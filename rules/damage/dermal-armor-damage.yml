@@ -1,0 +1,21 @@
+id: rule.damage.dermal-armor-damage
+record_type: rule
+name: "Dermal Armor Damage"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 133, basis: extends}
+scope:
+  applies_to: ["dermal plating or dermal sheath after Serious or Deadly wounds"]
+resolution:
+  summary: "After sufficiently severe wounds, dermal armor can lose self-repairing function. The source provides a check for damage, a temporary repair treatment window, and Stress consequences if repair is not completed."
+  inputs: ["dermal armor type", "wound severity"]
+  outputs: ["normal function, damaged state, or Stress"]
+  steps: []
+links:
+  uses: [rule.damage.stress-points, rule.damage.stress-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 133, relation: extends, note: "Dermal Armor Damage"}
+notes: []
