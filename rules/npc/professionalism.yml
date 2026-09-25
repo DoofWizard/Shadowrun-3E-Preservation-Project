@@ -1,0 +1,43 @@
+id: rule.npc.professionalism
+record_type: rule
+name: "NPC Professionalism"
+domain: npc
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 248
+  basis: defines
+
+scope:
+  applies_to:
+    - "non-player characters in dangerous situations"
+
+resolution:
+  summary: "NPC professionalism represents training, discipline, and willingness to keep fighting. NPCs are categorized as Average, Semi-Trained, Trained, or Professional, with increasingly strong expectations for remaining in combat after being wounded."
+  inputs:
+    - "NPC professionalism category"
+    - "wound state"
+    - "gamemaster judgment"
+  outputs:
+    - "whether NPC continues fighting, withdraws, or flees"
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 248
+    relation: defines
+    note: "Non-Player Characters / NPC Professionalism"
+  - source: source.sr3-core
+    page: 249
+    relation: clarifies
+    note: "Average, Semi-Trained, Trained, Professional categories"
+
+notes:
+  - "The gamemaster may use Willpower Tests for borderline cases as described by the source."
