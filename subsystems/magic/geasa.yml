@@ -1,0 +1,56 @@
+id: subsystem.magic.geasa
+record_type: subsystem
+name: "Geasa"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 31
+  basis: extends
+
+state:
+  tracked_values:
+    - "geas type"
+    - "Magic Point offset"
+    - "fulfilled or broken state"
+
+participants:
+  - "Awakened characters"
+
+components:
+  - "creating a geas"
+  - "accepting a geas"
+  - "fulfilling a geas"
+  - "removing a geas"
+  - "adepts and geasa"
+
+entry_conditions:
+  - "Awakened character suffers eligible Magic loss or accepts a permitted adept-power geas"
+
+exit_conditions:
+  - "geas removed or no longer relevant"
+
+links:
+  rules:
+    - rule.magic.magic-loss
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.initiation
+
+sources:
+  - source: source.mits
+    page: 31
+    relation: extends
+    note: "Geasa / Creating a Geas"
+  - source: source.mits
+    pages: "32-33"
+    relation: extends
+    note: "Accepting, fulfilling and removing geasa; adepts and geasa"
+
+notes:
+  - "A geas offsets lost magical capability; it does not restore the lost Magic Point itself."
