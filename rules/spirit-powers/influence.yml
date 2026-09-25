@@ -1,0 +1,24 @@
+id: rule.spirit-power.influence
+record_type: rule
+name: "Influence"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 264, basis: defines}
+
+scope:
+  applies_to: ["beings with Influence"]
+
+resolution:
+  summary: "Implants a suggestion or emotional disposition in the target. Resolve an Opposed Test between the user's Charisma (or Essence if it has no Charisma) and the victim's Willpower; net successes measure the strength of the influence."
+  inputs: ["user Charisma or Essence", "victim Willpower"]
+  outputs: ["strength of implanted suggestion/disposition"]
+
+power_profile: {type: mana, action: complex, range: LOS, duration: instant}
+
+links: {uses: [rule.tests.opposed-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 264, relation: defines, note: "Influence"}
+
+notes: []
