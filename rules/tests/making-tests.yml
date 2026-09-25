@@ -1,0 +1,42 @@
+id: rule.tests.making-tests
+record_type: rule
+name: "Making Tests"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Most uncertain character actions resolved with dice"
+  excludes: []
+
+resolution:
+  summary: "Resolve an uncertain action by rolling a number of six-sided dice, comparing individual die results to a target number, and counting successes."
+  inputs:
+    - "dice pool or relevant Attribute/skill rating"
+    - "target number"
+  outputs:
+    - "number of successes"
+  steps:
+    - "Determine how many d6 are rolled."
+    - "Determine the target number."
+    - "Roll the dice."
+    - "Compare each die individually to the target number."
+    - "Each die that equals or exceeds the target number is one success."
+
+links:
+  uses: []
+  affects: []
+  modified_by:
+    - modifier.tests.target-number
+  interacts_with:
+    - rule.tests.rule-of-one
+    - rule.tests.rule-of-six
+
+sources:
+  - source: source.sr3-core
+    page: 38
+    relation: defines
+    note: "Game Concepts — Making Tests / Making Dice Rolls"
+
+notes:
+  - "The source explicitly treats each die separately; die results are not summed."
