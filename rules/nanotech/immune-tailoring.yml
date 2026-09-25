@@ -1,0 +1,16 @@
+id: rule.nanotech.immune-tailoring
+record_type: rule
+name: "Nanoware Immune-System Tailoring"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 99, basis: defines}
+scope: {applies_to: ["free-floating nanoware"]}
+resolution:
+  summary: "Free-floating nanoware must be tailored to the host's immune markers so the body does not rapidly destroy it. Existing filtration systems may require modification, and the source treats correct immune matching as part of the installation and long-term support process."
+  inputs: ["host immune markers", "free-floating system", "filtration-system configuration"]
+  outputs: ["compatible or rejected nanoware"]
+  steps: []
+links: {uses: [procedure.nanotech.installation], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 99, relation: defines, note: "Modified Filtration System / Immune System Tailoring"}
+notes: []
