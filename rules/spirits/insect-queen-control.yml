@@ -1,0 +1,16 @@
+id: rule.spirits.insect-queen-control
+record_type: rule
+name: "Insect Queen and Shaman Control"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 130, basis: defines}
+scope: {applies_to: ["insect Queens and their shamans"]}
+resolution:
+  summary: "A Queen can command hive insect spirits directly and can redistribute Spirit Energy in ways that alter the shaman's Potency and the hive's available Force. The Queen and shaman constantly compete for control; an insect shaman may summon only one Queen, and if that Queen is banished or destroyed the source removes the shaman's insect magic."
+  inputs: ["Queen Force", "Queen Spirit Energy", "shaman Potency", "shaman Magic/Charisma"]
+  outputs: ["hive Force allocation, Potency changes, control state"]
+  steps: []
+links: {uses: [rule.magic.potency, rule.spirits.insect-hive], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 130, relation: defines, note: "Queen Spirits"}
+notes: []
