@@ -1,0 +1,21 @@
+id: rule.surgery.surgical-costs
+record_type: rule
+name: "Surgical Costs"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 151, basis: defines}
+scope:
+  applies_to: ["medical and surgical services"]
+resolution:
+  summary: "Medical care, planning, surgery, provider use, hospitalization, recovery, replacement body parts and Stress repair have base costs defined by the Surgical Costs Table. Doctor/provider charges are multiplied by equipment grade where applicable."
+  inputs: ["service type", "skill rating where used", "equipment grade", "days of care", "body part or Stress repair"]
+  outputs: ["service cost in nuyen"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.surgery.core]
+sources:
+  - {source: source.mm, page: 151, relation: defines, note: "Paying the Price / Surgical Costs Table"}
+notes: []
