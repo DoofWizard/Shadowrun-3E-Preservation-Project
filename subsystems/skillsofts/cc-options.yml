@@ -1,0 +1,62 @@
+id: subsystem.skillsofts.cc-options
+record_type: subsystem
+name: "Advanced Skillsoft and Simsense Options"
+domain: skillsofts
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 58
+  basis: extends
+
+state:
+  tracked_values:
+    - "skillsoft rating"
+    - "programming options"
+    - "memory/code size"
+    - "chip/deck modifications"
+    - "reprogramming"
+
+participants:
+  - "skillsofts"
+  - "BTLs"
+  - "ASIST devices"
+  - "users"
+
+components:
+  - "using skillsoft systems"
+  - "skillsoft programming options"
+  - "buying skillsofts with options"
+  - "dedicated chipjack"
+  - "BTL formats"
+  - "BTL side effects"
+  - "BTL programming options"
+  - "programmable ASIST biofeedback"
+  - "event/detect/reverse reprogramming"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.skillsofts.use
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.matrix.core
+
+sources:
+  - source: source.cc
+    page: 58
+    relation: extends
+    note: "Applied Simsense / Skillsofts"
+  - source: source.cc
+    pages: "59-71"
+    relation: extends
+    note: "Skillsoft/BTL options and ASIST reprogramming"
+
+notes:
+  - "The chapter explicitly builds on the SR3 skillsoft description."
