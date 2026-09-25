@@ -1,0 +1,16 @@
+id: rule.nanotech.excessive-nanoware
+record_type: rule
+name: "Excessive Free-Floating Nanoware"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 100, basis: defines}
+scope: {applies_to: ["hosts with more than two free-floating nanoware systems"]}
+resolution:
+  summary: "More than two free-floating systems overload the host. Each system introduced after the second can fail outright and all active free-floating systems lose effectiveness as additional systems are added."
+  inputs: ["number of free-floating systems", "existing system effectiveness"]
+  outputs: ["failure risk and reduced effectiveness"]
+  steps: []
+links: {uses: [rule.nanotech.classification], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 100, relation: defines, note: "Excessive Nanoware"}
+notes: []
