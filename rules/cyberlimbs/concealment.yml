@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.concealment
+record_type: rule
+name: "Cyberlimb Concealment"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 35, basis: defines}
+scope: {applies_to: ["synthetic cyberlimbs and installed enhancements"]}
+resolution:
+  summary: "Synthetic limbs have a base Concealability that changes with limb grade and installed devices. Higher-grade limbs can be more difficult to notice, while implanted enhancements reduce effective concealability according to their listed modifiers."
+  inputs: ["limb type and grade", "installed enhancements", "interaction context"]
+  outputs: ["effective concealability and Perception modifiers"]
+  steps: []
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 35, relation: defines, note: "Concealment rules for synthetic cyberlimbs"}
+notes: []
