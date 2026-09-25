@@ -1,0 +1,49 @@
+id: rule.cyberware.magic-interaction
+record_type: rule
+name: "Cyberware and Magic Interaction"
+domain: cyberware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 46
+  basis: extends
+
+scope:
+  applies_to:
+    - "implanted cyberware"
+    - "spells and adept powers interacting with an implanted character"
+  excludes:
+    - "cyberware removed from the body"
+
+resolution:
+  summary: "Implanted cyberware paid for with Essence is treated as an integral part of the body for magical targeting and transformation; it generally cannot be targeted separately by spells or adept powers."
+  inputs:
+    - "whether cyberware is implanted"
+    - "magical effect"
+  outputs:
+    - "whether the cyberware can be separately targeted/affected"
+  steps: []
+
+links:
+  uses: []
+  affects:
+    - subsystem.magic
+  modified_by: []
+  interacts_with:
+    - entity.cyberware.cyberware
+
+sources:
+  - source: source.mm
+    page: 46
+    relation: extends
+    note: "Cyberware and Magic"
+  - source: source.mm
+    page: 47
+    relation: clarifies
+    note: "Continuation: targeting, transformation, adept powers, enchanting"
+
+notes:
+  - "Removed cyberware can be targeted as a normal device."
+  - "Pre-implant enchanting is referenced to Magic in the Shadows."
