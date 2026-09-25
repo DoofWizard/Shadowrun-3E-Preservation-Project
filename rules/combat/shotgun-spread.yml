@@ -1,0 +1,42 @@
+id: rule.combat.shotgun-spread
+record_type: rule
+name: "Shotgun Spread"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 117
+  basis: defines
+
+scope:
+  applies_to:
+    - "shot rounds fired from shotguns"
+
+resolution:
+  summary: "Shot rounds spread with distance based on the shotgun's choke. As the spread widens, attacks can affect multiple targets, but Power is reduced with distance/spread. Targets farther across the spread may receive additional Damage Resistance dice."
+  inputs:
+    - "choke"
+    - "distance"
+    - "target position within spread"
+  outputs:
+    - "spread width"
+    - "Power reduction"
+    - "additional resistance dice where applicable"
+
+links:
+  uses: []
+  affects:
+    - procedure.combat.ranged-attack
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 117
+    relation: defines
+    note: "Shotguns"
+
+notes:
+  - "Smartlink/smart-goggle equipped shotguns can be cybernetically adjusted as described by the source."
