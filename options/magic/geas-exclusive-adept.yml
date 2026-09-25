@@ -1,0 +1,14 @@
+id: option.magic.geas-exclusive-adept
+record_type: option
+name: "Exclusive Geas — Adept"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 32, basis: defines}
+option_for: [subsystem.magic.geasa, subsystem.magic.adepts]
+selection: {timing: "when attaching a geas to an adept power", prerequisites: [], incompatible_with: []}
+effects:
+  - "Limits a chosen adept power so the offset Power Point is usable only when the geas condition is fulfilled."
+links: {modifies: [subsystem.magic.geasa, subsystem.magic.adepts], requires: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 32, relation: defines, note: "Exclusive Geas (Adept only)"}
+notes: []
