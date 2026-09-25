@@ -14,12 +14,13 @@ intrinsic:
   type: "Active Skill"
   category: "combat"
   linked_attribute: "Quickness"
-  default: "Rifles, Shotguns, Submachine Guns, Pistols"
-  specializations:
-    - "by specific weapon type"
+  summary: "Use of multi-firing-rate rifles."
+  default_routes: ["Rifles","Shotguns","Submachine Guns","Pistols"]
+  specializations: ["by specific weapon type"]
 
 links:
-  uses: []
+  uses:
+    - rule.skills.skill-ratings
   requires: []
   component_of: []
   interacts_with:
@@ -30,6 +31,6 @@ sources:
   - source: source.sr3-core
     page: 85
     relation: defines
-    note: "Skills — Active Skill categories"
+    note: "Skills — Active Skill Categories"
 
 notes: []
