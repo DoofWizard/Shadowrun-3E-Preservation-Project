@@ -1,0 +1,22 @@
+id: rule.dice-pools.combat-pool
+record_type: rule
+name: "Combat Pool"
+domain: dice-pools
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 104, basis: defines}
+scope:
+  applies_to: ["combat-related tests eligible for Combat Pool"]
+  excludes: []
+resolution:
+  summary: "Combat Pool dice may augment eligible offensive or defensive combat tests and may be used to dodge attacks or resist damage. Spent dice remain unavailable until the pool refreshes at the start of the next Combat Turn."
+  inputs: ["available Combat Pool","eligible combat test"]
+  outputs: ["additional dice and reduced remaining pool"]
+  steps: []
+links:
+  uses: [rule.dice-pools.general]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.combat.dodge-test, rule.combat.damage-resistance]
+sources:
+  - {source: source.sr3-core, page: 104, relation: defines, note: "Using Dice Pools / Combat Pool"}
+notes: []
