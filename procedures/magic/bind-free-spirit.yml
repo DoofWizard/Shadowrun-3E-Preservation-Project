@@ -1,0 +1,26 @@
+id: procedure.magic.bind-free-spirit
+record_type: procedure
+name: "Bind a Free Spirit by True Name"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 115, basis: defines}
+purpose: "Use a free spirit's true name in a binding ritual to compel indefinite service."
+prerequisites:
+  - "knowledge of the spirit's true name"
+  - "appropriate lodge/circle or equivalent ritual setting"
+inputs: ["spirit Force", "Spirit Energy", "binder Conjuring or mundane ritual dice"]
+stages:
+  - id: ritual
+    name: "Call Spirit"
+    test_or_action: "Perform a ritual lasting Force minutes and speak the true name three times."
+    outputs: ["spirit appears"]
+  - id: bind
+    name: "Binding Test"
+    test_or_action: "Conjuring binders roll Conjuring +3 dice; mundanes roll 3 dice. Target number is Force + Spirit Energy."
+    outputs: ["bound or unbound spirit"]
+outcomes: ["spirit bound until released or master dies", "failed binding and hostile free spirit"]
+links: {uses: [rule.spirits.true-names], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "115-116", relation: defines, note: "Binding a Free Spirit"}
+notes:
+  - "A character who fails to bind a particular free spirit can never attempt to bind that same spirit again."
