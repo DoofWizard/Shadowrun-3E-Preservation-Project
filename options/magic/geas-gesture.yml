@@ -1,0 +1,14 @@
+id: option.magic.geas-gesture
+record_type: option
+name: "Gesture Geas"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 32, basis: defines}
+option_for: [subsystem.magic.geasa]
+selection: {timing: "when accepting or creating a geas", prerequisites: [], incompatible_with: []}
+effects:
+  - "Requires a specified physical gesture or routine as part of using magic tied to the geas."
+links: {modifies: [subsystem.magic.geasa], requires: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 32, relation: defines, note: "Gesture Geas"}
+notes: []
