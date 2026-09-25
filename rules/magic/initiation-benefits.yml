@@ -1,0 +1,42 @@
+id: rule.magic.initiation-benefits
+record_type: rule
+name: "Initiation Benefits"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 58
+  basis: extends
+
+scope:
+  applies_to:
+    - subsystem.magic.initiation
+  excludes: []
+
+resolution:
+  summary: "Each initiation can provide one of three principal benefits: increase Magic and learn a metamagic technique; increase Magic and alter astral signature; or shed a geas. Only one option is chosen per initiation."
+  inputs:
+    - "new initiation grade"
+    - "chosen benefit"
+  outputs:
+    - "Magic/metamagic, Magic/signature alteration, or geas removal"
+  steps: []
+
+links:
+  uses: []
+  affects:
+    - subsystem.magic.initiation
+  modified_by: []
+  interacts_with:
+    - option.magic.metamagic
+
+sources:
+  - source: source.mits
+    page: 58
+    relation: defines
+    note: "Advantages of Initiation"
+
+notes:
+  - "Initiates also gain astral benefits including grade-based Astral Reaction and an Astral Pool as described on the same page."
