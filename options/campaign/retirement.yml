@@ -1,0 +1,41 @@
+id: option.campaign.retirement
+record_type: option
+name: "Character Retirement"
+domain: campaign
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 87
+  basis: adds_option
+
+option_for:
+  - "ongoing campaign character lifecycle"
+
+selection:
+  timing: "campaign play"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Provides structured ways to retire established player characters and move them into second careers or supporting roles."
+  - "Supports integrating replacement/new team members without treating retirement as character death."
+
+links:
+  modifies: []
+  requires: []
+  interacts_with:
+    - subsystem.karma.team-karma
+
+sources:
+  - source: source.srcomp
+    page: 87
+    relation: adds_option
+    note: "Retirement / Second Careers"
+  - source: source.srcomp
+    page: 88
+    relation: extends
+    note: "Integrating New Team Members"
+
+notes: []
