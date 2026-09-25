@@ -1,0 +1,45 @@
+id: rule.chemistry.additional-dosage
+record_type: rule
+name: "Additional Dosage and Overdose"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 106
+  basis: extends
+
+scope:
+  applies_to:
+    - "repeated exposure to the same drug or chemical"
+
+resolution:
+  summary: "Additional doses taken before the previous Speed period expires can increase the compound's Damage Level, then Power, subject to the source's dosage limits. Continued exposure requires repeated resistance tests. Excessive dosage can also trigger overdose damage determined by the gamemaster."
+  inputs:
+    - "number/timing of doses"
+    - "base Damage Code"
+    - "Speed"
+  outputs:
+    - "modified Damage Level and/or Power"
+    - "possible overdose damage"
+
+links:
+  uses:
+    - rule.chemistry.drug-exposure
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.chemistry.addiction
+
+sources:
+  - source: source.mm
+    page: 106
+    relation: extends
+    note: "Additional Dosage"
+  - source: source.mm
+    page: 107
+    relation: extends
+    note: "Continuation / Overdosing"
+
+notes: []
