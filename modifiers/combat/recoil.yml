@@ -1,0 +1,49 @@
+id: modifier.combat.recoil
+record_type: modifier
+name: "Firearm Recoil"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 110
+  basis: defines
+
+trigger:
+  conditions:
+    - "A firearm fires multiple rounds within an action/Combat Phase."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "increase attack target number"
+  value: "Mode-dependent cumulative recoil; uncompensated recoil is reduced by recoil-compensation systems."
+
+stacking:
+  mode: "Cumulative within the Combat Phase as specified by firing mode."
+  exceptions:
+    - "Heavy-weapon recoil doubles uncompensated recoil."
+    - "Burst-fire shotguns double uncompensated recoil."
+    - "Recoil compensation and gyro stabilization reduce applicable recoil."
+
+sources:
+  - source: source.sr3-core
+    page: 110
+    relation: defines
+    note: "Recoil"
+  - source: source.sr3-core
+    page: 111
+    relation: clarifies
+    note: "Mode/heavy-weapon recoil details"
+  - source: source.sr3-core
+    page: 112
+    relation: clarifies
+    note: "Ranged Combat Modifiers Table"
+  - source: source.sr3-core
+    page: 113
+    relation: clarifies
+    note: "Recoil Compensation and Gyro-Stabilization"
+
+notes:
+  - "Firing-mode-specific records can extend this modifier without replacing its identity."
