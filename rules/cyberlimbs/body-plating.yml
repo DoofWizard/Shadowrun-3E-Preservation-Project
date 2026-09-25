@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.body-plating
+record_type: rule
+name: "Cyberlimb Body Plating"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 35, basis: defines}
+scope: {applies_to: ["cyberlimbs with body plating or ablative armor"]}
+resolution:
+  summary: "Cyberlimb armor is tracked by body location and contributes to overall armor by averaging coverage across the character's body. Ballistic and Impact plating are purchased separately and stack with worn armor; ablative armor adds temporary armor and degrades when struck by sufficiently powerful attacks."
+  inputs: ["armor points by location", "attack type", "external armor"]
+  outputs: ["effective armor and ablative degradation"]
+  steps: []
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "35-37", relation: defines, note: "Cyberlimb armor, body plating and ablative armor rules"}
+notes: []
