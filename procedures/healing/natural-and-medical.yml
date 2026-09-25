@@ -1,0 +1,24 @@
+id: procedure.healing.natural-and-medical
+record_type: procedure
+name: "Healing Damage"
+domain: healing
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 126, basis: defines}
+purpose: "Recover Stun or Physical damage through natural recovery, medical care, first aid or magical healing."
+prerequisites: []
+inputs: ["damage type","wound level","Body/Willpower","medical care","lifestyle/conditions","magical healing where used"]
+stages:
+  - {id: stun, name: "Stun Recovery", test_or_action: "Use periodic Body or Willpower recovery tests as specified.", outputs: ["reduced Stun damage"]}
+  - {id: physical, name: "Physical Recovery", test_or_action: "Use Body tests over wound-level-dependent base times with medical/lifestyle modifiers.", outputs: ["reduced Physical damage"]}
+  - {id: stages, name: "Healing Stages", test_or_action: "Heal one Damage Level per successful stage until recovered.", outputs: ["updated Condition Monitor"]}
+outcomes: ["partial or full recovery","need for medical attention where required"]
+links:
+  uses: [rule.condition.condition-monitor, rule.condition.damage-levels]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 126, relation: defines, note: "Healing / Healing Stun Damage / Healing Physical Damage"}
+  - {source: source.sr3-core, page: 127, relation: extends, note: "Stages of Healing / Healing Table / Magical Healing"}
+notes:
+  - "Detailed Biotech and magical healing procedures are linked from their respective subsystems rather than duplicated here."
