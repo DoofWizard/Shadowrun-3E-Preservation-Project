@@ -1,0 +1,11 @@
+id: entity.nanotech.cyberware-repair-unit
+record_type: entity
+name: "Cyberware Repair Unit"
+domain: nanotech
+status: ingested
+intrinsic: {nanite_type: "Fixed Transient", cost: "10% of implant cost", availability: "8/2 wks", street_index: 1.5, legality: "Legal"}
+links: {uses: [rule.damage.stress-points], requires: [], component_of: [], interacts_with: [subsystem.cyberware.core]}
+sources:
+  - {source: source.mm, page: 92, relation: defines, note: "Cyberware Repair Unit description, game effects and statistics"}
+notes:
+  - "Repairs Stress on the attached fictional cyberware implant; cannot restore destroyed components."
