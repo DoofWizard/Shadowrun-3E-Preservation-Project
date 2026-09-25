@@ -1,0 +1,41 @@
+id: option.magic.metamagic
+record_type: option
+name: "Metamagic Technique"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 69
+  basis: extends
+
+option_for:
+  - subsystem.magic.initiation
+
+selection:
+  timing: "initiation/learning after initiation"
+  prerequisites:
+    - "initiate status"
+    - "technique-specific requirements"
+  incompatible_with: []
+
+effects:
+  - "An initiate may attempt to learn one metamagic technique for each initiation grade, subject to technique requirements."
+  - "Techniques include Anchoring, Centering, Cleansing, Divining, Invoking, Masking, Possessing, Quickening, Reflecting, and Shielding."
+  - "Learning requires a source of instruction and a test; failed learning can delay acquisition until a later initiation grade."
+
+links:
+  modifies: []
+  requires:
+    - subsystem.magic.initiation
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 69
+    relation: extends
+    note: "Metamagic and Learning Metamagic"
+
+notes:
+  - "Each named technique will receive its own option/rule record during the detailed metamagic chapter pass."
