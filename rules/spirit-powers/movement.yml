@@ -1,0 +1,24 @@
+id: rule.spirit-power.movement
+record_type: rule
+name: "Movement"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 265, basis: defines}
+
+scope:
+  applies_to: ["beings with Movement"]
+
+resolution:
+  summary: "Increases or decreases a target's movement rate within the user's terrain. For ordinary subjects, multiply or divide movement by the user's Essence. Vehicle use instead relies on Essence Tests against a vehicle-based target number and changes vehicle speed/acceleration as specified."
+  inputs: ["user Essence", "target movement rate", "vehicle Body/Acceleration when applicable"]
+  outputs: ["modified movement or vehicle speed"]
+
+power_profile: {type: physical, action: complex, range: LOS, duration: sustained}
+
+links: {uses: [rule.tests.success-test], affects: [rule.combat.movement], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 265, relation: defines, note: "Movement"}
+
+notes: []
