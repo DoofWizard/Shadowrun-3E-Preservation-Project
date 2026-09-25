@@ -1,0 +1,42 @@
+id: rule.skills.build-repair
+record_type: rule
+name: "Build/Repair Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 85
+  basis: defines
+
+scope:
+  applies_to:
+    - "Build/Repair Active Skills"
+  excludes: []
+
+resolution:
+  summary: "Many Active Skills have corresponding Build/Repair skills for making or repairing relevant equipment. Build/Repair skills default to Intelligence and may be specialized by specific weapon or item type."
+  inputs:
+    - "relevant Build/Repair skill"
+    - "tools/materials"
+  outputs:
+    - "construction or repair result"
+  steps: []
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with:
+    - procedure.equipment.ammunition-construction
+    - procedure.matrix.cyberterminal-construction
+
+sources:
+  - source: source.sr3-core
+    page: 85
+    relation: defines
+    note: "Build/Repair Skills"
+
+notes:
+  - "Actual construction/repair procedures and target numbers are defined by the relevant equipment rules."
