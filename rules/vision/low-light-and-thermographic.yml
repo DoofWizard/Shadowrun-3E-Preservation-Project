@@ -1,0 +1,22 @@
+id: rule.vision.low-light-and-thermographic
+record_type: rule
+name: "Low-Light and Thermographic Vision"
+domain: vision
+status: ingested
+effective: {status: current, source: source.mm, page: 48, basis: extends}
+scope:
+  applies_to: ["natural or cybernetic low-light and thermographic vision"]
+resolution:
+  summary: "Low-light vision amplifies available light and does not function in total darkness. Thermographic vision reads heat differences against ambient temperature. Natural and cybernetic implementations differ in how the image is layered with normal vision, and environmental conditions modify visibility according to the expanded visibility table."
+  inputs: ["vision mode", "ambient light", "temperature contrast", "environment"]
+  outputs: ["visibility modifiers and usable visual information"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 48, relation: extends, note: "Vision System Use / Low-light Vision"}
+  - {source: source.mm, page: 49, relation: extends, note: "Thermographic Vision / Visibility Modifiers"}
+notes: []
