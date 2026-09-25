@@ -1,0 +1,24 @@
+id: rule.dice-pools.hacking-pool
+record_type: rule
+name: "Hacking Pool"
+domain: dice-pools
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 207, basis: defines}
+scope:
+  applies_to: ["Matrix tests eligible for Hacking Pool"]
+  excludes: []
+resolution:
+  summary: "Hacking Pool is a decker's Matrix dice reserve derived from Intelligence and cyberdeck performance. Eligible dice may supplement Matrix/System and cybercombat tests subject to each test's rules and normal pool-refresh timing."
+  inputs: ["Hacking Pool","eligible Matrix test","allocated dice"]
+  outputs: ["bonus dice and reduced available pool"]
+  steps: []
+links:
+  uses: [rule.dice-pools.general]
+  affects: [rule.matrix.system-test, procedure.matrix.cybercombat]
+  modified_by: []
+  interacts_with: [compatibility.vr2.cyberware-hacking-pool]
+sources:
+  - {source: source.sr3-core, page: 207, relation: defines, note: "The Hacking Pool"}
+  - {source: source.mm, page: 45, relation: extends, note: "M&M cyberware bonuses and explicit VR2 replacement"}
+notes:
+  - "M&M p.45 is the current explicit replacement for the affected VR2 cyberware/Hacking Pool interaction, not a replacement of this SR3 core pool definition."
