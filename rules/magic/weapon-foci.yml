@@ -1,0 +1,22 @@
+id: rule.magic.weapon-foci
+record_type: rule
+name: "Weapon Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 191, basis: defines}
+scope:
+  applies_to: ["bonded active magical melee weapon focus"]
+  excludes: []
+resolution:
+  summary: "An active weapon focus adds its Force in dice to the owner's appropriate combat skill while wielded and functions as a magical weapon in physical and astral combat. Astral damage uses the focus's Power in place of physical Strength under the astral weapon-focus rule."
+  inputs: ["focus Force","appropriate melee skill","physical/astral combat state"]
+  outputs: ["bonus combat dice and magical weapon effect"]
+  steps: []
+links:
+  uses: [procedure.combat.melee-attack, rule.magic.astral-combat]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 191, relation: defines, note: "Weapon Foci"}
+notes: []
