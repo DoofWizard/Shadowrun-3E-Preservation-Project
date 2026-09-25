@@ -1,0 +1,35 @@
+id: rule.time.combat-turn
+record_type: rule
+name: "Combat Turn"
+domain: time
+status: ingested
+
+scope:
+  applies_to:
+    - "Situations such as combat or pursuit where timing becomes critical"
+  excludes: []
+
+resolution:
+  summary: "When detailed timing matters, play proceeds in Combat Turns of roughly three seconds. Characters act in Initiative Passes, and the point at which a specific character acts is that character's Combat Phase."
+  inputs:
+    - "initiative order"
+  outputs:
+    - "ordered Initiative Passes and Combat Phases"
+  steps: []
+
+links:
+  uses:
+    - rule.initiative.initiative
+  affects:
+    - rule.actions.combat-phase-actions
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 39
+    relation: defines
+    note: "Game Concepts — Time / Combat Turns"
+
+notes:
+  - "The source describes a Combat Turn as roughly three seconds long."
