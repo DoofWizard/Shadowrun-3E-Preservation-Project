@@ -1,0 +1,53 @@
+{
+  "id": "rule.armor.armor-clothing",
+  "record_type": "rule",
+  "name": "Armor Clothing and Concealability",
+  "domain": "armor",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 45,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "fashion armor and armor-clothing outfits"
+    ]
+  },
+  "resolution": {
+    "summary": "Armor clothing uses ordinary armor ratings but may have fractional values when individual outfit components are combined. Matching components add their armor values and normally do not count as layered armor with each other; armor lines can also impose social/context consequences and use Concealability to determine whether observers notice protection.",
+    "inputs": [
+      "outfit components",
+      "Ballistic/Impact ratings",
+      "Concealability",
+      "social context"
+    ],
+    "outputs": [
+      "combined armor rating",
+      "noticeability",
+      "layering interaction"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "rules.armor.armor-ratings",
+      "rules.armor.layering"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "modifier.social.visible-armor"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "45-46",
+      "relation": "extends",
+      "note": "Armor Clothing / Outfit Components"
+    }
+  ],
+  "notes": []
+}
