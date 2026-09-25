@@ -1,0 +1,46 @@
+id: rule.skills.specialization
+record_type: rule
+name: "Skill Specialization at Character Creation"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 57
+  basis: defines
+
+scope:
+  applies_to:
+    - "skills that permit specialization"
+  excludes: []
+
+resolution:
+  summary: "At character creation, a character may choose one specialization for each skill at no extra Skill Point cost. The specialization begins at base skill +1 and the related base skill is reduced by 1."
+  inputs:
+    - "base skill rating"
+    - "chosen specialization"
+  outputs:
+    - "reduced base skill rating"
+    - "specialized rating"
+  steps:
+    - "Choose one specialization permitted by the skill."
+    - "Reduce the base skill rating by 1."
+    - "Set the specialization rating to the original base rating +1."
+
+links:
+  uses:
+    - rule.skills.skill-ratings
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.character-creation.active-skill-purchase
+
+sources:
+  - source: source.sr3-core
+    page: 57
+    relation: defines
+    note: "Specialization"
+
+notes:
+  - "Further specialization rules appear in the Skills chapter and may extend or clarify this creation-time treatment."
