@@ -1,0 +1,38 @@
+id: option.combat.full-defense
+record_type: option
+name: "Full Defense"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 123
+  basis: adds_option
+
+option_for:
+  - procedure.combat.melee-attack
+
+selection:
+  timing: "when attacked in melee"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "The defender forgoes dealing damage and uses melee defense solely to avoid the attack."
+  - "If the normal opposed melee test does not avoid the attack, remaining Combat Pool dice may be used in an additional Dodge-style defense test as specified."
+
+links:
+  modifies:
+    - procedure.combat.melee-attack
+  requires: []
+  interacts_with:
+    - rule.dice-pools.combat-pool
+
+sources:
+  - source: source.sr3-core
+    page: 123
+    relation: adds_option
+    note: "Full Defense"
+
+notes: []
