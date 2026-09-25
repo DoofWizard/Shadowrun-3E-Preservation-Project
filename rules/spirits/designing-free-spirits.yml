@@ -1,0 +1,16 @@
+id: rule.spirits.designing-free-spirits
+record_type: rule
+name: "Designing Free Spirits"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 118, basis: defines}
+scope: {applies_to: ["gamemaster creation of free spirits"]}
+resolution:
+  summary: "The source provides random generation tables for spirit type, Force, Spirit Energy, great-form status, and additional free-spirit powers. Force is normally 2D6; Spirit Energy is 2D6 x 10 percent of Force, rounded up. A free spirit automatically gains 1D3 free-spirit powers on going free and can gain additional powers as Force rises."
+  inputs: ["spirit type table", "2D6 Force roll", "Spirit Energy roll", "power rolls"]
+  outputs: ["generated free spirit"]
+  steps: []
+links: {uses: [entity.spirit.free-spirit, rule.spirits.spirit-energy], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "118-120", relation: defines, note: "Designing Free Spirits / generation and power tables"}
+notes: []
