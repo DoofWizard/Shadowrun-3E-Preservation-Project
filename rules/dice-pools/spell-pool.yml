@@ -1,0 +1,22 @@
+id: rule.dice-pools.spell-pool
+record_type: rule
+name: "Spell Pool"
+domain: dice-pools
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 180, basis: defines}
+scope:
+  applies_to: ["characters capable of Sorcery"]
+  excludes: []
+resolution:
+  summary: "Spell Pool is a magical dice pool based on mental Attributes. Eligible dice can augment Sorcery-related tests such as spellcasting, Drain Resistance and Spell Defense as specified; allocations refresh with normal dice-pool timing."
+  inputs: ["Spell Pool","eligible Sorcery test","allocated dice"]
+  outputs: ["bonus dice and reduced available Spell Pool"]
+  steps: []
+links:
+  uses: [rule.dice-pools.general]
+  affects: [procedure.magic.spellcasting, rule.magic.spell-defense]
+  modified_by: []
+  interacts_with: [entity.skill.sorcery]
+sources:
+  - {source: source.sr3-core, page: 180, relation: defines, note: "Spell Pool"}
+notes: []
