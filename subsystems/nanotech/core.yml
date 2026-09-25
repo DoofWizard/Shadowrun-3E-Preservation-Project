@@ -1,0 +1,60 @@
+id: subsystem.nanotech.core
+record_type: subsystem
+name: "Nanotechnology"
+domain: nanotech
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 80
+  basis: extends
+
+state:
+  tracked_values:
+    - "nanoware/nanite type"
+    - "rating"
+    - "nanite population"
+    - "maintenance"
+    - "detection"
+    - "loss through time or injury"
+
+participants:
+  - "nanomachines"
+  - "nanoware users"
+  - "nanotech equipment"
+
+components:
+  - "medical nanites"
+  - "industrial/security nanites"
+  - "nanotech gear"
+  - "nanite loss"
+  - "maintenance"
+  - "detection"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.nanotech.nanite-loss
+    - rule.nanotech.detection
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.bioware.core
+    - subsystem.cyberware.core
+
+sources:
+  - source: source.mm
+    page: 80
+    relation: extends
+    note: "Nanotechnology"
+  - source: source.mm
+    pages: "90-100"
+    relation: extends
+    note: "Nanotech gear and rules"
+
+notes: []
