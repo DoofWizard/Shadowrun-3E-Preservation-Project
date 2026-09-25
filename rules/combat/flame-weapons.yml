@@ -1,0 +1,50 @@
+{
+  "id": "rule.combat.flame-weapons",
+  "record_type": "rule",
+  "name": "Flame Weapons",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 29,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "fictional flame weapons such as flamethrowers"
+    ]
+  },
+  "resolution": {
+    "summary": "Flame weapons use a Full Combat Turn to ready for firing. Flamethrowers can attack a single target or sweep a short arc against multiple targets. They use the Spray Weapons skill, use shotgun ranges, and cannot mount ordinary ammunition/explosive accessories. Their fuel supply is measured in shots and carried in external tanks.",
+    "inputs": [
+      "weapon",
+      "Spray Weapons skill",
+      "single-target or sweep attack",
+      "remaining fuel"
+    ],
+    "outputs": [
+      "attack mode",
+      "affected targets",
+      "fuel use"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 29,
+      "relation": "defines",
+      "note": "Flame Weapons / Flamethrower rules"
+    }
+  ],
+  "notes": [
+    "Fictional Shadowrun combat abstraction; operational real-world construction details are intentionally not represented."
+  ]
+}
