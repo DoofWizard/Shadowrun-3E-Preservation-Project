@@ -1,0 +1,28 @@
+id: modifier.tests.target-number
+record_type: modifier
+name: "Target Number Modifier"
+domain: tests
+status: ingested
+
+trigger:
+  conditions:
+    - "A rule or circumstance specifies a plus or minus modifier to a test's target number."
+
+effect:
+  target:
+    - rule.tests.target-numbers
+  operation: "add"
+  value: "specified modifier"
+
+stacking:
+  mode: "Apply as directed by the governing rules."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 38
+    relation: defines
+    note: "Game Concepts — Modifiers"
+
+notes:
+  - "SR3 also uses dice-count modifiers; those alter the number of dice rolled rather than the target number."
