@@ -1,0 +1,21 @@
+id: rule.surgery.provider-ratings
+record_type: rule
+name: "Medical Provider Ratings"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 144, basis: defines}
+scope:
+  applies_to: ["medical providers sought for non-emergency treatment"]
+resolution:
+  summary: "Providers have base ratings, staff-skill modifiers and search times based on provider type and equipment level. Better-equipped providers take longer to locate but provide higher staff/tool ratings."
+  inputs: ["provider category", "equipment grade", "search result"]
+  outputs: ["provider rating", "staff rating", "search time"]
+  steps: []
+links:
+  uses: [procedure.surgery.find-provider]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: "141-144", relation: defines, note: "Medical Providers, Emergency Care/Rating and Medical Ratings tables"}
+notes: []
