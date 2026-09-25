@@ -1,0 +1,17 @@
+id: entity.chemistry.mao
+record_type: entity
+name: "MAO"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "5/36 hrs"
+  cost_nuyen_per_dose: 280
+  street_index: 2
+  legality: "4P-X"
+  vector: "Injection"
+  speed: "Immediate"
+  damage: "12L Stun"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [entity.bioware.adrenal-pump]}
+sources:
+  - {source: source.mm, page: 120, relation: defines, note: "MAO fictional drug game effects and statistics"}
+notes: []
