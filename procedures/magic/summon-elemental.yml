@@ -1,0 +1,23 @@
+id: procedure.magic.summon-elemental
+record_type: procedure
+name: "Summoning an Elemental"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 186, basis: defines}
+purpose: "Summon and bind a hermetic elemental."
+prerequisites: ["hermetic mage or other permitted conjurer","appropriate hermetic circle/library/materials"]
+inputs: ["elemental type","Force","Conjuring","materials","Charisma/Drain resistance"]
+stages:
+  - {id: preparation, name: "Preparation", test_or_action: "Prepare the required circle/materials for the chosen elemental.", outputs: ["prepared summoning"]}
+  - {id: summon, name: "Conjuring Test", test_or_action: "Roll Conjuring against target number equal to elemental Force.", outputs: ["summoning successes"]}
+  - {id: bind, name: "Bind Elemental", test_or_action: "Successful summoning binds the elemental and determines services owed.", outputs: ["bound elemental and services"]}
+  - {id: drain, name: "Resist Conjuring Drain", test_or_action: "Resolve Conjuring Drain.", outputs: ["Drain damage"]}
+outcomes: ["bound elemental","failed summon"]
+links:
+  uses: [entity.skill.conjuring, rule.magic.drain]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 186, relation: defines, note: "Elementals / Preparation / Summoning Elementals"}
+notes: []
