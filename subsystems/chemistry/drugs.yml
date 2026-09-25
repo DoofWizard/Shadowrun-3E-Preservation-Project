@@ -1,0 +1,72 @@
+id: subsystem.chemistry.drugs
+record_type: subsystem
+name: "Drugs and Chemical Compounds"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 105
+  basis: extends
+
+state:
+  tracked_values:
+    - "Vector"
+    - "Damage Code"
+    - "Speed"
+    - "Effects"
+    - "dosage"
+    - "Addiction Rating"
+    - "Addiction Code"
+    - "Tolerance"
+    - "Edge"
+    - "Fix Factor"
+
+participants:
+  - "characters"
+  - "drugs"
+  - "toxins"
+  - "medicines and chemical compounds"
+
+components:
+  - "exposure"
+  - "resistance"
+  - "additional dosage"
+  - "overdose"
+  - "antidotes"
+  - "addiction"
+  - "tolerance"
+  - "withdrawal"
+
+entry_conditions:
+  - "exposure to a chemical compound"
+
+exit_conditions: []
+
+links:
+  rules:
+    - rule.chemistry.drug-exposure
+    - rule.chemistry.additional-dosage
+    - rule.chemistry.addiction
+    - rule.chemistry.tolerance
+  procedures:
+    - procedure.chemistry.manufacture
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rule.hazards.toxins-diseases
+
+sources:
+  - source: source.mm
+    page: 105
+    relation: extends
+    note: "Drug Rules — dosage, attributes, vectors, Damage Code, Speed, effects"
+  - source: source.mm
+    pages: "106-110"
+    relation: extends
+    note: "Exposure, resistance, antidotes, dosage, overdose, addiction, tolerance and withdrawal"
+
+notes:
+  - "These rules explicitly expand the SR3 Diseases and Toxins framework rather than replacing its general Damage Code/Speed concept."
