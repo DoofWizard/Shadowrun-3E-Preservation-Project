@@ -1,0 +1,17 @@
+id: rule.spirits.designing-ally
+record_type: rule
+name: "Designing an Ally Spirit"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 110, basis: defines}
+scope: {applies_to: ["ally spirit creation and later ritual changes"]}
+resolution:
+  summary: "Before summoning an ally, the creator specifies forms, Force, physical Attributes, skills, powers, spells and Karma Pool. The first Force point is paid with the creator's sacrificed Magic Point; higher Force, Attribute/skill increases, extra forms, Sense Link, spells and Karma Pool have the source-defined Karma costs. Mental Attributes are fixed from the creator at creation."
+  inputs: ["desired Force", "forms", "Attributes", "skills", "powers", "spells", "Karma Pool"]
+  outputs: ["ally design and total Karma cost"]
+  steps: []
+links: {uses: [rule.spirits.ally-framework, rule.spirits.ally-powers], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "110-111", relation: defines, note: "Designing an Ally / Karma costs"}
+notes:
+  - "Additional Force costs 5 Karma x current Force per +1; physical Attribute increases cost current Attribute rating; skills cost current skill rating per +1; additional forms cost 1 Karma each; Sense Link costs 5; additional initial spells cost Force; extra Karma Pool costs 1 Karma per point."
