@@ -1,0 +1,17 @@
+id: rule.magic.spell-formula-market
+record_type: rule
+name: "Spell Formula Availability and Cost"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 170, basis: defines}
+scope: {applies_to: ["purchased spell formulas"]}
+resolution:
+  summary: "Spell-formula availability time and price scale with spell Force and Drain level. Light, Moderate, Serious, and Deadly Drain use progressively higher base time and cost multipliers; variable Drain is treated as Deadly for this table. Combat spells, elemental manipulation spells, and other formulas above Force 3 use the source's Force-based legality code."
+  inputs: ["spell Force", "Drain level", "spell category/type"]
+  outputs: ["availability", "cost", "legality"]
+  steps: []
+links: {uses: [procedure.magic.learning-spells, procedure.magic.spell-design], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 170, relation: defines, note: "Spell Formulas table and legality note"}
+notes:
+  - "Light: Force/24 hrs, Force x 50 nuyen; Moderate: Force/48 hrs, Force x 100; Serious: Force/72 hrs, Force x 500; Deadly/variable: Force/7 days, Force x 1,000."
