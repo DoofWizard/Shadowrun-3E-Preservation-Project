@@ -1,0 +1,24 @@
+id: subsystem.drones.remote-control-network
+record_type: subsystem
+name: "Remote-Control Network"
+domain: drones
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 154, basis: defines}
+state:
+  tracked_values: ["remote-control deck","Subscriber List","drone mode","network communication","ECM/ECCM","rigger state"]
+participants: ["rigger","remote-control deck","drones","remote network"]
+components: ["remote-control deck","Subscriber List","primary/secondary drone roles","network channels"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: [rule.drones.operation, rule.drones.issuing-commands]
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.vehicles.ecm]
+sources:
+  - {source: source.sr3-core, page: 154, relation: defines, note: "Using Drones / About Drones / Remote-Control Networks"}
+  - {source: source.sr3-core, page: 155, relation: extends, note: "Subscriber Lists and network operation"}
+notes:
+  - "Rigger 3 later expands remote networks and drone operations."
