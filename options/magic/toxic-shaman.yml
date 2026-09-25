@@ -1,0 +1,19 @@
+id: option.magic.toxic-shaman
+record_type: option
+name: "Toxic Shaman"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 124, basis: defines}
+option_for: [rule.magic.shamanic-tradition]
+selection:
+  timing: "NPC magical-threat creation"
+  prerequisites: []
+  incompatible_with: []
+effects:
+  - "Uses a corrupted shamanic path associated with ecological destruction, pollution, and toxic domains."
+  - "Toxic shamans are broadly divided into avengers and poisoners, with their totem's ideals twisted according to that alignment."
+  - "Typical starting Potency is 1D6 ÷ 2, rounded down."
+links: {modifies: [rule.magic.shamanic-tradition], requires: [rule.magic.potency], interacts_with: [rule.magic.toxic-domains]}
+sources:
+  - {source: source.mits, pages: "124-126", relation: defines, note: "Toxic Shamans, avengers/poisoners, toxic totems and Toxic Potency"}
+notes: []
