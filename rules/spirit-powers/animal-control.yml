@@ -1,0 +1,24 @@
+id: rule.spirit-power.animal-control
+record_type: rule
+name: "Animal Control"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 262, basis: defines}
+
+scope:
+  applies_to: ["beings with Animal Control"]
+
+resolution:
+  summary: "Allows control over animals of a particular type. A controlled animal resists with Willpower against the user's Charisma; the user can control a number of small animals up to Charisma x5 or larger animals up to Charisma."
+  inputs: ["user Charisma", "target Willpower", "animal size/type"]
+  outputs: ["controlled behavior or resistance"]
+
+power_profile: {type: mana, action: complex, range: LOS, duration: sustained}
+
+links: {uses: [rule.tests.opposed-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 262, relation: defines, note: "Animal Control"}
+
+notes: []
