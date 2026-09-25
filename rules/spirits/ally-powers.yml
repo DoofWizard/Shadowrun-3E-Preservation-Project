@@ -1,0 +1,16 @@
+id: rule.spirits.ally-powers
+record_type: rule
+name: "Ally Spirit Powers"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 108, basis: defines}
+scope: {applies_to: ["ally spirits"]}
+resolution:
+  summary: "Allies may be designed with Aid Power, Inhabiting, Materialization, Sense Link, Sorcery, Telepathic Link, and Three-Dimensional Movement. Most cost no design Karma; Sense Link costs 5 Karma. The ally's selected powers determine whether it remains astral, materializes, inhabits a host, casts spells, shares senses, or communicates telepathically."
+  inputs: ["ally design", "selected powers"]
+  outputs: ["ally capabilities and design Karma cost"]
+  steps: []
+links: {uses: [rule.spirits.ally-framework], affects: [entity.spirit.ally], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "108-110", relation: defines, note: "Powers of Allies"}
+notes: []
