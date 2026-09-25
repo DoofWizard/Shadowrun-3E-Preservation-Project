@@ -1,0 +1,31 @@
+id: procedure.magic.create-zombie
+record_type: procedure
+name: "Create Zombie"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 104, basis: defines}
+purpose: "Prepare a corpse and summon a minor spirit to animate it as a zombie."
+prerequisites:
+  - "Eligible Voodoo practitioner"
+  - "reasonably fresh corpse"
+  - "ritual materials costing 1,000 nuyen x desired Force"
+inputs: ["desired Force", "Enchanting skill", "Conjuring skill", "ritual materials"]
+stages:
+  - id: prepare
+    name: "Prepare Corpse"
+    test_or_action: "Make an Enchanting Test against desired Force; base time 10 days divided by successes."
+    outputs: ["prepared corpse"]
+  - id: animate
+    name: "Summon Animating Spirit"
+    test_or_action: "Make a Conjuring Test against desired Force; ritual time equals desired Force in hours."
+    outputs: ["animated zombie and lifespan"]
+  - id: drain
+    name: "Drain Resistance"
+    test_or_action: "Resist Drain using the normal spirit-summoning Drain rules."
+    outputs: ["Drain resisted or suffered"]
+outcomes: ["controlled zombie", "failed preparation or animation"]
+links: {uses: [entity.spirit.zombie], requires: [], produces: [entity.spirit.zombie], modified_by: []}
+sources:
+  - {source: source.mits, pages: "104-105", relation: defines, note: "Zombies"}
+notes:
+  - "A houngan may control no more zombies than twice Charisma."
