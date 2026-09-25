@@ -1,0 +1,22 @@
+id: rule.magic.banishing
+record_type: rule
+name: "Banishing"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 189, basis: defines}
+scope:
+  applies_to: ["spirits being banished"]
+  excludes: []
+resolution:
+  summary: "Banishing is a Conjuring contest between magician and spirit. Successes reduce the opposing side's effective Magic/Force as specified; repeated exchanges can destroy/banish the spirit or defeat the magician. Banishing also causes Drain."
+  inputs: ["Conjuring","Magic","spirit Force","Charisma/Drain resistance"]
+  outputs: ["reduced Force/Magic, banishment or failed attempt","Drain"]
+  steps: []
+links:
+  uses: [entity.skill.conjuring, rule.magic.drain]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 189, relation: defines, note: "Banishing"}
+notes: []
