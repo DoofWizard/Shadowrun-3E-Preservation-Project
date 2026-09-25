@@ -1,0 +1,22 @@
+id: rule.cyberware.increased-reflexes-behavior
+record_type: rule
+name: "Effects of Increased Reflexes"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 45, basis: extends}
+scope:
+  applies_to: ["characters with wired reflexes or other cybernetic reflex enhancements"]
+resolution:
+  summary: "At gamemaster discretion, reflex-enhanced characters may react instinctively to perceived threats before fully analyzing them. A Perception Test is modified upward according to Initiative enhancement; failure can cause an immediate reflexive response, with a Willpower test allowed to avoid especially destructive reactions."
+  inputs: ["Perception", "Initiative enhancement", "situation"]
+  outputs: ["possible involuntary reaction"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.initiative.initiative]
+sources:
+  - {source: source.mm, page: 45, relation: extends, note: "Effects of Increased Reflexes"}
+notes:
+  - "The source explicitly advises gamemasters to use this rule sparingly."
