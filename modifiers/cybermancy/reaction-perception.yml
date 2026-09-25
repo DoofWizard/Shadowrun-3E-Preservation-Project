@@ -1,0 +1,16 @@
+id: modifier.cybermancy.reaction-perception
+record_type: modifier
+name: "Cybermantic Reaction and Perception Penalties"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, pages: "57-58", basis: defines}
+condition: "Character has negative Essence from cybermancy."
+effect:
+  summary: "Reaction Tests receive +1 target number for each point or fraction of negative Essence when the character is surprised. Perception Tests receive +1 target number for every 2 points or fraction of negative Essence."
+links:
+  modifies: [rule.attributes.reaction]
+  requires: [subsystem.cybermancy.core]
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: "57-58", relation: defines, note: "Changes to Reaction/Perception"}
+notes: []
