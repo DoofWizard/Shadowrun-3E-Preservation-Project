@@ -1,0 +1,15 @@
+id: option.magic.path-mage
+record_type: option
+name: "Path of the Mage"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 17, basis: extends}
+option_for: [subsystem.magic.traditions-expanded]
+selection: {timing: "magical tradition/path selection", prerequisites: [], incompatible_with: []}
+effects:
+  - "Uses the hermetic approach to magic and may be expressed through different hermetic schools."
+  - "Elemental mages specialize more narrowly in elemental magical practice."
+links: {modifies: [rule.magic.hermetic-tradition], requires: [], interacts_with: [subsystem.magic.conjuring]}
+sources:
+  - {source: source.mits, page: 17, relation: extends, note: "Path of the Mage / Hermetic Schools / Elemental Mages"}
+notes: []
