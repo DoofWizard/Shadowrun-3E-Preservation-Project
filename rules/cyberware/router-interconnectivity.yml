@@ -1,0 +1,16 @@
+id: rule.cyberware.router-interconnectivity
+record_type: rule
+name: "Router Interconnectivity"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 22, basis: defines}
+scope: {applies_to: ["cyberware devices connected through a router"]}
+resolution:
+  summary: "A router provides multiple dedicated or generic cyberware ports, letting linked devices exchange data. Dedicated ports accept one assigned input; generic ports can be reassigned. Routers can connect to external devices through an appropriate interface and have a maximum of ten ports excluding the brain connection."
+  inputs: ["router ports", "connected devices", "port assignment"]
+  outputs: ["allowed cyberware data paths"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberware.interconnectivity]}
+sources:
+  - {source: source.mm, page: 22, relation: defines, note: "Router game effects and port rules"}
+notes: []
