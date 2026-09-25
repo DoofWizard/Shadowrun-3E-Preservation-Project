@@ -1,0 +1,60 @@
+id: subsystem.armor.cc-expanded
+record_type: subsystem
+name: "Expanded Armor and Gear"
+domain: armor
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 45
+  basis: extends
+
+state:
+  tracked_values:
+    - "Ballistic/Impact rating"
+    - "Concealability"
+    - "armor component"
+    - "modification"
+    - "special protection"
+
+participants:
+  - "armor clothing"
+  - "general armor"
+  - "diving armor"
+  - "military armor"
+  - "armor modifications"
+
+components:
+  - "armor clothing"
+  - "outfit components"
+  - "general armor"
+  - "armor modifications"
+  - "BattleTac/communications gear"
+  - "underwater gear"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.armor.armor-ratings
+    - rule.armor.layering
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: []
+
+sources:
+  - source: source.cc
+    page: 45
+    relation: extends
+    note: "Armor and Gear / Armor Clothing"
+  - source: source.cc
+    pages: "45-57"
+    relation: extends
+    note: "Armor, gear and underwater equipment"
+
+notes:
+  - "Armor clothing explicitly uses the SR3 armor rules rather than replacing them."
