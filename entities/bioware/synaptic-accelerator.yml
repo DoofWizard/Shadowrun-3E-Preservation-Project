@@ -1,0 +1,19 @@
+id: entity.bioware.synaptic-accelerator
+record_type: entity
+name: "Synaptic Accelerator"
+domain: bioware
+status: ingested
+intrinsic:
+  grade: cultured
+  levels:
+    1: {bio_index: 0.4, availability: "6/12 days", cost_nuyen: 75000, street_index: 2, legality: "5P-Q"}
+    2: {bio_index: 1.0, availability: "6/12 days", cost_nuyen: 200000, street_index: 2, legality: "5P-Q"}
+links:
+  uses: [rule.initiative.initiative]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "74-75", relation: defines, note: "Synaptic Accelerator description, game effects, stress effects and statistics"}
+notes:
+  - "Each level adds a cumulative +1D6 to Initiative; incompatible with wired-reflex or move-by-wire systems."
