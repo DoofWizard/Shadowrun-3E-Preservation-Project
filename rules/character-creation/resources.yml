@@ -1,0 +1,49 @@
+id: rule.character-creation.resources
+record_type: rule
+name: "Starting Resources"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 60
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes: []
+
+resolution:
+  summary: "The Resources priority provides starting nuyen for gear and other creation-time purchases. During character creation, gear must be paid for at full listed cost without Street Index multipliers, and starting gear is limited by rating/Availability restrictions."
+  inputs:
+    - "Resources priority"
+  outputs:
+    - "starting nuyen"
+    - "purchased equipment, contacts, lifestyle, cyberware, magical resources"
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with:
+    - entity.contact.contact
+    - entity.lifestyle.lifestyle
+    - option.cyberware.grades
+
+sources:
+  - source: source.sr3-core
+    page: 60
+    relation: defines
+    note: "Assigning Resources"
+  - source: source.sr3-core
+    page: 61
+    relation: extends
+    note: "Cyberware, Contacts and Lifestyle"
+
+notes:
+  - "During character creation, items above Rating 6 or Availability 8 are not available as starting gear."
+  - "Every starting character must purchase a lifestyle."
+  - "Contacts are normally purchased during character creation."
+  - "SR3 core explicitly makes basic and alphaware available at character creation; Man & Machine later expands the cyberware-grade system."
