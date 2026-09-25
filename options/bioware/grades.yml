@@ -1,0 +1,43 @@
+id: option.bioware.grades
+record_type: option
+name: "Bioware Grades"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 76
+  basis: extends
+
+option_for:
+  - subsystem.bioware.core
+
+selection:
+  timing: "purchase/implantation"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Bioware is categorized as basic or cultured; basic bioware may also be specially cultured for the recipient."
+  - "Culturing basic bioware increases cost and availability while reducing its Bio Index burden."
+  - "Used bioware is available only for basic bioware, costs less, and begins with permanent Stress."
+
+links:
+  modifies:
+    - rule.bioware.bio-index
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 76
+    relation: extends
+    note: "Bioware Grades"
+  - source: source.mm
+    page: 77
+    relation: defines
+    note: "Bioware Grades Table / Used Bioware"
+
+notes:
+  - "The source's exact cost/availability multipliers should remain on purchase metadata for individual bioware entities."
