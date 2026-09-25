@@ -1,0 +1,20 @@
+id: entity.bioware.suprathyroid-gland
+record_type: entity
+name: "Suprathyroid Gland"
+domain: bioware
+status: ingested
+intrinsic:
+  bio_index: 1.4
+  availability: "8/12 days"
+  cost_nuyen: 50000
+  street_index: 2.5
+  legality: "6P-Q"
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [entity.bioware.metabolic-arrester, rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 69, relation: defines, note: "Suprathyroid Gland description, game effects, stress effects and statistics"}
+notes:
+  - "Adds +1 to Physical Attributes and Reaction and alters food/lifestyle requirements; incompatible with the metabolic arrester."
