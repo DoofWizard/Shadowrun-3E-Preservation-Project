@@ -1,0 +1,21 @@
+id: rule.damage.bioware-wound-effects
+record_type: rule
+name: "Bioware Wound Effects and Failure"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 128, basis: defines}
+scope:
+  applies_to: ["wound effects classified as bioware damage"]
+resolution:
+  summary: "Bioware is assigned among six Bio Index slots in the same general manner that cyberware uses Essence slots. Damaged bioware receives Stress and its normal function degrades according to its item-specific Stress effects. A failed Stress Test is treated as Deadly Stress and the implant ceases functioning until repaired."
+  inputs: ["wound effect", "Bio Index slot assignment", "bioware item"]
+  outputs: ["affected bioware", "Stress-level effects", "possible failure"]
+  steps: []
+links:
+  uses: [rule.damage.wound-effects, rule.damage.stress-test]
+  affects: [subsystem.bioware.core]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 128, relation: defines, note: "Bioware Damage and Bioware Failure"}
+notes: []
