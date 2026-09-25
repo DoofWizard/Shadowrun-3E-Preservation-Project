@@ -1,0 +1,21 @@
+id: rule.damage.cyberware-failure
+record_type: rule
+name: "Cyberware Failure"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 128, basis: defines}
+scope:
+  applies_to: ["cyberware that fails a Stress Test"]
+resolution:
+  summary: "A failed cyberware system may cease functioning or malfunction. The gamemaster may choose the fiction and effect or use the Cyberware Failure Table, which progressively reduces bonuses/ratings and adds target-number penalties as severity increases."
+  inputs: ["failed cyberware", "failure-table result if used"]
+  outputs: ["malfunction or loss of function"]
+  steps: []
+links:
+  uses: [rule.damage.stress-test]
+  affects: [subsystem.cyberware.core]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 128, relation: defines, note: "Cyberware Failure and Cyberware Failure Table"}
+notes: []
