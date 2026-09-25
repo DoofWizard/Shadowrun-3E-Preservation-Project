@@ -1,0 +1,44 @@
+id: rule.bioware.bio-index
+record_type: rule
+name: "Bio Index"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 77
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters with implanted bioware"
+
+resolution:
+  summary: "Each bioware implant contributes its Bio Index rating to the character's total Bio Index. Total Bio Index measures the physiological load imposed by bioware and may not exceed 9; exceeding that absolute limit is fatal."
+  inputs:
+    - "Bio Index values of all implanted bioware"
+  outputs:
+    - "total Bio Index"
+  steps:
+    - "Add the Bio Index values of all implanted bioware."
+    - "Compare the total to Essence Index for excessive-bioware effects."
+    - "A total above 9 is fatal."
+
+links:
+  uses: []
+  affects:
+    - rule.bioware.excessive-bioware
+    - rule.bioware.awakened
+  modified_by:
+    - option.bioware.grades
+  interacts_with:
+    - rule.bioware.essence-index
+
+sources:
+  - source: source.mm
+    page: 77
+    relation: defines
+    note: "Bio Index / Essence Index"
+
+notes: []
