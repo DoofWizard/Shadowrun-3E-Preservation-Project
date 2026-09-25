@@ -1,0 +1,41 @@
+id: rule.character.edges-flaws-balance
+record_type: rule
+name: "Edges and Flaws Balance"
+domain: character
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 16
+  basis: defines
+
+scope:
+  applies_to:
+    - subsystem.character.edges-flaws
+
+resolution:
+  summary: "Edges cost positive points and Flaws provide negative points/compensation under the Companion character-creation rules. The gamemaster controls availability, combinations, limits, later elimination and custom design."
+  inputs:
+    - "selected Edges"
+    - "selected Flaws"
+    - "gamemaster limits"
+  outputs:
+    - "net character-creation adjustment"
+
+links:
+  uses: []
+  affects:
+    - procedure.character-creation.standard
+    - option.character-creation.point-based-design
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 16
+    relation: defines
+    note: "Purchasing Edges and Flaws / Limitations / Eliminating Flaws / Designing Edges and Flaws"
+
+notes:
+  - "The exact value and effect of each Edge/Flaw belongs on its individual option record."
