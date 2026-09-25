@@ -1,0 +1,17 @@
+id: rule.spirits.becoming-free
+record_type: rule
+name: "Becoming a Free Spirit"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 113, basis: defines}
+scope: {applies_to: ["uncontrolled spirits eligible to become free"]}
+resolution:
+  summary: "When a spirit becomes uncontrolled, the gamemaster may determine whether it becomes free. A Force (6) Test can be used randomly, with target-number reduction for spirits strongly associated with metahumanity. On success the spirit becomes free, gains a true name, one point of Spirit Energy, new powers, and a Karma Pool equal to what it had when it went free."
+  inputs: ["spirit Force", "spirit history/type", "uncontrolled state"]
+  outputs: ["free-spirit state or return/hostile reaction"]
+  steps: []
+links: {uses: [entity.spirit.free-spirit], affects: [], modified_by: [], interacts_with: [rule.spirits.losing-banishing-ally]}
+sources:
+  - {source: source.mits, pages: "113-114", relation: defines, note: "Free Spirits / Born Free"}
+notes:
+  - "Watchers and ancestor spirits do not normally become free under these rules."
