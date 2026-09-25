@@ -1,0 +1,16 @@
+id: rule.spirits.spirit-energy
+record_type: rule
+name: "Spirit Energy"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 114, basis: defines}
+scope: {applies_to: ["free spirits"]}
+resolution:
+  summary: "Spirit Energy represents accumulated free-spirit power beyond Force. It augments Force-based powers and physical Attributes, adds to astral Initiative, and can vary by situation or personal domain. All free spirits begin with 1 Spirit Energy and may raise it by spending Good Karma equal to the new Spirit Energy rating."
+  inputs: ["Force", "Spirit Energy", "situation/personal domain"]
+  outputs: ["effective Force for powers, physical Attributes, astral Initiative"]
+  steps: []
+links: {uses: [entity.spirit.free-spirit], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 114, relation: defines, note: "Spirit Energy"}
+notes: []
