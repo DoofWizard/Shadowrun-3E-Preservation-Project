@@ -1,0 +1,28 @@
+id: rule.vehicles.maneuver-score
+record_type: rule
+name: "Maneuver Score"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 138, basis: defines}
+scope:
+  applies_to: ["vehicle combat"]
+  excludes: []
+resolution:
+  summary: "Maneuver Score represents a vehicle's relative tactical position. It is built from Vehicle Points, Terrain Points, Speed Points and Driver Points and is recalculated through vehicle combat as positioning changes."
+  inputs: ["vehicle type","terrain","speed","driver Open Test"]
+  outputs: ["Maneuver Score"]
+  steps:
+    - "Determine Vehicle Points."
+    - "Apply Terrain Points."
+    - "Determine Speed Points."
+    - "Determine Driver Points using an Open Test."
+    - "Sum the components."
+links:
+  uses: [rule.tests.open-test, rule.vehicles.driving-test]
+  affects: [procedure.vehicles.combat-turn-sequence]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 138, relation: defines, note: "Vehicle Combat / The Maneuver Score"}
+  - {source: source.sr3-core, page: 140, relation: extends, note: "Vehicle Points, Terrain Points, Speed Points and Driver Points"}
+notes: []
