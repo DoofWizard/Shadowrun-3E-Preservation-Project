@@ -1,0 +1,37 @@
+id: modifier.combat.melee-position
+record_type: modifier
+name: "Melee Position and Numbers"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 122
+  basis: defines
+
+trigger:
+  conditions:
+    - "A melee combatant has superior position, is prone, is wounded, or is outnumbered."
+
+effect:
+  target:
+    - procedure.combat.melee-attack
+  operation: "modify melee target number"
+  value: "Apply the appropriate modifiers for friends/opponents in melee, superior position, prone status, wounds, visibility, and multiple targets."
+
+stacking:
+  mode: "Use the melee modifier table; Reach and positional advantages follow the table's restrictions."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 122
+    relation: adds_modifier
+    note: "Multiple Opponents and Friends in Melee / Superior Position / Opponent Prone"
+  - source: source.sr3-core
+    page: 123
+    relation: clarifies
+    note: "Melee Modifiers Table"
+
+notes: []
