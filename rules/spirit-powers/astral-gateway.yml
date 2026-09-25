@@ -1,0 +1,16 @@
+id: rule.spirit-powers.astral-gateway
+record_type: rule
+name: "Free Spirit Power: Astral Gateway"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 117, basis: defines}
+scope: {applies_to: ["free spirits with Astral Gateway"]}
+resolution:
+  summary: "A free spirit can temporarily bring the astral and physical planes into closer contact and project a willing subject into astral space or onto the spirit's native metaplane. The spirit must maintain the gateway; abandonment can strand or kill a non-initiate subject on a metaplane."
+  inputs: ["spirit", "willing subject", "destination plane"]
+  outputs: ["temporary astral/metaplanar projection"]
+  steps: []
+links: {uses: [subsystem.magic.metaplanes], affects: [], modified_by: [], interacts_with: [rule.spirit-powers.possession]}
+sources:
+  - {source: source.mits, page: 117, relation: defines, note: "Astral Gateway"}
+notes: []
