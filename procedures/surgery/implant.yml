@@ -1,0 +1,16 @@
+id: procedure.surgery.implant
+record_type: procedure
+name: "Implant Surgery"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 147, basis: defines}
+purpose: "Install, remove, repair or upgrade cyberware and related implants."
+prerequisites: []
+inputs: ["implant", "procedure type", "implant grade", "planned options"]
+stages: []
+outcomes: ["implant installed/removed/repaired/upgraded", "Stress or wound consequences on failure"]
+links: {uses: [rule.surgery.surgical-test, rule.damage.stress-points], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, page: 147, relation: defines, note: "Implant Surgery procedures and target numbers"}
+notes:
+  - "Includes install/remove cyberware, repair Stress/failure and upgrade cyberware."
