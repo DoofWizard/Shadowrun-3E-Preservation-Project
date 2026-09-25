@@ -1,0 +1,61 @@
+{
+  "id": "procedure.skillsofts.detect-reprogramming",
+  "record_type": "procedure",
+  "name": "Detect Event Reprogramming",
+  "domain": "skillsofts",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 71,
+    "basis": "defines"
+  },
+  "purpose": "Detect whether a fictional Shadowrun character's memories have been altered by event reprogramming.",
+  "prerequisites": [],
+  "inputs": [
+    "Biotech or Psychology",
+    "subject Willpower",
+    "PAB rating used",
+    "concealment successes"
+  ],
+  "stages": [
+    {
+      "id": "test",
+      "name": "Detection Test",
+      "test_or_action": "Make a Biotech or Psychology Test with a base time equal to PAB rating hours. Target number is subject Willpower plus PAB rating, further modified by concealment successes.",
+      "outputs": [
+        "detected/not detected",
+        "details learned"
+      ]
+    },
+    {
+      "id": "detail",
+      "name": "Interpret Successes",
+      "test_or_action": "Additional successes can reveal which memories were altered, how recently, or reduce time.",
+      "outputs": [
+        "diagnostic detail"
+      ]
+    }
+  ],
+  "outcomes": [
+    "reprogramming detected",
+    "reprogramming remains hidden"
+  ],
+  "links": {
+    "uses": [
+      "procedure.skillsofts.event-reprogramming"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 71,
+      "relation": "defines",
+      "note": "Detecting Reprogramming"
+    }
+  ],
+  "notes": []
+}
