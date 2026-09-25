@@ -1,0 +1,16 @@
+id: entity.spirit.blood-spirit
+record_type: entity
+name: "Blood Spirit"
+domain: spirits
+status: ingested
+effective: {status: restricted, source: source.mits, page: 134, basis: defines}
+intrinsic:
+  attack: "Strength (M)"
+  powers: ["Engulf","Essence Drain","Fear","Guard","Materialization","Noxious Breath"]
+  weakness: "Essence Loss (1 point per day)"
+  maximum_force_basis: "depends on fictional sacrifice category in the source"
+links: {uses: [subsystem.magic.magical-threats], requires: [option.magic.sacrificing], component_of: [], interacts_with: [rule.spirits.free-spirit-good-karma]}
+sources:
+  - {source: source.mits, page: 134, relation: defines, note: "Blood Spirits and Blood Spirit Table"}
+notes:
+  - "Restricted fictional Shadowrun magical-threat spirit."
