@@ -1,0 +1,44 @@
+id: entity.spirit.nature-spirit
+record_type: entity
+name: "Nature Spirit"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 266
+  basis: defines
+
+intrinsic:
+  type: "spirit family"
+  governing_rating: "Force"
+  domains:
+    - "Man"
+    - "Sky"
+    - "Land"
+    - "Water"
+  statistics: "Domain/subtype-specific attributes, Initiative, attacks, weaknesses, and powers are defined by the nature-spirit stat blocks."
+  common_role: "Shamanic summoned spirit family bound to a domain."
+
+links:
+  uses:
+    - subsystem.spirits.powers
+  requires: []
+  component_of: []
+  interacts_with:
+    - subsystem.magic.conjuring
+    - rule.spirits.combat
+
+sources:
+  - source: source.sr3-core
+    page: 266
+    relation: defines
+    note: "Nature Spirits"
+  - source: source.sr3-core
+    page: 267
+    relation: extends
+    note: "Nature-spirit subtype/stat blocks"
+
+notes:
+  - "Specific domains/subtypes should be child entities where later supplements add or change powers."
