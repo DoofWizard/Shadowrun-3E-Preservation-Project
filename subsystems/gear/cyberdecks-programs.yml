@@ -1,0 +1,47 @@
+id: subsystem.gear.cyberdecks-programs
+record_type: subsystem
+name: "Cyberdecks and Programs as Gear"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 303
+  basis: references
+
+state:
+  tracked_values:
+    - "cyberdeck MPCP/rating statistics"
+    - "program size"
+    - "program rating"
+    - "cost"
+    - "availability"
+    - "legality"
+
+participants:
+  - "cyberdecks"
+  - "Matrix programs"
+
+components: []
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.matrix.core
+
+sources:
+  - source: source.sr3-core
+    page: 303
+    relation: references
+    note: "Cyberdecks and Programs — points back to Matrix chapter statistics and program size table"
+
+notes:
+  - "The core mechanical definitions are canonical under the Matrix subsystem; Street Gear contributes acquisition/cost/legality context rather than a second Matrix ruleset."
