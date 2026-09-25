@@ -1,0 +1,44 @@
+id: rule.combat.combat-turn-sequence
+record_type: rule
+name: "Combat Turn Sequence"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 104
+  basis: defines
+
+scope:
+  applies_to:
+    - rule.time.combat-turn
+
+resolution:
+  summary: "A Combat Turn proceeds through pool refresh, Initiative determination, sequential Combat Phases, recalculation of the next Initiative Pass, and finally the start of a new Combat Turn."
+  inputs:
+    - "combat participants"
+  outputs:
+    - "resolved Combat Turn"
+  steps:
+    - "Refresh applicable dice pools."
+    - "Determine Initiative."
+    - "Resolve Combat Phases from highest to lowest Initiative."
+    - "After all eligible actors act, subtract 10 and resolve the next Initiative Pass."
+    - "When no Initiative remains above 0, begin a new Combat Turn."
+
+links:
+  uses:
+    - rule.initiative.initiative-passes
+    - rule.dice-pools.general
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 104
+    relation: defines
+    note: "Combat Turn Sequence"
+
+notes: []
