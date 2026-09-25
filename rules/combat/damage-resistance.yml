@@ -1,0 +1,22 @@
+id: rule.combat.damage-resistance
+record_type: rule
+name: "Damage Resistance Test"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 113, basis: defines}
+scope:
+  applies_to: ["targets hit by damaging attacks"]
+  excludes: []
+resolution:
+  summary: "Roll Body plus eligible Combat Pool dice against a target number based on the attack's Power after armor adjustment. Each die meeting the target number is a success; target-number minimum remains 2 and the Rule of Six applies."
+  inputs: ["Body","Combat Pool dice","weapon Power","armor"]
+  outputs: ["damage resistance successes"]
+  steps: []
+links:
+  uses: [rule.tests.success-test, rule.dice-pools.combat-pool]
+  affects: [procedure.combat.ranged-attack]
+  modified_by: []
+  interacts_with: [rule.combat.damage-staging]
+sources:
+  - {source: source.sr3-core, page: 113, relation: defines, note: "Damage Resistance Test"}
+notes: []
