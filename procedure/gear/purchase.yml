@@ -1,0 +1,69 @@
+id: procedure.gear.purchase
+record_type: procedure
+name: "Purchasing Gear"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 272
+  basis: defines
+
+purpose: "Locate and purchase gear through legal, gray-market, or shadow-market channels."
+
+prerequisites:
+  - "desired item"
+
+inputs:
+  - "Availability Code"
+  - "Street Index"
+  - "Cost"
+  - "appropriate contact or source"
+  - "Etiquette"
+  - "Negotiation"
+
+stages:
+  - id: locate
+    name: "Locate Item"
+    test_or_action: "Use a contact and make an Etiquette Test against the Availability target number."
+    outputs: ["item located or search continues"]
+  - id: wait
+    name: "Determine Acquisition Time"
+    test_or_action: "Divide the Availability time period by Etiquette successes, subject to the source's minimum/adjustment rules."
+    outputs: ["acquisition time"]
+  - id: price
+    name: "Determine Street Price"
+    test_or_action: "Apply Street Index to legal retail Cost, then resolve negotiation."
+    outputs: ["final price"]
+  - id: complete
+    name: "Complete Purchase"
+    test_or_action: "Exchange payment and receive the item."
+    outputs: ["acquired gear"]
+
+outcomes:
+  - "gear purchased"
+  - "item unavailable or deal fails"
+
+links:
+  uses:
+    - entity.skill.etiquette
+    - entity.skill.negotiation
+  requires: []
+  produces: []
+  modified_by:
+    - rule.gear.availability
+    - rule.gear.street-index
+    - rule.gear.legality-codes
+
+sources:
+  - source: source.sr3-core
+    page: 272
+    relation: defines
+    note: "Purchasing Gear / Availability"
+  - source: source.sr3-core
+    page: 273
+    relation: extends
+    note: "Street Index and Cost / Legal Purchases / Permits"
+
+notes: []
