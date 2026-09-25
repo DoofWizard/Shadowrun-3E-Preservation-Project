@@ -1,0 +1,33 @@
+id: modifier.combat.target-state
+record_type: modifier
+name: "Ranged Target Movement State"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 112
+  basis: defines
+
+trigger:
+  conditions:
+    - "Target is running or stationary."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "modify attack target number"
+  value: "Running target +2; stationary target -1."
+
+stacking:
+  mode: "Apply with other situational modifiers."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 112
+    relation: adds_modifier
+    note: "Target Running / Target Stationary"
+
+notes: []
