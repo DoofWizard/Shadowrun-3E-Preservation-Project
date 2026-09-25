@@ -1,0 +1,17 @@
+id: rule.magic.toxic-domains
+record_type: rule
+name: "Toxic Domains and Toxic Nature Spirits"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 126, basis: defines}
+scope: {applies_to: ["toxic shamans and nature spirits in corrupted domains"]}
+resolution:
+  summary: "A toxic domain is an area where natural or human conditions have been badly corrupted. Such areas usually carry strong background count. Only toxic shamans can summon or control toxic nature spirits there; toxic spirits inherit the ordinary powers of their nature-spirit type and additionally gain corrosive-secretion and noxious-breath style powers. Their Force is increased by the domain's background count for summoning resistance and game effects."
+  inputs: ["domain type", "background count", "nature-spirit type", "summoner"]
+  outputs: ["toxic-spirit eligibility, adjusted Force, and powers"]
+  steps: []
+links: {uses: [rule.magic.background-count], affects: [], modified_by: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, pages: "126-127", relation: defines, note: "Toxic Domains / Toxic Nature Spirits / Rare Toxics"}
+notes:
+  - "Toxic spirits are not constrained by normal domain boundaries in the same way as ordinary nature spirits."
