@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.integrity-enhancement
+record_type: rule
+name: "Cyberlimb Integrity Enhancement"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 39, basis: defines}
+scope: {applies_to: ["cyberlimbs with Integrity Enhancement"]}
+resolution:
+  summary: "Integrity Enhancement reinforces a cyberlimb, reducing the target number of cyberlimb Stress Tests by one per point and adding protective Body Dice against damaging effects targeted at the limb. Maximum enhancement is three points per limb."
+  inputs: ["Integrity Enhancement rating", "Stress Test", "targeted damage"]
+  outputs: ["Stress Test modifier and added protective dice"]
+  steps: []
+links: {uses: [rule.damage.stress-test], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 39, relation: defines, note: "Integrity Enhancement"}
+notes: []
