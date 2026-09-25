@@ -1,0 +1,40 @@
+id: rule.initiative.damage-effects
+record_type: rule
+name: "Damage Effects on Initiative"
+domain: initiative
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 102
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters who take damage during a Combat Turn"
+
+resolution:
+  summary: "Wound modifiers reduce Initiative. Damage taken during a Combat Turn immediately applies the Initiative modifier from that damage and can change later action order or eliminate later Initiative Passes."
+  inputs:
+    - "current Initiative Score"
+    - "current wound modifier"
+    - "new damage"
+  outputs:
+    - "modified Initiative Score and action order"
+
+links:
+  uses: []
+  affects:
+    - rule.initiative.initiative-passes
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 102
+    relation: defines
+    note: "Damage and Initiative"
+
+notes:
+  - "If damage reduces Initiative to 0 or less, the character takes no further actions that Combat Turn."
