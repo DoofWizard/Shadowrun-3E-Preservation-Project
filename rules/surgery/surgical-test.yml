@@ -1,0 +1,21 @@
+id: rule.surgery.surgical-test
+record_type: rule
+name: "Surgery Test"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 146, basis: defines}
+scope:
+  applies_to: ["cosmetic, implant, therapeutic, transimplant and trauma surgery"]
+resolution:
+  summary: "Surgery uses Biotech or the appropriate specialization against a procedure-specific target number modified by surgical conditions and patient factors. Medicine may provide complementary dice. Surgery duration is based on the modified target number, and extra successes not spent on options can shorten the procedure."
+  inputs: ["procedure target number", "surgical modifiers", "Biotech/specialization", "Medicine", "planned options"]
+  outputs: ["success/failure, achieved options, procedure time"]
+  steps: []
+links:
+  uses: [procedure.surgery.planning]
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.surgery.operation]
+sources:
+  - {source: source.mm, page: 146, relation: defines, note: "Surgical Tests and Surgery Table"}
+notes: []
