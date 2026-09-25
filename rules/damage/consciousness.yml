@@ -1,0 +1,21 @@
+id: rule.damage.consciousness
+record_type: rule
+name: "Consciousness After Deadly Damage"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 131, basis: extends}
+scope:
+  applies_to: ["characters who reach 10 boxes of Stun or Physical damage"]
+resolution:
+  summary: "A character at 10 boxes makes a Willpower Test against a target number based on injury and bioware load to remain conscious. Pain resistance can modify this. Conscious characters continue to suffer severe action/Initiative effects and can become disabled; further damage can force additional tests."
+  inputs: ["damage track", "Willpower", "injury modifiers", "Bio Index", "pain resistance"]
+  outputs: ["conscious, unconscious, or disabled state"]
+  steps: []
+links:
+  uses: [rule.tests.success-test, rule.condition.condition-monitor]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: "131-132", relation: extends, note: "Consciousness, retaining consciousness, reviving and disablement"}
+notes: []
