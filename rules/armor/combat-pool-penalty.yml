@@ -1,0 +1,41 @@
+id: rule.armor.combat-pool-penalty
+record_type: rule
+name: "Armor Encumbrance and Combat Pool"
+domain: armor
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 285
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters whose armor exceeds Quickness-based limits"
+
+resolution:
+  summary: "For every 2 points by which either Ballistic or Impact Armor exceeds the character's Quickness, reduce Combat Pool by 1 die. If combined worn armor ratings exceed Quickness under the layering rule, Quickness-linked tests and movement can also be penalized."
+  inputs:
+    - "Quickness"
+    - "effective Ballistic Armor"
+    - "effective Impact Armor"
+  outputs:
+    - "Combat Pool penalty"
+    - "possible Quickness/movement penalties"
+
+links:
+  uses:
+    - rule.dice-pools.combat-pool
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.armor.layering
+
+sources:
+  - source: source.sr3-core
+    page: 285
+    relation: defines
+    note: "Armor and Combat Pool / Layering Armor"
+
+notes: []
