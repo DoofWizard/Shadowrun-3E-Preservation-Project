@@ -1,0 +1,22 @@
+id: rule.combat.called-shots
+record_type: rule
+name: "Called Shots"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 114, basis: defines}
+scope:
+  applies_to: ["ranged or melee attacks aimed at a specific vulnerable location or effect"]
+  excludes: []
+resolution:
+  summary: "A called shot adds +4 to the attack target number. For ranged attacks, the character must take the Call a Shot Free Action immediately before the attack. The gamemaster determines the resulting special effect or damage adjustment appropriate to the declared target."
+  inputs: ["declared vulnerable target","attack"]
+  outputs: ["modified attack and called-shot effect"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.combat.ranged-attack]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 114, relation: defines, note: "Called Shots"}
+notes: []
