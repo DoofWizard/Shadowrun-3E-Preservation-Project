@@ -1,0 +1,23 @@
+id: rule.magic.spell-targeting
+record_type: rule
+name: "Spell Targeting"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 181, basis: defines}
+scope:
+  applies_to: ["spellcasting"]
+  excludes: []
+resolution:
+  summary: "A caster must normally be able to see a target with natural or appropriately enhanced vision and satisfy the spell's range/target restrictions. Transparent barriers can block targeting in specific physical/astral circumstances; area spells affect valid targets within their radius."
+  inputs: ["caster perception","spell range/type","target","barriers"]
+  outputs: ["valid/invalid target","target number modifiers where applicable"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.magic.spellcasting]
+  modified_by: []
+  interacts_with: [rule.magic.astral-barriers]
+sources:
+  - {source: source.sr3-core, page: 181, relation: defines, note: "Spell Targeting"}
+  - {source: source.sr3-core, page: 182, relation: clarifies, note: "Transparent barriers, astral targeting and object resistance"}
+notes: []
