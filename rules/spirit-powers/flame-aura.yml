@@ -1,0 +1,24 @@
+id: rule.spirit-power.flame-aura
+record_type: rule
+name: "Flame Aura"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Flame Aura"]
+
+resolution:
+  summary: "Surrounds the user with flame. Melee attacks by the user gain +2 Power; successful melee attacks against the user expose the attacker to fire damage based on the user's Essence."
+  inputs: ["user Essence", "melee attack"]
+  outputs: ["increased melee Power and retaliatory fire damage"]
+
+power_profile: {type: physical, action: free, range: self, duration: sustained}
+
+links: {uses: [], affects: [procedure.combat.melee-attack], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Flame Aura"}
+
+notes: []
