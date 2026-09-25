@@ -1,0 +1,29 @@
+id: modifier.social.visible-armor
+record_type: modifier
+name: "Visible Armor and Social Interaction"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 93
+  basis: adds_modifier
+
+trigger:
+  conditions:
+    - "Visible armor materially affects the social setting."
+
+effect:
+  target: ["non-abusive social skill target numbers","Intimidation target numbers"]
+  operation: "situational"
+  value: "In some upper-class/polite settings visible armor adds +2 to non-abusive social tests; the same visible threat can instead reduce Intimidation target numbers by 1."
+
+stacking:
+  mode: "Apply according to social context."
+  exceptions: []
+
+sources:
+  - {source: source.sr3-core, page: 93, relation: adds_modifier, note: "Armor and Society"}
+
+notes: []
