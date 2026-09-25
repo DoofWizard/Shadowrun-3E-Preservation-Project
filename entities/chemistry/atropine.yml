@@ -1,0 +1,17 @@
+id: entity.chemistry.atropine
+record_type: entity
+name: "Atropine"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "5/12 hrs"
+  cost_nuyen_per_dose: 600
+  street_index: 1
+  legality: "Legal"
+  vector: "Injection"
+  speed: "Immediate/15 min"
+  damage: "7D"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 118, relation: defines, note: "Atropine game effects and statistics"}
+notes: []
