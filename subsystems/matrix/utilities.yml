@@ -1,0 +1,25 @@
+id: subsystem.matrix.utilities
+record_type: subsystem
+name: "Matrix Utilities"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 220, basis: defines}
+state:
+  tracked_values: ["utility Rating","Multiplier","program size","loaded/running state","applicable operation or combat function"]
+participants: ["decker persona","utility programs","hosts/IC"]
+components: ["operational utilities","offensive utilities","defensive utilities","special utilities"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [procedure.matrix.system-operation, procedure.matrix.cybercombat]
+sources:
+  - {source: source.sr3-core, page: 220, relation: defines, note: "Utilities / Operational Utilities"}
+  - {source: source.sr3-core, page: 221, relation: extends, note: "Offensive utilities"}
+  - {source: source.sr3-core, page: 222, relation: extends, note: "Defensive utilities"}
+notes:
+  - "FASA7909 Matrix substantially expands utility and programming rules."
