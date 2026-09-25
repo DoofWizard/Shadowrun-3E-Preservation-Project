@@ -1,0 +1,39 @@
+id: option.cyberware.io-speed
+record_type: option
+name: "Cyberware I/O Speed"
+domain: cyberware
+status: ingested
+
+effective:
+  status: optional
+  source: source.mm
+  page: 46
+  basis: adds_option
+
+option_for:
+  - subsystem.cyberware.interconnectivity
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Instead of treating ordinary cyberware-to-cyberware data transfer as effectively instantaneous, transfers between datajacks, routers, cyberware, and external devices may be limited to 1,000 Mp per Combat Turn."
+  - "Encrypted or compressed data uses twice its normal Mp size for determining transfer speed."
+
+links:
+  modifies:
+    - subsystem.cyberware.interconnectivity
+  requires: []
+  interacts_with:
+    - subsystem.matrix
+
+sources:
+  - source: source.mm
+    page: 46
+    relation: adds_option
+    note: "I/O Speed (Optional Rule)"
+
+notes:
+  - "Explicitly optional."
