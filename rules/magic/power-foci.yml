@@ -1,0 +1,22 @@
+id: rule.magic.power-foci
+record_type: rule
+name: "Power Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["Awakened owner of an active bonded power focus"]
+  excludes: []
+resolution:
+  summary: "An active power focus increases the owner's effective Magic Attribute by its Force for specified purposes including Drain classification and maximum spirit Force, and contributes bonus dice equal to Force to eligible Sorcery, Conjuring and Drain Resistance tests."
+  inputs: ["focus Force","eligible magical calculation/test"]
+  outputs: ["effective Magic increase and/or bonus dice"]
+  steps: []
+links:
+  uses: [rule.magic.magic-attribute]
+  affects: [subsystem.magic.sorcery, subsystem.magic.conjuring]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Power Foci"}
+notes: []
