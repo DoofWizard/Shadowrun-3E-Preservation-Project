@@ -1,0 +1,15 @@
+id: procedure.surgery.cosmetic
+record_type: procedure
+name: "Cosmetic Surgery"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 146, basis: defines}
+purpose: "Change a character's appearance through minor, moderate or serious cosmetic surgery."
+prerequisites: []
+inputs: ["desired change", "procedure severity", "selected options"]
+stages: []
+outcomes: ["appearance alteration", "procedure-specific wound level", "possible cosmetic-surgery options"]
+links: {uses: [rule.surgery.surgical-test], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, pages: "146-147", relation: defines, note: "Cosmetic Surgery and Cosmetic Surgery Test Target Numbers"}
+notes: []
