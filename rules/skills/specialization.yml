@@ -1,14 +1,14 @@
 id: rule.skills.specialization
 record_type: rule
-name: "Skill Specialization at Character Creation"
+name: "Skill Specialization"
 domain: skills
 status: ingested
 
 effective:
   status: current
   source: source.sr3-core
-  page: 57
-  basis: defines
+  page: 82
+  basis: clarifies
 
 scope:
   applies_to:
@@ -16,17 +16,17 @@ scope:
   excludes: []
 
 resolution:
-  summary: "At character creation, a character may choose one specialization for each skill at no extra Skill Point cost. The specialization begins at base skill +1 and the related base skill is reduced by 1."
+  summary: "A specialization narrows a base skill to a specific sub-area. At character creation, one specialization may be chosen for a skill at no extra Skill Point cost: the specialization becomes base skill +1 and the related base skill is reduced by 1. Specializing later in play is handled through advancement and does not reduce the base skill rating."
   inputs:
     - "base skill rating"
     - "chosen specialization"
   outputs:
-    - "reduced base skill rating"
+    - "base skill rating"
     - "specialized rating"
   steps:
-    - "Choose one specialization permitted by the skill."
-    - "Reduce the base skill rating by 1."
-    - "Set the specialization rating to the original base rating +1."
+    - "At character creation, choose one permitted specialization."
+    - "At character creation, reduce the base skill by 1 and set the specialization to the original base rating +1."
+    - "During game play, use the advancement rules to add/improve specializations without reducing the base skill."
 
 links:
   uses:
@@ -35,12 +35,24 @@ links:
   modified_by: []
   interacts_with:
     - rule.character-creation.active-skill-purchase
+    - rule.skills.defaulting
 
 sources:
   - source: source.sr3-core
     page: 57
     relation: defines
-    note: "Specialization"
+    note: "Creating a Shadowrunner — Specialization"
+  - source: source.sr3-core
+    page: 82
+    relation: clarifies
+    note: "Skills — Specialization"
+  - source: source.sr3-core
+    page: 84
+    relation: extends
+    note: "Defaulting to a specialization"
 
 notes:
-  - "Further specialization rules appear in the Skills chapter and may extend or clarify this creation-time treatment."
+  - "Only one specialization per base skill is permitted at character creation."
+  - "During game play, a character may take one additional specialization per base skill."
+  - "A specialization normally may not exceed twice the related base skill; an exception allows base skill 1 with specialization 3."
+  - "The number of specializations a character has cannot exceed the rating of the base skill's linked Attribute."
