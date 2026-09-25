@@ -1,0 +1,16 @@
+id: rule.bioware.magic-interactions
+record_type: rule
+name: "Bioware and Magic Effects"
+domain: bioware
+status: ingested
+effective: {status: current, source: source.mm, page: 79, basis: extends}
+scope: {applies_to: ["bioware effects interacting with spells, adept powers, and magical concealment"]}
+resolution:
+  summary: "Most magical effects combine normally with bioware, but the source defines bounded exceptions: metabolic-suspension effects do not stack, pain-resistance bioware has limits against magical pain effects and Nerve Strike, reflex-enhancement bonuses use only the highest applicable Reaction/Initiative bonus, and thermosense is not defeated by vision-based illusions."
+  inputs: ["bioware effect", "spell or adept power", "situation"]
+  outputs: ["stacking, suppression, or unaffected interaction"]
+  steps: []
+links: {uses: [rule.bioware.awakened], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 79, relation: extends, note: "Bioware and Magic Effects"}
+notes: []
