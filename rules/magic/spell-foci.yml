@@ -1,0 +1,22 @@
+id: rule.magic.spell-foci
+record_type: rule
+name: "Spell Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["Expendable Spell Foci","Specific Spell Foci","Spell Category Foci"]
+  excludes: []
+resolution:
+  summary: "Spell foci provide additional dice equal to Force for the spellcasting functions allowed by their subtype. Expendable foci are consumed on use; specific-spell and category foci remain bonded and allocate dice to eligible Sorcery/Drain functions under their subtype restrictions."
+  inputs: ["focus subtype","Force","eligible spell/test"]
+  outputs: ["bonus dice"]
+  steps: []
+links:
+  uses: [rule.dice-pools.spell-pool]
+  affects: [procedure.magic.spellcasting]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Spell Foci"}
+notes: []
