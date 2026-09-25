@@ -1,0 +1,39 @@
+id: rule.skillsofts.use
+record_type: rule
+name: "Using Skillsofts"
+domain: skillsofts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 296
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters accessing skillsofts through compatible hardware"
+
+resolution:
+  summary: "A skillsoft provides encoded capability rather than learned memory. Knowsofts replicate Knowledge Skills, linguasofts replicate Language Skills, datasofts provide information, and activesofts replicate eligible Active Skills when used with skillwire-compatible hardware. Skillsoft use does not create associated dice pools and does not permanently teach the skill."
+  inputs:
+    - "skillsoft type and rating"
+    - "compatible access hardware"
+  outputs:
+    - "temporary encoded skill/information access"
+
+links:
+  uses:
+    - rule.skills.skill-ratings
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 296
+    relation: defines
+    note: "Skillsofts"
+
+notes:
+  - "Activesofts cannot replace magical skills such as Sorcery and Conjuring."
