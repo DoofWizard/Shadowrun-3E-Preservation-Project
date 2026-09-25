@@ -1,0 +1,15 @@
+id: entity.chemistry.carcerands
+record_type: entity
+name: "Carcerands"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "4/10 days"
+  cost: "100 nuyen per day"
+  street_index: 2
+  legality: "Legal"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 111, relation: defines, note: "Carcerands description and game effects"}
+notes:
+  - "Fictional delivery technology that delays release of an enclosed compound; contained compound is represented separately."
