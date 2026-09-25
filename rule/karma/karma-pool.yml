@@ -1,0 +1,49 @@
+id: rule.karma.karma-pool
+record_type: rule
+name: "Karma Pool"
+domain: karma
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 246
+  basis: defines
+
+scope:
+  applies_to:
+    - "player characters and NPCs with Karma Pool"
+
+resolution:
+  summary: "Karma Pool represents accumulated luck. Humans add one Karma Pool point for every 10 points of Total Karma earned; other metatypes add one for every 20. Karma Pool normally refreshes periodically and may be spent or permanently burned for specific effects."
+  inputs:
+    - "Total Karma earned"
+    - "metatype"
+    - "current Karma Pool"
+  outputs:
+    - "available Karma Pool dice"
+    - "Good Karma remainder"
+
+links:
+  uses:
+    - rule.karma.core-karma
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.karma.karma-pool-uses
+    - option.karma.hooper-nelson
+    - option.karma.hand-of-god
+
+sources:
+  - source: source.sr3-core
+    page: 242
+    relation: defines
+    note: "Karma division into Good Karma and Karma Pool"
+  - source: source.sr3-core
+    page: 246
+    relation: clarifies
+    note: "Karma Pools"
+
+notes:
+  - "The book suggests refreshing the pool by scene, approximately every 24 hours of game time, or at the beginning of a gaming session depending on campaign style."
+  - "Burned Karma Pool is permanently lost and does not refresh."
