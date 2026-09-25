@@ -1,0 +1,42 @@
+id: rule.dice-pools.general
+record_type: rule
+name: "Dice Pools"
+domain: dice-pools
+status: ingested
+
+scope:
+  applies_to:
+    - "Tests eligible for augmentation by a named dice pool"
+  excludes: []
+
+resolution:
+  summary: "A dice pool is a separate reserve of dice that may be added to tests allowed by that pool. Dice drawn from a pool remain unavailable until the pool refreshes."
+  inputs:
+    - "eligible dice pool"
+    - "number of pool dice allocated"
+  outputs:
+    - "additional dice on the test"
+    - "reduced available pool until refresh"
+  steps:
+    - "Choose how many pool dice to allocate, subject to that pool's limits."
+    - "Add those dice directly to the test dice."
+    - "Mark the allocated dice unavailable."
+    - "Refresh pools according to the applicable refresh rule."
+
+links:
+  uses: []
+  affects:
+    - rule.tests.making-tests
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 43
+    relation: defines
+    note: "Game Concepts — Dice Pools"
+
+notes:
+  - "The core book states that most dice pools refresh to full value at the start of each Combat Turn."
+  - "Unused dice do not carry from one Combat Turn to the next."
+  - "Each named pool can impose its own limits on how many dice may be added to a single test."
