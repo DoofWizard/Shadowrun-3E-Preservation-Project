@@ -1,0 +1,22 @@
+id: rule.condition.damage-levels
+record_type: rule
+name: "Condition Levels"
+domain: condition
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 125, basis: defines}
+scope:
+  applies_to: ["Physical and Stun Condition Monitors"]
+  excludes: []
+resolution:
+  summary: "Damage Levels are Light, Moderate, Serious and Deadly and fill increasing numbers of boxes on the appropriate Condition Monitor. Reaching the Deadly level fills the column; excess Stun can overflow into Physical damage, and excess Physical damage can cause death according to Body and overflow rules."
+  inputs: ["Damage Level","existing damage","Body where overflow matters"]
+  outputs: ["Condition Monitor state","unconsciousness/death where applicable"]
+  steps: []
+links:
+  uses: [rule.condition.condition-monitor, rule.condition.damage-types]
+  affects: []
+  modified_by: []
+  interacts_with: [modifier.condition.wounds]
+sources:
+  - {source: source.sr3-core, page: 125, relation: defines, note: "Condition Levels / Condition Monitor"}
+notes: []
