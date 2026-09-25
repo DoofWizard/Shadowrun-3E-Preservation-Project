@@ -1,0 +1,23 @@
+id: rule.magic.magic-attribute
+record_type: rule
+name: "Magic Attribute"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 158, basis: defines}
+scope:
+  applies_to: ["Awakened characters"]
+  excludes: []
+resolution:
+  summary: "Magic is a Special Attribute measuring magical capability. Starting Magic is tied to Essence and magical status; Essence loss and other events can reduce Magic. A Magic rating of 0 causes loss of magical ability unless a specific rule provides otherwise."
+  inputs: ["Essence","magical status","Magic-loss events"]
+  outputs: ["current Magic Attribute"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.magic.magic-loss]
+sources:
+  - {source: source.sr3-core, page: 158, relation: defines, note: "The Magic Attribute"}
+  - {source: source.sr3-core, page: 160, relation: clarifies, note: "Magic Loss"}
+notes: []
