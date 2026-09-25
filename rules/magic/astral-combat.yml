@@ -1,0 +1,23 @@
+id: rule.magic.astral-combat
+record_type: rule
+name: "Astral Combat"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 174, basis: defines}
+scope:
+  applies_to: ["astral forms in combat"]
+  excludes: []
+resolution:
+  summary: "Astral combat broadly follows melee combat but substitutes astral Attributes/skills and astral initiative/damage rules. Astral Combat Pool, Sorcery and weapon foci may participate where permitted; damage codes depend on astral attack type."
+  inputs: ["astral Attributes","astral combat skill/Sorcery","astral pools/foci"]
+  outputs: ["astral combat result and damage"]
+  steps: []
+links:
+  uses: [procedure.combat.melee-attack, entity.skill.sorcery]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.magic.astral]
+sources:
+  - {source: source.sr3-core, page: 174, relation: defines, note: "Astral Combat"}
+  - {source: source.sr3-core, page: 176, relation: extends, note: "Astral Damage / Astral Objects"}
+notes: []
