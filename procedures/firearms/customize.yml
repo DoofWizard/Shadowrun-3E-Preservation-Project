@@ -1,0 +1,55 @@
+id: procedure.firearms.customize
+record_type: procedure
+name: "Firearm Customization"
+domain: firearms
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 78
+  basis: defines
+
+purpose: "Modify or upgrade an existing firearm."
+
+prerequisites:
+  - "appropriate gunsmithing kit/shop/facility"
+
+inputs:
+  - "existing firearm"
+  - "desired modification"
+  - "available modification space"
+  - "time and cost"
+
+stages:
+  - id: select
+    name: "Select Modification"
+    test_or_action: "Check modification compatibility and available space."
+    outputs: ["legal modification plan"]
+  - id: modify
+    name: "Perform Modification"
+    test_or_action: "Use the appropriate Build/Repair/gunsmithing test and time."
+    outputs: ["modified firearm"]
+
+outcomes:
+  - "successful customization"
+  - "failed/invalid modification"
+
+links:
+  uses:
+    - rule.skills.build-repair
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.cc
+    page: 78
+    relation: defines
+    note: "Firearm Customization"
+  - source: source.cc
+    pages: "79-84"
+    relation: extends
+    note: "Working Time/Cost, space restrictions and modifications"
+
+notes: []
