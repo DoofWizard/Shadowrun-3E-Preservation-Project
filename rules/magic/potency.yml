@@ -1,0 +1,41 @@
+id: rule.magic.potency
+record_type: rule
+name: "Magical Threat Potency"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 123
+  basis: defines
+
+scope:
+  applies_to:
+    - "NPC magical threats"
+
+resolution:
+  summary: "Potency is a special rating and dice pool representing extra supernatural power available to magical threats. Potency dice may augment magical tests and refresh each Combat Turn; Potency also increases effective Magic for many standard purposes and can provide extra adept Power Points."
+  inputs:
+    - "Potency Rating"
+    - "magical test"
+  outputs:
+    - "extra dice/effective magical power"
+
+links:
+  uses:
+    - rule.dice-pools.general
+  affects:
+    - rule.magic.magic-attribute
+  modified_by: []
+  interacts_with:
+    - subsystem.magic.magical-threats
+
+sources:
+  - source: source.mits
+    page: 123
+    relation: defines
+    note: "Potency"
+
+notes:
+  - "Potency does not increase Spell Pool and cannot replace lost Potency through a geas."
