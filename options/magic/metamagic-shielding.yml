@@ -1,0 +1,41 @@
+id: option.magic.metamagic-shielding
+record_type: option
+name: "Metamagic: Shielding"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 79
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when allocating spell-defense protection"
+  prerequisites:
+    - "initiate"
+  incompatible_with: []
+
+effects:
+  - "Provides an enhanced form of spell defense that can protect subjects at range."
+  - "The initiate allocates Sorcery and Spell Pool dice; protected subjects add those dice to Spell Resistance Tests until the initiate's next action."
+  - "Shielding also raises hostile spell target numbers against protected subjects by +1 per die allocated, capped by the initiate's grade."
+  - "Different initiates may stack shielding protection."
+
+links:
+  modifies:
+    - rules.magic.spell-defense
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 79
+    relation: defines
+    note: "Shielding"
+
+notes: []
