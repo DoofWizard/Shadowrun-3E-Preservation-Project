@@ -1,0 +1,23 @@
+id: rule.matrix.system-ratings
+record_type: rule
+name: "Matrix System Ratings"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 205, basis: defines}
+scope:
+  applies_to: ["Matrix grids and hosts"]
+  excludes: []
+resolution:
+  summary: "A host/grid has a Security Rating consisting of Security Code and Security Value plus five subsystem ratings: Access, Control, Index, Files and Slave (ACIFS). These ratings set target numbers/opposition for system tests and help determine the system's intrusion difficulty/security behavior."
+  inputs: ["host/grid security code","security value","ACIFS subsystem ratings"]
+  outputs: ["system target numbers/security characteristics"]
+  steps: []
+links:
+  uses: []
+  affects: [rule.matrix.system-test, rule.matrix.security-tally]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 205, relation: defines, note: "System Ratings / Security Rating / Subsystem Ratings"}
+  - {source: source.sr3-core, page: 206, relation: clarifies, note: "Access, Control, Index, Files, Slave ratings and shorthand"}
+notes: []
