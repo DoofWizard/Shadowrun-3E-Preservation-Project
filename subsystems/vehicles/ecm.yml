@@ -1,0 +1,24 @@
+id: subsystem.vehicles.ecm
+record_type: subsystem
+name: "Electronic Countermeasures"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 138, basis: defines}
+state:
+  tracked_values: ["ECM rating","ECCM rating","Flux","effective electronic range/signature"]
+participants: ["vehicles","drones","remote-control networks","electronic targets"]
+components: ["ECM","ECCM","Flux"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.vehicles.sensors, subsystem.rigging.electronic-warfare]
+sources:
+  - {source: source.sr3-core, page: 137, relation: extends, note: "Flux Rating / range"}
+  - {source: source.sr3-core, page: 138, relation: defines, note: "Electronic Countermeasures (ECM)"}
+notes:
+  - "Rigger 3 extends this baseline with additional electronic-warfare systems."
