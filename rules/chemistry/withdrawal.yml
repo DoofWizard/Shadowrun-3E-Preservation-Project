@@ -1,0 +1,49 @@
+id: rule.chemistry.withdrawal
+record_type: rule
+name: "Addiction Withdrawal"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 109
+  basis: defines
+
+scope:
+  applies_to:
+    - "addicted characters attempting to quit or missing required fixes"
+
+resolution:
+  summary: "An addicted character who exceeds the Fix Factor without another dose enters withdrawal unless the interval is extended by the specified resistance test. Quitting requires Willpower tests against Addiction Rating with additional difficulty for physical or combined dependence; prolonged addiction can cause permanent attribute, Essence or Condition Monitor losses."
+  inputs:
+    - "Fix Factor"
+    - "Addiction Rating/Code"
+    - "Body"
+    - "Willpower"
+  outputs:
+    - "withdrawal state"
+    - "continued addiction or recovery"
+    - "possible permanent harm"
+
+links:
+  uses:
+    - rule.chemistry.addiction
+  affects:
+    - rule.attributes.attribute-ratings
+    - rule.cyberware.essence
+    - rule.condition.condition-monitor
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 109
+    relation: defines
+    note: "Getting a Fix / Addiction Effects / Kicking the Habit"
+  - source: source.mm
+    page: 110
+    relation: extends
+    note: "Continuation of withdrawal/addiction recovery rules"
+
+notes: []
