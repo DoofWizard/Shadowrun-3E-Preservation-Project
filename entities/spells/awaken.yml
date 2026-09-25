@@ -1,0 +1,33 @@
+{
+  "id": "entity.spell.awaken",
+  "record_type": "entity",
+  "name": "Awaken",
+  "domain": "spells",
+  "status": "ingested",
+  "intrinsic": {
+    "category": "health",
+    "type": "M",
+    "target": "4",
+    "duration": "I",
+    "drain": "-2(Stun Damage Level)"
+  },
+  "links": {
+    "uses": [
+      "rule.magic.spell-characteristics"
+    ],
+    "requires": [],
+    "component_of": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.mits",
+      "page": 141,
+      "relation": "defines",
+      "note": "Spell statistics and effect"
+    }
+  ],
+  "notes": [
+    "Temporarily awakens an unconscious target without healing Stun damage."
+  ]
+}
