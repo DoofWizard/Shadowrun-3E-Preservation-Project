@@ -1,0 +1,22 @@
+id: rule.magic.dispelling
+record_type: rule
+name: "Dispelling"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 184, basis: defines}
+scope:
+  applies_to: ["existing sustained spells"]
+  excludes: []
+resolution:
+  summary: "A magician may use Sorcery to attack an existing sustained spell. Resolve a Dispelling Test opposed by the spell's Force/caster-derived threshold; accumulated dispelling successes can permanently reduce and eventually cancel the spell."
+  inputs: ["Sorcery","Spell Pool where allowed","spell Force","caster's original successes"]
+  outputs: ["reduced spell successes or canceled spell","Drain"]
+  steps: []
+links:
+  uses: [entity.skill.sorcery, rule.magic.drain]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 184, relation: defines, note: "Dispelling"}
+notes: []
