@@ -1,0 +1,56 @@
+id: procedure.security.maglock-bypass
+record_type: procedure
+name: "Maglock Bypass"
+domain: security
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 235
+  basis: defines
+
+purpose: "Bypass powered magnetic access-control locks."
+
+prerequisites:
+  - "access to the lock and appropriate tools/skills"
+
+inputs:
+  - "maglock/access-system rating"
+  - "lock type"
+  - "Electronics or Electronics B/R capability"
+  - "sequencer or passkey when used"
+
+stages:
+  - id: access
+    name: "Expose/Access Controls"
+    test_or_action: "Open the keypad/cardreader casing or otherwise reach the system, where necessary."
+    outputs: ["access to internal controls"]
+  - id: defeat
+    name: "Defeat Access Control"
+    test_or_action: "Use the appropriate Electronics-related test, sequencer/passkey, or biometric bypass procedure."
+    outputs: ["lock bypassed or alert triggered"]
+
+outcomes:
+  - "access granted"
+  - "failure or security alert"
+
+links:
+  uses:
+    - entity.skill.electronics
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.sr3-core
+    page: 235
+    relation: defines
+    note: "Maglocks / Keypads / Circuit Tampering / Cardreaders / Print Scanners"
+  - source: source.sr3-core
+    page: 236
+    relation: extends
+    note: "Voice Recognition Systems and related access/security measures"
+
+notes:
+  - "Different maglock components use distinct opposed or Build/Repair procedures; these can be split into child procedures if later supplements modify them independently."
