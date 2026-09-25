@@ -1,0 +1,24 @@
+id: procedure.magic.learn-free-spirit-true-name
+record_type: procedure
+name: "Learn a Free Spirit's True Name"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 115, basis: defines}
+purpose: "Determine a free spirit's native metaplane and complete an astral quest to learn its true name."
+prerequisites:
+  - "initiate status for astral-quest method"
+inputs: ["spirit aura/signature", "Assensing", "native metaplane", "Force", "Spirit Energy"]
+stages:
+  - id: plane
+    name: "Determine Native Plane"
+    test_or_action: "Assense the free spirit or a place/object holding its astral signature; 2+ successes identify the native plane, subject to aura masking."
+    outputs: ["native metaplane"]
+  - id: quest
+    name: "Quest for True Name"
+    test_or_action: "Complete an astral quest to the native plane with Quest Rating equal to Force + Spirit Energy."
+    outputs: ["true name"]
+outcomes: ["true name learned", "failed quest"]
+links: {uses: [rule.spirits.true-names, procedure.magic.astral-quest], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "115-116", relation: defines, note: "Learning a True Name / Determining the Native Plane / Quest for the True Name"}
+notes: []
