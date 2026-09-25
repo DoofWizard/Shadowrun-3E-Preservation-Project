@@ -1,0 +1,23 @@
+id: procedure.magic.summon-nature-spirit
+record_type: procedure
+name: "Summoning a Nature Spirit"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 185, basis: defines}
+purpose: "Summon a nature spirit within an appropriate domain."
+prerequisites: ["shaman or other character permitted to summon nature spirits","appropriate domain"]
+inputs: ["chosen spirit type","Force","Conjuring","Charisma/Drain resistance"]
+stages:
+  - {id: summon, name: "Conjuring Test", test_or_action: "Roll Conjuring against a target number equal to spirit Force.", outputs: ["net successes/services"]}
+  - {id: services, name: "Determine Services", test_or_action: "Net summoning successes determine services owed.", outputs: ["services"]}
+  - {id: drain, name: "Resist Conjuring Drain", test_or_action: "Resolve Drain based on spirit Force and summoner attributes.", outputs: ["Drain damage"]}
+outcomes: ["summoned spirit and services","failed summon"]
+links:
+  uses: [entity.skill.conjuring, rule.magic.drain]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 185, relation: defines, note: "Nature Spirits / Summoning"}
+notes:
+  - "Nature spirits are domain-bound and normally remain only for the period allowed by the core rules."
