@@ -1,0 +1,20 @@
+id: option.surgery.surgical-options
+record_type: option
+name: "Surgical Options"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 148, basis: defines}
+option_for: [rule.surgery.surgical-test]
+selection:
+  timing: "surgical planning"
+  prerequisites: []
+  incompatible_with: []
+effects:
+  - "Each procedure includes required negative options; additional positive and negative options modify the Surgical Threshold."
+  - "Negative options include Bio Index Gain, Essence Cost/Loss, Fragility, Mangled Part, Marred Appearance, Obvious, Scarring, Scar Tissue, Sensitive, Surgical Stress and Wound Effect where applicable."
+  - "Positive options include Bio Index Reduction/Slot, Concealed, Essence Reduction/Slot, Human Looking, Improved Healing/Looks, Nanosurgery, Natural Look, Remove Stress Point, Redundancy, Rugged and Trauma Control where applicable."
+links: {modifies: [rule.surgery.surgical-test], requires: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "148-150", relation: defines, note: "Surgical Options, negative and positive options"}
+notes:
+  - "Options are procedure-scoped; individual applicability and threshold modifiers remain as listed by the source."
