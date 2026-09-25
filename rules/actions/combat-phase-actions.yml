@@ -1,0 +1,34 @@
+id: rule.actions.combat-phase-actions
+record_type: rule
+name: "Combat Phase Action Economy"
+domain: actions
+status: ingested
+
+scope:
+  applies_to:
+    - "A character's Combat Phase"
+  excludes: []
+
+resolution:
+  summary: "During a Combat Phase, a character may normally take either one Complex Action or two Simple Actions, and may also take a Free Action during each Combat Phase taken by that character or another character."
+  inputs:
+    - "current Combat Phase"
+  outputs:
+    - "available action allowance"
+  steps: []
+
+links:
+  uses:
+    - rule.time.combat-turn
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 40
+    relation: defines
+    note: "Game Concepts — Actions"
+
+notes:
+  - "Delayed Actions are introduced on the same page and should be represented separately when that mechanic is ingested."
