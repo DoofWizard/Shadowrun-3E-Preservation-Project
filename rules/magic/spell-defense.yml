@@ -1,0 +1,22 @@
+id: rule.magic.spell-defense
+record_type: rule
+name: "Spell Defense"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 183, basis: defines}
+scope:
+  applies_to: ["magicians protecting themselves or others from spells"]
+  excludes: []
+resolution:
+  summary: "A magician may allocate Sorcery dice to Spell Defense for protected targets. When a protected target is attacked by a spell, allocated Spell Defense dice are rolled with the target's resistance and successes reduce the caster's successes. Allocated dice remain committed until released or refreshed under the pool rules."
+  inputs: ["allocated Sorcery dice","protected targets","incoming spell"]
+  outputs: ["additional spell-resistance successes"]
+  steps: []
+links:
+  uses: [entity.skill.sorcery, rule.dice-pools.spell-pool]
+  affects: [rule.magic.spell-resistance]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 183, relation: defines, note: "Spell Defense"}
+notes: []
