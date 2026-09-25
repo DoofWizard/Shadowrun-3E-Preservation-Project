@@ -1,0 +1,47 @@
+id: rule.advancement.karma-awards
+record_type: rule
+name: "Karma Awards"
+domain: advancement
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 242
+  basis: defines
+
+scope:
+  applies_to:
+    - "player characters after adventures"
+
+resolution:
+  summary: "Characters receive Karma for surviving adventures and accomplishing goals. Awards are divided into Good Karma and Karma Pool according to the Karma Pool rule. The gamemaster may give group and individual awards for mission completion, roleplaying, heroism, cleverness, motivation, timing, surprise, humor, and drama."
+  inputs:
+    - "adventure outcome"
+    - "group accomplishments"
+    - "individual contributions"
+  outputs:
+    - "Total Karma earned"
+    - "Good Karma"
+    - "Karma Pool progression"
+
+links:
+  uses:
+    - rule.karma.core-karma
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.karma.karma-pool
+
+sources:
+  - source: source.sr3-core
+    page: 242
+    relation: defines
+    note: "Beyond the Shadows — Karma"
+  - source: source.sr3-core
+    page: 244
+    relation: extends
+    note: "Awarding Karma"
+
+notes:
+  - "The source separates Total Karma earned from unspent Good Karma."
