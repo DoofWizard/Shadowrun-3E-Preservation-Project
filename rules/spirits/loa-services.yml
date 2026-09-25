@@ -1,0 +1,16 @@
+id: rule.spirits.loa-services
+record_type: rule
+name: "Loa Spirit Services and Possession"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 102, basis: defines}
+scope: {applies_to: ["loa spirits"]}
+resolution:
+  summary: "Loa remain astral and may use powers for their summoner or perform watcher-like tasks. Their distinctive service is possession. Possession cancels remaining services, allows the loa to act through the host with Force-augmented physical Attributes and Force-based mental Attributes, and ends when the task is done, 12 hours pass, or the spirit is expelled. Host Willpower resists Stun Drain when the loa departs."
+  inputs: ["loa Force", "host", "remaining services", "task duration"]
+  outputs: ["astral service or possessed-host state"]
+  steps: []
+links: {uses: [rule.spirit-powers.possession], affects: [], modified_by: [], interacts_with: [entity.spirit.loa]}
+sources:
+  - {source: source.mits, pages: "102-103", relation: defines, note: "Loa Spirit Services / Possession / Domain"}
+notes: []
