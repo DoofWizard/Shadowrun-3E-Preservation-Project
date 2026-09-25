@@ -1,0 +1,19 @@
+id: entity.chemistry.acth
+record_type: entity
+name: "ACTH"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "5/12 hrs"
+  cost_nuyen: 100
+  street_index: 1
+  legality: "Legal"
+  vector: "Inhalation"
+  speed: "Instant"
+  tolerance: 3
+  edge: "10/—"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [entity.bioware.adrenal-pump]}
+sources:
+  - {source: source.mm, pages: "117-118", relation: defines, note: "ACTH pharmaceutical game effects and statistics"}
+notes:
+  - "In the game, inhaled ACTH triggers an adrenal pump; cost includes a six-dose inhaler."
