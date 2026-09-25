@@ -1,0 +1,41 @@
+id: rule.initiative.initiative
+record_type: rule
+name: "Initiative"
+domain: initiative
+status: ingested
+
+scope:
+  applies_to:
+    - "Determining action order within a Combat Turn"
+  excludes: []
+
+resolution:
+  summary: "Initiative is based on augmented Reaction plus Initiative dice. Roll the Initiative dice, add their total to Reaction, and use the result to determine order during Initiative Passes."
+  inputs:
+    - "augmented Reaction"
+    - "Initiative dice"
+  outputs:
+    - "Initiative total"
+    - "action order"
+  steps:
+    - "Roll the character's Initiative dice."
+    - "Add the dice total to the character's Reaction."
+    - "Use the resulting Initiative total to determine action order in the Combat Turn."
+
+links:
+  uses: []
+  affects:
+    - rule.time.combat-turn
+  modified_by: []
+  interacts_with:
+    - rule.tests.rule-of-six
+
+sources:
+  - source: source.sr3-core
+    page: 42
+    relation: defines
+    note: "Game Concepts — Initiative"
+
+notes:
+  - "Every character begins with 1D6 base Initiative dice before applicable effects."
+  - "The source explicitly states that the Rule of Six does not apply to Initiative dice."
