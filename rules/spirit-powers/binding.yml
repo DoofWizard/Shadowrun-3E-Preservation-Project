@@ -1,0 +1,24 @@
+id: rule.spirit-power.binding
+record_type: rule
+name: "Binding"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 262, basis: defines}
+
+scope:
+  applies_to: ["beings with Binding"]
+
+resolution:
+  summary: "Makes the victim stick to a surface or to itself with a Strength equal to twice the user's Essence. The victim must overcome that binding Strength to break free."
+  inputs: ["user Essence", "victim Strength"]
+  outputs: ["bound or escaped"]
+
+power_profile: {type: physical, action: complex, range: "LOS or Touch", duration: instant}
+
+links: {uses: [rule.tests.success-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 262, relation: defines, note: "Binding"}
+
+notes: []
