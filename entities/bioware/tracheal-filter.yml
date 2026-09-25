@@ -1,0 +1,21 @@
+id: entity.bioware.tracheal-filter
+record_type: entity
+name: "Tracheal Filter"
+domain: bioware
+status: ingested
+intrinsic:
+  bio_index_per_level: 0.4
+  availability: "4/4 days"
+  cost_nuyen_per_level: 60000
+  street_index: 1
+  legality: "Legal"
+  maximum_levels: "one-half unaugmented Body, rounded down"
+links:
+  uses: [rule.chemistry.drug-exposure]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "71-72", relation: defines, note: "Tracheal Filter description, game effects, stress effects and statistics"}
+notes:
+  - "Each level reduces the Power of air-vector compounds and other airborne nonmicrobiological attacks by 1."
