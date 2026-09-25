@@ -1,0 +1,21 @@
+id: rule.cybermancy.karma-hazing
+record_type: rule
+name: "Karma Hazing"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 57, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Cybermantic characters gradually pollute astral space around them. Remaining in one location can create and intensify a Background Count up to a limit based on the subject's negative Essence. They also leave astral signatures whose effective Force and duration scale with negative Essence, and the resulting astral disturbance can attract astral threats."
+  inputs: ["negative Essence", "time spent in location"]
+  outputs: ["Background Count", "astral signature", "possible astral attention"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.cybermancy.dual-nature]
+sources:
+  - {source: source.mm, page: 57, relation: defines, note: "Karma Hazing"}
+notes: []
