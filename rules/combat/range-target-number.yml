@@ -1,0 +1,23 @@
+id: rule.combat.range-target-number
+record_type: rule
+name: "Ranged Combat Range and Base Target Number"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 110, basis: defines}
+scope:
+  applies_to: ["ranged attacks"]
+  excludes: []
+resolution:
+  summary: "Weapon range category determines the base attack target number: Short 4, Medium 5, Long 6, Extreme 9, subject to weapon-specific range bands and modifiers."
+  inputs: ["weapon","distance"]
+  outputs: ["range category","base target number"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.combat.ranged-attack]
+  modified_by: [modifier.combat.ranged-target-number]
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 110, relation: defines, note: "Range and Base Target Number"}
+  - {source: source.sr3-core, page: 111, relation: clarifies, note: "Weapon Range Table"}
+notes: []
