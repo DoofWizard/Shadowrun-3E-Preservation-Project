@@ -1,0 +1,43 @@
+id: rule.armor.armor-ratings
+record_type: rule
+name: "Armor Ratings"
+domain: armor
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 283
+  basis: defines
+
+scope:
+  applies_to:
+    - "external armor"
+    - "dermal armor where applicable"
+
+resolution:
+  summary: "External armor has separate Ballistic and Impact ratings. Ballistic Armor protects primarily against bullets and similar high-velocity projectiles; Impact Armor protects primarily against lower-velocity impacts, melee weapons, explosives, stun ammunition, and similar attacks. Armor normally reduces attack Power by the applicable rating."
+  inputs:
+    - "attack type"
+    - "Ballistic Armor"
+    - "Impact Armor"
+  outputs:
+    - "applicable armor rating"
+    - "adjusted attack Power"
+
+links:
+  uses:
+    - rule.combat.damage-codes
+  affects: []
+  modified_by:
+    - rule.armor.layering
+    - rule.armor.combat-pool-penalty
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 283
+    relation: defines
+    note: "Street Gear — Armor"
+
+notes: []
