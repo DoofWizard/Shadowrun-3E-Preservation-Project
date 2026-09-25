@@ -1,0 +1,50 @@
+id: rule.chemistry.addiction
+record_type: rule
+name: "Substance Addiction"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 108
+  basis: defines
+
+scope:
+  applies_to:
+    - "addictive drugs, BTLs, and other addictive substances"
+
+resolution:
+  summary: "An addictive substance has an Addiction Rating and an Addiction Code indicating physical, mental, or both forms of dependence. On first use and again as exposure raises the effective Addiction Rating, the character tests unaugmented Willpower for mental addiction and/or Body for physical addiction. Failure causes addiction."
+  inputs:
+    - "Addiction Rating"
+    - "Addiction Code"
+    - "Body"
+    - "Willpower"
+    - "number of uses"
+    - "pre/post-addiction Edge"
+  outputs:
+    - "addicted or unaddicted state"
+    - "modified Addiction Rating"
+
+links:
+  uses:
+    - rule.tests.success-test
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.chemistry.tolerance
+    - rule.chemistry.withdrawal
+
+sources:
+  - source: source.mm
+    page: 108
+    relation: defines
+    note: "Substance Abuse / Addiction Rating, Code, Tolerance, Edge, Fix Factor / Becoming Addicted"
+  - source: source.mm
+    page: 109
+    relation: extends
+    note: "Getting a Fix / Addiction Effects"
+
+notes:
+  - "Dwarfs receive the source's special physical-addiction resistance benefit."
