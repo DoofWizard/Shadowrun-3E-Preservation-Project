@@ -1,0 +1,40 @@
+id: option.magic.metamagic-reflecting
+record_type: option
+name: "Metamagic: Reflecting"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 78
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when allocating spell-defense dice"
+  prerequisites:
+    - "initiate"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to allocate Sorcery and Spell Pool dice to reflect hostile magic."
+  - "Reflecting works like spell defense, but if reflecting successes exceed the incoming spell's Force and the caster's successes are overcome, the spell rebounds toward its caster."
+  - "Reflected spellcasting uses the reflecting initiate's net reflecting successes as spellcasting successes and may stage the effect upward."
+
+links:
+  modifies:
+    - rules.magic.spell-defense
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 78
+    relation: defines
+    note: "Reflecting"
+
+notes: []
