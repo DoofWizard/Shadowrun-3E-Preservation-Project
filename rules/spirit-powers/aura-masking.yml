@@ -1,0 +1,16 @@
+id: rule.spirit-powers.aura-masking
+record_type: rule
+name: "Free Spirit Power: Aura Masking"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 117, basis: defines}
+scope: {applies_to: ["free spirits with Aura Masking"]}
+resolution:
+  summary: "A free spirit can disguise its aura as its current physical form or as an ordinary spirit of its type. Spirit Energy substitutes for initiation grade when resolving masking. Initiates can penetrate the mask with the source's masking rules; astral questing to the native metaplane can reveal the spirit's true aura and true name."
+  inputs: ["Spirit Energy", "viewer initiation grade", "spirit Force"]
+  outputs: ["masked aura or penetrated mask"]
+  steps: []
+links: {uses: [rule.spirits.spirit-energy, option.magic.metamagic-masking], affects: [], modified_by: [], interacts_with: [procedure.magic.learn-free-spirit-true-name]}
+sources:
+  - {source: source.mits, pages: "117-118", relation: defines, note: "Aura Masking"}
+notes: []
