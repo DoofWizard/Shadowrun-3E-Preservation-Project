@@ -1,0 +1,38 @@
+id: modifier.combat.visibility
+record_type: modifier
+name: "Visibility Impairment"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 111
+  basis: defines
+
+trigger:
+  conditions:
+    - "Lighting, smoke, fog, rain, mist, glare, or similar conditions impair the attacker's vision."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "increase attack target number"
+  value: "Condition- and vision-type-specific modifier from the Visibility Table."
+
+stacking:
+  mode: "Apply according to the table and vision mode."
+  exceptions:
+    - "Thermographic and low-light vision alter many listed modifiers."
+
+sources:
+  - source: source.sr3-core
+    page: 111
+    relation: defines
+    note: "Visibility Impaired"
+  - source: source.sr3-core
+    page: 112
+    relation: defines
+    note: "Visibility Table"
+
+notes: []
