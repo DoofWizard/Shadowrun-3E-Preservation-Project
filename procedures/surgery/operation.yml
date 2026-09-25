@@ -1,0 +1,68 @@
+id: procedure.surgery.operation
+record_type: procedure
+name: "Surgical Procedure"
+domain: surgery
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 144
+  basis: defines
+
+purpose: "Resolve a surgical procedure using diagnosis, planning, a Surgical Test and the procedure's positive/negative options."
+
+prerequisites:
+  - "appropriate medical provider"
+  - "required medical skills and equipment"
+
+inputs:
+  - "procedure type"
+  - "patient medical profile"
+  - "surgeon Biotech/Medicine skills"
+  - "Surgical Threshold"
+  - "planned procedural options"
+  - "facility/equipment"
+
+stages:
+  - id: diagnosis
+    name: "Diagnosis and Profiling"
+    test_or_action: "Perform medical checks/scans and create or consult a medical profile."
+    outputs: ["patient profile and identified risks"]
+  - id: plan
+    name: "Planning and Preparation"
+    test_or_action: "Choose procedure and available positive/negative surgical options."
+    outputs: ["Procedural List and Surgical Threshold"]
+  - id: surgery
+    name: "Surgical Test"
+    test_or_action: "Make the surgery test against the procedure's target number; compare successes to the Procedural List and Surgical Threshold."
+    outputs: ["failure or successful procedure with resulting options"]
+  - id: recovery
+    name: "Postoperative Recovery"
+    test_or_action: "Apply procedure-specific healing, Stress and recovery consequences."
+    outputs: ["postoperative state"]
+
+outcomes:
+  - "failed procedure"
+  - "successful procedure with negative/neutral/positive results"
+
+links:
+  uses:
+    - entity.skill.biotech
+  requires:
+    - procedure.surgery.find-provider
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.mm
+    page: 144
+    relation: defines
+    note: "Surgery Overview / Procedural List Example / Diagnosis and Profiling"
+  - source: source.mm
+    pages: "145-150"
+    relation: extends
+    note: "Planning, surgery types/procedures, surgical options and recovery"
+
+notes:
+  - "One procedure can contain multiple procedural options; later procedures in a surgical session become more difficult."
