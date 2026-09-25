@@ -1,0 +1,48 @@
+id: compatibility.vr2.cyberware-hacking-pool
+record_type: rule
+name: "VR2 Cyberware and Hacking Pool Replacement"
+domain: compatibility
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 45
+  basis: replaces
+
+scope:
+  applies_to:
+    - "Cyberware effects on Hacking Pool"
+  excludes: []
+
+resolution:
+  summary: "For SR3-era play, Man & Machine replaces the Cyberware and the Pool section on p. 19 of Virtual Realities 2.0. Encephalon and math SPU add their ratings in dice to the decker's Hacking Pool, cumulatively."
+  inputs:
+    - "encephalon rating"
+    - "math SPU rating"
+  outputs:
+    - "Hacking Pool bonus dice"
+  steps:
+    - "Add encephalon rating to Hacking Pool."
+    - "Add math SPU rating to Hacking Pool."
+    - "Apply both cumulatively when both are present."
+
+links:
+  uses: []
+  affects:
+    - "matrix.hacking-pool"
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.fasa-7904
+    page: 19
+    relation: replaces
+    note: "Older VR2 rule identified by M&M as replaced."
+  - source: source.mm
+    page: 45
+    relation: defines
+    note: "Cyberware and Hacking Pool; explicitly states replacement of VR2 p. 19."
+
+notes:
+  - "This is an explicit supersession and therefore controls over the older VR2 treatment for the affected mechanic."
