@@ -1,0 +1,23 @@
+id: rule.matrix.security-sheaf
+record_type: rule
+name: "Security Sheaf"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 210, basis: defines}
+scope:
+  applies_to: ["Matrix hosts/grids"]
+  excludes: []
+resolution:
+  summary: "A security sheaf maps Security Tally trigger steps to defensive events such as IC activation and alert changes. High-security systems may have denser/multiple triggers; grid/PLTG tallies can follow additional transfer/decay rules."
+  inputs: ["Security Tally","sheaf trigger table"]
+  outputs: ["activated IC/security event"]
+  steps: []
+links:
+  uses: [rule.matrix.security-tally]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.matrix.alert-status]
+sources:
+  - {source: source.sr3-core, page: 210, relation: defines, note: "Security Sheaves"}
+  - {source: source.sr3-core, page: 211, relation: extends, note: "Sample sheaf and trigger rules"}
+notes: []
