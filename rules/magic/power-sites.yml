@@ -1,0 +1,16 @@
+id: rule.magic.power-sites
+record_type: rule
+name: "Power Sites"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 84, basis: defines}
+scope: {applies_to: ["magical activity at mana-rich sites"]}
+resolution:
+  summary: "Some locations contain a beneficial concentration of mana rather than hostile background count. These power sites or manalines can enhance compatible magic and may be hidden or difficult to identify."
+  inputs: ["site rating", "magical tradition/aspect", "magical action"]
+  outputs: ["beneficial magical modifier"]
+  steps: []
+links: {uses: [rule.magic.background-count], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, page: 84, relation: defines, note: "Power Sites"}
+notes: []
