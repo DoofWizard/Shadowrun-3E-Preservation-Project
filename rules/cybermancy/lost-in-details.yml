@@ -1,0 +1,21 @@
+id: rule.cybermancy.lost-in-details
+record_type: rule
+name: "Lost in the Details"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 58, basis: defines}
+scope:
+  applies_to: ["cybermantic characters using Observe in Detail"]
+resolution:
+  summary: "A cybermantic character can become absorbed in minor details after an unsuccessful Observe in Detail attempt. A Willpower test is required to break the cycle, and other characters may assist by attracting the subject's attention."
+  inputs: ["Perception Test result", "Willpower"]
+  outputs: ["normal attention or fixation"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 58, relation: defines, note: "Lost in the Details"}
+notes: []
