@@ -1,0 +1,24 @@
+id: procedure.magic.alchemy
+record_type: procedure
+name: "Alchemy and Making Radicals"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 42, basis: defines}
+purpose: "Transform refined magical materials into radicals used in enchanting."
+prerequisites: ["enchanting shop", "Alchemy specialization or appropriate Enchanting skill"]
+inputs: ["refined material units", "Enchanting skill", "28-day circulation period"]
+stages:
+  - id: circulate
+    name: "Circulation"
+    test_or_action: "Maintain the alchemical process for the required lunar-month base time."
+    outputs: ["completed circulation"]
+  - id: test
+    name: "Enchanting Test"
+    test_or_action: "Test against the number of refined units being processed; successes multiply the radical yield."
+    outputs: ["radical material units"]
+outcomes: ["radicals produced", "continued circulation after failure", "materials destroyed on catastrophic failure"]
+links: {uses: [subsystem.magic.enchanting], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, page: 42, relation: defines, note: "Alchemy / Making Radicals / Orichalcum"}
+notes:
+  - "Orichalcum uses a special alchemical circulation defined separately by the source."
