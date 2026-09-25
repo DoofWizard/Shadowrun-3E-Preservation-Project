@@ -1,0 +1,19 @@
+id: entity.bioware.orthoskin
+record_type: entity
+name: "Orthoskin"
+domain: bioware
+status: ingested
+intrinsic:
+  levels:
+    1: {bio_index: 0.5, availability: "8/8 days", cost_nuyen: 25000, street_index: 0.8, legality: "5P-N", armor: "+1 Impact", concealability: 10}
+    2: {bio_index: 1.0, availability: "8/8 days", cost_nuyen: 60000, street_index: 0.8, legality: "5P-N", armor: "+1 Impact, +1 Ballistic", concealability: 9}
+    3: {bio_index: 1.5, availability: "8/8 days", cost_nuyen: 100000, street_index: 0.8, legality: "5P-N", armor: "+2 Impact, +1 Ballistic", concealability: 8}
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "68-69", relation: defines, note: "Orthoskin description, armor table, stress effects and statistics"}
+notes:
+  - "Armor stacks with external armor as specified; tactile Perception Tests suffer a modifier equal to Orthoskin level."
