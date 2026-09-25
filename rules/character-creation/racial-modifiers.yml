@@ -1,0 +1,45 @@
+id: rule.character-creation.racial-modifiers
+record_type: rule
+name: "Starting Racial Attribute Modifiers"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 56
+  basis: defines
+
+scope:
+  applies_to:
+    - "dwarf"
+    - "elf"
+    - "ork"
+    - "troll"
+  excludes:
+    - "human"
+
+resolution:
+  summary: "Apply metatype-specific Attribute modifiers and innate racial abilities after assigning starting Attribute Points."
+  inputs:
+    - "chosen metatype"
+    - "base assigned Attributes"
+  outputs:
+    - "modified starting Attributes"
+    - "racial abilities"
+
+links:
+  uses: []
+  affects:
+    - rule.character-creation.attribute-assignment
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 56
+    relation: defines
+    note: "Racial Modifications Table"
+
+notes:
+  - "The detailed metatype modifiers/abilities should live on the individual metatype entity records; this rule records when and how the modifiers are applied."
