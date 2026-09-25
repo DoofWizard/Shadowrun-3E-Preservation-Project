@@ -1,0 +1,24 @@
+id: procedure.magic.ally-formula
+record_type: procedure
+name: "Design Ally Formula"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 111, basis: defines}
+purpose: "Create the formula required to summon a specific ally spirit design."
+prerequisites: ["Conjuring skill", "completed ally design"]
+inputs: ["ally design Karma cost", "Conjuring", "tradition"]
+stages:
+  - id: complexity
+    name: "Determine Complexity"
+    test_or_action: "Complexity equals ally design Karma cost divided by 5, rounded normally."
+    outputs: ["formula complexity"]
+  - id: design
+    name: "Conjuring Design Test"
+    test_or_action: "Make a Conjuring Test against complexity. Base time equals complexity x 2 days divided by successes."
+    outputs: ["completed ally formula"]
+outcomes: ["specific ally formula", "failed design requiring revised design or later attempt"]
+links: {uses: [rule.spirits.designing-ally], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, page: 111, relation: defines, note: "Ally Formula"}
+notes:
+  - "Formula design uses an appropriately rated lodge/circle and is specific to one ally design."
