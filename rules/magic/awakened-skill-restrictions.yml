@@ -1,0 +1,16 @@
+id: rule.magic.awakened-skill-restrictions
+record_type: rule
+name: "Expanded Awakened Skills"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 30, basis: extends}
+scope: {applies_to: ["Awakened characters using specialized magical Active and Knowledge Skills"]}
+resolution:
+  summary: "The source adds and clarifies specialized magical skills including Centering, Divining, Enchanting, Ritual Sorcery, Spell Design and Talismongering. Individual skills have explicit applicability limits and often cannot default in the same way as ordinary skills."
+  inputs: ["magical skill", "character magical capabilities"]
+  outputs: ["permitted test and defaulting behavior"]
+  steps: []
+links: {uses: [rule.skills.skill-ratings], affects: [], modified_by: [], interacts_with: [subsystem.magic.enchanting, procedure.magic.ritual-sorcery, procedure.magic.spell-design]}
+sources:
+  - {source: source.mits, page: 30, relation: extends, note: "Awakened Skills"}
+notes: []
