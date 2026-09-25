@@ -1,0 +1,22 @@
+id: rule.vehicles.hiding-relocating
+record_type: rule
+name: "Vehicle Hiding and Relocating"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 144, basis: defines}
+scope:
+  applies_to: ["breaking/re-establishing vehicle contact"]
+  excludes: []
+resolution:
+  summary: "A driver may attempt to hide from another vehicle with a Driving Skill test using Maneuver Score/terrain/control modifiers. A pursuing vehicle may later attempt to relocate the hidden target with a Sensor Test modified by the hiding result and circumstances."
+  inputs: ["Driving Skill","Maneuver Scores","terrain","sensors","hiding successes"]
+  outputs: ["contact broken or re-established"]
+  steps: []
+links:
+  uses: [rule.vehicles.driving-test, rule.vehicles.sensor-tests]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 144, relation: defines, note: "Hiding / Relocating"}
+notes: []
