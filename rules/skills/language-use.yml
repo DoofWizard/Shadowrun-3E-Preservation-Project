@@ -1,0 +1,33 @@
+id: rule.skills.language-use
+record_type: rule
+name: "Using Language Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 97
+  basis: defines
+
+scope:
+  applies_to: ["Language Skill tests"]
+  excludes: []
+
+resolution:
+  summary: "Language Tests use target numbers based on conceptual complexity; speaking a lingo/variation adds +2 to the applicable language target number unless represented by the relevant specialization."
+  inputs: ["Language Skill rating","concept complexity","lingo/variation"]
+  outputs: ["communication/comprehension result"]
+  steps: []
+
+links:
+  uses: [rule.skills.language-skills, rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 97, relation: defines, note: "Using Language Skills / Language Skill Table"}
+
+notes:
+  - "Failure generally means communication does not successfully occur or is misunderstood."
