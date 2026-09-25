@@ -1,0 +1,21 @@
+id: rule.cybermancy.chronic-dissociation
+record_type: rule
+name: "Chronic Dissociation Syndrome"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 59, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Cybermantic characters periodically test Willpower for chronic dissociation syndrome at intervals and target numbers based on negative Essence. Onset causes severe penalties to perception and other tests and prevents initiating actions. Specialized magical treatment at a delta clinic may reverse the syndrome, but repeated treatment becomes progressively harder."
+  inputs: ["negative Essence", "Willpower", "treatment attempts"]
+  outputs: ["CDS state", "test modifiers", "recovery"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.cybermancy.core]
+sources:
+  - {source: source.mm, page: 59, relation: defines, note: "Chronic Dissociation Syndrome"}
+notes: []
