@@ -1,0 +1,21 @@
+id: rule.cybermancy.access
+record_type: rule
+name: "Access to Cybermancy"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 54, basis: defines}
+scope:
+  applies_to: ["cybermancy procedures"]
+resolution:
+  summary: "Cybermancy that takes Essence below zero requires a delta clinic and specialized magical support. Characters cannot begin play with Essence 0 or less; access is intended to be controlled by the gamemaster and tied to campaign circumstances."
+  inputs: ["clinic access", "magical support", "campaign permission"]
+  outputs: ["whether cybermancy may be attempted"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.cybermancy.core]
+sources:
+  - {source: source.mm, page: 54, relation: defines, note: "Access to Cybermancy"}
+notes: []
