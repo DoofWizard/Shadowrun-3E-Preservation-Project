@@ -1,0 +1,24 @@
+id: rule.spirit-power.noxious-breath
+record_type: rule
+name: "Noxious Breath"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 265, basis: defines}
+
+scope:
+  applies_to: ["beings with Noxious Breath"]
+
+resolution:
+  summary: "Projects a nauseating or irritating breath effect at close range. The victim resists with Willpower or Body, whichever is greater, against damage based on the user's Essence; armor normally does not protect, though appropriate respiratory protection reduces Power."
+  inputs: ["user Essence", "victim Willpower/Body", "respiratory protection"]
+  outputs: ["Stun damage and nausea/disorientation effects"]
+
+power_profile: {type: physical, action: complex, range: touch, duration: instant}
+
+links: {uses: [rule.tests.success-test], affects: [rule.condition.condition-monitor], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 265, relation: defines, note: "Noxious Breath"}
+
+notes: []
