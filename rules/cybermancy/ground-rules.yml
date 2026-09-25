@@ -1,0 +1,21 @@
+id: rule.cybermancy.ground-rules
+record_type: rule
+name: "Cybermancy Ground Rules"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 54, basis: defines}
+scope:
+  applies_to: ["cybersurgery that would reduce Essence to 0 or below"]
+resolution:
+  summary: "A character reduced to Essence 0 or below dies unless the surgery is performed as part of a cybermancy procedure in a delta clinic. The attending cybersurgeon must have Biotech (Cybermancy) 8 or higher, and the magical group must know the cybermantic ritual."
+  inputs: ["post-surgery Essence", "clinic type", "cybersurgeon skill", "ritual access"]
+  outputs: ["eligibility to attempt cybermancy"]
+  steps: []
+links:
+  uses: [entity.skill.biotech]
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.cybermancy.operation]
+sources:
+  - {source: source.mm, pages: "54-55", relation: defines, note: "Ground Rules"}
+notes: []
