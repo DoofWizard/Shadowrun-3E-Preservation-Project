@@ -1,0 +1,77 @@
+id: rule.advancement.skill-improvement
+record_type: rule
+name: "Skill Improvement"
+domain: advancement
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 245
+  basis: defines
+
+scope:
+  applies_to:
+    - "Active Skills"
+    - "Knowledge Skills"
+    - "Language Skills"
+    - "skill specializations"
+
+resolution:
+  summary: "Improve a skill one rating at a time by multiplying the new rating by a cost factor determined by skill type and the new rating's relationship to the linked Attribute, rounding fractions down. New skills are purchased at Rating 1 for 1 Good Karma."
+  inputs:
+    - "skill type"
+    - "new skill or specialization rating"
+    - "linked Attribute rating"
+  outputs:
+    - "Good Karma cost"
+    - "new rating"
+  steps:
+    - "For a new base skill at Rating 1, pay 1 Good Karma."
+    - "Otherwise choose the cost factor from the Skill Improvement Cost Table."
+    - "Multiply the factor by the new rating."
+    - "Round fractions down."
+    - "Pay the resulting Good Karma at the time of improvement."
+
+cost_factors:
+  base_skill:
+    active:
+      at_or_below_linked_attribute: 1.5
+      at_or_below_twice_linked_attribute: 2
+      above_twice_linked_attribute: 2.5
+    knowledge_or_language:
+      at_or_below_linked_attribute: 1
+      at_or_below_twice_linked_attribute: 1.5
+      above_twice_linked_attribute: 2
+  specialization:
+    active:
+      at_or_below_linked_attribute: 0.5
+      at_or_below_twice_linked_attribute: 1
+      above_twice_linked_attribute: 1.5
+    knowledge_or_language:
+      at_or_below_linked_attribute: 0.5
+      at_or_below_twice_linked_attribute: 1
+      above_twice_linked_attribute: 1.5
+
+links:
+  uses:
+    - rule.karma.core-karma
+    - rule.skills.specialization
+  affects:
+    - rule.skills.skill-ratings
+  modified_by:
+    - option.training.optional-training-rules
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 244
+    relation: defines
+    note: "Improving Skills"
+  - source: source.sr3-core
+    page: 245
+    relation: defines
+    note: "Skill Improvement Cost Table / Learning New Skills / Training"
+
+notes:
+  - "Skill costs can change over time as linked Attributes change; there are no retroactive rebates."
