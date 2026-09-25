@@ -1,0 +1,21 @@
+id: rule.cyberware.task-pool
+record_type: rule
+name: "Task Pool"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 48, basis: defines}
+scope:
+  applies_to: ["cyberware that grants a Task Pool"]
+resolution:
+  summary: "A Task Pool provides extra dice for skill use while the device is active. Some devices apply the pool broadly, while others restrict it to Intelligence-linked Technical, Build/Repair, Knowledge and Language skills. Task Pool dice do not modify Perception Tests, Reaction, or other dice-pool calculations unless a specific device says otherwise."
+  inputs: ["device", "skill being used"]
+  outputs: ["additional skill dice"]
+  steps: []
+links:
+  uses: [rule.dice-pools.general]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 48, relation: defines, note: "Task Pool"}
+notes: []
