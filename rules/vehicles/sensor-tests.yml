@@ -1,0 +1,22 @@
+id: rule.vehicles.sensor-tests
+record_type: rule
+name: "Vehicle Sensor Tests"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 136, basis: defines}
+scope:
+  applies_to: ["active and passive vehicle/drone sensor detection"]
+  excludes: []
+resolution:
+  summary: "Sensor Tests use Sensor Rating dice (or the applicable rigger/drone substitution) against target numbers based primarily on target Signature and environmental/electronic modifiers. Successes determine contact quality and identification."
+  inputs: ["Sensor Rating","target Signature","sensor modifiers"]
+  outputs: ["no contact through detailed identification"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.vehicles.sensors, subsystem.vehicles.ecm]
+sources:
+  - {source: source.sr3-core, page: 136, relation: defines, note: "Sensor Tests / Sensor Test Results Table"}
+notes: []
