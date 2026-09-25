@@ -1,0 +1,18 @@
+id: entity.bioware.synthacardium
+record_type: entity
+name: "Synthacardium"
+domain: bioware
+status: ingested
+intrinsic:
+  levels:
+    1: {bio_index: 0.2, availability: "4/10 days", cost_nuyen: 6000, street_index: 1.5, legality: "Legal"}
+    2: {bio_index: 0.3, availability: "4/10 days", cost_nuyen: 15000, street_index: 1.5, legality: "Legal"}
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 70, relation: defines, note: "Synthacardium description, game effects, stress effects and statistics"}
+notes:
+  - "Adds dice to Athletics Tests and tasks and improves resistance to cardiac/circulatory conditions."
