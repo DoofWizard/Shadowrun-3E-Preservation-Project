@@ -1,0 +1,22 @@
+id: entity.skill.fixed-wing-aircraft
+record_type: entity
+name: "Fixed-Wing Aircraft"
+domain: skills
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 89, basis: defines}
+intrinsic:
+  type: "Active Skill"
+  category: "vehicle"
+  linked_attribute: "Reaction"
+  default: "Rotor Aircraft, Vectored Thrust Aircraft, LTA Aircraft"
+  specializations:
+    - "by specific vehicle type"
+    - "Remote Operations"
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.skills.defaulting, rule.skills.specialization]
+sources:
+  - {source: source.sr3-core, page: 89, relation: defines, note: "Skills — Active Skill categories"}
+notes: []
