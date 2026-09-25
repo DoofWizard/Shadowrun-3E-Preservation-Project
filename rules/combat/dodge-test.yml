@@ -1,0 +1,22 @@
+id: rule.combat.dodge-test
+record_type: rule
+name: "Dodge Test"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 113, basis: defines}
+scope:
+  applies_to: ["eligible defenders against ranged attacks"]
+  excludes: []
+resolution:
+  summary: "A defender may allocate eligible Combat Pool dice to a Dodge Test against target number 4, modified by fire mode, shotgun spread and Damage Modifiers as applicable. Each dodge success cancels one attacker success; if all attack successes are canceled, the attack is completely dodged."
+  inputs: ["Combat Pool dice","attack successes","dodge modifiers"]
+  outputs: ["remaining attack successes or complete dodge"]
+  steps: []
+links:
+  uses: [rule.dice-pools.combat-pool]
+  affects: [procedure.combat.ranged-attack]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 113, relation: defines, note: "Dodge Test"}
+notes: []
