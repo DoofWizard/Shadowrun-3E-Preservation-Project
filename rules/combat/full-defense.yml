@@ -1,0 +1,23 @@
+id: rule.combat.full-defense
+record_type: rule
+name: "Full Defense"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 123, basis: defines}
+scope:
+  applies_to: ["melee combat defender choosing only to defend"]
+  excludes: []
+resolution:
+  summary: "A character may use Full Defense instead of attempting to damage the opponent. Resolve the melee opposed test as normal; if the defender wins, no counterattack damage is inflicted, and ties/attacker wins follow the Full Defense rule."
+  inputs: ["defender Combat Skill","Combat Pool","attacker test"]
+  outputs: ["defense-only result"]
+  steps: []
+links:
+  uses: [procedure.combat.melee-attack]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 123, relation: defines, note: "Full Defense"}
+notes:
+  - "Cannon Companion contains additional optional melee options and must not silently replace this baseline."
