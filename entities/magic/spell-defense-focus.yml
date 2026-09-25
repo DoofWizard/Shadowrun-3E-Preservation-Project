@@ -1,0 +1,11 @@
+id: entity.magic.spell-defense-focus
+record_type: entity
+name: "Spell Defense Focus"
+domain: magic
+status: ingested
+intrinsic: {bond_karma: "3 x Force"}
+links: {uses: [rule.magic.spell-defense], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 45, relation: defines, note: "Spell Defense Foci"}
+notes:
+  - "Provides additional spell-defense dice up to the focus's Force."
