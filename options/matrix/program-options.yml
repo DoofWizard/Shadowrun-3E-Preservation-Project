@@ -1,0 +1,53 @@
+id: option.matrix.program-options
+record_type: option
+name: "Matrix Program Options"
+domain: matrix
+status: ingested
+
+effective:
+  status: optional
+  source: source.matrix
+  page: 82
+  basis: adds_option
+
+option_for:
+  - entity.matrix.program
+  - entity.matrix.utility
+  - entity.matrix.ic
+
+selection:
+  timing: "program design/programming"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Allows compatible options to alter program behavior, design rating, actual size, design size, targeting, reliability, stealth, or other properties."
+  - "Utility options and IC options have separate compatibility lists."
+  - "The book warns that program options significantly increase Matrix rules complexity."
+
+links:
+  modifies:
+    - procedure.matrix.programming
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.matrix
+    page: 82
+    relation: adds_option
+    note: "Program Options introduction"
+  - source: source.matrix
+    page: 83
+    relation: clarifies
+    note: "Options and size/ratings/cost"
+  - source: source.matrix
+    page: 83
+    relation: adds_option
+    note: "Utility Options"
+  - source: source.matrix
+    page: 85
+    relation: adds_option
+    note: "IC Options"
+
+notes:
+  - "Specific options are to be ingested as child option records during the detailed Matrix pass."
