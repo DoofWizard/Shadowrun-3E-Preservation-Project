@@ -1,0 +1,16 @@
+id: rule.spirits.ally-services
+record_type: rule
+name: "Ally Spirit Services"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 109, basis: defines}
+scope: {applies_to: ["ally spirits bound to their creators"]}
+resolution:
+  summary: "Allies normally remain with or near their master and can be sent to their native metaplane and recalled. A service order normally takes a Simple Action. Common services include astral watch, resisting the master's spell Drain, surveillance, ritual support, combat and other tasks. Allies can become increasingly independent as they grow."
+  inputs: ["service ordered", "ally location/form", "Force"]
+  outputs: ["performed service or refusal where source permits"]
+  steps: []
+links: {uses: [entity.spirit.ally], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "109-110", relation: defines, note: "Services of Allies / Astral Watch / Resist Drain / Other Services"}
+notes: []
