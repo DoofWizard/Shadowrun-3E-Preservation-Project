@@ -1,0 +1,39 @@
+id: entity.spirit.ally
+record_type: entity
+name: "Ally Spirit"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 107
+  basis: defines
+
+intrinsic:
+  type: "custom conjured spirit companion"
+  creation: "Designed through an Ally Formula and ritual; the summoner invests Magic/Karma to determine the ally's capabilities."
+  role:
+    - "servant"
+    - "companion"
+    - "physical and magical support"
+
+links:
+  uses:
+    - subsystem.spirits.mits-expanded
+  requires:
+    - subsystem.magic.conjuring
+  component_of: []
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 107
+    relation: defines
+    note: "Ally Spirits"
+  - source: source.mits
+    pages: "109-113"
+    relation: extends
+    note: "Designing, formula, summoning, ritual of change, losing/banishing ally"
+
+notes: []
