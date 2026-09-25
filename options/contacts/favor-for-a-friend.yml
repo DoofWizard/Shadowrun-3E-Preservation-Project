@@ -1,0 +1,41 @@
+id: option.contacts.favor-for-a-friend
+record_type: option
+name: "Favor for a Friend"
+domain: contacts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 256
+  basis: adds_option
+
+option_for:
+  - entity.contact.contact
+
+selection:
+  timing: "campaign/adventure play"
+  prerequisites:
+    - "established contact relationship"
+  incompatible_with: []
+
+effects:
+  - "A contact may ask a runner to perform a favor instead of offering a normal paid shadowrun."
+  - "Favors can introduce plot hooks, deepen relationships, or create obligations."
+  - "The favor system is narrative rather than a replacement for normal contact mechanics."
+
+links:
+  modifies: []
+  requires:
+    - entity.contact.contact
+  interacts_with:
+    - rule.contacts.contact-loyalty
+
+sources:
+  - source: source.sr3-core
+    page: 256
+    relation: adds_option
+    note: "Favor for a Friend"
+
+notes:
+  - "This is framed as a campaign/adventure device, not a universal payment mechanic."
