@@ -1,0 +1,23 @@
+id: rule.projectile.strength-minimum
+record_type: rule
+name: "Projectile Weapon Strength Minimum"
+domain: projectile-weapons
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 117, basis: defines}
+scope:
+  applies_to: ["bows and crossbows with Strength Minimum ratings"]
+  excludes: []
+resolution:
+  summary: "A projectile weapon's Strength Minimum limits effective use. A character below the required Strength suffers attack penalties and reduced effective performance; weapon range/damage derive from the user's Strength subject to the weapon's limits."
+  inputs: ["character Strength","weapon Strength Minimum"]
+  outputs: ["attack modifier","effective range/damage"]
+  steps: []
+links:
+  uses: [entity.skill.projectile-weapons]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 117, relation: defines, note: "Projectile Weapons / Strength Minimum Rating"}
+  - {source: source.sr3-core, page: 118, relation: clarifies, note: "Projectile Weapons Table"}
+notes: []
