@@ -1,0 +1,47 @@
+id: rule.combat.full-auto-effects
+record_type: rule
+name: "Full-Auto Effects"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 115
+  basis: defines
+
+scope:
+  applies_to:
+    - "full-auto firearm attacks"
+
+resolution:
+  summary: "Full-auto fire is a Complex Action. Each round fired applies cumulative recoil; for every 3 rounds in the burst, increase Power by 3 and Damage Level by one step, subject to weapon ammunition and firing limits."
+  inputs:
+    - "number of rounds fired"
+    - "base Power"
+    - "base Damage Level"
+  outputs:
+    - "recoil"
+    - "modified Power"
+    - "modified Damage Level"
+
+links:
+  uses:
+    - modifier.combat.recoil
+  affects:
+    - procedure.combat.ranged-attack
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 115
+    relation: defines
+    note: "Full-Auto Mode"
+  - source: source.sr3-core
+    page: 116
+    relation: extends
+    note: "Multiple Targets in full-auto"
+
+notes:
+  - "A full-auto attack can engage multiple targets by sweeping the burst; the source applies target/recoil consequences for each new target."
