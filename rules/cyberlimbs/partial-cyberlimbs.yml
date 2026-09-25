@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.partial-cyberlimbs
+record_type: rule
+name: "Partial Cyberlimbs"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 39, basis: defines}
+scope: {applies_to: ["cyberhands, cyberfeet, lower arms, lower legs and other partial replacements"]}
+resolution:
+  summary: "Partial cyberlimbs use standard cyberlimb rules with specific exceptions. Structural requirements can add reinforcement costs; partial replacements can be designed for removal, and attribute/strength benefits are limited to situations where the partial limb can meaningfully contribute."
+  inputs: ["partial limb type", "enhancements", "task"]
+  outputs: ["applicable bonuses, costs and removable-replacement behavior"]
+  steps: []
+links: {uses: [rule.cyberlimbs.attributes], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 39, relation: defines, note: "Partial Cyberlimbs and replacement modifications"}
+notes: []
