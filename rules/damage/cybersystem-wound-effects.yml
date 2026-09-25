@@ -1,0 +1,22 @@
+id: rule.damage.cybersystem-wound-effects
+record_type: rule
+name: "Cybersystem Wound Effects"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 127, basis: defines}
+scope:
+  applies_to: ["wound effects classified as cybersystem damage"]
+resolution:
+  summary: "Cyberware is assigned among six Essence slots to determine which system a wound effect damages. Electrical attacks can generate additional cyberware wound effects. A damaged cybersystem receives Stress and makes a Stress Test; cybereyes, cyberears and cyberlimbs may be treated as whole systems or as individual subsystems at gamemaster discretion."
+  inputs: ["wound effect", "Essence-slot assignment", "cyberware Essence Costs", "electrical damage where applicable"]
+  outputs: ["affected cybersystem", "Stress", "possible failure"]
+  steps: []
+links:
+  uses: [rule.damage.wound-effects, rule.damage.stress-points, rule.damage.stress-test]
+  affects: [subsystem.cyberware.core]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: "127-128", relation: defines, note: "Cybersystem Damage, electrical damage, Essence slots and system affected"}
+notes:
+  - "Cybermantic subjects double up cyberware in Essence slots as specified by the source."
