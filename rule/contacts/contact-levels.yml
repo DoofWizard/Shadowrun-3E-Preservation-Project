@@ -1,0 +1,63 @@
+id: rule.contacts.contact-levels
+record_type: rule
+name: "Contact Levels"
+domain: contacts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 254
+  basis: defines
+
+scope:
+  applies_to:
+    - entity.contact.contact
+
+resolution:
+  summary: "Contacts are classified as Level 1, Level 2, or Level 3, representing increasing familiarity, loyalty, and usefulness. Higher-level contacts grant bonus dice to Etiquette Tests for information and are more loyal to the runner."
+  inputs:
+    - "contact level"
+    - "runner-contact relationship"
+  outputs:
+    - "legwork modifier"
+    - "contact loyalty/availability behavior"
+
+levels:
+  level_1:
+    description: "Standard acquaintance-level contact."
+    legwork_bonus: 0
+    notes:
+      - "May know useful information but may not reveal it without sufficient reason."
+      - "May have difficulty recalling the runner."
+  level_2:
+    description: "Regular relationship with established trust."
+    legwork_bonus: 1
+    notes:
+      - "Generally provides useful information and may keep an ear open for the runner."
+  level_3:
+    description: "Close friend/buddy-level relationship."
+    legwork_bonus: 2
+    notes:
+      - "Knows the runner well and is strongly disposed to help."
+
+links:
+  uses: []
+  affects:
+    - rule.contacts.legwork
+  modified_by: []
+  interacts_with:
+    - rule.contacts.contact-loyalty
+
+sources:
+  - source: source.sr3-core
+    page: 254
+    relation: defines
+    note: "Contact Levels / Level 1 Contact"
+  - source: source.sr3-core
+    page: 256
+    relation: extends
+    note: "Level 2 Contact / Level 3 Contact"
+
+notes:
+  - "Characters receive two free contacts at character creation; new contacts gained during play are normally Level 1."
