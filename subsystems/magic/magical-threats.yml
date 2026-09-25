@@ -1,0 +1,59 @@
+id: subsystem.magic.magical-threats
+record_type: subsystem
+name: "Magical Threats"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 123
+  basis: extends
+
+state:
+  tracked_values:
+    - "Potency"
+    - "threat tradition/type"
+    - "special powers"
+    - "corruption/toxic state"
+
+participants:
+  - "toxic shamans"
+  - "insect shamans"
+  - "blood magicians"
+  - "corrupted magicians"
+  - "other magically empowered adversaries"
+
+components:
+  - "Potency"
+  - "spirit pacts"
+  - "toxic shamans"
+  - "insect shamans"
+  - "blood magic"
+  - "the Corrupted"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.magic.potency
+  procedures: []
+  entities: []
+  options:
+    - option.magic.sacrificing
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.core
+
+sources:
+  - source: source.mits
+    page: 123
+    relation: extends
+    note: "Magical Threats / Potency"
+  - source: source.mits
+    pages: "124-135"
+    relation: extends
+    note: "Toxic, insect, blood magic and corrupted threats"
+
+notes: []
