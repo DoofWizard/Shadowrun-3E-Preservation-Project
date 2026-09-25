@@ -1,0 +1,16 @@
+id: rule.magic.awakened-character-creation
+record_type: rule
+name: "Creating an Awakened Character"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 28, basis: extends}
+scope: {applies_to: ["Awakened characters during character creation"]}
+resolution:
+  summary: "Magic in the Shadows expands character creation for Awakened characters by clarifying magical priorities, magical skills, spell acquisition, spell points, adept Power Points and the social/economic consequences of being Awakened."
+  inputs: ["character priority system", "magician type", "tradition", "Magic", "skills and spell/power choices"]
+  outputs: ["legal Awakened starting character"]
+  steps: []
+links: {uses: [rule.character-creation.priority-system, rule.magic.magician-types, rule.magic.traditions], affects: [], modified_by: [], interacts_with: [subsystem.magic.adepts]}
+sources:
+  - {source: source.mits, pages: "28-30", relation: extends, note: "Creating an Awakened Character / Priorities / Race / Awakened Skills"}
+notes: []
