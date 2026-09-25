@@ -1,0 +1,53 @@
+id: rule.character-creation.attribute-assignment
+record_type: rule
+name: "Starting Attribute Assignment"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 55
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes: []
+
+resolution:
+  summary: "Spend the Attribute Points granted by the chosen priority among Body, Quickness, Strength, Intelligence, Willpower, and Charisma. No Attribute may receive more than 6 points or fewer than 1 before racial modifiers."
+  inputs:
+    - "Attribute Point total"
+    - "racial modifiers"
+  outputs:
+    - "starting Physical and Mental Attributes"
+    - "derived Reaction"
+    - "starting Essence and Magic state"
+  steps:
+    - "Assign at least 1 and at most 6 Attribute Points to each of the six Physical/Mental Attributes."
+    - "Apply racial modifiers after assigning points."
+    - "Derive Reaction from Quickness and Intelligence."
+    - "Set Essence to 6 before cyberware."
+    - "Set Magic according to magical status and Essence."
+
+links:
+  uses:
+    - rule.attributes.reaction
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.character-creation.racial-modifiers
+
+sources:
+  - source: source.sr3-core
+    page: 55
+    relation: defines
+    note: "Choosing Attributes"
+  - source: source.sr3-core
+    page: 56
+    relation: clarifies
+    note: "Racial Modifications Table; Essence, Magic and Reaction"
+
+notes:
+  - "Race modifies starting Attributes after points are assigned."
