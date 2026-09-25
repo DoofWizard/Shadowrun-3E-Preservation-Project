@@ -1,0 +1,46 @@
+id: option.karma.favors-markers
+record_type: option
+name: "Favors and Markers"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 80
+  basis: adds_option
+
+option_for:
+  - rule.karma.core-karma
+  - entity.contact.contact
+
+selection:
+  timing: "campaign play"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "A favor represents an NPC obligation to perform a service for the character."
+  - "A marker represents the character's obligation to perform a service for an NPC."
+  - "The book allows Karma to be exchanged for favors/markers under gamemaster control."
+  - "Called-in markers can generate Karma awards when the character performs the service."
+
+links:
+  modifies:
+    - rule.karma.core-karma
+  requires: []
+  interacts_with:
+    - entity.contact.contact
+
+sources:
+  - source: source.srcomp
+    page: 80
+    relation: adds_option
+    note: "Favors and Markers"
+  - source: source.srcomp
+    page: 81
+    relation: clarifies
+    note: "Continuation of favors/markers"
+
+notes:
+  - "Explicitly presented as an optional Karma use."
