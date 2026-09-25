@@ -1,0 +1,16 @@
+id: rule.spirits.ally-inhabiting
+record_type: rule
+name: "Ally Spirit Inhabiting"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 108, basis: defines}
+scope: {applies_to: ["ally spirits designed with Inhabiting"]}
+resolution:
+  summary: "The summoner prepares an animal or homunculus host for the ally. Once the ally inhabits a body, it is dual-natured, cannot leave the body normally, and cannot materialize separately. Animal hosts add ally Force to physical Attributes and gain the source's immunity benefits; homunculus hosts use material-based Armor and the ally's Force-based enhancement."
+  inputs: ["host type", "ally Force", "host material/Attributes"]
+  outputs: ["inhabited dual-natured ally body"]
+  steps: []
+links: {uses: [rule.spirits.ally-powers], affects: [], modified_by: [], interacts_with: [procedure.magic.artificing]}
+sources:
+  - {source: source.mits, pages: "108-109", relation: defines, note: "Inhabiting and Homunculus Table"}
+notes: []
