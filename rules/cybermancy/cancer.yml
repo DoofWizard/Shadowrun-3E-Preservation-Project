@@ -1,0 +1,21 @@
+id: rule.cybermancy.cancer
+record_type: rule
+name: "Cybermancy Cancer Risk"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 59, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Cybermancy creates a long-term cancer risk. A die roll made during the initial operation is compared to a threshold based on the absolute value of the subject's desired negative Essence, with modifiers for Body and symbiotes. A failed check means cancer develops after a delayed interval and is ultimately fatal without further intervention."
+  inputs: ["desired negative Essence", "Body", "symbiotes"]
+  outputs: ["future cancer risk and onset"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.cybermancy.operation]
+sources:
+  - {source: source.mm, page: 59, relation: defines, note: "Cancer"}
+notes: []
