@@ -1,0 +1,38 @@
+id: entity.spirit.watcher
+record_type: entity
+name: "Watcher Spirit"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 98
+  basis: defines
+
+intrinsic:
+  type: "temporary spirit"
+  purpose:
+    - "astral observation"
+    - "astral tracking"
+    - "simple assigned tasks"
+
+links:
+  uses:
+    - subsystem.spirits.mits-expanded
+  requires: []
+  component_of: []
+  interacts_with:
+    - subsystem.magic.astral
+
+sources:
+  - source: source.mits
+    page: 98
+    relation: defines
+    note: "Watcher Spirits"
+  - source: source.mits
+    pages: "101-102"
+    relation: extends
+    note: "Watcher characteristics, astral tracking and tasks"
+
+notes: []
