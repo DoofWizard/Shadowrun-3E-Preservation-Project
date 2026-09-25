@@ -1,0 +1,21 @@
+id: rule.vision.multiple-systems
+record_type: rule
+name: "Multiple Vision Systems"
+domain: vision
+status: ingested
+effective: {status: current, source: source.mm, page: 49, basis: extends}
+scope:
+  applies_to: ["characters using multiple vision systems"]
+resolution:
+  summary: "Characters may use more than one vision system simultaneously. Cybernetic users may turn individual systems on or off. When multiple systems are active, use the lowest applicable visibility modifier, but changing systems after glare or flash exposure does not remove effects already suffered."
+  inputs: ["active vision systems", "environmental condition"]
+  outputs: ["applicable visibility modifier"]
+  steps: []
+links:
+  uses: [rule.vision.low-light-and-thermographic]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 49, relation: extends, note: "Multiple Vision Systems / Visibility Modifiers"}
+notes: []
