@@ -1,0 +1,19 @@
+id: entity.bioware.reflex-recorder
+record_type: entity
+name: "Reflex Recorder"
+domain: bioware
+status: ingested
+intrinsic:
+  grade: cultured
+  forms:
+    base_skill: {bio_index: 0.25, availability: "8/6 days", cost_nuyen: 25000, street_index: 1.5, legality: "Legal"}
+    specialization: {bio_index: 0.1, availability: "5/6 days", cost_nuyen: 10000, street_index: 1.5, legality: "Legal"}
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 74, relation: defines, note: "Reflex Recorder description, game effects, stress effects and statistics"}
+notes:
+  - "Stores one learned Combat or Physical Skill pattern and adds 1 die when that skill is used; recorders do not stack on the same skill."
