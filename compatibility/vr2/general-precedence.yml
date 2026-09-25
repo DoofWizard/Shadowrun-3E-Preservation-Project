@@ -1,0 +1,44 @@
+id: compatibility.vr2.general-precedence
+record_type: rule
+name: "Virtual Realities 2.0 to SR3 Precedence"
+domain: compatibility
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 325
+  basis: supersedes
+
+scope:
+  applies_to:
+    - "Virtual Realities 2.0 Matrix rules used in an SR3 game"
+
+resolution:
+  summary: "VR2 rules supersede previous Shadowrun Matrix rules except where they conflict with SR3; in conflicts, SR3 controls. The SR3 core book then lists specific VR2-to-SR3 changes for Matrix systems, utilities, damage tracks, IC and operations."
+  inputs:
+    - "VR2 rule"
+    - "SR3 Matrix rule"
+  outputs:
+    - "effective SR3-era Matrix treatment"
+
+links:
+  uses:
+    - compatibility.sourcebooks.general-precedence
+  affects:
+    - subsystem.matrix.core
+  modified_by: []
+  interacts_with:
+    - compatibility.vr2.cyberware-hacking-pool
+
+sources:
+  - source: source.fasa-7904
+    relation: references
+    note: "Legacy source being converted."
+  - source: source.sr3-core
+    page: 325
+    relation: conversion
+    note: "Virtual Realities 2.0"
+
+notes:
+  - "Specific VR2 rules should retain individual lineage entries when an exact replacement is identified."
