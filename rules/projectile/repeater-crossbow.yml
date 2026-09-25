@@ -1,0 +1,46 @@
+{
+  "id": "rule.projectile.repeater-crossbow",
+  "record_type": "rule",
+  "name": "Repeater Crossbow",
+  "domain": "projectile-weapons",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 13,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "repeater crossbow"
+    ]
+  },
+  "resolution": {
+    "summary": "A bolt magazine automatically feeds and re-cocks the repeater crossbow after the first shot, allowing repeated fire until the five-bolt magazine is empty; only the first shot needs a Ready Weapon Simple Action.",
+    "inputs": [
+      "loaded magazine",
+      "first or subsequent shot"
+    ],
+    "outputs": [
+      "ready state and remaining ammunition"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "entity.weapon.repeater-crossbow"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 13,
+      "relation": "defines",
+      "note": "Repeater Crossbow"
+    }
+  ],
+  "notes": []
+}
