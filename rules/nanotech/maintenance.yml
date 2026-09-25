@@ -1,0 +1,16 @@
+id: rule.nanotech.maintenance
+record_type: rule
+name: "Nanoware Maintenance"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 100, basis: defines}
+scope: {applies_to: ["nanoware systems that lose active nanites over time or injury"]}
+resolution:
+  summary: "Nanoware must be maintained by periodically replacing lost nanites or by using a nanite hive where compatible. Replacement can be performed before the system has fully degraded, and healing ordinary physical damage does not restore lost nanites."
+  inputs: ["nanoware type", "current nanite percentage", "maintenance method"]
+  outputs: ["restored nanite population and effectiveness"]
+  steps: []
+links: {uses: [rule.nanotech.nanite-loss], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: [entity.nanotech.nanite-hive]}
+sources:
+  - {source: source.mm, page: 100, relation: defines, note: "Nanite Loss / Maintenance"}
+notes: []
