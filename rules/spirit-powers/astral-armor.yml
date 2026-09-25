@@ -1,0 +1,24 @@
+id: rule.spirit-power.astral-armor
+record_type: rule
+name: "Astral Armor"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 262, basis: defines}
+
+scope:
+  applies_to: ["astral forms using the power"]
+
+resolution:
+  summary: "Provides astral armor equal to the user's Essence against astral attacks. It gives no protection from physical attacks and normally benefits only fully astral beings; dual beings benefit while astrally projecting."
+  inputs: ["user Essence"]
+  outputs: ["astral armor rating"]
+
+power_profile: {type: mana, action: auto, range: self, duration: always}
+
+links: {uses: [], affects: [rule.magic.astral-combat], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 262, relation: defines, note: "Astral Armor"}
+
+notes: []
