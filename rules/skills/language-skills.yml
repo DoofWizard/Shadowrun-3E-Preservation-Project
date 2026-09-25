@@ -1,0 +1,33 @@
+id: rule.skills.language-skills
+record_type: rule
+name: "Language Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 91
+  basis: defines
+
+scope:
+  applies_to: ["Language Skills"]
+  excludes: []
+
+resolution:
+  summary: "Language Skills are distinct from Active and Knowledge Skills. They default to Intelligence with a +4 target-number modifier, though the gamemaster may reduce the modifier for closely related languages. Lingos are specializations of languages."
+  inputs: ["Language Skill rating","Intelligence when defaulting","language similarity","lingo specialization"]
+  outputs: ["Language test dice/results"]
+  steps: []
+
+links:
+  uses: [rule.skills.defaulting]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.skills.language-use]
+
+sources:
+  - {source: source.sr3-core, page: 91, relation: defines, note: "About Language Skills / Lingos"}
+
+notes:
+  - "A language may have multiple Lingo specializations."
