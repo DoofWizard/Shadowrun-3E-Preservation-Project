@@ -1,0 +1,46 @@
+id: option.magic.metamagic-possessing
+record_type: option
+name: "Metamagic: Possessing"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 76
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "while astrally projecting and targeting an astrally active physical being"
+  prerequisites:
+    - "initiate"
+    - "astral projection"
+  incompatible_with: []
+
+effects:
+  - "Allows the initiate's astral form to seize control of another living body for a limited time after defeating the target in astral combat."
+  - "Only astrally active beings can be targeted."
+  - "The possessor uses the host's physical capabilities while retaining the possessor's mental Attributes, and can later be expelled or banished."
+
+links:
+  modifies:
+    - subsystem.magic.astral
+  requires:
+    - option.magic.metamagic
+  interacts_with:
+    - rule.magic.astral-combat
+
+sources:
+  - source: source.mits
+    page: 76
+    relation: defines
+    note: "Possessing"
+  - source: source.mits
+    page: 77
+    relation: extends
+    note: "Control, dismounting and possession effects"
+
+notes: []
