@@ -1,0 +1,26 @@
+id: rule.magic.focus-bonding
+record_type: rule
+name: "Focus Bonding"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["foci requiring bonding"]
+  excludes: []
+resolution:
+  summary: "A focus must normally be bonded to a single owner before use. Bonding requires a magical ritual whose duration is based on focus Force and a Karma cost determined by focus type and Force; bonding imprints the owner's astral signature on the focus."
+  inputs: ["focus type","Force","owner","Karma"]
+  outputs: ["bonded focus"]
+  steps:
+    - "Perform the bonding ritual for the required time."
+    - "Pay the focus-type Karma cost."
+    - "Record the focus as bonded to that owner."
+links:
+  uses: []
+  affects: [subsystem.magic.foci]
+  modified_by: []
+  interacts_with: [subsystem.magic.astral]
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Bonding / Focus Bonding Table"}
+notes:
+  - "A focus can be bonded to only one person at a time."
