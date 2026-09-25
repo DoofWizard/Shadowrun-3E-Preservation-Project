@@ -1,0 +1,21 @@
+id: rule.cybermancy.social-karma-penalties
+record_type: rule
+name: "Cybermantic Social and Karma Penalties"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 58, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Sub-zero Essence adds further penalties to Charisma and Charisma-linked skill tests on top of normal cyberware social penalties; the penalty increases with additional negative Essence and becomes steeper below -2. The same alienating presence can improve Intimidation or Interrogation Open Tests. Cybermantic characters accumulate Karma at half the usual rate."
+  inputs: ["negative Essence", "social test type"]
+  outputs: ["social-test modifier", "Karma award rate"]
+  steps: []
+links:
+  uses: [modifier.social.cyberware]
+  affects: [rule.karma.core-karma]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 58, relation: defines, note: "Social and Karma Penalties"}
+notes: []
