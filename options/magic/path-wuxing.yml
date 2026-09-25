@@ -1,0 +1,15 @@
+id: option.magic.path-wuxing
+record_type: option
+name: "Path of Wuxing"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 17, basis: extends}
+option_for: [subsystem.magic.traditions-expanded]
+selection: {timing: "magical tradition/path selection", prerequisites: [], incompatible_with: []}
+effects:
+  - "Uses a five-element magical worldview centered on the Chinese wuxing elements and their relationships."
+  - "Wujen/aspected practitioners follow the path-specific spirit, spell and magical-tool conventions described by the source."
+links: {modifies: [rule.magic.traditions], requires: [], interacts_with: [subsystem.magic.conjuring]}
+sources:
+  - {source: source.mits, pages: "17-19", relation: extends, note: "Path of Wuxing / Wujen Aspected Magicians"}
+notes: []
