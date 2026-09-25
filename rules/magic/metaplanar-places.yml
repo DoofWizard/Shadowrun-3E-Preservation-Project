@@ -1,0 +1,16 @@
+id: rule.magic.metaplanar-places
+record_type: rule
+name: "Metaplanar Places"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 93, basis: defines}
+scope: {applies_to: ["astral quests"]}
+resolution:
+  summary: "Astral quests proceed through symbolic Places: Battle, Charisma, Destiny, Fear, Knowledge, Magic, Spirits, and the Citadel. Each Place presents a challenge appropriate to its theme and normally uses the Quest Rating to set difficulty or damage."
+  inputs: ["current Place", "Quest Rating", "appropriate skill/Attribute or roleplayed challenge"]
+  outputs: ["Place overcome, damage, or failed quest"]
+  steps: []
+links: {uses: [procedure.magic.astral-quest], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "93-94", relation: defines, note: "Metaplaces Table / Quest Tests / Places of Battle, Charisma, Destiny, Fear, Knowledge, Magic, Spirits and Citadel"}
+notes: []
