@@ -1,0 +1,47 @@
+id: option.character-creation.point-based-design
+record_type: option
+name: "Point-Based Character Design System"
+domain: character-creation
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 13
+  basis: adds_option
+
+option_for:
+  - procedure.character-creation.standard
+
+selection:
+  timing: "character creation"
+  prerequisites: []
+  incompatible_with:
+    - "standard priority allocation as the primary allocation method"
+
+effects:
+  - "Replaces the A-E priority allocation step with a Building Point budget chosen by the gamemaster."
+  - "Building Points purchase Race, Magic, Attributes, Skills, and Resources."
+  - "Other SR3 character-creation restrictions continue to apply unless this option says otherwise."
+  - "The book recommends 120 Building Points; sample SR3 archetypes are described as roughly 123 points."
+  - "Edges and Flaws may be purchased/used for Building Points if the gamemaster allows them."
+
+links:
+  modifies:
+    - procedure.character-creation.standard
+  requires: []
+  interacts_with:
+    - option.character.edges-and-flaws
+
+sources:
+  - source: source.srcomp
+    page: 13
+    relation: adds_option
+    note: "Point-Based Character Design System"
+  - source: source.srcomp
+    page: 14
+    relation: clarifies
+    note: "Building Points Table and component costs"
+
+notes:
+  - "This is an alternate creation method, not a supersession of the SR3 priority system."
