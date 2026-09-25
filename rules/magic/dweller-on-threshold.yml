@@ -1,0 +1,16 @@
+id: rule.magic.dweller-on-threshold
+record_type: rule
+name: "Dweller on the Threshold"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 92, basis: defines}
+scope: {applies_to: ["travelers beginning an astral quest"]}
+resolution:
+  summary: "Every astral quest begins with the Dweller on the Threshold. The Dweller confronts each traveler with personally relevant knowledge and requires a test against the Quest Rating. Failure ends the quest for that traveler; successes can add temporary Karma Pool dice usable during the quest."
+  inputs: ["Quest Rating", "gamemaster-chosen skill or Attribute", "traveler"]
+  outputs: ["admitted/failed state", "temporary quest Karma Pool dice"]
+  steps: []
+links: {uses: [procedure.magic.astral-quest], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "92-93", relation: defines, note: "The Dweller on the Threshold"}
+notes: []
