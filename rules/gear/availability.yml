@@ -1,0 +1,43 @@
+id: rule.gear.availability
+record_type: rule
+name: "Availability"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 272
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.gear.purchase
+
+resolution:
+  summary: "An Availability Code expresses both how difficult an item is to locate and how long acquisition normally takes. The left value is the Etiquette target number; the right value is the base acquisition time."
+  inputs:
+    - "Availability target number"
+    - "Availability time"
+    - "Etiquette successes"
+  outputs:
+    - "whether source is found"
+    - "time to acquire item"
+
+links:
+  uses:
+    - rule.tests.success-test
+  affects:
+    - procedure.gear.purchase
+  modified_by: []
+  interacts_with:
+    - rule.gear.street-index
+
+sources:
+  - source: source.sr3-core
+    page: 272
+    relation: defines
+    note: "Availability"
+
+notes:
+  - "The gamemaster may adjust Availability for campaign conditions and especially unusual gear."
