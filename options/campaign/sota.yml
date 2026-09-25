@@ -1,0 +1,43 @@
+id: option.campaign.sota
+record_type: option
+name: "General State of the Art (SOTA)"
+domain: campaign
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 84
+  basis: adds_option
+
+option_for:
+  - "campaign technology/equipment progression"
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Provides rules for technological advancement and obsolescence outside the Matrix."
+  - "The gamemaster determines affected technological fields and SOTA advances."
+  - "Characters may need resources to keep equipment current or suffer degraded effectiveness when falling behind."
+
+links:
+  modifies: []
+  requires: []
+  interacts_with:
+    - option.matrix.sota
+
+sources:
+  - source: source.srcomp
+    page: 84
+    relation: adds_option
+    note: "State of the Art"
+  - source: source.srcomp
+    pages: "85-87"
+    relation: extends
+    note: "SOTA advancement, falling behind, roleplaying, dead-end tech"
+
+notes:
+  - "The text distinguishes these general SOTA rules from the Matrix SOTA rules in Virtual Realities 2.0."
