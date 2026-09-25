@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.attributes
+record_type: rule
+name: "Cyberlimb Attributes and Bonuses"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 32, basis: extends}
+scope: {applies_to: ["characters with one or more cyberlimbs"]}
+resolution:
+  summary: "Cyberlimbs have independent Strength and Quickness ratings, can add Body and Power/armor benefits when enough replacement parts are present, and can be enhanced subject to racial and structural limits. Partial limbs and unbalanced limb ratings use the source's special application rules."
+  inputs: ["number/type of cyberlimbs", "limb Strength/Quickness", "character Body", "enhancements"]
+  outputs: ["effective limb attributes", "Body/Power bonuses", "situation-specific Strength use"]
+  steps: []
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "32-33", relation: extends, note: "Cyberlimb General Rules, Bonuses, Strength and Limitations"}
+notes: []
