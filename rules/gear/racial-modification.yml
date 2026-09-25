@@ -1,0 +1,37 @@
+id: rule.gear.racial-modification
+record_type: rule
+name: "Metatype Gear Modification"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 272
+  basis: defines
+
+scope:
+  applies_to:
+    - "gear requiring size/ergonomic modification for dwarfs or trolls"
+
+resolution:
+  summary: "Gear modified for dwarf-sized users increases price by 10 percent; troll-modified gear increases price by 25 percent. Similar adjustments apply to vehicles, and operating an unsuitable unmodified vehicle can impose penalties."
+  inputs:
+    - "base price"
+    - "required metatype modification"
+  outputs:
+    - "modified price and usability"
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 272
+    relation: defines
+    note: "Racial Modifications"
+
+notes: []
