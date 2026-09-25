@@ -1,0 +1,21 @@
+id: option.healing.expanded-doctoring
+record_type: option
+name: "Expanded Doctoring"
+domain: healing
+status: ingested
+effective: {status: optional, source: source.mm, page: 133, basis: adds_option}
+option_for: [procedure.healing.natural-and-medical]
+selection:
+  timing: "campaign healing rules"
+  prerequisites: []
+  incompatible_with: []
+effects:
+  - "Adds optional modifiers for care conditions, long-term magical care, Awakened status, natural Body/Willpower, doctor's Biotech (Extended Care), undocumented bioware/cyberware, cybermancy and impaired communication."
+links:
+  modifies: [procedure.healing.natural-and-medical]
+  requires: []
+  interacts_with: [subsystem.cybermancy.core, subsystem.bioware.core, subsystem.cyberware.core]
+sources:
+  - {source: source.mm, page: 133, relation: adds_option, note: "Expanded Doctoring Table and notes"}
+notes:
+  - "Explicitly optional."
