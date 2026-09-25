@@ -1,0 +1,42 @@
+id: rule.gear.legality-codes
+record_type: rule
+name: "Legality Codes"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 273
+  basis: defines
+
+scope:
+  applies_to:
+    - "restricted or prohibited equipment"
+
+resolution:
+  summary: "A Legality Code combines a restriction level with a restriction category. Lower restriction numbers represent more serious restrictions. Law-enforcement detection and enforcement use the item's restriction level as a target or severity reference; some items may be legal with permits."
+  inputs:
+    - "restriction level"
+    - "restriction category"
+    - "jurisdiction"
+    - "permit status"
+  outputs:
+    - "legal, permit-required, restricted, or illegal status"
+
+links:
+  uses: []
+  affects:
+    - procedure.gear.purchase
+  modified_by: []
+  interacts_with:
+    - procedure.identity.forge-credstick
+
+sources:
+  - source: source.sr3-core
+    page: 273
+    relation: defines
+    note: "Legality Codes / Making Legal Purchases / Permits"
+
+notes:
+  - "The core table is framed for Seattle/UCAS; legality can differ by jurisdiction."
