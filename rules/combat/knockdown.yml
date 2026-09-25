@@ -1,0 +1,22 @@
+id: rule.combat.knockdown
+record_type: rule
+name: "Knockdown"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 124, basis: defines}
+scope:
+  applies_to: ["characters struck in ranged or melee combat"]
+  excludes: []
+resolution:
+  summary: "A character hit by an attack makes a Body Test to resist knockdown. The target number is based on attack Power after armor; successes needed depend on wound level. Failure knocks the character down, while heavier wounds can knock a character down automatically."
+  inputs: ["Body","attack Power after armor","wound level"]
+  outputs: ["standing, staggered or knocked prone"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 124, relation: defines, note: "Knockdown / Knockdown Table"}
+notes: []
