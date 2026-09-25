@@ -1,0 +1,44 @@
+id: rule.combat.movement
+record_type: rule
+name: "Combat Movement"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 108
+  basis: defines
+
+scope:
+  applies_to:
+    - "movement during a Combat Turn"
+
+resolution:
+  summary: "Characters may walk or run during a Combat Turn. Walking rate equals Quickness in meters per Combat Turn; running rate equals Quickness times the metatype running multiplier. Movement is distributed across Initiative Passes."
+  inputs:
+    - "Quickness"
+    - "metatype"
+    - "number of Initiative Passes"
+    - "walking or running"
+  outputs:
+    - "maximum movement per Combat Turn and per Initiative Pass"
+
+links:
+  uses:
+    - rule.initiative.initiative-passes
+  affects:
+    - procedure.combat.ranged-attack
+  modified_by: []
+  interacts_with:
+    - rule.combat.interception
+
+sources:
+  - source: source.sr3-core
+    page: 108
+    relation: defines
+    note: "Movement / Movement Rate / Walking / Running"
+
+notes:
+  - "Walking while performing a Success Test normally adds +1 TN; running normally adds +4."
+  - "Athletics (Running) can be used to increase running distance under the detailed rule."
