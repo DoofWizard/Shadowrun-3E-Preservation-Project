@@ -23,6 +23,28 @@ Books are analyzed for:
 
 A later publication is never assumed to overwrite an earlier rule solely because it is newer.
 
-## Queue
+## Current priority pass
 
-The Google Drive corpus will be entered here source-by-source as it is processed.
+| Source | Status | Current scope |
+| --- | --- | --- |
+| SR3 Core (FASA7001) | ingesting | Core concepts begun; full core rules remaining |
+| Shadowrun Companion (FASA7905a) | ingesting | Alternate chargen, optional training, Karma options begun |
+| Matrix (FASA7909) | ingesting | Source lineage, SOTA, construction, programming/options begun |
+| Man & Machine (FASA7126) | structural_scan | TOC/domain map complete; detailed ingest next |
+| Magic in the Shadows (FASA7907) | structural_scan | TOC/domain map complete; detailed ingest next |
+| Cannon Companion (FASA7908) | structural_scan | TOC/domain map complete; detailed ingest next |
+| Rigger 3 (FASA7910) | structural_scan | TOC/domain map complete; detailed ingest next |
+
+## Corpus inventory
+
+The complete 97-item Drive inventory is stored in `sources/catalog.yml`. Every item remains in the queue until it is marked complete here or in its source manifest.
+
+## Completion rule
+
+A source is not marked `complete` until:
+- all mechanical additions have canonical records or explicit links to existing records,
+- all explicit replacements/supersessions/conversions have lineage entries,
+- optional rules are marked optional,
+- world-only material has been routed to world records where appropriate,
+- ambiguous conflicts are preserved rather than silently reconciled,
+- source/page provenance is present.
