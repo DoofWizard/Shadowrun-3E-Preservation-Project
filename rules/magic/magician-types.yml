@@ -1,0 +1,22 @@
+id: rule.magic.magician-types
+record_type: rule
+name: "Magician Types"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 160, basis: defines}
+scope:
+  applies_to: ["magicians"]
+  excludes: []
+resolution:
+  summary: "SR3 distinguishes full magicians, aspected magicians and adepts. Full magicians can use the broad magical skill set of their tradition; aspected magicians are limited to a defined aspect; adepts channel magic into personal powers instead of ordinary spellcasting/conjuring."
+  inputs: ["magical character type","tradition/aspect"]
+  outputs: ["permitted magical skills/actions"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.magic.traditions, subsystem.magic.adepts]
+sources:
+  - {source: source.sr3-core, page: 160, relation: defines, note: "Magicians / Full Magicians / Aspected Magicians / Magical Skills"}
+notes: []
