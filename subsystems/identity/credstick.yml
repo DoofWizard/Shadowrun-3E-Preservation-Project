@@ -1,0 +1,53 @@
+id: subsystem.identity.credstick
+record_type: subsystem
+name: "Credsticks and Identification"
+domain: identity
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 238
+  basis: defines
+
+state:
+  tracked_values:
+    - "credstick rating/type"
+    - "stored identity"
+    - "account balances/permissions"
+    - "verification requirements"
+
+participants:
+  - "registered credsticks"
+  - "certified credsticks"
+  - "financial and identity systems"
+
+components:
+  - "standard through ebony registered credsticks"
+  - "certified credsticks"
+  - "forged credsticks"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures:
+    - procedure.identity.forge-credstick
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.identity.sin
+
+sources:
+  - source: source.sr3-core
+    page: 238
+    relation: defines
+    note: "Credsticks and ID"
+  - source: source.sr3-core
+    page: 239
+    relation: extends
+    note: "Certified Credsticks / Forging Credsticks and IDs / Credstick Table"
+
+notes: []
