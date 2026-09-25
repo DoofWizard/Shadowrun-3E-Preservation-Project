@@ -1,0 +1,37 @@
+id: entity.skill.unarmed-combat
+record_type: entity
+name: "Unarmed Combat"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 86
+  basis: defines
+
+intrinsic:
+  type: "Active Skill"
+  category: "combat"
+  linked_attribute: "Strength"
+  default: "Cyber-Implant Combat"
+  specializations:
+    - "Subduing Combat"
+    - "Martial Arts Technique"
+    - "by body part"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.skills.defaulting
+    - rule.skills.specialization
+
+sources:
+  - source: source.sr3-core
+    page: 86
+    relation: defines
+    note: "Skills — Active Skill categories"
+
+notes: []
