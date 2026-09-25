@@ -1,0 +1,25 @@
+id: procedure.combat.melee-attack
+record_type: procedure
+name: "Resolving Melee Combat"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 122, basis: defines}
+purpose: "Resolve melee combat as an opposed exchange."
+prerequisites: ["combatants in melee range"]
+inputs: ["attacker Combat Skill","defender Combat Skill","Combat Pool","Reach/modifiers","weapon Power/Damage"]
+stages:
+  - {id: attacker, name: "Attacker Success Test", test_or_action: "Roll attacker's Combat Skill plus allocated Combat Pool against target number 4, modified by circumstances.", outputs: ["attacker successes"]}
+  - {id: defender, name: "Defender Success Test", test_or_action: "Roll defender's Combat Skill plus allocated Combat Pool against target number 4, modified by circumstances.", outputs: ["defender successes"]}
+  - {id: compare, name: "Compare Successes", test_or_action: "Higher success total wins; a tie favors the attacker.", outputs: ["winner and net successes"]}
+  - {id: damage, name: "Determine Damage", test_or_action: "Stage weapon damage using net successes.", outputs: ["staged Damage Level"]}
+  - {id: resist, name: "Resist Damage", test_or_action: "Target rolls Body against adjusted attack Power plus eligible Combat Pool.", outputs: ["final damage"]}
+outcomes: ["attacker hits","defender counter-hits","resolved damage"]
+links:
+  uses: [rule.dice-pools.combat-pool, rule.combat.damage-resistance, rule.combat.damage-staging]
+  requires: []
+  produces: []
+  modified_by: [modifier.combat.melee]
+sources:
+  - {source: source.sr3-core, page: 122, relation: defines, note: "Resolving Melee Combat"}
+  - {source: source.sr3-core, page: 123, relation: extends, note: "Compare Successes / Determine Damage / Damage Resistance"}
+notes: []
