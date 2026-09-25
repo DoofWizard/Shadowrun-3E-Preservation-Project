@@ -1,0 +1,16 @@
+id: rule.cyberware.smartlink-2
+record_type: rule
+name: "Smartlink-2"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 31, basis: extends}
+scope: {applies_to: ["Smartlink-2 systems and smartlinked weapons"]}
+resolution:
+  summary: "Smartlink-2 improves target acquisition beyond standard smartlink behavior and adds special handling for linked grenade launchers, air-timed mini-grenades and compatible smartlink subsystems. The system requires Smartlink-2-compatible hardware for its enhanced benefits."
+  inputs: ["weapon", "smartlink generation", "installed subsystems"]
+  outputs: ["ranged-combat target-number and linked-system benefits"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "31-33", relation: extends, note: "Smartlink-2 and subsystem/accessory rules"}
+notes: []
