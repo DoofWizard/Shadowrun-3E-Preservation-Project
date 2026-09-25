@@ -1,0 +1,45 @@
+id: rule.contacts.new-contacts
+record_type: rule
+name: "Acquiring New Contacts"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 72
+  basis: extends
+
+scope:
+  applies_to:
+    - "contacts gained during play"
+
+resolution:
+  summary: "The Companion provides guidance for turning recurring NPC relationships into new contacts during play. Contact type, access, loyalty and usefulness depend on how the relationship was established and maintained."
+  inputs:
+    - "NPC relationship"
+    - "history of interaction"
+    - "campaign circumstances"
+  outputs:
+    - "new contact"
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.improving-levels
+
+sources:
+  - source: source.srcomp
+    page: 72
+    relation: extends
+    note: "New Contacts"
+  - source: source.srcomp
+    pages: "73-78"
+    relation: example
+    note: "Additional contact archetypes/examples"
+
+notes:
+  - "The contact archetypes on pp. 73-78 are examples/entities rather than replacement contact mechanics."
