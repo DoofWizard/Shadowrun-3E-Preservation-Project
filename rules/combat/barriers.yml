@@ -1,0 +1,23 @@
+id: rule.combat.barriers
+record_type: rule
+name: "Barriers"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 124, basis: defines}
+scope:
+  applies_to: ["attacks through or against physical barriers"]
+  excludes: []
+resolution:
+  summary: "Barrier Rating represents a material's resistance. Attacks may fire through barriers with attack Power reduced by armor and Barrier Rating, or attempt to break through barriers using Power compared with Barrier Rating. Damage can reduce Barrier Rating and sufficiently powerful attacks can open holes or destroy the barrier."
+  inputs: ["Barrier Rating","attack Power","weapon/attack type"]
+  outputs: ["reduced attack, barrier damage, breach or no effect"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.combat.grenade-attack]
+sources:
+  - {source: source.sr3-core, page: 124, relation: defines, note: "Barriers / Firing Through"}
+  - {source: source.sr3-core, page: 125, relation: extends, note: "Breaking Through / Barrier Effect Table"}
+notes: []
