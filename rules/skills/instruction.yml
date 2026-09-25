@@ -1,0 +1,36 @@
+id: rule.skills.instruction
+record_type: rule
+name: "Using Instruction"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 95
+  basis: defines
+
+scope:
+  applies_to: ["teaching a skill, spell or other subject"]
+  excludes: []
+
+resolution:
+  summary: "An instructor must have the subject at rating 3+ and at least the rating the pupil seeks. Teaching requires an Instruction (4) Test; every two successes give the student one additional die for learning the subject."
+  inputs: ["instructor subject rating","Instruction rating","student desired rating"]
+  outputs: ["learning bonus dice"]
+  steps:
+    - "Verify instructor subject rating is at least 3 and at least the student's desired rating."
+    - "Make an Instruction Test at target number 4."
+    - "For every two successes, grant the student one additional die on the learning test."
+
+links:
+  uses: [entity.skill.instruction]
+  affects: []
+  modified_by: []
+  interacts_with: [option.training.optional-training-rules]
+
+sources:
+  - {source: source.sr3-core, page: 95, relation: defines, note: "Instruction"}
+
+notes:
+  - "The source also provides rules for virtual instructor programs."
