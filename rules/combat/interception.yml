@@ -1,0 +1,38 @@
+id: rule.combat.interception
+record_type: rule
+name: "Interception"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 108
+  basis: defines
+
+scope:
+  applies_to:
+    - "a moving character who passes within one meter of an opponent without attacking that opponent"
+
+resolution:
+  summary: "An opponent may make a free melee attack against a character attempting to pass within one meter without engaging them. If the moving character takes damage, they may be knocked down and their movement can end."
+  inputs:
+    - "movement path"
+    - "opponent reach and melee capability"
+  outputs:
+    - "possible free melee attack and interrupted movement"
+
+links:
+  uses: []
+  affects:
+    - rule.combat.movement
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 108
+    relation: defines
+    note: "Interception"
+
+notes: []
