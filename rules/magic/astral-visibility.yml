@@ -1,0 +1,16 @@
+id: rule.magic.astral-visibility
+record_type: rule
+name: "Astral Visibility"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 82, basis: defines}
+scope: {applies_to: ["astral perception and projection"]}
+resolution:
+  summary: "Astral visibility is independent of ordinary physical light but is affected by astral clutter, obscurants, crowds, background count and packed biomass. These conditions apply target-number modifiers to astral Perception Tests and related astral actions."
+  inputs: ["astral environment", "background count", "crowding/biomass", "obscurants"]
+  outputs: ["astral visibility modifier"]
+  steps: []
+links: {uses: [rule.magic.astral-perception], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, page: 82, relation: defines, note: "Astral Visibility and Astral Perception Modifiers Table"}
+notes: []
