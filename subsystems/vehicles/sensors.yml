@@ -1,0 +1,25 @@
+id: subsystem.vehicles.sensors
+record_type: subsystem
+name: "Vehicle Sensors"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 135, basis: defines}
+state:
+  tracked_values: ["Sensor Rating","sensor mode/components","target Signature","range","environmental modifiers"]
+participants: ["vehicles","drones","riggers","targets"]
+components: ["active sensors","passive sensors","sensor components","image transmission","remote-deck/sensor range"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: [rule.vehicles.sensor-tests]
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.vehicles.ecm, subsystem.rigging.electronic-warfare]
+sources:
+  - {source: source.sr3-core, page: 135, relation: defines, note: "Sensors / System Components and Sensor Ratings"}
+  - {source: source.sr3-core, page: 136, relation: extends, note: "Sensor Tests"}
+  - {source: source.sr3-core, page: 137, relation: extends, note: "Sensor and Remote Deck Ranges"}
+notes:
+  - "Rigger 3 explicitly supplements this subsystem."
