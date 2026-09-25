@@ -1,0 +1,38 @@
+id: entity.dragon.dragon
+record_type: entity
+name: "Dragon"
+domain: dragons
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 267
+  basis: defines
+
+intrinsic:
+  type: "awakened sapient creature family"
+  governing_statistics: "Dragon stat blocks and magical abilities"
+  common_traits:
+    - "high physical attributes"
+    - "magical ability"
+    - "spirit/critter powers"
+    - "astral capability"
+
+links:
+  uses:
+    - subsystem.spirits.powers
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.spirits.combat
+    - subsystem.magic.astral
+
+sources:
+  - source: source.sr3-core
+    page: 267
+    relation: defines
+    note: "Dragons"
+
+notes:
+  - "Dragon subspecies and great-dragon distinctions are preserved in later setting/rules sources rather than collapsed here."
