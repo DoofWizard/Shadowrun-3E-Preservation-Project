@@ -1,0 +1,16 @@
+id: rule.cyberware.battletac-network
+record_type: rule
+name: "BattleTac Network"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 42, basis: defines}
+scope: {applies_to: ["BattleTac master/receiver networks and compatible drones or remote-control systems"]}
+resolution:
+  summary: "BattleTac links a master component to receiver components and continuously shares tactical data, maps, unit status, target information and requests. Networked units can receive Small Unit Tactics and Initiative-related benefits, and compatible drone networks can exchange BattleTac information through the required interfaces."
+  inputs: ["master component", "receiver components", "network membership", "Small Unit Tactics"]
+  outputs: ["shared tactical information and network bonuses"]
+  steps: []
+links: {uses: [rule.cyberware.tactical-computer], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "42-44", relation: defines, note: "BattleTac systems, game effects and drone networks"}
+notes: []
