@@ -30,7 +30,7 @@ A later publication is never assumed to overwrite an earlier rule solely because
 | SR3 Core (FASA7001) | ingesting | Core concepts + chargen + Skills + Combat + Vehicles/Drones + core Magic baseline complete; Matrix next |
 | Shadowrun Companion (FASA7905a) | ingesting | Alternate chargen, optional training, Karma options begun |
 | Matrix (FASA7909) | ingesting | Source lineage, SOTA, construction, programming/options begun |
-| Man & Machine (FASA7126) | structural_scan | TOC/domain map complete; detailed ingest next |
+| Man & Machine (FASA7126) | ingesting | Detailed ingest underway: cyberware/grades, cybermancy, bioware, nanotech, chemistry/drugs, stress/healing, surgery; equipment/entity coverage and completeness audit remain |
 | Magic in the Shadows (FASA7907) | structural_scan | TOC/domain map complete; detailed ingest next |
 | Cannon Companion (FASA7908) | structural_scan | TOC/domain map complete; detailed ingest next |
 | Rigger 3 (FASA7910) | structural_scan | TOC/domain map complete; detailed ingest next |
