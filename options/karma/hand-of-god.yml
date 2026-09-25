@@ -1,0 +1,43 @@
+id: option.karma.hand-of-god
+record_type: option
+name: "Hand of God"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.sr3-core
+  page: 248
+  basis: adds_option
+
+option_for:
+  - rule.karma.karma-pool
+
+selection:
+  timing: "when a player character would otherwise certainly die"
+  prerequisites:
+    - "gamemaster allows the option"
+    - "character has at least 1 Karma Pool point"
+    - "character has never used Hand of God before"
+  incompatible_with: []
+
+effects:
+  - "The character permanently burns all current Good Karma and Karma Pool at once."
+  - "The character escapes certain death by a narratively plausible or miraculous outcome determined by the gamemaster."
+  - "The character begins again with no Good Karma and no Karma Pool."
+  - "A character may use Hand of God only once, ever."
+
+links:
+  modifies:
+    - rule.karma.karma-pool
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 248
+    relation: adds_option
+    note: "Hand of God"
+
+notes:
+  - "Explicitly optional."
