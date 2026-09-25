@@ -1,0 +1,25 @@
+id: rule.spirit-power.innate-spell
+record_type: rule
+name: "Innate Spell"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 264, basis: defines}
+
+scope:
+  applies_to: ["critters/beings with Innate Spell"]
+
+resolution:
+  summary: "Allows the being to create an effect similar to a specified spell. Resolve it broadly as spellcasting using Essence as both Sorcery and Force, with the power's listed Damage Level/effect. Spell defense may protect against applicable innate spells."
+  inputs: ["user Essence", "specified innate spell effect", "target"]
+  outputs: ["spell-like effect"]
+
+power_profile: {type: physical, action: complex, range: LOS, duration: instant}
+
+links: {uses: [procedure.magic.spellcasting], affects: [], modified_by: [], interacts_with: [rule.magic.spell-defense]}
+
+sources:
+  - {source: source.sr3-core, page: 264, relation: defines, note: "Innate Spell"}
+
+notes:
+  - "Drain generally does not apply, though the source describes a Drain case for sustained innate spells."
