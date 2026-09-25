@@ -1,0 +1,13 @@
+id: entity.gear.hazmat-xe
+record_type: entity
+name: "Hazmat and X-E Gear"
+domain: gear
+status: ingested
+intrinsic:
+  gas_mask_air_tank: {availability: "4/12 hrs", cost_nuyen: 1000, street_index: 1, legality: "Legal"}
+  hazmat_suit: {availability: "6/1 wk", cost_nuyen: 5000, street_index: 1.5, legality: "Legal", armor: "1/1"}
+  xe_suit: {availability: "8/2 wks", cost_nuyen: 15000, street_index: 2, legality: "Legal", armor: "3/2"}
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.chemistry.drug-exposure]}
+sources:
+  - {source: source.mm, page: 116, relation: defines, note: "Hazmat Gear game effects and statistics"}
+notes: []
