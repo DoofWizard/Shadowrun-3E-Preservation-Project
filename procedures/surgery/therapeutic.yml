@@ -1,0 +1,15 @@
+id: procedure.surgery.therapeutic
+record_type: procedure
+name: "Therapeutic Surgery"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 147, basis: defines}
+purpose: "Repair damaged bioware or Attributes affected by Stress."
+prerequisites: []
+inputs: ["target bioware or Attribute", "Stress/failure state", "planned options"]
+stages: []
+outcomes: ["Stress corrected", "failed system restored where applicable"]
+links: {uses: [rule.surgery.surgical-test, rule.damage.stress-points], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, pages: "147-148", relation: defines, note: "Therapeutic Surgery procedures and target numbers"}
+notes: []
