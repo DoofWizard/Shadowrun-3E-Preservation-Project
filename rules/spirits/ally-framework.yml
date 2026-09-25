@@ -1,0 +1,16 @@
+id: rule.spirits.ally-framework
+record_type: rule
+name: "Ally Spirit Framework"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 107, basis: defines}
+scope: {applies_to: ["ally spirits"]}
+resolution:
+  summary: "An ally spirit is a unique spirit created by a magician from a custom formula. The creator sacrifices 1 point of Magic and spends Karma to determine Force, Attributes, skills, forms, powers, spells and Karma Pool. The ally is bound to the creator but grows more independent as it gains power; an escaped ally becomes a free spirit."
+  inputs: ["creator", "ally formula", "Magic sacrifice", "Karma design budget"]
+  outputs: ["custom ally spirit"]
+  steps: []
+links: {uses: [entity.spirit.ally], affects: [], modified_by: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, pages: "107-111", relation: defines, note: "Ally Spirits / powers / services / designing an ally"}
+notes: []
