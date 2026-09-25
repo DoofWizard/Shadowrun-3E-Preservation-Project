@@ -1,0 +1,41 @@
+id: rule.damage.stress-points
+record_type: rule
+name: "Stress Points"
+domain: damage
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 124
+  basis: defines
+
+scope:
+  applies_to:
+    - "implants and Attributes affected by wound effects or other Stress sources"
+
+resolution:
+  summary: "Stress Points represent accumulated wear, injury or dysfunction. When an implant or Attribute takes Stress, add the specified Stress Points and make a Stress Test where required; increasing Stress raises the risk or severity of failure."
+  inputs:
+    - "existing Stress Points"
+    - "new Stress source"
+  outputs:
+    - "updated Stress"
+    - "possible implant/Attribute failure"
+
+links:
+  uses: []
+  affects:
+    - subsystem.damage.stress
+  modified_by: []
+  interacts_with:
+    - rule.damage.attribute-damage
+
+sources:
+  - source: source.mm
+    page: 124
+    relation: defines
+    note: "Stress Points / Stress from Wound Effects / Other Sources of Stress"
+
+notes:
+  - "A wound effect that damages an implant or Attribute adds 1D6 ÷ 2 Stress Points; the Rule of Six does not apply to that roll."
