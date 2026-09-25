@@ -1,0 +1,16 @@
+id: rule.cyberware.independent-cybereyes
+record_type: rule
+name: "Independent Cybereyes"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 16, basis: defines}
+scope: {applies_to: ["independent cybereyes mounted away from normal paired eye placement"]}
+resolution:
+  summary: "Independent cybereyes may be installed elsewhere on the body and must be mentally selected for visual use. Switching imposes an adaptation penalty to vision-based tests, and independent eyes use the single-cybereye accessory rules."
+  inputs: ["active eye", "placement", "accessories"]
+  outputs: ["visual-test modifiers and available functions"]
+  steps: []
+links: {uses: [rule.cyberware.single-cybereye], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "16-17", relation: defines, note: "Independent Cybereyes"}
+notes: []
