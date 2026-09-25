@@ -1,0 +1,22 @@
+id: entity.skill.diving
+record_type: entity
+name: "Diving"
+domain: skills
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 87, basis: defines}
+intrinsic:
+  type: "Active Skill"
+  category: "physical"
+  linked_attribute: "Body"
+  default: "Body Attribute"
+  specializations:
+    - "Deep-water Diving"
+    - "Mixed-gas Diving"
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.skills.defaulting, rule.skills.specialization]
+sources:
+  - {source: source.sr3-core, page: 87, relation: defines, note: "Skills — Active Skill categories"}
+notes: []
