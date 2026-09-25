@@ -1,0 +1,21 @@
+id: rule.nanotech.pilot-and-programming
+record_type: rule
+name: "Nanite Pilot Ratings and Programming"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 96, basis: defines}
+scope:
+  applies_to: ["nanoware and nanodrones"]
+resolution:
+  summary: "Nanites are semi-autonomous game-system devices rather than full robots. Pilot Rating measures the number of functions a system can perform; common systems are fixed-function, while rare reprogrammable systems can have their instructions modified as described by the source."
+  inputs: ["nanite system", "Pilot Rating"]
+  outputs: ["available functions"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.nanotech.core]
+sources:
+  - {source: source.mm, page: 96, relation: defines, note: "Nanotech and its Uses / Programming Nanites"}
+notes: []
