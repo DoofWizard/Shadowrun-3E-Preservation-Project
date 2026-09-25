@@ -1,0 +1,23 @@
+id: rule.magic.astral-barriers
+record_type: rule
+name: "Astral Barriers"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 174, basis: defines}
+scope:
+  applies_to: ["astral forms attempting to cross or attack astral barriers"]
+  excludes: []
+resolution:
+  summary: "Astral barriers block astral movement/perception and have Force/ratings that govern crossing and destruction. Natural barriers and wards use related but distinct resistance and permanence rules."
+  inputs: ["barrier Force/rating","astral form","attempt type"]
+  outputs: ["blocked passage, passage, barrier damage or destruction"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.magic.astral-combat]
+sources:
+  - {source: source.sr3-core, page: 174, relation: defines, note: "Astral Barriers / Wards"}
+  - {source: source.sr3-core, page: 176, relation: extends, note: "Astral Objects and destroying astral forms"}
+notes: []
