@@ -1,0 +1,23 @@
+id: rule.magic.spirit-services
+record_type: rule
+name: "Spirit Services"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 185, basis: defines}
+scope:
+  applies_to: ["summoned nature spirits and bound elementals"]
+  excludes: []
+resolution:
+  summary: "Spirits owe a finite number of services determined by successful conjuring. A service can require use of spirit powers or specified tasks; different spirit types have different service limits, duration and availability."
+  inputs: ["spirit type","services owed","command"]
+  outputs: ["service consumed/performed"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.drones.issuing-commands]
+sources:
+  - {source: source.sr3-core, page: 185, relation: defines, note: "Nature Spirit Services"}
+  - {source: source.sr3-core, page: 187, relation: extends, note: "Elemental Services"}
+notes: []
