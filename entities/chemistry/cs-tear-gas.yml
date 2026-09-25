@@ -1,0 +1,17 @@
+id: entity.chemistry.cs-tear-gas
+record_type: entity
+name: "CS/Tear Gas"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "4/36 hrs"
+  cost_nuyen_per_dose: 10
+  street_index: 1
+  legality: "Legal"
+  vector: "Contact or inhalation"
+  speed: "1 Combat Turn"
+  damage: "Special"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 118, relation: defines, note: "CS/Tear Gas game effects and statistics"}
+notes: []
