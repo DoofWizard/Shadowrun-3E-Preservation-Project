@@ -1,0 +1,16 @@
+id: option.magic.corrupted-magician
+record_type: option
+name: "Corrupted Magician"
+domain: magic
+status: ingested
+effective: {status: restricted, source: source.mits, page: 134, basis: defines}
+option_for: [subsystem.magic.magical-threats]
+selection: {timing: "NPC magical-threat creation", prerequisites: [], incompatible_with: []}
+effects:
+  - "Represents magicians who pursue power through deliberately harmful or corrupt magical practice."
+  - "Typical starting Potency is 1D6 ÷ 2, rounded down, and Potency rises or falls with source-defined threat goals."
+  - "Shadow free spirits may form Spirit Pacts with corrupted magicians."
+links: {modifies: [subsystem.magic.magical-threats], requires: [rule.magic.potency], interacts_with: [rule.magic.spirit-pact-threat]}
+sources:
+  - {source: source.mits, pages: "134-135", relation: defines, note: "The Corrupted / Corrupt Potency"}
+notes: []
