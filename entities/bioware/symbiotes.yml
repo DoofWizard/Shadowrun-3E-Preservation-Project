@@ -1,0 +1,19 @@
+id: entity.bioware.symbiotes
+record_type: entity
+name: "Symbiotes"
+domain: bioware
+status: ingested
+intrinsic:
+  levels:
+    1: {bio_index: 0.4, availability: "5/10 days", cost_nuyen: 15000, street_index: 1, legality: "Legal", healing_time_percent: 90}
+    2: {bio_index: 0.7, availability: "5/10 days", cost_nuyen: 35000, street_index: 1, legality: "Legal", healing_time_percent: 70}
+    3: {bio_index: 1.0, availability: "5/10 days", cost_nuyen: 60000, street_index: 1, legality: "Legal", healing_time_percent: 50}
+links:
+  uses: [procedure.healing.natural-and-medical]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "69-70", relation: defines, note: "Symbiotes description, healing table, stress effects and statistics"}
+notes:
+  - "Tailored microorganisms accelerate natural healing and increase food/lifestyle requirements."
