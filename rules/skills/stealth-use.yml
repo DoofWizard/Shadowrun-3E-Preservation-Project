@@ -1,0 +1,33 @@
+id: rule.skills.stealth-use
+record_type: rule
+name: "Using Stealth"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 95
+  basis: defines
+
+scope:
+  applies_to: ["Sneaking","Hiding","Theft","Alertness uses of Stealth"]
+  excludes: []
+
+resolution:
+  summary: "Sneaking or hiding uses a Stealth Open Test; the highest result becomes the target number for observers' Perception Tests. Theft commonly uses an Opposed Test of Stealth against the victim's Intelligence. Alertness is treated as a Complementary Skill for Perception Tests when applicable."
+  inputs: ["Stealth rating","specialization","observer Perception or victim Intelligence"]
+  outputs: ["detection/evasion or theft result"]
+  steps: []
+
+links:
+  uses: [entity.skill.stealth, rule.tests.open-test, rule.tests.opposed-test, rule.skills.complementary-skills]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 95, relation: defines, note: "Using Stealth"}
+  - {source: source.sr3-core, page: 96, relation: extends, note: "Theft and Alertness"}
+
+notes: []
