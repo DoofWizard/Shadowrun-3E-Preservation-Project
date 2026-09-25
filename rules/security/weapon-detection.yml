@@ -1,0 +1,43 @@
+id: rule.security.weapon-detection
+record_type: rule
+name: "Weapon and Cyberware Detection"
+domain: security
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 237
+  basis: defines
+
+scope:
+  applies_to:
+    - "security checks for concealed weapons or cyberware"
+
+resolution:
+  summary: "Automatic detection systems generally make a Rating-based test against an item's Concealability or use the stated detector procedure. Manual searches use Perception against Concealability with search modifiers; cyberware scanners use their own ratings and thresholds."
+  inputs:
+    - "detector/searcher rating"
+    - "Concealability"
+    - "search conditions"
+  outputs:
+    - "item/cyberware detected or missed"
+
+links:
+  uses:
+    - rule.perception.perception-test
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 237
+    relation: defines
+    note: "Weapon Detection — Automatic Systems, Manual Detection, Cyberware Detection"
+  - source: source.sr3-core
+    page: 236
+    relation: clarifies
+    note: "Physical Search Modifiers Table"
+
+notes: []
