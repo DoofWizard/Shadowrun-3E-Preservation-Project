@@ -1,0 +1,16 @@
+id: rule.spirits.free-spirit-good-karma
+record_type: rule
+name: "Free Spirits and Good Karma"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 116, basis: defines}
+scope: {applies_to: ["free spirits receiving or spending Good Karma"]}
+resolution:
+  summary: "Free spirits cannot earn Karma directly and grow through Good Karma gifted by living beings. Full magicians normally transfer at 1:1, aspected magicians/adepts at 2:1, and mundanes at 3:1; a Conjuring ritual can improve the donor ratio. Free spirits spend Good Karma to increase Spirit Energy, raise Force by trading Spirit Energy plus Karma, improve skills, learn spells, and increase Karma Pool."
+  inputs: ["donor type", "Good Karma paid", "desired spirit improvement"]
+  outputs: ["Good Karma received or improved spirit rating"]
+  steps: []
+links: {uses: [rule.spirits.spirit-energy], affects: [entity.spirit.free-spirit], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "116-117", relation: defines, note: "Free Spirits and Good Karma / Uses of Good Karma"}
+notes: []
