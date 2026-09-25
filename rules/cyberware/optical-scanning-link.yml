@@ -1,0 +1,16 @@
+id: rule.cyberware.optical-scanning-link
+record_type: rule
+name: "Optical Scanning Link"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 14, basis: defines}
+scope: {applies_to: ["optiscan links and compatible optical devices"]}
+resolution:
+  summary: "An optical scanning link transfers data through an infrared optical beam rather than radio. It requires line of sight, is disrupted by obscurants, and can link to compatible datajack or external optical devices through the required interface."
+  inputs: ["line of sight", "compatible transmitter/receiver", "environmental obscurants"]
+  outputs: ["successful or failed optical data link"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberware.interconnectivity]}
+sources:
+  - {source: source.mm, page: 14, relation: defines, note: "Optical Scanning Link"}
+notes: []
