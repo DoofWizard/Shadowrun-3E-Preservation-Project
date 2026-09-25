@@ -3,9 +3,14 @@ record_type: entity
 name: "Spell Defense Focus"
 domain: magic
 status: ingested
-intrinsic: {bond_karma: "3 x Force"}
+intrinsic:
+  availability: "5/48 hrs"
+  cost: "Force x 75,000 nuyen"
+  street_index: 2
+  bond_karma: "3 x Force"
 links: {uses: [rule.magic.spell-defense], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mits, page: 45, relation: defines, note: "Spell Defense Foci"}
+  - {source: source.mits, page: 169, relation: clarifies, note: "Magical Gear Table pricing/availability"}
 notes:
   - "Provides additional spell-defense dice up to the focus's Force."
