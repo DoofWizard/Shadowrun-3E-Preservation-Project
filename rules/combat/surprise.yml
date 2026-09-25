@@ -1,0 +1,23 @@
+id: rule.combat.surprise
+record_type: rule
+name: "Surprise"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 109, basis: defines}
+scope:
+  applies_to: ["combatants who may be caught unaware"]
+  excludes: []
+resolution:
+  summary: "Resolve surprise with Reaction Tests against target number 4, modified by circumstance. Compare successes between opponents: a character who has fewer successes against a particular opponent is surprised by that opponent and is restricted from acting against or defending against that opponent as specified."
+  inputs: ["Reaction","surprise modifiers","opposing successes"]
+  outputs: ["surprised/not surprised relationship per opponent"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 109, relation: defines, note: "Surprise"}
+notes:
+  - "Surprise can be asymmetric and opponent-specific."
