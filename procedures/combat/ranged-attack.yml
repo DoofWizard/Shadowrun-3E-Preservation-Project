@@ -1,0 +1,27 @@
+id: procedure.combat.ranged-attack
+record_type: procedure
+name: "Resolving Ranged Combat"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 109, basis: defines}
+purpose: "Resolve a ranged attack from range determination through damage."
+prerequisites: ["appropriate ready ranged weapon"]
+inputs: ["range","weapon","attacker skill","modifiers","defender Combat Pool/armor/Body"]
+stages:
+  - {id: range, name: "Determine Range", test_or_action: "Measure range and determine the weapon's range category/base target number.", outputs: ["base target number"]}
+  - {id: modifiers, name: "Apply Situational Modifiers", test_or_action: "Apply ranged combat target-number modifiers.", outputs: ["final attack target number"]}
+  - {id: attack, name: "Attacker Success Test", test_or_action: "Roll the appropriate Combat Skill plus eligible Combat Pool dice.", outputs: ["attack successes"]}
+  - {id: dodge, name: "Dodge Test", test_or_action: "If the target chooses and can dodge, roll eligible Combat Pool dice and reduce attack successes.", outputs: ["remaining attack successes"]}
+  - {id: resist, name: "Damage Resistance Test", test_or_action: "Target rolls Body plus eligible Combat Pool dice against adjusted weapon Power.", outputs: ["resistance successes"]}
+  - {id: outcome, name: "Determine Outcome", test_or_action: "Compare successes to stage damage up/down.", outputs: ["final Damage Level"]}
+  - {id: apply, name: "Apply Damage", test_or_action: "Record damage on the target's Condition Monitor.", outputs: ["updated condition"]}
+outcomes: ["miss","dodged attack","resolved damage"]
+links:
+  uses: [rule.combat.range-target-number, modifier.combat.ranged-target-number, rule.combat.dodge-test, rule.combat.damage-resistance, rule.combat.damage-staging]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 109, relation: defines, note: "Ranged Combat / Resolving Ranged Combat"}
+  - {source: source.sr3-core, page: 110, relation: extends, note: "Determine Outcome / Apply Damage"}
+notes: []
