@@ -3,9 +3,14 @@ record_type: entity
 name: "Shielding Focus"
 domain: magic
 status: ingested
-intrinsic: {bond_karma: "4 x Force"}
+intrinsic:
+  availability: "6/72 hrs"
+  cost: "Force x 95,000 nuyen"
+  street_index: 2
+  bond_karma: "4 x Force"
 links: {uses: [option.magic.metamagic-shielding], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mits, page: 45, relation: defines, note: "Shielding Foci"}
+  - {source: source.mits, page: 169, relation: clarifies, note: "Magical Gear Table pricing/availability"}
 notes:
   - "Functions like a spell-defense focus but contributes its dice to Shielding."
