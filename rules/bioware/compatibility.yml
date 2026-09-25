@@ -1,0 +1,38 @@
+id: rule.bioware.compatibility
+record_type: rule
+name: "Bioware Compatibility"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 78
+  basis: defines
+
+scope:
+  applies_to:
+    - "multiple implanted bioware systems"
+
+resolution:
+  summary: "Some bioware implants are mutually incompatible or limited in how many copies may coexist. Implant-specific compatibility restrictions control whether systems can be installed together and generally prevent redundant copies of the same implant unless explicitly permitted."
+  inputs:
+    - "installed implants"
+    - "proposed implant"
+  outputs:
+    - "compatible or incompatible installation"
+
+links:
+  uses: []
+  affects:
+    - subsystem.bioware.core
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 78
+    relation: defines
+    note: "Bioware Compatibility"
+
+notes: []
