@@ -1,0 +1,39 @@
+id: entity.skill.sorcery
+record_type: entity
+name: "Sorcery"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 87
+  basis: defines
+
+intrinsic:
+  type: "Active Skill"
+  category: "magical"
+  linked_attribute: "Willpower"
+  default: "None"
+  specializations:
+    - "Spellcasting"
+    - "Spell Defense"
+    - "Dispelling"
+    - "Astral Combat"
+    - "Spell Category"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.skills.defaulting
+    - rule.skills.specialization
+
+sources:
+  - source: source.sr3-core
+    page: 87
+    relation: defines
+    note: "Skills — Active Skill categories"
+
+notes: []
