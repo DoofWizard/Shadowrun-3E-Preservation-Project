@@ -1,0 +1,60 @@
+id: subsystem.gear.magical-equipment
+record_type: subsystem
+name: "Magical Equipment"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 305
+  basis: references
+
+state:
+  tracked_values:
+    - "Force or Rating"
+    - "Availability"
+    - "Cost"
+    - "Street Index"
+    - "Legality"
+
+participants:
+  - "foci"
+  - "magical supplies"
+  - "fetishes"
+  - "spell formulas"
+
+components:
+  - "spell focus"
+  - "spirit focus"
+  - "power focus"
+  - "sustaining focus"
+  - "weapon focus"
+  - "conjuring materials"
+  - "lodge materials"
+  - "hermetic library"
+  - "fetish"
+  - "spell formula"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.foci
+    - subsystem.magic.sorcery
+    - subsystem.magic.conjuring
+
+sources:
+  - source: source.sr3-core
+    page: 305
+    relation: references
+    note: "Magical Equipment table and pointers to Magic chapter"
+
+notes:
+  - "Mechanical use of foci/spell formulas remains canonical in the Magic records; Street Gear supplies purchase metadata."
