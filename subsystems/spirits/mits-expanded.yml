@@ -1,0 +1,67 @@
+id: subsystem.spirits.mits-expanded
+record_type: subsystem
+name: "Expanded Spirit Rules"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 96
+  basis: extends
+
+state:
+  tracked_values:
+    - "Force"
+    - "spirit type"
+    - "services"
+    - "domain/native metaplane"
+    - "astral movement"
+    - "disruption"
+    - "spontaneous appearance"
+
+participants:
+  - "spirits"
+  - "summoners"
+
+components:
+  - "watcher spirits"
+  - "loa spirits"
+  - "zombies"
+  - "spirits of the elements"
+  - "ancestor spirits"
+  - "great form spirits"
+  - "ally spirits"
+  - "free spirits"
+  - "ghosts"
+  - "unique spirits"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.spirits.actions-skills
+    - rule.spirits.combat
+  procedures: []
+  entities: []
+  options:
+    - option.magic.metamagic-invoking
+  modifiers: []
+  interacts_with:
+    - subsystem.spirits.powers
+    - subsystem.magic.conjuring
+    - subsystem.magic.metaplanes
+
+sources:
+  - source: source.mits
+    page: 96
+    relation: extends
+    note: "Spirits — Spirit Rules"
+  - source: source.mits
+    pages: "98-122"
+    relation: extends
+    note: "Watcher, loa, zombies, spirits of elements, ancestors, great forms, allies, free spirits, ghosts and unique spirits"
+
+notes:
+  - "Unless otherwise stated, these spirits inherit the SR3 general spirit rules."
