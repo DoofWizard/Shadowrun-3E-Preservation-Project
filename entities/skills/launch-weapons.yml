@@ -14,14 +14,13 @@ intrinsic:
   type: "Active Skill"
   category: "combat"
   linked_attribute: "Intelligence"
-  default: "Gunnery"
-  specializations:
-    - "by specific missile or rocket type"
-    - "Grenade Launchers"
-    - "Spotter"
+  summary: "Use and targeting of missile, rocket, mortar, and grenade-launching systems, including sensor-enhanced fire."
+  default_routes: ["Gunnery"]
+  specializations: ["by specific missile or rocket type","Grenade Launchers","Spotter"]
 
 links:
-  uses: []
+  uses:
+    - rule.skills.skill-ratings
   requires: []
   component_of: []
   interacts_with:
@@ -32,6 +31,6 @@ sources:
   - source: source.sr3-core
     page: 86
     relation: defines
-    note: "Skills — Active Skill categories"
+    note: "Skills — Active Skill Categories"
 
 notes: []
