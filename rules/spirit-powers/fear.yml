@@ -1,0 +1,24 @@
+id: rule.spirit-power.fear
+record_type: rule
+name: "Fear"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Fear"]
+
+resolution:
+  summary: "Fills victims with overwhelming fear. Resolve an Opposed Test between the victim's Willpower and the user's Essence; the user's net successes determine how long the victim flees or panics."
+  inputs: ["victim Willpower", "user Essence"]
+  outputs: ["resisted or fear duration"]
+
+power_profile: {type: mana, action: complex, range: LOS, duration: special}
+
+links: {uses: [rule.tests.opposed-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Fear"}
+
+notes: []
