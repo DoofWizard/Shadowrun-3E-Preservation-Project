@@ -1,0 +1,22 @@
+id: rule.matrix.detection-factor
+record_type: rule
+name: "Detection Factor"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 207, basis: defines}
+scope:
+  applies_to: ["Matrix intrusion detection"]
+  excludes: []
+resolution:
+  summary: "Detection Factor measures how difficult the decker's persona is for Matrix systems/IC to detect and is derived from Masking together with the relevant deck/persona configuration. It modifies the system's Security Tests used to detect/increase security tally."
+  inputs: ["Masking/persona configuration"]
+  outputs: ["Detection Factor"]
+  steps: []
+links:
+  uses: []
+  affects: [rule.matrix.security-tally]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 207, relation: defines, note: "Detection Factor"}
+notes: []
