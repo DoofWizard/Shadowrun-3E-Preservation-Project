@@ -1,0 +1,45 @@
+id: option.matrix.sota
+record_type: option
+name: "Matrix State-of-the-Art (SOTA)"
+domain: matrix
+status: ingested
+
+effective:
+  status: optional
+  source: source.matrix
+  page: 28
+  basis: adds_option
+
+option_for:
+  - subsystem.matrix
+
+selection:
+  timing: "campaign maintenance"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Introduces periodic state-of-the-art advances for Matrix hardware/software."
+  - "When a covered technology advances, unmaintained affected components/programs can lose effective rating."
+  - "Maintenance may be paid through skill, nuyen, and/or Good Karma under the SOTA Factor procedure."
+  - "High and Luxury lifestyles reduce SOTA maintenance burden."
+
+links:
+  modifies: []
+  requires: []
+  interacts_with:
+    - entity.lifestyle.lifestyle
+    - rule.karma.core-karma
+
+sources:
+  - source: source.matrix
+    page: 28
+    relation: adds_option
+    note: "Optional Rule: SOTA"
+  - source: source.matrix
+    page: 29
+    relation: clarifies
+    note: "SOTA Factor, Lifestyle and SOTA, Maintenance Costs"
+
+notes:
+  - "Explicitly optional; it does not replace baseline SR3 equipment/program persistence."
