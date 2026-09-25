@@ -1,0 +1,16 @@
+id: rule.cyberware.cybered-critters
+record_type: rule
+name: "Cyberware and Critters"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 44, basis: clarifies}
+scope: {applies_to: ["critters with cyberware"]}
+resolution:
+  summary: "Critters generally follow normal cyberware rules except where their innate abilities alter implantation or recovery. Awakened critters are particularly affected because Essence loss can diminish power, while some regenerating creatures may violently reject foreign implants."
+  inputs: ["critter type", "cyberware", "innate powers"]
+  outputs: ["compatibility and special implantation consequences"]
+  steps: []
+links: {uses: [subsystem.cyberware.core], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 44, relation: clarifies, note: "Cyberware and Critters"}
+notes: []
