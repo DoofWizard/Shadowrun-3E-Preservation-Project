@@ -1,0 +1,23 @@
+id: rule.matrix.security-tally
+record_type: rule
+name: "Security Tally"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 210, basis: defines}
+scope:
+  applies_to: ["intrusion into a Matrix host/grid"]
+  excludes: []
+resolution:
+  summary: "Security Tally accumulates host/grid Security Test successes against the decker. As tally reaches trigger-step values in the active security sheaf, the system activates IC, alerts and other security responses. Tally is tied to the intrusion/session and can be modified by specified Matrix actions and effects."
+  inputs: ["Security Test successes","security sheaf/trigger steps","alert state"]
+  outputs: ["updated Security Tally","triggered security event"]
+  steps: []
+links:
+  uses: [rule.matrix.system-test, rule.matrix.security-sheaf]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.matrix.alert-status]
+sources:
+  - {source: source.sr3-core, page: 210, relation: defines, note: "Security Tally"}
+  - {source: source.sr3-core, page: 211, relation: extends, note: "Trigger Steps / Multiple Triggers / Grid Security Tallies"}
+notes: []
