@@ -1,0 +1,16 @@
+id: rule.spirit-powers.free-spirit-dispelling
+record_type: rule
+name: "Free Spirit Power: Dispelling"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 117, basis: defines}
+scope: {applies_to: ["free spirits with Dispelling"]}
+resolution:
+  summary: "The free spirit can break spells using the standard dispelling rules, treating Force plus Spirit Energy as its effective Sorcery Skill."
+  inputs: ["Force", "Spirit Energy", "target spell"]
+  outputs: ["dispel result"]
+  steps: []
+links: {uses: [rule.magic.dispelling, rule.spirits.spirit-energy], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 117, relation: defines, note: "Dispelling"}
+notes: []
