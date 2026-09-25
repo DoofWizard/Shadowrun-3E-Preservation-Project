@@ -1,0 +1,60 @@
+id: subsystem.skillsofts.core
+record_type: subsystem
+name: "Skillsofts and Chips"
+domain: skillsofts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 295
+  basis: defines
+
+state:
+  tracked_values:
+    - "skillsoft type"
+    - "rating"
+    - "memory size"
+    - "access method"
+    - "chip/object-code form"
+
+participants:
+  - "skillsofts"
+  - "optical memory chips"
+  - "chipjacks/datajacks/headware memory"
+  - "skillwire systems"
+
+components:
+  - "knowsoft"
+  - "linguasoft"
+  - "datasoft"
+  - "activesoft"
+  - "skillsoft jukebox"
+  - "optical memory chip"
+  - "autonav map chip"
+  - "BTL chips"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.skillsofts.use
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.matrix
+
+sources:
+  - source: source.sr3-core
+    page: 295
+    relation: defines
+    note: "Skillsofts and Chips / Source and Object Code"
+  - source: source.sr3-core
+    page: 296
+    relation: extends
+    note: "Skillsoft types, memory, access methods and BTLs"
+
+notes: []
