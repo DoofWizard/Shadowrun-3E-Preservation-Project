@@ -1,0 +1,42 @@
+id: option.magic.sacrificing
+record_type: option
+name: "Sacrificing Metamagic / Blood Magic"
+domain: magic
+status: ingested
+
+effective:
+  status: restricted
+  source: source.mits
+  page: 133
+  basis: defines
+
+option_for:
+  - subsystem.magic.magical-threats
+
+selection:
+  timing: "magical-threat or setting-specific use"
+  prerequisites:
+    - "initiate"
+    - "instruction from a group that already knows the technique"
+  incompatible_with: []
+
+effects:
+  - "Sacrificing draws magical power from physical harm inflicted on a living donor to reduce Drain for a Magical Skill test."
+  - "The technique is tied to blood-magic practice and cannot be learned through self-initiation."
+  - "The source also defines a sacrifice geas requiring repeated sentient killing to maintain magical ability."
+
+links:
+  modifies:
+    - rule.magic.drain
+  requires: []
+  interacts_with:
+    - subsystem.magic.magical-threats
+
+sources:
+  - source: source.mits
+    page: 133
+    relation: defines
+    note: "Blood Magic / Sacrifice Geas / Sacrificing Metamagic"
+
+notes:
+  - "The source frames blood magic as a dangerous/restricted magical-threat practice rather than a standard player-character technique."
