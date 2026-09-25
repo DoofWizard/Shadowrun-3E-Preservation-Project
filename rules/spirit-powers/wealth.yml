@@ -1,0 +1,16 @@
+id: rule.spirit-powers.wealth
+record_type: rule
+name: "Free Spirit Power: Wealth"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 118, basis: defines}
+scope: {applies_to: ["free spirits with Wealth"]}
+resolution:
+  summary: "A free spirit can create precious stones or metals. The base value is 1,000 nuyen x Force, then multiplied by a D6 result plus Spirit Energy. The spirit may produce this wealth once every 30 days, and created material bears the spirit's astral signature."
+  inputs: ["Force", "Spirit Energy", "D6 roll"]
+  outputs: ["value of created material"]
+  steps: []
+links: {uses: [rule.spirits.spirit-energy], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 118, relation: defines, note: "Wealth"}
+notes: []
