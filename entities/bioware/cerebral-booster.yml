@@ -1,0 +1,19 @@
+id: entity.bioware.cerebral-booster
+record_type: entity
+name: "Cerebral Booster"
+domain: bioware
+status: ingested
+intrinsic:
+  grade: cultured
+  levels:
+    1: {bio_index: 0.4, availability: "6/14 days", cost_nuyen: 50000, street_index: 2, legality: "Legal"}
+    2: {bio_index: 0.8, availability: "6/14 days", cost_nuyen: 110000, street_index: 2, legality: "Legal"}
+links:
+  uses: [rule.cyberware.task-pool]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 72, relation: defines, note: "Cerebral Booster description, game effects, stress effects and statistics"}
+notes:
+  - "Each level adds 1 Intelligence; level 2 also adds a Task Pool of 1."
