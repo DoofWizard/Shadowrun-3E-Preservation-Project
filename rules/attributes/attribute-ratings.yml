@@ -1,0 +1,43 @@
+id: rule.attributes.attribute-ratings
+record_type: rule
+name: "Attribute Ratings"
+domain: attributes
+status: ingested
+
+scope:
+  applies_to:
+    - "Character Attributes"
+  excludes: []
+
+resolution:
+  summary: "An Attribute Rating is normally the number of dice rolled when that Attribute is used for a test. Natural and augmented ratings are distinct; augmented ratings are commonly shown after the natural rating."
+  inputs:
+    - "natural Attribute Rating"
+    - "applicable augmentation"
+  outputs:
+    - "effective Attribute Rating"
+  steps: []
+
+links:
+  uses: []
+  affects:
+    - rule.tests.success-test
+    - rule.tests.opposed-test
+    - rule.tests.open-test
+  modified_by: []
+  interacts_with:
+    - rule.initiative.initiative
+
+sources:
+  - source: source.sr3-core
+    page: 40
+    relation: defines
+    note: "Game Concepts — Attributes"
+  - source: source.sr3-core
+    page: 41
+    relation: clarifies
+    note: "Game Concepts — Attribute Ratings"
+
+notes:
+  - "The core book distinguishes Physical, Mental, and Special Attributes."
+  - "During character creation, natural Physical and Mental Attributes are subject to metatype-based limits; later advancement and augmentation are handled elsewhere."
