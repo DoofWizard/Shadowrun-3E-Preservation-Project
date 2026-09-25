@@ -1,0 +1,22 @@
+id: rule.magic.focus-activation
+record_type: rule
+name: "Focus Activation"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["bonded foci"]
+  excludes: []
+resolution:
+  summary: "A bonded focus must normally be activated before use. Activation is a Simple Action unless the focus type says otherwise; deactivation is a Free Action. A character may keep active only a number of foci up to Intelligence, and a focus deactivates if separated from its owner as specified."
+  inputs: ["bonded focus","owner Intelligence","current active foci"]
+  outputs: ["active/inactive focus state"]
+  steps: []
+links:
+  uses: []
+  affects: [subsystem.magic.foci]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Activation"}
+notes: []
