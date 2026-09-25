@@ -1,0 +1,41 @@
+id: rule.chemistry.tolerance
+record_type: rule
+name: "Drug Tolerance"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 109
+  basis: defines
+
+scope:
+  applies_to:
+    - "repeated use of addictive substances"
+
+resolution:
+  summary: "As repeated use reaches the substance's Edge interval, Addiction and Tolerance ratings can increase. A Body Test against Tolerance determines whether tolerance develops; tolerant characters require a stronger substance or increased dosage to satisfy the addiction and may receive reduced ordinary effects."
+  inputs:
+    - "Tolerance Rating"
+    - "Edge"
+    - "number of uses"
+    - "Body"
+  outputs:
+    - "tolerance state and required future dose/strength"
+
+links:
+  uses:
+    - rule.chemistry.addiction
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.chemistry.additional-dosage
+
+sources:
+  - source: source.mm
+    page: 109
+    relation: defines
+    note: "Acquiring a Tolerance"
+
+notes: []
