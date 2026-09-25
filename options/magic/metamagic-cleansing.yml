@@ -1,0 +1,41 @@
+id: option.magic.metamagic-cleansing
+record_type: option
+name: "Metamagic: Cleansing"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 74
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when reducing eligible temporary background count"
+  prerequisites:
+    - "initiate"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to reduce temporary background count after its underlying cause has been removed."
+  - "Cleansing also erases astral traces/signatures associated with the cleansed background count."
+  - "The initiate tests Sorcery against the background count and resists Drain from the cleansing."
+
+links:
+  modifies: []
+  requires:
+    - option.magic.metamagic
+  interacts_with:
+    - subsystem.magic.astral
+
+sources:
+  - source: source.mits
+    page: 74
+    relation: defines
+    note: "Cleansing"
+
+notes:
+  - "It cannot permanently cleanse lasting background counts such as major toxic sites where the cause persists."
