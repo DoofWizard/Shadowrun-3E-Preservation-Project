@@ -1,0 +1,47 @@
+{
+  "id": "rule.throwing.thrown-melee-weapons",
+  "record_type": "rule",
+  "name": "Throwing Melee Weapons",
+  "domain": "throwing-weapons",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 14,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "melee weapons thrown with Throwing Weapons skill"
+    ]
+  },
+  "resolution": {
+    "summary": "Melee weapons commonly thrown use their standard Damage Codes and the ranges in the Thrown Melee Weapons Table. Poorly balanced improvised throws may receive a gamemaster-assigned +1 to +4 modifier.",
+    "inputs": [
+      "weapon",
+      "Throwing Weapons skill",
+      "weapon balance"
+    ],
+    "outputs": [
+      "range category and attack modifier"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "entity.skill.throwing-weapons"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 14,
+      "relation": "extends",
+      "note": "Throwing Weapons / Thrown Melee Weapons Table"
+    }
+  ],
+  "notes": []
+}
