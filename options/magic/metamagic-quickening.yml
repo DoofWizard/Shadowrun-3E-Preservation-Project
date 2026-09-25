@@ -1,0 +1,42 @@
+id: option.magic.metamagic-quickening
+record_type: option
+name: "Metamagic: Quickening"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 77
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "after casting and sustaining an eligible spell"
+  prerequisites:
+    - "initiate"
+    - "eligible sustained spell"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to make a sustained spell self-sustaining without a sustaining focus."
+  - "The initiate sustains the spell for the required time, performs a Sorcery Test, and spends Karma equal to the spell's Force."
+  - "Additional Karma may make the resulting quickened spell harder to dispel."
+
+links:
+  modifies:
+    - subsystem.magic.sorcery
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 77
+    relation: defines
+    note: "Quickening"
+
+notes:
+  - "Exclusive-limited spells may not be quickened."
