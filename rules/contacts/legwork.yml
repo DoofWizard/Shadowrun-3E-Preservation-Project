@@ -1,0 +1,49 @@
+id: rule.contacts.legwork
+record_type: rule
+name: "Contact Legwork"
+domain: contacts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 253
+  basis: defines
+
+scope:
+  applies_to:
+    - "using contacts to obtain information"
+
+resolution:
+  summary: "Legwork normally uses an Etiquette Success Test, often against TN 4, to determine how much information a contact provides. The number of successes controls the amount/detail of information available; the gamemaster may adjust the target number or outcome for the specific contact and circumstances."
+  inputs:
+    - "appropriate Etiquette specialization"
+    - "contact"
+    - "information sought"
+    - "target number and situational modifiers"
+  outputs:
+    - "information level available"
+    - "time/cost/relationship consequences"
+
+links:
+  uses:
+    - entity.skill.etiquette
+    - rule.tests.success-test
+  affects: []
+  modified_by:
+    - rule.contacts.contact-levels
+  interacts_with:
+    - rule.contacts.searching-matrix
+
+sources:
+  - source: source.sr3-core
+    page: 253
+    relation: defines
+    note: "Contacts — Legwork"
+  - source: source.sr3-core
+    page: 254
+    relation: extends
+    note: "Contact fees, checking around, rushing a meeting, appropriate contact restrictions"
+
+notes:
+  - "A contact's knowledge is distinct from willingness to reveal it."
