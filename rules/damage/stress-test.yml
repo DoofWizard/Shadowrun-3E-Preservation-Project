@@ -1,0 +1,26 @@
+id: rule.damage.stress-test
+record_type: rule
+name: "Stress Test"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 126, basis: defines}
+scope:
+  applies_to: ["implant or Attribute when it takes Stress"]
+resolution:
+  summary: "Whenever an implant or Attribute takes Stress, make a Stress Test. The base target number is the current Stress Point total and one success avoids system failure. Dice depend on implant grade or the unaugmented Attribute value, with the source's cyberlimb-integrity and bioware-boost modifiers."
+  inputs: ["current Stress Points", "implant grade or unaugmented Attribute", "applicable integrity/bioware modifiers"]
+  outputs: ["system remains functional or fails"]
+  steps:
+    - "Determine the Stress Test dice from implant grade or Attribute."
+    - "Apply listed target-number modifiers."
+    - "Roll against the current Stress Point total."
+    - "One or more successes avoids failure."
+links:
+  uses: [rule.damage.stress-points]
+  affects: [subsystem.damage.stress]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 126, relation: defines, note: "Stress Level, Stress Test and Stress Dice tables"}
+notes:
+  - "The Rule of Six is not applied to the roll that generates wound-effect Stress Points, per the preceding Stress rule."
