@@ -1,0 +1,41 @@
+id: option.healing.box-by-box
+record_type: option
+name: "Box-by-Box Physical Healing"
+domain: healing
+status: ingested
+
+effective:
+  status: optional
+  source: source.mm
+  page: 134
+  basis: adds_option
+
+option_for:
+  - procedures.healing.natural-and-medical
+
+selection:
+  timing: "campaign healing rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Replaces the standard SR3 Physical-damage healing stages with healing one Physical damage box at a time."
+  - "Healing without medical care uses an unaugmented Body Test against total Physical damage plus wound and condition modifiers to determine time per box."
+  - "Healing with medical care uses a doubled base period per box plus doctoring modifiers and allows discharge/recovery decisions as damage is reduced."
+
+links:
+  modifies:
+    - procedures.healing.natural-and-medical
+  requires: []
+  interacts_with:
+    - subsystem.damage.stress
+    - subsystem.bioware.core
+
+sources:
+  - source: source.mm
+    page: 134
+    relation: adds_option
+    note: "Healing Physical Damage / Optional Healing Table"
+
+notes:
+  - "Explicitly optional; the page states these rules replace the SR3 pp.126-127 healing rules only when selected."
