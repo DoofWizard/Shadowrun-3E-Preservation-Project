@@ -1,0 +1,21 @@
+id: rule.cybermancy.willpower
+record_type: rule
+name: "Cybermantic Willpower Changes"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 58, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Negative Essence reduces Willpower, but the cybermantic process magically restores up to four points of the Willpower lost from negative Essence, up to the rating held before cybermancy. This restored Willpower cannot be increased or dispelled by magic."
+  inputs: ["negative Essence", "pre-cybermancy Willpower"]
+  outputs: ["effective Willpower"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 58, relation: defines, note: "Changes to Willpower"}
+notes: []
