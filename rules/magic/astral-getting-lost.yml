@@ -1,0 +1,16 @@
+id: rule.magic.astral-getting-lost
+record_type: rule
+name: "Getting Lost in Astral Space"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 82, basis: defines}
+scope: {applies_to: ["astral travelers moving through opaque solid material"]}
+resolution:
+  summary: "When an astral traveler moves blindly through large opaque objects, the gamemaster may make secret Intelligence Tests to determine whether the traveler deviates from the intended route. Repeated failures can leave the traveler completely lost and force retreat to the body or home metaplane."
+  inputs: ["Intelligence", "time traveling blind", "object thickness"]
+  outputs: ["on course, diverted, or lost state"]
+  steps: []
+links: {uses: [rule.magic.astral-projection], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, page: 82, relation: defines, note: "Getting Lost"}
+notes: []
