@@ -1,0 +1,16 @@
+id: rule.spirits.great-loa-nature-elements
+record_type: rule
+name: "Great Loa, Nature Spirits, and Spirits of the Elements"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 107, basis: defines}
+scope: {applies_to: ["great loa, great nature spirits, and great form spirits of the elements"]}
+resolution:
+  summary: "Great loa can possess astrally active beings as well as ordinary eligible hosts, display their loa aspect physically, and gain Immunity (Normal Weapons) plus a loa-specific great-form power. Great nature spirits can cross domain lines, with land/sea/sky types gaining Storm and all great nature spirits able to Divinate. Great spirits of the elements also cross domain lines, count against Charisma-based spirit limits, gain Storm, and gain Cleansing."
+  inputs: ["great-form spirit family", "Force", "domain"]
+  outputs: ["expanded mobility and great-form powers"]
+  steps: []
+links: {uses: [rule.spirits.great-form, rule.spirit-powers.storm, rule.spirit-powers.divination], affects: [], modified_by: [], interacts_with: [option.magic.metamagic-cleansing]}
+sources:
+  - {source: source.mits, page: 107, relation: defines, note: "Great Loa / Great Nature Spirits / Great Spirits of the Elements"}
+notes: []
