@@ -1,0 +1,40 @@
+id: option.karma.hooper-nelson
+record_type: option
+name: "Hooper-Nelson Rule"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.sr3-core
+  page: 248
+  basis: adds_option
+
+option_for:
+  - rule.karma.karma-pool
+
+selection:
+  timing: "before resolving an exceptionally difficult test"
+  prerequisites:
+    - "gamemaster allows the option"
+  incompatible_with: []
+
+effects:
+  - "A character may permanently burn Karma Pool dice to reduce a test's target number by the same amount."
+  - "The book recommends using this only when the target number is 12 or higher."
+  - "The target number cannot be reduced below 8 using this option."
+
+links:
+  modifies:
+    - rule.karma.karma-pool
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 248
+    relation: adds_option
+    note: "The Hooper-Nelson Rule"
+
+notes:
+  - "Explicitly optional."
