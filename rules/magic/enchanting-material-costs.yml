@@ -1,0 +1,17 @@
+id: rule.magic.enchanting-material-costs
+record_type: rule
+name: "Enchanting Material and Service Costs"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 170, basis: defines}
+scope: {applies_to: ["buying magical materials or hiring enchanting services"]}
+resolution:
+  summary: "The source assigns raw, refined, and radical prices to common enchanting materials and provides benchmark service-cost formulas for gathering, refining, making radicals, focus-formula design, and enchanting work. Orichalcum is separately priced per unit."
+  inputs: ["material type", "processing state", "enchanter skill/grade", "service type"]
+  outputs: ["material or service cost"]
+  steps: []
+links: {uses: [procedure.magic.talismongering, procedure.magic.alchemy, procedure.magic.artificing], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 170, relation: defines, note: "Enchanting Material Costs and Enchanting Service Costs tables"}
+notes:
+  - "Service prices are explicitly described as general figures; actual cost may vary by situation and game style."
