@@ -1,0 +1,40 @@
+id: rule.ammunition.chemical-payload
+record_type: rule
+name: "Chemical Payload Ammunition"
+domain: ammunition
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 36
+  basis: extends
+
+scope:
+  applies_to:
+    - "capsule rounds and other ammunition carrying drugs/chemicals"
+
+resolution:
+  summary: "Chemical-payload rounds deliver a chemical exposure in addition to or instead of ordinary ammunition effects. Once the round successfully exposes the target, resolve the compound using the Man & Machine drug/exposure rules."
+  inputs:
+    - "ammunition type"
+    - "chemical payload"
+    - "successful exposure"
+  outputs:
+    - "chemical exposure/effects"
+
+links:
+  uses:
+    - rule.chemistry.drug-exposure
+  affects: []
+  modified_by: []
+  interacts_with:
+    - subsystem.ammunition.cc-expanded
+
+sources:
+  - source: source.cc
+    page: 36
+    relation: extends
+    note: "Capsule Rounds"
+
+notes: []
