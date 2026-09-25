@@ -1,0 +1,16 @@
+id: rule.magic.stacked-foci
+record_type: rule
+name: "Stacked Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 44, basis: defines}
+scope: {applies_to: ["foci designed to contain multiple focus functions"]}
+resolution:
+  summary: "A stacked focus combines multiple focus functions into one enchanted item. Formula difficulty, enchanting target number and first-bond Karma are derived from the component focus types and their Forces rather than treating the object as a single ordinary focus."
+  inputs: ["component focus types", "component Forces"]
+  outputs: ["stacked focus formula, enchanting difficulty, first-bond Karma"]
+  steps: []
+links: {uses: [procedure.magic.artificing, subsystem.magic.foci], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "44-45", relation: defines, note: "Stacked Foci"}
+notes: []
