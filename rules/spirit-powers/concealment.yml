@@ -1,0 +1,25 @@
+id: rule.spirit-power.concealment
+record_type: rule
+name: "Concealment"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 262, basis: defines}
+
+scope:
+  applies_to: ["beings with Concealment"]
+
+resolution:
+  summary: "Hides the user, another subject, or an object within suitable terrain. Add the user's Essence to the target number of Perception Tests made to locate each concealed subject."
+  inputs: ["user Essence", "Perception Test"]
+  outputs: ["increased difficulty locating target"]
+
+power_profile: {type: physical, action: simple, range: LOS, duration: sustained}
+
+links: {uses: [], affects: [rule.perception.perception-test], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 262, relation: defines, note: "Concealment"}
+  - {source: source.sr3-core, page: 263, relation: clarifies, note: "Concealment continuation"}
+
+notes: []
