@@ -1,0 +1,22 @@
+id: subsystem.cyberlimbs.core
+record_type: subsystem
+name: "Cyberlimbs"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 32, basis: extends}
+state:
+  tracked_values: ["replacement body part", "Strength", "Quickness", "Body/armor bonuses", "ECU", "concealability"]
+participants: ["character", "cyberlimb"]
+components: ["obvious limbs", "synthetic limbs", "partial limbs", "skull", "torso", "enhancements"]
+entry_conditions: ["cyberlimb installed"]
+exit_conditions: []
+links:
+  rules: [rule.cyberlimbs.attributes, rule.cyberlimbs.compatibility]
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.cyberware.core]
+sources:
+  - {source: source.mm, pages: "32-40", relation: extends, note: "Cyberlimb general rules, bonuses, attributes and enhancements"}
+notes: []
