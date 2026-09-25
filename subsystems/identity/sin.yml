@@ -1,0 +1,55 @@
+id: subsystem.identity.sin
+record_type: subsystem
+name: "System Identification Number (SIN)"
+domain: identity
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 238
+  basis: defines
+
+state:
+  tracked_values:
+    - "SIN status"
+    - "registered identity information"
+    - "criminal SIN status"
+    - "forged identity rating"
+
+participants:
+  - "legal residents/citizens"
+  - "SINless characters"
+  - "corporations and governments"
+
+components:
+  - "government/corporate SIN"
+  - "criminal SIN"
+  - "forged SIN/identity"
+  - "identity verification"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures:
+    - procedure.identity.forge-credstick
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.identity.credstick
+
+sources:
+  - source: source.sr3-core
+    page: 238
+    relation: defines
+    note: "SINless / What's in a SIN?"
+  - source: source.sr3-core
+    page: 239
+    relation: extends
+    note: "Forging Credsticks and IDs"
+
+notes:
+  - "SINless status restricts access to many ordinary legal services and transactions."
