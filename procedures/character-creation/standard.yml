@@ -1,0 +1,86 @@
+id: procedure.character-creation.standard
+record_type: procedure
+name: "Standard SR3 Character Creation"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 54
+  basis: defines
+
+purpose: "Create a starting Shadowrun character using the SR3 Priority System."
+
+prerequisites: []
+
+inputs:
+  - "five priorities A through E"
+  - "Race"
+  - "Magic"
+  - "Attributes"
+  - "Skills"
+  - "Resources"
+
+stages:
+  - id: assign-priorities
+    name: "Assign Priorities"
+    test_or_action: "Assign each of A, B, C, D, and E exactly once among Race, Magic, Attributes, Skills, and Resources."
+    outputs: ["priority assignment"]
+  - id: choose-race
+    name: "Choose Race"
+    test_or_action: "Choose human, elf, dwarf, ork, or troll consistent with the assigned Race priority."
+    outputs: ["metatype and racial modifications"]
+  - id: choose-magic
+    name: "Choose Magical Ability"
+    test_or_action: "Choose mundane, full magician, aspected magician, or adept consistent with the assigned Magic priority."
+    outputs: ["magical status and starting magical resources"]
+  - id: assign-attributes
+    name: "Assign Attributes"
+    test_or_action: "Spend Attribute Points among the six Physical and Mental Attributes, then apply racial modifiers."
+    outputs: ["starting Attributes", "Reaction", "Essence", "Magic"]
+  - id: assign-skills
+    name: "Assign Skills"
+    test_or_action: "Spend Active Skill Points and derive/spend Knowledge and Language Skill Points."
+    outputs: ["starting skills"]
+  - id: assign-resources
+    name: "Assign Resources"
+    test_or_action: "Spend starting nuyen and other creation resources on gear, contacts, lifestyle, cyberware, magical gear, and related choices."
+    outputs: ["starting gear/resources", "contacts", "lifestyle"]
+
+outcomes:
+  - "starting SR3 player character"
+
+links:
+  uses:
+    - rule.character-creation.priority-system
+    - rule.character-creation.attribute-assignment
+    - rule.character-creation.active-skill-purchase
+    - rule.character-creation.knowledge-skill-points
+    - rule.character-creation.language-skill-points
+    - rule.character-creation.resources
+  requires: []
+  produces: []
+  modified_by:
+    - option.character-creation.point-based-design
+
+sources:
+  - source: source.sr3-core
+    page: 54
+    relation: defines
+    note: "Creating a Shadowrunner — Building a Shadowrunner / The Priority System"
+  - source: source.sr3-core
+    page: 55
+    relation: extends
+    note: "Choosing Magical Abilities and Attributes"
+  - source: source.sr3-core
+    page: 57
+    relation: extends
+    note: "Assigning Skills"
+  - source: source.sr3-core
+    page: 60
+    relation: extends
+    note: "Assigning Resources"
+
+notes:
+  - "Shadowrun Companion's point-based system is an optional alternative, not a supersession."
