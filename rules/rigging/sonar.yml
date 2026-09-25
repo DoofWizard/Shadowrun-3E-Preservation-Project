@@ -1,0 +1,43 @@
+id: rule.rigging.sonar
+record_type: rule
+name: "Sonar Detection"
+domain: rigging
+status: ingested
+
+effective:
+  status: current
+  source: source.r3
+  page: 33
+  basis: extends
+
+scope:
+  applies_to:
+    - "underwater detection by vessels"
+  excludes: []
+
+resolution:
+  summary: "Rigger 3 adds passive and active sonar rules. Passive sonar depends on target-generated sound and Sonar Signature; active sonar emits a ping and uses the detecting vessel's Sonar rating against the target's Sonar Signature."
+  inputs:
+    - "Sonar rating"
+    - "target Sonar Signature"
+    - "mode"
+    - "range/modifiers"
+  outputs:
+    - "contact quality and identification detail"
+  steps: []
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with:
+    - subsystem.rigging.electronic-warfare
+
+sources:
+  - source: source.r3
+    page: 33
+    relation: extends
+    note: "Sonar, Passive Sonar, Active Sonar"
+
+notes:
+  - "Contact detail scales with successes from no contact through unique identification."
