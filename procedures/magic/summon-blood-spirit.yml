@@ -1,0 +1,25 @@
+id: procedure.magic.summon-blood-spirit
+record_type: procedure
+name: "Summon Blood Spirit"
+domain: magic
+status: ingested
+effective: {status: restricted, source: source.mits, page: 134, basis: defines}
+purpose: "Summon a fictional blood spirit using the restricted Sacrificing metamagic rules."
+prerequisites:
+  - "initiate who knows Sacrificing"
+inputs: ["desired Force", "Conjuring", "source-defined fictional sacrifice limit"]
+stages:
+  - id: ritual
+    name: "Conjuring Ritual"
+    test_or_action: "Perform the source's Force-based ritual and resolve a Conjuring Test against desired Force."
+    outputs: ["blood spirit and services or failed ritual"]
+  - id: drain
+    name: "Drain Resistance"
+    test_or_action: "Resist summoning Drain normally."
+    outputs: ["Drain resisted or suffered"]
+outcomes: ["bound blood spirit", "uncontrolled/free blood spirit on failure conditions"]
+links: {uses: [entity.spirit.blood-spirit, option.magic.sacrificing], requires: [], produces: [entity.spirit.blood-spirit], modified_by: []}
+sources:
+  - {source: source.mits, page: 134, relation: defines, note: "Summoning Blood Spirits"}
+notes:
+  - "This record preserves tabletop procedure structure and does not reproduce real-world harmful instructions."
