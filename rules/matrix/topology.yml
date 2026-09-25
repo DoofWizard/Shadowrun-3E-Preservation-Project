@@ -1,0 +1,24 @@
+id: rule.matrix.topology
+record_type: rule
+name: "Matrix Topology and Access"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 200, basis: defines}
+scope:
+  applies_to: ["grids","hosts","jackpoints","system access nodes"]
+  excludes: []
+resolution:
+  summary: "Matrix access proceeds through jackpoints and telecommunications grids into hosts/system access nodes. RTGs, LTGs, PLTGs and host-to-host links define the path a decker must traverse; access configurations may be open, tiered, checkpointed, host-to-host or private-grid based."
+  inputs: ["current Matrix location","destination","network topology/access configuration"]
+  outputs: ["available route/access requirement"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.matrix.system-operation]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 200, relation: defines, note: "Accessing the Matrix / Matrix jargon / Jackpoints"}
+  - {source: source.sr3-core, page: 202, relation: extends, note: "Grids and Hosts"}
+  - {source: source.sr3-core, page: 204, relation: extends, note: "Tiered, checkpoint, host-to-host and private-grid access"}
+notes: []
