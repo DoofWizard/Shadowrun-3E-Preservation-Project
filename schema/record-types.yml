@@ -1,0 +1,34 @@
+record_types:
+  entity:
+    purpose: "A thing that exists in the game world or rules model."
+    examples: [weapon, spell, vehicle, cyberware, skill, spirit, contact]
+  rule:
+    purpose: "A general mechanical relationship or resolution rule."
+    examples: [recoil, defaulting, damage_resistance, astral_movement]
+  procedure:
+    purpose: "A multi-step process with ordered stages, tests, costs, or outcomes."
+    examples: [character_creation, surgery, enchanting, programming, vehicle_construction]
+  option:
+    purpose: "A selectable character, equipment, program, vehicle, campaign, or rules choice."
+    examples: [edge_flaw, tradition, metamagic, martial_art, program_option]
+  modifier:
+    purpose: "A conditional change applied to another record or resolution."
+    examples: [wound_modifier, ammunition_effect, environmental_penalty]
+  subsystem:
+    purpose: "A coherent stateful mechanical domain with its own entities, rules, and procedures."
+    examples: [matrix_security, remote_control_network, initiation, cyberlimbs]
+  world_record:
+    purpose: "A setting fact, person, place, organization, timeline event, or institution."
+    examples: [location, corporation, government, faction, person]
+  source:
+    purpose: "A publication, errata document, printing, or other provenance source."
+    examples: [core_rulebook, supplement, errata]
+
+identity:
+  requirement: "Every non-source canonical record MUST have a stable id independent of its path."
+  format: "<record_type>.<domain>.<slug>"
+  examples:
+    - "rule.combat.recoil"
+    - "entity.weapon.ares-predator"
+    - "procedure.matrix.programming"
+    - "option.magic.metamagic.centering"
