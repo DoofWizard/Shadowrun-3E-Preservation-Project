@@ -1,0 +1,46 @@
+id: rule.cyberware.essence
+record_type: rule
+name: "Cyberware Essence Cost"
+domain: cyberware
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 296
+  basis: defines
+
+scope:
+  applies_to:
+    - "implanted cyberware"
+
+resolution:
+  summary: "Each cyberware implant has an Essence Cost that reduces the character's Essence when implanted. If Essence falls below zero, the character dies. Cyberware grade may modify Essence Cost."
+  inputs:
+    - "current Essence"
+    - "implant Essence Cost"
+    - "grade modifier"
+  outputs:
+    - "new Essence"
+
+links:
+  uses: []
+  affects:
+    - subsystem.cyberware.core
+  modified_by:
+    - option.cyberware.grades
+  interacts_with:
+    - rule.cyberware.magic-interaction
+
+sources:
+  - source: source.sr3-core
+    page: 296
+    relation: defines
+    note: "Cyberware / Alphaware"
+  - source: source.sr3-core
+    page: 297
+    relation: extends
+    note: "Continuation of alphaware and headware"
+
+notes:
+  - "SR3 core includes standard and alphaware; Man & Machine extends the grade model."
