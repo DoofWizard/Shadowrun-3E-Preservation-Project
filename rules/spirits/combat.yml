@@ -1,0 +1,44 @@
+id: rule.spirits.combat
+record_type: rule
+name: "Spirit Combat"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 265
+  basis: defines
+
+scope:
+  applies_to:
+    - "spirits and dragons participating in combat"
+
+resolution:
+  summary: "Resolve spirit/dragon combat using the standard combat framework, with creature-specific Initiative, actions, skills, dice pools, astral state, armor/immunity, and powers. Materialized and astral forms use the rules appropriate to the plane/state in which the encounter occurs."
+  inputs:
+    - "creature statistics"
+    - "materialized/astral state"
+    - "powers"
+    - "opponent"
+  outputs:
+    - "combat result"
+
+links:
+  uses:
+    - procedure.combat.melee-attack
+    - procedure.combat.ranged-attack
+    - rule.spirits.actions-skills
+  affects: []
+  modified_by: []
+  interacts_with:
+    - subsystem.magic.astral
+    - subsystem.spirits.powers
+
+sources:
+  - source: source.sr3-core
+    page: 265
+    relation: defines
+    note: "Spirits and Dragons — Combat"
+
+notes: []
