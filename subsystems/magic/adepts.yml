@@ -1,0 +1,26 @@
+id: subsystem.magic.adepts
+record_type: subsystem
+name: "Adept Powers"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 168, basis: defines}
+state:
+  tracked_values: ["Magic Attribute","Power Points","purchased adept powers"]
+participants: ["adepts"]
+components: ["Power Points","adept powers"]
+entry_conditions: ["character is an adept"]
+exit_conditions: []
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [rule.magic.magic-attribute]
+sources:
+  - {source: source.sr3-core, page: 168, relation: defines, note: "Adepts / Adept Powers"}
+  - {source: source.sr3-core, page: 169, relation: extends, note: "Core adept power list"}
+  - {source: source.sr3-core, page: 170, relation: extends, note: "Core adept power list continued"}
+notes:
+  - "Adepts normally receive Power Points equal to Magic; powers have individual costs."
+  - "Magic in the Shadows adds further adept powers."
