@@ -1,0 +1,23 @@
+id: subsystem.magic
+record_type: subsystem
+name: "Magic"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 158, basis: defines}
+state:
+  tracked_values: ["Magic Attribute","Essence","Force","Drain","tradition","astral state","active spells/foci/spirits"]
+participants: ["Awakened characters","spirits","magical effects","foci"]
+components: ["mana","Magic Attribute","magicians","traditions","adepts","astral plane","sorcery","conjuring","foci"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: [rule.magic.magic-attribute, rule.magic.drain]
+  procedures: [procedure.magic.spellcasting]
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.magic.astral, subsystem.magic.sorcery, subsystem.magic.conjuring]
+sources:
+  - {source: source.sr3-core, page: 158, relation: defines, note: "Magic / Mana / The Magic Attribute"}
+notes:
+  - "Magic in the Shadows extends this baseline."
