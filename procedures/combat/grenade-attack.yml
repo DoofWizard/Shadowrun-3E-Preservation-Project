@@ -1,0 +1,25 @@
+id: procedure.combat.grenade-attack
+record_type: procedure
+name: "Grenade Attack"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 118, basis: defines}
+purpose: "Resolve thrown or launched grenade placement, scatter and blast effects."
+prerequisites: ["grenade or grenade launcher"]
+inputs: ["attack skill","range","grenade type","successes","environment"]
+stages:
+  - {id: attack, name: "Attack Test", test_or_action: "Make the appropriate ranged attack test.", outputs: ["successes"]}
+  - {id: scatter, name: "Determine Scatter", test_or_action: "If required, determine scatter direction and distance, reduced by successes.", outputs: ["final detonation point"]}
+  - {id: timing, name: "Resolve Timing", test_or_action: "Apply grenade/launcher timing rules.", outputs: ["detonation Combat Phase"]}
+  - {id: blast, name: "Resolve Blast", test_or_action: "Apply blast Power/Damage Code and distance reduction, including barriers/reflection where applicable.", outputs: ["targets and attack values"]}
+  - {id: resist, name: "Resistance", test_or_action: "Targets resolve Damage Resistance.", outputs: ["final damage"]}
+outcomes: ["detonation and resolved blast damage"]
+links:
+  uses: [procedure.combat.ranged-attack, rule.combat.damage-resistance]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 118, relation: defines, note: "Grenades"}
+  - {source: source.sr3-core, page: 119, relation: extends, note: "Blast Effects / confined spaces"}
+notes: []
