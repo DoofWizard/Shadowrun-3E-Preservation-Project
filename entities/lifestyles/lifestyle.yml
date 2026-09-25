@@ -1,0 +1,31 @@
+id: entity.lifestyle.lifestyle
+record_type: entity
+name: "Lifestyle"
+domain: lifestyles
+status: ingested
+
+intrinsic:
+  purpose:
+    - "represents the character's standard of living and recurring daily expenses"
+  recurring_cost: "monthly"
+  multiplicity: "A character may maintain more than one lifestyle."
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 45
+    relation: defines
+    note: "Game Concepts — Lifestyle"
+  - source: source.sr3-core
+    page: 46
+    relation: clarifies
+    note: "Continuation of Lifestyle"
+
+notes:
+  - "Failure to maintain the required monthly payment causes the character to drop to the next lower lifestyle."
+  - "Detailed lifestyle costs and categories are defined later in the book."
