@@ -1,0 +1,45 @@
+id: rule.contacts.contact-knowledge
+record_type: rule
+name: "Contact Knowledge"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 66
+  basis: extends
+
+scope:
+  applies_to:
+    - "contacts asked for information"
+
+resolution:
+  summary: "The Companion gives contacts their own knowledge competency for resolving whether they know requested information and how useful/complete the answer is, instead of assuming every contact automatically knows everything in a broad field."
+  inputs:
+    - "contact"
+    - "subject matter"
+    - "contact knowledge/rating"
+    - "difficulty"
+  outputs:
+    - "information known, partially known, or unavailable"
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.legwork
+
+sources:
+  - source: source.srcomp
+    page: 66
+    relation: extends
+    note: "Contact Knowledge"
+  - source: source.srcomp
+    page: 67
+    relation: clarifies
+    note: "Spilling the Beans"
+
+notes: []
