@@ -1,0 +1,25 @@
+id: rule.spirit-power.engulf
+record_type: rule
+name: "Engulf"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["spirits/beings with Engulf"]
+
+resolution:
+  summary: "Draws a victim into the user's element/terrain. The initial attack is melee using Quickness instead of Reaction; while engulfed, the victim may attempt an Opposed Strength Test to escape and otherwise suffers element-specific damage/effects each action."
+  inputs: ["user Quickness", "user Strength", "victim Strength", "element"]
+  outputs: ["engulfed state, escape, repeated damage/effects"]
+
+power_profile: {type: physical, action: exclusive_complex, range: touch, duration: sustained}
+
+links: {uses: [procedure.combat.melee-attack, rule.tests.opposed-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Engulf and elemental variants"}
+
+notes:
+  - "Fire, water, air, and earth variants use different damage/effect details."
