@@ -1,0 +1,27 @@
+id: rule.matrix.system-test
+record_type: rule
+name: "Matrix System Test"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 209, basis: defines}
+scope:
+  applies_to: ["decker attempts to perform system operations"]
+  excludes: []
+resolution:
+  summary: "A System Test rolls Computer Skill plus eligible Hacking Pool against the target host/grid subsystem rating, modified by the decker's applicable utility and other Matrix modifiers. At the same time the host/grid makes a Security Test; the decker's successes resolve the operation while the system's successes contribute to Security Tally."
+  inputs: ["Computer Skill","Hacking Pool","target subsystem rating","utility rating","host Security Rating"]
+  outputs: ["operation successes","security successes"]
+  steps:
+    - "Select the System Operation and corresponding subsystem."
+    - "Roll the decker's System Test against the subsystem target number with utility modifiers."
+    - "Roll the host/grid Security Test."
+    - "Apply decker successes to the operation and security successes to Security Tally."
+links:
+  uses: [entity.skill.computer, rule.dice-pools.hacking-pool, rule.matrix.system-ratings]
+  affects: [procedure.matrix.system-operation, rule.matrix.security-tally]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 209, relation: defines, note: "System Tests"}
+  - {source: source.sr3-core, page: 210, relation: clarifies, note: "System Test example and System Operations on Grids"}
+notes: []
