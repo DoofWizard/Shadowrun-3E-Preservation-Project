@@ -1,0 +1,26 @@
+id: procedure.magic.summon-ancestor-spirit
+record_type: procedure
+name: "Summon Ancestor Spirit"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 106, basis: defines}
+purpose: "Summon an ancestor spirit using personal fetishes connected to the ancestor."
+prerequisites:
+  - "Eligible shamanic practitioner"
+  - "Up to three appropriate ancestral fetishes"
+inputs: ["desired Force", "fewer/missing fetishes", "relatives participating"]
+stages:
+  - id: prepare
+    name: "Prepare Fetishes"
+    test_or_action: "Use three ancestor-appropriate fetishes where possible; missing fetishes reduce services."
+    outputs: ["prepared summoning"]
+  - id: ritual
+    name: "Summoning Ritual"
+    test_or_action: "Perform ritual for Force hours divided by participating relatives, then resolve normal summoning/service/Drain tests."
+    outputs: ["ancestor spirit and services"]
+outcomes: ["summoned ancestor spirit", "failed summoning"]
+links: {uses: [entity.spirit.ancestor], requires: [], produces: [entity.spirit.ancestor], modified_by: []}
+sources:
+  - {source: source.mits, pages: "106-107", relation: defines, note: "Summoning Ancestor Spirits"}
+notes:
+  - "Only one ancestor spirit may be summoned at a time; summoning another causes the prior one and its services to vanish."
