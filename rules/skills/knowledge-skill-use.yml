@@ -1,0 +1,36 @@
+id: rule.skills.knowledge-skill-use
+record_type: rule
+name: "Using Knowledge Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 96
+  basis: defines
+
+scope:
+  applies_to: ["Knowledge Skill tests"]
+  excludes: []
+
+resolution:
+  summary: "The depth/obscurity of the information sets the target number. More successes improve the detail and accuracy of the information obtained."
+  inputs: ["Knowledge Skill rating","information difficulty"]
+  outputs: ["knowledge result detail"]
+  steps:
+    - "Choose a target number based on the requested information."
+    - "Roll the relevant Knowledge Skill."
+    - "Interpret successes as increasing detail/accuracy."
+
+links:
+  uses: [rule.skills.knowledge-skills, rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 96, relation: defines, note: "Using Knowledge Skills / Knowledge Skill Table"}
+
+notes:
+  - "The table gives example target numbers from general through obscure knowledge and maps successes to increasing detail."
