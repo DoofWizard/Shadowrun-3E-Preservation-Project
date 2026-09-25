@@ -1,0 +1,31 @@
+id: procedure.magic.geas-management
+record_type: procedure
+name: "Accepting, Fulfilling, and Removing a Geas"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 32, basis: defines}
+purpose: "Manage a geas that offsets Magic loss or limits an adept power."
+prerequisites: []
+inputs: ["lost Magic Point or adept Power Point", "geas type", "fulfilled/broken state", "initiation state"]
+stages:
+  - id: accept
+    name: "Accept Geas"
+    test_or_action: "Choose an eligible geas when the source permits one to offset a Magic or Power Point loss."
+    outputs: ["active geas"]
+  - id: fulfill
+    name: "Fulfill Geas"
+    test_or_action: "Satisfy the geas's condition; a fulfilled geas allows use of the linked magical capability."
+    outputs: ["fulfilled state"]
+  - id: break
+    name: "Break Geas"
+    test_or_action: "Violating the geas removes access to the offset capability until the condition is fulfilled again."
+    outputs: ["broken state"]
+  - id: remove
+    name: "Remove Geas"
+    test_or_action: "Use initiation where permitted to permanently remove a geas and replace the offset Magic loss according to the source."
+    outputs: ["removed geas or replacement Magic Point"]
+outcomes: ["active fulfilled geas", "broken geas", "removed geas"]
+links: {uses: [rule.magic.magic-loss, procedure.magic.initiation], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "32-33", relation: defines, note: "Accepting, Fulfilling and Removing Geasa / Adepts and Geasa"}
+notes: []
