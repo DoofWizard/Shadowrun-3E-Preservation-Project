@@ -1,0 +1,21 @@
+id: rule.cyberware.triggers
+record_type: rule
+name: "Cyberware Triggers"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 48, basis: defines}
+scope:
+  applies_to: ["cyberware that can be activated or deactivated"]
+resolution:
+  summary: "Cyberware connected to the nervous system can normally be triggered by mental impulse as a Free Action. At gamemaster discretion, a manual trigger may be installed instead; manual activation or deactivation requires a Simple Action."
+  inputs: ["cyberware device", "trigger type"]
+  outputs: ["activation/deactivation action cost"]
+  steps: []
+links:
+  uses: [rule.actions.combat-phase-actions]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 48, relation: defines, note: "Cyberware Triggers"}
+notes: []
