@@ -1,0 +1,44 @@
+id: rule.contacts.friends-of-friends
+record_type: rule
+name: "Friends of a Friend"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 62
+  basis: extends
+
+scope:
+  applies_to:
+    - "using a contact's network to reach another source"
+
+resolution:
+  summary: "A contact may connect the character to another NPC through the contact's own network. Such friends-of-friends are less reliable and less directly loyal than the original contact and may require waiting, favors, or additional negotiation."
+  inputs:
+    - "existing contact"
+    - "desired information/service"
+    - "network suitability"
+  outputs:
+    - "secondary contact access"
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - option.karma.favors-markers
+
+sources:
+  - source: source.srcomp
+    page: 62
+    relation: extends
+    note: "Friends of a Friend"
+  - source: source.srcomp
+    page: 63
+    relation: clarifies
+    note: "Using FOFs / Waiting for the Goods / The Walls Have Ears"
+
+notes: []
