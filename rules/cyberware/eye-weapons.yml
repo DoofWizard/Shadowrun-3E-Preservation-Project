@@ -1,0 +1,16 @@
+id: rule.cyberware.eye-weapons
+record_type: rule
+name: "Eye Weapons"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 16, basis: defines}
+scope: {applies_to: ["eye dart and eye gun cyberware"]}
+resolution:
+  summary: "Eye weapons must be installed in cybereyes and use the Cyber-Implant Combat skill rather than ordinary ranged-weapon skills. Firing produces a temporary visual penalty in the firing eye, ammunition is limited, and eye-weapon ammunition costs more than ordinary ammunition."
+  inputs: ["eye weapon", "Cyber-Implant Combat skill", "firing eye"]
+  outputs: ["attack resolution and temporary visual modifier"]
+  steps: []
+links: {uses: [entity.skill.cyber-implant-combat], affects: [], modified_by: [], interacts_with: [rule.cyberware.single-cybereye]}
+sources:
+  - {source: source.mm, page: 16, relation: defines, note: "Eye Weapons / Game Effects"}
+notes: []
