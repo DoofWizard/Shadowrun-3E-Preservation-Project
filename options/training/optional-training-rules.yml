@@ -1,0 +1,41 @@
+id: option.training.optional-training-rules
+record_type: option
+name: "Optional Training Rules"
+domain: training
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 48
+  basis: adds_option
+
+option_for:
+  - rule.advancement.skill-improvement
+  - rule.advancement.attribute-improvement
+
+selection:
+  timing: "campaign advancement"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Adds required training time to skill and Attribute improvement instead of allowing improvement solely by spending Good Karma."
+  - "Skill training time depends on the type and rating of the skill being learned or improved."
+  - "A Skill Test with the skill being trained may reduce base training time; situational modifiers and instruction can alter training."
+
+links:
+  modifies:
+    - rule.advancement.skill-improvement
+    - rule.advancement.attribute-improvement
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 48
+    relation: adds_option
+    note: "Optional Training Rules / Skill Training Time"
+
+notes:
+  - "This does not replace the baseline SR3 Karma advancement system unless enabled by the gamemaster."
