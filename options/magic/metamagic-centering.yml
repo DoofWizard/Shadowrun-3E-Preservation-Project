@@ -1,0 +1,46 @@
+id: option.magic.metamagic-centering
+record_type: option
+name: "Metamagic: Centering"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 72
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "during eligible magical actions"
+  prerequisites:
+    - "initiate"
+    - "Centering Skill"
+    - "appropriate creative skill/method"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to channel magical discipline through a creative practice such as singing, dancing, instruments, languages or meditation."
+  - "Centering can reduce Drain, overcome penalties affecting magical target numbers, and improve magical concentration."
+  - "Adepts may learn to apply Centering to additional skill areas as they gain initiation grades."
+
+links:
+  modifies:
+    - rule.magic.drain
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 72
+    relation: defines
+    note: "Centering / Centering Skill"
+  - source: source.mits
+    pages: "73-74"
+    relation: extends
+    note: "Centering tests and adept applications"
+
+notes: []
