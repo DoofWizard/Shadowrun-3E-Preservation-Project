@@ -1,0 +1,43 @@
+id: world.location.seattle
+record_type: world_record
+name: "Seattle"
+domain: setting
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 313
+  basis: defines
+
+world_type: "metroplex/city"
+period: "SR3 core setting era"
+
+facts:
+  - "Seattle is a UCAS-controlled metroplex surrounded by foreign powers and Native American Nations."
+  - "It is a major Pacific Rim trade center and the primary default urban setting presented by SR3."
+  - "The metroplex is divided into ten districts and governed by a governor, mayor/district councils, a cabinet and a Seattle Congress."
+  - "Lone Star Security Services is the primary contracted police provider in the metroplex during the core-book period."
+
+links:
+  contains: []
+  references: []
+  interacts_with:
+    - world.region.modern-northwest
+
+sources:
+  - source: source.sr3-core
+    page: 313
+    relation: defines
+    note: "Seattle and the Modern Northwest — Seattle / Seattle at a Glance"
+  - source: source.sr3-core
+    page: 314
+    relation: extends
+    note: "Getting In and Around / Government / Law Enforcement"
+  - source: source.sr3-core
+    pages: "315-322"
+    relation: extends
+    note: "Seattle institutions, districts, corporations and surrounding regional context"
+
+notes:
+  - "Later Seattle sourcebooks should extend this world record rather than create a competing Seattle identity."
