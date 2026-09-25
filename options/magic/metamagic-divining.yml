@@ -1,0 +1,46 @@
+id: option.magic.metamagic-divining
+record_type: option
+name: "Metamagic: Divining"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 74
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when seeking insight into future events concerning a linked subject"
+  prerequisites:
+    - "initiate"
+    - "Divining Skill"
+    - "prediction skill/method"
+    - "subject link"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to ask questions about future events and receive increasingly useful but never certain information based on a Divination Test."
+  - "Question specificity raises the target number."
+  - "The technique provides clues/omens rather than guaranteed future knowledge."
+
+links:
+  modifies: []
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 74
+    relation: defines
+    note: "Divining"
+  - source: source.mits
+    page: 75
+    relation: clarifies
+    note: "Divination Test and table"
+
+notes: []
