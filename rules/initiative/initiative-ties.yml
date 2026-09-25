@@ -1,0 +1,22 @@
+id: rule.initiative.initiative-ties
+record_type: rule
+name: "Initiative Ties"
+domain: initiative
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 102, basis: defines}
+scope:
+  applies_to: ["equal Initiative Scores"]
+  excludes: []
+resolution:
+  summary: "Resolve Initiative ties by comparing first-pass Initiative Score where applicable, then adjusted Reaction, then unaugmented Reaction; if still tied, roll 1D6 repeatedly until the tie breaks. A character may intentionally act after another tied character when the ordering permits."
+  inputs: ["tied characters"]
+  outputs: ["tie-broken order"]
+  steps: []
+links:
+  uses: [rule.initiative.initiative]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 102, relation: defines, note: "Initiative Ties"}
+notes: []
