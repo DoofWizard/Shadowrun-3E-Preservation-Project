@@ -1,0 +1,17 @@
+id: rule.magic.spirit-pact-threat
+record_type: rule
+name: "Magical-Threat Spirit Pact"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 124, basis: defines}
+scope: {applies_to: ["magical threats entering a pact with a willing free spirit"]}
+resolution:
+  summary: "A magical threat can form a symbiotic pact with a willing free spirit. The threat gains a one-time Potency bonus equal to half the spirit's Spirit Energy, rounded up. From then on the threat's Potency and the spirit's Spirit Energy are mystically linked so increases or decreases to one alter the other one-for-one."
+  inputs: ["threat Potency", "free-spirit Spirit Energy", "pact status"]
+  outputs: ["linked Potency/Spirit Energy and pact consequences"]
+  steps: []
+links: {uses: [rule.magic.potency, rule.spirits.spirit-energy], affects: [], modified_by: [], interacts_with: [entity.spirit.free-spirit]}
+sources:
+  - {source: source.mits, page: 124, relation: defines, note: "Spirit Pact"}
+notes:
+  - "Breaking the pact can produce permanent gains or losses depending on which partner survives and dominates the break."
