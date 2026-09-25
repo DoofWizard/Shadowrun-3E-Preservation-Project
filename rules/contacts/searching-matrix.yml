@@ -1,0 +1,45 @@
+id: rule.contacts.searching-matrix
+record_type: rule
+name: "Matrix Information Search"
+domain: contacts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 254
+  basis: defines
+
+scope:
+  applies_to:
+    - "deckers searching Matrix information sources for legwork"
+
+resolution:
+  summary: "A decker may search Matrix databases for information using an Etiquette (Matrix) Success Test. Base search time is 2D6 hours. Successes determine information quality and may be traded to reduce search time. A decker can maintain a limited number of simultaneous searches based on Intelligence."
+  inputs:
+    - "Etiquette (Matrix)"
+    - "information sought"
+    - "database/source type"
+    - "Intelligence"
+  outputs:
+    - "information found"
+    - "search time"
+
+links:
+  uses:
+    - entity.skill.etiquette
+    - rule.tests.success-test
+  affects: []
+  modified_by: []
+  interacts_with:
+    - subsystem.matrix.core
+    - rule.contacts.legwork
+
+sources:
+  - source: source.sr3-core
+    page: 254
+    relation: defines
+    note: "Searching the Matrix"
+
+notes:
+  - "The base number of simultaneous searches is one-half Intelligence, rounded up."
