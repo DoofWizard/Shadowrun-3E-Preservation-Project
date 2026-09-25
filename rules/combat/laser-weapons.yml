@@ -1,0 +1,50 @@
+{
+  "id": "rule.combat.laser-weapons",
+  "record_type": "rule",
+  "name": "Laser Weapons",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 30,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "laser weapons"
+    ]
+  },
+  "resolution": {
+    "summary": "Laser weapons use Laser Weapons skill rather than firearm skills. Smoke or fog modifies attacks because the beam is attenuated. Laser damage falls with range; weapon Power drops by 2 at each range band beyond Short. Battery systems provide finite shots and can be recharged at the source-defined rate.",
+    "inputs": [
+      "laser weapon",
+      "range category",
+      "visibility/obscurant",
+      "battery state"
+    ],
+    "outputs": [
+      "Power at range",
+      "attack modifier",
+      "remaining battery shots"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "entity.skill.laser-weapons"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 30,
+      "relation": "defines",
+      "note": "Laser Weapons rules"
+    }
+  ],
+  "notes": []
+}
