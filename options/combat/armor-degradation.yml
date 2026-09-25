@@ -1,0 +1,39 @@
+id: option.combat.armor-degradation
+record_type: option
+name: "Armor Degradation"
+domain: combat
+status: ingested
+
+effective:
+  status: optional
+  source: source.cc
+  page: 96
+  basis: adds_option
+
+option_for:
+  - rule.armor.armor-ratings
+
+selection:
+  timing: "campaign combat rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Moderate-or-greater non-Stun damage can reduce worn armor's appropriate rating."
+  - "The amount of degradation is based on attack Power relative to the relevant armor value."
+  - "The rule applies to Impact, hardened, and vehicle armor as specified, but not critter armor."
+
+links:
+  modifies:
+    - rule.armor.armor-ratings
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.cc
+    page: 96
+    relation: adds_option
+    note: "Armor Degradation (Optional)"
+
+notes:
+  - "Explicitly optional."
