@@ -1,0 +1,47 @@
+id: option.cyberware.grades
+record_type: option
+name: "Cyberware Grades"
+domain: cyberware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 45
+  basis: extends
+
+option_for:
+  - entity.cyberware.cyberware
+
+selection:
+  timing: "purchase/implantation"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Cyberware may be basic, alpha, beta, delta, or used."
+  - "Alphaware reduces base Essence Cost by 20 percent (x0.8) and multiplies cyberware cost by 2."
+  - "Betaware reduces base Essence Cost by 40 percent (x0.6) and multiplies cyberware cost by 4."
+  - "Deltaware reduces base Essence Cost by 50 percent (x0.5) and multiplies cyberware cost by 8."
+  - "Used cyberware uses the Essence reduction appropriate to its actual grade and has a cost multiplier of 0.5."
+  - "Essence reductions are rounded up and cannot reduce Essence Cost below 0.01 by this method."
+  - "Accessories/systems installed as components of graded cyberware generally must match the parent system's grade where the book specifies."
+
+links:
+  modifies:
+    - entity.cyberware.cyberware
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 44
+    relation: extends
+    note: "Cyberware Grades introduction"
+  - source: source.mm
+    page: 45
+    relation: defines
+    note: "Cyberware Grades Table and grade rules"
+
+notes:
+  - "Availability also changes by grade; preserve the exact grade-specific availability expressions in equipment ingestion."
