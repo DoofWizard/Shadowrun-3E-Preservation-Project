@@ -1,0 +1,37 @@
+id: modifier.combat.multiple-targets
+record_type: modifier
+name: "Multiple Ranged Targets"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 111
+  basis: defines
+
+trigger:
+  conditions:
+    - "A character attacks more than one target during the same Combat Phase."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "increase target number per additional target"
+  value: "+2 for each additional target that Combat Phase"
+
+stacking:
+  mode: "Cumulative by additional target."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 111
+    relation: adds_modifier
+    note: "Multiple Targets"
+  - source: source.sr3-core
+    page: 112
+    relation: clarifies
+    note: "Ranged Combat Modifiers Table"
+
+notes: []
