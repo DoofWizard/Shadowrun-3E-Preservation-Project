@@ -31,8 +31,8 @@ A later publication is never assumed to overwrite an earlier rule solely because
 | Shadowrun Companion (FASA7905a) | ingesting | Alternate chargen, optional training, Karma options begun |
 | Matrix (FASA7909) | ingesting | Source lineage, SOTA, construction, programming/options begun |
 | Man & Machine (FASA7126) | complete | Mechanical audit complete through printed p.160: cyberware/cyberlimbs, cybermancy, bioware, nanotech, chemistry/drugs, Stress/healing, surgery/medical rules, catalogs and lineage |
-| Magic in the Shadows (FASA7907) | structural_scan | TOC/domain map complete; detailed ingest next |
-| Cannon Companion (FASA7908) | structural_scan | TOC/domain map complete; detailed ingest next |
+| Magic in the Shadows (FASA7907) | complete | Deep mechanical audit complete through printed p.170; pp.171-178 checked as reference/end matter |
+| Cannon Companion (FASA7908) | ingesting | Detailed sequential ingest begins next |
 | Rigger 3 (FASA7910) | structural_scan | TOC/domain map complete; detailed ingest next |
 
 ## Corpus inventory
