@@ -1,0 +1,32 @@
+id: entity.contact.contact
+record_type: entity
+name: "Contact"
+domain: contacts
+status: ingested
+
+intrinsic:
+  kind: "non-player character relationship"
+  levels:
+    - 1
+    - 2
+    - 3
+  purpose:
+    - "information"
+    - "assistance"
+    - "access to goods or services"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 45
+    relation: defines
+    note: "Game Concepts — Contacts"
+
+notes:
+  - "The core concepts section introduces three contact levels and states that higher levels represent stronger relationships."
+  - "Detailed contact mechanics appear later in the book."
