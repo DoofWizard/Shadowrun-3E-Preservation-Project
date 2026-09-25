@@ -1,0 +1,23 @@
+id: procedure.surgery.diagnosis-profile
+record_type: procedure
+name: "Diagnosis and Medical Profiling"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 144, basis: defines}
+purpose: "Build or update a medical profile before surgery and identify medical conditions, implants and surgical risks."
+prerequisites: ["medical shop or facility for full profiling"]
+inputs: ["patient", "Medicine skill", "existing records"]
+stages:
+  - id: diagnose
+    name: "Medical Diagnosis"
+    test_or_action: "Use Medicine to diagnose relevant medical issues."
+    outputs: ["identified conditions"]
+  - id: profile
+    name: "Create/Update Profile"
+    test_or_action: "Create a medical profile in a suitable medical facility; extra successes reduce required time."
+    outputs: ["medical profile"]
+outcomes: ["profile available for surgical planning", "unknown issues may remain if not detected"]
+links: {uses: [], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, pages: "144-145", relation: defines, note: "Diagnosis and Profiling / Detecting Implants"}
+notes: []
