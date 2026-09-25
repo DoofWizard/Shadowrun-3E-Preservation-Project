@@ -1,0 +1,61 @@
+id: subsystem.gear.vehicles
+record_type: subsystem
+name: "Vehicles as Gear"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 305
+  basis: references
+
+state:
+  tracked_values:
+    - "vehicle statistics"
+    - "price"
+    - "availability"
+    - "Street Index"
+    - "legality"
+    - "control modifications"
+
+participants:
+  - "ground vehicles"
+  - "boats"
+  - "aircraft"
+  - "military/restricted vehicles"
+  - "drones"
+  - "vehicle weapon mounts"
+
+components:
+  - "vehicle control adjustments"
+  - "rigger gear"
+  - "remote-control interfaces"
+  - "adaptation points"
+  - "weapon mounts"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rules.vehicles.attributes
+    - subsystem.drones.remote-control-network
+
+sources:
+  - source: source.sr3-core
+    page: 305
+    relation: references
+    note: "Vehicles / Vehicle Control Adjustments"
+  - source: source.sr3-core
+    pages: "306-307"
+    relation: extends
+    note: "Vehicle categories, drones, mounts and weapon tables"
+
+notes:
+  - "Rigger 3 is the later SR3-era expansion for vehicle/rigging gear and modifications; individual precedence is tracked per mechanic."
