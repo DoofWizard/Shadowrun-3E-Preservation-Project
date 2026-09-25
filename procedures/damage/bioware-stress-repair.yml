@@ -1,0 +1,27 @@
+id: procedure.damage.bioware-stress-repair
+record_type: procedure
+name: "Bioware Stress Repair"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 130, basis: defines}
+purpose: "Heal or surgically repair Stress damage to bioware."
+prerequisites: []
+inputs: ["bioware Stress", "whether the implant has failed", "Body/healing conditions"]
+stages:
+  - id: natural
+    name: "Natural Repair"
+    test_or_action: "Nonfailed bioware can heal Stress over time using a procedure analogous to Physical-damage healing."
+    outputs: ["reduced Stress"]
+  - id: surgery
+    name: "Therapeutic Surgery"
+    test_or_action: "Failed bioware requires therapeutic surgery before function can be restored."
+    outputs: ["repaired implant"]
+outcomes: ["Stress reduced", "implant function restored when required surgery succeeds"]
+links:
+  uses: [rule.damage.stress-points, procedure.healing.natural-and-medical]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.mm, page: 130, relation: defines, note: "Bioware Stress Repair"}
+notes: []
