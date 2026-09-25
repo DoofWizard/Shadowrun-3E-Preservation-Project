@@ -1,0 +1,63 @@
+id: rule.karma.karma-pool-uses
+record_type: rule
+name: "Karma Pool Uses"
+domain: karma
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 246
+  basis: defines
+
+scope:
+  applies_to:
+    - rule.karma.karma-pool
+
+resolution:
+  summary: "Karma Pool may re-roll failed dice, mitigate a Rule of One, re-roll Open Test dice, buy additional dice, buy successes by burning points, and support certain extended actions. Repeated re-rolls or additional dice use escalating incremental costs."
+  inputs:
+    - "available Karma Pool"
+    - "eligible test"
+    - "selected Karma Pool use"
+  outputs:
+    - "modified test result"
+    - "spent or burned Karma Pool"
+
+uses:
+  reroll_failures:
+    cost: "1 point for the first re-roll, then 2 additional points for the second, 3 additional for the third, and so on."
+    effect: "Re-roll failed dice; a die showing 1 on a re-roll cannot be re-rolled again."
+  avoid_oops:
+    cost: "1 point"
+    effect: "Turn an all-ones Rule-of-One disaster into an ordinary failure; does not re-roll the test."
+  open_test_reroll:
+    cost: "Escalating 1, then +2, then +3, etc."
+    effect: "Re-roll one Open Test die per purchase."
+  buy_dice:
+    cost: "Escalating 1, then +2, then +3, etc."
+    effect: "Buy additional dice up to the number of skill/Attribute/rating dice used, excluding other pool dice."
+  buy_successes:
+    cost: "Burn 1 Karma Pool point per success"
+    effect: "Add successes only if the character already achieved at least one normal success."
+  extended_actions:
+    cost: "Allocate Karma Pool dice at the start of the extended action."
+    effect: "Support eligible long-duration tests; allocated dice do not refresh until the activity ends."
+
+links:
+  uses:
+    - rule.karma.karma-pool
+  affects:
+    - rule.tests.making-tests
+    - rule.tests.open-test
+    - rule.tests.rule-of-one
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 246
+    relation: defines
+    note: "Re-Rolling Failures / Avoiding an Oops / Open Tests / Buying Additional Dice / Buying Successes / Extended Actions"
+
+notes: []
