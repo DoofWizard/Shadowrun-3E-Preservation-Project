@@ -1,0 +1,56 @@
+id: subsystem.contacts.enemies
+record_type: subsystem
+name: "Enemies"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 68
+  basis: adds_option
+
+state:
+  tracked_values:
+    - "enemy power"
+    - "enemy motivation"
+    - "enemy knowledge/access"
+    - "enemy activity"
+
+participants:
+  - "player characters"
+  - "recurring antagonists"
+
+components:
+  - "creating enemies"
+  - "enemy characteristics"
+  - "using enemies"
+  - "death at the enemy's hand"
+  - "killing enemies"
+
+entry_conditions:
+  - "gamemaster/player uses the Enemy rules"
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.character.edges-flaws
+
+sources:
+  - source: source.srcomp
+    page: 68
+    relation: adds_option
+    note: "Enemies / Creating Enemies"
+  - source: source.srcomp
+    pages: "69-72"
+    relation: extends
+    note: "Enemy characteristics, using enemies, death/killing enemies"
+
+notes:
+  - "Enemies are campaign hooks/antagonist relationships rather than ordinary contacts."
