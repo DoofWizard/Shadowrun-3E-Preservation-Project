@@ -1,0 +1,25 @@
+id: rule.spirit-power.hardened-armor
+record_type: rule
+name: "Hardened Armor"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Hardened Armor"]
+
+resolution:
+  summary: "Provides an exoskeleton or supernatural shell of extraordinary strength. If the modified Power of an attack does not exceed the hardened armor rating, the attack does no damage. Against APDS or AVM ammunition, hardened armor counts at half rating."
+  inputs: ["armor rating", "modified attack Power", "ammunition type"]
+  outputs: ["attack stopped or proceeds to resistance"]
+
+power_profile: {type: physical, action: auto, range: self, duration: always}
+
+links: {uses: [], affects: [procedure.combat.ranged-attack, procedure.combat.melee-attack], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Hardened Armor"}
+  - {source: source.sr3-core, page: 264, relation: clarifies, note: "APDS/AVM interaction"}
+
+notes: []
