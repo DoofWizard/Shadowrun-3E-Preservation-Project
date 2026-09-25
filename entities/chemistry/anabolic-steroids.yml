@@ -1,0 +1,19 @@
+id: entity.chemistry.anabolic-steroids
+record_type: entity
+name: "Anabolic Steroids"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "4/12 hrs"
+  cost_nuyen_per_dose: 40
+  street_index: 1
+  legality: "Legal"
+  vector: "Ingestion, injection"
+  addiction: "3P"
+  edge: "10/10"
+  fix_factor: "1 wk"
+links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "117-118", relation: defines, note: "Anabolic Steroids fictional game effects and statistics"}
+notes:
+  - "Preserves the source's tabletop character-development and long-term side-effect mechanics; not real-world guidance."
