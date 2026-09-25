@@ -1,0 +1,16 @@
+id: rule.spirits.disruption-healing
+record_type: rule
+name: "Spirit Disruption and Healing"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 98, basis: extends}
+scope: {applies_to: ["spirits disrupted by astral or physical combat"]}
+resolution:
+  summary: "A spirit that takes Deadly Stun astrally or has its physical form destroyed is disrupted and normally cannot reappear for 28 days minus Force, minimum 24 hours. It returns to its native metaplane while disrupted. Bound elementals remain counted against the summoner's limit while disrupted. Ordinary spirit damage can be healed by returning home or by spending a service to recover Physical damage."
+  inputs: ["spirit Force", "disruption source", "services owed"]
+  outputs: ["disrupted duration, healing, or release state"]
+  steps: []
+links: {uses: [], affects: [subsystem.spirits.mits-expanded], modified_by: [], interacts_with: [procedure.magic.astral-quest]}
+sources:
+  - {source: source.mits, page: 98, relation: extends, note: "Disruption / Healing Spirits"}
+notes: []
