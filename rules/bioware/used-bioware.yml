@@ -1,0 +1,21 @@
+id: rule.bioware.used-bioware
+record_type: rule
+name: "Used Bioware"
+domain: bioware
+status: ingested
+effective: {status: current, source: source.mm, page: 62, basis: defines}
+scope:
+  applies_to: ["secondhand bioware"]
+resolution:
+  summary: "Only basic bioware can normally be obtained secondhand. Cultured bioware is individually matched and cannot simply be transplanted into another recipient. Used basic bioware is less predictable because its biological origin and history may be uncertain."
+  inputs: ["bioware grade/type"]
+  outputs: ["whether secondhand implantation is possible"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: [option.bioware.grades]
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 62, relation: defines, note: "Used Bioware"}
+notes: []
