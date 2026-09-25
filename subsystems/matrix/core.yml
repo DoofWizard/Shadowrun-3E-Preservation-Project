@@ -1,0 +1,23 @@
+id: subsystem.matrix
+record_type: subsystem
+name: "The Matrix"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 199, basis: defines}
+state:
+  tracked_values: ["Matrix location/topology","persona state","cyberdeck ratings","host/grid ratings","security tally","alert status","running utilities","Condition Monitor"]
+participants: ["deckers","cyberdecks/cyberterminals","hosts","grids","IC","personas","utilities"]
+components: ["access","grids and hosts","system ratings","cyberdecks","persona","system tests","security tally","system operations","utilities","cybercombat","IC"]
+entry_conditions: ["Matrix access through an appropriate interface/jackpoint"]
+exit_conditions: ["graceful logoff","jack out","crash/disconnection"]
+links:
+  rules: [rule.matrix.system-ratings, rule.matrix.system-test, rule.matrix.security-tally]
+  procedures: [procedure.matrix.system-operation, procedure.matrix.cybercombat]
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 199, relation: defines, note: "Matrix chapter introduction"}
+notes:
+  - "FASA7909 Matrix later extends this subsystem substantially."
