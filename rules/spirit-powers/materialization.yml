@@ -1,0 +1,25 @@
+id: rule.spirit-power.materialization
+record_type: rule
+name: "Materialization"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 264, basis: defines}
+
+scope:
+  applies_to: ["spirits/beings with Materialization"]
+
+resolution:
+  summary: "Allows an astral being to assume a solid physical form. While materialized, Physical Attributes generally equal Essence unless otherwise specified, the being gains physical Initiative adjustments and Immunity to Normal Weapons based on Essence, and can interact physically."
+  inputs: ["Essence", "spirit-specific modifiers"]
+  outputs: ["materialized physical form"]
+
+power_profile: {type: physical, action: exclusive_simple, range: self, duration: special}
+
+links: {uses: [], affects: [], modified_by: [], interacts_with: [rule.spirit-power.immunity]}
+
+sources:
+  - {source: source.sr3-core, page: 264, relation: defines, note: "Materialization"}
+  - {source: source.sr3-core, page: 265, relation: clarifies, note: "Materialized Initiative and physical activity"}
+
+notes: []
