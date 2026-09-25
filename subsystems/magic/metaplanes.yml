@@ -1,0 +1,61 @@
+id: subsystem.magic.metaplanes
+record_type: subsystem
+name: "Metaplanes and Astral Quests"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 91
+  basis: extends
+
+state:
+  tracked_values:
+    - "metaplane"
+    - "Quest Rating"
+    - "quest tests"
+    - "quest duration"
+    - "Dweller on the Threshold"
+
+participants:
+  - "initiates"
+  - "spirits"
+  - "metaplanar entities"
+
+components:
+  - "metaplanes"
+  - "Astral Quest"
+  - "Dweller on the Threshold"
+  - "Quest Tests"
+  - "Types of Quest"
+  - "Quest Duration"
+
+entry_conditions:
+  - "eligible initiate undertakes astral quest/metaplanar travel"
+
+exit_conditions:
+  - "quest completed, failed or abandoned"
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.initiation
+    - option.magic.metamagic
+
+sources:
+  - source: source.mits
+    page: 91
+    relation: extends
+    note: "The Metaplanes"
+  - source: source.mits
+    pages: "92-95"
+    relation: extends
+    note: "Astral Quest, Dweller, quest tests/types/duration"
+
+notes:
+  - "Astral quests are one permitted method of learning metamagic."
