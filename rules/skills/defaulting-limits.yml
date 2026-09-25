@@ -1,0 +1,44 @@
+id: rule.skills.defaulting-limits
+record_type: rule
+name: "Limits on Defaulting"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 85
+  basis: defines
+
+scope:
+  applies_to:
+    - rule.skills.defaulting
+  excludes: []
+
+resolution:
+  summary: "Defaulting is not permitted when the modified target number would be 8 or higher. When a defaulted test is an Open Test, subtract the defaulting modifier from the highest die result instead of adding it to a target number."
+  inputs:
+    - "modified target number"
+    - "default route modifier"
+    - "Open Test result when applicable"
+  outputs:
+    - "whether defaulting is permitted"
+    - "modified Open Test result"
+  steps: []
+
+links:
+  uses:
+    - rule.skills.defaulting
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.tests.open-test
+
+sources:
+  - source: source.sr3-core
+    page: 85
+    relation: defines
+    note: "Limits on Defaulting"
+
+notes:
+  - "Some skills/actions have no default regardless of target number."
