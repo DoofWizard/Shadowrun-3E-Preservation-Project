@@ -1,0 +1,25 @@
+id: rule.damage.wound-effects
+record_type: rule
+name: "Wound Effects"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 127, basis: extends}
+scope:
+  applies_to: ["Physical or Stun damage that may create additional implant/bioware/Attribute complications"]
+resolution:
+  summary: "After a Damage Resistance Test, compare the highest die result to the number of damage boxes inflicted. Failure or a shortfall produces wound effects. Each wound effect is then classified as cybersystem damage, bioware damage, or organic physical injury using the source's wound-effect table."
+  inputs: ["Damage Resistance Test dice", "damage boxes inflicted"]
+  outputs: ["number and type of wound effects"]
+  steps:
+    - "Treat the Damage Resistance Test as a Success Test with target number equal to boxes inflicted."
+    - "If no die reaches the target number, determine wound effects from the shortfall."
+    - "Roll for each wound effect to determine whether cyberware, bioware, or an Attribute is affected."
+links:
+  uses: [rule.damage.stress-points, rule.damage.stress-test]
+  affects: [subsystem.damage.stress]
+  modified_by: []
+  interacts_with: [rule.damage.attribute-damage]
+sources:
+  - {source: source.mm, pages: "126-127", relation: defines, note: "Determining Wound Effects and Wound Effect Table"}
+notes:
+  - "This adds complications to normal damage resolution rather than replacing the core SR3 damage system."
