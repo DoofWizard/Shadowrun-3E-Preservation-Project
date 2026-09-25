@@ -14,12 +14,13 @@ intrinsic:
   type: "Active Skill"
   category: "combat"
   linked_attribute: "Strength"
-  default: "Clubs, Pole Arms/Staffs"
-  specializations:
-    - "by specific weapon type"
+  summary: "Use of hand-held edged or pointed melee weapons of roughly one meter or less."
+  default_routes: ["Clubs","Pole Arms/Staffs"]
+  specializations: ["by specific weapon type"]
 
 links:
-  uses: []
+  uses:
+    - rule.skills.skill-ratings
   requires: []
   component_of: []
   interacts_with:
@@ -30,6 +31,6 @@ sources:
   - source: source.sr3-core
     page: 86
     relation: defines
-    note: "Skills — Active Skill categories"
+    note: "Skills — Active Skill Categories"
 
 notes: []
