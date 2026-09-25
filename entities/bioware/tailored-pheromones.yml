@@ -1,0 +1,18 @@
+id: entity.bioware.tailored-pheromones
+record_type: entity
+name: "Tailored Pheromones"
+domain: bioware
+status: ingested
+intrinsic:
+  levels:
+    1: {bio_index: 0.4, availability: "12/14 days", cost_nuyen: 20000, street_index: 2, legality: "Legal"}
+    2: {bio_index: 0.6, availability: "12/14 days", cost_nuyen: 45000, street_index: 2, legality: "Legal"}
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "70-71", relation: defines, note: "Tailored Pheromones description, game effects, stress effects and statistics"}
+notes:
+  - "Each level adds dice to Charisma and Social Skill Tests where scent can affect the target; cultured versions improve benefits and range."
