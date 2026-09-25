@@ -1,0 +1,58 @@
+id: subsystem.cyberware.core
+record_type: subsystem
+name: "Cyberware"
+domain: cyberware
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 296
+  basis: defines
+
+state:
+  tracked_values:
+    - "Essence Cost"
+    - "grade"
+    - "rating"
+    - "implant compatibility"
+    - "augmented attributes and capabilities"
+
+participants:
+  - "characters"
+  - "cyberware implants"
+
+components:
+  - "headware"
+  - "bodyware"
+  - "cyberlimbs"
+  - "alphaware"
+
+entry_conditions:
+  - "implantation"
+
+exit_conditions: []
+
+links:
+  rules:
+    - rule.cyberware.essence
+  procedures: []
+  entities: []
+  options:
+    - option.cyberware.grades
+  modifiers: []
+  interacts_with:
+    - rule.cyberware.magic-interaction
+
+sources:
+  - source: source.sr3-core
+    page: 296
+    relation: defines
+    note: "Cyberware"
+  - source: source.sr3-core
+    pages: "297-303"
+    relation: extends
+    note: "Headware, bodyware and cyberlimbs"
+
+notes:
+  - "Man & Machine extends this subsystem with additional grades, implants, interconnectivity, surgery and bioware."
