@@ -1,0 +1,16 @@
+id: rule.nanotech.acquisition-legality
+record_type: rule
+name: "Acquiring and Legally Possessing Nanoware"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 98, basis: defines}
+scope: {applies_to: ["nanoware acquisition and installation"]}
+resolution:
+  summary: "Nanoware is rare, expensive and generally available only through advanced clinics or specialized research/production sources. Legal systems may carry licensing and intellectual-property restrictions, while black-market access follows the source's shadowclinic rules and generally requires beta- or delta-grade facilities."
+  inputs: ["nanoware type", "clinic grade", "legal or black-market channel"]
+  outputs: ["availability and legal-access constraints"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core, procedure.surgery.find-provider]}
+sources:
+  - {source: source.mm, page: 98, relation: defines, note: "Acquiring Nanoware, Finding a Shadowclinic, Legality"}
+notes: []
