@@ -1,0 +1,16 @@
+id: rule.spirits.watcher-tasks
+record_type: rule
+name: "Watcher Tasks"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 101, basis: defines}
+scope: {applies_to: ["watcher spirits"]}
+resolution:
+  summary: "Watchers can perform simple astral errands including Air Cover, Alarm, Attack Dog, Bug, Courier and Irritant tasks. Instructions must remain simple and literal; complicated technological, arithmetic, or nuanced orders exceed watcher intelligence."
+  inputs: ["assigned task", "named people/places/targets", "watcher lifespan"]
+  outputs: ["guarding, pursuit, observation, message delivery, harassment, or failed/confused task"]
+  steps: []
+links: {uses: [entity.spirit.watcher, rule.spirits.watcher-tracking], affects: [], modified_by: [], interacts_with: [rule.magic.astral-security-patrolling]}
+sources:
+  - {source: source.mits, pages: "101-102", relation: defines, note: "Tasks for Watchers: Air Cover, Alarm, Attack Dog, Bug, Courier, Irritant"}
+notes: []
