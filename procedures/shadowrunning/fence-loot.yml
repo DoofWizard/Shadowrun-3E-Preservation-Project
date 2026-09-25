@@ -1,0 +1,61 @@
+id: procedure.shadowrunning.fence-loot
+record_type: procedure
+name: "Fencing Loot"
+domain: shadowrunning
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 237
+  basis: defines
+
+purpose: "Find a buyer and negotiate payment for stolen or illicit goods."
+
+prerequisites:
+  - "loot to dispose of"
+
+inputs:
+  - "loot type/value"
+  - "Etiquette"
+  - "Negotiation"
+  - "contacts and legal heat"
+  - "time spent finding a fence"
+
+stages:
+  - id: find-fence
+    name: "Find a Fence"
+    test_or_action: "Etiquette Test against base TN 4, modified by loot type and circumstances."
+    outputs: ["fence located", "search successes"]
+  - id: arrange-meet
+    name: "Arrange the Meet"
+    test_or_action: "Use search successes to affect time or negotiation position."
+    outputs: ["meeting"]
+  - id: negotiate
+    name: "Negotiate Sale"
+    test_or_action: "Opposed Negotiation Test determines final percentage of actual value paid."
+    outputs: ["sale price"]
+
+outcomes:
+  - "loot sold"
+  - "no buyer or complications"
+
+links:
+  uses:
+    - entity.skill.etiquette
+    - entity.skill.negotiation
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.sr3-core
+    page: 237
+    relation: defines
+    note: "Fencing the Loot / Finding a Fence / The Loot"
+  - source: source.sr3-core
+    page: 238
+    relation: extends
+    note: "Hustle It Along / Financing the Fence / The Meet"
+
+notes: []
