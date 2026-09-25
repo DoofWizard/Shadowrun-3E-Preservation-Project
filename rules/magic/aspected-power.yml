@@ -1,0 +1,17 @@
+id: rule.magic.aspected-power
+record_type: rule
+name: "Aspected Power"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 85, basis: defines}
+scope: {applies_to: ["magical activity at aspected background counts or power sites"]}
+resolution:
+  summary: "Some background counts and power sites favor particular traditions, magical skills, spell categories, spirit types, or other magical activities while hindering incompatible magic. Beneficial aspecting grants the site's rating as extra dice to compatible Magical Skill or Astral Tests; incompatible magic suffers the normal background-count penalty."
+  inputs: ["site/background rating", "site aspect", "magical activity"]
+  outputs: ["bonus dice or background-count penalty"]
+  steps: []
+links: {uses: [rule.magic.background-count, rule.magic.power-sites], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, page: 85, relation: defines, note: "Aspected Power"}
+notes:
+  - "Toxic background counts can function as power sites for compatible toxic practitioners."
