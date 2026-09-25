@@ -1,0 +1,61 @@
+id: procedure.magic.initiation
+record_type: procedure
+name: "Initiation Procedure"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 58
+  basis: extends
+
+purpose: "Increase an Awakened character's initiation grade and gain initiation benefits."
+
+prerequisites:
+  - "eligible Awakened character"
+  - "sufficient Karma"
+
+inputs:
+  - "desired new grade"
+  - "self-initiation or group initiation"
+  - "whether an ordeal is undertaken"
+  - "chosen initiation benefit"
+
+stages:
+  - id: cost
+    name: "Determine Karma Cost"
+    test_or_action: "Base Cost = 5 + desired grade; apply initiation multiplier"
+    outputs: ["Karma cost"]
+  - id: ordeal
+    name: "Complete Ordeal if chosen"
+    test_or_action: "Complete the selected ordeal before gaining the grade"
+    outputs: ["reduced Karma multiplier when successful"]
+  - id: initiate
+    name: "Gain Grade"
+    test_or_action: "Pay Karma and complete initiation"
+    outputs: ["new initiation grade", "chosen benefit"]
+
+outcomes:
+  - "increase initiation grade"
+  - "gain one permitted initiation benefit"
+
+links:
+  uses: []
+  requires: []
+  produces: []
+  modified_by:
+    - option.magic.initiation-ordeal
+
+sources:
+  - source: source.mits
+    page: 58
+    relation: defines
+    note: "Grades, advantages, cost of initiation"
+  - source: source.mits
+    page: 59
+    relation: extends
+    note: "Initiation ordeals"
+
+notes:
+  - "Cost multipliers: self-initiation x3; self with ordeal x2.5; group initiation x2; group with ordeal x1.5."
