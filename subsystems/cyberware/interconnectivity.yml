@@ -1,0 +1,49 @@
+id: subsystem.cyberware.interconnectivity
+record_type: subsystem
+name: "Cyberware Interconnectivity"
+domain: cyberware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 46
+  basis: extends
+
+state:
+  tracked_values:
+    - "device links"
+    - "router/datajack ports"
+
+participants:
+  - "cyberware devices"
+  - "datajacks"
+  - "routers"
+
+components:
+  - "linked devices"
+  - "dedicated ports"
+
+entry_conditions:
+  - "Devices that do not normally exchange data must be linked through a router or datajack to communicate."
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.matrix
+
+sources:
+  - source: source.mm
+    page: 46
+    relation: extends
+    note: "Interconnectivity"
+
+notes:
+  - "Devices that are integral accessories/components of the same system need not be separately linked."
+  - "Cyberware grade is not itself a restriction on linking devices of different grades."
