@@ -1,0 +1,40 @@
+id: rule.tests.opposed-test
+record_type: rule
+name: "Opposed Test"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Two characters directly opposing one another"
+  excludes: []
+
+resolution:
+  summary: "Each participant rolls dice equal to the relevant Attribute or skill rating against a target number equal to the opposing participant's relevant rating. The participant with more successes achieves the goal; a tie usually produces no result."
+  inputs:
+    - "participant A Attribute or skill rating"
+    - "participant B Attribute or skill rating"
+  outputs:
+    - "winner by net success comparison"
+    - "tie/no result"
+  steps:
+    - "Each participant rolls the relevant rating as dice."
+    - "Each participant uses the opponent's relevant rating as target number."
+    - "Count successes for both participants."
+    - "Compare success totals."
+
+links:
+  uses:
+    - rule.tests.making-tests
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 39
+    relation: defines
+    note: "Game Concepts — Opposed Tests"
+
+notes:
+  - "The core book says ties usually mean nothing happens."
