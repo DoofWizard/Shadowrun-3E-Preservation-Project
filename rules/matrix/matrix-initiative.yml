@@ -1,0 +1,23 @@
+id: rule.matrix.matrix-initiative
+record_type: rule
+name: "Matrix Initiative and Actions"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 208, basis: defines}
+scope:
+  applies_to: ["deckers/personas acting in the Matrix"]
+  excludes: []
+resolution:
+  summary: "Matrix Initiative uses decker/cyberdeck Response-based rules and follows the normal Combat Turn/Initiative Pass structure. Matrix actions are Free, Simple or Complex and can be delayed under standard initiative rules, with Matrix-specific action classifications."
+  inputs: ["Response Increase/Matrix Reaction","initiative dice","Matrix actions"]
+  outputs: ["Matrix Initiative Score and action economy"]
+  steps: []
+links:
+  uses: [rule.initiative.initiative-passes, rule.actions.combat-phase-actions]
+  affects: [procedure.matrix.cybercombat]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 208, relation: defines, note: "Running the Matrix / Movement and subjective time"}
+  - {source: source.sr3-core, page: 223, relation: clarifies, note: "Decker Initiative / Initiating Combat / Actions"}
+notes: []
