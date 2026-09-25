@@ -1,0 +1,22 @@
+id: rule.combat.shock-weapons
+record_type: rule
+name: "Shock Weapons"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 124, basis: defines}
+scope:
+  applies_to: ["stun batons, shock weapons and similar electrical attacks"]
+  excludes: []
+resolution:
+  summary: "Shock weapons inflict Stun damage and use their own armor interaction and resistance behavior; successful shock attacks may produce additional incapacitating effects under the shock-weapon rules."
+  inputs: ["shock weapon Power/Damage","armor","Body/resistance"]
+  outputs: ["Stun damage and shock effect"]
+  steps: []
+links:
+  uses: [rule.combat.damage-resistance]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 124, relation: defines, note: "Shock Weapons"}
+notes: []
