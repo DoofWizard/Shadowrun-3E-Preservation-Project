@@ -1,0 +1,22 @@
+id: rule.drones.operation
+record_type: rule
+name: "Drone Operation"
+domain: drones
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 154, basis: defines}
+scope:
+  applies_to: ["drones under autonomous or rigger control"]
+  excludes: []
+resolution:
+  summary: "Drones have Pilot Ratings and normally operate autonomously with Pilot-based tests. A rigger may control drones through a remote-control network, jump into a primary drone, or supervise multiple drones; secondary drones and captain's-chair operation use their own rating substitutions and bonus restrictions."
+  inputs: ["Pilot Rating","rigger control state","drone mode"]
+  outputs: ["dice/rating used for drone actions"]
+  steps: []
+links:
+  uses: [subsystem.drones.remote-control-network]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 154, relation: defines, note: "About Drones / Operative Modes / Captain's Chair Mode"}
+notes: []
