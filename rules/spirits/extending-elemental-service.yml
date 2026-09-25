@@ -1,0 +1,16 @@
+id: rule.spirits.extending-elemental-service
+record_type: rule
+name: "Extending Elemental Service"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 98, basis: extends}
+scope: {applies_to: ["bound elementals"]}
+resolution:
+  summary: "A mage may perform a new summoning ritual specifically to extend the service of an already-bound elemental. Each success on the new Conjuring Test adds one service. The mage resists Drain normally; if incapacitated or killed the elemental becomes uncontrolled, and a Rule-of-One result also releases it."
+  inputs: ["bound elemental", "new Conjuring Test", "Drain"]
+  outputs: ["additional services or uncontrolled elemental"]
+  steps: []
+links: {uses: [procedure.magic.summon-elemental], affects: [rule.magic.spirit-services], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 98, relation: extends, note: "Extending Elemental Service"}
+notes: []
