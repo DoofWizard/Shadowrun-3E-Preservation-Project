@@ -1,0 +1,46 @@
+id: rule.perception.perception-test
+record_type: rule
+name: "Perception Test"
+domain: perception
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 231
+  basis: defines
+
+scope:
+  applies_to:
+    - "noticing non-obvious sensory information"
+
+resolution:
+  summary: "A Perception Test normally rolls Intelligence against a gamemaster-set target number or a relevant opposing value. Team perception may use the highest Intelligence plus additional dice for team members. Success count determines the detail noticed."
+  inputs:
+    - "Intelligence"
+    - "base target number"
+    - "sensory/situational modifiers"
+  outputs:
+    - "degree of perceived information"
+
+links:
+  uses:
+    - rule.tests.success-test
+  affects: []
+  modified_by:
+    - modifier.perception.conditions
+  interacts_with:
+    - entity.skill.stealth
+
+sources:
+  - source: source.sr3-core
+    page: 231
+    relation: defines
+    note: "Running the Shadows — Perception"
+  - source: source.sr3-core
+    page: 232
+    relation: clarifies
+    note: "Perception Test Modifiers and Perception Success tables"
+
+notes:
+  - "Stealth (Awareness) may be added in certain cases."
