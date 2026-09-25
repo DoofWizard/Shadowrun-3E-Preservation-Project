@@ -1,0 +1,56 @@
+id: subsystem.magic.traditions-expanded
+record_type: subsystem
+name: "Expanded Magical Traditions"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 24
+  basis: extends
+
+state:
+  tracked_values:
+    - "tradition"
+    - "tools and trappings"
+    - "spirit/totem relationships"
+    - "tradition-specific geasa/foci/fetishes"
+
+participants:
+  - "magicians"
+  - "adepts"
+
+components:
+  - "Aboriginal magic"
+  - "Aztec magic"
+  - "Black magic"
+  - "Chaos magic"
+  - "Christian magic"
+  - "additional cultural traditions"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.magic.traditions
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.core
+
+sources:
+  - source: source.mits
+    page: 24
+    relation: extends
+    note: "Magical Traditions"
+  - source: source.mits
+    pages: "24-27"
+    relation: extends
+    note: "Tradition examples and Awakened oddities"
+
+notes:
+  - "These traditions use the standard SR3 magical rules except where the individual tradition says otherwise."
