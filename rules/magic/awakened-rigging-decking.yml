@@ -1,0 +1,16 @@
+id: rule.magic.awakened-rigging-decking
+record_type: rule
+name: "Awakened Rigging and Decking"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 31, basis: clarifies}
+scope: {applies_to: ["Awakened characters using rigging or decking interfaces"]}
+resolution:
+  summary: "Awakened characters may rig or deck, but the source highlights how cyberware Essence cost can impair Magic and how magical perception does not automatically transfer through technological sensor feeds or virtual environments."
+  inputs: ["Awakened status", "cyberware", "rigging/decking interface", "perception mode"]
+  outputs: ["allowed action and magical-perception limitations"]
+  steps: []
+links: {uses: [rule.cyberware.magic-interaction], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 31, relation: clarifies, note: "The Awakened and Rigging / The Awakened and Decking"}
+notes: []
