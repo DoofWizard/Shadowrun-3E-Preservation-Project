@@ -1,0 +1,38 @@
+id: compatibility.sr2.skill-conversion
+record_type: rule
+name: "SR2 Skill Conversion"
+domain: compatibility
+status: ingested
+
+effective:
+  status: conversion_only
+  source: source.sr3-core
+  page: 323
+  basis: conversion
+
+scope:
+  applies_to:
+    - "SR2 skills, concentrations and specializations"
+
+resolution:
+  summary: "Map SR2 skills to equivalent SR3 skills. SR2 concentrations generally become SR3 specializations where an equivalent exists; where SR2 separated firearms or knowledge subskills that SR3 consolidates, map them to the appropriate SR3 base skill/specialization, preserving rating as closely as possible."
+  inputs:
+    - "SR2 skill structure and ratings"
+  outputs:
+    - "SR3 base skills and specializations"
+
+links:
+  uses:
+    - rule.skills.specialization
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 323
+    relation: conversion
+    note: "Converting Characters — Skills"
+
+notes:
+  - "The source gives examples such as Stealth concentration becoming a Stealth specialization and SR2 firearm groupings mapping into SR3 base skills."
