@@ -1,0 +1,40 @@
+id: option.karma.staggered-rate-karma-pools
+record_type: option
+name: "Staggered-Rate Karma Pools"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 82
+  basis: adds_option
+
+option_for:
+  - rule.karma.karma-pool
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with:
+    - option.karma.equalized-karma-pools
+
+effects:
+  - "Karma Pool accumulation slows as a character's pool becomes larger."
+  - "Characters use the normal rate until Karma Pool reaches 5, then require larger awarded-Karma intervals for later Pool increases."
+  - "The rule is intended to keep very large Karma Pools from dominating play."
+
+links:
+  modifies:
+    - rule.karma.karma-pool
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 82
+    relation: adds_option
+    note: "Staggered-Rate Karma Pools"
+
+notes:
+  - "Explicitly optional."
