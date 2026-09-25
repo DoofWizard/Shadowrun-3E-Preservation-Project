@@ -1,0 +1,16 @@
+id: rule.spirit-powers.storm
+record_type: rule
+name: "Spirit Power: Storm"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 99, basis: defines}
+scope: {applies_to: ["spirits with the Storm power"]}
+resolution:
+  summary: "A spirit can create a storm anywhere in its domain over a radius up to Force x 100 meters. The storm manifests appropriate environmental phenomena and can make one storm strike per Combat Turn as a service when ordered by its summoner. The strike uses the source's Force-based attack and damage rules."
+  inputs: ["Force", "domain", "target area", "service use"]
+  outputs: ["storm area, environmental effects, or storm strike"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "99-100", relation: defines, note: "Storm spirit power"}
+notes: []
