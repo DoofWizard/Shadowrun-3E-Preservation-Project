@@ -1,0 +1,26 @@
+id: rule.spirit-power.immunity
+record_type: rule
+name: "Immunity"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 264, basis: defines}
+
+scope:
+  applies_to: ["beings with a specified Immunity"]
+
+resolution:
+  summary: "Provides an Armor Rating equal to twice Essence against the specified form of damage. If attack Power does not exceed twice Essence, the attack has no effect. Normal-weapons immunity has special interactions with elemental damage, Combat Spells, weapon foci, and armor-piercing ammunition."
+  inputs: ["Essence", "attack type and Power", "immunity type"]
+  outputs: ["immunity applies, armor rating, or attack proceeds"]
+
+power_profile: {type: physical, action: auto, range: self, duration: always}
+
+links: {uses: [], affects: [procedure.combat.ranged-attack, procedure.combat.melee-attack], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 264, relation: defines, note: "Immunity"}
+
+notes:
+  - "Immunity to age prevents aging."
+  - "Immunity to normal weapons does not protect against Combat Spells or weapon foci."
