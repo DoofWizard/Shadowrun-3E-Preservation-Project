@@ -1,0 +1,24 @@
+id: rule.spirit-power.guard
+record_type: rule
+name: "Guard"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Guard"]
+
+resolution:
+  summary: "Protects targets within the user's terrain/domain against accidents, including natural mishaps and effects caused by the Accident power, for as long as the power is sustained."
+  inputs: ["protected target", "accident effect"]
+  outputs: ["accident prevented where Guard applies"]
+
+power_profile: {type: physical, action: complex, range: LOS, duration: sustained}
+
+links: {uses: [], affects: [rule.spirit-power.accident], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Guard"}
+
+notes: []
