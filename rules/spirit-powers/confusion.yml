@@ -1,0 +1,24 @@
+id: rule.spirit-power.confusion
+record_type: rule
+name: "Confusion"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Confusion"]
+
+resolution:
+  summary: "Disorients victims. Add the user's Essence as a target-number modifier to Success Tests made while affected. When an important decision is required, the victim may resist with Willpower against the user's Essence."
+  inputs: ["user Essence", "victim Willpower"]
+  outputs: ["test penalties and possible resisted decisions"]
+
+power_profile: {type: mana, action: complex, range: LOS, duration: sustained}
+
+links: {uses: [rule.tests.success-test], affects: [rule.tests.making-tests], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Confusion"}
+
+notes: []
