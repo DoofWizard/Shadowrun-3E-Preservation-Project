@@ -1,0 +1,17 @@
+id: rule.spirits.great-form
+record_type: rule
+name: "Great Form Spirits"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 107, basis: defines}
+scope: {applies_to: ["eligible spirits successfully invoked as great forms"]}
+resolution:
+  summary: "Invoking can transform an eligible summoned spirit into a great form. Great forms gain type-specific powers and may receive physical-form enhancements. The summoner has points equal to initiation grade divided by 2, rounded down, to buy armor, Body, or Reach bonuses for the spirit's materialized form."
+  inputs: ["spirit type", "initiation grade", "Invoking result"]
+  outputs: ["great-form status, type-specific powers, physical-form bonuses"]
+  steps: []
+links: {uses: [option.magic.metamagic-invoking], affects: [entity.spirit.great-form], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 107, relation: defines, note: "Great Form Spirits / Physical Bonus / Great Elementals / Great Loa / Great Nature Spirits / Great Spirits of the Elements"}
+notes:
+  - "Physical bonus costs: Armor +1 costs 3 points; Body +1 costs 1; Reach +1 costs 2."
