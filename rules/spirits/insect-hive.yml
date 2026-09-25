@@ -1,0 +1,16 @@
+id: rule.spirits.insect-hive
+record_type: rule
+name: "Insect Hive Structure"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 129, basis: defines}
+scope: {applies_to: ["hive insect spirits"]}
+resolution:
+  summary: "Hive insects organize around a Queen and commonly include worker and soldier spirits. Ant, Fly, Termite, and Wasp hives differ in social structure and preferred environments, but all prioritize expansion and protection of the Queen. Before the Queen is summoned, an insect shaman's controlled true-form workers and soldiers are capped by Potency; after the Queen's arrival, hive growth shifts toward the Queen."
+  inputs: ["insect family", "Potency", "Magic", "Queen present or absent"]
+  outputs: ["controlled-hive composition and population limits"]
+  steps: []
+links: {uses: [rule.magic.potency, rule.spirits.insect-forms], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 129, relation: defines, note: "Hive Insect Spirits / Ant, Fly, Termite and Wasp Spirits / Building the Hive"}
+notes: []
