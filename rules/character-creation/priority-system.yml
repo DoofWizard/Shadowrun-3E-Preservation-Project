@@ -1,0 +1,44 @@
+id: rule.character-creation.priority-system
+record_type: rule
+name: "SR3 Priority System"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 54
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes: []
+
+resolution:
+  summary: "Assign each priority A through E exactly once to Race, Magic, Attributes, Skills, and Resources. Higher priorities provide greater benefits within that category."
+  inputs:
+    - "priority assignment"
+  outputs:
+    - "category-specific starting values"
+  steps:
+    - "Assign A, B, C, D, and E once each."
+    - "Read the resulting Race, Magic, Attribute Point, Skill Point, and Resource values from the Master Character Creation Table."
+
+links:
+  uses: []
+  affects:
+    - procedure.character-creation.standard
+  modified_by:
+    - option.character-creation.point-based-design
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 54
+    relation: defines
+    note: "Master Character Creation Table and The Priority System"
+
+notes:
+  - "Priority A through E values are category-specific."
+  - "Race and Magic choices constrain which priorities are available for the remaining categories."
