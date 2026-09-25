@@ -1,0 +1,21 @@
+id: rule.cyberware.single-cybereye
+record_type: rule
+name: "Single Cybereye"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 44, basis: extends}
+scope:
+  applies_to: ["single cybereye purchases and single-eye enhancements"]
+resolution:
+  summary: "Cybereyes may be purchased singly. A single eye costs 60 percent of the standard pair, uses 0.1 Essence, and has reduced accessory capacity. Paired-function enhancements are less effective in one eye; vision magnification in only one eye removes depth perception and adds a target-number penalty to distance-based tests while active."
+  inputs: ["cybereye configuration", "installed enhancements"]
+  outputs: ["cost", "Essence", "capacity/effect adjustments"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 44, relation: extends, note: "Single Cybereyes / Eye Modification Limits"}
+notes: []
