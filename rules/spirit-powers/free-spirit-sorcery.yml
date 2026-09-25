@@ -1,0 +1,16 @@
+id: rule.spirit-powers.free-spirit-sorcery
+record_type: rule
+name: "Free Spirit Power: Sorcery"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 118, basis: defines}
+scope: {applies_to: ["free spirits with Sorcery"]}
+resolution:
+  summary: "A free spirit uses Sorcery as a magician. Initial Sorcery is based on Force and Spell Pool on Spirit Energy. The spirit can spend Good Karma to increase Sorcery and learn spells without a teacher or formula, but cannot cast spells above its own Force and must materialize to affect physical targets."
+  inputs: ["Force", "Spirit Energy", "Sorcery", "known spells"]
+  outputs: ["spellcasting capability"]
+  steps: []
+links: {uses: [subsystem.magic.sorcery, rule.spirits.free-spirit-good-karma], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 118, relation: defines, note: "Sorcery"}
+notes: []
