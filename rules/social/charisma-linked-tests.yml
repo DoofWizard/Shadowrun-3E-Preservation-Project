@@ -1,0 +1,33 @@
+id: rule.social.charisma-linked-tests
+record_type: rule
+name: "Charisma-Linked Skill Tests"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 92
+  basis: defines
+
+scope:
+  applies_to: ["Etiquette","Interrogation","Intimidation","Leadership","Negotiation and similar Charisma-linked interaction"]
+  excludes: []
+
+resolution:
+  summary: "Charisma-linked social tests commonly use the other character's Intelligence as the base target number, then apply situational social modifiers. The exact resolution may instead use an Open Test for specific skills such as Intimidation and Interrogation."
+  inputs: ["social skill","opposing character","social situation"]
+  outputs: ["interaction target number and outcome"]
+  steps: []
+
+links:
+  uses: [entity.skill.etiquette, entity.skill.interrogation, entity.skill.intimidation, entity.skill.leadership, entity.skill.negotiation]
+  affects: []
+  modified_by: [modifier.social.cyberware, modifier.social.visible-armor]
+  interacts_with: [rule.social.negotiation-leadership, rule.social.interrogation-intimidation]
+
+sources:
+  - {source: source.sr3-core, page: 92, relation: defines, note: "Using Charisma-Linked Skills"}
+  - {source: source.sr3-core, page: 94, relation: extends, note: "Social Modifiers Table"}
+
+notes: []
