@@ -1,0 +1,21 @@
+id: entity.chemistry.jazz
+record_type: entity
+name: "Jazz"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "8/4 days"
+  cost_nuyen_per_dose: 40
+  street_index: 3
+  legality: "4P-X"
+  vector: "Inhalation"
+  speed: "Immediate"
+  addiction: "4M/5P"
+  tolerance: 2
+  edge: "2/8"
+  fix_factor: "3 days"
+links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: [rule.initiative.initiative]}
+sources:
+  - {source: source.mm, page: 119, relation: defines, note: "Jazz fictional drug game effects and statistics"}
+notes:
+  - "Temporarily modifies Quickness and Initiative in the tabletop rules and has a crash period."
