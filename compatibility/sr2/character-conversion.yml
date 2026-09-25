@@ -1,0 +1,71 @@
+id: compatibility.sr2.character-conversion
+record_type: procedure
+name: "SR2 Character Conversion to SR3"
+domain: compatibility
+status: ingested
+
+effective:
+  status: conversion_only
+  source: source.sr3-core
+  page: 323
+  basis: conversion
+
+purpose: "Convert existing Shadowrun Second Edition characters and NPCs for SR3."
+
+prerequisites:
+  - "SR2 character or NPC"
+
+inputs:
+  - "SR2 skills and specializations"
+  - "SR2 dice pools"
+  - "SR2 Karma Pool"
+  - "SR2 magical status/powers/spells"
+  - "SR2 gear"
+
+stages:
+  - id: skills
+    name: "Convert Skills"
+    test_or_action: "Map SR2 skills/concentrations/specializations onto SR3 base skills and specializations."
+    outputs: ["SR3 skill list"]
+  - id: additional-skills
+    name: "Allocate Additional Knowledge/Language Skills"
+    test_or_action: "Grant conversion skill points from Intelligence and language rules after accounting for converted skills."
+    outputs: ["additional SR3 skills"]
+  - id: pools
+    name: "Convert Dice Pools"
+    test_or_action: "Retain Combat and Control Pools; replace Magic Pool with Spell Pool; recalculate Astral Combat and Hacking Pools."
+    outputs: ["SR3 dice pools"]
+  - id: karma
+    name: "Convert Karma"
+    test_or_action: "For metahumans, halve old Karma Pool (round down, minimum 1); add the difference to Good Karma. Humans retain equivalent treatment under SR3 rules."
+    outputs: ["SR3 Karma Pool and Good Karma"]
+  - id: magic
+    name: "Convert Magic"
+    test_or_action: "Convert adepts, powers, spells and foci according to SR3 magic changes."
+    outputs: ["SR3 magical statistics"]
+  - id: gear
+    name: "Convert Gear"
+    test_or_action: "Use SR3-equivalent items/costs/functions where possible."
+    outputs: ["SR3 gear"]
+
+outcomes:
+  - "approximate SR3-compatible character"
+
+links:
+  uses: []
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.sr3-core
+    page: 323
+    relation: conversion
+    note: "Sourcebook Updates — Converting Characters"
+  - source: source.sr3-core
+    page: 324
+    relation: conversion
+    note: "Magic / Gear / Converting Sourcebook Material"
+
+notes:
+  - "The book explicitly says conversion results are approximate rather than exact duplicates."
