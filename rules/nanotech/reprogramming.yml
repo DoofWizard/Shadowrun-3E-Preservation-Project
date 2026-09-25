@@ -1,0 +1,16 @@
+id: rule.nanotech.reprogramming
+record_type: rule
+name: "Reprogramming Nanites"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 97, basis: defines}
+scope: {applies_to: ["nanites with Pilot Rating 2 or higher and reprogrammable functions"]}
+resolution:
+  summary: "Reprogrammable nanites can have supported functions changed by a suitable host or knowbot that can analyze their control language and communicate through the required directed signal. Reprogramming takes substantial time based on Pilot Rating and controller type, during which the nanites suspend normal operations."
+  inputs: ["Pilot Rating", "controller type", "supported function", "Engineering (Nanorobotics)"]
+  outputs: ["new programmed function or failed attempt"]
+  steps: []
+links: {uses: [rule.nanotech.pilot-and-programming], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 97, relation: defines, note: "Programming Nanites and Time to Reprogram Nanites table"}
+notes: []
