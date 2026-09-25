@@ -1,0 +1,17 @@
+id: rule.magic.wild-magic
+record_type: rule
+name: "Wild Magic Areas"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 87, basis: defines}
+scope: {applies_to: ["areas where magical conditions fluctuate unpredictably"]}
+resolution:
+  summary: "Wild-magic areas experience unpredictable supernatural events driven by unstable local mana. The gamemaster may roll daily on the Wild Magic Table or create an event appropriate to the site's established quirks."
+  inputs: ["wild-magic area", "daily event roll or gamemaster choice"]
+  outputs: ["temporary mana surge, spirit event, paranormal-creature event, ghost/haunting, or other local anomaly"]
+  steps: []
+links: {uses: [rule.magic.mana-surges], affects: [subsystem.magic.astral-terrain], modified_by: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, pages: "87-88", relation: defines, note: "Wild Magic and Wild Magic Table"}
+notes:
+  - "The table is explicitly presented as a template; each wild area may have its own characteristic results."
