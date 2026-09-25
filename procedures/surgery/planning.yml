@@ -1,0 +1,27 @@
+id: procedure.surgery.planning
+record_type: procedure
+name: "Surgical Planning and Preparation"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 145, basis: defines}
+purpose: "Plan a surgical procedure, determine options and establish the Surgical Threshold."
+prerequisites: ["patient medical profile unless emergency circumstances prevent it", "Medicine skill", "required surgical skills"]
+inputs: ["surgery type", "planned procedures", "positive and negative surgical options", "implant grade"]
+stages:
+  - id: choose
+    name: "Select Procedures and Options"
+    test_or_action: "Choose procedures and record required positive/negative options."
+    outputs: ["procedural list"]
+  - id: plan
+    name: "Planning Test"
+    test_or_action: "Make the source-specified Medicine planning test; successes may reduce planning time."
+    outputs: ["completed surgical plan"]
+  - id: threshold
+    name: "Determine Surgical Threshold"
+    test_or_action: "Combine procedure target number and cumulative option modifiers to establish the final threshold."
+    outputs: ["Surgical Threshold"]
+outcomes: ["surgical plan with procedural list and threshold"]
+links: {uses: [], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, pages: "144-145", relation: defines, note: "Surgery Overview, Surgical Planning and Preparation"}
+notes: []
