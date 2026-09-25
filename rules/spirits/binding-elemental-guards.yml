@@ -1,0 +1,16 @@
+id: rule.spirits.binding-elemental-guards
+record_type: rule
+name: "Binding Elemental Guards"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 98, basis: extends}
+scope: {applies_to: ["bound elementals assigned as astral guards"]}
+resolution:
+  summary: "A mage can permanently assign an elemental to astrally guard a location by spending Good Karma equal to the spirit's Force. The elemental then no longer counts against the mage's normal Charisma-based bound-elemental limit and guards the site for one year and one day unless destroyed or banished."
+  inputs: ["elemental Force", "Good Karma", "guard location"]
+  outputs: ["permanent guard assignment"]
+  steps: []
+links: {uses: [rule.magic.spirit-services], affects: [subsystem.magic.astral-security], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 98, relation: extends, note: "Binding Elemental Guards"}
+notes: []
