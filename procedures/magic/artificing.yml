@@ -1,0 +1,31 @@
+id: procedure.magic.artificing
+record_type: procedure
+name: "Artificing"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 42, basis: defines}
+purpose: "Design and create magical foci."
+prerequisites: ["Artificing specialization or Enchanting skill", "enchanting shop", "focus formula", "telesma/material basis"]
+inputs: ["focus type", "Force", "telesma", "radicals/orichalcum", "exotic materials if required"]
+stages:
+  - id: formula
+    name: "Design Focus Formula"
+    test_or_action: "Create or obtain a formula specifying focus type, rating, form and material basis."
+    outputs: ["focus formula"]
+  - id: materials
+    name: "Prepare Telesma"
+    test_or_action: "Select mundane, handmade, or virgin telesma and any required alchemical or exotic materials."
+    outputs: ["prepared telesma"]
+  - id: enchant
+    name: "Enchant Focus"
+    test_or_action: "Make the source-defined Enchanting Test over the required base time."
+    outputs: ["enchanted focus"]
+  - id: bond
+    name: "First Bonding"
+    test_or_action: "Pay Karma to complete first bonding; the creator may use Enchanting successes/materials to reduce the first-bond cost."
+    outputs: ["bonded focus"]
+outcomes: ["usable focus", "failed or incomplete enchantment"]
+links: {uses: [subsystem.magic.enchanting, subsystem.magic.foci], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "42-45", relation: defines, note: "Artificing, focus formula, telesma, Enchanting Test and first bonding"}
+notes: []
