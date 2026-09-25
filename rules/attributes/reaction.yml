@@ -1,0 +1,38 @@
+id: rule.attributes.reaction
+record_type: rule
+name: "Reaction"
+domain: attributes
+status: ingested
+
+scope:
+  applies_to:
+    - "Characters acting under pressure and in Initiative"
+  excludes: []
+
+resolution:
+  summary: "Reaction represents how quickly and how often a character can act under pressure. Base Reaction is the average of Quickness and Intelligence, rounded down, before applicable augmentations."
+  inputs:
+    - "Quickness"
+    - "Intelligence"
+  outputs:
+    - "Reaction"
+  steps:
+    - "Add Quickness and Intelligence."
+    - "Divide by 2."
+    - "Round down."
+
+links:
+  uses: []
+  affects:
+    - rule.initiative.initiative
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 41
+    relation: defines
+    note: "Game Concepts — Special Attributes / Reaction"
+
+notes:
+  - "Matrix, rigging, astral, cyberware, magic, and injury-specific Reaction modifications are treated by their own rules."
