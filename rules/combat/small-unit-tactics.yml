@@ -1,0 +1,46 @@
+id: rule.combat.small-unit-tactics
+record_type: rule
+name: "Small Unit Tactics Team Initiative"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 105
+  basis: extends
+
+scope:
+  applies_to:
+    - "teams using Small Unit Tactics"
+
+resolution:
+  summary: "A character can analyze the tactical situation and communicate orders to grant Initiative bonuses to eligible teammates. The leader makes a Small Unit Tactics Test; successes determine the Initiative bonus, with limits on how many teammates benefit and additional interaction with BattleTac systems."
+  inputs:
+    - "Small Unit Tactics rating"
+    - "team members"
+    - "tactical conditions"
+    - "BattleTac support where present"
+  outputs:
+    - "team Initiative bonus"
+
+links:
+  uses:
+    - entity.skill.small-unit-tactics
+    - rule.initiative.initiative
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.cc
+    page: 105
+    relation: extends
+    note: "Small Unit Tactics Skill"
+  - source: source.cc
+    page: 106
+    relation: extends
+    note: "Small Unit Tactics and Combat Pool / Smoke / Suppressive Fire"
+
+notes:
+  - "The skill first appears in M&M; Cannon Companion expands its tactical combat use."
