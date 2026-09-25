@@ -1,0 +1,55 @@
+id: subsystem.npc.prime-runners
+record_type: subsystem
+name: "Prime Runner Scaling"
+domain: npc
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 83
+  basis: adds_option
+
+state:
+  tracked_values:
+    - "relative NPC tier"
+    - "skill/attribute delta"
+    - "Karma Pool"
+    - "Professional Rating"
+
+participants:
+  - "important NPC opponents/allies"
+
+components:
+  - "Inferior"
+  - "Equal"
+  - "Superior"
+  - "Superhuman"
+  - "Ultimate"
+
+entry_conditions:
+  - "gamemaster uses relative Prime Runner scaling"
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rule.npc.professionalism
+
+sources:
+  - source: source.srcomp
+    page: 83
+    relation: adds_option
+    note: "Creating Prime Runners"
+  - source: source.srcomp
+    page: 84
+    relation: extends
+    note: "Superior / Superhuman / Ultimate and State of the Art introduction"
+
+notes:
+  - "The tiers are tools for relative opposition design, not replacements for normal NPC creation."
