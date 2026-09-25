@@ -1,0 +1,64 @@
+id: subsystem.ammunition.cc-expanded
+record_type: subsystem
+name: "Expanded Ammunition and Explosives"
+domain: ammunition
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 36
+  basis: extends
+
+state:
+  tracked_values:
+    - "ammunition type"
+    - "weapon class"
+    - "cased/caseless"
+    - "Power/Damage effects"
+    - "armor interaction"
+    - "chemical payload where applicable"
+
+participants:
+  - "firearms"
+  - "ammunition"
+  - "grenades"
+  - "mines"
+  - "mortar rounds"
+  - "missiles/rockets"
+
+components:
+  - "expanded firearm ammunition"
+  - "shotgun rounds"
+  - "miscellaneous rounds"
+  - "grenades"
+  - "mines"
+  - "mortar rounds"
+  - "missile/rocket munitions"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rules.firearms.ammunition
+  procedures:
+    - procedure.equipment.ammunition-construction
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.chemistry.drugs
+
+sources:
+  - source: source.cc
+    page: 36
+    relation: extends
+    note: "Ammunition and Explosives"
+  - source: source.cc
+    pages: "36-44"
+    relation: extends
+    note: "Ammunition types, explosives, mines, mortar rounds and missiles/rockets"
+
+notes:
+  - "The chapter explicitly uses the standard SR3 ammunition rules and adds new ammunition/equipment types."
