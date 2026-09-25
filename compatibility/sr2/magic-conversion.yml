@@ -1,0 +1,38 @@
+id: compatibility.sr2.magic-conversion
+record_type: rule
+name: "SR2 Magic Conversion"
+domain: compatibility
+status: ingested
+
+effective:
+  status: conversion_only
+  source: source.sr3-core
+  page: 324
+  basis: conversion
+
+scope:
+  applies_to:
+    - "SR2 adepts, powers, spells and foci"
+
+resolution:
+  summary: "Convert SR2 magical characters to SR3 by treating SR2 magical adepts as SR3 aspected magicians, recalculating physical-adept powers using SR3 Power Point costs, adjusting changed powers/spells, converting spell locks into sustaining foci, and recalculating magician Astral Initiative under SR3."
+  inputs:
+    - "SR2 magical character"
+  outputs:
+    - "SR3 magical character"
+
+links:
+  uses:
+    - subsystem.magic.core
+    - subsystem.magic.foci
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 324
+    relation: conversion
+    note: "Magic"
+
+notes: []
