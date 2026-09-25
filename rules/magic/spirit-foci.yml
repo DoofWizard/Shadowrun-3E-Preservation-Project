@@ -1,0 +1,22 @@
+id: rule.magic.spirit-foci
+record_type: rule
+name: "Spirit Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["Conjuring involving the spirit type specified by the focus"]
+  excludes: []
+resolution:
+  summary: "A spirit focus supplies bonus dice equal to its Force for eligible summoning, controlling and banishing tests involving one declared type of nature spirit or elemental, and may also assist applicable Conjuring Drain Resistance."
+  inputs: ["focus Force","declared spirit type","Conjuring/Drain test"]
+  outputs: ["bonus dice"]
+  steps: []
+links:
+  uses: [entity.skill.conjuring]
+  affects: [subsystem.magic.conjuring]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Spirit Foci"}
+notes: []
