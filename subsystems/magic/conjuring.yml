@@ -1,0 +1,23 @@
+id: subsystem.magic.conjuring
+record_type: subsystem
+name: "Conjuring"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 184, basis: defines}
+state:
+  tracked_values: ["Conjuring Skill","spirit Force","services owed","bound/unbound state","domain","Conjuring Drain"]
+participants: ["conjurers","nature spirits","elementals"]
+components: ["summoning","binding","services","controlling","banishing","spirit forms","spirit combat"]
+entry_conditions: ["character can use Conjuring"]
+exit_conditions: []
+links:
+  rules: [rule.magic.spirit-services, rule.magic.controlling-spirits, rule.magic.banishing]
+  procedures: [procedure.magic.summon-nature-spirit, procedure.magic.summon-elemental]
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [rule.magic.drain]
+sources:
+  - {source: source.sr3-core, page: 184, relation: defines, note: "Conjuring"}
+notes:
+  - "Magic in the Shadows extends Conjuring and spirit rules."
