@@ -1,0 +1,14 @@
+id: option.magic.geas-condition
+record_type: option
+name: "Condition Geas"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 32, basis: defines}
+option_for: [subsystem.magic.geasa]
+selection: {timing: "when accepting or creating a geas", prerequisites: [], incompatible_with: []}
+effects:
+  - "Requires the character to satisfy a specific personal condition in order to use the Magic Point offset by the geas."
+links: {modifies: [subsystem.magic.geasa], requires: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 32, relation: defines, note: "Condition Geas"}
+notes: []
