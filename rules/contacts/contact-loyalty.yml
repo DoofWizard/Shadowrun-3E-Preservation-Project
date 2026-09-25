@@ -1,0 +1,44 @@
+id: rule.contacts.contact-loyalty
+record_type: rule
+name: "Contact Loyalty and Refusal"
+domain: contacts
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 255
+  basis: defines
+
+scope:
+  applies_to:
+    - "determining whether a contact refuses sensitive questions or cooperation"
+
+resolution:
+  summary: "When a contact's loyalty is uncertain, the gamemaster may make an Opposed Willpower Test. Higher-level contacts are progressively more loyal, but contacts remain independent NPCs with their own interests and may refuse or oppose runners."
+  inputs:
+    - "contact level"
+    - "contact Willpower"
+    - "runner circumstances"
+  outputs:
+    - "cooperates, refuses, or withholds"
+
+links:
+  uses:
+    - rule.tests.opposed-test
+  affects:
+    - rule.contacts.legwork
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 255
+    relation: defines
+    note: "Continuation of Level 1 contact"
+  - source: source.sr3-core
+    page: 256
+    relation: extends
+    note: "Level 2 / Level 3 contact advantages and refusal"
+
+notes: []
