@@ -1,0 +1,70 @@
+id: procedure.matrix.programming
+record_type: procedure
+name: "Matrix Programming"
+domain: matrix
+status: ingested
+
+effective:
+  status: current
+  source: source.matrix
+  page: 76
+  basis: extends
+
+purpose: "Create Matrix programs such as utilities, applications, IC, frames, agents, and related code."
+
+prerequisites:
+  - "Computer (Programming) capability"
+  - "sufficient computer memory"
+  - "appropriate program design constraints"
+
+inputs:
+  - "program type"
+  - "program rating"
+  - "program multiplier"
+  - "selected options"
+
+stages:
+  - id: plan
+    name: "Program Plan"
+    test_or_action: "Appropriate Program Design Knowledge test if a plan is created"
+    outputs: ["possible programming target-number reduction"]
+  - id: programming
+    name: "Programming Test"
+    test_or_action: "Computer (Programming) Test"
+    outputs: ["task period and completed source code"]
+  - id: object-code
+    name: "Object Code"
+    test_or_action: "Create/cook usable object-code copies as required"
+    outputs: ["usable program copy"]
+
+outcomes:
+  - "program source code"
+  - "usable object code after required finishing steps"
+
+links:
+  uses: []
+  requires: []
+  produces:
+    - entity.matrix.program
+  modified_by:
+    - option.matrix.program-options
+
+sources:
+  - source: source.matrix
+    page: 76
+    relation: extends
+    note: "Programming"
+  - source: source.matrix
+    page: 78
+    relation: clarifies
+    note: "Program rating, size, base time, planning"
+  - source: source.matrix
+    page: 80
+    relation: extends
+    note: "Programming teams"
+  - source: source.matrix
+    page: 81
+    relation: extends
+    note: "Upgrading and optional bugs"
+
+notes: []
