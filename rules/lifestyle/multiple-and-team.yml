@@ -1,0 +1,38 @@
+id: rule.lifestyle.multiple-and-team
+record_type: rule
+name: "Multiple, Safehouse, and Team Lifestyles"
+domain: lifestyles
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 241
+  basis: extends
+
+scope:
+  applies_to:
+    - entity.lifestyle.lifestyle
+
+resolution:
+  summary: "Characters may maintain multiple lifestyles for different purposes. Teams may jointly purchase team lifestyles/safehouses; individual characters still maintain personal lifestyles unless the campaign circumstances dictate otherwise."
+  inputs:
+    - "number and level of lifestyles"
+    - "team contributions"
+  outputs:
+    - "separate maintained residences/safehouses"
+
+links:
+  uses:
+    - rule.lifestyle.maintenance
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 241
+    relation: extends
+    note: "Multiple Lifestyles / Safehouses / Team Lifestyles"
+
+notes: []
