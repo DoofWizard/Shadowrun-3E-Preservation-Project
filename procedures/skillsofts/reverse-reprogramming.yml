@@ -1,0 +1,63 @@
+{
+  "id": "procedure.skillsofts.reverse-reprogramming",
+  "record_type": "procedure",
+  "name": "Reverse Event Reprogramming",
+  "domain": "skillsofts",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 71,
+    "basis": "defines"
+  },
+  "purpose": "Restore original memories after fictional PAB event reprogramming.",
+  "prerequisites": [
+    "reprogramming has been detected"
+  ],
+  "inputs": [
+    "original reprogramming target number",
+    "PAB rating used to reverse",
+    "original PAB rating",
+    "Psychotherapy skill if used"
+  ],
+  "stages": [
+    {
+      "id": "test",
+      "name": "Reversal Test",
+      "test_or_action": "Use the original reprogramming procedure and target number, modified by the difference between the PAB ratings. Psychotherapy may be used with the same detection target number.",
+      "outputs": [
+        "restored or unrestored memories"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Determine Time",
+      "test_or_action": "PAB reversal uses the same base-time framework; psychotherapy uses PAB rating x D6 hours as base time.",
+      "outputs": [
+        "recovery time"
+      ]
+    }
+  ],
+  "outcomes": [
+    "original memories restored",
+    "reversal incomplete"
+  ],
+  "links": {
+    "uses": [
+      "procedure.skillsofts.event-reprogramming",
+      "procedure.skillsofts.detect-reprogramming"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 71,
+      "relation": "defines",
+      "note": "Reversing Reprogramming"
+    }
+  ],
+  "notes": []
+}
