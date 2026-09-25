@@ -1,0 +1,55 @@
+id: subsystem.biotech.gear
+record_type: subsystem
+name: "Biotech Gear"
+domain: biotech
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 303
+  basis: defines
+
+state:
+  tracked_values:
+    - "medical device/service type"
+    - "availability"
+    - "cost"
+    - "Street Index"
+    - "legality"
+
+participants:
+  - "medical gear"
+  - "medical services"
+  - "patients"
+
+components:
+  - "biomonitor"
+  - "DocWagon contract"
+  - "stabilization unit"
+  - "slap patches"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures:
+    - procedures.healing.natural-and-medical
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rule.hazards.toxins-diseases
+
+sources:
+  - source: source.sr3-core
+    page: 303
+    relation: defines
+    note: "Biotech"
+  - source: source.sr3-core
+    pages: "304-305"
+    relation: extends
+    note: "DocWagon, stabilization units and slap patches"
+
+notes: []
