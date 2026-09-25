@@ -1,0 +1,40 @@
+id: rule.nanotech.nanite-loss
+record_type: rule
+name: "Nanite Loss and Maintenance"
+domain: nanotech
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 100
+  basis: defines
+
+scope:
+  applies_to:
+    - "nanoware/nanite populations in a host"
+
+resolution:
+  summary: "Nanite populations degrade over time and may also be lost through bleeding or other physical events. Nanoware requires maintenance/replenishment according to its type; insufficient population can reduce or end the system's effect."
+  inputs:
+    - "nanoware type"
+    - "elapsed time"
+    - "injury/bleeding"
+    - "maintenance"
+  outputs:
+    - "remaining effective nanite population/effect"
+
+links:
+  uses: []
+  affects:
+    - subsystem.nanotech.core
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 100
+    relation: defines
+    note: "Nanite Loss / Bleeding / Maintenance"
+
+notes: []
