@@ -1,0 +1,35 @@
+id: procedure.damage.cyberware-stress-repair
+record_type: procedure
+name: "Cyberware Stress Repair"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 130, basis: defines}
+purpose: "Remove repairable Stress Points from cyberware through maintenance or surgery."
+prerequisites:
+  - "appropriate cyberware tool shop"
+  - "appropriate repair skill"
+inputs:
+  - "implant Stress Points"
+  - "implant grade"
+  - "facility and doctoring modifiers"
+stages:
+  - id: assess
+    name: "Assess Repair"
+    test_or_action: "Choose the appropriate Biotechnology (Cybertechnology Implantation), Computer (Cybernetics) B/R, or Electronics (Cybertechnology) B/R skill for the system."
+    outputs: ["repair approach"]
+  - id: test
+    name: "Repair Test"
+    test_or_action: "Test against a target number equal to implant Stress, modified by Expanded Doctoring and implant grade."
+    outputs: ["Stress removed or repair complication"]
+outcomes:
+  - "Every two successes remove one Stress Point."
+  - "Failed repair can make remaining Stress permanent."
+  - "Stress cannot be reduced below one after the implant has been pushed beyond its limits, as specified by the source."
+links:
+  uses: [rule.damage.stress-points]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.mm, page: 130, relation: defines, note: "Cyberware Stress Repair / Repair Test"}
+notes: []
