@@ -1,0 +1,22 @@
+id: rule.initiative.damage-and-initiative
+record_type: rule
+name: "Damage and Initiative"
+domain: initiative
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 102, basis: defines}
+scope:
+  applies_to: ["wounded characters during Combat Turns"]
+  excludes: []
+resolution:
+  summary: "Apply wound modifiers to Initiative Scores. Damage already present modifies the Initiative roll; damage taken during the Combat Turn immediately reduces the current Initiative Score and can change later pass order or remove later actions."
+  inputs: ["current Initiative Score","applicable wound modifier"]
+  outputs: ["modified Initiative Score and action eligibility"]
+  steps: []
+links:
+  uses: [rule.initiative.initiative-passes]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.condition.condition-monitor]
+sources:
+  - {source: source.sr3-core, page: 102, relation: defines, note: "Damage and Initiative"}
+notes: []
