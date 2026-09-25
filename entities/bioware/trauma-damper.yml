@@ -1,0 +1,21 @@
+id: entity.bioware.trauma-damper
+record_type: entity
+name: "Trauma Damper"
+domain: bioware
+status: ingested
+intrinsic:
+  grade: cultured
+  bio_index: 0.4
+  availability: "6/8 days"
+  cost_nuyen: 40000
+  street_index: 2
+  legality: "6P-N"
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [entity.bioware.damage-compensators, entity.bioware.pain-editor, rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "75-76", relation: defines, note: "Trauma Damper description, game effects, stress effects and statistics"}
+notes:
+  - "In the fictional game rules, converts or reduces incoming wound boxes as specified and alters pain-related tests; interactions with pain editor and damage compensators are explicit."
