@@ -1,0 +1,60 @@
+id: subsystem.firearms.design-customization
+record_type: subsystem
+name: "Firearm Design and Customization"
+domain: firearms
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 72
+  basis: extends
+
+state:
+  tracked_values:
+    - "weapon design"
+    - "design points/options"
+    - "space"
+    - "work time"
+    - "cost"
+    - "modification compatibility"
+
+participants:
+  - "firearm designers"
+  - "gunsmiths"
+  - "firearms"
+
+components:
+  - "gunsmithing tools"
+  - "firearm design"
+  - "design process"
+  - "customization"
+  - "space restrictions"
+  - "cosmetic/internal/physical modifications"
+  - "ammunition design"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures:
+    - procedure.firearms.design
+    - procedure.firearms.customize
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rule.skills.build-repair
+
+sources:
+  - source: source.cc
+    page: 72
+    relation: extends
+    note: "Firearm Design and Customization"
+  - source: source.cc
+    pages: "72-84"
+    relation: extends
+    note: "Design process, firearm customization and ammunition design"
+
+notes: []
