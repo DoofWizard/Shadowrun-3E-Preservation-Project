@@ -1,0 +1,38 @@
+id: option.combat.grenade-explosives-damage
+record_type: option
+name: "Optional Grenade/Explosives Damage Rule"
+domain: combat
+status: ingested
+
+effective:
+  status: optional
+  source: source.sr3-core
+  page: 119
+  basis: adds_option
+
+option_for:
+  - procedure.combat.grenade-attack
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Uses a Demolitions Skill Test against TN 4 to stage grenade/explosive Damage Level before resolving the explosion."
+  - "Successes from the Demolitions Test stage the grenade/explosive Damage Level upward."
+
+links:
+  modifies:
+    - procedure.combat.grenade-attack
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 119
+    relation: adds_option
+    note: "Grenade/Explosives Damage (Optional Rule)"
+
+notes:
+  - "Explicitly optional and therefore not baseline current behavior unless enabled."
