@@ -1,0 +1,14 @@
+id: entity.nanotech.nanitdotes
+record_type: entity
+name: "Nanitdotes"
+domain: nanotech
+status: ingested
+intrinsic:
+  forms:
+    free_floating: {cost: "500 x toxin cost", availability: "10/2 wks", street_index: 2, legality: "Legal"}
+    transient: {cost: "200 x toxin cost", availability: "8/1 wk", street_index: 2, legality: "Legal"}
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
+sources:
+  - {source: source.mm, page: 94, relation: defines, note: "Nanitdotes description, game effects and statistics"}
+notes:
+  - "Fictional game-system antidote nanoware tailored to one specified toxin."
