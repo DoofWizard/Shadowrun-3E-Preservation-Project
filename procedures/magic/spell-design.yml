@@ -1,0 +1,60 @@
+id: procedure.magic.spell-design
+record_type: procedure
+name: "Spell Design"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 47
+  basis: extends
+
+purpose: "Design a new spell formula within the limits of SR3 sorcery."
+
+prerequisites:
+  - "appropriate magical knowledge and inspiration"
+
+inputs:
+  - "desired spell effect"
+  - "spell category"
+  - "range/target/duration parameters"
+  - "Drain modifiers"
+  - "tradition-specific formula representation"
+
+stages:
+  - id: concept
+    name: "Define Effect"
+    test_or_action: "Choose an effect that obeys the setting's stated limits of sorcery."
+    outputs: ["spell concept"]
+  - id: formula
+    name: "Create Formula"
+    test_or_action: "Create the symbolic formula appropriate to the designer's magical tradition."
+    outputs: ["spell formula"]
+  - id: design
+    name: "Resolve Design"
+    test_or_action: "Apply spell-design rules to derive the final spell characteristics and Drain."
+    outputs: ["new spell design"]
+
+outcomes:
+  - "usable spell formula"
+
+links:
+  uses:
+    - rules.magic.spell-characteristics
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.mits
+    page: 47
+    relation: extends
+    note: "Spell Design / Limits of Sorcery / Spell Formulas"
+  - source: source.mits
+    pages: "48-56"
+    relation: extends
+    note: "Designing new spells"
+
+notes:
+  - "The source states explicit setting limits: sorcery requires a magical link, cannot directly alter space/time, cannot predict the future with certainty, cannot summon/banish spirits, and magic is not intelligent."
