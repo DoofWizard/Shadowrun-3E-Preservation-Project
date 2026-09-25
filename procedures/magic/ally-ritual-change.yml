@@ -1,0 +1,23 @@
+id: procedure.magic.ally-ritual-change
+record_type: procedure
+name: "Ritual of Change for an Ally"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 112, basis: defines}
+purpose: "Increase or modify an existing ally spirit's ratings using its original formula."
+prerequisites: ["existing ally", "original ally formula", "Karma for desired changes"]
+inputs: ["rating changes", "current ally Force/Attributes/skills", "Conjuring"]
+stages:
+  - id: calculate
+    name: "Calculate Change Cost"
+    test_or_action: "Pay Karma for the chosen Force/Attribute/skill changes before beginning."
+    outputs: ["paid change plan"]
+  - id: ritual
+    name: "Change Ritual"
+    test_or_action: "Use summoning-ritual requirements; target number is ally Force plus total rating points added, except Force increase uses the new Force."
+    outputs: ["changed ally or failed ritual"]
+outcomes: ["ally ratings increased", "ally attempts to go free after failure"]
+links: {uses: [procedure.magic.summon-ally, rule.spirits.designing-ally], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, page: 112, relation: defines, note: "Ritual of Change"}
+notes: []
