@@ -1,0 +1,72 @@
+{
+  "id": "procedure.skillsofts.event-reprogramming",
+  "record_type": "procedure",
+  "name": "Event Reprogramming with PAB",
+  "domain": "skillsofts",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 69,
+    "basis": "defines"
+  },
+  "purpose": "Use programmable ASIST biofeedback to erase, alter, or insert memories of events or specific knowledge in a fictional Shadowrun character.",
+  "prerequisites": [
+    "programmable ASIST biofeedback unit (PAB)",
+    "appropriate trained operator"
+  ],
+  "inputs": [
+    "subject Willpower or Intelligence",
+    "PAB rating",
+    "memory span and importance",
+    "operator Biotech/Psychology",
+    "concealment effort"
+  ],
+  "stages": [
+    {
+      "id": "target",
+      "name": "Set Reprogramming Difficulty",
+      "test_or_action": "Base target number is the higher of Willpower or Intelligence minus the PAB rating, then apply Reprogramming Modifiers.",
+      "outputs": [
+        "target number"
+      ]
+    },
+    {
+      "id": "test",
+      "name": "Reprogramming Test",
+      "test_or_action": "Use Biotech with Psychology as a complementary skill; successes complete the change and can conceal evidence.",
+      "outputs": [
+        "successes and concealed/revealed alteration"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Determine Time",
+      "test_or_action": "Base time is 60 days divided by PAB rating, then divided by successes.",
+      "outputs": [
+        "reprogramming time"
+      ]
+    }
+  ],
+  "outcomes": [
+    "memory alteration succeeds",
+    "failed or partial reprogramming eventually degrades according to the source"
+  ],
+  "links": {
+    "uses": [],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "69-71",
+      "relation": "defines",
+      "note": "Event Reprogramming / Reprogramming Test / modifiers"
+    }
+  ],
+  "notes": [
+    "Fictional game mechanic; not a real-world memory-modification procedure."
+  ]
+}
