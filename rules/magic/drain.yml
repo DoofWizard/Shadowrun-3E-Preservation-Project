@@ -1,0 +1,22 @@
+id: rule.magic.drain
+record_type: rule
+name: "Drain"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 162, basis: defines}
+scope:
+  applies_to: ["spellcasting","conjuring","specified magical actions"]
+  excludes: []
+resolution:
+  summary: "Magical actions can cause Drain. Drain has a target number/Power and Damage Level; the magician resists with the Attribute specified by the magical subsystem, possibly with eligible pool dice. Each two successes reduce the Drain Damage Level by one. Drain is normally Stun, but becomes Physical under the source's Force-versus-Magic conditions."
+  inputs: ["Drain Power/target number","Drain Level","specified resistance Attribute","eligible pool dice","Force/Magic comparison"]
+  outputs: ["final Drain damage"]
+  steps: []
+links:
+  uses: [rule.combat.damage-staging]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.magic.sorcery, subsystem.magic.conjuring]
+sources:
+  - {source: source.sr3-core, page: 162, relation: defines, note: "Drain"}
+notes: []
