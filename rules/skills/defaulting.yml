@@ -1,0 +1,60 @@
+id: rule.skills.defaulting
+record_type: rule
+name: "Skill Defaulting"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 84
+  basis: defines
+
+scope:
+  applies_to:
+    - "attempting an action without the necessary skill"
+  excludes:
+    - "skills/actions that explicitly have no default"
+    - "defaults outside the allowed category/group routes"
+
+resolution:
+  summary: "A character lacking the needed skill may sometimes default from a related skill, specialization, or linked Attribute. The route chosen determines the target-number modifier and how many dice/pool dice may be used."
+  inputs:
+    - "required skill"
+    - "available related skill, specialization, or linked Attribute"
+    - "base target number or Open Test"
+  outputs:
+    - "default dice"
+    - "modified target number or Open Test result"
+  steps:
+    - "Identify the required base skill."
+    - "Choose an allowed default route."
+    - "Apply the route's target-number modifier."
+    - "Apply the route's dice-pool restriction."
+    - "Resolve the test."
+
+links:
+  uses:
+    - rule.skills.specialization
+    - rule.tests.success-test
+    - rule.tests.open-test
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.skills.defaulting-limits
+
+sources:
+  - source: source.sr3-core
+    page: 84
+    relation: defines
+    note: "Defaulting / The Defaulting Process"
+  - source: source.sr3-core
+    page: 85
+    relation: clarifies
+    note: "Default Table and route details"
+
+notes:
+  - "Default from specialization to related base skill: +3 target number; dice pool limited to half specialization's base skill."
+  - "Default from skill to another allowed skill: +2 target number; dice pool limited to half rating in the skill used."
+  - "Default from skill to linked Attribute: +4 target number; no dice pool allowed."
+  - "Characters may only default within the allowed skill grouping/category routes described by SR3."
