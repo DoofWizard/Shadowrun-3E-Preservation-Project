@@ -1,0 +1,60 @@
+id: subsystem.magic.enchanting
+record_type: subsystem
+name: "Enchanting"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 39
+  basis: extends
+
+state:
+  tracked_values:
+    - "Enchanting/Talismongering skill"
+    - "raw/refined magical materials"
+    - "radicals"
+    - "focus design/Force"
+    - "enchanting time"
+    - "magical item analysis"
+
+participants:
+  - "Awakened enchanters"
+  - "magical materials"
+  - "foci"
+
+components:
+  - "enchanting gear"
+  - "talismongering"
+  - "alchemy"
+  - "artificing"
+  - "new foci"
+  - "focus addiction"
+  - "unique enchantments"
+  - "magical-item analysis"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.foci
+
+sources:
+  - source: source.mits
+    page: 39
+    relation: extends
+    note: "Enchanting"
+  - source: source.mits
+    pages: "40-47"
+    relation: extends
+    note: "Talismongering, alchemy, artificing, foci and magical-item analysis"
+
+notes:
+  - "Enchanting has Talismongering and Artificing specializations."
