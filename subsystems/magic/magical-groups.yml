@@ -1,0 +1,65 @@
+id: subsystem.magic.magical-groups
+record_type: subsystem
+name: "Magical Groups"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 61
+  basis: extends
+
+state:
+  tracked_values:
+    - "group purpose"
+    - "structure"
+    - "customs"
+    - "resources"
+    - "patron"
+    - "membership"
+    - "initiation benefits"
+
+participants:
+  - "initiates"
+  - "magical groups"
+
+components:
+  - "purpose"
+  - "structures"
+  - "customs"
+  - "resources"
+  - "patrons"
+  - "finding/joining/founding"
+  - "group creation"
+  - "avatar"
+
+entry_conditions:
+  - "membership requirements satisfied"
+
+exit_conditions:
+  - "member leaves or is removed"
+
+links:
+  rules: []
+  procedures:
+    - procedure.magic.initiation
+  entities: []
+  options:
+    - option.magic.initiation-ordeal
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.initiation
+
+sources:
+  - source: source.mits
+    page: 61
+    relation: extends
+    note: "Magical Groups"
+  - source: source.mits
+    pages: "62-69"
+    relation: extends
+    note: "Group structures, customs, resources, membership and avatars"
+
+notes:
+  - "Group initiation can reduce initiation Karma cost as defined by the initiation procedure."
