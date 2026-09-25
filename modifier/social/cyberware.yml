@@ -1,0 +1,32 @@
+id: modifier.social.cyberware
+record_type: modifier
+name: "Cyberware and Social Interaction"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 93
+  basis: adds_modifier
+
+trigger:
+  conditions:
+    - "A character's obvious/visible cyberware or substantial cybernetic alteration is socially relevant to the current NPC/situation."
+
+effect:
+  target: ["Charisma tests","Charisma-linked Skill Tests"]
+  operation: "increase target number"
+  value: "Normally +1 for every 2 points of Essence (or portion thereof) below 6, subject to visibility and gamemaster judgment."
+
+stacking:
+  mode: "Apply situationally."
+  exceptions:
+    - "Invisible/common cyberware may not justify the modifier."
+    - "Contexts where cyberware is expected or advantageous may reduce or remove it."
+
+sources:
+  - {source: source.sr3-core, page: 93, relation: adds_modifier, note: "Cyberware and Social Interaction"}
+
+notes:
+  - "The source explicitly makes application situational rather than automatic."
