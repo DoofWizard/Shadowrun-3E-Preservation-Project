@@ -27,7 +27,7 @@ A later publication is never assumed to overwrite an earlier rule solely because
 
 | Source | Status | Current scope |
 | --- | --- | --- |
-| SR3 Core (FASA7001) | ingesting | Core concepts begun; full core rules remaining |
+| SR3 Core (FASA7001) | ingesting | Core concepts + chargen + defaulting/specialization begun; skill catalog and combat next |
 | Shadowrun Companion (FASA7905a) | ingesting | Alternate chargen, optional training, Karma options begun |
 | Matrix (FASA7909) | ingesting | Source lineage, SOTA, construction, programming/options begun |
 | Man & Machine (FASA7126) | structural_scan | TOC/domain map complete; detailed ingest next |
