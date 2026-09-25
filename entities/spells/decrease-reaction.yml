@@ -1,0 +1,33 @@
+{
+  "id": "entity.spell.decrease-reaction",
+  "record_type": "entity",
+  "name": "Decrease Reaction",
+  "domain": "spells",
+  "status": "ingested",
+  "intrinsic": {
+    "category": "health",
+    "type": "M",
+    "target": "10 - Essence",
+    "duration": "S",
+    "drain": "+1(D)"
+  },
+  "links": {
+    "uses": [
+      "rule.magic.spell-characteristics"
+    ],
+    "requires": [],
+    "component_of": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.mits",
+      "page": 142,
+      "relation": "defines",
+      "note": "Spell statistics and effect"
+    }
+  ],
+  "notes": [
+    "Reduces Reaction by 1 per two net successes, up to Force."
+  ]
+}
