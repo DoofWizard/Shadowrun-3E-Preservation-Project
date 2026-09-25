@@ -1,0 +1,35 @@
+id: procedure.magic.summon-ally
+record_type: procedure
+name: "Ritual of Summoning an Ally"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 111, basis: defines}
+purpose: "Bring a designed ally spirit into full existence and bind it to the creator."
+prerequisites:
+  - "completed ally formula"
+  - "lodge/circle rated at least ally Force"
+  - "ritual materials costing ally Force x 1,000 nuyen"
+inputs: ["ally Force", "Conjuring", "creator Magic", "design Karma cost"]
+stages:
+  - id: ritual
+    name: "Summoning Ritual"
+    test_or_action: "Base time is Force days; make a Conjuring Test against Force and divide time by successes."
+    outputs: ["spirit appears or ritual fails"]
+  - id: daily-drain
+    name: "Resist Ritual Drain"
+    test_or_action: "Each day resist cumulative Stun Drain using Willpower; interrupted/failed ritual must restart."
+    outputs: ["fatigue/Drain"]
+  - id: pay
+    name: "Create Ally"
+    test_or_action: "On success pay design Karma and permanently sacrifice 1 Magic Point."
+    outputs: ["created ally"]
+  - id: control
+    name: "Control Test"
+    test_or_action: "Resolve the normal spirit-control Drain/Conjuring outcome; failure or incapacitation can free the ally."
+    outputs: ["bound ally or free spirit"]
+outcomes: ["bound ally spirit", "free ally spirit", "failed ritual"]
+links: {uses: [procedure.magic.ally-formula, entity.spirit.ally], requires: [], produces: [entity.spirit.ally], modified_by: []}
+sources:
+  - {source: source.mits, pages: "111-112", relation: defines, note: "Ritual of Summoning"}
+notes:
+  - "The sacrificed Magic Point is not recovered merely because the ally later goes free."
