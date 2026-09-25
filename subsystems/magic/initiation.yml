@@ -1,0 +1,55 @@
+id: subsystem.magic.initiation
+record_type: subsystem
+name: "Initiation"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 57
+  basis: extends
+
+state:
+  tracked_values:
+    - "initiation grade"
+    - "Magic Attribute changes"
+    - "known metamagic techniques"
+    - "shed geasa"
+    - "astral abilities"
+
+participants:
+  - "Awakened characters capable of initiation"
+
+components:
+  - "grades"
+  - "initiation procedure"
+  - "ordeals"
+  - "magical groups"
+  - "metamagic"
+  - "astral signature alteration"
+
+entry_conditions:
+  - "Character is an eligible Awakened character."
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures:
+    - procedure.magic.initiation
+  entities: []
+  options:
+    - option.magic.metamagic
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.astral
+
+sources:
+  - source: source.mits
+    page: 57
+    relation: extends
+    note: "Initiation and Metamagic / Initiation"
+
+notes:
+  - "Initiation is measured in grades beginning at Grade 1."
