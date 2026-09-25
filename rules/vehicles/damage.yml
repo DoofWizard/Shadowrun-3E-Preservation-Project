@@ -1,0 +1,24 @@
+id: rule.vehicles.damage
+record_type: rule
+name: "Vehicle Damage"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 145, basis: defines}
+scope:
+  applies_to: ["vehicles hit by weapons, collisions or other damage sources"]
+  excludes: []
+resolution:
+  summary: "Vehicles use a Vehicle Condition Monitor with Light, Moderate, Serious and Destroyed states. Damage affects handling, Initiative, speed and reactions according to vehicle damage modifiers. Vehicle damage can result from impact/collision or weapons and uses vehicle Body/Armor and scale-specific rules."
+  inputs: ["damage source","vehicle Body","Armor","speed/impact","attack Power/Damage"]
+  outputs: ["Vehicle Condition Monitor state and performance penalties"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.vehicles.repair]
+sources:
+  - {source: source.sr3-core, page: 145, relation: defines, note: "Vehicle Damage / Vehicle Condition Monitor"}
+  - {source: source.sr3-core, page: 147, relation: extends, note: "Impact damage / crash tests"}
+  - {source: source.sr3-core, page: 149, relation: extends, note: "Vehicle Damage from Weapons"}
+notes: []
