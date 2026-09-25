@@ -1,0 +1,25 @@
+id: procedure.combat.combat-turn-sequence
+record_type: procedure
+name: "Combat Turn Sequence"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 103, basis: defines}
+purpose: "Resolve one complete SR3 Combat Turn."
+prerequisites: []
+inputs: ["combatants","dice pools","Initiative"]
+stages:
+  - {id: refresh-pools, name: "Refresh Dice Pools", test_or_action: "Refresh applicable dice pools.", outputs: ["full pools"]}
+  - {id: determine-initiative, name: "Determine Initiative", test_or_action: "Roll/calculate Initiative Scores and establish order.", outputs: ["Initiative order"]}
+  - {id: resolve-actions, name: "Characters Act", test_or_action: "Characters declare and resolve actions in Combat Phases.", outputs: ["resolved actions"]}
+  - {id: next-pass, name: "Calculate Next Initiative Pass", test_or_action: "Subtract 10 and repeat while scores remain above 0.", outputs: ["next pass or turn end"]}
+  - {id: new-turn, name: "Begin New Combat Turn", test_or_action: "Restart sequence when combat continues.", outputs: ["new Combat Turn"]}
+outcomes: ["one resolved Combat Turn"]
+links:
+  uses: [rule.initiative.initiative-passes, rule.actions.combat-phase-actions, rule.dice-pools.general]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 103, relation: defines, note: "Combat Turn Sequence"}
+  - {source: source.sr3-core, page: 104, relation: clarifies, note: "Steps 1–4"}
+notes: []
