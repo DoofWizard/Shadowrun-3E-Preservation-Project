@@ -1,0 +1,28 @@
+id: procedure.vehicles.combat-turn-sequence
+record_type: procedure
+name: "Vehicle Combat Turn Sequence"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 140, basis: defines}
+purpose: "Resolve one vehicle-combat turn while integrating standard character Initiative/actions."
+prerequisites: ["vehicles engaged in vehicle combat"]
+inputs: ["starting distances/speeds","vehicle/terrain/speed points","Control Pool","Initiative","declared vehicle actions"]
+stages:
+  - {id: starting-state, name: "Determine Starting Distances and Speeds", test_or_action: "Establish positions/speeds at first turn.", outputs: ["starting state"]}
+  - {id: maneuver-inputs, name: "Determine Vehicle, Terrain and Speed Points", test_or_action: "Calculate partial maneuver values.", outputs: ["partial maneuver values"]}
+  - {id: driver, name: "Determine Driver Points", test_or_action: "Resolve driver Open Tests.", outputs: ["Driver Points"]}
+  - {id: control-pool, name: "Allocate Control Pool", test_or_action: "Allocate eligible Control Pool dice.", outputs: ["pool allocation"]}
+  - {id: initiative, name: "Determine Initiative", test_or_action: "Resolve character Initiative.", outputs: ["action order"]}
+  - {id: actions, name: "Resolve Actions", test_or_action: "Resolve vehicle and character actions.", outputs: ["action results"]}
+  - {id: update-state, name: "Update Speed, Distance and Terrain", test_or_action: "Apply maneuver/action results.", outputs: ["new state"]}
+  - {id: repeat, name: "Begin New Combat Turn", test_or_action: "Repeat while vehicle combat continues.", outputs: ["next turn"]}
+outcomes: ["updated vehicle-combat state"]
+links:
+  uses: [rule.vehicles.maneuver-score, rule.initiative.initiative]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 140, relation: defines, note: "Vehicle Combat Turn Sequence"}
+  - {source: source.sr3-core, page: 141, relation: clarifies, note: "Sequence continuation and example"}
+notes: []
