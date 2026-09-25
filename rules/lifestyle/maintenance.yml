@@ -1,0 +1,48 @@
+id: rule.lifestyle.maintenance
+record_type: rule
+name: "Lifestyle Maintenance"
+domain: lifestyles
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 239
+  basis: defines
+
+scope:
+  applies_to:
+    - entity.lifestyle.lifestyle
+
+resolution:
+  summary: "Lifestyle represents recurring living costs and quality of life. Characters normally pay the listed monthly cost; missed payments can lead to debt and eventual loss/downgrade of the lifestyle. Permanent lifestyles may be purchased for 100 times monthly cost."
+  inputs:
+    - "lifestyle level"
+    - "monthly payment status"
+  outputs:
+    - "maintained, downgraded, lost, or permanent lifestyle"
+
+links:
+  uses: []
+  affects:
+    - entity.lifestyle.lifestyle
+  modified_by: []
+  interacts_with:
+    - rule.lifestyle.multiple-and-team
+
+sources:
+  - source: source.sr3-core
+    page: 239
+    relation: defines
+    note: "Lifestyles of the Rich and Shadowy"
+  - source: source.sr3-core
+    page: 240
+    relation: extends
+    note: "Lifestyle levels and Keeping Up the Payments"
+  - source: source.sr3-core
+    page: 241
+    relation: extends
+    note: "Buying a Lifestyle"
+
+notes:
+  - "Lifestyle levels include Luxury, High, Middle, Low, Squatter, Streets, and Hospitalized."
