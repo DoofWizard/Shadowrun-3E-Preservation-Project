@@ -1,0 +1,40 @@
+id: option.magic.metamagic-invoking
+record_type: option
+name: "Metamagic: Invoking"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 75
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when summoning an eligible spirit"
+  prerequisites:
+    - "initiate capable of conjuring the spirit type"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to attempt to transform a normally summoned spirit into a more powerful great form spirit."
+  - "The intention is declared before the initial Conjuring Test and requires an additional Conjuring Test and Drain Resistance Test."
+  - "Failure can leave the summoned spirit uncontrolled."
+
+links:
+  modifies:
+    - subsystem.magic.conjuring
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 75
+    relation: defines
+    note: "Invoking"
+
+notes: []
