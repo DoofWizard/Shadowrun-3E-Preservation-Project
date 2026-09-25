@@ -1,0 +1,16 @@
+id: rule.magic.background-count
+record_type: rule
+name: "Background Count"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 83, basis: defines}
+scope: {applies_to: ["magical and astral activity in areas emotionally or magically charged"]}
+resolution:
+  summary: "Background count measures local astral disturbance from intense emotion, ecological devastation, prolonged magic and similar causes. Ratings normally range from 1 to 5. The count modifies Magical Skill tests and astral tests in the area and increases Drain target numbers; it also leaves astral impressions that can reveal the emotional character of past events."
+  inputs: ["background-count rating", "magical/astral test", "Drain"]
+  outputs: ["target-number modifier, Drain modifier, astral impression"]
+  steps: []
+links: {uses: [], affects: [subsystem.magic.astral-terrain], modified_by: [], interacts_with: [option.magic.metamagic-cleansing]}
+sources:
+  - {source: source.mits, pages: "83-84", relation: defines, note: "Background Count and Background Count Levels Table"}
+notes: []
