@@ -1,0 +1,42 @@
+id: rule.combat.burst-fire-effects
+record_type: rule
+name: "Burst-Fire Effects"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 115
+  basis: defines
+
+scope:
+  applies_to:
+    - "three-round burst-fire attacks"
+
+resolution:
+  summary: "A normal three-round burst applies +3 recoil, increases attack Power by 3, and raises Damage Level by one step. A short burst caused by insufficient ammunition applies +2 recoil and +2 Power but does not raise Damage Level."
+  inputs:
+    - "base Power"
+    - "base Damage Level"
+    - "rounds available"
+  outputs:
+    - "modified Power"
+    - "modified Damage Level"
+    - "recoil modifier"
+
+links:
+  uses:
+    - modifier.combat.recoil
+  affects:
+    - procedure.combat.ranged-attack
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 115
+    relation: defines
+    note: "Burst-Fire Mode / Short Bursts"
+
+notes: []
