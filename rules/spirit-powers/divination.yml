@@ -1,0 +1,16 @@
+id: rule.spirit-powers.divination
+record_type: rule
+name: "Spirit Power: Divination"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 99, basis: defines}
+scope: {applies_to: ["spirits with the Divination power"]}
+resolution:
+  summary: "A spirit can make a limited prediction about the next actions of beings in its domain. It rolls Force as a Divination Test; successes determine how much information is revealed. Answers are brief and intentionally cryptic rather than certain future knowledge."
+  inputs: ["Force", "question/situation"]
+  outputs: ["limited predictive answer"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [option.magic.metamagic-divining]}
+sources:
+  - {source: source.mits, page: 99, relation: defines, note: "Divination spirit power"}
+notes: []
