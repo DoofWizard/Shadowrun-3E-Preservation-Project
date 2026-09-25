@@ -1,0 +1,22 @@
+id: rule.movement.interception
+record_type: rule
+name: "Interception"
+domain: movement
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 108, basis: defines}
+scope:
+  applies_to: ["movement passing within 1 meter of an opponent"]
+  excludes: []
+resolution:
+  summary: "An opponent may attempt to intercept a character moving within 1 meter, producing an immediate melee engagement under the movement/combat rules."
+  inputs: ["movement path","opponent position"]
+  outputs: ["interception attempt and possible melee combat"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.combat.melee-attack]
+sources:
+  - {source: source.sr3-core, page: 108, relation: defines, note: "Interception"}
+notes: []
