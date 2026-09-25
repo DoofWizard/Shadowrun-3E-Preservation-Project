@@ -1,0 +1,27 @@
+id: rule.firearms.firing-modes
+record_type: rule
+name: "Firearm Firing Modes"
+domain: firearms
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 114, basis: defines}
+scope:
+  applies_to: ["firearms"]
+  excludes: []
+resolution:
+  summary: "Firearms may operate in single-shot, semi-automatic, burst-fire or full-auto modes according to weapon capability. Mode determines action cost, rounds fired, recoil and, for burst/full-auto fire, potential Power and Damage Level adjustments."
+  inputs: ["weapon firing-mode capability","selected mode"]
+  outputs: ["action cost","rounds fired","recoil","damage adjustments"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.combat.ranged-attack]
+  modified_by: []
+  interacts_with: [modifier.combat.ranged-target-number]
+sources:
+  - {source: source.sr3-core, page: 114, relation: defines, note: "Firearms / Single-Shot Mode"}
+  - {source: source.sr3-core, page: 115, relation: extends, note: "Semi-Automatic, Burst-Fire and Full-Auto Mode"}
+notes:
+  - "Single-shot weapons may normally fire only once per Combat Phase."
+  - "Semi-automatic fire uses a Simple Action per shot."
+  - "Burst fire uses three-round bursts."
+  - "Full-auto fire is a Complex Action and may fire multiple rounds subject to the weapon/rules."
