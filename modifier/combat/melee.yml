@@ -1,0 +1,19 @@
+id: modifier.combat.melee
+record_type: modifier
+name: "Melee Combat Modifiers"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 123, basis: defines}
+trigger:
+  conditions: ["Melee combat circumstances alter attack or defense."]
+effect:
+  target: ["melee attack/defense target numbers"]
+  operation: "apply listed situational and Reach modifiers"
+  value: "See governing condition; includes Reach, wounds, visibility, position, friends/opponents in melee, movement and related circumstances."
+stacking:
+  mode: "Apply as directed by the individual modifier rules."
+  exceptions: []
+sources:
+  - {source: source.sr3-core, page: 123, relation: defines, note: "Melee Modifiers Table"}
+notes:
+  - "Cannon Companion advanced melee options later add optional modifiers and maneuvers."
