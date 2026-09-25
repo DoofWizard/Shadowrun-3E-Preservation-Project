@@ -1,0 +1,21 @@
+id: rule.surgery.surgery-damage
+record_type: rule
+name: "Surgery Damage"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 151, basis: defines}
+scope:
+  applies_to: ["surgical procedures"]
+resolution:
+  summary: "Most surgery inflicts Physical damage on the patient according to the procedure. Trauma surgery inflicts no additional surgery damage. Implant surgery damage is based on the implant's Essence Cost or Bio Index before reductions, using the Implant Surgery Damage table; this damage is checked for wound effects and permanent damage where applicable."
+  inputs: ["surgery type", "implant Essence Cost or Bio Index"]
+  outputs: ["Physical damage boxes"]
+  steps: []
+links:
+  uses: [rule.damage.wound-effects, rule.surgery.surgical-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 151, relation: defines, note: "Surgery Damage and Implant Surgery Damage table"}
+notes: []
