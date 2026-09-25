@@ -1,0 +1,41 @@
+id: rule.contacts.upkeep
+record_type: rule
+name: "Contact Upkeep"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 60
+  basis: extends
+
+scope:
+  applies_to:
+    - "ongoing relationships with contacts"
+
+resolution:
+  summary: "The Companion adds campaign upkeep expectations for maintaining contact relationships rather than treating contacts as permanently static resources. Characters may need to spend time, money, favors, or attention to keep important contacts active and useful."
+  inputs:
+    - "contact level"
+    - "frequency of interaction"
+    - "campaign circumstances"
+  outputs:
+    - "maintained, strained, improved, or degraded relationship"
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.improving-levels
+
+sources:
+  - source: source.srcomp
+    page: 60
+    relation: extends
+    note: "Contact Upkeep"
+
+notes:
+  - "This extends core contact play; it does not replace the core contact entity or contact-level definitions."
