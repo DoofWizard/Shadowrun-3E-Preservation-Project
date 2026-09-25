@@ -1,0 +1,39 @@
+id: rule.advancement.learning-new-skills
+record_type: rule
+name: "Learning New Skills"
+domain: advancement
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 245
+  basis: defines
+
+scope:
+  applies_to:
+    - "new Active, Knowledge, or Language Skills"
+
+resolution:
+  summary: "A new skill may be purchased at rating 1 for 1 Good Karma. Raising it beyond 1 then follows the ordinary Skill Improvement rules. A specialization cannot be purchased before the character has the corresponding base skill."
+  inputs:
+    - "Good Karma"
+    - "skill to be learned"
+  outputs:
+    - "new skill at rating 1"
+
+links:
+  uses:
+    - rule.advancement.skill-improvement
+  affects: []
+  modified_by:
+    - option.training.optional-training-rules
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 245
+    relation: defines
+    note: "Learning New Skills"
+
+notes: []
