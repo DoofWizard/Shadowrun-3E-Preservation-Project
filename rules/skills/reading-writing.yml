@@ -1,0 +1,35 @@
+id: rule.skills.reading-writing
+record_type: rule
+name: "Reading and Writing Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 91
+  basis: defines
+
+scope:
+  applies_to: ["Languages with written forms"]
+  excludes: ["primarily spoken/visual lingos without a corresponding written form"]
+
+resolution:
+  summary: "At character creation, a language's Reading/Writing rating is half the related Language Skill, rounded down, and is free. It is improved separately thereafter and does not automatically rise when the Language Skill improves."
+  inputs: ["Language Skill rating"]
+  outputs: ["Reading/Writing rating"]
+  steps:
+    - "At character creation, divide the Language Skill rating by 2 and round down."
+    - "If the starting Language Skill is 1 or less, the character does not receive the associated Reading/Writing Skill automatically."
+    - "After creation, improve Reading/Writing separately."
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.skills.language-skills]
+
+sources:
+  - {source: source.sr3-core, page: 91, relation: defines, note: "Reading and Writing"}
+
+notes: []
