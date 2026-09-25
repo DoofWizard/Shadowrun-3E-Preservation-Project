@@ -1,0 +1,24 @@
+id: rule.firearms.ammunition
+record_type: rule
+name: "Ammunition"
+domain: firearms
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 116, basis: defines}
+scope:
+  applies_to: ["firearms and compatible special ammunition"]
+  excludes: []
+resolution:
+  summary: "Ammunition type can modify attack Power, Damage Level, armor interaction, target-number modifiers and special effects. The core chapter defines standard ammunition behavior and several special ammunition types."
+  inputs: ["weapon","ammunition type"]
+  outputs: ["modified attack/damage behavior"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.combat.ranged-attack]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 116, relation: defines, note: "Ammunition"}
+  - {source: source.sr3-core, page: 117, relation: extends, note: "Special ammunition and reloading"}
+notes:
+  - "Specific ammunition entities and later Cannon Companion additions are to attach here rather than overwrite this generic rule."
