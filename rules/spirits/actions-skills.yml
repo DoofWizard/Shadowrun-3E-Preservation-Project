@@ -1,0 +1,41 @@
+id: rule.spirits.actions-skills
+record_type: rule
+name: "Spirit Actions and Skills"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 265
+  basis: defines
+
+scope:
+  applies_to:
+    - "spirits and dragons in physical or astral combat"
+
+resolution:
+  summary: "Spirits and dragons use ordinary combat actions and skills where applicable, with their listed attributes, powers, and magical abilities. Their Initiative, actions, skills, and dice pools are determined from the creature's statistics and the relevant physical/astral state."
+  inputs:
+    - "creature statistics"
+    - "physical or astral state"
+    - "available powers and skills"
+  outputs:
+    - "legal actions and dice available"
+
+links:
+  uses:
+    - rule.combat.combat-turn-sequence
+    - subsystem.magic.astral
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.spirits.combat
+
+sources:
+  - source: source.sr3-core
+    page: 265
+    relation: defines
+    note: "Combat — Initiative / Actions and Skills / Dice Pools"
+
+notes: []
