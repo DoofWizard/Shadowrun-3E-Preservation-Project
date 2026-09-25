@@ -1,0 +1,42 @@
+id: rule.bioware.excessive-bioware
+record_type: rule
+name: "Excessive Bioware"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 78
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters whose total Bio Index is equal to or greater than Essence Index"
+
+resolution:
+  summary: "When Bio Index reaches or exceeds Essence Index, the character suffers systemic imbalance and additional physiological penalties. Effects include reduced physical overflow capacity, diminished resistance, longer healing, and system overstress, as detailed by the excessive-bioware rules."
+  inputs:
+    - "Bio Index"
+    - "Essence Index"
+  outputs:
+    - "excessive-bioware penalties"
+
+links:
+  uses:
+    - rule.bioware.bio-index
+    - rule.bioware.essence-index
+  affects:
+    - procedures.healing.natural-and-medical
+  modified_by: []
+  interacts_with:
+    - rule.bioware.awakened
+
+sources:
+  - source: source.mm
+    page: 78
+    relation: defines
+    note: "Excessive Bioware"
+
+notes:
+  - "This is distinct from the absolute Bio Index limit of 9."
