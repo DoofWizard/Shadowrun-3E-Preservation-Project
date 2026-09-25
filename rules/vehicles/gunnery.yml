@@ -1,0 +1,24 @@
+id: rule.vehicles.gunnery
+record_type: rule
+name: "Vehicle Gunnery"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 151, basis: defines}
+scope:
+  applies_to: ["vehicle-mounted weapons"]
+  excludes: []
+resolution:
+  summary: "Vehicle weapons are fired with Gunnery using either manual or sensor-enhanced gunnery. Manual gunnery broadly follows ranged-combat rules with vehicle-specific modifiers; sensor-enhanced gunnery uses vehicle sensors and target Signature with sensor/gunnery modifiers."
+  inputs: ["Gunnery","weapon","vehicle sensors","target Signature","vehicle movement/control"]
+  outputs: ["vehicle weapon attack result"]
+  steps: []
+links:
+  uses: [entity.skill.gunnery, procedure.combat.ranged-attack, rule.vehicles.sensor-tests]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 151, relation: defines, note: "Vehicle Gunnery / Manual Gunnery"}
+  - {source: source.sr3-core, page: 152, relation: extends, note: "Sensor-Enhanced Gunnery"}
+  - {source: source.sr3-core, page: 153, relation: clarifies, note: "Gunnery modifier tables"}
+notes: []
