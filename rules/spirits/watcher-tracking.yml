@@ -1,0 +1,16 @@
+id: rule.spirits.watcher-tracking
+record_type: rule
+name: "Watchers and Astral Tracking"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 101, basis: defines}
+scope: {applies_to: ["watchers ordered to locate a person, place, magical item, or their summoner"]}
+resolution:
+  summary: "A watcher can track a living person/place known to its summoner and can locate enchanted objects whose aura the summoner has assensed. Tracking uses a secret Force Test against a target number based on the summoner's Intelligence, modified for initiates. Search time depends on successes and target type. Astral barriers and metaplanar travel break the trail."
+  inputs: ["watcher Force", "summoner Intelligence/Magic", "target type", "barriers/metaplanar movement"]
+  outputs: ["target located, confused search, or failed trail"]
+  steps: []
+links: {uses: [entity.spirit.watcher], affects: [], modified_by: [], interacts_with: [rule.magic.astral-barriers]}
+sources:
+  - {source: source.mits, page: 101, relation: defines, note: "Watchers and Astral Tracking"}
+notes: []
