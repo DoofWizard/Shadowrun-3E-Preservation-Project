@@ -1,0 +1,60 @@
+id: subsystem.security.core
+record_type: subsystem
+name: "Security Systems"
+domain: security
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 232
+  basis: defines
+
+state:
+  tracked_values:
+    - "physical barriers"
+    - "technical sensors and access control"
+    - "active security responses"
+    - "magical security"
+    - "Matrix security"
+    - "weapon/cyberware detection"
+
+participants:
+  - "sites and facilities"
+  - "security personnel and systems"
+  - "intruders"
+
+components:
+  - "physical security"
+  - "technical security"
+  - "active security measures"
+  - "magical security"
+  - "Matrix security"
+  - "weapon detection"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules:
+    - rule.security.weapon-detection
+  procedures:
+    - procedure.security.maglock-bypass
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.matrix
+    - subsystem.magic.astral
+
+sources:
+  - source: source.sr3-core
+    page: 232
+    relation: defines
+    note: "Security Systems"
+  - source: source.sr3-core
+    pages: "233-237"
+    relation: extends
+    note: "Physical, technical, active, magical, Matrix and weapon-detection security"
+
+notes: []
