@@ -1,0 +1,61 @@
+id: procedure.surgery.find-provider
+record_type: procedure
+name: "Find Medical Provider"
+domain: surgery
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 143
+  basis: defines
+
+purpose: "Locate a medical provider with the capabilities needed for a particular treatment or surgery."
+
+prerequisites:
+  - "need for medical care"
+
+inputs:
+  - "contacts"
+  - "desired surgery/treatment type"
+  - "implant grade"
+  - "legality"
+  - "Etiquette"
+  - "provider rating"
+
+stages:
+  - id: search
+    name: "Medical Search"
+    test_or_action: "Make an Etiquette Test using Medical Search modifiers."
+    outputs: ["provider located", "search time"]
+  - id: capabilities
+    name: "Determine Provider Capabilities"
+    test_or_action: "Use provider base rating and modifiers to determine attending medical skill ratings and equipment."
+    outputs: ["provider skill/equipment profile"]
+  - id: negotiate
+    name: "Get in the Door"
+    test_or_action: "Resolve access, legality, payment, bribery or other provider conditions."
+    outputs: ["care accepted or refused"]
+
+outcomes:
+  - "provider secured"
+  - "search/access fails"
+
+links:
+  uses:
+    - entity.skill.etiquette
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.mm
+    page: 143
+    relation: defines
+    note: "Non-Emergency Medical Care / Medical Search Table"
+  - source: source.mm
+    page: 144
+    relation: clarifies
+    note: "Medical Ratings Table / Getting in the Door"
+
+notes: []
