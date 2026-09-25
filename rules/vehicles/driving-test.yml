@@ -1,0 +1,23 @@
+id: rule.vehicles.driving-test
+record_type: rule
+name: "Driving Test"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 134, basis: defines}
+scope:
+  applies_to: ["vehicle operation requiring a test"]
+  excludes: []
+resolution:
+  summary: "A Driving Test rolls the appropriate Vehicle Skill, plus eligible Control Pool or Autonav dice where permitted, against a target number based on the vehicle's Handling and situational modifiers."
+  inputs: ["Vehicle Skill","Handling","terrain/situation","Control Pool","Autonav"]
+  outputs: ["driving success/failure"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.vehicles.maneuver-score]
+sources:
+  - {source: source.sr3-core, page: 134, relation: defines, note: "The Driving Test / Driving Test Modifiers Table"}
+notes:
+  - "Rigger control and datajack operation modify the test according to VCR/vehicle rules."
