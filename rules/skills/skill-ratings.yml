@@ -1,0 +1,37 @@
+id: rule.skills.skill-ratings
+record_type: rule
+name: "Skill Ratings"
+domain: skills
+status: ingested
+
+scope:
+  applies_to:
+    - "Character skills"
+  excludes: []
+
+resolution:
+  summary: "A skill rating measures training or knowledge and normally supplies the number of dice rolled when making a test with that skill."
+  inputs:
+    - "skill rating"
+  outputs:
+    - "base skill dice"
+  steps: []
+
+links:
+  uses: []
+  affects:
+    - rule.tests.success-test
+    - rule.tests.opposed-test
+    - rule.tests.open-test
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 43
+    relation: defines
+    note: "Game Concepts — Skills"
+
+notes:
+  - "The core concepts section distinguishes Active, Knowledge, and Language skills."
+  - "Specializations and Complementary Skills are introduced here but receive their own detailed rules later in the Skills chapter."
