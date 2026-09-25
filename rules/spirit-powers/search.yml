@@ -1,0 +1,16 @@
+id: rule.spirit-powers.search
+record_type: rule
+name: "Spirit Power: Search"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 99, basis: extends}
+scope: {applies_to: ["spirits using Search"]}
+resolution:
+  summary: "A spirit can search its domain for a target that the summoner can clearly identify. The standard form locates a target if present, with barriers and concealment increasing difficulty. The optional expanded form searches a much larger area using twice Force in dice, with base target numbers determined by whether the target is living or an object and with a time cost based on search area."
+  inputs: ["Force", "domain", "target description", "barriers/concealment", "search area"]
+  outputs: ["target absent, target present, or target location"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "99-100", relation: extends, note: "Search and Optional Expanded Search"}
+notes: []
