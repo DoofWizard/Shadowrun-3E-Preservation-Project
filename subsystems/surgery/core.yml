@@ -1,0 +1,67 @@
+id: subsystem.surgery.core
+record_type: subsystem
+name: "Surgery and Medical Care"
+domain: surgery
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 135
+  basis: extends
+
+state:
+  tracked_values:
+    - "medical provider rating"
+    - "medical skills"
+    - "patient profile"
+    - "procedure"
+    - "Surgical Threshold"
+    - "positive/negative surgical options"
+    - "implant grade"
+    - "legality"
+
+participants:
+  - "patient"
+  - "surgeon/biotechnician"
+  - "medical provider/facility"
+
+components:
+  - "medical search"
+  - "diagnosis and profiling"
+  - "planning and preparation"
+  - "surgical test"
+  - "procedural list"
+  - "recovery"
+
+entry_conditions:
+  - "character requires medical or surgical care"
+
+exit_conditions:
+  - "procedure completed and patient enters recovery"
+
+links:
+  rules: []
+  procedures:
+    - procedure.surgery.find-provider
+    - procedure.surgery.operation
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - entity.skill.biotech
+    - subsystem.cyberware.core
+    - subsystem.bioware.core
+    - subsystem.damage.stress
+
+sources:
+  - source: source.mm
+    page: 135
+    relation: extends
+    note: "Surgery / Surgical Skills"
+  - source: source.mm
+    pages: "136-150"
+    relation: extends
+    note: "Medical gear, providers, search, surgery, diagnosis, procedures and recovery"
+
+notes: []
