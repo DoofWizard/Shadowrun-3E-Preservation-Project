@@ -1,0 +1,18 @@
+id: entity.chemistry.cyanide
+record_type: entity
+name: "Cyanide"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "3/48 hrs"
+  cost_nuyen_per_dose: 360
+  street_index: 1
+  legality: "4P-X"
+  vector: "Ingestion, inhalation, injection"
+  speed: "Immediate or 1 min"
+  damage: "7D"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "118-119", relation: defines, note: "Cyanide game effects and statistics"}
+notes:
+  - "Preserved solely as tabletop rules data."
