@@ -1,0 +1,16 @@
+id: rule.spirits.spontaneous-appearance
+record_type: rule
+name: "Spontaneous Spirit Appearance"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 98, basis: defines}
+scope: {applies_to: ["spirits that appear without being conjured"]}
+resolution:
+  summary: "Spontaneously appearing domain spirits are short-lived and generally uninterested in metahuman affairs. Attempts to banish, bind, or control them are especially difficult: the magician's target number is doubled and successes are reduced by half."
+  inputs: ["spirit", "Conjuring attempt"]
+  outputs: ["modified banishing/binding/control attempt"]
+  steps: []
+links: {uses: [rule.magic.banishing], affects: [], modified_by: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, page: 98, relation: defines, note: "Spontaneous Appearances"}
+notes: []
