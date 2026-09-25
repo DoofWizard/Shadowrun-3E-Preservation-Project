@@ -1,0 +1,16 @@
+id: rule.cyberware.eye-laser-systems
+record_type: rule
+name: "Eye Laser Systems"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 13, basis: defines}
+scope: {applies_to: ["cybernetic eye laser systems and accessories"]}
+resolution:
+  summary: "Eye lasers are cybernetic visual tools available in multiple power levels and may support tasks such as rangefinding, optical communication, illumination, cutting and targeting. Accessory rules define batteries, laser designators, microphones, scanning links, tool-laser use and brightlight/superflash effects."
+  inputs: ["laser power", "installed accessory", "task"]
+  outputs: ["range, utility effect or attack/test modifier"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "13-15", relation: defines, note: "Eye Laser Systems and accessories"}
+notes: []
