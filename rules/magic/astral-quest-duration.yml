@@ -1,0 +1,16 @@
+id: rule.magic.astral-quest-duration
+record_type: rule
+name: "Astral Quest Duration"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 95, basis: defines}
+scope: {applies_to: ["astral quests"]}
+resolution:
+  summary: "Except for Initiation and True Aura quests, physical-world quest duration is normally Quest Rating x D6 hours. Initiation quests last Quest Rating days. Metaplanar subjective duration can vary greatly. Because the traveler's Essence remains in the body, astral questing does not cause Essence loss from prolonged projection."
+  inputs: ["quest type", "Quest Rating"]
+  outputs: ["physical-world duration"]
+  steps: []
+links: {uses: [procedure.magic.astral-quest], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 95, relation: defines, note: "Quest Duration"}
+notes: []
