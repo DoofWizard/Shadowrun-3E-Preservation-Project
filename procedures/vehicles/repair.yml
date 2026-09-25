@@ -1,0 +1,22 @@
+id: procedure.vehicles.repair
+record_type: procedure
+name: "Repairing Vehicles"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 149, basis: defines}
+purpose: "Repair damaged vehicle components and remove Vehicle Condition Monitor damage."
+prerequisites: ["appropriate Vehicle Build/Repair skill","repair parts/tools"]
+inputs: ["vehicle damage level","component damage","parts cost/availability","Build/Repair skill"]
+stages:
+  - {id: parts, name: "Acquire Repair Parts", test_or_action: "Obtain required replacement parts according to Availability/cost.", outputs: ["parts"]}
+  - {id: repair, name: "Repair Test", test_or_action: "Make applicable Vehicle Build/Repair tests over the required base time.", outputs: ["repaired damage/components"]}
+outcomes: ["restored vehicle condition or component functionality"]
+links:
+  uses: [procedure.skills.build-repair-use]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 149, relation: defines, note: "Repairing Vehicles"}
+  - {source: source.sr3-core, page: 150, relation: clarifies, note: "Repair completion and parts"}
+notes: []
