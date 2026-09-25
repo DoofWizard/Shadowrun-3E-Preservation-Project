@@ -1,0 +1,36 @@
+id: rule.tests.rule-of-one
+record_type: rule
+name: "Rule of One"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Tests using standard SR3 dice resolution"
+  excludes: []
+
+resolution:
+  summary: "A die showing 1 is always a failure. If every die rolled for a test shows 1, the result is a disastrous mistake whose exact consequence is determined by the gamemaster and the situation."
+  inputs:
+    - "rolled dice"
+  outputs:
+    - "individual die failures"
+    - "possible all-ones catastrophic result"
+  steps:
+    - "Treat each die result of 1 as a failure regardless of target number."
+    - "If all dice rolled are 1s, apply the Rule of One consequence appropriate to the situation."
+
+links:
+  uses: []
+  affects:
+    - rule.tests.making-tests
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 38
+    relation: defines
+    note: "Game Concepts — Rule of One"
+
+notes: []
