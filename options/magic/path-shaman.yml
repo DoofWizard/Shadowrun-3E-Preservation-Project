@@ -1,0 +1,18 @@
+id: option.magic.path-shaman
+record_type: option
+name: "Path of the Shaman"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 16, basis: extends}
+option_for: [subsystem.magic.traditions-expanded]
+selection:
+  timing: "magical tradition/path selection"
+  prerequisites: []
+  incompatible_with: []
+effects:
+  - "Uses shamanic/totemic relationships as the magician's central magical framework."
+  - "The source expands shamanic practice with wilderness/urban shamans, spirits of the elements, ancestor shamans and pantheism."
+links: {modifies: [rule.magic.shamanic-tradition], requires: [], interacts_with: [subsystem.magic.conjuring]}
+sources:
+  - {source: source.mits, page: 16, relation: extends, note: "Path of the Shaman"}
+notes: []
