@@ -1,0 +1,29 @@
+id: procedure.magic.summon-loa
+record_type: procedure
+name: "Conjure Loa Spirit"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 102, basis: defines}
+purpose: "Summon a loa spirit for a houngan and obtain services."
+prerequisites:
+  - "Houngan or other eligible Voodoo practitioner"
+inputs:
+  - "loa type"
+  - "Force"
+  - "Conjuring"
+  - "patron loa relationship"
+stages:
+  - id: summon
+    name: "Conjuring Test"
+    test_or_action: "Use the nature-spirit summoning procedure; each success grants one service."
+    outputs: ["loa spirit and services"]
+  - id: drain
+    name: "Drain Resistance"
+    test_or_action: "Resist Drain with Charisma against the loa's Force, applying loa/totem advantages and spirit foci where relevant."
+    outputs: ["Drain resisted or suffered"]
+outcomes: ["summoned loa for up to 12 hours", "failed summoning"]
+links: {uses: [entity.spirit.loa, procedure.magic.summon-nature-spirit], requires: [], produces: [entity.spirit.loa], modified_by: []}
+sources:
+  - {source: source.mits, page: 102, relation: defines, note: "Conjuring Loa Spirits"}
+notes:
+  - "Only one loa spirit may normally be bound at a time, and only one patron-loa spirit may be bound at a time; the source defines patron-loa dice bonuses."
