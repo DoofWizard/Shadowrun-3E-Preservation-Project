@@ -1,0 +1,42 @@
+id: rule.bioware.awakened
+record_type: rule
+name: "Bioware and the Awakened"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 78
+  basis: extends
+
+scope:
+  applies_to:
+    - "Awakened characters with bioware"
+
+resolution:
+  summary: "Bioware does not permanently reduce Magic like cyberware Essence loss, but total Bio Index produces a virtual reduction of effective Magic for relevant magical purposes. The reduction equals Bio Index rounded down to a whole number, subject to the detailed magical interaction rules."
+  inputs:
+    - "Magic"
+    - "Bio Index"
+  outputs:
+    - "effective Magic for affected calculations"
+
+links:
+  uses:
+    - rule.bioware.bio-index
+    - rule.magic.magic-attribute
+  affects:
+    - subsystem.magic.core
+  modified_by: []
+  interacts_with:
+    - rule.cyberware.magic-interaction
+
+sources:
+  - source: source.mm
+    page: 78
+    relation: extends
+    note: "Bioware and the Awakened"
+
+notes:
+  - "The underlying Magic Attribute is not itself permanently lost solely from Bio Index."
