@@ -1,0 +1,16 @@
+id: rule.magic.astral-security-wards
+record_type: rule
+name: "Expanded Wards"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 89, basis: extends}
+scope: {applies_to: ["wards used for astral security"]}
+resolution:
+  summary: "Magic in the Shadows adds ward variants and spirit-created wards to the standard SR3 ward system. Spirits can create wards using Force in place of Magic; alarm wards emphasize intrusion detection, polarized wards restrict astral visibility asymmetrically, and masking wards conceal magical activity behind the barrier."
+  inputs: ["ward type", "ward Force", "creator", "intruder"]
+  outputs: ["barrier, alarm, visibility, or masking effect"]
+  steps: []
+links: {uses: [rule.magic.astral-barriers], affects: [subsystem.magic.astral-security], modified_by: [], interacts_with: [option.magic.metamagic-masking]}
+sources:
+  - {source: source.mits, page: 89, relation: extends, note: "Wards / Spirits and Wards / Alarm, Polarized, and Masking Wards"}
+notes: []
