@@ -1,0 +1,39 @@
+id: option.karma.equalized-karma-pools
+record_type: option
+name: "Equalized Karma Pools"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 82
+  basis: adds_option
+
+option_for:
+  - rule.karma.karma-pool
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with:
+    - option.karma.staggered-rate-karma-pools
+
+effects:
+  - "All characters add every tenth awarded Karma point to Karma Pool, regardless of metatype."
+  - "This removes the standard SR3 human/metahuman difference in Karma Pool accumulation."
+
+links:
+  modifies:
+    - rule.karma.karma-pool
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 82
+    relation: adds_option
+    note: "Equalized Karma Pools"
+
+notes:
+  - "Optional replacement for the ordinary metatype-specific accumulation rate."
