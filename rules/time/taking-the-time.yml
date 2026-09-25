@@ -1,0 +1,36 @@
+id: rule.time.taking-the-time
+record_type: rule
+name: "Taking the Time"
+domain: time
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 92
+  basis: defines
+
+scope:
+  applies_to: ["tasks with a base completion time resolved by a Success Test"]
+  excludes: []
+
+resolution:
+  summary: "For tasks with a base time, divide the base time by the number of successes to determine actual task time, rounding fractions to the nearest whole time unit."
+  inputs: ["base time","number of successes"]
+  outputs: ["actual task time"]
+  steps:
+    - "Determine the task's base time."
+    - "Resolve the applicable test."
+    - "Divide base time by successes."
+    - "Round fractional time to the nearest whole time unit."
+
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 92, relation: defines, note: "Taking the Time"}
+
+notes: []
