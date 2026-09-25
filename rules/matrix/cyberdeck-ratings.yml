@@ -1,0 +1,23 @@
+id: rule.matrix.cyberdeck-ratings
+record_type: rule
+name: "Cyberdeck and Persona Ratings"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 206, basis: defines}
+scope:
+  applies_to: ["cyberdecks and decker personas"]
+  excludes: []
+resolution:
+  summary: "Cyberdecks are defined by MPCP and related hardware ratings/capacities. The MPCP limits persona-program ratings and contributes to deck functions; persona programs provide Bod, Evasion, Masking and Sensors, while deck hardware includes Hardening, Active Memory, Storage Memory, I/O Speed and Response Increase."
+  inputs: ["deck hardware ratings","persona program allocation"]
+  outputs: ["persona ratings and Matrix performance limits"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.matrix.cybercombat, rule.matrix.system-test]
+  modified_by: []
+  interacts_with: [compatibility.vr2.cyberware-hacking-pool]
+sources:
+  - {source: source.sr3-core, page: 206, relation: defines, note: "Cyberdecks / Deck Ratings"}
+  - {source: source.sr3-core, page: 207, relation: extends, note: "Hardening, memory, I/O, Response Increase and deck examples"}
+notes: []
