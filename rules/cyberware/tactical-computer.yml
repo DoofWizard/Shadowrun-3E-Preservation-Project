@@ -1,0 +1,16 @@
+id: rule.cyberware.tactical-computer
+record_type: rule
+name: "Tactical Computer"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 22, basis: defines}
+scope: {applies_to: ["characters using a tactical computer"]}
+resolution:
+  summary: "A tactical computer combines multiple sensory inputs and tactical software to improve combat decision-making. Each sense requires a dedicated or generic input port and an appropriate tactical-sense program. Every two usable senses increase the tactical rating, which can provide Combat Pool dice and Small Unit Tactics benefits subject to the source's limits."
+  inputs: ["usable senses", "port assignments", "tactical sense programs", "tactical computer rating"]
+  outputs: ["Combat Pool bonus and Small Unit Tactics benefits"]
+  steps: []
+links: {uses: [rule.cyberware.router-interconnectivity], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "22-23", relation: defines, note: "Tactical Computer, BattleTac and tactical-computer bonuses"}
+notes: []
