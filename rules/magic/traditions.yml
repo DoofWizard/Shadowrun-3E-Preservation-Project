@@ -1,0 +1,24 @@
+id: rule.magic.traditions
+record_type: rule
+name: "Shamanic and Hermetic Traditions"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 161, basis: defines}
+scope:
+  applies_to: ["magicians choosing a magical tradition"]
+  excludes: []
+resolution:
+  summary: "The core game defines shamanic and hermetic traditions. Both use the same underlying Magic/Sorcery/Conjuring framework but differ in worldview, spirit relationships, ritual resources and tradition-specific restrictions."
+  inputs: ["chosen tradition"]
+  outputs: ["tradition-specific magical rules"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.magic.shamanic-tradition, rule.magic.hermetic-tradition]
+sources:
+  - {source: source.sr3-core, page: 161, relation: defines, note: "The Shamanic Tradition"}
+  - {source: source.sr3-core, page: 167, relation: extends, note: "The Hermetic Tradition"}
+notes:
+  - "Magic in the Shadows adds additional traditions/options."
