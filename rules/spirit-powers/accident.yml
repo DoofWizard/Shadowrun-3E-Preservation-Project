@@ -1,0 +1,24 @@
+id: rule.spirit-power.accident
+record_type: rule
+name: "Accident"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 262, basis: defines}
+
+scope:
+  applies_to: ["beings with Accident"]
+
+resolution:
+  summary: "Causes an apparently normal mishap. The target resists with Quickness or Intelligence, whichever is greater, against a target number equal to the power user's Essence; failure causes the mishap to affect the target's next Initiative Pass."
+  inputs: ["target Quickness", "target Intelligence", "user Essence"]
+  outputs: ["resisted or accident occurs"]
+
+power_profile: {type: physical, action: complex, range: LOS, duration: instant}
+
+links: {uses: [rule.tests.success-test], affects: [], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 262, relation: defines, note: "Accident"}
+
+notes: []
