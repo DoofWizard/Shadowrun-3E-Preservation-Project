@@ -1,0 +1,16 @@
+id: rule.spirits.free-insect-spirits
+record_type: rule
+name: "Free Insect Spirits"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 132, basis: defines}
+scope: {applies_to: ["insect spirits whose Queen/Mother dies or who otherwise break free"]}
+resolution:
+  summary: "Most insect spirits die with their Queen/Mother, but exceptional spirits can become free. A target-number Force Test can determine this, with good-merge flesh forms receiving a bonus. A freed insect spirit gains 1D3 free-spirit powers and 1 Spirit Energy but loses any Queen/Mother-specific reproductive or summoning authority."
+  inputs: ["spirit Force", "Queen/Mother Force and Spirit Energy", "good-merge status"]
+  outputs: ["free-spirit state or death"]
+  steps: []
+links: {uses: [entity.spirit.free-spirit, rule.spirits.becoming-free], affects: [], modified_by: [], interacts_with: [rule.spirits.insect-forms]}
+sources:
+  - {source: source.mits, page: 132, relation: defines, note: "Free Insect Spirits"}
+notes: []
