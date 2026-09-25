@@ -1,0 +1,22 @@
+id: rule.vehicles.ramming
+record_type: rule
+name: "Ramming"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 143, basis: defines}
+scope:
+  applies_to: ["vehicle intentionally colliding with another target"]
+  excludes: []
+resolution:
+  summary: "A ramming attempt requires an opposed Driving Skill test modified by Maneuver Scores, speed, terrain and vehicle-control factors. On success, collision damage is based on relative speed and vehicle-body interactions."
+  inputs: ["driver skills","Maneuver Scores","relative speed","vehicle Body","modifiers"]
+  outputs: ["ram success and impact damage"]
+  steps: []
+links:
+  uses: [rule.vehicles.driving-test, rule.vehicles.damage]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 143, relation: defines, note: "Ramming / Ramming Modifiers Table"}
+notes: []
