@@ -1,0 +1,16 @@
+id: rule.magic.astral-security-patrolling
+record_type: rule
+name: "Astral Patrolling"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 88, basis: defines}
+scope: {applies_to: ["astral-security patrols"]}
+resolution:
+  summary: "Astral patrols search defined areas for intruders. Patrol difficulty depends on area size, terrain, background count, intruder magical activity, guard sensory powers and the number of additional patrolling astral forms."
+  inputs: ["patrol area", "terrain", "background count", "intruder magical signature", "number/type of guards"]
+  outputs: ["chance to detect astral intruders"]
+  steps: []
+links: {uses: [rule.magic.astral-perception], affects: [subsystem.magic.astral-security], modified_by: [], interacts_with: [rule.magic.background-count]}
+sources:
+  - {source: source.mits, pages: "88-89", relation: defines, note: "Astral Patrolling / Astral Patrol Modifiers"}
+notes: []
