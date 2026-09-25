@@ -1,0 +1,48 @@
+id: rule.character-creation.knowledge-skill-points
+record_type: rule
+name: "Starting Knowledge Skill Points"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 58
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes: []
+
+resolution:
+  summary: "Starting Knowledge Skill Points equal Intelligence x5. Knowledge Skills are purchased at the same rating-point cost schedule as Active Skills, using Intelligence as their linked Attribute."
+  inputs:
+    - "Intelligence"
+  outputs:
+    - "Knowledge Skill Point budget"
+  steps:
+    - "Multiply Intelligence by 5."
+    - "Spend resulting points on Knowledge Skills and, if desired, Language Skills."
+
+links:
+  uses:
+    - rule.character-creation.active-skill-purchase
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.character-creation.language-skill-points
+
+sources:
+  - source: source.sr3-core
+    page: 58
+    relation: defines
+    note: "Knowledge Skill Points"
+  - source: source.sr3-core
+    page: 59
+    relation: clarifies
+    note: "Knowledge Skill categories, costs, and use of Knowledge points for Language Skills"
+
+notes:
+  - "Knowledge Skill Points and Active Skill Points are not interchangeable."
+  - "Starting base Knowledge Skills may not exceed 6; specializations may not exceed 7."
