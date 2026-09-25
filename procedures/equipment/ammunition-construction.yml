@@ -1,0 +1,49 @@
+id: procedure.equipment.ammunition-construction
+record_type: procedure
+name: "Ammunition Construction"
+domain: equipment
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 84
+  basis: extends
+
+purpose: "Create cased or caseless ammunition using Build/Repair skills and appropriate tools."
+
+prerequisites:
+  - "appropriate Weapon B/R skill"
+  - "ammunition kit or shop as required"
+
+inputs:
+  - "ammunition type"
+  - "Availability"
+  - "tools"
+  - "materials"
+
+stages:
+  - id: construct
+    name: "Construction Test"
+    test_or_action: "Weapon B/R test against an ammunition-specific target number"
+    outputs: ["time/cost reduction successes or completed ammunition"]
+
+outcomes:
+  - "constructed ammunition"
+  - "failed attempt may consume materials/kit as specified"
+
+links:
+  uses: []
+  requires: []
+  produces:
+    - entity.ammunition
+  modified_by: []
+
+sources:
+  - source: source.cc
+    page: 84
+    relation: extends
+    note: "Ammunition / Cased Ammo / Caseless Ammo / Special Rules"
+
+notes:
+  - "Cased and caseless ammunition use related but distinct tool and minimum-cost rules."
