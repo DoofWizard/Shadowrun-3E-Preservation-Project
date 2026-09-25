@@ -1,0 +1,16 @@
+id: rule.spirits.watcher-characteristics
+record_type: rule
+name: "Watcher Spirit Characteristics"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 101, basis: defines}
+scope: {applies_to: ["watcher spirits"]}
+resolution:
+  summary: "Watchers exist only on the astral plane and cannot materialize or ascend to a metaplane. Their Attributes equal Force. They can see/hear and manifest visibly/audibly, but cannot directly manipulate the physical world. They are bound to their summoner, use only Stun damage in astral combat, and have highly literal, limited intelligence."
+  inputs: ["watcher Force", "summoner"]
+  outputs: ["watcher Attributes, movement/task limitations, combat behavior"]
+  steps: []
+links: {uses: [entity.spirit.watcher], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral]}
+sources:
+  - {source: source.mits, page: 101, relation: defines, note: "Characteristics of Watchers"}
+notes: []
