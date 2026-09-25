@@ -1,0 +1,30 @@
+id: procedure.magic.summon-insect-spirit
+record_type: procedure
+name: "Summon Insect Spirit"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 128, basis: defines}
+purpose: "Summon a worker, soldier, or Queen/Mother insect spirit and incubate it in a physical host."
+prerequisites:
+  - "Insect shaman"
+  - "Living host body for incubation"
+inputs: ["desired insect-spirit type", "Force", "host Willpower", "Conjuring", "Invoking if summoning Queen/Mother"]
+stages:
+  - id: summon
+    name: "Summon Spirit"
+    test_or_action: "Use the ordinary Conjuring procedure for worker or soldier spirits; a Queen/Mother requires an initiate who knows Invoking."
+    outputs: ["summoned insect spirit"]
+  - id: incubate
+    name: "Incubate in Host"
+    test_or_action: "The spirit inhabits the host for Force weeks, then the host makes an Opposed Willpower versus Force test; Queen/Mother assistance raises the host target number."
+    outputs: ["transformation result"]
+  - id: transform
+    name: "Resolve Transformation"
+    test_or_action: "Use host net successes to determine whether the host is destroyed and a true form emerges or whether a flesh-form hybrid of varying quality is produced."
+    outputs: ["true-form spirit or flesh-form spirit"]
+outcomes: ["true-form insect spirit", "flesh-form insect spirit"]
+links: {uses: [rule.spirits.insect-forms, option.magic.metamagic-invoking], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "128-129", relation: defines, note: "Summoning Insect Spirits / incubation / Transformation Table"}
+notes:
+  - "Once incubation begins, the source states the host cannot be saved by later banishing or killing the spirit."
