@@ -1,0 +1,41 @@
+id: procedure.cybermancy.operation
+record_type: procedure
+name: "Cybermancy Operation"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 55, basis: defines}
+purpose: "Attempt cybersurgery and the linked magical procedure needed to keep a subject alive after Essence falls below zero."
+prerequisites:
+  - "delta clinic"
+  - "Biotech (Cybermancy) 8+ cybersurgeon"
+  - "magical group that knows the cybermantic ritual"
+inputs:
+  - "desired post-operation Essence"
+  - "cyberware Essence Cost"
+  - "surgical modifiers"
+stages:
+  - id: planning
+    name: "Plan Procedure"
+    test_or_action: "Use the standard implant-surgery planning process; base planning time is ten weeks before modifiers."
+    outputs: ["surgical plan"]
+  - id: survival
+    name: "Cybermancy Survival Test"
+    test_or_action: "Make the required Biotech (Cybermancy) Test against the target number determined by desired Essence, with applicable doctoring modifiers."
+    outputs: ["subject survives or dies"]
+  - id: implants
+    name: "Perform Implant Procedures"
+    test_or_action: "If the survival test succeeds, proceed with the planned implant procedures."
+    outputs: ["installed implants"]
+outcomes:
+  - "subject survives and continues under cybermantic support"
+  - "subject dies on failed survival test"
+links:
+  uses: [procedure.surgery.operation, rule.cybermancy.ground-rules]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.mm, page: 55, relation: defines, note: "Less Than Zero / Cybermancy Procedure"}
+notes:
+  - "Karma may not be spent on the cybersurgeon's survival test."
+  - "Successful subjects receive an invoked memory stimulator and an auto-injector as part of the procedure."
