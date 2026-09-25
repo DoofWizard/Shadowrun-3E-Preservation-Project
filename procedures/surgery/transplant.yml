@@ -1,0 +1,15 @@
+id: procedure.surgery.transplant
+record_type: procedure
+name: "Transimplant Surgery"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 147, basis: defines}
+purpose: "Install or remove bioware and transplant replacement organs or limbs."
+prerequisites: []
+inputs: ["bioware or body part", "recipient", "planned options"]
+stages: []
+outcomes: ["bioware installed/removed", "organ or limb transplanted", "rejection/Stress consequences on failure"]
+links: {uses: [rule.surgery.surgical-test, rule.surgery.body-parts], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, pages: "147-148", relation: defines, note: "Transimplant Surgery procedures and target numbers"}
+notes: []
