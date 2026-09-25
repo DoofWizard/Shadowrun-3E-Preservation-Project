@@ -1,0 +1,22 @@
+id: rule.drones.issuing-commands
+record_type: rule
+name: "Issuing Drone Commands"
+domain: drones
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 157, basis: defines}
+scope:
+  applies_to: ["rigger commands to drones on a remote-control network"]
+  excludes: []
+resolution:
+  summary: "Issuing commands through a remote-control deck is normally a Complex Action. A single command may be issued to one drone or a group; complicated/interpreted commands may require comprehension tests using Pilot and rigger ratings as specified."
+  inputs: ["command","target drone(s)","Pilot","rigger skill/ratings"]
+  outputs: ["accepted/interpreted command and drone behavior"]
+  steps: []
+links:
+  uses: [subsystem.drones.remote-control-network]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 157, relation: defines, note: "Issuing Commands"}
+notes: []
