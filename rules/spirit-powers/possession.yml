@@ -1,0 +1,16 @@
+id: rule.spirit-powers.possession
+record_type: rule
+name: "Spirit Power: Possession"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 99, basis: defines}
+scope: {applies_to: ["spirits with the Possession power"]}
+resolution:
+  summary: "A spirit may possess a willing living host, or under the source's exceptions a bound serviteur. The spirit controls the body, adds its Force to physical Attributes, replaces the host's mental Attributes with its own, and can use its own and host skills/knowledge. Unwilling hosts impose an additional resistance modifier. The spirit is forced out by unconsciousness, death, banishing, or the end of the task."
+  inputs: ["spirit Force", "host", "willing/unwilling state"]
+  outputs: ["possessed state, modified Attributes, or expelled spirit"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [option.magic.metamagic-possessing]}
+sources:
+  - {source: source.mits, page: 99, relation: defines, note: "Possession spirit power"}
+notes: []
