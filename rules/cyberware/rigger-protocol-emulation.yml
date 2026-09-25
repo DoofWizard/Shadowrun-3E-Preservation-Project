@@ -1,0 +1,16 @@
+id: rule.cyberware.rigger-protocol-emulation
+record_type: rule
+name: "Rigger Protocol Emulation"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 25, basis: extends}
+scope: {applies_to: ["rigger protocol emulation modules"]}
+resolution:
+  summary: "A protocol emulation module lets a rigger's cranial deck imitate compatible remote-control protocols. Higher ratings store more protocol sets, allowing access to different systems and supporting meaconing, intrusion and interference attempts in the game."
+  inputs: ["module rating", "target protocol"]
+  outputs: ["available emulated protocol functions"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.rigging.electronic-warfare]}
+sources:
+  - {source: source.mm, page: 25, relation: extends, note: "Rigger Protocol Emulation Module"}
+notes: []
