@@ -1,0 +1,16 @@
+id: rule.bioware.critters
+record_type: rule
+name: "Bioware and Critters"
+domain: bioware
+status: ingested
+effective: {status: current, source: source.mm, page: 79, basis: clarifies}
+scope: {applies_to: ["critters implanted with bioware"]}
+resolution:
+  summary: "Critters generally tolerate bioware better than cyberware, but still use normal bioware restrictions and drawbacks. Awakened critters also suffer the same magical restrictions from bioware as other Awakened characters."
+  inputs: ["critter type", "bioware", "Awakened status"]
+  outputs: ["compatibility and magical interaction"]
+  steps: []
+links: {uses: [rule.bioware.compatibility, rule.bioware.awakened], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 79, relation: clarifies, note: "Bioware and Critters"}
+notes: []
