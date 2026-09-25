@@ -1,0 +1,43 @@
+id: rule.gear.street-index
+record_type: rule
+name: "Street Index"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 273
+  basis: defines
+
+scope:
+  applies_to:
+    - "gray/shadow-market gear purchases"
+
+resolution:
+  summary: "Street Index multiplies an item's legal retail Cost to produce its baseline street-market asking price. After locating the item, buyer and source resolve an opposed negotiation to adjust the price."
+  inputs:
+    - "legal Cost"
+    - "Street Index"
+    - "Negotiation results"
+  outputs:
+    - "street asking price"
+    - "final negotiated price"
+
+links:
+  uses:
+    - entity.skill.negotiation
+  affects:
+    - procedure.gear.purchase
+  modified_by: []
+  interacts_with:
+    - rule.gear.availability
+
+sources:
+  - source: source.sr3-core
+    page: 273
+    relation: defines
+    note: "Street Index and Cost"
+
+notes:
+  - "Each net negotiation success changes the price by 5 percent in the winner's favor."
