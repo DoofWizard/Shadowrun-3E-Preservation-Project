@@ -1,0 +1,33 @@
+id: rule.social.interrogation-intimidation
+record_type: rule
+name: "Interrogation and Intimidation Resolution"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 93
+  basis: defines
+
+scope:
+  applies_to: ["Interrogation","Intimidation"]
+  excludes: []
+
+resolution:
+  summary: "Interrogation and Intimidation use Open Tests to generate resistance target numbers. Interrogation sets the target number for the subject's Willpower Success Test; Intimidation sets the target number the victim must meet with Willpower to resist."
+  inputs: ["Interrogation/Intimidation rating","situational modifiers","subject Willpower"]
+  outputs: ["resistance target number","resistance outcome"]
+  steps: []
+
+links:
+  uses: [entity.skill.interrogation, entity.skill.intimidation, rule.tests.open-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.social.charisma-linked-tests]
+
+sources:
+  - {source: source.sr3-core, page: 93, relation: defines, note: "Interrogation and Intimidation"}
+  - {source: source.sr3-core, page: 94, relation: extends, note: "Social Modifiers Table and resistance detail"}
+
+notes: []
