@@ -1,0 +1,14 @@
+id: option.magic.path-adept-magician
+record_type: option
+name: "Adept Way — Magician"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 22, basis: extends}
+option_for: [subsystem.magic.adepts]
+selection: {timing: "adept way selection", prerequisites: [], incompatible_with: []}
+effects:
+  - "Represents the magician-adept path, combining adept abilities with a limited set of magician capabilities under the source's restrictions."
+links: {modifies: [subsystem.magic.adepts], requires: [], interacts_with: [subsystem.magic.sorcery, subsystem.magic.conjuring]}
+sources:
+  - {source: source.mits, pages: "22-23", relation: extends, note: "Magician's Way"}
+notes: []
