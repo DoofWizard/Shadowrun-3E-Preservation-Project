@@ -1,0 +1,45 @@
+id: rule.character-creation.language-skill-points
+record_type: rule
+name: "Starting Language Skill Points"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 59
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes: []
+
+resolution:
+  summary: "Starting Language Skill Points equal Intelligence x1.5, rounded down. Knowledge Skill Points may also be spent to raise Language Skills."
+  inputs:
+    - "Intelligence"
+  outputs:
+    - "Language Skill Point budget"
+  steps:
+    - "Multiply Intelligence by 1.5."
+    - "Round down."
+    - "Spend points on one or more Language Skills."
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.character-creation.knowledge-skill-points
+
+sources:
+  - source: source.sr3-core
+    page: 59
+    relation: defines
+    note: "Language Skills"
+
+notes:
+  - "Characters begin the game knowing at least one language."
+  - "Language specializations are called Lingos."
+  - "A character also has a Reading/Writing skill for languages known, at half the related Language Skill rating rounded down."
