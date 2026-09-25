@@ -1,0 +1,23 @@
+id: entity.bioware.chemical-gland
+record_type: entity
+name: "Chemical Gland"
+domain: bioware
+status: ingested
+intrinsic:
+  bio_index: 0.6
+  availability: "10/4 days"
+  cost: "Special"
+  street_index: 3
+  legality: "5-Q"
+  production_time_per_dose: "24 hours"
+  maximum_stored_doses: 5
+  delivery_modes: ["exhalation spray", "spit", "internal release", "weapon reservoir"]
+links:
+  uses: [rule.chemistry.drug-exposure]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: "64-66", relation: defines, note: "Chemical Gland description, delivery modes, game effects, stress effects and statistics"}
+notes:
+  - "The implanted gland is tailored to manufacture one chosen compound; compound availability and legality remain separate."
