@@ -1,0 +1,68 @@
+id: subsystem.bioware.core
+record_type: subsystem
+name: "Bioware"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 60
+  basis: extends
+
+state:
+  tracked_values:
+    - "Bio Index"
+    - "Essence Index"
+    - "implant type"
+    - "implant grade"
+    - "Stress"
+    - "compatibility"
+
+participants:
+  - "characters"
+  - "basic bioware"
+  - "cultured bioware"
+
+components:
+  - "basic bioware"
+  - "cultured bioware"
+  - "cosmetic bioware"
+  - "implantation"
+  - "Bio Index"
+  - "Essence Index"
+  - "excessive bioware"
+  - "compatibility"
+
+entry_conditions:
+  - "bioware implantation"
+
+exit_conditions: []
+
+links:
+  rules:
+    - rule.bioware.bio-index
+    - rule.bioware.essence-index
+    - rule.bioware.excessive-bioware
+    - rule.bioware.awakened
+    - rule.bioware.compatibility
+  procedures: []
+  entities: []
+  options:
+    - option.bioware.grades
+  modifiers: []
+  interacts_with:
+    - subsystem.cyberware.core
+
+sources:
+  - source: source.mm
+    page: 60
+    relation: extends
+    note: "Bioware Defined / Implanting Bioware"
+  - source: source.mm
+    pages: "76-79"
+    relation: defines
+    note: "Bioware Rules"
+
+notes:
+  - "Bioware normally augments biological functions without reducing Essence."
