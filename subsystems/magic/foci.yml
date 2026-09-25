@@ -1,0 +1,24 @@
+id: subsystem.magic.foci
+record_type: subsystem
+name: "Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 189, basis: defines}
+state:
+  tracked_values: ["focus type","Force","bonded owner","active/inactive state","allocated bonus dice/effect"]
+participants: ["Awakened characters","magical foci"]
+components: ["bonding","activation","spell foci","spirit foci","power foci","sustaining foci","weapon foci"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: [rule.magic.focus-bonding, rule.magic.focus-activation]
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [subsystem.magic.sorcery, subsystem.magic.conjuring, subsystem.magic.astral]
+sources:
+  - {source: source.sr3-core, page: 189, relation: defines, note: "Foci / Form"}
+  - {source: source.sr3-core, page: 190, relation: extends, note: "Bonding, activation and focus types"}
+notes:
+  - "Magic in the Shadows later expands foci and enchanting."
