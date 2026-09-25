@@ -1,0 +1,37 @@
+id: rule.skills.complementary-skills
+record_type: rule
+name: "Complementary Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 97
+  basis: defines
+
+scope:
+  applies_to: ["skills explicitly or reasonably supporting another skill"]
+  excludes: ["Background Knowledge Skills unless specifically allowed"]
+
+resolution:
+  summary: "When a legitimate Complementary Skill supports an Active Skill, roll both against the same target number. Every two successes on the Complementary Skill add one success to the Active Skill test, but only if the Active Skill test itself scores at least one success."
+  inputs: ["primary Active Skill","Complementary Skill","shared target number"]
+  outputs: ["additional successes on the primary test"]
+  steps:
+    - "Resolve the primary Active Skill test."
+    - "Resolve the Complementary Skill test against the same target number."
+    - "If the primary test has at least one success, add one success for every two Complementary Skill successes."
+
+links:
+  uses: [rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.skills.background-knowledge]
+
+sources:
+  - {source: source.sr3-core, page: 97, relation: defines, note: "Complementary Skills"}
+
+notes:
+  - "The book says this mechanic should be used sparingly."
+  - "Some Active Skills can explicitly complement Build/Repair or device-related tests under special cases."
