@@ -1,0 +1,14 @@
+id: option.magic.geas-standard
+record_type: option
+name: "Standard Geas"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 32, basis: defines}
+option_for: [subsystem.magic.geasa]
+selection: {timing: "when accepting or creating a geas", prerequisites: [], incompatible_with: []}
+effects:
+  - "Uses a recurring or persistent obligation appropriate to the character's magical path; violating it breaks access to the Magic Point offset by the geas until the geas is fulfilled again."
+links: {modifies: [subsystem.magic.geasa], requires: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 32, relation: defines, note: "Standard Geasa"}
+notes: []
