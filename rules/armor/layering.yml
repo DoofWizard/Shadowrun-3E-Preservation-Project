@@ -1,0 +1,40 @@
+id: rule.armor.layering
+record_type: rule
+name: "Layering Armor"
+domain: armor
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 285
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters wearing multiple external armor layers"
+
+resolution:
+  summary: "When layering armor, use the highest-rated layer at full value and add one-half, rounded down, of the next-highest armor rating for the same protection type. Layered armor also increases movement/skill encumbrance and normally cannot benefit from armor-bonus stacking more than once."
+  inputs:
+    - "Ballistic ratings of worn layers"
+    - "Impact ratings of worn layers"
+  outputs:
+    - "effective Ballistic Armor"
+    - "effective Impact Armor"
+
+links:
+  uses:
+    - rule.armor.armor-ratings
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.armor.combat-pool-penalty
+
+sources:
+  - source: source.sr3-core
+    page: 285
+    relation: defines
+    note: "Armor and Combat Pool / Layering Armor"
+
+notes: []
