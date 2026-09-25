@@ -1,0 +1,22 @@
+id: rule.magic.magic-loss
+record_type: rule
+name: "Magic Loss"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 160, basis: defines}
+scope:
+  applies_to: ["Awakened characters suffering qualifying Essence loss, Deadly Physical damage or other listed events"]
+  excludes: []
+resolution:
+  summary: "Certain events require Magic-loss checks. Failed checks reduce the Magic Attribute by 1; specific causes and thresholds determine when checks occur. If Magic falls to 0, the character burns out and loses magical ability."
+  inputs: ["Magic rating","qualifying event"]
+  outputs: ["unchanged or reduced Magic"]
+  steps: []
+links:
+  uses: [rule.magic.magic-attribute]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 160, relation: defines, note: "Magic Loss"}
+notes: []
