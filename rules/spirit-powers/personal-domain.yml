@@ -1,0 +1,16 @@
+id: rule.spirit-powers.personal-domain
+record_type: rule
+name: "Free Spirit Power: Personal Domain"
+domain: spirit-powers
+status: ingested
+effective: {status: current, source: source.mits, page: 118, basis: defines}
+scope: {applies_to: ["free spirits with Personal Domain"]}
+resolution:
+  summary: "A free spirit selects a permanent domain where its powers are stronger. Within an area up to 10,000 square meters x Force, Spirit Energy doubles for powers and physical Attributes influenced by Spirit Energy. A possessing spirit can attempt to possess anyone in its personal domain. The domain cannot normally be changed."
+  inputs: ["chosen domain", "Force", "Spirit Energy"]
+  outputs: ["domain area and enhanced effective Spirit Energy"]
+  steps: []
+links: {uses: [rule.spirits.spirit-energy], affects: [], modified_by: [], interacts_with: [rule.spirit-powers.possession]}
+sources:
+  - {source: source.mits, page: 118, relation: defines, note: "Personal Domain"}
+notes: []
