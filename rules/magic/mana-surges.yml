@@ -1,0 +1,20 @@
+id: rule.magic.mana-surges
+record_type: rule
+name: "Mana Surges"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 86, basis: defines}
+scope: {applies_to: ["magic used inside an active mana surge"]}
+resolution:
+  summary: "Mana surges are temporary storms of magical energy that unpredictably alter magic. A surge can change spell Force or Drain, disrupt ritual-sorcery links, and cause summoned spirits to appear at a Force different from that intended. Astral perception can detect a surge."
+  inputs: ["surge effect roll", "spell Force", "Drain code", "summoning Force", "background count"]
+  outputs: ["modified spell Force, Drain, ritual link, or spirit Force"]
+  steps:
+    - "If required, determine the surge effect with the Mana Surge Table."
+    - "For Sorcery, apply the Force-increase/decrease or Drain-change result."
+    - "For Conjuring, resolve the responding spirit at the surge-modified Force and resist Drain from that actual Force."
+links: {uses: [subsystem.magic.sorcery, subsystem.magic.conjuring], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, pages: "86-87", relation: defines, note: "Mana Surges / Mana Surge, Force and Drain tables / Sorcery Effects / Conjuring Effects"}
+notes:
+  - "Surges affect mana-manipulating magic; relatively fixed magical abilities such as astral projection and adept/critter powers are not normally altered."
