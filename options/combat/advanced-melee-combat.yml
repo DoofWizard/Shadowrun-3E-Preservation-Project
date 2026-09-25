@@ -1,0 +1,39 @@
+id: option.combat.advanced-melee-combat
+record_type: option
+name: "Advanced Melee Combat Rules"
+domain: combat
+status: ingested
+
+effective:
+  status: optional
+  source: source.cc
+  page: 85
+  basis: adds_option
+
+option_for:
+  - "SR3 melee combat"
+
+selection:
+  timing: "campaign rules"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Adds optional combat options and special maneuvers on top of the SR3 melee combat system."
+  - "Combat options may be used without martial arts."
+  - "If the martial-arts rules are used, the book says the combat options should also be used."
+
+links:
+  modifies: []
+  requires: []
+  interacts_with:
+    - option.combat.martial-arts
+
+sources:
+  - source: source.cc
+    page: 85
+    relation: adds_option
+    note: "Advanced Melee Combat introduction"
+
+notes:
+  - "Explicitly optional; does not replace baseline SR3 melee combat unless selected."
