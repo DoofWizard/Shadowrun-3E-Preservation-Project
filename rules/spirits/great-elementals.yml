@@ -1,0 +1,16 @@
+id: rule.spirits.great-elementals
+record_type: rule
+name: "Great Elementals"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 107, basis: defines}
+scope: {applies_to: ["great form elementals"]}
+resolution:
+  summary: "Great elementals can use powers on multiple targets up to Force, may affect areas with Engulf, and gain dramatic element-specific physical effects. Fire can ignite materials, water can burst plumbing/flood, air can generate fierce winds, and earth can cause localized tremors."
+  inputs: ["elemental type", "Force", "target area"]
+  outputs: ["multi-target powers and element-specific area effects"]
+  steps: []
+links: {uses: [rule.spirits.great-form], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 107, relation: defines, note: "Great Elementals"}
+notes: []
