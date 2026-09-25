@@ -3,9 +3,15 @@ record_type: entity
 name: "Centering Focus"
 domain: magic
 status: ingested
-intrinsic: {first_bond_karma: "5 x Force", later_bond_karma: "3 x Force"}
+intrinsic:
+  availability: "5/48 hrs"
+  cost: "Force x 75,000 nuyen"
+  street_index: 2
+  first_bond_karma: "5 x Force"
+  later_bond_karma: "3 x Force"
 links: {uses: [option.magic.metamagic-centering], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mits, pages: "45-46", relation: defines, note: "Centering Focus"}
+  - {source: source.mits, page: 169, relation: clarifies, note: "Magical Gear Table pricing/availability"}
 notes:
   - "Provides additional dice for the specific Centering Skill associated with the focus, limited by the user's Centering Skill."
