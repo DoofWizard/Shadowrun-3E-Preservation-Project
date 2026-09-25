@@ -1,0 +1,55 @@
+id: subsystem.karma.team-karma
+record_type: subsystem
+name: "Team Karma"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 82
+  basis: adds_option
+
+state:
+  tracked_values:
+    - "Team Karma Pool"
+    - "member contributions"
+    - "team membership"
+    - "defection/retirement penalties"
+
+participants:
+  - "shadowrunning teams"
+  - "team members"
+
+components:
+  - "contribution"
+  - "team use"
+  - "member departure"
+  - "NPC team Karma"
+
+entry_conditions:
+  - "gamemaster enables Team Karma"
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - rule.karma.karma-pool
+
+sources:
+  - source: source.srcomp
+    page: 82
+    relation: adds_option
+    note: "Team Karma"
+  - source: source.srcomp
+    page: 83
+    relation: extends
+    note: "Karma and Defecting Team Members / NPC Team Karma"
+
+notes:
+  - "Contributed personal Karma Pool points are permanently transferred to the Team Karma Pool."
