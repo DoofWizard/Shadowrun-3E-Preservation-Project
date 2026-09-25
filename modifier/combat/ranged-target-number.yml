@@ -1,0 +1,20 @@
+id: modifier.combat.ranged-target-number
+record_type: modifier
+name: "Ranged Combat Target Number Modifiers"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 111, basis: defines}
+trigger:
+  conditions: ["A ranged attack is affected by recoil, visibility, movement, cover, target state, aiming, smartlinks, imaging or other listed circumstances."]
+effect:
+  target: ["ranged attack target number"]
+  operation: "apply listed situational modifiers"
+  value: "See the governing rule/condition; modifiers are cumulative unless a rule says otherwise."
+stacking:
+  mode: "cumulative unless specifically limited"
+  exceptions: []
+sources:
+  - {source: source.sr3-core, page: 111, relation: defines, note: "Situational Target Modifiers"}
+  - {source: source.sr3-core, page: 112, relation: clarifies, note: "Ranged Combat Modifiers Table"}
+notes:
+  - "Individual recurring modifiers such as recoil, visibility, running, cover, aiming and smartlink effects should be independently addressable as the corpus expands."
