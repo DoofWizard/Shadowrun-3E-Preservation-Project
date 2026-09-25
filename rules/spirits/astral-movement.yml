@@ -1,0 +1,16 @@
+id: rule.spirits.astral-movement
+record_type: rule
+name: "Spirit Astral Movement and Metaplanar Travel"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 96, basis: extends}
+scope: {applies_to: ["spirits unless a spirit type says otherwise"]}
+resolution:
+  summary: "Spirits normally move through astral space at Force x 5 meters per turn at slow speed and can accelerate up to Force x 1,000 kph. Spirits can also take a Complex Action to travel directly between the physical/astral planes and their native metaplane; astral barriers do not block this metaplanar movement."
+  inputs: ["Force", "movement mode", "native metaplane"]
+  outputs: ["astral speed or metaplanar relocation"]
+  steps: []
+links: {uses: [], affects: [subsystem.spirits.mits-expanded], modified_by: [], interacts_with: [subsystem.magic.metaplanes]}
+sources:
+  - {source: source.mits, pages: "96-98", relation: extends, note: "Astral Movement / Metaplanar Travel / calling spirits through metaplanes"}
+notes: []
