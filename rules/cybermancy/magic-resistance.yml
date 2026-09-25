@@ -1,0 +1,21 @@
+id: rule.cybermancy.magic-resistance
+record_type: rule
+name: "Cybermancy Magic Resistance"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 56, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Cybermantic treatment makes the subject more resistant to most magic. Add the absolute value of the character's negative Essence, rounded up, to target numbers for Spellcasting, spirit powers, metamagic and other magical tests made against the character. The modifier does not apply to elemental manipulation spells, but it does apply to magical healing."
+  inputs: ["negative Essence", "magical effect"]
+  outputs: ["target-number modifier"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.cyberware.magic-interaction]
+sources:
+  - {source: source.mm, pages: "56-57", relation: defines, note: "Magic Resistance"}
+notes: []
