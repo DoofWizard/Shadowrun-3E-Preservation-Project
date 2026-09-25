@@ -1,0 +1,20 @@
+id: entity.chemistry.arsenic
+record_type: entity
+name: "Arsenic"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "4/12 hrs"
+  cost_nuyen_per_dose: 40
+  street_index: 1
+  legality: "Legal"
+  vector: "Ingestion"
+  speed: "1D6 hrs"
+  damage: "10D"
+  tolerance: 1
+  edge: "20/—"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 118, relation: defines, note: "Arsenic game statistics and cumulative-dose mechanics"}
+notes:
+  - "Represented strictly as sourcebook game data."
