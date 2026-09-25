@@ -1,0 +1,21 @@
+id: rule.cyberware.protocols
+record_type: rule
+name: "Cyberware Data Protocols"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 47, basis: extends}
+scope:
+  applies_to: ["linked cyberware devices exchanging or broadcasting data"]
+resolution:
+  summary: "Data transferred between cyberware must be usable by the destination device; image, audio and simsense data require compatible display/playback devices. Standard radio and simsense broadcasts use the normal broadcast encryption/decryption rules, while rigger remote-control networks use their own protocol rules. Gamemasters determine which protocol a device or broadcast uses where the source does not specify."
+  inputs: ["data type", "source device", "destination device", "protocol"]
+  outputs: ["whether the data can be used or translated"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.cyberware.interconnectivity]
+sources:
+  - {source: source.mm, page: 47, relation: extends, note: "Protocols / Broadcast Encryption-Decryption / Jamming"}
+notes: []
