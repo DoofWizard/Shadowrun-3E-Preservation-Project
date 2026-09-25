@@ -1,0 +1,34 @@
+id: rule.skills.knowledge-skills
+record_type: rule
+name: "Knowledge Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 89
+  basis: defines
+
+scope:
+  applies_to: ["Knowledge Skills"]
+  excludes: []
+
+resolution:
+  summary: "Knowledge Skills represent learned information and expertise. They normally default to Intelligence, are individually defined, and are organized into Street, Academic, Sixth World, Background, and Interests categories."
+  inputs: ["Knowledge Skill rating","Intelligence when defaulting"]
+  outputs: ["Knowledge Skill test dice/results"]
+  steps: []
+
+links:
+  uses: [rule.tests.success-test, rule.skills.defaulting]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.skills.complementary-skills, rule.skills.background-knowledge]
+
+sources:
+  - {source: source.sr3-core, page: 89, relation: defines, note: "About Knowledge Skills"}
+  - {source: source.sr3-core, page: 90, relation: extends, note: "Knowledge Skill categories"}
+
+notes:
+  - "Gamemasters may permit defaulting from one similar Knowledge Skill to another using ordinary defaulting rules."
