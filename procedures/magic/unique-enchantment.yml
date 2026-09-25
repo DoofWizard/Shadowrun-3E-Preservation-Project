@@ -1,0 +1,27 @@
+id: procedure.magic.unique-enchantment
+record_type: procedure
+name: "Unique Enchantment"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 46, basis: defines}
+purpose: "Create a one-off magical item whose effect is defined by an adventure, ritual need, spirit bargain, or other unique magical requirement."
+prerequisites: ["Enchanting skill", "gamemaster-defined formula/material requirements"]
+inputs: ["unique formula", "required materials", "intended magical purpose"]
+stages:
+  - id: design
+    name: "Establish Formula"
+    test_or_action: "Define or obtain the unique formula and its special requirements."
+    outputs: ["unique-enchantment formula"]
+  - id: prepare
+    name: "Prepare Required Materials"
+    test_or_action: "Gather and refine the special materials called for by the formula."
+    outputs: ["prepared components"]
+  - id: enchant
+    name: "Enchant Item"
+    test_or_action: "Use Enchanting under the gamemaster-defined process appropriate to the unique item."
+    outputs: ["unique enchantment"]
+outcomes: ["adventure-specific magical item"]
+links: {uses: [subsystem.magic.enchanting], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, page: 46, relation: defines, note: "Unique Enchantments"}
+notes: []
