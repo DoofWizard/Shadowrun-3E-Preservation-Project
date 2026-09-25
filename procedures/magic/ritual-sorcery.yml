@@ -1,0 +1,69 @@
+id: procedure.magic.ritual-sorcery
+record_type: procedure
+name: "Ritual Sorcery"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 34
+  basis: extends
+
+purpose: "Allow a ritual team to cooperate in casting a spell, often at a distant target linked by material/sympathetic means."
+
+prerequisites:
+  - "ritual team members know the spell at the desired Force"
+  - "team members share a compatible magical tradition"
+  - "appropriate lodge/circle and ritual materials"
+  - "valid link to remote target when required"
+
+inputs:
+  - "spell and Force"
+  - "ritual team"
+  - "ritual leader"
+  - "Ritual Pool"
+  - "target/material link"
+  - "time"
+
+stages:
+  - id: team
+    name: "Form Ritual Team"
+    test_or_action: "Establish eligible participants and ritual space."
+    outputs: ["ritual team"]
+  - id: link
+    name: "Establish Link"
+    test_or_action: "Use material/sympathetic link or astral spotter where required."
+    outputs: ["ritual connection"]
+  - id: cast
+    name: "Perform Ritual"
+    test_or_action: "Resolve the ritual's linking, sending, Sorcery, resistance and Drain tests."
+    outputs: ["spell effect or failed ritual"]
+  - id: sustain
+    name: "Sustain or Track"
+    test_or_action: "Maintain spell/ritual link or use ritual tracking where applicable."
+    outputs: ["continued effect or astral trail"]
+
+outcomes:
+  - "ritual spell succeeds"
+  - "ritual fails or is interrupted"
+
+links:
+  uses:
+    - subsystem.magic.sorcery
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.mits
+    page: 34
+    relation: extends
+    note: "Ritual Sorcery / Requirements"
+  - source: source.mits
+    pages: "36-39"
+    relation: extends
+    note: "Ritual team, casting, tests, sustaining and ritual tracking"
+
+notes:
+  - "Elemental manipulation spells are excluded from ritual sorcery by the source."
