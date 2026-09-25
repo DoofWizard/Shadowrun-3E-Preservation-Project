@@ -1,0 +1,23 @@
+id: rule.vehicles.magic
+record_type: rule
+name: "Vehicles and Magic"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 150, basis: defines}
+scope:
+  applies_to: ["magical effects involving vehicles, passengers and riggers"]
+  excludes: []
+resolution:
+  summary: "Vehicle armor/body, line of sight and the distinction between a vehicle as an object versus its occupants affect spell targeting. Physical effects may affect vehicles; passengers generally remain separate targets subject to visibility/line-of-sight. Additional rules cover natural domains, spirits, casting from vehicles and astral projection from moving vehicles."
+  inputs: ["spell/effect type","vehicle","occupant visibility","movement/domain"]
+  outputs: ["valid target and effect resolution"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.magic, rule.cyberware.magic-interaction]
+sources:
+  - {source: source.sr3-core, page: 150, relation: defines, note: "Vehicles and Magic"}
+  - {source: source.sr3-core, page: 151, relation: extends, note: "Natural Domains, Spirits, Casting/Astral Projection from Vehicles"}
+notes: []
