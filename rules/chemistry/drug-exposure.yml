@@ -1,0 +1,51 @@
+id: rule.chemistry.drug-exposure
+record_type: rule
+name: "Drug Exposure and Resistance"
+domain: chemistry
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 105
+  basis: extends
+
+scope:
+  applies_to:
+    - subsystem.chemistry.drugs
+
+resolution:
+  summary: "A chemical's Vector determines how exposure occurs: contact, ingestion, inhalation or injection. After the compound's Speed period, the exposed character makes a Body-based Damage Resistance Test against the drug's Power, modified by exposure and protective equipment. Damage Level may be staged down but normally not up by resistance."
+  inputs:
+    - "Vector"
+    - "Power"
+    - "Damage Level"
+    - "Speed"
+    - "exposure conditions"
+    - "protective gear"
+    - "Body"
+  outputs:
+    - "damage/effects suffered"
+
+links:
+  uses:
+    - rule.combat.damage-codes
+    - rule.tests.success-test
+  affects:
+    - rule.condition.condition-monitor
+  modified_by: []
+  interacts_with:
+    - rule.chemistry.additional-dosage
+
+sources:
+  - source: source.mm
+    page: 105
+    relation: extends
+    note: "Drug Attributes / Determine Exposure"
+  - source: source.mm
+    page: 106
+    relation: clarifies
+    note: "Exposure modifiers / Body Resistance Test / Applying an Antidote"
+
+notes:
+  - "Weapon-delivered chemicals can generate separate weapon-damage and chemical-resistance tests."
