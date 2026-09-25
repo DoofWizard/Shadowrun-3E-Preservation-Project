@@ -1,0 +1,46 @@
+id: compatibility.rigger2.general-precedence
+record_type: rule
+name: "Rigger 2 to SR3 Precedence"
+domain: compatibility
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 324
+  basis: supersedes
+
+scope:
+  applies_to:
+    - "Rigger 2 vehicle rules used in an SR3 game"
+
+resolution:
+  summary: "Rigger 2 rules supersede other older Shadowrun vehicle rules except where they conflict with SR3. In a conflict, use SR3 unless a specific Rigger 2 conversion/update instruction states otherwise."
+  inputs:
+    - "Rigger 2 rule"
+    - "SR3 rule"
+  outputs:
+    - "effective SR3-era vehicle rule"
+
+links:
+  uses:
+    - compatibility.sourcebooks.general-precedence
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.fasa-7906
+    relation: references
+    note: "Legacy source being converted."
+  - source: source.sr3-core
+    page: 324
+    relation: conversion
+    note: "Rigger 2"
+  - source: source.sr3-core
+    page: 325
+    relation: conversion
+    note: "Continuation of Rigger 2 updates"
+
+notes:
+  - "Later Rigger 3 is a separate SR3-era expansion and its explicit replacements/extensions are tracked independently."
