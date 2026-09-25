@@ -1,0 +1,35 @@
+id: procedure.magic.astral-quest
+record_type: procedure
+name: "Astral Quest"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 92, basis: defines}
+purpose: "Travel to a metaplane and overcome a sequence of symbolic challenges to reach the Citadel and obtain a magical objective."
+prerequisites:
+  - "astral projection or another valid route to the metaplanes"
+inputs:
+  - "Quest Rating"
+  - "target metaplane"
+  - "quest purpose"
+  - "companions if any"
+stages:
+  - id: threshold
+    name: "Meet the Dweller on the Threshold"
+    test_or_action: "Each traveler faces the Dweller and makes the source-defined personal test against the Quest Rating."
+    outputs: ["admitted to quest or quest failed"]
+  - id: places
+    name: "Traverse Metaplanar Places"
+    test_or_action: "Move through Places determined by the metaplane sequence or gamemaster design and resolve each Place's challenge."
+    outputs: ["continued progress or return to body"]
+  - id: citadel
+    name: "Reach the Citadel"
+    test_or_action: "Overcome the final Place and reach the Citadel."
+    outputs: ["quest objective achieved"]
+outcomes:
+  - "quest succeeds and the character receives the sought information, insight, spirit result, or initiation benefit"
+  - "quest fails and the traveler returns to the body"
+links: {uses: [subsystem.magic.metaplanes], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "92-95", relation: defines, note: "Astral Quest / Dweller on the Threshold / Metaplaces / Quest Tests / Types of Quest / Quest Duration"}
+notes:
+  - "Damage suffered during a quest can affect the physical body; the source distinguishes Stun, Physical, Deadly and Magic-loss consequences."
