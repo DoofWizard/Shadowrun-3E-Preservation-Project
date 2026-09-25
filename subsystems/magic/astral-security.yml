@@ -1,0 +1,55 @@
+id: subsystem.magic.astral-security
+record_type: subsystem
+name: "Astral Security"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 88
+  basis: extends
+
+state:
+  tracked_values:
+    - "astral patrols"
+    - "barriers/wards"
+    - "passive security"
+    - "intrusion response"
+
+participants:
+  - "security magicians"
+  - "spirits"
+  - "wards"
+  - "astral intruders"
+
+components:
+  - "astral patrolling"
+  - "fooling astral barriers"
+  - "wards"
+  - "passive security options"
+
+entry_conditions: []
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.security.core
+    - subsystem.magic.astral-terrain
+
+sources:
+  - source: source.mits
+    page: 88
+    relation: extends
+    note: "Astral Security"
+  - source: source.mits
+    pages: "89-90"
+    relation: extends
+    note: "Wards and passive security"
+
+notes: []
