@@ -1,0 +1,15 @@
+id: option.magic.path-voodoo
+record_type: option
+name: "Path of Voodoo"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 19, basis: extends}
+option_for: [subsystem.magic.traditions-expanded]
+selection: {timing: "magical tradition/path selection", prerequisites: [], incompatible_with: []}
+effects:
+  - "Centers magical practice on loa, patron relationships and Voodoo ritual practice."
+  - "The source distinguishes houngans, mambo practitioners, vodounistas and obeiyifa, and introduces loa spirits and zombies as related spirit forms."
+links: {modifies: [rule.magic.traditions], requires: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, pages: "19-20", relation: extends, note: "Path of Voodoo"}
+notes: []
