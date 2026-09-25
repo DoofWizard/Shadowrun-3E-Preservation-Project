@@ -1,0 +1,22 @@
+id: rule.magic.spell-resistance
+record_type: rule
+name: "Spell Resistance"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 183, basis: defines}
+scope:
+  applies_to: ["unwilling targets of resistible spells"]
+  excludes: []
+resolution:
+  summary: "An unwilling living target normally makes the Attribute-based resistance test specified by the spell. Nonliving targets use Object Resistance where applicable. Resistance successes oppose the caster's Sorcery successes to determine net spell effect."
+  inputs: ["specified resistance Attribute or Object Resistance","caster successes"]
+  outputs: ["net spell successes"]
+  steps: []
+links:
+  uses: [rule.tests.success-test]
+  affects: [procedure.magic.spellcasting]
+  modified_by: []
+  interacts_with: [rule.magic.spell-defense]
+sources:
+  - {source: source.sr3-core, page: 183, relation: defines, note: "Spell Resistance Test / Object Resistance"}
+notes: []
