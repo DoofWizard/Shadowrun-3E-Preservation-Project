@@ -1,0 +1,41 @@
+id: option.magic.metamagic-anchoring
+record_type: option
+name: "Metamagic: Anchoring"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 70
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "after learning the Anchoring metamagic technique"
+  prerequisites:
+    - "initiate"
+    - "Anchoring technique"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to place a live spell in an anchoring focus and define trigger conditions that activate or deactivate it."
+  - "The anchor must be bonded and the spell/trigger linked to it before use."
+  - "Only an initiate who knows Anchoring can create or link an anchoring focus, though others may use a prepared anchor if they know how to trigger it."
+
+links:
+  modifies: []
+  requires:
+    - option.magic.metamagic
+  interacts_with:
+    - subsystem.magic.foci
+
+sources:
+  - source: source.mits
+    page: 70
+    relation: defines
+    note: "Anchoring"
+
+notes: []
