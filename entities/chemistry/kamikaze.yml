@@ -1,0 +1,21 @@
+id: entity.chemistry.kamikaze
+record_type: entity
+name: "Kamikaze"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "5/4 days"
+  cost_nuyen_per_dose: 50
+  street_index: 5
+  legality: "3P-X"
+  vector: "Inhalation"
+  speed: "Immediate"
+  addiction: "5P"
+  tolerance: 2
+  edge: "2/10"
+  fix_factor: "2 days"
+links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: [rule.initiative.initiative, rule.damage.stress-points]}
+sources:
+  - {source: source.mm, pages: "119-120", relation: defines, note: "Kamikaze fictional combat-drug game effects and statistics"}
+notes:
+  - "Fictional Shadowrun drug; repeated use interacts with implant Stress in the game."
