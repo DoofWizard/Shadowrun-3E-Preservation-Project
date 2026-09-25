@@ -1,0 +1,33 @@
+id: rule.skills.skill-tests
+record_type: rule
+name: "Skill Tests"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 91
+  basis: clarifies
+
+scope:
+  applies_to: ["tests made with Skill ratings"]
+  excludes: []
+
+resolution:
+  summary: "A Skill Test normally rolls dice equal to the relevant Skill rating. Skill Tests use the same four test structures already defined in Game Concepts: Success Tests, Opposed Tests, Success Contests and Open Tests."
+  inputs: ["Skill rating","test type","target number or opposing rating"]
+  outputs: ["successes or Open Test result"]
+  steps: []
+
+links:
+  uses: [rule.tests.success-test, rule.tests.opposed-test, rule.tests.success-contest, rule.tests.open-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 91, relation: clarifies, note: "Using Skills / Skill Tests"}
+  - {source: source.sr3-core, page: 92, relation: extends, note: "Determining Target Numbers"}
+
+notes: []
