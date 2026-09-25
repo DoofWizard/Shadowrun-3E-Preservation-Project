@@ -14,12 +14,13 @@ intrinsic:
   type: "Active Skill"
   category: "combat"
   linked_attribute: "Strength"
-  default: "Unarmed Combat"
-  specializations:
-    - "by specific weapon type"
+  summary: "Combat using implanted combat cyberware."
+  default_routes: ["Unarmed Combat"]
+  specializations: ["by specific weapon type"]
 
 links:
-  uses: []
+  uses:
+    - rule.skills.skill-ratings
   requires: []
   component_of: []
   interacts_with:
@@ -30,6 +31,6 @@ sources:
   - source: source.sr3-core
     page: 85
     relation: defines
-    note: "Skills — Active Skill categories"
+    note: "Skills — Active Skill Categories"
 
 notes: []
