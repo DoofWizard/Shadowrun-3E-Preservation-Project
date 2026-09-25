@@ -1,0 +1,22 @@
+id: rule.condition.damage-types
+record_type: rule
+name: "Physical and Stun Damage"
+domain: condition
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 125, basis: defines}
+scope:
+  applies_to: ["character damage"]
+  excludes: []
+resolution:
+  summary: "Character damage is tracked separately as Physical or Stun. Physical damage represents bodily injury; Stun represents fatigue, bruising and nonlethal trauma. Damage is recorded on the corresponding Condition Monitor column after staging/resistance."
+  inputs: ["final Damage Level","damage type"]
+  outputs: ["filled Condition Monitor boxes"]
+  steps: []
+links:
+  uses: [rule.condition.condition-monitor]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.condition.damage-levels]
+sources:
+  - {source: source.sr3-core, page: 125, relation: defines, note: "Damage and Healing / Types of Injury / Applying Damage"}
+notes: []
