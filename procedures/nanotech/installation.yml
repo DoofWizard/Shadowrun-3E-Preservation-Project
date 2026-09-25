@@ -1,0 +1,27 @@
+id: procedure.nanotech.installation
+record_type: procedure
+name: "Nanoware Installation"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 99, basis: defines}
+purpose: "Install fixed, free-floating, or transient nanoware using the source's type-specific procedures."
+prerequisites: []
+inputs: ["nanoware classification", "required medical care", "host compatibility", "supporting cyberware"]
+stages:
+  - id: fixed
+    name: "Install Fixed Nanoware"
+    test_or_action: "Use cyberware-implantation or transimplantation surgery, depending on the system."
+    outputs: ["installed fixed nanoware"]
+  - id: free-floating
+    name: "Introduce Free-Floating Nanoware"
+    test_or_action: "Use injection plus the required monitoring/hospitalization and compatibility checks."
+    outputs: ["active free-floating nanoware"]
+  - id: transient
+    name: "Introduce Transient Nanoware"
+    test_or_action: "Inject the transient treatment; no surgery is normally required."
+    outputs: ["active transient nanoware"]
+outcomes: ["successful installation", "rejection or complication"]
+links: {uses: [rule.nanotech.classification, procedure.surgery.implant, procedure.surgery.transplant], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, page: 99, relation: defines, note: "Nanoware Installation / Modified Filtration System / Immune System Tailoring"}
+notes: []
