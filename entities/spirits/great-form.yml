@@ -1,0 +1,43 @@
+id: entity.spirit.great-form
+record_type: entity
+name: "Great Form Spirit"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 106
+  basis: defines
+
+intrinsic:
+  type: "enhanced spirit form"
+  creation: "Summoned using the Invoking metamagic technique."
+  families:
+    - "Great Blood Spirits"
+    - "Great Elementals"
+    - "Great Loa"
+    - "Great Nature Spirits"
+    - "Great Spirits of the Elements"
+
+links:
+  uses:
+    - option.magic.metamagic-invoking
+  requires:
+    - subsystem.magic.conjuring
+  component_of: []
+  interacts_with:
+    - subsystem.spirits.mits-expanded
+
+sources:
+  - source: source.mits
+    page: 106
+    relation: defines
+    note: "Great Form Spirits"
+  - source: source.mits
+    page: 107
+    relation: extends
+    note: "Great-form family effects"
+
+notes:
+  - "Great-form spirits can gain physical bonuses and family-specific expanded powers."
