@@ -1,0 +1,11 @@
+id: entity.nanotech.bioware-regenerator
+record_type: entity
+name: "Bioware Regenerator"
+domain: nanotech
+status: ingested
+intrinsic: {nanite_type: "Fixed Transient", cost: "10% of implant cost", availability: "10/2 wks", street_index: 2, legality: "Legal"}
+links: {uses: [rule.damage.stress-points], requires: [], component_of: [], interacts_with: [subsystem.bioware.core]}
+sources:
+  - {source: source.mm, pages: "91-92", relation: defines, note: "Bioware Regenerator description, game effects and statistics"}
+notes:
+  - "Repairs Stress on the attached fictional bioware implant; replenishment requires surgery."
