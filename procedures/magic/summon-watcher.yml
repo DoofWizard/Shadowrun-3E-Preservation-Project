@@ -1,0 +1,31 @@
+id: procedure.magic.summon-watcher
+record_type: procedure
+name: "Summon Watcher Spirit"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 100, basis: defines}
+purpose: "Conjure a short-lived watcher spirit to perform simple astral tasks."
+prerequisites:
+  - "Magician is able to use Conjuring"
+inputs:
+  - "desired watcher Force"
+  - "Conjuring skill"
+  - "Magic Attribute"
+  - "desired life span"
+stages:
+  - id: conjure
+    name: "Conjuring Test"
+    test_or_action: "Roll Conjuring against a target number equal to watcher Force. Each success grants one hour of life."
+    outputs: ["watcher spirit with life span"]
+  - id: drain
+    name: "Drain Resistance"
+    test_or_action: "Resist Stun Drain with Charisma against a target number based on Force plus life span."
+    outputs: ["Drain suffered or resisted"]
+outcomes:
+  - "watcher exists for the generated life span"
+  - "summoning fails"
+links: {uses: [entity.spirit.watcher], requires: [], produces: [entity.spirit.watcher], modified_by: []}
+sources:
+  - {source: source.mits, pages: "100-101", relation: defines, note: "Watcher Spirits / summoning and extended-duration watchers"}
+notes:
+  - "Watcher Force may not exceed one-half the summoner's Magic, rounded up. The summoner can maintain a number of watchers equal to Charisma."
