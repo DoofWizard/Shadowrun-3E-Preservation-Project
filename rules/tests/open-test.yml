@@ -1,0 +1,36 @@
+id: rule.tests.open-test
+record_type: rule
+name: "Open Test"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Tests used to generate a target number or other open-ended result"
+  excludes: []
+
+resolution:
+  summary: "Roll dice equal to the relevant Attribute or skill rating with no target number. The highest individual die result, using the Rule of Six, becomes the Open Test result."
+  inputs:
+    - "relevant Attribute or skill rating"
+  outputs:
+    - "highest individual die result"
+  steps:
+    - "Roll a number of d6 equal to the relevant Attribute or skill rating."
+    - "Apply the Rule of Six to individual dice."
+    - "Discard all but the highest resulting die total."
+
+links:
+  uses:
+    - rule.tests.rule-of-six
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 39
+    relation: defines
+    note: "Game Concepts — Open Tests"
+
+notes: []
