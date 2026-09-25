@@ -1,0 +1,13 @@
+id: entity.gear.dart-guns
+record_type: entity
+name: "Dart Guns"
+domain: gear
+status: ingested
+intrinsic:
+  pistol: {concealability: 7, ammo: "5(c)", mode: "SA", damage: "Special", weight: 1.5, cost_nuyen: 600, availability: "6/2 days", street_index: 2, legality: "Legal"}
+  rifle: {concealability: 4, ammo: "10(c)", mode: "SA", damage: "Special", weight: 3.25, cost_nuyen: 1700, availability: "8/2 days", street_index: 2, legality: "Legal"}
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 116, relation: defines, note: "Dart Pistol and Dart Rifle fictional game gear statistics"}
+notes:
+  - "Chemical payload is purchased and represented separately."
