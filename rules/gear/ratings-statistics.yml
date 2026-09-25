@@ -1,0 +1,39 @@
+id: rule.gear.ratings-statistics
+record_type: rule
+name: "Gear Ratings and Statistics"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 270
+  basis: defines
+
+scope:
+  applies_to:
+    - "Street Gear equipment records"
+
+resolution:
+  summary: "Street Gear entries use standardized fields such as Rating, Availability, Cost, Street Index, Legality Code, Concealability, weight, and category-specific combat statistics."
+  inputs:
+    - "equipment entry"
+  outputs:
+    - "normalized gear metadata"
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with:
+    - procedure.gear.purchase
+    - rule.gear.legality-codes
+
+sources:
+  - source: source.sr3-core
+    page: 270
+    relation: defines
+    note: "Street Gear — Gear Ratings and Statistics"
+
+notes:
+  - "Category-specific fields such as Damage Code, Reach, Ammo, Mode, Armor rating, and vehicle statistics belong on the relevant entity type."
