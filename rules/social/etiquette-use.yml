@@ -1,0 +1,32 @@
+id: rule.social.etiquette-use
+record_type: rule
+name: "Etiquette Resolution"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 94
+  basis: defines
+
+scope:
+  applies_to: ["Etiquette"]
+  excludes: []
+
+resolution:
+  summary: "When Etiquette is used to influence one person, the base target number is the opposing character's Charisma; against a group, use the Charisma of the leader or most vocal member. Apply social modifiers."
+  inputs: ["Etiquette rating","opponent/group Charisma","social modifiers"]
+  outputs: ["social interaction outcome"]
+  steps: []
+
+links:
+  uses: [entity.skill.etiquette]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.social.charisma-linked-tests]
+
+sources:
+  - {source: source.sr3-core, page: 94, relation: defines, note: "Etiquette"}
+
+notes: []
