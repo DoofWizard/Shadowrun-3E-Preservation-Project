@@ -1,0 +1,17 @@
+id: rule.nanotech.classification
+record_type: rule
+name: "Nanoware Classification"
+domain: nanotech
+status: ingested
+effective: {status: current, source: source.mm, page: 98, basis: defines}
+scope: {applies_to: ["nanoware installed in metahuman bodies"]}
+resolution:
+  summary: "Nanoware is classified as fixed, free-floating, or transient. Fixed systems are localized or encapsulated; free-floating systems circulate through bodily fluids and are limited in concurrent use; transient treatments remain only temporarily before being cleared from the body."
+  inputs: ["nanoware type", "host body", "concurrent systems"]
+  outputs: ["classification, persistence, and stacking limits"]
+  steps: []
+links: {uses: [], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: [rule.nanotech.nanite-loss]}
+sources:
+  - {source: source.mm, page: 98, relation: defines, note: "Nanoware categories: fixed, free-floating, transient"}
+notes:
+  - "A host may normally have no more than two free-floating nanoware systems active at once; additional systems degrade effectiveness as specified."
