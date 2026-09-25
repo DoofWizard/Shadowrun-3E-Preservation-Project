@@ -1,0 +1,16 @@
+id: rule.cyberware.rigger-crypto-modules
+record_type: rule
+name: "Rigger Encryption and Decryption Modules"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 24, basis: extends}
+scope: {applies_to: ["cranial remote-control networks"]}
+resolution:
+  summary: "Rigger encryption modules encode remote-control traffic using rigger-network-specific protocols, while rigger decryption modules attack compatible encrypted remote-control traffic. These modules use the rigger encryption/decryption framework rather than ordinary broadcast encryption."
+  inputs: ["module rating", "encrypted network"]
+  outputs: ["protected or decoded remote-control traffic"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.rigging.electronic-warfare]}
+sources:
+  - {source: source.mm, pages: "24-25", relation: extends, note: "Remote Control Encryption and Rigger Decryption Modules"}
+notes: []
