@@ -1,0 +1,16 @@
+id: rule.cyberware.catastrophic-clonic-seizure-syndrome
+record_type: rule
+name: "Catastrophic Clonic Seizure Syndrome"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 31, basis: defines}
+scope: {applies_to: ["move-by-wire users when the system fails or when source-defined seizure conditions occur"]}
+resolution:
+  summary: "Move-by-wire can cause severe seizure episodes. The source defines seizure damage, duration, repeated tests, and a possible catastrophic clonic seizure syndrome state that can permanently compromise move-by-wire function and impose long-term penalties."
+  inputs: ["move-by-wire rating", "seizure trigger", "Willpower or Quickness/Reaction tests"]
+  outputs: ["seizure duration, damage, recovery, or chronic syndrome"]
+  steps: []
+links: {uses: [rule.cyberware.move-by-wire], affects: [], modified_by: [], interacts_with: [rule.damage.stress-points]}
+sources:
+  - {source: source.mm, pages: "25,31", relation: defines, note: "Move-by-wire seizure complications and catastrophic clonic seizure syndrome"}
+notes: []
