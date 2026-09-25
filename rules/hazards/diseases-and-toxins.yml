@@ -1,0 +1,47 @@
+id: rule.hazards.diseases-and-toxins
+record_type: rule
+name: "Diseases and Toxins"
+domain: hazards
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 249
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters exposed to diseases, drugs, poisons, or toxins"
+
+resolution:
+  summary: "Diseases and toxins have Damage and Speed ratings. After the listed Speed interval, the victim makes a Body Test against the substance's Power; every 2 successes reduce the Damage Level by one step. Continued exposure can require repeated tests. Antidotes or vaccines may reduce Power or prevent a resistance test where applicable."
+  inputs:
+    - "substance Power and Damage Level"
+    - "Speed"
+    - "Body"
+    - "antidote/vaccine modifiers"
+  outputs:
+    - "final damage and side effects"
+
+links:
+  uses:
+    - rule.tests.success-test
+    - rule.combat.damage-staging
+  affects:
+    - rule.condition.condition-monitor
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 249
+    relation: defines
+    note: "Diseases and Toxins"
+  - source: source.sr3-core
+    page: 250
+    relation: clarifies
+    note: "Body resistance, antidotes/vaccines, toxin examples"
+
+notes:
+  - "Individual toxins and diseases should be represented as entities when their full catalog is ingested."
