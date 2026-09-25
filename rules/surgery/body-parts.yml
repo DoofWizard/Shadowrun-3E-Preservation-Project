@@ -1,0 +1,21 @@
+id: rule.surgery.body-parts
+record_type: rule
+name: "Body Parts and Transplants"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 139, basis: defines}
+scope:
+  applies_to: ["replacement organs and limbs"]
+resolution:
+  summary: "Replacement parts may be donated, cloned, forced-grown, or sourced from generic stock. Compatibility, availability, cost and rejection risk vary by source; transplanted body parts can take Stress and require separate transplant procedures."
+  inputs: ["part source", "recipient compatibility", "availability"]
+  outputs: ["replacement-part type and compatibility consequences"]
+  steps: []
+links:
+  uses: [rule.damage.stress-points]
+  affects: []
+  modified_by: []
+  interacts_with: [procedure.surgery.transplant]
+sources:
+  - {source: source.mm, pages: "139-140", relation: defines, note: "Body Parts, Donated Parts and Cloned Parts"}
+notes: []
