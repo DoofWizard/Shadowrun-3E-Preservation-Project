@@ -1,0 +1,16 @@
+id: rule.magic.astral-quest-types
+record_type: rule
+name: "Astral Quest Types"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 94, basis: defines}
+scope: {applies_to: ["astral quests with a defined magical objective"]}
+resolution:
+  summary: "The source defines common purposes for astral quests: conceal an astral link, complete an initiation ordeal, gain insight into a magical formula, learn metamagic, reduce the cost of learning a spell, retrieve a disrupted spirit, destroy a spirit through a spirit battle, read an initiate's true aura, or learn a free spirit's true name."
+  inputs: ["quest purpose", "subject", "Quest Rating"]
+  outputs: ["purpose-specific benefit"]
+  steps: []
+links: {uses: [procedure.magic.astral-quest], affects: [], modified_by: [], interacts_with: [procedure.magic.initiation, option.magic.metamagic]}
+sources:
+  - {source: source.mits, pages: "94-95", relation: defines, note: "Types of Quest"}
+notes: []
