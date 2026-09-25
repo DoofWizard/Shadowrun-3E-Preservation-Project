@@ -1,0 +1,19 @@
+id: modifier.condition.wounds
+record_type: modifier
+name: "Wound Modifiers"
+domain: condition
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 126, basis: defines}
+trigger:
+  conditions: ["character has Light, Moderate or Serious damage on either Condition Monitor"]
+effect:
+  target: ["tests","Initiative Score"]
+  operation: "penalty"
+  value: "Apply the highest applicable wound level's target-number and Initiative modifiers; Physical and Stun wound modifiers are not cumulative with each other."
+stacking:
+  mode: "Use only the highest wound-level modifier across the two monitors."
+  exceptions: []
+sources:
+  - {source: source.sr3-core, page: 126, relation: defines, note: "Condition Levels / Damage Modifiers Table"}
+notes:
+  - "Light: +1 test TN, no Initiative modifier; Moderate: +2 TN, -2 Initiative; Serious: +3 TN, -3 Initiative."
