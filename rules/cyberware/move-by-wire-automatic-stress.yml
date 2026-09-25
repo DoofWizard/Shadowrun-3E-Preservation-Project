@@ -1,0 +1,16 @@
+id: rule.cyberware.move-by-wire-automatic-stress
+record_type: rule
+name: "Move-by-Wire Automatic Stress"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 31, basis: defines}
+scope: {applies_to: ["move-by-wire systems"]}
+resolution:
+  summary: "Move-by-wire systems accumulate automatic Stress over time at intervals determined by system rating. The added Stress is handled through the standard implant Stress rules."
+  inputs: ["move-by-wire rating", "elapsed time"]
+  outputs: ["additional Stress Points"]
+  steps: []
+links: {uses: [rule.damage.stress-points, rule.cyberware.move-by-wire], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 31, relation: defines, note: "Automatic Stress Table"}
+notes: []
