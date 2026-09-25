@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.equipment-capacity
+record_type: rule
+name: "Cyberlimb Equipment Capacity"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 35, basis: defines}
+scope: {applies_to: ["cyberlimbs and structurally integrated cyberware"]}
+resolution:
+  summary: "Cyberlimbs provide equipment-capacity units that can hold compatible cyberware and gear. Obvious and synthetic limbs provide different capacity, and devices have listed capacity costs. Items installed in a cyberlimb normally do not have a direct neural connection unless the item itself includes one or one is added."
+  inputs: ["limb type", "available ECU", "device ECU cost"]
+  outputs: ["whether equipment fits and whether additional interfaces are required"]
+  steps: []
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "35-37", relation: defines, note: "Equipment capacity, capacity cost and equipment-capacity-unit tables"}
+notes: []
