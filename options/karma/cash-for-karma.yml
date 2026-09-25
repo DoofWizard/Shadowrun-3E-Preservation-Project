@@ -1,0 +1,38 @@
+id: option.karma.cash-for-karma
+record_type: option
+name: "Cash for Karma"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 80
+  basis: adds_option
+
+option_for:
+  - rule.karma.core-karma
+
+selection:
+  timing: "campaign play"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Allows characters to exchange nuyen for Good Karma Points under a gamemaster-defined campaign exchange rate."
+  - "Karma obtained this way is Good Karma and does not count when determining when Karma is added to the Karma Pool."
+
+links:
+  modifies:
+    - rule.karma.core-karma
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 80
+    relation: adds_option
+    note: "Advanced Rules — Cash for Karma"
+
+notes:
+  - "The source frames this as an option; it does not supersede standard Karma awards."
