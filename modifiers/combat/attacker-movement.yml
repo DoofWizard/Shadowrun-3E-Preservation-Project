@@ -1,0 +1,33 @@
+id: modifier.combat.attacker-movement
+record_type: modifier
+name: "Attacker Movement in Ranged Combat"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 112
+  basis: defines
+
+trigger:
+  conditions:
+    - "The attacker is walking or running during the attack."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "increase attack target number"
+  value: "Walking +1; running +4; difficult/broken ground increases these modifiers as specified."
+
+stacking:
+  mode: "May be reduced by gyro-stabilization where applicable."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 112
+    relation: adds_modifier
+    note: "Ranged Combat Modifiers Table / Attacker Running / Attacker Walking"
+
+notes: []
