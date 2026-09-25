@@ -1,0 +1,23 @@
+id: rule.combat.damage-staging
+record_type: rule
+name: "Damage Staging"
+domain: combat
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 113, basis: defines}
+scope:
+  applies_to: ["attacks with staged Damage Levels"]
+  excludes: []
+resolution:
+  summary: "Compare remaining attacker successes with defender Damage Resistance successes. Net attacker successes stage damage up one Damage Level for every two; net defender successes stage damage down one level for every two. Ties leave the base Damage Level unchanged."
+  inputs: ["attack successes","damage resistance successes","base Damage Level"]
+  outputs: ["final Damage Level"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.combat.damage-resistance]
+sources:
+  - {source: source.sr3-core, page: 113, relation: defines, note: "Determine Outcome"}
+  - {source: source.sr3-core, page: 114, relation: clarifies, note: "Staging / Apply Damage"}
+notes: []
