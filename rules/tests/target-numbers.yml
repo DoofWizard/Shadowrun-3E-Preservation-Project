@@ -1,0 +1,40 @@
+id: rule.tests.target-numbers
+record_type: rule
+name: "Target Numbers"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - rule.tests.making-tests
+  excludes: []
+
+resolution:
+  summary: "A test's target number expresses the difficulty or opposition that each rolled die must meet or exceed to score a success."
+  inputs:
+    - "base target number"
+    - "applicable target-number modifiers"
+  outputs:
+    - "final target number"
+  steps:
+    - "Start with the target number specified by the relevant rule or chosen for the situation."
+    - "Apply applicable modifiers."
+    - "If the result is below 2, use 2."
+
+links:
+  uses: []
+  affects:
+    - rule.tests.making-tests
+  modified_by:
+    - modifier.tests.target-number
+  interacts_with:
+    - rule.tests.rule-of-six
+
+sources:
+  - source: source.sr3-core
+    page: 38
+    relation: defines
+    note: "Game Concepts — Target Numbers"
+
+notes:
+  - "SR3 states that no target number can be lower than 2."
