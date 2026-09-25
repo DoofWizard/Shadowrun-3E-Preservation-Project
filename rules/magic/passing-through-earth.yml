@@ -1,0 +1,16 @@
+id: rule.magic.passing-through-earth
+record_type: rule
+name: "Passing Through Earth in Astral Space"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 80, basis: defines}
+scope: {applies_to: ["astral forms moving through natural Earth"]}
+resolution:
+  summary: "Natural Earth is unusually dense on the astral plane. Astral travelers may pass through it, but movement is slow and requires repeated Charisma Tests; earth elementals and gnomes can assist. Failure can prevent further progress, and travelers may abandon the attempt and return by the route taken."
+  inputs: ["distance through Earth", "Charisma", "assistance"]
+  outputs: ["travel time, progress, or failed passage"]
+  steps: []
+links: {uses: [rule.magic.astral-projection], affects: [], modified_by: [], interacts_with: [subsystem.magic.astral-terrain]}
+sources:
+  - {source: source.mits, pages: "80-82", relation: defines, note: "Passing Through Earth"}
+notes: []
