@@ -1,0 +1,25 @@
+id: entity.skill.etiquette
+record_type: entity
+name: "Etiquette"
+domain: skills
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 87, basis: defines}
+intrinsic:
+  type: "Active Skill"
+  category: "social"
+  linked_attribute: "Charisma"
+  default: "Charisma Attribute"
+  specializations:
+    - "Matrix"
+    - "Corporate"
+    - "Magical Groups"
+    - "Tribal"
+    - "other subcultures/groups"
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.skills.defaulting, rule.skills.specialization]
+sources:
+  - {source: source.sr3-core, page: 87, relation: defines, note: "Skills — Active Skill categories"}
+notes: []
