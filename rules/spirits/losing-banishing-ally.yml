@@ -1,0 +1,16 @@
+id: rule.spirits.losing-banishing-ally
+record_type: rule
+name: "Losing and Banishing an Ally"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 113, basis: defines}
+scope: {applies_to: ["ally spirits"]}
+resolution:
+  summary: "An ally whose Force exceeds its master's Charisma may attempt to escape when the master is incapacitated or during failed Rituals of Change. Escape is resolved as a Success Contest using the master's Conjuring + Charisma against ally Force and the ally's Force against master Charisma. Banishing by the creator destroys the ally; banishing by others disrupts it. The creator can recover the sacrificed Magic Point only under the source's specific banishing circumstances."
+  inputs: ["ally Force", "master Charisma/Conjuring", "escape trigger", "banisher identity"]
+  outputs: ["bound, free, destroyed, disrupted, or recovered Magic Point state"]
+  steps: []
+links: {uses: [rule.magic.banishing], affects: [entity.spirit.ally], modified_by: [], interacts_with: [subsystem.spirits.mits-expanded]}
+sources:
+  - {source: source.mits, page: 113, relation: defines, note: "Losing an Ally / Banishing an Ally"}
+notes: []
