@@ -1,0 +1,51 @@
+id: rule.character-creation.active-skill-purchase
+record_type: rule
+name: "Starting Active Skill Purchase"
+domain: character-creation
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 57
+  basis: defines
+
+scope:
+  applies_to:
+    - procedure.character-creation.standard
+  excludes:
+    - "Knowledge Skill Points"
+    - "Language Skill Points"
+
+resolution:
+  summary: "Spend Skill Points on Active Skills. Each point of rating up to the linked Attribute costs 1 Skill Point; each point above the linked Attribute costs 2 Skill Points."
+  inputs:
+    - "Skill Point budget"
+    - "linked Attribute rating"
+    - "desired skill rating"
+  outputs:
+    - "purchased Active Skill rating"
+  steps:
+    - "Purchase each rating point separately."
+    - "For rating points at or below the linked Attribute, pay 1 Skill Point each."
+    - "For rating points above the linked Attribute, pay 2 Skill Points each."
+
+links:
+  uses:
+    - rule.skills.skill-ratings
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.skills.specialization
+
+sources:
+  - source: source.sr3-core
+    page: 57
+    relation: defines
+    note: "Purchasing Active Skills / Skill Cost Table"
+
+notes:
+  - "Magical skills may only be used by characters with Magic Rating above 0."
+  - "Starting base skill ratings may not exceed 6; specializations may not exceed 7."
+  - "Base skills may not begin below 1."
+  - "Unspent Active Skill Points are lost after character creation."
