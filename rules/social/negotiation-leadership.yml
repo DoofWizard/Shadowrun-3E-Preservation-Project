@@ -1,0 +1,33 @@
+id: rule.social.negotiation-leadership
+record_type: rule
+name: "Negotiation and Leadership Resolution"
+domain: social
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 93
+  basis: defines
+
+scope:
+  applies_to: ["Negotiation","Leadership"]
+  excludes: []
+
+resolution:
+  summary: "To influence another character with Negotiation or Leadership, use the opposing character's Intelligence as the base target number and apply social modifiers. Against a group without a designated leader, use the group's average Intelligence; otherwise use the leader's rating."
+  inputs: ["acting skill rating","opponent/group Intelligence","social modifiers"]
+  outputs: ["influence result"]
+  steps: []
+
+links:
+  uses: [entity.skill.negotiation, entity.skill.leadership]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.social.charisma-linked-tests]
+
+sources:
+  - {source: source.sr3-core, page: 93, relation: defines, note: "Negotiation and Leadership"}
+
+notes:
+  - "Negotiation may also be used as an Open Test to conceal or lie, with the result becoming a target number for detecting the deception."
