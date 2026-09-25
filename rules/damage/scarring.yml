@@ -1,0 +1,21 @@
+id: rule.damage.scarring
+record_type: rule
+name: "Scarring"
+domain: damage
+status: ingested
+effective: {status: current, source: source.mm, page: 132, basis: extends}
+scope:
+  applies_to: ["characters healing Serious or Deadly Physical wounds"]
+resolution:
+  summary: "After healing from Serious or Deadly Physical damage, make a Body Test to determine whether a scar remains. Healing conditions, magical healing, dermal protection, fire/acid and other listed factors modify the test. Number of successes determines scar severity."
+  inputs: ["Body", "wound severity", "healing conditions", "source modifiers"]
+  outputs: ["no scar or scar category"]
+  steps: []
+links:
+  uses: [procedure.healing.natural-and-medical]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: "132-133", relation: extends, note: "Scars, Scarring Modifiers and Scarring Table"}
+notes: []
