@@ -1,0 +1,39 @@
+id: rule.tests.success-contest
+record_type: rule
+name: "Success Contest"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Two characters in conflict where situational or system factors prevent a direct opposed-rating test"
+  excludes: []
+
+resolution:
+  summary: "Resolve two opposing Success Tests, often with different ratings and target numbers, and compare the number of successes. The greater number of successes achieves the goal; a tie usually produces no result."
+  inputs:
+    - "first Success Test"
+    - "second Success Test"
+  outputs:
+    - "winner by success comparison"
+    - "tie/no result"
+  steps:
+    - "Resolve each side's Success Test independently."
+    - "Compare total successes."
+    - "The greater total wins."
+
+links:
+  uses:
+    - rule.tests.success-test
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 39
+    relation: defines
+    note: "Game Concepts — Success Contest"
+
+notes:
+  - "The source explicitly distinguishes this from an Opposed Test because the two sides may use different ratings and target numbers."
