@@ -1,0 +1,37 @@
+id: rule.tests.success-test
+record_type: rule
+name: "Success Test"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "A character attempting a task against a fixed target number"
+  excludes: []
+
+resolution:
+  summary: "Roll dice equal to the appropriate Attribute or skill rating against a target number. Each die meeting or exceeding the target number is one success; more successes generally indicate a better result."
+  inputs:
+    - "relevant Attribute or skill rating"
+    - "target number"
+  outputs:
+    - "number of successes"
+  steps:
+    - "Roll a number of d6 equal to the relevant Attribute or skill rating."
+    - "Resolve each die against the target number."
+    - "Count successes."
+
+links:
+  uses:
+    - rule.tests.making-tests
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 39
+    relation: defines
+    note: "Game Concepts — Different Types of Tests / Success Tests"
+
+notes: []
