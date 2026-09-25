@@ -1,0 +1,23 @@
+id: rule.magic.sustaining-foci
+record_type: rule
+name: "Sustaining Foci"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 190, basis: defines}
+scope:
+  applies_to: ["sustained spells compatible with the focus"]
+  excludes: []
+resolution:
+  summary: "A sustaining focus can maintain one compatible sustained spell whose Force does not exceed the focus Force, freeing the caster from the normal sustaining concentration modifier while the focus remains active and in contact with the spell target as required."
+  inputs: ["focus Force","spell Force","spell target"]
+  outputs: ["sustained spell maintained by focus"]
+  steps: []
+links:
+  uses: []
+  affects: [procedure.magic.spellcasting]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 190, relation: defines, note: "Sustaining Foci"}
+  - {source: source.sr3-core, page: 191, relation: clarifies, note: "Sustaining focus contact/termination behavior"}
+notes: []
