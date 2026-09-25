@@ -1,0 +1,33 @@
+id: modifier.combat.partial-cover
+record_type: modifier
+name: "Partial Cover"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 111
+  basis: defines
+
+trigger:
+  conditions:
+    - "A ranged target is obscured by intervening terrain or objects."
+
+effect:
+  target:
+    - procedure.combat.ranged-attack
+  operation: "increase attack target number"
+  value: "+4"
+
+stacking:
+  mode: "Use visibility modifiers instead when concealment is due to darkness/visibility rather than physical cover."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 111
+    relation: adds_modifier
+    note: "Partial Cover"
+
+notes: []
