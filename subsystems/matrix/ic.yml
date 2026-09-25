@@ -1,0 +1,24 @@
+id: subsystem.matrix.ic
+record_type: subsystem
+name: "Intrusion Countermeasures (IC)"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 212, basis: defines}
+state:
+  tracked_values: ["IC type","Rating","triggered/active state","target","damage/effect"]
+participants: ["host/grid","IC programs","decker personas/cyberdecks"]
+components: ["white IC","gray IC","black IC","proactive/reactive IC","cripplers","killer/probe/scramble/tarbaby and related IC"]
+entry_conditions: ["security trigger or host activation"]
+exit_conditions: ["IC crashed/suppressed","intruder exits","system resets"]
+links:
+  rules: [rule.matrix.ic-rating]
+  procedures: [procedure.matrix.cybercombat]
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [rule.matrix.security-sheaf]
+sources:
+  - {source: source.sr3-core, page: 212, relation: defines, note: "Triggering IC / Proactive vs Reactive / Crashing & Suppressing IC"}
+  - {source: source.sr3-core, page: 227, relation: extends, note: "Intrusion Countermeasures details"}
+  - {source: source.sr3-core, page: 230, relation: extends, note: "Black IC"}
+notes: []
