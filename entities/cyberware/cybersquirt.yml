@@ -1,0 +1,25 @@
+id: entity.cyberware.cybersquirt
+record_type: entity
+name: "Cybersquirt"
+domain: cyberware
+status: ingested
+intrinsic:
+  essence_cost: 0.4
+  concealability: 8
+  ammunition: "10 chemical doses"
+  mode: "SA"
+  damage: "Special"
+  cost_nuyen: 1400
+  availability: "8/6 days"
+  street_index: 2
+  legality: "5P-Q"
+links:
+  uses: [rule.chemistry.drug-exposure]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 42, relation: defines, note: "Cybersquirt description and game effects"}
+  - {source: source.mm, page: 43, relation: defines, note: "Cyberweapon statistics table"}
+notes:
+  - "Implanted chemical-spray weapon; reservoir and stress/leak behavior are handled by linked rules rather than duplicated here."
