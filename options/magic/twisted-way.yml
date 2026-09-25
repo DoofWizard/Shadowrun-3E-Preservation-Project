@@ -1,0 +1,16 @@
+id: option.magic.twisted-way
+record_type: option
+name: "Twisted Way Adept"
+domain: magic
+status: ingested
+effective: {status: restricted, source: source.mits, page: 135, basis: defines}
+option_for: [subsystem.magic.adepts, subsystem.magic.magical-threats]
+selection: {timing: "NPC magical-threat creation", prerequisites: [], incompatible_with: []}
+effects:
+  - "Represents adepts whose magic manifests through destructive, predatory, or terror-focused practices."
+  - "Potency provides additional Power Points that may be spent on powers suited to the adept's twisted persona; losing Potency removes those extra powers correspondingly."
+  - "Typical starting Potency is 1D6 ÷ 2, rounded down."
+links: {modifies: [subsystem.magic.adepts], requires: [rule.magic.potency], interacts_with: [rule.magic.spirit-pact-threat]}
+sources:
+  - {source: source.mits, page: 135, relation: defines, note: "The Twisted Way / Twisted Potency"}
+notes: []
