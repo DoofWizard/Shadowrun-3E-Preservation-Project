@@ -1,0 +1,49 @@
+id: procedure.identity.forge-credstick
+record_type: procedure
+name: "Forge Credstick / Identity"
+domain: identity
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 239
+  basis: defines
+
+purpose: "Create and use a forged registered credstick/identity."
+
+prerequisites:
+  - "forger or organization capable of creating false identity records"
+
+inputs:
+  - "desired credstick rating"
+  - "identity detail"
+  - "cost and creation time"
+
+stages:
+  - id: create
+    name: "Create False Identity"
+    test_or_action: "Establish coherent cross-referenced identity/credit records and produce the credstick."
+    outputs: ["forged credstick of specified rating"]
+  - id: verify
+    name: "Pass Verification"
+    test_or_action: "Opposed test between credstick rating and verification/checking system rating."
+    outputs: ["accepted or rejected identity"]
+
+outcomes:
+  - "forged identity accepted"
+  - "verification failure"
+
+links:
+  uses: []
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - source: source.sr3-core
+    page: 239
+    relation: defines
+    note: "Forging Credsticks and IDs / Creating a Credstick Table / Using a Forged Credstick"
+
+notes: []
