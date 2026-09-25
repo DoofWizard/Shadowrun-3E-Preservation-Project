@@ -1,0 +1,36 @@
+id: rule.karma.core-karma
+record_type: rule
+name: "Karma"
+domain: karma
+status: ingested
+
+scope:
+  applies_to:
+    - "Character rewards and advancement"
+  excludes: []
+
+resolution:
+  summary: "Karma numerically represents a character's accomplishments and experience. Karma is divided into Good Karma and Karma Pool."
+  inputs:
+    - "Karma awarded from play"
+  outputs:
+    - "Good Karma"
+    - "Karma Pool"
+  steps: []
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 46
+    relation: defines
+    note: "Game Concepts — Karma"
+
+notes:
+  - "Good Karma is used for character improvement."
+  - "Karma Pool is used to improve outcomes or escape trouble under its own rules."
+  - "The detailed Karma rules are defined later in the book."
