@@ -1,0 +1,24 @@
+id: rule.spirit-power.magical-skills
+record_type: rule
+name: "Magical Skills (Critter/Spirit Power)"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 264, basis: defines}
+
+scope:
+  applies_to: ["intelligent magical beings possessing the power"]
+
+resolution:
+  summary: "Allows a being to use Sorcery and/or Conjuring similarly to a magician. Its Magic Attribute equals Essence; eligible beings may use spell defense, spell pools, conjuring, astral projection, and related magical abilities as specified."
+  inputs: ["Essence", "Sorcery/Conjuring capability"]
+  outputs: ["access to magical skill mechanics"]
+
+power_profile: {type: mana, action: varies, range: varies, duration: varies}
+
+links: {uses: [entity.skill.sorcery, entity.skill.conjuring], affects: [], modified_by: [], interacts_with: [subsystem.magic.core]}
+
+sources:
+  - {source: source.sr3-core, page: 264, relation: defines, note: "Magical Skills"}
+
+notes: []
