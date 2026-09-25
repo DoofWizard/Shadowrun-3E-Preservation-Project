@@ -1,0 +1,42 @@
+id: rule.tests.rule-of-six
+record_type: rule
+name: "Rule of Six"
+domain: tests
+status: ingested
+
+scope:
+  applies_to:
+    - "Tests where a die must meet a target number greater than 6"
+    - "Open Tests"
+  excludes:
+    - rule.initiative.initiative
+
+resolution:
+  summary: "When a die rolls 6, roll that die again and add the new result; repeat for additional 6s. The accumulated total for that die is compared to the target number or used as the Open Test result."
+  inputs:
+    - "individual die result of 6"
+  outputs:
+    - "accumulated die result"
+  steps:
+    - "Roll the die again after a 6."
+    - "Add the new roll to the existing result."
+    - "Repeat when another 6 is rolled."
+    - "Stop once the target number has been met/exceeded or the chain ends."
+
+links:
+  uses: []
+  affects:
+    - rule.tests.making-tests
+    - rule.tests.open-test
+  modified_by: []
+  interacts_with:
+    - rule.tests.target-numbers
+
+sources:
+  - source: source.sr3-core
+    page: 38
+    relation: defines
+    note: "Game Concepts — Rule of Six"
+
+notes:
+  - "The core book explicitly states that the Rule of Six does not apply to Initiative Tests."
