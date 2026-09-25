@@ -1,0 +1,39 @@
+id: rule.nanotech.detection
+record_type: rule
+name: "Nanotech Detection"
+domain: nanotech
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 100
+  basis: defines
+
+scope:
+  applies_to:
+    - "attempts to detect nanoware or nanite activity"
+
+resolution:
+  summary: "Nanoware can be detected through specialized scanning and, for some systems, thermal signatures. Detection difficulty depends on the nanotech involved and the scanner/equipment used."
+  inputs:
+    - "nanotech/nanoware type"
+    - "scanner rating or detection method"
+  outputs:
+    - "detected or undetected nanotechnology"
+
+links:
+  uses:
+    - rule.tests.success-test
+  affects: []
+  modified_by: []
+  interacts_with:
+    - subsystem.nanotech.core
+
+sources:
+  - source: source.mm
+    page: 100
+    relation: defines
+    note: "Thermographic Detection / Nanoscanners / Nanotech Detection Table"
+
+notes: []
