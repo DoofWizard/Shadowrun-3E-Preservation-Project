@@ -1,0 +1,33 @@
+id: modifier.perception.conditions
+record_type: modifier
+name: "Perception Conditions"
+domain: perception
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 232
+  basis: defines
+
+trigger:
+  conditions:
+    - "Sensory conditions change how difficult something is to perceive."
+
+effect:
+  target:
+    - rule.perception.perception-test
+  operation: "modify target number"
+  value: "Use sight, sound, smell, touch, and taste condition modifiers from the Perception Test Modifiers Table."
+
+stacking:
+  mode: "Apply relevant modifiers; vision modifiers vary by normal, low-light, and thermographic vision."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 232
+    relation: adds_modifier
+    note: "Perception Test Modifiers Table"
+
+notes: []
