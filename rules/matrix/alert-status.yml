@@ -1,0 +1,23 @@
+id: rule.matrix.alert-status
+record_type: rule
+name: "Matrix Alert Status"
+domain: matrix
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 211, basis: defines}
+scope:
+  applies_to: ["Matrix host/grid security state"]
+  excludes: []
+resolution:
+  summary: "Hosts/grids can operate at no-alert, passive-alert or active-alert status. Alert state changes how trigger steps activate IC/security measures and reflects how certain the system is that an intruder is present."
+  inputs: ["security sheaf trigger","system state","intruder detection"]
+  outputs: ["alert status","security response behavior"]
+  steps: []
+links:
+  uses: [rule.matrix.security-sheaf]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 211, relation: defines, note: "Alerts / No Alert / Passive Alert"}
+  - {source: source.sr3-core, page: 212, relation: extends, note: "Active Alert / reset behavior"}
+notes: []
