@@ -1,0 +1,17 @@
+id: rule.magic.enchanting-service-costs
+record_type: rule
+name: "Enchanting Service Costs"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 170, basis: defines}
+scope: {applies_to: ["commercial enchanting services"]}
+resolution:
+  summary: "The source gives standard market pricing for magical-material gathering, refining, radical-making, focus-formula design, and enchanting services. For cost calculations, an initiate adds initiation grade to the relevant Enchanting/Talismongering Skill rating."
+  inputs: ["service type", "provider skill", "initiation grade", "days/units/Karma spent"]
+  outputs: ["service cost"]
+  steps: []
+links: {uses: [subsystem.magic.enchanting], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 170, relation: defines, note: "Enchanting Service Costs table"}
+notes:
+  - "Gathering: Skill x 50 nuyen/day; Refining: Skill x 50/unit; Making Radicals: Skill x 80/unit; Focus Formula Design: Skill x 200/day; Enchanting: Skill x 250/day plus 5,000 per Karma Point spent."
