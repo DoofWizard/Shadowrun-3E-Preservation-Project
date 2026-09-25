@@ -1,0 +1,16 @@
+id: rule.magic.pressing-through-astral-barrier
+record_type: rule
+name: "Pressing Through an Astral Barrier"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 83, basis: extends}
+scope: {applies_to: ["dual-natured items, astrally perceiving characters, dual beings, and foci attempting to cross astral barriers without destroying them"]}
+resolution:
+  summary: "Dual-natured beings and active magical items may sometimes force their way through an astral barrier. The source uses opposed or threshold-style tests based on the item's Force, the character's Charisma, the barrier's Force, and the entity's nature; failure may deactivate foci, disrupt perceivers, or inflict damage on dual beings."
+  inputs: ["barrier Force", "entity/item Force or Charisma", "entity type"]
+  outputs: ["passes barrier, is blocked, deactivated, disrupted, or damaged"]
+  steps: []
+links: {uses: [rule.magic.astral-barriers], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 83, relation: extends, note: "Pressing Through a Barrier"}
+notes: []
