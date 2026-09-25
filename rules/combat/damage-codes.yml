@@ -1,0 +1,41 @@
+id: rule.combat.damage-codes
+record_type: rule
+name: "Weapon Damage Codes"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 114
+  basis: defines
+
+scope:
+  applies_to:
+    - "weapons and attacks expressed with SR3 Damage Codes"
+
+resolution:
+  summary: "A Damage Code consists of a numerical Power and a Damage Level letter: Light, Moderate, Serious, or Deadly. Power is normally the target number for resisting damage after armor; Damage Level is the attack's base severity before staging."
+  inputs:
+    - "Power"
+    - "Damage Level"
+    - "armor"
+  outputs:
+    - "resistance target number"
+    - "base damage severity"
+
+links:
+  uses: []
+  affects:
+    - procedure.combat.ranged-attack
+    - rule.combat.damage-staging
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 114
+    relation: defines
+    note: "Damage Codes / Power / Damage Level"
+
+notes: []
