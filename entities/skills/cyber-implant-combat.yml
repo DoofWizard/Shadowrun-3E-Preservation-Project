@@ -1,0 +1,35 @@
+id: entity.skill.cyber-implant-combat
+record_type: entity
+name: "Cyber-Implant Combat"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 85
+  basis: defines
+
+intrinsic:
+  type: "Active Skill"
+  category: "combat"
+  linked_attribute: "Strength"
+  default: "Unarmed Combat"
+  specializations:
+    - "by specific weapon type"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.skills.defaulting
+    - rule.skills.specialization
+
+sources:
+  - source: source.sr3-core
+    page: 85
+    relation: defines
+    note: "Skills — Active Skill categories"
+
+notes: []
