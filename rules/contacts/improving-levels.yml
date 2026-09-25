@@ -1,0 +1,40 @@
+id: rule.contacts.improving-levels
+record_type: rule
+name: "Improving Contact Levels"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 60
+  basis: extends
+
+scope:
+  applies_to:
+    - "existing contacts"
+
+resolution:
+  summary: "Contact relationships can improve through repeated interaction, favors, loyalty and roleplaying, allowing a lower-level contact to become a stronger and more reliable relationship when the gamemaster judges the bond has developed."
+  inputs:
+    - "current contact level"
+    - "relationship history"
+    - "favors/services"
+  outputs:
+    - "improved contact level where earned"
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - option.karma.favors-markers
+
+sources:
+  - source: source.srcomp
+    page: 60
+    relation: extends
+    note: "Improving Contact Levels"
+
+notes: []
