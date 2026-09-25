@@ -1,0 +1,27 @@
+id: procedure.magic.spellcasting
+record_type: procedure
+name: "Spellcasting"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 181, basis: defines}
+purpose: "Resolve casting a spell from preparation through Drain."
+prerequisites: ["caster knows the spell","caster can use Sorcery"]
+inputs: ["spell","Force","targets","Sorcery dice","Spell Pool allocation","situational modifiers"]
+stages:
+  - {id: preparation, name: "Preparation", test_or_action: "Choose spell, Force, target(s), Sorcery/Spell Pool allocation, Spell Defense and sustaining choices.", outputs: ["casting setup"]}
+  - {id: targeting, name: "Spell Targeting", test_or_action: "Verify range/line of sight and valid target.", outputs: ["valid target set"]}
+  - {id: sorcery-test, name: "Sorcery Test", test_or_action: "Roll Sorcery plus allocated Spell Pool against the spell target number.", outputs: ["casting successes"]}
+  - {id: resistance, name: "Spell Resistance", test_or_action: "Eligible targets make the specified resistance test.", outputs: ["net spell successes"]}
+  - {id: effect, name: "Spell Effect", test_or_action: "Determine effect from net successes and spell definition.", outputs: ["spell effect"]}
+  - {id: drain, name: "Drain Resistance", test_or_action: "Resolve the spell's Drain Resistance Test.", outputs: ["Drain damage"]}
+outcomes: ["spell fails","spell takes effect","Drain resolved"]
+links:
+  uses: [entity.skill.sorcery, rule.dice-pools.spell-pool, rule.magic.drain]
+  requires: []
+  produces: []
+  modified_by: []
+sources:
+  - {source: source.sr3-core, page: 181, relation: defines, note: "Spellcasting / Spellcasting Sequence"}
+  - {source: source.sr3-core, page: 182, relation: extends, note: "Spell Targeting / Sorcery Test"}
+  - {source: source.sr3-core, page: 183, relation: extends, note: "Spell Resistance / Spell Effect / Drain Resistance"}
+notes: []
