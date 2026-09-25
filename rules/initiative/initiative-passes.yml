@@ -1,0 +1,26 @@
+id: rule.initiative.initiative-passes
+record_type: rule
+name: "Initiative Passes"
+domain: initiative
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 102, basis: defines}
+scope:
+  applies_to: ["Combat Turns"]
+  excludes: []
+resolution:
+  summary: "Characters act from highest Initiative Score to lowest in the first Initiative Pass. After all eligible characters act, subtract 10 from every Initiative Score; characters still above 0 act again in descending order. Repeat until no Initiative Score remains above 0, then start a new Combat Turn and reroll Initiative."
+  inputs: ["Initiative Scores"]
+  outputs: ["ordered Combat Phases across one or more Initiative Passes"]
+  steps:
+    - "Resolve the first pass from highest Initiative Score to lowest."
+    - "Subtract 10 from all Initiative Scores."
+    - "Resolve another pass for scores above 0."
+    - "Repeat until no scores remain above 0."
+links:
+  uses: [rule.initiative.initiative]
+  affects: [rule.time.combat-turn]
+  modified_by: []
+  interacts_with: [rule.initiative.damage-and-initiative, rule.initiative.initiative-ties]
+sources:
+  - {source: source.sr3-core, page: 102, relation: defines, note: "Determining the Order / Initiative Pass"}
+notes: []
