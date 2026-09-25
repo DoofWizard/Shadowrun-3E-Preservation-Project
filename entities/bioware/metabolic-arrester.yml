@@ -1,0 +1,28 @@
+id: entity.bioware.metabolic-arrester
+record_type: entity
+name: "Metabolic Arrester"
+domain: bioware
+status: ingested
+
+intrinsic:
+  bio_index: 0.6
+  availability: "6/8 days"
+  cost_nuyen: 20000
+  street_index: 1.5
+  legality: "Legal"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.damage.stress-points
+
+sources:
+  - source: source.mm
+    pages: "66-67"
+    relation: defines
+    note: "Metabolic Arrester description, game effects, stress effects and statistics"
+
+notes:
+  - "Fictional Shadowrun bioware implant that slows the character's metabolism under specified game conditions; incompatible with suprathyroid gland and adrenal pump."
