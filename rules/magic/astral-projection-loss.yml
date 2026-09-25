@@ -1,0 +1,16 @@
+id: rule.magic.astral-projection-loss
+record_type: rule
+name: "Magic Loss While Astrally Projecting"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 31, basis: extends}
+scope: {applies_to: ["Awakened characters who lose Magic while astrally projecting"]}
+resolution:
+  summary: "If Magic loss while projecting reduces a magician's Magic below the threshold required to remain separated from the body, the astral form is immediately pulled back to the physical body. The source also clarifies burnout consequences when Magic reaches zero."
+  inputs: ["current Magic", "Magic loss", "astral projection state"]
+  outputs: ["continued projection, forced return, or burnout"]
+  steps: []
+links: {uses: [rule.magic.magic-loss, rule.magic.astral-projection], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 31, relation: extends, note: "Magic Loss / Astral Projection"}
+notes: []
