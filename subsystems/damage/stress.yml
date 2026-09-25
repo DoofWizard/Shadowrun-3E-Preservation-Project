@@ -1,0 +1,64 @@
+id: subsystem.damage.stress
+record_type: subsystem
+name: "Stress"
+domain: damage
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 124
+  basis: extends
+
+state:
+  tracked_values:
+    - "Stress Points per implant or Attribute"
+    - "permanent Stress"
+    - "Stress Test state"
+    - "failure/malfunction thresholds"
+    - "maintenance/repair"
+
+participants:
+  - "cyberware implants"
+  - "bioware implants"
+  - "character Attributes"
+
+components:
+  - "Stress Points"
+  - "wound effects"
+  - "maintenance"
+  - "implant failure"
+  - "Attribute damage/failure"
+  - "repair/healing"
+
+entry_conditions:
+  - "implant or Attribute takes Stress"
+
+exit_conditions:
+  - "removable Stress repaired/healed"
+
+links:
+  rules:
+    - rule.damage.stress-points
+    - rule.damage.attribute-damage
+  procedures: []
+  entities: []
+  options:
+    - option.healing.box-by-box
+  modifiers: []
+  interacts_with:
+    - subsystem.cyberware.core
+    - subsystem.bioware.core
+
+sources:
+  - source: source.mm
+    page: 124
+    relation: extends
+    note: "Damage and Healing — Stress Points"
+  - source: source.mm
+    pages: "125-131"
+    relation: extends
+    note: "Wound effects, implant/Attribute Stress, maintenance and repair"
+
+notes:
+  - "New implants/Attributes normally begin at 0 Stress; used cyberware and bioware can begin with permanent Stress as specified."
