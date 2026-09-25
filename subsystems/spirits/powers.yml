@@ -1,0 +1,54 @@
+id: subsystem.spirits.powers
+record_type: subsystem
+name: "Spirit and Critter Powers"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 262
+  basis: defines
+
+state:
+  tracked_values:
+    - "power type"
+    - "action"
+    - "range"
+    - "duration"
+    - "Essence/Force-dependent effects"
+
+participants:
+  - "spirits"
+  - "dragons"
+  - "critters and other beings with powers"
+
+components:
+  - "mana powers"
+  - "physical powers"
+  - "exclusive powers"
+  - "sustained/permanent/always/special-duration powers"
+
+entry_conditions:
+  - "The being possesses the named power."
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.core
+
+sources:
+  - source: source.sr3-core
+    page: 262
+    relation: defines
+    note: "Spirits and Dragons — Powers; type/action/range/duration conventions"
+
+notes:
+  - "Powers affect only targets in the same astral/physical state unless a specific rule allows otherwise."
+  - "Nature-spirit powers normally function only within the spirit's domain."
