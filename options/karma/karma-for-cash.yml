@@ -1,0 +1,42 @@
+id: option.karma.karma-for-cash
+record_type: option
+name: "Karma for Cash"
+domain: karma
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 79
+  basis: adds_option
+
+option_for:
+  - rule.karma.core-karma
+
+selection:
+  timing: "campaign play"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Allows the gamemaster to provide opportunities for characters to exchange Good Karma Points for nuyen or equivalent resources."
+  - "Exchanged Karma is permanently spent."
+  - "The gamemaster sets exchange value and frequency to fit campaign economics."
+
+links:
+  modifies:
+    - rule.karma.core-karma
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.srcomp
+    page: 79
+    relation: adds_option
+    note: "Advanced Rules — Balancing Karma and Nuyen / Karma for Cash"
+  - source: source.srcomp
+    page: 80
+    relation: clarifies
+    note: "Continuation of Karma for Cash"
+
+notes: []
