@@ -1,0 +1,15 @@
+id: entity.chemistry.dmso
+record_type: entity
+name: "DMSO"
+domain: chemistry
+status: ingested
+intrinsic:
+  availability: "2/12 hrs"
+  cost: "10 nuyen plus chemical cost per dose"
+  street_index: 1.5
+  legality: "Legal"
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "111-112", relation: defines, note: "DMSO game use and statistics"}
+notes:
+  - "In the game system, combining a compound with DMSO gives it a contact vector."
