@@ -1,0 +1,37 @@
+id: rule.condition.condition-monitor
+record_type: rule
+name: "Condition Monitor"
+domain: condition
+status: ingested
+
+scope:
+  applies_to:
+    - "Characters"
+    - "Equipment that uses Condition Monitors"
+  excludes: []
+
+resolution:
+  summary: "A character Condition Monitor has separate Physical Damage and Stun Damage tracks. The Physical track records wound damage and indicates death; the Stun track records fatigue and stun damage and indicates unconsciousness."
+  inputs:
+    - "Physical damage"
+    - "Stun damage"
+  outputs:
+    - "current damage state"
+    - "unconsciousness or death when applicable"
+  steps: []
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 46
+    relation: defines
+    note: "Game Concepts — Condition Monitor"
+
+notes:
+  - "The source notes that some equipment, including vehicles and cyberdecks, also uses Condition Monitors."
+  - "Detailed damage and healing mechanics are defined later in the book."
