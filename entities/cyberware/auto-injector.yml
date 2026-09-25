@@ -1,0 +1,14 @@
+id: entity.cyberware.auto-injector
+record_type: entity
+name: "Auto-Injector"
+domain: cyberware
+status: ingested
+intrinsic:
+  reusable: {essence: 0.2, cost_nuyen: 1000, availability: "4/72 hrs", street_index: 1.5, legality: "6P-N"}
+  one_shot: {essence: 0.05, cost_nuyen: 1500, availability: "4/72 hrs", street_index: 1.5, legality: "4P-Q"}
+  extra_dose_capacity: {cost_nuyen_per_dose: 500}
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [entities.medical.medkit]}
+sources:
+  - {source: source.mm, page: 25, relation: defines, note: "Auto-Injector description and table statistics"}
+notes:
+  - "Fictional Shadowrun delivery implant; contents and effects are represented separately."
