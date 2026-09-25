@@ -1,0 +1,23 @@
+id: subsystem.magic.astral
+record_type: subsystem
+name: "The Astral Plane"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 171, basis: defines}
+state:
+  tracked_values: ["astral/physical state","astral Attributes","astral Initiative","astral location","astral signatures/barriers"]
+participants: ["astrally perceiving characters","astrally projecting magicians","spirits","dual beings","astral forms"]
+components: ["astral perception","astral projection","astral signatures","astral barriers","astral combat","astral tracking"]
+entry_conditions: []
+exit_conditions: []
+links:
+  rules: [rule.magic.astral-perception, rule.magic.astral-projection, rule.magic.astral-combat]
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 171, relation: defines, note: "The Astral Plane / Astral Perception"}
+  - {source: source.sr3-core, page: 172, relation: extends, note: "Astral Projection and signatures"}
+notes: []
