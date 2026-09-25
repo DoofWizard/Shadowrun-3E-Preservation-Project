@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.weapon-mounts
+record_type: rule
+name: "Cyberlimb Weapon Mounts"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 40, basis: defines}
+scope: {applies_to: ["external, retractable, tracking and articulated cyberlimb weapon mounts"]}
+resolution:
+  summary: "Cyberlimb and cybertorso mounts support different classes of weapons and recoil behavior. Tracking mounts can follow targets automatically when linked appropriately, retractable mounts require deployment actions, and articulated mounts provide a wide firing arc. Mount type determines ECU, concealment and supported weapon classes."
+  inputs: ["mount type", "installed weapon", "interfaces"]
+  outputs: ["supported weapon use, recoil and deployment behavior"]
+  steps: []
+links: {uses: [rule.cyberlimbs.equipment-capacity], affects: [], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "40-41", relation: defines, note: "Weapon Mounts and mounting rules"}
+notes: []
