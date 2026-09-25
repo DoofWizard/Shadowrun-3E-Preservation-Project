@@ -1,0 +1,22 @@
+id: rule.magic.controlling-spirits
+record_type: rule
+name: "Controlling Spirits"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 189, basis: defines}
+scope:
+  applies_to: ["attempting to take control of a spirit from another magician"]
+  excludes: []
+resolution:
+  summary: "A magician may attempt to wrest control of another magician's spirit with an opposed Conjuring test, with spirit Force affecting the contest. Success transfers or alters control/services as specified; failure can leave control unchanged and may cause Drain."
+  inputs: ["challenger Conjuring","controller Conjuring","spirit Force"]
+  outputs: ["control result","services state","Drain where applicable"]
+  steps: []
+links:
+  uses: [entity.skill.conjuring]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 189, relation: defines, note: "Controlling"}
+notes: []
