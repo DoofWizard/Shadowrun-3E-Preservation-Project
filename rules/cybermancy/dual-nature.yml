@@ -1,0 +1,21 @@
+id: rule.cybermancy.dual-nature
+record_type: rule
+name: "Cybermantic Dual Nature"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 57, basis: defines}
+scope:
+  applies_to: ["cybermantic characters"]
+resolution:
+  summary: "Cybermantic characters are permanently dual-natured and exist on the physical and astral planes simultaneously. They are vulnerable to astral attack. To astrally perceive they use Aura Reading as a standard skill, defaulting to Intelligence if they lack it; standard astral-combat rules apply when they are attacked."
+  inputs: ["Aura Reading or Intelligence"]
+  outputs: ["astral perception and vulnerability"]
+  steps: []
+links:
+  uses: [entity.skill.aura-reading]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 57, relation: defines, note: "Dual Nature"}
+notes: []
