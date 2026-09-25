@@ -1,0 +1,21 @@
+id: entity.bioware.muscle-augmentation
+record_type: entity
+name: "Muscle Augmentation"
+domain: bioware
+status: ingested
+intrinsic:
+  bio_index_per_level: 0.4
+  availability: "6/6 days"
+  cost_nuyen_per_level: 20000
+  street_index: 0.9
+  legality: "4P-BC/D"
+  maximum_levels: 4
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 67, relation: defines, note: "Muscle Augmentation description, game effects, stress effects and statistics"}
+notes:
+  - "Each level adds 1 Strength to a maximum +4; incompatible with muscle-replacement cyberware."
