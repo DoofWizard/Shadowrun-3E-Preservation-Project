@@ -4,24 +4,43 @@ name: "Karma"
 domain: karma
 status: ingested
 
+effective:
+  status: current
+  source: source.sr3-core
+  page: 242
+  basis: clarifies
+
 scope:
   applies_to:
     - "Character rewards and advancement"
   excludes: []
 
 resolution:
-  summary: "Karma numerically represents a character's accomplishments and experience. Karma is divided into Good Karma and Karma Pool."
+  summary: "Karma represents a character's accomplishments and experience. Earned Karma accumulates as Total Karma; portions are added to Karma Pool at the appropriate interval, with the remainder available as Good Karma for advancement."
   inputs:
-    - "Karma awarded from play"
+    - "Karma awards"
+    - "metatype"
+    - "existing Total Karma"
+    - "existing Karma Pool"
   outputs:
+    - "updated Total Karma"
     - "Good Karma"
     - "Karma Pool"
-  steps: []
+  steps:
+    - "Award Karma for surviving and advancing the story, with optional individual awards."
+    - "Add earned Karma to Total Karma."
+    - "At each metatype-specific interval, add one point to Karma Pool."
+    - "Treat remaining spendable Karma as Good Karma for advancement."
 
 links:
   uses: []
-  affects: []
-  modified_by: []
+  affects:
+    - rule.advancement.attribute-improvement
+    - rule.advancement.skill-improvement
+    - rule.karma.karma-pool
+  modified_by:
+    - option.karma.karma-for-cash
+    - option.karma.cash-for-karma
   interacts_with: []
 
 sources:
@@ -29,8 +48,15 @@ sources:
     page: 46
     relation: defines
     note: "Game Concepts — Karma"
+  - source: source.sr3-core
+    page: 242
+    relation: clarifies
+    note: "Beyond the Shadows — Karma"
+  - source: source.sr3-core
+    page: 244
+    relation: extends
+    note: "Awarding Karma and Improving the Character"
 
 notes:
-  - "Good Karma is used for character improvement."
-  - "Karma Pool is used to improve outcomes or escape trouble under its own rules."
-  - "The detailed Karma rules are defined later in the book."
+  - "Humans add 1 Karma Pool point per 10 Karma earned; metahumans add 1 per 20 Karma earned."
+  - "Karma awards include both equal team awards and discretionary individual awards."
