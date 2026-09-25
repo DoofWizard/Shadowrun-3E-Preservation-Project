@@ -1,0 +1,66 @@
+id: subsystem.magic.astral-terrain
+record_type: subsystem
+name: "Astral Terrain and Background Count"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 80
+  basis: extends
+
+state:
+  tracked_values:
+    - "astral visibility"
+    - "astral barriers"
+    - "background count"
+    - "power site rating"
+    - "aspected power"
+    - "mana warp"
+    - "mana surge"
+
+participants:
+  - "astral forms"
+  - "projecting/perceiving magicians"
+  - "spirits"
+  - "magical sites"
+
+components:
+  - "astral terrain"
+  - "passing through earth"
+  - "getting lost"
+  - "astral visibility"
+  - "background count"
+  - "power sites"
+  - "aspected power"
+  - "mana warps"
+  - "mana surges"
+
+entry_conditions:
+  - "astral perception/projection or magical action in affected area"
+
+exit_conditions: []
+
+links:
+  rules: []
+  procedures: []
+  entities: []
+  options:
+    - option.magic.metamagic-cleansing
+  modifiers: []
+  interacts_with:
+    - subsystem.magic.astral
+
+sources:
+  - source: source.mits
+    page: 80
+    relation: extends
+    note: "The Planes — Astral Terrain"
+  - source: source.mits
+    pages: "81-87"
+    relation: extends
+    note: "Astral visibility, barriers, background count, power sites, mana warps/surges and wild magic"
+
+notes:
+  - "Astral forms are solid to one another; the Earth's astral form is a notable physical/astral barrier exception described by the chapter."
