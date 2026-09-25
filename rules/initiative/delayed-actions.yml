@@ -1,0 +1,23 @@
+id: rule.initiative.delayed-actions
+record_type: rule
+name: "Delayed Actions"
+domain: initiative
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 103, basis: defines}
+scope:
+  applies_to: ["characters with an eligible action"]
+  excludes: []
+resolution:
+  summary: "A character may declare a delayed action and act later in the same Initiative Pass, or carry it into a later pass subject to the source's restrictions. Intervening with a delayed action must be declared and resolves before the character whose action is being interrupted."
+  inputs: ["current Combat Phase","declared delay","later trigger or chosen point"]
+  outputs: ["rescheduled action"]
+  steps: []
+links:
+  uses: [rule.initiative.initiative-passes]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 103, relation: defines, note: "Delayed Actions"}
+notes:
+  - "A character may act only once during any Initiative Pass."
