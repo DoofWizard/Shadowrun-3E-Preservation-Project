@@ -1,0 +1,37 @@
+id: rule.skills.background-knowledge
+record_type: rule
+name: "Background Knowledge Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 90
+  basis: defines
+
+scope:
+  applies_to: ["Knowledge Skills tied to Active Skills"]
+  excludes: []
+
+resolution:
+  summary: "Any Active Skill may have a corresponding Background Knowledge Skill. At character creation, and when the Active Skill later improves, the related Background Skill may be maintained at a rating 3 lower than the Active Skill at no additional cost."
+  inputs: ["Active Skill rating","Background Knowledge Skill rating"]
+  outputs: ["free Background Knowledge rating where eligible"]
+  steps:
+    - "Determine the associated Active Skill rating."
+    - "A related Background Knowledge Skill may be created or maintained at Active Skill rating minus 3 without cost."
+    - "If the player wants the Background Skill closer than 3 points below the Active Skill, improve it normally."
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.skills.knowledge-skills]
+
+sources:
+  - {source: source.sr3-core, page: 90, relation: defines, note: "Background Knowledge"}
+
+notes:
+  - "Background Knowledge Skills normally use the corresponding Active Skill's specialization structure."
+  - "The source states that Background Skills are not Complementary Skills unless specifically allowed."
