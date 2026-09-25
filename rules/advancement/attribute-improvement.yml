@@ -1,0 +1,53 @@
+id: rule.advancement.attribute-improvement
+record_type: rule
+name: "Attribute Improvement"
+domain: advancement
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 244
+  basis: defines
+
+scope:
+  applies_to:
+    - "Physical and Mental Attributes"
+
+resolution:
+  summary: "Increase a Physical or Mental Attribute one point at a time by spending Good Karma. Up to the metatype's Racial Modified Limit, the cost is twice the new natural Attribute rating. Raising an Attribute above the Racial Modified Limit, up to the Racial Attribute Maximum, costs three times the new rating."
+  inputs:
+    - "current natural Attribute rating"
+    - "new rating"
+    - "Racial Modified Limit"
+    - "Racial Attribute Maximum"
+  outputs:
+    - "increased natural Attribute rating"
+  steps:
+    - "Increase only one point at a time."
+    - "If the new rating is at or below the Racial Modified Limit, pay Good Karma equal to 2 x the new rating."
+    - "If the new rating exceeds the Racial Modified Limit, pay Good Karma equal to 3 x the new rating."
+    - "Do not exceed the Racial Attribute Maximum."
+
+links:
+  uses:
+    - rule.karma.core-karma
+  affects:
+    - rule.attributes.attribute-ratings
+  modified_by:
+    - option.training.optional-training-rules
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 244
+    relation: defines
+    note: "Improving Attributes / Exceeding the Racial Modified Limit"
+  - source: source.sr3-core
+    page: 245
+    relation: clarifies
+    note: "Racial Attribute Limit Table"
+
+notes:
+  - "Use natural, unaugmented Attribute ratings when calculating improvement costs."
+  - "Essence and Magic are not directly increased through this rule."
