@@ -1,0 +1,38 @@
+id: entity.skill.aura-reading
+record_type: entity
+name: "Aura Reading"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 86
+  basis: defines
+
+intrinsic:
+  type: "Active Skill"
+  category: "magical"
+  linked_attribute: "Intelligence"
+  default: "None"
+  specializations:
+    - "Auras"
+    - "Signatures"
+    - "Sorcery"
+    - "Conjuring"
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.skills.defaulting
+    - rule.skills.specialization
+
+sources:
+  - source: source.sr3-core
+    page: 86
+    relation: defines
+    note: "Skills — Active Skill categories"
+
+notes: []
