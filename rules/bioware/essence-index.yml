@@ -1,0 +1,41 @@
+id: rule.bioware.essence-index
+record_type: rule
+name: "Essence Index"
+domain: bioware
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 77
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters with implanted bioware"
+
+resolution:
+  summary: "Essence Index equals the character's current Essence plus 3. It is the threshold used to determine whether the character carries excessive bioware."
+  inputs:
+    - "current Essence"
+  outputs:
+    - "Essence Index"
+  steps:
+    - "Add 3 to current Essence."
+
+links:
+  uses:
+    - rule.cyberware.essence
+  affects:
+    - rule.bioware.excessive-bioware
+  modified_by: []
+  interacts_with:
+    - rule.bioware.bio-index
+
+sources:
+  - source: source.mm
+    page: 77
+    relation: defines
+    note: "Essence Index"
+
+notes: []
