@@ -1,0 +1,23 @@
+id: procedure.surgery.trauma
+record_type: procedure
+name: "Trauma Surgery"
+domain: surgery
+status: ingested
+effective: {status: current, source: source.mm, page: 148, basis: defines}
+purpose: "Stabilize and surgically treat life-threatening trauma, Deadly wounds and permanent damage."
+prerequisites: []
+inputs: ["Physical and Stun damage", "overflow", "permanent damage", "planned options"]
+stages:
+  - id: deadly
+    name: "Treat Deadly Wounds"
+    test_or_action: "Use the trauma-surgery target number derived from damage modifiers and overflow."
+    outputs: ["stabilized/reduced wound state"]
+  - id: permanent
+    name: "Treat Permanent Damage"
+    test_or_action: "Attempt repair/replacement for permanent organ or limb damage."
+    outputs: ["repaired, replaced, or failed treatment"]
+outcomes: ["stabilized patient", "repair/replacement", "death on repeated failed critical treatment where specified"]
+links: {uses: [rule.surgery.surgical-test], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mm, page: 148, relation: defines, note: "Trauma Surgery, Treat Deadly Wounds and Treat Permanent Damage"}
+notes: []
