@@ -1,0 +1,27 @@
+id: procedure.magic.talismongering
+record_type: procedure
+name: "Talismongering"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 40, basis: defines}
+purpose: "Locate, collect, refine, and prepare raw magical materials for use in enchanting."
+prerequisites: ["Talismongering/Enchanting knowledge appropriate to the task"]
+inputs: ["material class", "collection site", "tools", "time"]
+stages:
+  - id: collect
+    name: "Collect Raw Materials"
+    test_or_action: "Use the appropriate Talismongering/Gathering test over the source's base time."
+    outputs: ["raw herbal, mineral, or metal materials"]
+  - id: refine
+    name: "Refine Materials"
+    test_or_action: "Process raw materials with an enchanting kit or shop into refined materials suitable for magical use."
+    outputs: ["refined materials"]
+  - id: ritual
+    name: "Make Ritual Materials"
+    test_or_action: "Use refined materials to create ritual materials, fetishes, lodges/circles or other required magical supplies."
+    outputs: ["ritual materials"]
+outcomes: ["usable enchanting/ritual materials", "ruined material on critical failure"]
+links: {uses: [subsystem.magic.enchanting], requires: [], produces: [], modified_by: []}
+sources:
+  - {source: source.mits, pages: "40-42", relation: defines, note: "Talismongering, materials, collecting/refining and ritual materials"}
+notes: []
