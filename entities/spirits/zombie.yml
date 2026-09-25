@@ -1,0 +1,17 @@
+id: entity.spirit.zombie
+record_type: entity
+name: "Zombie"
+domain: spirits
+status: ingested
+effective: {status: current, source: source.mits, page: 104, basis: defines}
+intrinsic:
+  type: "corpse animated by a minor spirit"
+  dual_natured: true
+  lifespan: "1 month per Conjuring success"
+  physical_attributes: "Half original body's Attributes, rounded down; Strength and Body additionally increased by spirit Force"
+  mental_attributes: "Equal to spirit Force"
+links: {uses: [subsystem.spirits.mits-expanded], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "104-105", relation: defines, note: "Zombie creation, control, characteristics and limits"}
+notes:
+  - "Fictional Shadowrun spirit-animated corpse."
