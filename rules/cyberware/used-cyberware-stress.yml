@@ -1,0 +1,21 @@
+id: rule.cyberware.used-cyberware-stress
+record_type: rule
+name: "Used Cyberware Permanent Stress"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 45, basis: extends}
+scope:
+  applies_to: ["used cyberware"]
+resolution:
+  summary: "Each used cyberware item begins with 1D3 permanent Stress Points. These points cannot be removed and accumulate with Stress acquired in play."
+  inputs: ["used cyberware item"]
+  outputs: ["permanent Stress Points"]
+  steps: []
+links:
+  uses: [rule.damage.stress-points]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 45, relation: extends, note: "Used Cyberware Drawbacks"}
+notes: []
