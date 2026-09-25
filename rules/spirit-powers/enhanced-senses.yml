@@ -1,0 +1,24 @@
+id: rule.spirit-power.enhanced-senses
+record_type: rule
+name: "Enhanced Senses"
+domain: spirit-powers
+status: ingested
+
+effective: {status: current, source: source.sr3-core, page: 263, basis: defines}
+
+scope:
+  applies_to: ["beings with Enhanced Senses"]
+
+resolution:
+  summary: "Grants one or more enhanced sensory capabilities such as low-light or thermographic vision, improved hearing/smell, sonar, motion detection, or similar senses."
+  inputs: ["specified enhanced sense"]
+  outputs: ["enhanced sensory capability"]
+
+power_profile: {type: physical, action: auto, range: self, duration: always}
+
+links: {uses: [], affects: [rule.perception.perception-test], modified_by: [], interacts_with: []}
+
+sources:
+  - {source: source.sr3-core, page: 263, relation: defines, note: "Enhanced Senses"}
+
+notes: []
