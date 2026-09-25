@@ -1,0 +1,21 @@
+id: rule.magic.mana-warps
+record_type: rule
+name: "Mana Warps"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 85, basis: defines}
+scope: {applies_to: ["magical and astral activity in background counts above 5"]}
+resolution:
+  summary: "Background counts above 5 are mana warps. They suppress effective Magic/Force, impose extreme target-number and Drain modifiers, and physically damage astrally active beings. Warp severity is rated 6–10 and uses the source's Warp Effects Table."
+  inputs: ["warp rating", "Magic or Force", "Magical/Astral Test", "Drain", "astral-active state"]
+  outputs: ["effective Magic/Force reduction", "test modifier", "Drain modifier", "astral damage"]
+  steps:
+    - "Reduce effective Magic/Force by the rating-specific amount."
+    - "Apply the warp's Magical/Astral target-number modifier."
+    - "Apply the warp's Drain Power and Drain Level modifiers."
+    - "Astrally active beings resist the listed damage each Combat Turn."
+links: {uses: [rule.magic.background-count], affects: [subsystem.magic.astral-terrain], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "85-86", relation: defines, note: "Mana Warps / Warp Effects Table / Deep Space"}
+notes:
+  - "Warp Effects Table: rating 6 => Magic -2, 6L astral damage, +6 magical/astral TN, Drain Power +3, Drain Level +1; 7 => -4, 7M, +7, +3, +1; 8 => -6, 8S, +8, +4, +2; 9 => -9, 10D, +9, +4, +2; 10 => -12, 14D, +10, +5, +3."
