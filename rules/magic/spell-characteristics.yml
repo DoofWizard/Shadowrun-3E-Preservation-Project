@@ -1,0 +1,22 @@
+id: rule.magic.spell-characteristics
+record_type: rule
+name: "Spell Characteristics"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 178, basis: defines}
+scope:
+  applies_to: ["spells"]
+  excludes: []
+resolution:
+  summary: "Core spells are defined by Type, Category, Duration, Range, Force and Drain. Type distinguishes mana/physical effects; Category groups Combat, Detection, Health, Illusion and Manipulation; Duration is Instant, Sustained or Permanent; Range and Force constrain targeting/effect; Drain describes casting fatigue."
+  inputs: ["spell definition","chosen Force"]
+  outputs: ["spell mechanical profile"]
+  steps: []
+links:
+  uses: [rule.magic.drain]
+  affects: [procedure.magic.spellcasting]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 178, relation: defines, note: "Spells / Type / Category / Range / Duration / Force"}
+notes: []
