@@ -1,0 +1,24 @@
+id: subsystem.magic.sorcery
+record_type: subsystem
+name: "Sorcery"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 177, basis: defines}
+state:
+  tracked_values: ["Sorcery Skill","Spell Pool","known spells","Force","sustained spells","spell defense allocations"]
+participants: ["characters capable of Sorcery","spell targets"]
+components: ["spell design characteristics","learning spells","spellcasting","spell resistance","drain","spell defense","dispelling"]
+entry_conditions: ["character can use Sorcery"]
+exit_conditions: []
+links:
+  rules: [rule.magic.spell-characteristics, rule.magic.spell-defense, rule.magic.dispelling]
+  procedures: [procedure.magic.spellcasting]
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with: [rule.magic.drain]
+sources:
+  - {source: source.sr3-core, page: 177, relation: defines, note: "Sorcery / Spells"}
+  - {source: source.sr3-core, page: 180, relation: extends, note: "Spell Pool and learning spells"}
+notes:
+  - "Magic in the Shadows extends Sorcery with additional spells, design rules and metamagic."
