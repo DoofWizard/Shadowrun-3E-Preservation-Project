@@ -1,0 +1,19 @@
+id: entity.bioware.extended-volume
+record_type: entity
+name: "Extended Volume"
+domain: bioware
+status: ingested
+intrinsic:
+  levels:
+    1: {bio_index: 0.2, availability: "4/4 days", cost_nuyen: 8000, street_index: 1, legality: "Legal"}
+    2: {bio_index: 0.3, availability: "4/4 days", cost_nuyen: 15000, street_index: 1, legality: "Legal"}
+    3: {bio_index: 0.4, availability: "4/4 days", cost_nuyen: 25000, street_index: 1, legality: "Legal"}
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 66, relation: defines, note: "Extended Volume description, game effects, stress effects and statistics"}
+notes:
+  - "Each level increases breath-holding duration and affects stamina-related tests; stress effects are specified per severity."
