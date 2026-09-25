@@ -1,0 +1,23 @@
+id: rule.vehicles.positioning
+record_type: rule
+name: "Vehicle Positioning"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 142, basis: defines}
+scope:
+  applies_to: ["vehicle combat"]
+  excludes: []
+resolution:
+  summary: "A Positioning Test lets a driver improve relative tactical position and Maneuver Score. The test uses the appropriate Vehicle Skill against a target based on vehicle Handling, with positioning modifiers from relative maneuver/speed, terrain, autonav and VCR factors."
+  inputs: ["Vehicle Skill","Handling","relative Maneuver Scores","terrain","speed","vehicle systems"]
+  outputs: ["positioning successes and Maneuver Score change"]
+  steps: []
+links:
+  uses: [rule.vehicles.driving-test, rule.vehicles.maneuver-score]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.sr3-core, page: 142, relation: defines, note: "Positioning"}
+  - {source: source.sr3-core, page: 143, relation: clarifies, note: "Positioning Modifiers Table"}
+notes: []
