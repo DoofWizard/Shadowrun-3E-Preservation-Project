@@ -1,0 +1,44 @@
+id: rule.hazards.toxins-diseases
+record_type: rule
+name: "Toxins and Diseases"
+domain: hazards
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 249
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters exposed to toxins or diseases"
+
+resolution:
+  summary: "Toxins and diseases are described by Damage Code and Speed. When the Speed interval comes due, the victim makes a Body Test to resist damage. If exposure or infection continues, additional resistance tests may be required at later intervals, generally with worsening difficulty."
+  inputs:
+    - "Damage Code"
+    - "Speed"
+    - "Body"
+    - "continued exposure/infection"
+  outputs:
+    - "resisted or applied damage"
+    - "ongoing disease/toxin state"
+
+links:
+  uses:
+    - rule.tests.success-test
+    - rule.combat.damage-codes
+  affects:
+    - rule.condition.condition-monitor
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 249
+    relation: defines
+    note: "Diseases and Toxins"
+
+notes:
+  - "Specific toxins and diseases are defined in the following pages and can be ingested as individual entities."
