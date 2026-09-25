@@ -1,0 +1,44 @@
+id: subsystem.cybermancy.core
+record_type: subsystem
+name: "Cybermancy"
+domain: cybermancy
+status: ingested
+effective: {status: current, source: source.mm, page: 50, basis: defines}
+state:
+  tracked_values:
+    - "Essence below zero"
+    - "ongoing artificial life support"
+    - "cybermantic side effects"
+    - "astral presence"
+participants:
+  - "cybermantic subject"
+  - "cybersurgeon"
+  - "magical group"
+  - "delta clinic"
+components:
+  - "cybersurgery"
+  - "cybermantic ritual"
+  - "life-support maintenance"
+  - "mental stabilization"
+entry_conditions:
+  - "cybersurgery would reduce Essence to 0 or below"
+exit_conditions:
+  - "subject dies or cybermantic support ceases"
+links:
+  rules:
+    - rule.cybermancy.access
+    - rule.cybermancy.ground-rules
+  procedures:
+    - procedure.cybermancy.operation
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - subsystem.cyberware.core
+    - subsystem.surgery.core
+    - rule.cyberware.magic-interaction
+sources:
+  - {source: source.mm, page: 50, relation: defines, note: "Defining Cybermancy / How Cybermancy Works"}
+  - {source: source.mm, pages: "52-55", relation: extends, note: "Advantages, drawbacks, access and core rules"}
+notes:
+  - "Cybermancy is explicitly presented as exceptional and campaign-dependent rather than ordinary character access."
