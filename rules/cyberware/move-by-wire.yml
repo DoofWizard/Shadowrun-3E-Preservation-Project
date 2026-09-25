@@ -1,0 +1,16 @@
+id: rule.cyberware.move-by-wire
+record_type: rule
+name: "Move-by-Wire System"
+domain: cyberware
+status: ingested
+effective: {status: current, source: source.mm, page: 30, basis: defines}
+scope: {applies_to: ["characters with move-by-wire cyberware"]}
+resolution:
+  summary: "Move-by-wire provides rating-based Quickness, Reaction, Initiative and Athletics/Stealth bonuses, but requires periodic extra actions at higher ratings and creates accumulating automatic Stress plus seizure and neurological side effects. It is incompatible with other Reaction- or Initiative-enhancing cyberware and cannot use a reflex trigger."
+  inputs: ["move-by-wire rating", "elapsed time", "Stress", "Willpower"]
+  outputs: ["attribute/initiative bonuses", "extra-action obligations", "Stress and side effects"]
+  steps: []
+links: {uses: [rule.damage.stress-points, rule.damage.stress-test], affects: [], modified_by: [], interacts_with: [rule.initiative.initiative]}
+sources:
+  - {source: source.mm, pages: "30-31", relation: defines, note: "Move-by-Wire bonuses, Stress, seizures and failure consequences"}
+notes: []
