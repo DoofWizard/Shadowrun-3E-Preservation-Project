@@ -1,0 +1,15 @@
+id: entity.medical.medkit
+record_type: entity
+name: "Medkit"
+domain: medical
+status: ingested
+intrinsic:
+  availability: "(Rating - 1)/24 hrs"
+  cost: "(Rating + 2) x 40 nuyen"
+  weight: "Rating"
+  street_index: 1.5
+links: {uses: [procedure.healing.natural-and-medical], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, pages: "136-138", relation: extends, note: "Medkits, ratings and Medical Tools Table"}
+notes:
+  - "Provides medical-reference/support functions; its in-game dice interaction depends on the user's Biotech skill."
