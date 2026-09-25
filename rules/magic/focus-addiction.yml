@@ -1,0 +1,17 @@
+id: rule.magic.focus-addiction
+record_type: rule
+name: "Focus Addiction"
+domain: magic
+status: ingested
+effective: {status: optional, source: source.mits, page: 45, basis: adds_option}
+scope: {applies_to: ["magicians relying heavily on active foci"]}
+resolution:
+  summary: "When the total Force of active foci exceeds the source-defined threshold relative to Magic, the magician can be required to make Magic Tests. Failure can lead to Magic loss and a talisman geas tied to the abused focus, representing dependence on foci."
+  inputs: ["Magic Attribute", "total Force of active foci"]
+  outputs: ["no effect, Magic-loss check, or focus-dependent geas"]
+  steps: []
+links: {uses: [rule.magic.magic-loss, option.magic.geas-talisman], affects: [subsystem.magic.foci], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mits, pages: "45-46", relation: adds_option, note: "Focus Addiction"}
+notes:
+  - "Presented as a gamemaster option for campaigns where focus proliferation needs a limiting mechanic."
