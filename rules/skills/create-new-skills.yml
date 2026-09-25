@@ -1,0 +1,32 @@
+id: rule.skills.create-new-skills
+record_type: rule
+name: "Creating New Active Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 97
+  basis: defines
+
+scope:
+  applies_to: ["gamemaster-created Active Skills"]
+  excludes: []
+
+resolution:
+  summary: "SR3 permits new Active Skills when appropriate to a campaign. A new skill must link to one Attribute; the gamemaster decides its defaulting group/routes; it should not exist only for one character or one narrow effect and should normally support at least two specializations."
+  inputs: ["proposed skill concept"]
+  outputs: ["approved skill definition"]
+  steps: []
+
+links:
+  uses: [rule.skills.defaulting, rule.skills.specialization]
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - {source: source.sr3-core, page: 97, relation: defines, note: "Creating Your Own Skills"}
+
+notes: []
