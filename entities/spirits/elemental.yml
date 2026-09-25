@@ -1,0 +1,40 @@
+id: entity.spirit.elemental
+record_type: entity
+name: "Elemental"
+domain: spirits
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 266
+  basis: defines
+
+intrinsic:
+  type: "spirit family"
+  variants:
+    - "Air Elemental"
+    - "Earth Elemental"
+    - "Fire Elemental"
+    - "Water Elemental"
+  governing_rating: "Force"
+  statistics: "Variant-specific attributes, Initiative, attacks, weaknesses, and powers are defined by the elemental stat blocks."
+  common_role: "Hermetic summoned spirit family."
+
+links:
+  uses:
+    - subsystem.spirits.powers
+  requires: []
+  component_of: []
+  interacts_with:
+    - subsystem.magic.conjuring
+    - rule.spirits.combat
+
+sources:
+  - source: source.sr3-core
+    page: 266
+    relation: defines
+    note: "Elementals"
+
+notes:
+  - "Each elemental variant has a distinct stat block and power set and can be split into child entities for machine-readable stat ingestion."
