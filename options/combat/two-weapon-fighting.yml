@@ -1,0 +1,47 @@
+id: option.combat.two-weapon-fighting
+record_type: option
+name: "Ambidexterity and Two-Weapon Fighting"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.cc
+  page: 94
+  basis: extends
+
+option_for:
+  - procedure.combat.ranged-attack
+  - procedure.combat.melee-attack
+
+selection:
+  timing: "when attacking with two weapons simultaneously"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Adds rules for simultaneous two-weapon ranged and melee attacks."
+  - "Two-weapon ranged attacks resolve separate attack tests and apply the listed two-weapon, smartgun/aiming, recoil and multiple-target restrictions."
+  - "Two-weapon melee designates primary and secondary weapons and uses an Off-Hand skill or the source's defaulting rule for the secondary weapon."
+  - "Ambidexterity reduces or removes off-hand/two-weapon penalties depending on Edge value."
+
+links:
+  modifies:
+    - procedure.combat.ranged-attack
+    - procedure.combat.melee-attack
+  requires: []
+  interacts_with:
+    - subsystem.character.edges-flaws
+
+sources:
+  - source: source.cc
+    page: 94
+    relation: extends
+    note: "Ambidexterity and Two-Weapon Fighting"
+  - source: source.cc
+    pages: "95-96"
+    relation: extends
+    note: "Two-weapon ranged/melee details and Ambidexterity Edge"
+
+notes:
+  - "The advanced-combat chapter warns that rules explicitly labeled Optional should be agreed upon before use; this two-weapon section itself is not marked optional in the observed introduction."
