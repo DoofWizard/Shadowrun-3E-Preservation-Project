@@ -1,0 +1,40 @@
+id: option.magic.metamagic-masking
+record_type: option
+name: "Metamagic: Masking"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 76
+  basis: defines
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when concealing or penetrating magical auras"
+  prerequisites:
+    - "initiate"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to disguise the true nature of the initiate's aura from astral observers."
+  - "Can disguise dual nature/emotional state and can penetrate another initiate's masking."
+  - "Deliberate masking can also conceal foci and sustained/quickened spells up to grade-based limits."
+
+links:
+  modifies:
+    - subsystem.magic.astral
+  requires:
+    - option.magic.metamagic
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 76
+    relation: defines
+    note: "Masking / Deliberate Masking / Masking Foci and Spells"
+
+notes: []
