@@ -1,0 +1,44 @@
+id: option.magic.initiation-ordeal
+record_type: option
+name: "Initiation Ordeal"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.mits
+  page: 58
+  basis: adds_option
+
+option_for:
+  - procedure.magic.initiation
+
+selection:
+  timing: "before completing an initiation grade"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Undertaking an ordeal reduces the initiation cost multiplier by 0.5."
+  - "The ordeal must be chosen before the initiation."
+  - "Except for a deed ordeal, a failed ordeal must be retried until successful before the new grade is gained."
+  - "If an ordeal is failed, the initiation Karma cost does not need to be repaid."
+
+links:
+  modifies:
+    - procedure.magic.initiation
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.mits
+    page: 58
+    relation: adds_option
+    note: "Initiation Ordeals"
+  - source: source.mits
+    page: 60
+    relation: extends
+    note: "Examples/types of ordeals"
+
+notes:
+  - "Individual ordeal types are to be ingested as child options."
