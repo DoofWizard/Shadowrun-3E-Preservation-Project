@@ -1,0 +1,59 @@
+id: subsystem.character.edges-flaws
+record_type: subsystem
+name: "Edges and Flaws"
+domain: character
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 15
+  basis: adds_option
+
+state:
+  tracked_values:
+    - "Edge values"
+    - "Flaw values"
+    - "creation-time balance"
+    - "later elimination or acquisition"
+
+participants:
+  - "player characters"
+
+components:
+  - "Attribute Edges"
+  - "Skill Edges and Flaws"
+  - "Physical Edges and Flaws"
+  - "Mental Edges and Flaws"
+  - "Social Edges and Flaws"
+  - "Magical Edges and Flaws"
+  - "Matrix Edges and Flaws"
+  - "Miscellaneous Edges and Flaws"
+
+entry_conditions:
+  - "gamemaster permits Edges and Flaws"
+
+exit_conditions: []
+
+links:
+  rules:
+    - rule.character.edges-flaws-balance
+  procedures: []
+  entities: []
+  options: []
+  modifiers: []
+  interacts_with:
+    - option.character-creation.point-based-design
+
+sources:
+  - source: source.srcomp
+    page: 15
+    relation: adds_option
+    note: "Edges and Flaws"
+  - source: source.srcomp
+    pages: "16-29"
+    relation: extends
+    note: "Purchasing, limitations, eliminating/designing, and category-specific Edges/Flaws"
+
+notes:
+  - "The subsystem is optional; individual Edges and Flaws will be child option records."
