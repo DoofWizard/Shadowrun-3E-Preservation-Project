@@ -1,0 +1,20 @@
+id: entity.bioware.nephritic-screen
+record_type: entity
+name: "Nephritic Screen"
+domain: bioware
+status: ingested
+intrinsic:
+  bio_index: 0.4
+  availability: "4/4 days"
+  cost_nuyen: 20000
+  street_index: 1
+  legality: "Legal"
+links:
+  uses: [rule.chemistry.drug-exposure]
+  requires: []
+  component_of: []
+  interacts_with: [rule.damage.stress-points]
+sources:
+  - {source: source.mm, page: 67, relation: defines, note: "Nephritic Screen description, game effects, stress effects and statistics"}
+notes:
+  - "Improves resistance to toxins and pathogens and reduces the Power of blood-vector toxins/pathogens as specified."
