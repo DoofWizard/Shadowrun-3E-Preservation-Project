@@ -1,0 +1,39 @@
+id: option.combat.called-shot
+record_type: option
+name: "Called Shot"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 114
+  basis: adds_option
+
+option_for:
+  - procedure.combat.ranged-attack
+
+selection:
+  timing: "before resolving an eligible attack"
+  prerequisites:
+    - "eligible single-shot, semi-automatic, burst-fire, thrown-weapon, or melee/unarmed attack"
+  incompatible_with: []
+
+effects:
+  - "Adds +4 to the attack target number."
+  - "The attacker may either increase the weapon Damage Code by one Damage Level, up to Deadly, or target a specific vulnerable sub-component subject to gamemaster adjudication."
+
+links:
+  modifies:
+    - procedure.combat.ranged-attack
+  requires: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 114
+    relation: adds_option
+    note: "Called Shots"
+
+notes:
+  - "Full-auto fire is not listed among the eligible called-shot modes."
