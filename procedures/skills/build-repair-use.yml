@@ -1,0 +1,51 @@
+id: procedure.skills.build-repair-use
+record_type: procedure
+name: "Using Build/Repair Skills"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 95
+  basis: defines
+
+purpose: "Resolve generic construction or repair tasks when a more specific subsystem procedure does not override it."
+
+prerequisites:
+  - "appropriate Build/Repair skill"
+  - "required tools/materials unless the task permits otherwise"
+
+inputs: ["task difficulty","working conditions","tools","reference material","base time"]
+
+stages:
+  - id: target-number
+    name: "Determine Target Number"
+    test_or_action: "Use the Difficulty Number Table and apply Build/Repair modifiers."
+    outputs: ["final target number"]
+  - id: base-time
+    name: "Determine Base Time"
+    test_or_action: "Assign a base time appropriate to the item/task."
+    outputs: ["base time"]
+  - id: test
+    name: "Build/Repair Success Test"
+    test_or_action: "Roll the applicable Build/Repair Skill."
+    outputs: ["success/failure and successes"]
+  - id: time
+    name: "Resolve Completion Time"
+    test_or_action: "Use Taking the Time to reduce base time by successes."
+    outputs: ["actual completion time"]
+
+outcomes: ["built or repaired item","failure as applicable"]
+
+links:
+  uses: [rule.skills.build-repair, rule.time.taking-the-time]
+  requires: []
+  produces: []
+  modified_by: []
+
+sources:
+  - {source: source.sr3-core, page: 95, relation: defines, note: "Using Build/Repair Skills"}
+
+notes:
+  - "Bad conditions, inadequate tools and lack of reference material can raise the target number; superior conditions can reduce it."
