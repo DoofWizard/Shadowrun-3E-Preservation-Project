@@ -1,0 +1,33 @@
+id: modifier.combat.melee-reach
+record_type: modifier
+name: "Melee Reach"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 123
+  basis: defines
+
+trigger:
+  conditions:
+    - "Melee opponents have different Reach ratings."
+
+effect:
+  target:
+    - procedure.combat.melee-attack
+  operation: "modify melee target number"
+  value: "The character with longer Reach may apply the Reach difference as a target-number advantage, as specified by the melee modifiers."
+
+stacking:
+  mode: "Apply only the permitted Reach/position advantage under the melee rules."
+  exceptions: []
+
+sources:
+  - source: source.sr3-core
+    page: 123
+    relation: adds_modifier
+    note: "Melee Modifiers Table / Reach"
+
+notes: []
