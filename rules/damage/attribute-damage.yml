@@ -1,0 +1,42 @@
+id: rule.damage.attribute-damage
+record_type: rule
+name: "Attribute Damage and Failure"
+domain: damage
+status: ingested
+
+effective:
+  status: current
+  source: source.mm
+  page: 129
+  basis: extends
+
+scope:
+  applies_to:
+    - "wound effects that damage an Attribute"
+
+resolution:
+  summary: "Organic wound effects may damage specific Attributes. Attribute damage adds Stress; failed or heavily stressed Attributes can be temporarily reduced or rendered unusable, also impairing linked skills until repaired/healed."
+  inputs:
+    - "wound effect"
+    - "affected Attribute"
+    - "Stress"
+  outputs:
+    - "Attribute Stress"
+    - "temporary Attribute reduction/failure"
+
+links:
+  uses:
+    - rule.damage.stress-points
+  affects:
+    - rule.attributes.attribute-ratings
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.mm
+    page: 129
+    relation: extends
+    note: "Attribute Damage / Attribute Failure"
+
+notes:
+  - "These wound-effect rules do not replace the SR3 Deadly Wounds and Permanent Damage rules."
