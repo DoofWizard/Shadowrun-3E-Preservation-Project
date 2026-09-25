@@ -1,0 +1,26 @@
+id: procedure.magic.summon-spirit-of-elements
+record_type: procedure
+name: "Summon Spirit of the Elements"
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 105, basis: defines}
+purpose: "Summon a spirit of the ground, flame, wind, waves, or wood within an appropriate natural domain."
+prerequisites:
+  - "Magician/path able to summon spirits of the elements"
+  - "Summoner in line of sight of an appropriate domain"
+inputs: ["elemental-spirit type", "Force", "Conjuring"]
+stages:
+  - id: summon
+    name: "Conjuring Test"
+    test_or_action: "Summon as a nature spirit; each success grants one favor."
+    outputs: ["spirit and favors"]
+  - id: drain
+    name: "Drain Resistance"
+    test_or_action: "Resist summoning Drain normally."
+    outputs: ["Drain resisted or suffered"]
+outcomes: ["summoned spirit of the elements", "failed summoning"]
+links: {uses: [entity.spirit.spirit-of-elements, procedure.magic.summon-nature-spirit], requires: [], produces: [entity.spirit.spirit-of-elements], modified_by: []}
+sources:
+  - {source: source.mits, page: 105, relation: defines, note: "Spirits of the Elements / Summoning"}
+notes:
+  - "Only one spirit of the elements may be conjured in a given domain at a time."
