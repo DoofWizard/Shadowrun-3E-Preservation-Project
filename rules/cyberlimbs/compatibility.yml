@@ -1,0 +1,16 @@
+id: rule.cyberlimbs.compatibility
+record_type: rule
+name: "Cyberware Compatibility with Cyberlimbs"
+domain: cyberlimbs
+status: ingested
+effective: {status: current, source: source.mm, page: 32, basis: defines}
+scope: {applies_to: ["cyberware installed in or alongside cyberlimbs"]}
+resolution:
+  summary: "Bone lacing, dermal armor/sheathing, muscle augmentation and similar natural-body augmentations are not fully compatible with replaced limb sections. Essence or other costs are reduced proportionally where the source specifies because the corresponding natural tissue is absent."
+  inputs: ["cyberlimb replacement coverage", "other augmentation type"]
+  outputs: ["compatibility and adjusted cost/benefit"]
+  steps: []
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberlimbs.core]}
+sources:
+  - {source: source.mm, page: 32, relation: defines, note: "Cyberware Compatibility"}
+notes: []
