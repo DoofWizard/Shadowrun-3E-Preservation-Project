@@ -1,0 +1,23 @@
+id: rule.movement.combat-movement
+record_type: rule
+name: "Combat Movement"
+domain: movement
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 108, basis: defines}
+scope:
+  applies_to: ["movement during a Combat Turn"]
+  excludes: []
+resolution:
+  summary: "Walking and running distances are based on race-specific multipliers of Quickness. Declared movement is spread across the Combat Turn's Initiative Passes; movement does not itself consume Free, Simple or Complex Actions."
+  inputs: ["Quickness","racial movement multiplier","declared walking/running"]
+  outputs: ["maximum movement and per-pass movement"]
+  steps: []
+links:
+  uses: [rule.initiative.initiative-passes]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.movement.interception]
+sources:
+  - {source: source.sr3-core, page: 108, relation: defines, note: "Movement / Movement Rate / Walking / Running"}
+notes:
+  - "Running normally imposes a +4 modifier on other actions attempted while running, subject to specific rules."
