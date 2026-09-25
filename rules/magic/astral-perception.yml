@@ -1,0 +1,23 @@
+id: rule.magic.astral-perception
+record_type: rule
+name: "Astral Perception"
+domain: magic
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 171, basis: defines}
+scope:
+  applies_to: ["characters capable of astral perception"]
+  excludes: []
+resolution:
+  summary: "Astral perception is activated with a Simple Action and lets the character perceive astral forms/auras while remaining physically present. Assensing uses Intelligence and/or Aura Reading under the core assensing rules to obtain increasing information with successes."
+  inputs: ["astral perception","Assensing test","Aura Reading where used"]
+  outputs: ["astral sensory information"]
+  steps: []
+links:
+  uses: [entity.skill.aura-reading]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.magic.astral]
+sources:
+  - {source: source.sr3-core, page: 171, relation: defines, note: "Astral Perception / Assensing"}
+  - {source: source.sr3-core, page: 172, relation: clarifies, note: "Assensing Table / Astral Signatures"}
+notes: []
