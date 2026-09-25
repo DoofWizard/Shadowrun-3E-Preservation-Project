@@ -1,0 +1,24 @@
+id: rule.vehicles.attributes
+record_type: rule
+name: "Vehicle Attributes"
+domain: vehicles
+status: ingested
+effective: {status: current, source: source.sr3-core, page: 130, basis: defines}
+scope:
+  applies_to: ["vehicles and drones"]
+  excludes: []
+resolution:
+  summary: "SR3 vehicle profiles use Handling, Speed, Acceleration, Body, Armor, Signature, Autonav, Pilot, Sensor, Cargo Factor, Load, Seating and Entry Points, with additional special ratings such as ECM/ECCM, Flux and Maneuver Score where applicable."
+  inputs: ["vehicle profile"]
+  outputs: ["vehicle mechanical ratings"]
+  steps: []
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: [rule.vehicles.driving-test, subsystem.vehicles.sensors, rule.vehicles.maneuver-score]
+sources:
+  - {source: source.sr3-core, page: 130, relation: defines, note: "Vehicle Attributes"}
+  - {source: source.sr3-core, page: 132, relation: extends, note: "Speed, Acceleration, Body, Armor"}
+  - {source: source.sr3-core, page: 133, relation: extends, note: "Signature through Special Vehicle Ratings"}
+notes: []
