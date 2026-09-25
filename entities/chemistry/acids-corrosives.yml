@@ -1,0 +1,20 @@
+id: entity.chemistry.acids-corrosives
+record_type: entity
+name: "Acids and Corrosives"
+domain: chemistry
+status: ingested
+intrinsic:
+  rating_range: "variable"
+  availability: "(Rating)/6 days"
+  cost: "500 nuyen x Rating per dose"
+  street_index: 2
+  legality: "6P-X"
+links:
+  uses: [rule.chemistry.drug-exposure]
+  requires: []
+  component_of: []
+  interacts_with: []
+sources:
+  - {source: source.mm, page: 111, relation: defines, note: "Acids and Corrosives fictional game mechanics and statistics"}
+notes:
+  - "Preserved as Shadowrun tabletop mechanics; rating governs corrosive game effects."
