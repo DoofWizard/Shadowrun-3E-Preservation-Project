@@ -1,0 +1,38 @@
+id: compatibility.sourcebooks.general-precedence
+record_type: rule
+name: "SR3 Sourcebook Update Precedence"
+domain: compatibility
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 324
+  basis: conversion
+
+scope:
+  applies_to:
+    - "pre-SR3 sourcebook rules being used with SR3"
+
+resolution:
+  summary: "Where a conflict exists between rules printed in an older sourcebook and SR3 rules on the same topic, use the SR3 rules unless an explicit SR3 sourcebook-update instruction says otherwise."
+  inputs:
+    - "older sourcebook rule"
+    - "SR3 rule on same topic"
+  outputs:
+    - "effective SR3-era treatment"
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.sr3-core
+    page: 324
+    relation: conversion
+    note: "Converting Sourcebook Material"
+
+notes:
+  - "The core book specifically names Awakenings, The Grimoire, Cybertechnology, Shadowtech, Fields of Fire, Street Samurai Catalog, Rigger 2 and Virtual Realities 2.0 as material receiving SR3-era treatment/update guidance."
