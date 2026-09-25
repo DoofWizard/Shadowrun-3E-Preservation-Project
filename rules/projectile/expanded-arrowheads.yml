@@ -1,0 +1,51 @@
+{
+  "id": "rule.projectile.expanded-arrowheads",
+  "record_type": "rule",
+  "name": "Expanded Arrowhead Effects",
+  "domain": "projectile-weapons",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 12,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "specialized arrowheads and bolts"
+    ]
+  },
+  "resolution": {
+    "summary": "Cannon Companion adds specialized arrowhead types. Barbed heads add damage on removal; hammerheads convert the projectile to Stun-oriented impact behavior; incendiary heads create a temporary fictional fire effect; screamer heads reduce Power and inflict Stun; explosive and EX-explosive variants use the source's fictional ammunition-damage rules.",
+    "inputs": [
+      "arrowhead type",
+      "bow/crossbow shot",
+      "target"
+    ],
+    "outputs": [
+      "modified projectile damage/effect"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "rule.projectile.strength-minimum"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.ammunition.cc-expanded"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "12-13",
+      "relation": "extends",
+      "note": "Arrowheads and Projectile Weapons table"
+    }
+  ],
+  "notes": [
+    "Fictional Shadowrun game effects; no real-world construction instructions are represented."
+  ]
+}
