@@ -1,0 +1,54 @@
+id: catalog.matrix.system-operations
+record_type: reference
+name: "Matrix System Operations Extension"
+domain: matrix
+status: ingested
+source: source.matrix
+pages: "95-103"
+
+new_operations:
+  - {id: operation.matrix.abort-host-shutdown, name: "Abort Host Shutdown", test: Control, utility: Swerve, action: Complex, source_page: 95}
+  - {id: operation.matrix.alter-icon, name: "Alter Icon", test: Control, utility: Redecorate, action: Complex, source_page: 95}
+  - {id: operation.matrix.analyze-operation, name: "Analyze Operation", test: Control, utility: Snooper, action: Simple, source_page: 95}
+  - {id: operation.matrix.block-system-operation, name: "Block System Operation", test: Control, utility: Crash, action: Complex, source_page: 95}
+  - {id: operation.matrix.crash-application, name: "Crash Application", test: "appropriate subsystem", utility: Crash, action: Simple, source_pages: "95-96"}
+  - {id: operation.matrix.crash-host, name: "Crash Host", test: Control, utility: Crash, action: Complex, source_pages: "96-97"}
+  - {id: operation.matrix.decoy, name: "Decoy", test: Control, utility: Mirrors, action: Complex, source_page: 97}
+  - {id: operation.matrix.disarm-data-bomb, name: "Disarm Data Bomb", test: "Files or Slave", utility: Defuse, action: Complex, source_page: 97}
+  - {id: operation.matrix.disinfect, name: "Disinfect", test: "appropriate subsystem", utility: Purge, action: Complex, source_page: 97}
+  - {id: operation.matrix.dump-log, name: "Dump Log", test: Control, utility: Validate, action: Complex, source_page: 97}
+  - {id: operation.matrix.encrypt-access, name: "Encrypt Access", test: Access, utility: Encrypt, action: Simple, source_pages: "97-98"}
+  - {id: operation.matrix.encrypt-file, name: "Encrypt File", test: Files, utility: Encrypt, action: Simple, source_page: 98}
+  - {id: operation.matrix.encrypt-slave, name: "Encrypt Slave", test: Slave, utility: Encrypt, action: Simple, source_page: 98}
+  - {id: operation.matrix.freeze-vanishing-san, name: "Freeze Vanishing SAN", test: Access, utility: Doorstop, action: Complex, source_page: 98}
+  - {id: operation.matrix.infect, name: "Infect", test: "appropriate subsystem", utility: "worm program", action: Complex, source_page: 98}
+  - {id: operation.matrix.intercept-data, name: "Intercept Data", test: "appropriate subsystem", utility: Sniffer, action: Complex, source_pages: "98-99"}
+  - {id: operation.matrix.invalidate-account, name: "Invalidate Account", test: Control, utility: Validate, action: Complex, source_page: 100}
+  - {id: operation.matrix.locate-frame, name: "Locate Frame", test: Index, utility: Scanner, action: Complex, source_page: 100}
+  - {id: operation.matrix.locate-paydata, name: "Locate Paydata", test: Index, utility: Evaluate, action: Complex, source_page: 100}
+  - {id: operation.matrix.locate-tortoise-users, name: "Locate Tortoise Users", test: Index, utility: Scanner, action: Simple, source_page: 100}
+  - {id: operation.matrix.redirect-datatrail, name: "Redirect Datatrail", test: Control, utility: Camo, action: Complex, source_page: 100}
+  - {id: operation.matrix.relocate-trace, name: "Relocate Trace", test: Control, utility: Relocate, action: Simple, source_pages: "100-101"}
+  - {id: operation.matrix.restrict-icon, name: "Restrict Icon", test: Control, utility: Validate, action: Complex, source_page: 101}
+  - {id: operation.matrix.scan-icon, name: "Scan Icon", test: Special, utility: Scanner, action: Simple, source_page: 101}
+  - {id: operation.matrix.send-data, name: "Send Data", test: Files, utility: "Read/Write", action: Simple, source_page: 101}
+  - {id: operation.matrix.trace-mxp-address, name: "Trace MXP Address", test: Index, utility: Browse, action: Complex, source_page: 101}
+  - {id: operation.matrix.triangulate, name: "Triangulate", test: Slave, utility: Triangulation, action: Complex, source_page: 101}
+  - {id: operation.matrix.validate-account, name: "Validate Account", test: Control, utility: Validate, action: Complex, source_pages: "101-102"}
+
+advanced_sr3_operations:
+  source_pages: "102-103"
+  operations:
+    - "Analyze Host"
+    - "Analyze IC"
+    - "Analyze Icon"
+    - "Analyze Subsystem"
+    - "Graceful Logoff"
+    - "Locate Decker"
+    - "Logon to Host/LTG/RTG"
+    - "Null Operation"
+    - "Swap Memory"
+    - "Making Operations for Other Users"
+
+notes:
+  - "Each operation remains governed by procedure.matrix.system-operation and rule.matrix.system-test."
