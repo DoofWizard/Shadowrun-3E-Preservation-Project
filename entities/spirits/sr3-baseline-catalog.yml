@@ -1,0 +1,41 @@
+id: catalog.spirits.sr3-baseline
+record_type: entity_catalog
+name: "SR3 Spirit Baseline"
+domain: spirits
+status: ingested
+source: source.sr3-core
+pages: "266-268"
+
+elementals:
+  - {id: entity.spirit.air-elemental, name: "Air Elemental", source_page: 266, relation: defines}
+  - {id: entity.spirit.earth-elemental, name: "Earth Elemental", source_page: 266, relation: defines}
+  - {id: entity.spirit.fire-elemental, name: "Fire Elemental", source_page: 266, relation: defines}
+  - {id: entity.spirit.water-elemental, name: "Water Elemental", source_page: 266, relation: defines}
+
+nature_spirits:
+  spirits_of_man:
+    - {id: entity.spirit.city, name: "City Spirit", source_page: 267}
+    - {id: entity.spirit.field, name: "Field Spirit", source_page: 267}
+    - {id: entity.spirit.hearth, name: "Hearth Spirit", source_page: 267}
+  spirits_of_land:
+    - {id: entity.spirit.desert, name: "Desert Spirit", source_page: 267}
+    - {id: entity.spirit.forest, name: "Forest Spirit", source_page: 267}
+    - {id: entity.spirit.mountain, name: "Mountain Spirit", source_page: 267}
+    - {id: entity.spirit.prairie, name: "Prairie Spirit", source_page: 267}
+  spirits_of_sky:
+    - {id: entity.spirit.mist, name: "Mist Spirit", source_page: 267}
+    - {id: entity.spirit.storm, name: "Storm Spirit", source_page: 267}
+    - {id: entity.spirit.wind, name: "Wind Spirit", source_page: 267}
+  spirits_of_waters:
+    - {id: entity.spirit.lake, name: "Lake Spirit", source_page: 267}
+    - {id: entity.spirit.river, name: "River Spirit", source_page: 268}
+    - {id: entity.spirit.sea, name: "Sea Spirit", source_page: 268}
+    - {id: entity.spirit.swamp, name: "Swamp Spirit", source_page: 268}
+
+links:
+  uses:
+    - subsystem.spirits.powers
+    - rule.spirits.combat
+
+notes:
+  - "These records establish the SR3 core roster/provenance. Later SR3 supplements may extend or refine spirit treatments; they are not overwritten here."

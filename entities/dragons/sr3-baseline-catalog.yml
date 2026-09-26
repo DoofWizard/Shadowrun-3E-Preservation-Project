@@ -1,0 +1,39 @@
+id: catalog.dragons.sr3-baseline
+record_type: entity_catalog
+name: "SR3 Dragon Baseline"
+domain: dragons
+status: ingested
+source: source.sr3-core
+pages: "268-269"
+
+dragon_family:
+  canonical: entity.dragon.dragon
+  common_traits:
+    - "Dual-natured and magically capable."
+    - "Telepathic line-of-sight communication; ordinary microphones do not pick up the telepathic exchange."
+    - "Common powers include Astral Armor, Enhanced Senses and Hardened Armor."
+  types:
+    - {id: entity.dragon.eastern, name: "Eastern Dragon", source_page: 268, native_region: "Asia"}
+    - {id: entity.dragon.sirrush, name: "Sirrush", source_page: 268, native_region: "Asia Minor", relation: "eastern-dragon-relative"}
+    - {id: entity.dragon.feathered-serpent, name: "Feathered Serpent", source_page: 268, native_region: "South and Central America"}
+    - {id: entity.dragon.western, name: "Western Dragon", source_page: 268, native_region: "Europe and western Asia"}
+    - {id: entity.dragon.great, name: "Great Dragon", source_page: 268, relation: "exceptionally large/powerful dragon"}
+
+known_great_dragons:
+  - {id: world.character.aden, name: "Aden", source_page: 269, type: "sirrush"}
+  - {id: world.character.alamais, name: "Alamais", source_page: 269, type: "western dragon"}
+  - {id: world.character.celedyr, name: "Celedyr", source_page: 269, type: "western dragon"}
+  - {id: world.character.dunkelzahn, name: "Dunkelzahn", source_page: 269, type: "western dragon"}
+  - {id: world.character.hestaby, name: "Hestaby", source_page: 269, type: "western dragon"}
+  - {id: world.character.hualpa, name: "Hualpa", source_page: 269, type: "feathered serpent"}
+  - {id: world.character.lofwyr, name: "Lofwyr", source_page: 269, type: "western dragon"}
+  - {id: world.character.lung, name: "Lung", source_page: 269, type: "eastern dragon"}
+  - {id: world.character.mujaji, name: "Mujaji", source_page: 269, type: "feathered serpent"}
+  - {id: world.character.rhonabwy, name: "Rhonabwy", source_page: 269, type: "western dragon"}
+  - {id: world.character.ryumyo, name: "Ryumyo", source_page: 269, type: "eastern dragon"}
+  - {id: world.character.sirrurg, name: "Sirrurg", source_page: 269, type: "western dragon"}
+  - {id: world.character.sea-dragon, name: "The Sea Dragon", source_page: 269, type: "unknown", confidence: "reported/legendary in this source"}
+
+notes:
+  - "Named-dragon entries preserve what SR3 core reports; later setting books may provide additional or revised world-state detail."
+  - "No later-source facts are inferred into these baseline entries."
