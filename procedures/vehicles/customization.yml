@@ -1,0 +1,85 @@
+{
+  "id": "procedure.vehicles.customization",
+  "record_type": "procedure",
+  "name": "Vehicle Customization Process",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 122,
+    "basis": "defines"
+  },
+  "purpose": "Install post-production vehicle modifications, upgrades and accessories on an existing manufactured vehicle.",
+  "prerequisites": [
+    "existing vehicle",
+    "required parts",
+    "appropriate tools/shop/facility",
+    "appropriate Vehicle B/R or other listed skill"
+  ],
+  "inputs": [
+    "vehicle",
+    "modification",
+    "parts",
+    "installer",
+    "available CF and Load"
+  ],
+  "stages": [
+    {
+      "id": "procure",
+      "name": "Procure Parts",
+      "test_or_action": "Acquire the modification parts using normal equipment-purchase Availability and Street Index rules. Unless a modification says otherwise, parts use the same Availability and Street Index as the vehicle being repaired or modified; listed parts cost excludes labor.",
+      "outputs": [
+        "parts"
+      ]
+    },
+    {
+      "id": "check-space",
+      "name": "Check Space and Load",
+      "test_or_action": "A modification cannot make the vehicle exceed Cargo Factor or Load. Passenger room may be stripped for extra CF: each passenger seat removed yields 1.5 CF, rounded down; doing so raises the Power of crash/collision damage suffered by occupants by +1.",
+      "outputs": [
+        "installation feasibility"
+      ]
+    },
+    {
+      "id": "install",
+      "name": "Install Modification",
+      "test_or_action": "Make the listed Installation/Skill Test at the listed target number. Divide listed Base Time by the number of successes to determine actual installation time. Some modifications require multiple successful skill tests; all must succeed.",
+      "outputs": [
+        "installed modification"
+      ]
+    },
+    {
+      "id": "design-integration",
+      "name": "Incorporate During Design",
+      "test_or_action": "A listed customization may instead be included during the factory vehicle-design process. No Installation Test is required; pay Design Cost and apply listed CF/Load effects.",
+      "outputs": [
+        "factory-integrated modification"
+      ]
+    }
+  ],
+  "outcomes": [
+    "customized vehicle"
+  ],
+  "links": {
+    "uses": [
+      "subsystem.vehicles.customization"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "122-125",
+      "relation": "defines",
+      "note": "Vehicle Customization / The Customization Process / specifications"
+    }
+  ],
+  "notes": [
+    "A shadow mechanic can supply/install parts. Baseline labor is 100 nuyen/hour; ordinary schedule is 8 hours/day, 5 days/week, with overtime at 150 nuyen/hour or more. Level 2-3 contacts may discount/waive rush charges; a 'spare time' job doubles duration but halves labor cost.",
+    "For DIY work, roughly six hours/day can normally be devoted without crowding out ordinary obligations; sustained work beyond about twelve hours/day invokes ordinary consequences of sleep deprivation and neglect.",
+    "Customization-spec fields are Parts Cost, Parts Availability (with SI), Equipment Required, Base Time/Skill Test, Target Number, Max Rating/Improvement, CF Consumed and Load Reduction."
+  ]
+}

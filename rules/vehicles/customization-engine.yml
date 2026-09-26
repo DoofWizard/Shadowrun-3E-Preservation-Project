@@ -1,0 +1,60 @@
+{
+  "id": "rule.vehicles.customization-engine",
+  "record_type": "rule",
+  "name": "Vehicle Engine Customization Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 125,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 defines post-production and design-time engine modifications that alter Speed, Acceleration, Load, fuel/economy or alternate power supply.",
+    "inputs": [
+      "vehicle power plant",
+      "vehicle Body",
+      "customization level"
+    ],
+    "outputs": [
+      "modified performance",
+      "cost/space/load",
+      "possible Stress"
+    ],
+    "steps": [
+      "Engine Customization: each level separately raises either Speed by +30, Acceleration by +2, or Load by Body×50 kg. Customization can exceed ordinary power-plant maxima. During operation the GM makes a secret failure test: customization uses an Appropriate Vehicle B/R test at twice the Installation TN; design-time customization rolls 6 dice at TN 6. On failure, roll 1D6, halve and round up; add that many permanent Stress Points. These points cannot be removed unless the customized engine is replaced with a factory-standard engine.",
+      "Engine Customization design cost: first level 25% of power-plant DP cost; second/subsequent levels 50% per level. Maximum in each performance category is power-plant maximum ×1.75, rounded up. Custom parts cost 5% of vehicle list cost per level; 40 hours/level; Availability 8/14 days (SI 2).",
+      "GridLink Power: electrical ground vehicles can draw roadbed induction power. Design cost 2 DP; custom parts 600 nuyen, Availability 3/96h (SI 1), facility, 16h Vehicle B/R(4), 1 CF.",
+      "Nitrous Oxide Injectors (gasoline/diesel): on Accelerating/Braking tests add dice equal to injector level; may raise current Speed to 2.5× normal Speed, then vehicle decelerates by Acceleration each following turn until below normal Speed. Up to 20 charges. Design cost 55 DP/level, max 6, 1.5 CF and 15 kg. Custom max 5; parts 3,500 nuyen/level (1-3) or 7,000/level (4-5); Availability 4/48h (SI 1); base time Level+47 hours, Vehicle B/R(4); 2 CF, 15 kg.",
+      "SunCell Power: solar panels generate Body×25 Power Factor/hour in clear skies, half in clouds, none at night/heavy overcast. Electric vehicles only; tractors must panel all trailers. Design cost 5 DP. Custom parts 500 nuyen, Availability 3/72h (SI 1), shop, 8h Vehicle B/R(4), 1 CF.",
+      "Turbocharging/Superconductive Drive: each level gives Speed +15 and Acceleration +1, reduces Signature by 1 and Economy by 5%. Used with methane/gasoline/diesel or electric superconductive-drive equivalents; non-electric aircraft cannot be turbocharged. Design cost 75% of power-plant cost/level; max Speed cap becomes original max ×1.25. Custom parts 10% of vehicle list cost/level, Availability 6/12 days (SI 1.5), facility, 8h/level Vehicle B/R; maximum Speed cap becomes original max ×1.5."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.stress"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.design-power-plants"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "125-126",
+      "relation": "defines",
+      "note": "Engine Modifications"
+    }
+  ],
+  "notes": []
+}

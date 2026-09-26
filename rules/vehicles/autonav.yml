@@ -17,21 +17,27 @@
     "excludes": []
   },
   "resolution": {
-    "summary": "Autonav ranges from collision avoidance to self-driving navigation integrated with GPS and traffic-management systems.",
+    "summary": "Autonav ranges from collision avoidance to self-driving navigation integrated with GPS and traffic-management systems; Rigger 3 also gives rating-by-rating capabilities and installation costs.",
     "inputs": [
       "autonav rating",
       "self-driving capability",
       "GPS/traffic data"
     ],
     "outputs": [
-      "automated navigation/control"
+      "automated navigation/control",
+      "Driving Test dice or penalties"
     ],
     "steps": [
       "Basic collision-avoidance autonav uses proximity detection to avoid hazards and is standard on most vehicles.",
       "Self-driving autonav can operate point-to-point without driver supervision and normally cooperates with traffic-control systems such as GridGuide.",
       "On self-driving system failure, control returns to manual; if the driver is nonresponsive, the vehicle pulls over and places an emergency call.",
-      "Autonav Rating 2+ includes GPS.",
-      "GPS signals are treated as Flux 2 for jamming/electronic-warfare purposes."
+      "Autonav Rating 2+ includes GPS; GPS signals are treated as Flux 2 for jamming/electronic-warfare.",
+      "Autonav rating is extra dice for standard Driving Tests. In vehicle combat, its safety-conscious programming opposes the driver and its rating is added to target numbers.",
+      "Rating 1: collision avoidance only; cannot self-drive.",
+      "Rating 2: self-navigation plus traffic-grid radio. Can follow mapped urban routes; rough terrain doubles relevant TNs and overwhelms collision avoidance.",
+      "Rating 3: can follow pre-programmed routes across rough terrain; compatible geological-survey mapchips.",
+      "Rating 4: highest ordinary private system; operates urban/off-road with maps and can re-plan routes as conditions change.",
+      "Design cost by rating: 5/10/50/150 DP. Custom parts cost 500/1,000/5,000/15,000 nuyen; Availability 2/96h(SI1), 3/6d(SI1), 4/8d(SI1.5), 6/14d(SI2); base time 16/32/40/48h Vehicle B/R; TN 8-Handling; facility."
     ]
   },
   "links": {
@@ -39,7 +45,8 @@
     "affects": [],
     "modified_by": [],
     "interacts_with": [
-      "subsystem.vehicles.gridguide"
+      "subsystem.vehicles.gridguide",
+      "rule.vehicles.customization-control-systems"
     ]
   },
   "sources": [
@@ -48,6 +55,12 @@
       "page": 13,
       "relation": "extends",
       "note": "Automated Driving / Autonav Systems / Self-Driving Autonav / Autonav GPS"
+    },
+    {
+      "source": "source.r3",
+      "pages": "127-128",
+      "relation": "extends",
+      "note": "Autonavigation Systems ratings and installation/design specifications"
     }
   ],
   "notes": []

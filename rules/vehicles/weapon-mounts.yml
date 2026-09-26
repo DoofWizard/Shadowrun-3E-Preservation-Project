@@ -1,0 +1,77 @@
+{
+  "id": "rule.vehicles.weapon-mounts",
+  "record_type": "rule",
+  "name": "Vehicle Weapon Mounts and Weapon-Control Hardware",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 135,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle-mounted weapons",
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 defines hardpoint/firm point capacity, mount types, ammunition storage, recoil systems, launch control, missile/torpedo mounting, turret capacity and remote weapon controls.",
+    "inputs": [
+      "Body/Hull",
+      "hardpoints/firm points",
+      "weapon type",
+      "mount type",
+      "CF/Load"
+    ],
+    "outputs": [
+      "legal weapon installation",
+      "mount firing arc",
+      "recoil/signature effects",
+      "ammo capacity"
+    ],
+    "steps": [
+      "Capacity: each hardpoint counts 2 points and each firmpoint 1; total point value cannot exceed Body. Heavy weapons (MMG+) and vehicle weapons require hardpoints; LMG/small arms may use firmpoints. A suitable motorcycle sidecar may hold one forward-facing fixed hardpoint.",
+      "Ammunition bins: 0.2 CF stores 2,000 rounds small arms (LMG/rifle and smaller), 200 rounds MMG/HMG, or 20 rounds grenade-launcher/assault-cannon ammo. Reload manually at 100 rounds/Combat Turn, doubled with Quickness(4); failure jams the bin and clearing requires Quickness(2)+Complex Action. Design 0 DP; custom 50 nuyen per 0.2 CF and 12h Vehicle B/R(4).",
+      "Firearm Conversion Kits are required to mount personal firearms on fixed mounts/turrets; 12h Weapon B/R(4) plus Weapons Kit. Not required on pintle/ring mounts or true vehicle weapons.",
+      "Fixed mounts have essentially fixed arcs; side-facing mounts add weapon recoil to vehicle Handling and require Driving Test or crash if fired. Fixed mounts halve recoil before other compensation and cancel heavy-weapon double recoil. External mounts are obvious and reduce Signature by 1; internal mounts are armored/concealed until extended, then reduce Signature by 1 while armed. Design DP/CF: external hardpoint 25/1, external firmpoint 10/.5, internal hardpoint 35/4, internal firmpoint 20/3. Custom parts 2,000/750/3,000/1,500 nuyen; Availability 6/7d(SI2); 24h Vehicle B/R(4); CF 2/1/7/5; 10kg plus weapon.",
+      "Gunnery Recoil Adjusters work like recoil compensation, 1 point/level, on fixed mounts/turrets only and incompatible with vehicle gyrostabilization. Max levels: fixed firmpoint/micro-turret 4; mini 6; small/fixed hardpoint 9; medium+ 12. Design 10 DP/level. Custom 500 nuyen/level; Availability 6/48h(SI1.5); vehicle kit; 24h Vehicle B/R(4); 1 CF; Load rating+24kg.",
+      "Launch Control Systems let a vehicle fire up to one rocket/missile per control system per Initiative Pass. Medium systems use one firmpoint for ordinary rockets/missiles; heavy systems use one hardpoint for anti-ship/N-damage munitions. Design 10 DP medium or 25 heavy; custom 750/2,000 nuyen; Availability 6/7d(SI2), facility, 24h Vehicle B/R(4); custom CF 1 medium/2 heavy; 10kg.",
+      "Missile/Rocket mounts: ground external racks carry missiles/rockets up to Body count and reduce Signature by 1; aircraft may have up to Body external mounts, every two external mounts reduce Signature by 1, each ordinary mount holds up to 300kg. Reinforced aircraft mounts hold up to 1,500kg. Internal bays preserve normal Signature until armed; opening bay causes -1 Signature until fired/stowed. Standard internal storage uses 2 CF +3 CF per rocket/missile; heavy internal uses 8 CF +50 CF per heavy missile and 500kg plus weapons. External standard/reinforced design 0 DP; custom 1,500/5,000 nuyen; internal 5,000 nuyen/CF standard or 50,000/CF heavy.",
+      "Naval Weapon Control Network control stations each consume one hardpoint and 100 CF/500kg; rating cannot exceed available hardpoints. Design Rating×5,000 DP; custom Rating×500,000 nuyen, Availability TN Rating×10 and Rating×10 days, ship facility, 480h Electronics B/R(8). Reuses procedure.vehicles.naval-weapon-control for combat.",
+      "Pintle mount: one firmpoint, roughly 60° lateral/30° vertical arc; cannot be remotely controlled by riggers/drone pilots; provides 2 recoil compensation. Design 1 DP, 0 CF; custom 50 nuyen, Availability 4/96h(SI1.5), shop, 12h Vehicle B/R(2).",
+      "Ring mount: one hardpoint, full horizontal traverse and about 30° vertical; cannot be remotely controlled; provides 6 recoil compensation. Open/convertible vehicles require roll bars; helicopter door guns use ring mounts. Design 10 DP, 1 CF (door-gun configuration also 16 CF people space), 25kg. Custom 3,000 nuyen, Availability 8/14d(SI2), shop, 8h Vehicle B/R(3).",
+      "Smartlink Integration Kits connect smartgun weapons on fixed mounts/turrets to smartlink-equipped gunners for Manual Gunnery. Design 250 DP level I /350 level II. Custom 650/900 nuyen; Availability 4/48h(SI1) or 6/48h(SI2); vehicle kit; 24h Vehicle B/R(4); 1 CF.",
+      "Torpedo Tubes: each tube design 250 DP; autoloader +250 DP. Design CF: 128/tube +32/torpedo storage +720 manual loading or +360 autoloader; Load 500kg/tube + stored torpedo weight +50,000kg autoloader. Custom 100,000 nuyen/tube +50,000 autoloader; Availability 25/6 months; ship facility; 300h Submarine B/R(6); custom CF 50/tube +150/torpedo +720 manual or +400 autoloader; Load 750kg/tube + torpedo weight +60,000kg autoloader. Fore/aft tubes require separate storage; manual reload takes 30 seconds with combined Strength 30, autoloader 15 seconds.",
+      "Turrets are armored motorized mounts. Weapon Value limits total weapon values mounted: mini 2/1 hardpoint, small 3/2, medium 6/3, large 8/4, extra-large 10/6. Standard firing arc about 360° with -10° depression/+45° elevation. Turrets halve recoil and cancel heavy-weapon double recoil; submarines reduce Sonar Signature by 1 per medium-or-smaller turret, 3 per large, 5 per XL. Anti-aircraft turrets allow +75° elevation, cost ×1.5 and +1 CF. Pop-up turrets have Weapon Value -1 and double CF; large/XL cannot pop up.",
+      "Standard turret design DP: mini 125, small 250, medium 500, large 1,500, XL 3,000; design CF 6/7/16/32/64 and Load 25/100/1,000/6,000/30,000kg. Custom parts 5,000/7,500/15,000/300,000/1,000,000 nuyen; 72h Vehicle B/R(4); custom CF 7/8/24/36/72 with same Load.",
+      "Remote Turrets are weapons-only mounts controlled via remote sensors; micro/mini/small/medium/large/XL. Design DP 100/175/350/600/2,500/5,000; design CF 0/3/4/4/60/120; Load 10/25/100/1,000/8,000/75,000kg. Custom parts 2,500/6,000/9,000/17,500/600,000/2,000,000 nuyen; 72h Vehicle B/R(4); custom CF 1/4/5/8/60/120 with same Load. Anti-aircraft and pop-up options also apply; pop-up micro has Weapon Value 1 and 1 CF.",
+      "Vehicle Gyroscopic Stabilizers reduce combined recoil+movement modifiers by 1 per rating point on fixed mounts/turrets. If active rating exceeds Body, vehicle Handling worsens by +1 for each excess point. Incompatible with gunnery recoil adjusters. Design 15 DP/level, max Body×2, 1 CF, Load rating+24kg. Custom 1,000 nuyen/level, Availability 8/72h(SI1.5), vehicle kit, 24h Vehicle B/R(4), same max/CF/Load."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.gunnery",
+      "procedure.vehicles.naval-weapon-control"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.customization-protective-systems"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "135-142",
+      "relation": "defines",
+      "note": "Vehicle Weapon Mounts through Vehicle Gyroscopic Stabilizers"
+    }
+  ],
+  "notes": [
+    "Vehicles fitted with weapon mounts should generally use security- or military-grade Street Index where appropriate."
+  ]
+}

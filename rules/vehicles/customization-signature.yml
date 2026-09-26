@@ -1,0 +1,57 @@
+{
+  "id": "rule.vehicles.customization-signature",
+  "record_type": "rule",
+  "name": "Vehicle Signature Customization Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 134,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Signature modifications reduce or mask radar, thermal or sonar detectability, often with temporary performance or space/load penalties.",
+    "inputs": [
+      "vehicle Signature",
+      "engine customization level",
+      "vehicle Body"
+    ],
+    "outputs": [
+      "modified Signature",
+      "detection modifiers"
+    ],
+    "steps": [
+      "Active Thermal Masking: standard motorcycle engines and customized gasoline/methane/diesel/jet engines only. Each active level gives +1 Signature. During use, Speed drops 15 per level and may not exceed adjusted Speed. Duration = (60 - [masking×5]) minutes; after duration system must vent/cool 10 minutes and Signature becomes 2 regardless of other Signature modifiers. Overrunning duration gives 1 Stress/minute and a Stress Test each minute. Maximum improvement is +2 Signature or engine-customization level, whichever lower. Design first-level cost = engine-customization cost×2; +.25 multiplier/extra level; 3 CF, 100kg. Custom uses same cost basis; Availability 8/21d(SI2), facility, level×8h Vehicle B/R(4), 3 CF, 100kg.",
+      "Noisemaker Dispenser (ship/sub/boat): releasing one gives +3 TN to detect/target the vessel for the rest of that Combat Turn and the next two turns. Design 350 DP, 16 CF +8 CF/noisemaker, 150kg +25kg/noisemaker. Custom 350,000 nuyen, Availability 8/21d(SI4.5), ship facility, 48h Submarine B/R(4), same CF/Load.",
+      "Radar-Absorbent Materials: each level gives +1 Signature, max +3. Vehicle should use military-grade Street Index. Design cost (levels^3)×50 DP. Custom parts (levels^3)×25,000 nuyen; Availability 18/30d; facility; 12h Vehicle B/R(4).",
+      "Thermal Baffles: +1 Signature per level against infrared/thermal detection while also tracking a separate thermal-masking rating used as a positive modifier on non-vehicle thermographic Perception Tests. Available only gasoline/methane/diesel/jet. Each +1 costs Body×50kg Load. Design 75 DP/level, maximum +2 or Load limit. Custom parts per level vary by chassis: ground Body×5,000; motorcycle Body×6,000; truck/fixed-wing Body×7,500; tractor/helicopter Body×10,000; hovercraft Body×3,750; watercraft/zeppelin Body×2,500. Availability 6/14d(SI2), facility, level×8h Vehicle B/R(4), 3 CF/level."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.stress"
+    ],
+    "affects": [
+      "rule.vehicles.sensor-tests"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "134-135",
+      "relation": "defines",
+      "note": "Signature Modifications"
+    }
+  ],
+  "notes": []
+}

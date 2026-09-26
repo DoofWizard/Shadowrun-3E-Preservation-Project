@@ -1,0 +1,64 @@
+{
+  "id": "rule.vehicles.customization-protective-systems",
+  "record_type": "rule",
+  "name": "Vehicle Protective-System Customization Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 131,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Protective-system modifications add armor, crash protection, environmental sealing or survivability systems with CF/Load and concealment tradeoffs.",
+    "inputs": [
+      "vehicle Body/Hull",
+      "Armor",
+      "modification"
+    ],
+    "outputs": [
+      "protection",
+      "space/load costs"
+    ],
+    "steps": [
+      "Ablative Armor: each level raises Armor by 2; total Armor may not exceed Body. A hit with Power >3× total modified Armor reduces ablative level by 1. Not hardened; does not stage attacks down. Replacement takes 6 hours and no skill test. -Body×100 kg Load/level, no CF; security/military grade; not aircraft, not concealable.",
+      "Advanced Passenger Protection System: reduces crash-damage Power by half but exiting after a crash requires Strength(5); not motorcycles. Design 30 DP/seat. Custom 2,500 nuyen/seat, Availability 3/6d(SI1), facility, 40h Vehicle B/R(4), 1 CF.",
+      "Vehicle Armor: +1 Armor per point; Body 0 cannot use. Every 6 Armor raises Handling by +1. Design 50 DP/Armor and -Body^2×5 kg/point. Custom 1,250 nuyen/point, Availability 6/12d(SI2.5), facility, base time Armor×8h, Vehicle B/R, TN desired Armor÷3, same Load reduction.",
+      "Personal Armor: ballistic protection for occupants against small arms without much performance penalty; same effect as personal ballistic armor, not impact. Design 5 DP/point, max Body×2, -Body×2kg/point. Custom 400 nuyen/point, Availability 7/10d(SI1.5), facility, base time Armor×6h Vehicle B/R, TN desired Armor÷3 rounded up, max Body×2, -Body×3kg/point.",
+      "Bulwark (Hull vehicles): acts as ship-scale Armor; each point reduces naval-damage Power by 1 and negates attacks with Power below Bulwark. Every additional 6 Bulwark raises Handling by +1. Design Hull Factor×100 DP/point, -Hull Factor×500kg/point. Custom Hull Factor×12,500 nuyen/point, Availability 6/24d(SI2.5), ship facility, base time Bulwark×16 days Vehicle B/R, TN Bulwark÷3, 10 CF/point, same Load reduction.",
+      "Concealed Armor: hidden interior armor; detection Perception TN = 9-(Armor÷3 rounded down). Incompatible with standard vehicle armor and consumes interior space. Design 50 DP/level, 2 CF/Armor point, -Body^2×5kg/point. Custom 2,000 nuyen/point, Availability 8/21d(SI3.5), facility, Armor×8h Vehicle B/R, TN desired Armor÷3 rounded up, 3 CF/point, same Load reduction.",
+      "Crash Cage: each occupant gains +6 dice for crash Damage Resistance. Not motorcycles. Design 40 DP, -10kg. Custom 3,500 nuyen, Availability 4/96h(SI2), shop, 16h Vehicle B/R(4), 2 CF, -25kg.",
+      "EnviroSeal: gas-, water- or engine-seal options; opening hatches/windows defeats the seal. Light damage creates patchable breaches; Moderate+ requires shop work. Water operation may need a separately sealed engine; drones need engine seal only. Cabin over-pressurization excludes contaminants after a light breach but fails underwater or at Moderate+ damage. Design cost: gas Body×3, water Body×10, engine Body×15, overpressure Body×75; overpressure uses 1 CF and 10kg. Custom cost: Body×250/750/1,000/5,000 nuyen respectively; Availability 8/14d(SI2.5), facility, 12h Vehicle B/R(3); overpressure uses 2 CF and 15kg.",
+      "Life Support: each CF provides 10 man-hours oxygen/climate support. Design 5 DP +1 DP/man-hour, 1 CF/10 man-hours, 25kg/10 man-hours. Custom 500 nuyen +100/man-hour, Availability 8/14d(SI2.5), shop, 8h Vehicle B/R(3), same CF/Load.",
+      "Roll Bars: on rag-top vehicles negate double crash-damage resistance penalty; on hardtops add +3 dice to occupant crash Damage Resistance. Required for certain roof mounts. Design 0 DP. Custom 2,000 nuyen, Availability 3/72h(SI1), shop, 24h Vehicle B/R(3).",
+      "Smart Armor: reactive/proactive system available only Body 4+, Armor 1+, not concealable; design-time installation makes vehicle military-grade. On each incoming projectile, roll 2D6; base activation TN 3 and +1 for each prior hit this vehicle has taken. If activated, reduce Damage Level by one in addition to normal vehicle armor effects. Replacement of expended cells resets TN to 3 and requires Vehicle B/R(2), 8h. Design 250 DP, 2 CF, -Body×50kg per Armor point. Custom 20,000 nuyen install plus Body×500 replacement, Availability 10/28d, facility, Body×40h with Demolitions/Electronics/Computer(4), 3 CF per Armor point, same Load reduction."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.safety-systems"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rules/vehicles/damage.yml"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "131-134",
+      "relation": "defines",
+      "note": "Protective-System Modifications"
+    }
+  ],
+  "notes": []
+}

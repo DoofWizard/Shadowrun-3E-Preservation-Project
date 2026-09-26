@@ -1,0 +1,65 @@
+{
+  "id": "rule.vehicles.customization-control-systems",
+  "record_type": "rule",
+  "name": "Vehicle Control-System Customization Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 127,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Control-system modifications alter who can control a vehicle, how it handles, and what automated or remote control it supports.",
+    "inputs": [
+      "vehicle",
+      "control modification"
+    ],
+    "outputs": [
+      "control capability",
+      "Handling/Speed/Load changes"
+    ],
+    "steps": [
+      "Adjusted Controls remove the +3 driving-test penalty suffered by dwarfs/trolls using controls built for other body sizes, or by standard metatypes using dwarf/troll-specific controls; also available for disabilities. Design cost 25 DP dwarf, 35 troll, 30 other. Custom parts 2,500/3,500/3,000 nuyen, Availability 3/72h (SI 1), 40h Vehicle B/R(4).",
+      "Advanced Drone Pilot raises Pilot above the default 1. Design DP: Pilot 2=50, 3=250, 4=1,250, 5=5,000; max 5. Custom parts: 5,000/25,000/500,000/2,500,000 nuyen for ratings 2-5; Availability rises from 6/14d(SI2) through 14/70d; facility; 64h Computer B/R; TN 8-Handling.",
+      "Contingency Maneuver Controls negate a number of vehicle-damage boxes equal to CMC rating when applying handling/control modifiers; damage still destroys the vehicle at Deadly and CMCs do not cancel rigger wound modifiers. Design: ratings 1-3 35 DP/rating, 4-6 75, 7-9 150; max 9; -25kg Load. Custom: 2,500/5,000/10,000 nuyen per rating bands, Availability 6/14d(SI2), 80h Vehicle B/R, TN 10-Handling, 2 CF and 30kg.",
+      "Datajack Port enables rudimentary virtual-dashboard control and gives +1 Reaction when used without rigger adaptation/VCR; unnecessary if rigger adaptation exists. Design cost 25 DP. Custom parts 2,500 nuyen (5,000 motorcycles), Availability 3/72h (SI1.5), facility, 56h (112 motorcycles) Vehicle B/R(4), 1 CF, 15kg.",
+      "Drive-by-Wire has ratings 1-3; each level improves Handling by 1 and grants a one-time 10% total multiplier split among Acceleration, Speed and Load. The multiplier is not cumulative across levels. Custom installation requires successful Vehicle B/R, Computer and Electronics tests. Design cost chassis DP×1.75/level; max Handling -3. Custom parts vehicle cost×1.25/level; Availability 8/16d(SI2.5); facility; Body×160h; TNs Vehicle B/R(10-on-road Handling), Computer(4), Electronics(4).",
+      "Improved Control Surfaces (watercraft) improve Handling by 1/increment, maximum -2 and incompatible with drive-by-wire. Design cost chassis DP×1.4/increment. Custom parts original cost×1.15/increment; Availability 6/12d(SI2), facility, level×40h Vehicle B/R.",
+      "Improved Suspension (wheeled ground vehicles) improves Handling by 1/level, max -2; motorcycles improve on- and off-road Handling. Incompatible with drive-by-wire. Design cost chassis DP×1.25/level. Custom parts original cost×1.1/level; Availability 6/12d(SI2), facility, level×40h Vehicle B/R.",
+      "Motorbike Gyro-Stabilization lets a motorcycle balance itself for remote/autonav operation; required for Autonav 2+ and remote-control adaptation. Design cost chassis DP×1.25, -5kg Load. Custom parts original cost×1.25, Availability 6/10d(SI1.5), facility, 48h Vehicle B/R(5), -5kg Load.",
+      "Off-Road Suspension (wheeled ground vehicles) improves off-road Handling 1/level but worsens on-road Handling 1/level, reduces Speed by 15, and multiplies Economy by vehicle type (cars/vans/SUVs/light trucks .85; motorcycles .7; transports .6). Max net change ±2; compatible with improved suspension and drive-by-wire. Design cost chassis DP×1.5 per 1-point change. Custom cost per 1-point change: cars .35× vehicle cost, bikes .2×, medium/heavy transports/tractors 1.50×; Availability 6/12d(SI2), facility, level×40h Vehicle B/R(4).",
+      "Remote-Control Interface lets a vehicle join a remote-control network, provides initial Pilot 1, and requires Sensor 1+. Drones already include it. Design cost 25×Body DP. Custom parts 2,500×Body nuyen; Availability 4/72d(SI2); facility; 16h Vehicle B/R(4) and Electronics B/R(4).",
+      "Rigger Adaptation provides full vehicle-control-rig interface and includes a datajack port. Design cost 35 DP. Custom parts 2,800 nuyen, Availability 4/7d(SI2), facility, 40h Vehicle B/R(4), 1 CF and 10kg.",
+      "Secondary Controls duplicate primary steering/speed controls; not motorcycles. Design cost 5 DP, 1 CF. Custom parts 400 nuyen, Availability 3/72h(SI1), facility, 40h Vehicle B/R(4), 2 CF."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.control-systems",
+      "rule.vehicles.autonav"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "entity.cyberware.vehicle-control-rig"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "127-131",
+      "relation": "defines",
+      "note": "Control-System Modifications"
+    }
+  ],
+  "notes": []
+}
