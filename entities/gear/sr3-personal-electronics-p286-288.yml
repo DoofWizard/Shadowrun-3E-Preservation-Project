@@ -1,0 +1,46 @@
+id: catalog.gear.sr3-personal-electronics-p286-288
+record_type: entity_catalog
+name: "SR3 Core Personal Electronics"
+domain: gear
+status: ingested
+source: source.sr3-core
+pages: "286-288"
+
+entries:
+  - id: entity.gear.cellular-phone
+    name: "Cellular Phone"
+    source_page: 287
+    properties:
+      device_rating: 2
+      matrix_decking: "not supported over cellular frequencies"
+      location_tracking: "A service provider or an actor with access to its computers can locate a powered-on phone within the source's stated 5-meter game abstraction."
+  - id: entity.gear.pager
+    name: "Pager"
+    source_page: 287
+    properties:
+      memory_mp: 5
+      receive_only: true
+      tracking_note: "Does not transmit, so the cellular-phone tracking rule does not apply."
+  - id: entity.gear.pocket-secretary
+    name: "Pocket Secretary"
+    source_page: 288
+    properties:
+      memory_mp: 100
+      functions: ["cellular phone", "computer", "digital camera", "filing system"]
+      matrix_jack: false
+  - id: entity.gear.personal-computer
+    name: "Personal Computer"
+    source_page: 288
+    properties:
+      form: "keyboard-sized unit with roll-out flat-screen monitor"
+      storage: "non-volatile internal storage for common software/data"
+  - id: entity.gear.data-display-headset
+    name: "Data Display Headset"
+    source_page: 288
+    properties:
+      cartridge_slots: 1
+      cartridge_capacity_mp: 1000
+      display: "heads-up display on a transparent surface"
+
+notes:
+  - "Entertainment and descriptive consumer-electronics prose is not duplicated where it adds no reusable mechanic."
