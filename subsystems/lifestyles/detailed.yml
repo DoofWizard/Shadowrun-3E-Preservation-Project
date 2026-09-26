@@ -1,0 +1,59 @@
+id: subsystem.lifestyle.detailed
+record_type: subsystem
+name: "Detailed Lifestyles"
+domain: lifestyles
+status: ingested
+effective: {status: optional, source: source.fanpro-10667, pages: "127-144", basis: adds_option}
+
+state:
+  tracked_values:
+    - "Area"
+    - "Comforts"
+    - "Entertainment"
+    - "Furnishings"
+    - "Security"
+    - "Space"
+    - "lifestyle point total"
+    - "monthly lifestyle cost"
+    - "lifestyle Edges and Flaws"
+
+construction:
+  - "Choose one level in each of six lifestyle categories."
+  - "Each category contributes points; the total maps to a monthly cost on the source's Lifestyle Costs Table."
+  - "Standard SR3 lifestyle levels can be represented by taking the same level in every category."
+  - "Category combinations are subject to source limitations and gamemaster approval."
+
+categories:
+  - Area
+  - Comforts
+  - Entertainment
+  - Furnishings
+  - Security
+  - Space
+
+maintenance:
+  - "Category ratings can change independently as living circumstances change."
+  - "Shared lifestyles divide costs according to the detailed-lifestyle sharing rules."
+  - "Vehicles and other unusual residences use special handling described by the source."
+  - "Permanent lifestyles interact with category changes and lifestyle modifiers."
+
+edges_and_flaws:
+  - "Lifestyle Edges and Flaws personalize a residence and modify its effective monthly cost."
+  - "Edges and Flaws may affect access, privacy, neighborhood behavior, building quality, services, security response, supernatural conditions, roommates and other environmental factors."
+  - "Edges may be added and Flaws removed during play through appropriate roleplaying, expense and changes to the residence."
+
+sample_packages:
+  - "Co-op Housing"
+  - "Community Beacon"
+  - "House of the Dead"
+  - "Safehouse"
+
+links:
+  uses:
+    - entity.lifestyle.lifestyle
+    - rule.lifestyle.maintenance
+
+sources:
+  - {source: source.fanpro-10667, pages: "127-144", relation: adds_option, note: "Detailed Lifestyles"}
+notes:
+  - "This is an optional expansion of the SR3 lifestyle system, not a replacement."
