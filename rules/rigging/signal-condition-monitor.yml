@@ -1,0 +1,55 @@
+{
+  "id": "rule.rigging.signal-condition-monitor",
+  "record_type": "rule",
+  "name": "Remote-Network Signal Condition Monitors",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 38,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "command",
+      "simsense",
+      "system channels during MIJI"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Each remote-network channel tracks MIJI degradation on a 10-box Signal Monitor. Degradation levels impose escalating TN penalties and can sever the channel.",
+    "inputs": [
+      "net MIJI successes",
+      "channel"
+    ],
+    "outputs": [
+      "degradation level",
+      "TN modifiers",
+      "channel status"
+    ],
+    "steps": [
+      "Each net MIJI success fills 1 Signal Monitor box on the targeted channel.",
+      "Light degradation applies +1 TN; Moderate +2; Serious +3 to actions governed by that channel.",
+      "When all 10 boxes fill, the channel is disengaged/lost and its carrier signal is severed."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "rule.rigging.miji"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "37-40",
+      "relation": "defines",
+      "note": "MIJI Test Results / Signal Condition Monitors"
+    }
+  ],
+  "notes": []
+}

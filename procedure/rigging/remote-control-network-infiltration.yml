@@ -1,0 +1,82 @@
+{
+  "id": "procedure.rigging.remote-control-network-infiltration",
+  "record_type": "procedure",
+  "name": "Remote-Control Network Infiltration",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 36,
+    "basis": "extends"
+  },
+  "purpose": "Secretly enter one or more channels of an opponent's remote-control network before attempting MIJI.",
+  "prerequisites": [
+    "intercepted target frequencies/frequency-hopping pattern",
+    "both decks within communications range"
+  ],
+  "inputs": [
+    "Electronics (Electronic Warfare)",
+    "target deck rating",
+    "protocol-emulation module",
+    "target network channels"
+  ],
+  "stages": [
+    {
+      "id": "channels",
+      "name": "Identify Channels",
+      "test_or_action": "Remote-control networks use command, simsense and system channels.",
+      "outputs": [
+        "channel candidates"
+      ]
+    },
+    {
+      "id": "test",
+      "name": "Infiltration Test",
+      "test_or_action": "Complex Action, Base Time 10 Combat Turns. Roll Electronics (Electronic Warfare) vs TN 6 modified by target deck rating minus intruder protocol-emulation-module rating. Each success infiltrates one channel; successes may instead reduce Base Time or raise Intrusion Factor.",
+      "outputs": [
+        "infiltrated channels",
+        "Intrusion Factor"
+      ]
+    },
+    {
+      "id": "encryption",
+      "name": "Defeat Deck Encryption",
+      "test_or_action": "If target deck uses encryption, it must be defeated first using Broadcast Encryption rules. Failed decryption alerts target and gives cumulative +2 TN to later infiltration attempts.",
+      "outputs": [
+        "encryption defeated"
+      ]
+    },
+    {
+      "id": "detection",
+      "name": "Detection Check",
+      "test_or_action": "Intrusion Factor = Electronics (Electronic Warfare) rating + successes allocated to Intrusion Factor. Target deck makes Success Test using deck rating vs Intrusion Factor whenever infiltration/request-for-data may expose intruder; target rigger may also actively scan with Electronics (Electronic Warfare).",
+      "outputs": [
+        "detected/undetected"
+      ]
+    }
+  ],
+  "outcomes": [
+    "eavesdropping/data access",
+    "detected intrusion"
+  ],
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "36-37",
+      "relation": "extends",
+      "note": "Remote-Control Network Infiltration"
+    }
+  ],
+  "notes": [
+    "Infiltration permits spying/requesting data but not issuing commands to target drones."
+  ]
+}

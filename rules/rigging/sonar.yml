@@ -1,43 +1,58 @@
-id: rule.rigging.sonar
-record_type: rule
-name: "Sonar Detection"
-domain: rigging
-status: ingested
-
-effective:
-  status: current
-  source: source.r3
-  page: 33
-  basis: extends
-
-scope:
-  applies_to:
-    - "underwater detection by vessels"
-  excludes: []
-
-resolution:
-  summary: "Rigger 3 adds passive and active sonar rules. Passive sonar depends on target-generated sound and Sonar Signature; active sonar emits a ping and uses the detecting vessel's Sonar rating against the target's Sonar Signature."
-  inputs:
-    - "Sonar rating"
-    - "target Sonar Signature"
-    - "mode"
-    - "range/modifiers"
-  outputs:
-    - "contact quality and identification detail"
-  steps: []
-
-links:
-  uses: []
-  affects: []
-  modified_by: []
-  interacts_with:
-    - subsystem.rigging.electronic-warfare
-
-sources:
-  - source: source.r3
-    page: 33
-    relation: extends
-    note: "Sonar, Passive Sonar, Active Sonar"
-
-notes:
-  - "Contact detail scales with successes from no contact through unique identification."
+{
+  "id": "rule.rigging.sonar",
+  "record_type": "rule",
+  "name": "Sonar Detection",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 33,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "vessel underwater detection"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Passive sonar listens to target-generated sound; active sonar pings. Successes determine contact detail from none to unique identification.",
+    "inputs": [
+      "Sonar rating",
+      "target Sonar Signature",
+      "mode",
+      "range/modifiers"
+    ],
+    "outputs": [
+      "contact detail",
+      "signature exposure"
+    ],
+    "steps": [
+      "Passive range in km = 50 / target Sonar Signature. Roll detecting vessel Sonar rating vs target Sonar Signature plus modifiers.",
+      "Passive modifiers: detecting vessel is surface ship +3; distance <1/3 max -1; 1/3-2/3 +0; 2/3-full +2. Passive sonar has a 120-degree stern baffles blind spot unless towed-array sonar is used.",
+      "Contact results: 0 no contact; 1 unknown; 2 general form; 3 specific form; 4+ unique identification.",
+      "Active tactical ping range = Sonar rating × 2,500m. All Sonar Signatures in range, including the emitter's, receive -2; multiple sources add another -1 each to max -4.",
+      "Yankee search uses Loudness rating. Loudness 0-9 ranges: 125m, 500m, 1km, 2km, 3km, 4.5km, 6km, 8km, 10km, 12.5km; 10+ range = Loudness +5 km. Targets in range suffer negative Sonar Signature equal to Loudness (max -10), and sensors within triple range gain bonus dice equal to Loudness to detect the searcher.",
+      "Cavitation: exceeding Cavitation Threshold Speed reduces Sonar Signature by 2; exceeding normal Speed reduces by 4. Submarines below 500m reduce cavitation modifier by 1; below 1,000m by 2.",
+      "Thermoclines block ordinary active/passive sonar across the layer. Yankee search can penetrate with +8 Sonar Test TN."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.rigging.electronic-warfare"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "33-35",
+      "relation": "extends",
+      "note": "Sonar / Passive / Active / Cavitation / Thermoclines"
+    }
+  ],
+  "notes": []
+}

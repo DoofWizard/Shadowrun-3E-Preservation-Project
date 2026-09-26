@@ -1,45 +1,54 @@
-id: rule.rigging.electronic-counter-deception
-record_type: rule
-name: "Electronic Counter-Deception (ECD)"
-domain: rigging
-status: ingested
-
-effective:
-  status: current
-  source: source.r3
-  page: 32
-  basis: extends
-
-scope:
-  applies_to:
-    - "Sensor Tests opposed by Electronic Deception"
-  excludes: []
-
-resolution:
-  summary: "ECD supplies additional dice to overcome ED. Roll normal Sensor dice plus ECD dice; ECD successes apply only against the ED effect and do not otherwise improve the Sensor Test."
-  inputs:
-    - "Sensor rating"
-    - "ECD rating"
-    - "ED rating"
-  outputs:
-    - "net effect of ED after ECD"
-  steps:
-    - "Roll Sensor-rating dice and separate ECD-rating dice."
-    - "Use ECD successes to reduce/overcome the ED effect."
-    - "Use Sensor successes for the underlying Sensor Test."
-
-links:
-  uses: []
-  affects:
-    - rule.rigging.electronic-deception
-  modified_by: []
-  interacts_with: []
-
-sources:
-  - source: source.r3
-    page: 32
-    relation: extends
-    note: "Electronic Counter-Deception (ECD)"
-
-notes:
-  - "Activating/deactivating ECD is a Simple Action; the ECD rating also reduces effective Flux as described by the source."
+{
+  "id": "rule.rigging.electronic-counter-deception",
+  "record_type": "rule",
+  "name": "Electronic Counter-Deception (ECD)",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 32,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "Sensor Tests opposed by ED"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "ECD provides separate dice that cancel ED successes/effects but do not otherwise improve the underlying Sensor Test.",
+    "inputs": [
+      "Sensor rating",
+      "ECD rating",
+      "ED rating"
+    ],
+    "outputs": [
+      "net ED effect",
+      "Sensor result"
+    ],
+    "steps": [
+      "Roll Sensor dice plus separately identifiable ECD dice.",
+      "ECD successes apply only against ED; Sensor-die successes determine actual contact quality.",
+      "Because ECD draws transmitter power, subtract ECD rating from effective Flux while active.",
+      "Activate/deactivate ECD as a Simple Action."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "rule.rigging.electronic-deception"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 32,
+      "relation": "extends",
+      "note": "Electronic Counter-Deception"
+    }
+  ],
+  "notes": []
+}

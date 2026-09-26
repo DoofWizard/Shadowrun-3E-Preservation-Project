@@ -1,0 +1,71 @@
+{
+  "id": "procedure.rigging.miji-recovery",
+  "record_type": "procedure",
+  "name": "Recover a Degraded Remote-Control Network",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 40,
+    "basis": "extends"
+  },
+  "purpose": "Heal channel degradation, reconnect lost carriers, or reboot a damaged remote network.",
+  "prerequisites": [
+    "rigger still has relevant control/access"
+  ],
+  "inputs": [
+    "degradation boxes",
+    "ECCM",
+    "Control Systems",
+    "deck rating"
+  ],
+  "stages": [
+    {
+      "id": "heal",
+      "name": "Regenerate Degradation",
+      "test_or_action": "Complex Action; ECCM Test vs TN = intruder device rating +3 (protocol-emulation or ECM as applicable), Electronic Warfare skill may supply complementary dice. Every 2 successes removes 1 degradation box from one channel.",
+      "outputs": [
+        "boxes removed"
+      ]
+    },
+    {
+      "id": "reconnect",
+      "name": "Reconnect Lost Carrier",
+      "test_or_action": "First clear at least 1 box. Then Complex Action Electronics (Control Systems) vs TN 4 plus remaining degradation and wound modifiers. Successes must exceed number of filled degradation boxes.",
+      "outputs": [
+        "carrier reconnected"
+      ]
+    },
+    {
+      "id": "reboot",
+      "name": "Reboot Network",
+      "test_or_action": "Spend 3 consecutive Complex Actions to disaffiliate drones and shut network down; drones go autopilot standby. Deck reboot time = rating in Combat Turns, then reconfigure/re-establish network in about 10 Combat Turns. Reboot clears all previous signal degradation.",
+      "outputs": [
+        "clean network"
+      ]
+    }
+  ],
+  "outcomes": [
+    "restored channel",
+    "reconnected carrier",
+    "fully rebooted network"
+  ],
+  "links": {
+    "uses": [
+      "rule.rigging.signal-condition-monitor"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 40,
+      "relation": "extends",
+      "note": "Regenerating MIJI Degradation / Re-Connecting Lost Carriers / Rebooting"
+    }
+  ],
+  "notes": []
+}

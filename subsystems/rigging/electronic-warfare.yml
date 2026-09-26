@@ -1,56 +1,74 @@
-id: subsystem.rigging.electronic-warfare
-record_type: subsystem
-name: "Vehicle Sensors and Electronic Warfare"
-domain: rigging
-status: ingested
-
-effective:
-  status: current
-  source: source.r3
-  page: 30
-  basis: extends
-
-state:
-  tracked_values:
-    - "Sensor rating"
-    - "Flux"
-    - "electronic deception"
-    - "electronic counter-deception"
-    - "ECM/ECCM state"
-
-participants:
-  - "vehicles"
-  - "drones"
-  - "riggers"
-  - "sensor/electronic warfare systems"
-
-components:
-  - "sensors"
-  - "electronic deception"
-  - "electronic counter-deception"
-  - "sonar"
-  - "jamming/counter-jamming"
-
-entry_conditions: []
-exit_conditions: []
-
-links:
-  rules:
-    - rule.rigging.sensor-dead-zones
-    - rule.rigging.electronic-deception
-    - rule.rigging.electronic-counter-deception
-  procedures: []
-  entities: []
-  options: []
-  modifiers: []
-  interacts_with:
-    - subsystem.matrix
-
-sources:
-  - source: source.r3
-    page: 30
-    relation: extends
-    note: "States that these sensor rules supplement the basic sensor rules beginning on SR3 p. 135."
-
-notes:
-  - "Recorded as an extension, not a replacement, because Rigger 3 explicitly says these rules supplement SR3."
+{
+  "id": "subsystem.rigging.electronic-warfare",
+  "record_type": "subsystem",
+  "name": "Vehicle Sensors and Electronic Warfare",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 30,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "Sensor rating",
+      "Flux",
+      "ED/ECD state",
+      "sonar contact quality",
+      "remote-network channels",
+      "Intrusion Factor",
+      "Signal Condition Monitors",
+      "MIJI degradation"
+    ]
+  },
+  "participants": [
+    "vehicles",
+    "ships",
+    "drones",
+    "riggers",
+    "sensor/EW systems"
+  ],
+  "components": [
+    "sensor upgrades",
+    "sensor dead zones",
+    "ED/ECD",
+    "sonar",
+    "remote-network infiltration",
+    "MIJI",
+    "recovery/reconnect/reboot"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "links": {
+    "rules": [
+      "rule.rigging.sensor-dead-zones",
+      "rule.rigging.electronic-deception",
+      "rule.rigging.electronic-counter-deception",
+      "rule.rigging.sonar",
+      "rule.rigging.miji",
+      "rule.rigging.signal-condition-monitor"
+    ],
+    "procedures": [
+      "procedure.rigging.remote-control-network-infiltration",
+      "procedure.rigging.miji-recovery"
+    ],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "30-40",
+      "relation": "extends",
+      "note": "Sensors and Electronic Warfare"
+    }
+  ],
+  "notes": [
+    "Rigger 3 explicitly supplements rather than replaces the basic SR3 sensor rules."
+  ]
+}

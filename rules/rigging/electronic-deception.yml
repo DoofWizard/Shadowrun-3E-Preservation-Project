@@ -1,41 +1,51 @@
-id: rule.rigging.electronic-deception
-record_type: rule
-name: "Electronic Deception (ED)"
-domain: rigging
-status: ingested
-
-effective:
-  status: current
-  source: source.r3
-  page: 32
-  basis: extends
-
-scope:
-  applies_to:
-    - "Sensor Tests against a vehicle using an active ED system"
-  excludes: []
-
-resolution:
-  summary: "An active ED system generates misleading sensor signatures. Add the ED rating to the number of successes required to detect or identify the target vehicle; a failed Sensor Test may yield a fabricated false reading."
-  inputs:
-    - "ED rating"
-    - "Sensor Test successes"
-  outputs:
-    - "detection/identification result"
-  steps: []
-
-links:
-  uses: []
-  affects: []
-  modified_by: []
-  interacts_with:
-    - rule.rigging.electronic-counter-deception
-
-sources:
-  - source: source.r3
-    page: 32
-    relation: extends
-    note: "Electronic Deception (ED)"
-
-notes:
-  - "ED is an area-effect system with range determined by allocated Flux."
+{
+  "id": "rule.rigging.electronic-deception",
+  "record_type": "rule",
+  "name": "Electronic Deception (ED)",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 32,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "Sensor Tests against active ED"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "ED emits false/misleading sensor information. Add ED rating to successes required to detect/identify the protected target; failure can produce a convincing false reading.",
+    "inputs": [
+      "ED rating",
+      "Sensor Test successes",
+      "allocated Flux"
+    ],
+    "outputs": [
+      "detection/identification or false return"
+    ],
+    "steps": [
+      "ED range is set by its allocated Flux and affects sensors only within that area.",
+      "Activate/deactivate ED as a Simple Action."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.rigging.electronic-counter-deception"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 32,
+      "relation": "extends",
+      "note": "Electronic Deception"
+    }
+  ],
+  "notes": []
+}

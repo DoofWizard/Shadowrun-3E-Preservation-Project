@@ -1,0 +1,65 @@
+{
+  "id": "rule.rigging.miji",
+  "record_type": "rule",
+  "name": "MIJI Electronic Warfare",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 37,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "infiltrated remote-control networks"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "MIJI means meaconing, intrusion, jamming and interference. After infiltration, attacker and defender contest Electronic Warfare; net successes degrade network channels and specialized attack types determine the effect.",
+    "inputs": [
+      "infiltrated channel",
+      "attacker Electronics (EW)",
+      "defender Electronics (EW)",
+      "Flux",
+      "protocol-emulation/ECM rating"
+    ],
+    "outputs": [
+      "channel degradation",
+      "false data",
+      "jamming",
+      "network takeover"
+    ],
+    "steps": [
+      "Attacker declares target infiltrated channel and spends Complex Action. Both sides roll Electronics (Electronic Warfare) in Success Contest.",
+      "Attacker TN = target remote-control deck rating; attacker may add Flux rating as complementary dice.",
+      "Defender TN = attacker protocol-emulation rating for meaconing/intrusion/interference, or attacker ECM rating for jamming; defender may add own Flux as complementary dice.",
+      "Each attacker net success fills one Signal Monitor box; attack type determines affected channel/effect.",
+      "Meaconing targets command/system channels and degrades drone Pilot-driven actions, Driving/Gunnery, IVIS and related physical actions; it does not affect simsense or directly rigged drones.",
+      "Intrusion creates bogus data/targets on any channel. Target rigger may spot false image with Perception (4) plus degradation modifiers; ECCM can remove it. Pre-generated false images can increase the Perception TN.",
+      "Jamming uses ECM and degrades command/simsense/system channels: command degradation impairs command/comprehension and can cut drones off; simsense degradation affects Perception/manual Gunnery and remote-rigger Initiative/damage modifiers; system degradation impairs indirect-fire/BattleTac direction and smartlink support.",
+      "Interference targets system channel and can lead to direct takeover. Both attackers may accumulate degradation over repeated contests; first to fill opponent system channel or force opponent out takes control. Losing operator suffers dump shock."
+    ]
+  },
+  "links": {
+    "uses": [
+      "procedure.rigging.remote-control-network-infiltration",
+      "rule.rigging.signal-condition-monitor"
+    ],
+    "affects": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "37-40",
+      "relation": "extends",
+      "note": "MIJI / Meaconing / Intrusion / Jamming / Interference"
+    }
+  ],
+  "notes": []
+}
