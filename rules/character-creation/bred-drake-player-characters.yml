@@ -1,0 +1,30 @@
+id: rule.character-creation.bred-drake-player-characters
+record_type: rule
+name: "Bred Drake Player Characters"
+domain: character-creation
+status: ingested
+effective: {status: optional, source: source.fanpro-10666, page: 185, basis: defines}
+priority_system:
+  race: "Priority B"
+  magic: "Priority A required for aspected magician or adept drakes."
+  other_priorities: "Allocated normally."
+build_point_system:
+  cost: 25
+  system: "Shadowrun Companion build-point creation"
+mandatory_flaw:
+  flaw: "Hunted"
+  value: 6
+  build_points_awarded: 0
+  rationale: "A free drake is likely hunted by most great dragons and other interested parties."
+protected_variant:
+  rule: "GM may drop mandatory Hunted if character begins under protection of a great dragon or Draco Foundation."
+  replacement: "Must purchase an equivalent high-point Edge."
+  example: "Unique 6-point Dragon Patron Edge under Ryumyo; protection carries obligation to serve the patron."
+recommendation:
+  - "Source recommends permitting bred rather than true drakes as player characters."
+  - "GM is warned that drake abilities/enemies can dominate a mixed campaign."
+links:
+  uses:
+    - rule.dragons.drakes
+sources:
+  - {source: source.fanpro-10666, page: 185, relation: defines}

@@ -1,0 +1,67 @@
+id: rule.dragons.drakes
+record_type: rule
+name: "Drakes"
+domain: dragons
+status: ingested
+effective: {status: current, source: source.fanpro-10666, pages: "183-185", basis: defines}
+forms:
+  natural: "Miniature dragon form, roughly two to three meters overall length."
+  metahuman: "One fixed human or metahuman form; mental attributes remain the same between forms."
+true_drake:
+  origin: "Magically created by great dragons through secret rituals."
+  stats: {B: 10, Q: "5 (x4)", S: 9, C: 4, I: 5, W: 5, E: "8Z", R: 6}
+  initiative: "6 + 2D6"
+  astral_initiative: "25 + 2D6"
+  pools: {astral_combat: 7, combat: 7, spell: 6}
+  attack: "9M"
+  reach: 1
+  powers:
+    - Astral Armor
+    - Enhanced Senses (Enhanced Smell, Low-Light Vision, Thermographic Vision, Wide-Band Hearing)
+    - Hardened Armor
+    - Innate Spell (Flamethrower)
+    - Magical Guard
+    - Magical Skills
+    - Metahuman Form
+    - Regeneration
+  notes:
+    - "All true drakes are magicians, adepts or magician adepts."
+    - "True drakes in metahuman form have Essence 8."
+bred_drake:
+  origin: "Born descendants of a drake lineage; may awaken when mana conditions trigger their heritage."
+  stats: {B: 7, Q: "4 (x4)", S: 7, C: 3, I: 3, W: 3, E: "6Z", R: 4}
+  initiative: "4 + 2D6"
+  astral_initiative: "23 + 2D6"
+  pools: {astral_combat: 4, combat: 5, spell: 4}
+  attack: "7M"
+  reach: 1
+  powers:
+    - Astral Armor
+    - Enhanced Senses (Enhanced Smell, Low-Light Vision, Thermographic Vision, Wide-Band Hearing)
+    - Innate Spell (Flamethrower)
+    - Metahuman Form
+  variable: "Some possess Magical Skills or adept powers."
+magical_skills:
+  initial_magic: "Based on Essence."
+  initiation: "May initiate normally under Magic in the Shadows rules."
+  use_in_dracoform: "May cast spells, conjure and use adept powers and other magical abilities while in dracoform."
+  astral_projection: "A drake capable of astral projection may project in either form."
+  pool_caveat: "Listed Astral Initiative, Astral Combat Pool and Spell Pool apply only when appropriate Magical Skills are present."
+metahuman_form:
+  transform_action: "Exclusive Complex Action"
+  equipment: "Clothing/equipment is not transformed and may be ripped or destroyed."
+  dracoform_astral: "Dual being, simultaneously physical and astral."
+  humanoid_astral_perception: "May turn astral perception on/off with a Simple Action."
+  astral_projection: "Magically capable drakes may project in either form."
+  detect_true_nature:
+    awakened_humanoid: "At least 3 successes on Astral Perception Test."
+    not_yet_awakened: "At least 5 successes."
+    masking: "Initiated drakes may use Masking normally."
+implants:
+  essence_loss: "Double normal Essence loss."
+  bio_index: "Double normal Bio Index."
+  dracoform_function: "Implants do not function and effectively do not exist while in dragon form."
+awakening_signal:
+  effect: "First bred-drake transformation sends a faint astral ripple perceptible to great dragons and similarly powerful magical beings such as free spirits."
+sources:
+  - {source: source.fanpro-10666, pages: "183-185", relation: defines}
