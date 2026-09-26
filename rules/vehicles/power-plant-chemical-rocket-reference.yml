@@ -1,0 +1,83 @@
+{
+  "id": "rule.vehicles.power-plant-chemical-rocket-reference",
+  "record_type": "rule",
+  "name": "Chemical Rocket Power-Plant Reference Table",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 195,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design",
+      "chemical rocket power plants"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Numeric design authority for Chemical Rocket power plants.",
+    "inputs": [
+      "chassis subtype"
+    ],
+    "outputs": [
+      "power-plant design values"
+    ],
+    "steps": []
+  },
+  "rows": [
+    {
+      "category": "Special Vehicles",
+      "vehicle": "Semiballistic",
+      "load_start": 8000,
+      "load_max": 15000,
+      "speed_start": "200/750",
+      "speed_max": "200/1500",
+      "accel_start": 40,
+      "accel_max": 60,
+      "signature": 2,
+      "starting_fuel_code": 50000,
+      "economy_start": 0.01,
+      "economy_max": 0.02,
+      "design_points": 250000,
+      "people_space_load": null
+    },
+    {
+      "category": "Special Vehicles",
+      "vehicle": "Suborbital",
+      "load_start": 10000,
+      "load_max": 20000,
+      "speed_start": "150/750",
+      "speed_max": "150/2000",
+      "accel_start": 80,
+      "accel_max": 240,
+      "signature": 2,
+      "starting_fuel_code": 80000,
+      "economy_start": 0.01,
+      "economy_max": 0.025,
+      "design_points": 50000,
+      "people_space_load": null
+    }
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.design-power-plants"
+    ],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 195,
+      "relation": "defines",
+      "note": "Power Plant Table — Chemical Rockets"
+    }
+  ],
+  "notes": []
+}
