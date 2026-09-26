@@ -1,18 +1,30 @@
-phase: pass_a
-active_source: source.matrix
-source_status: complete
+phase: pass_b
+active_source: source.fanpro-10667
+source_status: ingesting
 completed_through:
-  printed_page: 171
+  printed_page: 0
   pdf_page: null
 resume_at:
-  printed_page: null
+  printed_page: 1
   pdf_page: null
 last_commit: eb93e9a20a52686ffb59333848b9d333802a3a9a
 open_conflicts:
-next_sources: []
+next_sources:
+  - source.fanpro-10666
+  - source.fanpro-10665
+  - source.fanpro-10664
+  - source.fanpro-10657
+  - source.fanpro-10655
+  - source.fanpro-10654
+  - source.fanpro-10653
+  - source.fanpro-10652
+  - source.fanpro-10651
+  - source.fanpro-10650
 instructions:
+  - use directed scan for late-SR3/FanPro sources
+  - scan sequentially
   - preserve provenance
   - do not infer supersession
   - reuse canonical IDs
-  - resolve pending normalization items from source/repository evidence
-  - do not restart completed source scans
+  - commit bounded semantic slices
+  - continue automatically
