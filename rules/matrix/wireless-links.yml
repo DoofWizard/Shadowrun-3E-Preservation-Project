@@ -1,0 +1,29 @@
+id: rule.matrix.wireless-links
+record_type: rule
+name: "Matrix Wireless Links"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "33-35", basis: extends}
+
+resolution:
+  interference:
+    - "Each net success from jamming imposes +1 to Matrix test target numbers and -1 Matrix Reaction."
+    - "Equivalent environmental interference may impose the same kind of penalties at gamemaster discretion."
+  media:
+    cellular: {access_modifier: 3, trace_modifier: -3, io_speed: 100, base_bandwidth: 5}
+    laser: {access_modifier: -2, trace_modifier: -2, io_speed: 300, base_bandwidth: 20}
+    microwave: {access_modifier: -2, trace_modifier: -2, io_speed: 200, base_bandwidth: 10}
+    radio: {access_modifier: 2, trace_modifier: -2, io_speed: 200, base_bandwidth: "2 x radio rating"}
+    satellite: {access_modifier: 2, trace_modifier: 0, io_speed: 500, base_bandwidth: 50}
+  special:
+    - "Laser links ignore electromagnetic jamming but can be impaired by heavy rain, fog or smoke."
+    - "Microwave links ignore electromagnetic jamming and ordinary weather interference."
+    - "Satellite access imposes -2 Matrix Reaction from lag and carries security tally to the next grid."
+    - "A successful trace of cellular/satellite-style access may identify the link or receiver without directly identifying the user's physical location."
+  daisy_chain:
+    - "Use the lowest I/O Speed and Base Bandwidth among all devices in the chain."
+    - "Trace modifiers from chained links are cumulative."
+
+sources:
+  - {source: source.matrix, pages: "33-35", relation: extends, note: "Wireless Links and Daisy-Chained Wireless Links"}
+notes: []

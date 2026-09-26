@@ -1,0 +1,29 @@
+id: rule.matrix.iconography-tortoise
+record_type: rule
+name: "Matrix Iconography, Perception and Tortoise Mode"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "40-41", basis: extends}
+
+resolution:
+  iconography:
+    - "UMS uses standardized iconography; sculpted systems impose a central metaphor."
+    - "A user who acts contrary to a sculpted system's metaphor suffers +2 to target numbers."
+    - "If a reality filter conflicts with a sculpted system, make an MPCP Test against the system Security Value; failure causes -2 Reaction and -1D6 Initiative while within that environment."
+  movement:
+    - "Matrix location is logical rather than physical and changes as the user accesses systems, subsystems and data."
+  tortoise_mode:
+    - "Tortoise mode uses conventional displays/controls without persona or ASIST."
+    - "It functions with an effective Sensor 1 and Detection Factor 1."
+    - "Tortoise users do not trigger IC; trigger steps instead record the MXP address, with trace launched on the third trigger step and session termination on passive alert."
+    - "Tortoise users can perform most system operations but cannot use Decoy, Null Operation, Redirect Datatrail or Relocate Trace."
+    - "During combat, a tortoise user may perform computer-related actions during only one Combat Phase per Combat Turn."
+
+links:
+  interacts_with:
+    - rule.matrix.speed-options
+    - rule.matrix.security-tally
+
+sources:
+  - {source: source.matrix, pages: "40-41", relation: extends, note: "Visibility and Perception, Iconography, Matrix Movement, Tortoise Operations"}
+notes: []

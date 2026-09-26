@@ -1,0 +1,35 @@
+id: subsystem.matrix.accounts-passcodes
+record_type: subsystem
+name: "Matrix Accounts, Passcodes and Datatrails"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "35-40", basis: extends}
+
+state:
+  tracked_values:
+    - account
+    - passcode
+    - account_privilege
+    - MPCP_signature
+    - jackpoint_id
+    - MXP_address
+    - datatrail
+
+account_privileges:
+  - personal
+  - group
+  - security
+  - superuser
+
+resolution:
+  - "A valid passcode makes authorized System Tests automatically succeed without generating a Security Test, though the action cost still applies."
+  - "Account privileges determine which operations are authorized."
+  - "Superuser privilege adds broad administrative access and gives -2 to System Test target numbers while the system is not under active alert."
+  - "Matrix sessions generate an MXP address tied to jackpoint identity and related account/session data; trace programs use this datatrail to locate users."
+  - "Masking and related tools can interfere with signature/MXP tracking."
+  - "Unauthorized users may use deception, altered/spoofed access information or short-lived accounts; these techniques do not create blanket automatic access."
+
+sources:
+  - {source: source.matrix, pages: "35-40", relation: extends, note: "MSP Accounts, Passcodes, Account Privileges, Datatrail, Unauthorized Access, Passcode Security"}
+notes:
+  - "Provider pricing and fictional service packages are source context and are not treated as superseding core lifestyle rules."
