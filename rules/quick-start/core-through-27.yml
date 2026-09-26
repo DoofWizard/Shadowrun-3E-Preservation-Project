@@ -1,0 +1,83 @@
+id: ruleset.quick-start.core-through-27
+record_type: ruleset
+name: "Quick Start Core Rules Through p.27"
+domain: quick-start
+status: ingested
+
+effective:
+  status: variant
+  source: source.quick-start
+  pages: "8-27"
+  basis: derived_summary
+
+scope:
+  applies_to:
+    - "Shadowrun Quick Start Rules play"
+
+resolution:
+  summary: "Condensed introductory SR3 rules. Reuses the familiar success-test/initiative/damage vocabulary but includes Quick Start-specific simplifications such as a single Action Pool."
+  tests:
+    - "Roll a number of d6 equal to the relevant Attribute or skill; each die meeting or exceeding the target number is a success."
+    - "Most unspecified target numbers default to 4."
+    - "Target-number modifiers normally modify the target number; target numbers cannot be reduced below 2."
+    - "A die result of 1 fails. If every die rolled is 1, the Rule of One produces a disastrous failure adjudicated by the gamemaster."
+    - "The Rule of Six permits rerolling a 6 and adding the new result when a target number exceeds 6; it does not apply to Initiative."
+  time_and_initiative:
+    - "A Combat Turn is roughly three seconds."
+    - "Initiative Score is Reaction plus rolled Initiative dice."
+    - "Characters act from highest to lowest Initiative; after a pass subtract 10 and repeat while scores remain above 0."
+    - "Initiative ties are broken by Reaction, then a die roll."
+  skills:
+    - "A skill rating is the number of dice rolled for that skill."
+    - "Quick Start defaulting: if the character lacks the skill, roll the linked Attribute and increase the target number by +4."
+  action_pool:
+    description: "A Quick Start-only pooled-dice simplification used in place of the fuller SR3 pool structure."
+    rules:
+      - "Action Pool refreshes at the beginning of each Combat Turn."
+      - "Pool dice may augment eligible offensive/defensive combat tests and Sorcery/Drain tests."
+      - "Action Pool dice cannot be used for Initiative."
+      - "No more Action Pool dice may be added to a roll than the rating of the skill being used."
+      - "Spent dice are unavailable until the next refresh; unused dice do not carry over."
+  movement:
+    - "Walking Rate equals Quickness in meters per Combat Turn."
+    - "Running Rate equals Quickness times the racial running modifier."
+    - "Running imposes +4 on the runner's actions and +2 on ranged attacks against the runner."
+  ranged_combat:
+    sequence:
+      - "Determine the attack's base target number."
+      - "Apply target-number modifiers."
+      - "Attacker rolls the relevant Combat Skill plus optional Action Pool dice."
+      - "Target rolls Body plus optional Action Pool dice against weapon Power minus armor, minimum target number 2."
+      - "Compare successes and stage damage; a tie inflicts base damage."
+    common_modifiers:
+      partial_cover: "+2"
+      target_running: "+2"
+      target_stationary: "-1"
+      attacker_running: "+4"
+      aimed_shot: "-1 if the attacker has not moved this turn and is not moving in the current pass"
+  damage:
+    - "Damage Codes contain Power and a Damage Level: Light, Moderate, Serious, or Deadly."
+    - "Damage is staged up or down by net successes."
+    - "Condition Monitor tracks Physical and Stun separately; base boxes are 1/3/6/10 for L/M/S/D."
+    - "Stun overflow becomes Physical damage."
+    - "At 10 Stun boxes a character is unconscious until Stun falls to Serious; at 10 Physical boxes a character is unconscious; the Quick Start text states 11+ Physical boxes is death."
+    - "Injury target-number modifiers apply to most tests but not tests to resist or avoid damage."
+  healing:
+    - "Stun recovery uses higher of Body or Willpower against TN 2, modified by injury; base time is 60 minutes per box divided by successes, requiring complete rest."
+    - "Physical healing first checks whether medical attention is required using natural Body against the wound-level target number; Deadly wounds always require medical attention."
+    - "Biotech first aid must be applied within one hour, affects Physical damage only, and on success reduces the Damage Level by one; it cannot reduce more than one level."
+    - "Biotech cannot be applied after magical healing, while magical healing may follow Biotech."
+
+links:
+  reuses:
+    - rule.tests.success-test
+    - rule.tests.rule-of-one
+    - rule.tests.rule-of-six
+    - rule.initiative.initiative
+    - rule.skills.defaulting
+    - rule.condition.condition-monitor
+    - rule.combat.damage-staging
+    - rule.combat.damage-resistance
+
+sources:
+  - {source: source.quick-start, pages: "8-27", relation: derived_summary, note: "Condensed Quick Start presentation"}
