@@ -1,0 +1,58 @@
+id: catalog.matrix.celedyr-dracobots
+record_type: entity_catalog
+name: "Celedyr Dracobots"
+domain: matrix
+status: ingested
+source: source.fanpro-10666
+page: 189
+entries:
+  - id: entity.matrix.celedyr-routine-search-dracobot
+    name: "Routine Search Dracobot"
+    type: "smart frame"
+    frame_core: {MPCP: 10, B: 1, E: 1, M: 4, S: 4}
+    initiative: "10 + 1D6"
+    pilot: 3
+    utility_payload: 34
+    utilities:
+      Analyze: 6
+      Browse: 6
+      Camo: 4
+      Deception: 5
+      Evaluate: 5
+      Decrypt: 4
+      Sleaze: 4
+    detection_factor: 4
+    icon: "Coal miner with pickaxe and helmet lantern"
+  - id: entity.matrix.celedyr-combat-dracobot
+    name: "Combat Dracobot"
+    type: "agent"
+    frame_core: {MPCP: 10, B: 6, E: 6, M: 3, S: 5}
+    initiative: "10 + 5D6"
+    pilot: 5
+    hacking_pool: 10
+    utility_payload: 38
+    utilities:
+      Analyze: 4
+      Armor: 3
+      Attack-M: 6
+      Crash: 4
+      Deception: 4
+      Lock-On: 3
+      Medic: 4
+      Shield: 3
+      Sleaze: 4
+      Steamroller: 3
+    detection_factor: 4
+    icon: "Giant stone lizard"
+  - id: entity.matrix.celedyr-cyberdrake
+    name: "Cyberdrake"
+    type: "semi-autonomous knowbot"
+    frame_core: {MPCP: 8, B: 5, E: 6, M: 7, S: 6}
+    initiative: "8 + 5D6"
+    pilot: 6
+    hacking_pool: 8
+    utility_pool: 12
+    utility_payload: 44
+    icon: "Western dragon with shimmering iridescent colors"
+sources:
+  - {source: source.fanpro-10666, page: 189, relation: defines}
