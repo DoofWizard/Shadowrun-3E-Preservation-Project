@@ -1,0 +1,41 @@
+id: subsystem.identity.sin-and-credsticks
+record_type: subsystem
+name: "SINs, Credsticks, and Forged Identity"
+domain: identity
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  pages: "238-239"
+  basis: defines
+
+sin:
+  description: "System Identification Numbers identify legally registered persons; governments and corporations maintain interlinked identity records."
+  sinless:
+    - "A person without a SIN lacks ordinary legal recognition and cannot easily access many routine legal services."
+    - "A SINless arrestee may be issued a criminal SIN, creating a permanent law-enforcement identity record."
+  character_creation: "Players may choose whether their character has a SIN as part of background."
+
+credsticks:
+  registered:
+    description: "Registered credsticks combine identification, licenses/permits and account-access credentials; financial use requires an ID check."
+  certified:
+    description: "Certified credsticks function like bearer instruments: no registered owner and no identification required; they cannot serve as ID."
+
+forged_identity:
+  acquisition: "High-quality false identities/credsticks require specialist organizations capable of inserting a credible identity history into networked databases."
+  verification:
+    test: "Opposed Test: forged credstick Rating vs verification-system Rating."
+    success: "Side with more successes wins."
+    tie: "Verifier asks further identity-history questions; an incorrect answer causes rejection."
+  note: "Creation cost, availability and delivery time scale by forged-credstick rating according to the source table."
+
+links:
+  interacts_with:
+    - subsystem.matrix
+    - rule.gear.legality-codes
+
+sources:
+  - {source: source.sr3-core, page: 238, relation: defines, note: "SINless / What's in a SIN? / Credsticks and ID"}
+  - {source: source.sr3-core, page: 239, relation: extends, note: "Certified credsticks / Forging Credsticks and IDs / Using a Forged Credstick"}

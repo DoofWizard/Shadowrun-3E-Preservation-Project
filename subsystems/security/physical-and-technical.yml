@@ -1,0 +1,72 @@
+id: subsystem.security.physical-and-technical
+record_type: subsystem
+name: "Physical and Technical Security"
+domain: security
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  pages: "232-237"
+  basis: defines
+
+state:
+  tracked_values:
+    - barrier type
+    - sensor/system rating
+    - alarm state
+    - access-control state
+
+physical_security:
+  natural_barriers:
+    - "Dense brush may be traversed, but applies a -2 modifier to Stealth Open Tests while moving through it."
+    - "Solid or area-wide obstructions must be skirted."
+  manmade_barriers:
+    - "Walls, fences, lakes and hills use ordinary barrier/climbing/swimming mechanics as appropriate."
+  electric_fence:
+    damage: "4D shock damage on contact"
+    release_test: "Willpower or Body (6)"
+    failure: "Remain in contact and take another 4D on the next Initiative Pass; an unconscious victim takes one final shock before falling away."
+  wire:
+    - "Barbed, concertina and monowire have distinct Barrier/Damage/visibility values in the source table."
+    - "Trip wires use monowire visibility; ordinary trip wires trigger alarms but do not themselves damage, while monowire trip wires also inflict monowire damage."
+
+technical_security:
+  surveillance:
+    - "Video/trideo surveillance may carry vision options and microphones; effectiveness still depends on monitoring."
+  door_window_alarms:
+    detection: "Perception (8), with Electronics B/R as a complementary skill."
+    bypass: "After locating contacts, make an Electronics Test against system rating; Build/Repair modifiers apply."
+  motion_sensors:
+    field: "Typically ultrasound."
+    detection: "Ultrasound detector can identify a field within 5 meters."
+    bypass: "Move at one-half meter per Combat Turn and win an Opposed Stealth (Sensor Rating) Test."
+    faster_movement: "Above 1 meter per Combat Turn, add +1 TN for each additional quarter-meter moved."
+  access_control:
+    canonical_procedure: procedure.security.maglock-bypass
+    note: "Keypads, cardreaders, print scanners and voice-recognition systems are normalized under the existing maglock-bypass procedure."
+  active_security:
+    note: "Security systems may combine trained guards/riggers/drones, automated weapons and containment responses."
+  magical_security:
+    note: "Wards, spirits, dual-natured critters and guard mages complement mundane systems; core magical-security rules are linked rather than duplicated."
+  matrix_security:
+    note: "Matrix-controlled security can be attacked through Matrix rules, though sites may isolate security networks from the public Matrix."
+
+links:
+  uses:
+    - rule.combat.barriers
+    - rule.combat.shock-weapons
+    - rule.perception.perception-test
+    - entity.skill.stealth
+    - entity.skill.electronics
+    - procedure.security.maglock-bypass
+    - rule.security.weapon-detection
+    - rule.magic.astral-security-wards
+  interacts_with:
+    - subsystem.matrix
+
+sources:
+  - {source: source.sr3-core, page: 232, relation: defines, note: "Security Systems / Physical Security"}
+  - {source: source.sr3-core, page: 234, relation: extends, note: "Perimeter barriers, electric fences, wire, technical security, cameras, alarms and motion sensors"}
+  - {source: source.sr3-core, pages: "235-236", relation: extends, note: "Maglocks and access-control systems"}
+  - {source: source.sr3-core, page: 237, relation: extends, note: "Magical, Matrix and weapon-detection security"}

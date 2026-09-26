@@ -1,0 +1,57 @@
+id: procedure.shadowrunning.fencing-loot
+record_type: procedure
+name: "Fencing Loot"
+domain: shadowrunning
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  pages: "237-238"
+  basis: defines
+
+purpose: "Find a buyer and negotiate payment for loot when no prearranged disposal deal exists."
+
+inputs:
+  - loot category
+  - Etiquette (Street)
+  - Negotiation
+  - team composition
+  - search circumstances
+  - item listed value
+
+stages:
+  - id: find_fence
+    name: "Find a Fence"
+    test_or_action: "Make Etiquette (Street) Test, base TN 4, modified by circumstances and loot type."
+    team_rule: "For a team search, roll dice equal to average Etiquette (Street) plus one die per participating member; contributors must attend the meet."
+    outputs: ["successes available for time reduction or bankroll"]
+  - id: search_time
+    name: "Resolve Search Time"
+    test_or_action: "Base time is 10 days; successes may reduce it to a minimum of 1 day."
+    risk: "At the end of each search day, roll dice equal to days spent against TN 6; any success means former owners learn the team is trying to move the goods."
+  - id: bankroll
+    name: "Determine Fence Bankroll"
+    test_or_action: "GM rolls 2D6 × 100,000¥ as base bankroll, then multiplies by successes allocated to bankroll."
+  - id: meet
+    name: "Negotiate the Meet"
+    test_or_action: "Opposed Negotiation Test; each side rolls Negotiation against the other's Willpower, with +2 TN for mutual suspicion."
+    pricing:
+      base: "30% of listed value for most loot"
+      shift: "5 percentage points per net success in winner's favor"
+      minimum: "10% of listed value"
+      maximum: "50% of listed value"
+
+loot_priority:
+  - standard_gear
+  - high_tech_loot
+  - hot_or_unique_loot
+
+links:
+  uses:
+    - entity.skill.etiquette
+    - entity.skill.negotiation
+
+sources:
+  - {source: source.sr3-core, page: 237, relation: defines, note: "Fencing the Loot / Finding a Fence"}
+  - {source: source.sr3-core, page: 238, relation: extends, note: "Financing the Fence / The Meet"}

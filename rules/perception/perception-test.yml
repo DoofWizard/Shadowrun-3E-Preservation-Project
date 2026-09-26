@@ -15,13 +15,16 @@ scope:
     - "noticing non-obvious sensory information"
 
 resolution:
-  summary: "A Perception Test normally rolls Intelligence against a gamemaster-set target number or a relevant opposing value. Team perception may use the highest Intelligence plus additional dice for team members. Success count determines the detail noticed."
+  summary: "A Perception Test normally rolls Intelligence against a gamemaster-set target number or a relevant opposing value. For one team-wide Perception Test, use the team’s average Intelligence Rating as the base dice, then add one die for each team member; do not use a group Perception Test when surprise is possible. Success count determines the detail noticed."
   inputs:
     - "Intelligence"
     - "base target number"
     - "sensory/situational modifiers"
   outputs:
     - "degree of perceived information"
+  team_perception:
+    dice: "average team Intelligence + 1 die per team member"
+    restriction: "Do not make one group Perception Test when surprise is possible."
 
 links:
   uses:
@@ -43,4 +46,5 @@ sources:
     note: "Perception Test Modifiers and Perception Success tables"
 
 notes:
+  - "Corrected against the source image: team Perception uses average Intelligence, not highest Intelligence."
   - "Stealth (Awareness) may be added in certain cases."
