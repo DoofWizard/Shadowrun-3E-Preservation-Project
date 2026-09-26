@@ -1,0 +1,60 @@
+{
+  "id": "rule.vehicles.ship-magic",
+  "record_type": "rule",
+  "name": "Magic Against Ships and Ship Domains",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 58,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "combat spells",
+      "elemental manipulations",
+      "spirits",
+      "ship domains"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Ship scale modifies spell effectiveness, while sufficiently occupied ships can form hearth domains.",
+    "inputs": [
+      "spell type",
+      "Hull",
+      "Bulwark",
+      "spirit/domain state"
+    ],
+    "outputs": [
+      "spell damage",
+      "domain interaction"
+    ],
+    "steps": [
+      "Combat spell target number against ship = Object Resistance 8 + (Hull×2) + Bulwark. Elemental manipulation target number remains 4 per ordinary rules.",
+      "Combat spells reduce Damage Level by Hull steps. Elemental manipulations reduce Damage Level by Hull+1 steps; if below Light, no effect.",
+      "Elemental manipulation Power is divided by (Bulwark+1), round down; if result <2 round up to 2; then resolve normal Damage Resistance.",
+      "Spirit attacks otherwise work normally; Immunity to Normal Weapons applies against naval weapons as usual.",
+      "A sufficiently occupied large ship may count as a hearth domain encompassing interior and space above decks up to highest point. Above decks simultaneously remains sea/sky domain.",
+      "Being a domain grants no special protection; ship-conjured hearth spirits are ordinary hearth spirits. Ships can also accumulate Background Count."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.ship-attributes"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "58-59",
+      "relation": "extends",
+      "note": "Ships and Magic / Sorcery / Spirits / Ships and Domains"
+    }
+  ],
+  "notes": []
+}

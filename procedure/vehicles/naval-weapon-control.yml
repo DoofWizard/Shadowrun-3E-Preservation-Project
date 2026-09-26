@@ -1,0 +1,79 @@
+{
+  "id": "procedure.vehicles.naval-weapon-control",
+  "record_type": "procedure",
+  "name": "Naval Weapon Control Network Combat",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 55,
+    "basis": "defines"
+  },
+  "purpose": "Coordinate ship weapon systems, including guided anti-ship missiles and torpedoes, through a Naval Weapon Control Network (NWCN).",
+  "prerequisites": [
+    "ship with NWCN and assigned control stations"
+  ],
+  "inputs": [
+    "NWCN rating",
+    "assigned stations",
+    "weapon systems",
+    "rigger roles"
+  ],
+  "stages": [
+    {
+      "id": "stations",
+      "name": "Assign Stations",
+      "test_or_action": "NWCN rating is the number of available control stations. Each station controls one weapon system; guided missiles/torpedoes active at once are limited by stations assigned to them.",
+      "outputs": [
+        "station assignments"
+      ]
+    },
+    {
+      "id": "pilot",
+      "name": "Autonomous Control",
+      "test_or_action": "Each NWCN station functions with Pilot rating equal to NWCN rating unless a live rigger overrides/directly controls it.",
+      "outputs": [
+        "weapon control"
+      ]
+    },
+    {
+      "id": "multiple",
+      "name": "Multiple Riggers",
+      "test_or_action": "One rigger occupies captain's-chair control while subordinate riggers may directly control individual weapon stations. A subordinate direct-control rigger may apply Control Pool and Combat Pool to that weapon's tests.",
+      "outputs": [
+        "rigger allocations"
+      ]
+    },
+    {
+      "id": "guided",
+      "name": "Guide Anti-Ship Weapon",
+      "test_or_action": "Anti-ship missiles and torpedoes follow missile-combat guidance; a rigger guiding one substitutes appropriate Vehicle Skill for missile Intelligence and may add Control Pool. NWCN dismounts before impact, avoiding dump shock.",
+      "outputs": [
+        "guided attack"
+      ]
+    }
+  ],
+  "outcomes": [
+    "weapon attack",
+    "guided naval missile/torpedo"
+  ],
+  "links": {
+    "uses": [
+      "subsystem.vehicles.ships-subs",
+      "procedure.combat.missile-combat"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "55-56",
+      "relation": "defines",
+      "note": "Naval Weapon Control Network and anti-ship missile/torpedo combat"
+    }
+  ],
+  "notes": []
+}

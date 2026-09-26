@@ -1,0 +1,82 @@
+{
+  "id": "procedure.vehicles.ship-damage-control",
+  "record_type": "procedure",
+  "name": "Ship Damage Control",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 57,
+    "basis": "defines"
+  },
+  "purpose": "Reduce ship damage at sea and stop flooding before full port repair.",
+  "prerequisites": [
+    "damage-control team",
+    "Ship Build/Repair skill"
+  ],
+  "inputs": [
+    "current naval damage level",
+    "team size",
+    "combat conditions",
+    "submarine status"
+  ],
+  "stages": [
+    {
+      "id": "team",
+      "name": "Form Damage-Control Team",
+      "test_or_action": "Minimum team size is Hull+2. Use highest Ship B/R on team. Every two extra team members add +1 die, maximum +3 dice.",
+      "outputs": [
+        "repair dice"
+      ]
+    },
+    {
+      "id": "repair",
+      "name": "Damage-Control Test",
+      "test_or_action": "TN/Base Time: Light 4/60 min; Moderate 6/120 min; Serious 8/180 min. Combat conditions +1 TN; submarine +2 TN. One or more successes reduce Damage Level one step, never below one Light naval level by damage control alone. Actual minutes = Base Time divided by successes. Serious interruption aborts attempt, which may later be repeated.",
+      "outputs": [
+        "damage level reduced"
+      ]
+    },
+    {
+      "id": "failure",
+      "name": "Failed Damage Control",
+      "test_or_action": "With zero successes, no further repair can be attempted until the ship reaches port.",
+      "outputs": [
+        "repair locked until port"
+      ]
+    },
+    {
+      "id": "flood",
+      "name": "Stop Taking Water",
+      "test_or_action": "Moderate-or-greater single attack causes hull leak. Every 15 minutes ship takes +1 Condition box; submarines every 5 minutes. Successful B/R plugs leak and stops added damage but does not undo original damage.",
+      "outputs": [
+        "flooding stopped"
+      ]
+    }
+  ],
+  "outcomes": [
+    "temporary damage reduction",
+    "flooding stopped",
+    "repair failure until port"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.ship-damage"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "57-58",
+      "relation": "defines",
+      "note": "Damage Control / Taking On Water"
+    }
+  ],
+  "notes": [
+    "When using vehicle subsystem damage, team may repair one subsystem instead; one or more successes restore it to full operational capability."
+  ]
+}

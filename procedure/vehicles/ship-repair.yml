@@ -1,0 +1,87 @@
+{
+  "id": "procedure.vehicles.ship-repair",
+  "record_type": "procedure",
+  "name": "Ship Repair and Sinking",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 58,
+    "basis": "extends"
+  },
+  "purpose": "Determine sinking after destruction and perform full port repair.",
+  "prerequisites": [
+    "port repair for ordinary ship repair",
+    "repair team"
+  ],
+  "inputs": [
+    "Hull",
+    "damage boxes",
+    "repair team",
+    "sinking state"
+  ],
+  "stages": [
+    {
+      "id": "sink",
+      "name": "Determine Sinking Time",
+      "test_or_action": "When all ship Condition boxes fill, roll 4D6 and subtract 9. Result is minutes until fully sunk; 0 or less means end of current Combat Turn. During sinking all systems are inoperative. Riggers are dumped and take dump shock. Only non-vehicle actions such as abandoning ship may be performed.",
+      "outputs": [
+        "sinking time"
+      ]
+    },
+    {
+      "id": "sub",
+      "name": "Submarine Sinking",
+      "test_or_action": "For a submarine, sinking time is remaining breathable-air time; when it expires, breathable air is exhausted. Occupants must use underwater breathing gear, hold breath or drown.",
+      "outputs": [
+        "air deadline"
+      ]
+    },
+    {
+      "id": "crew",
+      "name": "Form Repair Team",
+      "test_or_action": "Minimum full-repair team = Hull^2 ×3. Use highest Ship B/R. Every four extra members add +1 die, maximum +3.",
+      "outputs": [
+        "repair dice"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Repair Test",
+      "test_or_action": "Base repair days = Hull × number of damage boxes. One repair day is 8 work hours. Divide Base Time by successes. Replacement parts must arrive before work starts.",
+      "outputs": [
+        "repair duration"
+      ]
+    },
+    {
+      "id": "sea",
+      "name": "Return to Sea During Repair",
+      "test_or_action": "Ship unavailable while under repair. If put to sea mid-repair, team must spend 4 extra hours making vessel seaworthy; repair time does not advance during that work, and later resumes from prior point after returning to port.",
+      "outputs": [
+        "paused repair"
+      ]
+    }
+  ],
+  "outcomes": [
+    "ship sinks",
+    "ship repaired at port"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.ship-damage"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 58,
+      "relation": "extends",
+      "note": "Sinking / Ship Repair"
+    }
+  ],
+  "notes": []
+}

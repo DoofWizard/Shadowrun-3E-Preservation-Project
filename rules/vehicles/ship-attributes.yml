@@ -1,0 +1,63 @@
+{
+  "id": "rule.vehicles.ship-attributes",
+  "record_type": "rule",
+  "name": "Ship Attributes and Crew Scale",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 51,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "waterborne vessels over 50m and 100 metric tons",
+      "ship-scale naval rules"
+    ],
+    "excludes": [
+      "smaller vessels treated as boats"
+    ]
+  },
+  "resolution": {
+    "summary": "Ship-scale vehicles replace ordinary Body/Armor concepts with Hull/Bulwark and add naval-specific Signature, Sonar, Depth and crew abstractions.",
+    "inputs": [
+      "vessel mass/length",
+      "Hull",
+      "Bulwark",
+      "Signature",
+      "Sonar",
+      "Depth"
+    ],
+    "outputs": [
+      "ship-scale ratings"
+    ],
+    "steps": [
+      "A ship is a waterborne vessel both over 50m overall length and over 100 metric tons; smaller craft use boat rules.",
+      "Ship Speed converts to knots by dividing Speed rating by 1.54.",
+      "Hull replaces Body for ship-scale tests and damage. Hull rating by mass: 1=100-200t, 2=201-500t, 3=501-1000t, 4=1001-5000t, 5=5001-10000t, 6=10001-25000t, 7=25001-50000t, 8=50001-100000t, 9=100001-250000t, 10+=over 250000t.",
+      "Ship weapon mount points = Hull × Hull +4. Hardpoint costs 2; firmpoint costs 1.",
+      "Bulwark is ship-scale Armor.",
+      "Ship Signature is recorded as normal/Sonar Signature. Sonar rating governs sonar systems. Depth rating gives safe maximum depth for submarines/underwater vessels.",
+      "Ship crews are divided among helm, gunnery, communications and engineering; helm crew performs Driving Tests.",
+      "Minimum engineering crew = (Hull+1)^2. Each unfilled position per day at sea adds cumulative -1 to Stress Tests. At -10 the ship takes 1 Stress Point and the staffing modifier resets; full staffing permits Ship B/R (4), Base Time 24h, to remove one -1 modifier per successful repair cycle."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entity.skill.ship"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "51-54",
+      "relation": "defines",
+      "note": "Ship definitions, attributes and crews"
+    }
+  ],
+  "notes": []
+}

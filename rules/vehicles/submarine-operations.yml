@@ -1,0 +1,65 @@
+{
+  "id": "rule.vehicles.submarine-operations",
+  "record_type": "rule",
+  "name": "Submarine Depth, Terrain and Underwater Vehicle Combat",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 60,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "submarines",
+      "underwater vehicles",
+      "underwater drones",
+      "torpedoes"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Submarines use Depth rating, underwater terrain and sonar-specific combat rules, with cable-linked drones and guided torpedoes subject to special constraints.",
+    "inputs": [
+      "Depth rating",
+      "actual depth",
+      "terrain",
+      "sonar state",
+      "tethered drone state"
+    ],
+    "outputs": [
+      "depth damage",
+      "terrain category",
+      "sensor/combat effects"
+    ],
+    "steps": [
+      "At periscope depth, treat submarine as surface ship for most systems but apply +4 to visual Perception/Sensor attempts to detect/target it; sonar still applies and may outperform visual detection.",
+      "Below Depth rating, make Body (6) or Hull (6) each turn; failure adds 1 Condition box. Add +1 TN per full 100m below Depth rating.",
+      "Underwater terrain: Open=very flat abyssal plain; Normal=abyssal plain with rolling hills; Restricted=jagged terrain with steep hills/buttes/obstacles; Tight=narrow canyons/crevasses. Surface/periscope depth uses surface terrain; deeper but off-bottom is generally Open unless major obstructions; near-bottom navigation resembles low-altitude flight.",
+      "Underwater drones normally connect by communications cable; effective range is cable length. When two or more dice on a Vehicle Test roll 1s, roll 2D6; if result <= number of 1s, cable is cut. Direct-control rigger suffers dump shock if link is cut.",
+      "Torpedoes may be guided by fiber-optic cable and otherwise use anti-ship missile rules. Guidance continues while cable intact; if broken, torpedo acts autonomously.",
+      "Underwater vehicle combat uses Sensor-Enhanced Gunnery, replacing Sensor rating with Sonar rating and Signature with Sonar Signature.",
+      "Thermoclines can break sonar contact but do not physically block torpedoes/anti-sub weapons. Firing through known target position across thermocline suffers +8 Blind Fire."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entity.skill.submarine",
+      "rule.rigging.sonar",
+      "procedure.vehicles.naval-weapon-control"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "59-60",
+      "relation": "extends",
+      "note": "Submarines / Depth / Underwater Terrain / Drones / Torpedoes / Underwater Vehicle Combat"
+    }
+  ],
+  "notes": []
+}

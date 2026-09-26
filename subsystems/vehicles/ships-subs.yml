@@ -1,0 +1,83 @@
+{
+  "id": "subsystem.vehicles.ships-subs",
+  "record_type": "subsystem",
+  "name": "Ships and Submarines",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 51,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "Hull",
+      "Bulwark",
+      "normal Signature",
+      "Sonar Signature",
+      "Sonar rating",
+      "Depth rating",
+      "ship damage monitor",
+      "crew staffing",
+      "water ingress",
+      "sinking time"
+    ]
+  },
+  "participants": [
+    "ships",
+    "boats",
+    "submarines",
+    "crews",
+    "riggers",
+    "naval weapons"
+  ],
+  "components": [
+    "ship attributes",
+    "crew operations",
+    "terrain/weather",
+    "ramming/grounding",
+    "NWCN",
+    "naval damage",
+    "damage control",
+    "sinking/repair",
+    "ship magic",
+    "submarine depth/terrain",
+    "underwater drones",
+    "torpedoes"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "links": {
+    "rules": [
+      "rule.vehicles.ship-attributes",
+      "rule.vehicles.ship-operations",
+      "rule.vehicles.ship-damage",
+      "rule.vehicles.ship-magic",
+      "rule.vehicles.submarine-operations"
+    ],
+    "procedures": [
+      "procedure.vehicles.ship-damage-control",
+      "procedure.vehicles.ship-repair",
+      "procedure.vehicles.naval-weapon-control"
+    ],
+    "entities": [
+      "entity.skill.ship",
+      "entity.skill.submarine"
+    ],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "rule.rigging.sonar"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "51-60",
+      "relation": "extends",
+      "note": "Ships and Subs"
+    }
+  ],
+  "notes": []
+}

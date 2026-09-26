@@ -1,0 +1,61 @@
+{
+  "id": "rule.vehicles.ship-damage",
+  "record_type": "rule",
+  "name": "Ship-Scale Damage",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 57,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "ship-scale damage codes",
+      "standard/anti-vehicle attacks against ships",
+      "naval attacks against ordinary targets"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Ships use expanded naval damage levels and special scale-conversion rules between naval and ordinary damage.",
+    "inputs": [
+      "attack Power/Damage Code",
+      "Hull",
+      "Bulwark",
+      "attack scale"
+    ],
+    "outputs": [
+      "ship/ordinary damage"
+    ],
+    "steps": [
+      "Ship Condition Monitor boxes: Light Naval 15, Moderate Naval 21, Serious Naval 28, Deadly Naval 36.",
+      "Against naval damage codes, ships do not automatically stage damage down as ordinary vehicles do against standard weapons; reduce Power using full Bulwark.",
+      "Naval weapon against ordinary character/vehicle: multiply Power by naval Damage Level scale factor (LN×2, MN×3, SN×4, DN×5); Power drops 1 per meter from blast; resolve ordinary resistance, staging down one ordinary level per 2 successes. If still above Deadly, apply physical boxes using naval damage box values.",
+      "Naval weapons count as anti-vehicle.",
+      "Standard weapon against ship: reduce Damage Level by Hull+1 steps; anti-vehicle weapon reduces by Hull steps. If below Light, no effect; otherwise map resulting L/M/S/D to LN/MN/SN/DN.",
+      "For Power conversion against ship, standard attack divides Power by (Bulwark+1), round down; anti-vehicle divides by Bulwark. If resulting Power <2, round up to 2.",
+      "Below-deck characters/cargo are protected by ship Barrier Rating (Hull+Bulwark)×8; above-deck targets are exposed from above unless behind cover."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.ship-attributes"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "procedure.vehicles.ship-damage-control"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "57-58",
+      "relation": "defines",
+      "note": "Ship Damage and scale conversion"
+    }
+  ],
+  "notes": []
+}

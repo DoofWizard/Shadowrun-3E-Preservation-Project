@@ -1,0 +1,59 @@
+{
+  "id": "rule.vehicles.ship-operations",
+  "record_type": "rule",
+  "name": "Ship Terrain, Ramming, Grounding and Boarding",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 54,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "ship/boat maneuvering and close interaction"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 adds naval terrain/weather categories plus ship-scale ramming, grounding and boarding procedures.",
+    "inputs": [
+      "vessel class",
+      "terrain",
+      "weather",
+      "Hull/Bulwark",
+      "maneuver result"
+    ],
+    "outputs": [
+      "terrain category",
+      "damage/grounding/boarding state"
+    ],
+    "steps": [
+      "Boat terrain: Open=open water/lakes/seas/bays; Normal=lightly cluttered rivers/harbors; Restricted=considerable hazards; Tight=many dangerous obstacles/whitewater/rocky shore/sandbars/extreme congestion.",
+      "Ship terrain: Open=open sea no land visible; Normal=islands/reefs visible or within ~2km shore; Restricted=heavy congestion or within ~1km shore; Tight=city harbors/shore areas.",
+      "Marginal weather worsens terrain one step; severe weather two steps; major storms/gales/tropical storms/hurricanes make all terrain Tight.",
+      "Ship Vehicle Points = -(Hull×5).",
+      "Ship ramming uses Hull instead of Body and Bulwark instead of Armor. Against a standard vehicle, treat ship as Barrier Rating (Hull+Bulwark)×8; no penetration means no ship damage, penetration gives ship Moderate damage. Occupants near penetration resist (vehicle Body+3)M explosive damage, Power -1/m. Ship never crashes merely from ramming/being rammed by boat/standard vehicle.",
+      "After failed Crash Test in water terrain, grounding occurs on 1 on 1D6 in Normal, 2 or less Restricted, 3 or less Tight; otherwise vessel hits above-water obstacle. Grounding stops vessel and normally inflicts Moderate damage, adjustable by GM.",
+      "Boarding uses a positioning maneuver. Approach/boarding consumes the Combat Turn; on next turn characters may board, with climb/jump tests if deck height differs."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.ship-attributes"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "54-55",
+      "relation": "extends",
+      "note": "Terrain, ramming, running aground and boarding"
+    }
+  ],
+  "notes": []
+}
