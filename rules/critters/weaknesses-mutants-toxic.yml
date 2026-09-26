@@ -1,0 +1,40 @@
+id: subsystem.critters.weaknesses-mutation-toxicity
+record_type: subsystem
+name: "Critter Weaknesses, Mutation, and Toxicity"
+domain: critters
+status: ingested
+
+effective: {status: current, source: source.critters, pages: "14-17", basis: defines}
+
+weaknesses:
+  allergy:
+    nuisance: "No significant game effect beyond annoyance."
+    mild: "+1 to all target numbers while exposed."
+    moderate: "Painful exposure; +2 Power for weapons made from the allergen."
+    severe: "Contact causes Physical damage; +2 Power for allergen weapons and an additional Light wound."
+  dietary_requirement: "Without the required substance, the creature sickens and eventually dies."
+  essence_loss: "HMHVV-derived beings with this weakness lose Essence over time and must replenish it by consuming Essence; reaching 0 is rapidly fatal."
+  reduced_senses: "Affected senses typically function at half normal rating."
+  vulnerability: "Weapons made of the specified substance increase Damage Level by one; non-damaging contact counts as a Nuisance allergy."
+
+mutant_critters:
+  description: "Radiation-mutated mundane or paranormal animals are typically aggressive, unstable, and may gain physical or paranormal anomalies."
+  construction:
+    - "Reduce Intelligence by 2, minimum 1."
+    - "Reduce Essence by 1 for each chosen mutant characteristic."
+    - "Enhanced Attributes cost 1 Essence per point of enhancement."
+    - "A mutant should have no more than one paranormal ability; adding one costs 3 Essence, minimum Essence 1."
+    - "Essence-based paranormal abilities function at new Essence plus the difference between old and new Essence, preserving the source's stated potency adjustment."
+
+toxic_critters:
+  description: "Pollution/radiation-warped paranormal critters gain toxic powers and a severe allergy to purified air or water."
+  construction:
+    - "Choose one primary and one secondary toxic power."
+    - "Primary toxic power uses equal Essence; secondary uses equal Essence/2, round down."
+    - "Toxic hibernation in toxic waste/highly toxic terrain restores one use per hour."
+    - "A standard paranormal power may be removed to grant unlimited use of a toxic power."
+    - "Spend 1 Essence to add one die to Combat Pool."
+  behavior: "The text describes toxic critters as paranoid, vengeful loners that often pursue perceived polluters and commonly fight to the death."
+
+sources:
+  - {source: source.critters, pages: "14-17", relation: defines, note: "Weaknesses, mutant critters, toxic critters"}

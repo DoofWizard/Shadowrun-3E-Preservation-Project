@@ -1,0 +1,551 @@
+id: catalog.critters.powers
+record_type: reference
+name: "Critters Power Catalog"
+domain: critters
+status: ingested
+source: source.critters
+pages: "6-14"
+
+framework:
+  same_state_requirement: "Power user and target must share an astral/physical state; mana powers can cross to astral targets only when the user can perceive/interact astrally, while physical powers require physical presence."
+  action_classes: [complex, simple, free, automatic, exclusive]
+  range_classes: [LOS, touch, self, special]
+  duration_classes: [instant, sustained, permanent, special, always]
+  sustained_limit: "A critter may simultaneously sustain a number of powers equal to Essence."
+  sustained_behavior: "Innate sustained powers impose no sustaining target-number penalty, are not disrupted by damage, and normally do not require continued line of sight; nature-spirit domain limits still apply."
+
+powers:
+  - id: rule.spirit-power.accident
+    name: "Accident"
+    source_page: 7
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "apparently normal accident to occur. The nature and result of the accident will vary according to the terrain the being controls. A character affected by the Accident power must make a test using Quickness or Intelligence (whichever is greater) against a target number equal to the Essence of the being using the power. If the character fails the test, he lose"
+  - id: rule.critter-power.adaptive-coloration
+    name: "Adaptive Coloration"
+    source_page: 7
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "light around itself and so become nearly invisible. When the creature remains fmmobile, the target number for the Perception Test to detect it is 10; when the creature is moving, the target number is 8. Because this power affects the depth perception of onlookers, add a +2 modifier to the target numbers of any ranged attacks against the creature. This power "
+  - id: rule.spirit-power.animal-control
+    name: "Animal Control"
+    source_page: 7
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "from acting or control an individual animal, experiencing the world through its senses and directing its behavior. This behavior must fall within what is normal for the animal. For example, a controlled monkey could not drive a car. The being may control a number of small animals (cats, rats and so on) equal to its Charisma x 5. A being may control a number "
+  - id: rule.spirit-power.astral-armor
+    name: "Astral Armor"
+    source_page: 8
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS or Touch"
+      duration: "Instant"
+    evidence: "form, providing it with armor equal to its Essence. Astral Armor does not protect the creature in any way from physical attacks. Dual creatures must be astrally projecting to receive any benefit from this power. BINDING"
+  - id: rule.spirit-power.binding
+    name: "Binding"
+    source_page: 8
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "surface or to the being itself. The target must make a Strength Test against a target number equal to the Strength of the binding (the being's Essence x 2) to break free. BLINDNESS As this name suggests, the"
+  - id: rule.critter-power.blindness
+    name: "Blindness"
+    source_page: 8
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Free"
+      range: "Touch"
+      duration: "Sustained"
+    evidence: "in a single target. Make an Opposed Test between the critter's Essence and the victim's Willpower. If the creature generates more successes, the victim is blinded for 1D6 Combat Turns but suffers no actual physical damage. This power also affects cybereyes and astral sight. COLD AURA Beings with the"
+  - id: rule.critter-power.cold-aura
+    name: "Cold Aura"
+    source_page: 8
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "cold extending a number of centimeters equal to their Essence away from their body. Within this region, liquids freeze instantly and metals become brittle with prolonged exposure. Any character within melee attack range of a creature surrounded by a cold aura must make a Damage Resistance Test against a Damage Code of (Essence)M. Reduce the Power of the dama"
+  - id: rule.spirit-power.compulsion
+    name: "Compulsion"
+    source_page: 8
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Simple"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "perform a specific action (generally, each creature can compel only one type of action). To use this power, the critter must succeed in an Opposed Test pitting its Essence against the target's Willpower. Each net success allows the critter to control one of the target's actions. The creature must control the target immediately upon exercising the Compulsion "
+  - id: rule.spirit-power.concealment
+    name: "Concealment"
+    source_page: 8
+    relation: clarifies
+    profile:
+      type: "unknown"
+      action: "see source"
+      range: "see source"
+      duration: "see source"
+    evidence: "then afflict the corporate security squad following the runners with the sustained power"
+  - id: rule.spirit-power.confusion
+    name: "Confusion"
+    source_page: 8
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "without dropping the Concealment. Critters may simultaneously sustain a number of powers equal to their Essence. Permanent powers must be sustained for a certain amount of time, then their effects become permanent. See the descriptions of the individual powers for more details. Other powers have a Special duration, meaning other factors affect the duration o"
+  - id: rule.critter-power.corrosive-saliva
+    name: "Corrosive Saliva"
+    source_page: 8
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "saliva at opponents. Each time the creature engages in combat, it can spit corrosive saliva as a Free Action. To spit the saliva, the creature makes a Ranged Combat Test. The target may dodge the attack and/or make a Damage Resistance Test using Quickness instead of Body, adding Combat Pool dice to one or both tests. Compare the successes. Each net success t"
+  - id: rule.critter-power.corrosive-secretions
+    name: "Corrosive Secretions"
+    source_page: 8
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "substance from their skin. Touching the creature's body causes damage each turn. Any successful melee attack on or by the creature reduces by I the ratings of any armor (ballistic and impact) worn by the target for each Damage Level inflicted (Light reduces by 1, Serious by 3, and so on). When both Armor Ratings reach 0, the target is no longer protected by "
+  - id: rule.critter-power.desire-reflection
+    name: "Desire Reflection"
+    source_page: 9
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "greatest desire of a single target within its range and create an illusion relating to that desire in the target's mind. The creature itself can appear as a harmless or pleasing aspect of the illusion, if it wishes. When a being uses this power, roll an Opposed Test between the being's Essence and the target's Willpower. If the creature generates more succes"
+  - id: rule.critter-power.dispelling
+    name: "Dispelling"
+    source_page: 9
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "same way as a magician (p. 184, SR3). The creature rolls its Essence in place of its Sorcery Skill for purposes of dispelling. EMPATHY"
+  - id: rule.critter-power.empathy
+    name: "Empathy"
+    source_page: 9
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Exclusive Complex"
+      range: "Touch"
+      duration: "Sustained"
+    evidence: "and moods of a target. The being can also project an emotional state of its choice onto the target. Establishing this empathic link requires an Opposed Test between the being's Essence and the target's Willpower. If the creature generates more successes, it can sense the target's emotions and project emotions onto the target in the same way as the control em"
+  - id: rule.spirit-power.engulf
+    name: "Engulf"
+    source_page: 9
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Special"
+    evidence: "itself or the terrain or element appropriate to its nature. The victim is subject to all the effects of being submerged in the substance, the least of which is usually suffocation. Make an Opposed Test between the victim's Willpower and the critter's Essence. If the critter generates more successes, the victim is engulfed. The victim cannot escape as long as"
+  - id: rule.critter-power.enhanced-physical-attributes
+    name: "Enhanced Physical Attributes"
+    source_page: 9
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Special"
+    evidence: "current Essence Rating to one or more of its Physical Attributes. This power to enhance Attributes may be limited to specific Attributes and/or limited in duration or number of uses. Note that the critters' statistics have nor been modified to reflect this power. ENHANCED REACTIONS A creature with the"
+  - id: rule.critter-power.enhanced-reactions
+    name: "Enhanced Reactions"
+    source_page: 9
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "÷ 2) dice (round down) to its Initiative dice when rolling Initiative and also to its Reaction dice when making Reaction or Surprise Tests. This power may be limited in duration and/or number of uses. Note that the critters' statistics have not been modified to reflect this power. ENHANCED SENSES Enhanced senses include low-light and thermographic vision, im"
+  - id: rule.spirit-power.enhanced-senses
+    name: "Enhanced Senses"
+    source_page: 9
+    relation: clarifies
+    profile:
+      type: "unknown"
+      action: "see source"
+      range: "see source"
+      duration: "see source"
+    evidence: "(Poisons) Notes: If an Abrams lobster inflicts damage with a melee attack, the target must make a Quickness (4) Test. If the target achieves no successes, the lobster's claw grips the victim. Gripped victims automatically suffer one 6S wound on the lobster's next action and on each subsequent action. The Damage Code for the gripping wound increases by +1 eac"
+  - id: rule.critter-power.essence-drain
+    name: "Essence Drain"
+    source_page: 10
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "Fading 10 Fear 10 Flame Aura 10 Glamour 10 Guard 11 Hardened Armor 11 Hypnotic Song 11 Immunity 11 Infection 11 Influence 11 Innate Spell 11 Magical Guard 12 Magical Skills 12 Magic Sense 12 Materialization 12 Mimicry 12 Mist Form 12 Movement 12 Noxious Breath 13 Paralyzing Touch/Howl 13 Pestilence 13 Petrifying Gaze 13 Possession 13 Psychokinesis 13 Regener"
+  - id: rule.critter-power.essence-drain-temporary
+    name: "Essence Drain (Temporary)"
+    source_page: 10
+    relation: defines
+    profile:
+      type: "unknown"
+      action: "see source"
+      range: "see source"
+      duration: "see source"
+    evidence: "Immunity (Age, Cold, Normal Weapons, Pathogens, Poisons), Magic Sense, Materialization, Paralyzing Howl, Psychokinesis, Regeneration, Sonic Projection. Some also possess Magical Skills. Weaknesses: Allergy (Silver, Severe), Essence Loss Notes: F = current Essence. Minimum Essence 6, Max 26. Astral Initiative is F + 20 + ID6. BEHEMOTH A territorial animal wit"
+  - id: rule.critter-power.fading
+    name: "Fading"
+    source_page: 10
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Special"
+    evidence: "from the physical and astral planes at will, leaving no trace of their existence. Neither physical nor magical barriers prevent a creature from fading. Though no one knows where creatures with the Fading power go when they disappear, paranaturalists and occultists speculate that they go to the metaplanes of astral space. FEAR The"
+  - id: rule.spirit-power.fear
+    name: "Fear"
+    source_page: 10
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Free"
+      range: "Self"
+      duration: "Sustained"
+    evidence: "overwhelming fear of either the terrain or of the being itself. The victim will race in panic for the nearest point of apparent safety. The gamemaster makes an Opposed Test pitting the victim's Willpower against the creature's Essence. The creature's net successes determine the severity of the victim's fear. Generally speaking, the terror lasts for a number "
+  - id: rule.spirit-power.flame-aura
+    name: "Flame Aura"
+    source_page: 10
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "Special"
+      duration: "Sustained"
+    evidence: "ripple with flames, burning anyone who touches it. Intense forms of this power may make wooden weapons burst into flames at a touch or even melt metal or plastic weapons. The flames add +2 to the Power of the being's melee attacks. Any successful melee attack against a creature with the Flame Aura power means the attacker also takes damage from proximity to "
+  - id: rule.critter-power.glamour
+    name: "Glamour"
+    source_page: 10
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "in the terrain it controls, causing intruders to see the terrain as whatever the creature wishes. Thus, a victim can see a swamp as solid ground, rusting metal pillars as verdant trees, or a gaping abyss as a shallow river spanned by a solid stone bridge. Any and all sensory input will fit the illusion or be ignored by the victim, including shouts from frien"
+  - id: rule.spirit-power.guard
+    name: "Guard"
+    source_page: 11
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "Magical Skills 12 Magic Sense 12 Materialization 12 Mimicry 12 Mist Form 12 Movement 12 Noxious Breath 13 Paralyzing Touch/Howl 13 Pestilence 13 Petrifying Gaze 13 Possession 13 Psychokinesis 13 Regeneration 13 Search 14 Shadow Cloak 14 Silence 14 Sonic Projection 14 Spraying 14 Venom 14 Weather Control 14 Weaknesses of the Awakened 14 Allergy 15 Dietary Req"
+  - id: rule.spirit-power.hardened-armor
+    name: "Hardened Armor"
+    source_page: 11
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "exoskeleton or outer shell of extraordinary strength. If the unmodified Power of an attack against the creature does not exceed the rating of the being's Hardened Armor, the attack does no damage. Against APDS or AVM ammunition, Hardened Armor only counts as half its rating. HYPNOTIC SONG Creatures with the"
+  - id: rule.critter-power.hypnotic-song
+    name: "Hypnotic Song"
+    source_page: 11
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "who hear it. Treat the song as an attack with a Damage Code of (Essence)M, resisted by the victim's Willpower. In this case, the Damage Code simply measures the song's effect. Cyberears with dampening reduce the song's Damage Code to (Essence)L. Earplugs may do the same, at the gamemaster's discretion. If the attack inflicts \"Deadly\" damage, the target stand"
+  - id: rule.spirit-power.immunity
+    name: "Immunity"
+    source_page: 11
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Touch"
+      duration: "Permanent"
+    evidence: "Rating equal to twice its Essence for resisting damage from the thing against which it has immunity. In addition, if the Power of the damage does not exceed twice the creature's Essence, it automatically has no effect. This power works against both magical and non-magical effects. Note that beings with Immunity to Age do not age and never suffer the effects "
+  - id: rule.critter-power.infection
+    name: "Infection"
+    source_page: 11
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "(see p. 10) to infect any suitable creature it drains to 0 Essence with the Essence Drain power. The victim sickens and apparently dies. Shortly after \"death,\" the individual returns to life as a being of the type that drained its Essence. Such \"newborn\" Essence-draining creatures are dangerous. Though they are barely conscious of their new state, instinct w"
+  - id: rule.spirit-power.influence
+    name: "Influence"
+    source_page: 11
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "a target's mind, predisposing that person to some form of action, reaction, or emotion. Make an Opposed Test between the being's Charisma (or Essence, if it has no Charisma) and the target's Willpower. The number of net successes determines how strongly the suggestion is taken. INNATE SPELL The"
+  - id: rule.spirit-power.innate-spell
+    name: "Innate Spell"
+    source_page: 11
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Free"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "effect roughly similar to a spell, usually an elemental manipulation spell. The creature is not actually using Sorcery to cast a spell, but is manipulating mana in a manner that roughly approximates a spell being cast. Most creatures can only mimic one spell effect (listed in parentheses after the power). Spell descriptions appear in SR3, beginning on p. 191"
+  - id: rule.critter-power.magical-guard
+    name: "Magical Guard"
+    source_page: 12
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Variable"
+      range: "Variable"
+      duration: "Variable"
+    evidence: "defense (p. 183, SR3) in the same way as a magician, using a number of dice equal to its Essence. MAGICAL SKILLS Certain beings can learn and use the magical skills of Sorcery and Conjuring. Most creatures follow a more shamanistic style of magic but do not necessarily follow totems (at least, not as metahumanity understands the concept). Others may use a mo"
+  - id: rule.spirit-power.magical-skills
+    name: "Magical Skills"
+    source_page: 12
+    relation: clarifies
+    profile:
+      type: "mana"
+      action: "Simple"
+      range: "Special"
+      duration: "Instant"
+    evidence: "projection in the same way as a magician (p. 172, SR3). Astrally projecting critters use their Mental Attributes in astral form. They can use any mana-based powers they possess on astral targets, but physical-based powers do not work on the astral plane. When astrally projecting, such critters can use Astral Combat Pool. They roll their normal number of Init"
+  - id: rule.critter-power.magic-sense
+    name: "Magic Sense"
+    source_page: 12
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Simple"
+      range: "Self"
+      duration: "Special"
+    evidence: "presence of magic and Awakened characters or creatures on the same plane. Make an Essence (2) Test for the creature, applying the modifiers on the Magic Sense Modifiers Table. Creatures with this power subtract one-half (round down) their Essence from the target number for astral patrolling. MATERIALIZATION A spirit with the"
+  - id: rule.spirit-power.materialization
+    name: "Materialization"
+    source_page: 12
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "and is treated much like an astrally projecting character. A spirit it in material form is treated like a dual being (see above). For more information on spirits and their interaction with astral space, consult the Magic chapter, p. 188 of SR3. CRITTER COMBAT Characters are likely to encounter critters under hostile or dangerous circumstances, most often as "
+  - id: rule.critter-power.mimicry
+    name: "Mimicry"
+    source_page: 12
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Exclusive Complex"
+      range: "Self"
+      duration: "Sustained"
+    evidence: "sounds, including speech and the hunting calls of other creatures. The target number for a Perception Test to determine that the sound is false is the creature's Essence +3. MIST FORM Sustained The being can use the"
+  - id: rule.critter-power.mist-form
+    name: "Mist Form"
+    source_page: 12
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "magically transform its body into mist. The mist can pass through any crack or crevice that is not airtight, even penetrating filtration systems that are proof against gases or pollution. Systems that are proof against bacteria or viral infiltration will stop a being in mist form. While in mist form, the being has Immunity to Normal Weapons, including weapon"
+  - id: rule.spirit-power.movement
+    name: "Movement"
+    source_page: 12
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "Touch"
+      duration: "Instant"
+    evidence: "to increase or decrease a target's movement rate within the terrain it controls by multiplying or dividing the target's movement rate by its Essence. 1 2 When used on vehicles, the critter makes an Essence Test with a target number equal to half the vehicle's Body. Multiply the successes by the vehicle's Acceleration Rating and add the result to or subtract "
+  - id: rule.spirit-power.noxious-breath
+    name: "Noxious Breath"
+    source_page: 13
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "Touch or LOS"
+      duration: "Special"
+    evidence: "nauseating stench to incapacitate victims. The victim makes a Willpower or Body Test (whichever is greater) against a Damage Code of (being's Essence)S Stun. Armor and dermal plating do not protect against this damage, but a respirator will reduce the Power by 2 and stage the damage down one level. PARALYZING TOUCH/HOWL Any touch from a being (including an u"
+  - id: rule.critter-power.paralyzing-touch-howl
+    name: "Paralyzing Touch/Howl"
+    source_page: 13
+    relation: defines
+    profile:
+      type: "unknown"
+      action: "see source"
+      range: "see source"
+      duration: "see source"
+    evidence: ""
+  - id: rule.critter-power.pestilence
+    name: "Pestilence"
+    source_page: 13
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "VITAS-3 or the Human-Metahuman Vampiric Virus (HMHW). If the victim touches or is touched or wounded by the critter (or exchanges body fluid or any other such contact), she must make a Body Test against a target number equal to the critter's Essence + 2. Gamemasters can modify this target number based on the situation, how infectious the disease or carrier i"
+  - id: rule.critter-power.petrifying-gaze
+    name: "Petrifying Gaze"
+    source_page: 13
+    relation: defines
+    profile:
+      type: "mana"
+      action: "Complex"
+      range: "Special"
+      duration: "Special"
+    evidence: "tissue to calcium carbonate. If the victim meets the being's eyes, make an Opposed Test between the victim's Intelligence and the being's Essence. If the creature achieves more net successes, the victim is petrified. A creature can keep a number of victims petrified equal to its Essence. The only thing a petrified victim can attempt to do each turn is break "
+  - id: rule.spirit-power.possession
+    name: "Possession"
+    source_page: 13
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "The spirit can use possession in the following circumstances: The spirit can attempt to possess anyone it defeats in astral combat. In order to be possessed, the victim must have a physical body. The spirit can inhabit a willing host, whether or not the host is capable of astral travel. Though the host invites the spirit to enter, the spirit decides when it "
+  - id: rule.critter-power.psychokinesis
+    name: "Psychokinesis"
+    source_page: 13
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Self"
+      duration: "Always"
+    evidence: "similar to the Magic Fingers spell (p. 197, SR3). REGENERATION A creature with the"
+  - id: rule.critter-power.regeneration
+    name: "Regeneration"
+    source_page: 13
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Exclusive Complex"
+      range: "LOS"
+      duration: "Special"
+    evidence: "damage except that which injures the spine or brain. 1 3Check for this type of damage whenever the creature takes Deadly damage or its cumulative damage reaches Deadly on the condition monitor. To determine whether a creature dies from Deadly damage, roll 1D6. A result of 1 indicates that the creature is indeed dead. If the damage is from weapons that cause "
+  - id: rule.spirit-power.search
+    name: "Search"
+    source_page: 14
+    relation: clarifies
+    profile:
+      type: "physical"
+      action: "Free"
+      range: "Self"
+      duration: "Sustained"
+    evidence: "or object within its terrain. To find the target, the creature must succeed in an Opposed Test between twice its Essence and the person's Intelligence. If the target of the Search power is an object, the critter must succeed in rolling twice its Essence against a target number equal to the target's Object Resistance (p. 182, SR3). The Concealment power direc"
+  - id: rule.critter-power.shadow-cloak
+    name: "Shadow Cloak"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "Special"
+      duration: "Sustained"
+    evidence: "darkness, making it appear to be a shadow. Though Shadow Cloak is useless in full daylight and redundant in complete darkness, a creature with this power is difficult to detect in any other lighting conditions. Apply a +2 target number to Perception Tests to detect the creature in Minimal Light and a +4 in Partial Light (p. 231, SR3). In Glare, apply a -1 to"
+  - id: rule.critter-power.silence
+    name: "Silence"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Touch"
+      duration: "Instant"
+    evidence: "Howl by the Force of the spell. PESTILENCE A creature with the Pestilence power carries a disease such as VITAS-3 or the Human-Metahuman Vampiric Virus (HMHW). If the victim touches or is touched or wounded by the critter (or exchanges body fluid or any other such contact), she must make a Body Test against a target number equal to the critter's Essence + 2."
+  - id: rule.critter-power.sonic-projection
+    name: "Sonic Projection"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "Special"
+      duration: "Instant"
+    evidence: "causes physical pain to other creatures. Add a +2 modifier to all target numbers for characters able to hear the cry for one full Combat Turn after the creature utters the cry. Characters with sound-dampening implants are unaffected, but characters with high-frequency hearing suffer a +3 modifier. Victims who achieve more net successes in an Opposed Test of "
+  - id: rule.critter-power.spraying
+    name: "Spraying"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Auto"
+      range: "Touch"
+      duration: "Instant"
+    evidence: "musk. The maximum range of the spray is the creature's Essence x 2 in meters. The spray affects a 60-degree arc in one attack. To evade the spray, a target must make a Quickness (8) Test. A sprayed victim cannot perform any actions except defense for the remainder of the Combat Turn. Increase all the victim's target numbers by +1 for (Essence)D6 turns. A spr"
+  - id: rule.critter-power.venom
+    name: "Venom"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Sustained"
+    evidence: "with a Damage Code of (Essence)S. Treat the venom as a toxin with a speed of one Combat Turn. Individual creatures may have variations on this power (see critter descriptions). WEATHER CONTROL The"
+  - id: rule.critter-power.weather-control
+    name: "Weather Control"
+    source_page: 14
+    relation: defines
+    profile:
+      type: "physical"
+      action: "Complex"
+      range: "LOS"
+      duration: "Instant"
+    evidence: "Weaknesses of the Awakened 14 Allergy 15 Dietary Requirement 15 Essence Loss 15 Reduced Senses 15 Vulnerability 15 Mutant Critters 15 Size Change 15 Physical Characteristics 15 Enhanced Attributes and Abilities 15 Paranormal Abilities 15 Creating Mutant Critters 16 Toxic Critters 17 Using Toxic Critters 17 AWAKENED CRITTERS 18 Critter Statistics 18 Critters "
+
+notes:
+  - "Entries reuse rule.spirit-power.* canonical IDs where those records already existed before this ingestion slice."
+  - "New Critters-only entries use rule.critter-power.* IDs; this catalog is the durable normalized source contribution and does not by itself assert replacement of SR3-core power records."

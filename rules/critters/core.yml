@@ -1,0 +1,41 @@
+id: subsystem.critters.core
+record_type: subsystem
+name: "Critter Core Rules"
+domain: critters
+status: ingested
+
+effective: {status: current, source: source.critters, pages: "5-6", basis: extends}
+
+resolution:
+  summary: "Critters use the standard SR3 combat framework with source-specific rules for dual beings, Initiative, actions, dice pools, Karma Pool use, and cyberware."
+  dual_beings:
+    - "Dual beings are continuously aware of both physical and astral planes and may act on either at any time."
+    - "They do not suffer the +2 non-magical-action modifier associated with ordinary astral perception."
+    - "Dual beings with magical skills may astrally project; mana-based powers can affect astral forms when otherwise valid."
+  combat:
+    - "Critters use standard SR3 combat except where Critters says otherwise."
+    - "Initiative is Reaction plus Initiative dice; astrally projecting critters add +20."
+    - "Sentient critters may perform character actions when physically/paranormally capable."
+  dice_pools:
+    combat_pool: "Quickness + Intelligence + Willpower, divided by 2, round down; use the right-hand Intelligence value when split. Attack use is capped by Reaction."
+    astral_combat_pool: "For astrally projecting critters: Intelligence + Charisma + Willpower, divided by 2, round down."
+    spell_pool: "For critters with Sorcery: Intelligence + Willpower + Essence, divided by 3, round down."
+    karma_pool: "All critters may have Karma Pool; size is set by the gamemaster according to threat level. Powers may use Karma Pool dice but not other dice pools."
+  cyberware:
+    - "Critters may receive specially designed cyberware."
+    - "When a cyber-modified animal is unleashed, roll 1D6; if the result equals or exceeds Essence, it turns on its handler."
+    - "Each control implant lowers Essence by 1, subtracts 2 from the behavior-check roll, and lowers each Mental Attribute by 1."
+
+links:
+  uses:
+    - rule.initiative.initiative
+    - rule.dice-pools.combat-pool
+    - rule.dice-pools.spell-pool
+    - rule.karma.karma-pool
+    - rule.magic.astral-perception
+    - rule.magic.astral-projection
+  interacts_with:
+    - rule.cyberware.cybered-critters
+
+sources:
+  - {source: source.critters, pages: "5-6", relation: extends, note: "Dual beings, spirits, critter combat, dice pools, cyberware"}
