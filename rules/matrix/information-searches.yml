@@ -1,0 +1,34 @@
+id: rule.matrix.information-searches
+record_type: rule
+name: "Expanded Matrix Information Searches"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "124-132", basis: extends}
+
+resolution:
+  summary: "Matrix expands information searches into social/contact searches with Etiquette (Matrix) and structured database searches using Computer (Search Operations)."
+  search_types:
+    - simple
+    - standard
+    - detailed
+  computer_search:
+    - "Search area may be a specific database/archive or a general Matrix search."
+    - "Search type sets base difficulty, time and information depth."
+    - "Maximum simultaneous searches equal half Intelligence, rounded up."
+    - "Hacking Pool cannot be used for Search Tests."
+    - "Extra successes may improve information yield or reduce search time."
+    - "Frames/agents with appropriate search tools may assist or conduct searches."
+    - "Wrong Party checks may expose sensitive searches."
+  social_search:
+    - "Etiquette (Matrix) governs Matrix social interaction and contact legwork."
+    - "Physical appearance and ordinary meat-world social cues generally do not apply; reputation, favors, cred and bargains matter more."
+
+links:
+  interacts_with:
+    - rule.contacts.searching-matrix
+    - rule.contacts.friends-of-friends
+    - rule.contacts.wrong-party
+
+sources:
+  - {source: source.matrix, pages: "124-132", relation: extends, note: "Information Searches"}
+notes: []
