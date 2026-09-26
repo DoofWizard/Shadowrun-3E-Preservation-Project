@@ -1,0 +1,25 @@
+id: rule.combat.whip-entanglement
+record_type: rule
+name: "Whip Entanglement"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 276
+  basis: defines
+
+resolution:
+  summary: "A standard whip may be used to snare a target instead of inflicting damage."
+  attack:
+    result: "Each net success on the Attack Test supplies one die for an Open Test."
+  escape:
+    target_number: "Highest result from the attacker's Open Test."
+    test: "Strength Success Test"
+    action: "Complex Action"
+  armored_target_damage:
+    modifier: "When a whip is used for damage against an armored target, reduce damage by twice the target's Impact Armor Rating."
+
+sources:
+  - {source: source.sr3-core, page: 276, relation: defines, note: "Whip"}
