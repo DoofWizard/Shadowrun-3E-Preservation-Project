@@ -1,0 +1,67 @@
+{
+  "id": "rule.vehicles.control-system-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Control-System Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 127,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle controls, handling systems, autonomous control and rigger interfaces"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Control-system modifications alter how a vehicle is driven, piloted or remotely controlled and may change Handling, autonomous capability or operator interface.",
+    "inputs": [
+      "vehicle",
+      "control-system modification"
+    ],
+    "outputs": [
+      "modified Handling, control mode or autonomous capability"
+    ],
+    "steps": [
+      "Adjusted Controls remove the control penalty for the intended body type; using physically incompatible controls can impose +3 to driving target numbers. Rigged or virtual-dashboard control bypasses the physical-size issue.",
+      "Advanced Drone Pilot extends Pilot hardware through Rating 5. This modification acts on the canonical Drone Pilot Ratings rule rather than replacing it.",
+      "Autonav upgrade ratings 1-4 range from collision avoidance through self-navigation and rough-terrain route planning. Autonav dice can assist ordinary driving, while combat safety programming can add the rating to the driver's target numbers.",
+      "Contingency Maneuver Controls suppress vehicle-damage modifiers up to their rating while the system remains within its damage limits; they do not suppress the rigger's personal wound modifiers.",
+      "A Datajack Port provides virtual-dashboard control and a +1 Reaction bonus while controlling a compatible vehicle, but does not grant full VCR benefits; full Rigger Adaptation already incorporates a datajack interface.",
+      "Drive-by-Wire has levels 1-3: each level reduces Handling by 1, while the installation also grants one ten-percent performance budget that may be divided among Acceleration, Speed and Load.",
+      "Improved Control Surfaces and Improved Suspension reduce Handling within their respective water/ground domains and are incompatible with Drive-by-Wire; Off-Road Suspension trades on-road performance/economy for improved off-road Handling.",
+      "Motorbike Gyro-Stabilization is required for motorcycles using Rating 2+ autonav or remote control.",
+      "Remote-Control Interfaces allow eligible non-drone vehicles with Sensors 1+ to join a remote-control network and provide default Pilot 1. Drone chassis already include the interface.",
+      "Rigger Adaptation provides the interface required for full Vehicle Control Rig operation and incorporates a datajack port.",
+      "Secondary Controls duplicate steering/speed controls for a second operator; motorcycles cannot use them."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.control-systems",
+      "rule.vehicles.autonav",
+      "rule.drones.pilot-ratings"
+    ],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "127-131",
+      "relation": "extends",
+      "note": "Control-System Modifications; customization entries extend the already-ingested baseline control, Autonav and Pilot rules"
+    }
+  ],
+  "notes": [
+    "Baseline Autonav, Pilot and vehicle-control behavior stays in the existing canonical records; this record preserves the customization-specific additions."
+  ]
+}

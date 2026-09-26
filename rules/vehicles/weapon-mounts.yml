@@ -1,0 +1,83 @@
+{
+  "id": "rule.vehicles.weapon-mounts",
+  "record_type": "rule",
+  "name": "Vehicle Weapon Mounts and Ammunition Systems",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 135,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle-mounted firearms, heavy weapons, rockets, missiles, torpedoes and naval weapon-control systems"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Vehicle weapon mounts convert hardpoints/firm points, Cargo Factor and Load into firing positions, ammunition storage, launch/control capability and turret systems.",
+    "inputs": [
+      "vehicle Body and mount capacity",
+      "weapon",
+      "mount type",
+      "ammunition/storage"
+    ],
+    "outputs": [
+      "installed vehicle weapon system"
+    ],
+    "steps": [
+      "Total hardpoint/firm-point value cannot exceed Body: a hardpoint counts as 2 and a firm point as 1. Heavy weapons from MMG upward and vehicle weapons require hardpoints; LMGs and small arms can use firm points. A suitable sidecar motorcycle may support one forward-firing hardpoint.",
+      "Ammo bins use Cargo Factor in 0.2-CF increments. Each 0.2 CF stores about 2,000 rounds of small-arms/LMG ammunition, 200 MMG/HMG rounds, or 20 grenade-launcher/assault-cannon rounds. Manual reload is normally 100 rounds per Combat Turn and may be doubled with a Quickness (4) Test, with failure causing a jam.",
+      "Personal firearms installed in fixed mounts/turrets normally require a Firearm Conversion Kit; pintle/ring mounts and purpose-built vehicle weapons are exceptions.",
+      "Fixed mounts have very limited traverse, halve recoil modifiers before recoil compensation, and cancel the heavy-weapon double-recoil rule. External mounts are obvious/unarmored and reduce Signature by 1; internal mounts are armored/concealed until deployed, then lose that concealment/armor and reduce Signature while armed.",
+      "Gunnery Recoil Adjusters provide one recoil-compensation point per level for fixed mounts/turrets and are incompatible with vehicle gyroscopic stabilization.",
+      "Launch Control Systems determine how many rockets/missiles can be launched per Initiative Pass; medium systems use firm points and heavy anti-ship systems use hardpoints.",
+      "External rocket/missile mounts are limited by vehicle Body and reduce Signature; internal mounts consume CF/Load for doors and storage, preserve Signature until armed, and require a Complex Action to arm or stow.",
+      "Naval Weapons Control Networks centralize several ship/submarine weapon-control stations; each independently controlled station consumes a hardpoint.",
+      "Pintle mounts are manually operated firm-point mounts with broad traverse and recoil-compensation equivalent 2; ring mounts count as a hardpoint and provide recoil-compensation equivalent 6.",
+      "Smartlink Integration Kits connect compatible fixed/turret smartguns to a gunner's smartlink.",
+      "Torpedo tubes use fixed fore/aft arcs, dedicated storage racks and either manual crews or autoloaders; weapon-control systems, rather than the tubes themselves, consume hardpoints.",
+      "Turrets are armored rotating mounts. Mini/small/medium/large/extra-large turrets have increasing Weapon Value, hardpoint cost, internal space and mass. Pop-up and anti-aircraft variants alter concealment, elevation, Cargo Factor and Weapon Value. Remote turrets remove the local gunner requirement in exchange for remote operation and their own space/cost profile."
+    ]
+  },
+  "tables": {
+    "turret_weapon_values": {
+      "mini": 2,
+      "small": 3,
+      "medium": 6,
+      "large": 8,
+      "extra_large": 10
+    },
+    "turret_internal_space_cf": {
+      "mini": 1,
+      "small": 2,
+      "medium": 4,
+      "large": 8,
+      "extra_large": 16
+    }
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.vehicles.design"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "135-141",
+      "relation": "defines",
+      "note": "Weapon Mounts through turret and remote-turret specifications"
+    }
+  ],
+  "notes": [
+    "The remote-turret Load Reduction table continues at the top of printed p.142; those final values and Vehicle Gyroscopic Stabilizers are deferred to the next slice so the durable checkpoint remains p.141.",
+    "Individual weapon and ammunition entities already ingested from New Toys remain canonical; this record covers the mounting/control system."
+  ]
+}

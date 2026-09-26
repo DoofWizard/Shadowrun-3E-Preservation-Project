@@ -1,0 +1,63 @@
+{
+  "id": "rule.vehicles.protective-system-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Protective-System Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 131,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle and passenger protection"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Protective-system modifications add armor, crash protection, environmental sealing and defensive systems while consuming Load and sometimes Cargo Factor.",
+    "inputs": [
+      "vehicle",
+      "protective modification"
+    ],
+    "outputs": [
+      "protection and capacity changes"
+    ],
+    "steps": [
+      "Ablative Armor is expendable and unhardened: each level supplies twice its level in vehicle Armor, and sufficiently powerful hits can strip a level. It is unavailable to aircraft and cannot be concealed.",
+      "Advanced Passenger Protection Systems halve crash-damage Power; after such a crash an occupant must pass a Strength (5) Test to exit. Motorcycles cannot use the system.",
+      "Standard Vehicle Armor adds one Armor point per level; each six added Armor worsens Handling by +1. Body 0 vehicles cannot use it.",
+      "Personal Armor protects occupants ballistically without changing vehicle performance, up to Body × 2.",
+      "Bulwark is the Hull-scale armor system. Each point reduces naval-damage Power by 1 and may negate attacks below the Bulwark rating; each additional six Bulwark worsens Handling by +1.",
+      "Concealed Armor hides protection in cargo space and uses a Perception Test to detect; it cannot be combined with standard Vehicle Armor.",
+      "Crash Cages add six dice per occupant to crash Damage Resistance Tests; motorcycles cannot use them.",
+      "EnviroSeal provides gas/water/engine sealing with optional cabin over-pressurization. Opening doors/windows/hatches breaks ordinary sealing; Light damage can be temporarily patched, while Moderate-or-worse damage requires proper repair.",
+      "Life Support converts Cargo Factor into breathable/climate-controlled support at ten man-hours per CF.",
+      "Roll Bars mitigate crash exposure and are required for certain civilian roof weapon mounts.",
+      "Smart Armor uses replaceable explosive cells. Each incoming projectile hit rolls 2D6 against an activation target that begins at 3 and rises by 1 after every prior hit; successful activation reduces the attack Damage Level by one in addition to normal vehicle damage staging."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.weapon-mounts"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "131-134",
+      "relation": "defines",
+      "note": "Protective-System Modifications"
+    }
+  ],
+  "notes": [
+    "Smart Armor requires Body 4+, existing Armor 1+, cannot be concealed, and design-time inclusion makes the vehicle military-grade."
+  ]
+}

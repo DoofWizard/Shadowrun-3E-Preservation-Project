@@ -1,0 +1,61 @@
+{
+  "id": "rule.vehicles.engine-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Engine Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 125,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle power-producing and propulsion systems"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Engine modifications change power generation, propulsion performance or auxiliary power, with separate design-time and post-production limits.",
+    "inputs": [
+      "vehicle",
+      "engine modification"
+    ],
+    "outputs": [
+      "modified Speed, Acceleration, Load, Economy, Signature or power capability"
+    ],
+    "steps": [
+      "Engine Customization is level-based. One level raises one chosen rating: Speed +30, Acceleration +2, or Load +(Body × 50 kg). Each rating is customized separately. The post-production process carries a permanent engine-Stress failure risk that is removed only by replacing the engine with a factory-standard unit.",
+      "GridLink Power equips eligible electrical ground vehicles to draw inductive power from GridLink-equipped roadbeds.",
+      "Nitrous Oxide Injectors for gasoline/diesel engines add rating dice to an Accelerating/Braking Success Test and may temporarily raise current Speed as high as 2.5 times standard Speed; a system carries twenty charges.",
+      "SunCell Power provides solar electrical energy: under clear skies it generates Body × 25 Power Factor per hour, half that in clouds, and none at night or in heavy overcast. Towing tractors require compatible panels on their trailers.",
+      "Turbocharging for methane/gasoline/diesel engines, or Superconductive Drive for electric vehicles, adds +15 Speed and +1 Acceleration per level, lowers Signature by 1 per level, and worsens Economy by 5 percent per level; non-electric aircraft are excluded."
+    ]
+  },
+  "examples": [
+    "Nitrous design maximum is Rating 6; post-production customization maximum is Rating 5.",
+    "Engine Customization can exceed ordinary Speed/Acceleration/Load maxima within the modification's own limits."
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.design-power-plants"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "125-126",
+      "relation": "defines",
+      "note": "Engine Customization, GridLink Power, Nitrous Oxide Injectors, SunCell Power and Turbocharging/Superconductive Drive"
+    }
+  ],
+  "notes": [
+    "These are extensions/options to the power-plant system, not silent replacements of baseline power-plant rules."
+  ]
+}

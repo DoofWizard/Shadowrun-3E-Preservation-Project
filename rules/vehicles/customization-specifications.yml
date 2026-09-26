@@ -1,0 +1,61 @@
+{
+  "id": "rule.vehicles.customization-specifications",
+  "record_type": "rule",
+  "name": "Vehicle Modification Specifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 124,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization entries",
+      "vehicle design entries that permit the same modification"
+    ],
+    "excludes": [
+      "ordinary repairs unless a modification explicitly invokes repair rules"
+    ]
+  },
+  "resolution": {
+    "summary": "Vehicle modifications separate factory Design Specifications from post-production Customization Specifications while tracking cost, availability, installation, rating limits, Cargo Factor and Load.",
+    "inputs": [
+      "modification entry",
+      "vehicle design or manufactured vehicle"
+    ],
+    "outputs": [
+      "applicable design or customization requirements"
+    ],
+    "steps": [
+      "Design Specifications may list Design Cost, maximum rating/improvement, Cargo Factor consumed and Load reduction.",
+      "Customization Specifications may list Parts Cost, Parts Availability/Street Index, required equipment, base time and skill test, target number, maximum rating/improvement, Cargo Factor consumed and Load reduction.",
+      "Unless otherwise stated, modification parts use the same Street Index and Availability as the vehicle; parts cost excludes installation labor.",
+      "Passenger room may be removed for additional cargo space: each removed passenger seat yields 1.5 CF, rounded down after conversion; the cramped conversion adds +1 Power to crash/collision damage resisted by occupants.",
+      "Mechanic labor uses a 100¥ per work-hour baseline, with contact level, overtime and spare-time work modifying price and turnaround at GM discretion."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.vehicles.customization",
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.vehicles.design"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "122-125",
+      "relation": "defines",
+      "note": "Customization process, parts/labor, capacity and Design/Customization Specifications"
+    }
+  ],
+  "notes": [
+    "Do not substitute Parts Cost for Design Cost or vice versa; design-time incorporation and post-production installation are explicitly different cases."
+  ]
+}

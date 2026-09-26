@@ -1,0 +1,86 @@
+{
+  "id": "subsystem.vehicles.customization",
+  "record_type": "subsystem",
+  "name": "Vehicle Customization",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 122,
+    "basis": "defines"
+  },
+  "state": {
+    "tracked_values": [
+      "parts and availability",
+      "installation base time",
+      "installation skill and target number",
+      "Cargo Factor consumed",
+      "Load reduction",
+      "modification rating",
+      "Handling",
+      "Speed",
+      "Acceleration",
+      "Load",
+      "Signature",
+      "Armor/Bulwark",
+      "hardpoints and firm points",
+      "weapon-mount capacity"
+    ]
+  },
+  "participants": [
+    "vehicle owner/rigger",
+    "mechanic",
+    "gamemaster"
+  ],
+  "components": [
+    "parts procurement",
+    "mechanic or do-it-yourself installation",
+    "design-versus-post-production specifications",
+    "engine modifications",
+    "control-system modifications",
+    "protective-system modifications",
+    "Signature modifications",
+    "weapon-mount modifications"
+  ],
+  "entry_conditions": [
+    "a manufactured vehicle is being modified after production, or an eligible modification is being incorporated during vehicle design"
+  ],
+  "exit_conditions": [
+    "the modification is successfully installed or incorporated in design",
+    "the vehicle remains within Cargo Factor and Load limits"
+  ],
+  "links": {
+    "rules": [
+      "rule.vehicles.customization-specifications",
+      "rule.vehicles.engine-modifications",
+      "rule.vehicles.control-system-modifications",
+      "rule.vehicles.protective-system-modifications",
+      "rule.vehicles.signature-modifications",
+      "rule.vehicles.weapon-mounts"
+    ],
+    "procedures": [
+      "procedure.vehicles.customization"
+    ],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "subsystem.vehicles.design",
+      "rule.vehicles.control-systems",
+      "rule.vehicles.autonav",
+      "rule.drones.pilot-ratings"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "122-141",
+      "relation": "defines",
+      "note": "Vehicle Customization through the turret modification tables"
+    }
+  ],
+  "notes": [
+    "Rigger 3 explicitly separates factory vehicle design from post-production customization, while allowing many modification entries to be incorporated during design through their Design Specifications."
+  ]
+}

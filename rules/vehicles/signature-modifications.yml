@@ -1,0 +1,54 @@
+{
+  "id": "rule.vehicles.signature-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Signature Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 134,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicles detected or targeted by thermal, radar or sonar sensors"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Signature modifications mask or alter thermal, radar or sonar profiles and increase the difficulty of detecting or locking onto a vehicle.",
+    "inputs": [
+      "vehicle",
+      "Signature modification"
+    ],
+    "outputs": [
+      "Signature or detection/targeting modifiers"
+    ],
+    "steps": [
+      "Active Thermal Masking is available to standard motorcycle engines and customized gasoline, methane, diesel and jet engines. Each active level adds +1 Signature, costs 15 Speed, and can run for (60 - rating × 5) minutes; overrun adds engine Stress. After use the system must vent for ten minutes, during which Signature is 2 regardless of other modifiers.",
+      "Noisemaker dispensers on boats/ships/submarines impose +3 to detection/targeting for the current Combat Turn and the next two.",
+      "Radar-Absorbent Materials add +1 Signature per level to a maximum +3 and make the equipped vehicle military-grade for market purposes.",
+      "Thermal Baffles add +1 Signature per level against infrared detection, limited by the modification's maximum and available Load; their mass also modifies non-vehicle thermographic Perception."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "134-135",
+      "relation": "defines",
+      "note": "Signature Modifications"
+    }
+  ],
+  "notes": [
+    "In SR3 vehicle-sensor terminology a higher Signature rating makes the vehicle harder to detect or lock onto."
+  ]
+}

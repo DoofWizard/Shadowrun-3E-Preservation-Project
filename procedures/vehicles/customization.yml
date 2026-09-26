@@ -1,0 +1,84 @@
+{
+  "id": "procedure.vehicles.customization",
+  "record_type": "procedure",
+  "name": "Vehicle Customization Process",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 122,
+    "basis": "defines"
+  },
+  "purpose": "Install post-production vehicle modifications or incorporate eligible modifications during vehicle design.",
+  "prerequisites": [
+    "required parts/equipment have been procured",
+    "the listed shop, facility or kit is available when required",
+    "the result remains within the vehicle's Cargo Factor and Load limits"
+  ],
+  "inputs": [
+    "vehicle",
+    "chosen modification",
+    "parts",
+    "installer skill",
+    "tools or facility"
+  ],
+  "stages": [
+    {
+      "id": "procure",
+      "name": "Procure Parts",
+      "test_or_action": "Acquire the modification parts using ordinary equipment-purchasing rules and the entry's listed Availability/Street Index; absent a special listing, parts use the vehicle's own market values.",
+      "outputs": [
+        "parts"
+      ]
+    },
+    {
+      "id": "install",
+      "name": "Install Modification",
+      "test_or_action": "Make the listed Build/Repair or other Installation Test. Actual work time equals the listed base time divided by the number of successes.",
+      "outputs": [
+        "installed modification or failed attempt"
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "Apply Space and Load",
+      "test_or_action": "Deduct the listed Cargo Factor and Load. A vehicle may not exceed either rating.",
+      "outputs": [
+        "updated capacity"
+      ]
+    },
+    {
+      "id": "design-integration",
+      "name": "Design-Time Integration",
+      "test_or_action": "When an eligible modification is incorporated during vehicle design, no Installation Test is required; pay its Design Cost and apply its listed CF/Load effects.",
+      "outputs": [
+        "factory-integrated modification"
+      ]
+    }
+  ],
+  "outcomes": [
+    "customized vehicle",
+    "updated ratings, capabilities and capacity"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.customization-specifications"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "122-125",
+      "relation": "defines",
+      "note": "Customization process, parts, labor, DIY work, weight/space and design integration"
+    }
+  ],
+  "notes": [
+    "For repair work rather than modifications, Rigger 3 points back to the SR3 vehicle-repair rules.",
+    "The DIY guidance assumes roughly six hours of vehicle work per day before normal obligations are displaced; extended work invokes ordinary sleep/sustenance consequences."
+  ]
+}
