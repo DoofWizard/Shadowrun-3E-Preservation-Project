@@ -1,0 +1,104 @@
+id: catalog.contacts.sr3-samples
+record_type: entity_catalog
+name: "SR3 Sample Contacts"
+domain: contacts
+status: ingested
+source: source.sr3-core
+pages: "257-259"
+
+entries:
+  - id: example.contact.bartender
+    name: "Bartender"
+    source_page: 257
+    uses:
+      - information
+      - additional_contacts
+      - private_meeting_space
+    typical_meeting_places:
+      - bar
+      - nightclub
+    similar_contacts:
+      - bar_owner
+      - bouncer
+      - waitress
+      - stripper
+    notes:
+      - "Street-information contact with a reputation for discretion and broad neighborhood connections."
+
+  - id: example.contact.fixer
+    name: "Fixer"
+    source_page: 257
+    uses:
+      - jobs
+      - reputation
+      - information
+      - gear
+      - additional_contacts
+      - fencing
+    typical_meeting_places:
+      - bars
+      - clubs
+      - coffee_shops
+      - crowded_public_places
+    similar_contacts:
+      - fence
+      - loan_shark
+      - mr_johnson
+    notes:
+      - "Connection-driven intermediary who links runners with jobs, gear, specialists, information and buyers."
+
+  - id: example.contact.mr-johnson
+    name: "Mr. Johnson"
+    source_page: 258
+    uses:
+      - shadowruns
+      - job_information
+      - additional_contacts
+    similar_contacts:
+      - company_man
+      - fixer
+      - government_agent
+    notes:
+      - "Employer/intermediary archetype connecting respectable institutions to deniable shadow work."
+
+  - id: example.contact.talismonger
+    name: "Talismonger"
+    source_page: 259
+    uses:
+      - magical_items
+      - magical_information
+      - additional_contacts
+    typical_meeting_places:
+      - talismonger_shop
+      - medicine_lodge
+      - occult_library
+      - coffee_shop
+    similar_contacts:
+      - street_mage
+      - street_shaman
+      - corporate_mage
+    notes:
+      - "Magical-goods and magical-information specialist with access to other Awakened contacts."
+
+  - id: example.contact.technician
+    name: "Technician"
+    source_page: 259
+    uses:
+      - repair_services
+      - electronics
+      - high_tech_gear
+      - technical_information
+    typical_meeting_places:
+      - electronics_shop
+      - workshop
+      - electronics_retailer
+      - coffee_shop
+      - bar
+    similar_contacts:
+      - deckmeister
+      - mechanic
+    notes:
+      - "Hardware repair/modification specialist who also tracks new technical developments."
+
+notes:
+  - "These are example NPC/contact archetypes, not replacements for the generic contact entity or contact-level rules."
