@@ -1,0 +1,29 @@
+id: rule.matrix.advanced-security
+record_type: rule
+name: "Advanced Matrix Security"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "110-116", basis: extends}
+
+resolution:
+  summary: "Matrix expands host/grid security with per-icon tallies, shutdown behavior, optional subsystem variation, random security-sheaf generation, constructs, additional security features and security-decker guidance."
+  features:
+    - "Each intruding icon normally maintains its own security tally."
+    - "IC constructs and passive-alert subsystem changes can affect multiple users."
+    - "Host shutdown follows a timed warning/countdown procedure and dumps remaining users."
+    - "Subsystem ratings may optionally vary by access path, data set or system conditions."
+    - "Security sheaves can be generated randomly, including IC type/rating/options and alert transitions."
+    - "IC constructs and additional security features can be added at trigger steps."
+    - "Grid security uses later alert thresholds, security-decker response, no ordinary shutdown trigger, and defined tally carryover."
+
+links:
+  uses:
+    - rule.matrix.security-sheaf
+    - rule.matrix.security-tally
+    - rule.matrix.alert-status
+  interacts_with:
+    - subsystem.matrix.ic
+
+sources:
+  - {source: source.matrix, pages: "110-116", relation: extends, note: "Advanced Security and random security generation"}
+notes: []

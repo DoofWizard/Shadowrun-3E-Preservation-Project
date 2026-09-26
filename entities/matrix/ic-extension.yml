@@ -1,0 +1,24 @@
+id: catalog.matrix.ic-extension
+record_type: entity_catalog
+name: "Matrix Intrusion Countermeasures Extension"
+domain: matrix
+status: ingested
+source: source.matrix
+pages: "104-110"
+
+entries:
+  - {id: entity.matrix.ic.data-bomb, name: "Data Bomb White IC", source_pages: "103-104"}
+  - {id: entity.matrix.ic.pavlov, name: "Pavlov White IC", source_page: 104}
+  - {id: entity.matrix.ic.scout, name: "Scout White IC", source_pages: "104-105"}
+  - {id: entity.matrix.ic.trace, name: "Trace IC", source_pages: "105-108"}
+  - {id: entity.matrix.ic.cerebropathic, name: "Cerebropathic Black IC", source_pages: "108-109"}
+  - {id: entity.matrix.ic.psychotropic, name: "Psychotropic Black IC", source_pages: "109-110"}
+
+advanced_rules:
+  - "Advanced uses for existing SR3 IC"
+  - "Programming IC"
+  - "Crashing IC"
+
+notes:
+  - "All six entries extend the SR3 IC subsystem; no blanket replacement of existing IC types is inferred."
+  - "Trace IC includes hunt/location phases and interacts with datatrail, jackpoint and relocation mechanics."
