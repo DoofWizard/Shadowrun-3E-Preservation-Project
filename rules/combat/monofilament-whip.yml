@@ -1,0 +1,35 @@
+id: rule.combat.monofilament-whip
+record_type: rule
+name: "Monofilament Whip Mishap"
+domain: combat
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 275
+  basis: defines
+
+resolution:
+  summary: "The SR3 monofilament whip has a special self-hit check when an attack fails in either of two specified ways."
+  trigger:
+    - "The attack misses solely because Full Defense Combat Pool successes exceed the attacker's successes."
+    - "The attacker rolls more 1s than successes."
+  self_hit_check:
+    test: "Whip Test"
+    target_number: 6
+    failure: "The whip strikes the attacker."
+  self_hit_resistance:
+    damage_code: "10S"
+    dice: "Body plus Combat Pool"
+  armor_and_barriers:
+    impact_armor: "Halve Impact Armor, round down."
+    barrier_rating: "Double Barrier Rating against the monofilament whip."
+
+links:
+  uses:
+    - rule.combat.full-defense
+    - rule.combat.damage-resistance
+
+sources:
+  - {source: source.sr3-core, page: 275, relation: defines, note: "Monofilament Whip"}
