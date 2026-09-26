@@ -1,0 +1,45 @@
+id: subsystem.matrix.autonomous-programs
+record_type: subsystem
+name: "Autonomous Matrix Programs"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "147-159", basis: defines}
+
+components:
+  - "semi-autonomous knowbots"
+  - "true artificial intelligences"
+
+semi_autonomous_knowbots:
+  summary: "SKs are self-directed Matrix programs modeled from frames/agents but with substantially greater autonomy."
+  state:
+    - "frame core / MPCP"
+    - "persona ratings"
+    - "Pilot"
+    - "Reaction and Initiative"
+    - "utility payload"
+    - "Utility Pool"
+    - "Hacking Pool"
+    - "native host"
+  rules:
+    - "SK persona points derive from MPCP and are allocated among Bod, Evasion, Masking and Sensor."
+    - "Frame Points purchase Pilot, Initiative, utility payload and Utility Pool."
+    - "SKs receive Hacking Pool equal to MPCP."
+    - "Utility Pool dynamically supplies operational utilities for immediate use."
+    - "SKs have native hosts where they can recover from damage and reduced persona ratings."
+    - "Tracing an SK follows its datatrail to its native host rather than to a physical jackpoint."
+
+artificial_intelligences:
+  summary: "True AIs are self-aware autonomous Matrix entities that operate independently of ordinary host/persona constraints."
+  rules:
+    - "AIs are treated as exceptionally powerful Matrix actors rather than ordinary player-character programs."
+    - "They can perform Matrix operations using broad utility access and very high Matrix capabilities."
+    - "They may establish native-host environments on sufficiently powerful systems."
+  setting_profiles:
+    - "Megaera"
+    - "Deus"
+    - "Mirage"
+
+sources:
+  - {source: source.matrix, pages: "147-159", relation: defines, note: "Autonomous Programs"}
+notes:
+  - "The named AIs are setting entities as well as mechanical examples; this record preserves the chapter framework without reducing them to ordinary NPC stat blocks."
