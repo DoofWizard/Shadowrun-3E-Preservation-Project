@@ -1,0 +1,33 @@
+id: rule.matrix.cyberterminal-component-management
+record_type: rule
+name: "Cyberterminal Component Management"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "62-67", basis: extends}
+
+resolution:
+  partial_construction:
+    - "Software or pre-cooked component code may be purchased instead of created from scratch."
+  hardwiring:
+    - "Hardwiring reduces parts cost but increases installation time and removes modularity."
+    - "A hardwired component may be upgraded once, by one rating point."
+    - "The MPCP itself cannot be hardwired to itself or upgraded by this method."
+  salvaging:
+    - "Modular and hardwired components may be removed for reuse, resale or parts under the source's removal/installation rules."
+  mismatched_components:
+    - "Components tied to a particular MPCP rating become harder to install and may fail when used with a different MPCP."
+  implanted_terminals:
+    - "Cranial cyberterminals use specialized implanted parts and follow cyberterminal rules subject to cyberware installation requirements."
+    - "Cyberlimb cyberterminals use normal terminal construction rules with cyberlimb-specific packaging limits."
+  custom_design:
+    - "Custom cyberterminal pricing separates hardware, software and miscellaneous component costs using MPCP-based multipliers."
+
+links:
+  uses:
+    - procedure.matrix.cyberterminal-construction
+  interacts_with:
+    - rule.matrix.cyberdeck-ratings
+
+sources:
+  - {source: source.matrix, pages: "62-67", relation: extends, note: "Cyberterminal component management and custom design"}
+notes: []
