@@ -1,0 +1,28 @@
+id: rule.communications.radio-baseline
+record_type: rule
+name: "Radio Communications Baseline"
+domain: communications
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 288
+  basis: defines
+
+resolution:
+  summary: "SR3 divides radio communications gear into transmitters, receivers and transceivers and uses Device Rating to determine range/Flux behavior."
+  categories:
+    transmitter: "Transmits but does not receive."
+    receiver: "Receives/monitors but does not transmit."
+    transceiver: "Both transmits and receives."
+  simplex:
+    rule: "Standard radio communication uses a one-frequency simplex system; a transceiver cannot receive while it is transmitting on that frequency."
+  rating:
+    effect: "Device Rating determines communications range and Flux Rating."
+  frequency_programming:
+    standard: "Complex Action"
+    cybernetic_or_jacked: "Simple Action"
+
+sources:
+  - {source: source.sr3-core, page: 288, relation: defines, note: "Communications"}
