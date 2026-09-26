@@ -1,0 +1,59 @@
+{
+  "id": "rule.combat.camouflage",
+  "record_type": "rule",
+  "name": "Camouflage and Anti-Sensor Camouflage",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 97,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "concealing camouflage",
+      "anti-sensor night camouflage"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Appropriate camouflage improves concealment; mismatched camouflage can make detection easier; anti-sensor camouflage alters Signature at night.",
+    "inputs": [
+      "camouflage",
+      "environment",
+      "movement/hiding"
+    ],
+    "outputs": [
+      "Perception/ranged/Sensor modifiers"
+    ],
+    "steps": [
+      "Actively hiding in matching camouflage: Stealth (Hiding) Open Test +4 to result, used as vision-Perception TN.",
+      "Moving/not actively hiding in matching camouflage: +1 vision-based Perception TN.",
+      "Mismatched camouflage: -2 vision-based Perception TN.",
+      "Matching camouflage against ranged attacks: +2 attack TN; standard camouflage has no sensor effect.",
+      "Anti-sensor night camouflage: +1 Signature at night; no daytime effect."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.ranged-attack"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "modifiers/cyberware/signature.yml"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "97-98",
+      "relation": "extends",
+      "note": "Camouflage"
+    }
+  ],
+  "notes": [
+    "Source gives desert, snow, urban and woodland patterns."
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "id": "rule.combat.weapon-holding",
+  "record_type": "rule",
+  "name": "Weapon Holding and Heavy Weapons",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 98,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "weapon-size/metatype mismatch",
+      "one/two-handed use",
+      "heavy weapons"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Grip, metatype and weapon scale modify attacks and Power.",
+    "inputs": [
+      "metatype",
+      "weapon",
+      "hands",
+      "Body",
+      "Strength"
+    ],
+    "outputs": [
+      "attack/Power/recoil/knockdown modifiers"
+    ],
+    "steps": []
+  },
+  "modifiers": [
+    "Dwarf with extra-large melee: +4 TN.",
+    "Dwarf/troll using non-racially modified weapon: +2; nondwarf with dwarf-modified +2; nontroll with troll-modified +2; dwarf with troll-modified +4; troll with dwarf-modified +4.",
+    "Two-handed melee used one-handed: troll +1 TN/-1 Power; others +2/-2.",
+    "One-handed melee used two-handed if grip permits: +1 Power.",
+    "Rifle-sized+ firearm one-handed: +2 TN; trolls exempt.",
+    "Heavy weapon without gyro: only Body 8+ and Strength 8+; firing causes Light Stun at half weapon Power and Knockdown Test at half Power; successes equal recoil needed to avoid knockback."
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.ranged-attack",
+      "procedure.combat.melee-attack"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.combat.knockdown"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "98-99",
+      "relation": "extends",
+      "note": "Holding Weapons"
+    }
+  ],
+  "notes": []
+}

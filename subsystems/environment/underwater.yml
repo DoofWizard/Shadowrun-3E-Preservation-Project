@@ -1,0 +1,134 @@
+{
+  "id": "subsystem.environment.underwater",
+  "record_type": "subsystem",
+  "name": "Underwater Activity and Combat",
+  "domain": "environment",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 107,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "depth",
+      "dive type",
+      "safe diving time",
+      "pressure",
+      "buoyancy",
+      "vision",
+      "hearing"
+    ]
+  },
+  "participants": [
+    "divers",
+    "combatants",
+    "spellcasters",
+    "spirits"
+  ],
+  "components": [
+    "shallow diving",
+    "scuba",
+    "deep-water diving",
+    "diving time",
+    "hazards",
+    "underwater perception",
+    "water combat",
+    "underwater magic"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "rules": {
+    "dive_types": [
+      "Shallow <=10m; OXSYS allows indefinite time without decompression sickness.",
+      "Scuba systems support dives to 300m; dives >80m are deep-water for these rules.",
+      "Deep-water >80m uses specialized JIM/LBA systems."
+    ],
+    "safe_diving_time": [
+      [
+        "0-10m",
+        "TN3",
+        "240 min +40/success",
+        "480 max"
+      ],
+      [
+        "11-30m",
+        "TN5",
+        "20 min +20/success",
+        "150 max"
+      ],
+      [
+        "31-50m",
+        "TN6",
+        "5 min +15/success",
+        "90 max"
+      ],
+      [
+        "51-150m",
+        "TN8",
+        "10 min/success",
+        "60 max"
+      ],
+      [
+        "151-300m",
+        "TN10",
+        "5 min/success",
+        "30 max"
+      ]
+    ],
+    "movement": [
+      "Unaided walk 1m/Combat Turn; run one-fifth normal. Fins give half normal walking/running. Athletics may increase.",
+      "Without buoyancy compensator reduce Running multiplier by 0.5 and subtract 2 Combat Pool dice."
+    ],
+    "pressure": [
+      "Ascend/descend >1m/Combat Turn: Body (4) for ear squeeze; failure +4 all TNs for 1 min and +4 hearing Perception for 24h.",
+      "Air embolism on all-1s Body result while ascending too quickly: immediate 8D, then 8D/hour after surfacing until decompression; surviving Deadly requires Body (6) or permanent -1 Intelligence."
+    ],
+    "hazards": [
+      "Oxygen toxicity: 1 Physical/min until above safe depth (1D6+4m), plus +4 TN symptoms.",
+      "Decompression sickness: after surfacing, 1 Physical/hour until chamber; +4 all TNs. Prevention stop at 3m for 25% of total underwater time.",
+      "Nitrogen narcosis: Body (6) each minute; failure +2 all TNs; Willpower (6) to ascend 16m+, recover in (10-Body) Combat Turns.",
+      "Helium chills: Body (8) each minute; failure 1 Physical and cumulative +1 all tests.",
+      "HPNS at >200m/excessive exposure: Body (8) every 5 min; failures cumulative +1 all subsequent tests."
+    ],
+    "perception": [
+      "Vision modifiers by depth/vision type: subsurface normal +1/thermo +2; shallow mostly +1/+2 with thermo +4; deep normal +4, low-light/eyelight +2, thermo +5, ultrasound +1; murky mostly +4 except thermo/ultrasound +2.",
+      "Detect sounds underwater at -1 Perception TN, but locating direction by sound alone is impossible without sonar."
+    ],
+    "combat": [
+      "Surface-to-surface waves add roughly +2 to +6 combat TN.",
+      "Surface-to-underwater projectile: each meter water reduces Power by 1; after Power reaches 2, each additional 2m reduces Damage Level one step; +2 refraction TN from air to submerged target.",
+      "Underwater melee: use Underwater Combat or normal defaulting; without swim mask/cybereyes +2 melee TN plus vision mods; Strength -1 for damage except choke/crushing; marine critters/water spirits exempt.",
+      "Underwater surface-designed explosions increase Damage Level one; anti-vehicle in vehicle combat.",
+      "Scuba tank Body 4/Armor 4; Power 6+ Serious hit can rupture; explosion 8D, armor applies, Power -1/m, no Combat Pool."
+    ],
+    "magic": [
+      "Most combat/detection/health spells work subject to LOS. Physical illusions are refractively distorted; mana illusions are not. Fire/blast elemental manipulation may fail; water extinguishes flame, disrupts earth/ice, lightning becomes area-effect radius = Force and area lightning doubles radius.",
+      "Underwater conjuring usually requires underwater habitat. Water elementals/spirits function; air/fire elementals cannot materialize underwater. Materialized water elemental underwater: Perception TN 8 + Force; underwater water spirits: TN 11 + Force. Sylphs/salamanders cannot materialize underwater."
+    ]
+  },
+  "links": {
+    "rules": [],
+    "procedures": [],
+    "entities": [
+      "entity.skill.underwater-combat"
+    ],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "rule.combat.damage-resistance"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "107-112",
+      "relation": "extends",
+      "note": "Underwater Activity and Combat"
+    }
+  ],
+  "notes": [
+    "Safe-diving-time rules do not apply with LBA, JIM suit, submarine or pressurized facility as specified."
+  ]
+}

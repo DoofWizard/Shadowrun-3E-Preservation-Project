@@ -1,33 +1,46 @@
-id: modifier.combat.partial-cover
-record_type: modifier
-name: "Partial Cover"
-domain: combat
-status: ingested
-
-effective:
-  status: current
-  source: source.sr3-core
-  page: 111
-  basis: defines
-
-trigger:
-  conditions:
-    - "A ranged target is obscured by intervening terrain or objects."
-
-effect:
-  target:
-    - procedure.combat.ranged-attack
-  operation: "increase attack target number"
-  value: "+4"
-
-stacking:
-  mode: "Use visibility modifiers instead when concealment is due to darkness/visibility rather than physical cover."
-  exceptions: []
-
-sources:
-  - source: source.sr3-core
-    page: 111
-    relation: adds_modifier
-    note: "Partial Cover"
-
-notes: []
+{
+  "id": "modifier.combat.partial-cover",
+  "record_type": "modifier",
+  "name": "Partial Cover",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 97,
+    "basis": "extends"
+  },
+  "trigger": {
+    "conditions": [
+      "Ranged target is physically obscured by cover."
+    ]
+  },
+  "effect": {
+    "target": [
+      "procedure.combat.ranged-attack"
+    ],
+    "operation": "apply cover modifier and reciprocal attack penalty",
+    "value": "Visible 76-100%: +0/none; 51-75%: +2/+1; 26-50%: +4/+2; 1-25%: +6/+3; 0%: +8 Blind Fire/no direct attack, indirect only"
+  },
+  "stacking": {
+    "mode": "Physical cover uses this table; pure lighting/visibility uses visibility rules.",
+    "exceptions": []
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "page": 111,
+      "relation": "defines",
+      "note": "Partial Cover"
+    },
+    {
+      "source": "source.cc",
+      "pages": "97-98",
+      "relation": "extends",
+      "note": "Advanced Cover Modifiers"
+    }
+  ],
+  "notes": [
+    "When attacking from cover, attacker penalty is roughly half the defensive cover modifier."
+  ]
+}

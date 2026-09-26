@@ -1,0 +1,46 @@
+{
+  "id": "option.combat.athletics-dodging",
+  "record_type": "option",
+  "name": "Athletics and Dodging",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 97,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "procedure.combat.ranged-attack"
+  ],
+  "selection": {
+    "timing": "Complex Action before later Dodge Tests",
+    "prerequisites": [
+      "entity.skill.athletics"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Make Athletics (4); each success creates one extra die usable only for Dodge Tests until the beginning of the next Combat Phase. Each die is single-use once spent."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.ranged-attack"
+    ],
+    "requires": [
+      "entity.skill.athletics"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 97,
+      "relation": "adds_option",
+      "note": "Athletics and Dodging (Optional)"
+    }
+  ],
+  "notes": [
+    "Explicitly optional."
+  ]
+}

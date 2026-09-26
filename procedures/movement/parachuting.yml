@@ -1,0 +1,129 @@
+{
+  "id": "procedure.movement.parachuting",
+  "record_type": "procedure",
+  "name": "Parachuting",
+  "domain": "movement",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 102,
+    "basis": "extends"
+  },
+  "purpose": "Resolve parachute deployment, scatter and landing.",
+  "prerequisites": [
+    "entity.skill.parachuting",
+    "parachute"
+  ],
+  "inputs": [
+    "jump type",
+    "opening altitude",
+    "weather/terrain"
+  ],
+  "stages": [
+    {
+      "id": "type",
+      "name": "Jump Type",
+      "test_or_action": "Standard safe opening 500m; low-altitude 200m; HALO 100m.",
+      "outputs": [
+        "parameters"
+      ]
+    },
+    {
+      "id": "test",
+      "name": "Parachuting Test",
+      "test_or_action": "TN = 10 - (opening altitude/100), then modifiers. One success deploys; extra successes reduce scatter or resist landing damage.",
+      "outputs": [
+        "successes"
+      ]
+    },
+    {
+      "id": "scatter",
+      "name": "Scatter",
+      "test_or_action": "Base landing offset = initiation altitude/2, divided by extra accuracy successes.",
+      "outputs": [
+        "offset"
+      ]
+    },
+    {
+      "id": "landing",
+      "name": "Landing",
+      "test_or_action": "Resist 4M with Body only; armor no effect; allocated Parachuting successes count as automatic successes.",
+      "outputs": [
+        "damage"
+      ]
+    },
+    {
+      "id": "failure",
+      "name": "Failure",
+      "test_or_action": "Failed deployment permits reserve-chute second attempt; estimate fall ~40m/Initiative Pass or ~160m/Combat Turn before it.",
+      "outputs": [
+        "reserve attempt"
+      ]
+    }
+  ],
+  "modifiers": [
+    [
+      "Standard",
+      "+0"
+    ],
+    [
+      "Low-altitude",
+      "+2"
+    ],
+    [
+      "HALO",
+      "+4"
+    ],
+    [
+      "Bad weather",
+      "+2"
+    ],
+    [
+      "Terrible weather",
+      "+4"
+    ],
+    [
+      "Restricted terrain",
+      "+2"
+    ],
+    [
+      "Tight terrain",
+      "+4"
+    ],
+    [
+      "Combat landing",
+      "+2"
+    ],
+    [
+      "Below minimum",
+      "+1 per 250m"
+    ],
+    [
+      "Military jump",
+      "-2"
+    ]
+  ],
+  "outcomes": [
+    "landing",
+    "scatter",
+    "injury"
+  ],
+  "links": {
+    "uses": [
+      "entity.skill.parachuting"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "102-103",
+      "relation": "extends",
+      "note": "Parachuting"
+    }
+  ],
+  "notes": []
+}

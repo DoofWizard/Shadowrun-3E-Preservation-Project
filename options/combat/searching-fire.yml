@@ -1,0 +1,45 @@
+{
+  "id": "option.combat.searching-fire",
+  "record_type": "option",
+  "name": "Searching Fire",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 103,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "procedure.combat.ranged-attack"
+  ],
+  "selection": {
+    "timing": "declare before attack",
+    "prerequisites": [
+      "full-auto weapon",
+      "at least 6 rounds"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Instead of increasing Damage Level, every 3 rounds fired adds +1 attack die. Standard combat modifiers and Combat Pool apply."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.ranged-attack"
+    ],
+    "requires": [],
+    "interacts_with": [
+      "rule.combat.maximum-rates-of-fire"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 103,
+      "relation": "adds_option",
+      "note": "Searching Fire"
+    }
+  ],
+  "notes": []
+}

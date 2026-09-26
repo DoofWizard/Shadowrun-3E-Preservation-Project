@@ -1,42 +1,58 @@
-id: rule.combat.maximum-rates-of-fire
-record_type: rule
-name: "Maximum Rates of Fire"
-domain: combat
-status: ingested
-
-effective:
-  status: current
-  source: source.cc
-  page: 101
-  basis: clarifies
-
-scope:
-  applies_to:
-    - "firearms used within a Combat Phase/Combat Turn"
-
-resolution:
-  summary: "Cannon Companion clarifies maximum rounds fired by weapon/mode: normal burst-fire fires three-round bursts, normal full-auto can fire up to ten rounds in one Complex Action, minigun-class weapons up to fifteen, and qualifying super-machine-gun weapons up to eighteen, subject to ammunition and mode restrictions."
-  inputs:
-    - "weapon class"
-    - "firing mode"
-    - "available ammunition"
-  outputs:
-    - "maximum rounds/bursts per Combat Phase"
-
-links:
-  uses:
-    - subsystem.combat.firearm-firing-modes
-  affects:
-    - rule.combat.burst-fire-effects
-    - rule.combat.full-auto-effects
-  modified_by: []
-  interacts_with: []
-
-sources:
-  - source: source.cc
-    page: 101
-    relation: clarifies
-    note: "Maximum Rates of Fire"
-
-notes:
-  - "This clarifies/extents SR3 firing-rate rules rather than replacing the core firing-mode subsystem."
+{
+  "id": "rule.combat.maximum-rates-of-fire",
+  "record_type": "rule",
+  "name": "Maximum Rates of Fire",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 101,
+    "basis": "clarifies"
+  },
+  "scope": {
+    "applies_to": [
+      "firearms in a Combat Phase"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Maximum rounds depend on firing system.",
+    "inputs": [
+      "weapon class",
+      "mode",
+      "ammo"
+    ],
+    "outputs": [
+      "max rounds/bursts"
+    ],
+    "steps": [
+      "Normal BF: 3-round bursts, normally up to two BF attacks in the phase.",
+      "Normal FA: up to 10 rounds in one Complex Action, divisible into bursts; normally one FA attack in phase.",
+      "Minigun: up to 15 rounds in one FA attack.",
+      "High-velocity/super-machine-gun: up to 18 rounds; six-round BF and 6-18 round FA bursts."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.combat.firearm-firing-modes"
+    ],
+    "affects": [
+      "rule.combat.burst-fire-effects",
+      "rule.combat.full-auto-effects"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 101,
+      "relation": "clarifies",
+      "note": "Maximum Rates of Fire"
+    }
+  ],
+  "notes": [
+    "No separate whole-Combat-Turn round cap beyond action/phase limits."
+  ]
+}

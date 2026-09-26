@@ -1,0 +1,48 @@
+{
+  "id": "option.combat.signature-weapon",
+  "record_type": "option",
+  "name": "Signature Weapon",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 103,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "weapon skill specialization"
+  ],
+  "selection": {
+    "timing": "earned during play at GM discretion",
+    "prerequisites": [
+      "weapon specialization",
+      "personalized grip"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "A unique favored weapon supports a Signature Weapon concentration beyond ordinary specialization.",
+    "Start at specialization +1. Good Karma cost multiplier: new rating <= Attribute x .25; <= 2x Attribute x .5; >2x Attribute x .75.",
+    "Ordinary specialization can no longer increase, though base skill may.",
+    "If weapon is lost/destroyed, halve the difference between old specialization and Signature Weapon concentration, round down; remaining points may raise ordinary specialization or seed a replacement concentration."
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": [
+      "rule.skills.specialization"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "103-104",
+      "relation": "adds_option",
+      "note": "Signature Weapon"
+    }
+  ],
+  "notes": [
+    "Only one Signature Weapon per character; each is unique."
+  ]
+}

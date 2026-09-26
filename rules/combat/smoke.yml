@@ -1,0 +1,80 @@
+{
+  "id": "rule.combat.smoke",
+  "record_type": "rule",
+  "name": "Smoke Rules",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 106,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "smoke devices"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Smoke area/duration depend on source and wind.",
+    "inputs": [
+      "source",
+      "wind"
+    ],
+    "outputs": [
+      "area",
+      "duration",
+      "visibility"
+    ],
+    "steps": [
+      "No wind: smoke lasts base duration.",
+      "Wind speed = D6-1; result is Combat Turns for center/bulk to drift 1m; 0 means no wind.",
+      "Wind-adjusted duration = base duration / (6 - wind-speed result).",
+      "GM applies Light Smoke when seeing through thinning smoke or Heavy Smoke through bulk."
+    ]
+  },
+  "table": [
+    [
+      "Grenade",
+      "10m radius",
+      "2 min",
+      "vision"
+    ],
+    [
+      "Mortar",
+      "15m radius",
+      "4 min",
+      "vision"
+    ],
+    [
+      "Vehicle",
+      "10m radius or 10x5x4m ribbon",
+      "4 min",
+      "vision"
+    ],
+    [
+      "Thermal",
+      "special",
+      "special",
+      "thermographic"
+    ]
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "modifiers/combat/visibility.yml"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "106-107",
+      "relation": "extends",
+      "note": "Smoke Rules"
+    }
+  ],
+  "notes": []
+}

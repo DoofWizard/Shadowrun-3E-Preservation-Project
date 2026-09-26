@@ -1,0 +1,76 @@
+{
+  "id": "procedure.combat.suppressive-fire",
+  "record_type": "procedure",
+  "name": "Suppressive Fire",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 106,
+    "basis": "extends"
+  },
+  "purpose": "Use full-auto to deny/pin an area.",
+  "prerequisites": [
+    "full-auto weapon"
+  ],
+  "inputs": [
+    "rounds",
+    "area"
+  ],
+  "stages": [
+    {
+      "id": "declare",
+      "name": "Declare",
+      "test_or_action": "Complex Action; rounds up to rate cap. Max area meters = rounds fired; each round covers 1m, and rounds can concentrate.",
+      "outputs": [
+        "field"
+      ]
+    },
+    {
+      "id": "duration",
+      "name": "Duration",
+      "test_or_action": "Lasts until beginning of next Combat Phase or end of next Initiative Pass, whichever first; ends if shooter prone/unconscious/killed.",
+      "outputs": [
+        "active suppression"
+      ]
+    },
+    {
+      "id": "dodge",
+      "name": "Dodge",
+      "test_or_action": "Anyone in/entering area makes Dodge TN4 + wounds only; required successes equal bullets concentrated in/crossed area.",
+      "outputs": [
+        "avoidance"
+      ]
+    },
+    {
+      "id": "attack",
+      "name": "Failed Dodge",
+      "test_or_action": "Shooter makes normal ranged attack with wounds, cover and +2 suppressive modifier, no Combat Pool. On hit use base Damage Code, stage by successes only; no FA Power/Damage boost. Defender gets Damage Resistance only.",
+      "outputs": [
+        "damage"
+      ]
+    }
+  ],
+  "outcomes": [
+    "area denied",
+    "hit"
+  ],
+  "links": {
+    "uses": [
+      "rule.combat.maximum-rates-of-fire"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "106-107",
+      "relation": "extends",
+      "note": "Suppressive Fire"
+    }
+  ],
+  "notes": []
+}

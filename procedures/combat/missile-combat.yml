@@ -1,0 +1,96 @@
+{
+  "id": "procedure.combat.missile-combat",
+  "record_type": "procedure",
+  "name": "Missile Combat",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 101,
+    "basis": "extends"
+  },
+  "purpose": "Resolve manual and sensor-enhanced missile attacks.",
+  "prerequisites": [
+    "missile launcher",
+    "Launch Weapons or Gunnery"
+  ],
+  "inputs": [
+    "missile Intelligence",
+    "target Signature",
+    "range",
+    "sensor lock",
+    "ECM"
+  ],
+  "stages": [
+    {
+      "id": "manual",
+      "name": "Manual Fire",
+      "test_or_action": "Roll Launch Weapons + Combat Pool + missile Intelligence; TN by range or target vehicle Signature as applicable. Vehicle/drone launch may use Gunnery. Scatter as grenades, reduced 1m/success plus 1m/Intelligence.",
+      "outputs": [
+        "attack"
+      ]
+    },
+    {
+      "id": "lock",
+      "name": "Sensor Lock",
+      "test_or_action": "Sensor Test detects/locks target; one success establishes lock. Choose continuous lock or fire-and-forget.",
+      "outputs": [
+        "lock"
+      ]
+    },
+    {
+      "id": "continuous",
+      "name": "Continuous Lock",
+      "test_or_action": "Add half Sensor rating to missile Intelligence; maintain contact, cannot attack another target, other actions +2 TN.",
+      "outputs": [
+        "enhanced intelligence"
+      ]
+    },
+    {
+      "id": "faf",
+      "name": "Fire-and-Forget",
+      "test_or_action": "Lock required only at launch; no Sensor-dice Intelligence bonus.",
+      "outputs": [
+        "autonomous flight"
+      ]
+    },
+    {
+      "id": "result",
+      "name": "Attack Result",
+      "test_or_action": "Launch Weapons/Gunnery + missile Intelligence with sensor/ECM modifiers; successes reduce scatter 1m each plus 1m per Intelligence point.",
+      "outputs": [
+        "hit/scatter"
+      ]
+    },
+    {
+      "id": "time",
+      "name": "Flight Time",
+      "test_or_action": "Assume 1,000m per Combat Turn; missile arrives at end of arrival turn.",
+      "outputs": [
+        "arrival"
+      ]
+    }
+  ],
+  "outcomes": [
+    "hit",
+    "scatter"
+  ],
+  "links": {
+    "uses": [],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "101-102",
+      "relation": "extends",
+      "note": "Missile Combat"
+    }
+  ],
+  "notes": [
+    "Rockets use ordinary ranged/vehicle combat."
+  ]
+}

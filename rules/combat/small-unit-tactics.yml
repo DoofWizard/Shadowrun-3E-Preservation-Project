@@ -1,46 +1,58 @@
-id: rule.combat.small-unit-tactics
-record_type: rule
-name: "Small Unit Tactics Team Initiative"
-domain: combat
-status: ingested
-
-effective:
-  status: current
-  source: source.cc
-  page: 105
-  basis: extends
-
-scope:
-  applies_to:
-    - "teams using Small Unit Tactics"
-
-resolution:
-  summary: "A character can analyze the tactical situation and communicate orders to grant Initiative bonuses to eligible teammates. The leader makes a Small Unit Tactics Test; successes determine the Initiative bonus, with limits on how many teammates benefit and additional interaction with BattleTac systems."
-  inputs:
-    - "Small Unit Tactics rating"
-    - "team members"
-    - "tactical conditions"
-    - "BattleTac support where present"
-  outputs:
-    - "team Initiative bonus"
-
-links:
-  uses:
-    - entity.skill.small-unit-tactics
-    - rule.initiative.initiative
-  affects: []
-  modified_by: []
-  interacts_with: []
-
-sources:
-  - source: source.cc
-    page: 105
-    relation: extends
-    note: "Small Unit Tactics Skill"
-  - source: source.cc
-    page: 106
-    relation: extends
-    note: "Small Unit Tactics and Combat Pool / Smoke / Suppressive Fire"
-
-notes:
-  - "The skill first appears in M&M; Cannon Companion expands its tactical combat use."
+{
+  "id": "rule.combat.small-unit-tactics",
+  "record_type": "rule",
+  "name": "Small Unit Tactics Team Initiative",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 105,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "teams using Small Unit Tactics"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Communicate tactical analysis/orders to improve Initiative or optionally Combat Pool.",
+    "inputs": [
+      "skill",
+      "communication",
+      "BattleTac"
+    ],
+    "outputs": [
+      "team bonus"
+    ],
+    "steps": [
+      "Normally use on last action of Combat Turn; communication is Complex Action, except self-only. BattleTac master can make communication a Simple Action.",
+      "Base TN: direct/close LOS 4; radio 6; LOS hand-signals/no audio 8. BattleTac cyberlink -2, receiver -1; apply wound and recipient Perception modifiers.",
+      "Maximum teammates benefiting excludes user and equals skill rating.",
+      "Every 2 successes grants +1 Initiative next Combat Turn, capped by recipient Reaction. Conflicting orders use highest bonus -1.",
+      "Prepared ambush can add 1 die per 2 successes to Reaction/Surprise Tests.",
+      "Optional: replace Initiative bonus with extra Combat Pool at 1 die per +1 Initiative."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entity.skill.small-unit-tactics",
+      "rule.initiative.initiative"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "105-106",
+      "relation": "extends",
+      "note": "Small Unit Tactics"
+    }
+  ],
+  "notes": [
+    "Skill first appears in M&M; CC expands combat use."
+  ]
+}

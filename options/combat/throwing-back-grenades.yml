@@ -1,0 +1,45 @@
+{
+  "id": "option.combat.throwing-back-grenades",
+  "record_type": "option",
+  "name": "Throwing Back Grenades",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 107,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "procedure.combat.grenade-attack"
+  ],
+  "selection": {
+    "timing": "before detonation",
+    "prerequisites": [
+      "available action"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Retrieve and rethrow grenade; cannot relaunch through grenade launcher.",
+    "Mini-grenade pickup Quickness (8), standard grenade Quickness (6), at least 1 success. Failure means effective Range 0 at detonation."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.grenade-attack"
+    ],
+    "requires": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 107,
+      "relation": "adds_option",
+      "note": "Throwing Back Grenades"
+    }
+  ],
+  "notes": [
+    "Air-timed mini-grenades detonate in the same Combat Phase launched."
+  ]
+}

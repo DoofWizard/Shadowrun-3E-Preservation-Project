@@ -1,0 +1,81 @@
+{
+  "id": "procedure.combat.indirect-fire",
+  "record_type": "procedure",
+  "name": "Indirect Fire",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 99,
+    "basis": "extends"
+  },
+  "purpose": "Attack without direct LOS using a spotter and target-acquisition data.",
+  "prerequisites": [
+    "spotter",
+    "guidable weapon or compatible targeting-data system"
+  ],
+  "inputs": [
+    "spotter",
+    "target",
+    "weapon",
+    "BattleTac/designator/sensors"
+  ],
+  "stages": [
+    {
+      "id": "guidance",
+      "name": "Guidance Method",
+      "test_or_action": "Use information-guided BattleTac/remote data or target-designator reflected-energy guidance.",
+      "outputs": [
+        "guidance"
+      ]
+    },
+    {
+      "id": "spot",
+      "name": "Spotting Test",
+      "test_or_action": "Drone/vehicle: Sensor Test vs Signature. Character: Launch Weapons (Spotter), TN based on grenade-launcher/designator range plus ranged modifiers. Combat Pool may be used but does not refresh while prolonged spotting continues.",
+      "outputs": [
+        "lock",
+        "successes"
+      ]
+    },
+    {
+      "id": "maintain",
+      "name": "Maintain Lock",
+      "test_or_action": "Simple Action each spotter Initiative Pass; spotter has +2 TN on other Success Tests. Lost contact causes automatic miss and +2D6 scatter.",
+      "outputs": [
+        "lock maintained"
+      ]
+    },
+    {
+      "id": "attack",
+      "name": "Attack",
+      "test_or_action": "Resolve normal weapon attack by range; smartlink-2 may give -1. Spotting successes can add dice; apply sensor/ECM/ECCM modifiers. Successes reduce scatter and excess successes stage damage.",
+      "outputs": [
+        "hit/scatter"
+      ]
+    }
+  ],
+  "outcomes": [
+    "indirect hit",
+    "scatter",
+    "automatic miss"
+  ],
+  "links": {
+    "uses": [],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "99-101",
+      "relation": "extends",
+      "note": "Indirect Fire"
+    }
+  ],
+  "notes": [
+    "Direct-fed systems include missiles, rockets, mortars and artillery; rigged/FDDM mounts can permit other weapons."
+  ]
+}

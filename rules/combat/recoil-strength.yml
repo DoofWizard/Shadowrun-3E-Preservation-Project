@@ -1,0 +1,66 @@
+{
+  "id": "rule.combat.recoil-strength",
+  "record_type": "rule",
+  "name": "Strength-Based Recoil Reduction",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 103,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "firearm recoil"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "High Strength reduces recoil.",
+    "inputs": [
+      "Strength"
+    ],
+    "outputs": [
+      "recoil reduction"
+    ],
+    "steps": []
+  },
+  "table": [
+    [
+      "1-5",
+      0
+    ],
+    [
+      "6-11",
+      -1
+    ],
+    [
+      "12-18",
+      -2
+    ],
+    [
+      "19+",
+      -3
+    ]
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "modifiers/combat/recoil.yml"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 103,
+      "relation": "extends",
+      "note": "Recoil and Strength"
+    }
+  ],
+  "notes": [
+    "Cyberarm uses that arm's augmented Strength."
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "rule.combat.shotgun-suppression",
+  "record_type": "rule",
+  "name": "Shotgun Sound Suppression",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 103,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "shotguns firing slug rounds"
+    ],
+    "excludes": [
+      "shot/flechette requiring choke",
+      "BF/FA shotguns for this suppressor"
+    ]
+  },
+  "resolution": {
+    "summary": "Slug-only shotguns can use sound suppressors; shot/flechette ammunition cannot use them.",
+    "inputs": [
+      "shotgun",
+      "ammo"
+    ],
+    "outputs": [
+      "suppressed fire"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.firearms.ammunition"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 103,
+      "relation": "extends",
+      "note": "Shotgun Sound Suppression"
+    }
+  ],
+  "notes": []
+}

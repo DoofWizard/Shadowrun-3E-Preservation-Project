@@ -1,0 +1,117 @@
+{
+  "id": "rule.combat.biological-signature",
+  "record_type": "rule",
+  "name": "Signatures of Biological Forms",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 104,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "metahumans and critters as sensor targets"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Base human/metahuman Signature is 6; size and special conditions modify it.",
+    "inputs": [
+      "body size",
+      "condition"
+    ],
+    "outputs": [
+      "Signature"
+    ],
+    "steps": []
+  },
+  "examples": [
+    [
+      "Dwarf/elf/human/ork",
+      6
+    ],
+    [
+      "Troll",
+      5
+    ],
+    [
+      "Cockatrice",
+      8
+    ],
+    [
+      "Barghest",
+      7
+    ],
+    [
+      "Harpy",
+      7
+    ],
+    [
+      "Sasquatch",
+      6
+    ],
+    [
+      "Thunderbird",
+      6
+    ],
+    [
+      "Eyewyrm",
+      5
+    ],
+    [
+      "Griffin",
+      5
+    ],
+    [
+      "Merrow",
+      5
+    ],
+    [
+      "Phoenix",
+      5
+    ],
+    [
+      "Unicorn",
+      5
+    ],
+    [
+      "Kraken",
+      4
+    ],
+    [
+      "Naga",
+      4
+    ],
+    [
+      "Dracoforms",
+      3
+    ]
+  ],
+  "modifiers": [
+    "Essence 0-3 cyberware: -1 Signature.",
+    "Cyberzombie: -1 Signature per 2 negative Essence.",
+    "Open parachute: -2 Signature.",
+    "Anti-sensor camouflage: +1 Signature."
+  ],
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.combat.camouflage"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 104,
+      "relation": "extends",
+      "note": "Critter Signature Ratings"
+    }
+  ],
+  "notes": [
+    "General size guidance: 3x human size ~5, 6x ~4; 3x smaller ~7, 6x smaller ~8."
+  ]
+}

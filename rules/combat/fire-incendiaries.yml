@@ -1,0 +1,114 @@
+{
+  "id": "rule.combat.fire-incendiaries",
+  "record_type": "rule",
+  "name": "Fire and Incendiaries",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 98,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "fire attacks",
+      "burning items",
+      "white phosphorus"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Fire causes immediate/ongoing damage and may ignite equipment.",
+    "inputs": [
+      "fire source",
+      "Impact armor",
+      "object resistance"
+    ],
+    "outputs": [
+      "damage",
+      "ignition"
+    ],
+    "steps": [
+      "Immediate fire damage: reduce Power by half Impact armor, round down.",
+      "Ignition: roll 2D6 vs modified Object Resistance; if result >= resistance, item catches fire.",
+      "Burning worn/touched item causes 6M at end of Combat Turn; Body resists, Power reduced by half worn Impact armor; Power increases +2 each Combat Turn while burn spreads.",
+      "Suitable firefighting materials normally extinguish in 2 Combat Turns; white phosphorus ends in 2 Combat Turns if fully cut off from air."
+    ]
+  },
+  "tables": {
+    "base_fire_damage": [
+      [
+        "Campfire",
+        "3M or 4M"
+      ],
+      [
+        "Torch",
+        "5M"
+      ],
+      [
+        "Burning melee weapon",
+        "Power +1"
+      ],
+      [
+        "Bonfire",
+        "8M"
+      ],
+      [
+        "Forest Fire",
+        "15M"
+      ],
+      [
+        "Burning Building",
+        "20M"
+      ]
+    ],
+    "catching_fire": [
+      [
+        "Light",
+        "does not catch"
+      ],
+      [
+        "Moderate",
+        "+4"
+      ],
+      [
+        "Serious",
+        "+2"
+      ],
+      [
+        "Deadly",
+        "+0"
+      ],
+      [
+        "Highly flammable",
+        "-1"
+      ],
+      [
+        "Fire resistant",
+        "+rating"
+      ]
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "rule.combat.damage-resistance"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "option.armor.fire-resistance"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "98-99",
+      "relation": "extends",
+      "note": "Fire and Incendiaries"
+    }
+  ],
+  "notes": [
+    "Ammunition and explosives may explode if ignited."
+  ]
+}

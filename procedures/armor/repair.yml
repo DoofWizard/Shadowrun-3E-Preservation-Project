@@ -1,0 +1,53 @@
+{
+  "id": "procedure.armor.repair",
+  "record_type": "procedure",
+  "name": "Armor Repair",
+  "domain": "armor",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 97,
+    "basis": "extends"
+  },
+  "purpose": "Repair lost armor rating.",
+  "prerequisites": [
+    "Armor Build/Repair skill"
+  ],
+  "inputs": [
+    "original armor rating",
+    "armor points lost"
+  ],
+  "stages": [
+    {
+      "id": "repair",
+      "name": "Repair Test",
+      "test_or_action": "Roll Armor Build/Repair against TN equal to original armor rating. Every 2 successes restores 1 armor point. Base Time is 1 hour per point repaired.",
+      "outputs": [
+        "armor points restored"
+      ]
+    }
+  ],
+  "outcomes": [
+    "armor restored only up to rating points previously lost"
+  ],
+  "links": {
+    "uses": [
+      "entity.skill.armor-build-repair"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 97,
+      "relation": "extends",
+      "note": "Armor Build/Repair"
+    }
+  ],
+  "notes": [
+    "Security and hardened military-grade armor require an armor shop or facility."
+  ]
+}
