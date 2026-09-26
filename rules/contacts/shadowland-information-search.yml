@@ -1,0 +1,75 @@
+id: rule.contacts.shadowland-information-search
+record_type: rule
+name: "Shadowland as a Contact"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 65
+  basis: extends
+
+scope:
+  applies_to:
+    - "characters using Shadowland as an information contact"
+
+resolution:
+  summary: "Shadowland can be selected as a special Level 2 contact and used for Matrix research. It is powerful but public: searches require active Matrix work, take time, and do not provide the secrecy of a private contact."
+  inputs:
+    - "Computer skill"
+    - "Matrix access method"
+    - "information sought"
+    - "Etiquette (Matrix)"
+  outputs:
+    - "research result"
+    - "search duration"
+    - "possible public exposure through Shadowland"
+  selection:
+    prerequisite: "Computer 1 or higher"
+    contact_level: 2
+    improvable: false
+  upkeep:
+    - "Maintain the codes and access practices needed to use Shadowland."
+    - "Pay normal Matrix-use costs."
+    - "Periodically contribute information to Shadowland boards and databases."
+  search_time:
+    line_commands_from_telecom: "3D6 days"
+    tortoise: "1D6 days"
+    cyberdeck: "2D6 hours"
+    knowbot: "2D6 hours"
+    registered_knowbot: "May remain in Shadowland and feed new matching information to its owner as it appears."
+  modifiers:
+    etiquette_matrix_target_number: -2
+    source: "Compared with ordinary Matrix information searches."
+  difficulty:
+    - "For unusually specific information, the gamemaster may apply an appropriate target number from the Contact Knowledge Table to Matrix-based searches."
+    - "For tortoise or line-command searches, the gamemaster may also add that target number to the number of days required."
+  privacy:
+    - "Information placed on Shadowland becomes broadly available; the service is not a private confidant."
+    - "Communication with another individual through Shadowland while researching may count as an FOF meeting."
+
+links:
+  uses:
+    - entity.skill.computer
+    - entity.skill.etiquette
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.searching-matrix
+    - rule.contacts.contact-knowledge
+    - rule.contacts.friends-of-friends
+    - rule.contacts.wrong-party
+
+sources:
+  - source: source.srcomp
+    page: 65
+    relation: extends
+    note: "Shadowland"
+  - source: source.srcomp
+    page: 66
+    relation: extends
+    note: "Shadowland search times, knowbots, modifiers, and upkeep"
+
+notes:
+  - "The source explicitly fixes Shadowland at Level 2 and says its contact level cannot be improved."

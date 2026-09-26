@@ -15,13 +15,21 @@ scope:
     - "existing contacts"
 
 resolution:
-  summary: "Contact relationships can improve through repeated interaction, favors, loyalty and roleplaying, allowing a lower-level contact to become a stronger and more reliable relationship when the gamemaster judges the bond has developed."
+  summary: "Contact levels normally improve through roleplaying and sustained relationship-building. As an optional alternative, the gamemaster may permit a character to spend Karma to improve a contact by one level."
   inputs:
     - "current contact level"
     - "relationship history"
-    - "favors/services"
+    - "gamemaster approval"
   outputs:
     - "improved contact level where earned"
+  karma_option:
+    cost: "2 x the new contact level in Karma Points"
+    maximum_improvement: "one contact level by this method"
+    examples:
+      level_1_to_2: 4
+      level_2_to_3: 6
+  deterioration:
+    - "The process works in reverse: prolonged neglect or disrespect can reduce a contact by one level."
 
 links:
   uses:
@@ -29,7 +37,7 @@ links:
   affects: []
   modified_by: []
   interacts_with:
-    - option.karma.favors-markers
+    - rule.contacts.upkeep
 
 sources:
   - source: source.srcomp
@@ -37,4 +45,5 @@ sources:
     relation: extends
     note: "Improving Contact Levels"
 
-notes: []
+notes:
+  - "The Karma purchase is an optional alternative to relationship-based advancement and requires gamemaster approval."

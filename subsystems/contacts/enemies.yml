@@ -12,9 +12,10 @@ effective:
 
 state:
   tracked_values:
+    - "enemy rating"
     - "enemy power"
     - "enemy motivation"
-    - "enemy knowledge/access"
+    - "enemy knowledge"
     - "enemy activity"
 
 participants:
@@ -23,8 +24,9 @@ participants:
 
 components:
   - "creating enemies"
-  - "enemy characteristics"
-  - "using enemies"
+  - "enemy rating budget"
+  - "enemy Power, Motivation, and Knowledge characteristics"
+  - "using enemies during play"
   - "death at the enemy's hand"
   - "killing enemies"
 
@@ -32,6 +34,52 @@ entry_conditions:
   - "gamemaster/player uses the Enemy rules"
 
 exit_conditions: []
+
+rating_budget:
+  rows:
+    - standard_resource_priority: "E"
+      point_based_starting_resources: 5000
+      enemy_rating: 0
+      characteristic_points: 0
+    - standard_resource_priority: "D"
+      point_based_starting_resources: 20000
+      enemy_rating: 1
+      characteristic_points: 4
+    - standard_resource_priority: "C"
+      point_based_starting_resources: 90000
+      enemy_rating: 2
+      characteristic_points: 6
+    - standard_resource_priority: "B"
+      point_based_starting_resources: 200000
+      enemy_rating: 3
+      characteristic_points: 8
+    - standard_resource_priority: "A"
+      point_based_starting_resources: 400000
+      enemy_rating: 4
+      characteristic_points: 11
+    - standard_resource_priority: null
+      point_based_starting_resources: 650000
+      enemy_rating: 5
+      characteristic_points: 14
+    - standard_resource_priority: null
+      point_based_starting_resources: 1000000
+      enemy_rating: 6
+      characteristic_points: 17
+  allocation:
+    - "The gamemaster may split a character's Enemy Rating among several enemies in any combination that fits the campaign."
+    - "Character flaws can increase the number or ratings of enemies."
+    - "Ratings 5-6 are described as unusually extreme and are best reserved for special cases unless a flaw such as Hunted justifies them."
+
+characteristics:
+  scale: "0-6 each"
+  power: "Resources and practical ability the enemy can bring to bear against the character."
+  motivation: "How strongly and persistently the enemy wants to hurt or pursue the character."
+  knowledge: "How much the enemy knows about the character, including identity, habits, and whereabouts."
+  points: "Enemy Rating determines the total characteristic-point budget; the gamemaster distributes those points among Power, Motivation, and Knowledge."
+
+evolution:
+  - "Enemy ratings and characteristics may rise or fall during play as campaign events change an enemy's resources, motives, knowledge, or relationship to the character."
+  - "The source treats enemies as campaign antagonists rather than static chargen-only disadvantages."
 
 links:
   rules: []
@@ -41,6 +89,7 @@ links:
   modifiers: []
   interacts_with:
     - subsystem.character.edges-flaws
+    - rule.contacts.upkeep
 
 sources:
   - source: source.srcomp
@@ -48,9 +97,14 @@ sources:
     relation: adds_option
     note: "Enemies / Creating Enemies"
   - source: source.srcomp
-    pages: "69-72"
+    page: 69
     relation: extends
-    note: "Enemy characteristics, using enemies, death/killing enemies"
+    note: "Enemy Rating Table and Enemy Characteristics"
+  - source: source.srcomp
+    pages: "70-72"
+    relation: extends
+    note: "Power, Motivation, Knowledge, using enemies, death and killing enemies"
 
 notes:
   - "Enemies are campaign hooks/antagonist relationships rather than ordinary contacts."
+  - "No supersession of core contact rules is implied."

@@ -15,13 +15,23 @@ scope:
     - "ongoing relationships with contacts"
 
 resolution:
-  summary: "The Companion adds campaign upkeep expectations for maintaining contact relationships rather than treating contacts as permanently static resources. Characters may need to spend time, money, favors, or attention to keep important contacts active and useful."
+  summary: "Contact upkeep is a two-part optional campaign rule: maintain the relationship through roleplaying and also meet an annual upkeep cost. Upkeep can be paid with nuyen or with favors, services, advice, gifts, or other benefits the gamemaster values as payment."
   inputs:
     - "contact level"
-    - "frequency of interaction"
-    - "campaign circumstances"
+    - "relationship maintenance"
+    - "annual upkeep paid in nuyen or equivalent value"
   outputs:
-    - "maintained, strained, improved, or degraded relationship"
+    - "maintained contact level"
+    - "degraded or lost contact if upkeep is neglected"
+  annual_upkeep_nuyen:
+    level_1: 500
+    level_2: 3000
+    level_3: 7000
+  failure:
+    - "A contact normally drops one level when required upkeep is not met or the relationship is not maintained."
+    - "A Level 2 or Level 3 contact that drops may regain the previous level under the improving-contact rules."
+    - "If a Level 1 contact is lost, the gamemaster may remove the contact, convert the contact into an enemy, or assign the Bad Reputation flaw."
+    - "If all contacts are lost through neglected upkeep, the character receives Hung Out to Dry and Bad Reputation; the source also directs the gamemaster to increase the Priority level of each enemy by 1."
 
 links:
   uses:
@@ -30,12 +40,13 @@ links:
   modified_by: []
   interacts_with:
     - rule.contacts.improving-levels
+    - subsystem.contacts.enemies
 
 sources:
   - source: source.srcomp
     page: 60
     relation: extends
-    note: "Contact Upkeep"
+    note: "Contact Upkeep and Contact Upkeep Table"
 
 notes:
-  - "This extends core contact play; it does not replace the core contact entity or contact-level definitions."
+  - "This is optional/additive Companion material and does not replace the core contact entity or contact-level definitions."

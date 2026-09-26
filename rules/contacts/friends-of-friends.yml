@@ -15,13 +15,42 @@ scope:
     - "using a contact's network to reach another source"
 
 resolution:
-  summary: "A contact may connect the character to another NPC through the contact's own network. Such friends-of-friends are less reliable and less directly loyal than the original contact and may require waiting, favors, or additional negotiation."
+  summary: "A character may work through a primary contact to reach that contact's secondary contacts (FOFs). FOFs use the character's normal test dice but apply target-number, cost/time, and information-leak modifiers according to the FOF's level and distance from the primary contact."
   inputs:
-    - "existing contact"
-    - "desired information/service"
-    - "network suitability"
+    - "primary contact"
+    - "FOF level"
+    - "desired information, equipment, or service"
+    - "base contact fee or item availability time"
   outputs:
     - "secondary contact access"
+    - "modified test target number"
+    - "modified fee or waiting time"
+  modifiers:
+    level_1:
+      target_number: 6
+      cost_time_multiplier: 3
+      wrong_party_target_modifier: -2
+    level_2:
+      target_number: 4
+      cost_time_multiplier: 2
+      wrong_party_target_modifier: -1
+    level_3:
+      target_number: 2
+      cost_time_multiplier: "see source text; may be reduced or waived at gamemaster discretion"
+      wrong_party_target_modifier: 0
+    each_fof_after_first:
+      target_number: 2
+      cost_time_multiplier: "see source text"
+      wrong_party_target_modifier: -2
+    asking_around:
+      wrong_party_target_modifier: -3
+  fees:
+    - "Determine the normal contact fee using the SR3 contact-fee rules, then multiply it by the FOF cost/time multiplier."
+    - "A Level 3 FOF may reduce or waive the fee as a favor at the gamemaster's discretion."
+  waiting:
+    - "For an item with Availability time, multiply the normal Availability time by the FOF cost/time multiplier."
+    - "If the information or item has no Availability, roll 2D6 days for the base wait, then apply the multiplier."
+    - "Each Etiquette success or each extra payment equal to 10 percent of the contact's fee reduces the wait by one day; normal Availability rules still apply."
 
 links:
   uses:
@@ -29,16 +58,18 @@ links:
   affects: []
   modified_by: []
   interacts_with:
-    - option.karma.favors-markers
+    - rule.contacts.wrong-party
+    - rule.contacts.special-contact-networking
 
 sources:
   - source: source.srcomp
     page: 62
     relation: extends
-    note: "Friends of a Friend"
+    note: "Friends of a Friend / Friend of a Friend Modifiers Table"
   - source: source.srcomp
     page: 63
     relation: clarifies
     note: "Using FOFs / Waiting for the Goods / The Walls Have Ears"
 
-notes: []
+notes:
+  - "The source says ordinary character contacts begin with one Level 1, one Level 2, and one Level 3 secondary contact; fixers and Mr. Johnson contacts are explicit exceptions because their work gives them broader networks."

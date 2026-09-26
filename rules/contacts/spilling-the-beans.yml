@@ -1,0 +1,82 @@
+id: rule.contacts.spilling-the-beans
+record_type: rule
+name: "Spilling the Beans"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 67
+  basis: extends
+
+scope:
+  applies_to:
+    - "determining how much information a knowledgeable contact is willing to reveal"
+
+resolution:
+  summary: "A contact's knowledge and willingness to reveal it are separate. The gamemaster may resolve willingness with an Etiquette test whose default target number is 4, or use a Negotiation-versus-Intelligence Success Contest for a more detailed interaction."
+  inputs:
+    - "information sensitivity"
+    - "contact relationship"
+    - "debts, hostility, culture, language, and payment"
+    - "character Negotiation and contact Intelligence for the Success Contest option"
+  outputs:
+    - "amount of information disclosed"
+    - "refusal or misleading information"
+  standard_method:
+    skill: "Etiquette"
+    base_target_number: 4
+    result: "Successes determine how much the contact reveals; the gamemaster adjusts the target number for the sensitivity and circumstances."
+  success_contest:
+    character_test: "Negotiation"
+    contact_test: "Intelligence"
+    resolution: "Contact successes offset the character's successes. If the contact generates more successes than the character, the contact may refuse to reveal anything or may provide misleading information."
+    contact_test_target_modifiers:
+      character_essence_below_1: -2
+      character_essence_below_0_cybermancy: "negative Essence - 2, rounded down; see source note for interrogation use"
+      contact_suspicious: -2
+      planned_action_beneficial_to_contact: 2
+      planned_action_pleasurable_to_contact: 1
+      planned_action_annoying_to_contact: -1
+      planned_action_harmful_to_contact: -2
+      planned_action_disastrous_to_contact: -3
+      character_displays_racist_attitudes: "gamemaster discretion"
+      level_1_contact: 0
+      level_2_contact: 1
+      level_3_contact: 2
+      fof: "-1 per level between the FOF and the primary contact"
+      contact_owes_character: 1
+      character_owes_contact: -1
+      contact_hostile: -3
+      contact_is_enemy: -4
+      mild_cultural_difference: -1
+      moderate_cultural_difference: -2
+      dramatic_cultural_difference: -3
+      extreme_cultural_difference: -4
+      language_barrier: "-1 per point below 5 in Language Rating"
+      extra_nuyen: "+1 per 10 percent increase above normal fee"
+    minimum_target_number: 2
+    modifiers_cumulative: true
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.contact-knowledge
+    - rule.contacts.friends-of-friends
+
+sources:
+  - source: source.srcomp
+    page: 67
+    relation: extends
+    note: "Spilling the Beans"
+  - source: source.srcomp
+    page: 68
+    relation: extends
+    note: "Contact Success Contest Table"
+
+notes:
+  - "The modifiers apply to the contact's side of the optional Success Contest as described by the source example."

@@ -15,14 +15,28 @@ scope:
     - "contacts asked for information"
 
 resolution:
-  summary: "The Companion gives contacts their own knowledge competency for resolving whether they know requested information and how useful/complete the answer is, instead of assuming every contact automatically knows everything in a broad field."
+  summary: "After determining whether a contact is willing to talk, the gamemaster may test what the contact actually knows using Etiquette or Intelligence, whichever is most appropriate. The requested information sets the target number; contact level does not change this knowledge target."
   inputs:
     - "contact"
-    - "subject matter"
-    - "contact knowledge/rating"
-    - "difficulty"
+    - "requested information"
+    - "Etiquette or Intelligence"
   outputs:
-    - "information known, partially known, or unavailable"
+    - "whether the contact knows the information"
+    - "breadth or specificity of what is known"
+  target_numbers:
+    2: "general information"
+    4: "more details"
+    6: "even more details"
+    "8-11": "specific names, places, and unusually useful details"
+    "12-13": "information not yet on the streets"
+    "14+": "information beyond the normal realm of street knowledge"
+  modifiers:
+    contact_specialty: -2
+    fixer_or_mr_johnson: -3
+  interpretation:
+    - "A single success normally means the contact knows the requested information and also information associated with lower target-number bands."
+    - "For broad subjects the gamemaster may scale how much is known by number of successes."
+    - "Failure means the contact does not know the requested information; the contact may still provide incomplete or incorrect information for in-world reasons."
 
 links:
   uses:
@@ -31,6 +45,8 @@ links:
   modified_by: []
   interacts_with:
     - rule.contacts.legwork
+    - rule.contacts.spilling-the-beans
+    - rule.contacts.shadowland-information-search
 
 sources:
   - source: source.srcomp
@@ -40,6 +56,7 @@ sources:
   - source: source.srcomp
     page: 67
     relation: clarifies
-    note: "Spilling the Beans"
+    note: "Contact Knowledge Table"
 
-notes: []
+notes:
+  - "Knowledge and willingness to reveal information are separate questions; willingness is handled by rule.contacts.spilling-the-beans."

@@ -1,0 +1,79 @@
+id: rule.contacts.special-contact-networking
+record_type: rule
+name: "Special Contact Networking"
+domain: contacts
+status: ingested
+
+effective:
+  status: optional
+  source: source.srcomp
+  page: 64
+  basis: extends
+
+scope:
+  applies_to:
+    - "clubs and organizations"
+    - "fixers"
+    - "international contacts"
+
+resolution:
+  summary: "Some contact types provide broader networks than ordinary contacts. The Companion supplies special networking procedures and modifiers for organizations, fixers, and international contacts while retaining the ordinary FOF framework."
+  inputs:
+    - "special contact type"
+    - "desired FOF, travel, smuggling, information, or service"
+    - "fees and time available"
+  outputs:
+    - "number of network hops"
+    - "test target-number modifiers"
+    - "network access"
+  clubs_and_organizations:
+    hops_to_knowledgeable_fof: "roll 2D6, divide by 2, round up"
+    chaining: "Treat each FOF as a contact of the preceding FOF and apply the normal FOF cost/time and Wrong Party modifiers."
+  fixers:
+    network: "At least six secondary contacts, usually including another fixer and occasionally a Mr. Johnson; specialist fixers' secondary contacts reflect their specialty."
+    payment: "Fixers generally expect payment in nuyen or a return favor rather than free information or services."
+  international_contacts:
+    hops_to_knowledgeable_fof: "roll 2D6, divide by 2, round up"
+    target_modifiers:
+      member_of_international_group: -2
+      out_of_favor_with_locals: 2
+      enemies_looking_for_character: "add each enemy's rating; may be waived at the cost of alerting those enemies"
+      customs_or_border_patrol_contact: -2
+      law_enforcement_contact: -1
+      main_contact_is_fixer: -1
+      racism: "as appropriate under SR3 racism rules"
+      travel_more_than_2_weeks: -1
+      travel_more_than_2_months: -2
+      travel_more_than_1_year: -3
+      travel_less_than_72_hours: 1
+      travel_less_than_24_hours: 2
+      travel_less_than_6_hours: 4
+      smuggle_class_a_paralegal_equipment: 1
+      smuggle_class_b_security_equipment: 3
+      smuggle_class_c_military_equipment: 5
+    money:
+      effect: "For each additional 10 percent of the total fee paid, reduce the contact/FOF target number by 1."
+      minimum_target_number: 2
+    chargen_option: "Friends Abroad Edge may also provide foreign contacts."
+
+links:
+  uses:
+    - entity.contact.contact
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.contacts.friends-of-friends
+    - rule.contacts.wrong-party
+
+sources:
+  - source: source.srcomp
+    page: 64
+    relation: extends
+    note: "Special Contacts / Members of Clubs and Organizations"
+  - source: source.srcomp
+    page: 65
+    relation: extends
+    note: "Fixers / International Contacts / International Contacts Table"
+
+notes:
+  - "These are special extensions of the FOF system, not replacements for ordinary contacts."
