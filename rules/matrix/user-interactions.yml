@@ -1,0 +1,22 @@
+id: rule.matrix.user-interactions
+record_type: rule
+name: "Matrix User Special Cases"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "27-28", basis: extends}
+
+resolution:
+  riggers:
+    - "A rigger suffers +1 to Matrix target numbers while the VCR is active."
+    - "Any Hacking Pool is reduced by VCR rating."
+    - "A reflex trigger can avoid these penalties by switching the VCR off."
+  awakened:
+    - "Awakened characters have no inherent Matrix penalty from being Awakened."
+    - "Magic does not operate within Matrix virtual reality, though physical effects that change Intelligence or Reaction can alter Matrix-relevant statistics."
+  non_metahumans:
+    - "The text limits full virtual-reality Matrix access to metahuman neural physiology at this point in the setting."
+    - "Regenerating creatures are described as using trodes rather than datajacks."
+
+sources:
+  - {source: source.matrix, pages: "27-28", relation: extends, note: "Riggers, Awakened and non-metahuman Matrix users"}
+notes: []

@@ -1,0 +1,18 @@
+id: option.matrix.hacking-pool-allocation
+record_type: option
+name: "Optional Hacking Pool Allocation"
+domain: matrix
+status: ingested
+effective: {status: optional, source: source.matrix, page: 26, basis: adds_option}
+
+option_for:
+  - rule.dice-pools.hacking-pool
+
+effects:
+  - "A character may sacrifice Hacking Pool dice to suppress crashed IC instead of reducing Detection Factor."
+  - "A character may allocate two Hacking Pool dice per +1 temporary Detection Factor, to a maximum +3."
+  - "Allocated dice are unavailable for other uses for the specified duration."
+
+sources:
+  - {source: source.matrix, page: 26, relation: adds_option, note: "Optional Hacking Pool and IC Suppression / Detection Factor"}
+notes: []

@@ -1,0 +1,20 @@
+id: rule.matrix.asist-modes
+record_type: rule
+name: "Cold and Hot ASIST"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "18-19", basis: extends}
+
+resolution:
+  summary: "Matrix distinguishes cold ASIST from hot ASIST and defines their speed and biofeedback consequences."
+  cold:
+    - "Cold ASIST protects against lethal black-IC biofeedback by treating lethal black IC as non-lethal for that user; psychotropic effects are unchanged."
+  hot:
+    - "Hot ASIST enables Response Increase, hot-ASIST pure-DNI speed bonuses, and Hacking Pool use."
+    - "Hot ASIST exposes the user to lethal black-IC damage."
+  switching:
+    - "Switching hot/cold mode is a Complex Action; the new mode begins next Combat Turn."
+
+sources:
+  - {source: source.matrix, pages: "18-19", relation: extends, note: "ASIST interface, cold ASIST, hot ASIST"}
+notes: []

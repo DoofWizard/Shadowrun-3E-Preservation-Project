@@ -1,0 +1,18 @@
+id: rule.matrix.iccm-protection
+record_type: rule
+name: "ICCM Biofeedback Protection"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, page: 21, basis: extends}
+
+resolution:
+  summary: "ICCM filters improve survival against dangerous Matrix biofeedback."
+  effects:
+    - "Apply -2 to the target number of the Willpower test to jack out while under black-IC attack."
+    - "Against lethal or non-lethal black IC, make separate Body and Willpower resistance tests and use the better result."
+    - "Karma Pool may augment the resistance; Hacking Pool may not."
+    - "Psychotropic effects are not blocked, though physical side effects from sparky IC are buffered."
+
+sources:
+  - {source: source.matrix, page: 21, relation: extends, note: "ICCM Biofeedback Filter"}
+notes: []

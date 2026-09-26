@@ -1,0 +1,17 @@
+id: rule.matrix.transmission-multiplexing
+record_type: rule
+name: "Matrix Transmission and Multiplexing"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, page: 21, basis: extends}
+
+resolution:
+  summary: "I/O Speed controls cyberterminal data transfer and may be divided among simultaneous transfers."
+  rules:
+    - "Use the lower of cyberterminal I/O Speed and jackpoint I/O Speed for transfer rate."
+    - "Multiplexing divides available I/O Speed among simultaneous upload/download jobs."
+    - "Multiplexing itself requires no additional action or test beyond the underlying operation."
+
+sources:
+  - {source: source.matrix, page: 21, relation: extends, note: "Transmission Speeds and Multiplexing"}
+notes: []

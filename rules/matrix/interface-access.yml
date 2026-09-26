@@ -1,0 +1,26 @@
+id: rule.matrix.interface-access
+record_type: rule
+name: "Matrix Neural Interface Access"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "17-19", basis: extends}
+
+resolution:
+  summary: "Matrix expands direct neural access into trodes, datajack/pure-DNI operation, and ASIST modes."
+  trodes:
+    - "Trodes provide non-implant neural access but reduce Matrix speed."
+    - "Matrix Reaction is halved, round down to minimum 1, and Matrix Initiative is capped at 2D6."
+    - "Positioning/calibration requires three full Combat Turns."
+  datajack:
+    - "A datajack provides direct neural input through a wired link to the cyberterminal."
+  pure_dni:
+    - "Pure DNI uses Intelligence as Matrix Reaction instead of ordinary physical Reaction."
+    - "With hot ASIST, pure DNI adds +2 Matrix Reaction and +1D6 Matrix Initiative."
+    - "Switching between pure DNI and partial-manual mode is a Simple Action; speed changes apply next Combat Turn."
+  ras_override:
+    - "With RAS active, physical actions and Perception Tests suffer +8 target-number modifiers."
+    - "Running without RAS while simultaneously processing both environments imposes +8 to Perception and +4 to other tests in both environments."
+
+sources:
+  - {source: source.matrix, pages: "17-19", relation: extends, note: "Jacking In, trodes, datajack, pure DNI, RAS override"}
+notes: []

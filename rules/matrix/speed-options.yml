@@ -1,0 +1,27 @@
+id: rule.matrix.speed-options
+record_type: rule
+name: "Matrix Speed Options"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "19-22", basis: extends}
+
+resolution:
+  reality_filter:
+    - "A personalized reality filter adds +2 Matrix Reaction and +1D6 Matrix Initiative."
+    - "While active it reduces effective MPCP by 1."
+    - "Using another person's filter gives no speed bonus and imposes +2 to target numbers."
+  response_increase:
+    - "Each level adds +2 Matrix Reaction and +1D6 Matrix Initiative."
+    - "Requires hot ASIST; maximum rating is 3."
+  cumulative_cap:
+    - "Pure DNI, reality-filter and Response Increase bonuses are cumulative."
+    - "Total Matrix speed bonus is capped at +10 Reaction and +5D6 Initiative."
+
+links:
+  interacts_with:
+    - rule.matrix.matrix-initiative
+    - rule.matrix.cyberdeck-ratings
+
+sources:
+  - {source: source.matrix, pages: "19-22", relation: extends, note: "Reality Filter, Response Increase, Matrix user Reaction and Initiative"}
+notes: []

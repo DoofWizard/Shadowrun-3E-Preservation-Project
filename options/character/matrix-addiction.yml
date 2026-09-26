@@ -1,0 +1,23 @@
+id: option.character.matrix-addiction
+record_type: option
+name: "Matrix Addiction Flaw"
+domain: character
+status: ingested
+effective: {status: optional, source: source.matrix, page: 26, basis: adds_option}
+
+option_for:
+  - subsystem.character.edges-flaws
+
+selection:
+  timing: "character creation or campaign development"
+  prerequisites: []
+  incompatible_with: []
+
+effects:
+  - "Represents compulsive Matrix use with Mild, Moderate and Severe levels."
+  - "Higher severity increases the character's dependence on Matrix access and associated real-world social impairment."
+
+sources:
+  - {source: source.matrix, page: 26, relation: adds_option, note: "Matrix Addiction Flaw"}
+notes:
+  - "Exact severity effects remain source-defined."
