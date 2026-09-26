@@ -1,0 +1,75 @@
+{
+  "id": "subsystem.security.ccss",
+  "record_type": "subsystem",
+  "name": "Closed-Circuit Simsense Security System",
+  "domain": "security",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 45,
+    "basis": "defines"
+  },
+  "state": {
+    "tracked_values": [
+      "Technical Rating",
+      "Vigilance Code",
+      "alert state",
+      "controlled components",
+      "rigger state",
+      "encryption/protocol state"
+    ]
+  },
+  "participants": [
+    "security rigger",
+    "CCSS system-control rig",
+    "security components",
+    "hardwired drones",
+    "intruding rigger/decker"
+  ],
+  "components": [
+    "system-control rig",
+    "hardwired fiber/power network",
+    "sensors",
+    "doors/maglocks",
+    "cameras",
+    "weapon ports",
+    "environmental systems",
+    "drones",
+    "encryption"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "rules": [
+    "Security Value consists of Technical Rating 1-10 plus Vigilance Code (Blue/Green/Amber/Red). Technical Rating measures sophistication and serves as the target number for intrusion/system-adjustment tests and as the rating of the security rigger's remote-control deck for EW purposes.",
+    "Vigilance Code governs alertness and intrusion difficulty: Blue requires 1 success, Green 2, Amber 3, Red 4 on relevant access steps.",
+    "CCSS uses hardwired communications and therefore is not vulnerable to ordinary MIJI unless the attacker first obtains a physical/hardwire access path.",
+    "Security rigger can directly perceive/control components through simsense, jump into drones or rooms/corridors, and receives automatic alerts from system triggers.",
+    "When a security rigger assumes the system body, standard VCR Initiative bonuses apply; dice pools are normally unavailable except Karma Pool until the rigger jumps into a specific drone/room/corridor, at which point normal applicable pools return.",
+    "An intruding rigger who gains access also receives VCR Initiative bonuses and may use Task Pool (not Control Pool) for encryption/protocol-adjustment steps; Control Pool is usable in rigger combat."
+  ],
+  "links": {
+    "rules": [
+      "rule.security.ccss-actions",
+      "rule.security.ccss-rigger-combat"
+    ],
+    "procedures": [
+      "procedure.security.access-ccss"
+    ],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "45-50",
+      "relation": "defines",
+      "note": "Security Riggers / Closed-Circuit Simsense Systems"
+    }
+  ],
+  "notes": []
+}

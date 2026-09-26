@@ -1,0 +1,70 @@
+{
+  "id": "rule.security.ccss-actions",
+  "record_type": "rule",
+  "name": "Actions in a CCSS",
+  "domain": "security",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 48,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "active security rigger in CCSS"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "CCSS riggers have a defined action economy for monitoring and directly controlling security components.",
+    "inputs": [
+      "current control focus",
+      "available devices"
+    ],
+    "outputs": [
+      "security-system action"
+    ],
+    "steps": []
+  },
+  "free_actions": [
+    "Activate/deactivate sensors for one drone.",
+    "Arm/disarm one weapon system.",
+    "Delay Action.",
+    "Call up overall status report.",
+    "Observe through one drone/room/corridor sensor group.",
+    "Speak a Word through intercom to selected area.",
+    "Suppress automatic alarms within the limits of CCSS perception."
+  ],
+  "simple_actions": [
+    "Observe in Detail through a selected drone/room/corridor.",
+    "Jump into a primary drone.",
+    "Monitor one radio frequency."
+  ],
+  "complex_actions": [
+    "Control a Room: direct-control weapons, doors and mechanical systems in a room/corridor section.",
+    "Fire a Weapon System.",
+    "Issue a Command to a drone/group, with max commanded drones equal to RC deck rating.",
+    "Operate a Drone directly, using Control Pool and rigger bonuses.",
+    "Turn on/off unspecified devices or adjust variable-setting devices while directly controlling a room/corridor."
+  ],
+  "links": {
+    "uses": [
+      "subsystem.security.ccss"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 48,
+      "relation": "defines",
+      "note": "Actions in a CCSS"
+    }
+  ],
+  "notes": [
+    "Perception triggers use a secret test. Examples: door/gate/window open/close TN6; successful maglock tampering TN 6 + successes achieved; destroyed device TN4; carefully deactivated device TN8; system on alert TN -2."
+  ]
+}

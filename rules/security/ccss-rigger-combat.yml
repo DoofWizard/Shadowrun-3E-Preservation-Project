@@ -1,0 +1,58 @@
+{
+  "id": "rule.security.ccss-rigger-combat",
+  "record_type": "rule",
+  "name": "Rigger Combat in a CCSS",
+  "domain": "security",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 50,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "two riggers contesting control of the same CCSS"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Riggers fight directly for system control through opposed Willpower-based combat over repeated rigged Initiative actions.",
+    "inputs": [
+      "rigged Initiative",
+      "Willpower",
+      "Control Pool"
+    ],
+    "outputs": [
+      "Stun damage",
+      "disengagement",
+      "system control"
+    ],
+    "steps": [
+      "Roll normal rigged Initiative. Combat can occur within ordinary Combat Turn sequence; rigger acts on each eligible phase.",
+      "On attack, spend Complex Action. Both riggers make Opposed Willpower Test. Control Pool may augment each side up to the attacker's Willpower limit.",
+      "Winner's net successes inflict (Willpower)M Stun; stage +1 Damage Level per 2 successes. Loser resists with Willpower plus Control Pool if desired.",
+      "If rendered unconscious (10 boxes), loser is dumped and control passes automatically.",
+      "Either rigger may Disengage as Free Action, surrendering control; re-entry requires Complex Action.",
+      "While engaged, neither participant may take other actions until combat ends.",
+      "On multi-rigger CCSS, intruder fights one security rigger at a time; another may contest after predecessor is defeated."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.security.ccss"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 50,
+      "relation": "defines",
+      "note": "Rigger Combat"
+    }
+  ],
+  "notes": []
+}

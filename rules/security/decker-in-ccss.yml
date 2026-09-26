@@ -1,0 +1,56 @@
+{
+  "id": "rule.security.decker-in-ccss",
+  "record_type": "rule",
+  "name": "Decking a Rigged CCSS",
+  "domain": "security",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 50,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "decker contesting a rigged CCSS"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A decker can access a rigged CCSS with special interface hardware but is less efficient than a rigger and fights under modified rigger-combat rules.",
+    "inputs": [
+      "cyberdeck with system-control-rig emulator",
+      "protocol-emulation module",
+      "remote-control utility"
+    ],
+    "outputs": [
+      "CCSS access/combat capability"
+    ],
+    "steps": [
+      "Use access steps analogous to tapping/decrypting/protocol adjustment.",
+      "No Matrix programs may be used during rigger combat.",
+      "Decker suffers +1 TN on all tests.",
+      "Decker Reaction reduced by 2 and gains no extra Initiative dice from response increase/reality filters beyond normal DNI benefits.",
+      "No Hacking Pool; instead Control Pool = half (round up) of system-control-rig emulator rating.",
+      "Both decker and icon take damage as if struck by non-lethal Black IC; armor utilities, Hardening and ICCM filters protect normally."
+    ]
+  },
+  "links": {
+    "uses": [
+      "procedure.security.access-ccss",
+      "rule.security.ccss-rigger-combat"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 50,
+      "relation": "extends",
+      "note": "Decking a Rigged System"
+    }
+  ],
+  "notes": []
+}

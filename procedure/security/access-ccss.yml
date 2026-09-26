@@ -1,0 +1,83 @@
+{
+  "id": "procedure.security.access-ccss",
+  "record_type": "procedure",
+  "name": "Access a Rigged Security System",
+  "domain": "security",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 49,
+    "basis": "defines"
+  },
+  "purpose": "Seize control of a hardwired CCSS from an active security rigger.",
+  "prerequisites": [
+    "remote-control deck",
+    "rigger protocol-emulation module",
+    "dataline tap if needed",
+    "rigger-decryption module where encryption is present"
+  ],
+  "inputs": [
+    "CCSS Technical Rating",
+    "Vigilance Code",
+    "protocol/encryption information"
+  ],
+  "stages": [
+    {
+      "id": "tap",
+      "name": "Tap Hardwire Access Point",
+      "test_or_action": "Find a fixed CCSS-connected device or slave port. Opening/tapping may require Electronics B/R (4). Dataline tap rating must be at least intruder RC deck rating; if tap rating is below CCSS Technical Rating, difference becomes a TN modifier to intruder actions.",
+      "outputs": [
+        "physical network access"
+      ]
+    },
+    {
+      "id": "decrypt",
+      "name": "Defeat Encryption",
+      "test_or_action": "Use decryption module rating as dice; Electronics (Electronic Warfare) may be complementary and Task Pool may be used. TN equals encryption rating, usually CCSS Technical Rating. Successes must equal/exceed Vigilance Code success requirement; failure alerts the system.",
+      "outputs": [
+        "decrypted communications"
+      ]
+    },
+    {
+      "id": "protocol",
+      "name": "Adjust to Configuration and Protocols",
+      "test_or_action": "If protocols unknown, make Electronics (Electronic Warfare), with protocol-emulation-module rating as complementary dice, against TN = Technical Rating. Successes must equal/exceed Vigilance Code requirement; failure alerts system.",
+      "outputs": [
+        "synchronized protocol"
+      ]
+    },
+    {
+      "id": "combat",
+      "name": "Defeat Controlling Rigger",
+      "test_or_action": "Immediately resolve rigger combat for system control.",
+      "outputs": [
+        "system seized or intrusion defeated"
+      ]
+    }
+  ],
+  "outcomes": [
+    "intruder gains CCSS control",
+    "system alerts/repels intruder"
+  ],
+  "links": {
+    "uses": [
+      "subsystem.security.ccss",
+      "rule.security.ccss-rigger-combat"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "49-50",
+      "relation": "defines",
+      "note": "Accessing a Security System"
+    }
+  ],
+  "notes": [
+    "CCSS hardwire means MIJI is not the route of entry; physical/hardline access is required unless an exposed slave port exists."
+  ]
+}
