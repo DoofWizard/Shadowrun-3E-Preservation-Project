@@ -1,0 +1,21 @@
+id: catalog.organizations.srcomp-seattle-gangs
+record_type: entity_catalog
+name: "Companion Seattle Gang Profiles"
+domain: organizations
+status: ingested
+source: source.srcomp
+pages: "124-129"
+
+explicit_supersession:
+  statement: "The source states that these descriptions supersede all other information previously published about these gangs."
+
+entries:
+  - {id: entity.organization.halloweeners, name: "The Halloweeners", source_pages: "124-125", relation: replaces_prior_profile}
+  - {id: entity.organization.spiders, name: "The Spiders", source_pages: "125-127", relation: replaces_prior_profile}
+  - {id: entity.organization.spikes, name: "The Spikes", source_pages: "127-128", relation: replaces_prior_profile}
+  - {id: entity.organization.red-hot-nukes, name: "The Red Hot Nukes", source_pages: "128-129", relation: replaces_prior_profile}
+  - {id: entity.organization.night-hunters, name: "The Night Hunters", source_page: 129, relation: replaces_prior_profile}
+
+notes:
+  - "Profiles include leadership, membership scale, initiation practices, visual identity, territory, activities, opponents and distinguishing traits."
+  - "No predecessor source links are invented where the repository does not already identify them."

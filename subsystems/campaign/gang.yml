@@ -1,0 +1,33 @@
+id: subsystem.campaign.gang
+record_type: subsystem
+name: "Gang Campaign"
+domain: campaign
+status: ingested
+effective: {status: optional, source: source.srcomp, pages: "120-124", basis: adds_option}
+
+state:
+  tracked_values:
+    - "gang focus"
+    - "initiation rituals"
+    - "uniforms/colors"
+    - "symbol"
+    - "territory"
+    - "operations"
+    - "foes"
+    - "uniqueness"
+    - "leader and lieutenants"
+    - "gang rating"
+    - "head count"
+    - "reputation"
+
+components:
+  - "gang creation"
+  - "campaign operations"
+  - "reputation and leadership"
+  - "leadership challenges"
+  - "rival gang scaling"
+
+sources:
+  - {source: source.srcomp, pages: "120-124", relation: adds_option, note: "Gang campaign and special rules"}
+notes:
+  - "The subsystem is optional campaign material, not a replacement for ordinary character or contact rules."
