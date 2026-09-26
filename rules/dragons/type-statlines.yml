@@ -1,0 +1,55 @@
+id: rule.dragons.type-statlines
+record_type: rule
+name: "Dragon Type Stat Lines"
+domain: dragons
+status: ingested
+effective:
+  status: current
+  source: source.fanpro-10666
+  pages: "175-178"
+  basis: "explicitly updated/official where different from SR3 core"
+types:
+  eastern:
+    canonical_id: entity.dragon.eastern
+    stats: {B: "14/8", Q: "8 (x3)", S: 35, C: 9, I: 8, W: 8, E: "(6 + 1D6)Z", R: 8}
+    initiative: "8 + 2D6"
+    astral_initiative: "28 + 2D6"
+    pools: {astral_combat: 12, combat: 12, spell: "7-9"}
+    attack: "14D"
+    reach: 2
+    notes: ["Sirrush use the same game stats as normal eastern dragons."]
+  feathered_serpent:
+    canonical_id: entity.dragon.feathered-serpent
+    stats: {B: "12/8", Q: "6 (x4)", S: 30, C: 8, I: 8, W: 8, E: "(6 + 1D6)Z", R: 9}
+    initiative: "9 + 2D6"
+    astral_initiative: "28 + 2D6"
+    pools: {astral_combat: 12, combat: 11, spell: "7-9"}
+    attack: "12D"
+    reach: 2
+  sea_dragon:
+    canonical_id: world.character.sea-dragon
+    stats: {B: "13/8", Q: "6 (x4)", S: 35, C: 8, I: 8, W: 8, E: "(6 + 1D6)Z", R: 8}
+    initiative: "8 + 2D6"
+    astral_initiative: "28 + 2D6"
+    pools: {astral_combat: 12, combat: 11, spell: "7-9"}
+    attack: "14D"
+    reach: 2
+  western:
+    canonical_id: entity.dragon.western
+    stats: {B: "15/8", Q: "7 (x3)", S: 40, C: 8, I: 8, W: 8, E: "(6 + 1D6)Z", R: 7}
+    initiative: "7 + 2D6"
+    astral_initiative: "28 + 2D6"
+    pools: {astral_combat: 12, combat: 11, spell: "7-9"}
+    attack: "14D"
+    reach: 3
+great_dragon_adjustments:
+  canonical_id: entity.dragon.great
+  add_to_base_type: {B: "+10/12", Q: "+3 (+1)", S: "+10", C: "+5", I: "+5", W: "+5", E: "12Z", R: "+3"}
+  initiative_bonus: "+1D6"
+  astral_initiative_bonus: "+1D6"
+  attack: "16D"
+  reach: 4
+notes:
+  - "Great-dragon attributes preceded by (+) are added to the normal attributes for the dragon's type."
+sources:
+  - {source: source.fanpro-10666, pages: "175-178", relation: updates}

@@ -1,0 +1,50 @@
+id: rule.dragons.magic
+record_type: rule
+name: "Dragon Magic"
+domain: dragons
+status: ingested
+effective: {status: current, source: source.fanpro-10666, pages: "179-181", basis: expands}
+magic_attribute:
+  value: "Essence for dragons with Magical Skills"
+  magic_loss_check: "Roll 3D6 instead of 2D6; total <= current Magic means loss of a point unless accepting a geas; a roll of 3 always loses a point."
+tradition:
+  rule: "Dragons follow a unique draconic tradition."
+  non_dragon_learning_modifier: "+2 to relevant Skill Tests when a non-dragon of another tradition tries to understand draconic magic."
+  assisted_by_dragon: "Modifier does not apply with dragon teacher/tutor assistance."
+  restriction: "Non-dragons cannot learn/follow draconic tradition, though they may learn spells or related material from dragons."
+sorcery:
+  standard_rules: true
+  ritual_sorcery:
+    circle_required: false
+    preparation: "6 hours base; Willpower (4) Test; divide base time by successes; failed roll doubles base time."
+    force: "Any Force known."
+    participants: "Can join any ritual team regardless of magical tradition."
+    material_link: "Required as usual when target is not in line of sight."
+conjuring:
+  spirits: ["elementals","nature spirits","spirits of the elements","watcher spirits"]
+  action: "Exclusive Complex Action"
+  bound_limit: "Charisma spirits at one time"
+  overlapping_domains: "May summon multiple nature spirits in overlapping domains, but only one of any given type."
+  great_forms: "Available with Invoking."
+  ally_spirits: "Can summon allies normally."
+  sacrificing: "May summon blood spirits, but considered a serious crime among dragonkind."
+  free_spirits: "May attempt control by normal rules if true name known; often can bargain/command without magically binding."
+  restrictions: ["cannot summon/control ancestor spirits","cannot summon/control loa spirits"]
+enchanting:
+  foci: "Rare; use normal enchanting rules."
+  body_parts: "Separated scales, claws, horns etc. are retained by dragon or trusted associates because they can remain ritual links."
+initiation:
+  status: "Nearly all dragon magicians are initiates; great dragons usually high grade (often Grade 10+ except young greats)."
+  groups: "Dragons never belong to magical groups; always self-initiate."
+  common_metamagic: ["Masking","Shielding"]
+  rarer_metamagic: ["Divining","Possessing","Sensing","Absorption","Filtering","Psychometry","Severing"]
+  rare: ["Channeling"]
+  secrets: "GM may assign undiscovered draconic metamagic."
+astral:
+  dual_natured: true
+  physical_actions_while_perceiving: "No +2 penalty."
+  projection: "Dragons with Magical Skills, including all great dragons, may astrally project."
+  astral_form: "As other characters, Mental attributes substitute for Physical attributes; Astral Armor makes them formidable."
+  metaplanes: "Can project to metaplanes; may know Places unknown to metahumans."
+sources:
+  - {source: source.fanpro-10666, pages: "179-181", relation: expands}

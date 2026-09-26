@@ -2,12 +2,12 @@ phase: pass_b
 active_source: source.fanpro-10666
 source_status: ingesting
 completed_through:
-  printed_page: 174
-  pdf_page: 176
+  printed_page: 182
+  pdf_page: 184
 resume_at:
-  printed_page: 175
-  pdf_page: 177
-last_commit: 946230f5481b3ea0d580efad3c84147045718732
+  printed_page: 183
+  pdf_page: 185
+last_commit: __SELF__
 open_conflicts:
   - pending.dragons.draco-foundation-p24-34
   - pending.dragons.range-7-23
@@ -40,15 +40,13 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - use directed scan for late-SR3/FanPro sources
+  - use directed scan for late-SR3/FanPro sources except deep-scan rules-bearing Game Information
   - scan sequentially
   - preserve provenance
-  - do not infer supersession
+  - do not infer supersession beyond explicit source statements
   - reuse canonical IDs
   - commit bounded semantic slices
   - continue automatically
   - pending ranges must be fully normalized before final reconciliation completes
   - capture every rules-bearing item; do not treat partial rule coverage as complete
-  - Game Information from printed p.175 onward is rules-bearing and requires full extraction
-  - defer reference aids unless needed for discrepancy checking
-  - after the listed sourcebooks, proceed through SR3-era adventures; legacy SR1/SR2 lineage is Pass C
+  - continue deep extraction of Game Information from printed p.183

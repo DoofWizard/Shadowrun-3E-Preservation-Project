@@ -1,0 +1,53 @@
+id: rule.dragons.technology-flight-vehicle-combat
+record_type: rule
+name: "Dragon Technology, Flight and Vehicle Combat"
+domain: dragons
+status: ingested
+effective: {status: current, source: source.fanpro-10666, pages: "181-182", basis: expands}
+cyberware_bioware:
+  stress_regression:
+    trigger: "In stressful situation, roll 1D6 + Bio-Index; if total > Essence"
+    effect: "feral/primitive state for 2D6 Combat Turns; likely attacks threats and cannot act rationally"
+  cyberware: "Must be custom-designed; equivalent to deltaware with additional x4 cost multiplier, total x12 normal cost."
+  essence_bioindex: "Double normal Essence loss or Bio-Index."
+  surgery: "Requires expert surgeon with Parabiology (Dragon)."
+matrix:
+  metahuman_form: "Can use trode net or tortoise normally."
+  natural_form_trodes: "Custom-designed; cost x20 normal."
+  computer_skill: "May learn it, though rare."
+  hitching: "May use dragonspeech to hitch along with a decker; treated as Complex Action to establish; dragon must break mental link before decker can jack out."
+ranged_combat:
+  target_modifier: "Between -2 and -4, standard -3, for dragon's large size."
+flight:
+  speed: "Quickness x50 equivalent"
+  acceleration: "Quickness x3 equivalent"
+  ceiling_meters: 15000
+  test:
+    procedure: "As standard Vehicle Test."
+    skill: "Reaction"
+    handling: 3
+    modifiers: "Driving Test Modifiers Table, SR3 p.134"
+    pool: "Combat Pool may be used as Control Pool, max dice added equal to Quickness."
+    failure: "If required successes not met, maneuver fails; zero successes means temporary loss of control and Crash Test; all 1s means automatic crash."
+vehicle_combat:
+  standard_rules:
+    vehicle_points_modifier: "+30"
+    driver_open_test: "Reaction instead of Control Pool dice"
+    maneuver_skill: "Reaction instead of Vehicle skill"
+    base_target_number: 3
+  alternate_rigger3:
+    walking_speed: "Quickness x3"
+    running_speed: "Quickness x10"
+    full_move_max: "Quickness x50"
+  melee_vs_vehicle: "Use standard critter combat; vehicles cannot melee-counterattack."
+  ramming_equivalent_body: {adult_dragon: 4, great_dragon: 6}
+  targeting:
+    manual_gunnery_modifier: "-3"
+    signature: 4
+  missile_counterattack:
+    method: "Hold an action; on Phase 0 of last initiative pass use breath weapon against missile."
+    missile_body: {man_portable: 1, vehicle_launched: 2, anti_ship: "use listed Rigger 3 Body"}
+    result: "Destroying missile prevents strike."
+  vehicle_damage: "Dragon resists as a character; hardened armor still applies, but APDS/AV can reduce armor by half."
+sources:
+  - {source: source.fanpro-10666, pages: "181-182", relation: expands}
