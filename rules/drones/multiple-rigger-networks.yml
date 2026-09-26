@@ -1,0 +1,56 @@
+{
+  "id": "rule.drones.multiple-rigger-networks",
+  "record_type": "rule",
+  "name": "Multiple-Rigger Networks",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 42,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "large ship/fixed-facility RC networks"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Some large networks support multiple riggers with one captain's-chair controller and standby/direct-control riggers under an exclusion principle.",
+    "inputs": [
+      "network roles",
+      "drone control state"
+    ],
+    "outputs": [
+      "which rigger controls which network element"
+    ],
+    "steps": [
+      "Only ships/fixed facilities normally support multiple riggers.",
+      "A rigger may be in captain's chair, direct-control a drone, or stand by.",
+      "Standby rigger can communicate/perceive through network but cannot issue commands or control drones.",
+      "Only one rigger may control captain's chair; only one rigger may directly control a particular drone.",
+      "If captain's chair becomes vacant, a standby rigger may take over. If contested, resolve Opposed Willpower Test; winner gets captain's chair.",
+      "Captain's-chair rigger can remove a drone from another rigger's control; direct-control rigger can relinquish drone to standby."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "42-43",
+      "relation": "extends",
+      "note": "Multiple Rigger Networks"
+    }
+  ],
+  "notes": [
+    "Source calls the one-drone/one-rigger rule the Rigger Exclusion Principle."
+  ]
+}

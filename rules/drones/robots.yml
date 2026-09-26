@@ -1,0 +1,58 @@
+{
+  "id": "rule.drones.robots",
+  "record_type": "rule",
+  "name": "Robots, Adaptation Pool and Prime Directive",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 44,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "advanced adaptive robots"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Robots are drones with adaptive programming, a shared Adaptation Pool equal to Pilot, independent Initiative and a prime-directive constraint.",
+    "inputs": [
+      "Pilot rating",
+      "prime directive",
+      "task relevance"
+    ],
+    "outputs": [
+      "Adaptation Pool",
+      "Reaction/Initiative"
+    ],
+    "steps": [
+      "Adaptation Pool = Pilot rating. Dice may augment Success Tests like Combat/Control/Task Pool dice when action directly supports prime directive.",
+      "Adaptation Pool refreshes at start of each Combat Turn and is unavailable when rigger directly controls robot.",
+      "IVIS-equipped robot may also use IVIS Pool simultaneously.",
+      "Tasks unrelated to prime directive receive no Adaptation Pool.",
+      "Robot Reaction = Pilot ×2. Base Initiative 1D6, increaseable by Robotic Reflexes design option up to 4D6.",
+      "Adaptation and IVIS Pool dice may not be used for Initiative Tests.",
+      "Robots are adaptive but not self-aware; Matrix access is generally limited to simple programmed tortoise-mode information retrieval unless externally controlled."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.drones.pilot-ratings",
+      "rule.dice-pools.ivis-pool"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 44,
+      "relation": "defines",
+      "note": "Robots / Adaptation Pool / Prime Directive / Initiative / Matrix"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,52 @@
+{
+  "id": "rule.drones.autosofts",
+  "record_type": "rule",
+  "name": "Drone Autosofts",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 44,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "drones with autosoft-interpretation system"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Autosofts are plug-and-play software suites that add skills/abilities to drones.",
+    "inputs": [
+      "Pilot rating",
+      "autosoft ratings",
+      "interpretation memory"
+    ],
+    "outputs": [
+      "new drone skills"
+    ],
+    "steps": [
+      "A drone may use only autosofts with rating <= Pilot rating.",
+      "Autosofts must be loaded into autosoft interpretation system memory.",
+      "When multiple autosofts run simultaneously, combined ratings cannot exceed Pilot rating ×2."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.drones.pilot-ratings"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 44,
+      "relation": "defines",
+      "note": "Autosofts"
+    }
+  ],
+  "notes": []
+}

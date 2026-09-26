@@ -1,0 +1,53 @@
+{
+  "id": "rule.drones.hardwired-remote-control-deck",
+  "record_type": "rule",
+  "name": "Hardwired Remote-Control Deck",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 42,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle permanently hardwired to RC deck"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Permanently hardwiring an RC deck to a vehicle creates a fixed network connection with power, protection and Flux benefits.",
+    "inputs": [
+      "vehicle",
+      "RC deck"
+    ],
+    "outputs": [
+      "hardwired network"
+    ],
+    "steps": [
+      "Deck may draw vehicle alternator/battery power.",
+      "Rigger gains vehicle-protection benefits while jacked into the network and may drive the vehicle while jacked into the RC deck.",
+      "Hardwired RC deck increases Flux by half vehicle Body, rounded down.",
+      "Vehicle must have rigger adaptation and electronics ports before hardwiring.",
+      "Hardwired vehicle cannot be disaffiliated from its remote-control network."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 42,
+      "relation": "adds_option",
+      "note": "Hardwiring a Remote-Control Deck"
+    }
+  ],
+  "notes": []
+}

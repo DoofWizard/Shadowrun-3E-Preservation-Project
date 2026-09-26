@@ -1,24 +1,75 @@
-id: subsystem.drones.remote-control-network
-record_type: subsystem
-name: "Remote-Control Network"
-domain: drones
-status: ingested
-effective: {status: current, source: source.sr3-core, page: 154, basis: defines}
-state:
-  tracked_values: ["remote-control deck","Subscriber List","drone mode","network communication","ECM/ECCM","rigger state"]
-participants: ["rigger","remote-control deck","drones","remote network"]
-components: ["remote-control deck","Subscriber List","primary/secondary drone roles","network channels"]
-entry_conditions: []
-exit_conditions: []
-links:
-  rules: [rule.drones.operation, rule.drones.issuing-commands]
-  procedures: []
-  entities: []
-  options: []
-  modifiers: []
-  interacts_with: [subsystem.vehicles.ecm]
-sources:
-  - {source: source.sr3-core, page: 154, relation: defines, note: "Using Drones / About Drones / Remote-Control Networks"}
-  - {source: source.sr3-core, page: 155, relation: extends, note: "Subscriber Lists and network operation"}
-notes:
-  - "Rigger 3 later expands remote networks and drone operations."
+{
+  "id": "subsystem.drones.remote-control-network",
+  "record_type": "subsystem",
+  "name": "Remote-Control Network",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 41,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "remote-control deck",
+      "subscriber list",
+      "command/simsense/system channels",
+      "Flux",
+      "drone affiliation",
+      "rigger role",
+      "network degradation"
+    ]
+  },
+  "participants": [
+    "rigger",
+    "remote-control deck",
+    "drones",
+    "remote network"
+  ],
+  "components": [
+    "MSST protocol",
+    "E-CDMA sequencing",
+    "subscriber list",
+    "captain's chair",
+    "hardwired decks",
+    "multiple-rigger support",
+    "BattleTac IVIS"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "links": {
+    "rules": [
+      "rule.drones.subscriber-lists",
+      "rule.drones.hardwired-remote-control-deck",
+      "rule.drones.multiple-rigger-networks",
+      "rule.drones.pilot-ratings",
+      "rule.drones.autosofts",
+      "rule.drones.robots"
+    ],
+    "procedures": [],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "subsystem.rigging.electronic-warfare"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "pages": "154-155",
+      "relation": "defines",
+      "note": "Remote-Control Networks"
+    },
+    {
+      "source": "source.r3",
+      "pages": "41-44",
+      "relation": "extends",
+      "note": "Drones / Remote-Control Network"
+    }
+  ],
+  "notes": [
+    "Rigger 3 explains MSST as a three-channel, frequency-hopping protocol with E-CDMA synchronization."
+  ]
+}

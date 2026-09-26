@@ -7,40 +7,53 @@
   "effective": {
     "status": "current",
     "source": "source.r3",
-    "page": 25,
+    "page": 43,
     "basis": "defines"
   },
   "scope": {
     "applies_to": [
-      "rigger controlling drones equipped with BattleTac IVIS"
+      "rigger coordinating BattleTac IVIS-compatible drones as a group"
     ],
-    "excludes": []
+    "excludes": [
+      "drones the rigger is directly jumped into"
+    ]
   },
   "resolution": {
-    "summary": "IVIS Pool dice augment tests when a rigger's IVIS-equipped drones perform group tasks.",
+    "summary": "A Small Unit Tactics (Vehicle Tactics) IVIS Test can improve group drone comprehension and/or create a shared IVIS Pool.",
     "inputs": [
-      "BattleTac IVIS system",
-      "group drone task"
+      "Small Unit Tactics (Vehicle Tactics)",
+      "drone group",
+      "BattleTac IVIS"
     ],
     "outputs": [
-      "extra task dice"
+      "extra Comprehension dice",
+      "shared IVIS Pool"
     ],
-    "steps": []
+    "steps": [
+      "Before group Comprehension Test, make Small Unit Tactics (Vehicle Tactics) TN 5.",
+      "Split successes between extra dice on group Comprehension Test and IVIS Pool dice.",
+      "IVIS Pool is shared by all drones in group, not per-drone.",
+      "Pool can augment any action by any group drone, including Sensor and Gunnery Tests.",
+      "Pool refreshes at end of each Combat Turn until group completes assigned task or receives a new task, then disappears and must be rebuilt."
+    ]
   },
   "links": {
     "uses": [
+      "entity.skill.small-unit-tactics",
       "entities/cyberware/battletac-ivis.yml"
     ],
     "affects": [],
     "modified_by": [],
-    "interacts_with": []
+    "interacts_with": [
+      "rule.drones.pilot-ratings"
+    ]
   },
   "sources": [
     {
       "source": "source.r3",
-      "page": 25,
+      "page": 43,
       "relation": "defines",
-      "note": "IVIS Pool"
+      "note": "BattleTac IVIS System / IVIS Test / IVIS Pool"
     }
   ],
   "notes": []

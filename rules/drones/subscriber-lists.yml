@@ -1,0 +1,52 @@
+{
+  "id": "rule.drones.subscriber-lists",
+  "record_type": "rule",
+  "name": "Remote-Control Subscriber Lists",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 42,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "remote-control decks and affiliated drones"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A subscriber list maps drones to call signs and synchronizes their frequency-hopping position in the E-CDMA sequence.",
+    "inputs": [
+      "drone count",
+      "subscriber-list datafile"
+    ],
+    "outputs": [
+      "configured network affiliation"
+    ],
+    "steps": [
+      "In a stressful/critical situation, programming a subscriber list requires Electronics (4). Base Time in minutes = number of drones ×2.",
+      "Uploading/affiliating a drone uses the special digital-code fill module/data port; file access takes ~30 seconds and normally no skill test, or Vehicle Background (4) if unfamiliar.",
+      "Switching to a new subscriber list requires rebooting the RC deck: ~6 seconds plus 1 second per drone on the new list.",
+      "Drones on old list disaffiliate when reboot starts; drones on new list are unsubscribed when reboot ends and must be affiliated at normal rate."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 42,
+      "relation": "extends",
+      "note": "Subscriber Lists"
+    }
+  ],
+  "notes": []
+}

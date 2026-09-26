@@ -1,0 +1,50 @@
+{
+  "id": "rule.drones.dump-shock",
+  "record_type": "rule",
+  "name": "Drone Network Dump Shock",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 42,
+    "basis": "clarifies"
+  },
+  "scope": {
+    "applies_to": [
+      "rigger directly controlling drone/vehicle when destroyed or disconnected"
+    ],
+    "excludes": [
+      "secondary/autonomous drone destruction",
+      "ordinary captain's-chair monitoring unless network disrupted by EW"
+    ]
+  },
+  "resolution": {
+    "summary": "Dump shock occurs when a directly controlled vehicle/drone is destroyed or severed; secondary-mode destruction normally only causes a simsense warning.",
+    "inputs": [
+      "control mode",
+      "drone/network destruction"
+    ],
+    "outputs": [
+      "dump shock or warning"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.asist-backlash"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 42,
+      "relation": "clarifies",
+      "note": "Dump Shock"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "rule.drones.pilot-ratings",
+  "record_type": "rule",
+  "name": "Drone Pilot Ratings",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 43,
+    "basis": "clarifies"
+  },
+  "scope": {
+    "applies_to": [
+      "drones not directly controlled by a rigger"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Pilot rating is the drone's semiautonomous decision-making capability and substitutes for the rigger's skills for ordinary programmed tasks.",
+    "inputs": [
+      "Pilot rating",
+      "task"
+    ],
+    "outputs": [
+      "drone test dice/capability"
+    ],
+    "steps": [
+      "Pilot rating may act as appropriate Vehicle skill for maneuvering, Gunnery for weapon use, and for other onboard-device operation within programmed function.",
+      "Pilot ratings should not stand in for unrelated skills/abilities; autosofts and robotic functions cover expanded capability.",
+      "Installing new weapons/equipment may require adjusting pilot system. Treat as program upgrade: Computer (Programming) vs Pilot rating, subject to GM discretion."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [
+      "rule.drones.autosofts"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "43-44",
+      "relation": "clarifies",
+      "note": "Pilot Ratings"
+    }
+  ],
+  "notes": []
+}
