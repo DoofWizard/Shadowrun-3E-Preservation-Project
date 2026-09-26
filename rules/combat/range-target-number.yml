@@ -1,23 +1,277 @@
-id: rule.combat.range-target-number
-record_type: rule
-name: "Ranged Combat Range and Base Target Number"
-domain: combat
-status: ingested
-effective: {status: current, source: source.sr3-core, page: 110, basis: defines}
-scope:
-  applies_to: ["ranged attacks"]
-  excludes: []
-resolution:
-  summary: "Weapon range category determines the base attack target number: Short 4, Medium 5, Long 6, Extreme 9, subject to weapon-specific range bands and modifiers."
-  inputs: ["weapon","distance"]
-  outputs: ["range category","base target number"]
-  steps: []
-links:
-  uses: []
-  affects: [procedure.combat.ranged-attack]
-  modified_by: [modifier.combat.ranged-target-number]
-  interacts_with: []
-sources:
-  - {source: source.sr3-core, page: 110, relation: defines, note: "Range and Base Target Number"}
-  - {source: source.sr3-core, page: 111, relation: clarifies, note: "Weapon Range Table"}
-notes: []
+{
+  "id": "rule.combat.range-target-number",
+  "record_type": "rule",
+  "name": "Ranged Combat Range and Base Target Number",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.sr3-core",
+    "page": 110,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "ranged attacks"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Range category sets base TN: Short 4, Medium 5, Long 6, Extreme 9. Cannon Companion consolidates weapon-specific bands, including added weapon classes.",
+    "inputs": [
+      "weapon class",
+      "distance",
+      "Strength where applicable"
+    ],
+    "outputs": [
+      "range category",
+      "base target number"
+    ],
+    "steps": []
+  },
+  "range_bands": [
+    {
+      "weapon": "Hold-Out Pistol",
+      "short": "0-5",
+      "medium": "6-15",
+      "long": "16-30",
+      "extreme": "31-50"
+    },
+    {
+      "weapon": "Light/Machine Pistol",
+      "short": "0-5",
+      "medium": "6-15",
+      "long": "16-30",
+      "extreme": "31-50"
+    },
+    {
+      "weapon": "Heavy Pistol",
+      "short": "0-5",
+      "medium": "6-20",
+      "long": "21-40",
+      "extreme": "41-60"
+    },
+    {
+      "weapon": "SMG",
+      "short": "0-10",
+      "medium": "11-40",
+      "long": "41-80",
+      "extreme": "81-150"
+    },
+    {
+      "weapon": "Taser",
+      "short": "0-5",
+      "medium": "6-10",
+      "long": "11-12",
+      "extreme": "13-15"
+    },
+    {
+      "weapon": "Shotgun",
+      "short": "0-10",
+      "medium": "11-20",
+      "long": "21-50",
+      "extreme": "51-100"
+    },
+    {
+      "weapon": "Sporting Rifle",
+      "short": "0-100",
+      "medium": "101-250",
+      "long": "251-500",
+      "extreme": "501-750"
+    },
+    {
+      "weapon": "Sniper Rifle",
+      "short": "0-150",
+      "medium": "151-300",
+      "long": "301-700",
+      "extreme": "701-1000"
+    },
+    {
+      "weapon": "Assault Rifle",
+      "short": "0-50",
+      "medium": "51-150",
+      "long": "151-350",
+      "extreme": "351-550"
+    },
+    {
+      "weapon": "Light Machine Gun",
+      "short": "0-75",
+      "medium": "76-200",
+      "long": "201-400",
+      "extreme": "401-800"
+    },
+    {
+      "weapon": "Medium Machine Gun",
+      "short": "0-80",
+      "medium": "81-250",
+      "long": "251-750",
+      "extreme": "751-1200"
+    },
+    {
+      "weapon": "Heavy Machine Gun",
+      "short": "0-80",
+      "medium": "81-250",
+      "long": "251-800",
+      "extreme": "801-1500"
+    },
+    {
+      "weapon": "Assault Cannon",
+      "short": "0-100",
+      "medium": "101-300",
+      "long": "301-900",
+      "extreme": "901-2400"
+    },
+    {
+      "weapon": "Minigun",
+      "short": "0-75",
+      "medium": "76-200",
+      "long": "201-400",
+      "extreme": "401-800"
+    },
+    {
+      "weapon": "Bow",
+      "short": "0-STR",
+      "medium": "to STR×10",
+      "long": "to STR×30",
+      "extreme": "to STR×60"
+    },
+    {
+      "weapon": "Light Crossbow",
+      "short": "0-STR×2",
+      "medium": "to STR×8",
+      "long": "to STR×20",
+      "extreme": "to STR×40"
+    },
+    {
+      "weapon": "Medium Crossbow",
+      "short": "0-STR×3",
+      "medium": "to STR×12",
+      "long": "to STR×30",
+      "extreme": "to STR×50"
+    },
+    {
+      "weapon": "Heavy Crossbow",
+      "short": "0-STR×5",
+      "medium": "to STR×15",
+      "long": "to STR×40",
+      "extreme": "to STR×60"
+    },
+    {
+      "weapon": "Sling Launcher",
+      "short": "0-STR×3",
+      "medium": "to STR×5",
+      "long": "to STR×20",
+      "extreme": "to STR×30"
+    },
+    {
+      "weapon": "Sling Shot",
+      "short": "0-STR",
+      "medium": "to STR×2",
+      "long": "to STR×5",
+      "extreme": "to STR×7"
+    },
+    {
+      "weapon": "Speargun",
+      "short": "0-10",
+      "medium": "11-40",
+      "long": "41-80",
+      "extreme": "81-150"
+    },
+    {
+      "weapon": "Caltrops",
+      "short": "0-STR×3",
+      "medium": "to STR×5",
+      "long": "to STR×10",
+      "extreme": "to STR×20"
+    },
+    {
+      "weapon": "Nets",
+      "short": "0-2",
+      "medium": "3-4",
+      "long": "5-6",
+      "extreme": "7-10"
+    },
+    {
+      "weapon": "Shuriken",
+      "short": "0-STR",
+      "medium": "to STR×2",
+      "long": "to STR×5",
+      "extreme": "to STR×7"
+    },
+    {
+      "weapon": "Thrown Knife",
+      "short": "0-STR",
+      "medium": "to STR×2",
+      "long": "to STR×3",
+      "extreme": "to STR×5"
+    },
+    {
+      "weapon": "Blowgun",
+      "short": "0-3",
+      "medium": "4-8",
+      "long": "9-12",
+      "extreme": "13-15"
+    },
+    {
+      "weapon": "Flamethrower",
+      "short": "0-10",
+      "medium": "11-20",
+      "long": "21-50",
+      "extreme": "51-100"
+    },
+    {
+      "weapon": "Gyrojet (Land)",
+      "short": "0-5",
+      "medium": "6-20",
+      "long": "21-40",
+      "extreme": "41-60"
+    },
+    {
+      "weapon": "Gyrojet (Water)",
+      "short": "0-10",
+      "medium": "11-20",
+      "long": "21-50",
+      "extreme": "51-100"
+    },
+    {
+      "weapon": "Netguns",
+      "short": "3-10 minimum",
+      "medium": "11-20",
+      "long": "21-50",
+      "extreme": "51-100"
+    }
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.ranged-attack"
+    ],
+    "modified_by": [
+      "modifier.combat.ranged-target-number"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "page": 110,
+      "relation": "defines",
+      "note": "Range and Base Target Number"
+    },
+    {
+      "source": "source.sr3-core",
+      "page": 111,
+      "relation": "clarifies",
+      "note": "Weapon Range Table"
+    },
+    {
+      "source": "source.cc",
+      "page": 113,
+      "relation": "extends",
+      "note": "Consolidated Weapon Range Table"
+    }
+  ],
+  "notes": [
+    "Netgun minimum range refers to SR3 minimum-range rules."
+  ]
+}

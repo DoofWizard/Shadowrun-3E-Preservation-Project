@@ -1,0 +1,122 @@
+{
+  "id": "rule.combat.grenade-launched-weapon-ranges",
+  "record_type": "rule",
+  "name": "Grenade and Launched Weapon Ranges",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 114,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "thrown grenades",
+      "grenade launchers",
+      "mortars",
+      "missile launchers"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Cannon Companion consolidates range bands and base scatter for grenade/launched weapons. Base TNs are Short 4, Medium 5, Long 8, Extreme 9.",
+    "inputs": [
+      "launcher type",
+      "distance",
+      "Strength for thrown grenades"
+    ],
+    "outputs": [
+      "range category",
+      "base TN",
+      "scatter"
+    ],
+    "steps": []
+  },
+  "range_bands": [
+    {
+      "weapon": "Standard (Thrown)",
+      "short": "0-STR×3",
+      "medium": "to STR×5",
+      "long": "to STR×10",
+      "extreme": "to STR×20",
+      "scatter": "1D6 m"
+    },
+    {
+      "weapon": "Aerodynamic (Thrown)",
+      "short": "0-STR×3",
+      "medium": "to STR×5",
+      "long": "to STR×20",
+      "extreme": "to STR×30",
+      "scatter": "2D6 m"
+    },
+    {
+      "weapon": "Grenade Launcher",
+      "short": "5-50 minimum",
+      "medium": "51-100",
+      "long": "101-150",
+      "extreme": "151-300",
+      "scatter": "3D6 m"
+    },
+    {
+      "weapon": "Mortar Launcher",
+      "short": "150-300 minimum",
+      "medium": "301-1000",
+      "long": "1001-4000",
+      "extreme": "4001-6000",
+      "scatter": "3D6 m"
+    },
+    {
+      "weapon": "Ballista Missile Launcher",
+      "short": "20-100 minimum",
+      "medium": "101-500",
+      "long": "501-3000",
+      "extreme": "3001-5000",
+      "scatter": "2D6 m"
+    },
+    {
+      "weapon": "Generic Missile Launcher",
+      "short": "20-150 minimum",
+      "medium": "151-450",
+      "long": "451-1200",
+      "extreme": "1201-3000",
+      "scatter": "2D6 m"
+    },
+    {
+      "weapon": "Great Dragon Missile Launcher",
+      "short": "20-350 minimum",
+      "medium": "351-750",
+      "long": "751-1500",
+      "extreme": "1501-5000",
+      "scatter": "2D6 m"
+    },
+    {
+      "weapon": "Vogeljaeger Man-Portable",
+      "short": "25-200 minimum",
+      "medium": "201-600",
+      "long": "601-2000",
+      "extreme": "2001-4000",
+      "scatter": "2D6 m"
+    }
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.grenade-attack",
+      "procedure.combat.missile-combat"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 114,
+      "relation": "extends",
+      "note": "Grenade/Launched Weapon Range Table"
+    }
+  ],
+  "notes": [
+    "Asterisked minimum ranges use the SR3 minimum-range rule."
+  ]
+}

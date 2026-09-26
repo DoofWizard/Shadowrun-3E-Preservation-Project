@@ -1,0 +1,75 @@
+{
+  "id": "rule.combat.target-designator-ranges",
+  "record_type": "rule",
+  "name": "Target Designator Ranges",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 114,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "laser",
+      "microwave",
+      "radar target designators"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Designator type sets range bands used when spotting/designating targets. Base TNs are Short 4, Medium 5, Long 8, Extreme 9.",
+    "inputs": [
+      "designator type",
+      "distance"
+    ],
+    "outputs": [
+      "range category",
+      "base TN"
+    ],
+    "steps": []
+  },
+  "range_bands": [
+    {
+      "type": "Laser Designator",
+      "short": "50-300 minimum",
+      "medium": "301-1500",
+      "long": "1501-3000",
+      "extreme": "3001-5000"
+    },
+    {
+      "type": "Microwave Designator",
+      "short": "50-500 minimum",
+      "medium": "501-2500",
+      "long": "2501-5000",
+      "extreme": "5001-8000"
+    },
+    {
+      "type": "Radar Designator",
+      "short": "50-500 minimum",
+      "medium": "501-3000",
+      "long": "3001-6000",
+      "extreme": "6001-10000"
+    }
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.indirect-fire"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 114,
+      "relation": "extends",
+      "note": "Target Designator Table"
+    }
+  ],
+  "notes": [
+    "Asterisked minimum ranges use the SR3 minimum-range rule."
+  ]
+}
