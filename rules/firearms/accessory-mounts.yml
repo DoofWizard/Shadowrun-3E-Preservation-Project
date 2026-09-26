@@ -1,0 +1,34 @@
+id: rule.firearms.accessory-mounts
+record_type: rule
+name: "Firearm Accessory Mounts"
+domain: firearms
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 280
+  basis: defines
+
+resolution:
+  summary: "Firearm accessories occupy barrel, underbarrel or top mount locations; only one accessory may occupy a mount, and integral accessories consume the mount without their normal post-purchase Concealability modifier."
+  general:
+    - "Only one accessory may be attached to a particular mount."
+    - "Integral accessories occupy mount locations."
+    - "An integral accessory does not apply the ordinary after-purchase Concealability modifier and cannot be removed."
+  weapon_class_limits:
+    standard_pistols: "One barrel mount and one top mount."
+    revolvers: "Cannot use silencers or sound suppressers."
+    hold_out_pistols: "Cannot mount accessories."
+    tasers: "One top mount."
+    smgs: "One top, one barrel and one underbarrel mount; grenade launchers are excluded; silencers are prohibited but sound suppressers are allowed."
+    rifles: "One barrel, one underbarrel and one top mount."
+    shotguns: "Cannot mount silencers or sound suppressers."
+    heavy_weapons: "Generally one barrel, one underbarrel and one top mount."
+    missile_rocket_launchers: "Do not use standard firearm accessories."
+
+sources:
+  - {source: source.sr3-core, page: 276, relation: clarifies, note: "Weapon-class mount limits begin with pistols"}
+  - {source: source.sr3-core, page: 277, relation: clarifies, note: "SMG and rifle mount limits"}
+  - {source: source.sr3-core, page: 279, relation: clarifies, note: "Heavy-weapon mount limits"}
+  - {source: source.sr3-core, page: 280, relation: defines, note: "Firearm Accessories / Mount"}
