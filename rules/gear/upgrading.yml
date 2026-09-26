@@ -1,0 +1,37 @@
+id: rule.gear.upgrading
+record_type: rule
+name: "Upgrading Rated Gear"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 272
+  basis: defines
+
+scope:
+  applies_to:
+    - "rated gear that can accept component upgrades"
+
+resolution:
+  summary: "When rated gear can be upgraded, base the upgrade cost on the difference between the existing and desired rating costs. Use the improved rating's Availability and Street Index to obtain the parts; installation may require an appropriate Build/Repair test at gamemaster-determined difficulty."
+  inputs:
+    - existing rating and cost
+    - desired rating and cost
+    - improved-rating Availability
+    - improved-rating Street Index
+    - appropriate Build/Repair skill
+  outputs:
+    - upgraded gear rating
+    - acquisition/installation requirements
+
+links:
+  uses:
+    - rule.gear.availability
+    - rule.gear.street-index
+    - rule.skills.build-repair
+  affects: []
+
+sources:
+  - {source: source.sr3-core, page: 272, relation: defines, note: "Upgrading"}

@@ -1,0 +1,46 @@
+id: rule.gear.encumbrance
+record_type: rule
+name: "Hauling the Load"
+domain: gear
+status: ingested
+
+effective:
+  status: current
+  source: source.sr3-core
+  page: 274
+  basis: defines
+
+scope:
+  applies_to:
+    - "characters carrying excessive equipment"
+
+resolution:
+  summary: "A character may carry Strength × 5 kg without appreciable effect. Higher multiples impose escalating Stun-equivalent fatigue and movement restrictions after a number of Combat Turns equal to Body."
+  load_bands:
+    normal:
+      maximum: "Strength × 5 kg"
+      effect: "No appreciable penalty."
+    double:
+      load: "Strength × 10 kg"
+      onset: "after Body Combat Turns"
+      effect: "State equivalent to a Light Stun wound; gain one additional Stun box each Combat Turn until the load is dropped or the character falls unconscious."
+    triple:
+      load: "Strength × 15 kg"
+      onset: "after Body Combat Turns"
+      effect: "State equivalent to a Moderate wound; cannot run; movement halved."
+    quadruple:
+      load: "Strength × 20 kg"
+      onset: "after Body Combat Turns"
+      effect: "State equivalent to a Serious wound; cannot run; movement reduced to one-quarter."
+    heavier:
+      effect: "Character passes out from exertion."
+  lifting:
+    note: "For lifting rather than carrying, the source permits a Strength-based random addition to maximum load; this does not alter the carry thresholds above."
+
+links:
+  uses:
+    - rule.condition.condition-monitor
+    - rule.movement.combat-movement
+
+sources:
+  - {source: source.sr3-core, page: 274, relation: defines, note: "Hauling the Load"}
