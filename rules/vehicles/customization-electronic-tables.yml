@@ -1,0 +1,601 @@
+{
+  "id": "rule.vehicles.customization-electronic-tables",
+  "record_type": "rule",
+  "name": "Vehicle Electronic-System Design and Retrofit Tables",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 144,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "ECM",
+      "ECCM",
+      "ED",
+      "ECD",
+      "vehicle sensors",
+      "sonar"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 rating tables give design CF/DP and retrofit CF/cost/weight/Availability for electronic systems. Retrofit ECM/ECCM/ED/ECD uses vehicle facility and 16h per level Electronics B/R(4); sensors use vehicle facility and 16h per level Electronics B/R(4); sonar uses vehicle facility and 40h per level Electronics B/R(6).",
+    "inputs": [
+      "system",
+      "rating"
+    ],
+    "outputs": [
+      "design/customization specifications"
+    ],
+    "steps": []
+  },
+  "tables": {
+    "ecm": [
+      [
+        1,
+        0,
+        1,
+        100,
+        10000,
+        5,
+        "5/7 days",
+        2.5
+      ],
+      [
+        2,
+        1,
+        2,
+        200,
+        20000,
+        10,
+        "6/10 days",
+        3
+      ],
+      [
+        3,
+        2,
+        3,
+        300,
+        30000,
+        15,
+        "7/14 days",
+        3.5
+      ],
+      [
+        4,
+        2,
+        3,
+        500,
+        50000,
+        20,
+        "8/21 days",
+        4
+      ],
+      [
+        5,
+        3,
+        6,
+        750,
+        75000,
+        25,
+        "10/30 days",
+        null
+      ],
+      [
+        6,
+        4,
+        8,
+        1000,
+        100000,
+        50,
+        "12/45 days",
+        null
+      ],
+      [
+        7,
+        6,
+        9,
+        2000,
+        200000,
+        75,
+        "14/60 days",
+        null
+      ],
+      [
+        8,
+        10,
+        12,
+        3000,
+        300000,
+        100,
+        "16/3 months",
+        null
+      ],
+      [
+        9,
+        12,
+        16,
+        5000,
+        500000,
+        150,
+        "18/6 months",
+        null
+      ],
+      [
+        10,
+        16,
+        20,
+        10000,
+        1000000,
+        250,
+        "20/1 year",
+        null
+      ]
+    ],
+    "eccm": [
+      [
+        1,
+        0,
+        1,
+        100,
+        10000,
+        3,
+        "4/7 days",
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        200,
+        20000,
+        5,
+        "4/10 days",
+        2.5
+      ],
+      [
+        3,
+        2,
+        3,
+        300,
+        30000,
+        8,
+        "5/14 days",
+        3
+      ],
+      [
+        4,
+        2,
+        3,
+        400,
+        40000,
+        12,
+        "6/21 days",
+        3.5
+      ],
+      [
+        5,
+        3,
+        6,
+        500,
+        50000,
+        18,
+        "8/30 days",
+        null
+      ],
+      [
+        6,
+        4,
+        8,
+        750,
+        75000,
+        25,
+        "10/45 days",
+        null
+      ],
+      [
+        7,
+        6,
+        9,
+        1000,
+        100000,
+        50,
+        "12/60 days",
+        null
+      ],
+      [
+        8,
+        10,
+        12,
+        2500,
+        250000,
+        75,
+        "14/3 months",
+        null
+      ],
+      [
+        9,
+        12,
+        16,
+        3000,
+        300000,
+        100,
+        "16/6 months",
+        null
+      ],
+      [
+        10,
+        16,
+        20,
+        5000,
+        500000,
+        150,
+        "18/1 year",
+        null
+      ]
+    ],
+    "ed": [
+      [
+        1,
+        1,
+        2,
+        150,
+        15000,
+        10,
+        "8/30 days",
+        3
+      ],
+      [
+        2,
+        2,
+        3,
+        300,
+        30000,
+        20,
+        "8/45 days",
+        3.5
+      ],
+      [
+        3,
+        4,
+        5,
+        500,
+        50000,
+        30,
+        "8/60 days",
+        4
+      ],
+      [
+        4,
+        5,
+        6,
+        750,
+        75000,
+        45,
+        "10/3 months",
+        4.5
+      ],
+      [
+        5,
+        6,
+        7,
+        1000,
+        100000,
+        50,
+        "12/6 months",
+        5
+      ],
+      [
+        6,
+        8,
+        9,
+        2500,
+        250000,
+        75,
+        "16/1 year",
+        null
+      ]
+    ],
+    "ecd": [
+      [
+        1,
+        1,
+        2,
+        100,
+        10000,
+        25,
+        "8/30 days",
+        3
+      ],
+      [
+        2,
+        2,
+        3,
+        300,
+        30000,
+        30,
+        "8/45 days",
+        3.5
+      ],
+      [
+        3,
+        3,
+        4,
+        500,
+        50000,
+        35,
+        "8/60 days",
+        4
+      ],
+      [
+        4,
+        4,
+        5,
+        750,
+        75000,
+        45,
+        "10/3 months",
+        4.5
+      ],
+      [
+        5,
+        6,
+        6,
+        1500,
+        150000,
+        60,
+        "12/6 months",
+        5
+      ],
+      [
+        6,
+        8,
+        8,
+        3000,
+        300000,
+        75,
+        "16/1 year",
+        null
+      ]
+    ],
+    "sensors": [
+      [
+        1,
+        0,
+        1,
+        50,
+        5000,
+        12,
+        "4/7 days",
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        75,
+        7500,
+        20,
+        "4/10 days",
+        2.5
+      ],
+      [
+        3,
+        2,
+        3,
+        100,
+        10000,
+        25,
+        "5/14 days",
+        3
+      ],
+      [
+        4,
+        2,
+        3,
+        125,
+        12500,
+        35,
+        "6/21 days",
+        3.5
+      ],
+      [
+        5,
+        3,
+        6,
+        150,
+        15000,
+        50,
+        "8/30 days",
+        null
+      ],
+      [
+        6,
+        4,
+        8,
+        200,
+        20000,
+        75,
+        "10/45 days",
+        null
+      ],
+      [
+        7,
+        6,
+        9,
+        300,
+        30000,
+        110,
+        "12/60 days",
+        null
+      ],
+      [
+        8,
+        10,
+        12,
+        500,
+        50000,
+        150,
+        "14/3 months",
+        null
+      ],
+      [
+        9,
+        12,
+        16,
+        1000,
+        100000,
+        200,
+        "16/6 months",
+        null
+      ],
+      [
+        10,
+        16,
+        20,
+        5000,
+        500000,
+        250,
+        "18/1 year",
+        null
+      ]
+    ],
+    "sonar": [
+      [
+        1,
+        4,
+        6,
+        50,
+        5000,
+        120,
+        "4/7 days",
+        2
+      ],
+      [
+        2,
+        6,
+        8,
+        500,
+        25000,
+        250,
+        "4/10 days",
+        2.5
+      ],
+      [
+        3,
+        10,
+        14,
+        2500,
+        125000,
+        350,
+        "5/14 days",
+        3
+      ],
+      [
+        4,
+        16,
+        25,
+        5000,
+        625000,
+        500,
+        "6/21 days",
+        3.5
+      ],
+      [
+        5,
+        50,
+        75,
+        2500,
+        2000000,
+        750,
+        "8/30 days",
+        null
+      ],
+      [
+        6,
+        75,
+        100,
+        3000,
+        5000000,
+        1000,
+        "10/45 days",
+        null
+      ],
+      [
+        7,
+        100,
+        150,
+        10000,
+        15000000,
+        1250,
+        "12/60 days",
+        null
+      ],
+      [
+        8,
+        200,
+        300,
+        15000,
+        20000000,
+        1500,
+        "14/3 months",
+        null
+      ],
+      [
+        9,
+        300,
+        500,
+        25000,
+        30000000,
+        2000,
+        "16/6 months",
+        null
+      ],
+      [
+        10,
+        500,
+        750,
+        50000,
+        50000000,
+        2500,
+        "18/1 year",
+        null
+      ]
+    ]
+  },
+  "column_order": [
+    "rating",
+    "design_cf",
+    "custom_cf",
+    "design_points",
+    "custom_cost_nuyen",
+    "weight_kg",
+    "availability",
+    "street_index"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.customization-electronic-systems"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.rigging.electronic-warfare",
+      "subsystem.vehicles.sensors"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "144-148",
+      "relation": "defines",
+      "note": "ECM/ECCM/ED/ECD, Sensor and Sonar Systems tables"
+    }
+  ],
+  "notes": [
+    "Null Street Index means the source table prints a dash; no value is inferred."
+  ]
+}

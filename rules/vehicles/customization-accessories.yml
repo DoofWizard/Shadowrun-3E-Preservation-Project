@@ -1,0 +1,76 @@
+{
+  "id": "rule.vehicles.customization-accessories",
+  "record_type": "rule",
+  "name": "Vehicle Customization Accessories",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 148,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 defines general-purpose vehicle accessories and conversion packages with design/retrofit costs, space/load consequences and operational effects.",
+    "inputs": [
+      "vehicle",
+      "accessory",
+      "Body/chassis",
+      "available CF/Load"
+    ],
+    "outputs": [
+      "installed accessory",
+      "changed vehicle capabilities"
+    ],
+    "steps": [
+      "Aircraft Drop Tanks replace pairs of external rocket/missile mounts; each tank holds 1,000L, so a pair adds 2,000L. Drop tanks reduce Signature by 1; every additional pair lowers Speed by 15 and every two pairs worsen Handling by +1. Install/remove in 10 minutes; jettison is a Complex Action and restores standard flight characteristics. Pair cost 8,000 nuyen; each tank Body 1, Armor 3.",
+      "Amphibious Operation Packages are ground-vehicle conversions. Submarine operation requires a sealed power plant; unsealed engines can operate only on the surface. Water touching the ground uses Off-Road speed. Level 1 uses wheels, water speed 15m/turn and Handling +2. Level 2 propeller system gives water Speed 30, no Handling penalty. Level 3 waterjets/impellers gives water Speed 45, no Handling penalty. Design DP 25/80/200; design CF 0/0/2. Retrofit costs 2,500/7,500/15,000; Availability 3/6d(SI1), 5/10d(SI1.25), 6/12d(SI1.5); facility; 32h B/R(4), 40h B/R(5), 80h B/R(6); custom CF 0/2/4.",
+      "Anti-Theft Systems: stock vehicles have rating-2 maglocks on entry/control points plus keypad/card/fingerprint authentication and alarm/call responses. Improved Security raises rating 3-10. Optional shock and proximity-alert responses can be added; the source also describes a destructive anti-theft option with collateral-risk rules. Design DP/rating: 3-6=4 each, 7-9=10 each, 10+=50 each; shock +20; proximity +2; max10. Retrofit parts/rating: 400, 1,000, or 5,000 for those bands; shock +2,000; proximity +250; Availability 4/7d(SI1.25), 5/10d(SI1.5), 6/14d(SI2); facility; 40h Vehicle B/R(4).",
+      "Ejection Bucket Seats include solid-fuel rocket, stabilization and parasail. Reinforced versions support large metahumans. Design 35 DP standard/70 reinforced; 6 CF; 100kg/250kg. Retrofit 3,000/6,000 nuyen; Availability 5/10d(SI2); facility; 16h Vehicle B/R(4); 7 CF; 110kg/250kg.",
+      "Convertible Tops replace a hardtop with folding canopy; if no roll bar, double target number for passenger Damage Resistance Tests after a crash; rag-tops do not protect occupants from side/rear/top attacks. Design 0 DP. Retrofit cost = vehicle cost×0.1 +2,500; Availability 4/72h(SI1); vehicle shop; 24h Vehicle B/R(4).",
+      "Cranes require stationary, immobilized vehicle with chocks and are unavailable Body 0. Crane Load rating controls lifting; towing while moving is limited by lower of vehicle Load or crane Load. Capacity by vehicle Body: 1=25kg,2=200,3=750,4=2,000,5=5,000,6=20,000,7=30,000,8=45,000,9=60,000,10+=Body×Body×750kg. Design DP = crane Load÷50; 15 CF; -Body×80kg Load. Retrofit cost = crane Load×2 nuyen; Availability 6/14d(SI2); facility; Body×16h Vehicle B/R(4); 35 CF; same Load reduction.",
+      "Drone Racks launch/recover airborne drones from moving vehicles. Launch requires one action to activate rack and another to launch; launched drone movement starts at greater of carrier current speed or drone stall speed. Recovery requires vehicle Handling Test and drone Handling Test simultaneously; one failure means no recovery, both failures crash drone into vehicle. Rack is an enclosed mini-hangar with vehicle Armor but half vehicle Body. Design Body×12 DP; CF = stored drones; 45kg. Retrofit cost = vehicle cost×0.1 +2,500; Availability 4/96h(SI2); facility; 8h per Body point Vehicle B/R(4); CF=drone storage+2; 45kg.",
+      "External Cargo Mounts use no CF but loaded mounts worsen Handling +1; external capacity cannot exceed original internal cargo capacity. Cannot be added during design. Retrofit 250 nuyen per CF; Availability 3/24h(SI1); vehicle shop; 8h Vehicle B/R(3).",
+      "Aircraft Flotation Packages permit amphibious ditching. Initial Economy×1.2. Fixed-wing Speed halves and cannot touch down on land; helicopter Speed×0.9 rounded down and may still land. Design chassis point value×1.2. Retrofit vehicle cost×0.1 +2,500; Availability 4/7d(SI2); facility; 32h Vehicle B/R(3); 100kg.",
+      "Generator option is for trailers, barges and rail cars only and powers powered options/modifications. Design cost chassis cost÷4; CF starting CF÷3; Load reduction starting Load÷2. Retrofit parts chassis cost÷4; Availability 5/7d(SI1); vehicle shop; 16h Vehicle B/R(4); same CF/Load.",
+      "Hovercraft Water Seals keep a powerless hovercraft afloat rather than sinking within 30 minutes. Design Body×5 DP. Retrofit Body×500 nuyen; Availability 4/96h(SI1); facility; 32h Vehicle B/R(3).",
+      "Medical Clinic is a mobile medical shop. Rating determines capability; patient capacity is limited by People Space. Design cost (Rating+4)^3×3 DP; max6; CF Rating×2; Load Rating×75kg. Retrofit cost (Rating+4)^3×800 nuyen; Availability (Rating+3)/(Rating×2 days), SI3; vehicle and electronics shops; Base Time Rating days; appropriate Vehicle B/R and Electronics B/R tests with TN=Rating; max6; CF Rating×3; Load Rating×100kg.",
+      "Photovoltaic Chameleon Paint changes vehicle pigmentation/pattern by computer command (minimum one Complex Action) but does not provide environmental camouflage. Incompatible with ruthenium polymers, smart armor, ablative armor and radar-absorbent materials. Design 50 DP. Retrofit 5,000 nuyen; Availability 6/14d(SI1.5); vehicle shop; 72h Electronics(6).",
+      "Seats: bench seats hold two human-sized/three small metahumans or 200kg; removing one frees 6 CF and +200kg Load. Folding bench seats free 4 CF/150kg when folded. Bucket seats hold one person; removing frees 6 CF and +100kg Load. Bench/bucket seats may have up to 2 Armor (bench armor protects rear only). Reinforced seats support larger metahumans: bench up to 300kg, bucket up to 250kg. Standard-seat oversized occupants take +2 on crash/collision Resistance Tests; riding unseated has same effect. Design: standard/folding 0 DP, reinforced 5 DP, armor 12 DP/point. Retrofit standard/folding 750 nuyen, reinforced bench 1,500, standard bucket 700, reinforced bucket 1,500 +100 per 25kg above 250; armor 1,250/point; Availability 3/48h(SI1); shop; 4h Vehicle B/R(4).",
+      "Sidecars: small/medium/large provide 6/8/12 CF, Handling +1/+1/+2, design 10/20/35 DP, retrofit 1,000/2,000/3,500 nuyen. Speed -15 and Economy -10%; Body equals motorcycle; cargo capacity excludes seating. Install/remove 15 minutes.",
+      "Spotlight effective range 600m; beam diameter grows from 0.5m at origin to 5m at max. White or medium-range infrared versions; manual or remote. Design 6 DP. Retrofit 600 nuyen; Availability 4/96h(SI1.5); vehicle shop; 24h Vehicle B/R(4).",
+      "Tire types: standard tires halve suspension/Handling-modification benefits, rounding down; cost Body×50. Performance tires are required for improved suspension/drive-by-wire and negate off-road-mode active-suspension benefits; cost Body×75. Off-road tires are required for off-road/active-suspension off-road mode and otherwise act as standard regarding improved suspension/DBW; cost Body×125. Dual-purpose tires support active suspension on/off-road without penalty and otherwise act as standard for improved/high-speed systems; cost Body×250. Runflat versions add armored-vest-equivalent protection (5/3) and cost +200 each.",
+      "Valkyrie Module vehicle installation is the one-patient tele-surgery robotic medical unit. Vehicle version includes rigger adaptation, remote-control interfaces, satellite uplink, datajack, Pilot 5 with Adaptation Pool 5, and one-patient space. Design 3,000 DP, 10 CF, 400kg. Retrofit 1,000,000 nuyen; Availability 10/2 weeks(SI3); vehicle and electronics shops; 5 days; Vehicle B/R(5) and Electronics B/R(5); 15 CF, 500kg.",
+      "Winches on ground vehicles pull/tow/lift. Capacity by Body: 0=5kg,1=25,2=200,3=750,4=2,000,5=5,000,6=20,000,7=30,000,8=45,000,9=60,000,10+=Body×Body×750kg. Towing while moving is limited by lower of vehicle Load or winch Load. Self-pulling across normally impassable terrain moves 1m/turn, requires vehicle not be loaded over Load, and prevents other actions while winching. Design DP=winch Load÷100; Load reduction Body×2.5kg. Retrofit cost=winch Load÷2 nuyen; Availability 6/14d(SI2); facility; Body×16h Vehicle B/R(4); 1 CF; same Load reduction."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.customization-protective-systems",
+      "rule.vehicles.customization-control-systems",
+      "rule.vehicles.mechanical-arms-legs",
+      "entity.medical.valkyrie-module"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.stress"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "148-155",
+      "relation": "defines",
+      "note": "Accessories"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,75 @@
+{
+  "id": "rule.vehicles.customization-electronic-systems",
+  "record_type": "rule",
+  "name": "Vehicle Electronic-System Customization",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 142,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle customization",
+      "vehicle design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 supplies design-time and retrofit specifications for drone software interfaces, BattleTac receivers, ship CCSS integration, sensor/EW suites, communications ports and specialized detection systems.",
+    "inputs": [
+      "vehicle",
+      "electronic system",
+      "rating",
+      "available CF/Load"
+    ],
+    "outputs": [
+      "installed electronic capability",
+      "rating",
+      "CF/Load consumption"
+    ],
+    "steps": [
+      "Autosoft Interpretation System gives a drone chip ports equal to Pilot rating and processing/memory equal to Pilot×2; autosoft/knowsoft ratings may not exceed Pilot and combined simultaneously running ratings may not exceed Pilot×2. It cannot use activesofts. Design cost Pilot×50 DP, 1 CF. Retrofit cost Pilot×1,000 nuyen; Availability 8/14 days (SI 2); electronics shop; 72h Electronics B/R(4); 1 CF, 2kg.",
+      "BattleTac FDDM receiver lets a vehicle exchange targeting data over its remote-control network, including indirect-fire targets. Design 350 DP. Retrofit 35,000 nuyen; Availability 10/21 days (SI 3); microtronics shop; 64×Pilot hours Computer B/R(4).",
+      "BattleTac IVIS receiver lets a remote-controlled vehicle/drone participate in IVIS, gaining the normal BattleTac drone-network benefits when its Pilot is modified for the system. Design 250 DP. Retrofit 25,000 nuyen; Availability 8/14 days (SI 3); microtronics shop; 64×Pilot hours Computer B/R(4).",
+      "Ship CCSS integration is distinct from rigger adaptation: it monitors and controls internal ship systems rather than piloting/maneuvering. A ship wired for both lets a rigger jump between helm control and CCSS internal monitoring. Maintenance drones in CCSS can participate in ship damage-control teams; each counts as a crew member and the controlling rigger uses Ship/Build Repair for the team test. A rigger may command CCSS internal drones up to Intelligence. Design cost Technical Rating×5,000 DP, max 10. Retrofit Technical Rating×400,000 nuyen; Availability 6/21 days (SI 4); ship facility; 120h Computer B/R(6) and Electronics B/R(6).",
+      "Dipping sonar is for helicopters/hover-capable aircraft. The aircraft must remain at altitude <=30m and speed <=7m/turn while dipping. Design cost Sonar rating×250 DP; max 6; 12 CF, 50kg. Retrofit Sonar×15,000 nuyen; Availability 8/21 days (SI 4.5); vehicle facility; 16h appropriate Vehicle B/R(4); max 6; 16 CF, 50kg.",
+      "Electronic ports power non-vehicle-operation electronics and connect them to the vehicle computer/router. Applicable connected electronics may increase Flux by half the vehicle Body, rounded up. Port design cost 10 DP; retrofit 1,000 nuyen, Availability 3/6 days (SI 1), vehicle shop, 8h Electronics B/R(3). The port itself consumes no CF/Load; attached equipment does.",
+      "Magnetic-Anomaly Detector is aircraft-only and detects submerged submarines. Roll aircraft Sensor rating as a Sensor Perception Test against the target submarine's normal (not Sonar) Signature. Design cost Sensor rating×250 DP, 12 CF, 50kg. Retrofit Sensor×20,000 nuyen; Availability 8/21 days (SI 4.5); vehicle facility; 16h Electronics B/R(8); 16 CF, 50kg.",
+      "Over-the-Horizon Sensors remove the ordinary 35km surface-detection cap for ship sensors, but surface Detection Tests beyond 35km suffer +3 TN. Design cost Sensor×1,000 DP, 216 CF, 2,500kg. Retrofit Sensor×100,000 nuyen; Availability 10/60 days (SI 5); ship facility; 40h Electronics B/R(6); 216 CF, 2,500kg.",
+      "Power Amplifiers raise Flux for sensors, ECM/ECCM, hardwired remote-control decks and other transmitters. Design 5 DP/rating, max 10, 0.25 CF/rating rounded down, 1kg/rating. Retrofit 250 nuyen/rating; Availability TN=rating with base time rating×12 hours (SI 1.5); vehicle shop; 8h Electronics B/R(4); max10; 0.5 CF/rating rounded up; 1kg/rating.",
+      "Remote-Control Encryption Module mirrors remote-control-deck encryption. Every vehicle/drone on an encrypted network must have a compatible module; network encryption operates at the lowest module rating. Design Rating×50 DP. Retrofit Rating×5,000 nuyen; Availability TN=rating/base time rating days (SI 3); electronics kit; 1h Electronics B/R(4).",
+      "Retransmission Unit relays remote-control commands on another frequency. Drones within retrans range can receive commands beyond the main deck range. When a drone is within range of both deck and retrans, retrans Flux adds complementary dice to MIJI Tests made against the deck. EW against the retrans affects only drones currently using it. Base Flux 0; power amplifiers may raise Flux. Design 250 DP, 1 CF, 5kg. Retrofit 25,000 nuyen; Availability 8/14 days (SI 3); microtronics shop; 64h Electronics B/R(4); 1.5 CF, 5kg.",
+      "Towed-array sonar removes a ship's stern baffles blind spot and adds one die to passive Sonar Detection Tests against contacts more than 15km away while deployed. During hard maneuvers the GM may roll 2D6; on double 1 the cable is cut. Design cost Sonar×1,000 DP; max6; 125 CF, 1,500kg. Retrofit Sonar×100,000 nuyen; Availability 10/45 days (SI 4.5); ship facility; 16h Ship/Submarine B/R(6); max6; 175 CF, 1,500kg."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.rigging.electronic-warfare",
+      "subsystem.vehicles.sensors",
+      "rule.rigging.electronic-deception",
+      "rule.rigging.electronic-counter-deception",
+      "rule.rigging.sonar",
+      "rule.drones.autosofts",
+      "subsystem.security.ccss"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "142-148",
+      "relation": "defines",
+      "note": "Electronic Systems customization specifications"
+    }
+  ],
+  "notes": [
+    "Rating tables are stored separately in rules/vehicles/customization-electronic-tables.yml."
+  ]
+}

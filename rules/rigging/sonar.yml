@@ -17,7 +17,7 @@
     "excludes": []
   },
   "resolution": {
-    "summary": "Passive sonar listens to target-generated sound; active sonar pings. Successes determine contact detail from none to unique identification.",
+    "summary": "Passive sonar listens to target-generated sound; active sonar pings. Successes determine contact detail from none to unique identification. Specialized dipping and towed arrays extend platform use.",
     "inputs": [
       "Sonar rating",
       "target Sonar Signature",
@@ -35,7 +35,9 @@
       "Active tactical ping range = Sonar rating × 2,500m. All Sonar Signatures in range, including the emitter's, receive -2; multiple sources add another -1 each to max -4.",
       "Yankee search uses Loudness rating. Loudness 0-9 ranges: 125m, 500m, 1km, 2km, 3km, 4.5km, 6km, 8km, 10km, 12.5km; 10+ range = Loudness +5 km. Targets in range suffer negative Sonar Signature equal to Loudness (max -10), and sensors within triple range gain bonus dice equal to Loudness to detect the searcher.",
       "Cavitation: exceeding Cavitation Threshold Speed reduces Sonar Signature by 2; exceeding normal Speed reduces by 4. Submarines below 500m reduce cavitation modifier by 1; below 1,000m by 2.",
-      "Thermoclines block ordinary active/passive sonar across the layer. Yankee search can penetrate with +8 Sonar Test TN."
+      "Thermoclines block ordinary active/passive sonar across the layer. Yankee search can penetrate with +8 Sonar Test TN.",
+      "Dipping sonar permits helicopter/hovering-aircraft underwater scans while <=30m altitude and <=7m/turn.",
+      "A deployed towed array removes the stern baffles blind spot and gives +1 die on passive Sonar Detection Tests against contacts beyond 15km; hard maneuvers may sever the tow cable on double 1 on 2D6."
     ]
   },
   "links": {
@@ -43,7 +45,8 @@
     "affects": [],
     "modified_by": [],
     "interacts_with": [
-      "subsystem.rigging.electronic-warfare"
+      "subsystem.rigging.electronic-warfare",
+      "rule.vehicles.customization-electronic-systems"
     ]
   },
   "sources": [
@@ -52,6 +55,18 @@
       "pages": "33-35",
       "relation": "extends",
       "note": "Sonar / Passive / Active / Cavitation / Thermoclines"
+    },
+    {
+      "source": "source.r3",
+      "page": 143,
+      "relation": "extends",
+      "note": "Dipping Sonar"
+    },
+    {
+      "source": "source.r3",
+      "page": 148,
+      "relation": "extends",
+      "note": "Towed-Array Sonar"
     }
   ],
   "notes": []

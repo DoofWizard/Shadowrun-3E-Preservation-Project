@@ -17,19 +17,22 @@
     "excludes": []
   },
   "resolution": {
-    "summary": "Autosofts are plug-and-play software suites that add skills/abilities to drones.",
+    "summary": "Autosofts are plug-and-play software suites that add skills/abilities to drones through an autosoft interpretation system.",
     "inputs": [
       "Pilot rating",
-      "autosoft ratings",
+      "autosoft/knowsoft ratings",
       "interpretation memory"
     ],
     "outputs": [
-      "new drone skills"
+      "new drone skills/abilities"
     ],
     "steps": [
-      "A drone may use only autosofts with rating <= Pilot rating.",
-      "Autosofts must be loaded into autosoft interpretation system memory.",
-      "When multiple autosofts run simultaneously, combined ratings cannot exceed Pilot rating ×2."
+      "A drone may use only autosofts or knowsofts with rating <= Pilot rating.",
+      "Autosofts/knowsofts are inserted in chip ports or transmitted through the remote-control network and loaded into interpretation-system memory. Chip ports equal Pilot rating.",
+      "Interpretation processing/memory equals Pilot×2; when multiple autosofts/knowsofts run simultaneously, their combined ratings cannot exceed this figure.",
+      "Activesofts cannot be used.",
+      "Autosofts do not inhibit IVIS Pool or a robot's Adaptation Pool.",
+      "System design cost = Pilot×50 DP and 1 CF. Retrofit cost = Pilot×1,000 nuyen; Availability 8/14 days(SI2); electronics shop; 72h Electronics B/R(4); 1 CF, 2kg."
     ]
   },
   "links": {
@@ -38,7 +41,9 @@
     ],
     "affects": [],
     "modified_by": [],
-    "interacts_with": []
+    "interacts_with": [
+      "rule.vehicles.customization-electronic-systems"
+    ]
   },
   "sources": [
     {
@@ -46,6 +51,12 @@
       "page": 44,
       "relation": "defines",
       "note": "Autosofts"
+    },
+    {
+      "source": "source.r3",
+      "page": 142,
+      "relation": "extends",
+      "note": "Autosoft Interpretation System vehicle design/customization"
     }
   ],
   "notes": []
