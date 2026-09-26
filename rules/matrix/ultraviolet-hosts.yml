@@ -1,0 +1,26 @@
+id: rule.matrix.ultraviolet-hosts
+record_type: rule
+name: "Ultraviolet Hosts"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "48-50", basis: extends}
+
+resolution:
+  summary: "Ultraviolet hosts use direct full-simsense processing and replace normal Matrix abstractions with a near-physical virtual environment."
+  access:
+    - "Requires a hot ASIST interface."
+    - "Cold ASIST and tortoise-mode connections fail."
+  conversion:
+    - "Persona ratings are replaced by character-style physical and mental attributes under the source's UV conversion framework."
+    - "Hacking Pool remains usable; Task Pool may apply to technical tasks."
+    - "Normal skills may be used, except magical skills."
+  environment:
+    - "Utilities manifest as tools or objects appropriate to the UV host metaphor."
+    - "Damage suffered in the UV host is applied to the user's physical body."
+    - "Subjective time is under gamemaster control."
+  disconnect:
+    - "Jacking out is unusually difficult and inflicts severe dump shock; ICCM mitigates but does not remove the risk."
+
+sources:
+  - {source: source.matrix, pages: "48-50", relation: extends, note: "Ultraviolet Hosts"}
+notes: []

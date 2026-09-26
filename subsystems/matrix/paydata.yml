@@ -1,0 +1,31 @@
+id: subsystem.matrix.paydata
+record_type: subsystem
+name: "Matrix Paydata"
+domain: matrix
+status: ingested
+effective: {status: current_extension, source: source.matrix, pages: "49-51", basis: extends}
+
+state:
+  tracked_values:
+    - "Paydata Points"
+    - "file size"
+    - "file defenses"
+    - "street value"
+    - "time sensitivity"
+
+resolution:
+  summary: "Matrix provides a random-generation and resale framework for valuable stolen data."
+  rules:
+    - "Host Security Code influences the number and size of Paydata Points."
+    - "Paydata may be protected by ordinary Matrix defenses."
+    - "Base street value is 5,000 nuyen per Paydata Point."
+    - "Unsold generic paydata loses value over time, one Point per day, least valuable first."
+
+links:
+  interacts_with:
+    - procedure.shadowrunning.fence-loot
+
+sources:
+  - {source: source.matrix, pages: "49-51", relation: extends, note: "Paydata"}
+notes:
+  - "Adventure-specific data invented by the gamemaster is exempt from the generic daily value-loss rule."

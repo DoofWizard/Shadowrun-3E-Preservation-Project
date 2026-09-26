@@ -1,0 +1,25 @@
+id: rule.matrix.archaic-systems
+record_type: rule
+name: "Archaic Matrix Systems"
+domain: matrix
+status: ingested
+effective: {status: optional_extension, source: source.matrix, page: 51, basis: extends}
+
+resolution:
+  summary: "Older Matrix systems use standard Matrix rules with compatibility limitations reflecting obsolete protocols and interfaces."
+  caps:
+    security_code_max: "Green"
+    security_value_max: 6
+    subsystem_rating_max: 10
+  limitations:
+    - "ASIST feedback"
+    - "protocol incompatibility"
+    - "pre-simsense/tortoise-only access"
+    - "poor tracking"
+    - "weak bandwidth"
+    - "weak interface"
+
+sources:
+  - {source: source.matrix, page: 51, relation: extends, note: "Archaic Systems"}
+notes:
+  - "The gamemaster selects or rolls appropriate limitations."
