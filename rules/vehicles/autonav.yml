@@ -1,0 +1,54 @@
+{
+  "id": "rule.vehicles.autonav",
+  "record_type": "rule",
+  "name": "Autonav Systems",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 13,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicles with autonav"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Autonav ranges from collision avoidance to self-driving navigation integrated with GPS and traffic-management systems.",
+    "inputs": [
+      "autonav rating",
+      "self-driving capability",
+      "GPS/traffic data"
+    ],
+    "outputs": [
+      "automated navigation/control"
+    ],
+    "steps": [
+      "Basic collision-avoidance autonav uses proximity detection to avoid hazards and is standard on most vehicles.",
+      "Self-driving autonav can operate point-to-point without driver supervision and normally cooperates with traffic-control systems such as GridGuide.",
+      "On self-driving system failure, control returns to manual; if the driver is nonresponsive, the vehicle pulls over and places an emergency call.",
+      "Autonav Rating 2+ includes GPS.",
+      "GPS signals are treated as Flux 2 for jamming/electronic-warfare purposes."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.vehicles.gridguide"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 13,
+      "relation": "extends",
+      "note": "Automated Driving / Autonav Systems / Self-Driving Autonav / Autonav GPS"
+    }
+  ],
+  "notes": []
+}

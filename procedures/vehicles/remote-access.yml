@@ -1,0 +1,98 @@
+{
+  "id": "procedure.vehicles.remote-access",
+  "record_type": "procedure",
+  "name": "Remote Vehicle Access and Identity Hacking",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 16,
+    "basis": "extends"
+  },
+  "purpose": "Access or manipulate a modern vehicle remotely through its onboard computer/transponder identity.",
+  "prerequisites": [
+    "wireless/cell link or appropriate network access",
+    "vehicle command code/passcode or successful intrusion"
+  ],
+  "inputs": [
+    "vehicle passcode",
+    "onboard computer",
+    "transponder/license identity",
+    "Matrix access"
+  ],
+  "stages": [
+    {
+      "id": "remote",
+      "name": "Remote Vehicle Access",
+      "test_or_action": "Knowing the vehicle command code/passcode permits remote diagnostic access, sensor feeds, locks, lights, engine controls and dealer/emergency-service functions through the onboard computer.",
+      "outputs": [
+        "remote access"
+      ]
+    },
+    {
+      "id": "passcode",
+      "name": "Disable Manufacturer Passcode",
+      "test_or_action": "Removing/disabling the built-in remote-access passcode requires Computer (8).",
+      "outputs": [
+        "passcode disabled"
+      ]
+    },
+    {
+      "id": "fake-transponder",
+      "name": "Forge Transponder Registration",
+      "test_or_action": "Alter matching DMV records with successful Locate File/Edit File operations, then reprogram vehicle transponder with Computer (Programming) (6), Base Time 10 minutes.",
+      "outputs": [
+        "false transponder identity"
+      ]
+    },
+    {
+      "id": "license",
+      "name": "Alter License Identity",
+      "test_or_action": "Stolen/replacement plates work reliably only if DMV data is also modified to match vehicle/transponder identity; the source uses Locate File/Edit File on protected hosts.",
+      "outputs": [
+        "matching plate/registration"
+      ]
+    },
+    {
+      "id": "termination",
+      "name": "Disable Vehicle Termination Chip",
+      "test_or_action": "Via onboard computer use Computer (6), or physically remove with Electronics B/R (5), Base Time 10 minutes.",
+      "outputs": [
+        "termination chip disabled"
+      ]
+    },
+    {
+      "id": "isolate",
+      "name": "Isolate Termination Chip",
+      "test_or_action": "A separated wireless trigger arrangement requires both Computer (Programming) (6) and Electronics B/R (5), each Base Time 30 minutes.",
+      "outputs": [
+        "alternate termination link"
+      ]
+    }
+  ],
+  "outcomes": [
+    "remote control/access",
+    "forged identity",
+    "disabled tracking/shutdown path"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.transponders"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "16-18",
+      "relation": "extends",
+      "note": "Remote Vehicle Access / Hacking Your Vehicle / Vehicle Termination Chip"
+    }
+  ],
+  "notes": [
+    "The source warns that official manufacturer/security passcodes can also enable covert surveillance."
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "id": "rule.vehicles.safety-systems",
+  "record_type": "rule",
+  "name": "Vehicle Safety Systems",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 12,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "seat belts",
+      "air bags",
+      "vehicle collision/crash damage"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Seat belts and air bags reduce occupant crash injury and impose escape/use constraints.",
+    "inputs": [
+      "collision/crash result",
+      "seat-belt/air-bag status"
+    ],
+    "outputs": [
+      "occupant damage adjustment",
+      "escape requirement"
+    ],
+    "steps": [
+      "When a vehicle takes Moderate-or-higher collision damage, roll 1D6 for each air bag; on 1-3 it inflates, pinning the passenger and blocking line of sight for a full Combat Turn.",
+      "Air bags automatically deploy when the vehicle Condition Monitor reaches Destroyed.",
+      "If protected by a seat belt or air bag during a collision/crash, reduce the passenger's Damage Level by one.",
+      "Putting on a seat belt is a Complex Action; taking it off is a Simple Action.",
+      "Escaping a wreck while secured by belt and/or air bag requires Strength (4).",
+      "Air bags can be disabled with Vehicle B/R (4), Base Time 5 minutes."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "rules/vehicles/damage.yml"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 12,
+      "relation": "extends",
+      "note": "Safety Systems / Safety System Rules"
+    }
+  ],
+  "notes": []
+}

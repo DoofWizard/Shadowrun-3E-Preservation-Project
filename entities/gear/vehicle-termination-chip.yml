@@ -1,0 +1,39 @@
+{
+  "id": "entity.gear.vehicle-termination-chip",
+  "record_type": "entity",
+  "name": "Vehicle Termination Chip",
+  "domain": "gear",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 17,
+    "basis": "defines"
+  },
+  "intrinsic": {
+    "type": "vehicle computer security component",
+    "function": "On receipt of the proper termination code, overrides normal inputs, locks controls/doors/windows/communications and commands autonav to stop or follow a programmed route.",
+    "rearm": "Sending the termination code again reactivates vehicle control."
+  },
+  "links": {
+    "uses": [
+      "procedures/vehicles/remote-access.yml"
+    ],
+    "requires": [],
+    "component_of": [],
+    "interacts_with": [
+      "rule.vehicles.autonav"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "17-18",
+      "relation": "defines",
+      "note": "Vehicle Termination Chip / Messing With Vehicle Termination Chips"
+    }
+  ],
+  "notes": [
+    "Termination codes are stored on protected DMV Matrix hosts and are described as hardwired rather than reprogrammable."
+  ]
+}

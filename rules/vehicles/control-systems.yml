@@ -1,0 +1,55 @@
+{
+  "id": "rule.vehicles.control-systems",
+  "record_type": "rule",
+  "name": "Vehicle Control Systems",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 11,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "manual vehicle controls",
+      "datajack/virtual-dashboard control",
+      "VCR rigging",
+      "remote-control/drone control"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 distinguishes physical manual controls, datajack-operated virtual dashboards, direct vehicle-control-rig integration, and remote-control/drone operation.",
+    "inputs": [
+      "vehicle control hardware",
+      "operator interface"
+    ],
+    "outputs": [
+      "available control mode"
+    ],
+    "steps": [
+      "Manual controls remain standard unless explicitly removed by a design option.",
+      "A datajack-equipped operator may control a compatible vehicle through a virtual dashboard.",
+      "A rigger-adapted vehicle with a VCR allows full 'jumped in' vehicle control.",
+      "Remote-control-adapted vehicles may be operated through a remote-control deck as drones."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "entity.cyberware.vehicle-control-rig"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 11,
+      "relation": "extends",
+      "note": "Control Systems / Virtual Dashboard / Man in the Machine / Other Control Systems"
+    }
+  ],
+  "notes": []
+}

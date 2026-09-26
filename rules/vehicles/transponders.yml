@@ -1,0 +1,56 @@
+{
+  "id": "rule.vehicles.transponders",
+  "record_type": "rule",
+  "name": "Vehicle Transponders and License Identity",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 13,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "registered vehicles",
+      "GridGuide interaction",
+      "law-enforcement identification",
+      "vehicle EW"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A vehicle transponder continuously broadcasts identifying and navigation data and provides the identity link used by traffic-management systems.",
+    "inputs": [
+      "transponder state",
+      "vehicle autonav/GPS"
+    ],
+    "outputs": [
+      "broadcast vehicle identity/location"
+    ],
+    "steps": [
+      "Vehicle cellphone doubles as transponder, broadcasting unique code, license number, model and speed; with autonav GPS it also broadcasts coordinates and heading.",
+      "GridGuide and law-enforcement systems use this identity for monitoring, routing and violations.",
+      "Transponder-broadcasting vehicles receive +1 Signature.",
+      "For jamming/EW, ordinary vehicle transponders have Flux 1; aircraft/ship long-range transponders have Flux 3.",
+      "Some jurisdictions require a working transponder; detection without one can trigger enforcement and repair/ticket consequences."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.vehicles.gridguide"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 13,
+      "relation": "extends",
+      "note": "Vehicle Transponders"
+    }
+  ],
+  "notes": []
+}

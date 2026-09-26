@@ -1,0 +1,73 @@
+{
+  "id": "subsystem.vehicles.gridguide",
+  "record_type": "subsystem",
+  "name": "GridGuide Traffic Management",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 15,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "vehicle transponder identity",
+      "traffic density",
+      "route",
+      "parking occupancy",
+      "sensor coverage",
+      "Matrix host records",
+      "EW disruption"
+    ]
+  },
+  "participants": [
+    "vehicles",
+    "GridGuide sensor suites",
+    "GridGuide hosts",
+    "law enforcement",
+    "deckers"
+  ],
+  "components": [
+    "transponder antennas",
+    "directional radar",
+    "video cameras",
+    "regional Matrix hosts",
+    "traffic management",
+    "law-enforcement integration",
+    "electronic warfare"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "rules": [
+    "GridGuide sensor suites use Sensor 1 and include a transponder antenna, directional radar and video camera.",
+    "GridGuide transponders operate at Flux 1 and receive/record active vehicle broadcasts.",
+    "The system monitors traffic load, routes around congestion/incidents, meters parking, automates traffic violations and can prioritize/reroute for emergency vehicles.",
+    "Coverage quality varies by district; poorly maintained low-security zones may have intermittent or no GridGuide coverage.",
+    "GridGuide can be jammed because transponder signals are weak; electronic deception can feed false transponder data.",
+    "A compromised GridGuide host can Locate/Monitor/Edit vehicle data; if no GPS fix is available, physical location can be determined via Triangulate. A vehicle on autonav may be redirected through Control Slave.",
+    "GridGuide hosts are normally high-security Matrix systems because traffic manipulation can cause severe physical consequences."
+  ],
+  "links": {
+    "rules": [
+      "rule.vehicles.transponders",
+      "rule.vehicles.autonav"
+    ],
+    "procedures": [],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "15-16",
+      "relation": "extends",
+      "note": "GridGuide, traffic management, law enforcement, coverage, EW and hacking"
+    }
+  ],
+  "notes": [
+    "The source also describes ALI as a comparable regional European/Middle Eastern/African traffic system."
+  ]
+}
