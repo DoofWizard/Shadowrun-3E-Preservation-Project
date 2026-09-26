@@ -1,0 +1,43 @@
+{
+  "id": "option.combat.break-missile-lock",
+  "record_type": "option",
+  "name": "Breaking Missile Target Lock",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 84,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "missile-targeted vehicles"
+  ],
+  "selection": {
+    "timing": "before missile resolves at end of Combat Turn",
+    "prerequisites": [
+      "available Complex Action"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Make a Hiding maneuver. If Hiding successes >= missile Intelligence, target lock breaks and missile misses.",
+    "If first attempt fails, another may be attempted if a Complex Action remains, but required successes increase by 2 for each subsequent attempt."
+  ],
+  "links": {
+    "modifies": [
+      "procedures/combat/missile-combat.yml"
+    ],
+    "requires": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 84,
+      "relation": "adds_option",
+      "note": "Breaking Missile-Target Lock"
+    }
+  ],
+  "notes": []
+}

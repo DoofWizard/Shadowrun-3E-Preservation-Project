@@ -1,0 +1,44 @@
+{
+  "id": "option.vehicles.integrated-standard-combat",
+  "record_type": "option",
+  "name": "Integrating Vehicles in Standard Combat",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 80,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "mixed foot/vehicle combat"
+  ],
+  "selection": {
+    "timing": "combat resolution choice",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Treat vehicles as NPCs in ordinary combat rather than switching to full vehicle-combat sequence.",
+    "Vehicle Walking Rate = Acceleration. Running Rate = Speed÷Handling, round down, minimum 2×Acceleration; exceeding Running Rate up to Speed requires Vehicle Test and Complex Action.",
+    "Ranged combat uses vehicle gunnery rules. Directly jacked rigger may Dodge with Control Pool; autonomous/non-direct vehicle normally cannot Dodge; robots may use Adaptation Pool if programmed to avoid danger.",
+    "Vehicles generally cannot make melee attacks unless equipped with mechanical arms/legs, but characters can attack vehicles in melee.",
+    "No Maneuver Score or ordinary vehicle maneuvers except ramming; ramming can be resolved as impact damage using movement rate as equivalent speed."
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": [
+      "rule.vehicles.mechanical-arms-legs"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 80,
+      "relation": "adds_option",
+      "note": "Integrating Vehicles in Standard Combat"
+    }
+  ],
+  "notes": []
+}

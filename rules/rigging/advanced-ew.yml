@@ -1,0 +1,57 @@
+{
+  "id": "rule.rigging.advanced-ew",
+  "record_type": "rule",
+  "name": "Advanced Electronic Warfare Options",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 85,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "advanced MIJI/jamming"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Optional EW expands MIJI range/multiple channels and introduces barrage/hot-mike jamming.",
+    "inputs": [
+      "intruder range",
+      "infiltrated channels",
+      "Flux",
+      "jamming method"
+    ],
+    "outputs": [
+      "partial MIJI",
+      "multi-channel degradation",
+      "barrage/hot-mike effects"
+    ],
+    "steps": [
+      "Partial/range MIJI: even if target RC deck is outside attacker range, attacker may affect target drones within range; drones outside are unaffected. A directly jumped-in drone within jammer range can still expose rigger to dump shock.",
+      "Multiple-channel MIJI: one MIJI attack may blitz multiple already infiltrated channels. Apply +3 TN for each additional channel (+3 for two, +6 for all three). Only one MIJI attack type may be used in that multi-channel attempt.",
+      "Barrage jamming jams all radio bands without prior channel infiltration. For each 3 Flux used, fill 1 degradation box on every opponent Signal Monitor. Wireless Matrix devices receive -1 to Matrix tests and Matrix Reaction -1. Effective range = normal range÷20. Jammer Signature drops by 1 per 2 Flux, min 2, after other increases.",
+      "Hot-mike jamming uses ordinary radio/transmission gear instead of ECM to overwhelm a frequency. Works on ordinary radio, wireless Matrix and RC transmissions; MIJI tests against RC/wireless Matrix links suffer +2 due to their partial resistance."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.rigging.miji",
+      "rule.rigging.signal-condition-monitor"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 85,
+      "relation": "adds_option",
+      "note": "Advanced Electronic Warfare Rules"
+    }
+  ],
+  "notes": []
+}

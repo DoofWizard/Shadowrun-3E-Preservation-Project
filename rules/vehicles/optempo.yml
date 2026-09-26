@@ -1,0 +1,53 @@
+{
+  "id": "rule.vehicles.optempo",
+  "record_type": "rule",
+  "name": "Vehicle Optempo Maintenance",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 75,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle maintenance based on operational mileage"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Optempo replaces or supplements flat monthly overhead with mileage-based maintenance/fuel overhead.",
+    "inputs": [
+      "vehicle base value excluding Street Index",
+      "kilometers traveled",
+      "chosen combination method"
+    ],
+    "outputs": [
+      "nuyen per kilometer",
+      "maintenance cost"
+    ],
+    "steps": [
+      "Optempo rate = vehicle base value plus modifications ÷100,000, rounded to nearest tenth; units are nuyen/km.",
+      "Adventure optempo cost = kilometers traveled × optempo rate.",
+      "Combination choices: Split Cost halves both monthly overhead and optempo rate, charging half of each; Frequently Used uses optempo for regularly used vehicles and standard overhead for rarely used ones; Significant Mileage uses optempo only above GM-set threshold, suggested 200km/adventure for vehicles and 50km/adventure for drones."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rules/vehicles/maintenance-overhead.yml"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "75-76",
+      "relation": "adds_option",
+      "note": "Optempo Rules"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,69 @@
+{
+  "id": "rule.vehicles.subsystem-damage",
+  "record_type": "rule",
+  "name": "Vehicle Subsystem Damage",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 77,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "damaged vehicles using advanced subsystem rules"
+    ],
+    "excludes": [
+      "design options themselves"
+    ]
+  },
+  "resolution": {
+    "summary": "Vehicle hits may damage individual subsystems in addition to ordinary Condition Monitor damage; subsystem severity changes capability or destroys components.",
+    "inputs": [
+      "Damage Resistance dice",
+      "boxes inflicted",
+      "vehicle equipment"
+    ],
+    "outputs": [
+      "number, identity and severity of subsystem hits"
+    ],
+    "steps": [
+      "Compare highest die result from vehicle Damage Resistance Test to boxes of damage inflicted after staging. If highest die >= boxes, no subsystem damage.",
+      "Otherwise subtract highest die from boxes and divide by 2, round down; result = number of subsystems damaged.",
+      "For each damaged subsystem roll major category then component, rerolling/choosing if vehicle lacks that system, then roll severity.",
+      "Major categories: vehicle electronics, vehicle controls, accessories, weapon systems, engine, chassis.",
+      "Severity d6: 1-2 Light (reduced efficiency; halve bonuses/extra dice, or +1 TN if none); 3-4 Moderate (malfunctioning; halve bonuses/extra dice, or +3 TN); 5 Serious (accessory/system inoperative but repairable); 6 Deadly (destroyed beyond repair, accessories must be replaced)."
+    ]
+  },
+  "subsystem_notes": [
+    "Aggravated Body damage: Light Body -1 (except Body1); Moderate Body halved round up; Serious Body becomes one-third round up; Deadly destroys/crashes vehicle. Repair-base-cost multipliers: L .1, M .2, S .4, D .6 of original vehicle cost.",
+    "Armor-defeating hit: Armor reduction L1/M3/S6/D10; lost Armor must be replaced and is distinct from Cannon Companion Armor Degradation.",
+    "Engine hit: Acceleration/Speed/Load multipliers L .9, M .7, S .4; Deadly engine loses power and decelerates 2×Acceleration plus Crash Test.",
+    "Fuel tank: leak per turn based on remaining fuel: L ×.01, M ×.05, S ×.1; Deadly ruptures and requires Crash Test; possible fire/explosion.",
+    "Handling: increase Handling by +1/+2/+3 for L/M/S; Deadly automatic crash.",
+    "Passenger compartment: passengers resist Physical damage, Power half vehicle attack Power after armor; severity from subsystem damage roll.",
+    "Rigger control box: triggers ASIST backlash; Power = vehicle attack Power after armor and severity per subsystem result.",
+    "Target acquisition: smart/sensor-enhanced weapons suffer severity modifier; Deadly prevents target lock/smart weapons.",
+    "Turret: weapon(s) in turret suffer severity effects; Deadly freezes turret/inoperative."
+  ],
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.asist-backlash"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "77-80",
+      "relation": "adds_option",
+      "note": "Vehicle Subsystem Damage Tables and Notes"
+    }
+  ],
+  "notes": [
+    "Repairing subsystem modifications/accessories uses normal vehicle repair; parts cost = damage boxes ×.05 × parts cost, with repair TN by Damage Level and installation Base Time."
+  ]
+}

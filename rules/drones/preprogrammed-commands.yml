@@ -1,0 +1,57 @@
+{
+  "id": "rule.drones.preprogrammed-commands",
+  "record_type": "rule",
+  "name": "Pre-Programmed Drone Commands and Backup Channels",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 84,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "advanced remote-control networks"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Stored commands can encapsulate detailed drone behavior and remote-control channels can back one another during EW degradation.",
+    "inputs": [
+      "command complexity",
+      "programming successes",
+      "deck storage",
+      "channel state"
+    ],
+    "outputs": [
+      "stored command",
+      "backup-channel configuration"
+    ],
+    "steps": [
+      "Each preprogrammed command covers one specific task and must contain explicit formation/direction/distance/speed details. Command complexity cannot exceed RC deck rating.",
+      "Before run, Computer (Programming) Test against GM-set complexity TN. Memory MP = (complexity TN²×100)÷successes. Programming hours = TN÷successes.",
+      "During run activate a stored command as Free Action; RC deck directs drones automatically.",
+      "RC deck channels are command/system/simsense. One may act as backup for another; actions on a channel carrying two functions suffer +2 TN, while intruder trying to locate that channel gets -1 TN. All three cannot be consolidated onto one channel."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.rigging.miji"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "84-85",
+      "relation": "adds_option",
+      "note": "Pre-Programmed Drone Commands / Back-Up Channels"
+    }
+  ],
+  "notes": []
+}

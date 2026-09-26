@@ -1,0 +1,62 @@
+{
+  "id": "rule.vehicles.fuel-consumption",
+  "record_type": "rule",
+  "name": "Variable Fuel Consumption and Fuel Grades",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 72,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "option.vehicles.advanced-rules"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Economy changes with speed/combat, specialized aircraft maneuvers and fuel grade; running dry creates coasting/emergency-landing consequences.",
+    "inputs": [
+      "base Economy",
+      "Speed",
+      "combat state",
+      "aircraft maneuver",
+      "fuel grade",
+      "Acceleration"
+    ],
+    "outputs": [
+      "modified Economy",
+      "remaining fuel",
+      "coasting distance"
+    ],
+    "steps": [
+      "Vehicle below Speed rating uses base Economy. At 1-1.5× Speed use Economy÷2. In vehicle combat use (Economy÷2)÷5.",
+      "Aircraft short/vertical takeoff/landing consumes a fraction of initial fuel capacity: STOL takeoff .8 (.7 if cargo >Load), STOL landing .9; VSTOL takeoff .7 (.55 over Load), landing .85; VTOL takeoff .6 (.4 over Load for tilt-wing), landing .8. Not used for helicopters, zeppelins or LAVs.",
+      "Out of fuel: lose Speed each turn by 2×Acceleration until 0. Coasting distance = (.75×starting Speed²)÷Acceleration. Vehicle Test can extend coast by Acceleration per 2 successes.",
+      "Aircraft running dry makes Crash Test once below Stall Speed. Success permits emergency landing at end of deceleration, adds 1D6 Stress and aircraft resists 6L; failure crashes immediately.",
+      "Drones consume fuel while operating even when stationary, using Idle Economy.",
+      "Cheap fuel: maintenance ×.95, Acceleration -2, Economy ×.9. Premium: maintenance ×1.05, Acceleration +2, Economy ×1.1.",
+      "Custom fuel grades: each +1 Acceleration increases maintenance 2% and Economy 1%; each -1 Acceleration decreases both by those amounts. Custom grade should not alter Acceleration by more than 5."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.special-attributes",
+      "rule.vehicles.stress"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "72-75",
+      "relation": "adds_option",
+      "note": "Variable Fuel Consumption / Running Out of Gas / Aircraft Maneuvers / Fuel Grades"
+    }
+  ],
+  "notes": []
+}

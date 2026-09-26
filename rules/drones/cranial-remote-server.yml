@@ -1,0 +1,52 @@
+{
+  "id": "rule.drones.cranial-remote-server",
+  "record_type": "rule",
+  "name": "Server System for Cranial Remote Decks",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 85,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "cranial remote deck used as subscriber to standard remote-control deck"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A cranial remote deck may act as subscriber to a conventional deck that serves as the network server, trading one subscriber slot for better support/range.",
+    "inputs": [
+      "CRD rating",
+      "server deck rating/Flux/accessories"
+    ],
+    "outputs": [
+      "effective network rating/range"
+    ],
+    "steps": [
+      "Server deck's drone capacity is reduced by 1 because CRD occupies one subscriber slot.",
+      "Effective network rating is lower of CRD rating and standard deck rating.",
+      "Compatible accessories/options in either deck can be available; most expensive/large accessories should be placed on server deck when possible.",
+      "Range is based on server deck Flux, and effect center is server rather than CRD. If operator leaves server range, CRD loses network contact and rigger is dumped."
+    ]
+  },
+  "links": {
+    "uses": [
+      "subsystem.drones.remote-control-network"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 85,
+      "relation": "adds_option",
+      "note": "Server System for CRD"
+    }
+  ],
+  "notes": []
+}

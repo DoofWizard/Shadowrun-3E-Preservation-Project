@@ -1,0 +1,45 @@
+{
+  "id": "option.vehicles.alternate-collision-damage",
+  "record_type": "option",
+  "name": "Alternate Ramming and Collision Damage",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 81,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "vehicle collisions"
+  ],
+  "selection": {
+    "timing": "campaign combat rules",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Expands collision type, relative Body and post-impact speed changes."
+  ],
+  "rules": [
+    "Damage Level to a vehicle by relative Body: victim Body twice other vehicle = Light; greater but <2× = Moderate; equal = Serious; less = Destroyed. Treat Body0 as 0.5.",
+    "Collision Power: head-on=(combined speeds)÷10; rear-end=(speed difference)÷10; sideswipe=(higher speed÷2)÷10; T-bone=(ramming vehicle speed)÷10.",
+    "After collision: head-on both speeds 0 if both survive/destroyed; if one destroyed, surviving speed reduced by destroyed vehicle speed. Rear-end new shared speed=(speeds sum)÷2. Sideswipe retains respective speeds. T-bone both speeds halved.",
+    "Walls/barriers: collision Power for attack on barrier = vehicle Body+Armor+(effective speed÷10); if barrier penetrated enough to pass, vehicle loses Barrier×10 Speed, otherwise comes to complete stop (sideswipe loses Barrier×10). Vehicle then resists impact using effective speed÷10 Power and comparison Body from Barrier÷4.",
+    "Vehicle-pedestrian: pedestrian effective Body1, or Body2 if pedestrian Body>=8; vehicle need not Crash Test unless it hits pedestrians totaling its Body in one turn."
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "81-82",
+      "relation": "adds_option",
+      "note": "Alternative Ramming and Collision Damage"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,53 @@
+{
+  "id": "rule.rigging.footprint",
+  "record_type": "rule",
+  "name": "Vehicle Electronic Footprint",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 83,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "sensor-enhanced targeting of active transmitters"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Transmitting electronics make a vehicle easier to detect/target; Footprint reduces effective Signature TN and can be actively reduced by EW.",
+    "inputs": [
+      "Flux ratings of active transmitters",
+      "Electronic Warfare"
+    ],
+    "outputs": [
+      "Footprint rating",
+      "modified Signature"
+    ],
+    "steps": [
+      "Footprint = sum Flux of all active transmitters (radios, RC decks, sensors, ECM, etc.) ÷10, rounded to nearest whole number.",
+      "Subtract Footprint from target number of tests against vehicle/device Signature.",
+      "Reduce Footprint: Complex Action, Electronics (Electronic Warfare) vs TN Footprint+4; Task Pool may add up to skill. Each success reduces total Flux by 1; attempts are cumulative but each attempt after first gets +2 TN.",
+      "All-1s result doubles vehicle total Flux and recalculates Footprint."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.rigging.electronic-warfare"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 83,
+      "relation": "adds_option",
+      "note": "Footprint / Reducing Footprint"
+    }
+  ],
+  "notes": []
+}

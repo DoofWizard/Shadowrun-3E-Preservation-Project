@@ -1,0 +1,92 @@
+{
+  "id": "option.vehicles.quality-factors",
+  "record_type": "option",
+  "name": "Vehicle Quality Factors",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 76,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "vehicle design"
+  ],
+  "selection": {
+    "timing": "vehicle design",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Quality Factors modify the chassis markup multiplier and represent construction quality. No more than two should normally be selected; total negative modifier cannot reduce chassis markup below 0.1."
+  ],
+  "factors": [
+    {
+      "name": "Complex Chassis",
+      "modifier": -0.3,
+      "effect": "+2 TN to all Build/Repair Tests on vehicle."
+    },
+    {
+      "name": "Custom Built",
+      "modifier": -0.2,
+      "effect": "Aftermarket customization is harder; double parts cost and base time for modifications installed after construction."
+    },
+    {
+      "name": "Fragility",
+      "modifier": "-0.50/level, max 2",
+      "effect": "+1 TN per level on Stress Tests."
+    },
+    {
+      "name": "Lemon",
+      "modifier": "-0.15/level, max 4",
+      "effect": "+25% maintenance cost per level."
+    },
+    {
+      "name": "Master Workmanship",
+      "modifier": "+0.10/level, max 3",
+      "effect": "-20% maintenance cost per level."
+    },
+    {
+      "name": "Passenger Trap",
+      "modifier": -0.15,
+      "effect": "+1 TN for occupants resisting crash/collision damage."
+    },
+    {
+      "name": "Prototype Model/Used Vehicle",
+      "modifier": -0.6,
+      "effect": "Starts with 1D6 hidden Stress Points, revealed through use at GM discretion."
+    },
+    {
+      "name": "Ruggedness",
+      "modifier": "+0.50/level, max 2",
+      "effect": "-1 TN per level on Stress Tests."
+    },
+    {
+      "name": "Safety Certified",
+      "modifier": 0.15,
+      "effect": "Occupants get -1 TN resisting crash/collision damage."
+    },
+    {
+      "name": "Streamlined Layout",
+      "modifier": 0.25,
+      "effect": "-1 TN to all Build/Repair Tests on vehicle."
+    }
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": [
+      "rule.vehicles.stress"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "76-77",
+      "relation": "adds_option",
+      "note": "Quality Factors"
+    }
+  ],
+  "notes": []
+}

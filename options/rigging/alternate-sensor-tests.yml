@@ -1,0 +1,42 @@
+{
+  "id": "option.rigging.alternate-sensor-tests",
+  "record_type": "option",
+  "name": "Alternate Sensor Tests",
+  "domain": "rigging",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 82,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "sensor detection/perception"
+  ],
+  "selection": {
+    "timing": "campaign rules",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Instead of separate Active/Passive Sensor Tests, rigger rolls Intelligence as normal Perception and adds Sensor-rating complementary dice. Vehicle/drone/robot uses Pilot rating with Sensor complementary dice.",
+    "Detecting vehicles/characters uses TN equal to Signature plus normal sensor modifiers; noticing ordinary environmental details uses TN4 plus Perception modifiers.",
+    "Successes may not exceed Sensor rating +1; use standard Sensor Test Results table for contact detail."
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": [
+      "subsystem.rigging.electronic-warfare"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 82,
+      "relation": "adds_option",
+      "note": "Alternate Sensor Tests"
+    }
+  ],
+  "notes": []
+}
