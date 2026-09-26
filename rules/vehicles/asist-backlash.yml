@@ -1,0 +1,55 @@
+{
+  "id": "rule.vehicles.asist-backlash",
+  "record_type": "rule",
+  "name": "ASIST Backlash While Rigging",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 27,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "cybernetically controlled vehicle/drone hit by electricity-elemental attacks"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Electrical attacks on a rigged vehicle can feed a damaging ASIST surge back into the operator.",
+    "inputs": [
+      "vehicle electrical attack",
+      "vehicle damage result",
+      "VCR rating",
+      "control mode"
+    ],
+    "outputs": [
+      "rigger Stun/Physical backlash"
+    ],
+    "steps": [
+      "If an electrical attack inflicts at least Light damage on a cybernetically controlled vehicle/drone, operator resists backlash.",
+      "Backlash Power = 4 + VCR rating when directly rigging; when controlling remotely, reduce Power by 2.",
+      "Backlash Damage Level is one step higher than the Damage Level sustained by the vehicle after its Damage Resistance Test; naval scale increases Power by 2 per scale step.",
+      "Virtual-dashboard/captain's-chair control treats backlash as Stun; directly rigged control treats it as Physical.",
+      "If vehicle/drone takes Serious or Deadly electrical damage, the operator resists backlash only, not the ordinary damage-transfer effect from vehicle damage."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.vehicle-control-rig"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 27,
+      "relation": "extends",
+      "note": "ASIST Backlash"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,43 @@
+{
+  "id": "option.vehicles.maneuver-specialization",
+  "record_type": "option",
+  "name": "Vehicle Maneuver Specialization",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.r3",
+    "page": 25,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "vehicle skills"
+  ],
+  "selection": {
+    "timing": "skill specialization",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "A Vehicle skill may be specialized by maneuver rather than vehicle model/type: Accelerating/Braking, Positioning, Ramming, or Hiding.",
+    "The specialization applies whenever the character makes the matching Driving Test in that vehicle class."
+  ],
+  "links": {
+    "modifies": [],
+    "requires": [],
+    "interacts_with": [
+      "rule.skills.specialization"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 25,
+      "relation": "adds_option",
+      "note": "Optional Vehicle Specialization Rule"
+    }
+  ],
+  "notes": [
+    "Explicitly optional."
+  ]
+}

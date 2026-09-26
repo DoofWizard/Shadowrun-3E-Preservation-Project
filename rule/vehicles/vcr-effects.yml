@@ -1,0 +1,69 @@
+{
+  "id": "rule.vehicles.vehicle-control-rig",
+  "record_type": "rule",
+  "name": "Vehicle Control Rig Effects",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 26,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle control rig cyberware used with compatible rigger-adapted vehicles"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A VCR translates neural impulses into vehicle-control commands and grants the rigger's primary control bonuses when directly jacked in.",
+    "inputs": [
+      "VCR rating",
+      "rigger adaptation",
+      "control mode"
+    ],
+    "outputs": [
+      "Control Pool",
+      "Reaction/Initiative vehicle bonuses",
+      "defaulting behavior",
+      "simulated sensory control"
+    ],
+    "steps": [
+      "Full VCR benefits require both the VCR implant and rigger adaptation in the vehicle.",
+      "When directly jacked in, the VCR provides Control Pool and the SR3 VCR Reaction/Initiative benefits; other Reaction/Initiative bonus sources normally do not stack unless specifically permitted.",
+      "When using captain's-chair mode instead of directly rigging, VCR bonuses do not apply; the operator receives +1 Reaction for vehicle-related tasks but +1 TN to actions other than controlling drones/vehicles.",
+      "When directly rigging, defaulting from Vehicle skills to Reaction has its modifier reduced by half, subject to the bandwidth limit implied by VCR rating.",
+      "The rigger can override RAS to regain temporary physical control, but doing so adds +8 TN to physical actions and Perception while still rigging."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entities/cyberware/vehicle-control-rig-1.yml",
+      "entities/cyberware/vehicle-control-rig-2.yml",
+      "entities/cyberware/vehicle-control-rig-3.yml"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.dice-pools.control-pool"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "page": 301,
+      "relation": "defines",
+      "note": "Vehicle Control Rig"
+    },
+    {
+      "source": "source.r3",
+      "pages": "26-27",
+      "relation": "extends",
+      "note": "The Vehicle Control Rig / VCR Effects"
+    }
+  ],
+  "notes": [
+    "The source frames VCR rating as bandwidth: higher ratings are more extensively wired into the middle brain and can exploit more processing capacity."
+  ]
+}

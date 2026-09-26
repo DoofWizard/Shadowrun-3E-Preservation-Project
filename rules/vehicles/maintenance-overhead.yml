@@ -1,0 +1,57 @@
+{
+  "id": "rule.vehicles.maintenance-overhead",
+  "record_type": "rule",
+  "name": "Vehicle Maintenance and Monthly Overhead",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 29,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "owned vehicles",
+      "monthly maintenance"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Vehicles incur monthly maintenance overhead based on value and recent Stress; lifestyles reduce the total, and skipped maintenance increases future Stress-test risk.",
+    "inputs": [
+      "vehicle Cost Value",
+      "Stress Points accumulated during past month",
+      "lifestyle reductions",
+      "missed maintenance months"
+    ],
+    "outputs": [
+      "monthly nuyen overhead",
+      "Stress Test modifier"
+    ],
+    "steps": [
+      "Cost Value = vehicle base nuyen value + accessories/modifications.",
+      "Monthly overhead = Cost Value / 100 + (past-month Stress Points × 10), rounding up the Stress component as described.",
+      "Middle lifestyle reduces total monthly overhead by 200 nuyen; High by 1,500; Luxury by 3,000. Lifestyle reductions may be allocated among vehicles.",
+      "Each month of missed maintenance applies cumulative -1 to vehicle Stress Tests.",
+      "To erase one missed-month modifier, pay that month's overhead and succeed at Vehicle B/R (4), Base Time 2 hours; each missed month requires its own payment/test."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "28-29",
+      "relation": "extends",
+      "note": "Maintenance and Overhead / Maintenance Costs / Lifestyle Reductions / Neglecting Overhead"
+    }
+  ],
+  "notes": [
+    "Rigger 3 explicitly distinguishes these maintenance rules from the SOTA rules in Shadowrun Companion."
+  ]
+}

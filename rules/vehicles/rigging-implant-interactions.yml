@@ -1,0 +1,56 @@
+{
+  "id": "rule.vehicles.rigging-implant-interactions",
+  "record_type": "rule",
+  "name": "Rigging and Other Implants",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 27,
+    "basis": "clarifies"
+  },
+  "scope": {
+    "applies_to": [
+      "cyberware/bioware while rigging"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Implants interact differently with direct rigging because the vehicle substitutes for much of the rigger's physical sensorimotor loop.",
+    "inputs": [
+      "implant",
+      "rigging mode"
+    ],
+    "outputs": [
+      "whether bonus/effect applies"
+    ],
+    "steps": []
+  },
+  "interactions": [
+    "Cerebral-booster-derived indirect Reaction increase does apply while jacked into a vehicle or remote-control deck.",
+    "Ordinary physical Quickness/Reaction/Initiative boosters generally do not improve rigger Reaction or Control Pool while rigging; source examples include adrenal pump, cyberlimb enhancements, enhanced articulation, move-by-wire, muscle toner, reaction enhancers, suprathyroid gland, synaptic accelerator and wired reflexes. Reflex boosters are incompatible with VCRs.",
+    "Simrig playback mode cannot be active while using the VCR.",
+    "Directly rigged characters cannot use skillwires/activesofts to pilot; physically driving while merely jacked into the virtual dashboard may use them, but the activesoft overrides natural Vehicle skill and prevents Control Pool use for that vehicle.",
+    "Knowledge softs/datasofts remain accessible while rigging.",
+    "Directly rigged characters may use smartgun bonuses with vehicle weapons if the vehicle has a smartlink integration path; non-VCR gunners need the ordinary smartlink package.",
+    "A tactical computer cannot use sensory feeds from the rigger's natural/cybernetic senses while VCR RAS blocks them, but each vehicle Sensor-rating point may count as one extra sensory feed."
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.vehicle-control-rig"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "27-28",
+      "relation": "clarifies",
+      "note": "Rigging and Other Implants"
+    }
+  ],
+  "notes": []
+}

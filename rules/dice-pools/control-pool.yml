@@ -1,0 +1,61 @@
+{
+  "id": "rule.dice-pools.control-pool",
+  "record_type": "rule",
+  "name": "Control Pool",
+  "domain": "dice-pools",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 25,
+    "basis": "clarifies"
+  },
+  "scope": {
+    "applies_to": [
+      "rigger directly controlling a vehicle/drone through a VCR"
+    ],
+    "excludes": [
+      "sensor or electronic-warfare tests",
+      "remote-control network operation from captain's-chair mode"
+    ]
+  },
+  "resolution": {
+    "summary": "Control Pool supplements tests directly tied to control of a rigged vehicle.",
+    "inputs": [
+      "Control Pool",
+      "vehicle-control test"
+    ],
+    "outputs": [
+      "extra dice"
+    ],
+    "steps": [
+      "May add to Maneuver Tests.",
+      "May add to Dodge or Damage Resistance Tests against attacks on the rigger's vehicle.",
+      "May not be used for firing vehicle weapons or using vehicle sensors.",
+      "May not be used for sensor/EW tests or when merely operating a remote-control network from captain's-chair mode."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.vehicle-control-rig"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "page": 44,
+      "relation": "defines",
+      "note": "Control Pool"
+    },
+    {
+      "source": "source.r3",
+      "page": 25,
+      "relation": "clarifies",
+      "note": "Control Pool use by riggers"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,47 @@
+{
+  "id": "rule.dice-pools.ivis-pool",
+  "record_type": "rule",
+  "name": "IVIS Pool",
+  "domain": "dice-pools",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 25,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "rigger controlling drones equipped with BattleTac IVIS"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "IVIS Pool dice augment tests when a rigger's IVIS-equipped drones perform group tasks.",
+    "inputs": [
+      "BattleTac IVIS system",
+      "group drone task"
+    ],
+    "outputs": [
+      "extra task dice"
+    ],
+    "steps": []
+  },
+  "links": {
+    "uses": [
+      "entities/cyberware/battletac-ivis.yml"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 25,
+      "relation": "defines",
+      "note": "IVIS Pool"
+    }
+  ],
+  "notes": []
+}
