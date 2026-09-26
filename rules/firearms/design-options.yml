@@ -1,0 +1,163 @@
+{
+  "id": "rule.firearms.design-options",
+  "record_type": "rule",
+  "name": "Firearm Design Options",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 74,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.firearms.design"
+    ],
+    "excludes": [
+      "aftermarket-only use unless a separate modification allows it"
+    ]
+  },
+  "resolution": {
+    "summary": "Design-only choices alter DPV, FCU, weight, concealability, capacity, firing behavior or compatibility.",
+    "inputs": [
+      "base frame",
+      "selected options"
+    ],
+    "outputs": [
+      "modified design"
+    ],
+    "steps": []
+  },
+  "options": [
+    {
+      "name": "Ammo Loading",
+      "page": 74,
+      "dp": "belt +10; break action -5; clip +10; cylinder +8; internal magazine +5",
+      "effects": "Replaces base load except belt is additive; break action cap 1; clip/cylinder/internal-magazine cap 4; Concealability break action +1, clip -1, cylinder -1."
+    },
+    {
+      "name": "Barrel Extension/Reduction",
+      "page": 74,
+      "dp": "extension +15; reduction +8",
+      "effects": "Range ±10%; FCU -0.5; weight +0.25/-0.25; Concealability -2/+2; shortened shotgun choke max 6."
+    },
+    {
+      "name": "Bullpup Configuration",
+      "page": 74,
+      "dp": "+25",
+      "effects": "Rifles/assault rifles/shotguns only; FCU -0.5; Concealability +2; 1 recoil compensation; incompatible with Improved Concealability."
+    },
+    {
+      "name": "Ceramic Components",
+      "page": 74,
+      "dp": "+20/level",
+      "effects": "Max 3; FCU -0.25/level; weight -0.1/level; +2 Concealability/level vs MAD; level 3 entirely ceramic and MAD-undetectable."
+    },
+    {
+      "name": "Easy Breakdown",
+      "page": 75,
+      "dp": "+40",
+      "effects": "FCU -1; disassemble/reassemble in 3 Complex Actions; broken-down gun fits large briefcase."
+    },
+    {
+      "name": "Firing Mode",
+      "page": 75,
+      "dp": "BF +100; FA +120; SA +5; SS -5",
+      "effects": "Each mode purchased separately; BF/FA each FCU -1 and weight +0.5; obsolete-mode DP is returned when changing combinations."
+    },
+    {
+      "name": "Flechette Only",
+      "page": 75,
+      "dp": "+10",
+      "effects": "Slivergun; only flechette ammunition; FCU +0.5."
+    },
+    {
+      "name": "Heavy Barrel",
+      "page": 75,
+      "dp": "+25",
+      "effects": "FCU -0.25; weight +0.5; 1 integral recoil compensation."
+    },
+    {
+      "name": "High-Velocity Capability",
+      "page": 76,
+      "dp": "+100",
+      "effects": "Requires BF+FA; six-round bursts; recoil +6 for first and +12 for second burst in same phase before compensation; max 18 rounds/Combat Phase; FCU -1.5; weight +1; no barrel mounts."
+    },
+    {
+      "name": "Improved Ammo Capacity",
+      "page": 76,
+      "dp": "+2/round",
+      "effects": "Cylinder/internal-magazine only; internal max 10, cylinder max 7; FCU -0.25 per 2 added rounds (round down); Concealability -1 per 4 added rounds (round down)."
+    },
+    {
+      "name": "Improved Concealability",
+      "page": 76,
+      "dp": "+20/level",
+      "effects": "Max level 2 unless frame table tighter; FCU -0.25/level; Concealability +1/level."
+    },
+    {
+      "name": "Improved FCU",
+      "page": 76,
+      "dp": "+10/level",
+      "effects": "Max level 6 unless frame table tighter; adds +0.25 FCU/level."
+    },
+    {
+      "name": "Increased Power",
+      "page": 77,
+      "dp": "+80/level",
+      "effects": "+1 base Power/level; FCU -0.25/level; weight +0.25/level; frame maximums apply."
+    },
+    {
+      "name": "Melee Hardening",
+      "page": 77,
+      "dp": "+15",
+      "effects": "FCU -0.5; weight +0.25; firearm gains +1 Power when used in melee."
+    },
+    {
+      "name": "Metahuman Design",
+      "page": 77,
+      "dp": "+20",
+      "effects": "Dwarf- or troll-specific ergonomics; other metahumans +2 modifier; dwarf using troll design or troll using dwarf design +4."
+    },
+    {
+      "name": "Recoil Compensation",
+      "page": 77,
+      "dp": "+70/level",
+      "effects": "FCU -0.5/level; weight +0.25/level; +1 recoil compensation/level; pistols/tasers normally max 1, larger guns 2, high-velocity designs max +1."
+    },
+    {
+      "name": "Selectable Clip",
+      "page": 77,
+      "dp": "+35",
+      "effects": "Clip-loaded only; FCU -0.5; weight +0.1; Concealability -1; two clips mounted, one feeds at a time; switch as Simple Action or Free Action with smartlink."
+    },
+    {
+      "name": "Weight Decrease",
+      "page": 78,
+      "dp": "+5/level",
+      "effects": "Weight -0.25/level; frame maximums apply."
+    }
+  ],
+  "links": {
+    "uses": [
+      "rule.firearms.design-frames"
+    ],
+    "affects": [
+      "procedure.firearms.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "74-78",
+      "relation": "defines",
+      "note": "Firearm design options and frame-availability tables"
+    }
+  ],
+  "notes": [
+    "Frame-specific eligibility and maximum levels in the source table remain constraints even where the generic option allows a larger maximum."
+  ]
+}

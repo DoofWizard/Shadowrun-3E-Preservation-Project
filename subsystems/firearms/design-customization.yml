@@ -1,60 +1,72 @@
-id: subsystem.firearms.design-customization
-record_type: subsystem
-name: "Firearm Design and Customization"
-domain: firearms
-status: ingested
-
-effective:
-  status: current
-  source: source.cc
-  page: 72
-  basis: extends
-
-state:
-  tracked_values:
-    - "weapon design"
-    - "design points/options"
-    - "space"
-    - "work time"
-    - "cost"
-    - "modification compatibility"
-
-participants:
-  - "firearm designers"
-  - "gunsmiths"
-  - "firearms"
-
-components:
-  - "gunsmithing tools"
-  - "firearm design"
-  - "design process"
-  - "customization"
-  - "space restrictions"
-  - "cosmetic/internal/physical modifications"
-  - "ammunition design"
-
-entry_conditions: []
-exit_conditions: []
-
-links:
-  rules: []
-  procedures:
-    - procedure.firearms.design
-    - procedure.firearms.customize
-  entities: []
-  options: []
-  modifiers: []
-  interacts_with:
-    - rule.skills.build-repair
-
-sources:
-  - source: source.cc
-    page: 72
-    relation: extends
-    note: "Firearm Design and Customization"
-  - source: source.cc
-    pages: "72-84"
-    relation: extends
-    note: "Design process, firearm customization and ammunition design"
-
-notes: []
+{
+  "id": "subsystem.firearms.design-customization",
+  "record_type": "subsystem",
+  "name": "Firearm Design and Customization",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 72,
+    "basis": "extends"
+  },
+  "state": {
+    "tracked_values": [
+      "base frame statistics",
+      "DPV/design points",
+      "FCU",
+      "barrel/top/under mounts",
+      "weight",
+      "concealability",
+      "work time",
+      "cost",
+      "compatibility"
+    ]
+  },
+  "participants": [
+    "firearm designers",
+    "gunsmiths",
+    "firearms"
+  ],
+  "components": [
+    "gunsmithing tools",
+    "base firearm frames",
+    "design options",
+    "customization modifications",
+    "ammunition manufacture",
+    "explosives manufacture"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "links": {
+    "rules": [
+      "rule.firearms.design-frames",
+      "rule.firearms.design-options",
+      "rule.firearms.customization-modifications",
+      "rule.firearms.ammunition"
+    ],
+    "procedures": [
+      "procedure.firearms.design",
+      "procedure.firearms.customize",
+      "procedure.firearms.ammunition-manufacture",
+      "procedure.firearms.explosives-manufacture"
+    ],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "rule.skills.build-repair"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "72-84",
+      "relation": "extends",
+      "note": "Firearm Design and Customization"
+    }
+  ],
+  "notes": [
+    "Printed p.73 is art-only. Printed p.85 begins Advanced Melee Combat."
+  ]
+}

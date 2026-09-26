@@ -1,0 +1,281 @@
+{
+  "id": "rule.firearms.design-frames",
+  "record_type": "rule",
+  "name": "Base Firearm Frames",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 75,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.firearms.design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "A firearm design begins with a base frame. Frame statistics, FCU and DPV are the baseline to which design options and modifications are applied.",
+    "inputs": [
+      "base frame"
+    ],
+    "outputs": [
+      "baseline firearm design"
+    ],
+    "steps": []
+  },
+  "frames": [
+    {
+      "name": "Hold-Out Pistol",
+      "power": 4,
+      "damage": "L",
+      "mode": "SS",
+      "concealability": 8,
+      "weight": 0.5,
+      "ammo_cap": 4,
+      "ammo_load": "clip",
+      "mounts": [],
+      "fcu": 0.1,
+      "dpv": 25
+    },
+    {
+      "name": "Light Pistol",
+      "power": 6,
+      "damage": "L",
+      "mode": "SA",
+      "concealability": 6,
+      "weight": 1.25,
+      "ammo_cap": 12,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top"
+      ],
+      "fcu": 1.5,
+      "dpv": 90
+    },
+    {
+      "name": "Machine Pistol",
+      "power": 6,
+      "damage": "L",
+      "mode": "SA/BF",
+      "concealability": 6,
+      "weight": 3.5,
+      "ammo_cap": 30,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top"
+      ],
+      "fcu": 1,
+      "dpv": 180
+    },
+    {
+      "name": "Heavy Pistol",
+      "power": 9,
+      "damage": "M",
+      "mode": "SA",
+      "concealability": 5,
+      "weight": 2.75,
+      "ammo_cap": 10,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top"
+      ],
+      "fcu": 2,
+      "dpv": 120
+    },
+    {
+      "name": "Submachine Gun",
+      "power": 6,
+      "damage": "M",
+      "mode": "SA/BF",
+      "concealability": 4,
+      "weight": 4,
+      "ammo_cap": 20,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 1.5,
+      "dpv": 100
+    },
+    {
+      "name": "Shotgun",
+      "power": 8,
+      "damage": "S",
+      "mode": "SA",
+      "concealability": 3,
+      "weight": 4.5,
+      "ammo_cap": 5,
+      "ammo_load": "internal magazine",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 2.5,
+      "dpv": 130
+    },
+    {
+      "name": "Taser",
+      "power": 10,
+      "damage": "S (Stun)",
+      "mode": "SA",
+      "concealability": 5,
+      "weight": 2.5,
+      "ammo_cap": 3,
+      "ammo_load": "internal magazine",
+      "mounts": [
+        "top"
+      ],
+      "fcu": 1,
+      "dpv": 200
+    },
+    {
+      "name": "Sport Rifle",
+      "power": 7,
+      "damage": "S",
+      "mode": "SA",
+      "concealability": 2,
+      "weight": 4.5,
+      "ammo_cap": 5,
+      "ammo_load": "internal magazine",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 2.5,
+      "dpv": 125
+    },
+    {
+      "name": "Assault Rifle",
+      "power": 8,
+      "damage": "M",
+      "mode": "SA/BF/FA",
+      "concealability": 3,
+      "weight": 6,
+      "ammo_cap": 30,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 3,
+      "dpv": 225
+    },
+    {
+      "name": "Sniper Rifle",
+      "power": 14,
+      "damage": "S",
+      "mode": "SA",
+      "concealability": null,
+      "weight": 6,
+      "ammo_cap": 6,
+      "ammo_load": "internal magazine",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 2.5,
+      "dpv": 800
+    },
+    {
+      "name": "Light Machine Gun",
+      "power": 7,
+      "damage": "S",
+      "mode": "BF/FA",
+      "concealability": null,
+      "weight": 12,
+      "ammo_cap": 40,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 4,
+      "dpv": 425
+    },
+    {
+      "name": "Medium Machine Gun",
+      "power": 9,
+      "damage": "S",
+      "mode": "FA",
+      "concealability": null,
+      "weight": 15,
+      "ammo_cap": 30,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 4,
+      "dpv": 700
+    },
+    {
+      "name": "Heavy Machine Gun",
+      "power": 10,
+      "damage": "S",
+      "mode": "FA",
+      "concealability": null,
+      "weight": 18,
+      "ammo_cap": 30,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 4,
+      "dpv": 1000
+    },
+    {
+      "name": "Assault Cannon",
+      "power": 18,
+      "damage": "D",
+      "mode": "SS",
+      "concealability": null,
+      "weight": 22,
+      "ammo_cap": 20,
+      "ammo_load": "clip",
+      "mounts": [
+        "barrel",
+        "top",
+        "under"
+      ],
+      "fcu": 4,
+      "dpv": 1400
+    }
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.firearms.design"
+    ],
+    "modified_by": [
+      "rule.firearms.design-options"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "74-75",
+      "relation": "defines",
+      "note": "Base Firearm Frames"
+    }
+  ],
+  "notes": [
+    "FCU = Firearm Construction Units; DPV = Design Point Value."
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "id": "procedure.firearms.explosives-manufacture",
+  "record_type": "procedure",
+  "name": "Mine and Mortar Manufacture",
+  "domain": "explosives",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 84,
+    "basis": "extends"
+  },
+  "purpose": "Build mines and mortar rounds with specialized explosive tooling.",
+  "prerequisites": [
+    "appropriate explosive kit/shop",
+    "materials"
+  ],
+  "inputs": [
+    "device type",
+    "components"
+  ],
+  "stages": [
+    {
+      "id": "mine",
+      "name": "Mine Construction",
+      "test_or_action": "Electronics B/R and Demolitions tests, both TN 8; Base Time 24 hours.",
+      "outputs": [
+        "mine"
+      ]
+    },
+    {
+      "id": "mortar",
+      "name": "Mortar Round Construction",
+      "test_or_action": "Electronics B/R and Demolitions tests, both TN 8; Base Time 36 hours.",
+      "outputs": [
+        "mortar round"
+      ]
+    }
+  ],
+  "outcomes": [
+    "completed device"
+  ],
+  "links": {
+    "uses": [],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 84,
+      "relation": "extends",
+      "note": "Explosives manufacture"
+    }
+  ],
+  "notes": [
+    "GM may modify TN/Base Time for facility/material constraints; chemical payloads for splash/dual-charge grenades and mortars are acquired or made separately."
+  ]
+}

@@ -1,55 +1,86 @@
-id: procedure.firearms.customize
-record_type: procedure
-name: "Firearm Customization"
-domain: firearms
-status: ingested
-
-effective:
-  status: current
-  source: source.cc
-  page: 78
-  basis: defines
-
-purpose: "Modify or upgrade an existing firearm."
-
-prerequisites:
-  - "appropriate gunsmithing kit/shop/facility"
-
-inputs:
-  - "existing firearm"
-  - "desired modification"
-  - "available modification space"
-  - "time and cost"
-
-stages:
-  - id: select
-    name: "Select Modification"
-    test_or_action: "Check modification compatibility and available space."
-    outputs: ["legal modification plan"]
-  - id: modify
-    name: "Perform Modification"
-    test_or_action: "Use the appropriate Build/Repair/gunsmithing test and time."
-    outputs: ["modified firearm"]
-
-outcomes:
-  - "successful customization"
-  - "failed/invalid modification"
-
-links:
-  uses:
-    - rule.skills.build-repair
-  requires: []
-  produces: []
-  modified_by: []
-
-sources:
-  - source: source.cc
-    page: 78
-    relation: defines
-    note: "Firearm Customization"
-  - source: source.cc
-    pages: "79-84"
-    relation: extends
-    note: "Working Time/Cost, space restrictions and modifications"
-
-notes: []
+{
+  "id": "procedure.firearms.customize",
+  "record_type": "procedure",
+  "name": "Firearm Customization",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 78,
+    "basis": "defines"
+  },
+  "purpose": "Install aftermarket modifications on an existing firearm.",
+  "prerequisites": [
+    "appropriate parts",
+    "sufficient mount space and FCU",
+    "required kit/shop"
+  ],
+  "inputs": [
+    "existing firearm",
+    "selected modification"
+  ],
+  "stages": [
+    {
+      "id": "parts",
+      "name": "Acquire Parts",
+      "test_or_action": "Listed accessories use normal Availability/Street Index/cost. For unlisted modification parts, installation TN becomes Availability TN and Base Time becomes search time; access to a shop reduces Availability by 1 and halves Base Time, round up.",
+      "outputs": [
+        "parts"
+      ]
+    },
+    {
+      "id": "space",
+      "name": "Check Space",
+      "test_or_action": "Only one item may occupy each barrel/top/under mount and total FCU use may not exceed frame FCU. Removing a mod frees space and takes twice its Base Time.",
+      "outputs": [
+        "valid plan"
+      ]
+    },
+    {
+      "id": "install",
+      "name": "Installation Test",
+      "test_or_action": "Roll the listed B/R skill vs installation TN. Work time equals Base Time divided by successes.",
+      "outputs": [
+        "installed modification"
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Pay Costs",
+      "test_or_action": "Unlisted modification parts cost DP × 8 nuyen; listed accessories use their listed cost.",
+      "outputs": [
+        "modified firearm"
+      ]
+    }
+  ],
+  "outcomes": [
+    "customized firearm"
+  ],
+  "links": {
+    "uses": [
+      "rule.firearms.customization-modifications",
+      "rule.skills.build-repair"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "78-80",
+      "relation": "defines",
+      "note": "Customization workflow, working time/cost and space restrictions"
+    },
+    {
+      "source": "source.cc",
+      "pages": "80-84",
+      "relation": "extends",
+      "note": "Modification catalogue"
+    }
+  ],
+  "notes": [
+    "Typical gunsmith labor: Level 1 contact/friend 100 nuyen/hour (150+ overtime); Level 2 50/hour and may waive overtime; Level 3 25/hour and may waive cost. A PC can usually devote about 6 hours/day without neglecting ordinary obligations."
+  ]
+}

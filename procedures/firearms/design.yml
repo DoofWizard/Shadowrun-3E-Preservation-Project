@@ -1,55 +1,87 @@
-id: procedure.firearms.design
-record_type: procedure
-name: "Firearm Design"
-domain: firearms
-status: ingested
-
-effective:
-  status: current
-  source: source.cc
-  page: 72
-  basis: defines
-
-purpose: "Design and manufacture a new firearm from scratch."
-
-prerequisites:
-  - "gunsmithing facility"
-  - "appropriate design and Build/Repair capability"
-
-inputs:
-  - "weapon class"
-  - "desired design options"
-  - "design resources/tools"
-  - "time and materials"
-
-stages:
-  - id: design
-    name: "Design Weapon"
-    test_or_action: "Select weapon characteristics and design options under the firearm-design rules."
-    outputs: ["weapon design"]
-  - id: prototype
-    name: "Build/Test"
-    test_or_action: "Use appropriate gunsmithing resources and tests to construct and validate the weapon."
-    outputs: ["finished firearm or design failure"]
-
-outcomes:
-  - "new firearm design"
-
-links:
-  uses:
-    - rule.skills.build-repair
-  requires: []
-  produces: []
-  modified_by: []
-
-sources:
-  - source: source.cc
-    page: 72
-    relation: defines
-    note: "Firearm Design"
-  - source: source.cc
-    pages: "74-78"
-    relation: extends
-    note: "The Design Process"
-
-notes: []
+{
+  "id": "procedure.firearms.design",
+  "record_type": "procedure",
+  "name": "Firearm Design",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 72,
+    "basis": "defines"
+  },
+  "purpose": "Design a firearm from a base frame, design options and eligible modifications.",
+  "prerequisites": [
+    "gunsmithing facility for a from-scratch design; a shop can cover some tasks only when equivalent fabrication/testing resources are otherwise available"
+  ],
+  "inputs": [
+    "base frame",
+    "design options",
+    "eligible modifications"
+  ],
+  "stages": [
+    {
+      "id": "frame",
+      "name": "Select a Frame",
+      "test_or_action": "Choose a base frame and inherit its baseline statistics, FCU and DPV.",
+      "outputs": [
+        "frame baseline"
+      ]
+    },
+    {
+      "id": "options",
+      "name": "Add Design Options",
+      "test_or_action": "Apply eligible design-only options and their DP/FCU/weight/concealability effects.",
+      "outputs": [
+        "option-adjusted design"
+      ]
+    },
+    {
+      "id": "mods",
+      "name": "Add Modifications",
+      "test_or_action": "Apply eligible customization modifications during design; Full-Auto Conversion and Sawed-Off Shotgun Barrel are not design-stage options.",
+      "outputs": [
+        "finished specification"
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Determine Final Cost",
+      "test_or_action": "Total frame DPV + option DP + modification DP and multiply by mark-up factor 5 for nuyen cost.",
+      "outputs": [
+        "final DPV",
+        "final price"
+      ]
+    }
+  ],
+  "outcomes": [
+    "new firearm design"
+  ],
+  "links": {
+    "uses": [
+      "rule.firearms.design-frames",
+      "rule.firearms.design-options",
+      "rule.firearms.customization-modifications"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 72,
+      "relation": "defines",
+      "note": "Firearm Design"
+    },
+    {
+      "source": "source.cc",
+      "pages": "74-78",
+      "relation": "extends",
+      "note": "The Design Process"
+    }
+  ],
+  "notes": [
+    "Gunsmithing kits are firearm-class-specific; shops/facilities are not. Kits cannot be used to design a firearm from scratch."
+  ]
+}

@@ -1,0 +1,403 @@
+{
+  "id": "rule.firearms.customization-modifications",
+  "record_type": "rule",
+  "name": "Firearm Customization Modifications",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 80,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.firearms.customize",
+      "eligible design-stage modifications"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Each modification has a B/R skill, installation TN/Base Time, tool requirement, mount/FCU/weight costs and DP value.",
+    "inputs": [
+      "firearm",
+      "modification",
+      "tools"
+    ],
+    "outputs": [
+      "modified firearm"
+    ],
+    "steps": []
+  },
+  "modifications": [
+    {
+      "name": "Custom Finish",
+      "page": 80,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/24h",
+      "mount": "none",
+      "tools": "kit/shop",
+      "weight": "none",
+      "fcu": "none",
+      "dp": "+20",
+      "effect": "Incompatible with Ceramic Components; shop needed for whole-frame/nonsteel work."
+    },
+    {
+      "name": "Embossing/Engraving",
+      "page": 80,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/12h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "none",
+      "fcu": "none",
+      "dp": "+20",
+      "effect": "Cosmetic."
+    },
+    {
+      "name": "Gas Vent II/III/IV",
+      "page": 80,
+      "skill": "Weapon B/R",
+      "tn_base_time": "5/24h",
+      "mount": "barrel",
+      "tools": "shop",
+      "weight": "+0.5/+0.75/+0.75",
+      "fcu": "-0.5/-0.75/-1",
+      "dp": "+90/+140/+200",
+      "effect": "Integral gas-vent recoil compensation."
+    },
+    {
+      "name": "Safe Target System",
+      "page": 81,
+      "skill": "Electronics B/R + Weapon B/R",
+      "tn_base_time": "5/18h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "+1",
+      "fcu": "-0.25",
+      "dp": "+40",
+      "effect": "Installs Safe Target."
+    },
+    {
+      "name": "Secondary Weapon",
+      "page": 81,
+      "skill": "Weapon B/R",
+      "tn_base_time": "8/48h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "+0.5",
+      "fcu": "-0.75",
+      "dp": "+450",
+      "effect": "Requires biometric safety; unauthorized grip can trigger 6M spikes, 6S Stun shock, or one-dose chemical release within 1m; shock/chemical variants have 3 uses."
+    },
+    {
+      "name": "Internal Smartgun System",
+      "page": 81,
+      "skill": "Electronics B/R",
+      "tn_base_time": "5/24h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "standard +0.5; smartlink-2 +0.25",
+      "fcu": "-0.5",
+      "dp": "standard +frame DPV; smartlink-2 +(1.5× frame DPV)",
+      "effect": "Internal standard or improved smartlink-2."
+    },
+    {
+      "name": "Voice Activation",
+      "page": 81,
+      "skill": "Electronics B/R",
+      "tn_base_time": "6/24h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "+0.1",
+      "fcu": "-0.25",
+      "dp": "+50",
+      "effect": "Requires internal smartlink; recognized preprogrammed phrase can fire gun."
+    },
+    {
+      "name": "Biometric Safety",
+      "page": 81,
+      "skill": "Weapon B/R",
+      "tn_base_time": "6/24h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "+0.1",
+      "fcu": "-0.25",
+      "dp": "+450",
+      "effect": "Palmprint mismatch freezes safety."
+    },
+    {
+      "name": "Bipod",
+      "page": 81,
+      "skill": "Weapon B/R",
+      "tn_base_time": "3/8h",
+      "mount": "under",
+      "tools": "kit",
+      "weight": "+2",
+      "fcu": "none",
+      "dp": "+80",
+      "effect": "2 recoil compensation when deployed; Simple Action; not for SMGs."
+    },
+    {
+      "name": "Extended Clip",
+      "page": 81,
+      "skill": "Weapon B/R",
+      "tn_base_time": "3/8h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "none",
+      "fcu": "none",
+      "dp": "+2/round",
+      "effect": "Clip-fed only; maximum 50 rounds."
+    },
+    {
+      "name": "Foregrip",
+      "page": 81,
+      "skill": "Weapon B/R",
+      "tn_base_time": "3/36h",
+      "mount": "under",
+      "tools": "kit",
+      "weight": "+0.5",
+      "fcu": "none",
+      "dp": "+50",
+      "effect": "1 recoil compensation."
+    },
+    {
+      "name": "Full-Auto Conversion",
+      "page": 82,
+      "skill": "Weapon B/R",
+      "tn_base_time": "9/72h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "none",
+      "fcu": "-1 (r)",
+      "dp": "+120",
+      "effect": "Eligible BF machine pistols/SMGs; BF is replaced by FA; every FA firing has an extra +1 recoil modifier."
+    },
+    {
+      "name": "Imaging Systems",
+      "page": 82,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/24h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "+0.25",
+      "fcu": "-0.25 (r)",
+      "dp": "flashlight +25; gun cam +400; low-light +300; magnification 1/2/3 +100/+160/+240; thermographic +300",
+      "effect": "May combine as one scope; incompatible with smartlink systems."
+    },
+    {
+      "name": "Laser Sight",
+      "page": 82,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/24h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "+0.25",
+      "fcu": "-0.25 (r)",
+      "dp": "low-power +100; high-power +280",
+      "effect": "Incompatible with smartlink systems."
+    },
+    {
+      "name": "Laser Target Designator",
+      "page": 82,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/48h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "+0.5",
+      "fcu": "-0.25 (r)",
+      "dp": "+740",
+      "effect": "Marks targets for compatible seeker equipment."
+    },
+    {
+      "name": "Personalized Grip",
+      "page": 82,
+      "skill": "Weapon B/R",
+      "tn_base_time": "5/24h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "none",
+      "fcu": "none",
+      "dp": "+25",
+      "effect": "Intended user gets -1 recoil modifier; others no bonus/penalty."
+    },
+    {
+      "name": "Range Finder",
+      "page": 82,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/24h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "+0.1",
+      "fcu": "-0.25 (r)",
+      "dp": "+30",
+      "effect": "Feeds range via smartlink; incompatible with imaging systems."
+    },
+    {
+      "name": "Remove Safety",
+      "page": 82,
+      "skill": "Weapon B/R",
+      "tn_base_time": "5/18h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "none",
+      "fcu": "none",
+      "dp": "+30",
+      "effect": "Enables surprise-use rule; hard impact may discharge loaded weapon at GM discretion."
+    },
+    {
+      "name": "Remove Trigger",
+      "page": 82,
+      "skill": "Electronics B/R",
+      "tn_base_time": "5/24h",
+      "mount": "none",
+      "tools": "shop",
+      "weight": "none",
+      "fcu": "-0.5 (r)",
+      "dp": "+50",
+      "effect": "Smartgun only; weapon fires only through smartlink."
+    },
+    {
+      "name": "Sawed-Off Shotgun Barrel",
+      "page": 83,
+      "skill": "Shotguns B/R",
+      "tn_base_time": "3/2h",
+      "mount": "barrel",
+      "tools": "kit/shop",
+      "weight": "+1",
+      "fcu": "none",
+      "dp": "+8",
+      "effect": "Heavy-pistol ranges; Power -1; Concealability +2; choke max 6; kit job adds +1 to use TNs, shop avoids penalty."
+    },
+    {
+      "name": "Shock/Hip Pads",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "3/2h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "shock +0.25; hip +2",
+      "fcu": "none",
+      "dp": "+40",
+      "effect": "1 recoil compensation; rifles/shotguns/MGs/assault cannons."
+    },
+    {
+      "name": "Silencer",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/24h",
+      "mount": "barrel",
+      "tools": "kit",
+      "weight": "+0.2",
+      "fcu": "-0.25 (r)",
+      "dp": "+100",
+      "effect": "SS/SA only; not cylinder-fed."
+    },
+    {
+      "name": "External Smartgun System",
+      "page": 83,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/2h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "standard +1; smartlink-2 +0.75",
+      "fcu": "-0.25 (r)",
+      "dp": "standard +120; smartlink-2 +160",
+      "effect": "External removable interface."
+    },
+    {
+      "name": "Sound Suppressor",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/24h",
+      "mount": "barrel",
+      "tools": "kit",
+      "weight": "+0.5",
+      "fcu": "-0.25 (r)",
+      "dp": "+150",
+      "effect": "Compatible with BF/FA."
+    },
+    {
+      "name": "Rigid/Folding Stock",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/36h",
+      "mount": "none",
+      "tools": "kit",
+      "weight": "+0.5",
+      "fcu": "none",
+      "dp": "+40",
+      "effect": "1 recoil compensation; Concealability -1 while rigid/unfolded; not for rifles or shotguns."
+    },
+    {
+      "name": "Tripod",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "3/12h",
+      "mount": "under",
+      "tools": "kit",
+      "weight": "+8",
+      "fcu": "none",
+      "dp": "+120",
+      "effect": "MGs/assault cannons; 6 recoil compensation; setup Simple Action; fired prone/sitting; cannot conceal."
+    },
+    {
+      "name": "Ultrasound Sight",
+      "page": 83,
+      "skill": "Electronics B/R",
+      "tn_base_time": "4/24h",
+      "mount": "top/under",
+      "tools": "kit",
+      "weight": "+0.25",
+      "fcu": "-0.25 (r)",
+      "dp": "+260",
+      "effect": "Halves visibility/lighting targeting modifiers, round up, using ultrasound rules."
+    },
+    {
+      "name": "Underbarrel Weapon",
+      "page": 83,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/24h",
+      "mount": "under",
+      "tools": "kit",
+      "weight": "bayonet +0.75; grapple +2; grenade launcher +2; flamethrower +0",
+      "fcu": "-0.25 (r)",
+      "dp": "bayonet +10; grapple +100; grenade launcher +360; flamethrower +240",
+      "effect": "Rifle-sized or larger."
+    },
+    {
+      "name": "Underbarrel Weight",
+      "page": 84,
+      "skill": "Weapon B/R",
+      "tn_base_time": "4/24h",
+      "mount": "under",
+      "tools": "kit",
+      "weight": "+1",
+      "fcu": "-0.25 (r)",
+      "dp": "+25",
+      "effect": "1 recoil compensation."
+    }
+  ],
+  "links": {
+    "uses": [
+      "procedure.firearms.customize"
+    ],
+    "affects": [
+      "subsystem.firearms.design-customization"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "80-84",
+      "relation": "defines",
+      "note": "Cosmetic, internal-accessory and physical firearm modifications"
+    }
+  ],
+  "notes": [
+    "FCU entries marked (r) consume FCU only when permanently built into the firearm rather than attached to a mount."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "id": "procedure.firearms.ammunition-manufacture",
+  "record_type": "procedure",
+  "name": "Ammunition Manufacture",
+  "domain": "firearms",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.cc",
+    "page": 84,
+    "basis": "extends"
+  },
+  "purpose": "Manufacture cased or caseless ammunition.",
+  "prerequisites": [
+    "appropriate Weapon B/R",
+    "ammunition kit for the type or ammunition shop"
+  ],
+  "inputs": [
+    "ammunition type",
+    "materials",
+    "tooling"
+  ],
+  "stages": [
+    {
+      "id": "test",
+      "name": "Build Test",
+      "test_or_action": "Cased ammunition: TN equals Availability number and Base Time equals Availability time. A successful test produces 10 rounds.",
+      "outputs": [
+        "successes"
+      ]
+    },
+    {
+      "id": "successes",
+      "name": "Spend Successes",
+      "test_or_action": "Use successes either to divide Base Time (round down) or reduce cost by 5% per success (round down), not below 50%; recovered own casings can reduce cost another 2% per success.",
+      "outputs": [
+        "time or cost"
+      ]
+    },
+    {
+      "id": "caseless",
+      "name": "Caseless Adjustments",
+      "test_or_action": "Caseless ammunition requires a shop, adds +2 TN and cannot be reduced below 75% cost.",
+      "outputs": [
+        "completed ammunition"
+      ]
+    }
+  ],
+  "outcomes": [
+    "10 rounds on success",
+    "on failure, ammunition-cost materials are lost and a fresh kit is required"
+  ],
+  "links": {
+    "uses": [
+      "rule.firearms.ammunition"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 84,
+      "relation": "extends",
+      "note": "Ammunition manufacture"
+    }
+  ],
+  "notes": [
+    "A standard cased-ammunition kit supports standard ammunition plus one variation; each additional type adds 10% to supply cost.",
+    "Assault-cannon and certain specialty rounds require a shop. Incendiary successes reduce cost rather than time; the source defines an ignition mishap condition."
+  ]
+}
