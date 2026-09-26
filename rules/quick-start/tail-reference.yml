@@ -1,0 +1,99 @@
+id: ruleset.quick-start.tail
+record_type: reference
+name: "Quick Start Gear Completion, Prototype Envy, and Sample Characters"
+domain: quick-start
+status: ingested
+
+effective:
+  status: variant_reference
+  source: source.quick-start
+  pages: "38-64"
+  basis: derived_summary
+
+gear_completion:
+  cyberware:
+    cyberears:
+      - dampener
+      - hearing_amplification
+      - recorder
+    cybereyes:
+      - camera
+      - flare_compensation
+      - image_link
+      - low_light
+      - retinal_duplication
+      - thermographic
+      - vision_magnification
+    bodyware:
+      - bone_lacing
+      - boosted_reflexes
+      - dermal_plating
+      - muscle_replacement
+      - reaction_enhancer
+      - smartlink
+      - spur
+      - wired_reflexes
+    cyberlimbs:
+      - strength_enhancement
+  cyberdeck:
+    - "Cyberdecks are the Quick Start Matrix interface; only one decker may jack into a deck at a time."
+    - "The included deck is the Novatech Hyperdeck-6."
+  biotech:
+    - "The medkit includes an expert system rated Biotech 3 in this presentation."
+    - "After a treatment, supplies run out on a 1 on 1D6."
+  vehicles:
+    - "Ground vehicles are described as having cautious autonav/self-guidance."
+    - "Reference vehicles include Harley-Davidson Scorpion, Yamaha Rapier, Chrysler-Nissan Jackrabbit, and Ford Americar."
+
+prototype_envy:
+  record_type: adventure_reference
+  title: "Prototype Envy"
+  pages: "40-55"
+  structure:
+    - rookie_s_luck
+    - casing_the_joint
+    - picking_up_the_pieces
+  reusable_mechanics:
+    perception_test:
+      canonical_link: rule.perception.perception-test
+      quick_start_rule: "Roll Intelligence against TN 4; more successes reveal more information."
+      page: 43
+    reinforcement_rule:
+      page: 50
+      rule: "When Fred Richards calls reinforcements, roll 1D6+2 for guard count; one is a shaman. Roll another 1D6 for arrival time in minutes. More waves may be rolled until the runners escape, are captured, or die."
+    grouped_guard_initiative:
+      page: 50
+      rule: "For a large fight, the GM may roll one Initiative for multiple guards, using the highest Reaction among them; they act together."
+    matrix_security:
+      pages: "53-54"
+      rule: "The adventure applies the Quick Start Matrix rules to security-decker rooms, alarms, system control, cameras, and communications; successful control can reduce the intruder's Search/Combat target numbers to 2 while remaining guards use 4."
+    karma_handoff:
+      page: 55
+      rule: "Karma advancement is not part of Quick Start; players carrying these characters into full SR3 may begin with 5 additional Karma from the adventure."
+  setting_entities:
+    - "Hans Brackhaus"
+    - "Saeder-Krupp"
+    - "Silver Technology"
+    - "Lofwyr"
+    - "Fred Richards"
+    - "Dr. Stacy Ann"
+    - "Dr. Daniel Bishop"
+    - "Prototype CRM051998"
+  world_state:
+    - "The adventure epilogue says Saeder-Krupp purchases Silver Technology two weeks after the run after Silver declares bankruptcy because its newest cyberware never shipped."
+
+sample_characters:
+  pages: "56-64"
+  note: "These are Quick Start pregenerated archetypes derived from fuller SR3 archetypes; retained as reference examples rather than promoted over canonical character-creation rules."
+  archetypes:
+    - {id: example.quick-start.combat-mage, name: "Combat Mage", race: troll, role: magical_combat}
+    - {id: example.quick-start.covert-ops-specialist, name: "Covert Ops Specialist", race: elf, role: infiltration}
+    - {id: example.quick-start.investigator, name: "Investigator", race: ork, role: investigation_social}
+    - {id: example.quick-start.mercenary, name: "Mercenary", race: troll, role: combat}
+    - {id: example.quick-start.street-samurai, name: "Street Samurai", race: human, role: cybered_combat}
+    - {id: example.quick-start.street-shaman, name: "Street Shaman", race: ork, role: shamanic_magic}
+    - {id: example.quick-start.tech-wiz, name: "Tech-Wiz", race: dwarf, role: electronics_matrix}
+    - {id: example.quick-start.weapons-specialist, name: "Weapons Specialist", race: human, role: weapons_combat}
+
+sources:
+  - {source: source.quick-start, pages: "38-64", relation: derived_summary, note: "Gear completion, Prototype Envy, and sample characters"}
