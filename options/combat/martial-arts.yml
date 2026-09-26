@@ -1,42 +1,52 @@
-id: option.combat.martial-arts
-record_type: option
-name: "Martial Arts Rules"
-domain: combat
-status: ingested
-
-effective:
-  status: optional
-  source: source.cc
-  page: 88
-  basis: adds_option
-
-option_for:
-  - "SR3 unarmed/melee combat"
-
-selection:
-  timing: "campaign rules"
-  prerequisites:
-    - option.combat.advanced-melee-combat
-  incompatible_with: []
-
-effects:
-  - "When enabled, Unarmed Combat is removed and replaced by multiple martial-art Active Skills plus Brawling."
-  - "Martial-art skills use the standard Active Skill rules and Combat Pool, are linked to Strength, and cannot be specialized."
-  - "Each martial-art style provides style-specific advantages/disadvantages and access to maneuvers."
-  - "A character who defaults to or from a martial-art skill cannot use that style's associated maneuvers."
-
-links:
-  modifies:
-    - entity.skill.unarmed-combat
-  requires:
-    - option.combat.advanced-melee-combat
-  interacts_with: []
-
-sources:
-  - source: source.cc
-    page: 88
-    relation: adds_option
-    note: "Martial Arts / Skills / Martial Arts Styles"
-
-notes:
-  - "This is a conditional replacement of Unarmed Combat only inside the optional martial-arts rules package; it is not the universal current SR3 skill list."
+{
+  "id": "option.combat.martial-arts",
+  "record_type": "option",
+  "name": "Martial Arts Rules",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 88,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "SR3 unarmed/melee combat"
+  ],
+  "selection": {
+    "timing": "campaign rules",
+    "prerequisites": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Replaces Unarmed Combat within this optional package with Brawling and named martial-art Active Skills.",
+    "Martial-art skills use standard Active Skill advancement and Combat Pool, are linked to Strength, and cannot be specialized.",
+    "Styles grant advantages/disadvantages and maneuver access; defaulting to/from a martial-art skill does not grant its maneuvers."
+  ],
+  "links": {
+    "modifies": [
+      "entity.skill.unarmed-combat"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": [
+      "rule.combat.martial-arts-styles",
+      "rule.combat.martial-arts-maneuvers",
+      "procedure.combat.convert-advanced-melee"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "88-93",
+      "relation": "adds_option",
+      "note": "Martial Arts rules, styles, maneuvers and conversion"
+    }
+  ],
+  "notes": [
+    "The replacement is conditional on selecting this optional package, not a universal SR3 skill-list change."
+  ]
+}

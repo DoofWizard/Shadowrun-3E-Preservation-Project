@@ -1,0 +1,44 @@
+{
+  "id": "option.combat.charging-attack",
+  "record_type": "option",
+  "name": "Charging Attack",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "If the attacker moved at least 2 meters continuously into the attack, add +1 to the attack's Power.",
+    "If the charging attack fails, make a Quickness (5) Test or fall prone; if a Knockdown Test is already required, apply +2 to that test instead.",
+    "Attackers only."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Charging Attack"
+    }
+  ],
+  "notes": []
+}

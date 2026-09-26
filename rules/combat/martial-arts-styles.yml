@@ -1,0 +1,284 @@
+{
+  "id": "rule.combat.martial-arts-styles",
+  "record_type": "rule",
+  "name": "Martial Arts Styles",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 88,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "option.combat.martial-arts"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "When the optional martial-arts package is enabled, Unarmed Combat is replaced by Brawling plus style-specific Active Skills linked to Strength. Styles cannot be specialized; each has advantages, disadvantages and an allowed maneuver list.",
+    "inputs": [
+      "martial-art skill/style"
+    ],
+    "outputs": [
+      "style modifiers",
+      "maneuver access"
+    ],
+    "steps": []
+  },
+  "styles": [
+    {
+      "name": "Aikido",
+      "aliases": [
+        "Jujitsu",
+        "Sambo"
+      ],
+      "advantage": "+1 die with Throw; Subduing modifier reduced from +2 TN to +1",
+      "disadvantage": "-1 die when initiating melee",
+      "maneuvers": [
+        "Close Combat",
+        "Disorient",
+        "Evasion",
+        "Focus Will",
+        "Ground Fighting",
+        "Herding",
+        "Sweep",
+        "Throw",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Arnis De Mano",
+      "aliases": [
+        "Escrima",
+        "Kali"
+      ],
+      "advantage": "May use one learned Arnis maneuver with Clubs or Edged Weapons; each weapon skill counts separately",
+      "disadvantage": "-1 die with Charging",
+      "maneuvers": [
+        "Close Combat",
+        "Focus Strength",
+        "Ground Fighting",
+        "Kick Attack",
+        "Kip-up",
+        "Multi-Strike",
+        "Sweep",
+        "Throw",
+        "Zoning"
+      ]
+    },
+    {
+      "name": "Brawling",
+      "aliases": [
+        "Boxing",
+        "Pitfighting"
+      ],
+      "advantage": "May improve Brawling to any level without purchasing maneuvers",
+      "disadvantage": "none",
+      "maneuvers": [
+        "Close Combat",
+        "Disorient",
+        "Evasion",
+        "Full Offense",
+        "Ground Fighting",
+        "Herding",
+        "Kick Attack",
+        "Vicious Blow",
+        "Zoning"
+      ]
+    },
+    {
+      "name": "Capoeira",
+      "aliases": [
+        "Carromeleg"
+      ],
+      "advantage": "+1 die with Kick Attack and Ground Fighting",
+      "disadvantage": "-1 die in tightly enclosed/restricted-movement areas",
+      "maneuvers": [
+        "Disorient",
+        "Evasion",
+        "Ground Fighting",
+        "Herding",
+        "Kick Attack",
+        "Kip-up",
+        "Multi-Strike",
+        "Sweep",
+        "Whirling"
+      ],
+      "note": "Carromeleg replaces Herding with Focus Will."
+    },
+    {
+      "name": "Karate",
+      "aliases": [
+        "Kenpo"
+      ],
+      "advantage": "+1 die with Full Defense or Full Offense",
+      "disadvantage": "-2 dice with Subduing Combat",
+      "maneuvers": [
+        "Blind Fighting",
+        "Focus Strength",
+        "Focus Will",
+        "Full Offense",
+        "Kick Attack",
+        "Vicious Blow",
+        "Sweep",
+        "Throw",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Kung Fu",
+      "aliases": [
+        "Hwarang-do",
+        "Wushu"
+      ],
+      "advantage": "May use one learned Kung Fu maneuver with Pole Arms or Edged Weapons (each skill separately); Kung Fu strikes add +1 TN to opponent Knockdown Test",
+      "disadvantage": "-1 die with Subduing Combat or Full Defense",
+      "maneuvers": [
+        "Blind Fighting",
+        "Focus Strength",
+        "Full Offense",
+        "Ground Fighting",
+        "Kick Attack",
+        "Kip-up",
+        "Multi-Strike",
+        "Vicious Blow",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Muay Thai",
+      "aliases": [
+        "Kickboxing",
+        "Savate"
+      ],
+      "advantage": "+2 dice with Kick Attack",
+      "disadvantage": "-1 die in tightly enclosed/restricted-movement areas",
+      "maneuvers": [
+        "Close Combat",
+        "Focus Strength",
+        "Full Offense",
+        "Ground Fighting",
+        "Herding",
+        "Kick Attack",
+        "Kip-up",
+        "Sweep",
+        "Zoning"
+      ]
+    },
+    {
+      "name": "Ninjutsu",
+      "aliases": [],
+      "advantage": "May use one learned Ninjutsu maneuver with Clubs, Cyber-Implant Weaponry, Edged Weapons, Pole Arms/Staffs or Whips; each weapon skill separately",
+      "disadvantage": "Requires oath/renegade obligation represented by the specified 2-point Day Job or Hunted flaw without extra flaw points",
+      "maneuvers": [
+        "Blind Fighting",
+        "Close Combat",
+        "Disorient",
+        "Evasion",
+        "Ground Fighting",
+        "Herding",
+        "Kick Attack",
+        "Sweep",
+        "Zoning"
+      ]
+    },
+    {
+      "name": "Pentjak-Silat",
+      "aliases": [],
+      "advantage": "May use one learned maneuver with Cyber-Implant Weaponry or Edged Weapons; +1 die with Called Shot",
+      "disadvantage": "-3 dice with Subduing Combat",
+      "maneuvers": [
+        "Blind Fighting",
+        "Close Combat",
+        "Evasion",
+        "Focus Will",
+        "Ground Fighting",
+        "Vicious Blow",
+        "Multi-Strike",
+        "Sweep",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Tae Kwon Do",
+      "aliases": [
+        "Hapkido"
+      ],
+      "advantage": "Kick Attack may be combined with Called Shot, Charging, Disarming or Knockdown Attack",
+      "disadvantage": "-1 die with Called Shot",
+      "maneuvers": [
+        "Focus Strength",
+        "Full Offense",
+        "Herding",
+        "Kick Attack",
+        "Kip-up",
+        "Multi-Strike",
+        "Sweep",
+        "Throw",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Tai Chi Ch'uan",
+      "aliases": [
+        "Tai Chi Wu",
+        "Tai Chi Chen"
+      ],
+      "advantage": "Focus Will and Focus Strength require only a Simple Action",
+      "disadvantage": "-2 dice with Charging",
+      "maneuvers": [
+        "Blind Fighting",
+        "Evasion",
+        "Focus Strength",
+        "Focus Will",
+        "Herding",
+        "Kip-up",
+        "Sweep",
+        "Throw",
+        "Whirling"
+      ]
+    },
+    {
+      "name": "Wildcat",
+      "aliases": [],
+      "advantage": "Called Shot penalty is only +2 TN",
+      "disadvantage": "-3 dice with Subduing Combat",
+      "maneuvers": [
+        "Blind Fighting",
+        "Close Combat",
+        "Full Offense",
+        "Ground Fighting",
+        "Kick Attack",
+        "Multi-Strike",
+        "Sweep",
+        "Vicious Blow",
+        "Zoning"
+      ]
+    }
+  ],
+  "links": {
+    "uses": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "affects": [
+      "option.combat.martial-arts"
+    ],
+    "modified_by": [
+      "rule.combat.martial-arts-maneuvers"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "88-90",
+      "relation": "defines",
+      "note": "Martial Arts Styles"
+    }
+  ],
+  "notes": [
+    "The source says a character gains a style's advantages and disadvantages at skill Rating 2+."
+  ]
+}

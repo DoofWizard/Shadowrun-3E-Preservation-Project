@@ -1,0 +1,43 @@
+{
+  "id": "option.combat.multiple-targets",
+  "record_type": "option",
+  "name": "Multiple Targets",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "A single Complex Action may attack more than one opponent using the core multiple-target melee rules.",
+    "Attackers only."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Multiple Targets"
+    }
+  ],
+  "notes": []
+}

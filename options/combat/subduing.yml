@@ -1,0 +1,47 @@
+{
+  "id": "option.combat.subduing",
+  "record_type": "option",
+  "name": "Subduing Combat",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Initial grapple uses melee Success Test at +2 TN; to subdue, net successes must equal or exceed opponent Quickness.",
+    "Maintaining the grasp removes the +2 modifier on later subduing attempts, but the grasp is lost if the grappler is successfully attacked.",
+    "A subdued opponent is immobilized and takes no damage; the grappler may use a Complex Action to inflict Stun or tighten the grapple.",
+    "Breaking free is a Complex Action Strength or Quickness Test against an Open-Test TN generated from grappler net successes.",
+    "While grappling a subdued foe, attacker gets the combined superior-position/prone modifier (-3) for follow-up melee; net successes may stage (STR)M crushing/strangling damage or add +1 per success to victim escape TN.",
+    "A grappler cannot initiate attacks on others and suffers +4 TN to other actions; releasing the hold is a Free Action."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Subduing Combat"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,44 @@
+{
+  "id": "option.combat.knockdown-attack",
+  "record_type": "option",
+  "name": "Knockdown Attack",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Resolve a normal melee Success Test and stage potential damage normally, but instead of damage the defender resists knockdown with Body against attacker Strength +4.",
+    "If defender gets no successes, defender is prone. If defender successes equal the boxes the attack would have caused, defender stays standing; otherwise defender is knocked back 1–2 meters.",
+    "If the staged Damage Level would have been Deadly, defender is automatically knocked prone."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Knockdown Attack"
+    }
+  ],
+  "notes": []
+}

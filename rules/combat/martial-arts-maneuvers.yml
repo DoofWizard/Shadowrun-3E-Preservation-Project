@@ -1,0 +1,129 @@
+{
+  "id": "rule.combat.martial-arts-maneuvers",
+  "record_type": "rule",
+  "name": "Martial Arts Maneuvers",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 90,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "option.combat.martial-arts"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Maneuvers are learned techniques tied to a specific martial-art skill. Declare before dice; normally only one maneuver per Combat Phase and maneuvers cannot normally be combined with combat options.",
+    "inputs": [
+      "known style",
+      "known maneuver"
+    ],
+    "outputs": [
+      "maneuver effect"
+    ],
+    "steps": []
+  },
+  "learning": {
+    "normal": "One maneuver allowed per 2 full skill points; each costs 2 Karma and one must be learned before improving the skill another 2 full points (Brawling exception).",
+    "character_creation": "One maneuver per 2 Active Skill Points spent on the martial-art skill.",
+    "optional_accelerated": "GM may allow a second maneuver per 2 full skill points; that second maneuver costs 8 Karma or 8 Skill Points.",
+    "training": "During play an instructor must know the style at a higher rating and know the maneuver."
+  },
+  "maneuvers": [
+    {
+      "name": "Blind Fighting",
+      "effect": "Reduce visibility target-number penalties by 2; may combine with any combat option."
+    },
+    {
+      "name": "Close Combat",
+      "effect": "Negate opponent Reach bonus and own Reach bonus; own attack Power -1; may combine with any combat option."
+    },
+    {
+      "name": "Disorient",
+      "effect": "If user wins melee test, inflict no damage; opponent gets +2 to all TNs until end of next Initiative Pass/current Combat Turn, cumulative to +8."
+    },
+    {
+      "name": "Evasion",
+      "effect": "Use Full Defense with -1 TN on Dodge Test; if evading, user may not initiate a melee attack on next action."
+    },
+    {
+      "name": "Focus Strength",
+      "effect": "Complex Action to focus; +1 Power on next melee engagement, attack or defense; consumed on use; may combine with Called Shot and Charging."
+    },
+    {
+      "name": "Focus Will",
+      "effect": "Complex Action to focus; +2 Willpower for Contest of Wills against a materialized spirit on next melee engagement; consumed on use."
+    },
+    {
+      "name": "Full Offense",
+      "effect": "Opponent's target number to hit user is reduced by 2; user's attack Damage Level increases by one."
+    },
+    {
+      "name": "Ground Fighting",
+      "effect": "While prone, negate opponent's prone-position modifier; may combine with Full Defense."
+    },
+    {
+      "name": "Herding",
+      "effect": "On a won melee test, force opponent 1 meter per success up to movement available; restricted position gives opponent +2 TN until moving away; GM may grant superior-position bonus."
+    },
+    {
+      "name": "Kick Attack",
+      "effect": "Only when initiating; Reach +1 for that attack; until user's next action, melee attacks against user receive -1 TN."
+    },
+    {
+      "name": "Kip-up",
+      "effect": "Quickness (6) Test as Free Action to stand and still attack that phase; on failure spends a Simple Action and remains prone."
+    },
+    {
+      "name": "Multi-Strike",
+      "effect": "Multiple-target penalty becomes +1 per extra opponent; Power of each hit -1."
+    },
+    {
+      "name": "Sweep",
+      "effect": "Use Knockdown Attack and still deal damage; attack Power halved, round down."
+    },
+    {
+      "name": "Throw",
+      "effect": "Melee Success Test at +2 TN; on win, Strength Test TN = opponent Body minus net melee successes; throw distance equals Strength-test successes in meters; opponent prone; attack Power halved; GM may add collision damage."
+    },
+    {
+      "name": "Vicious Blow",
+      "effect": "Convert a normally Stun-damage weapon attack to Physical; +1 attack TN; 4 successes instead of 2 required to stage each Damage Level."
+    },
+    {
+      "name": "Whirling",
+      "effect": "Negate opponents' friends-in-melee bonuses until user's next Combat Phase; +1 TN on user's attacks while active."
+    },
+    {
+      "name": "Zoning",
+      "effect": "Successful attack inflicts no damage but grants superior-position bonus next engagement with that opponent; may combine with Full Defense."
+    }
+  ],
+  "links": {
+    "uses": [
+      "rule.combat.martial-arts-styles"
+    ],
+    "affects": [
+      "procedure.combat.melee-attack"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.combat.combat-options"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "90-92",
+      "relation": "defines",
+      "note": "Maneuvers"
+    }
+  ],
+  "notes": [
+    "Maneuvers are tied to the skill with which they are learned and normally cannot transfer between skills except where a style advantage expressly permits it."
+  ]
+}

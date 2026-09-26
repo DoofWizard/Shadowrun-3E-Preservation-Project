@@ -1,0 +1,43 @@
+{
+  "id": "option.combat.pulling-punches",
+  "record_type": "option",
+  "name": "Pulling Punches",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Before the melee Success Test, declare the maximum net successes you will accept.",
+    "Apply +1 to the attacker's melee Success Test target number; if the attacker wins, net successes are capped at the declared maximum."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Pulling Punches"
+    }
+  ],
+  "notes": []
+}

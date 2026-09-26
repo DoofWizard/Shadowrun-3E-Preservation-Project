@@ -1,44 +1,63 @@
-id: rule.combat.combat-options
-record_type: rule
-name: "Advanced Melee Combat Options"
-domain: combat
-status: ingested
-
-effective:
-  status: optional
-  source: source.cc
-  page: 85
-  basis: adds_option
-
-scope:
-  applies_to:
-    - option.combat.advanced-melee-combat
-  excludes: []
-
-resolution:
-  summary: "A character may declare one combat option per Combat Phase before rolling dice. The selected option modifies the attack or defense test rather than creating an additional test."
-  inputs:
-    - "declared combat option"
-    - "attack or defense test"
-  outputs:
-    - "option-specific modification"
-  steps:
-    - "Declare the combat option before dice are rolled."
-    - "Apply the option to the attack or defense test."
-    - "Use no more than one combat option per Combat Phase unless a specific rule states otherwise."
-
-links:
-  uses: []
-  affects: []
-  modified_by: []
-  interacts_with:
-    - option.combat.advanced-melee-combat
-
-sources:
-  - source: source.cc
-    page: 85
-    relation: defines
-    note: "Combat Options"
-
-notes:
-  - "Individual options such as Called Shot, Charging Attack, Disarm, Full Defense, Knockdown Attack, Multiple Targets and others will be individual child records."
+{
+  "id": "rule.combat.combat-options",
+  "record_type": "rule",
+  "name": "Advanced Melee Combat Options",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 85,
+    "basis": "adds_option"
+  },
+  "scope": {
+    "applies_to": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Declare one combat option per Combat Phase before rolling dice. The option modifies the attack or defense test rather than creating a separate test.",
+    "inputs": [
+      "chosen combat option",
+      "melee attack/defense test"
+    ],
+    "outputs": [
+      "option-specific result"
+    ],
+    "steps": [
+      "Declare before rolling.",
+      "Apply one option to the attack or defense test.",
+      "Unless otherwise stated, options may be used both attacking and defending."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.combat.melee-attack"
+    ],
+    "modified_by": [
+      "option.combat.charging-attack",
+      "option.combat.disarming",
+      "option.combat.knockdown-attack",
+      "option.combat.multiple-targets",
+      "option.combat.pulling-punches",
+      "option.combat.subduing"
+    ],
+    "interacts_with": [
+      "option.combat.called-shot",
+      "option.combat.full-defense"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "85-86",
+      "relation": "defines",
+      "note": "Combat Options"
+    }
+  ],
+  "notes": [
+    "Called Shot extends the core called-shot option to melee: use the core called-shot rules and only armor on the targeted location protects. Full Defense uses the core SR3 Full Defense rules."
+  ]
+}

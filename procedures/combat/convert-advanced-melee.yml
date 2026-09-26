@@ -1,0 +1,79 @@
+{
+  "id": "procedure.combat.convert-advanced-melee",
+  "record_type": "procedure",
+  "name": "Convert Existing Character to Advanced Melee",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 92,
+    "basis": "conversion"
+  },
+  "purpose": "Convert a standard SR3 character's Unarmed Combat skill/specializations into Brawling and/or martial-art skills when the optional advanced melee system is adopted.",
+  "prerequisites": [
+    "option.combat.advanced-melee-combat",
+    "option.combat.martial-arts"
+  ],
+  "inputs": [
+    "Unarmed Combat rating",
+    "specializations"
+  ],
+  "stages": [
+    {
+      "id": "basic",
+      "name": "Basic Skill",
+      "test_or_action": "If Unarmed Combat has no specialization, convert it to equal-rating Brawling.",
+      "outputs": [
+        "Brawling rating"
+      ]
+    },
+    {
+      "id": "single-spec",
+      "name": "Single Specialization",
+      "test_or_action": "Subtract base Unarmed rating from specialization rating; divide difference by 2, round down; add result to base rating. Convert total to Brawling, or to the martial art closest to the specialization.",
+      "outputs": [
+        "converted skill points"
+      ]
+    },
+    {
+      "id": "multiple-spec",
+      "name": "Multiple Specializations",
+      "test_or_action": "Convert specialization points back into the base as described, then place total into Brawling or an appropriate martial-art skill; GM may permit splitting between two skills.",
+      "outputs": [
+        "converted skills"
+      ]
+    },
+    {
+      "id": "maneuvers",
+      "name": "Choose Maneuvers",
+      "test_or_action": "After conversion choose one free maneuver per 2 full skill points, except Brawling where this is optional.",
+      "outputs": [
+        "known maneuvers"
+      ]
+    }
+  ],
+  "outcomes": [
+    "converted advanced-melee skill set"
+  ],
+  "links": {
+    "uses": [
+      "rule.combat.martial-arts-styles",
+      "rule.combat.martial-arts-maneuvers"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "pages": "92-93",
+      "relation": "conversion",
+      "note": "Converting Characters"
+    }
+  ],
+  "notes": [
+    "Improved Ability (Unarmed Combat) is reassigned to one martial-art skill at the same cost; the bonus dice do not grant extra maneuvers. Martial-art skillsofts are separate Active Skills and can carry maneuver access according to the source rules."
+  ]
+}

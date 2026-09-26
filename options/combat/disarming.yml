@@ -1,0 +1,44 @@
+{
+  "id": "option.combat.disarming",
+  "record_type": "option",
+  "name": "Disarming",
+  "domain": "combat",
+  "status": "ingested",
+  "effective": {
+    "status": "optional",
+    "source": "source.cc",
+    "page": 86,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "option.combat.advanced-melee-combat"
+  ],
+  "selection": {
+    "timing": "declare before dice are rolled; one combat option per Combat Phase unless specifically allowed otherwise",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Resolve a normal melee Success Test; with at least 1 net success the opponent's weapon is knocked from the hand and no damage is inflicted.",
+    "Each additional net success knocks the weapon another 0.5 meter away; scatter direction follows the core scatter rules.",
+    "Against a two-handed grip, required net successes equal half the opponent's Strength, rounded down; excess successes still increase distance."
+  ],
+  "links": {
+    "modifies": [
+      "procedure.combat.melee-attack"
+    ],
+    "requires": [
+      "option.combat.advanced-melee-combat"
+    ],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.cc",
+      "page": 86,
+      "relation": "adds_option",
+      "note": "Disarming"
+    }
+  ],
+  "notes": []
+}
