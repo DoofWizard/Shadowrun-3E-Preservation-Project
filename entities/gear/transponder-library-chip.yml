@@ -1,0 +1,38 @@
+{
+  "id": "entity.gear.transponder-library-chip",
+  "record_type": "entity",
+  "name": "Transponder Library Chip",
+  "domain": "gear",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 100,
+    "basis": "defines"
+  },
+  "intrinsic": {
+    "weight": null,
+    "availability": "5/48 hrs",
+    "cost_nuyen": "MP×20",
+    "street_index": 2,
+    "legality": "6-S",
+    "multiplier": 3
+  },
+  "links": {
+    "uses": [],
+    "requires": [],
+    "component_of": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "100-101",
+      "relation": "defines",
+      "note": "New Toys"
+    }
+  ],
+  "notes": [
+    "Generates semi-random new transponder code every Combat Turn to minute. Detection via GridGuide logs: Locate File Interrogation successes = rating+4; once identified, Locate Slave with rating+4 successes can track. Install Electronics B/R (4), Base Time 2h."
+  ]
+}

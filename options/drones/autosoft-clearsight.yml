@@ -1,0 +1,41 @@
+{
+  "id": "option.drones.autosoft-clearsight",
+  "record_type": "option",
+  "name": "Autosoft: Clearsight",
+  "domain": "drones",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 99,
+    "basis": "adds_option"
+  },
+  "option_for": [
+    "rule.drones.autosofts"
+  ],
+  "selection": {
+    "timing": "load into autosoft interpretation system",
+    "prerequisites": [],
+    "incompatible_with": []
+  },
+  "effects": [
+    "Adds rating to drone Pilot for Perception/Sensor Tests. Rigger may add rating to Intelligence for passive Sensor Tests, capped at Intelligence added dice. Not for combat Success Tests.",
+    "Program multiplier: 6. Rating may not exceed drone Pilot; combined active autosoft ratings obey Pilot×2 limit."
+  ],
+  "links": {
+    "modifies": [
+      "rule.drones.autosofts"
+    ],
+    "requires": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "99-100",
+      "relation": "adds_option",
+      "note": "Autosofts"
+    }
+  ],
+  "notes": []
+}
