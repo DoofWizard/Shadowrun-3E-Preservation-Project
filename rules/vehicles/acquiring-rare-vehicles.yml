@@ -1,0 +1,62 @@
+{
+  "id": "rule.vehicles.acquiring-rare-vehicles",
+  "record_type": "rule",
+  "name": "Acquiring Rare Vehicles",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 156,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle acquisition",
+      "rare vehicles",
+      "Vehicle List"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 adds acquisition guidance for vehicles with unusually high Availability ratings.",
+    "inputs": [
+      "vehicle Availability",
+      "vehicle Street Index",
+      "acquisition method"
+    ],
+    "outputs": [
+      "delivery timing",
+      "modified Availability/Street Index",
+      "encounter interval"
+    ],
+    "steps": [
+      "Legal purchase may require legal papers/background verification and a 10–25% down payment.",
+      "For a legal purchase, delivery time is Street Index × Availability in days; Street Index is not applied to the legal purchase price.",
+      "Vehicle Design and Vehicle Customization changes add their own cost and time to the base vehicle.",
+      "When contacts reduce vehicle Availability using the standard gear-purchase rule, Street Index rises by only 0.10 per point of Availability reduction.",
+      "For a specific vehicle with Availability 24 or higher, the source gives a guideline of one encounter every Availability × Street Index days.",
+      "Vehicles with no Street Index are classified as non-commercial corporate, government, or military vehicles and are not normally available through commercial acquisition."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.design-cost",
+      "subsystem.vehicles.customization"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "156-157",
+      "relation": "defines",
+      "note": "Finding a Vehicle; legal purchase; contacts; rare/non-commercial vehicles"
+    }
+  ],
+  "notes": [
+    "Vehicle List field and code legend is printed on p.157; later entity records should preserve those printed codes without guessing expansions."
+  ]
+}
