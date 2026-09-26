@@ -1,0 +1,57 @@
+{
+  "id": "rule.vehicles.special-attributes",
+  "record_type": "rule",
+  "name": "Special Vehicle Attributes",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 61,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "special vehicle attributes beyond SR3 baseline"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 formalizes Body-by-mass guidance, fuel/economy/idle economy, setup/breakdown, aircraft takeoff profile, ED/ECD, Adaptation Pool and Stress.",
+    "inputs": [
+      "vehicle mass/type",
+      "fuel code",
+      "economy",
+      "setup time",
+      "stress"
+    ],
+    "outputs": [
+      "derived vehicle operational attributes"
+    ],
+    "steps": [
+      "Body rating by mass: 0=0-5kg; 1=5-75kg; 2=75-300kg; 3=300-750kg; 4=750kg-2.5t; 5=2.5-7.5t; 6=7.5-20t; 7=20-30t; 8=30-45t; 9=45-60t; 10=60-100t. Body 0 vehicles cannot carry armor and are automatically destroyed if hit.",
+      "Economy measures distance per fuel unit. Idle Economy = Economy×7.5 minutes per fuel unit, or Economy×2 for aircraft in flight/hovercraft in hover.",
+      "Setup/Breakdown Time is configuration/storage time. A setup-rated drone can be disassembled for storage and then uses one-third normal storage space, round down.",
+      "Assembled drone storage CF = [(Body+1.5)×Body], round down.",
+      "Aircraft Landing/Takeoff profile is Normal, STOL, VSTOL or VTOL.",
+      "Stress tracks wear, abuse and operation beyond normal limits."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.stress"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "61-62",
+      "relation": "extends",
+      "note": "Special Vehicle Attributes"
+    }
+  ],
+  "notes": []
+}

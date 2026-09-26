@@ -1,0 +1,54 @@
+{
+  "id": "rule.vehicles.aircraft-operations",
+  "record_type": "rule",
+  "name": "Aircraft Flight, NOE, Takeoff and Landing",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 67,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "aircraft"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Aircraft obey flight ceilings, NOE terrain effects, runway-profile distances and special takeoff/landing tests.",
+    "inputs": [
+      "aircraft type/profile",
+      "altitude",
+      "runway",
+      "weather/load"
+    ],
+    "outputs": [
+      "flight restriction",
+      "takeoff/landing result"
+    ],
+    "steps": [
+      "Flight ceilings: thunderbird/LAV 1500m; zeppelin 4000m; helicopter 6000m; single-engine jet propeller 12000m; twin-engine propeller/airliner 12000m; jet-turbine fixed wing 17000m; fighter 20000m. LAV/zeppelin/helicopter attempting higher simply stop climbing; fixed-wing that stalls above ceiling must Piloting Test TN=Handling to restart before crash, one test per Combat Turn.",
+      "NOE: ordinary aircraft below 100m, drones <=20m. Apply terrain effects and +1 to Sensor Tests against aircraft; any failed Piloting Test while NOE requires Crash Test.",
+      "Runway profiles, unloaded/loaded takeoff then landing distances: Normal 1000/1500 and 2000/3000m; STOL 250/625 and 500/1250; VSTOL 125/300 and 250/625; VTOL none.",
+      "Unusual-surface takeoff TN3 and landing TN4, with modifiers: crosswinds +2, heavy crosswinds +3, rough/uneven +1, STOL +1, VSTOL +3, angled runway -1, catapult/arrestor/crash net -2.",
+      "Rough/uneven-surface takeoff/landing also requires aircraft Damage Resistance vs 6L."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "67-69",
+      "relation": "extends",
+      "note": "Aircraft / Flight Ceilings / NOE / Takeoff and Landing"
+    }
+  ],
+  "notes": []
+}

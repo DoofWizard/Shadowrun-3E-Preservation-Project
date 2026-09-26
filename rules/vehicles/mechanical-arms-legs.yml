@@ -1,0 +1,56 @@
+{
+  "id": "rule.vehicles.mechanical-arms-legs",
+  "record_type": "rule",
+  "name": "Mechanical Arms and Legs",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 66,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicles/drones with mechanical arms or legs"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Mechanical appendages use dedicated skill limits, vehicle Handling and Body for manipulation/melee, while legged vehicles use character-style movement/combat.",
+    "inputs": [
+      "Mechanical Arm Operation",
+      "Handling",
+      "Body",
+      "Walker skill"
+    ],
+    "outputs": [
+      "manipulation/melee/movement result"
+    ],
+    "steps": [
+      "Arm manipulation uses Mechanical Arm Operation vs TN = vehicle Handling; a directly controlling rigger may add Control Pool up to skill rating; autonomous drone may use Pilot instead.",
+      "When another skill is used through an arm, make that Skill Test plus Mechanical Arm Operation (or Pilot) against Handling. Skill successes are capped by arm-operation/Pilot successes. Without Mechanical Arm Operation, default to Reaction or Walker.",
+      "Arm melee uses Mechanical Arm Operation as Combat skill. For each Handling point above 3, add +1 TN. Attack effective Power/Strength = Body×Body unless arm modified for higher Strength.",
+      "Legged vehicles use normal walking/running and character-combat rules instead of vehicle combat. Listed Speed is walking speed; running speed = Speed×2.5.",
+      "Legged-vehicle kick uses Walker as Combat skill; +1 attack TN per Handling point above 3. Pilot must immediately Crash Test +2 to avoid falling."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entity.skill.mechanical-arm-operation",
+      "entity.skill.walkers"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "66-67",
+      "relation": "defines",
+      "note": "Mechanical Arms and Legs"
+    }
+  ],
+  "notes": []
+}

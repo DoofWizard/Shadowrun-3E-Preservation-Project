@@ -1,0 +1,56 @@
+{
+  "id": "rule.vehicles.trailers-and-rail",
+  "record_type": "rule",
+  "name": "Trailers, Tractor Trains, Monorails and Rail Vehicles",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 65,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "towed trailers",
+      "multi-tractor trains",
+      "rail/monorail vehicles"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 treats trailers as unpowered vehicles and defines train handling, Signature, weapon mounts and combat targeting.",
+    "inputs": [
+      "tractor/lead vehicle",
+      "trailer Bodies/Loads",
+      "weapon mounts"
+    ],
+    "outputs": [
+      "train Handling/Signature/load/combat effects"
+    ],
+    "steps": [
+      "Combined tractor Load ratings determine total train pull capacity; trailer Load is its individual cargo capacity. Trailer Body cannot exceed highest tractor Body.",
+      "One tractor is lead. Train Handling = lead vehicle Handling +1 per trailer; train Signature = lowest vehicle Signature minus 2, minimum 1.",
+      "In combat each trailer is a separate vehicle with own Body/Armor/Signature. Attacks affect only targeted vehicle except required Vehicle Tests; sensor/missile fire normally locks lowest modified Signature unless attacker specifies target.",
+      "Trailer weapon mounts: each Body point gives 1.5 points of firmpoints/hardpoints, round down. Excess total active weapon-mount points over total tractor Body impose Crash Test at end of Combat Turn, +1 per excess point.",
+      "Rail/monorail trains ignore +1 Handling per trailer because rails guide them; train Handling = lead Handling +1. Rail vehicles otherwise use standard vehicle combat and Vehicle Points modifier -10. Self-powered cars count as tractors; frontmost is lead."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "procedure.vehicles.pull-test"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "65-66",
+      "relation": "extends",
+      "note": "Trailers / Monorails and Rail Vehicles"
+    }
+  ],
+  "notes": []
+}

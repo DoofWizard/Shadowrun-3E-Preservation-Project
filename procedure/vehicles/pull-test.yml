@@ -1,0 +1,79 @@
+{
+  "id": "procedure.vehicles.pull-test",
+  "record_type": "procedure",
+  "name": "Vehicle Lifting and Pulling",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 64,
+    "basis": "defines"
+  },
+  "purpose": "Resolve lifting/pulling loads near or above a vehicle's normal Load rating.",
+  "prerequisites": [
+    "vehicle attached appropriately; crane/winch/boom required for lifting from ground"
+  ],
+  "inputs": [
+    "vehicle Body",
+    "Load rating",
+    "object weight",
+    "terrain/conditions"
+  ],
+  "stages": [
+    {
+      "id": "safe",
+      "name": "Check Safe Load",
+      "test_or_action": "A vehicle can safely lift/pull up to its Load rating. Multiple vehicles combine Load ratings.",
+      "outputs": [
+        "safe/overload"
+      ]
+    },
+    {
+      "id": "test",
+      "name": "Pull Test",
+      "test_or_action": "For loads up to twice Load at short distance, make vehicle Body Test. TN: 0-1× Load 3; 1.1-1.5× 5; 1.6-2× 8. Conditions: Bad +1; Terrible +3; object stuck +1 to +4; ground pulling without rollers +4; braced vehicle -2. Driver may intentionally incur Stress for extra dice.",
+      "outputs": [
+        "success/failure"
+      ]
+    },
+    {
+      "id": "side",
+      "name": "Apply Side Effects",
+      "test_or_action": "Successful over-load movement reduces Speed: up to 1.5× Load = half speed and +1 Stress/hour; 1.6-2× = quarter speed and +1 Stress/minute. If load >1.5×, make Body (4); failure adds 1 extra Stress.",
+      "outputs": [
+        "speed/stress"
+      ]
+    },
+    {
+      "id": "long",
+      "name": "Long-Distance Hauling",
+      "test_or_action": "Over distances >0.5km, carrying above Load halves Acceleration. Each hour or fraction above Load requires Body (4); failure adds 1 Stress. Cannot carry >2× Load.",
+      "outputs": [
+        "hauling consequences"
+      ]
+    }
+  ],
+  "outcomes": [
+    "load moved",
+    "failed lift/pull",
+    "Stress accumulation"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.stress"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "64-65",
+      "relation": "defines",
+      "note": "Lifting/Pulling / Pull Tests / Long-Distance Hauling"
+    }
+  ],
+  "notes": []
+}

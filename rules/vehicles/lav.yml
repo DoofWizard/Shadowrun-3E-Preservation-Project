@@ -1,0 +1,55 @@
+{
+  "id": "rule.vehicles.lav",
+  "record_type": "rule",
+  "name": "Low-Altitude Vehicle (LAV/Thunderbird) Rules",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 69,
+    "basis": "extends"
+  },
+  "scope": {
+    "applies_to": [
+      "low-altitude vectored-thrust vehicles"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "LAVs combine VSTOL operations, severe jetwash hazards and altitude-dependent stall behavior.",
+    "inputs": [
+      "takeoff mode",
+      "altitude",
+      "nearby personnel"
+    ],
+    "outputs": [
+      "takeoff/landing modifier",
+      "jetwash damage",
+      "stall applicability"
+    ],
+    "steps": [
+      "Normal LAV profile is VSTOL (~120m takeoff, ~240m landing by text/profile). LAV may make VTOL takeoff/landing with Piloting Test plus +1 modifier; failure gives 2 Stress but operation otherwise proceeds.",
+      "VTOL jetwash within 15m: unprotected characters resist 8M Physical, Impact armor applies but no Combat Pool; Body<=2 vehicles resist 4L vehicle damage. Characters also Body (4) unless wearing proper flight hearing protection; failure causes partial hearing loss and +1 hearing-Perception TN.",
+      "LAV stall speed applies only at altitude >=75m. Below 75m ground effect removes stall-speed limit, but craft is flying NOE and uses ground-terrain restrictions."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.vehicles.aircraft-operations",
+      "rule.vehicles.stress"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "page": 69,
+      "relation": "extends",
+      "note": "Low-Altitude Vehicles"
+    }
+  ],
+  "notes": []
+}

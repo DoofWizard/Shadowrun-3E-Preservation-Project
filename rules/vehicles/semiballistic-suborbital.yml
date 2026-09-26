@@ -1,0 +1,60 @@
+{
+  "id": "rule.vehicles.semiballistic-suborbital",
+  "record_type": "rule",
+  "name": "Semiballistic and Suborbital Flight",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 69,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "semiballistic aircraft",
+      "suborbital aircraft"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Hypersonic semiballistics and suborbitals use special transition phases, very high travel speeds, G-force/passenger rules and maneuver restrictions.",
+    "inputs": [
+      "craft type",
+      "flight phase",
+      "passenger state",
+      "pilot skill"
+    ],
+    "outputs": [
+      "Maneuver modifiers",
+      "travel time",
+      "G-force effects"
+    ],
+    "steps": [
+      "Semiballistic uses Semiballistic skill. Listed Speed is maneuver speed during climb to pre-launch altitude. Launch preparation takes 20 Combat Turns and imposes -10 Maneuver Score. Once launched, no vehicle combat until re-entry. Ground-speed equivalent for travel-time calculation = 12000 km/h. Terminal landing is >300 km/h and requires external arresting/crash systems.",
+      "Semiballistic passengers: walls Barrier=(Hull+Bulwark)×8. Launch G-force starts 1G and rises +1G per 5 min to max 5G; physical tests get +(G-force+3) TN and character resists (G-force+5)L Stun each minute unless seated for damage. Re-entry/landing may require Quickness (8) or 8S Physical if unseated. Leaving atmosphere creates mana-warp/background-count effects described by source.",
+      "Suborbital uses Suborbital skill. Listed Speed is climb/transition maneuver speed. Entering/leaving high-speed run takes 5 Combat Turns and gives -10 Maneuver Score. During high-speed run craft cannot meaningfully engage in vehicle combat; high-speed run does not incur Stress for exceeding listed Speed. Maximum suborbital high-speed speed ~10000 km/h.",
+      "Suborbital passengers: walls Barrier=(Hull+Bulwark)×8. G-force starts 1G, rises +1G per 5 min to max 3G, holds then falls -1G/5 min. Suborbitals stay in sub-orbit and do not create the semiballistic mana-warp exposure; astral travelers must move fast enough to keep pace."
+    ]
+  },
+  "links": {
+    "uses": [
+      "entity.skill.semiballistic",
+      "entity.skill.suborbital"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "69-71",
+      "relation": "defines",
+      "note": "Semiballistics and Suborbitals"
+    }
+  ],
+  "notes": [
+    "Source provides representative passenger fares and minimum route distances; these are setting/economy reference rather than core flight mechanics."
+  ]
+}
