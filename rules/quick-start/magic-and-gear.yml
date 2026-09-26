@@ -1,0 +1,101 @@
+id: ruleset.quick-start.magic-and-gear
+record_type: ruleset
+name: "Quick Start Magic and Opening Gear"
+domain: quick-start
+status: ingested
+
+effective:
+  status: variant
+  source: source.quick-start
+  pages: "28-37"
+  basis: derived_summary
+
+magic:
+  magical_skills:
+    - "Sorcery and Conjuring use normal Skill Test conventions plus the Quick Start magic rules."
+    - "Magical skills cannot default to Attributes."
+  drain:
+    - "Sorcery Drain is resisted with Willpower; Conjuring Drain is resisted with Charisma."
+    - "Every two Drain Resistance successes reduce Drain by one Damage Level; below Light means no damage."
+    - "Quick Start Drain is Stun damage."
+  traditions:
+    - "Shamans and mages are the two presented traditions; the choice is described as permanent."
+    - "Shamans use totems; Dog and Rat are the two examples mechanically tied to the included adventure/sample characters."
+  astral:
+    - "Astral perception is a psychic sense that reveals astral forms and auras."
+    - "Quick Start assensing uses an Intelligence-based Assensing (4) Test; successes determine information learned."
+  sorcery:
+    sequence:
+      - preparation
+      - sorcery_test
+      - spell_resistance_test
+      - spell_effect
+      - drain_resistance_test
+    rules:
+      - "Preparation selects the spell and any Action Pool dice; normal direct targeting requires the caster to see the target with unaided natural sight."
+      - "Sorcery uses Sorcery dice plus optional Action Pool dice against the spell's target number."
+      - "A Rule-of-One failure raises the Drain Resistance target number by +2."
+      - "Living targets may resist with the targeted Attribute against a target number equal to spell Force unless willing."
+      - "Caster and target successes are compared; equal or greater target successes negate the spell."
+      - "Sustaining a spell generally imposes +2 to the caster's target numbers except Damage Resistance Tests."
+  conjuring:
+    - "Quick Start summoning takes one Combat Phase and uses a Conjuring Test against TN 5."
+    - "Each summoning success grants one service; no successes means no spirit appears."
+    - "The magician resists Conjuring Drain whether or not the spirit appears."
+    - "Summoned spirits depart at sunrise or sunset and unused services are lost."
+    - "A magician may have only one summoned spirit at a time in this Quick Start ruleset."
+    - "A spirit's continuous use of one power counts as one service until its parameters change."
+  spirit_combat:
+    - "Quick Start triples the normal melee target number for mundane physical attacks against spirits."
+    - "Ranged physical combat cannot damage spirits in this simplified presentation."
+    - "Spirits use Reaction as their Combat Skill."
+    - "Spirits do not take Stun damage; Deadly Physical damage makes the spirit disappear."
+  sample_spells:
+    note: "Preserved as Quick Start examples/variants; canonical full-SR3 spell records are not replaced."
+    names:
+      - Armor
+      - Confusion
+      - Control Actions
+      - Death Touch
+      - Detect Enemies
+      - Detect Life
+      - Flamethrower
+      - Fling
+      - Heal
+      - Increase Reaction
+      - Improved Invisibility
+      - Lightning Bolt
+      - Magic Fingers
+      - Manabolt
+      - Resist Pain
+      - Shadow
+      - Silence
+      - Stunbolt
+
+gear:
+  armor:
+    - "Ballistic and Impact armor are distinguished; Quick Start lists Armor Jacket, Armor Vest, Lined Coat, and Securetech Armor Clothing."
+  electronics:
+    - "Lists cellular phones, pocket secretaries and personal computers as common personal electronics."
+  tools:
+    - "A kit is portable basic equipment for repairing a specific class of gear."
+  surveillance_security:
+    - "Includes binoculars, flashlights, goggles, micro-transceivers, scanners, micro-camcorders, maglock passkeys, and sequencers."
+    - "The Quick Start text describes standard radio communication as same-frequency simplex."
+  survival:
+    - "Includes climbing gear and Nav-Dat GPS; the latter is described as giving coordinates to within 2 meters."
+  cyberware:
+    - "Cyberware has an Essence Cost; Essence below 0 is fatal in this presentation."
+    - "Opening headware entries include radio, chipjack, datajack, and headware memory."
+
+links:
+  reuses:
+    - rule.magic.drain
+    - rule.magic.astral-perception
+    - rule.magic.spell-targeting
+    - rule.magic.spell-resistance
+    - rule.magic.spirit-services
+    - rule.cyberware.essence
+
+sources:
+  - {source: source.quick-start, pages: "28-37", relation: derived_summary, note: "Condensed Quick Start magic and opening gear"}
