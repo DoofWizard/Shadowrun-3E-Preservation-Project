@@ -1,0 +1,64 @@
+{
+  "id": "rule.vehicles.electronic-system-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Electronic-System Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 142,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle computers, drone support electronics, tactical networks and electronic-warfare hardware"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Electronic-system customization installs vehicle/drone computing, tactical-network and EW hardware while reusing the already-ingested operational rules for Autosofts, BattleTac and electronic warfare.",
+    "inputs": [
+      "vehicle or drone",
+      "electronic-system modification"
+    ],
+    "outputs": [
+      "installed electronic capability and CF/Load changes"
+    ],
+    "steps": [
+      "Autosoft Interpretation Systems let drones interpret Autosofts/knowsofts. Chip ports equal Pilot rating; processing/memory equals Pilot × 2, and the combined ratings of simultaneously used programs may not exceed that value. Program rating may not exceed Pilot. This installation does not suppress IVIS Pool or robot Adaptation Pool.",
+      "BattleTac FDDM receiver modules exchange targeting information over a remote-control network and support firing on targets outside the firing drone's line of sight under the canonical BattleTac/indirect-fire rules.",
+      "BattleTac IVIS receiver modules integrate remote vehicles/drones with IVIS. They can provide extra dice to Comprehension or create an IVIS Pool; only compatible remote-controlled vehicles/drones receive the benefits.",
+      "Ship Closed-Circuit Simsense System integration monitors ship systems/interior activity but is separate from rigger piloting control. CCSS can support damage-control coordination; the controlling rigger may command internal drones up to Intelligence.",
+      "ECM, ECCM, ED and ECD entries provide design/customization tables through Rating 10 for ECM/ECCM and Rating 6 for ED/ECD. Their operational effects remain those of the canonical electronic-warfare subsystem; installation normally requires a vehicle facility and Electronics B/R.",
+      "Electronics Ports power non-vehicle-operation electronics and automatically network attached devices through the vehicle computer. Applicable transmission devices connected to ports may increase Flux by half vehicle Body, rounded up. The port itself consumes no CF, but installed equipment does."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.drones.autosofts",
+      "rule.dice-pools.ivis-pool",
+      "subsystem.rigging.electronic-warfare",
+      "rule.rigging.electronic-deception",
+      "rule.rigging.electronic-counter-deception"
+    ],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "142-146",
+      "relation": "defines",
+      "note": "Electronic Systems through Electronics Ports and common-electronics CF table"
+    }
+  ],
+  "notes": [
+    "These pages primarily add design/customization costs and installation requirements; they do not silently replace the earlier operational EW/autosoft rules."
+  ]
+}

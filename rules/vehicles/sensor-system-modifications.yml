@@ -1,0 +1,65 @@
+{
+  "id": "rule.vehicles.sensor-system-modifications",
+  "record_type": "rule",
+  "name": "Vehicle Sensor-System Modifications",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 143,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle/ship/submarine sensor suites and remote-control communications"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Sensor customization adds specialized detection hardware, higher sensor/sonar ratings and communications-range enhancements while reusing the canonical Sensor/Sonar/EW resolution rules.",
+    "inputs": [
+      "vehicle or vessel",
+      "sensor-system modification"
+    ],
+    "outputs": [
+      "sensor rating, range, detection capability, Flux or EW-resistance changes"
+    ],
+    "steps": [
+      "Dipping Sonar equips hover-capable aircraft with active/passive sonar lowered by cable into water. Effective use requires hovering no higher than 30 m and moving no faster than 7 m/turn; maximum rating 6.",
+      "Magnetic-Anomaly Detectors are aircraft-only submarine-detection sensors. Roll Sensor Perception dice equal to aircraft Sensor against the submarine's normal (not Sonar) Signature. Maximum rating 6.",
+      "Over-the-Horizon Sensors on ships remove the ordinary 35 km surface-sensor detection ceiling but impose +3 to Detection Tests beyond 35 km. Maximum rating 6.",
+      "Power Amplifiers raise Flux for sensors, ECM/ECCM, hardwired remote-control decks and other transmitters; extra Flux increases effective remote-control range and resistance to electronic warfare. Maximum rating 10.",
+      "Remote-Control Encryption Modules installed throughout a remote-control network protect traffic; the network operates at the lowest encryption rating among participating modules.",
+      "Retransmission Units receive and relay remote-control traffic on a separate frequency, extending network reach. Drones in overlap can receive commands even outside the deck's direct range; the retrans unit's Flux can add complementary dice to MIJI tests directed at the deck. A retrans unit begins at Flux 0 and can use power amplifiers.",
+      "Standard vehicle Sensor systems bundle audio/video, thermal, radar, ultrasound and identification/tracking software. Sensor ratings 1-10 have distinct design/customization CF, weight, availability and market costs; higher ratings become restricted security/military equipment.",
+      "Sonar systems likewise use ratings 1-10 with separate high-CF/high-mass installation tables for vessels.",
+      "Towed-Array Sonar removes the stern baffles blind spot and grants +1 die to passive Sonar Detection Tests against contacts more than 15 km away while deployed. Sudden ship maneuvers can sever the tow cable on a 2D6 result of double 1."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.rigging.sonar",
+      "subsystem.rigging.electronic-warfare",
+      "entity.gear.remote-control-encryption-module"
+    ],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "subsystem.drones.remote-control-network"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "143-148",
+      "relation": "defines",
+      "note": "Dipping Sonar, EW/sensor installation tables, MAD, OTHS, power amplification, RC encryption/retransmission, Sensors, Sonar and Towed-Array Sonar"
+    }
+  ],
+  "notes": [
+    "Operational sonar/EW detection mechanics remain in their earlier canonical records; this record captures installation/customization-specific extensions."
+  ]
+}

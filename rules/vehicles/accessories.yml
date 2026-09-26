@@ -1,0 +1,71 @@
+{
+  "id": "rule.vehicles.accessories",
+  "record_type": "rule",
+  "name": "Vehicle Accessories",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 148,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "vehicle accessory design/customization"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Rigger 3 provides a broad accessory catalog for fuel/range, amphibious operation, security, seating, cargo handling, drones, medical support and terrain specialization.",
+    "inputs": [
+      "vehicle",
+      "accessory"
+    ],
+    "outputs": [
+      "added capability and CF/Load/performance changes"
+    ],
+    "steps": [
+      "Aircraft Drop Tanks are installed in pairs; each tank carries 1,000 liters. Drop tanks reduce Signature by 1 while mounted; additional pairs reduce Speed and eventually worsen Handling. A pilot can jettison them with a Complex Action, immediately restoring normal flight characteristics.",
+      "Amphibious Operation Packages convert ground vehicles for water travel. Level 1 uses wheels and travels 15 m/turn with +2 Handling; Level 2 uses propeller drive for Speed 30 with no Handling modifier; Level 3 uses waterjets for Speed 45. Submarine operation additionally requires a sealed power plant.",
+      "Anti-Theft Systems upgrade maglock/security rating from 3 through 10 and may add electric-shock, explosive or proximity-alert responses. Explosive traps use ordinary demolition/explosive damage logic and can endanger occupants/cargo/bystanders.",
+      "Ejection Bucket Seats combine seat, rocket/ejection controls and parasail; standard and reinforced metahuman versions are available.",
+      "Convertible-top conversions trade a hard top for a folding canopy; without a roll bar, passenger crash Damage Resistance target numbers are doubled and the soft top provides no side/rear/top attack protection.",
+      "Cranes have their own Load rating based on vehicle Body and use the lower of vehicle/crane Load when towing. Crane capacity ranges from 25 kg at Body 1 through 60,000 kg at Body 9, with Body 10+ using Body × Body × 750 kg.",
+      "Drone Racks launch/recover airborne drones from moving vehicles. Launch takes an activation action plus a launch action. Recovery requires a driver Handling Test and controller Free Action/Handling Test; if both fail, the drone strikes the carrier. The rack is armored like the vehicle and also serves as enclosed drone storage.",
+      "External Cargo Mounts require no CF themselves but loaded mounts worsen Handling by +1; maximum external cargo capacity equals original internal cargo capacity. This is a customization-only option.",
+      "Aircraft Flotation Packages enable water landings but worsen Economy and reduce Speed; fixed-wing aircraft with floats cannot land on land, while float-equipped helicopters can.",
+      "Generators supply power to trailers, barges and rail cars. Hovercraft Water Seals keep a powerless hovercraft chassis afloat rather than sinking.",
+      "Mechanical Arms use vehicle Body-derived Strength, can lift Strength × 20 kg, may buy limited Strength enhancement, and can mount most cyberarm accessories except Strength/Quickness enhancements.",
+      "Medical Clinics provide vehicle-mounted medical-shop capability with rating up to 6; patient capacity depends on People Space.",
+      "Photovoltaic Chameleon Paint changes programmed colors/patterns but does not provide ruthenium-style environmental camouflage and is incompatible with ruthenium, smart armor, ablative armor and radar-absorbent materials.",
+      "Seats include bench, folding bench, bucket, armored and reinforced metahuman versions. Removing seats frees CF/Load; incompatible seat sizing can worsen crash/collision Damage Resistance.",
+      "Motorcycle Sidecars add cargo/seating but reduce Speed by 15, worsen Handling by size, and reduce Economy by 10 percent; the sidecar shares the motorcycle Body rating.",
+      "Spotlights provide long-range visible or infrared illumination. Tire variants (standard, performance, off-road, dual-purpose and runflat) interact with suspension/drive-by-wire/off-road behavior; runflats provide armored-tire protection.",
+      "The Valkyrie Module is a one-patient tele-surgery medical-shop robotic module including rigger adaptation, remote-control interfaces, satellite uplink, datajack, robotic Pilot 5 with Adaptation Pool 5 and patient space.",
+      "Winches have a Body-based Load/lifting table and use the lower of vehicle/winch Load when towing. They can pull the vehicle across otherwise impassable terrain at 1 meter per turn while the vehicle takes no other action."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "subsystem.vehicles.customization"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.vehicles.control-system-modifications",
+      "rule.vehicles.protective-system-modifications"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "148-155",
+      "relation": "defines",
+      "note": "Vehicle Accessories catalog"
+    }
+  ],
+  "notes": [
+    "The accessory catalog supplies separate Design and Customization Specifications for most entries; this record preserves the reusable mechanical effects rather than duplicating every price line in prose."
+  ]
+}
