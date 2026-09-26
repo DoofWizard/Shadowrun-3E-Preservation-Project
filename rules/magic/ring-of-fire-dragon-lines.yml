@@ -1,0 +1,36 @@
+id: rule.magic.ring-of-fire-dragon-lines
+record_type: rule
+name: "Ring of Fire Dragon Lines"
+domain: magic
+status: ingested
+effective:
+  status: setting_specific
+  source: source.fanpro-10666
+  pages: "146-147"
+  basis: extends
+scope:
+  applies_to:
+    - "the Ring of Fire mana-line network"
+    - "astral observation and use of those lines"
+resolution:
+  summary: "The source identifies the Ring of Fire's mana-line network as dragon lines: naturally occurring lines that have become aspected through long use by Eastern dragons. They respond more readily and strongly to Eastern dragons than to other users. Close astral examination can reveal their aspected nature. The passage gives no numeric modifier, test, threshold or rating."
+  inputs:
+    - "access to the dragon-line network"
+    - "appropriate knowledge"
+    - "astral observation when identifying the aspect"
+  outputs:
+    - "setting-specific preferential response to Eastern dragons"
+    - "recognition of the network as aspected mana lines"
+links:
+  uses:
+    - rule.magic.aspected-power
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.magic.background-count
+    - rule.magic.power-sites
+sources:
+  - {source: source.fanpro-10666, pages: "146-147", relation: extends, note: "The Ring of Fire / dragon lines"}
+notes:
+  - "Do not invent a numeric bonus. This source supplies qualitative setting-specific behavior only."
+  - "The text states that uncontrolled drawing of mana through the network can unbalance the lines and contribute to severe seismic/volcanic consequences; it does not provide a player-facing resolution procedure for that effect."
