@@ -1,0 +1,71 @@
+{
+  "id": "rule.vehicles.design-options",
+  "record_type": "rule",
+  "name": "Vehicle Design Options",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 114,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design"
+    ],
+    "excludes": [
+      "ordinary post-production customization unless separately allowed"
+    ]
+  },
+  "resolution": {
+    "summary": "Design options are factory-engineering choices grouped into Functional Improvements, Design Enhancements, Facilities and Robot Options. Each option may consume DP, Cargo Factor and/or Load.",
+    "inputs": [
+      "vehicle design",
+      "option"
+    ],
+    "outputs": [
+      "modified ratings/capabilities"
+    ],
+    "steps": [
+      "Track all CF consumed against Cargo rating and all Load reduction against Load rating. If insufficient, option cannot be installed.",
+      "Functional improvements include rating changes such as Acceleration, Depth, entry points, fuel capacity, Handling, Economy, Cargo, Load, Signature and Speed.",
+      "Design enhancements add special capabilities such as airlocks, auxiliary engines, ballast tanks, ducted/EM ducted waterjet drives, flight-mode/body-lift features, improved takeoff/landing profile, removable/manual controls, setup/breakdown, specialty machinery, smart materials and structural agility.",
+      "Facilities provide built-in living/medical/shop/work spaces and amenities; people-space requirements consume CF and/or Load according to type.",
+      "Robot options add adaptive-robot capabilities such as autopilot/rigger improvements, robotic-pilot advanced programming and reflexes."
+    ]
+  },
+  "examples": [
+    "Acceleration Increase: 25 DP per +1; limited by power plant.",
+    "Depth Enhancement: 2 DP per +10m; capped by chassis; load reduction scales with Hull Factor × Body/Hull.",
+    "Extra Entry Points: no DP, but physical/common-sense limits; max additional entry points roughly Body÷2, or Hull×2 for hull vehicles.",
+    "Fuel Tank Capacity Enlargement uses engine-type-specific DP/CF/Load costs; non-electric aircraft with enlarged tanks increase takeoff/landing distances 10%.",
+    "Handling Improvement: 25 DP per -1 Handling; cannot reduce below half starting chassis Handling (rounded up).",
+    "Improved Economy: 5 DP per 5% improvement, limited by power plant.",
+    "Cargo Increase: 1 DP per +0.2 CF.",
+    "Load Increase: Body0 1 DP/kg; Body1+ 1 DP/10kg, limited by power plant.",
+    "Signature Improvement: (levels^4)×200 DP, maximum at GM discretion.",
+    "Speed Increase: 2 DP per +1 Speed, limited by power plant; fixed-wing stall speed is unaffected."
+  ],
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": [
+      "option.vehicles.quality-factors"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "114-121",
+      "relation": "defines",
+      "note": "Vehicle Design Options"
+    }
+  ],
+  "notes": [
+    "Rigger 3 defers the numeric chassis and power-plant maxima to the later Chassis and Power Plant tables."
+  ]
+}

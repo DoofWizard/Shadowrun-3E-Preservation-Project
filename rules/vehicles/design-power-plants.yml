@@ -1,0 +1,60 @@
+{
+  "id": "rule.vehicles.design-power-plants",
+  "record_type": "rule",
+  "name": "Vehicle Design Power Plants",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 109,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Power-plant choice supplies the propulsion method and sets starting/max performance, fuel/economy and Signature characteristics.",
+    "inputs": [
+      "chassis",
+      "power-plant type"
+    ],
+    "outputs": [
+      "starting/max Speed",
+      "Acceleration",
+      "Load",
+      "Signature",
+      "Economy",
+      "fuel capacity"
+    ],
+    "steps": [
+      "Only power plants allowed by the chassis/power-plant tables may be selected.",
+      "Power plant is an abstract propulsion class, not a literal engine cylinder/configuration.",
+      "Types described include electric battery, electric fuel cell, methane, gasoline, diesel, jet propeller, jet turbine, nuclear, chemical rocket and sail.",
+      "All templates begin with listed minimum Speed and Load; designers can raise ratings with Design Points subject to maxima, or reduce them without lowering DPV.",
+      "Fuel measures vary by plant: electric as Power Factor, methane as pressure bars, gasoline/diesel/jet fuel as liters, with special cases for nuclear/rocket/sail."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "109-111",
+      "relation": "defines",
+      "note": "Select a Power Plant"
+    }
+  ],
+  "notes": [
+    "Semiballistics and suborbitals require Chemical Rocket power plants."
+  ]
+}

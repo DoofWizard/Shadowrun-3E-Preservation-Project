@@ -1,0 +1,56 @@
+{
+  "id": "rule.vehicles.design-chassis",
+  "record_type": "rule",
+  "name": "Vehicle Design Chassis",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 104,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "The chassis is the structural template that establishes the vehicle category, fixed Body/Hull and many starting values and design limits.",
+    "inputs": [
+      "chassis type"
+    ],
+    "outputs": [
+      "starting ratings",
+      "allowed options",
+      "mark-up factor"
+    ],
+    "steps": [
+      "Body/Hull is fixed by chassis and cannot be improved directly; other ratings may be raised by design options or lowered without reducing DP unless a rule specifically grants CF/Load back.",
+      "All manned vehicles require at least one driver seat.",
+      "Chassis categories include bikes, boats, cars, fixed-wing aircraft, hovercraft, rotorcraft, ships, submarines, vectored-thrust aircraft and special vehicles.",
+      "Special-vehicle examples include anthroform drones, barges, locomotives/rail cars, mini-blimps, semiballistics, suborbitals, trailers, walker drones and zeppelins.",
+      "Chassis tables define maximum Cargo Factor, Load, Speed/Acceleration/Handling improvements, entry-point limits and other subtype restrictions."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "104-109",
+      "relation": "defines",
+      "note": "Select a Chassis"
+    }
+  ],
+  "notes": [
+    "Rigger 3's Chassis Table is in the later reference tables and is treated as the numeric authority for per-chassis starting/max values."
+  ]
+}

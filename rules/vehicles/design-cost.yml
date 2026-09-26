@@ -1,0 +1,55 @@
+{
+  "id": "rule.vehicles.design-cost",
+  "record_type": "rule",
+  "name": "Vehicle Design Cost, Street Index and Availability",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 113,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "completed vehicle designs"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Vehicle price is derived from DPV, chassis mark-up and market classification.",
+    "inputs": [
+      "DPV",
+      "chassis mark-up factor",
+      "vehicle class"
+    ],
+    "outputs": [
+      "nuyen cost",
+      "Street Index",
+      "Availability"
+    ],
+    "steps": [
+      "Adjusted design points = DPV × chassis Mark-Up Factor. GM may add roughly 1-3 to mark-up for unusual/prototype/experimental one-off designs.",
+      "Base nuyen cost = adjusted design points ×100.",
+      "Street Index base: standard vehicle 1; luxury 2; security-grade 2; military-grade 3+. Ambulance/medical specialty +0.5; specialty non-combat vehicle +1.",
+      "Availability number/base time derives from Vehicle Cost ÷20,000, rounded up. Minimum Availability/base time is 2/24; GM may declare certain large/military vehicles simply unavailable to ordinary buyers."
+    ]
+  },
+  "links": {
+    "uses": [],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "113-114",
+      "relation": "defines",
+      "note": "Determine Final Vehicle Cost / Street Index / Availability"
+    }
+  ],
+  "notes": []
+}

@@ -1,0 +1,77 @@
+{
+  "id": "subsystem.vehicles.design",
+  "record_type": "subsystem",
+  "name": "Vehicle Design",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 102,
+    "basis": "defines"
+  },
+  "state": {
+    "tracked_values": [
+      "chassis",
+      "power plant",
+      "Design Point Value",
+      "chassis mark-up factor",
+      "Cargo Factor",
+      "Load",
+      "Handling",
+      "Body/Hull",
+      "Armor/Bulwark",
+      "Signature",
+      "Autonav/Pilot",
+      "Sensor",
+      "fuel/economy",
+      "entry points",
+      "seating",
+      "facilities",
+      "robot options"
+    ]
+  },
+  "participants": [
+    "vehicle designer",
+    "gamemaster",
+    "mass-production manufacturer"
+  ],
+  "components": [
+    "chassis selection",
+    "power-plant selection",
+    "design options",
+    "vehicle modifications",
+    "final-cost calculation",
+    "availability/Street Index classification"
+  ],
+  "entry_conditions": [],
+  "exit_conditions": [],
+  "links": {
+    "rules": [
+      "rule.vehicles.design-chassis",
+      "rule.vehicles.design-power-plants",
+      "rule.vehicles.design-options",
+      "rule.vehicles.design-cost"
+    ],
+    "procedures": [
+      "procedure.vehicles.design"
+    ],
+    "entities": [],
+    "options": [],
+    "modifiers": [],
+    "interacts_with": [
+      "option.vehicles.quality-factors"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "102-121",
+      "relation": "defines",
+      "note": "Vehicle Design"
+    }
+  ],
+  "notes": [
+    "These rules model factory-built/production designs, not ordinary street customization; Rigger 3 directs existing-stock modification to the separate Vehicle Customization chapter."
+  ]
+}

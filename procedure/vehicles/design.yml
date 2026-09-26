@@ -1,0 +1,93 @@
+{
+  "id": "procedure.vehicles.design",
+  "record_type": "procedure",
+  "name": "Vehicle Design Process",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 104,
+    "basis": "defines"
+  },
+  "purpose": "Create a factory-designed stock vehicle from a chassis, power plant, design options and modifications.",
+  "prerequisites": [
+    "mass-production/factory-scale engineering context rather than ordinary garage customization"
+  ],
+  "inputs": [
+    "chassis",
+    "power plant",
+    "design options",
+    "vehicle modifications"
+  ],
+  "stages": [
+    {
+      "id": "chassis",
+      "name": "Select Chassis",
+      "test_or_action": "Choose vehicle category/subtype. Chassis fixes Body/Hull and starting ratings such as Handling, Armor/Bulwark, Cargo Factor, Autonav/Pilot, Sensor, seating, entry points and chassis-specific limits.",
+      "outputs": [
+        "chassis baseline",
+        "chassis mark-up factor"
+      ]
+    },
+    {
+      "id": "power",
+      "name": "Select Power Plant",
+      "test_or_action": "Choose an allowed power plant for the chassis. It establishes starting/max Speed, Acceleration, Load, Signature, Economy and fuel-tank capacity; designers may raise or lower starting ratings subject to design rules.",
+      "outputs": [
+        "powered chassis"
+      ]
+    },
+    {
+      "id": "options",
+      "name": "Add Design Options",
+      "test_or_action": "Add factory-only functional improvements, enhancements, facilities and robot options. Track DP, CF consumed and Load reduction; vehicle may not exceed Cargo/Load limits.",
+      "outputs": [
+        "option-adjusted design"
+      ]
+    },
+    {
+      "id": "mods",
+      "name": "Add Vehicle Modifications",
+      "test_or_action": "Eligible Vehicle Customization modifications may be incorporated at design time where allowed.",
+      "outputs": [
+        "completed specification"
+      ]
+    },
+    {
+      "id": "cost",
+      "name": "Determine Final Vehicle Cost",
+      "test_or_action": "Total Design Point Value × chassis Mark-Up Factor = adjusted point cost. Multiply by 100 for base nuyen cost, then apply Street Index classification. Availability is base vehicle cost ÷20,000 (rounded up), with minimum 2/24 unless GM rules otherwise.",
+      "outputs": [
+        "final cost",
+        "Street Index",
+        "Availability"
+      ]
+    }
+  ],
+  "outcomes": [
+    "stock vehicle specification"
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.design-chassis",
+      "rule.vehicles.design-power-plants",
+      "rule.vehicles.design-options",
+      "rule.vehicles.design-cost"
+    ],
+    "requires": [],
+    "produces": [],
+    "modified_by": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "102-121",
+      "relation": "defines",
+      "note": "The Design Process"
+    }
+  ],
+  "notes": [
+    "The five explicit steps are: select chassis; select power plant; add design options; add vehicle modifications; determine final vehicle cost."
+  ]
+}
