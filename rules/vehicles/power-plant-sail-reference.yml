@@ -1,0 +1,180 @@
+{
+  "id": "rule.vehicles.power-plant-sail-reference",
+  "record_type": "rule",
+  "name": "Sail Power-Plant Reference Table",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 201,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Numeric power-plant design reference. Rows preserve printed values for chassis subtype design.",
+    "inputs": [
+      "chassis subtype"
+    ],
+    "outputs": [
+      "power-plant design values"
+    ],
+    "steps": []
+  },
+  "columns": [
+    "category",
+    "vehicle",
+    "load_start",
+    "load_max",
+    "speed_start",
+    "speed_max",
+    "accel_start",
+    "accel_max",
+    "signature",
+    "starting_fuel_code",
+    "economy_start",
+    "economy_max",
+    "design_points",
+    "people_space_load"
+  ],
+  "rows": [
+    [
+      "Boats",
+      "Skiff",
+      150,
+      750,
+      30,
+      60,
+      3,
+      7,
+      6,
+      null,
+      null,
+      null,
+      25,
+      null
+    ],
+    [
+      "Boats",
+      "Sport Cruiser",
+      250,
+      1000,
+      30,
+      60,
+      3,
+      6,
+      6,
+      null,
+      null,
+      null,
+      32,
+      null
+    ],
+    [
+      "Boats",
+      "Water Scooter",
+      20,
+      180,
+      15,
+      45,
+      3,
+      7,
+      8,
+      null,
+      null,
+      null,
+      25,
+      null
+    ],
+    [
+      "Boats",
+      "Yacht",
+      400,
+      2500,
+      30,
+      50,
+      3,
+      6,
+      6,
+      null,
+      null,
+      null,
+      65,
+      1500
+    ],
+    [
+      "Ship",
+      "Harbor Tug",
+      1000,
+      5000,
+      "30 (30)",
+      "50 (50)",
+      1,
+      3,
+      "3/2",
+      null,
+      null,
+      null,
+      2000,
+      null
+    ],
+    [
+      "Ship",
+      "Merchantman, Light",
+      25000,
+      150000,
+      "25 (25)",
+      "40 (40)",
+      2,
+      5,
+      "3/2",
+      null,
+      null,
+      null,
+      20000,
+      22500
+    ],
+    [
+      "Ship",
+      "Trawler",
+      5000,
+      50000,
+      "25 (25)",
+      "40 (40)",
+      2,
+      6,
+      "3/2",
+      null,
+      null,
+      null,
+      8000,
+      null
+    ]
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.design-power-plants"
+    ],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "201",
+      "relation": "defines",
+      "note": "Power Plant Table"
+    }
+  ],
+  "notes": [
+    "B = Body; slash/parenthetical values preserve printed dual-mode or ship-scale values."
+  ]
+}

@@ -1,0 +1,244 @@
+{
+  "id": "rule.vehicles.power-plant-nuclear-reference",
+  "record_type": "rule",
+  "name": "Nuclear Power-Plant Reference Table",
+  "domain": "vehicles",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.r3",
+    "page": 201,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "procedure.vehicles.design"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Numeric power-plant design reference. Rows preserve printed values for chassis subtype design.",
+    "inputs": [
+      "chassis subtype"
+    ],
+    "outputs": [
+      "power-plant design values"
+    ],
+    "steps": []
+  },
+  "columns": [
+    "category",
+    "vehicle",
+    "load_start",
+    "load_max",
+    "speed_start",
+    "speed_max",
+    "accel_start",
+    "accel_max",
+    "signature",
+    "starting_fuel_code",
+    "economy_start",
+    "economy_max",
+    "design_points",
+    "people_space_load"
+  ],
+  "rows": [
+    [
+      "Ships",
+      "Merchantman, Medium",
+      800000,
+      3000000,
+      "25 (15)",
+      "50 (15)",
+      3,
+      5,
+      "4/3",
+      null,
+      null,
+      null,
+      100000,
+      30000
+    ],
+    [
+      "Ships",
+      "Merchantman, Heavy",
+      3000000,
+      30000000,
+      "20 (10)",
+      "25 (10)",
+      2,
+      4,
+      "3/2",
+      null,
+      null,
+      null,
+      400000,
+      37500
+    ],
+    [
+      "Ships",
+      "Freighter",
+      50000000,
+      250000000,
+      "15 (10)",
+      "20 (10)",
+      1,
+      2,
+      "2/2",
+      null,
+      null,
+      null,
+      1000000,
+      37500
+    ],
+    [
+      "Ships",
+      "Cruiser",
+      75000,
+      2000000,
+      "45 (20)",
+      "60 (30)",
+      3,
+      7,
+      "2/2",
+      null,
+      null,
+      null,
+      600000,
+      1125000
+    ],
+    [
+      "Ships",
+      "Aircraft Carrier, Light",
+      1000000,
+      12000000,
+      "45 (20)",
+      "60 (30)",
+      3,
+      7,
+      "2/2",
+      null,
+      null,
+      null,
+      600000,
+      5925000
+    ],
+    [
+      "Ships",
+      "Aircraft Carrier, Medium",
+      2000000,
+      30000000,
+      "45 (20)",
+      "60 (30)",
+      2,
+      6,
+      "1/2",
+      null,
+      null,
+      null,
+      800000,
+      8850000
+    ],
+    [
+      "Ships",
+      "Aircraft Carrier, Heavy",
+      2500000,
+      50000000,
+      "45 (20)",
+      "60 (30)",
+      2,
+      5,
+      "1/2",
+      null,
+      null,
+      null,
+      1500000,
+      14700000
+    ],
+    [
+      "Submarines",
+      "Attack Submarine",
+      750000,
+      4000000,
+      "40/35",
+      "60/40",
+      3,
+      5,
+      "7/7",
+      null,
+      null,
+      null,
+      250000,
+      236250
+    ],
+    [
+      "Submarines",
+      "Boomer",
+      1000000,
+      16000000,
+      "25/20",
+      "40/30",
+      2,
+      4,
+      "8/8",
+      null,
+      null,
+      null,
+      360000,
+      236250
+    ],
+    [
+      "Submarines",
+      "Commercial Sub, Heavy",
+      25000000,
+      40000000,
+      "15/5",
+      "45/30",
+      1,
+      3,
+      "5/4",
+      null,
+      null,
+      null,
+      140000,
+      36000
+    ],
+    [
+      "Submarines",
+      "Commercial Sub, Medium",
+      7500000,
+      15000000,
+      "25/5",
+      "50/5",
+      2,
+      4,
+      "6/5",
+      null,
+      null,
+      null,
+      80000,
+      30000
+    ]
+  ],
+  "links": {
+    "uses": [
+      "rule.vehicles.design-power-plants"
+    ],
+    "affects": [
+      "procedure.vehicles.design"
+    ],
+    "modified_by": [],
+    "interacts_with": []
+  },
+  "sources": [
+    {
+      "source": "source.r3",
+      "pages": "201",
+      "relation": "defines",
+      "note": "Power Plant Table"
+    }
+  ],
+  "notes": [
+    "B = Body; slash/parenthetical values preserve printed dual-mode or ship-scale values."
+  ]
+}
