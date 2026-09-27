@@ -1,0 +1,28 @@
+id: rule.equipment.target-wastelands-desert-equipment-stress
+record_type: rule
+name: "Target: Wastelands Sand and Equipment Stress"
+domain: equipment
+status: ingested
+context: "fictional tabletop RPG equipment-maintenance rule"
+effective: {status: source_specific, source: source.fanpro-10653, pages: "116-117", pdf_pages: "117-118", basis: defines}
+
+environmental_stress:
+  exposed_gear: "Exposed weapons, external cyberware and vehicles take 1 Stress Point per day in desert conditions."
+  maintained_or_adapted: "Daily implant cleaning/maintenance, or matching vehicle hostile-environment/desert adaptation, reduces this to 1 Stress Point per week."
+
+moving_parts:
+  daily_check: "Each day an item with moving parts is used, roll 1D6."
+  jam: "On a 1, the item jams and needs an appropriate Build/Repair (4) test with a base time of 1 hour before use."
+  poor_cleaning: "If not cleaned regularly, increase the jam range by 1 each day; on day two the item jams on 1-2."
+  timing: "The gamemaster may place a resulting jam at an appropriate dramatic moment."
+
+sandstorm_interaction:
+  rule: "During a sandstorm, double the Stress Points inflicted and the jam likelihood."
+
+links:
+  uses: [rule.damage.stress-test, rule.damage.stress-points]
+  interacts_with: [rule.vehicles.target-wastelands-hostile-environment-adaptation]
+sources:
+  - {source: source.fanpro-10653, pages: "116-117", pdf_pages: "117-118", relation: defines}
+notes:
+  - "All effects are fictional game mechanics."
