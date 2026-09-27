@@ -1,0 +1,46 @@
+id: subsystem.simsense.sim-vironment
+record_type: subsystem
+name: "Sim-Vironment"
+domain: simsense
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 124
+  basis: defines
+
+summary: "An interactive simsense environment combining a full sim feed with limited Matrix capability and no normal RAS override."
+
+resolution:
+  physical_movement: "Full physical movement is allowed while participating."
+  interactivity: "Players choose actions within preset limits while inhabiting a host of predefined characters."
+  common_track_length_minutes: 30
+  alternate_track_length_minutes: 60
+  session_cost_nuyen:
+    thirty_minutes: 100
+    sixty_minutes: 150
+  reality_separation:
+    test: "Willpower (8)"
+    repeat_interval: "every 5 minutes if the character does not disconnect"
+    failed_test_effect: "Increase the target number by 1 for the next attempt."
+  custom_tracks:
+    approximate_cost_nuyen: 75000
+    format: "four-person Dir-X, Full-X track and up"
+    access: "Sim-Vironments are deliberately kept off-line, so insertion of a custom track must be physical."
+
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+
+sources:
+  - source: source.fanpro-10664
+    pages: "124-125"
+    pdf_pages: "125-126"
+    relation: defines
+    note: "Culture Shock - Game Information - Sim-Vironment"
+
+notes:
+  - "The source presents the Willpower test as a risk of losing touch with reality during a session; this record preserves the tabletop mechanic without treating the surrounding setting commentary as a universal rule."
