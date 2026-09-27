@@ -1,0 +1,18 @@
+id: world.region.target-wastelands-desert-gear-guidance
+record_type: world
+name: "Target: Wastelands — Desert Gear Guidance"
+domain: regions
+status: ingested
+source_period: "2062"
+canonical_references:
+  - {id: entity.gear.chemical-analyzer, contribution: "Recommended for testing field water."}
+  - {id: entity.gear.solar-still, contribution: "Recommended for water recovery."}
+  - {id: entity.gear.snake-mesh-socks, contribution: "Recommended lower-leg protection for foot travel."}
+  - {id: entity.gear.desert-suit, contribution: "Described as reducing heat load and water loss while protecting against sun and sand."}
+  - {id: entity.gear.seismic-mic, contribution: "Described as detecting nearby movement through ground vibration."}
+vehicle_guidance:
+  - "Vehicles and drones require desert-specific sealing, cooling, filtration and maintenance."
+  - "The narrative says an unmodified vehicle may have only about one-fifth the operational life it would have in a less hostile environment."
+  - {canonical_rule: rule.vehicles.target-wastelands-hostile-environment-adaptation, relation: "Later Game Information supplies the formal adaptation mechanics."}
+sources:
+  - {source: source.fanpro-10653, pages: "32-33", pdf_pages: "33-34", relation: previews_entities_and_rules}
