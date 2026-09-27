@@ -1,0 +1,18 @@
+id: rule.security.target-wastelands-underwater-network-access
+record_type: rule
+name: "Target: Wastelands Underwater Network Access"
+domain: security
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, page: 101, pdf_page: 102, basis: commentary_only}
+
+posted_commentary:
+  connectivity: "Remote underwater installations still require some external communications path, such as satellite relays, signal buoys or dedicated cable."
+  risk_note: "The source post suggests those external routes can become entry points into local Matrix infrastructure."
+  status: "Shadowtalk operational commentary; not promoted to a universal architecture rule."
+
+links:
+  interacts_with: [world.location.target-wastelands-underwater-sites]
+sources:
+  - {source: source.fanpro-10653, page: 101, pdf_page: 102, relation: commentary}
+notes:
+  - "Kept because it is a reusable security consideration, while preserving its non-authoritative presentation."
