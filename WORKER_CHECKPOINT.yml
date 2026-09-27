@@ -1,38 +1,25 @@
 phase: pass_b
 active_source: source.fanpro-10655
 source_status: ingesting
+stage: pending_normalization
 completed_through:
-  printed_page: 177
-  pdf_page: 178
+  printed_page: 206
+  pdf_page: 207
 resume_at:
-  printed_page: 178
-  pdf_page: 179
-last_commit: 2874808fb4e29fed7c4e554c33251ff2013794d2
+  action: normalize_pending_ranges
+last_commit: 2e8db2ef5a69575f569153052231122067818e25
 open_conflicts:
-  - pending.sona.ucas-p165-177
-  - pending.sona.tir-tairngire-p138-153
-  - pending.sona.quebec-p100-112
-  - pending.sona.denver-p72-84
-  - pending.sona.cas-p57-71
-  - pending.sona.california-p40-56
-  - pending.sona.algonkian-manitou-p18-28
   - pending.sona.range-p16-17
-  - pending.newseattle.manifest-sync-p120-135
-  - pending.newseattle.law-enforcement-archetypes-p113-114
-  - pending.newseattle.lone-star-loadout-p112
-  - pending.newseattle.underworld-p97-107
-  - pending.newseattle.range-p4-13
-  - pending.newseattle.range-p17-30
-  - pending.newseattle.range-p31-39
-  - pending.newseattle.range-p40-43
-  - pending.newseattle.tacoma-p44-47
-  - pending.newseattle.everett-p47-50
-  - pending.newseattle.body-politic-p73-81
-  - pending.newseattle.corporate-profiles-p83-96
-  - pending.sota63.range-p124-125
-  - pending.sota63.range-p95-104
-  - pending.sota63.range-p72-78
-  - pending.ssg.game-info-p118-126
+  - pending.sona.algonkian-manitou-p18-28
+  - pending.sona.california-p40-56
+  - pending.sona.cas-p57-71
+  - pending.sona.denver-p72-84
+  - pending.sona.quebec-p100-112
+  - pending.sona.tir-tairngire-p138-153
+  - pending.sona.ucas-p165-177
+  - pending.sona.ute-p178-187
+prior_source_pending:
+  - "Consult source manifests for New Seattle, SOTA63 and SSG pending normalization."
 next_sources:
   - source.fanpro-10653
   - source.fanpro-10652
@@ -58,12 +45,9 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - continue source.fanpro-10655 from printed p.178 / PDF p.179
-  - directed scan sequentially at routed depth
+  - do not rescan source.fanpro-10655 completed pages
+  - normalize every active-source pending range before marking complete
   - preserve printed/PDF provenance
-  - do not infer supersession beyond explicit text
-  - reuse canonical IDs
-  - capture every rules-bearing item
-  - keep every pending range explicit until fully normalized
-  - commit bounded semantic slices
-  - continue automatically
+  - distinguish source-period facts from commentary
+  - do not infer supersession
+  - after reconciliation advance to source.fanpro-10653
