@@ -1,0 +1,45 @@
+id: catalog.gear.target-wastelands-underwater-systems
+record_type: entity_catalog
+name: "Target: Wastelands Underwater Systems"
+domain: gear
+status: ingested
+source: source.fanpro-10653
+pages: "130-131"
+entries:
+  - id: entity.gear.hydrostatic-pulse-baffler
+    name: "Hydrostatic Pulse Baffler"
+    table_raw: "Concealability —; Ammo 200; Mode SS; Damage 22D (AV); Weight 500; Availability NA; Cost 15,000 nuyen"
+    rules: "Underwater system; Power decreases by 1 for every meter traveled."
+    ranges: {short: "10-30 / TN 4", medium: "31-50 / TN 5", long: "51-60 / TN 6", extreme: "61-70 / TN 9"}
+    consumable: "Hydrostatic Pulse Baffler Charges (per 10): Damage as system; Weight 500; Availability NA; Cost 2,500 nuyen"
+  - id: entity.gear.olfactory-camouflage
+    name: "Olfactory Camouflage"
+    properties: {concealability: 4, weight_kg: 4, availability: "4/48 hrs", cost_nuyen: 200, street_index: 1.5, legality: "Legal"}
+    rules: "Bioactive hydrogel masks the user's scent from scent-tracking paracritters; it does not mask blood scent or visual detection."
+  - id: entity.gear.screaming-mimi
+    name: "Screaming Mimi"
+    properties: {concealability: "—/6", damage: "Special", weight_kg: 150, availability: "20/3 mo.", cost_nuyen: 50000, street_index: 4, legality: "1-J", sensor_sonar: "4/4", pilot: 3}
+    rules:
+      - "Maximum deployment depth is 1 kilometer."
+      - "Attachment uses Strength 7 adhesive or magnetic clamps."
+      - "Broadcast range spans roughly 10 to 60,000 Hz for one minute / 20 Combat Turns."
+      - "Active Sonar Tests against the noise receive +3; the attached vehicle's passive-Sonar Signature is reduced by 3."
+      - "Crew in the attached vessel resist 12L Stun, reducing Power by 1 per 5 meters of distance from the device."
+      - "Affected crew make Body or Willpower (6); failure incapacitates until the broadcast ends, success leaves +2 to tests while it continues."
+      - "Hearing-based Perception Tests inside the affected vessel receive +2."
+  - id: entity.gear.snake-spine-whip
+    name: "Snake-Spine Whip"
+    rules:
+      - "Underwater melee system operated with Mechanical Tentacle Operations."
+      - "Only one arm attacks at a time; attacks suffer +2 target-number modifier, offset by +2 Reach."
+      - "Strength 8; non-attack manipulation uses Handling 5."
+      - "Treat attacks against a whip as against a vehicle with Body 3 and Armor 1."
+    variants:
+      standard: {reach: 2, damage: "8M", weight_kg: 20, availability: "NA", cost_nuyen: 1500}
+      blade_arm: {reach: 2, damage: "10M", weight_kg: 25, availability: "NA", cost_nuyen: 2000}
+      electric_discharge_arm: {reach: 2, damage: "12S Stun", weight_kg: 25, availability: "NA", cost_nuyen: 2500}
+      hull_cutters: {reach: 2, damage_raw: "6M/N", weight_kg: 50, availability: "NA", cost_nuyen: 5000}
+sources:
+  - {source: source.fanpro-10653, pages: "130-132", pdf_pages: "131-133", relation: defines}
+notes:
+  - "Fictional tabletop equipment record; source abbreviations are preserved where interpretation would be uncertain."
