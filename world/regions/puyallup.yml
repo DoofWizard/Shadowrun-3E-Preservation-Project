@@ -1,0 +1,69 @@
+id: world.region.puyallup
+record_type: world
+name: "Puyallup"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "4206"
+  size_sq_km: 1008
+  population: 506000
+  population_mix: {Human: "48%", Elf: "21%", Dwarf: "4%", Ork: "22%", Troll: "4%", Other: "1%"}
+  security_rating: "E"
+  hospitals_and_clinics: 6
+  major_corp_facilities: []
+  major_gangs: ["Black Rains","Forever Tacoma","Princes","Reality Hackers"]
+lone_star_security_ratings:
+  C: ["Puyallup City","Tarislar"]
+  E: ["Carbonado","Loveland","Graham Cracker City"]
+  Z: ["Hell's Kitchen","Orting","Ponderosa Estates","Silver Spring","South Prairie","The Neon Killing","Thrift"]
+special_security_rule:
+  area: "Tarislar"
+  printed_rating: "C"
+  effective_rating: "A"
+  basis: "Tarislar pays Knight Errant for additional security."
+matrix_context:
+  - "The district Matrix is described as sparse, with factory controllers and small government/business systems, frequent brownouts, crashes and communication interruptions."
+  - "Abandoned jackpoints exist but are dangerous because criminal groups also use them."
+  - "Worthwhile Mafia or yakuza hosts are described as concealed behind small-business or warehouse fronts, frequently relocated, and equipped with the most lethal IC the syndicates can afford."
+sites:
+  crime_mall:
+    address: "136th Street East and 122nd Avenue East"
+    profile: "Abandoned mall converted to a black-market bazaar for illegal goods and services."
+    security_context: "Lone Star raids periodically, but vendors use effective early warning and local political protection."
+  spirit_focus:
+    address: "Spanaway-McKenna Highway and 208th Street"
+    profile: "Loveland jazz club owned/controlled by the yakuza and protected as a syndicate venue."
+  underworld_93:
+    address: "4819 96th Avenue East"
+    profile: "Major downtown Puyallup concert/nightclub venue."
+    security_context: "Manager Al Castanzo pays yakuza protection according to source-period commentary."
+  carbonado:
+    profile: "Ork-dominated former mining area with extensive surviving tunnels."
+    smuggling_context: "Some tunnels extend under the Salish-Shidhe border and are used as cross-border smuggling routes."
+  hells_kitchen:
+    profile: "Lava flats, boiling mud fields, steam geysers and ash dunes west of Carbonado."
+    awakened_context:
+      - "Source commentary describes the area as useful for spirit-quests."
+      - "Enchanters may find crystals, metals, stones and other natural materials; no numeric availability modifier is supplied."
+  loveland:
+    profile: "High-crime western border neighborhood used for vice, syndicate business and a smuggling route toward Tacoma."
+  puyallup_city:
+    profile: "Relatively clean, safer district center and seat of local government."
+    corruption_context: "Source-period commentary portrays local government and industry as heavily influenced by Mafia/yakuza money."
+  tarislar:
+    profile: "Predominantly elven southern enclave."
+    security_context: "Knight Errant contract raises its effective security rating from C to A."
+gangs:
+  black_rains:
+    profile: "All-ork Carbonado gang; protection, smuggling and chip-dealing."
+    relationship_note: "Tied to the Cascade Ork tribe and an ork smuggling network using Carbonado tunnels."
+  princes:
+    profile: "Elven Tarislar gang ('Princes of the Blood') led by the Black Prince; street-fighter/defender identity and hostility toward rival gangs."
+  forever_tacoma:
+    profile: "Ork-and-troll Loveland gang working protection, gambling and street-level vice; source says it has worked for both Mafia and yakuza."
+  reality_hackers:
+    profile: "Techno-gang near the Puyallup River/Tacoma border specializing in theft, datasteals, chips, pirated software and cyberware."
+    matrix_note: "Local poor Matrix infrastructure forces many jobs to combine physical intrusion with decking; the gang is described as capable at both."
+sources:
+  - {source: source.fanpro-10657, pages: "68-72", pdf_pages: "69-73", relation: defines_world_state}

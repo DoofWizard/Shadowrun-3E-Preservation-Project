@@ -1,0 +1,75 @@
+id: world.region.redmond
+record_type: world
+name: "Redmond"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "11206"
+  size_sq_km: 436
+  population: 498000
+  population_mix: {Human: "81%", Elf: "6%", Dwarf: "1%", Ork: "10%", Troll: "1%", Other: "1%"}
+  security_rating: "E"
+  hospitals_and_clinics: 6
+  major_corp_facilities: []
+  major_gangs: ["Brain Eaters","Crimson Crush","Red Hot Nukes","Rusted Stilettos","Spiders"]
+lone_star_security_ratings:
+  C: ["Redmond (Touristville)"]
+  E: ["Avondale","Brain Heaven","Hollywood","Kingsgate","Plastic Jungles","Purity","Sophocles","Woodinville"]
+  Z: ["Rat's Nest","Glow City"]
+  note: "The source says the remainder of Redmond is collectively known as the Barrens."
+matrix_context:
+  - "Redmond's Matrix infrastructure is portrayed as largely derelict after the Crash of 2029, with abandoned jackpoints, exposed fiber-optic trunks and improvised access."
+  - "High-end cyberdecks attract attention because few residents own substantial computing equipment."
+sites:
+  body_mall:
+    location: "Issaquah-Beaver Lake Road and East Beaver Lake Drive"
+    profile: "Abandoned hospital converted into a mall of street doctors, chop-shops and low-cost clinics."
+    pricing_note:
+      value: "10-20% below what a Downtown hospital or clinic would charge for cheap cyber-modification work"
+      evidence_type: "shadowtalk"
+      caveat: "The same source warns that much of the cyberware is low-grade or second-hand; this is not presented as a universal formal price table."
+  crusher_495:
+    address: "124th Avenue and 143rd Street"
+    profile: "Ork-operated Touristville bar/community venue that is comparatively welcoming to metahumans and may serve as neutral ground."
+  the_skeleton:
+    address: "Redmond Fall City Road and 196th Avenue NE"
+    profile: "Touristville nightclub frequented by local talent scouts, media-corporate visitors and affluent slummers."
+    security_context: "Source commentary calls security tight because wealthy visitors may carry their own guards."
+  crash_zone:
+    profile: "Area north of the Snoqualmie River devastated by a 2059 corporate cargo-plane crash."
+    consequences:
+      - "The blast and fires leveled an area nearly three kilometers in radius."
+      - "The Seattle Metroplex Reformatory was heavily damaged, enabling a mass jailbreak."
+      - "Former inmates under the heavily cybered leader 'King Chrome' control much of the zone in the source period."
+      - "Shadowtalk describes astral space in and around the zone as badly polluted, comparable to Glow City."
+  glow_city:
+    profile: "Radioactive southeast Redmond settlement around the Trojan-Satsop nuclear-plant disaster area."
+    history: "A partial meltdown in 2013 contaminated Beaver Lake and surrounding land; Shiawase later built a replacement plant nearby."
+    source_period_context:
+      - "High cancer, radiation sickness and mutation rates are described."
+      - "Awakened residents are portrayed as rare; shadowtalk mentions unusual radiation-associated magical phenomena without defining general rules."
+  hollywood_simsense_entertainments:
+    address: "NE 145th Street and 168th Avenue"
+    profile: "Factory producing cheap simsense gear and sim-chips, including illegal BTL material; described as tied to Seattle syndicates."
+  plastic_jungles:
+    profile: "Abandoned giant greenhouse complex occupied by metahuman urban tribes."
+  rats_nest:
+    profile: "North Seattle Refuse Center; large open-air dump and squatter settlement used for scavenging."
+gangs:
+  rusted_stilettos:
+    profile: "Mostly troll-and-ork gang near Glow City/Route 202; tied to protection, smuggling and BTL traffic."
+  crimson_crush:
+    profile: "Ork gang around the Bargain Basement/Touristville area; neighborhood-watch posture plus protection and small-time smuggling/dealing."
+    relationship_note: "Source says it clashes with Humanis-aligned human gangs and distrusts syndicates while receiving BTLs through Triad channels."
+  brain_eaters:
+    profile: "Mixed-race Touristville techno-gang involved in scavenging Redmond technology, smuggling and shadow-decking."
+    matrix_note: "Headquarters is described as having Matrix jackpoints, computer hardware and pirated software."
+  red_hot_nukes:
+    profile: "Dwarf go-gang from Hollywood/Route 202 led by Grinder; strongly associated with explosives and demolition rackets."
+    competency_note: "Gang initiation is described as disarming a bomb built by Grinder; the text presents strong demolition expertise but no numeric skill ratings."
+  spiders:
+    profile: "Large gang led by the Spider shaman Widow; claims to protect Redmond from insect spirits and other magical threats."
+    relationship_note: "Strongly hostile to the Rusted Stilettos and uses coercive recruitment/indoctrination according to the source."
+sources:
+  - {source: source.fanpro-10657, pages: "60-67", pdf_pages: "61-68", relation: defines_world_state}
