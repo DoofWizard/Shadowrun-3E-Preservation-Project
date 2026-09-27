@@ -1,0 +1,39 @@
+id: rule.hazards.target-wastelands-disease-toxin-extensions
+record_type: rule
+name: "Target: Wastelands Disease and Toxin Extensions"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "109-110", pdf_pages: "110-111", basis: extends}
+disease_exposure:
+  infection_test: "When infection is possible, or once per day in continuing infectious conditions, make a Body Test with base Target Number 4 plus contagion modifiers."
+  outcome: "One or more successes avoids infection; failure means infection."
+  immunity: "An immunized character makes no infection test."
+  dwarf_bonus: "+2 dice to Body Tests to resist infection."
+  filtration: "Filtration does not change infection chance but reduces applicable pathogen Power by its rating; Power reduced below 0 prevents infection."
+  recovery: "After onset and each interval equal to the disease's Speed, make a Body Test against Power; every 2 successes reduce the disease Damage Level one step. Reducing damage to none eliminates the disease and gives full recovery within 24 hours."
+  healing_limit: "Damage caused by the disease cannot be healed until the infection is overcome; magical healing can restore disease-caused damage but does not itself remove the infection unless a disease-specific effect says so."
+contagion_modifiers:
+  no_contact_with_possible_victims: -2
+  brief_physical_contact: 1
+  prolonged_physical_contact: 2
+  intimate_contact: 4
+  unsanitary_conditions: 2
+  airborne_pathogen: 4
+  virulent_pathogen: "+1 or more"
+  weak_pathogen: "-1 or more"
+toxins:
+  exposure_routes: ["ingestion", "injection", "breathing", "skin contact"]
+  test: "After the toxin's Speed interval, make a Body Test against toxin Power."
+  dwarf_bonus: "+2 dice."
+  filters: "Blood or toxin filters reduce Power by their rating."
+  antidote_magic: "An applicable Antidote spell may reduce toxin Power."
+  staging: "Every 2 Body successes reduce the toxin's Damage Level one step."
+links:
+  uses: [rule.hazards.diseases-and-toxins, rule.hazards.toxins-diseases]
+  affects: [rule.condition.condition-monitor]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.fanpro-10653, pages: "109-110", pdf_pages: "110-111", relation: extends}
+notes:
+  - "This record preserves only explicit Target: Wastelands extensions and does not replace the SR3 core disease/toxin rules."
