@@ -83,13 +83,35 @@ unauthorized_crossing:
     "8-9": {sensor: 1, flux: 0}
     "10-11": {sensor: 2, flux: 1}
     "12": {sensor: 3, flux: 2}
+  random_encounter_3d6:
+    "3-4": {high_altitude: "Special", low_altitude: "Special", land: "Special", water: "Special"}
+    "5-6": {high_altitude: "Flying Critter", low_altitude: "Critter", land: "Critter", water: "Critter"}
+    "7-8": {high_altitude: "Private/Corp/Cargo Craft", low_altitude: "Sensor Dead Zone", land: "Fence/Natural Barrier", water: "Pirates"}
+    "9": {high_altitude: "None", low_altitude: "None", land: "Gang or Rural Cop", water: "Private/Corp/Cargo Craft"}
+    "10": {high_altitude: "None", low_altitude: "None", land: "Joe/Jane Citizen", water: "None"}
+    "11": {high_altitude: "None", low_altitude: "None", land: "None", water: "None"}
+    "12": {high_altitude: "None", low_altitude: "Sensor Dead Zone", land: "None", water: "None"}
+    "13-14": {high_altitude: "Drone", low_altitude: "Ground Patrol", land: "Ground Patrol", water: "Boat Patrol"}
+    "15-16": {high_altitude: "Air Patrol", low_altitude: "Astral/Drone Patrol", land: "Astral/Drone Patrol", water: "Astral/Drone Patrol"}
+    "17-18": {high_altitude: "Fighter Squadron", low_altitude: "Drone/Air Patrol", land: "Air Patrol", water: "Naval Ship"}
+  encounter_notes:
+    high_security: "The table note permits rolling twice or even three times at high-security borders."
+    special: "Special means an unusual event selected by the gamemaster."
+    sensor_dead_zone: "Roll again on the Land Crossing column; implausible results become a ground patrol equipped with mobile radar and surface-to-air missiles."
+
+contraband_and_search:
+  procedure:
+    - "Determine which automatic detection systems are present and whether personnel use active search methods such as visual inspection, assensing or manual searches."
+    - "Search selection may be based on appearance, behavior, travel history or random choice; the gamemaster may call for an Etiquette Test to determine whether guards become suspicious."
+    - "Use SR3 rules for MAD/manual/cyberware detection and Shadowrun Companion rules for chemical detection systems."
+  response: "Checkpoint response depends on local security; alerted checkpoints call for backup and may use containment measures."
 
 links:
-  uses: [rule.identity.fake-identification, rule.vehicles.sensor-test]
+  uses: [procedure.identity.forge-credstick, rule.vehicles.sensor-tests, rule.social.etiquette-use]
   affects: []
   modified_by: []
-  interacts_with: [rule.vehicles.electronic-warfare]
+  interacts_with: [subsystem.rigging.electronic-warfare]
 sources:
   - {source: source.fanpro-10655, pages: "203-206", pdf_pages: "204-207", relation: defines}
 notes:
-  - "The source's encounter table is also part of this rule and remains source-specific rather than replacing core encounter procedures."
+  - "These procedures extend core identity, vehicle-sensor, electronic-warfare and social-test rules for the source's North American border-crossing context; they do not replace the core rules."
