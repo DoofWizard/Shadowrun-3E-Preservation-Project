@@ -1,0 +1,29 @@
+id: rule.critters.quebec-paranormal-bounties
+record_type: rule
+name: "Québec Harmful Paranormals Bounty Schedule"
+domain: critters
+status: ingested
+effective:
+  status: regional_rule
+  source: source.fanpro-10655
+  pages: "112"
+  basis: defines
+eligibility:
+  proof_required: "90% of the pelt, including the head, must be brought to a Ministry of Wildlife processing facility."
+  metahuman_changelings: "Not eligible under the Harmful Paranormals Act."
+  dragons: "Excluded from the Act as of the September 2061 amendment."
+bounties:
+  Class_E: {examples: ["devil rat", "SURGEd vorpal beaver"], reward: "50¥ per pelt"}
+  Class_D: {examples: ["barghest", "cockatrice", "demon rat", "ghoul", "sasquatch"], reward: "500¥ per pelt"}
+  Class_C: {examples: ["basilisk", "eyekiller", "griffin", "harpy"], reward: "2,000¥ per pelt"}
+  Class_B: {examples: ["banshee", "wendigo", "vampire"], reward: "10,000¥ per pelt"}
+  Class_A: {examples: ["horned bear", "night manta", "piasma", "shambler"], reward: "20,000¥ per pelt"}
+  Class_S: {examples: ["free spirits"], reward: "50,000¥ per pelt"}
+  Class_X: {examples: ["wyverns", "kraken"], reward: "100,000¥ per pelt"}
+relationship:
+  type: regional_option
+  supersession: "None inferred; this is a Québec source-period bounty regime."
+sources:
+  - {source: source.fanpro-10655, pages: "112", pdf_pages: "113", relation: defines}
+notes:
+  - "The table is headed 'Republic of Québec Ministry of Wildlife Paranormal Bounty Listing' and is dated August 2062."

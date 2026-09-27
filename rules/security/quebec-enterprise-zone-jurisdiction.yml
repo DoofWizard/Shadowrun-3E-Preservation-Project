@@ -1,0 +1,27 @@
+id: rule.security.quebec-enterprise-zone-jurisdiction
+record_type: rule
+name: "Québec Enterprise Zone and Gendarmerie Jurisdiction"
+domain: security
+status: ingested
+effective:
+  status: regional_rule
+  source: source.fanpro-10655
+  pages: "107-108"
+  basis: defines
+enterprise_zones:
+  extraterritorial_boundary: "The tenant's extraterritoriality begins at the Enterprise Zone wall and ends when the lease ends."
+  outside_holdings: "Corporate property elsewhere in Québec is not extraterritorial under this system and remains subject to Québec law and Gendarmerie investigation."
+  customs: "Québec may establish temporary unannounced customs posts at Enterprise Zone access points."
+  language: "Corporations inside Enterprise Zones may use any language."
+  authorized_counts: {Quebec_City: 12, Montreal: 18}
+  claimed_quebec_city_2062: 11
+gendarmerie:
+  security_rating_model: "Uses Lone Star SOP and security ratings."
+  wilderness_rating:
+    code: "W-zone"
+    meaning: "Wilderness area the Gendarmerie will not willingly patrol under normal circumstances."
+relationship:
+  type: regional_security_rule
+  supersession: "None inferred."
+sources:
+  - {source: source.fanpro-10655, pages: "107-108", pdf_pages: "108-109", relation: defines}
