@@ -1,0 +1,148 @@
+id: reference.magic.target-awakened-lands-australian-magic
+record_type: reference
+name: "Target: Awakened Lands — Australian Magic Game Information"
+domain: magic
+status: ingested
+source: source.fanpro-10651
+printed_pages: "105-110"
+pdf_pages: "106-111"
+
+koradji:
+  baseline: "Use normal shaman rules and Magic in the Shadows advanced rules except where this source states otherwise."
+  spirit_access:
+    - "Most summon ancestor spirits instead of spirits of man."
+    - "Rare urban-adapted koradji may summon spirits of man instead of ancestor spirits."
+    - "Wilderness-shaman koradji may give up ancestor/spirits-of-man access for normal wilderness-shaman affinity with spirits of land, waters and sky."
+  lodge: "Shamanic lodges function normally."
+  blood_magic:
+    - "Routine ritual bloodletting has no game effect and does not inflict even a Light wound."
+    - "Koradji with Sacrificing use it on self; use on others/blood spirits is treated as corruptive and may cost totem favor."
+
+totems:
+  mappings:
+    Dingo: option.magic.totem-jackal
+    Fish: option.magic.totem-fish
+    Lizard: option.magic.totem-lizard
+    Scorpion: option.magic.totem-scorpion
+    Spider: option.magic.totem-spider
+    Crocodile: "option.magic.totem-crocodile; choose which one spirit-of-the-waters type receives the spirit bonus"
+    Wombat: "option.magic.totem-badger; spirit bonus applies to prairie rather than forest spirits"
+    Snake: "SR3 Snake; may choose any one spirit-of-the-waters type for the totem bonus instead of a spirit of the land"
+  new:
+    Kangaroo:
+      id: option.magic.totem-kangaroo
+      environment: Prairie
+      advantages: ["+2 dice Health spells", "+2 dice prairie spirits", "Initiates may learn Movement as a self-only metamagic technique, usable Grade times/day"]
+      disadvantages: ["-1 die Combat spells"]
+    Koala:
+      id: option.magic.totem-koala
+      environment: Forest
+      advantages: ["+2 dice Detection spells", "+2 dice Illusion spells", "+2 dice either forest or prairie spirits, chosen by shaman"]
+      disadvantages: ["-1 die Combat spells"]
+    Platypus:
+      id: option.magic.totem-platypus
+      environment: River
+      advantages: ["+2 dice river spirits", "+2 dice Astral Pool; non-initiates therefore have Astral Pool 2"]
+      disadvantages: ["-1 die Combat spells", "-1 Initiative"]
+
+adept_tracking:
+  id: option.magic.adept-power-tracking
+  cost: 1
+  initial_test: "Perception Test vs target Stealth Open Test result, or TN 6 if higher; may add Magic dice and use Stealth as complementary skill; 1 success tracks."
+  constraints: "Track on foot only; repeat every 4 hours or after major terrain/weather change."
+  reacquire: "After failure, retry at +2 TN with base time 1 hour divided by successes; failure loses trail."
+  modifiers:
+    astral_perception: -2
+    target_essence_or_magic: "+3 - ([higher of Essence or Magic] / 2); Masking removes"
+    active_focus: "-(highest focus rating / 2); Masking removes"
+    inactive_focus: -1
+    sustained_spell: "-(highest spell Force / 2); Masking removes"
+    environment_affecting_critter_power: -2
+    traceless_walk: 4
+    target_astral_only: 4
+    time_0_4h: -1
+    time_4_24h: 0
+    time_24_48h: 1
+    each_extra_24h: 2
+    rain_or_dust_storm: "+1 or more"
+    visibility: "+ half applicable modifiers, max +4"
+    background_count: "+ rating / 2"
+    mana_storm: "+ storm Force"
+
+boomerang:
+  id: entity.weapon.boomerang
+  skill: "Throwing Weapons (Boomerang)"
+  stats: {concealability: 7, damage: "(STR)M Stun", weight_kg: 0.25, availability: "4/48 hrs", cost_nuyen: 50, street_index: 2, legality: Legal}
+  range: "Shuriken ranges"
+  return: "GM may allow a miss to return next Combat Phase; catch is Simple Action + Athletics (6), or TN 2 with Missile Parry; failed catch scatters 3D6 m; Missile Mastery always permits return even after hit."
+
+slow_death:
+  id: entity.spell.slow-death
+  stats: {category: Combat, type: M, target: W, duration: I, drain: "(Damage Level)"}
+  effect:
+    - "If caster beats Spell Resistance, deal 1 Physical box per full day until Sorcery-Test damage is fully applied."
+    - "No physical healing until all damage is applied; magical healing may be used at any time, but only once because all damage is one injury set."
+    - "Ongoing damage is magical and can be dispelled."
+    - "Spell is not sustained; caster may end it as a Free Action."
+
+ancestor_spirits:
+  churinga: "May serve as one fetish for summoning any ancestor spirit, leaving only two other fetishes required."
+  great_form:
+    prerequisite: option.magic.metamagic-invoking
+    multitarget: "May use powers on Force targets simultaneously."
+    bonus_power: "Choose one additional aspect-appropriate power, GM final."
+    choices: [Animal_Control, Binding, Compulsion, Concealment, Desire_Reflection, Dispelling, Empathy, Fear, Flame_Aura, Hypnotic_Song, Immunity, Movement, Paralyzing_Touch, Psychokinesis, Weather_Control]
+
+enchanting:
+  plant_material: {unit_kg: 2.5, refined_unit_kg: 1.25}
+  metal_gathering_target_number: 10
+  animal_material: {test: "Enchanting (Talismongering) (4)", base_time: "10 days/unit divided by successes", unit_kg: 5, refined_unit_kg: 2.5}
+  animal_exotics: "GM may classify suitable animal/paranormal materials exotic; rare refined materials may serve as alchemical radicals."
+  churinga: "May be a ritual-sorcery material link; enchanted versions get virgin-materials bonus and are commonly power/spirit foci, though other/stacked forms are possible."
+
+compounds:
+  Altyerre:
+    id: entity.chemistry.altyerre
+    vector: Contact
+    advantage: "Astral Gateway effect; permits astral projection and, with spirit guide or initiate magician, metaplanar access even for mundanes."
+    disadvantage: "After wear-off, Deadly Stun that cannot be resisted."
+  Kuman_Nhepa:
+    id: entity.chemistry.kuman-nhepa
+    vector: Ingestion
+    advantage: "Double dice on Resistance Tests vs non-magical Stun damage."
+    disadvantage: "On wear-off, Serious Stun unresisted; Quickness and Strength halved (round down) for the drug's effect span."
+  Wudu_aku:
+    id: entity.chemistry.wuduaku
+    vector: Ingestion
+    advantage: "+2 dice Conjuring Tests and +2 effective Charisma with ancestor spirits."
+    disadvantage: "For 24 hours, -2 Conjuring dice and -2 effective Charisma when summoning any other spirit type."
+
+metamagic:
+  Channeling:
+    id: option.magic.metamagic-channeling
+    action: "Exclusive Complex Action"
+    requirement: "Spirit owing services, astrally present and touching aura."
+    test: "Conjuring Test, TN (spirit Force x 2) - Grade"
+    duration: "10 minutes x successes"
+    all_ones: "Spirit immediately goes free."
+    effects:
+      - "Add spirit Force to Physical Attributes."
+      - "Use spirit powers at spirit Force without extra services, except Engulf and Materialization."
+      - "Great-form spirit also grants Immunity (Normal Weapons) at spirit Force."
+      - "Gain spirit vulnerabilities."
+      - "Spirit cannot be attacked astrally or control-contested; it can be banished, with initiate Charisma added to spirit Force Tests."
+      - "Astral projection or unconsciousness ends channeling."
+    ending: "Spirit returns to metaplanes and service ends; resist (spirit Force)D Stun with Charisma, Physical if spirit Force exceeds initiate Magic."
+  Sensing:
+    id: option.magic.metamagic-sensing
+    range: "Grade x 500 m; multiply by phenomenon rating if any."
+    test: "Simple Action; Intelligence + Grade vs TN 4, modified by astral-perception modifiers such as background count, not visual modifiers."
+    results: {"0": "none", "1-2": "general distance/location", "3-4": "distance/direction plus weak/moderate/strong relative to Magic", "5+": "exact rating if any plus general effects/aspect"}
+    sustain: "+2 TN to other actions while maintaining sensing."
+    detects: [background_count, astral_rifts, manalines, mana_storms, mana_surges, mana_warps, alchera, astral_shallows]
+    excludes: [spells, wards, foci, spirits, astrally_projecting_magicians]
+
+sources:
+  - {source: source.fanpro-10651, printed_pages: "105-110", pdf_pages: "106-111", relation: defines_and_extends}
+notes:
+  - "Existing canonical IDs are reused where this source points to prior totems/metamagics; new option/entity IDs are declared here for source-specific mechanics."
