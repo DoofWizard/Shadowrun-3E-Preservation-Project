@@ -1,0 +1,47 @@
+id: rule.hazards.target-wastelands-desert-hazards
+record_type: rule
+name: "Target: Wastelands Desert Hazards"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "116-118", pdf_pages: "117-119", basis: defines}
+
+heat_and_dehydration:
+  water_guideline: "4 liters per day; 8 liters per day for trolls."
+  exposure: "Gamemaster may apply Stun damage for excessive direct sun, over-exertion, unsuitable clothing or armor, or insufficient water."
+  symptoms: ["confusion", "disorientation", "nausea", "unconsciousness"]
+
+scorching_sands:
+  contact: "Unprotected contact with a scorching surface requires resistance against 6L Physical."
+  walking: "+1 to all actions while walking on superheated ground, even with good footwear."
+  aftereffects: "Untreated burns may justify additional damage or longer healing periods."
+
+desert_travel:
+  ground: "Most desert terrain counts as Difficult Ground; steep dunes, fine sand and rocky areas may halve movement."
+  steep_dunes: "Especially steep sand dunes may require Climbing (8)."
+  vehicles: "Sandy or rock-filled terrain may be Restricted or Tight and can become impassable."
+  handling_modifiers: "Gamemaster may impose vehicle Handling modifiers from +1 on gravel plains to +4 on sand dunes."
+
+sandstorms:
+  visibility:
+    visual_perception: "+4 mild to +8 severe for normal, low-light and thermographic vision."
+    ultrasound: "Use half the visual modifier."
+    astral_perception: "Use half the Visibility modifier, rounded down."
+  hearing: "+2 to +4 on hearing-based Perception Tests."
+  breathing: "Without a mask, filter or respirator, apply +1 to character actions."
+  movement: "Halve Movement rate."
+  gusts: "Major gusts may require Body (8) to remain standing."
+  exposed_gear: "During sandstorms, double sand-related Stress Points and jam likelihood."
+
+electrical_interference:
+  powered_gear: "For each electrical item operating in a sandstorm, roll 1D6; on a 1 the item shorts or blows a fuse."
+  direct_interface: "A character directly interfaced with a shorting device resists 8L Stun."
+  vehicles: "Running vehicles take 1 Stress Point per hour in a sandstorm, or 1 per day with matching hostile-environment/desert adaptation."
+  static_sensitive_materials: "Non-insulated ammunition and similar static-sensitive materials may fail on a 1 on 1D6."
+
+links:
+  uses: [rule.hazards.target-wastelands-survival-test, rule.damage.stress-test, rule.damage.stress-points]
+  interacts_with: [rule.vehicles.target-wastelands-hostile-environment-adaptation]
+sources:
+  - {source: source.fanpro-10653, pages: "116-118", pdf_pages: "117-119", relation: defines}
+notes:
+  - "Source-specific hostile-environment procedures; ordinary narrative adventure prompts are not promoted to rules."
