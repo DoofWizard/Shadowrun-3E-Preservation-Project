@@ -1,0 +1,73 @@
+id: rule.security.seattle-security-response-template
+record_type: rule
+name: "Seattle Security Response Template"
+domain: security
+status: ingested
+
+effective:
+  status: source_specific_extension
+  source: source.fanpro-10657
+  pages: "108-111"
+  basis: extends
+
+scope:
+  applies_to:
+    - "fictional Shadowrun tabletop law-enforcement response in the Seattle metroplex"
+  excludes:
+    - "corporate property, which remains under corporate jurisdiction and uses separate security"
+
+security_ratings:
+  AAA: "Highest coverage; upper-class/Luxury/High-lifestyle enclaves and premium businesses; proactive visible and hidden security, patrols, astral/magical coverage, drones and riggers; immediate and persistent investigation."
+  AA: "High-lifestyle/business areas with constant coverage but fewer round-the-clock deterrent measures than AAA; prompt response and irregular patrols."
+  A: "Typical Middle-lifestyle coverage; regular street patrols but only occasional astral, drone or security-rigger support; primarily call-and-response."
+  B: "Primarily commercial/business zones and other high-value criminal target areas; standard response is at least four patrol officers with an elite officer and security/combat mage on standby."
+  C: "Low-lifestyle residential version of A/B coverage; infrequent patrols and poorly maintained alert infrastructure."
+  D: "Low-lifestyle business-zone counterpart to C."
+  E: "Squatter/Street-lifestyle slums with no normal assigned patrols; response generally depends on a valid-SIN complainant or violence threatening more important areas."
+  Z: "Z-Zone; no normal law enforcement, with emphasis on containment and heavily prepared entry only when pursuit is unavoidable."
+
+response_time_units: "Initiative Passes; every row is cumulative from the previous effect and listed die expressions round down."
+response_time:
+  aware_of_problem: {AAA: "instant", AA: "D6/3", A: "D6", B: "D6", C: "D6x2", D: "D6x2", E: "D6x3", Z: "NA"}
+  first_response: {AAA: "1 or 2", AA: "D6/3", A: "D6", B: "D6", C: "D6x3", D: "NA", E: "NA", Z: "NA"}
+  second_response: {AAA: "1 or 2", AA: "D6/3", A: "D6", B: "D6", C: "NA", D: "NA", E: "NA", Z: "NA"}
+  patrol_arrives: {AAA: "2", AA: "D6/3", A: "D6/2", B: "D6/2", C: "D6", D: "D6", E: "NA", Z: "NA"}
+  reinforcements_1: {AAA: "D6", AA: "D6", A: "D6", B: "D6+2", C: "D6+4", D: "D6+6", E: "D6x3", Z: "NA"}
+  reinforcements_2: {AAA: "2", AA: "2", A: "2", B: "4", C: "6", D: "6", E: "8", Z: "NA"}
+  continuing_response: {AAA: "3", AA: "3", A: "3", B: "3", C: "6", D: "6", E: "8", Z: "NA"}
+
+awareness_triggers:
+  AAA_AA_A: "First audible gunshot or explosion, a call to law enforcement, or PanicButton activation."
+  B_C: "A cannon shot, automatic/full-auto gunfire, rocket/missile/other major ordnance explosion, a call, or PanicButton activation."
+  D: "Rocket, missile, cannon or major explosion, plus a call or PanicButton activation."
+  E: "Repeated cannon/missile/rocket fire; a resident caller must supply a valid SIN."
+  Z: "No automatic awareness."
+
+response_composition:
+  first_response: "Astral mage or spirit plus hidden-camera security-rigger observation; the rigger is always available in AAA and may be available only about half the time in AA at gamemaster discretion."
+  second_response: "Spotter drone; the provider also alerts an area patrol."
+  patrol_AAA_AA_A: "One patrol vehicle carrying two officers; extra patrols arrive every second Initiative Pass until headquarters calls them off."
+  patrol_B: "Two patrol cars."
+  patrol_C_D: "Use the security-rating descriptions for composition."
+  reinforcements_1: "One Citymaster with six fully armored officers, one weapons rigger and one combat mage."
+  reinforcements_2: "Armed, combat-ready VTOL and drone air support."
+  continuing_response: "Additional reinforcements of the same general makeup as Reinforcements 1 or 2, chosen for the situation."
+  E: "Very heavy response when one occurs: two Citymasters with about 12-15 heavily armored officers, one rigger per vehicle and at least two combat mages, led by an elite officer."
+  Z: "Minimum three Citymasters with about 25 fully armored officers, armored-helicopter support, one rigger per vehicle plus a dedicated drone rigger, at least five combat mages, one combat decker in constant headquarters contact and three elite officers."
+
+calling_911:
+  rule: "A Shadowrun Combat Turn is 3 seconds. Even a pre-combat 911 call cannot bring responders into an ongoing firefight under this template; one hundred Combat Turns is only five minutes."
+
+links:
+  interacts_with:
+    - subsystem.security.core
+    - rule.npc.professionalism
+
+sources:
+  - {source: source.fanpro-10657, page: 108, pdf_page: 109, relation: extends, note: "Game Information — Dealing with the Law / AAA security"}
+  - {source: source.fanpro-10657, page: 110, pdf_page: 111, relation: extends, note: "AA through Z security ratings and Calling 911"}
+  - {source: source.fanpro-10657, page: 111, pdf_page: 112, relation: defines, note: "Security Template timing table, triggers and response composition"}
+
+notes:
+  - "The source explicitly presents this as a gamemaster template for fictional tabletop play, not a universal real-world security model."
+  - "No supersession of the SR3 core security subsystem is inferred."
