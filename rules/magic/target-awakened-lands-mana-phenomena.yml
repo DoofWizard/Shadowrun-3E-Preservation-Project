@@ -1,0 +1,132 @@
+id: rule.magic.target-awakened-lands-mana-phenomena
+record_type: rule
+name: "Target: Awakened Lands — Formal Mana Phenomena"
+domain: magic
+status: ingested
+effective:
+  status: source_specific
+  source: source.fanpro-10651
+  pages: "99-114"
+  basis: extends_existing_rules
+
+mana_lines:
+  sense_without_astral_activity: {test: "Magic Test", target_number: "12 - manaline rating", success_threshold: 1}
+
+power_sites:
+  temporary: "A temporary background count aligned with a type of magic may create a temporary power site; size, potency and duration are gamemaster-set."
+  imprinting: "After at least one lunar month (28 days) under one person/group's control, a site may become aspected toward that controller's magic while hindering everyone else."
+
+mana_flares_and_ebbs:
+  rating: "Force"
+  flare:
+    effect: "Add flare Force to the Force of each spell cast or spirit summoned in the area."
+    tests: "All tests, including Drain resistance, use the increased Force."
+    overmagic: "If total Force exceeds Magic, Drain is Physical."
+  ebb:
+    effect: "Subtract ebb Force from spells and spirits."
+    zero_or_less: "If resulting Force is 0 or less, the spell fizzles or spirit does not appear and Drain is 0."
+    active_magic: "Use Sorcery/Conjuring against the higher Force required before subtraction; resist Drain at that higher Force."
+  detection: "Astral Perception (6)"
+  unaffected_fixed_abilities: [astral_projection, adept_powers, critter_powers]
+
+astral_shallows:
+  general: "All beings may perceive astral space as if dual-natured for perception only; this alone does not allow astral interaction."
+  awakened: "Awakened characters otherwise use normal astral perception/projection; activating astral perception is a Free Action instead of a Simple Action."
+  assensing: "Anyone in the shallow may use the SR3 Assensing Table; mundanes may attempt basic Aura Reading."
+
+astral_constructs:
+  barrier: "Use the corresponding physical object's Barrier rating."
+  breakthrough: "Use normal barrier breakthrough, substituting Charisma for Strength and Sorcery for the mundane Combat skill."
+  weapons: "Use counterpart weapon damage; astral characters substitute Charisma for Strength and Sorcery for the appropriate Combat skill."
+  physical_interaction: "Astral-perceiving/dual-natured beings may touch, pick up or stand on constructs; when perception becomes purely physical, constructs are intangible and cannot be carried."
+  manifestation: "Some constructs become visible under triggering conditions."
+  materialization:
+    - "Materialized constructs are dual-natured."
+    - "They cannot appear in occupied physical space; use nearest available space."
+    - "They gain the physical counterpart's properties, including Barrier and weapon damage."
+
+astral_rifts:
+  duration: "2D6 x 6 hours, possibly longer at gamemaster discretion"
+  projection:
+    - "Any being in the affected area, mundane or Awakened, may astrally project as a full magician using normal SR3 rules."
+    - "A character who normally cannot project must keep the body in a rift/equivalent gateway to reunite; if moved away or the rift closes, the character remains astrally trapped until Essence expires."
+  metaplanes:
+    - "Some rifts permit metaplanar access."
+    - "If such a rift closes while a non-initiate is on a metaplane, that character dies instantly; initiates are unaffected."
+  forced_projection: "A rift may force projection on contact, or permit a Willpower (Essence x 2) Test to resist, at gamemaster option."
+
+song_lines:
+  type: "Australian manalines with associated background count."
+  aspecting: "Often aspected toward Aboriginal/shamanic magic; otherwise use normal background-count effects."
+  koradji_bonus: "A koradji touching a song line adds its rating as bonus dice to all Navigation and Survival Tests."
+
+mana_storms:
+  invisible_detection: "Perception (10 - Force)"
+  frequency:
+    target_number: 12
+    outback: "2D6 dice"
+    urban_or_other_australia: "1D6 dice"
+    background_count: "+ (rating)D6 dice"
+    timing: "Once per day in the Outback; once per week in urban/other Australia."
+  lifecycle:
+    growth: "Begins Force 1, +1 Force/minute until maximum."
+    duration: "(Force)D6 minutes at full Force."
+    continuation: "At duration end make another Storm Frequency Test; success means mutate/continue, reroll characteristics/effects and adjust Force toward the new Force at 1/minute."
+    abatement: "When continuation fails, Force drops 1/minute until gone."
+  characteristics:
+    type: "1D6: 1-2 invisible; 3-6 physical"
+    force: "1D6 + background count rating, if any"
+    size: "Force x 100 x 1D6 x 1D6 meters radius"
+    speed: "40 + (Force x 10) kph"
+  physical:
+    driving: "Terrible Weather Condition"
+    movement: "Difficult ground where appropriate"
+    table_3d6:
+      3: "Eerie silence; Force is Hearing Test modifier"
+      4: "Extreme darkness; Force is Visibility modifier"
+      5: "Extreme cold"
+      6: "Unusual smells"
+      7: "Loud thunder"
+      8: "Hail"
+      9: "Snow"
+      10: "Light rain"
+      11: "Heavy rain"
+      12: "Sleet"
+      13: "Roll twice or invent an effect"
+      "14": "Light fog or smoke"
+      "15": "Heavy fog or smoke"
+      "16-17": "Rains small creatures"
+      18: "Rains something highly unusual"
+  magical:
+    category_1d6: {1: combat, 2: health, 3: illusion, 4: manipulation, 5: elemental, 6: "roll twice"}
+    combat_1d6: {1: Manaball, 2: Powerball, 3: "Slaughter (Species), GM chooses", 4: Stunball, "5-6": "Wreck, GM chooses"}
+    health_1d6: {1: "Cause Allergy; severity 1D6: 1-2 Nuisance, 3-4 Moderate, 5-6 Severe", 2: "Cripple Limb", 3: "Decrease (Attribute), GM chooses", 4: "Decrease Reaction", 5: "Decrease Reflexes", 6: Intoxication}
+    illusion_1d6: {1: "Chaotic World", 2: "Mass Confusion", 3: Foreboding, 4: "Mass Agony", 5: "1D6: 1-3 Phantasm, 4-6 Trid Phantasm", 6: Stench}
+    manipulation_1d6: {1: "1D6: 1-2 Alter Memory, 3-6 Mob Mood", 2: "1D6: 1-3 Animate, 4-6 Poltergeist", 3: "1D6: 1-3 Net, 4-6 Glue Strip", 4: "Shape Earth", 5: "1D6: 1-2 Influence, 3-6 Mob Mind", 6: "1D6: 1-2 Petrify, 3-6 Transform"}
+    elemental_1d6: {1: "1D6: 1-3 Acid, 4-6 Smoke", 2: Blast, 3: Fire, 4: Ice, 5: Lightning, 6: Sand}
+    effect_test:
+      dice: "2 x storm Force"
+      timing: "On entry, then every 2D6 minutes while a viable target remains."
+      defense: "Normal Spell Resistance, including spell defense and Shielding."
+      sustained: "A sustained effect affects a target once but lasts for storm duration; permanent effects are sustained until permanent."
+      dispelling: "Normal dispelling may remove the effect from one target; that target can be affected again later."
+  storm_wraiths: "For a physical storm, roll 2D6; on 10+, 2D6 storm wraiths appear, each at storm Force."
+  aftermath:
+    background_count: "Half storm Force, rounded down; fades 1 point/hour."
+    astral_perception: "+ storm Force modifier to Astral Perception Tests."
+
+alchera:
+  physical_state: "When materialized, alchera replace physical terrain rather than overlaying it."
+  disorientation:
+    test: "Willpower (6)"
+    failure: "+2 all target numbers and -2 Initiative for 3 turns"
+    successes: "Each success reduces duration by 1 turn; 3+ eliminates penalty."
+  contents: "Most contents dematerialize outside and reappear where taken; consumed food/drink remains part of the consumer."
+  independent_constructs: "Rare independent constructs may persist outside but revert to astral form."
+
+links:
+  extends: [rule.magic.aspected-power, rule.magic.power-sites, rule.magic.background-count, rule.magic.mana-surges, rule.magic.astral-perception, rule.magic.astral-projection, rule.magic.astral-barriers, option.magic.metamagic-shielding]
+sources:
+  - {source: source.fanpro-10651, printed_pages: "99-114", pdf_pages: "100-115", relation: extends}
+notes:
+  - "These are source-specific additions and do not supersede the cited SR3/Magic in the Shadows rules."
