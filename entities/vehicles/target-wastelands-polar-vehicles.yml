@@ -1,0 +1,34 @@
+id: catalog.vehicles.target-wastelands-polar
+record_type: entity_catalog
+name: "Target: Wastelands Polar Vehicles"
+domain: vehicles
+status: ingested
+source: source.fanpro-10653
+pages: "132-133"
+chassis:
+  - {name: "Snow Crawler", category: "Car", skill: "Track", sizes: ["Light","Medium","Heavy"]}
+  - {name: "Snowmobile", category: "Special Vehicles", skill: "Track", design_basis: "motorcycle", sizes: ["Light","Medium"], note: "Motorbike gyro-stabilization is not required for remote operation."}
+entries:
+  - id: entity.vehicle.soyo-snowglide
+    name: "Soyo Snowglide"
+    table_raw: "Hand —/3; Speed 70; Accel 3; Body 2; Armor 0; Sig 5; Auto 0; Pilot —; Sensor 0; Cargo 2; Load 20; Seating 2m; Fuel E (100 PF); Econ 0.6 km/PF; Chassis Med. Snowmobile; SI 1; Avail 2/24 hrs; Cost 28,600 nuyen"
+    features: ["Environmental Adaptation (Arctic)"]
+  - id: entity.vehicle.acheron-moss-hoplite-gas
+    name: "Acheron-Moss Hoplite (Gas)"
+    table_raw: "Hand —/3; Speed 90; Accel 6; Body 2; Armor 4P; Sig 1; Auto 0; Pilot —; Sensor 0; Cargo 0.3; Load 34; Seating 1m; Fuel G (20 l); Econ 0.5 km/l; Chassis Lt. Snowmobile; SI 2; Avail 2/24 hrs; Cost 12,600 nuyen"
+    features: ["Amphibious Operation 1","Electronics Port with Personal Comm Unit Rating 4","Environmental Adaptation (Arctic)","External Fixed Firmpoint","Turbocharging 2"]
+  - id: entity.vehicle.acheron-moss-hoplite-fuel-cell
+    name: "Acheron-Moss Hoplite (Fuel Cell)"
+    table_raw: "Hand —/3; Speed 65; Accel 5; Body 2; Armor 4P; Sig 4; Auto 0; Pilot —; Sensor 0; Cargo 0.3; Load 20; Seating 1m; Fuel F (305 PF); Econ 1 km/PF; Chassis Lt. Snowmobile; SI 2; Avail 2/24 hrs; Cost 23,600 nuyen"
+    features: ["Amphibious Operation 1","Electronics Port with Personal Comm Unit Rating 4","Environmental Adaptation (Arctic)","External Fixed Firmpoint","Turbocharging 1"]
+  - id: entity.vehicle.cat-snowbear-standard
+    name: "CAT Snowbear - Standard"
+    table_raw: "Hand 5/5; Speed 40; Accel 1; Body 6; Armor 0; Sig 2; Auto 0; Pilot —; Sensor 0; Cargo 250; Load 9,700; Fuel D (550 l); Econ 2 km/l; Chassis Hvy Snow Crawler; SI 1; Avail 10/10 days; Cost 186,300 nuyen"
+  - id: entity.vehicle.cat-snowbear-science
+    name: "CAT Snowbear - Science"
+    table_raw: "Hand 5/4; Speed 40; Accel 1; Body 6; Armor 0; Sig 2; Auto 0; Pilot —; Sensor 0; Cargo 478 (378 PS); Load 8,950 (700 PS); Fuel D (550 l); Econ 2 km/l; Chassis Hvy Snow Crawler; SI 1; Avail 10/10 days; Cost 407,445 nuyen"
+    features: ["Amphibious Operation 2","Datajack Port","Shop","Thermal Baffles 2","2 Basic Living Amenities"]
+sources:
+  - {source: source.fanpro-10653, pages: "132-133", pdf_pages: "133-134", relation: defines}
+notes:
+  - "Table notation is preserved where abbreviations are source-specific rather than expanded by inference."
