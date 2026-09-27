@@ -1,15 +1,14 @@
 phase: pass_b
-active_source: source.fanpro-10655
+active_source: source.fanpro-10653
 source_status: ingesting
-stage: pending_normalization
 completed_through:
-  printed_page: 206
-  pdf_page: 207
+  printed_page: 3
+  pdf_page: 4
 resume_at:
-  action: normalize_pending_ranges
-last_commit: 2e8db2ef5a69575f569153052231122067818e25
+  printed_page: 4
+  pdf_page: 5
+last_commit: 575b26aac1c6f8a24280954d805810150c35559d
 open_conflicts:
-  - pending.sona.range-p16-17
   - pending.sona.algonkian-manitou-p18-28
   - pending.sona.california-p40-56
   - pending.sona.cas-p57-71
@@ -18,10 +17,7 @@ open_conflicts:
   - pending.sona.tir-tairngire-p138-153
   - pending.sona.ucas-p165-177
   - pending.sona.ute-p178-187
-prior_source_pending:
-  - "Consult source manifests for New Seattle, SOTA63 and SSG pending normalization."
 next_sources:
-  - source.fanpro-10653
   - source.fanpro-10652
   - source.fanpro-10651
   - source.fanpro-10650
@@ -45,9 +41,9 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - do not rescan source.fanpro-10655 completed pages
-  - normalize every active-source pending range before marking complete
+  - continue source.fanpro-10653 from printed p.4 / PDF p.5
+  - directed scan sequentially
   - preserve printed/PDF provenance
-  - distinguish source-period facts from commentary
+  - capture all rules-bearing items
   - do not infer supersession
-  - after reconciliation advance to source.fanpro-10653
+  - deferred SoNA ranges remain tracked in its recovery manifest
