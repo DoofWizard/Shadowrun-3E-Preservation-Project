@@ -2,12 +2,14 @@ phase: pass_b
 active_source: source.fanpro-10652
 source_status: ingesting
 completed_through:
-  printed_page: 109
-  pdf_page: 109
+  printed_page: 120
+  pdf_page: 118
 resume_at:
-  printed_page: 112
-  pdf_page: 110
-last_commit: 7e23109f3801d3671656b9e92836222f1d6f6b25
+  mode: pending_normalization
+  pending_id: pending.source10652.p24
+  printed_page: 24
+  pdf_page: 24
+last_commit: ba0a39feb5245ce5bb1f73c6ae622332687c93a7
 open_conflicts:
   - pending.threats2.pax-ware-p24
   - pending.threats2.imp-karma-p35-36
@@ -17,6 +19,7 @@ open_conflicts:
   - pending.threats2.shared-potency-p45
   - pending.threats2.drakes-p79-80
   - pending.source10652.p100-101
+  - pending.source10652.p112-118
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
   - pending.sona.algonkian-manitou-p18-28
@@ -50,10 +53,9 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - continue Threats 2 from the next available source page, printed p.112 / PDF p.110
+  - sequential scan of all available numbered Threats 2 pages is complete
+  - resolve Threats 2 pending normalization before marking the source complete
+  - start with pending.source10652.p24 and do not rescan unrelated completed pages
   - keep printed pp.110-111 explicit as a source-copy gap; do not infer their contents
-  - directed scan narrative and deep scan each Game Information subsection
-  - preserve printed/PDF provenance
-  - capture every rules-bearing item
+  - preserve printed/PDF provenance and capture every rules-bearing item
   - reuse canonical IDs and do not infer supersession
-  - keep all pending ranges explicit until normalized
