@@ -1,0 +1,26 @@
+id: rule.matrix.echo.siphon
+record_type: rule
+name: "Siphon Echo"
+domain: matrix
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10652, printed_page: 24, pdf_page: 24, basis: defines}
+scope:
+  users: "Otaku who follow the Dissonance and undergo submersion at a Dissonance pool."
+resolution:
+  action: "Complex Action"
+  target: "One target connected to the Matrix."
+  opposed_or_resistance:
+    target_test: "Immediate Bod Test."
+    defender_pool: "Hacking Pool may be used against the otaku's Charisma."
+  failure:
+    effect: "Target is immediately dumped from the Matrix and suffers dumpshock."
+  success:
+    effect: "Target is temporarily stunned/disoriented."
+    penalty: "+2 TN to all tests."
+    initiative: "Cannot initiate any actions."
+    duration: "Next 4 Initiative Passes, minus 1 per success achieved."
+    immunity_threshold: "4 successes means no effect."
+  applicability: "Affects personas only; no effect on tortoise users or programs."
+  security_tally: "+2 automatically per use."
+sources:
+  - {source: source.fanpro-10652, printed_page: 24, pdf_page: 24, relation: defines}
