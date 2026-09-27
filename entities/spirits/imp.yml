@@ -1,0 +1,52 @@
+id: entity.spirit.imp
+record_type: entity
+name: "Imp"
+domain: spirits
+status: ingested
+source_period: "2062"
+classification:
+  type: "rare free spirit"
+  emergence: "First appeared during the Year of the Comet and remains uncommon."
+  known_behavior: "Prefers enchanted items as a home rather than freely roaming astral space."
+intrinsic:
+  attributes: "Use Force for all attributes."
+  physical_form: "Cannot materialize and has no Physical Attributes; physical action requires occupying a focus."
+  initial_spirit_energy: 1
+  spirit_energy_cap: "Spirit Energy may never exceed Force."
+powers:
+  standard:
+    - rule.spirit-power.accident
+    - rule.spirit-powers.aura-masking
+    - rule.spirit-power.compulsion
+    - rule.critter-power.empathy
+    - rule.spirit-power.guard
+    - rule.spirit-power.influence
+    - rule.spirit-power.occupation
+    - rule.critter-power.psychokinesis
+  force_6_plus:
+    - rule.spirit-power.astral-armor
+    - rule.spirit-power.binding
+    - rule.critter-power.desire-reflection
+  restrictions:
+    - "Psychokinesis is available only while the imp occupies a focus."
+    - "Asterisked source powers may be used only on characters bonded to the focus the imp occupies."
+    - "In astral form an imp can use only mana-based powers."
+campaign_use:
+  - "Motives vary from helpful or mischievous to hostile; the source recommends keeping them rare rather than treating every focus as occupied."
+  - "Individual imps may receive additional appropriate free-spirit powers at the gamemaster's discretion."
+uncertainties:
+  - "The source suggests, but does not establish, a connection to alchemical radicals used in foci."
+  - "An elemental origin and native metaplane remain speculative."
+links:
+  uses:
+    - entity.spirit.free-spirit
+    - rule.spirits.imp-astral-form
+    - rule.spirits.imp-karma
+    - rule.spirits.imp-conjuring-banishing
+    - rule.spirit-power.occupation
+  interacts_with:
+    - subsystem.magic.foci
+sources:
+  - {source: source.fanpro-10652, pages: "34-36", pdf_pages: "34-36", relation: defines}
+notes:
+  - "Narrative case material on pp.25-34 is treated as source-period testimony; GM-facing Game Information on pp.34-36 defines the mechanics."
