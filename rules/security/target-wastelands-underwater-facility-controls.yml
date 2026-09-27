@@ -1,0 +1,31 @@
+id: rule.security.target-wastelands-underwater-facility-controls
+record_type: rule
+name: "Target: Wastelands Underwater Facility Controls"
+domain: security
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "93-101", pdf_pages: "94-102", basis: defines_source_specific_conditions}
+
+atmospheric_integrity:
+  importance: "Pressure and atmosphere management are critical dependencies for deep facilities."
+  one_atmosphere:
+    - "Strong hull materials maintain near-surface interior pressure."
+    - "Expert-system and rigger-monitored life support may adjust pressure and gas mix."
+    - "Safety systems may add specific gases to counter atmospheric hazards."
+  ambient_pressure:
+    - "Some facilities use on-site magicians or bound air elementals to maintain a non-toxic oxygenated atmosphere."
+    - "Barriers, elementals and transformation-manipulation magic may protect the atmosphere from magical intrusion."
+    - "An on-site magician may combine environmental engineering, magical protection and life-support maintenance."
+
+astral_controls:
+  common: ["elemental guards", "wards", "staff magicians"]
+  fab_bulkheads: "Ingersoll Aquaculture is described as using nutrient-filled wall spaces with strain-II fluorescing astral bacteria as astral barriers."
+  exterior_patrol: "The same facilities are described as using trained paracritters outside."
+  commentary_limit: "A posted comment questions FAB performance in helium/high-pressure atmospheres and suggests a limit near ten atmospheres; this remains commentary, not established source fact."
+
+links:
+  uses: [rule.hazards.target-wastelands-deep-sea-environments]
+  interacts_with: [entity.spell.alter-pressure]
+sources:
+  - {source: source.fanpro-10653, pages: "93-95", pdf_pages: "94-96", relation: defines_source_specific_conditions}
+notes:
+  - "Shadowtalk claims are kept separate from attached-report facts."
