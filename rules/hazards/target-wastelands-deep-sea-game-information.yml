@@ -1,0 +1,25 @@
+id: rule.hazards.target-wastelands-deep-sea-game-information
+record_type: rule
+name: "Target: Wastelands Deep-Sea Pressure Mechanics"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "130-131", pdf_pages: "131-132", basis: defines}
+cyberware_pressure:
+  threshold: "Below 200 meters / above roughly 20 atmospheres, make a Stress Test for affected implants using implant grade to determine dice."
+  recurrence: "Make another Stress Test for each additional 200 meters of depth."
+  selection: "The gamemaster may test each piece or determine the affected item randomly."
+  internal_headware: "Internal headware is generally protected by cranial fluid; tooth compartments are called out as an exception."
+breathing_mixtures:
+  nitrox: "High-oxygen nitrox may call for Body (4) against inner-ear infection and a Stress Test for cybernetic equipment."
+  heliox: "Helium transfers heat much faster and can distort voice communications; cyberware and communications equipment may require Stress Tests."
+  trimix: "Effects are less severe but equipment remains subject to adverse-condition Stress Tests."
+oxygenate_interaction: "Sustaining Oxygenate on a character deep underwater can create oxygen-toxicity problems; the cited source applies one box of Physical damage per minute until ascent or the spell ends."
+links:
+  uses: [rule.damage.stress-test, rule.damage.stress-points]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.hazards.target-wastelands-deep-sea-environments]
+sources:
+  - {source: source.fanpro-10653, pages: "130-131", pdf_pages: "131-132", relation: defines}
+notes:
+  - "These rules supplement the Cannon Companion underwater procedures cited by the source."
