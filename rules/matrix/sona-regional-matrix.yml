@@ -1,0 +1,35 @@
+id: rule.matrix.sona-regional-matrix
+record_type: rule
+name: "Shadows of North America Regional Matrix Conditions"
+domain: matrix
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10655, pages: "191-196", basis: defines_and_extends}
+scope: {applies_to: ["regional Matrix access and host conditions in Shadows of North America"]}
+
+athabaska:
+  remote_wireless_hosts:
+    topology: "Many small towns, remote corporate stations and frontier posts use wireless, especially satellite, links."
+    access: "Some LTGs and hosts are reachable only through a PLTG leased from and maintained by the Renraku Globalink satellite network."
+    route: "The sub-grid is accessible only through the Athabaska RTG of the Globalink RTG."
+    security: "Its security and ACIFS are identical to Globalink's."
+  severe_weather:
+    guidance:
+      - "At gamemaster discretion, severe weather may make remote LTGs and hosts inaccessible from the RTG or vice versa."
+      - "Weather may disrupt signal quality, enforce I/O-speed and bandwidth limits, apply test modifiers for degraded signals, or randomly dump characters."
+    classification: "Optional regional complication rather than a fixed global Matrix rule."
+
+pueblo:
+  los_angeles_rtg:
+    grid: "NA/PUE/LA"
+    security_code: "Orange-4/6/8/6/6/7"
+    note: "Established for the California area occupied by Pueblo."
+  main_rtg_reference: "NA/PUE/FE is detailed in Target: Matrix p.16."
+
+links:
+  interacts_with:
+    - subsystem.matrix.core
+sources:
+  - {source: source.fanpro-10655, page: 191, pdf_page: 192, relation: defines, note: "Athabaskan wireless Matrix and weather effects"}
+  - {source: source.fanpro-10655, page: 196, pdf_page: 197, relation: defines, note: "Pueblo Los Angeles RTG security"}
+notes:
+  - "No global replacement of Matrix or Target: Matrix rules is inferred."
