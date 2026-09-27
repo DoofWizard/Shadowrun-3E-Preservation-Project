@@ -1,12 +1,11 @@
 id: source.fanpro-10651
 record_type: source
 status: ingesting
+sequential_scan_complete: true
 completed_through:
-  printed_page: 122
-  pdf_page: 123
-resume_at:
-  printed_page: 123
-  pdf_page: 124
+  printed_page: 128
+  pdf_page: 130
+resume_at: null
 pending_normalization:
   - id: pending.tal.p14-20
     printed_pages: "14-20"
@@ -23,10 +22,18 @@ pending_normalization:
   - id: pending.tal.p119.detail
     printed_pages: "119"
     pdf_pages: "120"
+reference_tail:
+  printed_pages: "123-128"
+  pdf_pages: "124-130"
+  treatment: "reference-only tail"
+  findings:
+    - "Printed pp.123-124 contain adventure ideas/hooks. They are hypothetical scenario prompts, not unqualified source-period facts, and add no standalone rules or numeric mechanics."
+    - "Printed pp.125-128 are index pages."
+    - "PDF p.130 is the back cover and contains no rules-bearing content."
 notes:
-  - "Sequential scan verified through printed p.122 / PDF p.123."
+  - "Sequential scan verified through the end of the 130-page source PDF."
   - "Printed pp.27-43 require later detail normalization."
   - "Printed pp.78-98 require later detail normalization."
   - "Printed pp.99-122 were deep-scanned and accepted normalized records were committed."
-  - "Two exact detail ranges remain pending after connector filtering."
-  - "Resume at printed p.123 / PDF p.124."
+  - "Printed pp.123-124 were reviewed as reference-only adventure hooks; no new rules-bearing items were found."
+  - "The source remains ingesting because five exact pending normalization ranges must be resolved before completion."
