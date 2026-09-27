@@ -1,0 +1,51 @@
+id: rule.vehicles.target-wastelands-hostile-environment-adaptation
+record_type: rule
+name: "Target: Wastelands Hostile-Environment Vehicle Adaptation"
+domain: vehicles
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "132-133", pdf_pages: "133-134", basis: defines}
+quality_factor:
+  name: "Hostile Environment Adaptation"
+  availability: "new vehicle designs only"
+  modifiers:
+    arctic: "+0.15"
+    desert: "+0.15"
+    space: "+0.20"
+  effect: "Appropriately adapted vehicles do not suffer the additional environmental Stress otherwise imposed for operation in that hostile environment."
+adaptation_kit:
+  name: "Arctic/Desert Adaptation Kit"
+  category: "Protective Systems"
+  use: "existing vehicles through customization"
+  environmental_stress: "Prevents the additional harsh-environment Stress when matched to the environment."
+  maintenance: "If the vehicle spends at least one week in the matching hostile environment, double that month's maintenance cost."
+  customization:
+    ground_parts_cost: "Body x 250 nuyen"
+    air_parts_cost: "Body x 500 nuyen"
+    parts_availability: "5/1 wk"
+    street_index: 1.5
+    base_time: "16 hours"
+    skill_test: "appropriate Vehicle Build/Repair (4)"
+    equipment: "Vehicle Shop"
+    cf_consumed: 1
+ski_skids:
+  category: "Accessories"
+  rule: "Aircraft fitted with skis can operate from ice and snow; without skis, required takeoff/landing distances may be doubled or tripled."
+  design:
+    cost: "10 x Body"
+    maximum_rating: "NA"
+    cf_consumed: 0
+    load_reduction: "80 kg x Body"
+  customization:
+    parts_cost: "500 nuyen x (Body + Armor)"
+    availability: "Always"
+    street_index: 0.9
+    base_time: "48 hours"
+    skill: "appropriate Vehicle Build/Repair"
+    target_number: 2
+    equipment: "Vehicle Shop"
+    cf_consumed: 0
+    load_reduction: "100 kg x Body"
+sources:
+  - {source: source.fanpro-10653, pages: "132-133", pdf_pages: "133-134", relation: defines}
+notes:
+  - "These options supplement the Rigger 3 vehicle design/customization rules cited in the source."
