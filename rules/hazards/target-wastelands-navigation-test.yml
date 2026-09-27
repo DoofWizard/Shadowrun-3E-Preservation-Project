@@ -1,0 +1,36 @@
+id: rule.hazards.target-wastelands-navigation-test
+record_type: rule
+name: "Target: Wastelands Navigation Test"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, page: 108, pdf_page: 109, basis: defines}
+procedure:
+  frequency: "once per day while traveling through wilderness"
+  skill: entity.skill.navigation
+  base_target_number: 4
+  initial_scatter: "10 percent of distance traveled multiplied by 1D6; direction uses the SR3 scatter procedure."
+  success_effect: "Each test success reduces scatter distance by 5 percent of distance traveled."
+  exact_arrival: "Scatter reduced to zero or less means the group reaches the intended destination."
+  recovery_after_getting_lost: "After realizing they are lost, the group may make another Navigation (4) Test with modifiers; one or more successes identifies location and permits a new course."
+  all_ones: "If every die is a 1, the group cannot determine its location or destination for 24 hours."
+  group_use: "Use the highest Navigation skill in the group."
+modifiers:
+  gps_present: -2
+  compass_present: -1
+  vehicle_autonav: "-(Autonav Rating - 1)"
+  map_or_mapsoft_available: -1
+  familiar_terrain: -1
+  weather_clear: -1
+  weather_overcast: 0
+  weather_bad: 2
+  weather_terrible: 4
+  equipment_limit: "Apply only one of GPS, compass or vehicle Autonav."
+links:
+  uses: [entity.skill.navigation, rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.fanpro-10653, page: 108, pdf_page: 109, relation: defines, note: "Game Information - Navigation"}
+notes:
+  - "No supersession of the referenced SR3 scatter procedure is inferred."
