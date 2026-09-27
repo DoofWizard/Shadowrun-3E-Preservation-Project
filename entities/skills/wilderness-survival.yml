@@ -1,0 +1,27 @@
+id: entity.skill.wilderness-survival
+record_type: entity
+name: "Wilderness Survival"
+domain: skills
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, page: 105, pdf_page: 106, basis: defines}
+intrinsic:
+  type: "Active Skill"
+  linked_attribute: "Willpower"
+  default: "Willpower Attribute"
+  purpose: "Surviving extended exposure to outdoor environments, locating food and water, selecting shelter and adapting equipment and behavior to terrain."
+  specializations:
+    - "Forest"
+    - "Mountain"
+    - "Desert"
+    - "Jungle"
+    - "Polar"
+    - "other appropriate terrain"
+links:
+  uses: [rule.tests.success-test]
+  requires: []
+  component_of: []
+  interacts_with: [rule.hazards.target-wastelands-survival-navigation]
+sources:
+  - {source: source.fanpro-10653, page: 105, pdf_page: 106, relation: defines, note: "Game Information - New Skills"}
+notes:
+  - "No supersession relationship is inferred."
