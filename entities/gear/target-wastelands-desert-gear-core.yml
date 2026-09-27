@@ -1,0 +1,48 @@
+id: catalog.gear.target-wastelands-desert-core
+record_type: entity_catalog
+name: "Target: Wastelands Desert Gear - Core"
+domain: gear
+status: ingested
+source: source.fanpro-10653
+pages: "117-119"
+
+entries:
+  - id: entity.gear.chemical-analyzer
+    name: "Chemical Analyzer"
+    properties: {concealability: 5, weight_kg: 2, availability: "(rating)/48 hrs", cost_nuyen: "rating x 50", street_index: 1, legality: "Legal"}
+    rules: "Acts as Chemistry skill at its Rating to identify chemical composition and alerts the user to hazardous toxins."
+  - id: entity.gear.compressed-air-blower
+    name: "Compressed Air Blower"
+    properties: {concealability: 8, weight_kg: 0.5, availability: "Always", cost_nuyen: 5, street_index: 1, legality: "Legal"}
+    rules: "Pressurized cleaning tool for removing sand from exposed equipment."
+  - id: entity.gear.deck-refrigeration-unit
+    name: "Deck Refrigeration Unit"
+    properties: {concealability: 4, weight_kg: 5, availability: "4/48 hrs", cost_nuyen: 250, street_index: 1, legality: "Legal"}
+    rules: "Installation requires a microtronics toolkit and Electronics B/R (4), base time 1 hour."
+  - id: entity.gear.desert-goggles
+    name: "Desert Goggles"
+    properties: {concealability: 3, weight_kg: null, availability: "Always", cost_nuyen: 25, street_index: 1, legality: "Legal"}
+    rules: "Protect from blowing grit and eliminate glare modifiers."
+  - id: entity.gear.desert-suit
+    name: "Desert Suit"
+    properties: {concealability: null, weight_kg: 2, availability: "8/10 days", cost_nuyen: 6000, street_index: 2, legality: "Legal"}
+    rules:
+      - "Cannot be worn with armor or tight clothing that interferes with the heat sinks."
+      - "Provides -2 target-number modifier to desert Survival Tests."
+      - "Recycles some body fluids into drinkable water."
+  - id: entity.gear.desert-survival-kit
+    name: "Desert Survival Kit"
+    properties: {concealability: 3, weight_kg: 3, availability: "6/72 hrs", cost_nuyen: 600, street_index: 2, legality: "Legal"}
+    rules: "Compact desert survival assortment for water treatment, repair, signaling, shelter and basic survival needs."
+  - id: entity.gear.desert-tent
+    name: "Desert Tent"
+    properties: {concealability: 2, weight_kg: 3, availability: "4/48 hrs", cost_nuyen: 400, street_index: 1, legality: "Legal"}
+    rules: "Shelters one troll or two human-sized occupants; built to withstand sand-laden winds up to 150 kph and burial by drifting sand."
+  - id: entity.gear.powdered-graphite
+    name: "Powdered Graphite"
+    properties: {concealability: 8, weight_kg: null, availability: "Always", cost_nuyen: 25, street_index: 1, legality: "Legal"}
+    rules: "Dry lubricant useful where oil would collect sand; one container supports about 20 cleanings."
+
+sources:
+  - {source: source.fanpro-10653, pages: "117-119", pdf_pages: "118-120", relation: defines}
+notes: []
