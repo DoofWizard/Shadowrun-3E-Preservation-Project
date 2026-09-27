@@ -2,15 +2,19 @@ phase: pass_b
 active_source: source.fanpro-10657
 source_status: ingesting
 completed_through:
-  printed_page: 30
-  pdf_page: 31
+  printed_page: 50
+  pdf_page: 51
 resume_at:
-  printed_page: 31
-  pdf_page: 32
-last_commit: 7baca067ddf585f03cf0a06e94a93ad99e327a08
+  printed_page: 51
+  pdf_page: 52
+last_commit: 3bfcdb6930a67bf86c31d425a935e681333fd1c2
 open_conflicts:
   - pending.newseattle.range-p4-13
   - pending.newseattle.range-p17-30
+  - pending.newseattle.range-p31-39
+  - pending.newseattle.range-p40-43
+  - pending.newseattle.tacoma-p44-47
+  - pending.newseattle.everett-p47-50
   - pending.sota63.range-p124-125
   - pending.sota63.range-p95-104
   - pending.sota63.range-p72-78
@@ -41,13 +45,14 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - continue source.fanpro-10657 from printed p.31 / PDF p.32
+  - continue source.fanpro-10657 from Renton, printed p.51 / PDF p.52
+  - if checkpoint and manifest disagree, reconcile to furthest verified manifest boundary before scanning
+  - reacquire source PDF each run; do not rely on ephemeral prior-run files
   - directed scan sequentially at routed depth
   - preserve printed/PDF provenance
   - do not infer supersession beyond explicit text
   - reuse canonical IDs
   - capture every rules-bearing item
-  - keep pending.newseattle.range-p4-13 explicit until fully normalized
-  - keep all SOTA63 pending ranges explicit until fully normalized
+  - keep every pending range explicit until fully normalized
   - commit bounded semantic slices
   - continue automatically
