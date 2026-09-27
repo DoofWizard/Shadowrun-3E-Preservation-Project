@@ -1,0 +1,69 @@
+id: rule.magic.magic-duels
+record_type: rule
+name: "Magic Duels"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 51
+  basis: defines
+
+scope:
+  applies_to:
+    - "formal or informal magical duels between magicians"
+
+resolution:
+  duel_types:
+    supremacy:
+      aliases: ["scorching"]
+      participants: "Two magicians only."
+      action: "Exclusive Complex Action."
+      contest: "Success Contest: each participant rolls Sorcery against a target number equal to the opponent's Magic rating."
+      spell_pool: "May not be used."
+      power_foci: "May be allowed only by mutual agreement and only to increase the character's Magic rating; they do not add dice to the test."
+      effect: "Each net success reduces the opponent's Magic attribute by 1."
+      termination: "Continue until the duel is called by the winner or an appointed third party/referee, or until one participant's Magic reaches 0."
+      magic_zero:
+        immediate: "Aura is momentarily disrupted; character passes out and takes Deadly Stun damage."
+        permanent_loss: "Make the normal check for permanent Magic loss."
+        recovery_if_not_permanent: "Magic refreshes at 1 point per hour."
+    sorcerous:
+      summary: "Uses normal spellcasting rather than a special duel-resolution system."
+      participants: "May involve more than two magicians and may occur in physical or astral space."
+      permissions: "Unless the duelists agree otherwise, they may use foci, metamagic and other magical abilities normally available to them."
+
+source_period_practice:
+  status: "setting custom, not a universal default mechanic"
+  formal_duel_guidelines:
+    - "The challenged party commonly sets place and agreed restrictions such as area, spells/foci, time, spectators and victory conditions."
+    - "Formal arenas are commonly warded to prevent magical spillover and outside interference."
+    - "The parties may agree on a third-party judge to inspect preparations, confirm terms and arbitrate the outcome."
+    - "Each party may have one or two seconds who witness the duel and may proxy if the principal cannot fight."
+    - "If outsiders join the fight, the formal duel is halted."
+    - "Participants traditionally salute before and after and accept agreed outcomes."
+
+links:
+  uses:
+    - entity.skill.sorcery
+    - rule.magic.magic-attribute
+  affects: []
+  modified_by: []
+  interacts_with:
+    - rule.magic.power-foci
+
+sources:
+  - source: source.fanpro-10664
+    pages: "41-42"
+    pdf_pages: "42-43"
+    relation: references
+    note: "Source-period formal dueling customs"
+  - source: source.fanpro-10664
+    pages: "51-52"
+    pdf_pages: "52-53"
+    relation: defines
+    note: "Game Information — Magic Duels / Supremacy Duels / Sorcerous Duels"
+
+notes:
+  - "The formal customs above are presented as practices used by some magical societies; they are not normalized as mandatory duel rules."

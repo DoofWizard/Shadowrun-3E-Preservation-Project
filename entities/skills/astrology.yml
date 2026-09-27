@@ -1,0 +1,42 @@
+id: entity.skill.astrology
+record_type: entity
+name: "Astrology"
+domain: skills
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 53
+  basis: clarifies
+
+intrinsic:
+  type: "Knowledge Skill"
+  linked_attribute: "Intelligence"
+  default: "Intelligence"
+  specializations:
+    - "Chinese"
+    - "Mayan"
+    - "Native American"
+    - "Vedic"
+    - "Western"
+  geomancy_use: "Geomancers commonly combine Astrology with Divining and Sensing; feng shui practitioners use Chinese/Oriental astrology rather than the Western system."
+
+links:
+  uses: []
+  requires: []
+  component_of: []
+  interacts_with:
+    - rule.skills.defaulting
+    - rule.skills.specialization
+    - option.magic.metamagic-divining
+
+sources:
+  - source: source.fanpro-10664
+    page: 53
+    pdf_page: 54
+    relation: clarifies
+    note: "Game Information — Astrology (Intelligence); source notes the skill was covered previously in Magic in the Shadows p.74"
+
+notes:
+  - "This contribution records only the rules-bearing details stated on SOTA63 p.53 and does not infer unscanned MitS text beyond the explicit cross-reference."

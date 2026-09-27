@@ -10,7 +10,15 @@ resolution:
   inputs: ["background-count rating", "magical/astral test", "Drain"]
   outputs: ["target-number modifier, Drain modifier, astral impression"]
   steps: []
-links: {uses: [], affects: [subsystem.magic.astral-terrain], modified_by: [], interacts_with: [option.magic.metamagic-cleansing]}
+links:
+  uses: []
+  affects: [subsystem.magic.astral-terrain]
+  modified_by:
+    - option.magic.metamagic-filtering
+  interacts_with:
+    - option.magic.metamagic-cleansing
+    - rule.magic.geomancy-imprinting
 sources:
   - {source: source.mits, pages: "83-84", relation: defines, note: "Background Count and Background Count Levels Table"}
+  - {source: source.fanpro-10664, pages: "52-53", pdf_pages: "53-54", relation: extends, note: "Filtering reduces effective background count for one initiate; geomancy may imprint sites"}
 notes: []

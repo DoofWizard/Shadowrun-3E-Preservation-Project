@@ -1,0 +1,63 @@
+id: option.magic.metamagic-absorption
+record_type: option
+name: "Metamagic: Absorption"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 52
+  basis: adds_option
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when allocating spell-defense dice and resisting an incoming spell"
+  prerequisites:
+    - "initiate"
+    - "capable of using Sorcery"
+  incompatible_with: []
+
+resolution:
+  allocation: "Allocate Sorcery and Spell Pool dice to Absorption under the same limitations as spell defense."
+  resistance:
+    - "When a protected target is affected by a spell, the initiate may use allocated absorption dice on the Spell Resistance Test."
+    - "Each success generated specifically by absorption dice removes one of the attacker's successes and places one die into a temporary Absorption Pool."
+    - "If the incoming spell is reduced to 0 successes, it fails to affect the target."
+  area_spells:
+    normal_area_spell: "Absorption protects only characters for whom absorption dice were allocated; other targets are affected normally even if some energy is absorbed."
+    area_elemental_manipulation_exception: "If any target of an area elemental manipulation successfully absorbs it, the entire spell is absorbed and affects no targets."
+  absorption_pool:
+    use: "Acts as a second Spell Pool and may be used in addition to the initiate's normal Sorcery and Spell Pool dice."
+    maximum: "Twice the initiate's Magic rating."
+  immediate_drain:
+    timing: "At the end of any Combat Phase in which the initiate absorbed a spell."
+    resistance: "Resist M damage with Power equal to the current number of dice in the Absorption Pool."
+    physical_threshold: "If that Power exceeds the initiate's Magic attribute, the Drain is Physical rather than Stun."
+  maintaining_pool:
+    sustaining_penalty: "+2 modifier while maintaining the pool."
+    exclusive_actions: "Cannot perform Exclusive actions while maintaining the pool."
+    damage_concentration: "If the initiate takes damage, make a Sorcery Test against a target number equal to the number of dice in the Absorption Pool, plus injury modifiers; failure loses the pool dice."
+    safe_duration: "A number of Combat Turns equal to the initiate's grade."
+    overstay_damage: "After the safe duration, take 1 box of Stun at the end of each Combat Turn while maintaining the pool; this becomes Physical if pool dice exceed Magic."
+    release: "May release some or all absorbed dice with a Free Action; released energy dissipates harmlessly."
+
+links:
+  modifies:
+    - rule.magic.spell-defense
+  requires:
+    - option.magic.metamagic
+    - entity.skill.sorcery
+  interacts_with:
+    - rule.dice-pools.spell-pool
+
+sources:
+  - source: source.fanpro-10664
+    page: 52
+    pdf_page: 53
+    relation: adds_option
+    note: "Game Information — Absorption Metamagic"
+
+notes: []

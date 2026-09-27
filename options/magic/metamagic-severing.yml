@@ -1,0 +1,68 @@
+id: option.magic.metamagic-severing
+record_type: option
+name: "Metamagic: Severing"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 48
+  basis: adds_option
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "after a ritual team has completed Targeting and begun Sending"
+  prerequisites:
+    - "initiate"
+    - "capable of astral perception"
+  incompatible_with: []
+
+resolution:
+  eligibility:
+    - "The initiate must know that the ritual link exists, such as by noticing the Sending or being alerted."
+    - "Severing works against a ritual link and not against a spotter."
+  test: "Roll the severing initiate's Magic rating against a target number equal to the ritual leader's Magic rating plus applicable modifiers."
+  target_number_modifiers:
+    per_additional_ritual_magician: "+1"
+    nature_of_ritual_link_unknown: "+2"
+    severing_for_another_person_or_object: "+2"
+  success_condition: "If Severing Test successes exceed the ritual team's Linking Test successes, the ritual link is broken."
+  failure_condition: "If Severing Test successes are equal to or less than the Linking Test successes, the ritual continues unhindered."
+  broken_link_effects:
+    - "The ritual ends immediately and the ritual team makes an immediate Drain Resistance Test."
+    - "The same material or symbolic link cannot be used for the same purpose until a number of hours equal to the severing initiate's grade have passed."
+  time:
+    grades_below_10: "(10 - initiate grade) x 10 minutes"
+    grades_10_and_above: "Starting from the grade-9 value of 10 minutes, each grade including and above 10 reduces the time by 1 additional minute."
+    minimum: "1 minute"
+    interruption: "If the initiate does not spend the full required time, or the Sending/tracking completes first, severing fails."
+  severing_other_targets:
+    astral_perception: "The initiate must astrally perceive the target for the entire severing time; stopping astral perception causes failure."
+  focus_material_link:
+    bond: "The focus bond is not broken."
+    lockout: "Use of that focus as a ritual link is negated for hours equal to the severing initiate's grade."
+    owner_lockout: "The focus is also temporarily useless to its bonder for the same period."
+    recovery: "After the period expires it may be used again without re-bonding; it is not consumed."
+  repeated_or_multiple_attempts:
+    - "Severing may be attempted against the same ritual link more than once."
+    - "Multiple characters may attempt to sever the same link, but their tests are separate and successes are not cumulative; use only the highest individual success count."
+
+links:
+  modifies:
+    - procedure.magic.ritual-sorcery
+  requires:
+    - option.magic.metamagic
+  interacts_with:
+    - option.magic.metamagic-symbolic-linking
+
+sources:
+  - source: source.fanpro-10664
+    pages: "48-49"
+    pdf_pages: "49-50"
+    relation: adds_option
+    note: "Game Information — Severing Metamagic and Severing Test Modifiers"
+
+notes: []

@@ -1,0 +1,89 @@
+id: option.magic.metamagic-psychometry
+record_type: option
+name: "Metamagic: Psychometry"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 49
+  basis: adds_option
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when examining psychic impressions left on an item, person or place"
+  prerequisites:
+    - "initiate"
+    - "capable of astral perception"
+  incompatible_with: []
+
+resolution:
+  setup:
+    - "The initiate comes into contact with the subject and opens her mind to its energies."
+    - "The initiate assenses the subject and examines the astral patterns around it."
+  test: "Aura Reading Test against the impression's modified Psychometry target number."
+  multiple_impressions: "Compare the Aura Reading result separately against each impression's target number; more than one impression may be learned in one attempt."
+  rule_of_one: "All ones produces vividly presented but completely false information."
+  base_target_numbers:
+    less_than_1_day: 6
+    less_than_1_month: 8
+    less_than_1_year: 10
+    one_year_or_more: 12
+    ten_years_or_more: 14
+    each_additional_ten_years: "+2"
+  target_number_modifiers:
+    subject_is_a_place: "+1"
+    subject_is_metal_object: "+1"
+    subject_is_bonded_focus: "-Force; only for impressions related to the person to whom the focus is bonded; for stacked foci use only the highest Force as the bonus"
+    subject_strongly_connected_to_people_in_impression: "-2"
+    initiate_strongly_connected_to_people_in_impression: "-2"
+    violence_or_strong_emotions: "-2"
+    violent_death: "-3"
+    chaotic_or_noisy_surroundings: "+1"
+    more_than_one_significant_impression: "+1 for each"
+    related_astral_signatures_erased: "+1"
+    cleansing_used_to_remove_impressions: "+6"
+    each_subsequent_attempt_same_subject: "+2"
+  information_by_successes:
+    zero: "No information received."
+    one: "Brief flashes of insight; disjointed, very superficial impressions."
+    two: "Longer sequences and deeper insights, though visions remain disjointed."
+    three: "Greater detail, multiple sensory types, clearer vision and more coherence."
+    four_or_more: "Lengthy sequences, multiple senses, coherent visions and significant information."
+  time:
+    duration: "Minutes equal to the impression's base target number minus the initiate's grade; when reading multiple impressions, use the highest target number."
+    source_lower_bound: "No minimum duration is stated in this passage."
+    action: "Exclusive Complex Action for the duration."
+    perception_penalty: "+4 target-number modifier to Perception Tests while maintaining psychometry."
+    voluntary_break: "Willpower (6) Test to break off psychometry in order to perform another action."
+  backlash:
+    trigger: "After successfully picking up any impressions."
+    test: "Willpower against a target number equal to 12 minus the modified target number used for the Aura Reading Test."
+    no_successes: "Light Stun wound; the gamemaster chooses the form of backlash such as nausea, headache or emotional distress."
+    all_ones: "Temporary phobia against performing psychometry; a Willpower (6) Test is required to use the technique again."
+    phobia_duration: "10 days minus the initiate's Willpower."
+    severe_impressions: "At gamemaster discretion, especially potent impressions may cause more severe backlash."
+  repeated_attempts:
+    penalty: "+2 target number for each subsequent attempt on the same subject."
+    wait: "Wait a number of hours equal to 10 minus the initiate's grade before another attempt."
+
+links:
+  modifies: []
+  requires:
+    - option.magic.metamagic
+    - entity.skill.aura-reading
+  interacts_with:
+    - option.magic.metamagic-cleansing
+
+sources:
+  - source: source.fanpro-10664
+    pages: "49-50"
+    pdf_pages: "50-51"
+    relation: adds_option
+    note: "Game Information — Psychometry Metamagic / Psychometry Table"
+
+notes:
+  - "The source treats emotional/sensory content and severe-backlash examples as gamemaster-facing interpretation, distinct from the fixed target-number and success tables."

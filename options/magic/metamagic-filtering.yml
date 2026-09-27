@@ -1,0 +1,50 @@
+id: option.magic.metamagic-filtering
+record_type: option
+name: "Metamagic: Filtering"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 52
+  basis: adds_option
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "while operating in an area with background count, including aspected sites and mana warps"
+  prerequisites:
+    - "initiate"
+    - "knows Metamagic: Cleansing"
+  incompatible_with: []
+
+resolution:
+  action: "Exclusive Complex Action to attune to the area and create a personal mana filter."
+  test: "Magic Test against a target number equal to the area's background count."
+  effect: "Every 2 successes reduce the effective background count against the filtering initiate by 1."
+  duration: "Combat Turns equal to initiate grade x (10 - background count)."
+  expiration: "After the duration the filter is clogged; the initiate must filter again to continue receiving the benefit."
+  scope:
+    - "Works with temporary or permanent background counts and may also apply to aspected power sites and mana warps."
+    - "Only the filtering initiate receives the reduction. The actual background count and penalties for everyone else remain unchanged."
+    - "Filtering reduces the effects imposed by the effective background count; it does not cleanse or remove the background count itself."
+
+links:
+  modifies:
+    - rule.magic.background-count
+  requires:
+    - option.magic.metamagic
+    - option.magic.metamagic-cleansing
+  interacts_with: []
+
+sources:
+  - source: source.fanpro-10664
+    pages: "52-53"
+    pdf_pages: "53-54"
+    relation: adds_option
+    note: "Game Information — Filtering Metamagic"
+
+notes:
+  - "The duration formula uses the area's background count as printed; the worked example uses the original count of 6 even after the effective count is reduced to 4."

@@ -1,0 +1,89 @@
+id: option.magic.metamagic-symbolic-linking
+record_type: option
+name: "Metamagic: Symbolic Linking"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 47
+  basis: adds_option
+
+option_for:
+  - option.magic.metamagic
+
+selection:
+  timing: "when establishing the Linking Test for ritual sorcery"
+  prerequisites:
+    - "initiate"
+    - "capable of using Sorcery"
+  incompatible_with: []
+
+effects:
+  - "Allows an initiate to use symbolic links in place of ordinary material links for ritual sorcery."
+  - "A symbolic representation may stand in for a target when the target cannot be seen physically or astrally and no material link is available."
+  - "Use the Symbolic Links modifiers together with the normal Linking Test modifiers from Magic in the Shadows."
+
+link_modifiers:
+  favored_object: "+2"
+  often_handled_object: "+3"
+  recently_handled_object: "+4"
+  symbolic_representation: "+6"
+  symbolic_representation_additional:
+    not_created_by_link_user: "+2"
+    only_two_successes_on_artistic_skill_test: "+2"
+    only_one_success_on_artistic_skill_test: "+4"
+    symbolic_link_focus: "-Force"
+
+object_requirements:
+  favored_object: "Frequently worn or carried and of significant emotional value to the target."
+  often_handled_object: "Frequently used or possessed by the target for some time, but without the favored object's deeper attachment."
+  recently_handled_object:
+    minimum_possession: "5 minutes"
+    useful_duration: "minutes equal to twice the target's Essence"
+    persistence: "If the ritual begins before that duration expires, the link remains effective for the ritual; if the ritual is interrupted, the link is lost."
+    conflicting_owner: "If the item is a favored or often-handled object of someone other than the intended target, the intended Linking Test fails and the gamemaster may rule that the ritual group instead acquires the other person's link."
+
+symbolic_representation_creation:
+  test: "Appropriate artistic skill vs Target Number 4, modified by representation conditions."
+  success_thresholds:
+    three_or_more: "Adequate symbolic link; no extra modifier beyond the base symbolic-representation modifier."
+    two: "+2 Linking Test modifier."
+    one: "+4 Linking Test modifier."
+    zero: "Representation is unusable as a symbolic link."
+  creator_requirement: "The ritual magician need not be the creator, but a representation created by someone else adds +2 to the Linking Test."
+  representation_modifiers:
+    creator_familiar_with_target: "+0"
+    creator_has_met_target: "+2"
+    creator_only_seen_target: "+4"
+    creator_last_saw_target_more_than_one_month_ago: "+6"
+    creator_has_assensed_target: "-2"
+    target_in_view_during_creation: "-1"
+
+symbolic_link_focus:
+  creation: "Create the representation, then enchant it as a focus using Enchanting (Artificing)."
+  formula_base_time: "10 days"
+  enchanting_target_number: 4
+  handmade_representation_modifier: "-1 to the Enchanting Test target number"
+  linking_effect: "Subtract the focus Force from the Linking Test modifier."
+  maximum_force: 6
+  force_cap: "Force cannot exceed the number of successes achieved on the artistic Skill Test used to create the representation."
+
+links:
+  modifies:
+    - procedure.magic.ritual-sorcery
+  requires:
+    - option.magic.metamagic
+  interacts_with:
+    - procedure.magic.ritual-sorcery-reverse-link
+
+sources:
+  - source: source.fanpro-10664
+    pages: "47-48"
+    pdf_pages: "48-49"
+    relation: adds_option
+    note: "Game Information — Sympathetic Magic / Symbolic Linking Metamagic / Symbolic Links Table / Symbolic Link Foci"
+
+notes:
+  - "This record preserves the source's symbolic-link categories and modifiers without treating them as replacements for ordinary material-link rules."

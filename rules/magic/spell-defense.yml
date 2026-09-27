@@ -15,8 +15,10 @@ resolution:
 links:
   uses: [entity.skill.sorcery, rule.dice-pools.spell-pool]
   affects: [rule.magic.spell-resistance]
-  modified_by: []
+  modified_by:
+    - option.magic.metamagic-absorption
   interacts_with: []
 sources:
   - {source: source.sr3-core, page: 183, relation: defines, note: "Spell Defense"}
+  - {source: source.fanpro-10664, page: 52, pdf_page: 53, relation: extends, note: "Absorption uses spell-defense allocation as its base process"}
 notes: []

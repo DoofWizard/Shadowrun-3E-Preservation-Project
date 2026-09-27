@@ -1,0 +1,48 @@
+id: procedure.magic.ritual-sorcery-reverse-link
+record_type: procedure
+name: "Ritual Sorcery: Reverse Link"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 49
+  basis: extends
+
+purpose: "Exploit the bidirectional nature of a valid ritual link to target or track from the usual material-link side back toward its source or a former component."
+
+prerequisites:
+  - "ritual sorcery requirements"
+  - "a still-viable material link, or symbolic-link capability when a symbolic link is used"
+  - "the specific material-link item being targeted is known to the magician or ritual team"
+
+resolution:
+  valid_reverse_cases:
+    - "A person may be used as the material link to establish a ritual link to tissue, hair or another viable material sample that came from that person."
+    - "A whole object may be used as the material link to a viable component that was once an integral part of that object."
+    - "The same process may be used for ritual tracking in reverse."
+  linking_test_modifier: "+2"
+  target_awareness: "A person may unknowingly possess the component or link being targeted."
+  viability: "Only components that remain viable as material links can be targeted."
+  symbolic_reverse_link:
+    prerequisite: "Metamagic: Symbolic Linking"
+    modifier: "+2 in addition to the applicable Symbolic Links Table modifiers"
+
+links:
+  uses:
+    - procedure.magic.ritual-sorcery
+  requires: []
+  produces: []
+  modified_by:
+    - option.magic.metamagic-symbolic-linking
+
+sources:
+  - source: source.fanpro-10664
+    page: 49
+    pdf_page: 50
+    relation: extends
+    note: "Game Information — Ritual Magic in Reverse"
+
+notes:
+  - "This is an extension to existing ritual-sorcery linking/tracking rules, not a replacement."

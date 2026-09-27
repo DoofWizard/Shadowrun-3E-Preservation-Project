@@ -1,0 +1,45 @@
+id: rule.magic.geomancy-imprinting
+record_type: rule
+name: "Geomancy: Site Imprinting"
+domain: magic
+status: ingested
+
+effective:
+  status: current
+  source: source.fanpro-10664
+  page: 53
+  basis: defines
+
+scope:
+  applies_to:
+    - "magical groups controlling a manaline or power site"
+
+resolution:
+  temporary_imprinting:
+    control_period: "At least one lunar month (28 days)."
+    effect: "A magical group may temporarily imprint its own aspect on the mana in the controlled area."
+    maintenance: "Requires prolonged ritual and mundane use that favors the group."
+    guideline_frequency: "Use the site regularly at least 8 times per year, usually more, to keep it aspected toward the group for at least one year."
+  long_term_imprinting:
+    unopposed_period: "At least 5 years, usually more."
+    effect: "The imprinting may become permanent."
+    cleansing: "Cleansing metamagic may be used to combat this permanency if the background count itself has not become permanent."
+
+links:
+  uses:
+    - rule.magic.background-count
+  affects: []
+  modified_by: []
+  interacts_with:
+    - option.magic.metamagic-cleansing
+
+sources:
+  - source: source.fanpro-10664
+    page: 53
+    pdf_page: 54
+    relation: defines
+    note: "Game Information — Geomancy / Imprinting"
+
+notes:
+  - "The source expressly presents the timing/frequency values as a general guideline rather than a universal automatic rule."
+  - "Speculation in the surrounding discussion about who controls particular power sites is not normalized as a mechanical fact."
