@@ -1,17 +1,16 @@
 phase: pass_b
 active_source: source.fanpro-10652
-source_status: ingesting
+source_status: blocked_source_gap
 completed_through:
   printed_page: 120
   pdf_page: 118
 resume_at:
-  mode: pending_normalization
-  pending_id: pending.source10652.p112-118
-  printed_page: 112
-  pdf_page: 110
-last_commit: 109cf12bf135fc51e8c068b9eabcb62f601d2b26
+  mode: source_gap
+  pending_id: pending.source10652.missing-p110-111
+  printed_page: 110
+  pdf_page: null
+last_commit: __SELF__
 open_conflicts:
-  - pending.source10652.p112-118
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
   - pending.sona.algonkian-manitou-p18-28
@@ -45,9 +44,8 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - sequential scan of all available numbered Threats 2 pages is complete
-  - resolve Threats 2 pending normalization before marking the source complete
-  - next resolve pending.source10652.p112-118
-  - keep printed pp.110-111 explicit as a source-copy gap; do not infer their contents
+  - all available numbered Threats 2 pages are scanned and normalized
+  - only printed pp.110-111 remain unresolved because they are absent from this source PDF
+  - attempt to recover an alternate corpus copy before declaring the gap irrecoverable
+  - do not infer missing-page contents
   - preserve printed/PDF provenance and capture every rules-bearing item
-  - reuse canonical IDs and do not infer supersession
