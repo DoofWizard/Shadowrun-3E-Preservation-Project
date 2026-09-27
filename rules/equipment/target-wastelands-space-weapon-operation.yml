@@ -1,0 +1,22 @@
+id: rule.equipment.target-wastelands-space-weapon-operation
+record_type: rule
+name: "Target: Wastelands Space Equipment Operation"
+domain: equipment
+status: ingested
+context: "fictional tabletop RPG equipment rule"
+effective: {status: source_specific, source: source.fanpro-10653, page: 128, pdf_page: 129, basis: defines}
+
+outer_space_operation:
+  firearms: "Require an air-tank connection modification; modification cost is +50 percent."
+  explosive_propulsion: "Explosives, rockets and missiles require an integral oxidizer; oxidizer-equipped versions cost +50 percent."
+  lasers_energy_weapons: "Do not lose Power over range in outer space."
+
+radiation:
+  ordinary_space_exposure: "Approximately 1 rad per month for prolonged spacewalking or spacecraft exposure."
+  solar_flare: "1D6 rads per hour for 1D6 days."
+  resolves_with: rule.hazards.target-wastelands-radiation
+
+sources:
+  - {source: source.fanpro-10653, page: 128, pdf_page: 129, relation: defines}
+notes:
+  - "All entries are fictional tabletop mechanics."
