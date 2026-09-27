@@ -1,0 +1,51 @@
+id: rule.spirits.imp-occupation
+record_type: rule
+name: "Imp Occupation"
+domain: spirits
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10652, printed_page: 36, pdf_page: 36, basis: defines}
+power:
+  type: "M"
+  action: "Exclusive Complex"
+  range: "Special"
+  duration: "Special"
+scope:
+  target: "Focus only; any focus type."
+resolution:
+  contact: "Imp astral form must contact the focus aura."
+  opposed_test:
+    unbonded_focus: "Imp Force vs focus Force."
+    bonded_focus: "Imp Force vs twice the focus Force."
+  success: "Imp occupies the focus and its astral form melds with the focus aura."
+  failure: "Imp loses 1 Force."
+  force_requirement: "Imp may not occupy a focus whose Force is lower than imp Force ÷ 2, round down."
+  exclusivity: "Cannot occupy a focus already occupied by another imp."
+  departure: "Once occupying a focus, imp cannot voluntarily leave."
+  physical_manifestation: "May manifest within Force meters of the active focus."
+  removal:
+    - "Banish the imp."
+    - "Destroy the focus enchantment or the focus itself."
+    destruction_consequence: "Imp is thrust into astral space and must resist (focus Force)D damage."
+focus_interaction:
+  aura: "Imp aura becomes so intertwined with focus aura that the two cannot be targeted separately."
+  defense: "Add imp Force to astral combat or Damage Resistance Tests the focus must make."
+  karma_use: "Imp may spend its Karma to aid these tests."
+  immunity_age: "Occupied focus gains Immunity (Age); it does not decay, rust, or show wear while occupied."
+  activation_control: "Imp can activate or deactivate occupied foci at will and may surreptitiously activate them to use powers on the physical plane."
+  force_interference:
+    weaken: "May temporarily reduce focus Force by imp Force."
+    strengthen: "May temporarily add half imp Force, round down, to focus Force."
+    sustaining: "If a sustaining focus is weakened, the maintained spell's Force is immediately reduced as well."
+    action_type: "Impeding or strengthening a focus is an Exclusive activity."
+bonding_karma_drain:
+  timing: "During bonding ritual for the occupied focus."
+  opposed_test: "Imp Force + Spirit Energy vs victim Willpower."
+  per_net_success: "Imp drains 1 additional Good Karma."
+  if_no_good_karma: "Drain Karma Pool at 1 Karma Pool point per 2 net successes."
+  conversion: "Drained Karma Pool points become equal Good Karma for the imp."
+  no_karma_pool: "Attempt has no effect."
+  permanence: "Karma drained by the imp is permanently lost to the character."
+bonded_character_modifier:
+  target_number: "-2 to imp target numbers for all power-based tests against the character bonded to the occupied focus."
+sources:
+  - {source: source.fanpro-10652, printed_page: 36, pdf_page: 36, relation: defines}

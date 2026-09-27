@@ -1,0 +1,52 @@
+id: entity.spirit.imp
+record_type: entity
+name: "Imp"
+domain: spirits
+status: ingested
+intrinsic:
+  classification: "free-spirit-like astral entity"
+  force: "Used for all attributes."
+  materialization: "Cannot materialize in physical form, though may manifest."
+astral_form:
+  physical_attributes: "None while unoccupied."
+  focus_requirement: "Must occupy a focus to act on the physical plane."
+  force_decay: "Loses 1 Force for each full 24 hours spent astral without occupying a focus."
+  destruction: "Destroyed if Force reaches 0."
+  appearance: "Variable small humanoid, animal, or odd floating forms; wispy and almost translucent."
+  detection_modifier: "+3 to Assensing Tests and other magical detection such as Magic Sense or Detect Magic."
+  astral_barriers: "When using Aura Masking to bypass an astral barrier, apply -3 to the imp's target number for the Success Contest."
+spirit_energy:
+  starting_value: 1
+  maximum: "Cannot exceed Force."
+  advancement: "May increase Spirit Energy and/or Force by acquiring and spending Good Karma."
+  common_acquisition: "Coercing Awakened characters bonded to occupied foci, or draining Karma during bonding."
+conjuring:
+  summon_control: "No magician may summon imps; imps are immune to attempts to control them."
+  true_names: "Home metaplanes are unidentified; whether they possess true names like other free spirits is unknown."
+  banishing:
+    normal_rules: true
+    occupied_focus: "If banished while occupying a focus, immediately expelled into astral space at full Force and cannot reoccupy that focus for 24 hours."
+    uncertainty: "Source does not establish whether banishing an astral imp destroys it or merely disrupts it to its native metaplane."
+karma_pool:
+  starting_pool: "1D6"
+  advancement: "+1 Karma Pool costs 10 Good Karma."
+  gm_adjustment: "Gamemaster may adjust imp Karma Pool."
+powers:
+  common:
+    - Accident
+    - Aura Masking
+    - Compulsion
+    - Empathy
+    - Guard
+    - Influence
+    - Occupation
+    - Psychokinesis
+  force_5_plus:
+    - Astral Armor
+    - Binding
+    - Desire Reflection
+  limitation: "In astral form only mana-based powers can be used. Physical powers require Occupation of an active dual-natured focus."
+  bonded_only: "Powers marked with an asterisk in the source may be exercised only on characters bonded to the occupied focus."
+  customization: "GM may assign additional free-spirit powers; source warns against excessive combinations."
+sources:
+  - {source: source.fanpro-10652, printed_pages: "35-36", pdf_pages: "35-36", relation: defines}
