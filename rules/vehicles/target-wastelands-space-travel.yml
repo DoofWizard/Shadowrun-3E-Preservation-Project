@@ -1,0 +1,38 @@
+id: rule.vehicles.target-wastelands-space-travel
+record_type: rule
+name: "Target: Wastelands Spacecraft Travel"
+domain: vehicles
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, page: 129, pdf_page: 130, basis: defines}
+departure_and_arrival:
+  safe_launch_zone: "10 minutes from a station before beginning a long-distance launch."
+  attitude_change: "Beginning or ending a long-distance run requires 15 seconds / 5 Combat Turns to change attitude and pitch; Maneuver Score is -10 during the change."
+braking:
+  space: "Safe deceleration equals Acceleration rating."
+  ordinary_vehicle_reference: "Normal vehicle safe deceleration is Acceleration x 4."
+speed_and_stress:
+  stress_exception: "Spacecraft in flight do not incur Stress merely for exceeding Speed or Acceleration ratings."
+  over_1_5_speed: "More than 1.5 times Speed rating increases the applicable modifier to +4."
+  over_2_5_speed: "A character cannot pilot above 2.5 times Speed rating; autonav takes over."
+long_distance_space_travel_hours:
+  "Earth surface -> LEO": 2
+  "Earth surface -> GEO": 12
+  "LEO -> Earth surface": 1
+  "LEO -> LEO": "1D6"
+  "LEO -> GEO": 8
+  "GEO -> Earth surface": 2
+  "GEO -> LEO": 2
+  "GEO -> GEO": "2D6"
+  "LEO/GEO -> L1": 12
+  "LEO/GEO -> L3/L4/L5": 36
+  "LEO/GEO/L4/L5 -> Moon or L2": "72 or 84"
+  "L1 -> L4/L5": 12
+  "L1 -> L3": 36
+  "L1 -> Moon or L2": "60 or 72"
+  "L3 -> L4/L5": 24
+  "L3 -> Moon or L2": "84 or 96"
+return_note: "Unless otherwise noted, return travel time is the same."
+sources:
+  - {source: source.fanpro-10653, page: 129, pdf_page: 130, relation: defines}
+notes:
+  - "Random travel times depend on destination where the table marks them."
