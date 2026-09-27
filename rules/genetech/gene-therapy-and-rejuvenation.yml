@@ -1,0 +1,62 @@
+id: rule.genetech.gene-therapy-and-rejuvenation
+record_type: rule
+name: "Gene Therapy and Age Rejuvenation"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, pages: "26-27", basis: defines}
+gene_therapy:
+  environment: "Patient remains inert on life support in a vat of DNA-vector solution."
+  neural_treatment: "10 minutes per month of therapy; patient unconscious with sensory stimulus minimized during neural treatment."
+  minimum_whole_body: {duration: "2 months", cost: "50,000¥"}
+  restore_existing_genetic_pattern: {minimum_duration: "1 month", minimum_cost: "30,000¥"}
+applications:
+  genetic_correction:
+    treatment_time: "6 months"
+    bio_index: "0.2-0.5"
+    cost: "60,000¥"
+    availability: "6/21 days"
+    street_index: 2
+    legality: Legal
+  augmented_healing:
+    effects:
+      - "Heals all remaining boxes on Condition Monitor even after magical healing."
+      - "Healing time is halved."
+      - "Can restore damaged organs and regrow severed limbs; use SR3 Body Part Types timing."
+    implants: "May be used with cyberware/bioware via tailored nanites; +25% cost, same time; cannot repair implants."
+    treatment_time: Special
+    bio_index: null
+    cost: "2,500¥ per week"
+    availability: "6/21 days"
+    street_index: 2
+    legality: Legal
+  cellular_repair:
+    effects:
+      - "Repairs otherwise irreparable somatic damage including permanent neurotoxin effects, physical Flaws, and Attribute loss from disease/trauma."
+      - "May reverse boosted reflexes cyberware effects."
+    treatment_time: "6 months"
+    bio_index: null
+    cost: "50,000¥"
+    availability: "6/21 days"
+    street_index: 2
+    legality: Legal
+age_rejuvenation:
+  result: "Restores physical age to approximately 21."
+  base_time: "1 month for true age 40 or less; +2 weeks per decade above 40."
+  maintenance: "Every 6 months for 3 years."
+  repeat_limit: "Finite; repeated treatments eventually cause systemic overshock/shutdown, exact limit not numerically fixed."
+  rejuvenative_treatment:
+    treatment_time: "3+ months"
+    bio_index: 1
+    cost: "2,000,000¥"
+    availability: "8/30 days"
+    street_index: 2.5
+    legality: Legal
+  maintenance_session:
+    treatment_time: "1 month"
+    bio_index: null
+    cost: "100,000¥"
+    availability: "8/30 days"
+    street_index: 2.5
+    legality: Legal
+sources:
+  - {source: source.fanpro-10664, page: 26, relation: defines}

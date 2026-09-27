@@ -1,0 +1,40 @@
+id: rule.genetech.general-and-compatibility
+record_type: rule
+name: "Genetech General Rules and Compatibility"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, page: 25, basis: defines}
+general:
+  multiple_procedures:
+    rule: "Multiple genetic procedures may be performed at once."
+    cost: "Monetary and Bio Index costs accumulate."
+    duration: "Use only the longest individual treatment duration."
+  nature: "Genetech modifications count as natural rather than augmented."
+  bio_index: "Assigned where the modification changes the body sufficiently."
+prenatal:
+  duration: "Half normal."
+  cost: "75% of normal."
+  exclusion: "Does not apply to gengineered substances."
+  chargen: "GM may allow this discount for starting characters whose background establishes prenatal modification."
+ritual_samples:
+  aura: "DNA alteration gradually changes aura/magical signature; after completion the subject remains astrally recognizable as the same person."
+  linking_penalty: "+1 TN to Linking Test per 0.2 Bio Index accrued from genetic engineering, maximum +4."
+cyberware_bioware_precedence:
+  rule: "Where a genetic modification conflicts with an implant, genetech effects take precedence as natural to the body."
+compatibility:
+  augmented_healing: "Cost +25% if character has cyberware or bioware."
+  cellular_repair: "Incompatible with boosted reflexes."
+  age_rejuvenation: "Cost +25% if character has cyberware or bioware, as augmented healing."
+  phenotypic_alteration: "Specific changes may conflict with organ replacements such as cyberlimbs, cybereyes, orthoskin, etc."
+  cold_microadaptation: "Incompatible with boosted reflexes, metabolic arrestor, heat microadaptation."
+  heat_microadaptation: "Incompatible with boosted reflexes, dermal sheathing/plating, orthoskin, suprathyroid gland, cold microadaptation."
+  angiotensin_synthesis:
+    - "Incompatible with muscle replacement and metabolic arrestor."
+    - "Effects negated with more than two cyberlimbs."
+  calcitonin_synthesis:
+    - "Incompatible with muscle replacement, flex hands, platelet factory."
+    - "Effects negated with more than two cyberlimbs."
+  erythropoietin_synthesis: "Incompatible with muscle replacement."
+  glucagon_synthesis: "Incompatible with suprathyroid gland."
+sources:
+  - {source: source.fanpro-10664, page: 25, relation: defines}

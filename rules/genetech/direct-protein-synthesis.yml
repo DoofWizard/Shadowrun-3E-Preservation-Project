@@ -1,0 +1,45 @@
+id: rule.genetech.direct-protein-synthesis
+record_type: rule
+name: "Direct Protein Synthesis"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, pages: "27-28", basis: defines}
+general:
+  onset: "Typically reaches full effectiveness about one month after treatment unless structural changes require longer."
+proteins:
+  angiotensin:
+    effect: "After a Deadly Physical wound, additional damage from blood loss/shock accrues at 1 box every (Body x 2) Combat Turns."
+    treatment_time: "2 months"
+    bio_index: 0.3
+    cost: "40,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+  calcitonin:
+    effects:
+      - "+1 Body for Damage Resistance Tests."
+      - "Bones normally do not break; Barrier rating 6."
+    treatment_time: "4 months"
+    bio_index: 0.4
+    cost: "60,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: "6P-N"
+  erythropoietin:
+    effect: "+2 dice for all Athletics Tests."
+    treatment_time: "2 months"
+    bio_index: 0.4
+    cost: "40,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+  glucagon:
+    effect: "Double all listed times when dealing with fatigue effects under SRComp p.47."
+    treatment_time: "2 months"
+    bio_index: 0.3
+    cost: "40,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+sources:
+  - {source: source.fanpro-10664, pages: "27-28", relation: defines}

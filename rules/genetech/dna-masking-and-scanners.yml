@@ -1,0 +1,27 @@
+id: rule.genetech.dna-masking-and-scanners
+record_type: rule
+name: "DNA Masking and DNA Scanners"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, page: 28, basis: defines}
+masking:
+  opposed_test: "DNA Masking rating vs DNA Scanner rating."
+  tie: "Scanner indicates additional identification by other methods is required."
+  treatment_time: "3 weeks + 1 week per masking level."
+  levels:
+    - {level: "1-3", bio_index: 0, cost: "7,500¥ x Level", availability: "8/14 days", street_index: 3, legality: "2-Z"}
+    - {level: "4-6", bio_index: 0.1, cost: "10,000¥ x Level", availability: "10/21 days", street_index: 3, legality: "2-Z"}
+    - {level: "7-9", bio_index: 0.1, cost: "15,000¥ x Level", availability: "14/21 days", street_index: 3, legality: "2-Z"}
+    - {level: "10+", bio_index: 0.2, cost: "20,000¥ x Level", availability: "18/28 days", street_index: 3, legality: "2-Z"}
+scanning:
+  masked_scan_time: "Minutes equal to scanner rating; reduce by scanner's excess successes if scanner wins opposed test."
+  ordinary_scan_time: "1 minute if no unregistered DNA alterations."
+  legal_status: "Scan may support detention/investigation but is not admissible prosecution evidence without proper sampling/laboratory testing."
+models:
+  - {name: "Sony ScanBuddy 2062", rating: 2, cost: "1,000¥", availability: Always, street_index: 1, legality: "8P-U"}
+  - {name: "Yakashima Gentest Pro", rating: 3, cost: "1,500¥", availability: Always, street_index: 1, legality: "6P-U"}
+  - {name: "Genexpress Assaymatic 5131", rating: 5, cost: "2,500¥", availability: "6/14 days", street_index: 1, legality: "5P-U"}
+  - {name: "Universal Omnitech GSC-15", rating: 7, cost: "3,500¥", availability: "10/21 days", street_index: 2, legality: "5P-V"}
+  - {name: "Cross Biomedical Ident Deluxe", rating: 9, cost: "4,500¥", availability: "12/1 mo.", street_index: 2, legality: "5P-V"}
+sources:
+  - {source: source.fanpro-10664, page: 28, relation: defines}

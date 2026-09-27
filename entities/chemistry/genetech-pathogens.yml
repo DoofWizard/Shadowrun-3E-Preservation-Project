@@ -1,0 +1,48 @@
+id: catalog.chemistry.genetech-pathogens
+record_type: entity_catalog
+name: "Genetech Pathogens"
+domain: chemistry
+status: ingested
+source: source.fanpro-10664
+page: 30
+entries:
+  - id: entity.chemistry.gamma-anthrax
+    name: "Gamma-Anthrax"
+    exposure:
+      test: "Unaugmented Body vs Power 8."
+      infection: "6+ successes avoids infection; otherwise successes equal incubation period in days."
+    progression:
+      - "After incubation, remove 1 box from maximum of both Condition Monitors every 6 hours."
+      - "Death occurs if Condition Monitors are reduced to zero."
+      - "Every 24 hours infection persists: pathogen Power +1 for treatment resistance and cumulative +1 TN to all actions."
+    diagnosis: "2 successes on Biotech (6); fewer give clues, more suggest remedies."
+    treatment: "Susceptible to antibac; after defeat, removed boxes heal as normal combat wounds."
+    vector: "air, contact, injection"
+    cost: "1,250¥/dose"
+    availability: "16/30 days"
+    street_index: 5
+    legality: "2Z"
+  - id: entity.chemistry.ebola-plus
+    name: "Ebola Plus"
+    aliases: ["Strain 74B-3"]
+    exposure:
+      test: "Unaugmented Body (8)."
+      infection: "6+ successes avoids infection for that exposure; while exposed, repeat Body (8) each minute."
+    progression:
+      - "24h after exposure: resist 5L with unaugmented Body."
+      - "Day 2: 8M."
+      - "Day 3: 8M."
+      - "Day 4: 8S."
+      - "Day 5: 8S."
+      - "Day 6: 8D."
+      - "Damage cannot heal until virus is eliminated."
+      - "If survivor heals without magic or cellular-repair therapy, permanent Body -2; later genetic therapy may repair this loss."
+    treatment: "Zeta-interferon functions at half normal strength, round down."
+    diagnosis: "Biotech (6); fewer than 3 successes may misidentify normal Ebola; total failure often indicates influenza or unknown viral attack."
+    vector: "air, contact, injection"
+    cost: "5,000¥/dose"
+    availability: "20/30 days"
+    street_index: 6
+    legality: "1Z"
+sources:
+  - {source: source.fanpro-10664, page: 30, relation: defines}

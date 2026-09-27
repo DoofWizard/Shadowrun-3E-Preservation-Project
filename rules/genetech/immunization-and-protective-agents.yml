@@ -1,0 +1,51 @@
+id: rule.genetech.immunization-and-protective-agents
+record_type: rule
+name: "Genetic Immunization and Protective Agents"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, pages: "29-30", basis: defines}
+immunization:
+  development: "Treatment is instantaneous; immunity develops fully after 1 month."
+  ordinary_exposure: "Complete resistance to normal doses of chosen compound."
+  excessive_exposure: "GM determines threshold; compound Power is halved (round down)."
+  similar_compounds: "GM may allow protection, perhaps halving Power."
+  limit: "Maximum number of immunizations equals unmodified Body (exclude racial, cyberware, bioware modifiers)."
+  permanence: true
+  fast_compound_limit: "Not available for neurotoxins or compounds with Speed Immediate; use cellular-repair gene therapy instead."
+  bio_index: 0.1
+  cost: "7,500¥"
+  availability: "6/18 days"
+  street_index: 2
+protective_agents:
+  antibac:
+    target: "bacteria/disease"
+    preinfection: "Subtract agent rating from TN of Body Tests for infection and/or from infection Power for Damage Resistance; Power <=0 grants immunity."
+    postinfection: "Halve side effects; subtract rating from infection Power for Damage Resistance; if damage becomes none, infection eliminated."
+    duration: "24 hours"
+    verification: "After 24h, Biotech Test vs original infection Power may determine success."
+    pricing:
+      - {rating: "1-3", cost: "500¥ x rating", availability: "2/24 days", street_index: 2, legality: Legal}
+      - {rating: "4-6", cost: "1,000¥ x rating", availability: "2/24 days", street_index: 2, legality: Legal}
+      - {rating: "7-9", cost: "1,500¥ x rating", availability: "4/24 days", street_index: 2, legality: Legal}
+      - {rating: "10+", cost: "2,500¥ x rating", availability: "6/24 days", street_index: 2, legality: Legal}
+  zeta_interferon:
+    target: "viruses"
+    mechanics: "Same timing/effect structure as antibac."
+    pricing:
+      - {rating: "1-3", cost: "400¥ x rating", availability: Always, street_index: 2, legality: Legal}
+      - {rating: "4-6", cost: "800¥ x rating", availability: "2/48 days", street_index: 2, legality: Legal}
+      - {rating: "7-9", cost: "1,200¥ x rating", availability: "4/48 days", street_index: 2, legality: Legal}
+      - {rating: "10+", cost: "2,000¥ x rating", availability: "6/48 days", street_index: 2, legality: Legal}
+  binder:
+    target: "one specific toxin chosen when purchased"
+    before_speed: "Complete immunity."
+    after_speed: "Halve toxin effects and protect against continued exposure."
+    continued_exposure: "Subtract binder rating from toxin Power and reduce Damage Level by one; Power <=0 grants immunity."
+    duration: "1 hour"
+    pricing:
+      - {rating: "1-3", cost: "300¥ x rating", availability: Always, street_index: 2, legality: Legal}
+      - {rating: "4-6", cost: "600¥ x rating", availability: "2/48 days", street_index: 2, legality: Legal}
+      - {rating: "7-9", cost: "900¥ x rating", availability: "4/48 days", street_index: 2, legality: Legal}
+      - {rating: "10+", cost: "1,500¥ x rating", availability: "6/48 days", street_index: 2, legality: Legal}
+sources:
+  - {source: source.fanpro-10664, pages: "29-30", relation: defines}

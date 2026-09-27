@@ -1,0 +1,72 @@
+id: rule.genetech.phenotypic-and-environmental-modification
+record_type: rule
+name: "Phenotypic Alteration and Environmental Microadaptation"
+domain: genetech
+status: ingested
+effective: {status: current, source: source.fanpro-10664, pages: "26-27", basis: defines}
+phenotypic_alteration:
+  attribute_limits:
+    rule: "May increase Racial Modified Limit for Body, Strength and/or Quickness by 1."
+    separate_treatment: true
+    once_per_attribute: true
+    major_change: true
+    attribute_maximum: "New Racial Modified Limit x 1.5, round up."
+    attribute_rating: "Actual attribute is not increased."
+  minor:
+    examples: "eye color, etc."
+    treatment_time: "4 months"
+    bio_index: 0.1
+    cost: "50,000¥"
+    availability: "5/21 days"
+    street_index: 2
+    legality: Legal
+  major:
+    examples: "height, weight, non-metatype-natural changes"
+    treatment_time: "6 months"
+    bio_index: 0.5
+    cost: "65,000¥"
+    availability: "5/21 days"
+    street_index: 2
+    legality: Legal
+microadaptations:
+  cold:
+    effects:
+      - "+2 dice to resist cold-related damage."
+      - "-2 TN modifier to cold-environment Survival Tests."
+    treatment_time: "3 months"
+    bio_index: 0.4
+    cost: "60,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+  heat:
+    effects:
+      - "+2 dice to resist heat damage; does not protect against burning."
+      - "-2 TN modifier to hot-environment Survival Tests."
+    treatment_time: "3 months"
+    bio_index: 0.3
+    cost: "60,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+  low_oxygen:
+    effects:
+      - "For holding breath, each Athletics success increases duration by 10 Combat Turns rather than 3."
+      - "At normal oxygen levels subject suffers hyperoxia; treat as oxygen toxicity per Cannon Companion p.109."
+    treatment_time: "2 months"
+    bio_index: 0.3
+    cost: "50,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+  pollution:
+    effects:
+      - "+3 Body dice to resist chemical attacks from pollutants, heavy metals and related toxins."
+    treatment_time: "2 months"
+    bio_index: 0.2
+    cost: "50,000¥"
+    availability: "6/30 days"
+    street_index: 2
+    legality: Legal
+sources:
+  - {source: source.fanpro-10664, pages: "26-27", relation: defines}
