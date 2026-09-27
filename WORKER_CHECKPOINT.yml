@@ -1,15 +1,13 @@
 phase: pass_b
-active_source: source.fanpro-10652
-source_status: blocked_source_gap
+active_source: source.fanpro-10651
+source_status: queued
 completed_through:
-  printed_page: 120
-  pdf_page: 118
-resume_at:
-  mode: source_gap
-  pending_id: pending.source10652.missing-p110-111
-  printed_page: 110
+  printed_page: null
   pdf_page: null
-last_commit: 125be7fdb7e6a3149277ba3b0cd24b2629ea35cd
+resume_at:
+  printed_page: 1
+  pdf_page: 1
+last_commit: __SELF__
 open_conflicts:
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
@@ -22,7 +20,6 @@ open_conflicts:
   - pending.sona.ucas-p165-177
   - pending.sona.ute-p178-187
 next_sources:
-  - source.fanpro-10651
   - source.fanpro-10650
   - source.fanpro-10654
   - source.fanpro-10665
@@ -44,8 +41,13 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - all available numbered Threats 2 pages are scanned and normalized
-  - only printed pp.110-111 remain unresolved because they are absent from this source PDF
-  - attempt to recover an alternate corpus copy before declaring the gap irrecoverable
-  - do not infer missing-page contents
-  - preserve printed/PDF provenance and capture every rules-bearing item
+  - Threats 2 available content is fully normalized; printed pp.110-111 remain a source-copy gap
+  - begin source.fanpro-10651 next
+  - preserve pending.source10652.missing-p110-111 until a replacement source copy is supplied or discovered
+  - use directed scan for late-SR3/FanPro sources
+  - deep-scan all rules-bearing sections
+  - preserve provenance
+  - do not infer supersession
+  - reuse canonical IDs
+  - commit bounded semantic slices
+  - continue automatically
