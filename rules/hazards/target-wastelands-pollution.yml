@@ -1,0 +1,27 @@
+id: rule.hazards.target-wastelands-pollution
+record_type: rule
+name: "Target: Wastelands Acid Rain and Air Pollution"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "109-110", pdf_pages: "110-111", basis: defines}
+acid_rain:
+  ordinary: "Creatures without relevant immunity are treated as having the equivalent of a Mild allergy; while exposed they take +1 to all target numbers."
+  hard_rain: "The penalty may rise to +2 and prolonged exposure may cause skin injury."
+  protection: "Protective clothing negates the ordinary exposure effect."
+air_pollution:
+  power: "1D6"
+  base_effect: "Moderate Stun"
+  speed: "30 minutes"
+  protection:
+    breathing_masks_and_filters: "reduce Power by rating"
+    respirators_and_self_contained_air: "negate exposure"
+  recovery: "Resulting Stun heals at the Physical-damage healing rate and only while breathing clean air."
+links:
+  uses: [rule.hazards.diseases-and-toxins]
+  affects: [rule.condition.condition-monitor]
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.fanpro-10653, pages: "109-110", pdf_pages: "110-111", relation: extends}
+notes:
+  - "These are source-specific environmental hazard procedures."
