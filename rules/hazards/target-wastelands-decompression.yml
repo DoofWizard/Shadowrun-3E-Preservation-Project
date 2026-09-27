@@ -1,0 +1,30 @@
+id: rule.hazards.target-wastelands-decompression
+record_type: rule
+name: "Target: Wastelands Decompression"
+domain: hazards
+status: ingested
+context: "fictional tabletop RPG mechanic"
+effective: {status: source_specific, source: source.fanpro-10653, page: 127, pdf_page: 128, basis: defines}
+
+exposure:
+  action_modifier: "+2 to all actions."
+  damage_track: "1 box Stun per Combat Turn; after the Stun track is filled, 1 box Physical per Combat Turn."
+  unconsciousness: "After the third exposed Combat Turn, test Willpower (6 + damage modifiers) at the end of each Combat Turn; failure causes unconsciousness."
+  air_supply: "Holding breath or an internal air supply delays that Willpower test until four Combat Turns after the air supply is exhausted."
+  implant_stress: "At gamemaster option, 1 Stress Point per Combat Turn may be applied to implants."
+
+suit_leaks:
+  puncture_test: "When a spacesuit wearer takes a hit capable of Physical damage, make a second Success Test versus TN 6 using dice by Damage Level: L 1, M 3, S 6, D 10."
+  punctures: "Any success breaches the suit; each success equals one puncture."
+  patch_in_combat: "Complex Action and Quickness (6), one hole at a time."
+  patch_out_of_combat: "Automatic, one minute."
+
+hull_breaches:
+  barrier_rating: 8
+  ejection_test: "Strength (4), +1 target number per additional half-meter of breach."
+  timing: "Decompression effects begin at the start of the next Combat Turn."
+
+sources:
+  - {source: source.fanpro-10653, page: 127, pdf_page: 128, relation: defines}
+notes:
+  - "Fictional environmental-hazard rules; linked baseline Barrier and damage procedures remain authoritative for their own subsystems."
