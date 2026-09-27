@@ -1,0 +1,39 @@
+id: rule.hazards.target-wastelands-survival-test
+record_type: rule
+name: "Target: Wastelands Survival Test"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "105-108", pdf_pages: "106-109", basis: defines}
+procedure:
+  frequency: "once per day in wilderness conditions"
+  skill: entity.skill.wilderness-survival
+  terrain_target_numbers: {arctic_or_antarctic: 8, desert: 6, forest: 4, jungle: 5, low_mountains_or_foothills: 5, high_mountains: 6, plains: 4, swamp: 5, tundra: 5}
+  modifiers:
+    - {condition: "full camping/survival gear", tn: -2}
+    - {condition: "partial camping/survival gear", tn: -1}
+    - {condition: "rations available", tn: -2}
+    - {condition: "no food or water", tn: 1}
+    - {condition: "heat/climate control available", tn: -1}
+    - {condition: "inappropriate clothing/armor", tn: "+1 to +4"}
+    - {condition: "extended travel/exertion", tn: "+1 to +4"}
+    - {condition: "toxic terrain", tn: "+2 to +4"}
+    - {condition: "poor weather", tn: 1}
+    - {condition: "terrible weather", tn: 2}
+    - {condition: "extreme weather", tn: 4}
+    - {condition: "unfavorable season", tn: 2}
+    - {condition: "Body 6-12", tn: -1}
+    - {condition: "Body 13+", tn: -2}
+    - {condition: "injured", tn: "+Wound Modifier"}
+  exposure_roll: "Roll 1D6, or 2D6 for extremely hazardous conditions, and subtract test successes; the remainder is exposure fatigue."
+  recovery: "Exposure fatigue cannot be recovered until the character is out of the survival situation and has rested 8 hours."
+  group_test: "One primary character tests; helpers with the skill make complementary tests, half their successes rounded down apply; add 1 to the exposure roll for each additional group member and divide the result evenly, assigning remainders from lowest Body."
+  optional_stress: "The result may be assigned as Stress Points using Man & Machine stress procedures."
+links:
+  uses: [entity.skill.wilderness-survival, rule.tests.success-test, rule.damage.stress-points]
+  affects: [rule.condition.condition-monitor]
+  modified_by: []
+  interacts_with: [rule.hazards.target-wastelands-polar-survival]
+sources:
+  - {source: source.fanpro-10653, pages: "105-108", pdf_pages: "106-109", relation: defines}
+notes:
+  - "The individual Body modifier does not apply to group tests."
