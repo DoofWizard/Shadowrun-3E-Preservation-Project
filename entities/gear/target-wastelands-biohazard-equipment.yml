@@ -1,0 +1,41 @@
+id: catalog.gear.target-wastelands-biohazard-equipment
+record_type: entity_catalog
+name: "Target: Wastelands Biohazard Equipment"
+domain: gear
+status: ingested
+source: source.fanpro-10653
+pages: "112-113"
+entries:
+  - id: entity.gear.air-filter
+    name: "Air Filter"
+    source_page: 113
+    properties: {concealability: 6, weight_kg: 1, availability: "2/24 hrs", cost_nuyen: "Rating x 50", street_index: 1, legality: "Legal"}
+    rules: "Breather filter for particulates; extra filters cost Rating x 10 nuyen. Does not stop gaseous compounds such as Neuro-Stun."
+  - id: entity.gear.bio-analyzer
+    name: "Bio-Analyzer"
+    source_page: 113
+    properties: {concealability: 5, weight_kg: 2, availability: "2/24 hrs", cost_nuyen: 100, street_index: 1, legality: "Legal"}
+    rules: "Handheld biosampling computer; detects most known biohazards within 50 meters, radiation and airborne toxins/pathogens, and can analyze biological samples."
+  - id: entity.gear.film-badge
+    name: "Film Badge"
+    source_page: 113
+    properties: {concealability: 10, weight_kg: 0, availability: "3/24 hrs", cost_nuyen: 5, street_index: 1.5, legality: "Legal"}
+    rules: "Single-use chemical badge that changes color under hazardous radiation."
+  - id: entity.gear.geiger-counter
+    name: "Geiger Counter"
+    source_page: 113
+    properties: {concealability: 5, weight_kg: 2, availability: "3/24 hrs", cost_nuyen: 50, street_index: 1, legality: "Legal"}
+    rules: "Detects radioactivity within 10 meters and reports amount."
+  - id: entity.gear.rad-suit
+    name: "Rad-Suit"
+    source_page: 113
+    properties: {concealability: null, weight_kg: 10, availability: "8/2 wks", cost_nuyen: 5000, street_index: 1.5, legality: "Legal"}
+    rules:
+      - "Protects completely against radiation up to 1 rad per minute; above that rate subtract 1 rad per minute from exposure."
+      - "Maximum armor value is Ballistic 1 / Impact 1."
+      - "Any attack that inflicts damage breaches the suit."
+      - "Bulky construction imposes -1 Quickness for all actions."
+sources:
+  - {source: source.fanpro-10653, pages: "112-113", pdf_pages: "113-114", relation: defines}
+notes:
+  - "Preserves the source's equipment statistics without inferring replacement of earlier gear."
