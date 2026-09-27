@@ -1,0 +1,40 @@
+id: catalog.medical.target-wastelands-magical-diseases
+record_type: entity_catalog
+name: "Target: Wastelands Magical Diseases"
+domain: medical
+status: ingested
+source: source.fanpro-10653
+pages: "110"
+
+entries:
+  - id: entity.medical.aura-deficiency-syndrome
+    name: "Aura Deficiency Syndrome"
+    kind: "viral magical disease"
+    transmission: "physical contact"
+    onset: "24 hours"
+    power: "variable, commonly 2 for weak strains through 6+ for stronger strains"
+    resolution:
+      - "Every 24 hours, make a Body Success Contest against disease Power."
+      - "Three or more net successes by the victim eliminate the disease; fewer have no effect and the contest repeats after 24 hours."
+      - "Every 2 net successes accumulated by the infection impose -1 die on Resistance Tests against magic."
+      - "If available resistance dice fall to zero or less, the victim cannot make magical Resistance Tests."
+      - "At 15 total net infection successes the loss of magical Resistance Tests becomes permanent."
+    magic:
+      - "Cure Disease and Prophylaxis use double the infection Power."
+      - "Astral Perception notices the affected aura with 1 success and diagnoses ADS with 3 or more successes."
+  - id: entity.medical.mana-active-aura-deficiency-syndrome
+    name: "Mana-Active Aura Deficiency Syndrome"
+    kind: "viral magical disease"
+    transmission: "direct contact between dual-natured beings, including an Awakened character using astral perception"
+    onset: "24 hours"
+    resolution:
+      - "Every 24 hours, make an Essence Success Contest against disease Power."
+      - "Three or more net successes by the victim eliminate the disease."
+      - "For every 2 net infection successes, reduce effective Essence or Magic by 1 for Magical Skills, adept powers and critter powers; actual ratings do not change."
+      - "At effective Essence or Magic zero or less, magical abilities cannot be used."
+      - "At 20 total net infection successes, magical abilities are permanently lost; affected paranormal critters die."
+sources:
+  - {source: source.fanpro-10653, page: 110, pdf_page: 111, relation: defines, note: "Game Information - Magical Diseases"}
+notes:
+  - "These are fictional Shadowrun diseases and their tabletop mechanics."
+  - "No real-world medical interpretation is intended."
