@@ -1,0 +1,33 @@
+id: rule.spirits.master-shedim-inhabitation
+record_type: rule
+name: "Master Shedim Inhabitation and Regeneration"
+domain: spirits
+status: ingested
+scope:
+  applies_to: [entity.spirit.master-shedim]
+resolution:
+  dead_vessel_restoration:
+    test: "When inhabiting a dead vessel, resolve the source's Force plus Spirit Energy test and count successes."
+    three_successes: "The corpse regenerates to full health."
+    two_successes: "The restored body has 1D6 Physical Flaws."
+    one_success: "The restored body has 1D6 Physical Flaws and 1D6 Mental Flaws."
+    flaws: "Choose flaws appropriate to the spirit and resurrected vessel; the source cites examples from the standard flaws rules and permits custom lingering defects."
+  banishment: "If the master shedim is banished from an inhabited corpse, the body immediately returns to its pre-inhabitation condition and is dead again."
+  living_vessels: "Master shedim may also inhabit living vessels under the standard shedim inhabitation rules referenced by the source."
+  memories_and_identity:
+    - "The spirit absorbs the previous inhabitant's memories and personality when it inhabits a living or dead vessel."
+    - "It inherits the vessel identity's skills, Edges, Flaws, personality quirks, likes and dislikes."
+    - "Magical skills and magical abilities are not inherited."
+    - "A master shedim with an independently available magical ability may use that ability normally; the source gives Sorcery as an example."
+    - "The spirit can use the body's implants, although the source notes that shedim generally dislike low-Essence vessels."
+    - "The inherited personality is not in control; it functions as a convincing identity while the spirit's own nature, goals and desires remain."
+    - "Fragments of one vessel's memories or personality may persist after the spirit moves to another vessel."
+links:
+  affects:
+    - entity.spirit.master-shedim
+  interacts_with:
+    - rule.spirits.spirit-energy
+sources:
+  - {source: source.fanpro-10652, page: 54, pdf_pages: "54", relation: defines}
+notes:
+  - "This record captures only the master-shedim changes stated in Threats 2; the underlying standard shedim Inhabitation procedure is referenced to Year of the Comet rather than restated or inferred."
