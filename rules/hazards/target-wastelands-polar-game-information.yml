@@ -1,0 +1,45 @@
+id: rule.hazards.target-wastelands-polar-game-information
+record_type: rule
+name: "Target: Wastelands Polar Hazards and Travel"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "121-124", pdf_pages: "122-125", basis: defines}
+cold_and_warmth:
+  exposure: "The gamemaster may assign Stun for unsuitable clothing or inadequate water."
+  bulky_clothing: "Cold-weather gear may impose +1 or +2 target-number modifiers to manual-dexterity or movement tasks."
+sunburn_and_glare:
+  snow_glare: "Characters without vision protection suffer glare penalties; extended exposure may cause temporary snow blindness."
+  sunburn: "Long unprotected exposure may inflict 4L."
+  antarctic_background_exposure: "Characters spending time outdoors in Antarctica accumulate 1 rad per month."
+frostbite:
+  trigger: "After a Serious or Deadly wound from extreme cold, make a separate Body Test."
+  target_number: {serious: 4, deadly: 6}
+  outcomes:
+    zero_successes: "One limb requires amputation."
+    one_success: "One extremity such as a toe, finger, ear or nose tip is lost."
+    two_or_more: "No permanent frostbite loss."
+foot_travel:
+  snow_or_ice: "Treat as Difficult Ground; movement may be reduced by half or more."
+  slippery_ice: "Quickness (6) may be required to avoid falling."
+  hidden_crevasse: "Perception (8) to notice a snow-concealed crevasse before falling."
+snowstorms:
+  visibility: "Use Light/Heavy Rain Perception modifiers as appropriate; severe whiteouts may impose +8."
+  ultrasound: "Halves the visual modifier."
+  astral: "Apply half the visibility modifier, rounded down."
+  hearing: "+2 to +4 to hearing-based Perception Tests."
+  movement: "May be reduced by half or more."
+  gusts: "Body (8) may be required to avoid knockdown."
+polar_vehicle_rules:
+  stress: "1 Stress Point per day of operation; appropriate Arctic hostile-environment adaptation reduces this to 1 per week."
+  ground_handling: "+1 on hard-packed snow through +4 on chopping ice; hitting an ice sheet may call for an immediate Crash Test."
+  aircraft: "Snow/ice takeoffs and landings require double normal distance and always call for a Driving Test; ski-skids give -2 to takeoff/landing tests."
+polar_magic:
+  nature_spirits: "Polar wastes generally use desert spirits; sky and mountain spirits may apply, and ice fields/glaciers may count as lake-spirit domains at gamemaster discretion."
+  white_nights: "Summoned nature spirits remain until the next sunrise or sunset even when that is weeks away."
+  antarctic_mana: "Antarctica is under mana-surge effects; the gamemaster determines duration/intensity, with once per day given as a general rolling cadence."
+  aurora_polaris: "Auroras are mana flares with Force 1D6-3 and can form astral rifts."
+  arctic_gathering: "Gathering Test target numbers for metal and herbal materials are 10+."
+sources:
+  - {source: source.fanpro-10653, pages: "121-124", pdf_pages: "122-125", relation: defines}
+notes:
+  - "This formalizes the Game Information mechanics beyond the earlier directed polar-survival guidance."
