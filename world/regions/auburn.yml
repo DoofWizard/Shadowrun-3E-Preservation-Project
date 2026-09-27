@@ -1,0 +1,31 @@
+id: world.region.auburn
+record_type: world
+name: "Auburn"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "11206"
+  size_sq_km: 363
+  population: 218000
+  population_mix: {Human: "64%", Elf: "12%", Dwarf: "2%", Ork: "19%", Troll: "2%", Other: "1%"}
+  hospitals_and_clinics: 17
+  major_corp_facilities: ["Bowman Metal Works","Federated-Boeing","United Oil"]
+  major_gangs: []
+lone_star_security_ratings:
+  AA: ["Auburn","Lake Wilderness"]
+  A: ["Algona (some areas)","Berrydale (some areas)","Pacifico (some areas)"]
+  B: ["Algona (some areas)","Berrydale (some areas)","Covington","Enumclaw (some areas)","Georgetown","Maple Valley","Pacifico (some areas)","Sumner (some areas)","Timberlane"]
+  C: ["Black Diamond","Enumclaw (some areas)","Sumner (some areas)"]
+  D: ["Boise"]
+sites:
+  federated_boeing_auburn:
+    security:
+      - "Entire facility benefits from relative isolation and heavy security."
+      - "Visitors require passes even through main gates; security checkpoints are distributed throughout."
+    matrix_note: "Classified corporate data kept in cold vaults in individual labs; physical penetration may be required before computer access."
+  ultra_resort:
+    access: "Membership by invitation; island access by chartered helicopters."
+    security: "Roadways controlled by checkpoints; isolated from the Matrix according to source commentary."
+sources:
+  - {source: source.fanpro-10657, pages: "52-54", pdf_pages: "53-55", relation: defines_world_state}

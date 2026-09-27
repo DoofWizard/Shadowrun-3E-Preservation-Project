@@ -1,0 +1,43 @@
+id: world.region.fort-lewis
+record_type: world
+name: "Fort Lewis"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "22206"
+  size_sq_km: 197
+  population: 98000
+  population_mix: {Human: "61%", Elf: "14%", Dwarf: "3%", Ork: "16%", Troll: "3%", Other: "3%"}
+  hospitals_and_clinics: 4
+  major_corp_facilities: []
+  major_gangs: []
+jurisdiction:
+  security_actors: ["Lone Star","Metroplex Guard","UCAS Military Police"]
+  rule: "Metroplex Guard and UCAS Military Police consider each area one security rating higher than Lone Star's rating."
+lone_star_security_ratings:
+  AA: ["Spanaway Lake Housing (Officer Housing)"]
+  A: ["Bridgeport","Grey and Madigan Housing (military housing)","Parkland (non-military housing)"]
+sites:
+  urban_combat_simulator:
+    address: "213 West Outer Drive"
+    operator: "UCAS Army"
+    purpose: "State-of-the-art urban warfare leadership/combat readiness simulator."
+    security:
+      - "Spacefleet HQ has extremely tight security."
+      - "Only personnel with Top Secret or higher clearance permitted."
+      - "Entrances guarded by MPs with real ammunition."
+      - "Virtual-machine links loaded with black IC."
+  mcchord_air_field:
+    profile: "Originally separate Air Force installation, rolled into Fort Lewis; heavy troop/equipment operations."
+    security: "Access tightened after arrival of RE-24C electronic surveillance aircraft."
+  fort_lewis_zoological_gardens:
+    access:
+      - "Much of the zoo is public."
+      - "Restricted sections require military/research high-security clearances."
+    security:
+      - "Restricted compound guarded by manned patrols and sentry guns."
+      - "Nature trails use proximity sensors; off-trail movement can trigger ultrasonic emitters, aerosol dispensers and remote-control transmitters for embedded pain-receptor chips."
+    research: "Breeding and paranormal-animal research; some animals supplied to NAN buyers."
+sources:
+  - {source: source.fanpro-10657, pages: "55-57", pdf_pages: "56-58", relation: defines_world_state}

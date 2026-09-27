@@ -1,0 +1,41 @@
+id: world.region.renton
+record_type: world
+name: "Renton"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "16206"
+  size_sq_km: 259
+  population: 218000
+  population_mix: {Human: "65%", Elf: "10%", Dwarf: "2%", Ork: "20%", Troll: "1%", Other: "2%"}
+  hospitals_and_clinics: 13
+  major_corp_facilities: ["Federated-Boeing","Knight Errant"]
+  major_gangs: ["Blood Mountain Boys","Night Hunters"]
+lone_star_security_ratings:
+  AAA: ["Lake Young"]
+  AA: ["Four Lakes","Maple Valley","Renton","Spring Lake"]
+  A: ["Issaquah (some areas)","Thomas (some areas)"]
+  B: ["Issaquah (some areas)","Meredith (some areas)","Thomas (some areas)"]
+  C: ["Christopher","Meredith (some areas)"]
+sites:
+  federated_boeing_renton:
+    profile: "RPV/drone development and manufacturing; R&D into new drone designs and robotics."
+  knight_errant_training_academy:
+    address: "Main Gates: 715 NE 3rd"
+    physical_security:
+      - "Wrought-iron perimeter wall with sophisticated sensor suites."
+      - "Electrical charge described as powerful enough to stun a juggernaut."
+      - "Students/faculty are combat-trained Knight Errant/Ares personnel; infiltration is difficult."
+    matrix_security:
+      - "Used to test new Matrix security measures and train KE combat deckers."
+      - "At least a couple of deckers typically run hot new IC."
+      - "Virtual training grounds simulate physical combat/security situations."
+gangs:
+  blood_mountain_boys:
+    profile: "Largest go-gang; mixed-race tribal style; Intercity 169 turf; heavily involved in chip trade."
+    awakened_presence: "Disproportionately high; includes street shamans and warrior/hunter adepts."
+  night_hunters:
+    profile: "Large thrill-gang/cluster of splinter gangs led by Stiv; rabidly anti-metahuman; cyber-modified."
+sources:
+  - {source: source.fanpro-10657, pages: "51-52", pdf_pages: "52-53", relation: defines_world_state}
