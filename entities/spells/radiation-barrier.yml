@@ -1,0 +1,22 @@
+id: entity.spell.radiation-barrier
+record_type: entity
+name: "Radiation Barrier"
+domain: spells
+status: ingested
+intrinsic:
+  category: "transformation manipulation"
+  type: "P"
+  target: "6"
+  duration: "S"
+  drain: "+1(S)"
+  effect: "Area version of Radiation Shield."
+  area: "Dome radius in meters equals the caster's Magic attribute."
+  protection: "Uses the same success-based radiation absorption as Radiation Shield."
+links:
+  uses: [rule.magic.spell-characteristics]
+  requires: []
+  component_of: []
+  interacts_with: [rule.hazards.target-wastelands-radiation, entity.spell.radiation-shield]
+sources:
+  - {source: source.fanpro-10653, page: 111, pdf_page: 112, relation: defines}
+notes: []
