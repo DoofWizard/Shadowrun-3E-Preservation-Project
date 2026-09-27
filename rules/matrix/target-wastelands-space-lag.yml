@@ -1,0 +1,25 @@
+id: rule.matrix.target-wastelands-space-lag
+record_type: rule
+name: "Target: Wastelands Space Matrix Lag"
+domain: matrix
+status: ingested
+effective:
+  status: source_specific
+  source: source.fanpro-10653
+  page: 126
+  pdf_page: 127
+  basis: defines_source_specific_latency
+
+resolution:
+  summary: "Long-distance Matrix communication between terrestrial, orbital and lunar locations may impose signal lag."
+  earth_moon_example: "Communication between Earth and the Moon takes one full Combat Turn each way."
+  reaction_effect: "At minimum, characters in the Matrix suffer -2 Matrix Reaction."
+  severe_effect: "At the gamemaster's discretion for sufficiently long delays, a character may act only once every other Combat Turn."
+  applicability: "The exact effect depends on communication distance and applies to Matrix interaction across the delayed link."
+
+links:
+  interacts_with: [rule.security.target-wastelands-orbital-security]
+sources:
+  - {source: source.fanpro-10653, page: 126, pdf_page: 127, relation: defines}
+notes:
+  - "This extends the earlier orbital-security communications note with explicit Game Information modifiers."
