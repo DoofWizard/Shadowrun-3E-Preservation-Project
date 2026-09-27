@@ -1,0 +1,23 @@
+id: catalog.gear.target-wastelands-space-gear
+record_type: entity_catalog
+name: "Target: Wastelands Space Gear"
+domain: gear
+status: ingested
+source: source.fanpro-10653
+pages: "128-129"
+entries:
+  - id: entity.gear.spacesuit
+    name: "Spacesuit"
+    properties: {weight_kg: 25, availability: "16/1 mo.", cost_nuyen: 15000, street_index: 3, legality: "Legal"}
+    rules:
+      - "Base donning time 5 minutes; Quickness (4) successes reduce time."
+      - "Requires 1 hour maintenance per 12 hours use. If skipped, roll 1D6 each use; 1 indicates a failure, with the failure range increasing by 1 for each additional 12 hours without maintenance."
+      - "Oxygen lasts 12 hours; power lasts 24 hours."
+      - "Provides Ballistic 2 / Impact 3; no other armor can be worn."
+      - "Includes 5 emergency patches."
+  - {id: entity.gear.security-spacesuit, name: "Security Spacesuit", properties: {weight_kg: 35, availability: "20/2 mo.", cost_nuyen: 25000, street_index: 5, legality: "2P-L"}, rules: "Armored spacesuit providing Ballistic 6 / Impact 6."}
+  - {id: entity.gear.spacesuit-maneuvering-unit, name: "Spacesuit Maneuvering Unit", properties: {weight_kg: 25, availability: "16/1 mo.", cost_nuyen: 2500, street_index: 3, legality: "Legal"}, rules: "Accelerate/brake up to 10 m per Combat Turn with Intelligence (6); change direction with Intelligence (8); fuel for 30 burns."}
+  - {id: entity.gear.survival-bubble, name: "Survival Bubble", properties: {weight_kg: "Rating x 10", availability: "8/2 wks", cost_nuyen: "Rating x 1000", street_index: 2, legality: "Legal"}, rules: "Inflates in 1 Combat Turn; rating is occupant capacity, maximum 6; includes 24-hour oxygen per person, food/water, airlock, 100-km homing beacon, medkit and maneuvering unit with 10 burns."}
+sources:
+  - {source: source.fanpro-10653, pages: "128-129", pdf_pages: "129-130", relation: defines}
+notes: []
