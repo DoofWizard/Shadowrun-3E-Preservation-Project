@@ -1,0 +1,26 @@
+id: entity.spell.alter-pressure
+record_type: entity
+name: "Alter Pressure"
+domain: spells
+status: ingested
+intrinsic:
+  category: "transformation manipulation"
+  type: "P"
+  target: "4"
+  duration: "S"
+  range: "LOS (A)"
+  drain: "+2(S)"
+  area: "Magic x 10 meters radius"
+  effect: "Each success shifts local pressure by one atmosphere above or below ambient, limited by Force."
+  depth_reference: "Underwater ambient pressure rises by roughly one atmosphere per 10 meters."
+  uses:
+    - "May affect pressure-control systems and structures."
+    - "May be used as a hyperbaric-style acclimatization aid."
+links:
+  uses: [rule.magic.spell-characteristics]
+  requires: []
+  component_of: []
+  interacts_with: [rule.hazards.target-wastelands-deep-sea-game-information]
+sources:
+  - {source: source.fanpro-10653, page: 130, pdf_page: 131, relation: defines}
+notes: []
