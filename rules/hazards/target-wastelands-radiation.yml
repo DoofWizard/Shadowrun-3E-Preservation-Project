@@ -1,0 +1,71 @@
+id: rule.hazards.target-wastelands-radiation
+record_type: rule
+name: "Target: Wastelands Radiation"
+domain: hazards
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "110-113", pdf_pages: "111-114", basis: defines}
+retention:
+  natural_reduction: "The body eliminates 10 percent of the original dose per day."
+  permanent_floor: "The final 10 percent of the original dose remains unless removed by extensive gene therapy."
+radiation_burns:
+  resistance: "After exposure, or every 6 hours during prolonged exposure, make a Damage Resistance Test."
+  target_number: "total rads / 200, minimum 2"
+  staging: "Every 2 successes reduce the damage level one step."
+  dermal_protection: "Dermal armor and similar protection do not add resistance."
+  damage_levels:
+    "10-799": "Light"
+    "800-1199": "Moderate"
+    "1200-1999": "Serious"
+    "2000+": "Deadly"
+radiation_sickness:
+  model: "disease"
+  speed: "24 hours"
+  power: "rads / 50"
+  damage_levels:
+    "10-400": "Light Stun"
+    "401-800": "Moderate Stun"
+    "801-1000": "Serious Stun"
+    "1001+": "Deadly Stun"
+  repetition: "Test 24 hours after exposure and every 24 hours thereafter."
+  recovery: "If any resistance test reduces the effect to none, the victim recovers; otherwise repeat. Stun overflow becomes Physical and sickness damage cannot recover while the condition persists."
+  magical_healing: "Heal/Treat may restore Physical damage caused by radiation sickness but do not remove the sickness itself."
+blindness_and_sterility:
+  threshold: "A single dose of 200+ rads causes temporary blindness and sterility."
+  base_duration: "120 days"
+  duration_test: "Body (4); divide base duration by successes."
+  permanent: "No Body successes, or a single dose of 500+ rads, makes both permanent."
+cancer_and_mutation:
+  annual_test: "Once per year after exposure, make an Essence Test (rounded up where needed) with Target Number equal to total rads / 50 rounded up."
+  failure: "Failure means cancer develops during that year and is treated as a disease with Speed 30 days using the radiation-sickness model."
+  offspring: "Exposure of 100+ rads may cause genetic mutation or birth defects in offspring at gamemaster discretion."
+background_count:
+  calculation: "radiation output per hour / 100, minimum 1"
+  fission_blast_ground_zero: 5
+  taper: "Reduce by 1 for each 100 meters from ground zero."
+  domain: "Radioactive background-count areas are toxic domains."
+  spirit_effect: "Only toxic shamans may summon nature spirits there."
+  cleanup: "The source states no magical method currently removes radioactivity."
+source_examples_rads:
+  fission_reactor_room_per_hour: 400
+  fallout_one_day_after_per_hour: 7
+  fallout_five_hours_after_per_hour: 36
+  fallout_one_hour_after_per_minute: 5
+  leaking_nuclear_waste_per_hour: "1-10"
+  contaminated_waste_dump_per_year: 10
+  ingested_plutonium_one_gram_per_second: 1
+  plutonium_dust_per_day: 2
+  inhaled_plutonium_dust_per_hour: 1
+  irradiated_area_per_week: 1
+  fission_plant_meltdown_per_hour: "1000+"
+  one_megaton_fission_airburst: 6600
+  outer_edge_cermak_blast_per_day: 2
+  center_cermak_blast_per_minute: 50
+links:
+  uses: [rule.hazards.diseases-and-toxins]
+  affects: [rule.condition.condition-monitor]
+  modified_by: []
+  interacts_with: [entity.spell.radiation-shield, entity.spell.radiation-barrier]
+sources:
+  - {source: source.fanpro-10653, pages: "110-113", pdf_pages: "111-114", relation: defines}
+notes:
+  - "All values are fictional tabletop mechanics from the cited source."
