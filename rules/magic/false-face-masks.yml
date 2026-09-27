@@ -1,0 +1,54 @@
+id: rule.magic.false-face-masks
+record_type: rule
+name: "False Face and Crying Mask Foci"
+domain: magic
+status: ingested
+scope:
+  applies_to: ["Haudenosaunee False Face Society masks", "Crying Masks"]
+focus_types:
+  false_face:
+    ordinary: ["Health spell focus", "spirit focus"]
+    other: "Some masks may be unique enchantments with unusual powers."
+  crying_masks:
+    additional: ["power focus", "non-Health spell focus", "channeling focus"]
+construction:
+  materials: "Mask must be made from wood or cornhusks."
+  raw_material_test: "Finding appropriate herbal telesma is typically a Talismongering (10) Test."
+  significance: "Materials must be magically imbued and have special significance to the builder."
+  base_enchanting_time: "120 days."
+  orichalcum: "May not be used in mask construction."
+  recycle_old_mask:
+    method: "An old mask may be ritually destroyed with a group of society members and its ashes incorporated into a new mask."
+    benefit: "For every 5 Karma invested in the old mask, reduce both the new mask's Enchanting Test target number and First Bonding Cost by 1."
+  prohibited_designs: ["expendable focus", "weapon focus"]
+stacked_focus_exception:
+  uses: rule.magic.stacked-foci
+  formula_target_number: "For a stacked mask, use the average of the two component ratings instead of their sum."
+  restriction: "This advantage applies only when the stacked mask is not a power focus and not a spell focus for a category other than Health."
+durability_after_first_bonding:
+  body: "Force"
+  immunity: "Immunity (Normal Weapons)"
+  armor: "Armor from Immunity equals twice Force."
+  wearer_protection: "The mask's armor does not protect the wearer unless an attack specifically strikes the mask."
+  repair: "A special ritual repairs damage at a cost of 1 Karma per box."
+  destroyed: "A completely destroyed mask cannot be repaired."
+use:
+  worn_requirement: "The mask must be physically worn to function; carrying or holding it is insufficient."
+  geasa:
+    - "A worn mask satisfies conditions for a mask geas or Talisman Geas."
+    - "The same mask may serve as the focus of multiple geasa; where a bonded-mask condition is used, any bonded mask satisfies it."
+channeling_focus:
+  effect: "Provides extra dice for either the Conjuring Test or Drain Resistance Test associated with the Channeling metamagic power."
+  focus_design_time: "30 days."
+  enchanting_target_number: 6
+  first_bonding_cost: "5 x Force Karma."
+links:
+  uses:
+    - subsystem.magic.enchanting
+    - subsystem.magic.foci
+    - rule.magic.stacked-foci
+    - rule.magic.focus-bonding
+sources:
+  - {source: source.fanpro-10652, page: 89, pdf_pages: "89", relation: defines}
+notes:
+  - "The source points to Magic in the Shadows for telesma, stacked-focus and general focus rules, and to Target: Awakened Lands for Channeling; those underlying rules are referenced rather than restated beyond this mask-specific modification."
