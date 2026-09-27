@@ -1,0 +1,27 @@
+id: entity.skill.navigation
+record_type: entity
+name: "Navigation"
+domain: skills
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "105-108", pdf_pages: "106-109", basis: defines}
+intrinsic:
+  type: "Knowledge Skill"
+  linked_attribute: "Intelligence"
+  default:
+    - "Intelligence Attribute"
+    - "appropriate area Knowledge skill"
+  purpose: "Plotting and maintaining a course using maps, navigation equipment and landmarks."
+  specializations:
+    - "Land"
+    - "Sea"
+    - "Flight"
+links:
+  uses: [rule.tests.success-test]
+  requires: []
+  component_of: []
+  interacts_with: [rule.hazards.target-wastelands-survival-navigation]
+sources:
+  - {source: source.fanpro-10653, pages: "105-106", pdf_pages: "106-107", relation: defines, note: "Game Information - New Skills"}
+  - {source: source.fanpro-10653, page: 108, pdf_page: 109, relation: clarifies, note: "Navigation Test procedure and modifiers"}
+notes:
+  - "No supersession relationship is inferred."
