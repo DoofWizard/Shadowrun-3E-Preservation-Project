@@ -1,0 +1,29 @@
+id: rule.magic.shared-potency
+record_type: rule
+name: "Shared Potency"
+domain: magic
+status: ingested
+effective: {status: restricted_npc, source: source.fanpro-10652, printed_page: 45, pdf_page: 45, basis: defines}
+availability:
+  users: "Magician and adept non-player characters."
+  player_characters: "Not available."
+prerequisite:
+  spirit_pact: "Initiate enters a spirit pact with shadow spirit Gaf even if Gaf already has pacts with other characters."
+  sharing_limit: "At gamemaster discretion, Gaf may limit sharing to a finite number of initiates, such as Force rating or fewer."
+potency:
+  amount: "Half Gaf's Spirit Energy rating, round down, upon entering pact."
+  base_rules: "Follows Potency rules from Magic in the Shadows pp.123-124."
+failure:
+  ordinary_stress:
+    trigger: "At beginning of any Combat Turn in which initiate uses Potency."
+    roll: "2D6"
+    failure_on: "3 or less"
+    effect: "Potency unavailable for that Combat Turn; initiate may not know until attempting use; Drain still applies normally."
+  increased_stress:
+    example: "Multiple magicians drawing on Potency to cast massive spells simultaneously."
+    gm_option: "Gamemaster may increase failure likelihood; example given is failure on 5 or less on 2D6."
+  total_dependence:
+    condition: "Initiate began at Magic 0 and Gaf sacrificed 1 Spirit Energy to enable initiation."
+    effect_on_failure: "Character loses all magical abilities for that Combat Turn."
+sources:
+  - {source: source.fanpro-10652, printed_page: 45, pdf_page: 45, relation: defines}
