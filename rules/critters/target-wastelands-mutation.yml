@@ -1,0 +1,35 @@
+id: rule.critters.target-wastelands-mutation
+record_type: rule
+name: "Target: Wastelands Critter Mutation"
+domain: critters
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10653, pages: "113-114", pdf_pages: "114-115", basis: defines}
+mutation_index:
+  model: "Analogous to Bioware Bio Index."
+  maximum: "Essence"
+  effects: "Carries the Bio Index drawbacks for immunity and healing."
+options:
+  enhanced_attribute: "+1 Mutation Index per added Attribute point; for a bioware-like increase use the lower applicable cost."
+  enhanced_sense: "+1 Mutation Index."
+  bioware_ability: "Add the selected bioware's Bio Index."
+  paranormal_ability: "+3 Mutation Index; use normal Essence when resolving the added power."
+  physical_edge: "Mutation Index cost equals the Edge value."
+drawbacks:
+  frequency: "At least one drawback per 2 Mutation Index."
+  examples: ["visible deformity", "pathological physical flaw", "permanent Light Wound", "Weakness"]
+paranormal_critters:
+  threshold: "At Mutation Index equal to or greater than Essence, Essence-based paranormal powers cannot be used."
+  effect_roll:
+    "1-2": "effective Essence for paranormal powers is reduced by Mutation Index"
+    "3-4": "no change"
+    "5-6": "effective Essence for paranormal powers is increased by Mutation Index"
+  astral_exception: "Purely astral beings do not mutate."
+links:
+  uses: []
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.fanpro-10653, pages: "113-114", pdf_pages: "114-115", relation: defines}
+notes:
+  - "No supersession relationship is inferred."
