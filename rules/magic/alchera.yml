@@ -1,0 +1,54 @@
+id: rule.magic.alchera
+record_type: rule
+name: "Alchera"
+domain: magic
+status: ingested
+effective:
+  status: current
+  source: source.fanpro-10651
+  printed_page: 114
+  pdf_page: 115
+  basis: defines
+physical_manifestation:
+  - "An alchera may materialize into the physical world, superimposing or replacing local terrain while present."
+  - "Living beings already present are not erased or embedded; the manifested terrain accommodates/displaces them sufficiently to avoid solid overlap."
+  - "When the alchera disappears, living beings may be repositioned as the ordinary landscape returns."
+transition_disorientation:
+  trigger: "Being inside an alchera when it materializes or dematerializes."
+  test: "Willpower (6)"
+  failure_effects:
+    target_number_modifier: "+2 to all target numbers"
+    initiative_modifier: "-2 Initiative"
+    duration: "3 turns"
+  successes:
+    - "Each success reduces the duration by 1 turn."
+    - "3 or more successes eliminate the effect."
+contents:
+  ordinary_constructs:
+    - "Objects such as water, fruit, trees or gemstones normally materialize as part of the alchera."
+    - "Most cannot be removed: crossing the boundary causes them to dematerialize and reappear at their original location."
+  food_and_drink:
+    - "May be consumed safely."
+    - "Once consumed, it becomes part of the creature and does not vanish later."
+    - "It can satisfy hunger and thirst normally."
+  independent_astral_constructs:
+    - "Rare contents may be independent astral constructs rather than fixed parts of the alchera."
+    - "Treat them as normal astral constructs."
+    - "They may materialize only inside the alchera; outside its boundary they revert to astral form."
+inhabitants:
+  - "Some apparent inhabitants are spirits rather than constructs."
+  - "Nature spirits are most common, but spirit versions of other critters may occur."
+  - "Use normal game statistics for the spirit/critter type."
+  - "Attitude may be friendly or hostile at gamemaster discretion."
+sample_alchera:
+  opal_cave:
+    guardian: "Force 6 gnome spirit"
+    gift: "A visitor approved by the guardian may receive one rough opal."
+    boundary_effect: "The opal vanishes if taken outside the alchera."
+    boon: "+1 Karma Pool until the next new moon."
+  crocodile_oasis:
+    guardian: "Force 5 lake spirit appearing as a large crocodile"
+    provisions: "Fruit and water are safe to consume."
+    theft_response: "The spirit objects to taking goods without repayment and demands a story as recompense; good stories satisfy it."
+sources:
+  - {source: source.fanpro-10651, printed_page: 114, pdf_page: 115, relation: defines}
