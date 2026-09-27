@@ -1,13 +1,13 @@
 phase: pass_b
 active_source: source.fanpro-10651
-source_status: queued
+source_status: ingesting
 completed_through:
-  printed_page: null
-  pdf_page: null
+  printed_page: 4
+  pdf_page: 5
 resume_at:
-  printed_page: 1
-  pdf_page: 1
-last_commit: cabf5b6c1fa7f324cdec8b513a52f16d39d2433f
+  printed_page: 5
+  pdf_page: 6
+last_commit: __SELF__
 open_conflicts:
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
@@ -41,13 +41,12 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - Threats 2 available content is fully normalized; printed pp.110-111 remain a source-copy gap
-  - begin source.fanpro-10651 next
-  - preserve pending.source10652.missing-p110-111 until a replacement source copy is supplied or discovered
-  - use directed scan for late-SR3/FanPro sources
-  - deep-scan all rules-bearing sections
-  - preserve provenance
-  - do not infer supersession
+  - continue Target: Awakened Lands sequentially from printed p.5 / PDF p.6
+  - use directed scan through setting sections and deep scan Game Information pp.99-122
+  - preserve printed/PDF provenance
+  - capture every rules-bearing item
   - reuse canonical IDs
+  - do not infer supersession
   - commit bounded semantic slices
   - continue automatically
+  - keep all prior open_conflicts explicit
