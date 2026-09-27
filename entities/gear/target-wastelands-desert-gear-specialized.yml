@@ -1,0 +1,43 @@
+id: catalog.gear.target-wastelands-desert-specialized
+record_type: entity_catalog
+name: "Target: Wastelands Desert Gear - Specialized"
+domain: gear
+status: ingested
+source: source.fanpro-10653
+pages: "118-119"
+
+entries:
+  - id: entity.gear.seismic-mic
+    name: "Seismic Mic"
+    properties: {concealability: 3, weight_kg: 0.5, availability: "8/1 wk", cost_nuyen: 3000, street_index: 1.5, legality: "Legal"}
+    detection:
+      vehicles: "Moving or idling vehicles up to 5 km."
+      people_animals: "Moving people or animals over 30 kg up to 2 km."
+      general: "Typically detects vehicles with Signature 10 or less and characters whose Open Stealth Test is 8 or less."
+    analysis: "Intelligence (8), or an appropriate Knowledge Skill such as Seismic Analysis."
+    success_table:
+      1: "Direction of source."
+      2: "Source type: vehicle or person/animal."
+      3: "Direction of travel."
+      4: "Rough distance and travel speed."
+      "5+": "Vehicle type and rough number of people/animals."
+  - id: entity.gear.snake-mesh-socks
+    name: "Snake Mesh Socks"
+    properties: {concealability: 5, weight_kg: null, availability: "5/48 hrs", cost_nuyen: 300, street_index: 1, legality: "Legal"}
+    rules: "Provide 2 points of Impact armor against attacks directed at the feet and lower legs."
+  - id: entity.gear.solar-still
+    name: "Solar Still"
+    properties: {concealability: null, weight_kg: 2, availability: "4/24 hrs", cost_nuyen: 500, street_index: 1, legality: "Legal"}
+    rules:
+      - "Distills up to 8 liters of contaminated water per day in sunlight."
+      - "Reduce toxin or chemical Power by 8; if reduced to 0 or less, the water is safe."
+      - "Does not remove bacteria or radiation."
+      - "Can collect condensation without a water source, up to about 1 liter per day."
+  - id: entity.gear.thermal-air-bag
+    name: "Thermal Air Bag"
+    properties: {concealability: 2, weight_kg: 2, availability: "4/48 hrs", cost_nuyen: 1000, street_index: 1, legality: "Legal"}
+    rules: "Sleeping system rated from -10 C to 65 C, with powered heating/cooling and flotation; batteries last about one week at 8 hours per night."
+
+sources:
+  - {source: source.fanpro-10653, pages: "118-119", pdf_pages: "119-120", relation: defines}
+notes: []
