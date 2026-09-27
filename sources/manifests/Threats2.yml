@@ -7,9 +7,13 @@ publisher: "FanPro"
 status: ingesting
 scan_depth: directed
 source_format: "image-only PDF"
-page_mapping: {printed_to_pdf_offset: 0}
-completed_through: {printed_page: 101, pdf_page: 101}
-resume_at: {printed_page: 102, pdf_page: 102}
+page_mapping:
+  - {pdf_pages: "1-109", printed_pages: "1-109", relation: "printed page equals PDF page"}
+  - {pdf_pages: "110-119", printed_pages: "112-121", relation: "printed page equals PDF page + 2"}
+source_gaps:
+  - {id: pending.source10652.missing-p110-111, printed_pages: "110-111", pdf_pages: null, status: "not present in source PDF"}
+completed_through: {printed_page: 109, pdf_page: 109}
+resume_at: {printed_page: 112, pdf_page: 110}
 pending_normalization:
   - {id: pending.source10652.p24, pages: "24", pdf_pages: "24"}
   - {id: pending.source10652.p35-36-a, pages: "35-36", pdf_pages: "35-36"}
@@ -17,4 +21,9 @@ pending_normalization:
   - {id: pending.source10652.p36-c, pages: "36", pdf_pages: "36"}
   - {id: pending.source10652.p44-45-a, pages: "44-45", pdf_pages: "44-45"}
   - {id: pending.source10652.p45-b, pages: "45", pdf_pages: "45"}
-  - {id: pending.source10652.p79-80, pages: "79-80", pdf_pages: "79-80"}\n  - {id: pending.source10652.p100-101, pages: "100-101", pdf_pages: "100-101"}
+  - {id: pending.source10652.p79-80, pages: "79-80", pdf_pages: "79-80"}
+  - {id: pending.source10652.p100-101, pages: "100-101", pdf_pages: "100-101"}
+  - {id: pending.source10652.missing-p110-111, pages: "110-111", pdf_pages: null}
+notes:
+  - "Directed scan completed through the Order of the Temple Game Information on printed/PDF p.109."
+  - "The source PDF jumps from printed p.109 / PDF p.109 to printed p.112 / PDF p.110. Printed pp.110-111 are absent from this source copy and remain explicitly pending; no contents are inferred."
