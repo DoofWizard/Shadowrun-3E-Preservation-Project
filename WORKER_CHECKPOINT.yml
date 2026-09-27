@@ -1,3 +1,4 @@
+state_protocol_version: 2
 phase: pass_b
 active_source: source.fanpro-10650
 source_status: ingesting
@@ -7,7 +8,7 @@ completed_through:
 resume_at:
   printed_page: 126
   pdf_page: 127
-last_commit: e6b7278e63520fc5b121533796f2b4a0c079ca07
+last_commit: eb084e20aafa4504c1a36d928d40289622bd575b
 open_conflicts:
   - pending.yotc.p115-125
   - pending.yotc.return-of-comet-p6-21
@@ -42,12 +43,15 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
+  - main source manifest is authoritative; checkpoint mirrors it
+  - reconcile any recovery sidecar into the main manifest before scanning new pages
   - continue Year of the Comet sequentially from printed p.126 / PDF p.127
   - next section is Aftershocks
   - preserve printed/PDF provenance
   - capture every rules-bearing item
   - reuse canonical IDs
   - do not infer supersession
-  - commit bounded semantic slices
-  - continue automatically
+  - keep state files compact and filter-resistant
+  - commit semantic payload, then main manifest, then checkpoint
+  - end the run on any connector filter or true source gap
   - keep all prior open_conflicts explicit
