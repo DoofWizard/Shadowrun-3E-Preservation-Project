@@ -1,0 +1,33 @@
+id: rule.spirits.paracritter-insect-hosts
+record_type: rule
+name: "Paranormal Critter Hosts for Insect Spirits"
+domain: spirits
+status: ingested
+scope:
+  applies_to: ["insect spirits summoned into paranormal critter hosts"]
+resolution:
+  base_procedure: "Use the standard Summoning Insect Spirits procedure; this rule modifies the resulting flesh-form when the host is a paranormal critter."
+  retained_innate_powers:
+    determination: "Use the host's net successes from the transformation resolution."
+    table:
+      - {host_net_successes: "0 or fewer", retained_powers: "None", result_note: "True-form insect spirit"}
+      - {host_net_successes: 1, retained_powers: 1}
+      - {host_net_successes: 2, retained_powers: 2}
+      - {host_net_successes: 3, retained_powers: 4}
+      - {host_net_successes: 4, retained_powers: 6}
+      - {host_net_successes: "5+", retained_powers: "All"}
+    selection: "Gamemaster chooses which host innate powers are retained or determines them randomly."
+  resulting_powers:
+    - "Retained host powers are added to the insect spirit's standard powers."
+    - "A power and weakness that directly oppose each other cancel out."
+    - "The source example states that retained Enhanced Senses (Sight) and the spirit's Reduced Senses (Sight) together produce average sight."
+links:
+  uses:
+    - procedure.magic.summon-insect-spirit
+    - rule.spirits.insect-forms
+  affects:
+    - rule.spirits.insect-forms
+sources:
+  - {source: source.fanpro-10652, page: 71, pdf_pages: "71", relation: extends}
+notes:
+  - "This is an extension for paranormal-critter hosts, not a replacement for the standard MITS insect-spirit summoning rules."
