@@ -8,13 +8,17 @@ status: ingesting
 scan_depth: directed
 source_format: "image-only PDF"
 page_mapping: {printed_to_pdf_offset: 0}
-completed_through: {printed_page: 24, pdf_page: 24}
-resume_at: {printed_page: 25, pdf_page: 25}
+completed_through: {printed_page: 36, pdf_page: 36}
+resume_at: {printed_page: 37, pdf_page: 37}
 
 notes:
-  - "Sequential directed scan verified printed/PDF pp.15-24."
-  - "Game Information pp.22-24 is normalized except for one connector-rejected detail range on p.24."
+  - "Sequential directed scan verified printed/PDF pp.15-36."
   - "No standalone mechanical rules were found in the narrative-only pp.15-21 range."
+  - "Game Information pp.22-24 is normalized except for one connector-rejected detail range on p.24."
+  - "Imps pp.25-36 were scanned as one semantic slice. The imp entity and astral-form rules are normalized; three compact rule-detail ranges on pp.35-36 were rejected by the connector and remain pending."
 
 pending_normalization:
   - {id: pending.threats2.pax-ware-p24, pages: "24", pdf_pages: "24"}
+  - {id: pending.threats2.imp-karma-p35-36, pages: "35-36", pdf_pages: "35-36"}
+  - {id: pending.threats2.imp-conjuring-p35, pages: "35", pdf_pages: "35"}
+  - {id: pending.threats2.imp-occupation-p36, pages: "36", pdf_pages: "36"}
