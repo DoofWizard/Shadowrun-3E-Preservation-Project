@@ -1,0 +1,20 @@
+id: entity.spell.radiation-shield
+record_type: entity
+name: "Radiation Shield"
+domain: spells
+status: ingested
+intrinsic:
+  category: "transformation manipulation"
+  type: "P"
+  target: "6"
+  duration: "S"
+  drain: "+1(M)"
+  effect: "Success-based protection from environmental radiation; each success covers 10 rads per hour, limited by Force."
+links:
+  uses: [rule.magic.spell-characteristics]
+  requires: []
+  component_of: []
+  interacts_with: [rule.hazards.target-wastelands-radiation]
+sources:
+  - {source: source.fanpro-10653, page: 111, pdf_page: 112, relation: defines}
+notes: []
