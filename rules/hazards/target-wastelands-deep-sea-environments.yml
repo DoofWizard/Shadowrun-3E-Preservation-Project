@@ -1,0 +1,51 @@
+id: rule.hazards.target-wastelands-deep-sea-environments
+record_type: rule
+name: "Target: Wastelands Deep-Sea Environment Guidance"
+domain: hazards
+status: ingested
+
+effective:
+  status: source_specific
+  source: source.fanpro-10653
+  pages: "93-104"
+  basis: defines_source_specific_environmental_guidance
+
+facility_pressure_models:
+  ambient_pressure:
+    description: "Habitat interior is pressurized toward external water pressure, reducing structural pressure differential but exposing occupants and equipment to high-pressure physiology and gas-mix problems."
+    operational_concerns:
+      - "Rapid pressure changes can produce decompression injuries and gas embolism."
+      - "Gas mixtures, electronics, power systems and cyberware may require pressure-specific design or maintenance."
+      - "Long decompression periods can make evacuation difficult."
+  one_atmosphere:
+    description: "Habitat remains near surface pressure, easing ordinary habitation but requiring a hull able to withstand the entire outside pressure differential."
+    operational_concerns:
+      - "Hull failure is catastrophic."
+      - "Compartmentalization, pressure-lattice structures and emergency isolation are described as major safety measures."
+
+gas_and_pressure_guidance:
+  exotic_gas_risk:
+    - "Atmospheric manipulation by magic or system failure can change gas ratios or pressure fast enough to poison or injure occupants."
+    - "Helium-rich atmospheres increase heat-loss and condensation concerns because helium conducts heat much more efficiently than nitrogen."
+  fab_limit:
+    - "The source states that standard FAB bulkhead approaches are most viable around sea-level conditions and are not engineered for very high ambient pressure; a posted comment places a practical limit around 10 atmospheres."
+  nitrox:
+    - "The source describes nitrox mixtures in the range of roughly 36-64 percent oxygen-to-nitrogen as one approach to reducing nitrogen narcosis and decompression risk."
+  heliox:
+    - "The source describes heliox as useful only to roughly 200 meters before high-pressure nervous syndrome becomes a major problem."
+  deep_diver_health:
+    - "The source reports bone-necrosis/joint-damage risk increasing with repeated deep-pressure exposure; a cited study reports no joint disintegration near 30 meters but 15.8 percent beyond 200 meters."
+  decompression_example:
+    - "Mitsuhama Platform 17's 1,700-meter ambient-pressure section requires a minimum five-day hyperbaric decompression before transfer to surface conditions."
+
+incident_case:
+  renraku_java_trench:
+    - "A magical sabotage incident caused local pressure and atmospheric anomalies, nitrogen bubble expansion, flooding confusion and lethal decompression injuries."
+    - "The incident demonstrates that pressure-control, life-support and magical security failures can cascade rapidly in deep habitats."
+
+sources:
+  - {source: source.fanpro-10653, pages: "93-104", pdf_pages: "94-105", relation: defines_source_specific_guidance}
+
+notes:
+  - "This is directed-scan operational guidance, not the final numeric environmental procedure set."
+  - "Formal modifiers, damage tests, depth bands and equipment statistics are deferred to printed pp.105-133 Game Information and must be fully normalized there."
