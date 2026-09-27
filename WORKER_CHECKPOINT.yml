@@ -2,13 +2,14 @@ phase: pass_b
 active_source: source.fanpro-10657
 source_status: ingesting
 completed_through:
-  printed_page: 3
-  pdf_page: 4
+  printed_page: 13
+  pdf_page: 14
 resume_at:
-  printed_page: 4
-  pdf_page: 5
-last_commit: 21d04d0cfd835b2c86e6c3e22a5c5470aa0070fe
+  printed_page: 14
+  pdf_page: 15
+last_commit: __SELF__
 open_conflicts:
+  - pending.newseattle.range-p4-13
   - pending.sota63.range-p124-125
   - pending.sota63.range-p95-104
   - pending.sota63.range-p72-78
@@ -39,12 +40,13 @@ next_sources:
   - source.fasa-7210
   - source.fasa-7209
 instructions:
-  - continue New Seattle from printed p.4 / PDF p.5
-  - route the source before detailed extraction and use directed scan depth
+  - continue source.fanpro-10657 from printed p.14 / PDF p.15
+  - directed scan sequentially at routed depth
   - preserve printed/PDF provenance
   - do not infer supersession beyond explicit text
   - reuse canonical IDs
   - capture every rules-bearing item
+  - keep pending.newseattle.range-p4-13 explicit until fully normalized
   - keep all SOTA63 pending ranges explicit until fully normalized
   - commit bounded semantic slices
   - continue automatically
