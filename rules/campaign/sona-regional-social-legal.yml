@@ -1,0 +1,64 @@
+id: rule.campaign.sona-regional-social-legal
+record_type: rule
+name: "Shadows of North America Regional Social and Legal Modifiers"
+domain: campaign
+status: ingested
+effective: {status: source_specific, source: source.fanpro-10655, pages: "190-204", basis: defines_and_modifies}
+scope: {applies_to: ["regional legal, social and access procedures in Shadows of North America"]}
+
+regions:
+  algonkian_manitou_council:
+    lawlessness:
+      scope: "Outside major business centers such as Calgary and Saskatoon."
+      legality_code: "Apply a +2 bonus to the Legality Code of all legal items; use +4 in Thunder Bay."
+
+  pueblo_corporate_council:
+    preferred_share:
+      current_price: "100¥"
+      voting_power: "None."
+      access: "May be purchased by anyone and allows the holder to stay in Pueblo relatively indefinitely."
+      note: "The source says the current rate may fluctuate."
+
+  quebec:
+    paranimal_bounty_hunting:
+      requirements: "Professional hunting requires a SIN plus an annual license."
+      annual_license: "100¥"
+      effect: "Certifies a paranimal hunter and grants access to most paranimal bounty-hunter resorts."
+      class_permits:
+        E: "50¥"
+        D: "100¥"
+        C: "500¥"
+        B: "1,000¥"
+        A: "5,000¥"
+        S: "10,000¥"
+        X: "10,000¥"
+      pelt_control: "Ministry officials tag and inspect pelts to prevent repeat cash-ins and verify the claimed paranimal."
+
+  tir_tairngire:
+    prejudice:
+      rule: "When checking for racial prejudice under SR3 p.92, Tir subjects subtract 4 from the roll, or 5 when dealing with a fellow Tir subject."
+      context: "The source frames intolerance of outsiders ('goro') as increasing even as elven racial prejudice declines."
+
+  tsimshian:
+    cultural_bias:
+      standard: "Apply +1 to social interaction or Charisma Tests made with Tsimshian or Tlingit tribals unless the character is from Tsimshian or is Japanese."
+      haida_or_metahuman: "Apply +2 instead if the character is Haida or metahuman."
+
+  ute:
+    prejudice:
+      rule: "At gamemaster discretion, apply +1 to +4 to Social and Charisma Tests when an Anglo character deals with a biased Amerindian."
+      alternative_expression: "The source also permits the discrimination to be represented narratively rather than only as a test modifier."
+
+links:
+  uses:
+    - rule.social.charisma-linked-tests
+  interacts_with:
+    - rule.campaign.sona-border-crossing
+sources:
+  - {source: source.fanpro-10655, page: 190, pdf_page: 191, relation: defines, note: "AMC lawlessness"}
+  - {source: source.fanpro-10655, page: 196, pdf_page: 197, relation: defines, note: "Pueblo preferred-share access"}
+  - {source: source.fanpro-10655, page: 198, pdf_page: 199, relation: defines, note: "Quebec paranimal bounty-hunting licenses and permits"}
+  - {source: source.fanpro-10655, pages: "200-201", pdf_pages: "201-202", relation: defines, note: "Tir and Tsimshian prejudice modifiers"}
+  - {source: source.fanpro-10655, page: 203, pdf_page: 204, relation: defines, note: "Ute prejudice modifier"}
+notes:
+  - "These are regional source-period modifiers and permissions; no later continuity or supersession is inferred."
