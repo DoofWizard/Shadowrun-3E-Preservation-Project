@@ -1,0 +1,102 @@
+id: world.society.seattle-government-2060
+record_type: world
+name: "Seattle Government and Public Services, 2060"
+domain: society
+status: ingested
+source_period: "2060"
+
+government_structure:
+  districts: 10
+  district_government: "Each district has an elected mayor and district council."
+  term_years: {district_mayor_and_council: 4, governor: 4, metroplex_congress_representative: 6}
+  term_limits: "None stated for these elected offices."
+  cabinet:
+    members: 21
+    meeting_schedule: "Every other Tuesday"
+    location: "18th floor, Charles Royer Building"
+  metroplex_congress:
+    representatives: 100
+    meeting_schedule: "First Thursday of every month"
+    location: "Metroplex Hall"
+
+officials:
+  governor: "Ivar J. Lindstrom"
+  metroplex_treasurer: "Gerald Marsh"
+  metroplex_attorney: "Carl S. Toran"
+  commissioner_race_relations: "Paula Willowhair"
+  seattle_fbi_chief: "Marian Tudor"
+  seattle_nsa_chief: "Lyle Weathers"
+
+district_mayors:
+  Downtown: {mayor: "Catherine DeBurke", party: "Technocrat"}
+  Bellevue: {mayor: "Daniel Reynolds", party: "Technocrat"}
+  Tacoma: {mayor: "Eva W. Pratt", party: "Republican"}
+  Everett: {mayor: "Tyler C. Combs", party: "Democrat"}
+  Renton: {mayor: ""Smiling Sam" Usinski", party: "Archconservative"}
+  Auburn: {mayor: "Ellen Danquist", party: "Republican"}
+  Snohomish: {mayor: "Karl Feddersen", party: "One World Party"}
+  Fort_Lewis: {mayor: "Colonel Ben O'Neil", party: "NA"}
+  Redmond: {mayor: "Jeffrey Gasston", party: "Independent"}
+  Puyallup: {mayor: "Jason Connors", party: "Technocrat"}
+
+city_services:
+  police: {provider: "Lone Star Security Services", chief: "William Loudon"}
+  fire: {provider: "Franklin Associates, Inc.", chief: "Ashley Tront"}
+  health_care: {provider: "City Health and Group Medical"}
+  sanitation: {provider: "Various district contractors", commissioner: "Richard K. Cary"}
+  public_works: {provider: "Shiawase Envirotech", commissioner: "Sarah Desanter"}
+  public_database: {provider: "Renraku Computer Systems", commissioner: "Geraldine Mahn"}
+  public_telecom: {provider: "Pacific Rim Communications", commissioner: "Richard Yashida"}
+  grid_guide: {provider: "Mitsuhama Computer Technologies", commissioner: "Erin Sanders-Booth"}
+  power: {providers: ["Gaeatronics","Shiawase Atomics"], commissioner: "Daniel Otter-McKreky"}
+  emergency_network:
+    name: "PANICBUTTON"
+    effect: "Links emergency services to public telecom for rapid dispatch."
+  grid_guide_tracking:
+    rule_context: "Mitsuhama can track a vehicle equipped with an autopilot once it links to the metroplex grid-guide system."
+
+law_enforcement:
+  lone_star:
+    role: "Official Seattle metroplex police-services provider."
+    division_head: "William Loudon"
+    paranormal_investigation_division_chief: "Capt. Walter Westcott"
+    magical_investigation:
+      personnel: "about 80 magicians"
+      functions: ["magical-crime investigation","forensic magic","astral crime-scene examination","magical licensing and certification"]
+  other_security_jurisdiction:
+    - "Private security providers may act on a customer's site."
+    - "Lone Star retains metroplex-wide police authority and is responsible for pursuit and arrest after a suspect leaves a private-security site."
+    - "Private security may hold a suspect on-site until Lone Star arrives."
+  knight_errant:
+    role: "Second-largest Seattle security provider in the source period."
+    president: "Roger Soaring Owl"
+    headquarters: "Detroit, UCAS"
+    seattle_division: "Knight Errant Seattle Training Academy, 715 NE 3rd (main gate), Renton"
+    division_head: "Ellen Ward"
+
+military:
+  joint_task_force:
+    strength: "about 5,000 soldiers and airmen"
+    commander: "Brigadier General Angela Colloton"
+  metroplex_guard:
+    commander: "Colonel Ben O'Neil"
+    magical_personnel: 4
+  first_infantry_magic_detachment:
+    magicians: 40
+    note: "Described as almost two-thirds of the First Infantry Division's total magical force."
+
+foreign_relations:
+  authority_since: 2042
+  envoy_count: 24
+  representatives:
+    Aztlan: "Tyler Silver-Feather"
+    California_Free_State: "Sarah Pinochet"
+    Japanese_Imperial_State: "Eric Ito"
+    Korea: "Timothy Washburn"
+    Salish_Shidhe_Council: "Ellen Risingsong"
+    Native_American_Nations: "Gregory Simenson"
+    Tir_Tairngire: "Samantha Tillian"
+  note: "Preserved as a source-period snapshot; no later status is inferred."
+
+sources:
+  - {source: source.fanpro-10657, pages: "73-81", pdf_pages: "74-82", relation: defines_world_state}
