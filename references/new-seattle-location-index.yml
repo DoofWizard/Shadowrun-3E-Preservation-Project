@@ -1,0 +1,48 @@
+id: reference.new-seattle-location-index
+record_type: reference
+name: "New Seattle Location Index"
+domain: locations
+status: ingested
+source: source.fanpro-10657
+pages: "120-132"
+pdf_pages: "121-133"
+
+purpose:
+  - "District-by-district reference inventory for named Seattle locations."
+  - "Provides addresses or area descriptions, short source-period notes and cross-references to fuller entries elsewhere in New Seattle."
+
+entry_categories:
+  - hotels
+  - restaurants
+  - bars_and_nightclubs
+  - attractions
+  - government
+  - businesses
+  - medical
+
+restaurant_capacity_conventions:
+  small: "up to 75 occupants"
+  medium: "up to 150 occupants"
+  large: "250 occupants or more"
+
+district_ranges:
+  Downtown: "120-123"
+  Council_Island: "123"
+  Bellevue: "123-124"
+  Tacoma: "124-125"
+  Everett: "126"
+  Renton: "127"
+  Auburn: "127-128"
+  Snohomish: "128-129"
+  Fort_Lewis: "129-130"
+  Redmond: "130-131"
+  Puyallup: "131-132"
+
+notes:
+  - "Page references inside the printed index refer to New Seattle itself."
+  - "Descriptions are preserved as source-period reference material; no later continuity or supersession is inferred."
+  - "The alphabetical general index on printed pp.133-135 was checked for reconciliation and adds no new rules-bearing content."
+
+sources:
+  - {source: source.fanpro-10657, pages: "120-132", pdf_pages: "121-133", relation: reference, note: "Location Index"}
+  - {source: source.fanpro-10657, pages: "133-135", pdf_pages: "134-136", relation: reference, note: "General index checked for reconciliation"}
