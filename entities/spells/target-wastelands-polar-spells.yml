@@ -1,0 +1,24 @@
+id: catalog.spells.target-wastelands-polar
+record_type: entity_catalog
+name: "Target: Wastelands Polar Spells"
+domain: spells
+status: ingested
+source: source.fanpro-10653
+pages: "124"
+entries:
+  - id: entity.spell.shape-snow-ice
+    name: "Shape Snow/Ice"
+    properties: {category: "transformation manipulation", type: "P", target: 4, duration: "S", range: "LOS", drain: "+2(M)"}
+    rules: "Functions as Shape Earth but shapes snow and ice."
+  - id: entity.spell.waterbolt
+    name: "Waterbolt"
+    properties: {category: "elemental manipulation", type: "P", target: 4, duration: "I", range: "LOS", drain: "Damage Level"}
+    rules: "Water elemental attack that inflicts Stun and soaking effects; target makes Knockdown. Fire elementals and creatures vulnerable to water take one extra Damage Level."
+  - id: entity.spell.splash
+    name: "Splash"
+    properties: {category: "elemental manipulation", type: "P", target: 4, duration: "I", range: "LOS", drain: "Damage Level"}
+    rules: "Area-effect version of Waterbolt."
+polar_water_effect: "In polar conditions a soaked target begins freezing; until dry and warm the gamemaster may apply 6L damage with +1 Power for each minute and cumulative +1 to all actions per minute."
+sources:
+  - {source: source.fanpro-10653, page: 124, pdf_page: 125, relation: defines}
+notes: []
