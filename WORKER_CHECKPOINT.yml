@@ -10,6 +10,7 @@ resume_at:
   pdf_page: 127
 last_commit: eb084e20aafa4504c1a36d928d40289622bd575b
 open_conflicts:
+  - pending.yotc.aftershocks-p126-133
   - pending.yotc.p115-125
   - pending.yotc.return-of-comet-p6-21
   - pending.source10652.missing-p110-111
@@ -24,34 +25,12 @@ open_conflicts:
   - pending.sona.ute-p178-187
 next_sources:
   - source.fanpro-10654
-  - source.fanpro-10665
-  - source.fasa-7219
-  - source.fasa-7125
-  - source.fasa-7124
-  - source.fasa-7123
-  - source.fasa-7122
-  - source.fasa-7121
-  - source.fasa-7118
-  - source.fasa-7117
-  - source.fasa-7116
-  - source.fasa-7115
-  - source.fasa-7215
-  - source.fasa-7214
-  - source.fasa-7213
-  - source.fasa-7212
-  - source.fasa-7211
-  - source.fasa-7210
-  - source.fasa-7209
 instructions:
-  - main source manifest is authoritative; checkpoint mirrors it
-  - reconcile any recovery sidecar into the main manifest before scanning new pages
-  - continue Year of the Comet sequentially from printed p.126 / PDF p.127
-  - next section is Aftershocks
+  - main source manifest remains authoritative at printed p.125 / PDF p.126
+  - verified scan exists for printed pp.126-133 / PDF pp.127-134 but its state write was filtered
+  - do not rescan pp.126-133 unless needed to recover provenance
+  - reconcile pending.yotc.aftershocks-p126-133 into the main manifest before further scanning
   - preserve printed/PDF provenance
   - capture every rules-bearing item
   - reuse canonical IDs
   - do not infer supersession
-  - keep state files compact and filter-resistant
-  - commit semantic payload, then main manifest, then checkpoint
-  - end the run on any connector filter or true source gap
-  - keep all prior open_conflicts explicit
