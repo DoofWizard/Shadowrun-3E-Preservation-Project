@@ -1,0 +1,95 @@
+id: rule.travel.north-america-border-crossing
+record_type: rule
+name: "North America Border Crossing"
+domain: travel
+status: ingested
+effective: {status: source_option, source: source.fanpro-10655, pages: "203-206", basis: defines}
+scope: {applies_to: ["North American border and customs crossings in Shadows of North America"]}
+
+checkpoint_verification:
+  procedure:
+    - "For false documents, make an Opposed Test: fake-ID rating versus checkpoint verification-system rating."
+    - "Before the test, roll 2D6 on the random-factors table and modify the verification-system rating."
+    - "Apply any applicable verification modifiers."
+    - "Normally test on exit and entry; the gamemaster may simplify to one test using the higher of the two ratings."
+  results:
+    id_wins: "Passes."
+    tie: "Operator asks questions based on the identity history; any incorrect answer rejects the identity."
+    system_wins: "Security is silently alerted and the traveler is diverted for questioning/search."
+  ratings: {AMC: 2, Athabaska: 1, Californian_Protectorate: 2, CAS: 3, Denver_ZDF: 4, Pueblo: 5, Quebec: 4, Sioux: 3, Tir_Tairngire: 4, Tsimshian: 3, UCAS: 3, Ute: 3}
+  denver_note: "Use the rating of the nation corresponding to the sector."
+  random_rating_modifier_2d6:
+    "2": -2
+    "3-5": -1
+    "6-8": 0
+    "9-11": 1
+    "12": 2
+  modifiers:
+    international_airport: 1
+    loose_security: -1
+    tight_security: 1
+    rush_hour: -1
+    dead_of_night: 1
+    crossing_from_allied_country: -1
+    crossing_from_hostile_country: 2
+  time_windows:
+    rush_hour: ["08:00-09:30", "16:30-18:00", "23:30-01:00"]
+    dead_of_night: "01:00-08:00"
+
+unauthorized_crossing:
+  procedure:
+    - "For each nation on either side of the border, make a Sensor Test against vehicle Signature using dice equal to the nation's Sensor Rating, after modifiers."
+    - "Apply the random sensor/Flux factor and situational sensor/Flux modifiers."
+    - "When ECM or ECD is used, use the nation's Flux, ECCM and/or ECD ratings with the SR3/Rigger 3 electronic-warfare rules."
+    - "Sensor Rating 0 or lower, or Flux below 0, means that crossing passes through a sensor-uncovered zone."
+    - "For underwater crossings, use Rigger 3 passive/active sonar rules as appropriate."
+    - "Even if undetected, roll on the random-encounter table; dangerous borders may be rolled twice."
+    - "If detected, adjusted Flux can benchmark detection range using the SR3 Flux Rating and Range Table."
+  ratings:
+    - {nation: AMC, sensor: 3, flux: 5, eccm: null, ecd: null, npc_pro: "Inferior/2"}
+    - {nation: "Manitou Border (AMC side)", sensor: 3, flux: 3, eccm: null, ecd: null, npc_pro: "Equal/2"}
+    - {nation: "Manitou Border (Manitou side)", sensor: 1, flux: 1, eccm: null, ecd: null, npc_pro: "Equal/3"}
+    - {nation: "Athabaskan Council", sensor: 5, flux: 4, eccm: 5, ecd: null, npc_pro: "Inferior/2"}
+    - {nation: CAS, sensor: 6, flux: 6, eccm: 3, ecd: 3, npc_pro: "Equal/3"}
+    - {nation: "Aztlan Border (CAS)", sensor: 8, flux: 8, eccm: 5, ecd: 4, npc_pro: "Equal/4"}
+    - {nation: "Californian Protectorate", sensor: 6, flux: 5, eccm: 4, ecd: 3, npc_pro: "Equal/4"}
+    - {nation: Pueblo, sensor: 7, flux: 8, eccm: 6, ecd: 4, npc_pro: "Equal/2"}
+    - {nation: "Aztlan Border (Pueblo)", sensor: 8, flux: 10, eccm: 6, ecd: 6, npc_pro: "Equal/3"}
+    - {nation: Quebec, sensor: 7, flux: 8, eccm: 3, ecd: null, npc_pro: "Equal/4"}
+    - {nation: "Salish-Shidhe Council", sensor: 5, flux: 6, eccm: 4, ecd: null, npc_pro: "Inferior/2"}
+    - {nation: "Tsimshian Border (SSC)", sensor: 7, flux: 8, eccm: 5, ecd: null, npc_pro: "Inferior/3"}
+    - {nation: Sioux, sensor: 6, flux: 7, eccm: 3, ecd: null, npc_pro: "Equal/3"}
+    - {nation: "UCAS Border (Sioux)", sensor: 8, flux: 10, eccm: 5, ecd: 4, npc_pro: "Superior/4"}
+    - {nation: "Tir Tairngire", sensor: 7, flux: 9, eccm: 6, ecd: 6, npc_pro: "Superior/3"}
+    - {nation: Tsimshian, sensor: 5, flux: 7, eccm: 3, ecd: null, npc_pro: "Inferior/2"}
+    - {nation: "SSC Border (Tsimshian)", sensor: 7, flux: 8, eccm: 5, ecd: null, npc_pro: "Inferior/3"}
+    - {nation: UCAS, sensor: 7, flux: 7, eccm: 4, ecd: 4, npc_pro: "Equal/2"}
+    - {nation: Ute, sensor: 3, flux: 3, eccm: null, ecd: null, npc_pro: "Inferior/2"}
+    - {nation: "Pueblo Border (Ute)", sensor: 3, flux: 5, eccm: null, ecd: null, npc_pro: "Inferior/3"}
+  situational_modifiers:
+    - {situation: "Near Major City or Airport", sensor: 1, flux: 4}
+    - {situation: "Commercial Flight Altitude (1,000-15,000m)", sensor: 0, flux: 2}
+    - {situation: "Very High Altitude (over 15,000m)", sensor: -1, flux: -4}
+    - {situation: "Low Altitude NOE (100-1,000m)", sensor: 0, flux: 0}
+    - {situation: "Nape-of-Earth Flight (less than 100m)", sensor: -1, flux: -2}
+    - {situation: "Land Travel", sensor: -3, flux: -3}
+    - {situation: "River or Lake Travel", sensor: -3, flux: 0}
+    - {situation: "Sea or Ocean Travel", sensor: -1, flux: 0}
+  random_sensor_flux_2d6:
+    "2": {sensor: "Sensors Down", flux: -2}
+    "3-4": {sensor: -2, flux: -1}
+    "5-6": {sensor: -1, flux: 0}
+    "7": {sensor: 0, flux: 0}
+    "8-9": {sensor: 1, flux: 0}
+    "10-11": {sensor: 2, flux: 1}
+    "12": {sensor: 3, flux: 2}
+
+links:
+  uses: [rule.identity.fake-identification, rule.vehicles.sensor-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.vehicles.electronic-warfare]
+sources:
+  - {source: source.fanpro-10655, pages: "203-206", pdf_pages: "204-207", relation: defines}
+notes:
+  - "The source's encounter table is also part of this rule and remains source-specific rather than replacing core encounter procedures."
