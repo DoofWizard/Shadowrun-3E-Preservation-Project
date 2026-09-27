@@ -1,0 +1,71 @@
+id: world.region.puyallup
+record_type: world
+name: "Puyallup"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "4206"
+  size_sq_km: 1008
+  population: 506000
+  population_mix: {Human: "48%", Elf: "21%", Dwarf: "4%", Ork: "22%", Troll: "4%", Other: "1%"}
+  overall_security_rating: "E"
+  hospitals_and_clinics: 6
+  major_corp_facilities: []
+  major_gangs: ["Black Rains","Forever Tacoma","Princes","Reality Hackers"]
+lone_star_security_ratings:
+  C:
+    - "Puyallup City"
+    - "Tarislar"
+  E: ["Carbonado","Loveland","Graham Cracker City"]
+  Z: ["Hell's Kitchen","Orting","Ponderosa Estates","Silver Spring","South Prairie","The Neon Killing","Thrift"]
+security_exceptions:
+  - "Tarislar pays Knight Errant for additional security; the source gives it an effective A rating."
+matrix_context:
+  - "The district Matrix is sparse and unreliable, with factory controllers and small government/business systems, frequent brownouts, system crashes and communications interruptions."
+  - "Abandoned jackpoints are common but risky because syndicates and local groups compete over Matrix access."
+  - "Mafia and yakuza host systems are identified as the principal high-value systems and are described as carrying the strongest lethal IC those syndicates can afford."
+sites:
+  crime_mall:
+    source_page: 69
+    pdf_page: 70
+    profile: "Abandoned mall converted into a black-market bazaar for illegal goods and services."
+    security_note: "Merchants use an effective early-warning network; Lone Star raids occur but have not shut the market down."
+  spirit_focus:
+    source_page: 69
+    pdf_page: 70
+    profile: "Loveland nightclub controlled by the yakuza."
+  underworld_93:
+    source_pages: "69-70"
+    pdf_pages: "70-71"
+    profile: "Major downtown Puyallup concert venue protected through yakuza payments."
+  carbonado:
+    source_page: 70
+    pdf_page: 71
+    profile: "Predominantly ork enclave using abandoned mine tunnels."
+    smuggling_note: "Some tunnels extend beneath the NAN border and are used for cross-border smuggling."
+  hells_kitchen:
+    source_page: 70
+    pdf_page: 71
+    profile: "Lava fields, mud flats, steam geysers and ash west of Carbonado."
+    magical_note: "Main text describes it as one of the few local areas whose astral space is not heavily tainted by violence, pollution or ecological devastation; shamans and enchanters use it for spirit quests and natural materials."
+  loveland:
+    source_page: 70
+    pdf_page: 71
+    profile: "Rough border neighborhood dominated by vice, smuggling and Mafia/yakuza competition."
+  tarislar:
+    source_pages: "71-72"
+    pdf_pages: "72-73"
+    profile: "Predominantly elven squatter community with limited outsider contact."
+gangs:
+  black_rains: "All-ork Carbonado gang; protection, smuggling and chip dealing; linked to the Cascade Ork smuggling network."
+  princes: "Elven Tarislar gang; militant defense of local turf."
+  forever_tacoma: "Ork/troll Loveland gang involved in protection, gambling and organized-crime work."
+  reality_hackers: "Techno-gang based near Puyallup proper; theft, datasteals, chips, pirated software and fencing of technology/data."
+shadowtalk_speculation:
+  - claim: "A commenter alleges Tarislar may be useful to Tir interests as a source of agents or a smuggling/espionage route."
+    verification: "unverified_shadowtalk"
+sources:
+  - {source: source.fanpro-10657, pages: "68-72", pdf_pages: "69-73", relation: defines_world_state}
+notes:
+  - "Source-period gang and syndicate relationships are preserved without inferring later continuity."

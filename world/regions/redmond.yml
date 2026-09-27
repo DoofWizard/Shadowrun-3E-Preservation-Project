@@ -1,0 +1,81 @@
+id: world.region.redmond
+record_type: world
+name: "Redmond"
+domain: regions
+status: ingested
+source_period: "2060"
+at_a_glance:
+  LTG_code: "11206"
+  size_sq_km: 436
+  population: 498000
+  population_mix: {Human: "81%", Elf: "6%", Dwarf: "1%", Ork: "10%", Troll: "1%", Other: "1%"}
+  overall_security_rating: "E"
+  hospitals_and_clinics: 6
+  major_corp_facilities: []
+  major_gangs: ["Brain Eaters","Crimson Crush","Red Hot Nukes","Rusted Stilettos","Spiders"]
+lone_star_security_ratings:
+  C: ["Redmond (Touristville)"]
+  E: ["Avondale","Brain Heaven","Hollywood","Kingsgate","Plastic Jungles","Purity","Sophocles","Woodinville"]
+  Z: ["Rat's Nest","Glow City"]
+security_note: "The source notes that areas outside Touristville are collectively known as the Barrens."
+matrix_context:
+  - "Redmond has little maintained public/corporate Matrix infrastructure after the Crash; abandoned jackpoints and exposed fiber links remain common."
+  - "A high-end cyberdeck visibly stands out because comparatively few residents maintain useful computers or decks."
+sites:
+  body_mall:
+    source_pages: "62-63"
+    pdf_pages: "63-64"
+    profile: "Abandoned hospital occupied by street doctors and former staff offering legal and illegal medical work."
+    pricing_rule: "Cyber-modifications are commonly offered for 10-20% less than comparable Downtown hospital or clinic prices."
+    quality_warning: "Much of the cyberware and many replacement organs are low-grade or second-hand."
+  crusher_495:
+    source_page: 63
+    pdf_page: 64
+    profile: "Touristville bar and community gathering place."
+    contact_note: "Manager Janus Koskey is presented as a useful information broker and introducer."
+  the_skeleton:
+    source_page: 63
+    pdf_page: 64
+    profile: "Touristville nightclub serving local talent and visiting Bellevue patrons."
+    security_note: "Management uses large bouncers and excludes many orks and trolls."
+  crash_zone:
+    source_page: 64
+    pdf_page: 65
+    origin: "Created by a 2059 Corporate Court shuttle crash; blast and fire damage covered an approximately three-kilometer radius."
+    factions: ["King Chrome's Reformatory survivors/scavengers"]
+    matrix_interest: "Surviving spacecraft components draw interest from Novatech and other corporations."
+    astral_note: "Source commentary describes astral space around the Crash Zone as dangerously disturbed, comparable to Glow City."
+  glow_city:
+    source_page: 65
+    pdf_page: 66
+    origin: "Site of the 2013 Trojan-Satsop nuclear-plant partial meltdown; Shiawase opened a replacement plant nearby in 2028."
+    hazards: ["radiation contamination","high cancer and radiation-sickness incidence","mutation risk"]
+    magical_note: "Local shamans report severe spiritual/astral contamination; unusual spirits are described in shadowtalk."
+  hollywood_simsense_entertainments:
+    source_page: 65
+    pdf_page: 66
+    profile: "Low-end simsense/BTL producer tied to local organized crime."
+  plastic_jungles:
+    source_page: 65
+    pdf_page: 66
+    profile: "Abandoned giant greenhouse complex inhabited by metahuman squatters/tribes."
+    hazards: ["contaminated soil"]
+  rats_nest:
+    source_pages: "65-66"
+    pdf_pages: "66-67"
+    profile: "North Seattle Refuse Center; large scavenger/squatter community amid the dump."
+gangs:
+  rusted_stilettos: "Metahuman gang based around Glow City/Route 202; protection, smuggling and BTL trade."
+  crimson_crush: "Ork gang in Touristville/Bargain Basement; neighborhood-watch role plus protection, smuggling and BTL dealing."
+  brain_eaters: "Mixed-race techno-gang in Touristville; scavenging, smuggling and shadow-decker activity."
+  red_hot_nukes:
+    canonical_id: entity.organization.red-hot-nukes
+    note: "Dwarf go-gang based around Hollywood/Route 202; specializes in demolitions-related rackets."
+  spiders:
+    canonical_id: entity.organization.spiders
+    note: "Gang led by Widow, strongly associated with Spider totem ideology and anti-insect-spirit activity in the source-period profile."
+sources:
+  - {source: source.fanpro-10657, pages: "60-68", pdf_pages: "61-69", relation: defines_world_state}
+notes:
+  - "Gang entries are source-period profiles; New Seattle does not explicitly state that they supersede the Companion gang profiles."
+  - "Shadowtalk rumors are not promoted to established world facts unless independently stated by the main text."
