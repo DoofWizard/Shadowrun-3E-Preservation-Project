@@ -1,0 +1,30 @@
+id: rule.spirits.imp-astral-form
+record_type: rule
+name: "Imp Astral Form"
+domain: spirits
+status: ingested
+scope:
+  applies_to: [entity.spirit.imp]
+resolution:
+  attributes: "Use the imp's Force rating for all attributes."
+  physical_presence: "An imp cannot materialize and has no Physical Attributes. To act on the physical plane it must occupy a focus."
+  unoccupied_force_loss:
+    interval: "Each full 24 hours spent on the astral plane without occupying a focus."
+    effect: "Reduce Force by 1."
+    zero_force: "Destroyed when Force reaches 0."
+    prevention: "Occupying a focus prevents this Force loss; after an imp is forced out, the countdown begins again."
+  detection:
+    assensing_modifier: "+3 target-number modifier to Assensing Tests to detect/resolve the imp."
+    other_magic_detection: "+3 target-number modifier to other magical-detection methods, including Magic Sense and Detect Magic."
+  astral_barriers:
+    modifier: "-3 to the imp's target number for the Success Test when using Aura Masking to bypass an astral barrier."
+appearance:
+  - "Astral forms vary widely and appear wispy, translucent and comparatively insubstantial."
+links:
+  uses:
+    - rule.spirit-powers.aura-masking
+    - rule.magic.astral-barriers
+  affects:
+    - entity.spirit.imp
+sources:
+  - {source: source.fanpro-10652, page: 35, pdf_pages: "35", relation: defines}
