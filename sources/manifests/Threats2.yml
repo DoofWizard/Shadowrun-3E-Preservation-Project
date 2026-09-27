@@ -7,13 +7,15 @@ publisher: "FanPro"
 status: ingesting
 scan_depth: directed
 source_format: "image-only PDF"
+sequential_scan_status: "complete_for_available_numbered_pages"
 page_mapping:
   - {pdf_pages: "1-109", printed_pages: "1-109", relation: "printed page equals PDF page"}
-  - {pdf_pages: "110-119", printed_pages: "112-121", relation: "printed page equals PDF page + 2"}
+  - {pdf_pages: "110-118", printed_pages: "112-120", relation: "printed page equals PDF page + 2"}
+  - {pdf_pages: "119", printed_pages: null, relation: "unnumbered back cover"}
 source_gaps:
   - {id: pending.source10652.missing-p110-111, printed_pages: "110-111", pdf_pages: null, status: "not present in source PDF"}
-completed_through: {printed_page: 109, pdf_page: 109}
-resume_at: {printed_page: 112, pdf_page: 110}
+completed_through: {printed_page: 120, pdf_page: 118}
+resume_at: {pending_id: pending.source10652.p24, printed_page: 24, pdf_page: 24, mode: "pending_normalization"}
 pending_normalization:
   - {id: pending.source10652.p24, pages: "24", pdf_pages: "24"}
   - {id: pending.source10652.p35-36-a, pages: "35-36", pdf_pages: "35-36"}
@@ -23,7 +25,11 @@ pending_normalization:
   - {id: pending.source10652.p45-b, pages: "45", pdf_pages: "45"}
   - {id: pending.source10652.p79-80, pages: "79-80", pdf_pages: "79-80"}
   - {id: pending.source10652.p100-101, pages: "100-101", pdf_pages: "100-101"}
+  - {id: pending.source10652.p112-118, pages: "112-118", pdf_pages: "110-116"}
   - {id: pending.source10652.missing-p110-111, pages: "110-111", pdf_pages: null}
 notes:
-  - "Directed scan completed through the Order of the Temple Game Information on printed/PDF p.109."
+  - "Directed scan completed through printed p.118 / PDF p.116; the final numbered pages 119-120 / PDF 117-118 are index-only."
   - "The source PDF jumps from printed p.109 / PDF p.109 to printed p.112 / PDF p.110. Printed pp.110-111 are absent from this source copy and remain explicitly pending; no contents are inferred."
+  - "The verified p.112-118 chapter details remain pending because the connector rejected the compact normalization commit; the scan boundary is preserved rather than replayed."
+  - "PDF p.119 is an unnumbered back cover."
+  - "The sequential scan is finished for all available numbered pages, but this source remains ingesting until every pending normalization item and the missing-page gap are resolved or explicitly reconciled."
