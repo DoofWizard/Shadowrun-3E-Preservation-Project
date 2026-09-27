@@ -1,0 +1,38 @@
+id: rule.security.target-wastelands-underwater-detection
+record_type: rule
+name: "Target: Wastelands Underwater Detection and Deterrence"
+domain: security
+status: ingested
+context: "fictional tabletop setting technology"
+effective: {status: source_specific, source: source.fanpro-10653, pages: "96-98", pdf_pages: "97-99", basis: defines_source_specific_conditions}
+
+olfactory_defense:
+  status: "attached technology description"
+  mechanism: "Thermally stable hydrogel carries bioactive agents and engineered scent compounds that activate in colder water."
+  uses:
+    - "Mask a diver's scent from marine predators or trained creatures."
+    - "Create decoy scent signatures for remotely operated devices."
+  linked_entity: entity.gear.olfactory-camouflage
+
+biological_deterrent:
+  status: "attached technology description"
+  mechanism: "A hydrogel can keep selected toxin-producing algae dormant until release into surrounding water."
+  purpose: "Discourage hazardous marine life from approaching a protected area."
+
+ares_trident_program:
+  status: "source-period research program"
+  normalized_equipment:
+    - entity.gear.hydrostatic-pulse-baffler
+    - entity.gear.screaming-mimi
+    - entity.gear.snake-spine-whip
+  note: "Detailed mechanics and statistics are stored in the linked Game Information equipment catalog."
+
+commentary_only:
+  - "A post describes trained dolphins responding to specific acoustic transponder frequencies as a passive alarm network; this is retained as posted commentary rather than universal source fact."
+
+links:
+  interacts_with: [catalog.gear.target-wastelands-underwater-systems]
+sources:
+  - {source: source.fanpro-10653, pages: "96-98", pdf_pages: "97-99", relation: defines_source_specific_conditions}
+notes:
+  - "Fictional technology descriptions only; rumors are explicitly segregated."
