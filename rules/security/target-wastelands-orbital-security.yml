@@ -1,0 +1,45 @@
+id: rule.security.target-wastelands-orbital-security
+record_type: rule
+name: "Target: Wastelands Orbital Security and Communications"
+domain: security
+status: ingested
+
+effective:
+  status: source_specific
+  source: source.fanpro-10653
+  pages: "73-79"
+  basis: defines_source_specific_conditions
+
+station_security:
+  general:
+    - "Orbital facilities favor surveillance, access controls and nonlethal weapons because hull damage, fire and atmospheric contamination are critical risks."
+    - "Firearms are uncommon; tasers, dart pistols and stun batons are described as common alternatives."
+    - "Life-support and communications computers are typically protected with strong encryption and intrusion countermeasures."
+  zurich_orbital:
+    passenger_and_freight_screening:
+      - "identity checks"
+      - "fingerprint scan"
+      - "retinal scan"
+      - "voice scan"
+      - "DNA match"
+      - "height/weight profile"
+      - "baggage scanning"
+      - "astral screening"
+    matrix:
+      minimum_host: "Red-6"
+      note: "Outside communications use dedicated uplinks, scheduled timing and heavy encryption."
+
+communications:
+  earth_moon_latency:
+    one_way: "about 1 second"
+    round_trip: "about 2 seconds"
+    rule_note: "The source explicitly notes that the delay affects both deckers and IC."
+
+station_access:
+  life_support: "Visitors normally pay access or docking fees that include life-support costs; invited employees or guests may have these costs covered."
+
+sources:
+  - {source: source.fanpro-10653, pages: "73-79", pdf_pages: "74-80", relation: defines_source_specific_conditions}
+
+notes:
+  - "Formal zero-gravity combat, movement and environmental modifiers remain for the Game Information extraction."
