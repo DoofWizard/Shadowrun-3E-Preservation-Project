@@ -4,58 +4,111 @@ name: "Year of the Comet SURGE Paranormals"
 domain: critters
 status: ingested
 source: source.fanpro-10650
-printed_pages: "35-41"
-pdf_pages: "36-42"
+printed_pages: "35-41, 143-145"
+pdf_pages: "36-42, 144-146"
 entries:
   - id: entity.critter.demon-rat
     name: "Demon Rat"
     origin: "SURGE expression of devil rat"
     descriptive_traits:
-      - "Larger than ordinary devil rats, commonly around 1 meter long with an additional meter of tail."
-      - "Pair of short sharp horns, dark fur, high disease/poison resistance and corrosive saliva."
-      - "More predatory, organized and aggressive than ordinary devil rats; dexterous hands can manipulate simple mechanisms."
+      - "Larger and more organized than ordinary devil rats; hunts in swarms and can direct mundane/devil rats."
+    intrinsic:
+      stat_block: {body: "5/4", quickness: "6 x 3", strength: 5, charisma: 5, intelligence: "4/6", willpower: 4, essence: "6Z", reaction: 6}
+      initiative: "6 + 2D6"
+      attacks: "6M"
+      powers:
+        - "Animal Control (Mundane Rats, Devil Rats)"
+        - "Concealment (Personal)"
+        - "Corrosive Saliva"
+        - "Immunity (Pathogens, Poisons)"
+      weaknesses:
+        - "Allergy (Sunlight, Moderate)"
+      notes:
+        - "1 in 6 chance of Pestilence (VITAS-3); infected rats are immune to the virus and act as carriers."
+        - "1 in 6 chance of Regeneration."
   - id: entity.flora.glomoss
     name: "Glomoss"
     origin: "Awakened/SURGE moss variation"
     descriptive_traits:
-      - "Dual-natured flora sensitive to astral magical activity."
-      - "Glows luminescent green when it detects astral activity or mana concentration."
-      - "Used as low-cost astral security/detection, sometimes paired with cameras/light sensors."
-      - "Vulnerable to mana magic and detects wards, bound spirits or other astral constructs that approach closely."
+      - "Dual-natured astral alarm moss that glows when it senses astral magical activity."
+    intrinsic:
+      force_rated: true
+      force_limit: "Force may not exceed area in square meters x 5."
+      powers:
+        - "Magic Sense (astral plane only)"
+      weaknesses:
+        - "Dietary Requirement (Water)"
   - id: entity.critter.horned-bear
     name: "Horned Bear"
     origin: "SURGE bear variant"
     descriptive_traits:
-      - "Very large bear, reported around 4 meters tall when erect, with curled ram-like horns and dark fur."
-      - "Dual-natured; unusually fast, strong and resilient."
-      - "Territorial behavior includes a challenge display before attack."
+      - "Large territorial bear with a ritualized challenge response."
+    intrinsic:
+      stat_block: {body: "13/6", quickness: "6 x 4", strength: 13, charisma: null, intelligence: "4/6", willpower: 5, essence: "6Z", reaction: 5}
+      initiative: "5 + 2D6"
+      attacks:
+        - "10M Stun without claws"
+        - "13S Physical with claws"
+        - "+2 Reach"
+      powers:
+        - "Enhanced Physical Attribute (Strength)"
+        - "Enhanced Reactions"
+      behavior_rule:
+        - "If the ritual single-opponent melee challenge is violated by multiple attackers, ranged weapons or offensive spells, it activates enhanced abilities and fights to the death."
   - id: entity.critter.night-manta
     name: "Night Manta"
     origin: "Awakened manta-ray variant"
-    descriptive_traits:
-      - "Airborne nocturnal hunter rather than aquatic."
-      - "Uses magical levitation; approximately 1.8 meters long with wingspan approaching 3 meters."
-      - "Jet-black coloration, tail stinger with virulent venom, rows of sharp teeth."
-      - "Dual-natured but described as showing little interest in astral forms of magicians or spirits."
+    intrinsic:
+      stat_block: {body: 6, quickness: "6 x 4", strength: 6, charisma: null, intelligence: "4/4", willpower: 4, essence: 6, reaction: 5}
+      initiative: "4 + 1D6"
+      attacks: "8M"
+      powers:
+        - "Innate Spell (Levitate)"
+        - "Shadow Cloak"
+        - "Silence"
+        - "Venom (6S, Speed 1 Combat Turn)"
   - id: entity.flora.sangre-del-diablo
     name: "Sangre del Diablo"
     translation: "Blood of the Devil"
     origin: "SURGE variant related to Sangre del Drago"
-    descriptive_traits:
-      - "Huge carnivorous tree, reported up to roughly 40 meters."
-      - "Magically compels nearby victims, envelops them and uses corrosive sap to dissolve prey."
-      - "Porous wood is unusually durable; source describes resistance to conventional removal and magical effects."
+    intrinsic:
+      stat_block: {body: "16/8", quickness: "5 x 0", strength: 14, charisma: null, intelligence: "2/5", willpower: 6, essence: 8, reaction: 3}
+      initiative: "3 + 1D6"
+      powers:
+        - "Compulsion"
+        - "Corrosive Secretions"
+        - "Engulf"
+        - "Immunity (Fire)"
+        - "Magical Guard"
+      notes:
+        - "Treat Engulf as sludge engulf (Critters p.9)."
   - id: entity.critter.shambler
     name: "Shambler"
-    origin_status: "Initially speculated SURGE ghoul/goblin variant; source states captured specimens are not HMHVV-infected."
-    descriptive_traits:
-      - "Pale nocturnal creature around 1.4 meters tall and 150 kg with four near-sighted eyes."
-      - "Produces extremely sticky neck/chest secretion to immobilize prey."
-      - "Builds an external shell from corpses and secretions; feeds through vein-like structures connected to the shell."
-      - "Shell hardens into a resinous armored mass; source suggests possible asexual reproduction by shedding a shell to an offspring."
+    origin_status: "Initially speculated SURGE ghoul/goblin variant; captured specimens are not HMHVV-infected."
+    intrinsic:
+      stat_block: {body: "4/*", quickness: "5 x 3", strength: 6, charisma: 1, intelligence: "4/5", willpower: 5, essence: 6, reaction: 5}
+      initiative: "5 + 1D6"
+      attacks: "4M"
+      powers:
+        - "Engulf"
+        - "Hardened Armor"
+        - "Innate Spell (Glue)"
+        - "Paralyzing Touch"
+      weaknesses:
+        - "Allergy (Sunlight, Severe)"
+      shell_growth:
+        armor_gain: "Gain 1 point of armor for every 6 points of Body added to the shell."
+        reproduction_threshold: "At 13 points of armor, sheds shell and produces a new shambler."
+        per_4_armor_modifiers: "+2 Body, -1 Quickness, -1 Reaction."
+
 surge_nature_notes:
-  - "SURGE expression also occurs in ordinary fauna, flora and insects; effects can be individual rather than species-wide."
+  - "SURGE expression also occurs in fauna, flora and insects; effects can be individual rather than species-wide."
   - "Researchers use 'Novo' in nomenclature for identified SURGE variants."
-  - "The chapter gives descriptive ecology but defers formal game statistics to later Game Information."
+  - "Formal game statistics are defined in Game Information pp.143-145."
+
 sources:
   - {source: source.fanpro-10650, printed_pages: "35-41", pdf_pages: "36-42", relation: defines_entities}
+  - {source: source.fanpro-10650, printed_pages: "143-145", pdf_pages: "144-146", relation: defines_stats}
+
+notes:
+  - "Existing canonical IDs are reused; no supersession is inferred."
