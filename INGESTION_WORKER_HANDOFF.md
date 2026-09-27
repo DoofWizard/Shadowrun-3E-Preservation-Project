@@ -269,3 +269,65 @@ Adopt this workflow incrementally:
 7. roll into a fresh conversation when context quality begins declining
 
 The objective is that each expensive source read becomes durable structured knowledge that no later worker has to pay to rediscover.
+
+
+## Transactional durability protocol (v2)
+
+This protocol is mandatory for every ingestion slice. It exists to prevent connector filtering or partial writes from creating competing resume states.
+
+### Single source of truth
+- The active source's main file in `sources/manifests/*.yml` is the sole authoritative source-progress record.
+- `WORKER_CHECKPOINT.yml` is a disposable execution mirror of the active main manifest. If they disagree, repair the checkpoint from the main manifest before reading more source pages.
+- Recovery/scan-checkpoint sidecars are never authoritative. They may temporarily preserve evidence only when the main manifest itself cannot be written. Reconcile them into the main manifest at the next successful write, then delete or explicitly retire them.
+- Conversation state, local files, commit messages, and catalog status never override a main source manifest.
+
+### Keep state files filter-resistant
+Main manifests and `WORKER_CHECKPOINT.yml` must contain compact operational metadata only. Do not place long fictional summaries, graphic narrative prose, quotations, or large normalization payloads in them.
+
+A main manifest may contain:
+- source identity and routing
+- scan depth
+- printed/PDF boundaries
+- exact pending IDs/ranges
+- concise neutral reasons
+- compact non-graphic notes needed to resume safely
+
+Rich extracted material belongs in canonical/entity/rule records, not in worker state files.
+
+### Slice transaction order
+For each bounded semantic slice:
+
+1. Re-read the main source manifest and checkpoint from GitHub.
+2. Reacquire the source from the catalog/Drive for the run.
+3. Scan the bounded range and prepare the normalization payload.
+4. Attempt the semantic/canonical write first.
+5. Update the main source manifest second.
+6. Update `WORKER_CHECKPOINT.yml` third, mirroring the manifest resume boundary and open pending IDs.
+7. Only then begin another slice.
+
+Never advance to another slice until steps 4-6 are durably consistent.
+
+### Connector-filter fallback
+If the semantic/canonical payload is blocked:
+- do not retry the same rich payload through alternate Git object APIs;
+- preserve the exact verified printed/PDF range in the main manifest as `pending_normalization`;
+- advance the manifest's verified scan/resume boundary only if the scan itself is complete and provenance is known;
+- mirror that same boundary and pending ID into `WORKER_CHECKPOINT.yml`;
+- end the run.
+
+A filtered semantic payload is a pending normalization problem, not a source gap.
+
+If the main manifest write itself is blocked, write one compact recovery sidecar containing only source ID, exact printed/PDF range, resume boundary, pending ID and reason; checkpoint to the last authoritative main-manifest boundary and end. On the next run, reconciliation of that sidecar into the main manifest is the first operation.
+
+### Completion gate
+A source may be marked `complete` only when:
+- the sequential scan reached the routed end of the source;
+- all required deep-scan ranges were processed;
+- `pending_normalization` is empty;
+- source gaps required for completeness are resolved or explicitly classified as irrecoverable with a project-level decision;
+- the main manifest and worker checkpoint agree.
+
+### Commit semantics
+`last_commit` in `WORKER_CHECKPOINT.yml` should point to the latest durable main-manifest or semantic commit that defines the current resume state. The checkpoint's own commit does not need to point to itself.
+
+This protocol supersedes any earlier practice that treated a recovery sidecar or checkpoint as more authoritative than the main source manifest.
