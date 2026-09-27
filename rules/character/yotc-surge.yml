@@ -1,0 +1,242 @@
+id: rule.character.yotc-surge
+record_type: rule
+name: "Year of the Comet SURGE Character Rules"
+domain: character
+status: ingested
+effective:
+  status: optional
+  source: source.fanpro-10650
+  printed_pages: "138-143"
+  pdf_pages: "139-144"
+  basis: defines
+
+eligibility:
+  surge_test:
+    test: "Essence (12) Test"
+    karma_allowed: false
+    exclusions:
+      - "characters with variable Essence"
+      - "cyberzombies"
+      - "characters with Essence 0 or less"
+    partial_essence: "round Essence up before testing"
+    target_number_modifiers:
+      awakened: "+(Magic rating / 2, round up)"
+      metahuman_standard: "+2"
+      metahuman_variant: "+3"
+      albino: "+4"
+      otaku: "+4"
+      infected_hmhvv: "+5"
+      shapeshifter: "+6"
+  new_characters:
+    options:
+      - "make the SURGE Test normally"
+      - "buy SURGE Positive and Negative Effects in the same manner as Edges and Flaws"
+    changeling_build_point_fee: 5
+    restriction: "A new character using the purchase method may not take SURGE Effects without paying the changeling fee."
+
+severity:
+  trigger: "one or more successes on the SURGE Test"
+  negative_effect_points:
+    roll: "1D6"
+    modifier: "+2 for each SURGE Test success after the first"
+  positive_effect_points:
+    roll: "1D6"
+    modifier: "+2 for each SURGE Test success after the first"
+  reroll:
+    cost_good_karma: 5
+    scope: "either one of the two 1D6 severity rolls"
+    finality: "the reroll result is final"
+
+effect_framework:
+  categories: [positive, negative]
+  balancing: "Positive and Negative SURGE Effect point totals need not cancel."
+  assignment: "GM may allow selection or require random generation."
+  custom_effects: "GM and player may create custom effects with final GM approval, balancing against these effects and SRComp Edges/Flaws."
+
+negative_effects:
+  - {name: "Altered Eye Color", value: -1, mechanics: "No direct vision effect; incompatible with cybereyes/bioware cat eyes and Feline Eyes."}
+  - {name: "Altered Skin Coloration", value: "-1 or -2", mechanics: "Value varies by visibility/social impact; incompatible with dermal sheathing, chloroplast skin and bioware skin pigmentation."}
+  - name: "Astral Hazing"
+    value: -5
+    restrictions: ["not available to Awakened characters"]
+    mechanics:
+      - "After remaining in one location for over an hour, creates local background count 1."
+      - "Background count may rise to Essence / 2, round down, minimum 1."
+      - "Applies to magic on both physical and astral planes."
+      - "Created background count fades about one hour after the character leaves."
+  - name: "Bio-Rejection"
+    value: "-5; -2 for Awakened characters"
+    mechanics:
+      - "Body rejects all cyberware, including nano-implants, and non-cultured bioware implants."
+      - "If implants are already present, illness progresses to incapacitation over Body days."
+      - "Without hospitalization/removal within Body x 2 days, the character dies."
+  - name: "Chronic Osteocuspus"
+    value: -10
+    mechanics:
+      - "Initial acclimation lasts (10 - Willpower) weeks."
+      - "During acclimation, +4 modifier to all actions from pain."
+      - "Pain-control drugs/powers/implants may reduce the modifier at GM discretion but may lengthen acclimation."
+      - "Ordinary armor/restrictive clothing cannot be worn; custom gear costs 50% more base cost."
+      - "After acclimation, gains pain resistance equivalent to adept Pain Resistance level 3."
+      - "Automatically gains Slow Healer at no additional value."
+      - "Bone thorns add +1 Power to unarmed attacks."
+      - "Surgical removal causes two weeks at +2 to all actions."
+      - "Incompatible with dermal sheathing."
+  - {name: "Critter Spook", value: -1, mechanics: "Animals/paranormal critters react with fear/hostility; +2 modifier to attempts to control, soothe or pacify them; in combat they preferentially attack this character."}
+  - {name: "Cyclops", value: -4, mechanics: "Existing cybereyes are purged; one natural eye remains; +2 target-number modifier to ranged attacks from lost depth perception."}
+  - name: "Dual Natured"
+    value: "-10; -5 for Awakened characters"
+    mechanics:
+      - "Permanently dual natured and simultaneously present on physical and astral planes."
+      - "May affect and be affected by astral objects/forms and is vulnerable to astral attack and possession."
+      - "May learn Aura Reading."
+      - "Awakened characters may still astrally project; they become dual natured again on return."
+  - {name: "Feathers", value: "-1 or -2", mechanics: "No protective value; value depends on visibility/social impact."}
+  - {name: "Pointed Ears", value: -1, mechanics: "Human only; may pass as elf if desired; exposed deception may provoke hostile NPC reaction."}
+  - {name: "Scales", value: "-1 or -2", mechanics: "No protective value; incompatible with dermal sheathing."}
+  - {name: "Slow Healer", value: -2, mechanics: "+2 modifier to all Healing Tests."}
+  - {name: "Third Eye", value: -2, mechanics: "No vision modifier; when hidden its presence can be detected with Perception (4)."}
+  - {name: "Tusks", value: -1, mechanics: "Minor speech impediment possible; unavailable to orks and trolls."}
+  - {name: "Unusual Hair", value: "-1 or -2", mechanics: "Value depends on visibility/social impact; incompatible with Feathers."}
+  - {name: "Vestigial Tail", value: -1, mechanics: "No balance bonus; clothing must be tailored; may hinder prolonged sitting."}
+  - name: "SRComp Flaws as Negative Effects"
+    values:
+      Allergy: "-2 to -5"
+      Color Blind: -1
+      Low Pain Tolerance: -4
+      Night Blindness: "-2/-1"
+      Weak Immune System: -1
+      Sensitive Neural Structure: "-2/-4"
+      Simsense Vertigo: "-2/-4"
+      Astral Impressions: -2
+      Spirit Bane: -2
+
+positive_effects:
+  - name: "Astral Sight"
+    value: 6
+    restrictions: ["not available to already-Awakened characters, including adepts"]
+    mechanics:
+      - "Limited Awakening; Magic rating 1."
+      - "May astrally perceive and learn Aura Reading and Enchanting."
+      - "Cannot astrally project or gain other magical abilities/skills from this effect."
+  - {name: "Claws or Talons", value: 2, mechanics: "Unarmed Combat; damage (STR + 1)L; incompatible with handrazor cyberware."}
+  - {name: "Dermal Deposits", value: 2, mechanics: "+1 Body for Damage Resistance Tests; cumulative with troll natural dermal armor and dermal-plating cyberware."}
+  - {name: "Fangs", value: 2, mechanics: "Unarmed Combat; -1 Reach; damage (STR + 1)L."}
+  - {name: "Feline Eyes", value: 2, mechanics: "Natural low-light vision; prior natural thermographic vision is lost; value 0 for shapeshifters; incompatible with cybereyes/bioware cat eyes."}
+  - {name: "Gills", value: 4, mechanics: "Can breathe underwater with OXSYS-cybergill-equivalent benefits without cyber upkeep; incompatible with OXSYS cybergills."}
+  - name: "Goblinization"
+    value: 10
+    mechanics:
+      - "Transforms into a different metahuman variant; human characters may only become ork or troll."
+      - "Existing racial modifiers are replaced by the new metahuman variant's modifiers."
+      - "GM may rule that incompatible implants suffer Stress or failure."
+  - {name: "High Frequency Hearing", value: 2, mechanics: "Natural high-frequency hearing; incompatible with cyberears/high-frequency hearing modifications."}
+  - {name: "Horns", value: 2, mechanics: "Unarmed Combat; -1 Reach; damage STR/M."}
+  - {name: "Improved Scent", value: 2, mechanics: "Functions as the adept power of the same name; unavailable if already possessed as an adept power."}
+  - {name: "Improved Taste", value: 2, mechanics: "Functions as the adept power of the same name; unavailable if already possessed as an adept power."}
+  - name: "Long Tail"
+    value: 2
+    mechanics:
+      - "-2 target-number modifier to tests involving balance, climbing, jumping, falling, Knockdown and similar balance tasks."
+      - "With balance-augmentation earware, cumulative modifier becomes -3."
+  - {name: "Low Frequency Hearing", value: 2, mechanics: "Natural low-frequency hearing; incompatible with cyberears/low-frequency hearing modifications."}
+  - {name: "Marsupial Pouch", value: 2, mechanics: "May carry items with Concealability 6 or higher; carried item gains +4 Concealability."}
+  - name: "Natural Venom"
+    value_by_vector: {ingestion: 2, injection: 4, inhalation: 6, contact: 8}
+    mechanics:
+      - "Venom Power equals unaugmented Body."
+      - "Damage Level M; Speed Immediate."
+      - "Maximum daily doses equal Essence."
+      - "Injection may be delivered via spit/mucus into bloodstream; Inhalation may use aerosol spray; Contact may coat weapons or be used with spit attack."
+      - "GM may substitute a different compound/effect and increase the value appropriately."
+  - name: "Prehensile Tail"
+    value: 5
+    mechanics:
+      - "Functions as Long Tail plus conscious object manipulation."
+      - "+2 modifier to attempts to use objects with the tail."
+      - "Effective Strength equals half unaugmented Strength, round down."
+      - "Can support full body weight when hanging if attached at the spine."
+      - "Does not provide an extra attack."
+  - {name: "Resistance to Disease", value: "1, 3 or 5", mechanics: "Each level adds one die to Body Tests resisting disease; stacks with implants, magic and dwarven natural resistance."}
+  - {name: "Resistance to Poisons", value: "1, 3 or 5", mechanics: "Each level adds one die to Body Tests resisting toxins; stacks with implants, magic and dwarven natural resistance."}
+  - {name: "Retractable Claws", value: 3, mechanics: "As Claws/Talons but retractable; incompatible with handrazor cyberware."}
+  - name: "Satyr Legs"
+    value: 6
+    mechanics:
+      - "+1 to running multiplier."
+      - "+2 Power to kicking attacks."
+      - "+1 die to Athletics Tests involving jumping."
+      - "Incompatible with cyberlegs."
+  - {name: "Thermographic Vision", value: "2; 1 for Decker and Rigger characters", mechanics: "Natural thermographic vision like dwarfs and trolls."}
+  - name: "SRComp Edges as Positive Effects"
+    values:
+      Exceptional Attribute: 2
+      Adrenaline Surge: 2
+      Double Jointed: 1
+      High Pain Tolerance: "2 per box"
+      Lightning Reflexes: "2/4/6"
+      Natural Immunity: "1/3"
+      Night Vision: "2/1"
+      Quick Healer: 2
+      Toughness: 3
+      Will to Live: "1/2/3"
+      Perfect Time: 1
+      Photographic Memory: 3
+      Sense of Direction: 1
+      Animal Empathy: 2
+      Astral Chameleon: 2
+      Magic Resistance: "1 to 4"
+      Poor Link: 2
+      Spirit Affinity: 2
+
+random_effect_tables:
+  positive_3d6:
+    3: "Goblinization"
+    4: "Satyr Legs"
+    5: "1D6: 1-3 Retractable Claws; 4-6 Marsupial Pouch"
+    6: "Dermal Deposits"
+    7: "1D6: 1-3 Resistance to Disease; 4-6 Resistance to Poisons"
+    8: "1D6: 1-3 Claws; 4-6 Talons"
+    9: "Choose an Edge as a Positive Effect, or create one"
+    10: "Thermographic Vision"
+    11: "1D6: 1-3 Fangs; 4-6 Horns"
+    12: "1D6: 1-3 High Frequency Hearing; 4-6 Low Frequency Hearing"
+    13: "1D6: 1-3 Improved Scent; 4-6 Improved Taste"
+    14: "Feline Eyes"
+    15: "Natural Venom"
+    16: "Prehensile Tail"
+    17: "Gills"
+    18: "Astral Sight"
+  negative_3d6:
+    3: "Chronic Osteocuspus"
+    4: "Bio-Rejection"
+    5: "Cyclops"
+    6: "Third Eye"
+    7: "Critter Spook"
+    8: "Tusks"
+    9: "Altered Skin Coloration"
+    10: "Unusual Hair"
+    11: "Altered Eye Color"
+    12: "Choose a Flaw as a Negative Effect, or create one"
+    13: "Pointed Ears"
+    14: "1D6: 1-3 Feathers; 4-6 Scales"
+    15: "Vestigial Tail"
+    16: "Slow Healer"
+    17: "Astral Hazing"
+    18: "Dual Natured"
+
+social_interaction:
+  default: "+1 modifier to Charisma and Charisma-linked skill tests made by a changeling"
+  gm_adjustment: "May be increased for especially conspicuous/frightening expressions."
+  sympathetic_audience: "May be waived or become -1 when interacting with changeling fans or accepting SURGE subcultures."
+
+npc_use:
+  rule: "NPCs may undergo SURGE using the same determination rules as player characters."
+
+sources:
+  - {source: source.fanpro-10650, printed_page: 138, pdf_page: 139, relation: defines, note: "SURGE Test, target-number modifiers and severity"}
+  - {source: source.fanpro-10650, printed_pages: "139-143", pdf_pages: "140-144", relation: defines, note: "SURGE effects, random tables, social interaction and custom effects"}
+
+notes:
+  - "This record defines Year of the Comet SURGE mechanics and does not infer supersession over any later treatment."
+  - "Printed pp.134-137 / PDF pp.135-138 contain Game Information framing and campaign/probe-race guidance but no additional standalone numeric rule procedure identified in this slice."
