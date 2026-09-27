@@ -1,0 +1,28 @@
+id: rule.magic.target-wastelands-space-magic
+record_type: rule
+name: "Target: Wastelands Space Magic Conditions"
+domain: magic
+status: ingested
+effective:
+  status: source_specific
+  source: source.fanpro-10653
+  page: 128
+  pdf_page: 129
+  basis: applies_existing_rules
+
+conditions:
+  outer_space: "All locations in space are treated as mana warps."
+  typical_background_count: 10
+  inhabited_station_background_count: "May be 9 or 8 due to population and activity."
+  moon_background_count: 8
+  guidance: "Background Knowledge appropriate to orbital or lunar conditions can be particularly useful."
+
+links:
+  uses:
+    - rule.magic.background-count
+    - rule.magic.mana-warps
+    - rule.skills.background-knowledge
+sources:
+  - {source: source.fanpro-10653, page: 128, pdf_page: 129, relation: applies}
+notes:
+  - "This record preserves Target: Wastelands' source-specific space values without changing the canonical Magic in the Shadows definitions of background count or mana warps."
