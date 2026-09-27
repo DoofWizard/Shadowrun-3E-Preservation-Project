@@ -1,0 +1,71 @@
+id: rule.hazards.target-wastelands-low-zero-gravity
+record_type: rule
+name: "Target: Wastelands Low- and Zero-Gravity Mechanics"
+domain: hazards
+status: ingested
+effective:
+  status: source_specific
+  source: source.fanpro-10653
+  pages: "126-127"
+  pdf_pages: "127-128"
+  basis: defines
+
+gravity_model:
+  g_strength: "Local gravity is expressed as a multiplier of Earth-normal gravity."
+  object_weight: "Apparent weight equals Earth-normal weight multiplied by local g-strength."
+  examples:
+    station_artificial_gravity: "0.8g"
+    moon: "0.16g"
+    zero_g: "0g"
+
+low_gravity_movement:
+  walking_running_rate: "Normal movement rate divided by local g-strength, rounded down."
+  movement_action_modifier: "+1 target-number modifier to physical actions involving movement, including ranged-attacker movement modifiers and Dodge Tests."
+  running_control: "Whenever a character runs in low gravity, make Quickness (4); failure means loss of control and falling prone."
+  complementary_skill: "Athletics may be used as a Complementary Skill for the running-control Quickness Test."
+
+zero_gravity_movement:
+  normal_walk_run: "Unavailable without a surface foothold."
+  velcro_surfaces: "With compatible strips/slippers, walking or running is possible at half normal movement rate."
+  crawling:
+    base_rate: "Half Quickness in meters per Combat Turn."
+    athletics: "Athletics (4); every 2 successes adds 1 meter."
+    control: "At the end of each turn, Quickness (4); failure means losing grip and floating in a random direction."
+    botch: "Rolling all 1s leaves the character disoriented, spending the next action regaining a grip and suffering +2 to other target numbers."
+  flying:
+    base_rate: "Strength in meters per Combat Turn after pushing off."
+    launch: "Quickness (6) to propel in the intended direction."
+    course_change: "Direction of travel cannot be changed in flight without another surface; facing may be changed with Quickness (8)."
+    landing: "Quickness (5) to land properly; failure causes a bad landing and 4L Stun resistance."
+    botch: "Rolling all 1s uses the same disorientation consequence as crawling."
+
+combat:
+  low_gravity:
+    throwing_projectile_knockback_modifier: "+1 target number"
+    uncompensated_recoil: "+1 additional modifier"
+    attacker_movement_and_dodge: "+1 additional modifier"
+  zero_gravity:
+    throwing_projectile_knockback_modifier: "+2 target number"
+    melee_control: "Characters involved in melee make Quickness (5) at the end of the Combat Turn or fly off in a random direction."
+    recoil: "Uncompensated recoil modifiers are doubled."
+    unbraced_fire: "When firing SA, BF or FA without bracing, the shooter moves backward at a rate equal to unmodified recoil in meters per turn."
+    recoil_recovery: "If recoil sends the shooter drifting, Quickness (5) is required to stop."
+
+long_term_effects:
+  zero_gravity:
+    first_24_hours: "After more than 24 hours, apply +1 to Body- and Strength-related Success Tests."
+    escalation: "After another Body or Strength days in zero gravity, the related modifier increases to +2."
+    attribute_loss: "Every Body or Strength days thereafter, lose 1 point from the corresponding attribute."
+    zero_attribute: "If Body or Strength reaches zero, hospitalization is required and untreated characters may die."
+    recovery: "Lost attributes require medical intervention and Karma; returning to gravity reduces the temporary modifiers by 1 every 12 hours."
+    mitigation: "Prescribed medication and exercise can prevent degeneration; the cited regimen costs about 1 nuyen/day and reduces modifiers by 1 for the next 24 hours."
+  low_gravity_under_0_5g:
+    rule: "Uses the same degeneration procedure, but the modifier does not rise above +1."
+
+links:
+  uses: [rule.skills.athletics]
+  interacts_with: [rule.damage.recoil, rule.combat.dodge]
+sources:
+  - {source: source.fanpro-10653, pages: "126-127", pdf_pages: "127-128", relation: defines}
+notes:
+  - "This is a source-specific extension for hostile-environment play and does not replace baseline SR3 movement or combat rules."
