@@ -1,0 +1,89 @@
+id: rule.campaign.wotc-price-of-liberty
+record_type: rule
+name: "The Price of Liberty Scenario Procedures"
+domain: campaign
+status: ingested
+effective:
+  status: scenario_specific
+  source: source.fanpro-10654
+  printed_pages: "60-83"
+  pdf_pages: "61-84"
+
+apollo_and_space:
+  external_rules:
+    zero_gravity: "Use Target: Wastelands p.126 for operating and fighting in zero gravity."
+    space_mana_warp: "Use Magic in the Shadows p.85 for Awakened characters exposed to the space mana warp."
+  security:
+    interior_airlock_maglock: 6
+    exterior_airlock_maglock: 7
+  eva:
+    first_exposure_test: "Willpower (5)"
+    failure: "Character is overwhelmed/paralyzed by the terror of open space until the gamemaster deems recovery appropriate."
+    locate_relay_test: "Intelligence (5)"
+    open_relay_panel_test: "Electronics B/R (7)"
+    gloves: "Spacesuit gloves are explicitly cited as making panel work difficult; apply scenario-appropriate handling difficulty."
+    objective: "Insert the supplied chip and enter the required code at the correct relay."
+
+aresspace_compound:
+  physical_security:
+    perimeter_wall_barrier: 16
+    watchtower_window_barrier: 8
+    front_gate_barrier: 6
+    tank_traps_barrier: 24
+    trip_beam_detection: "Perception (6)"
+    trip_beam_crossing: "Athletics (6)"
+    astral_patrol: "At sunup and sundown a Force 5 city spirit patrols the grounds."
+    watcher: "When a shaman is on duty, the Force 5 city spirit is accompanied by a Force 3 watcher that reports astral intruders."
+    background_count: 1
+  host:
+    security_code: "Orange-8/13/13/12/11/12"
+    trigger_steps:
+      - "3: Trace-8 with trap Killer-12"
+      - "7: Killer-10"
+      - "10: Tar Pit-10"
+      - "13: Passive Alert"
+      - "16: Construct-8"
+      - "19: Active Alert"
+      - "24: Scout-8"
+      - "27: Sparky-8"
+      - "30: Shutdown"
+  building_c_host:
+    security_code: "Red-6/15/16/17/15/13"
+    trigger_steps:
+      - "2: Probe-7"
+      - "6: Tar Baby-9"
+      - "10: Passive Alert"
+      - "12: Tar Pit-5"
+      - "16: Tar Pit-7"
+      - "20: Active Alert"
+      - "22: Crippler-7"
+      - "25: Ripper-7"
+      - "28: Non-Lethal Black IC-7"
+      - "30: Shutdown"
+  alarm_response:
+    first_alarm:
+      - "Facility enters passive alert."
+      - "On-duty security proceeds to checkpoints; off-duty security goes to heightened vigilance."
+      - "Security shaman is called and arrives in 1D6 minutes."
+    second_alarm:
+      - "Facility locks down."
+      - "Maglocks override into locked mode until the alert is resolved."
+      - "Off-duty security is summoned."
+      - "Barrier 12 security barriers drop over building entrances, including tunnel access."
+
+yard_and_exchange:
+  structure: "The Yard exchange is a branching social/ambush scene. Buyer and seller teams may negotiate, betray, ambush or exploit third-party interference."
+  note: "No new general-purpose combat subsystem is introduced; use standard SR3 combat/social rules and the stat blocks for participating teams."
+
+karma_awards:
+  note: "In addition to normal SR3 awards for roleplaying, guts, smarts, surprise and humor."
+  survival: 3
+  successfully_completing_apollo_run: 1
+  extracting_royce: 1
+  escaping_exchange_with_royces_money: 1
+  not_betraying_royce: 1
+
+sources:
+  - {source: source.fanpro-10654, printed_pages: "60-83", pdf_pages: "61-84", relation: defines}
+notes:
+  - "Scenario-specific mechanics; no broader supersession is inferred."
