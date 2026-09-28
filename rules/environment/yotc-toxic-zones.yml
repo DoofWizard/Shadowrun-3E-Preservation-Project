@@ -1,0 +1,47 @@
+id: rule.environment.yotc-toxic-zones
+record_type: rule
+name: "Yucatán Toxic Zones"
+domain: environment
+status: ingested
+effective:
+  status: source_defined
+  source: source.fanpro-10650
+  printed_page: 156
+  pdf_page: 157
+  basis: defines
+toxic_rating:
+  scale: "1 (light contamination) to 10 (deadly wasteland)"
+  quick_generation: "1D6"
+  high_rating_guidance: "Ratings 7 or higher are rare and should be used sparingly."
+daily_exposure:
+  test: "Damage Resistance Test using Body"
+  frequency: "once per day spent in a toxic-rated area"
+  damage_code_by_rating:
+    1: "2L"
+    2: "3L"
+    3: "4M"
+    4: "5M"
+    5: "6M"
+    6: "6S"
+    "7+": "(Toxic Rating)D"
+protection_and_modifiers:
+  protective_gear: "Chemsuits and other protective systems protect as described by their own rules."
+  open_wounds: "Increase the exposure target number by the character's Physical Wound Modifier; Stun wounds do not apply."
+  medical_procedures: "Apply the area's Toxic Rating to the target number for First Aid and other medical procedures performed inside the toxic zone."
+critters:
+  guidance: "Creatures may sicken, die or mutate from chemical exposure; use the Mutant Critters and Toxic Critters rules referenced by the source."
+spirits_and_shamans:
+  domain: "A toxic area becomes a domain of toxic spirits."
+  summoning:
+    toxic_spirits: "Only toxic shamans may summon toxic spirits."
+    nature_spirits: "Other magicians who summon nature spirits cannot do so while within a toxic domain."
+    entering_spirits: "Nature spirits and elemental spirits capable of crossing domain lines may enter, but are reluctant."
+  shaman_pressure:
+    treatment: "A shaman exposed during the Yucatán conflict may suffer psychological/spiritual distress from the ecological devastation."
+    optional_penalty: "At GM discretion, impose an appropriate Mental Flaw or other penalty, such as 1 box of unrecoverable Stun, when the shaman refuses to defend or flee the damaged land in accordance with the totem's demands."
+    toxic_conversion: "A player shaman is never forced to become toxic; if the character chooses to become toxic, the source directs that the character immediately become an NPC under the gamemaster."
+  spirit_activity: "Spontaneous spirit appearances increase as the conflict progresses, and toxic spirits may hinder or attack characters."
+sources:
+  - {source: source.fanpro-10650, printed_page: 156, pdf_page: 157, relation: defines}
+notes:
+  - "No supersession relationship is inferred."
