@@ -1,16 +1,16 @@
 state_protocol_version: 2
 phase: pass_b
-active_source: source.fanpro-10654
+active_source: source.fanpro-10665
 source_status: ingesting
 completed_through:
-  printed_page: 59
-  pdf_page: 60
-  anchor: "after CATCH A FALLING STAR"
+  printed_page: 0
+  pdf_page: 0
+  anchor: "before source"
 resume_at:
-  printed_page: 60
-  pdf_page: 61
-  anchor: "THE PRICE OF LIBERTY"
-last_commit: 21671b9c14f0af1d94bedd71c426889a7f466cac
+  printed_page: 1
+  pdf_page: 1
+  anchor: "start"
+last_commit: 2b22462350db9793b3ed95620354c353961df656
 open_conflicts:
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
@@ -23,11 +23,11 @@ open_conflicts:
   - pending.sona.ucas-p165-177
   - pending.sona.ute-p178-187
 next_sources:
-  - source.fanpro-10665
+  - source.fasa-7219
 instructions:
-  - active source main manifest is authoritative
-  - manual and scheduled workers hand off through GitHub durable state
-  - continue Wake of the Comet from Introduction printed p.4 / PDF p.5
+  - Wake of the Comet is complete
+  - reacquire Survival of the Fittest from sources/catalog.yml / Google Drive
+  - initialize/read its source manifest before scanning
   - use directed adventure scan and deep-scan every rules-bearing subsection
   - preserve printed/PDF provenance
   - capture reusable entities, scenario procedures, stats and mechanics
