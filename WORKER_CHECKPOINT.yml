@@ -1,16 +1,17 @@
 state_protocol_version: 2
 phase: pass_b
-active_source: source.fanpro-10650
+active_source: source.fanpro-10654
 source_status: ingesting
 completed_through:
-  printed_page: 160
-  pdf_page: 162
-  anchor: "end_of_pdf"
+  printed_page: 3
+  pdf_page: 4
+  anchor: "before INTRODUCTION"
 resume_at:
-  pending_id: pending.yotc.aftershocks-p126-133
-last_commit: 824760453e07c254653bb62e4e531f6dd1196ef1
+  printed_page: 4
+  pdf_page: 5
+  anchor: "INTRODUCTION"
+last_commit: 798f7abdab061eef4838d143611c32d939024af1
 open_conflicts:
-  - pending.yotc.aftershocks-p126-133
   - pending.source10652.missing-p110-111
   - pending.target-wastelands.desert-wars-p34-36
   - pending.sona.algonkian-manitou-p18-28
@@ -22,15 +23,13 @@ open_conflicts:
   - pending.sona.ucas-p165-177
   - pending.sona.ute-p178-187
 next_sources:
-  - source.fanpro-10654
+  - source.fanpro-10665
 instructions:
   - active source main manifest is authoritative
-  - before scanning, reconcile this checkpoint to the manifest if they differ
-  - manual and scheduled workers both hand off through GitHub durable state
-  - resolve required pending normalization before source completion
-  - sequential scan of Year of the Comet is complete through end of PDF
-  - resolve pending.yotc.return-of-comet-p6-21 next, then remaining YotC pending normalization ranges
+  - manual and scheduled workers hand off through GitHub durable state
+  - continue Wake of the Comet from Introduction printed p.4 / PDF p.5
+  - use directed adventure scan and deep-scan every rules-bearing subsection
   - preserve printed/PDF provenance
-  - capture every rules-bearing item
+  - capture reusable entities, scenario procedures, stats and mechanics
   - reuse canonical IDs
   - do not infer supersession
