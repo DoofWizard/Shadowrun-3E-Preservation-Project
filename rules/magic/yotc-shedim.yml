@@ -1,0 +1,139 @@
+id: rule.magic.yotc-shedim
+record_type: rule
+name: "Shedim"
+domain: magic
+status: ingested
+effective:
+  status: source_defined
+  source: source.fanpro-10650
+  printed_pages: "149-153"
+  pdf_pages: "150-154"
+  basis: defines
+core:
+  attributes: "Use the shedim's Force rating for all attributes unless a vessel rule below changes the physical attributes in use."
+  weakness: "Allergy (Sunlight, Mild)"
+  powers:
+    - "Aura Masking"
+    - "Compulsion"
+    - "Deathly Aura"
+    - "Fear"
+    - "Immunity (Age)"
+    - "Immunity (Pathogens)"
+    - "Immunity (Toxins)"
+    - "Inhabitation"
+    - "Karma Drain"
+    - "Magical Guard"
+    - "Noxious Breath"
+    - "Regeneration"
+    - "Shadowcloak"
+    - "Silence"
+  power_scope:
+    astral_form: "Only mana-based powers may be used."
+    inhabited_vessel: "A vessel is required to use physical powers."
+astral_form:
+  force_decay: "For each full 24 hours spent in full astral form, reduce Force by 1; Force 0 destroys the shedim."
+  vessel_anchor: "No Force is lost while inhabiting a vessel, though inhabitation does not itself restore Force."
+  detection: "+2 modifier to Assensing Tests and magical detection attempts made to detect a shedim."
+  aura_masking_barrier_bypass: "When using Aura Masking to bypass astral barriers, apply -2 to the shedim's target number for the Success Contest."
+spirit_energy:
+  arrival: "A shedim entering astral space from the metaplanes receives 1 point of Spirit Energy."
+  cap: "Spirit Energy may not exceed Force."
+  growth: "Shedim may increase Spirit Energy and/or Force by acquiring and spending Good Karma under the free-spirit rules; Karma Drain is their means of acquiring Karma."
+conjuring:
+  conjurable: false
+  controllable: false
+  banishing_inhabited: "Banishing an inhabiting shedim forces it back into astral form at full Force."
+  reinhabitation_lockout: "A shedim may not re-inhabit a vessel from which it was banished until 24 hours have passed; another shedim may inhabit it."
+  astral_banishing_outcome: "Source leaves uncertain whether banishing a shedim in astral form destroys it or merely disrupts/returns it to its native plane."
+karma_pool:
+  starting: "1D6"
+  increase: "Spend 10 Good Karma to increase Karma Pool by 1."
+deathly_aura:
+  action: "Free"
+  duration: "Sustained"
+  range: "radius in meters equal to Force + Spirit Energy"
+  entry_test: "First entry into the aura requires Willpower (Force)."
+  success: "Character is frightened but remains in control."
+  failure: "Character is paralyzed and may take no action other than whimpering/soiling clothing."
+  recovery: "At the end of each subsequent Combat Turn, make an Opposed Test between victim Willpower and shedim Force; a success breaks the aura's grip."
+  masking: "Aura Masking may be used to turn the Deathly Aura off."
+inhabitation:
+  action: "Exclusive Complex"
+  range: "Special"
+  duration: "Special"
+  valid_vessels:
+    - "corpse: body that once possessed a living spirit"
+    - "body of an astrally projecting magician while its living spirit is away"
+  procedure:
+    - "Move into contact with the vessel's aura."
+    - "Make a Force Test against the target number from the Shedim Inhabitation Table."
+    - "On success, inhabit the vessel."
+    - "On failure, lose 1 Force; each additional attempt receives a cumulative +2 target-number modifier."
+  target_numbers:
+    "still alive (astrally projecting magician)": 4
+    "dead less than 1 hour": 5
+    "dead 1-24 hours": 6
+    "dead 24 hours-1 week": 8
+    "dead 1 week-1 month": 9
+    "dead 1 month-1 year": 10
+    "dead 1-10 years": 11
+    "dead 10-100 years": 12
+    "dead 100-1,000 years": 15
+    "dead more than 1,000 years": 18
+  vessel_state:
+    dual_natured: true
+    physical_attributes: "Increase the vessel's Physical Attributes by shedim Force + Spirit Energy; use the shedim's own Mental Attributes."
+    magic_targeting: "Mana spells affect the shedim; physical spells and attacks affect the vessel only."
+    natural_abilities: "Shedim gains the vessel's natural abilities."
+    voluntary_exit: false
+    forced_exit:
+      - "vessel is killed (Deadly damage) and does not regenerate"
+      - "shedim is killed in astral combat"
+      - "shedim is banished"
+      - "another eligible effect repossesses the vessel using possession metamagic or equivalent power"
+corpse_vessels:
+  minimum_attribute: 1
+  age_modifiers:
+    - {age: "less than 1 hour", body: 0, quickness: -1, strength: 0, running_multiplier: 0}
+    - {age: "1-24 hours", body: 1, quickness: -3, strength: 0, running_multiplier: -2}
+    - {age: "24 hours-1 week", body: 0, quickness: -1, strength: -1, running_multiplier: 0}
+    - {age: "1 week-1 month", body: -1, quickness: -2, strength: -2, running_multiplier: 0}
+    - {age: "1 month-1 year", body: -2, quickness: -4, strength: -3, running_multiplier: 0}
+    - {age: "1-10 years", body: -3, quickness: -5, strength: -4, running_multiplier: -1}
+    - {age: "10-100 years", body: -4, quickness: -6, strength: -5, running_multiplier: -1}
+    - {age: "100-1,000 years", body: -6, quickness: -8, strength: -7, running_multiplier: -2}
+    - {age: "more than 1,000 years", body: -8, quickness: -10, strength: -10, running_multiplier: -2}
+  prior_damage: "Damage suffered before inhabitation remains and cannot be directly healed by the inhabiting shedim, even with Regeneration."
+  cyberware:
+    works: "Structural cyberware such as bone lacing and dermal plating may function if physically intact."
+    does_not_work: "Cyberware requiring mental/nervous-system interaction or electrical energy provides no bonuses."
+  bioware: "Body-function-dependent bioware provides no bonus; structural implants may function if undecomposed and undamaged."
+  nanoware: "Does not function in corpses."
+  decomposition:
+    during_inhabitation: "Stops while the shedim remains in the vessel."
+    after_exit: "Within one Combat Turn the corpse rapidly degrades to the state it would have reached had it never been inhabited."
+    reinhabitation: "+4 modifier to the required Force Test for each previous inhabitation of that corpse."
+living_vessels:
+  astral_projector_awareness: "The projecting magician immediately senses that the body link has been affected."
+  locating_body: "Use normal search rules; when not in the same location, apply a special +2 modifier to the test to locate the body because inhabitation distorts the link."
+  maintenance: "The shedim must feed, water and otherwise maintain the living body."
+  access:
+    implants: "May use the vessel's implants."
+    excluded: "Does not gain the vessel's memories, skills, personality or magical abilities."
+karma_drain:
+  action: "Exclusive Complex"
+  range: "Touch"
+  duration: "Sustained"
+  touch: "May require an Unarmed Combat Test to establish contact."
+  opposed_test: "shedim Force + Spirit Energy versus victim Willpower"
+  drain:
+    good_karma: "Each net success drains 1 point of unspent Good Karma."
+    karma_pool: "If no unspent Good Karma remains, drain 1 Karma Pool point per 2 net successes; each drained Pool point becomes 1 Good Karma for the shedim."
+    no_pool: "If the victim has no Karma Pool, an attempted Pool drain has no effect."
+  permanence: "Drained Good Karma/Karma Pool is permanently lost to the victim."
+  damage: "Victim takes 1 box of Physical damage per Karma point drained."
+  knockdown: "Victim makes an immediate Willpower (Force) Test or is knocked down."
+sources:
+  - {source: source.fanpro-10650, printed_pages: "149-153", pdf_pages: "150-154", relation: defines}
+notes:
+  - "No supersession relationship is inferred."
