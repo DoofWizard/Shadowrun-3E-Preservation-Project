@@ -1,0 +1,45 @@
+id: catalog.security.wotc-messenger
+record_type: entity_catalog
+name: "Wake of the Comet: The Messenger Security Assets"
+domain: security
+status: ingested
+source: source.fanpro-10654
+printed_pages: "16-24"
+pdf_pages: "17-25"
+drones:
+  - id: entity.drone.halfisch-ii
+    name: "Halfisch II Drone"
+    stats: {handling: "4/4", speed: 30, accel: 4, body: 2, armor: 0, signature: 5, pilot: 2, sensor: 5, cargo: 0, load: 0}
+    weapon: "Firmpoint gyrojet gun; SA; 12M (12S underwater); 10(c)"
+    range_target_numbers: ["0-5: 4", "6-20: 5", "21-40: 6", "41-60: 9"]
+  - id: entity.drone.winterknight
+    name: "Winterknight Drone"
+    stats: {handling: 4, speed: 60, accel: 6, body: 2, armor: 8, signature: 12, pilot: 3, sensor: 4, cargo: 0, load: 0}
+    initiative: "6 + 3D6"
+    pools: ["Adaptation 3"]
+    features:
+      - "Autosoft Interpretation System (Clearsight 3, Sharpshooter 2)"
+      - "Robot-pilot advanced programming"
+      - "Robotic Reflexes 2"
+    weapon: "Mini-turret with two SMGs; SA/BF; 7M; 28(c); APDS; sound suppressor; half recoil from turret"
+    range_target_numbers: ["0-10: 4", "11-40: 5", "41-80: 6", "81-150: 9"]
+matrix_security:
+  - id: entity.matrix-host.proteus-satellite-pltg
+    name: "Proteus Satellite PLTG"
+    security_code: "Red-10/15/15/13/13/14"
+    trigger_steps:
+      - "2: Probe-5"
+      - "4: Binder-5"
+      - "6: Killer-6; Passive Alert"
+      - "8: Blaster-6"
+      - "10: Blaster-8; Active Alert"
+  - id: entity.matrix-host.proteus-arkoblock-pltg
+    name: "Proteus Arkoblock PLTG"
+    security_code: "Orange-6/10/10/9/8/10"
+    trigger_steps:
+      - "3: Probe-5"
+      - "7: Binder-5"
+sources:
+  - {source: source.fanpro-10654, printed_pages: "16-19", pdf_pages: "17-20", relation: defines_stats}
+notes:
+  - "Scenario-specific assets are preserved without inferring supersession."
