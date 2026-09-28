@@ -1,0 +1,82 @@
+id: rule.campaign.wotc-catch-a-falling-star
+record_type: rule
+name: "Catch a Falling Star Scenario Procedures"
+domain: campaign
+status: ingested
+effective:
+  status: scenario_specific
+  source: source.fanpro-10654
+  printed_pages: "38-53"
+  pdf_pages: "39-54"
+
+alaxa_security:
+  physical:
+    cameras_and_motion_detectors: "Rating 5"
+    exterior_doors_and_labs: "Rating 4 maglocks"
+    security_office: "Rating 6 maglock"
+    note: "Front/exterior doors are fire doors; many rooms can be remotely locked from the security office."
+  matrix_hosts:
+    alaxa_host:
+      security_code: "Orange-6/8/12/8/10/12"
+      trigger_steps:
+        - "5: Probe-5"
+        - "12: Probe-7"
+        - "17: Passive Alert; Tar Baby-6"
+        - "21: Active Alert; Blaster-8"
+        - "27: Shutdown"
+    yamatetsu_pltg:
+      security_code: "Red-8/14/14/12/12/16"
+      trigger_steps:
+        - "2: Probe-9"
+        - "6: Jammer-6"
+        - "10: Marker-6"
+        - "12: Scramble-9 (Access)"
+        - "15: Passive Alert; Blaster-6"
+        - "19: Jammer-7"
+        - "22: Active Alert; Tar Baby-8"
+        - "25: Sparky-9"
+        - "30: Tar Pit-10"
+    gagarin_transmission_host:
+      trigger_steps:
+        - "3: Probe-5"
+        - "8: Probe-9"
+        - "12: Marker-6"
+        - "15: Passive Alert; Blaster-5"
+        - "19: Jammer-7"
+        - "22: Active Alert; Tar Baby-8"
+        - "25: Sparky-9"
+        - "30: Tar Pit-10"
+
+gagarin_data_search:
+  prerequisites:
+    - "Perform Locate Access Node to find the host containing probe data."
+    - "Log on to Host."
+    - "Perform Locate File to track down payload data."
+  threshold: "Relevant search results begin at 5 successes."
+  operation_scope: "The complete search may be treated as one operation; the decker may stop with current results or continue."
+  search_table:
+    "0-4": "Cannot find the data."
+    "5": "25 Mp summary files and basic probe data; indicates Yamatetsu re-established contact with Gagarin."
+    "6": "50 Mp including probe condition reports; probe is partially crippled, partly communicative and slightly off-course."
+    "7": "100 Mp telemetry and probe correspondence; sensor data cannot be remotely accessed."
+    "8": "250 Mp trajectory data and detailed probe reports; probe will deposit its sensor module on its Earth pass."
+    "9+": "All relevant files, 500 Mp, including simulations showing the sensor module is not expected to land on the planned Sea of Japan target and should touch down somewhere in North America."
+  payment_bonus:
+    trigger: "6 or more successes on the search"
+    formula: "1,000¥ x (search successes - 5)"
+
+crash_site_search:
+  crash_site_test: "At the crash site, make Perception (6) and consult the table."
+  table:
+    1: "Six sets of prints."
+    2: "A helicopter appears to have landed nearby."
+    3: "The footprints originated from the helicopter."
+    4: "The footprints cross the area and then head northeast."
+    5: "A slightly older, better-concealed set of tracks circles the site before the others; one of those tracks continues northeast."
+    6: "The second set of tracks also leads northeast."
+  ambush_site: "A successful Perception (8) test can identify the concealed continuation of the tracks at the ambush site."
+
+sources:
+  - {source: source.fanpro-10654, printed_pages: "38-45", pdf_pages: "39-46", relation: defines}
+notes:
+  - "Adventure-specific mechanics; no broader supersession is inferred."
