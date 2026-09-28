@@ -3,15 +3,16 @@ phase: pass_b
 active_source: source.fanpro-10650
 source_status: ingesting
 completed_through:
-  printed_page: 146
-  pdf_page: 147
-  anchor: "game-information-p146-end"
+  printed_page: 149
+  pdf_page: 150
+  anchor: "before THE SHEDIM"
 resume_at:
-  printed_page: 147
-  pdf_page: 148
-  anchor: "game-information-next"
-last_commit: 947a9638e631ad4b0583f37c851628038622d4d4
+  printed_page: 149
+  pdf_page: 150
+  anchor: "THE SHEDIM"
+last_commit: 2b36000ab64abd86461ce57dc4ac3c9d3ae5ff32
 open_conflicts:
+  - pending.yotc.game-info-p147-149
   - pending.yotc.aftershocks-p126-133
   - pending.yotc.p115-125
   - pending.yotc.return-of-comet-p6-21
@@ -28,8 +29,11 @@ open_conflicts:
 next_sources:
   - source.fanpro-10654
 instructions:
-  - main source manifest is authoritative at printed p.146 / PDF p.147
-  - continue from printed p.147 / PDF p.148
+  - active source main manifest is authoritative
+  - before scanning, reconcile this checkpoint to the manifest if they differ
+  - manual and scheduled workers both hand off through GitHub durable state
+  - resolve required pending normalization before source completion
+  - continue at THE SHEDIM on printed p.149 / PDF p.150
   - Game Information remains deep-scan territory
   - preserve printed/PDF provenance
   - capture every rules-bearing item
