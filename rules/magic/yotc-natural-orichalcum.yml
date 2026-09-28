@@ -1,0 +1,39 @@
+id: rule.magic.yotc-natural-orichalcum
+record_type: rule
+name: "Natural Orichalcum"
+domain: magic
+status: ingested
+effective:
+  status: optional
+  source: source.fanpro-10650
+  printed_page: 149
+  pdf_page: 150
+  basis: defines
+refining:
+  treatment: "Treat natural orichalcum as if it were already a refined material, then process it through alchemical circulation to remove impurities."
+  test: "Enchanting (Alchemy)"
+  target_number: "number of raw orichalcum units multiplied by 3"
+  yield:
+    raw_unit_weight: "20 grams"
+    output: "one 10 gram unit of radical orichalcum per raw unit"
+artificing:
+  enchanting_modifier: "-1 per 2 units of natural orichalcum"
+  comparison: "One unit of synthetic orichalcum provides the same -1 modifier."
+bonding:
+  karma_reduction: "2 units of natural orichalcum reduce Karma cost of bonding by 1"
+market:
+  raw:
+    unit_weight: "20 grams"
+    approximate_price: "25,000¥"
+  refined:
+    unit_weight: "10 grams"
+    approximate_price: "50,000¥"
+identification:
+  primary_test: "Parageology (6)"
+  substitutions:
+    - "appropriate Knowledge skill at GM discretion"
+  assensing_alternative: "5 or more successes on an Assensing Test"
+sources:
+  - {source: source.fanpro-10650, printed_page: 149, pdf_page: 150, relation: defines}
+notes:
+  - "No supersession relationship is inferred."
