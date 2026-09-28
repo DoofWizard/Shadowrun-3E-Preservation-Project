@@ -1,0 +1,42 @@
+id: rule.campaign.wotc-messenger
+record_type: rule
+name: "The Messenger Scenario Procedures"
+domain: campaign
+status: ingested
+effective:
+  status: scenario_specific
+  source: source.fanpro-10654
+  printed_pages: "16-31"
+  pdf_pages: "17-32"
+cliff_infiltration:
+  climbing_test:
+    base_target_number: 5
+    modifiers:
+      height: 4
+      wet_seaspray: 2
+  grapple_gun: "A successful grapple-gun shot reduces the climbing target number by 4."
+  boat_positioning:
+    restricted_terrain: "When holding the boat near the rock face for the grapple shot, target number equals boat Handling + 1."
+    tight_terrain: "If runners must bring the boat directly against the cliff to begin climbing without a grapple line, treat it as Tight terrain with a +3 difficulty modifier."
+    failure: "A failed positioning roll requires an immediate Crash Test as the boat collides with the cliff."
+    throughput: "Each success on the positioning roll allows one character to begin the climb."
+false_identity_check:
+  context: "Using stolen Proteus IDs to enter the arkoblock."
+  procedure: "For each runner using a stolen ID, roll a single Intelligence (6) check for the guards."
+  low_success_result: "A single success may result only in a cursory name check."
+  higher_success_result: "Additional success can expose mismatches between the runner and the employee identity."
+winterknight_drone:
+  self_destruct: "The drone is programmed to self-destruct after taking Deadly damage, producing a 12D explosion within a 1-meter radius."
+  safe_target: "Its Safe Target system prevents the self-destruct from harming Hausmann while he remains within the protected targeting condition described by the scenario."
+legwork:
+  french_guiana_matrix_search: "Simple Matrix search Target Number 4."
+karma_awards:
+  individual: "Award individual Karma using the standard SR3 rules."
+  team:
+    surviving_the_run: 2
+    threat_level: 2
+    preventing_nuke_launch: 1
+sources:
+  - {source: source.fanpro-10654, printed_pages: "16-31", pdf_pages: "17-32", relation: defines}
+notes:
+  - "These are adventure-specific procedures and awards; no broader supersession is inferred."
