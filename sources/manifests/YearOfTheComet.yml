@@ -14,17 +14,17 @@ page_mapping:
   - {printed_pages: "2+", pdf_pages: "3+", relation: "printed page equals PDF page - 1 across routed content"}
 routing:
   - {range: "4-5", section: "Introduction / A New Age", treatment: "sparse framing"}
-  - {range: "6-21", section: "Return of the Comet", treatment: "directed chronology/event scan; preserve probe-race and astronomical consequences"}
-  - {range: "22-41", section: "SURGE", treatment: "directed setting scan; deep-capture new paranormals and any explicit transformation mechanics"}
-  - {range: "42-54", section: "Hysteria", treatment: "directed factions/religious movements; preserve reusable organizations and source-period consequences"}
-  - {range: "55-75", section: "Ghost Stories", treatment: "directed event/world scan; preserve rift, Denver/Ghostwalker and political consequences"}
-  - {range: "76-96", section: "Like Mana From Heaven", treatment: "directed magic/economy scan; preserve orichalcum-rush and death/spirit events"}
-  - {range: "97-105", section: "Red Sunset, Red Sunrise", treatment: "directed Japan/political disaster scan"}
-  - {range: "106-114", section: "California Uber Alles", treatment: "directed California/Saito world-state scan"}
-  - {range: "115-125", section: "Yucatan War", treatment: "directed conflict/world scan; preserve faction and toxic-zone consequences"}
-  - {range: "126-133", section: "Aftershocks", treatment: "directed follow-up consequences"}
-  - {range: "134-158", section: "Game Information", treatment: "deep scan; capture all rules, tables, SURGE mechanics, critters, faction use, shedim, event mechanics and adventure procedures"}
-  - {range: "159+", section: "back matter/index", treatment: "reference only unless rules-bearing content appears"}
+  - {range: "6-21", section: "Return of the Comet", treatment: "directed chronology/event scan"}
+  - {range: "22-41", section: "SURGE", treatment: "directed scan; deep-capture explicit mechanics"}
+  - {range: "42-54", section: "Hysteria", treatment: "directed faction scan"}
+  - {range: "55-75", section: "Ghost Stories", treatment: "directed event/world scan"}
+  - {range: "76-96", section: "Like Mana From Heaven", treatment: "directed magic/economy scan"}
+  - {range: "97-105", section: "Red Sunset, Red Sunrise", treatment: "directed political/disaster scan"}
+  - {range: "106-114", section: "California Uber Alles", treatment: "directed world-state scan"}
+  - {range: "115-125", section: "Yucatan War", treatment: "directed conflict/world scan"}
+  - {range: "126-133", section: "Aftershocks", treatment: "directed follow-up scan"}
+  - {range: "134-158", section: "Game Information", treatment: "deep scan all rules-bearing subsections"}
+  - {range: "159+", section: "back matter/index", treatment: "reference only unless rules-bearing"}
 completed_through:
   printed_page: 146
   pdf_page: 147
@@ -37,26 +37,20 @@ pending_normalization:
   - id: pending.yotc.return-of-comet-p6-21
     printed_pages: "6-21"
     pdf_pages: "7-22"
-    reason: "Verified directed scan complete; normalization write was blocked by connector filtering."
+    reason: "Verified scan; normalization pending after connector filtering."
   - id: pending.yotc.p115-125
     printed_pages: "115-125"
     pdf_pages: "116-126"
-    reason: "Verified directed scan complete; detailed normalization write was blocked by connector filtering."
+    reason: "Verified scan; detailed normalization pending after connector filtering."
   - id: pending.yotc.aftershocks-p126-133
     printed_pages: "126-133"
     pdf_pages: "127-134"
-    reason: "Verified directed scan complete; semantic normalization and prior manifest advance were blocked by connector filtering."
-  - id: pending.yotc.using-hysteria-p145-146
-    printed_pages: "145-146"
-    pdf_pages: "146-147"
-    reason: "Verified deep scan complete; canonical write filtered."
+    reason: "Verified scan; semantic normalization pending after connector filtering."
 notes:
-  - "Main manifest is the sole authoritative per-source progress record. Recovery/checkpoint sidecars are non-authoritative."
-  - "Sequential directed scan is verified through printed p.133 / PDF p.134. Resume at Game Information, printed p.134 / PDF p.135."
-  - "California Uber Alles (pp.106-114) normalized source-period political/world-state material; attributed intelligence, propaganda and rumors remain attributed."
-  - "Yucatan War (pp.115-125) was directed-scanned. Rules-adjacent references to background count, astral contamination, hostile/toxic spirits and toxic shamans were identified as setting applications rather than newly quantified mechanics; detailed normalization remains pending."
-  - "Aftershocks (pp.126-133) was verified by directed scan; no standalone numeric rule block, modifier table, critter statistics, target-number procedure, or replacement rule was identified. Detailed normalization remains pending."
-  - "Do not mark this source complete while any pending_normalization range remains unresolved."
-  - "Game Information deep scan completed through the SURGE character rules on printed p.143 / PDF p.144, stopping at the NEW CRITTERS header. Canonical mechanics are in rule.character.yotc-surge."
-  - "NEW CRITTERS deep scan completed through printed p.145 / PDF p.146. Game statistics were merged into catalog.critters.yotc-surge-paranormals using existing canonical IDs."
-  - "Resume at USING HYSTERIA on printed p.145 / PDF p.146."
+  - "Main manifest is authoritative."
+  - "Game Information is deep-scan territory."
+  - "SURGE character mechanics are normalized as rule.character.yotc-surge."
+  - "New Critters statistics are normalized in catalog.critters.yotc-surge-paranormals."
+  - "Using Hysteria conditional totem mechanics are normalized as option.magic.totem-dragon."
+  - "Resume at printed p.147 / PDF p.148."
+  - "Do not mark complete while pending_normalization is non-empty."
