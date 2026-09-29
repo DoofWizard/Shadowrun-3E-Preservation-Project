@@ -1,0 +1,131 @@
+id: rules.environment.source7124-underwater-diving
+record_type: rule_bundle
+status: ingested
+source: source.fasa-7124
+printed_pages: "155-159"
+pdf_pages: "164-168"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+swimming:
+  skill: "Athletics (Swimming concentration)"
+  action: "Complex Action"
+  base_rate: "one-fifth normal Running rate"
+  fins_rate: "one-half normal walking or running rate"
+  vertical_dive_bonus: "add meters equal to height dived minus 1, minimum 1 meter"
+  fatigue: "Swimming characters sustain Fatigue damage unless resting by floating; use Shadowrun Companion p.91 fatigue rules."
+
+treading_water:
+  base_target_number: 2
+  initial_test: "Test immediately on entering the water, then once every Strength minutes."
+  tired_effect: "After becoming tired, resist Light Stun with Body at a Power equal to the cumulative number of Treading Water Tests; tests add up while treading and may be interrupted by floating."
+  survival_float_interval: "15 minutes"
+  failure_procedure:
+    - "On a failed Treading Water Test, make Body (8) to resist Light Stun."
+    - "On a successful Body (8) test, the character may resume swimming, treading or floating."
+    - "If the Body test fails and damage is taken, or the character begins to use the last 45 seconds of air, the character cannot tread, float or swim until a successful Damage Resistance Test or rescue."
+  target_number_modifiers:
+    cyberlimbs_or_torso: "+1 per part replaced"
+    aluminum_or_titanium_bone_lacing: "+2"
+    waterlogged_clothing: "+1"
+    dead_weight_clothes_and_armor: "+1 per 2 kilos"
+    metatype:
+      seal_shapeshifters: -2
+      elves: -1
+      dwarfs_and_humans: 0
+      orks_and_trolls: 1
+    physical_condition:
+      obese: -2
+      physically_fit: 0
+      out_of_shape: 1
+      highly_developed_muscles_or_exceptionally_low_body_fat: 1
+      mildly_buoyant_support: -1
+      very_buoyant_support: -2
+      wounded: "Damage Modifiers apply"
+      rough_seas: "+2 to +4"
+
+floating:
+  test: "Body (4), using applicable Treading Water modifiers"
+  duration_on_success: "[Body x successes] Combat Turns"
+  failure: "Must tread water or swim, or begins to drown."
+
+diving_categories:
+  shallow_water: "0-10 meters; OXSYS may be used indefinitely, does not cause decompression sickness, and requires no specialized training."
+  scuba: "Standard scuba is used for dives up to 300 meters in these rules; recreational safety precautions limit ordinary recreational diving to 33 meters."
+  deep_water: "Dives deeper than 80 meters are treated as deep-water dives."
+
+safe_diving_time:
+  procedure:
+    - "Before entering the water, declare intended dive time and deepest depth below sea level."
+    - "Make a Diving Test against the target number for that depth."
+    - "Use successes to calculate safe diving time; do not calculate diving time after entering except in an emergency."
+  table:
+    - {depth_m: "0-10", tn: 3, safe_time: "240 minutes + 40 minutes/success", maximum: "480 minutes"}
+    - {depth_m: "11-30", tn: 5, safe_time: "20 minutes + 20 minutes/success", maximum: "150 minutes"}
+    - {depth_m: "31-50", tn: 6, safe_time: "5 minutes + 15 minutes/success", maximum: "90 minutes"}
+    - {depth_m: "51-150", tn: 8, safe_time: "10 minutes/success", maximum: "60 minutes"}
+    - {depth_m: "151-300", tn: 10, safe_time: "5 minutes/success", maximum: "30 minutes"}
+
+buoyancy:
+  without_compensator:
+    running_multiplier_change: -0.5
+    combat_pool_change: -2
+  ascent_descent_safe_rate: "no faster than 1 meter per Combat Turn"
+
+ear_squeeze:
+  trigger: "Ascend or descend faster than 1 meter per Combat Turn."
+  test: "Body (4)"
+  failure:
+    - "+4 to all target numbers for 1 minute (20 turns)."
+    - "After recovery, +4 to hearing-related Perception Tests for 24 hours."
+
+air_embolism:
+  trigger: "All 1s on the Body Test for ascending too quickly."
+  ongoing_damage: "Resist 8D Physical every hour until placed in a decompression chamber."
+  severe_injury_check: "If the character takes Deadly Physical damage and survives, make Body (6); failure to achieve at least 1 success permanently costs 1 Intelligence."
+
+underwater_movement:
+  unaided:
+    walk: "1 meter per Combat Turn"
+    run: "one-fifth normal Running speed"
+  with_fins:
+    walk: "Quickness meters per turn"
+    run: "one-half normal Running speed"
+
+diving_hazards_by_depth:
+  - {depth_m: "0-10", hazards: ["Oxygen Toxicity"]}
+  - {depth_m: "11-50", hazards: ["Oxygen Toxicity", "Decompression Sickness", "Nitrogen Narcosis"]}
+  - {depth_m: "51-150", hazards: ["Oxygen Toxicity", "Decompression Sickness", "Nitrogen Narcosis", "Helium Chills"]}
+  - {depth_m: "151-300", hazards: ["Oxygen Toxicity", "Decompression Sickness", "Nitrogen Narcosis", "Helium Chills", "HPNS"]}
+  safe_time_exceptions:
+    - "LBA"
+    - "JIM suit"
+    - "submarine"
+    - "inside an underwater facility"
+
+hazards:
+  oxygen_toxicity:
+    pure_oxygen_limit: "Do not dive below 7 meters breathing pure oxygen."
+    damage: "1 point Physical Damage each minute until above safe depth (1D6 + 4)."
+    modifier: "+4 to all target numbers until treated."
+  decompression_sickness:
+    damage: "After surfacing, 1 box Physical Damage per hour until placed in a decompression chamber."
+    modifier: "+4 to all target numbers."
+    prevention: "If safe diving time is exceeded, stop at approximately 3 meters for one-quarter of total underwater time; decompression time = total underwater time x .25."
+  nitrogen_narcosis:
+    test: "Body (6) every minute"
+    failure: "Any failed test causes intoxication; +2 to all target numbers."
+    recovery: "Ascend 16 meters or more; an intoxicated character must make Willpower (6), including the +2 modifier, to do this unaided. After sufficient ascent, effects end in (10 - Body) Combat Turns."
+  helium_chills:
+    test: "Body (8) every minute"
+    failure: "Hypothermia; take 1 box Physical Damage and +1 to all tests from numbing."
+    stacking: "Modifiers are cumulative."
+  hpns:
+    trigger: "Excessive time at depths greater than 200 meters."
+    test: "Body (8) every 5 minutes"
+    failure: "+1 to all subsequent tests."
+    stacking: "Modifiers are cumulative and affect later tests, including other diving hazards."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "155-159", pdf_pages: "164-168", relation: exact_underwater_rules}
