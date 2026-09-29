@@ -1,0 +1,29 @@
+id: rule.source7124.ship-flooding-sinking-p167
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "167"
+pdf_pages: "176"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+flooding:
+  trigger: "Moderate or greater damage from a single attack"
+  surface_vessel: "+1 Condition Monitor box every 15 minutes"
+  submarine: "+1 Condition Monitor box every 5 minutes"
+  stop_condition: "successful leak-plugging damage-control action"
+  leak_team_success: "stops further flooding damage but does not reduce existing ship damage"
+
+sinking:
+  trigger: "Condition Monitor completely filled"
+  time_to_sink_minutes: "4D6 - 9"
+  result_zero_or_less: "sinks at end of current Combat Turn"
+  systems_while_sinking: inoperative
+  riggers: "dumped when sinking begins; dump shock applies"
+  character_actions: "non-vehicle actions only"
+  submerged_character_requirement: "use underwater breathing gear, hold breath, or use drowning rules"
+  submarine_air_rule: "the interval from beginning to end represents remaining crew air; going under means available air is exhausted"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "167", pdf_pages: "176", relation: exact_rule}
