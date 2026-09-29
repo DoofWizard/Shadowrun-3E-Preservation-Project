@@ -1,0 +1,69 @@
+id: catalog.organizations.target-matrix
+record_type: entity_catalog
+name: "Target: Matrix - Organizations"
+domain: organizations
+status: ingested
+source_period: "2060"
+source: source.fasa-7219
+printed_pages: "94-105"
+pdf_pages: "95-106"
+
+entities:
+  - id: organization.target-matrix.ccma
+    name: "Corporate Court Matrix Authority"
+    abbreviation: "CCMA"
+    role: "Corporate Court institution concerned with Matrix law, corporate-grid authority, and intercorporate Matrix disputes"
+    operating_notes:
+      - "Coordinates with Corporate Court structures and member megacorporations."
+      - "Jurisdiction is strongest where corporate and intercorporate Matrix interests overlap."
+  - id: organization.target-matrix.grid-overwatch-division
+    name: "Grid Overwatch Division"
+    abbreviation: "GOD"
+    role: "Matrix policing and enforcement organization"
+    operating_notes:
+      - "Uses GridSec personnel and contracted/affiliated deckers."
+      - "Investigates Matrix crime and pursues activity that crosses grid or corporate boundaries."
+      - "Personnel and authority vary by grid and jurisdiction."
+  - id: organization.target-matrix.dead-deckers-society
+    name: "Dead Deckers Society"
+    role: "small elite Matrix group"
+    operating_notes:
+      - "Members accept difficult, high-risk Matrix work."
+      - "Operates through reputation, personal connections, and selective recruitment."
+      - "The group's public mythology and actual activities are intentionally difficult to separate."
+  - id: organization.target-matrix.exchange
+    name: "The Exchange"
+    role: "anonymous information/task brokerage network"
+    operating_notes:
+      - "Members receive assignments through indirect channels."
+      - "Compensation may include information, services, favors, equipment, or money."
+      - "Participants generally do not know the wider organization's identity or structure."
+  - id: organization.target-matrix.schockwellenreiter
+    name: "Die Schockwellenreiter"
+    role: "German hacker collective"
+    operating_notes:
+      - "Originates in the European Matrix/hacker scene."
+      - "Advocates open information and resistance to restrictive corporate/government control."
+      - "Uses decentralized membership and public-facing ideological activity."
+  - id: organization.target-matrix.matrix-gangs
+    name: "Matrix gangs"
+    role: "informal or organized Matrix-native street/gang groups"
+    common_activities:
+      - "software piracy"
+      - "data theft"
+      - "vandalism"
+      - "programming and code exchange"
+      - "identity theft and fraud"
+      - "equipment acquisition and repair"
+      - "territorial or reputation conflict"
+    examples:
+      - "Troglobytes"
+      - "Archilects"
+      - "Terminal Cases"
+
+provenance_policy:
+  - "Rumors, accusations, motives, and claims of covert affiliation remain attributed."
+  - "Organization descriptions are source-period world state and do not imply later continuity."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "94-105", pdf_pages: "95-106", relation: defines_entities}
