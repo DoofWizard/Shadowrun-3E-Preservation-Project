@@ -1,0 +1,40 @@
+id: rule.campaign.sotf-balance
+record_type: rule
+name: "Survival of the Fittest - Balance Procedures"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "63-78"
+pdf_pages: "64-79"
+
+first_job:
+  contact: "Buttercup"
+  objective: "Locate Sen Lo in Hong Kong and escort him to Vladivostok."
+  payment_per_runner: "50,000¥"
+  advance_expenses_per_runner: "up to 5,000¥"
+  negotiation: "Buttercup may increase payment by up to 20 percent, but not more."
+
+second_job:
+  objective: "Carry out the Vladivostok/Wuxing assignment described by Buttercup."
+  payment_per_runner: "120,000¥"
+  decision: "runners may decline the second mission in Vladivostok and still receive the first-job payment"
+
+restaurant_attack_detection:
+  secret_perception_test: "Perception (6) for each runner"
+  detect_enemies_alternative: "compare caster Sorcery Test against TN 6"
+  vehicle:
+    pilot_initiative: "8 + 3D6"
+    gunnery: 4
+    rotor_aircraft: 4
+    control_pool: 8
+    karma_pool: 4
+  exposure_damage: "10D if caught in the initial pass without cover"
+  passes: "up to three strafing passes unless the vehicle is driven off sooner"
+
+karma:
+  survive_run: 1
+  escort_sen_lo: 1
+  succeed_against_wuxing_skytower: 2
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "63-78", pdf_pages: "64-79"}
