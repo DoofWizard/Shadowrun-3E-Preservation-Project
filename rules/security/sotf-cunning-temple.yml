@@ -1,0 +1,63 @@
+id: rule.security.sotf-cunning-temple
+record_type: rule
+name: "Survival of the Fittest - Cunning Temple Security"
+domain: security
+status: ingested
+source: source.fanpro-10665
+printed_pages: "38-40"
+pdf_pages: "39-41"
+
+site:
+  public_hours: "08:00-18:00"
+  kitchen_open_until: "22:00"
+  after_hours:
+    - "entrances are locked and require maglock access"
+    - "doors and windows are alarmed"
+    - "third-floor private rooms and Morningstar's second-floor office have separate maglocks"
+
+astral_security:
+  ward_rating: 5
+  coverage: "upper two floors"
+  response: "an attack on the ward alerts Morningstar and other Awakened members"
+
+staffing:
+  shifts: 3
+  guards_per_shift: 8
+  distribution:
+    bottom_floor: 4
+    upper_floor_2: 2
+    upper_floor_3: 2
+  response:
+    - "upper-floor guards monitor elevator and stair access"
+    - "on an incident, other guards investigate while third-floor guards remain at the private quarters"
+
+matrix:
+  host_rating: "Orange-7/12/14/14/11/12"
+  morningstar_files:
+    size: "150 Mp"
+    protection: "Rating 5 Data Bomb"
+    access: "Morningstar holds the passcodes"
+  security_sheaf:
+    - {step: 3, event: "Tar Baby-7 (Armor)"}
+    - {step: 8, event: "Probe-9; trap Black-7 (Armor)"}
+    - {step: 11, event: "Tar Pit-5 (Armor)"}
+    - {step: 14, event: "Killer-5 (Shielding)"}
+    - {step: 18, event: "Tar Pit-9 (Shifting)"}
+    - {step: 21, event: "Probe-5; trap Black-10 (Armor)"}
+    - {step: 26, event: "Passive Alert"}
+    - {step: 29, event: "Ripper (bind-rip)-7 (Shifting)"}
+    - {step: 32, event: "Crippler (acid)-9 (Armor)"}
+    - {step: 37, event: "Ripper (acid-rip)-7 (Shifting)"}
+    - {step: 41, event: "Sparky-5 (Armor)"}
+    - {step: 44, event: "Sparky-5 (Shielding)"}
+    - {step: 49, event: "Sparky-7; trap Sparky-9"}
+    - {step: 54, event: "Active Alert"}
+    - {step: 59, event: "Ripper (bind-rip)-7 (Cascading)"}
+    - {step: 62, event: "Scout-7 (Armor)"}
+    - {step: 65, event: "Non-Lethal Black IC-5"}
+    - {step: 68, event: "Crippler (binder)-5"}
+    - {step: 72, event: "Lethal Black IC (cyberphobia)-7"}
+    - {step: 76, event: "Shutdown"}
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "38-40", pdf_pages: "39-41"}
