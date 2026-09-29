@@ -1,0 +1,111 @@
+id: catalog.corporations.source7124-coastal-africa
+record_type: entity_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "110-116"
+pdf_pages: "111-113,123-125"
+content_class:
+  - world_fact
+  - attributed_claim
+
+entities:
+  - id: corporation.ares-arms-africa
+    name: "Ares Arms, Africa"
+    parent: corporation.ares-macrotechnology
+    area_manager: "Franklin Bonaire"
+    local_offices:
+      - "Bibiani"
+      - "Sekondi"
+    major_divisions:
+      - "manufacturing"
+      - "military magic"
+      - "armaments"
+    source_notes:
+      - "The source describes the division as a major regional manufacturer with mining and magical research interests."
+      - "Claims about field testing, covert support and research practices remain attributed."
+
+  - id: corporation.aztechnology-west-africa
+    name: "Aztechnology, West Africa"
+    parent: corporation.aztechnology
+    area_manager: "Jeffrey Switzer"
+    local_offices:
+      - "Sekondi"
+      - "Seguela"
+    major_divisions:
+      - "plastics"
+      - "textiles"
+      - "mining"
+      - "Medicarro"
+      - "The Battle Channel"
+    source_notes:
+      - "The source describes extensive manufacturing and resource activity in the region."
+      - "Claims about labor abuses, environmental practices and internal media activity remain source-attributed."
+
+  - id: corporation.debeers-omnitech
+    name: "DeBeers-Omnitech"
+    president: "Bas Groenenburg"
+    west_african_division_manager: "Pia Douwes"
+    local_offices:
+      - "Sekondi"
+      - "Akuse"
+    major_divisions:
+      - "mining"
+      - "manufacturing"
+    source_notes:
+      - "The company is described as active in diamonds, precious metals, manufacturing and industrial materials."
+      - "Dikote is identified as a notable company product/technology in the source."
+
+  - id: corporation.phoenix-biotechnologies
+    name: "Phoenix Biotechnologies"
+    divisional_head: "Kacheda Honaw"
+    major_facilities:
+      - "Sekondi"
+      - "Accra"
+      - "Grand-Bassam"
+    source_notes:
+      - "The source describes pharmaceutical, genetic and paranormal-animal research as major activities."
+      - "Claims about specimen acquisition and experimental practices remain attributed commentary."
+
+  - id: corporation.saeder-krupp-africa
+    name: "Saeder-Krupp, Africa"
+    parent: corporation.saeder-krupp
+    executives:
+      - {title: "Sub-Saharan Director of Agribusiness and Militech", name: "Gerlach von Altbuser"}
+      - {title: "Director of Resource Development and Environmental Engineering", name: "Meinhard Braun"}
+    major_offices:
+      - "Grand-Bassam"
+      - "Abingourou"
+    source_notes:
+      - "The source associates the regional organization with mining, smelting, reforestation, agriculture and paranormal-animal work."
+      - "Claims about individual disciplinary actions, hidden magical sites and covert agreements remain attributed."
+
+  - id: corporation.tan-tien
+    name: "Tan Tien, Inc."
+    regional_coordinator: "Meng-Chen Tsao"
+    facilities:
+      - "Bouake"
+      - "Ferkessedougou"
+      - "Sekondi"
+    source_notes:
+      - "The source describes research in cybernetics, biogenetics and animal-response systems."
+      - "Dunkelzahn-estate data and funding are described as contributing to a West African expansion."
+      - "Technical claims in Shadowland commentary are not promoted to equipment rules unless a stat block or formal mechanic is supplied elsewhere."
+
+  - id: corporation.yakashima-africa
+    name: "Yakashima, Africa"
+    divisional_manager: "Iwamatsu Mariko"
+    local_facilities: "widespread"
+    source_notes:
+      - "The source describes a small formal corporate footprint combined with aggressive investment and acquisition activity."
+      - "Agribusiness, mining, forestry and biotechnology are named regional interests."
+      - "Claims about informal trade relationships and covert sponsorship remain attributed."
+
+mechanics_audit:
+  protected_classes_found:
+    - equipment_term
+  notes:
+    - "Dikote is named as an existing product/technology but no new Dikote statistics are defined in this section."
+    - "No new corporate equipment stat line, Availability value, test procedure or numeric modifier is supplied in these player profiles."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "110-116", pdf_pages: "111-113,123-125", relation: corporate_players}
