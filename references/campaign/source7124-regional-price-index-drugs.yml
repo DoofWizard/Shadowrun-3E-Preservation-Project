@@ -1,0 +1,15 @@
+id: reference.rules.source7124-price-index-drugs
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact]
+unit: "percent_of_Seattle_base_cost"
+regions: [Caribbean, Philippines, Gold_and_Ivory_Coasts, Arctic, Australia, Mediterranean, Southeast_Asia, South_Africa, CAS]
+
+price_index:
+  Drugs: {Caribbean: "30/100", Philippines: 70, Gold_and_Ivory_Coasts: 90, Arctic: 75, Australia: 100, Mediterranean: 110, Southeast_Asia: "40/110", South_Africa: 150, CAS: 100}
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
