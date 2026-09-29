@@ -1,0 +1,137 @@
+id: rule.character.source7124-maritime-edges-flaws
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "142-144"
+pdf_pages: "151-153"
+content_class:
+  - character_option
+  - rule_exact
+  - rule_procedure
+
+options:
+  - name: "Braggart"
+    type: Flaw
+    value: -1
+    mechanics:
+      - "To back down from a story or boast, the character must roll at least 2 successes on an Intelligence (4) Test."
+
+  - name: "Connected"
+    type: Edge
+    value_options: [3, 5]
+    setup:
+      - "At character creation, choose one contact and one type of merchandise."
+      - "The contact can buy or sell that merchandise at a price that always benefits the player character."
+    value_3:
+      transaction: "one-way"
+      effect: "The contact will always buy or always sell for the best possible price."
+    value_5:
+      transaction: "two-way"
+      effect: "The contact will always buy and sell for the best possible price."
+    pricing:
+      buying_price: "Street Value"
+      selling_price: "No Street Index markup."
+
+  - name: "Liar"
+    type: Flaw
+    value: -2
+    mechanics:
+      initial:
+        - "Every time the character addresses someone, the gamemaster rolls 1D6."
+        - "On a result of 1, the person being addressed assumes the character is lying."
+      after_caught:
+        - "The next time the character meets that same person, the person refuses to believe the character on a result of 1 or 2."
+        - "The chance of being caught increases by 1 for every later encounter with that person: then 1-3, and so on."
+        - "Once the character is caught lying on a result of 1-6, that person will no longer deal with the character."
+        - "If that person is a contact, the character loses the contact permanently."
+        - "The gamemaster determines whether the former contact becomes an Enemy."
+
+  - name: "Natural Immunity"
+    type: Edge
+    value: 3
+    setup:
+      - "Choose one type of drug or poison."
+      - "Player and gamemaster must agree on the substance, and it must be something the character could plausibly encounter."
+    mechanics:
+      safe_dose_frequency: "One dose every (Body ÷ 2) days with no ill effects."
+      overdose: "If the character takes more than a single dose within that interval, apply the substance's normal damage."
+      recovery_start: "If the character survives, recovery begins after (Body ÷ 2) days."
+
+  - name: "Pirate Family"
+    type: Edge
+    value: 3
+    restriction: "Only for characters born and raised to the maritime life."
+    mechanics:
+      - "The character has extended family in multiple ports."
+      - "These relatives do not count as contacts."
+      - "They are treated as Friends who can help connect characters into and out of situations in unfamiliar ports and cities."
+      - "The family network may include non-blood relations tied by longstanding family association."
+
+  - name: "Sea Legs"
+    type: Flaw
+    value: -2
+    trigger: "24 consecutive hours on land without setting foot on a boat."
+    initial_test:
+      test: "Willpower (4)"
+      required_successes: 2
+    on_failure:
+      - "The character seeks a way back to a ship or boat, even if doing so disrupts the current objective."
+      - "Target numbers for all tests increase by +1 for each failure on the Willpower (4) Test, except for subsequent Sea Legs Tests."
+    repeat_test:
+      interval: "Every time the character's Intelligence in hours has passed."
+      if_previous_test_succeeded: "+1 target-number modifier"
+      if_previous_test_failed: "+2 target-number modifier"
+      tracking: "Track the total number of failures."
+    ending_condition:
+      - "The tests end when the character spends a number of hours on the water equal to the number of failures rolled."
+      - "If more than 24 failures are accumulated before returning to the water, the 25th failure requires 2 days on the water; the 26th requires 3 days; continue the same progression."
+
+  - name: "Sea Madness"
+    type: Flaw
+    value: -4
+    trigger: "24 hours or more at sea with no sight of land."
+    initial_test:
+      test: "Willpower (4)"
+      required_successes: 2
+    repeat_test:
+      interval: "Every time the character's Intelligence in hours has passed."
+      if_previous_test_succeeded: "+1 target-number modifier"
+      if_previous_test_failed: "+2 target-number modifier"
+      tracking: "Track the total number of failures."
+    visibility_condition:
+      - "Continue testing as long as land is not visible through the character's natural or cyber-enhanced vision."
+      - "Electronic equipment or another character reporting that land is nearby does not end the condition."
+    ending_condition:
+      - "After the character sees land, the madness passes after a number of hours equal to the number of failures rolled."
+      - "If more than 24 failures are accumulated before seeing land, the 25th failure extends recovery to 2 days; the 26th extends it to 3 days; continue the same progression."
+
+  - name: "Water Sprite"
+    type: Edge
+    value: "1 per ability improvement"
+    improvements:
+      Holding_Breath_Underwater:
+        effect: "+20 seconds"
+        reference: "Drowning, p.162, for base seconds"
+      Swimming_Distance_Increase:
+        effect: "+0.1 when multiplying Swimming Rate"
+        reference: "Swimming, p.155"
+      Swimming_Fatigue:
+        effect: "+1 to the rate of Fatigue"
+        normal_rate: "Body ÷ 2"
+        reference: "Swimming, p.155"
+      Treading_Water_Fatigue:
+        effect: "+1 minute to the time between Swimming Tests"
+        normal_interval: "Strength in minutes"
+        reference: "Treading Water, p.156"
+      Treading_Water_Taking_Damage:
+        effect: "-1 to the target number for the Damage Resistance Test"
+        reference: "Treading Water, p.156"
+      Floating_Success:
+        effect: "-1 modifier to all Buoyancy and Treading Water Tests except tests made to resist Damage"
+        reference: "Floating, p.156"
+      Floating_Length_of_Time:
+        effect: "+1 Body for determining the length of time the character can float"
+        reference: "Floating, p.156"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "142-144", pdf_pages: "151-153", relation: defines}
