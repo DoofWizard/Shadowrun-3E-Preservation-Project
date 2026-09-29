@@ -333,18 +333,75 @@ A source may be marked `complete` only when:
 This protocol supersedes any earlier practice that treated a recovery sidecar or checkpoint as more authoritative than the main source manifest.
 
 
+## Mechanical fidelity invariant
+
+This is mandatory across all passes and all connector-facing writes.
+
+**Mechanics-first rule:** connector-friendly wording may change framing, headings, summaries, and non-mechanical narrative diction. It must never remove, blur, generalize, or euphemize a rules-bearing fact.
+
+Treat the following as do-not-soften content:
+- target numbers and thresholds
+- dice pools and test procedures
+- modifiers and situational adjustments
+- damage codes and injury effects
+- ranges, rates, durations and timing
+- costs, Availability, legality and resource values
+- equipment, weapon, vehicle, cyberware, bioware, critter and spell statistics
+- character options, prerequisites, restrictions and exceptions
+- tables and table entries
+- environmental and movement mechanics
+- underwater, vessel, Matrix, magic, rigging and combat procedures
+- explicit replacement, extension, conversion, clarification or conflict relationships
+
+If a passage is both operational-sounding and mechanically significant, preserve the mechanic exactly and rewrite only the surrounding narrative framing.
+
+### Content classes
+
+Classify extracted material when useful with one or more of these values:
+
+- `rule_exact` — numeric or otherwise exact game rule; preserve literally in structured form
+- `rule_procedure` — game-resolution sequence or test procedure; preserve all steps that affect play
+- `equipment_stat` — stat line, cost, availability, legality, capacity or performance data
+- `character_option` — creation/advancement option, prerequisite, restriction or exception
+- `world_fact` — source-period setting fact
+- `campaign_guidance` — reusable GM/player-facing scenario guidance without standalone mechanical force
+- `attributed_claim` — rumor, commentary, propaganda, disputed motive or in-world assertion
+- `narrative_context` — flavor/context with no independent mechanical requirement
+
+`rule_exact`, `rule_procedure`, `equipment_stat`, and `character_option` are protected classes. Connector-facing normalization must not reduce their precision.
+
+### Connector-facing rewrite boundary
+
+Use restrained archival/reference diction for non-mechanical framing where useful. Examples:
+- "piracy operations" -> "maritime campaign activity"
+- "raid" -> "encounter" or "scenario" when no mechanical distinction is lost
+- "smuggling routes" -> "trade/distribution networks"
+- "dodging law enforcement" -> "public-security response and movement constraints"
+- "modus operandi" -> "operating patterns"
+- "financing the struggle" -> "resource networks"
+- "ship weapons" -> "vessel equipment" only when weapon classification is not itself mechanically relevant
+- "criminal faction" -> "regional organization"
+
+These are presentation substitutions, not semantic substitutions. Preserve the source's exact terminology in provenance or canonical fields whenever that terminology matters to rules, identity, classification, lineage, or player-facing lookup.
+
+### State-file rule
+
+Main source manifests and `WORKER_CHECKPOINT.yml` should be machine-oriented state, not summaries of source content. Prefer IDs, numeric page boundaries, scan-depth codes, pending IDs, record commit IDs and terse neutral anchors. Do not duplicate chapter prose or semantic summaries into state files.
+
+Rich world material belongs in world/entity/reference records. Exact mechanics belong in rule/equipment/character records. State files only track progress.
+
 ## Connector-facing normalization style
 
-When writing Shadowrun source material through external connectors, prefer compact reference-manual diction.
+When writing source material through external connectors, use compact reference-manual diction while preserving mechanical fidelity.
 
-- Preserve exact mechanics, numeric values, canonical IDs, source/page provenance, and explicit lineage relationships.
-- Keep source-period facts separate from attributed rumors, commentary, propaganda, speculation, or scenario branches.
-- Prefer neutral taxonomic wording such as `security force`, `armed faction`, `restricted equipment`, `scenario objective`, `hazard`, `injury effect`, `organization`, and `response procedure` when that wording preserves the source meaning.
-- Do not reproduce colorful violent or sensational narrative wording when it adds no mechanical or provenance value.
-- Split large payloads by semantic type before the first write attempt: world/organization, rules/procedure, NPC/entity statistics, equipment, and campaign/reference guidance should be separate records when practical.
-- Keep manifests and checkpoints administrative and terse.
-- This is a packaging/style rule only. Do not omit rules-bearing content or weaken the fidelity of the normalized data to avoid a connector filter.
-
+- Exact mechanics outrank connector-friendly wording. Never omit or weaken rules-bearing content to avoid a filter.
+- Preserve numeric values, canonical IDs, source/page provenance, mechanically meaningful terminology and explicit lineage relationships.
+- Keep source-period facts separate from attributed rumors, commentary, propaganda, speculation and scenario branches.
+- Rewrite colorful or operational-sounding non-mechanical prose as neutral taxonomy when the rewrite does not change game meaning.
+- Split large payloads by semantic type before the first write attempt: exact rules/procedures, equipment/stat data, character options, world/organization data, and campaign/reference guidance should be separate records when practical.
+- If a connector blocks a mixed payload, isolate the protected mechanical classes first and preserve them unchanged in a smaller record; repackage only the non-mechanical framing.
+- Keep manifests and checkpoints administrative and machine-oriented.
+- Never treat successful connector passage as evidence that a rule may be simplified; validation is against the source, not the filter.
 
 ## Known unresolved source-copy gaps
 
