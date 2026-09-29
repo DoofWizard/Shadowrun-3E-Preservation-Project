@@ -1,0 +1,125 @@
+id: rule.campaign.sotf-hunting
+record_type: rule
+name: "Survival of the Fittest - Hunting"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "79-91"
+pdf_pages: "80-92"
+
+job:
+  employer: "Celedyr"
+  objective: "Recover the Silver Songbird from Rhonabwy's lair and return it."
+  base_pay: "150,000¥"
+  alternate_compensation:
+    orichalcum: "2 refined units, stated street value 176,000¥ each if fenced"
+    corporate_scrip: "up to about 25% above cash value"
+  support:
+    - "Reasonable mundane equipment may be provided on request and retained after the run."
+    - "Magical instruction/items may be offered, but ordinary Karma costs still apply where relevant."
+
+amulets:
+  function:
+    - "Act as temporary magical passkeys through Rhonabwy's wards and for his guardian spirits."
+    - "Do not protect characters who use active magic."
+  detection_test:
+    dice: 6
+    base_target_number: 6
+    modifier: "subtract half the Force of the magical effect used, or half the Magic attribute of an astrally projecting character"
+    success: "Guardian spirits detect/intercept the runners."
+  guardian_response:
+    count: 4
+    force: 3
+    spirit_energy: "3 + (1D6 / 2)"
+    note: "Use appropriate spirit type from Magic in the Shadows as needed."
+  mundane_detection:
+    target_number: 6
+    note: "May be lower for conspicuous activity."
+
+approach:
+  distance_from_drop: "about 10 km"
+  normal_walk_time: "about 1 hour"
+  stealth:
+    test: "Open Stealth Test"
+    terrain_modifier: "-2 for foliage and irregular ground"
+    opposition: "Perception Test with 5 dice against the lowest runner Stealth result"
+  wolf_patrol:
+    composition: "one wolf per runner plus pack leader"
+    stats:
+      body: 5
+      quickness: "5 x 4"
+      strength: 4
+      charisma: null
+      intelligence: "3/4"
+      willpower: 2
+      essence: 6
+      magic: null
+      reaction: 5
+      initiative: "5 + 2D6"
+      combat_pool: 5
+      karma_professional_rating: "2/2"
+      attack: "7M"
+
+lair_security:
+  entrance:
+    motion_sensors: "Rating 5"
+    surveillance: "miniature cameras"
+    maglock: "Rating 6 keypad"
+    ward: "Rating 10"
+    alarm_response: "neuro-stun gas floods entrance; 6S Stun damage per Combat Turn"
+  treasury:
+    reinforced_door_barrier: 24
+    ward: "Rating 10"
+    maglock: "Rating 6 keypad"
+
+silver_songbird:
+  type: "unique magical construct"
+  physical:
+    material: "finely wrought silver"
+    body: 2
+    flight: "12 meters per Combat Turn"
+    aura: "no magical aura"
+  effect:
+    - "Its song improves mood and lifts spirits; no other inherent effect is specified."
+    - "Attempts to change, damage, or destroy it with magic fail."
+  tracker:
+    device: "tracking signal hidden in top of cage"
+    detection: "Perception (10) Test"
+    activation: "Hunters activate it."
+    countermeasure: "A jammer may mask the signal and the device may be physically disabled."
+  cage_charge:
+    material: "1 kilogram C-12 plastic explosive with radio detonator"
+    damage: "12D within 2 meters"
+    falloff: "-1 Power per meter farther away"
+
+hunt:
+  head_start: "5 minutes"
+  tracking:
+    - "Branwen uses a locator for the Songbird tracking signal."
+    - "A kludde scouts in avian form; spotting it is Perception (10), with an additional +4 TN at long distance as described."
+  tactics:
+    - "Branwen coordinates; Volk and Andres are principal trackers/pursuers."
+    - "Kludde and gargoyle are used for direct attacks once the runners are located."
+    - "Naga and Branwen provide magical support."
+    - "Hunters regroup and resume pursuit after unsuccessful assaults."
+  escape_requirements:
+    - "Deal with the tracking signal."
+    - "Delay, misdirect, negotiate with, or overcome the hunters long enough to reach pickup."
+  negotiation:
+    - "Surrender/negotiation may buy time, but the hunters are strongly committed to Rhonabwy's instructions."
+  environment:
+    - "Darkness, rough ground, weather, local wildlife, and astral background count may be used as complications."
+
+karma:
+  surviving_the_run: 1
+  reaching_the_songbird: 1
+  dealing_with_hunters: 1
+  discovering_explosives_in_time: 1
+
+legwork:
+  etiquette_tn: 4
+  obscure_information_tn: 6
+  note: "Computer (4) can reveal limited information about the Silver Songbird."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "79-91", pdf_pages: "80-92", relation: defines_scenario}
