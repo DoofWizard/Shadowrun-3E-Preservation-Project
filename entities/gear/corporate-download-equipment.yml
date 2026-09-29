@@ -1,0 +1,107 @@
+id: catalog.gear.corporate-download
+record_type: entity_catalog
+name: "Corporate Download - Corporate Equipment"
+domain: gear
+status: ingested
+source: source.fasa-7125
+printed_pages: "127-132"
+pdf_pages: "133-138"
+
+entities:
+  - id: gear.vehicle-package.gm-smartcar
+    name: "GM Smartcar package"
+    type: "vehicle option package"
+    base_vehicle: "Ford Americar (Rigger 2 p.155)"
+    availability: "Optional package for new 2061 GM/Ares civilian vehicles not designated for military or security work."
+    cost_modifier: "+50% vehicle cost"
+    features:
+      standard_armor: 2
+      anti_theft:
+        rating: 5
+        includes: ["alphanumeric keypad","fingerprint scanner"]
+      panicbutton:
+        rating: 4
+        includes: "tracking device"
+        response:
+          Lone_Star: "When activated, vehicle is treated as if in a Lone Star Security Rating A zone."
+          Knight_Errant: "In Knight Errant areas, may alert Knight Errant for a 1,000¥ monthly fee; response is as if vehicle is in Rating AA, and services are billed."
+          Z_Zone: "Ignored."
+    vehicle_impact: "Built-in package does not alter Load, Cargo, or other listed vehicle attributes."
+  - id: gear.cyberdeck.babel
+    name: "Babel Cyberdeck"
+    type: "cyberdeck"
+    stats:
+      mpcp: 5
+      hardening: 2
+      active_memory: 1000
+      storage_memory: 1000
+      io_speed: 200
+      response_increase: 0
+      cost: "70,000¥"
+      persona: {Bod: 3, Evasion: 4, Masking: 4, Sensors: 4}
+      casing: {level: 3, Impact: 4, Ballistic: 3}
+    programming_shop:
+      included: true
+      task_bonus: "+2"
+      small_utility_bonus: "+3 instead when utility being programmed is less than 500 Mp"
+      restriction: "Deck may not be used for decking while programming."
+  - id: gear.utility.cross-quick-coder
+    name: "Cross Quick Coder Utility"
+    type: "programming utility"
+    function:
+      - "Semi-expert system that can program simple utilities autonomously."
+      - "When installed and run, consumes Active Memory equal to its rating."
+      - "Programs other utilities using a Computer Skill equal to its rating; utility must fit available Active Memory."
+      - "Task bonuses from options apply normally; options double memory as usual."
+      - "Cannot program frames."
+    assisted_programming:
+      test: "Use the average of the decker's Computer Skills, rounded up, when making the Computer Test."
+      quality_tradeoff: "If the Quick Coder is used for more than half of the utility's normal programming time, completed utility operates at one Rating lower than programmed."
+    bundle: "Can be installed on a new Babel deck for 75% of its normal cost."
+    versions:
+      rating_3: {size_mp: 54, cost: "5,400¥", availability: "2/7 days", street_index: 1}
+      rating_4: {size_mp: 112, cost: "22,400¥", availability: "4/7 days", street_index: 1.5}
+      rating_5: {size_mp: 200, cost: "40,000¥", availability: "4/7 days", street_index: 1.5}
+  - id: gear.security.mct-gas-trap
+    name: "MCT gas-trap installation"
+    type: "facility security"
+    installation:
+      sealed_room_barrier_rating: 12
+      delivery: "Gas pumped through hidden vents near ceiling/floor after room seals."
+      standard_chem_suit: "Adds 2 Combat Turns to gas Speed; standard respirators/gas masks are insufficient."
+      military_chem_suit: "Special military chemical suits prevent exposure."
+    gases:
+      seven_7: {damage: "10D", speed: "1 Combat Turn"}
+      green_ring_8: {damage: "10S", speed: "Immediate"}
+    exposure_effects:
+      - "Cramping, nausea and double vision."
+      - "For every two boxes of damage from gas exposure, add +1 to all target numbers."
+    persistence: "Gas oxidizes and becomes inert after 10 minutes of exposure to air."
+    military_suit_market: {cost: "15,000¥", availability: "8/2 weeks", street_index: 2}
+  - id: gear.robot.hachiman-series-security
+    name: "Hachiman-series Security Robot"
+    type: "security robot"
+    stats:
+      handling: "3/6"
+      speed: 10
+      acceleration: 2
+      body_armor: "2/5(7)"
+      signature: 7
+      pilot: 3
+      sensor: 5
+      learning_pool: 3
+      initiative: "6 + 4D6"
+      fuel: "Electric (70 PF)"
+      cost: "70,000¥"
+    features:
+      - "Ablative armor (11)"
+      - "remote mini-turret with Ultramax medium machine gun"
+      - "remote control gear"
+      - "rigger control gear"
+      - "spotlight"
+    behavior:
+      - "Patrols assigned areas, recognizes and ignores authorized targets, and tracks unauthorized intruders."
+      - "Humanoid upper-body/sensor design; rare, high-end MCT security asset."
+
+sources:
+  - {source: source.fasa-7125, printed_pages: "127-132", pdf_pages: "133-138", relation: defines_gear}
