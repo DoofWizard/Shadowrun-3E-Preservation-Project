@@ -1,0 +1,44 @@
+id: rules.combat.source7124-underwater
+record_type: rule_bundle
+status: ingested
+source: source.fasa-7124
+printed_pages: "159-160"
+pdf_pages: "168-169"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+vision_modifiers:
+  table:
+    - {condition: "Subsurface (less than 4 m)", normal: 1, low_light: 0, thermographic: 2}
+    - {condition: "Shallow (4-15 m)", normal: 2, low_light: 1, thermographic: 4}
+    - {condition: "Deep (15+ m)", normal: 4, low_light: 2, thermographic: 5}
+    - {condition: "Murky waters", normal: 4, low_light: 4, thermographic: 2}
+  note: "Apply to visual Perception Tests according to depth, water condition and vision type."
+
+hearing:
+  detecting_sounds: "-1 modifier to Perception Tests"
+  locating_source: "Impossible by sound alone without sonar equipment."
+
+surface_to_surface_combat:
+  wave_target_number_modifier: "+2 to +6 as assessed by the gamemaster."
+
+surface_to_underwater_fire:
+  power_loss: "Each meter of water reduces weapon Power by 1."
+  wound_level_loss: "Once Power reaches 2, each additional 2 meters reduces Wound Category by 1 until harmless."
+  refraction: "+2 target number to tests made when aiming from air at a submerged target."
+  vision: "Use standard visibility modifiers when firing into water, but treat thermographic and low-light as normal vision; ultrasound still functions."
+
+underwater_melee:
+  armed_and_unarmed_target_number: "+2"
+  no_swim_mask_or_cybereyes: "additional +2"
+  visibility: "Also apply depth and murkiness vision modifiers."
+  strength_for_damage: "-1 Strength, except chokeholds and attacks using crushing strength rather than swinging or thrusting."
+  exemptions: "Marine critters, water spirits, and characters using the Underwater Concentration of Armed or Unarmed Combat ignore the target-number penalties; Underwater Concentration still suffers the -1 Strength penalty."
+
+explosions:
+  personal_scale: "A surface-designed explosive detonating underwater increases Damage Level by one level."
+  vehicle_scale: "Treat all explosions as armor-piercing: do not reduce Damage Levels against vehicles under the standard vehicle rules, and use only half vehicle Armor Rating to reduce attack Power."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "159-160", pdf_pages: "168-169", relation: exact_underwater_combat_rules}
