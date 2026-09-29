@@ -1,0 +1,58 @@
+id: rule.source7124.sea-damage-p162
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "162"
+pdf_pages: "171"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+rules:
+  drowning:
+    normal_breath_hold_combat:
+      seconds: 45
+      combat_turns: 15
+    after_expiry:
+      stun_damage: "1 box in each phase of each Combat Turn in which the character has an action"
+      resistance_test: none
+    after_stun_monitor_filled:
+      state: unconscious
+      if_still_underwater:
+        physical_damage: "1 box in each phase of each Combat Turn in which the character has an action"
+      death: "when damage exceeds the Damage Overflow Limit"
+    regenerating_characters:
+      healing_blocked_until_removed_from_cause: true
+      overflow_physical_damage: "death per Shadowrun Companion p.38"
+
+  exploding_scuba_tank:
+    tank_body: 4
+    tank_armor: 4
+    rupture_trigger:
+      minimum_weapon_power: 6
+      minimum_single_shot_wound: Serious
+      lesser_blows: ignored
+    explosion_damage: "8D"
+    resistance: "tank Body"
+    armor_reduces_damage: true
+    water_power_reduction: "-1 Power per meter of water traversed by the projectile"
+    combat_pool_allowed: false
+
+  keel_hauling_initial_damage:
+    source_wording_damage: "4D and 4D Stun"
+    resistance_attribute: Body
+    combat_pool_allowed: false
+    note: "The source prints the first component simply as 4D; do not infer an omitted damage type."
+
+  dragging_behind_moving_vessel:
+    damage_by_environment:
+      water_only: "(Speed ÷ 5)M Stun"
+      sandbar: "(Speed ÷ 5)M"
+      reef: "(Speed ÷ 4)S"
+    frequency: "each phase in which the ship is traveling forward"
+    assessment_phase: "rigger, captain or helmsman's combat phase"
+    multiple_hits_per_combat_turn_possible: true
+    resistance_tests: "gamemaster determines how many Damage Resistance Tests the dragged character may make"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "162", pdf_pages: "171", relation: exact_rule}
