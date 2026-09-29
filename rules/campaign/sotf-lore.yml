@@ -1,0 +1,131 @@
+id: rule.campaign.sotf-lore
+record_type: rule
+name: "Survival of the Fittest - Lore"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "106-122"
+pdf_pages: "107-123"
+
+mission:
+  employer: "Hestaby"
+  objective: "Reach the Citadel on the metaplanes, obtain the Jewel of Memory, and return with it."
+  payment: "500,000¥ on success"
+  strategic_context:
+    - "Final stage of the Rite of Succession."
+    - "Lofwyr is the opposing great dragon and cannot directly interfere with the runners under the Rite."
+
+threshold:
+  transport:
+    - "Hestaby sends the runners' astral forms into the metaplanes while their bodies remain at Shasta Lodge."
+    - "Elapsed time between astral quest and physical world is deliberately unreliable."
+  dweller:
+    questions:
+      - "Why have you come?"
+      - "Are you prepared to face what lies ahead?"
+    secret_revelation:
+      - "The Dweller reveals a personal secret/fear concerning each character."
+    tests:
+      skill_test: "Use a suitable highest-rated skill; Skill (6) Test."
+      willpower_test: "Willpower (6) for an apparently impossible challenge requiring resolve."
+      puzzle_test: "Intelligence (6), or automatic success if the player genuinely solves the riddle."
+      moral_test: "Willpower (6); automatic success if the player clearly makes the right principled choice."
+    result:
+      failure: "Dweller says the character may pass but predicts failure."
+      success: "Dweller says the character may pass."
+      bonus: "Every two full successes grant +1 temporary Karma Pool for the duration of the astral quest."
+
+places_of_power:
+  selection:
+    initial: "Roll 1D6 on Metaplanes Table."
+    subsequent: "After completing a Place, roll 2D6 and count downward from current Place; already visited results advance to the next unvisited Place."
+    table:
+      1: "Place of Battle"
+      2: "Place of Charisma"
+      3: "Place of Destiny"
+      4: "Place of Fear"
+      5: "Place of Knowledge"
+      6: "Place of Magic"
+      7: "Place of Spirits"
+      8: "The Citadel"
+  identity_options:
+    - "fantasy characters"
+    - "animals"
+    - "dracoforms"
+    - "contemporaries/borrowed identities"
+    - "historical figures"
+  guidance:
+    - "Retain useful equivalents for specialists such as deckers/riggers so no character becomes dead weight."
+    - "Challenges should reflect Rite themes and individual characters."
+
+place_of_battle:
+  rule: "Combat is real for astral-quest purposes; Deadly Physical damage can kill, while Deadly Stun normally leaves the character unconscious until the group reaches the next Place."
+  examples:
+    - "fight drakes/dragons scaled to party ability"
+    - "characters themselves take dragon forms and fight"
+
+place_of_charisma:
+  rule: "Resolve through social interaction/tests and argument."
+  examples:
+    - "debate Rite policy as great dragons"
+    - "argue for survival of metahumanity before dragon council"
+
+place_of_destiny:
+  rule: "Challenge centers on choice, responsibility, and the runners' role in the Rite."
+  examples:
+    - "intervene or remain neutral in conflict between dragons"
+    - "dry run of Council decision concerning the Jewel"
+
+place_of_fear:
+  rule: "Characters confront personal or Rite-related fears."
+  examples:
+    - "sacrifice dilemma imposed by a dragon"
+    - "encounter with Dunkelzahn and consequences of his plans"
+
+place_of_knowledge:
+  rule: "Tests understanding of the Rite, prior runs, and lessons learned."
+
+place_of_magic:
+  examples:
+    - "mediate Awakened/mundane conflict"
+    - "magical diagram challenge requiring 12 total successes using Magical skill such as Sorcery, Conjuring, or Magical Background"
+  masking_spirit:
+    effective_force: 6
+    spirit_energy: 3
+    note: "Penetrating Masking exposes its true nature."
+
+place_of_spirits:
+  rule: "Characters overcome a spirit challenge."
+  principal_example:
+    opponent: "dragon spirit"
+    note: "Has normal western-dragon abilities plus Innate Spell (Flamethrower), but no general spellcasting unless added by GM."
+
+citadel:
+  jewel_of_memory:
+    nature: "magical essence of the Jewel of Memory in Lofwyr's possession"
+    meaning: "accumulated knowledge/lore of ages of dragonkind"
+    extraction: "If deliberately removed from pedestal, all characters present return to the material world."
+  lofwyr_offer:
+    - "Offers the runners almost any plausible reward in exchange for giving him the gemstone after returning."
+    - "Threats and promises are used within the constraints of the Rite."
+  possible_outcomes:
+    hestaby: "Present Jewel to Hestaby; she gains victory in the Rite."
+    lofwyr: "Give Jewel to Lofwyr; he claims victory."
+    ghostwalker: "May be chosen as an alternate recipient; outcome shifts political balance."
+    other_dragon: "Possible; outcome depends on recipient and Council reaction."
+    destroy_jewel: "Allowed only by deliberate player choice; no test required; destroys astral essence and Hestaby wins by default because no other dragon can be named loremaster."
+    split_jewel: "Possible Solomon-style compromise; portions of lore distributed among dragons."
+    keep_jewel: "Not permitted; Council gives one warning, then protection of the Rite is forfeited."
+
+endgame:
+  decision_rule: "There is no single mandatory recipient; campaign consequences depend on the runners' decision."
+  interparty_conflict: "If necessary, resolve by group decision; suggested default is majority choice."
+
+karma:
+  surviving_run: 1
+  completing_astral_quest: 2
+  good_council_decision: 1
+  campaign_bonus: "Optional 2-4 Karma for overall Survival of the Fittest campaign performance."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "106-122", pdf_pages: "107-123", relation: defines_scenario}
