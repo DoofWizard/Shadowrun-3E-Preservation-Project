@@ -1,0 +1,80 @@
+id: rule.campaign.sotf-knowledge
+record_type: rule
+name: "Survival of the Fittest - Knowledge"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "18-27"
+pdf_pages: "19-28"
+
+job:
+  contact: "Mr. Radek"
+  target_file: "Kallisti"
+  target_location: "Shasta Lodge"
+  initial_offer:
+    advance: "10,000¥"
+    delivery_payment: "50,000¥ after delivery and verification"
+  negotiation_ceiling: "200,000¥ total, including expenses"
+  deadline: "10 days"
+  delivery: "Return the data to Radek; an LTG number is supplied for messages."
+
+investigation:
+  radek:
+    assensing: "Normal Assensing (4) Test identifies a mundane with moderate cyberware and a professional demeanor."
+    detection_spells:
+      - "Analyze Truth indicates that his statements are truthful to the best of his knowledge."
+      - "Mind Probe does not reveal Hestaby's role because Radek does not know it."
+      - "If Radek notices Mind Probe use, he ends negotiations."
+    matrix_search: "A Matrix search finds no incriminating information; his reputation is that of a competent fixer."
+    contacts: "Street contacts describe him as reputable and reliable."
+  meeting_etiquette: "Overt spellcasting or astral inspection during the meeting is treated as a serious breach of etiquette; Etiquette (Street) 1+ recognizes this."
+
+travel:
+  california:
+    - "Major airports are heavily controlled; travel may require secure identification and careful handling of restricted equipment."
+    - "Smuggler or overland approaches are possible but may cross multiple jurisdictions."
+  shasta_by_air:
+    - "Aircraft cannot land directly at the lodge and must set down outside the enclave."
+    - "The enclave uses radar/early-warning systems plus bound air elementals and wind spirits."
+    - "Unauthorized aircraft may be ordered down by spirits and reported to the lodge."
+  shasta_by_land:
+    - "Interstate 5 crosses the enclave and allows ordinary road access to the general area."
+    - "The final approach to the lodge still requires avoiding patrols and local surveillance."
+
+shasta_patrol_detection:
+  procedure:
+    - "Use one detection test for a road/air approach."
+    - "Use four detection tests for a mountain hike, approximately one every two hours."
+    - "Roll 5 dice for each patrol test."
+    - "The base target number is the worst result from the runners' Open Stealth Tests, then apply the modifiers below."
+    - "If the target number is reduced to 0, the runners are automatically spotted."
+  target_number_modifiers:
+    active_spells_or_foci: "-1 per 2 Force points, unless Masked"
+    astrally_active_character: "-1 per 2 Magic points"
+    spirits_accompanying_group: "-1 per 2 Force points"
+    combat: "-1 per Combat Turn, or portion thereof"
+    artificial_light_at_night: "-1"
+    spirit_using_concealment: "+ spirit's Force"
+
+hestaby_observation:
+  procedure:
+    - "If Hestaby passes near the runners, make a Perception Test with 13 dice."
+    - "The target number is based on the runners' Open Stealth Test, with appropriate modifiers."
+    - "Her dual nature and enhanced senses should be considered."
+  outcome: "She normally does not interfere, but remembers runners who successfully avoid her notice."
+
+lodge_approach:
+  - "The main road and direct air route are the most heavily monitored."
+  - "A mountain approach is slower but more covert."
+  - "The exterior uses surveillance and electronic locks; astral security is also present."
+  - "The source presents stealth, social infiltration, and direct entry as the three basic approaches."
+
+provenance_policy:
+  - "Hestaby's hidden role in arranging the job is GM information and is not treated as knowledge available to Radek or the runners."
+  - "Optional encounter suggestions are preserved as scenario guidance rather than required events."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "18-27", pdf_pages: "19-28", relation: defines_scenario_procedure}
+
+notes:
+  - "No supersession relationship is inferred."
