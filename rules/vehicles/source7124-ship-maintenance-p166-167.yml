@@ -1,0 +1,47 @@
+id: rule.source7124.ship-maintenance-p166-167
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "166-167"
+pdf_pages: "175-176"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+damage_control:
+  minimum_team: "Hull Rating + 2"
+  skill: "highest Ship Build/Repair Skill among team"
+  extra_dice: "+1 die per 2 additional members above minimum, maximum +3 dice"
+  table:
+    Light: {target_number: 4, repair_time_minutes: 60}
+    Moderate: {target_number: 6, repair_time_minutes: 120}
+    Serious: {target_number: 8, repair_time_minutes: 180}
+  target_number_modifiers:
+    active_encounter: 1
+    submarine: 2
+  successful_test:
+    minimum_successes: 1
+    reduce_damage_level_by: 1
+    actual_time: "listed repair time divided by successes"
+  interruption_over_5_minutes: "abort current process; may restart"
+  zero_successes: "onboard repair unavailable; wait until port"
+  subsystem_option:
+    reference: "Rigger 2 p.85 Vehicle Subsystem Damage"
+    one_or_more_successes: "restore selected subsystem to full operational capacity"
+
+port_repair:
+  reference: "Rigger 2 p.25 Vehicle Repair Rules"
+  minimum_team: "3 × Hull Rating"
+  skill: "highest Ship Build/Repair Skill among team"
+  extra_dice: "+1 die per 4 additional members, maximum +3 dice"
+  base_time_days: "damage boxes × Hull Rating"
+  day_length_hours: 8
+  actual_time: "base time divided by successes"
+  replacement_parts_required_before_start: true
+  temporary_seaworthy_pause:
+    extra_hours: 4
+    counts_toward_repair_time: false
+    resume_from_prior_point_on_return: true
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "166-167", pdf_pages: "175-176", relation: exact_rule}
