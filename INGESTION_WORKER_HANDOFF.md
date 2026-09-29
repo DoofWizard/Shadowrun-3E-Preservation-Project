@@ -344,3 +344,8 @@ When writing Shadowrun source material through external connectors, prefer compa
 - Split large payloads by semantic type before the first write attempt: world/organization, rules/procedure, NPC/entity statistics, equipment, and campaign/reference guidance should be separate records when practical.
 - Keep manifests and checkpoints administrative and terse.
 - This is a packaging/style rule only. Do not omit rules-bearing content or weaken the fidelity of the normalized data to avoid a connector filter.
+
+
+## Known unresolved source-copy gaps
+
+- `pending.source10652.missing-p110-111`: *Threats 2* printed pp.110-111 are absent from the current corpus PDF. Preserve this conflict across checkpoints and source transitions. The user may supply another copy later; do not infer or synthesize the missing pages, and do not let this gap block unrelated Pass B progress.
