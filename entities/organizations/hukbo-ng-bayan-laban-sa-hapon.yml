@@ -5,13 +5,13 @@ short_name: "The Huk"
 status: ingested
 source_period: "2059"
 source: source.fasa-7124
-printed_pages: "57-60"
-pdf_pages: "58-61"
+printed_pages: "57-82"
+pdf_pages: "58-83"
 
 nature:
   - "The source describes the Huk as a decentralized resistance network and rallying identity rather than a single conventional hierarchy."
   - "Masaru is presented as the only figure with a broad view of the network's members and accomplishments."
-  - "Cells, political organizations, labor groups, community supporters and armed pirate teams can all identify with the Huk while remaining operationally independent."
+  - "Cells, political organizations, labor groups, community supporters and pirate teams can identify with the Huk while remaining operationally independent."
 
 principal_figure:
   id: person.masaru
@@ -27,53 +27,92 @@ factions:
         id: person.julio-ocampo
         name: "Julio Ocampo"
       home_location: "Manila"
-      associated_person:
-        id: person.filipo-salonga
-        name: "Filipo Salonga"
-        role: "presidential candidate"
+      formed: 2051
+      predecessor_groups:
+        - "Kaakbay"
+        - "Partido ng Bayan"
+        - "Nationalista"
+      presidential_candidate:
+        id: person.filipa-salonga
+        name: "Filipa Salonga"
+      source_notes:
+        - "The party is presented as the Huk-aligned electoral movement and as a major vehicle for the planned open election."
+        - "Masaru is described as personally backing Salonga's candidacy."
+
+  labor_wing:
     - id: organization.negros-island-factory-workers-union
       name: "Negros Island Factory Workers' Union"
+      faction_name: "Anti-Corp Faction"
       captain:
         id: person.paolo-montalban
         name: "Paolo Montalban"
       home_location: "none"
-      subordinate_structure: "individual work-site leaders"
+      source_notes:
+        - "The faction draws heavily from organized labor across many industries."
+        - "Members range from conventional labor activists to small covert cells; high-level union contacts can provide useful access and information."
 
-  non_aligned_wing:
-    - id: organization.huk-carito-simpoo-cell
-      name: "Carito Simpoo's cell"
+  rebel_wing:
+    - id: organization.huk-environmentalist-faction
+      name: "Environmentalist Faction"
       captain:
-        id: person.carito-simpoo
-        name: "Carito Simpoo"
-      training_location: "Bubyan"
-      operations_location: "Manila's dwarf neighborhood"
+        id: person.edtami-mansayagan
+        name: "Edtami Mansayagan"
+      source_notes:
+        - "The faction focuses on logging, mining, land distribution and ecological damage."
+        - "Mansayagan is identified as Lumad and is closely associated with Mount Apo."
+        - "A seal shapeshifter known as Manuel is described as an important field associate."
+    - id: organization.huk-metahuman-rights
+      name: "Metahuman Rights Faction"
+      captain:
+        id: person.saloman-briones
+        name: "Saloman Briones"
+      associated_groups: "metahuman policlubs"
+      source_notes:
+        - "The faction concentrates on the status of metahumans exiled to Yomi."
+        - "It operates in small, low-profile teams and maintains a base on the newer islands off Palawan."
+        - "Briones is described as an Islamic Moro elf who keeps a low public profile."
+    - id: organization.huk-terrorist-faction
+      name: "Terrorist Faction"
+      captain:
+        id: person.clarita-simpao
+        name: "Clarita Simpao"
+      training_location: "Bubayan"
+      operations_location: "Manila dwarf neighborhood"
+      source_notes:
+        - "The source notes that 'Terrorist' is an imperfect label for a broad anti-Imperial political faction with members using widely different methods."
+        - "Clarita is described as a dwarf conjuring adept who has worked with the Huk since 2026."
+        - "Training grounds and equipment stores are concentrated near Bubayan while legitimate-facing activity is directed from Manila."
+
+  independents:
     - id: organization.huk-independents
-      name: "The Independents"
+      name: "Independent Pirates"
       contact:
         id: person.cesaro-bengson
         name: "Cesaro Bengson"
       home_location: "The Floating Casino in Manila"
-
-  rebel_wing:
-    - id: organization.huk-metahuman-rights
-      name: "Metahuman Rights"
-      captain:
-        id: person.saloman-briones
-        name: "Saloman Briones"
-      associated_groups: "various policlubs"
-    - id: organization.huk-environmental-issues
-      name: "Environmental Issues"
-      captain:
-        id: person.eldami-mansayogan
-        name: "Eldami Mansayogan"
-      home_location: "hidden in the northern islands"
-      associated_groups: "various environmental militants and pirates"
+      source_notes:
+        - "Independent Filipino and foreign pirates may cooperate with the Huk while remaining primarily profit-motivated."
+        - "Bengson is presented as a fixer and intermediary among Huk factions and independent crews."
+      lieutenant:
+        id: person.yun-shon
+        name: "Yun Shon"
+        description: "Korean dwarf and international contraband trader"
+        routes:
+          - "Tir Tairngire"
+          - "Aztlan"
 
 network_characteristics:
-  - "The source portrays faction leaders as joining for different reasons, including labor politics, elections, metahuman rights, environmental protection and armed resistance."
-  - "Membership and support are deliberately compartmentalized; many supporters provide information, shelter or material aid without joining armed cells."
-  - "A source character estimates that more than half of the Philippine population is affiliated with the Huk in some manner; this is retained as an attributed estimate, not a verified census figure."
-  - "Operational teams are described as commonly ranging from six to thirty pirates."
+  - "Membership and support are deliberately compartmentalized; many supporters provide information, shelter or material aid without joining pirate teams."
+  - "A source character estimates that more than half of the Philippine population is affiliated with the Huk in some manner; this remains an attributed estimate rather than a verified census figure."
+  - "Mission teams are formed from a larger personnel pool rather than maintained as permanent crews."
+  - "Political, labor, environmental, metahuman-rights and general anti-Imperial factions coexist under the broader Huk identity."
+
+transcription_corrections:
+  - {previous: "Filipo Salonga", corrected: "Filipa Salonga", verified_printed_page: 79, pdf_page: 80}
+  - {previous: "Carito Simpoo", corrected: "Clarita Simpao", verified_printed_page: 80, pdf_page: 81}
+  - {previous: "Bubyan", corrected: "Bubayan", verified_printed_page: 80, pdf_page: 81}
+  - {previous: "Eldami Mansayogan", corrected: "Edtami Mansayagan", verified_printed_page: 79, pdf_page: 80}
 
 sources:
-  - {source: source.fasa-7124, printed_pages: "57-60", pdf_pages: "58-61", relation: defines_organization}
+  - {source: source.fasa-7124, printed_pages: "57-60", pdf_pages: "58-61", relation: defines_network}
+  - {source: source.fasa-7124, printed_pages: "78-82", pdf_pages: "79-83", relation: details_players_and_factions}
