@@ -1,0 +1,47 @@
+id: rule.campaign.sotf-elements
+record_type: rule
+name: "Survival of the Fittest - Elements Procedures"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "48-62"
+pdf_pages: "49-63"
+
+job:
+  route: "New Orleans to Amazonia"
+  objective: "Deliver the Elemental Scrolls of Ak'le'ar to their designated recipients."
+  payment:
+    total: "150,000¥"
+    advance: "15,000¥"
+    remainder: "on successful completion"
+
+travel:
+  - "The route proceeds from New Orleans by water toward Macapá, then upriver into Amazonia."
+  - "The scenario supports a maritime interception, urban complications in Macapá, and jungle travel."
+
+sangre_del_diablo_encounter:
+  initial_test: "Opposed Test: tree Essence vs. runner Willpower"
+  on_tree_success: "target is compelled to approach for an Engulf attempt"
+  engulf_test: "Opposed Essence vs. Willpower"
+  on_engulf_success: "8M damage each Combat Turn; armor does not protect"
+  stat_block:
+    B: "16/8"
+    Q: "5 x 0"
+    S: 14
+    C: "-"
+    I: "2/5"
+    W: 6
+    E: 8
+    R: 3
+    initiative: "3 + 1D6"
+    powers: [Compulsion, Corrosive_Secretions, Engulf, Immunity_Fire, Magical_Guard]
+    note: "Treat Engulf as sludge engulf per Critters."
+
+karma:
+  survive_run: 1
+  deliver_scrolls: 1
+  deal_successfully_with_mitsuhama_team: 1
+  deal_successfully_with_aztechnology_team: 1
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "48-62", pdf_pages: "49-63"}
