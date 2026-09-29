@@ -1,0 +1,54 @@
+id: equipment.source7124.advanced-diving-gear-p173-174
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "173-174"
+pdf_pages: "182-183"
+content_class:
+  - equipment_stat
+  - rule_exact
+  - rule_procedure
+
+jim_diving_exoskeleton:
+  base_strength: 7
+  maximum_strength: 10
+  strength_upgrade_cost_per_point_nuyen: 5000
+  armor_rating: 6
+  quickness_modifier: -2
+  reaction_modifier: -2
+  initiative_dice_while_worn: 1
+  rigger_interface:
+    removes_listed_mobility_and_initiative_penalties: true
+    grants_vehicle_control_rig_benefits: true
+    control_pool_substitutes_for_combat_pool: true
+  suit_stats:
+    weight_kg: 300
+    cost_nuyen: 25000
+    availability: "6/14 days"
+    street_index: 2
+
+liquid_breathing_apparatus:
+  maximum_depth_m: 3000
+  protected_from:
+    - decompression_sickness
+    - oxygen_toxicity
+    - nitrogen_narcosis
+  remaining_hazard: HPNS
+  speech_while_in_use: unavailable
+  communication_methods:
+    - display_link_with_electronic_keypad
+    - cybercomm_link
+  stats:
+    weight_kg: 25
+    cost_nuyen: 50000
+    availability: "8/21 days"
+    street_index: 2.5
+  cybercomm_link:
+    weight_kg: null
+    cost_nuyen: 62000
+    availability: "8/2 weeks"
+    street_index: 3
+    free_action_word_capacity_multiplier: 4
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "173-174", pdf_pages: "182-183", relation: exact_equipment_stats}
