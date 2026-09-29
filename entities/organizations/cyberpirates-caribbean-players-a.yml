@@ -1,0 +1,135 @@
+id: catalog.organizations.cyberpirates-caribbean-players-a
+record_type: entity_catalog
+name: "Cyberpirates - Caribbean Players I"
+domain: organizations
+status: ingested
+source_period: "2059"
+source: source.fasa-7124
+printed_pages: "45-49"
+pdf_pages: "46-50"
+
+entities:
+  - id: organization.batista-gambione-family
+    name: "Batista and Gambione Families"
+    type: organized_crime_network
+    leadership:
+      - "Raul 'Sugarcane' Batista"
+      - "Pablo, Ricardo and Maria Salazar"
+      - "Pietro, Bianca, Marcus and Ambrosi Gambione"
+      - "Jack Schreiber"
+    headquarters:
+      - "Havana"
+      - "Miami"
+    source_notes:
+      - "The source presents the Batista side as dominant in Havana and the Caribbean League, with the Gambione side maintaining extensive Florida and I-95 business connections."
+      - "The families use commercial fronts, local intermediaries and long-standing political contacts."
+
+  - id: organization.crunch-time
+    name: "Crunch Time"
+    type: environmental_action_group
+    leader: "Jacare, a.k.a. Bernard Heldannic"
+    membership:
+      core: "15-20"
+      supporters: "100-120"
+    operating_area:
+      - "Everglades"
+    source_notes:
+      - "The group is described as opposing poaching, pollution and other environmental damage."
+      - "Incoming and outgoing shamans are described as occasional visitors and supporters."
+
+  - id: government.new-republic-of-cuba
+    name: "New Republic of Cuba"
+    type: government
+    president: "Enrique Martinez"
+    elected: 2052
+    noted_ports:
+      - "Havana"
+      - "Santiago de Cuba"
+      - "Cienfuegos"
+      - "Nipe"
+      - "Matanzas"
+    source_notes:
+      - "The source portrays Cuba as the strongest organized state actor in the Caribbean League and as operating a substantial regional naval force."
+
+  - id: organization.caribbean-navy
+    name: "Caribbean Navy"
+    type: state_maritime_force
+    affiliated_with: government.new-republic-of-cuba
+    notable_person:
+      id: person.rodolfo-serraza
+      name: "Rodolfo Serraza"
+      alias: "Wizard of Az"
+      role: "senior operational figure"
+    composition_notes:
+      - "The source describes crews as including both conventional and magical specialists."
+      - "A typical naval crew is said to include at least one hermetic magician and one houngan or shaman associated with Gwede or Sea spirits."
+    provenance:
+      - "Descriptions of motives and covert activity in Shadowland commentary remain attributed."
+
+  - id: organization.de-mons-black-light-posse
+    name: "De Mon's Black Light Posse"
+    type: pirate_network
+    leader:
+      id: person.de-mon
+      name: "De Mon"
+      birth_name: "Daniel Malkel"
+    lieutenants:
+      ship_captains: 18
+      local_bosses: 10
+    symbol: "flashlights mounted beneath firearms"
+    noted_ports:
+      - "Jamaica"
+      - "Port Royal"
+      - "ports across the Caribbean and Gulf"
+    approximate_size:
+      active: 200
+      support: "substantially larger network of workers and supporters"
+    source_notes:
+      - "The source describes the network as controlling multiple landing strips, agricultural sites, harbors and processing locations in Jamaica."
+      - "The organization includes a large proportion of metahumans and Awakened personnel."
+
+  - id: organization.las-desharrapadas
+    name: "Las Desharrapadas"
+    type: pirate_network
+    leader:
+      id: person.vibora
+      name: "Vibora"
+    lieutenants:
+      ship_captains: 4
+      senior_movers: "8-9"
+    symbol: "yellow bandannas"
+    noted_ports:
+      - "San Juan"
+      - "hideouts across the Lesser Antilles"
+    approximate_size:
+      active: 90
+    source_notes:
+      - "The source describes the organization as a comparatively small but persistent regional raiding group."
+      - "Reports of miniature submarines and submersible drones with anti-ship armament are presented as rumors, not confirmed equipment records."
+
+  - id: region.dominican-republic-territories-2059
+    name: "Dominican Republic Territories"
+    type: regional_polity
+    official_president: "Anita Chavez"
+    president_status: "deceased in 2046; no stable replacement recognized in the source period"
+    prime_ports:
+      - "Santo Domingo"
+      - "Puerto Plata"
+      - "Sanchez"
+      - "La Romana"
+    major_power_holders:
+      - {id: person.geraldo-montenegro, name: "Geraldo Montenegro"}
+      - {id: person.esfinge, name: "Esfinge"}
+      - {id: person.chocolate, name: "Chocolate"}
+    source_notes:
+      - "The source describes authority as fragmented among several local leaders rather than concentrated in a functioning central government."
+
+  - id: person.david-lloyd-ford
+    name: "David Lloyd Ford"
+    type: religious_figure
+    source_notes:
+      - "Founder of Fordianism and a prominent Caribbean public figure in the source period."
+      - "Claims about his affiliations, supporters and opponents are heavily contested inside the source commentary and are retained as attributed claims."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "45-49", pdf_pages: "46-50", relation: regional_entities}
