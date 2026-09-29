@@ -1,0 +1,68 @@
+id: equipment.source7124.torpedoes-p181-182
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "181-182"
+pdf_pages: "190-191"
+content_class: [equipment_stat, rule_exact, rule_procedure]
+
+mk_197_madcap:
+  handling: 4
+  speed: 115
+  range_km: 15
+  body: 4
+  signature: "5/5"
+  intelligence: 2
+  damage: "14DN"
+  weight_kg: 750
+  cost_nuyen: 350000
+  active_sonar:
+    activation: "activates when it splashes into the water"
+    range_origin: "measure target range from the splash point"
+    sonar_rating_for_active_range: 1
+  guidance:
+    submarine_or_ship_launch: "wire-guided while cable remains intact; a rigger on the launching vessel may control it"
+    severed_wire: "Intelligence Rating takes over automatically"
+    helicopter_drop: "no wire connection and cannot be directly controlled by a rigger"
+
+rur_15d_asroc:
+  handling: 4
+  speed:
+    rocket: 750
+    torpedo: 115
+  range:
+    rocket_km: 16
+    torpedo_km_from_splash_point: 15
+  body: 4
+  signature: "5/5"
+  intelligence: 2
+  damage: "14DN"
+  weight_kg: 2250
+  torpedo_weight_kg: 950
+  cost_nuyen: 350000
+  rocket_flight:
+    launch_distance_km: "4-16"
+    guidance: "unguided rocket"
+    intelligence_applies_in_flight: false
+    rigger_direct_control_after_launch: false
+    blind_fire_through_thermocline: false
+
+uim_199_kingfisher:
+  intelligence: 4
+  damage: "14D"
+  weight_kg: 25
+  availability: "14/21 days"
+  cost_nuyen: 15000
+  street_index: "NA"
+  launch_rule:
+    maximum_submergence_depth_m: 50
+    range_origin: "measure range from the point where the missile surfaces"
+  vls_storage: "Two Kingfisher missiles fit in one standard antiship-missile vertical-launch tube."
+  range:
+    short: "20-100 m"
+    medium: "101-220 m"
+    long: "221-600 m"
+    extreme: "601-2,200 m"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "181-182", pdf_pages: "190-191", relation: exact_equipment_stats_and_rules}
