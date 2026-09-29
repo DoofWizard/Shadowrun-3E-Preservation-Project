@@ -1,0 +1,56 @@
+id: rule.campaign.sotf-cunning
+record_type: rule
+name: "Survival of the Fittest - Cunning Procedures"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "33-46"
+pdf_pages: "34-47"
+
+job:
+  stated_objectives:
+    - "Acquire Joshua Morningstar."
+    - "Acquire Morningstar's private computer files."
+  payment:
+    advance_expenses: "5,000¥"
+    meeting_fee: "1,000¥ per runner"
+    completion: "20,000¥ per runner"
+
+goldwing_meeting:
+  analyze_truth:
+    dice: 5
+    target_number: "runner Willpower"
+    result: "on success, Goldwing knows the runner lied and reacts accordingly"
+  metamagic_shielding:
+    effect:
+      - "spells cast on Goldwing or Sappho have target numbers increased by +2"
+      - "Goldwing rolls 12 additional dice for Spell Resistance"
+
+evidence_review:
+  tampering_test: "Computer (6)"
+  success: "detects that Morningstar's files were altered to make him appear culpable"
+
+border_crossing:
+  over_wall:
+    wall_height: "at least 5 meters"
+    barrier_rating: 16
+    top: "concertina wire"
+    detection: "Perception Test with 5 dice against the runners' Open Stealth Test result, using SR3 modifiers"
+  authorized_checkpoint:
+    test: "Opposed Test"
+    runner_side: "lowest ID rating among the runners"
+    checkpoint_side: "Verification Rating 3"
+    success: "identification passes"
+    failure: "further questioning; runners detained until identities can be verified and vehicle searched"
+  escalation:
+    reinforcement_time: "about 1 minute / 20 Combat Turns if authorities are alerted"
+
+karma:
+  survive_run: 1
+  extract_morningstar_and_reach_meeting: 1
+  acquire_data: 1
+  escape_first_attempt: 1
+  determine_setup: 1
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "33-46", pdf_pages: "34-47"}
