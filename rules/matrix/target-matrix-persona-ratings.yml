@@ -1,0 +1,45 @@
+id: rule.matrix.target-matrix-persona-ratings
+record_type: rule
+name: "Target: Matrix - Persona NPC Ratings"
+domain: matrix
+status: ingested
+source: source.fasa-7219
+printed_pages: "126-129"
+pdf_pages: "127-130"
+
+ratings:
+  anubis:
+    npc_ratings: ["Superior","Trained"]
+    exceptional_skills: ["Computer (Programming)","Computer Build/Repair"]
+    favored_utility: "black hammer variant"
+  fastjack:
+    npc_ratings: ["Superhuman","Professional"]
+    notes: ["custom-made top-of-line deck and utilities"]
+  grid_reaper:
+    npc_ratings: ["Superior","Trained"]
+    exceptional_skills: ["Computer (Programming)","Computer (Decking)"]
+  link:
+    npc_ratings: ["Superhuman","Professional"]
+    access_rule: "Cannot normally be encountered without appointment/vouching from a current customer; may require background/reputation/credit checks."
+  red_wraith:
+    npc_ratings: ["Equal","Professional"]
+    notes: ["otaku","submersion grade 3","Echoes: Info Sortilage, Ghosting, Improved Reaction"]
+  silvery_k:
+    npc_ratings: ["Superior","Trained"]
+    notes:
+      - "Custom-built state-of-the-art cyberdeck."
+      - "Major programs Rating 5+."
+  slamm_0:
+    npc_ratings: ["Equal","Semi-trained"]
+    notes: ["designs and codes own icon and utility programs"]
+  smiling_bandit:
+    npc_ratings: ["Superhuman","Professional"]
+    exceptional_skills: ["computer science","genetech","biotechnology","chemistry","cybertechnology"]
+  snow_tiger:
+    npc_ratings: ["Superior","Trained"]
+    languages: ["Cantonese","Mandarin","English"]
+  michael_sutherland:
+    npc_ratings: ["Superhuman","Professional"]
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "126-129", pdf_pages: "127-130", relation: defines_npc_use}
