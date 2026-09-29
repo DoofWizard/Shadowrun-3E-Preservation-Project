@@ -1,0 +1,61 @@
+id: rule.character.source7124-maritime-character-creation
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "142"
+pdf_pages: "151"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - character_option
+
+base_creation:
+  - "Characters use the normal Shadowrun character-creation systems: the SRII Priority System or the point-based system in Shadowrun Companion."
+  - "The source adapts the Gang Creation rules from Shadowrun Companion p.122 for maritime groups."
+
+group_creation_changes:
+  contacts:
+    normal_free_contacts: "unchanged from the underlying Gang Creation rules"
+    additional_contact_cost_nuyen_each: 1000
+  turf:
+    replacement: "The group's turf is its home port."
+    effect: "The group's bonus fixer operates from the home port."
+  gamemaster_adjustment:
+    - "The gamemaster may grant additional bonuses appropriate to the selected home port."
+  enemy_group_type:
+    - "The group's Enemy is a maritime rival group rather than a street gang."
+
+independent_character_option:
+  followers: "Independent characters do not receive followers."
+  contacts:
+    - "They receive the maritime group's reduced-cost contacts and informants."
+    - "No starting contact may be above Level 1."
+  buddies:
+    - "Buddies may be bought at character creation."
+    - "Buddies cost full price rather than the reduced contact price."
+  enemies:
+    resources_assignment: "Enemies are assigned at one level of Resources higher than the character possesses."
+
+starting_home_port:
+  timing: "After character creation and after determining starting money."
+  group_purchase_cost_nuyen: 50000
+  benefits:
+    - "The purchased port becomes the group's home port."
+    - "Any Buddies the characters have may be found there."
+    - "Independent characters receive passes to the home-port dock valid for 30 days after character creation."
+    - "They also receive valid IDs allowing dock access for that same period."
+    - "Ship papers identify the purchased port as the gang's home port."
+  after_30_days:
+    - "The gamemaster determines through contacts and roleplaying what later costs apply to these benefits."
+
+starting_gear_availability_by_home_port:
+  African_home_port:
+    maximum_Availability: 9
+  Philippines_home_port:
+    maximum_Availability: 4
+  Caribbean_home_port:
+    maximum_Availability: 6
+  scope: "These limits apply to starting weapons and gear for beginning characters in the stated regions."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "142", pdf_pages: "151", relation: defines}
