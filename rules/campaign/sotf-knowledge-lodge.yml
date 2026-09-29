@@ -1,0 +1,116 @@
+id: rule.campaign.sotf-knowledge-lodge
+record_type: rule
+name: "Survival of the Fittest - Shasta Lodge Security"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "28-32"
+pdf_pages: "29-33"
+
+physical_security:
+  cameras:
+    coverage: "Exterior perimeter, approximately 15 meters in all directions."
+    monitoring: "Image-recognition system supervised from inside the lodge."
+    concealment_or_damage_tn: "8, plus range modifiers where applicable"
+    stealth_procedure:
+      - "A runner may make an Open Stealth Test while moving through camera coverage."
+      - "Roll 5 dice for the cameras for each turn the runner remains in line of sight."
+      - "Spirit Concealment can assist."
+      - "Physical illusion effects can defeat the camera image."
+  maglocks:
+    - "Exterior doors use card-reader maglocks."
+    - "Lodge personnel carry swipe cards."
+  structure:
+    barrier_rating: 8
+    doors: "reinforced composite"
+    windows: "armored glass"
+    alarm: "Breaking doors or windows triggers a silent alarm at the security station."
+
+astral_security:
+  outer_ward:
+    rating: 6
+    coverage: "Outer walls of the Shasta Lodge."
+    behavior:
+      - "Authorized lodge shamans and spirits under their command may pass."
+      - "Other astral forms are blocked."
+      - "An attack on the ward alerts a lodge shaman, who investigates astrally within 2 Combat Turns."
+
+personnel:
+  security_guards_on_duty: 6
+  deployment:
+    reception: 3
+    security_monitoring: 1
+    secure_areas: 2
+  shamans:
+    minimum_on_site: 3
+    response: "Additional shamans respond to a general alarm or attack."
+    initiate_scaling: "If the player group includes initiates, lodge shamans may also be initiates, normally one or two grades below the highest player-character grade."
+
+matrix:
+  mainframe:
+    rating: "Red-9/13/11/13/13/13"
+    security_sheaf:
+      - {step: 2, event: "Crippler (jammer)-10"}
+      - {step: 4, event: "Tar Pit-8 (Armor)"}
+      - {step: 7, event: "Crippler (marker)-8 (Expert Offense-1)"}
+      - {step: 9, event: "Passive Alert"}
+      - {step: 12, event: "Probe-10 with trap Sparky-10 with trap Black-8"}
+      - {step: 16, event: "Construct-11 with trap Blaster-11"}
+      - {step: 20, event: "Killer-10 with trap Killer-10"}
+      - {step: 24, event: "Active Alert"}
+      - {step: 27, event: "Crippler (acid)-8 (Shielding)"}
+      - {step: 31, event: "Lethal Black IC-11"}
+      - {step: 34, event: "Killer-10 (Shifting) with trap Black-8"}
+      - {step: 37, event: "Non-Lethal Black IC-8"}
+      - {step: 39, event: "Psychotropic Black IC (positive conditioning)-8"}
+      - {step: 43, event: "Shutdown"}
+    control: "A successful Control Slave operation can control the lodge security system, including cameras and maglocks."
+  kallisti_storage:
+    type: "isolated on-site system"
+    connection: "Connect through the lodge mainframe; about one minute and a Computer (4) Test."
+    file_size: "500 Mp"
+    file_protection: "Scramble IC-8"
+    security: "Uses the same security sheaf as the lodge mainframe, except it shuts down at step 20."
+
+capture_recovery:
+  holding_room:
+    ward_rating: 8
+    ward_effects:
+      - "Applies TN penalties to spells directed through the ward."
+      - "Prevents astral forms and spirits from leaving through it."
+      - "Characters with Magic Background know that attacking the ward alerts its creator."
+  equipment:
+    - "Captured runners normally retain clothing and armor only."
+    - "Well-concealed gear with Concealability 12 or better may have been missed."
+  abby_nightbird:
+    - "Hestaby may appear in a masked human-shaman identity as 'Abby Nightbird' to provide an escape route."
+    - "Assensing this identity normally reveals only a human shaman because of aura masking."
+
+karma_awards:
+  surviving_the_run: 1
+  acquiring_kallisti_file: 1
+  entering_lodge_without_detection: 1
+  avoiding_unnecessary_casualties: 1
+
+legwork:
+  radek:
+    contacts: "fixer, street, or shadow"
+    tn: 4
+    progression: "More successes reveal increasingly favorable professional reputation and that he has recently been hiring skilled talent."
+  shasta_lodge:
+    contacts: "magical"
+    tn: 4
+    progression: "More successes reveal the lodge's relationship to Hestaby, its shamans, and its modern security."
+  hestaby:
+    contacts: "magician, Tir Tairngire, or dragon-watcher"
+    tn: 6
+    progression: "More successes reveal her recent political role and the Dunkelzahn data bequest."
+  kallisti:
+    result: "Ordinary inquiry produces no useful project information; the name is identified as a Greek expression associated with Eris."
+    discretion: "Careless inquiry may attract attention and can reduce Radek's willingness to use the runners again."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "28-32", pdf_pages: "29-33", relation: defines_scenario_procedure}
+
+notes:
+  - "No supersession relationship is inferred."
