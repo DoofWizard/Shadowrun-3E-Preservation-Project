@@ -331,3 +331,16 @@ A source may be marked `complete` only when:
 `last_commit` in `WORKER_CHECKPOINT.yml` should point to the latest durable main-manifest or semantic commit that defines the current resume state. The checkpoint's own commit does not need to point to itself.
 
 This protocol supersedes any earlier practice that treated a recovery sidecar or checkpoint as more authoritative than the main source manifest.
+
+
+## Connector-facing normalization style
+
+When writing Shadowrun source material through external connectors, prefer compact reference-manual diction.
+
+- Preserve exact mechanics, numeric values, canonical IDs, source/page provenance, and explicit lineage relationships.
+- Keep source-period facts separate from attributed rumors, commentary, propaganda, speculation, or scenario branches.
+- Prefer neutral taxonomic wording such as `security force`, `armed faction`, `restricted equipment`, `scenario objective`, `hazard`, `injury effect`, `organization`, and `response procedure` when that wording preserves the source meaning.
+- Do not reproduce colorful violent or sensational narrative wording when it adds no mechanical or provenance value.
+- Split large payloads by semantic type before the first write attempt: world/organization, rules/procedure, NPC/entity statistics, equipment, and campaign/reference guidance should be separate records when practical.
+- Keep manifests and checkpoints administrative and terse.
+- This is a packaging/style rule only. Do not omit rules-bearing content or weaken the fidelity of the normalized data to avoid a connector filter.
