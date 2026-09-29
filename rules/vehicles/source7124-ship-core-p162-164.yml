@@ -1,0 +1,105 @@
+id: rule.source7124.ship-core-p162-164
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "162-164"
+pdf_pages: "171-173"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+scope:
+  ship_definition:
+    length_threshold: ">150 ft (50 m)"
+    displacement_threshold: ">100 tonnes (100 metric tons / 100,000 kg)"
+    smaller_vessels_classified_as: boat
+    underwater_shadowrun_boat_term: minisub
+
+attributes:
+  speed:
+    knot_conversion:
+      nautical_mile_feet: 6076
+      nautical_mile_statute_miles: 1.15
+      nautical_mile_kilometers: 1.85
+      knots_from_speed_rating: "Speed Rating × 1.54"
+    cavitation_threshold:
+      applies_to: ships
+      boats_have_threshold: false
+  hull:
+    replaces: Body
+    rating_by_tonnage:
+      - [1, "100-200"]
+      - [2, "201-500"]
+      - [3, "501-1,000"]
+      - [4, "1,001-5,000"]
+      - [5, "5,001-10,000"]
+      - [6, "10,001-25,000"]
+      - [7, "25,001-50,000"]
+      - [8, "50,001-100,000"]
+      - [9, "100,001-250,000"]
+      - ["10+", "more than 250,000"]
+  bulwark:
+    equivalent_to: Armor
+  signature:
+    format: "two numbers"
+    normal_signature: first
+    sonar_signature: second
+  sonar_rating:
+    meaning: "capability/sophistication of sonar and waveform analysis"
+  depth_rating:
+    applies_to: "submarines, minisubs, other underwater vessels"
+    meaning: "maximum safe depth in meters"
+  accommodation:
+    replaces: Seating
+    meaning: "maximum crew + passengers supported with living amenities"
+  load:
+    same_rule_as: "Rigger 2 vehicle Load Rating"
+  sensors_and_flux:
+    systems: [sensors, ECM, ECCM, communications]
+    flux_boost: "ship Hull Rating × 5"
+    surface_scan_horizon_max_km: 35
+    horizon_limit_exceptions: [aircraft_contacts, orbital_contacts]
+    relay_aircraft_allowed: true
+
+crews:
+  categories: [helm, gunnery, comms, engineering]
+  helm:
+    diving_tests: "pilot makes all Diving Tests"
+    maneuver_score_open_test: "pilot makes Driver Points open test"
+  gunnery:
+    minimum_operator_per_system: 1
+    exception: "unless system specifies more"
+  comms:
+    functions: [sensors, sonar, communications, electronic_warfare]
+    rigged_ship: "pilot may operate all electronic systems through the vehicle rig"
+    autonav_electronic_system_operation: false
+  engineering:
+    minimum_crew: "Hull Rating + 1"
+    shortage_stress: "1 Stress per missing engineer per day at sea"
+
+terrain:
+  weather_effects:
+    fair: "use listed terrain category"
+    marginal:
+      examples: ["steady rain", "thunder showers", "moderate winds >25 mph"]
+      shift: "one category worse"
+    severe:
+      examples: ["severe thunderstorms", "high winds short of gale force"]
+      shift: "two categories worse"
+    major_storm:
+      examples: ["gales", "tropical storms", "hurricanes"]
+      result: Tight
+  boat_terrain:
+    Open: "open water such as lakes, seas and bays"
+    Normal: "light obstacles such as major rivers and city harbors"
+    Restricted: "many dangerous obstacles"
+    Tight: "numerous dangerous obstacles / extremely congested waters"
+  ship_terrain:
+    Open: "open sea with no land in sight"
+    Normal: "islands/reefs within sight or within 1 nautical mile (2 km) of shoreline"
+    Restricted: "congested islands/reefs, large city harbors, or within 0.5 nautical mile (1 km) of shore"
+    Tight: "city harbors and shore areas"
+  maneuver_score_vehicle_points: "-5 × Hull Rating"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "162-164", pdf_pages: "171-173", relation: exact_rule}
