@@ -1,0 +1,114 @@
+id: world.matrix.target-matrix-virtual-seattle
+record_type: world
+name: "Target: Matrix - Virtual Seattle"
+domain: matrix
+status: ingested
+source_period: "2060"
+source: source.fasa-7219
+printed_pages: "52-65"
+pdf_pages: "53-66"
+
+scope:
+  - "Source-period survey of Seattle Matrix infrastructure and prominent hosts."
+  - "Host descriptions preserve their public role, architectural metaphor, access posture, and security character without treating descriptive commentary as a replacement for core Matrix rules."
+
+seattle_matrix:
+  rtg_ltg_model:
+    - "Seattle users normally enter through the local RTG and then route to LTGs/hosts."
+    - "LTGs map neighborhoods, institutions, and corporate systems into distinct local network spaces."
+    - "Traffic volume, corporate ownership, and local security policy affect the practical experience of moving through the Seattle grid."
+  operating_advice:
+    - "Public-facing hosts often contain deeper private systems that require additional access."
+    - "A host's visible architecture may reveal organizational structure, but iconography should not be assumed to map directly to physical facilities."
+    - "Corporate hosts commonly use layered access, restricted sub-hosts, and internal security escalation."
+
+major_hosts:
+  ares:
+    role: "Seattle Ares corporate host"
+    security_character: "high-security corporate system with public and restricted areas"
+    presentation: "Ares-branded corporate environment"
+  microdeck:
+    role: "Microdeck corporate system"
+    presentation: "large corporate campus/office metaphor"
+    security_character:
+      - "Public/customer-facing areas are separated from deeper internal systems."
+      - "Restricted research and proprietary data receive stronger protection."
+  global_technologies:
+    role: "Global Technologies corporate host"
+    security_character:
+      - "Research and project data are compartmented."
+      - "Security is described as alert and professional."
+  shiawase:
+    role: "Shiawase Seattle Matrix system"
+    architecture:
+      - "Distributed host structure with public and internal areas."
+      - "Corporate subdivisions and access levels are reflected in the virtual layout."
+    security_character: "layered access and strong internal controls"
+  cross_applied_technologies:
+    role: "Cross Electronics / Cross Applied Technologies Seattle presence"
+    security_character:
+      - "Corporate information is separated by sensitivity."
+      - "Public or academic-facing areas do not imply access to internal corporate hosts."
+  knight_errant:
+    role: "Knight Errant security host and training environment"
+    presentation: "large knight/fortress visual metaphor"
+    security_character:
+      - "Security-oriented system with training and operational data."
+      - "Intrusion response reflects the organization's security mission."
+  federated_boeing:
+    role: "Federated-Boeing Seattle corporate system"
+    architecture:
+      - "Large host with multiple project and corporate subareas."
+      - "Different divisions and projects are compartmented."
+    security_character: "strong corporate security with restricted project data"
+  aztechnology:
+    role: "Aztechnology Seattle host"
+    presentation: "pyramid/cultural corporate metaphor"
+    architecture:
+      - "Public-access areas are concentrated toward the outer/lower portions."
+      - "Internal and sensitive areas become progressively more restricted."
+  novatech:
+    role: "Novatech Seattle system"
+    security_character:
+      - "Large corporate Matrix presence with substantial internal segmentation."
+      - "Research, business, and operational data use differing access layers."
+  mitsuhama:
+    role: "Mitsuhama Seattle system"
+    presentation: "pagoda-style architecture"
+    security_character:
+      - "Tightly controlled internal system."
+      - "Users are expected to remain within their authorized areas."
+  sea_tac:
+    role: "Seattle-Tacoma International Airport host"
+    public_functions:
+      - "flight schedules and passenger information"
+      - "airport services and public information"
+    restricted_functions:
+      - "airport operations"
+      - "security and facility-control systems"
+    note: "Public access does not imply access to operational or security systems."
+  renraku_arcology:
+    role: "publicly reachable portions of the Renraku Arcology Matrix"
+    source_period_condition:
+      - "The public host remains disconnected from the higher/private Arcology systems after the shutdown."
+      - "Residual defenses and damaged or isolated architecture make deeper access unreliable and dangerous."
+  seasource:
+    role: "Seattle public-information service"
+    functions:
+      - "public records and civic information"
+      - "archives and searchable local information"
+    security_character: "public service with protected archival/administrative areas"
+  pac_rim_communications_unlimited:
+    role: "Seattle telecommunications / Matrix service provider"
+    functions:
+      - "communications routing"
+      - "Matrix access services"
+      - "subscriber and service-management functions"
+    security_character: "public service interfaces separated from provider infrastructure and subscriber/account data"
+
+provenance_policy:
+  - "Shadowtalk, rumors, intrusion anecdotes, and claims about weaknesses remain attributed rather than promoted to neutral fact."
+  - "Exact host statistics appearing later in Game Information or host stat blocks control over descriptive security adjectives."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "52-65", pdf_pages: "53-66", relation: defines_world_state}
