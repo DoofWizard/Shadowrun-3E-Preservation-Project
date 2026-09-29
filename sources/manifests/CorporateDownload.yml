@@ -1,0 +1,46 @@
+id: source.fasa-7125
+record_type: source
+title: "Corporate Download"
+abbreviation: "CD"
+catalog_number: "FASA7125"
+edition: "SR3"
+publication_type: "sourcebook_mixed"
+publisher: "FASA"
+status: ingesting
+scan_depth: directed
+source_format: "image-only PDF"
+page_count_pdf: 151
+page_mapping:
+  - {printed_pages: "2+", pdf_pages: "3+", relation: "printed page equals PDF page - 1 across routed content"}
+
+routing:
+  - {range: "5", section: "Introduction", treatment: "orientation"}
+  - {range: "6-17", section: "Nothing Personal, Just Business", treatment: "directed corporate-system scan"}
+  - {range: "18-23", section: "The Corporate Court", treatment: "directed governance/institution scan"}
+  - {range: "24-30", section: "Surviving the Corporations", treatment: "directed runner/corporate procedure scan"}
+  - {range: "31", section: "The Big Ten", treatment: "orientation"}
+  - {range: "32-40", section: "Ares Macrotechnology", treatment: "directed corporation scan"}
+  - {range: "41-50", section: "Aztechnology", treatment: "directed corporation scan"}
+  - {range: "51-57", section: "Cross Applied Technologies", treatment: "directed corporation scan"}
+  - {range: "58-65", section: "Mitsuhama Computer Technologies", treatment: "directed corporation scan"}
+  - {range: "66-74", section: "Novatech Incorporated", treatment: "directed corporation scan"}
+  - {range: "75-82", section: "Renraku Computer Systems", treatment: "directed corporation scan"}
+  - {range: "83-91", section: "Saeder-Krupp", treatment: "directed corporation scan"}
+  - {range: "92-101", section: "Shiawase Corporation", treatment: "directed corporation scan"}
+  - {range: "102-109", section: "Wuxing, Incorporated", treatment: "directed corporation scan"}
+  - {range: "110-118", section: "Yamatetsu Corporation", treatment: "directed corporation scan"}
+  - {range: "119-140", section: "Game Information", treatment: "deep scan all rules-bearing material"}
+  - {range: "141+", section: "back matter", treatment: "reference unless rules-bearing"}
+
+completed_through:
+  printed_page: 4
+  pdf_page: 5
+  anchor: "after TABLE OF CONTENTS"
+resume_at:
+  printed_page: 5
+  pdf_page: 6
+  anchor: "INTRODUCTION"
+pending_normalization: []
+notes:
+  - "TOC routed from printed pp.2-3 / PDF pp.3-4."
+  - "Corporate profiles are directed-scan territory; all explicit procedures, statistics, modifiers and Game Information receive deep capture."
