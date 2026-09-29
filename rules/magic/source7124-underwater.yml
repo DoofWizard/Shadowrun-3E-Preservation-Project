@@ -1,0 +1,59 @@
+id: rules.magic.source7124-underwater
+record_type: rule_bundle
+status: ingested
+source: source.fasa-7124
+printed_pages: "160-161"
+pdf_pages: "169-170"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+sorcery:
+  combat_spells:
+    blast_and_fire: "Fail automatically underwater; caster still resists Drain."
+    earth_ice_acid: "Water impedes or dissipates these elemental effects; targets receive -1 to target number on Spell Resistance Tests."
+    water: "Works normally."
+    lightning: "Normal lightning spells become area-effect spells with base radius in meters equal to Force; area lightning spells double their radius. Magic Pool dice may be withheld to reduce radius normally."
+  detection_spells: "Operate normally; water may compensate for poor visual conditions, but not for spellcasting line-of-sight requirements."
+  health_spells:
+    general: "Operate normally underwater."
+    oxygenate: "Characters affected are immune to all underwater health hazards except HPNS."
+  illusion_spells:
+    mana_based: "Not subject to water's refractive distortion; created objects appear at normal distance and size."
+    physical: "Affected by refraction and appear larger and closer than intended."
+  manipulation_spells:
+    damaging: "May not function or may work differently underwater."
+    other: "Underwater environment does not affect them unless another restriction applies."
+
+conjuring:
+  underwater_habitats:
+    earth_and_water_elementals: "May be conjured if proper materials are available."
+    air_elementals: "Cannot be conjured in enclosed underwater habitats."
+    fire_elementals: "Generally cannot be conjured where open fires are unavailable."
+  forced_underwater_manifestation:
+    air_and_fire: "Cannot manifest underwater; may appear astrally but cannot perform physical services."
+    earth: "May manifest and act normally, but suffers the same underwater penalties as characters."
+    water: "May manifest and is virtually invisible underwater."
+  manifested_water_elemental_spotting: "Perception Test against Target Number 8 + elemental Force."
+
+nature_spirits:
+  underwater_domains: ["Sea Spirits", "Lake Spirits", "River Spirits"]
+  spirit_of_waters_spotting: "Perception Test against Target Number 11 + spirit Force."
+  guard_power: "Spirits of the Waters may use Guard to protect characters from all underwater health hazards, including HPNS."
+  habitat_domains:
+    inhabited_research_or_mining_site: "Hearth Spirits"
+    sea_going_ship_or_submarine_with_long-term_crew: "Spirits of Man"
+    ruined_polluted_underwater_area: "toxic domain"
+
+astral_space:
+  projection_movement:
+    open_sea: "Astral Quickness x 4"
+    coral_reef: "Astral Quickness x 2"
+    sufficiently_life_dense_area: "Astral Quickness with no modifier"
+  astral_sight_target_modifiers:
+    average_sea_surface: 2
+    near_coral_reef: 4
+    life_overabundant: "up to +8"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "160-161", pdf_pages: "169-170", relation: exact_underwater_magic_rules}
