@@ -1,0 +1,103 @@
+id: rule.corporate.corporate-download-ratings
+record_type: rule
+name: "Corporate Download - Megacorporate Rating System"
+domain: corporate
+status: ingested
+source: source.fasa-7125
+printed_pages: "119-125"
+pdf_pages: "125-131"
+
+corporate_attributes:
+  definitions:
+    Intelligence: "Information-gathering capability; used as dice pool for determining what the corporation knows."
+    Counter-Intelligence: "Ability to keep secrets and prevent information leakage; may serve as target number against investigations."
+    Publicity: "Corporate analogue of Charisma; measures public image and media influence."
+    Efficiency: "Management, training, crisis response, redundancy and problem-solving effectiveness."
+    Black_Ops: "Capability to organize and execute covert corporate operations."
+    Security: "Overall ability to protect corporate assets from outside aggression."
+  security_subratings: ["Matrix","Magic","Physical"]
+
+megacorporate_attributes:
+  Ares: {Intelligence: 6, Counter_Intelligence: 5, Publicity: 8, Efficiency: 6, Black_Ops: 7, Security: 7, Matrix: 7, Magic: 7, Physical: 9}
+  Aztechnology: {Intelligence: 5, Counter_Intelligence: 9, Publicity: 10, Efficiency: 7, Black_Ops: 7, Security: 7, Matrix: 7, Magic: 9, Physical: 7}
+  Cross: {Intelligence: 9, Counter_Intelligence: 7, Publicity: 5, Efficiency: 6, Black_Ops: 8, Security: 6, Matrix: 8, Magic: 5, Physical: 6}
+  MCT: {Intelligence: 6, Counter_Intelligence: 6, Publicity: 6, Efficiency: 6, Black_Ops: 6, Security: 8, Matrix: 8, Magic: 9, Physical: 9}
+  Novatech: {Intelligence: 5, Counter_Intelligence: 6, Publicity: 8, Efficiency: 9, Black_Ops: 7, Security: 7, Matrix: 10, Magic: 5, Physical: 8}
+  Renraku: {Intelligence: 6, Counter_Intelligence: 6, Publicity: 5, Efficiency: 6, Black_Ops: 6, Security: 7, Matrix: 6, Magic: 7, Physical: 8}
+  Saeder_Krupp: {Intelligence: 8, Counter_Intelligence: 9, Publicity: 6, Efficiency: 8, Black_Ops: 8, Security: 8, Matrix: 7, Magic: 9, Physical: 9}
+  Shiawase: {Intelligence: 9, Counter_Intelligence: 8, Publicity: 5, Efficiency: 5, Black_Ops: 7, Security: 6, Matrix: 7, Magic: 6, Physical: 7}
+  Wuxing: {Intelligence: 7, Counter_Intelligence: 8, Publicity: 7, Efficiency: 7, Black_Ops: 6, Security: 6, Matrix: 6, Magic: 8, Physical: 5}
+  Yamatetsu: {Intelligence: 6, Counter_Intelligence: 5, Publicity: 7, Efficiency: 6, Black_Ops: 6, Security: 6, Matrix: 6, Magic: 7, Physical: 6}
+
+contact_knowledge:
+  general_information: "-1 or -2"
+  specific_details: "+1"
+  secret_information: "+2"
+  highly_sensitive_black_information: "+4"
+  contacts_specialty: "-2"
+  fixer_or_mr_johnson: "-2"
+  works_for_corporation: "-2"
+  procedure:
+    - "For information concerning a corporation, use its Counter-Intelligence as the target number for the contact's Intelligence or Etiquette Test, then apply the contact-knowledge modifiers."
+    - "If testing what one corporation knows about another, roll the investigating corporation's Intelligence against the subject corporation's Counter-Intelligence, applying appropriate Intelligence modifiers."
+
+asset_rating_scale:
+  "0-1": "No assets worth mentioning"
+  "2-3": "Poor"
+  "4": "Adequate"
+  "5": "Above-par"
+  "6": "Good"
+  "7": "Very Good"
+  "8": "Extensive"
+  "9-10": "Superior"
+  "11": "Extraordinary"
+  "12+": "Dominates the world market (no competition)"
+
+asset_categories:
+  - Aerospace
+  - Agriculture
+  - Biotech
+  - Chemicals
+  - Computer Engineering
+  - Computer Science
+  - Consumer Goods
+  - Cybernetics
+  - Entertainment
+  - Finance
+  - Heavy Industry
+  - Military Technology
+  - Mystical Goods and Services
+  - Service
+
+megacorporate_asset_ratings:
+  Ares: {Aerospace: 11, Agriculture: 3, Biotech: 3, Chemicals: 5, Computer_Engineering: 4, Computer_Science: 5, Consumer_Goods: 8, Cybernetics: 4, Entertainment: 7, Finance: 3, Heavy_Industry: 7, Military_Technology: 11, Mystical_Goods: 4, Service: 8, Total: 83}
+  Aztechnology: {Aerospace: 4, Agriculture: 8, Biotech: 6, Chemicals: 7, Computer_Engineering: 4, Computer_Science: 6, Consumer_Goods: 10, Cybernetics: 6, Entertainment: 4, Finance: 6, Heavy_Industry: 6, Military_Technology: 8, Mystical_Goods: 7, Service: 7, Total: 89}
+  Cross: {Aerospace: 4, Agriculture: 0, Biotech: 7, Chemicals: 5, Computer_Engineering: 10, Computer_Science: 8, Consumer_Goods: 7, Cybernetics: 7, Entertainment: 6, Finance: 4, Heavy_Industry: 4, Military_Technology: 5, Mystical_Goods: 2, Service: 5, Total: 74}
+  MCT: {Aerospace: 3, Agriculture: 6, Biotech: 6, Chemicals: 8, Computer_Engineering: 9, Computer_Science: 8, Consumer_Goods: 6, Cybernetics: 5, Entertainment: 8, Finance: 6, Heavy_Industry: 9, Military_Technology: 4, Mystical_Goods: 7, Service: 2, Total: 87}
+  Novatech: {Aerospace: 7, Agriculture: 3, Biotech: 4, Chemicals: 2, Computer_Engineering: 10, Computer_Science: 9, Consumer_Goods: 7, Cybernetics: 6, Entertainment: 5, Finance: 3, Heavy_Industry: 4, Military_Technology: 6, Mystical_Goods: 4, Service: 2, Total: 72}
+  Renraku: {Aerospace: 4, Agriculture: 7, Biotech: 6, Chemicals: 5, Computer_Engineering: 8, Computer_Science: 9, Consumer_Goods: 5, Cybernetics: 6, Entertainment: 6, Finance: 5, Heavy_Industry: 5, Military_Technology: 7, Mystical_Goods: 5, Service: 8, Total: 86}
+  Saeder_Krupp: {Aerospace: 7, Agriculture: 4, Biotech: 6, Chemicals: 9, Computer_Engineering: 8, Computer_Science: 5, Consumer_Goods: 6, Cybernetics: 4, Entertainment: 3, Finance: 9, Heavy_Industry: 11, Military_Technology: 7, Mystical_Goods: 6, Service: 6, Total: 91}
+  Shiawase: {Aerospace: 5, Agriculture: 8, Biotech: 10, Chemicals: 7, Computer_Engineering: 7, Computer_Science: 6, Consumer_Goods: 3, Cybernetics: 6, Entertainment: 2, Finance: 5, Heavy_Industry: 9, Military_Technology: 7, Mystical_Goods: 3, Service: 10, Total: 88}
+  Wuxing: {Aerospace: 3, Agriculture: 6, Biotech: 5, Chemicals: 4, Computer_Engineering: 5, Computer_Science: 4, Consumer_Goods: 7, Cybernetics: 4, Entertainment: 6, Finance: 8, Heavy_Industry: 5, Military_Technology: 3, Mystical_Goods: 6, Service: 9, Total: 75}
+  Yamatetsu: {Aerospace: 7, Agriculture: 7, Biotech: 8, Chemicals: 6, Computer_Engineering: 6, Computer_Science: 5, Consumer_Goods: 4, Cybernetics: 9, Entertainment: 3, Finance: 8, Heavy_Industry: 3, Military_Technology: 4, Mystical_Goods: 6, Service: 8, Total: 84}
+
+rating_change_cycle:
+  cadence: "Once every six months of game time."
+  efficiency_test:
+    target_number: 4
+    effect: "Each success adds one point to an Asset Rating chosen by the gamemaster; a given Asset Rating can increase by no more than 1 from this test."
+  publicity_test:
+    target_number: 8
+    effect: "The corporation loses three Asset points chosen by the gamemaster/randomly, reduced by one point per success; successes beyond three have no additional effect."
+  black_ops_test:
+    test: "Opposed test: acting corporation's Black Ops vs target corporation's Security."
+    zero_successes: "Acting corporation loses one Asset point."
+    one_success: "Break even."
+    two_or_more_successes: "Acting corporation gains one Asset point and target corporation loses one matching Asset point."
+  intelligence_test:
+    test: "Opposed/targeted as Intelligence vs another corporation's Counter-Intelligence."
+    effect: "Works like Black Ops Test for asset-rating gain/loss."
+  note: "Changed Asset Ratings must concern the same category on both sides when transferred/lost through competitive tests."
+
+sources:
+  - {source: source.fasa-7125, printed_pages: "119-125", pdf_pages: "125-131", relation: defines_rules}
