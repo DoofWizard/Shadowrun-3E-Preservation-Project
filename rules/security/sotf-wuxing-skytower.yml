@@ -1,0 +1,47 @@
+id: rule.security.sotf-wuxing-skytower
+record_type: rule
+name: "Survival of the Fittest - Wuxing Skytower"
+domain: security
+status: ingested
+source: source.fanpro-10665
+printed_pages: "74-76"
+pdf_pages: "75-77"
+
+astral_security:
+  penthouse_ward_rating: 8
+  ward_response: "an attack alerts the Wuxing security mage, who investigates astrally on the following Combat Turn"
+  bound_patrols: "three bound Force 6 air elementals"
+  background_count_effect: "+4 target number modifier on astral tests near the tower, including Perception Tests by guardian elementals"
+  astral_visibility:
+    - "the area is an astral shallow"
+    - "astral forms in the area are visible even when normally hidden"
+
+host:
+  rating: "Red-10/15/18/16/16/18"
+  security_sheaf:
+    - {step: 2, event: "Scout-8 (Cascading)"}
+    - {step: 5, event: "Trace-8 (Shifting)"}
+    - {step: 7, event: "Crippler (binder)-10 (Shifting)"}
+    - {step: 9, event: "Crippler (jammer)-8 (Armor)"}
+    - {step: 13, event: "Passive Alert"}
+    - {step: 17, event: "Ripper (jam-rip)-6 (Armor)"}
+    - {step: 20, event: "Killer-12 (Armor)"}
+    - {step: 22, event: "Blaster-8 (Party Cluster)"}
+    - {step: 25, event: "Sparky-6 (Shifting)"}
+    - {step: 27, event: "Active Alert"}
+    - {step: 31, event: "Psychotropic Black IC (cyberphobia)-8"}
+    - {step: 35, event: "Cerebropathic Black IC-6"}
+    - {step: 38, event: "Scout-10 (Cascading)"}
+    - {step: 41, event: "Lethal Black IC-6"}
+    - {step: 43, event: "Crippler (jammer)-8 (Shifting)"}
+    - {step: 45, event: "Shutdown"}
+
+penthouse_task:
+  base_time: "180 minutes"
+  per_runner_test: "Intelligence (4)"
+  resolution: "sum successes and divide into base time to determine actual duration"
+  failure: "a failed test does not reduce the time"
+  critical_error: "all 1s on a runner's test"
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "74-76", pdf_pages: "75-77"}
