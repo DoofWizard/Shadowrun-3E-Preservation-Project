@@ -1,0 +1,138 @@
+id: equipment.source7124.weapons-p170-172
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "170-172"
+pdf_pages: "179-181"
+content_class:
+  - equipment_stat
+  - rule_exact
+
+melee:
+  harpoon:
+    base_statistics: "standard pole-arm, SRII p.254"
+    thrusting_point_damage: "(STR + 2)M"
+  spear:
+    base_statistics: "standard staff, SRII p.254"
+    damage_type: Physical
+    thrust_point_damage: "(STR + 4)L"
+  rattan_stick:
+    base_statistics: "standard club, SRII p.254"
+    weight_kg: 0.2
+    damage_behavior: flechette
+    unarmored_damage: "(STR + 1)S Stun"
+    armored_opponent: "double opponent Impact Armor Rating"
+
+projectile:
+  harpoon_gun:
+    skill: Projectile_Weapons
+    weapon_value: 1
+    mode: SS
+    concealability: NA
+    ammunition: 1
+    damage:
+      standard: "12D"
+      explosive_head: "16D"
+    weight_kg: 20
+    availability: "3/24 hrs"
+    cost_nuyen: 6500
+    street_index: 1
+    ammo:
+      standard:
+        availability: "1/6 hrs"
+        cost_nuyen: 25
+        street_index: 1
+      explosive_head:
+        availability: "3/12 hrs"
+        cost_nuyen: 200
+        street_index: 2
+    resistance_armor: Impact
+  speargun:
+    skill: Projectile_Weapons
+    specialization_allowed: true
+    range_reference: "Heavy Crossbow, SRII p.88"
+    concealability: NA
+    ammunition: 1
+    mode: SS
+    damage:
+      standard: "6M"
+      armor_piercing: "8S"
+    weight_kg: 2
+    availability: "3/24 hrs"
+    cost_nuyen: 800
+    street_index: 1
+    resistance_armor: Impact
+  sling_launcher:
+    skill: Projectile_Weapons
+    range_reference: "aerodynamic grenade, SRII p.96"
+    scatter_reference: "SRII p.97"
+    concealability: NA
+    ammunition: 1
+    mode: SS
+    damage: "per item"
+    weight_kg: 7
+    availability: "1/14 hrs"
+    cost_nuyen: 40
+    street_index: 1
+
+firearms:
+  colt_m24a3_water_carbine:
+    type: SMG
+    concealability: 5
+    ammunition: "30(c)"
+    mode: "SA/BF"
+    damage: "6M"
+    weight_kg: 3.5
+    availability: "5/48 hrs"
+    cost_nuyen: 1000
+    street_index: 2.5
+    caseless_ammo_cost_rule: "multiply equivalent brass-cased ammunition cost by 1.5"
+    ammo_availability_rule: "standard ammunition Availability +1"
+  fn_aal_gyrojet_pistol:
+    type: Heavy_Pistol
+    concealability: 5
+    ammunition: "10(c)"
+    mode: SA
+    damage: "10M"
+    weight_kg: 2
+    availability: "4/48 hrs"
+    cost_nuyen: 600
+    street_index: 1.5
+    explosive_gyrojet_underwater_power_bonus: "+2 Power instead of the standard +1"
+    ammunition:
+      ball:
+        concealability: 8
+        damage: "10M"
+        weight: 1.75
+        availability: "3/36 hrs"
+        cost_nuyen: 50
+        street_index: 2
+      apds:
+        concealability: 8
+        damage_rule_reference: "Street Samurai Catalog p.63"
+        weight: 1.75
+        availability: "14/14 days"
+        cost_nuyen: 100
+        street_index: 5
+      explosive:
+        concealability: 8
+        damage: "12M"
+        weight: 1.75
+        availability: "4/48 hrs"
+        cost_nuyen: 80
+        street_index: 2.5
+
+other:
+  ink_grenade:
+    concealability: 6
+    damage: None
+    weight_kg: 0.25
+    availability: "4/4 days"
+    cost_nuyen: 40
+    street_index: 2
+    cloud_radius_m: 5
+    visual_test_modifier_inside_cloud: 4
+    modifier_is_cumulative_with_other_underwater_vision_modifiers: true
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "170-172", pdf_pages: "179-181", relation: exact_equipment_stats}
