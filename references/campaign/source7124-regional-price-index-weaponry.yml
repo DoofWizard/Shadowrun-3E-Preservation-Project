@@ -1,0 +1,23 @@
+id: reference.rules.source7124-price-index-weaponry
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact, equipment_stat]
+unit: "percent_of_Seattle_base_cost"
+regions: [Caribbean, Philippines, Gold_and_Ivory_Coasts, Arctic, Australia, Mediterranean, Southeast_Asia, South_Africa, CAS]
+
+price_index:
+  Accessories: {Caribbean: 80, Philippines: 300, Gold_and_Ivory_Coasts: 75, Arctic: 250, Australia: 120, Mediterranean: 80, Southeast_Asia: 80, South_Africa: 250, CAS: 75}
+  Armor: {Caribbean: 100, Philippines: 180, Gold_and_Ivory_Coasts: 75, Arctic: 280, Australia: 120, Mediterranean: 90, Southeast_Asia: 80, South_Africa: 140, CAS: 150}
+  Explosives: {Caribbean: 90, Philippines: 200, Gold_and_Ivory_Coasts: 75, Arctic: 250, Australia: 100, Mediterranean: 60, Southeast_Asia: 50, South_Africa: 250, CAS: 100}
+  Firearms: {Caribbean: 80, Philippines: 300, Gold_and_Ivory_Coasts: 75, Arctic: 130, Australia: 130, Mediterranean: 80, Southeast_Asia: 100, South_Africa: 175, CAS: 75}
+  Melee: {Caribbean: "110/200", Philippines: "20/300", Gold_and_Ivory_Coasts: 75, Arctic: "80/300", Australia: "90/90", Mediterranean: "70/90", Southeast_Asia: "20/200", South_Africa: 200, CAS: 75}
+
+category_scope:
+  Accessories: "The source says this category includes ammunition and emphasizes high-end accessories such as APDS and full-auto conversion kits."
+  Melee: "For split values, the left number applies to simple items such as knives and spears; the right number applies to monowhips, laser axes and other high-technology melee equipment."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
