@@ -1,0 +1,65 @@
+id: rule.magic.source7124-ancestor-spirits
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "151-152"
+pdf_pages: "160-161"
+content_class: [rule_exact, rule_procedure, character_option]
+
+shaman_requirements:
+  - "An ancestor shaman also follows an animal totem."
+  - "May summon ancestor spirits but not other Spirits of Man."
+  - "Other nature spirits are conjured normally."
+  - "Totem bonuses that would apply to Spirits of Man instead apply to ancestor spirits."
+
+adept_variants:
+  shamanic_adept:
+    - "May conjure only ancestor spirits."
+    - "May cast only spells for which the adept gains a totem advantage."
+  conjuring_adept:
+    - "May summon any spirit available to an ancestor shaman."
+    - "Cannot use Sorcery."
+
+summoning:
+  required_fetishes: 3
+  fetish_rule:
+    - "One fetish is made for the person before death; the other two are normally objects or foods favored while alive."
+    - "For each missing appropriate fetish, reduce commanded services by 1."
+  conjuring_time_hours: "desired spirit Force ÷ number of the spirit's relatives present, including the shaman"
+  relatives_need_not_be_willing: true
+  services_and_drain: "calculated normally"
+  great_form_or_ally_known: false
+
+spirit_stat_block:
+  Body: "F + 2"
+  Quickness: "F × 3"
+  Strength: "F + 1"
+  Charisma: F
+  Intelligence: F
+  Willpower: F
+  Essence: "F (A)"
+  Reaction: F
+  Attack: "(Strength)M Stun"
+  powers: [Accident, Confusion, Divination, Guard, Manifestation, Search]
+  notes:
+    - "Quickness ×3 is the Running multiplier when manifested."
+    - "Ancestor spirits have no domain boundaries."
+    - "Powers extend to a radius of 5 kilometers per Force point."
+
+divination:
+  dice_pool: "spirit Force"
+  target_number_by_question:
+    Very_vague: 4
+    Vague: 5
+    General: 6
+    Specific: 8
+    Very_specific: 10
+  result_by_successes:
+    0: "cryptic and potentially drastically misleading"
+    "1-2": "cryptic with an underlying truth"
+    "3-4": "mildly helpful"
+    "5+": "approximately the requested level of detail"
+  answer_length_limit: "2 × Force words maximum"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "151-152", pdf_pages: "160-161", relation: defines}
