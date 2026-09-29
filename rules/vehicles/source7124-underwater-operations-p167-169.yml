@@ -1,0 +1,93 @@
+id: rule.source7124.underwater-vehicle-operations-p167-169
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "167-169"
+pdf_pages: "176-178"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+depth:
+  periscope_depth:
+    treatment: "treat submarine as a surface ship"
+    visual_perception_or_sensor_modifier_to_detect_or_target: 4
+    sonar_detection_allowed: true
+  exceeding_depth_rating:
+    test: "Body (6) Test each turn"
+    on_failure: "+1 Condition Monitor box"
+    target_number_modifier: "+1 for every 100 meters below Depth Rating"
+
+underwater_terrain:
+  surface_or_periscope_depth_up_to_m: 10
+  surface_or_periscope_rule: "same terrain guidelines as surface ships"
+  between_periscope_and_seabed: "generally Open unless substantial obstacles"
+  near_seabed: "use low-altitude-aircraft-style terrain guidance"
+  sea_bottom_table:
+    Open: "flat abyssal plain"
+    Normal: "abyssal plain with rolling hills"
+    Restricted: "jagged terrain with steep hills, buttes or other obstacles"
+    Tight: "narrow canyons or crevasses"
+
+underwater_drones:
+  communications_cable_required: true
+  effective_range: "cable length"
+  sudden_maneuver_cable_check:
+    trigger: "two or more dice on a Vehicle Test show 1"
+    roll: "2D6"
+    cut_if: "2D6 total <= number of 1s rolled"
+  dump_shock_if_cut_while_rigger_controls_drone: true
+
+passive_sonar:
+  maximum_detection_range_km: "50 divided by target Sonar Signature"
+  detection_test:
+    dice: "ship Sonar Rating"
+    target_number: "target Sonar Signature, adjusted by passive-sonar modifiers"
+  stern_blind_arc:
+    degrees: 120
+    approximate_clock_arc: "4 o'clock through 8 o'clock"
+    exception: "towed sonar array"
+  modifiers:
+    target_is_surface_ship: 3
+    distance_less_than_one_third_max: -1
+    distance_one_third_to_two_thirds_max: 0
+    distance_two_thirds_to_max: 2
+
+active_sonar:
+  range_m: "Sonar Rating × 2,500"
+  sonar_signature_modifier_within_active_range: -2
+  affected_tests: [Sonar_Detection, underwater_Gunnery]
+  multiple_sources:
+    modifier_per_additional_active_source: -1
+    maximum_total_modifier: -4
+
+sonar_test_results:
+  0: "no contact"
+  1: "unknown contact"
+  2: "identified broad class/type"
+  3: "detailed specific type"
+  "4+": "distinguishing features identified"
+
+cavitation:
+  speed_above_cavitation_threshold:
+    sonar_signature_reduction: 2
+  speed_above_normal_speed_rating:
+    sonar_signature_reduction: 4
+  submarine_depth_cavitation_reduction:
+    below_500_m: 1
+    below_1000_m: 2
+
+thermoclines:
+  typical_spacing_m: "100-200"
+  sonar_detection_across_layer: false
+  objects_crossing_layer: "torpedoes or drones may detect targets after reaching the other side"
+
+underwater_vehicle_combat:
+  base_rule: "sensor-enhanced gunnery, Rigger 2 p.58"
+  substitutions:
+    Sensor_Rating: Sonar_Rating
+    Signature_Rating: Sonar_Signature
+  continuation: "additional rules continue on printed p.170"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "167-169", pdf_pages: "176-178", relation: exact_rule}
