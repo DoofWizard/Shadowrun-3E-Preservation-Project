@@ -1,0 +1,37 @@
+id: rule.source7124.ship-control-network-p165
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "165"
+pdf_pages: "174"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+control_network:
+  each_independent_system_has_pilot_rating: true
+  dedicated_station_requirement:
+    guided_systems_per_active_control_station: 1
+    simultaneous_active_limit: "number of dedicated control stations"
+  multi_rigger:
+    overall_network_control_position: "captain position"
+    subordinate_direct_control_allowed: true
+    direct_control_pool_dice: [Control_Pool, Combat_Pool]
+    same_position_simultaneous_occupancy: false
+    same_system_simultaneous_direct_control: false
+    lockout_until_previous_operator_exits_or_is_dumped: true
+
+long_range_guided_systems:
+  base_reference: "Rigger 2 p.89 Extended Range Missile rules"
+  direct_control:
+    Vehicle_Skill_replaces_system_Intelligence: true
+    Control_Pool_may_add_to_Success_Tests: true
+    disconnect_before_terminal_resolution: true
+  interception:
+    base_resolution: "standard vehicle combat plus Extended Range rules"
+    success:
+      - "incoming system is disabled by the defensive system"
+      - "incoming system fails its required Crash Test"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "165", pdf_pages: "174", relation: exact_rule}
