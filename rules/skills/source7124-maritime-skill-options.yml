@@ -1,0 +1,87 @@
+id: rule.skills.source7124-maritime-skill-options
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "144-145"
+pdf_pages: "153-154"
+content_class:
+  - character_option
+  - rule_exact
+  - rule_procedure
+
+skill_options:
+  - name: "Armed Combat (Underwater)"
+    type: Concentration
+    parent_skill: "Armed Combat"
+    mechanics:
+      - "The concentration is intended to offset underwater-combat penalties defined later in this source."
+      - "A character using an Underwater Combat Concentration for surface melee combat must reduce the relevant Combat Skill by 1."
+    specialization_examples:
+      - knives
+      - spears
+      - tridents
+
+  - name: "Unarmed Combat (Underwater)"
+    type: Concentration
+    parent_skill: "Unarmed Combat"
+    mechanics:
+      - "The concentration is intended to offset underwater-combat penalties defined later in this source."
+      - "A character using an Underwater Combat Concentration for surface melee combat must reduce the relevant Combat Skill by 1."
+    specialization_rule: "Specialization in the Unarmed Combat (Underwater) Concentration increases the level of the Concentration."
+
+  - name: "Diving"
+    type: Active Skill
+    scope:
+      - "All forms of underwater diving."
+      - "Safe-diving-time calculations and oxygen/nitrogen/helium gas mixtures."
+      - "Scuba gear and other underwater-diving equipment."
+      - "Surface intervals between multiple dives."
+    default:
+      attribute: Intelligence
+      skill_web_separation: "six dots"
+      target_number_modifier: +12
+    concentrations:
+      - "Deep-water Diving (JIM, LBA)"
+      - "Mixed-gas Diving"
+
+  - name: "Etiquette (Maritime)"
+    type: Concentration
+    parent_skill: Etiquette
+    scope: "Language, customs, traditions and attitudes of maritime professions and communities."
+    specializations:
+      - Diver
+      - Merchant Marine
+      - Naval Military
+      - "Pirate (by location)"
+      - Submarine
+
+  - name: "Ship"
+    type: Vehicle Skill
+    scope: "Piloting, navigation and handling of a large surface ship."
+    default:
+      skill: Motorboat
+      skill_web_separation: "one dot"
+      target_number_modifier: +2
+    concentrations:
+      - "Diesel (SV)"
+      - "Nuclear (SV)"
+      - "Turbine (SV)"
+    specialization_rule: "Specializing in a listed Concentration means specializing in a specific class of vessel (SV)."
+
+  - name: "Submarine"
+    type: Vehicle Skill
+    scope: "Control and maneuvering of underwater ships and boats."
+    default:
+      skill: Ship
+      skill_web_separation: "two dots"
+      target_number_modifier: +4
+    concentrations:
+      - "Deep Sea (SV)"
+      - "Large Diesel/Electric (SV)"
+      - "Minisub (SV)"
+      - "Nuclear (SV)"
+      - "Remote Operation (SV)"
+    specialization_rule: "Specialization consists of becoming proficient in a specific class of vessel (SV)."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "144-145", pdf_pages: "153-154", relation: defines}
