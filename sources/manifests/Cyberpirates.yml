@@ -1,42 +1,31 @@
 id: source.fasa-7124
-record_type: source
-title: "Cyberpirates"
-catalog_number: "FASA7124"
-edition: "SR3"
 status: ingesting
-scan_depth: directed
-source_format: "image-only PDF"
-page_count_pdf: 194
+depth: directed
 
-routing:
-  - {range: "6", treatment: orientation}
-  - {range: "8-9", treatment: sparse}
-  - {range: "10-22", treatment: directed}
-  - {range: "23-53", treatment: directed}
-  - {range: "54-86", treatment: directed}
-  - {range: "87-116", treatment: directed}
-  - {range: "117-138", treatment: directed}
-  - {range: "139-154", treatment: deep}
-  - {range: "155-169", treatment: deep}
-  - {range: "170-182", treatment: deep}
-  - {range: "183", treatment: reference}
+done:
+  p: 96
+  pdf: 97
 
-completed_through:
-  printed_page: 96
-  pdf_page: 97
-  anchor: "pre-coastal-magic boundary"
+next:
+  p: 96
+  pdf: 97
 
-resume_at:
-  printed_page: 96
-  pdf_page: 97
-  anchor: "coastal-magic"
+pending: []
 
-pending_normalization:
-  - pending.source7124.gold-ivory-p87-96
+routes:
+  - [6, 6, orientation]
+  - [8, 9, sparse]
+  - [10, 22, directed]
+  - [23, 53, directed]
+  - [54, 86, directed]
+  - [87, 116, directed]
+  - [117, 138, directed]
+  - [139, 154, deep]
+  - [155, 169, deep]
+  - [170, 182, deep]
+  - [183, 183, reference]
 
-durable_records:
-  - {range: "87-96", commit: "e4fb4116cbe410e83410d7b6c47d7026d32bf393", status: partial}
-
-state_notes:
-  - "Verified scan range is durable."
-  - "One compact normalization record remains pending."
+records:
+  - range: "87-96"
+    commit: a658bb190ba48443b1e05f31be4fc57b6e1a3b76
+    state: complete
