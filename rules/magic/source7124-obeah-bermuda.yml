@@ -1,0 +1,46 @@
+id: rule.magic.source7124-obeah-bermuda
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "146-147"
+pdf_pages: "155-156"
+content_class: [rule_exact, rule_procedure, character_option]
+
+obeah_adepts:
+  character_creation:
+    magic_priority: B
+    archetype: "shamanic conjuring adept equivalent"
+    common_skill_specialization: "Biology (Botany)"
+  conjuring:
+    allowed_spirits: "nature spirits"
+    required_container: "user-created obeah fetish"
+    fetish_creation_reference: "Grimoire II p.20"
+    fetish_does_not_aid_conjuring: true
+    maximum_spirit_force: "2 × successes on the Enchanting Test used to create the fetish"
+    maximum_spirits_held_at_once: Charisma
+    held_spirit_rules:
+      - "Only the summoner may command the held spirit."
+      - "The spirit remains until all services are used."
+      - "The spirit does not disappear at dusk or dawn while held."
+      - "The fetish may be transported and used outside the spirit's normal domain."
+      - "The spirit remains if the conjurer is unconscious and goes free if the conjurer dies."
+  restrictions:
+    - "Cannot conjure elementals or loas."
+    - "Must use an obeah fetish for all summoning."
+    - "Fetishes are specific to the user and must be created by the adept."
+    - "A fetish is not astrally active unless a spirit inside it is using powers."
+    - "For channeling spells through an active fetish, treat it as a focus with rating equal to the spirit's Force."
+    - "May enchant foci under standard rules."
+    - "Enchanting obeah fetishes is a Specialization of Enchanting (Talismongering)."
+    - "Cannot use metamagic requiring astral sight."
+    - "Cannot cast spells."
+
+bermuda_triangle:
+  background_count: 4
+  magic_reference: "Mana Surge rules, Shadowrun Companion p.82"
+  local_critter_variation:
+    extra_mutations_or_powers: "1D3"
+    note: "These are treated as magical-awakening variations, not toxic or mutant status."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "146-147", pdf_pages: "155-156", relation: defines}
