@@ -7,41 +7,62 @@ edition: "SR3"
 publication_type: "setting_sourcebook"
 publication_date: 2001
 publisher: "FanPro"
-status: ingesting
+status: complete
 scan_depth: directed
 source_format: "image-only PDF"
 
 routing:
-  - {range: "6", section: "Introduction", treatment: "directed orientation; capture explicit source scope"}
-  - {range: "7-17", section: "The Continental Divide", treatment: "directed chronology and continent-wide world-state scan"}
-  - {range: "18-28", section: "Algonkian-Manitou Council", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "29-39", section: "Athabaskan Council", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "40-56", section: "California Free State", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "57-71", section: "Confederation of American States", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "72-84", section: "Denver: The Treaty City", treatment: "directed government, sector, faction and reusable-mechanics scan"}
-  - {range: "85-99", section: "Pueblo Corporate Council", treatment: "directed government, corporate, faction and reusable-mechanics scan"}
-  - {range: "100-112", section: "Republic of Quebec", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "113-123", section: "Salish-Shidhe Council", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "124-137", section: "Sioux Nation", treatment: "directed government, military, faction and reusable-mechanics scan"}
-  - {range: "138-153", section: "Tir Tairngire", treatment: "directed government, faction, economy and reusable-mechanics scan"}
-  - {range: "154-164", section: "Tsimshian", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "165-177", section: "United Canadian and American States", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "178-187", section: "Ute Nation", treatment: "directed government, faction, place and reusable-mechanics scan"}
-  - {range: "188-205", section: "Game Information", treatment: "deep scan for all rules-bearing material, regional campaign procedures, magic, travel and border mechanics"}
+  - {range: "6", section: "Introduction", treatment: "directed orientation"}
+  - {range: "7-17", section: "The Continental Divide", treatment: "directed chronology and continent-wide scan"}
+  - {range: "18-28", section: "Algonkian-Manitou Council", treatment: "directed regional scan"}
+  - {range: "29-39", section: "Athabaskan Council", treatment: "directed regional scan"}
+  - {range: "40-56", section: "California Free State", treatment: "directed regional scan"}
+  - {range: "57-71", section: "Confederation of American States", treatment: "directed regional scan"}
+  - {range: "72-84", section: "Denver: The Treaty City", treatment: "directed regional scan"}
+  - {range: "85-99", section: "Pueblo Corporate Council", treatment: "directed regional scan"}
+  - {range: "100-112", section: "Republic of Quebec", treatment: "directed regional scan"}
+  - {range: "113-123", section: "Salish-Shidhe Council", treatment: "directed regional scan"}
+  - {range: "124-137", section: "Sioux Nation", treatment: "directed regional scan"}
+  - {range: "138-153", section: "Tir Tairngire", treatment: "directed regional scan"}
+  - {range: "154-164", section: "Tsimshian", treatment: "directed regional scan"}
+  - {range: "165-177", section: "United Canadian and American States", treatment: "directed regional scan"}
+  - {range: "178-187", section: "Ute Nation", treatment: "directed regional scan"}
+  - {range: "188-206", section: "Game Information", treatment: "deep scan all rules-bearing material"}
+
+completed_through:
+  printed_page: 206
+  pdf_page: 207
+  anchor: "end_of_routed_content"
+
+resume_at: null
+pending_normalization: []
+
+normalized_artifacts:
+  - world/organizations/sovereign-tribal-council.yml
+  - world/regions/algonkian-manitou-council.yml
+  - world/regions/athabaskan-council.yml
+  - world/regions/california-free-state.yml
+  - world/regions/confederation-of-american-states.yml
+  - world/regions/denver-treaty-city.yml
+  - world/regions/pueblo-corporate-council.yml
+  - world/regions/republic-of-quebec.yml
+  - world/regions/salish-shidhe-council.yml
+  - world/regions/sioux-nation.yml
+  - world/regions/tir-tairngire.yml
+  - world/regions/tsimshian.yml
+  - world/regions/ucas.yml
+  - world/regions/ute-nation.yml
+  - entities/critters/sea-wolf.yml
+  - entities/magic/sage.yml
+  - rules/campaign/sona-regional-magic.yml
+  - rules/campaign/sona-regional-social-legal.yml
+  - rules/matrix/sona-regional-matrix.yml
+  - world/travel/sona-regional-access-2062.yml
+  - rules/campaign/sona-border-crossing.yml
 
 notes:
-  - "Directed scan complete through printed p.187 / PDF p.188. Detailed normalization remains pending as pending.sona.ute-p178-187 after connector rejection. Resume Game Information at printed p.188 / PDF p.189."
-  - "Directed scan complete through printed p.177 / PDF p.178. Detailed normalization remains pending as pending.sona.ucas-p165-177 after connector rejection. Resume Ute Nation at printed p.178 / PDF p.179."
-  - "Directed scan complete through printed p.164 / PDF p.165, finishing Tsimshian. The chapter was read sequentially from raw page images; printed p.155 / PDF p.156 is a full-page illustration. world/regions/tsimshian.yml was normalized at commit 0f11c54308161898e6754214af38f4ec9b1d9a79. Source-period government, law/security, information-control, corporate, military, environmental, travel and shadow-activity procedures were captured with provenance. Resume United Canadian and American States at printed p.165 / PDF p.166."
-  - "Directed scan complete through printed p.153 / PDF p.154, finishing Tir Tairngire. The chapter was read sequentially from raw page images; printed p.141 / PDF p.142 is a full-page illustration. Verified rules-bearing/world procedures include the seven-tier Tir social-rank system and Rite of Progression, High Prince/Council authority, Peace Force and Information Secretariat jurisdictions, paladin/Ghost structures, foreign-corporation restrictions, tourist and internal-travel procedures, customs/border variation, Portland martial-law/security conditions and Royal Hill security. Rich normalization was rejected by the connector, so preserve pending.sona.tir-tairngire-p138-153 until fully normalized. The source imagery shows Tsimshian begins on printed p.154 / PDF p.155, correcting the earlier provisional routing boundary."
-  - "Sioux Nation pp.124-137 / PDF pp.125-138 was fully normalized as world/regions/sioux-nation.yml at commit e25b85f3d56d57cb2b5e1857d057ce65dab97d61."
-  - "Directed scan complete through printed p.123 / PDF p.124, finishing Salish-Shidhe Council. Normalized as world/regions/salish-shidhe-council.yml at commit f558c8b3dbf4ca72de02e1bbb890fa15985b76e5. Resume Sioux Nation at printed p.124 / PDF p.125."
-  - "Directed scan complete through printed p.112 / PDF p.113, finishing Republic of Quebec. Rich normalized payload was rejected by the connector, so preserve pending.sona.quebec-p100-112. Rules-bearing material verified in this range includes the W-zone wilderness security rating, Enterprise Zone extraterritoriality limits, border inspection guidance, and the Harmful Paranormals Act bounty/proof rules. Resume Salish-Shidhe Council at printed p.113 / PDF p.114."
-  - "Directed scan complete through printed p.99 / PDF p.100, finishing Pueblo Corporate Council. Normalized as world/regions/pueblo-corporate-council.yml at commit 224acbbfccfb58d7cd9a932a879ae45534770e60. Resume Republic of Quebec at printed p.100 / PDF p.101."
-  - "Directed scan complete through printed p.84 / PDF p.85, finishing Denver: The Treaty City. Detailed normalization remains pending as pending.sona.denver-p72-84 after connector rejection. Resume Pueblo Corporate Council at printed p.85 / PDF p.86."
-  - "Directed scan complete through printed p.71 / PDF p.72, finishing the Confederation of American States chapter. Detailed normalization remains pending as pending.sona.cas-p57-71 after connector rejection."
-  - "Directed scan complete through printed p.56 / PDF p.57. Detail range pending.sona.california-p40-56 remains pending."
-  - "Directed scan complete through printed p.39 / PDF p.40. Athabaskan Council is normalized in world/regions/athabaskan-council.yml at commit 9a79badbd9430a59ddb69151cd42a3aef910355e."
-  - "Algonkian-Manitou Council pp.18-28 / PDF pp.19-29 was fully scanned; detailed normalization remains pending as pending.sona.algonkian-manitou-p18-28 after connector rejection."
-  - "TOC routed from printed pp.2-5 / PDF pp.3-6. Printed page numbers map to PDF page +1."
-  - "Game Information pp.188-205 is the primary deep-extraction range; earlier regional chapters remain sequentially directed-scanned for embedded rules/stat blocks."
+  - "Sequential directed scan complete through printed p.206 / PDF p.207."
+  - "Game Information pp.188-206 was deep-scanned and normalized."
+  - "Previously filtered regional ranges were rewritten in compact reference-manual diction and normalized successfully."
+  - "Source-period facts remain distinct from attributed commentary."
+  - "No supersession relationships were inferred without explicit source support."
