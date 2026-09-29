@@ -1,0 +1,140 @@
+id: rule.matrix.target-matrix-grids
+record_type: rule
+name: "Target: Matrix - Grid Extensions"
+domain: matrix
+status: ingested
+source: source.fasa-7219
+printed_pages: "116-119"
+pdf_pages: "117-120"
+
+satellite_host_ratings:
+  comsats: {security_code: "Orange-8", acifs: "9/12/9/7/7"}
+  weather_sats: {security_code: "Orange-7", acifs: "6/10/7/7/9"}
+  research_sats: {security_code: "Orange-9", acifs: "7/10/9/8/9"}
+  surveillance_sats: {security_code: "Red-10", acifs: "12/14/12/12/12"}
+  sat_control_systems: {security_code: "Red-9", acifs: "10/14/12/9/11"}
+
+angel_satcon:
+  - "Angel SatCom satellites use scramble-5 IC; successful Decrypt Access is required."
+  - "When atmospheric conditions may interfere with sensor equipment, roll 1D6; on 1, conditions interfere with attempted device use."
+
+chicago_noose_net:
+  grid_security: "Random Easy-difficulty grid security; Orange is base level."
+  trace: "Tracing a character jacked in from inside Noose Net receives +4 Trace modifier; gamemaster may rule tracing impossible."
+  access_anomaly:
+    test: "On Logon to RTG, roll 2D6 and add results."
+    threshold: "10+ triggers unusual grid behavior."
+    resolution: "Roll 3D6 on Wild Matrix Table, or gamemaster invents an appropriate occurrence."
+  resonance_well_search: "Attempts to create a resonance well in Noose Net receive -2 target number modifier."
+
+wild_matrix_table:
+  "3-4": "Incompatibility; use Archaic Systems rules."
+  "5": "ASIST feedback; use Archaic Systems rules."
+  "6": "Subsystem infected with worms; roll Worm Table, then 1D6: 1-2 Access, 3 Control, 4 Index, 5 Files, 6 Slave."
+  "7-8": "System delays; lose Response Increase bonuses, excluding reality filters/pure DNI."
+  "9": "Grid cannot support full simsense; apply +1 TN to all Matrix activity."
+  "10": "Overlapping security; halve trigger intervals (round up) or generate two sheafs and compare tally against both."
+  "11": "Weak interface; use Archaic Systems rules."
+  "12": "Power fluctuations; once/minute Bod (6) or stalled/hung; failure = no actions next Combat Turn; all 1s = dump shock."
+  "13": "Partially corrupted file system; +2 TN to all Index and Files Tests."
+  "14-15": "Stray signals/static; +2 TN to all Sensor Tests."
+  "16-17": "Weak bandwidth; use Archaic Systems rules."
+  "18": "IC construct identifies intruder and attacks; cascading blaster-5 and tar pit-5 IC."
+
+doj:
+  edit_file_modifier: "+4 unless using superuser account"
+  offline_archive: "Files older than five years may be moved to offline chips in physical warehouses; retrieval may require physical/social legwork."
+  search_modifiers:
+    INS: 2
+    FBI: -1
+    UCAS_Marshals: 1
+    DEA: 1
+    Bureau_of_Prisons: 2
+    Anti_Trust_Division: 0
+    Office_of_Inspector_General: -1
+
+magicknet:
+  annual_fee: "1,000¥"
+  undernet_search_modifier: -1
+  undernet_access: "Requires in-the-know contact and successful social test(s), such as Etiquette (Matrix), Etiquette (Magic), or Negotiations (Bribery)."
+  threshold_guardian:
+    type: "semi-autonomous knowbot"
+    stats:
+      core_rating: 8
+      mpcp: "8/6/6/4/8"
+      pilot_skill: 8
+      initiative: "8 + 4D6"
+      utility_pool: 8
+      hacking_pool: 8
+      utility_payload: 23
+      utilities: {Attack_S: 8, Armor: 4, Scanner: 6, Lock_on: 5}
+
+service_providers:
+  UOL:
+    search_modifier: -1
+    note: "Low security makes users targets for hostile activity; operator may intercept user data."
+  PlanetLink:
+    security: "normally standard"
+    note: "Some game operators may run games at BTL levels; treat extended play as Rating 4 BTL dreamchip exposure using cited addiction rules."
+  Yamatetsu_MetaMatrix:
+    meta_modified_gear_discount: "5% reduction to cost increase for meta-modified gear obtained through MetaMatrix"
+    metahuman_search_modifier: -1
+
+pueblo_grids:
+  party_ic: "Reduce normal party-IC to-hit penalty by 1; e.g. three-piece cluster gives +1 instead of +2."
+  navigation:
+    route_memory: "If heading toward a host with LTG code or after successful Locate Access Node, roll 1D6/2 round up; number = grids away. If following known iconography trail, roll 1D6."
+    table:
+      "1-2": "Dead-end LTG; backtrack or Locate Access Node."
+      "3-4": "A SAN leads to a different/higher-security LTG; enter or Locate Access Node for directions."
+      "5-6": "Path leads where expected."
+  software_availability: "Reduce Availability of programs obtained through this source by 2."
+
+saeder_krupp_prime:
+  passkey_duration: "After obtaining passkey, roll 1D6; result is number of days it remains valid."
+  trace_ic: "+2 rating when locating intruder originating inside PLTG or from European/Russian/Middle Eastern grid."
+
+shiawase_mifd:
+  search_modifier: -3
+  smart_frames:
+    core_rating: 9
+    initiative: "9 + 3D6"
+    pilot_rating: 5
+    bod: 3
+    evasion: 0
+    masking: 0
+    sensor: 6
+    utilities: {Attack_M_sensitive: 4, Armor_sensitive: 4, Sniffer_sensitive: 6, Browse_sensitive: 6}
+  agents:
+    core_rating: 6
+    initiative: "6 + 3D6"
+    pilot_rating: 5
+    hacking_pool: 6
+    bod: 6
+    evasion: 0
+    masking: 0
+    sensor: 6
+    utilities: {Attack_M_sensitive: 4, Armor_sensitive: 4, Sniffer_sensitive: 6, Browse_sensitive: 6}
+  semi_autonomous_knowbots:
+    core_rating: 6
+    initiative: "6 + 4D6"
+    pilot_rating: 6
+    hacking_pool: 6
+    utility_pool: 6
+    bod: 6
+    evasion: 6
+    masking: 0
+    sensor: 6
+    utilities: {Attack_S_sensitive: 4, Armor_sensitive: 6, Track_sensitive: 5}
+  security_tally: "Add frame/agent/SK rating to decker's tally when trashed, as IC."
+
+transys_neuronet:
+  caerlion: "Master power-grid host; physical access at HECEDS uses power-grid interface."
+  boreworm:
+    size_multiplier: 4
+    attack: "When icon takes damage, worm makes Attack Test using its rating vs target number MPCP + Hardening."
+    success: "Permanently removes one level of Hardening, then begins removing MPCP levels by same procedure."
+    repair: "Only replacement of damaged MPCP repairs this damage."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "116-119", pdf_pages: "117-120", relation: defines_rules}
