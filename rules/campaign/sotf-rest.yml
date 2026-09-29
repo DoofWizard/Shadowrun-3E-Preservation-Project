@@ -1,0 +1,125 @@
+id: rule.campaign.sotf-rest
+record_type: rule
+name: "Survival of the Fittest - Rest"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "92-105"
+pdf_pages: "93-106"
+
+job:
+  employer: "Mr. Radek"
+  location: "Tehran ruins"
+  objective: "Recover the Shroud of Shadows from a ruined mosque and leave the area."
+  compensation: "200,000¥ per runner, subject to negotiation"
+  structure: "Free-form urban scenario with multiple factions and supernatural hazards."
+
+wraith:
+  baseline:
+    body: 8
+    quickness: 10
+    strength: 4
+    charisma: 4
+    intelligence: 4
+    willpower: 4
+    essence: "(4)A"
+    reaction: 5
+    initiative: "15 + 1D6; astral 25 + 1D6"
+    pools: "Astral Combat 6, Combat 9"
+    attack: "4M Stun or Powers"
+    force_spirit_energy: "3/1"
+    powers: ["Empathy","Fear","Influence","Karma Tap","Magic Resistance","Magic Sense","Materialization"]
+  first_encounter:
+    force: 3
+    spirit_energy: 1
+    observation:
+      mundane_perception_tn: 8
+      astral_perception_tn: 6
+  karma_tap:
+    trigger: "Wraith manipulates a victim into committing violence against another intelligent being."
+    opposed_test: "Willpower vs wraith power effect as described"
+    effect:
+      - "Victim permanently loses 1 point of Good Karma per death caused under the wraith's influence, maximum 1 per minute."
+      - "If the victim has no Good Karma, 1 point is instead taken from Karma Pool."
+      - "Wraith gains 1 Karma from each qualifying death."
+    growth:
+      - "First 2 accumulated Karma raise Spirit Energy from 1 to 2."
+      - "Next 3 raise Spirit Energy from 2 to 3."
+      - "Continue accumulating until 12 total Karma, then Force rises to 4 and Spirit Energy returns to 2."
+      - "Further growth follows the same escalating pattern referenced to Magic in the Shadows."
+    recovery: "If a wraith is permanently destroyed, surviving victims regain Karma lost to its Karma Tap."
+
+city_of_shadows:
+  encounter_pool:
+    - "devil rats"
+    - "ghouls"
+    - "harpies"
+    - "shedim"
+    - "survivors/refugees"
+    - "Farah Al-Pasha and allied ghosts"
+    - "Musa Muqla and followers"
+    - "Mack Donnelley and mercenaries"
+  design:
+    - "Wraith attempts to intensify conflict among factions and between team members."
+    - "Scenario encourages nonviolent solutions because violence feeds the wraith."
+
+mosque:
+  shroud_location: "hidden beneath a heavy floor tile in the main chamber"
+  search: "Strength (4) Test to move the tile"
+  conflict:
+    - "Multiple factions may arrive before or just after recovery."
+    - "Wraith may influence one character at a time to provoke conflict."
+  shroud_as_weapon:
+    - "Holding or deploying the Shroud can suppress or destroy eligible spirits."
+    - "A character taking violent action while touching the Shroud must make Willpower (12) to do so; defensive actions are not included."
+
+aden_confrontation:
+  rite_constraint:
+    - "Aden cannot simply attack or kill the runners unless they attack first."
+    - "He may threaten, negotiate, place indirect obstacles, or otherwise act within the Rite's constraints."
+  resolution_options: ["return the Shroud","negotiate","escape","fight if initiated"]
+  payment: "Aden may offer payment/treasure for return of the Shroud after delivery."
+
+shroud_of_shadows:
+  form: "approximately 3-meter-square black cloth with silver thread"
+  durability:
+    mundane: "Extremely strong; ordinary weapons described as ineffective."
+    armor: "12 points Hardened Armor, Ballistic and Impact"
+    magic: "Immune to magical attempts to damage it."
+  emotional_effect:
+    background_count:
+      temporary: "Reduces temporary background count by 1 point per minute until gone."
+      permanent: "Same effect, but reduction occurs only while Shroud is present; background returns at 1 point/hour after removal."
+    touch: "Functions like a Force 12 Control Emotions effect producing peace/serenity."
+  spirit_effects:
+    possessed_body: "Spirit must make opposed Force Test vs Shroud Force 12 each round or be immediately disrupted/banished."
+    wraith_or_blood_spirit: "Opposed Force Test as above or spirit is destroyed; repeated each round covered."
+    astral_form: "Opposed Unarmed Combat (4) Test; 2+ net successes allow covering the astral spirit."
+  concealment:
+    effect: "Any creature/object covered by the Shroud increases target numbers for magical detection, ritual sorcery, and Search by +12."
+
+shedim_reference:
+  typical_corporeal:
+    body: 3
+    quickness: 2
+    strength: 3
+    intelligence: 4
+    willpower: 4
+    essence: "4A"
+    reaction: 3
+    initiative: "3 + 1D6"
+    force: 4
+    spirit_energy: 1
+    attack: "3M or Karma Drain"
+    powers: ["Deathly Aura","Immunity (Age, Pathogens, Toxins)","Inhabitation","Karma Drain","Regeneration"]
+
+karma:
+  surviving_run: 2
+  overcoming_wraith: 1
+  handling_encounters_nonviolently: 1
+  getting_shroud: 1
+  getting_aden_to_claim_shroud: 1
+  note: "Only one of the last two Shroud/Aden awards is granted."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "92-105", pdf_pages: "93-106", relation: defines_scenario}
