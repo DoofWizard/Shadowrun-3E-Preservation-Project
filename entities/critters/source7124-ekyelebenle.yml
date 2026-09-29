@@ -1,0 +1,34 @@
+id: entity.critter.source7124-ekyelebenle
+record_type: critter
+status: ingested
+source: source.fasa-7124
+printed_pages: "154-155"
+pdf_pages: "163-164"
+content_class: [rule_exact]
+
+attributes:
+  Body: "5 (4)"
+  Quickness: "6 × 2"
+  Strength: "6 (5)"
+  Charisma: "-"
+  Intelligence: "1/5"
+  Willpower: "4 (3)"
+  Essence: "(6)(6)"
+  Reaction: "6**"
+attacks: "6M (6L) biting"
+powers:
+  - "Enhanced Senses (Smell, Thermographic Vision)"
+  - "Immunity to Poisons"
+  - "Immunity to Pathogens"
+  - "Magical Resistance"
+  - Venom
+venom:
+  trigger: "A Light wound or worse injects venom."
+  damage: "5S"
+  intervals_minutes: [5, 10, 20]
+  spit_range_meters: 5
+  spit_test: "opposed Reaction Test"
+  if_spit_test_won:
+    blindness_duration: "2D6 hours divided by successes on a Body Test against the poison's Damage Code"
+    no_successes: "blindness is permanent"
+note: "Parenthetical values are the source's non-Awakened mamba statistics."
