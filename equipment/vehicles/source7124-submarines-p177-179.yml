@@ -1,0 +1,178 @@
+id: equipment.source7124.submarines-p177-179
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "177-179 (p.179 read only through USS New Hampshire statistics)"
+pdf_pages: "186-188"
+content_class:
+  - equipment_stat
+  - rule_exact
+  - rule_procedure
+
+vulcan_electronaut:
+  handling: 4
+  speed: 15
+  acceleration: 4
+  body: 4
+  armor: 0
+  signature: "8/8"
+  autonav: 2
+  sensor: 1
+  sonar: 1
+  cost_nuyen: 35000
+  seating: "1 bucket + 1 bucket"
+  entry_points: "1 hatch"
+  depth_m: 150
+  cargo_cf: 12
+  load_kg: 150
+  fuel: "Electric (250 PF)"
+  economy: "1 km/PF"
+  other_features: "Enviroseal (water and engine), life support (10 man-hours)"
+
+saeder_krupp_dj_locker:
+  handling: 4
+  speed: 30
+  acceleration: 3
+  body: 4
+  armor: 0
+  signature: "6/7"
+  autonav: 2
+  sensor: 0
+  sonar: 1
+  cost_nuyen: 55000
+  seating: "1 bucket + 1 bucket"
+  entry_points: "1 hatch"
+  depth_m: 900
+  cargo_cf: 5
+  load_kg: 400
+  fuel: "Diesel/electric (300 liters/250 PF)"
+  economy: "1 km/liter; 1 km/PF"
+  other_features: "Enviroseal (water and engine), life support (10 man-hours), mechanical claw arm (Strength 16)"
+  claw_rule:
+    reference: "standard rules for operating mechanical arms, Rigger 2 p.34"
+    success_test_modifier: "+3 to all Success Tests"
+
+vulcan_delphin_rq7:
+  mini_torpedo_rule:
+    base_reference: "standard AVMs (p.99, SRII)"
+    legal_targets: "waterborne surface or underwater targets only"
+    damage: "4LN"
+  dual_engine_rule:
+    surfaced: "diesel engine"
+    submerged: "electric batteries"
+    diesel_recharge_rate: "1 PF per hour"
+  standard:
+    handling: 4
+    speed: 50
+    acceleration: 4
+    body: 4
+    armor: 0
+    signature: "6/6"
+    autonav: 2
+    sensor: 1
+    sonar: 1
+    cost_nuyen: 150000
+    seating: "2 bucket + 2 bucket"
+    entry_points: "1 hatch"
+    depth_m: 150
+    cargo_cf: 160
+    load_kg: 1500
+    fuel: "Diesel/Electric (300 liters/300 PF)"
+    economy: "1 km/liter; 1 km/PF"
+    other_features: "Enviroseal (water and engine), life support (80 man-hours), living amenities (Basic)"
+  coastal_patrol_variant:
+    handling: 4
+    speed: 50
+    acceleration: 4
+    body: 4
+    armor: 9
+    signature: "5/5"
+    autonav: 2
+    sensor: 5
+    sonar: 3
+    cost_nuyen: 34000000
+    seating: "2 bucket + 2 bucket"
+    entry_points: "1 hatch"
+    depth_m: 150
+    cargo_cf: 152
+    load_kg: 680
+    fuel: "Diesel/Electric (300 liters/300 PF)"
+    economy: "1 km/liter; 1 km/PF"
+    other_features:
+      - "Enviroseal (water and engine)"
+      - "life support (80 man-hours)"
+      - "living amenities (Basic)"
+      - "internal mini-torpedo launchers"
+      - "small turret with HMG and 500 rounds ammunition"
+
+kvaerner_triton_class_medium_transport_submarine:
+  handling: 5
+  speed: "30 (20)"
+  acceleration: 1
+  hull: 7
+  bulwark: 3
+  signature: "5/4"
+  autonav: 3
+  sensor: 2
+  sonar: 2
+  cost_nuyen: 250000000
+  accommodation: 40
+  entry_points: "1 emergency hatch + 1 oversize cargo hatch + 1 oversize cargo hatch + 1 passenger hatch"
+  depth_m: 4500
+  cargo_cf: 200000
+  load_kg: 25000000
+  fuel: "Nuclear"
+  economy: "Effectively infinite"
+  other_features: "Electrolytic oxygen generator, Enviroseal (water and engine), living amenities (Basic)"
+
+krasnaya_sormova_vaneyev_class_hunter_killer_submarine:
+  handling: 3
+  speed: "45 (30)"
+  acceleration: 2
+  hull: 4
+  bulwark: 9
+  signature: "6/6"
+  autonav: 3
+  sensor: 4
+  sonar: 4
+  cost_nuyen: 125000000
+  accommodation: 85
+  entry_points: "1 hatch + 1 emergency hatch"
+  depth_m: 400
+  cargo_cf: 400
+  load_kg: 50000
+  fuel: "Diesel/electric (18 kiloliters/10 kPF)"
+  economy: "175 km/kiloliter; 100 km/kPF"
+  other_features: "Electrolytic oxygen generator, Enviroseal (water and engine), living amenities (Basic)"
+
+uss_new_hampshire_class_attack_submarine:
+  handling: 4
+  speed: "50 (35)"
+  acceleration: 2
+  hull: 5
+  bulwark: 9
+  signature: "8/8"
+  autonav: 4
+  sensor: 7
+  sonar: 9
+  cost_nuyen: 800000000
+  accommodation: 105
+  entry_points: "1 hatch + 1 emergency hatch"
+  depth_m: 750
+  cargo_cf: 600
+  load_kg: 75000
+  fuel: "Nuclear"
+  economy: "Effectively infinite"
+  other_features:
+    - "Electrolytic oxygen generator"
+    - "Enviroseal (water and engine)"
+    - "living amenities (Basic)"
+    - "4 torpedo tubes"
+    - "vertical launch system (16 tubes)"
+  weapon_capacity:
+    torpedo_tubes: "launch MADCAPs and Sea Sabers"
+    storage: "up to 40 torpedoes or missiles"
+    vls: "sixteen-tube VLS cluster can launch long-range cruise missiles or Kingfisher SSAMs"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "177-179", pdf_pages: "186-188", relation: exact_equipment_stats_and_vehicle_rules}
