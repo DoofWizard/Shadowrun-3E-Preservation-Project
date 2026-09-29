@@ -1,0 +1,67 @@
+id: catalog.critters.source7124-west-africa-b
+record_type: entity_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "155"
+pdf_pages: "164"
+content_class:
+  - equipment_stat
+  - world_fact
+
+entities:
+  - id: critter.enwontzane
+    name: "Enwontzane"
+    attributes: {B: 8, Q: "3x4", S: 7, C: "-", I: "2/4", W: 4, E: "(6)", R: 4}
+    attacks: "8S2, +1 Reach"
+    powers:
+      - "Adaptive Coloration"
+
+  - id: critter.gomatia
+    name: "Gomatia"
+    attributes: {B: 6, Q: "3x1", S: 6, C: "-", I: "2/6", W: 3, E: "(6)", R: "3**"}
+    attacks:
+      - "Tongue: 6L Stun; opposed Strength Test to escape; Bite: 6M."
+    tongue_note: "A target caught by the tongue takes 1 Free Action to drag something to its mouth."
+    powers:
+      - "Adaptive Coloration"
+      - "Enhanced Senses (Smell, 360-degree vision)"
+      - "Immunity to Poisons"
+
+  - id: critter.mami-wata
+    name: "Mami Wata"
+    attributes: {B: 4, Q: "6x4", S: 6, C: "-", I: "3/5", W: 3, E: 6, R: 5}
+    attacks: "6S"
+    powers:
+      - "Enhanced Physical Attributes (Quickness, once per day, for [Essence x 2]D6 turns)"
+      - "Enhanced Senses (Improved Hearing)"
+    weaknesses:
+      - "Dietary Requirement (Alcohol)"
+
+  - id: critter.sasabonsam
+    name: "Sasabonsam"
+    attributes: {B: 7, Q: "5x5", S: 6, C: 1, I: 4, W: 5, E: "(5)", R: 4}
+    attacks: "Humanoid"
+    powers:
+      - "Enhanced Senses (Hearing, Smell)"
+    weaknesses:
+      - "Allergy (Sunlight, Moderate)"
+      - "Reduced Senses (blind or nearly so)"
+
+  - id: critter.warek
+    name: "Warek"
+    human_form:
+      attributes: {B: 5, Q: "4x5", S: 5, C: 5, I: 3, W: 3, E: "(8)", R: 5}
+      attacks: "Humanoid"
+    animal_form:
+      attributes: {B: "A+2", Q: "(A+1)x(A+1)", S: "A+2", C: 5, I: 3, W: 3, E: "(8)", R: 5}
+      attacks: "(A+1)(A)"
+      note: "When shapeshifter is in animal form, apply the animal Attributes, designated A, and add +2D6 Initiative."
+    powers:
+      - "Enhanced Physical Characteristics (animal form)"
+      - "Regeneration"
+    weaknesses:
+      - "Allergy (Gold, Severe)"
+      - "Vulnerability (Gold)"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "155", pdf_pages: "164", relation: exact_statistics}
