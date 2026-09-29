@@ -1,0 +1,48 @@
+id: rule.campaign.sotf-knowledge-procedures
+record_type: rule
+name: "Survival of the Fittest - Knowledge Procedures"
+domain: campaign
+status: ingested
+source: source.fanpro-10665
+printed_pages: "18-32"
+pdf_pages: "19-33"
+
+job:
+  objective: "Acquire the Kallisti data file from Shasta Lodge."
+  payment: {completion: "50,000¥", advance: "10,000¥"}
+
+mount_shasta_detection:
+  base_roll: "5 dice"
+  target_number: "worst Open Stealth Test result among the team"
+  frequency:
+    road_or_air: 1
+    mountain_hike: "4 checks, about one every two hours"
+  automatic_detection: "modified target number 0"
+  modifiers:
+    active_spells_or_foci: "-1 per 2 Force points unless Masked"
+    astrally_active: "-1 per 2 Magic points"
+    accompanying_spirits: "-1 per 2 Force points"
+    combat: "-1 per Combat Turn or portion"
+    artificial_light_at_night: "-1"
+    spirit_concealment: "+spirit Force"
+
+hestaby_overflight:
+  test: "Perception Test, 13 dice"
+  target_number: "team Open Stealth result, with situational modifiers"
+
+capture_contingency:
+  holding_room_ward: 8
+  ward_effects:
+    - "+8 target number to spells cast through the room boundary"
+    - "prevents astral forms and spirits from leaving"
+  retained_equipment: "items with Concealability 12+ may survive a quick search"
+  helper_identity: "Abby Nightbird"
+
+karma:
+  survive_run: 1
+  acquire_kallisti_file: 1
+  remain_undetected_during_lodge_entry: 1
+  avoid_unnecessary_casualties: 1
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "18-32", pdf_pages: "19-33"}
