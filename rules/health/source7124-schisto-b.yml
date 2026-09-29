@@ -1,0 +1,26 @@
+id: rule.health.source7124-schisto-b
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "151"
+pdf_pages: "160"
+content_class: [rule_exact, rule_procedure]
+
+treatment_in_region:
+  course_days: "30 + number of additional days equal to boxes of damage taken"
+  dose_effect: "Each dose removes 1 box of damage, beginning with Stun."
+  minimum_cost_per_dose_nuyen: 200
+  after_damage_removed:
+    - "Patient may leave the facility."
+    - "Medicine is still required for 30 days to eliminate the condition."
+
+if_remaining_doses_refused:
+  roll: "1D6 for every day remaining until total cure, up to 30 depending on prior hospital time"
+  secret_rolls_allowed: true
+  persistent_condition_if: "number of results of 1 is greater than the character's Body Rating"
+  timing: "Gamemaster may apply relapse immediately or later."
+
+treatment_outside_region:
+  facility_requirement: "best medical facilities"
+  minimum_bed_rest_days: 30
+  minimum_cost_per_dose_nuyen: 2000
