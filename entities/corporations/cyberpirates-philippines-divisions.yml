@@ -1,0 +1,156 @@
+id: catalog.corporations.cyberpirates-philippines-divisions
+record_type: entity_catalog
+name: "Cyberpirates - Philippines Corporate Divisions"
+domain: corporations
+status: ingested
+source_period: "2059"
+source: source.fasa-7124
+printed_pages: "84-86"
+pdf_pages: "85-87"
+
+entities:
+  - id: corporation.lami-look-pagkaon
+    name: "Lami Look Pagkaon"
+    translated_name: "Delicious Bay Food"
+    ceo:
+      id: person.monique-desiderio
+      name: "Monique Desiderio"
+    home_office: "Bataan"
+    business:
+      - "algae and seaweed cultivation"
+      - "shrimp and fish aquaculture"
+      - "underwater rice"
+    source_notes:
+      - "The company operates in the Moro Gulf and supplies low-cost food across much of Asia."
+      - "The source describes it as competing with Yakashima's Farm the Seas, Inc."
+      - "Its attempt to grow cactus on the sea floor is tied to a Dunkelzahn-estate award opportunity in the source period."
+
+  - id: corporation.mitsuhama-computer-technologies
+    regional_branch:
+      name: "Mitsuhama Philippines"
+      headquarters: "Cebu"
+      area_manager:
+        id: person.miruanosuke-akijui
+        name: "Miruanosuke Akijui"
+      source_notes:
+        - "The volume of Philippine business is described as large enough for MCT to operate a separate local branch."
+    principal_divisions:
+      - name: "Mitsuhama-Benguet Mining"
+        head:
+          id: person.sakurada-funado
+          name: "Sakurada Funado"
+        products_services:
+          - "gold"
+          - "bauxite"
+          - "copper"
+          - "steel"
+      - name: "Mitsuhama Militia-ware"
+        head:
+          id: person.miruanosuke-saeko
+          name: "Miruanosuke Saeko"
+        products_services:
+          - "military vehicles"
+          - "armor"
+          - "firearms"
+      - name: "Mitsuhama Automatonics"
+        head:
+          id: person.hanashima-ito
+          name: "Hanashima Ito"
+        products_services:
+          - "machine parts"
+          - "drones"
+          - "robotics"
+          - "experimental undersea drones"
+      - name: "Parashield"
+        head:
+          id: person.togami-ryo
+          name: "Togami Ryo"
+        products_services:
+          - "paranormal security"
+          - "veterinary care"
+
+  - id: corporation.renraku-computer-systems
+    regional_branch:
+      name: "Renraku Philippines"
+      division_head:
+        id: person.tev-greenwald
+        name: "Tev Greenwald"
+      area_manager:
+        id: person.aneki-hideaki
+        name: "Aneki Hideaki"
+    principal_divisions:
+      - name: "Underwater Living"
+        head:
+          id: person.nabo-mutai
+          name: "Nabo Mutai"
+        products_services:
+          - "construction and operation of two underwater laboratories"
+          - "construction and operation of one half-finished underwater city"
+    source_notes:
+      - "Claims about internal competence, personal relationships or hidden magical effects remain attributed Shadowland commentary."
+
+  - id: corporation.yamatetsu
+    regional_media:
+      name: "The Philippines Broadcasting Network"
+      ceo:
+        id: person.mateo-diokno
+        name: "Mateo Diokno"
+      home_office: "Manila"
+      source_notes:
+        - "The source identifies PBN as a locally owned Yamatetsu subsidiary operating trid and radio broadcasting."
+        - "It is described as maintaining public credibility through a mixture of corporate messaging, investigative material and Filipino history/culture programming."
+        - "Claims about covert Huk contacts, Japanese intelligence ties or future political positioning remain attributed."
+
+  - id: corporation.shiawase
+    president_ceo:
+      id: person.tadashi-shiawase
+      name: "Tadashi Shiawase"
+    home_office: "Osaka, Japan"
+    source_notes:
+      - "The source says Shiawase has at least three major and twenty or more minor executives with influence in the Philippines."
+    major_local_divisions:
+      - name: "Shiawase Envirotech"
+        head:
+          id: person.shiawase-mitsuko
+          name: "Shiawase Mitsuko"
+        products_services:
+          - "reforestation"
+          - "environmental administration"
+          - "logging"
+          - "mining"
+          - "drilling"
+      - name: "Shiawase Health and Welfare"
+        head:
+          id: person.matsudaira-choei
+          name: "Matsudaira Choei"
+        products_services:
+          - "medicines"
+          - "surgical equipment"
+          - "bioware"
+          - "hospital and health-care operations"
+      - name: "Shiawase Atomics"
+        head:
+          id: person.shimada-iku
+          name: "Shimada Iku"
+        products_services:
+          - "nuclear power"
+          - "service support for Imperial Navy submarines"
+
+  - id: corporation.shibata-construction-engineering
+    name: "Shibata Construction and Engineering"
+    abbreviation: "SCE"
+    ceo:
+      id: person.shibata-takako
+      name: "Shibata Takako"
+    home_office: "San Fernando"
+    source_notes:
+      - "The source describes SCE as having startup financing associated with Yamatetsu and continuing close work with Meta-Ergonomics."
+      - "Its projects include metahuman-scale housing and city-planning research."
+      - "Claims about executive misconduct or covert political alignment remain attributed commentary."
+
+provenance_policy:
+  - "Names, division heads and stated products/services are retained as direct source-period corporate data."
+  - "Shadowland allegations about individual motives, secret research and internal intrigue are not normalized as established facts."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "84-86", pdf_pages: "85-87", relation: regional_corporate_players}
