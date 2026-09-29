@@ -1,0 +1,24 @@
+id: reference.rules.source7124-price-index-tech-core
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact, equipment_stat]
+unit: "percent_of_Seattle_base_cost"
+regions: [Caribbean, Philippines, Gold_and_Ivory_Coasts, Arctic, Australia, Mediterranean, Southeast_Asia, South_Africa, CAS]
+
+price_index:
+  Consumer_Electronics: {Caribbean: 175, Philippines: 40, Gold_and_Ivory_Coasts: 250, Arctic: 300, Australia: 150, Mediterranean: 120, Southeast_Asia: 95, South_Africa: 100, CAS: 200}
+  Cybertech: {Caribbean: 130, Philippines: "75/300", Gold_and_Ivory_Coasts: "75/300", Arctic: 300, Australia: 90, Mediterranean: 100, Southeast_Asia: 240, South_Africa: 75, CAS: 280}
+  Biotech: {Caribbean: 140, Philippines: "75/300", Gold_and_Ivory_Coasts: "75/400", Arctic: 300, Australia: 100, Mediterranean: 180, Southeast_Asia: 150, South_Africa: 80, CAS: 90}
+  Medtech: {Caribbean: 130, Philippines: 60, Gold_and_Ivory_Coasts: "10/400", Arctic: 250, Australia: 100, Mediterranean: 175, Southeast_Asia: 200, South_Africa: 100, CAS: 100}
+  Cyberdecks: {Caribbean: 250, Philippines: "75/120", Gold_and_Ivory_Coasts: "NA", Arctic: "400+", Australia: 180, Mediterranean: 120, Southeast_Asia: 220, South_Africa: 250, CAS: 350}
+  Magic: {Caribbean: 210, Philippines: 175, Gold_and_Ivory_Coasts: 50, Arctic: 70, Australia: 90, Mediterranean: 180, Southeast_Asia: 90, South_Africa: 90, CAS: 250}
+  Raw_Materials: {Caribbean: 200, Philippines: 80, Gold_and_Ivory_Coasts: 50, Arctic: 80, Australia: 90, Mediterranean: 250, Southeast_Asia: 100, South_Africa: 50, CAS: 95}
+
+notes:
+  - "Medtech Gold and Ivory Coasts 10/400 is a deliberate split value and must remain split."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
