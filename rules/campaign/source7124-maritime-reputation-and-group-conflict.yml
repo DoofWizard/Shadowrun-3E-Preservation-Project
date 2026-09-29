@@ -1,0 +1,50 @@
+id: rule.campaign.source7124-maritime-reputation-and-group-conflict
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "140-141"
+pdf_pages: "149-150"
+content_class:
+  - rule_procedure
+  - rule_exact
+  - campaign_guidance
+
+reputation:
+  skill_test: "Etiquette Test using the most appropriate Etiquette form (examples in source: Gang, Street, Maritime)"
+  target_number_by_rival_reputation:
+    Inferior_or_Unknown: 6
+    Equal: 5
+    Superior: 4
+    Superhuman: 3
+  interpretation:
+    successes_0_to_3: "reveals the rival's self-promoted reputation"
+    successes_4_plus: "reveals the real reputation"
+  note: "The source treats reputation among maritime groups as analogous to gang ratings in Shadowrun Companion, but modified by how heavily a group promotes itself."
+
+large_group_conflict_abstraction:
+  name: "Pirate Wars"
+  timing:
+    start_of_each_combat_turn:
+      procedure: "Roll 1D6 for each side."
+      results:
+        "1-2": "A serious setback occurs to that side."
+        "3-4": "That side's status is unchanged."
+        "5-6": "That side gains a major advantage against an opponent."
+    end_of_each_combat_turn:
+      procedure: "Make an opposed Success Test."
+      dice_pool: "Each side rolls dice equal to its number of combatants."
+      target_numbers: "Alter target numbers according to the difference in power between the groups."
+      effect: "Each success rolled by either side incapacitates one member of the enemy crew."
+  named_npcs:
+    - "The gamemaster should run important non-player characters such as an opposing captain or leader and a few top henchmen outside this abstraction."
+    - "The gamemaster may adjudicate an outcome without rolling when needed to avoid strange or implausible results."
+  note: "The procedure is explicitly a large-group simplification for situations that would otherwise require mass combat."
+
+karma_guidance:
+  - "The source allows normal Karma rules and the cash-for-karma option from Shadowrun Companion."
+  - "As an alternative, Karma can be awarded for maintaining Reputation and for stylish or reputation-saving/enhancing actions."
+  - "For aggressive self-directed crews, award Karma for objectives they set for themselves; the source otherwise points to standard Karma rules in SRII p.190."
+  - "The gamemaster may award Karma for spontaneous encounters, long-term plans, successful raids, and successful smuggling when those are meaningful accomplishments in play."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "140-141", pdf_pages: "149-150", relation: defines}
