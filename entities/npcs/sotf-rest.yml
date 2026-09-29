@@ -1,0 +1,119 @@
+id: catalog.npcs.sotf-rest
+record_type: entity_catalog
+name: "Survival of the Fittest - Rest cast"
+domain: npcs
+status: ingested
+source: source.fanpro-10665
+printed_pages: "95-105"
+pdf_pages: "96-106"
+
+entities:
+  - id: npc.sotf.mad-merc
+    name: "Mad Merc"
+    role: "wraith-influenced former mercenary"
+    stats:
+      body: 4
+      quickness: "3 (5)"
+      strength: "5 (7)"
+      charisma: 2
+      intelligence: 3
+      willpower: 3
+      essence: "1.5"
+      reaction: "4 (6)"
+      initiative: "4 (6) + 1D6 (2D6)"
+      karma_professional_rating: "0/4"
+      skills: ["Athletics 3","Car 3","Cyber-Implant Combat 5","Pistols 5","Rifles 5","Stealth 3"]
+      cyberware: ["Cybereyes (Low-Light and Thermal)","Muscle Replacement 2","Spur (Retractable)","Wired Reflexes 1"]
+      armor: "Armor Jacket 5/3"
+  - id: npc.sotf.farah-al-pasha
+    name: "Farah Al-Pasha"
+    type: "specter"
+    role: "ghost leader"
+    stats:
+      body: 6
+      quickness: "7 x 3"
+      strength: 3
+      charisma: 5
+      intelligence: 5
+      willpower: 5
+      essence: "5A"
+      reaction: 6
+      initiative: "16 + 1D6; astral 25 + 1D6"
+      pools: "Astral Combat 7, Combat 8"
+      force: 5
+      attack: "3M"
+      powers: ["Fear","Materialization","Paralyzing Touch","Possession","Psychokinesis"]
+  - id: npc.sotf.mack-donnelley
+    name: "Mack Donnelley"
+    type: "mercenary"
+    role: "rival expedition leader"
+    stats:
+      body: "5 (7)"
+      quickness: "4 (6)"
+      strength: "6 (8)"
+      charisma: 4
+      intelligence: 4
+      willpower: 4
+      essence: "1.05"
+      reaction: "4 (6)"
+      initiative: "4 (6) + 1D6 (2D6)"
+      pools: "Combat 6 (7)"
+      karma_professional_rating: "4/4"
+      skills: ["Etiquette 1 (Mercenary 3)","Heavy Weapons 6","Launch Weapons 4","Pistols 4","Rifles 6","Stealth 2 (Urban 4)","Unarmed Combat 6"]
+      cyberware: ["Boosted Reflexes 2","Electronic Vision Magnification 3","Flare Compensation","Muscle Replacement 2","Smartlink","Titanium Bone Lacing"]
+      armor: "Armor Jacket 5/3; Titanium Bone Lacing 1/1"
+  - id: npc.sotf.mack-donnelley-merc
+    name: "Donnelley's Men"
+    count: 4
+    role: "mercenary team"
+    stats:
+      body: "4 (5)"
+      quickness: "4 (6)"
+      strength: "4 (6)"
+      charisma: 2
+      intelligence: 3
+      willpower: 4
+      essence: "1.75"
+      reaction: "3 (4)"
+      initiative: "3 (4) + 1D6 (2D6)"
+      pools: "Combat 5 (6)"
+      karma_professional_rating: "2/3"
+  - id: npc.sotf.musa-muqla
+    name: "Musa Muqla"
+    role: "spiritual leader"
+    stats:
+      body: 3
+      quickness: 3
+      strength: 3
+      charisma: 6
+      intelligence: 4
+      willpower: 6
+      essence: 6
+      magic: 8
+      reaction: 3
+      initiative: "3 + 1D6"
+      pools: "Combat 6, Spell 6"
+      skills: ["Aura Reading 4","Clubs 4","Conjuring 4 (Banishing 8)","Etiquette 3 (Muslim 5)","Intimidation 4","Leadership 4","Negotiation 3","Pistols 4","Sorcery 5 (Spell Defense 7)"]
+      metamagic: ["Masking","Shielding"]
+      initiation: "Grade 2"
+      armor: "Lined Coat 4/2"
+  - id: npc.sotf.musa-follower
+    name: "Musa Muqla's Followers"
+    role: "follower group"
+    stats:
+      body: 4
+      quickness: 4
+      strength: 4
+      charisma: 2
+      intelligence: 3
+      willpower: 3
+      essence: 6
+      reaction: 3
+      initiative: "3 + 1D6"
+      pools: "Combat 5"
+      karma_professional_rating: "1/3"
+      skills: ["Assault Rifles 3","Etiquette 1 (Muslim 3)","Pistols 3","Stealth 2 (Urban 4)","Unarmed Combat 4"]
+      armor: "Lined Coat 4/2"
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "95-105", pdf_pages: "96-106", relation: defines_stats}
