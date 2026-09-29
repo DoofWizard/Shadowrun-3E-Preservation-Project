@@ -1,0 +1,44 @@
+id: reference.matrix.target-matrix-anomalies
+record_type: reference
+name: "Target: Matrix - Open Forum: Anomalies"
+domain: matrix
+status: ingested
+source_period: "2060"
+source: source.fasa-7219
+printed_pages: "106-113"
+pdf_pages: "107-114"
+
+framing:
+  - "The chapter is intentionally presented as an in-universe discussion of reported Matrix anomalies."
+  - "Accounts are not converted into established facts unless later Game Information explicitly supplies mechanics."
+
+reported_topics:
+  - id: anomaly.alice
+    name: "Alice"
+    description: "Reported autonomous or AI-like Matrix entity associated with unusual interactions and claims of continuity beyond a normal persona."
+  - id: anomaly.roxborough
+    name: "Thomas Roxborough / reported Matrix manifestations"
+    description: "Reports concerning unusual Matrix appearances, identity continuity, and behavior linked to Roxborough."
+  - id: anomaly.resonance-wells
+    name: "Resonance wells"
+    description: "Reported locations in the Matrix associated with unusual resonance-like effects or experiences."
+  - id: anomaly.scire
+    name: "SCIRE / Renraku Arcology remnants"
+    description: "Reports of surviving or hidden systems, unusual code, and post-Arcology phenomena."
+  - id: anomaly.deep-resonance
+    name: "Deep Resonance"
+    description: "Speculative concept used by posters to explain otaku and unexplained Matrix phenomena."
+  - id: anomaly.code-tribes
+    name: "independent code/program communities"
+    description: "Claims that autonomous code populations or self-maintaining program communities may exist."
+  - id: anomaly.virtual-personality-transfer
+    name: "personality / consciousness transfer"
+    description: "Reports and speculation about copied, transferred, or persistent minds in the Matrix."
+
+normalization_policy:
+  - "Treat all of the above as attributed reports/speculation at this point in the source."
+  - "Do not infer an AI, Resonance, otaku, or consciousness-transfer rule from the forum discussion alone."
+  - "Any explicit mechanics from later sources should be linked as separate rules with lineage rather than retroactively converting these reports into fact."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "106-113", pdf_pages: "107-114", relation: attributed_source_period_reporting}
