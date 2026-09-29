@@ -1,0 +1,70 @@
+id: rule.matrix.target-matrix-organizations
+record_type: rule
+name: "Target: Matrix - Organization and Gang Procedures"
+domain: matrix
+status: ingested
+source: source.fasa-7219
+printed_pages: "129-131"
+pdf_pages: "130-132"
+
+ccma_god:
+  grid_overwatch_personnel: "Equal and Trained unless source/campaign indicates otherwise."
+  use:
+    - "CCMA may investigate corporate Matrix activity through audits, hired runners, or corporate-law actions."
+    - "Grid Overwatch Division acts as its policing arm and may pursue Matrix offenders across international/corporate boundaries."
+    - "Internal loyalties of G-men may vary with prior megacorporate affiliations."
+
+dead_deckers_society:
+  model:
+    - "Approximately a dozen elite deckers with high-grade gear and a network of safehouses/contacts."
+    - "Can be rivals, employers, or high-cost specialist allies."
+    - "Services are intentionally not a universal solution for runner problems."
+
+exchange:
+  model:
+    - "Anonymous barter/task network coordinated through the Matrix."
+    - "Assignments arrive through distinctive pocket-secretary intermediaries."
+    - "Rewards may take the form of reciprocal assistance rather than direct cash."
+  pocket_secretary:
+    scanner: "Rating 6"
+    communications: "forged MSP account and protected relay chain"
+    note: "Exact identity/agenda of Exchange remains deliberately undefined for gamemaster use."
+
+schockwellenreiter:
+  npc_rating: ["Equal","Trained"]
+  model:
+    - "Extended hacker collective that can act as allies, support contacts, or principled opposition."
+    - "Members may work alone or in groups and provide technical support, investigation, encryption and anti-worm software."
+
+matrix_gangs:
+  troglobytes:
+    gang_focus: "metahuman-oriented third-tier gang, primarily orks and trolls"
+    leader: "Lord Bunny"
+    lieutenants: "None"
+    gang_rating: "Inferior"
+    head_count: "approximately 12-15"
+    territory: "none; roams Matrix"
+    operations: ["pirated software","low-end cyberdeck repair/construction","occasional vandalism"]
+  architects:
+    gang_focus: "third-tier otaku gang focused on reshaping Matrix and metahuman bodies"
+    leader_lieutenants: "none known"
+    gang_rating: "Equal"
+    head_count: "approximately 20-30"
+    initiation_rituals: "None other than being an otaku dedicated to the Master Plan."
+    territory: "virtual world generally"
+    operations: ["extensive vandalism","attempted Matrix restructuring","intrusion into hospitals/cyberware clinics to alter surgical plans"]
+  terminal_cases:
+    gang_focus: "third-tier extremist gang focused on pain/death themes"
+    leader: "Terminus"
+    lieutenants: ["Negative Gain","Terminus' slave"]
+    gang_rating: "Inferior"
+    head_count: "approximately 15-20"
+    territory: "none; roams Matrix"
+    operations:
+      - "stalking/tracing targets"
+      - "psychotropic programming"
+      - "distribution of illicit BTL material"
+    initiation: "new recruits are subjected to gang-specific abuse/conditioning; details retained only as source-period characterization, not as a recommended procedure"
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "129-131", pdf_pages: "130-132", relation: defines_campaign_procedures}
