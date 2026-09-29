@@ -1,0 +1,53 @@
+id: rule.matrix.target-matrix-data-havens
+record_type: rule
+name: "Target: Matrix - Data Haven Procedures"
+domain: matrix
+status: ingested
+source: source.fasa-7219
+printed_pages: "120-122"
+pdf_pages: "121-123"
+
+general:
+  - "Data-haven contact upkeep may be purchased during character creation under standard contact rules."
+  - "No universal security sheaf is provided because haven security changes frequently; gamemaster sets current security."
+
+shadowland:
+  discovery: "Best reached through reputation, contacts and instructions/passcodes rather than brute-force discovery."
+  security: "Nodes use independent security with checkpoints; security deckers remain ready and IC is normally configured aggressively."
+  architecture: "Nodes are mirrored/backed up through the Nexus so one node's loss does not remove information availability."
+
+nexus:
+  access:
+    - "Reach through a Shadowland node."
+    - "Pass operator/security approval and supply valid passcodes."
+    - "Circumventing procedures triggers active alerts and aggressive IC/security deckers."
+
+asgard:
+  connection: "Use Satellite Uplink rules."
+  density_modifier: 4
+  connection_window: "two hours per day"
+  market:
+    - "Users may buy or sell data through anonymous accounts."
+    - "Asgard keeps roughly 40-80% of purchase price as commission."
+    - "Unsold/unauctioned data older than two weeks is archived and searchable for a fee."
+  services: ["electronic drop-box","satellite surveillance"]
+
+azziewatch:
+  focus: "Aztlan/Aztechnology intelligence and regional border/troop information."
+  security_context: "Frequent hostile attempts are expected; gamemaster should treat the haven as a high-risk target."
+
+helix:
+  public_access: "Address can be used like a public host; checkpoint trace is performed against persona."
+  visitor_privileges:
+    - "Limited personal-account privileges."
+    - "Can read files."
+    - "Upload Data does not automatically succeed."
+    - "Download Data succeeds only for items made available."
+  registered_users: "Normal personal-account privileges; no automatic trace on login."
+
+other_havens:
+  - "Kalinin, Manchester, Morgue and Mosaic are described as specialized regional/research havens."
+  - "Their distinctive content and access conditions should be preserved as setting constraints; no additional universal numeric mechanic is specified in this range."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "120-122", pdf_pages: "121-123", relation: defines_rules}
