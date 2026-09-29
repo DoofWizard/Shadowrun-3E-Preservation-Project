@@ -1,0 +1,21 @@
+id: reference.rules.source7124-price-index-transport-basics
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact, equipment_stat]
+unit: "percent_of_Seattle_base_cost"
+regions: [Caribbean, Philippines, Gold_and_Ivory_Coasts, Arctic, Australia, Mediterranean, Southeast_Asia, South_Africa, CAS]
+
+price_index:
+  Vehicles: {Caribbean: 150, Philippines: 500, Gold_and_Ivory_Coasts: 110, Arctic: 200, Australia: 100, Mediterranean: 75, Southeast_Asia: 150, South_Africa: 205, CAS: 75}
+  Aircraft: {Caribbean: 90, Philippines: 200, Gold_and_Ivory_Coasts: "75/NA", Arctic: 250, Australia: 90, Mediterranean: 150, Southeast_Asia: 400, South_Africa: 130, CAS: 200}
+  Boats: {Caribbean: 60, Philippines: 90, Gold_and_Ivory_Coasts: 75, Arctic: 180, Australia: 80, Mediterranean: 90, Southeast_Asia: 80, South_Africa: 110, CAS: 75}
+  Water: {Caribbean: 120, Philippines: 100, Gold_and_Ivory_Coasts: 140, Arctic: 10, Australia: "100/200", Mediterranean: 100, Southeast_Asia: 90, South_Africa: 80, CAS: 100}
+  Food: {Caribbean: 90, Philippines: 100, Gold_and_Ivory_Coasts: 80, Arctic: 140, Australia: 100, Mediterranean: 160, Southeast_Asia: 90, South_Africa: 100, CAS: 90}
+  Synthfood: {Caribbean: 20, Philippines: 120, Gold_and_Ivory_Coasts: 140, Arctic: 200, Australia: 90, Mediterranean: 90, Southeast_Asia: 70, South_Africa: 110, CAS: 110}
+  Animals: {Caribbean: 120, Philippines: 80, Gold_and_Ivory_Coasts: 50, Arctic: 200, Australia: 150, Mediterranean: 90, Southeast_Asia: 60, South_Africa: 290, CAS: 150}
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
