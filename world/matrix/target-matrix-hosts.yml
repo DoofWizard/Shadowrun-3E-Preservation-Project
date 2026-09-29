@@ -1,0 +1,107 @@
+id: world.matrix.target-matrix-hosts
+record_type: world
+name: "Target: Matrix - Hosts"
+domain: matrix
+status: ingested
+source_period: "2060"
+source: source.fasa-7219
+printed_pages: "66-81"
+pdf_pages: "67-82"
+
+scope:
+  - "Examples of Matrix hosts outside the major corporate/public systems covered earlier in the book."
+  - "The chapter emphasizes how host purpose, clientele, operator culture, and architecture shape access and security."
+
+hosts:
+  hacker_house:
+    security_code: "Red-Hard"
+    role: "software and code marketplace"
+    operating_model:
+      - "Sells software through catalog-style distribution."
+      - "Maintains a membership/account model and offers custom programming."
+      - "Combines legitimate, gray-market, and illicit offerings."
+    security_character:
+      - "Strong protection of proprietary code, accounts, and customer activity."
+      - "Internal culture rewards technical reputation."
+  lone_star:
+    security_code: "Blue-Average to Red-Hard"
+    role: "law-enforcement Matrix infrastructure"
+    structure:
+      - "Public-access and administrative systems coexist with restricted operational hosts."
+      - "Records, dispatch, investigations, and specialized functions are separated by access level."
+    security_character:
+      - "Restricted systems are protected more heavily than public-facing services."
+      - "Interagency and jurisdictional boundaries affect information access."
+  malaysian_independent_bank:
+    security_code: "Green-Average to Blue"
+    role: "banking and financial-services host"
+    structure:
+      - "Public customer-service area."
+      - "Internal banking operations."
+      - "More restricted private-client and transaction systems."
+    security_character:
+      - "Financial records and high-value accounts receive additional protection."
+      - "The institution also uses data-haven-like storage and archive services."
+  peoples_university:
+    security_code: "Orange-Easy"
+    role: "independent educational network"
+    operating_model:
+      - "Volunteer instructors and distributed courses."
+      - "Provides Matrix-based education and selected real-world instruction."
+      - "Open-access ethos coexists with basic operational security."
+    campaign_use:
+      - "Useful source of training, specialist instruction, and contacts."
+  zurich_orbital:
+    security_code: "Red-Hard"
+    role: "Zurich-Orbital corporate and financial host"
+    access:
+      - "Requires authorized satellite uplink and restricted access routes."
+      - "Access is tightly controlled and not intended for casual public use."
+    architecture:
+      - "Separate sections support banking, corporate administration, and habitat operations."
+    security_character:
+      - "Extremely sensitive corporate/financial records and habitat systems are compartmented."
+  matrix_clubs:
+    model:
+      - "Social/entertainment hosts use immersive themes and specialized sensory programming."
+      - "Security varies widely with clientele and operator purpose."
+    examples:
+      cube:
+        security_code: "Orange-Hard"
+        theme: "exclusive social/meeting club"
+      schwarzwald_radiance:
+        security_code: "Orange-Average"
+        theme: "underground club and music venue"
+      killing_floor:
+        security_code: "Orange-Average"
+        theme: "competitive simulated combat entertainment"
+      moonlight_hentai_garden:
+        security_code: "Red-Average"
+        theme: "adult entertainment host"
+      nasty_habits:
+        security_code: "Red-Easy"
+        theme: "adult entertainment host"
+
+matrix_games:
+  dawn_of_atlantis:
+    model:
+      - "Persistent multiplayer fantasy role-playing environment."
+      - "Players assume fantasy roles and participate in a continuing shared setting."
+  paranormal_crisis:
+    model:
+      - "Survival-horror/action game using simulated encounters with paranormal threats."
+      - "Designed for replay and multiple scenarios."
+  general:
+    - "Commercial Matrix games can maintain persistent worlds, recurring player communities, and specialized interfaces."
+    - "Game-host security and user policies are distinct from in-game challenge mechanics."
+
+operational_principles:
+  - "Host color/security labels in this chapter are source-period host descriptions and do not supersede core SR3 host-generation or intrusion rules."
+  - "Public areas and low-level accounts should not be treated as authorization for deeper host sections."
+  - "Financial, police, corporate, and entertainment hosts differ substantially in monitoring, user identity requirements, and tolerance for anonymous access."
+
+provenance_policy:
+  - "Shadowtalk claims about hidden activities, vulnerabilities, criminal ties, or operator motives remain attributed."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "66-81", pdf_pages: "67-82", relation: defines_world_state}
