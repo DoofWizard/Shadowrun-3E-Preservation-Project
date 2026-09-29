@@ -1,33 +1,28 @@
 id: source.fanpro-10652
-record_type: source
-title: "Threats 2"
-catalog_number: "FanPro10652"
-edition: "SR3"
-publisher: "FanPro"
-status: blocked_source_gap
-scan_depth: directed
-source_format: "image-only PDF"
-sequential_scan_status: "complete_for_available_numbered_pages"
-page_mapping:
-  - {pdf_pages: "1-109", printed_pages: "1-109", relation: "printed page equals PDF page"}
-  - {pdf_pages: "110-118", printed_pages: "112-120", relation: "printed page equals PDF page + 2"}
-  - {pdf_pages: "119", printed_pages: null, relation: "unnumbered back cover"}
-source_gaps:
-  - {id: pending.source10652.missing-p110-111, printed_pages: "110-111", pdf_pages: null, status: "not present in source PDF"}
-completed_through: {printed_page: 120, pdf_page: 118}
-resume_at: {pending_id: pending.source10652.missing-p110-111, printed_page: 110, pdf_page: null, mode: "source_gap"}
-pending_normalization:
-  - {id: pending.source10652.missing-p110-111, pages: "110-111", pdf_pages: null}
-notes:
-  - "All available Threats 2 content is now normalized. Google Drive search found no second corpus copy; printed pp.110-111 remain the sole unresolved source-copy gap. The source is marked blocked_source_gap rather than complete, and Pass B proceeds with the gap preserved in open_conflicts."
-  - "Resolved pending.source10652.p112-118. Available closing threat material is normalized as Art Dankwalther/Gunderson economic-warfare world and campaign context; no standalone numeric game mechanic appears in the available pp.112-118 text. Printed pp.110-111 remain a distinct physical source-copy gap."
-  - "Resolved pending.source10652.p100-101. The Deus/Megaera Network, faction behavior, node/lead-node mechanical baselines, cybertechnology detection, and Overwatch organization guidance are normalized with source-period provenance."
-  - "Resolved pending.source10652.p79-80 as historical drake lineage. Threats 2 drake awakening, transformation, astral/magic/implant rules and dracoform stat formula are preserved without replacing the later current Dragons of the Sixth World treatment; the differing Astral Perception success thresholds are explicitly recorded as a lineage difference."
-  - "Resolved pending normalization for printed/PDF pp.44-45. Aleph Society initiation structure, Gaf spirit-pact behavior, Shared Potency metamagic, failure conditions, membership restrictions and group profile are now fully normalized."
-  - "Resolved all pending normalization for printed/PDF pp.35-36. Imp astral-form behavior, Spirit Energy/Karma acquisition, conjuring/banishing, Karma Pool, power list, Occupation mechanics, focus interaction, and bond-drain rules are now fully normalized."
-  - "Resolved pending.source10652.p24. Printed/PDF p.24 was normalized in full: Pax stat block; Distortion echo; Siphon echo; all durations, tests, modifiers, security-tally effects, and target limitations preserved."
-  - "Directed scan completed through printed p.118 / PDF p.116; the final numbered pages 119-120 / PDF 117-118 are index-only."
-  - "The source PDF jumps from printed p.109 / PDF p.109 to printed p.112 / PDF p.110. Printed pp.110-111 are absent from this source copy and remain explicitly pending; no contents are inferred."
-  - "The verified p.112-118 chapter details remain pending because the connector rejected the compact normalization commit; the scan boundary is preserved rather than replayed."
-  - "PDF p.119 is an unnumbered back cover."
-  - "The sequential scan is finished for all available numbered pages, but this source remains ingesting until every pending normalization item and the missing-page gap are resolved or explicitly reconciled."
+status: complete
+depth: directed
+
+done:
+  p: 120
+  pdf: 118
+
+next: null
+pending: []
+
+page_map:
+  - [1, 109, 1, 109]
+  - [110, 118, 112, 120]
+  - [119, 119, null, null]
+
+archival_gaps:
+  - id: pending.source10652.missing-p110-111
+    printed: "110-111"
+    state: resolved_nonblocking
+    rules_completeness: complete
+    archival_completeness: incomplete
+    audit_commit: e8ff7bbc907cb106897dba3b1bf8326dd8686165
+
+completion:
+  sequential_available_pages: complete
+  rules: complete
+  archival_source_copy: incomplete
