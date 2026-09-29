@@ -1,0 +1,132 @@
+id: rule.magic.source7124-african-totems
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "152-154"
+pdf_pages: "161-163"
+content_class: [rule_exact, character_option]
+
+general_rule:
+  - "Any shaman may conjure ancestor spirits regardless of totem."
+  - "To do so, remove one Conjuring bonus granted by the totem and replace it with a bonus for conjuring ancestor spirits."
+  - "Caribbean shamans with African ancestry may also select these African totems."
+
+totems:
+  Agwengwere_Hyena:
+    favored_environment: Savannah
+    advantages:
+      - "+2 dice for combat spells"
+      - "+2 dice to Banishing"
+    disadvantages:
+      - "-1 die for health spells"
+      - "Willpower (4) Test required to perform an action with no benefit to the shaman"
+
+  Anansi_Spider:
+    favored_environment: "Quiet, dark places where few ever look"
+    advantages:
+      - "+1 die for illusion spells"
+      - "+1 die for manipulation spells"
+      - "+1 die for conjuring spells"
+    disadvantages:
+      - "+2 target-number modifier for Magic Tests in open areas"
+      - "+1 target-number modifier when the shaman lacks time to consider a situation, at gamemaster discretion"
+
+  Asenna_Bat:
+    favored_environment: Anywhere
+    advantages:
+      - "+2 dice for detection spells"
+      - "+2 dice for manipulation spells"
+      - "+1 die for conjuring Spirits of the Sky"
+    disadvantages:
+      - "+2 to all magical target numbers in direct sunlight"
+      - "Roleplaying limitation: becomes distracted and irritable after remaining in one place more than a week"
+
+  Awoba_Leopard:
+    favored_environment: "Forest and savannah"
+    advantages:
+      - "+2 dice for combat spells"
+      - "+2 dice for health spells"
+      - "+2 dice for conjuring nature spirits during hours of darkness"
+    disadvantages:
+      - "-1 die for Spell Resistance Tests against illusion spells"
+      - "Must intervene if family is threatened and may not test to avoid that responsibility"
+
+  Danwane_Dove:
+    favored_environment: "Forests and savannah"
+    advantages:
+      - "+2 dice for health spells"
+      - "+1 die for detection spells"
+      - "+1 die for conjuring Spirits of the Sky"
+    disadvantages:
+      - "Cannot cast combat spells"
+      - "Successful Willpower (4) Test required before intentionally causing a metahuman's death"
+
+  Nau_Crocodile:
+    favored_environment: "On or by the sea and rivers"
+    advantages:
+      - "+2 dice for combat spells"
+      - "+1 die for illusion spells"
+      - "+2 dice for conjuring sea and river spirits"
+    disadvantages:
+      trigger: "When wounded in combat or after defeating a target lethally"
+      test: "Willpower Test against injury-modified Target Number 3"
+      berserk_on: "2 or fewer successes"
+      duration: "maximum 3 turns, reduced by the number of successes"
+      behavior: "attacks the closest living target with the most powerful physical or magical weapon available"
+
+  Onini_Python:
+    favored_environment: Jungle
+    advantages:
+      - "+2 dice for health spells"
+      - "+2 dice for manipulation spells"
+      - "+2 dice for conjuring jungle spirits"
+    disadvantages:
+      - "Successful Willpower (6) Test required to quit combat or any ongoing activity"
+
+  Osebo_Cheetah:
+    favored_environment: Savannah
+    advantages:
+      - "+2 dice for combat spells"
+      - "+2 dice for conjuring savannah (prairie) spirits"
+    disadvantages:
+      - "-1 die for health spells"
+      - "Minimum natural Reaction 4"
+
+  Owoh_Cobra:
+    favored_environment: Jungle
+    advantages:
+      - "+2 dice for combat spells"
+      - "+2 dice for illusion spells"
+      - "+1 die for conjuring jungle spirits"
+    disadvantages:
+      - "Cannot choose Stun combat; the shaman must abstain or use lethal combat."
+      - "If surprised, +1 modifier to all target numbers throughout combat"
+
+  Sase_Jackal:
+    favored_environment: Savannah
+    advantages:
+      - "+2 dice for detection spells"
+      - "+2 dice for illusion spells"
+      - "+2 dice for conjuring savannah (prairie) spirits"
+    disadvantages:
+      - "-1 die for all combat spells"
+
+  Wurega_Parrot:
+    favored_environment: Jungle
+    advantages:
+      - "+2 dice for illusion spells"
+      - "+2 dice for conjuring jungle spirits"
+    disadvantages:
+      - "+1 modifier to magical target numbers when the shaman lacks an appreciative audience"
+
+revised_local_names:
+  Agona_Crow: "use Raven statistics"
+  Anlo_Shark: "use Shark statistics"
+  Glbwegen_Lion: "use Lion statistics"
+  Gwobeag_Dog: "use Dog statistics"
+  Kpwire_Mouse: "use Gecko statistics"
+  Oyoko_Falcon: "use Eagle statistics"
+  Weme_Deer_Antelope: "use Horse statistics"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "152-154", pdf_pages: "161-163", relation: defines}
