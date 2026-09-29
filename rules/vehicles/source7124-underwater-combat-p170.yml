@@ -1,0 +1,25 @@
+id: rule.source7124.underwater-vehicle-combat-p170
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "170"
+pdf_pages: "179"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+thermocline_targeting:
+  known_target_across_thermocline:
+    blind_fire_modifier: 8
+    reference: "SRII p.89 Blind Fire"
+
+guided_torpedoes:
+  guidance_link: "fiber-optic cable from launching vessel"
+  base_rule: "same ship-combat rules as antiship missiles"
+  remote_direct_control_while_cable_intact: true
+  cable_broken:
+    control_lost: true
+    uncontrolled_resolution_reference: "Rigger 2 p.60 Area Effect Attacks"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "170", pdf_pages: "179", relation: exact_rule}
