@@ -403,6 +403,6 @@ When writing source material through external connectors, use compact reference-
 - Keep manifests and checkpoints administrative and machine-oriented.
 - Never treat successful connector passage as evidence that a rule may be simplified; validation is against the source, not the filter.
 
-## Known unresolved source-copy gaps
+## Known archival source-copy gaps
 
-- `pending.source10652.missing-p110-111`: *Threats 2* printed pp.110-111 are absent from the current corpus PDF. Preserve this conflict across checkpoints and source transitions. The user may supply another copy later; do not infer or synthesize the missing pages, and do not let this gap block unrelated Pass B progress.
+- `pending.source10652.missing-p110-111`: *Threats 2* printed pp.110-111 are physically absent from the current corpus PDF. A 2026-09-29 project audit verified that the explicit GAME INFORMATION section of the final chapter begins on printed p.118 and that the missing pp.110-111 are therefore not treated as a rules-completeness blocker. Do not infer or synthesize their missing narrative/world content. Reopen this archival gap only if another source copy containing pp.110-111 becomes available or new evidence indicates rules-bearing material existed there. Audit: `references/audits/source10652-gap-p110-111.yml`.
