@@ -1,0 +1,102 @@
+id: catalog.organizations.cyberpirates-philippines-state-yakuza
+record_type: entity_catalog
+name: "Cyberpirates - Philippines State and Yakuza Players"
+domain: organizations
+status: ingested
+source_period: "2059"
+source: source.fasa-7124
+printed_pages: "81-84"
+pdf_pages: "82-85"
+
+entities:
+  - id: government.imperial-prefecture-philippines
+    name: "Imperial Government of the Prefecture of the Philippine Islands"
+    type: government
+    governor:
+      id: person.fukatsu-saru
+      name: "Fukatsu Saru"
+    source_notes:
+      - "The source describes the Philippines as remaining under the martial-law framework declared in 2026."
+      - "The prefectural assembly and governor report to the Japanese prime minister and emperor while administering local legislation."
+      - "An open presidential election scheduled for February 2059 is described as the first in thirty years."
+    election_players:
+      - id: organization.liberal-catholic-voters-party
+        name: "Liberal Catholic Voter's Party"
+        candidate:
+          id: person.carlos-consuni
+          name: "Carlos Consuni"
+        source_notes:
+          - "Consuni is described as a former drama-sim performer associated with Backbone Productions/Yakashima Entertainment."
+          - "Claims about megacorporate backing and internal party influence remain attributed commentary."
+
+  - id: government.philippines-ministry-environmental-resources
+    name: "Ministry of Environmental Resources"
+    type: government_agency
+    source_notes:
+      - "The source assigns the ministry twenty-two percent of prefectural government funding."
+      - "Its stated missions include hazardous-waste reduction, atmospheric protection, logging limits and reforestation of the Visayan islands."
+      - "Shadowland accusations of corporate capture or selective enforcement remain attributed."
+
+  - id: organization.imperial-marines-philippines
+    name: "Imperial Marines - Philippines"
+    type: military_force
+    commander:
+      id: person.mishina-daini
+      name: "Mishina Daini"
+      rank: "Vice Admiral"
+    source_notes:
+      - "The source traces the Imperial Marines to Japan's 2006 military reorganization known as the Big Switch."
+      - "The Philippine occupation force is described as approximately 60,000 Imperial Marine troops, nearly 300,000 logistical-support personnel and about 15,000 air and naval personnel."
+      - "The Marines specialize in amphibious operations and securing naval bases."
+      - "Commentary concerning future escalation, covert foreign training or Daini's private intentions remains attributed."
+
+  - id: organization.sumiyoshi-kai-philippines
+    name: "Sumiyoshi-Kai - Philippines"
+    type: yakuza_network
+    oyabun:
+      id: person.asako-white-powder-tsuburu
+      name: "Asako 'White Powder' Tsuburu"
+    source_notes:
+      - "The source presents the Philippine branch as relatively small in local personnel but internationally connected."
+      - "It is associated with smuggling and distribution networks linking mainland Asian suppliers, controlled goods and independent pirate buyers."
+      - "Competition with Huk-linked networks is a recurring source-period issue."
+      - "Claims about dragon influence or hidden sponsorship remain attributed Shadowland speculation."
+
+  - id: organization.ichiwa-kai
+    name: "Ichiwa-kai"
+    type: yakuza_network
+    oyabun:
+      id: person.hasegawa-hasei
+      name: "Hasegawa Hasei"
+    major_bases:
+      - "Manila"
+      - "Olangapo"
+      - "San Fernando"
+    senior_personnel:
+      - {id: person.daigo-ieharu, name: "Daigo Ieharu", role: "wakagashira / operations coordinator"}
+      - {id: person.cristina-roxas, name: "Cristina Roxas", role: "physical adept and primary enforcer"}
+    source_notes:
+      - "The chapter estimates that the Ichiwa-kai controls at least sixty percent of on-land, non-Revolution organized crime; this is a source-period estimate."
+      - "Its businesses include gambling, protection/extortion and other illicit vice markets."
+      - "Hasegawa is portrayed as delegating day-to-day activity to Daigo Ieharu."
+
+  - id: business.bahay-ng-isda
+    name: "Bahay ng Isda"
+    type: restaurant_chain
+    locations:
+      - "nine restaurants in Manila"
+      - "Puerto Princesa"
+      - "San Fernando"
+      - "Quezon City"
+    management:
+      - "The Leyvas extended family is described as operating the restaurants."
+    source_notes:
+      - "The chapter reports persistent allegations that the chain is linked to coercive criminal activity, but explicitly notes that no proof or charges had been established."
+      - "A Shadowland post claims Trans-Pan ROF owns twenty percent of the associated Coral Reef operation; this remains an attributed claim."
+
+provenance_policy:
+  - "Political accusations, organized-crime allegations and claims about covert patrons are separated from direct setting descriptions."
+  - "Sensational anecdotes are omitted where they add no reusable organizational or provenance information."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "81-84", pdf_pages: "82-85", relation: regional_players}
