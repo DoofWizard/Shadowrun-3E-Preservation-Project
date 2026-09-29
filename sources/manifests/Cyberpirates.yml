@@ -1,54 +1,42 @@
 id: source.fasa-7124
 record_type: source
 title: "Cyberpirates"
-abbreviation: "CP"
 catalog_number: "FASA7124"
 edition: "SR3"
-publication_type: "sourcebook_mixed"
-publisher: "FASA"
 status: ingesting
 scan_depth: directed
 source_format: "image-only PDF"
 page_count_pdf: 194
 
-page_mapping:
-  - {printed_pages: "2+", pdf_pages: "3+", relation: "early printed pages begin one page behind PDF; later unnumbered inserts exist, so verify exact PDF provenance by range rather than assuming a constant offset"}
-
 routing:
-  - {range: "6", section: "Introduction", treatment: "orientation"}
-  - {range: "8-9", section: "Not a Shadow in Sight", treatment: "sparse fiction/reference"}
-  - {range: "10-22", section: "A World of Piracy", treatment: "directed piracy-system scan"}
-  - {range: "23-53", section: "The Swashbucklers of the Caribbean", treatment: "directed regional/faction scan"}
-  - {range: "54-86", section: "The Rebel Pirates of the Philippines", treatment: "directed regional/faction scan"}
-  - {range: "87-116", section: "The Smugglers of the Gold and Ivory Coasts", treatment: "directed regional/faction scan"}
-  - {range: "117-138", section: "Long Haul Piracy and the Pirate Island", treatment: "directed world/operations scan"}
-  - {range: "139-144", section: "Piracy / Creating Pirate Characters", treatment: "deep scan"}
-  - {range: "145-154", section: "Regional Piracy Game Information", treatment: "deep scan"}
-  - {range: "155-162", section: "Underwater Adventuring", treatment: "deep scan"}
-  - {range: "162-169", section: "Ship Rules", treatment: "deep scan"}
-  - {range: "170-182", section: "Equipment / Vehicles / Ship Weapons / Accessories", treatment: "deep scan"}
-  - {range: "183", section: "Index", treatment: "reference"}
+  - {range: "6", treatment: orientation}
+  - {range: "8-9", treatment: sparse}
+  - {range: "10-22", treatment: directed}
+  - {range: "23-53", treatment: directed}
+  - {range: "54-86", treatment: directed}
+  - {range: "87-116", treatment: directed}
+  - {range: "117-138", treatment: directed}
+  - {range: "139-154", treatment: deep}
+  - {range: "155-169", treatment: deep}
+  - {range: "170-182", treatment: deep}
+  - {range: "183", treatment: reference}
 
 completed_through:
-  printed_page: 86
-  pdf_page: 87
-  anchor: "end of The Rebel Pirates of the Philippines"
+  printed_page: 96
+  pdf_page: 97
+  anchor: "pre-coastal-magic boundary"
+
 resume_at:
-  printed_page: 87
-  pdf_page: 88
-  anchor: "The Smugglers of the Gold and Ivory Coasts"
-pending_normalization: []
+  printed_page: 96
+  pdf_page: 97
+  anchor: "coastal-magic"
 
-notes:
-  - "TOC routed from printed pp.2-3 / PDF pp.3-4."
-  - "Regional chapters are directed scan; all explicit piracy procedures, character rules, underwater rules, ship rules, equipment, cyberware, vehicles and stat blocks receive deep capture."
-  - "PDF contains additional unnumbered/art/back-matter pages; exact PDF mapping is verified per completed range."
-  - "Introduction and Not a Shadow in Sight inspected as orientation/fiction."
-  - "A World of Piracy pp.10-22 / PDF pp.11-23 normalized as campaign-world piracy economy, crew, raid, hideout, enforcement and escape guidance."
-  - "Caribbean regional scan pp.23-41 / PDF pp.24-42 is normalized in the regional and campaign-practice records."
-  - "Caribbean logistics/trade and late regional players pp.42-53 / PDF pp.43-54 are normalized in references/campaign/cyberpirates-caribbean-logistics.yml and entities/organizations/cyberpirates-caribbean-players-a.yml / -players-b.yml."
-  - "Philippines opening and Huk material pp.54-60 / PDF pp.55-61 are normalized in world/regions/philippines-2059.yml, entities/organizations/hukbo-ng-bayan-laban-sa-hapon.yml and references/campaign/cyberpirates-philippines-huk-practice.yml."
+pending_normalization:
+  - pending.source7124.gold-ivory-p87-96
 
-  - "Philippines pp.61-67 / PDF pp.62-68 normalized in durable semantic records."
-  - "Philippines pp.68-77 / PDF pp.69-78 normalized in corporate-presence, administrative-security, and financing-trade records."
-  - "Philippines pp.78-86 / PDF pp.79-87 normalized across Huk corrections, dragon/Yomi context, state/yakuza players, and corporate divisions."
+durable_records:
+  - {range: "87-96", commit: "e4fb4116cbe410e83410d7b6c47d7026d32bf393", status: partial}
+
+state_notes:
+  - "Verified scan range is durable."
+  - "One compact normalization record remains pending."
