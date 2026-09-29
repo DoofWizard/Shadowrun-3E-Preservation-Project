@@ -1,0 +1,49 @@
+id: rule.source7124.ship-motion-contact-p164-165
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "164-165"
+pdf_pages: "173-174"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+ramming:
+  ship_vs_ship:
+    base_rule: "Rigger 2 pp.47-48"
+    substitute_hull_for_body: true
+    substitute_bulwark_for_armor: true
+    crash_test_if_either_takes_damage: true
+    crash_test_exception: "Open Terrain"
+  boat_or_standard_vehicle_vs_ship:
+    ship_barrier_rating: "8 × (Hull + Bulwark)"
+    if_barrier_not_penetrated:
+      ship_damage: none
+    if_barrier_penetrated:
+      ship_damage: Moderate
+      nearby_character_damage: "(vehicle Body + 3)M explosive"
+      shrapnel_power_reduction: "-1 Power per meter from penetration point"
+    ship_crash_from_boat_collision: false
+
+running_aground:
+  trigger: "failed Crash Test"
+  followup_roll: "1D6"
+  thresholds:
+    Normal: "1"
+    Restricted: "2 or less"
+    Tight: "3 or less"
+  on_grounding:
+    stop: complete
+    base_damage: Moderate
+    gm_adjustment: "may downgrade to Light or upgrade to Serious based on terrain/obstacles"
+
+boarding:
+  positioning: "Position Action (Rigger 2 p.47) to move alongside, adjacent, or above"
+  approach_duration: "entire Combat Turn"
+  boarding_actions_begin: "start of next Combat Turn"
+  climb_rate: "one-quarter (25%) of average Quickness and Strength, rounded down"
+  jump_height: "half the difference between Strength and natural Body"
+  natural_body_excludes: [cyberware, bioware, magic]
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "164-165", pdf_pages: "173-174", relation: exact_rule}
