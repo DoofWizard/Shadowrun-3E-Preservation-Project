@@ -1,0 +1,68 @@
+id: rule.campaign.source7124-regional-market-pricing
+record_type: rule
+name: "Regional Market Pricing"
+domain: campaign
+status: ingested
+content_class:
+  - rule_procedure
+  - rule_exact
+
+effective:
+  status: source_option
+  source: source.fasa-7124
+  printed_pages: "136-138"
+  pdf_pages: "145-147"
+  basis: defines
+
+resolution:
+  summary: "Cyberpirates supplies regional percentage indexes for cost of living and item/service prices, using Seattle as the 100-percent baseline."
+  baseline:
+    seattle_cost_of_living_percent: 100
+    seattle_item_base_cost_percent: 100
+  procedure:
+    - "For affluent buyers and megacorporate purchasers of imported goods, use the listed regional item percentage directly against the Seattle base price."
+    - "For lower-income local buyers or locally produced low-end goods, the source instructs the GM to apply the region's Cost of Living percentage as an additional multiplier to the regional item price."
+    - "Example relationship from the text: a region with Cost of Living 35 percent can reduce the effective local-buyer price to 35 percent of the listed regional item-price result."
+    - "Cost of Living also signals local purchasing power, availability and expected quality; the table is a campaign baseline rather than a guaranteed transaction price."
+    - "When characters sell goods to a dealer, the source states that the dealer's buy price is normally below the listed street price; no fixed resale percentage is supplied."
+
+category_scope:
+  weapon_accessories: "Includes ammunition and assumes high-end accessories rather than ordinary legal consumer accessories."
+  electronics_b_and_e: "Includes microtronics tool kits and maglock passkeys."
+  cybertech: "Aggregated cybertechnology category."
+  surveillance: "Aggregated security/surveillance category."
+  magic: "Aggregated magical-goods category."
+  additional_categories:
+    - medtech
+    - drugs
+    - BTL
+    - skilled_labor
+    - services
+    - animals
+    - consumer_electronics
+    - espionage
+    - false_SINs
+
+cost_of_living_percent:
+  Caribbean: 70
+  Philippines: "40/100"
+  Gold_and_Ivory_Coasts: 25
+  Arctic: 150
+  Australia: 90
+  Mediterranean: 120
+  Southeast_Asia: 35
+  South_Africa: 120
+  CAS: 75
+
+special_notes:
+  - "A slash value is source-specific and must not be averaged; preserve both values and its category footnote/context."
+  - "A value ending in '+' is open-ended upward in the source table."
+  - "NA means the source table gives no applicable percentage."
+  - "All item/service percentages are relative to Seattle base cost."
+
+sources:
+  - source: source.fasa-7124
+    printed_pages: "136-138"
+    pdf_pages: "145-147"
+    relation: defines
+    note: "The Cost of Living on the Sea regional price procedure and tables"
