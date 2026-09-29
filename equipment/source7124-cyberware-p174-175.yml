@@ -1,0 +1,76 @@
+id: equipment.source7124.cyberware-p174-175
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "174-175 (peg/hook subsection continues onto p.175)"
+pdf_pages: "183-184"
+content_class:
+  - equipment_stat
+  - rule_exact
+  - rule_procedure
+
+oxsys_cybergill:
+  essence_cost: 1.5
+  price_nuyen: 12500
+  availability: "5/72 hours"
+  street_index: 1.75
+  effects:
+    immune_to: [oxygen_toxicity]
+    vulnerable_to: [nitrogen_narcosis, decompression_sickness]
+
+air_tank_implant:
+  essence_cost: 0.25
+  price_nuyen: 1200
+  availability: "4/5 days"
+  street_index: 1.5
+
+cyberfins:
+  essence_cost: 0.3
+  price_nuyen: 10500
+  availability: "5/48 hours"
+  street_index: 1.25
+  swimming_effect: "functions as standard fins"
+  attack_reference: "treat as hand razors"
+  incompatible_with: [standard_fins, gloves]
+
+nitrogen_monitor:
+  essence_cost: 0.5
+  price_nuyen: 8500
+  availability: "4/24 hours"
+  street_index: 1.25
+  detection_check:
+    trigger: "character is on verge of nitrogen narcosis or decompression sickness"
+    roll: "2D6"
+    detects_on: "8 or less"
+  does_not_warn_for: [oxygen_toxicity, helium_chills, HPNS]
+
+peg_legs:
+  standard_grade_only: true
+  movement_penalties:
+    knee_length:
+      walking_reduction: 1
+      running_multiplier_reduction: 1
+    hip_length:
+      walking_reduction: 2
+      running_multiplier_reduction: 2
+  detection: "successful Perception (3) Test notices a peg leg"
+  storage_limit: "object no larger than character fist in diameter and no longer than character forearm"
+  sharpened_use: "standard hand-spur statistics/damage"
+  table:
+    knee_length: {essence_cost: 0.2, price_nuyen: 50, availability: "1/6 hours", street_index: "Always available"}
+    hip_length: {essence_cost: 0.4, price_nuyen: 120, availability: "1/6 hours", street_index: "Always available"}
+
+hook_hand:
+  standard_grade_only: true
+  attachment_weight_limit_kg: "Strength ÷ 10"
+  base_melee_damage: "(STR + 1)M"
+  alternate_attachment_damage: "use standard knife or spur code as appropriate"
+  removable: true
+  table:
+    essence_cost: 0.1
+    price_nuyen: 30
+    availability: "1/6 hours"
+    street_index: "Always available"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "174-175", pdf_pages: "183-184", relation: exact_equipment_stats}
