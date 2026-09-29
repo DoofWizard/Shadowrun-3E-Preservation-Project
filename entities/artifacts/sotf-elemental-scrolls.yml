@@ -1,0 +1,85 @@
+id: artifact.sotf.elemental-scrolls-aklear
+record_type: entity
+name: "Elemental Scrolls of Ak'le'ar"
+domain: artifacts
+status: ingested
+source: source.fanpro-10665
+printed_pages: "59-60"
+pdf_pages: "60-61"
+
+physical_properties:
+  count: 5
+  material: "thick tough parchment"
+  unrolled_length_each: "about 50 meters"
+  rolled_diameter_each: "about 33 centimeters"
+  storage: "soft leather slipcases in a carved hardwood box"
+  scroll_barrier_rating: 20
+  scroll_armor_rating: "0/1"
+  box_barrier_rating: 3
+  writing: "unknown and indecipherable language with diagrams and illustrations"
+  astral_examination: "no obvious signs of enchantment"
+
+ambient_magic:
+  - "Wild-magic phenomena may occur within roughly 1 kilometer of the scrolls."
+  - "Elemental spirits may appear spontaneously nearby."
+  spontaneous_spirits:
+    force: "2D6"
+    demeanor: "generally curious/inquisitive rather than automatically hostile"
+
+guardians:
+  - id: spirit.sotf.scrolls-winds
+    name: "Spirit of the Winds"
+    attributes: {B: "11 (12)", Q: "16 x 4", S: 10, C: 10, I: 10, W: 10, E: "(10)A", M: "-", R: 15}
+    initiative: "25 + 1D6"
+    astral_initiative: "33 + 1D6"
+    dice_pools: {Astral_Combat: 15, Combat: 18}
+    karma_pool_professional_rating: "8/3"
+    attack: "10M Stun"
+    powers:
+      - "Force 10, Spirit Energy 3"
+      - "Great Form Spirit of the Winds where applicable"
+      - "Aura Masking"
+      - "Cleansing"
+      - "Concealment"
+      - "Confusion"
+      - "Engulf"
+      - "Guard"
+      - "Magical Guard"
+      - "Materialization"
+      - "Movement"
+      - "Psychokinesis"
+      - "Storm"
+      - "Wealth"
+    great_form_bonuses: "Armor (2/2), Body +1, Reach +1"
+    weakness: "Vulnerability (Earth)"
+
+  - id: spirit.sotf.scrolls-fire
+    name: "Fire Elemental"
+    attributes: {B: 13, Q: "14 x 3", S: 10, C: 12, I: 12, W: 12, E: "(12)A", M: "-", R: 13}
+    initiative: "23 + 1D6"
+    astral_initiative: "32 + 1D6"
+    dice_pools: {Astral_Combat: 18, Combat: 19, Spell: 12}
+    karma_pool_professional_rating: "6/4"
+    attack: "10M"
+    powers:
+      - "Force 12"
+      - "Great Form Fire Elemental where applicable"
+      - "Aura Masking"
+      - "Dispelling"
+      - "Engulf"
+      - "Flame Aura"
+      - "Guard"
+      - "Hidden Life"
+      - "Innate Spell (Flamethrower)"
+      - "Materialization"
+      - "Sorcery skill 10"
+    spells: "all elemental, telekinetic, and transformation manipulation spells at Force 6"
+    weakness: "Vulnerability (Water)"
+
+guardian_behavior:
+  - "The two named guardians appear when the scrolls are endangered."
+  - "They focus on protecting the scrolls rather than their current possessor."
+  - "They cannot be permanently destroyed while the scrolls continue to exist; if defeated, they return later."
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "59-60", pdf_pages: "60-61"}
