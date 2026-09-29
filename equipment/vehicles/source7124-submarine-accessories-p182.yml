@@ -1,0 +1,56 @@
+id: equipment.source7124.submarine-accessories-p182
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "182"
+pdf_pages: "191"
+content_class: [equipment_stat, rule_exact, rule_procedure]
+
+torpedo_probe:
+  handling: 4
+  speed: 150
+  range: "15 km"
+  depth_m: 750
+  body: 4
+  signature: "5/3"
+  intelligence: 2
+  damage: "None"
+  sonar: 4
+  weight_kg: 950
+  cost_nuyen: 150000
+  operation:
+    movement_rate: "150 meters per Combat Turn"
+    approximate_speed: "100 knots"
+    optical_cable_limit_km: 3
+    maximum_recon_time: "20 Combat Turns (about 1 minute)"
+    control: "remote joystick or rigger link if the submarine has a remote control deck"
+
+noisemaker:
+  weight_kg: 75
+  cost_nuyen: 500
+  availability: "6/48 hours"
+  street_index: 4.5
+  game_effect:
+    target_number_modifier: 3
+    affected_tests: "tests by other craft to detect or target the submarine"
+    duration: "current Combat Turn plus the next 2 turns (10 seconds total)"
+
+decoy:
+  handling: 4
+  speed: 150
+  range: "15 km"
+  depth_m: 750
+  body: 4
+  signature: "5/3"
+  intelligence: 2
+  damage: "NA"
+  sonar: 4
+  weight_kg: 950
+  cost_nuyen: 150000
+  game_effect:
+    test: "attacking torpedo makes Intelligence (6) Test"
+    success: "torpedo remains locked on the target submarine and may still strike it"
+    failure: "torpedo cannot distinguish submarine from decoy and strikes the decoy"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "182", pdf_pages: "191", relation: exact_equipment_stats_and_rules}
