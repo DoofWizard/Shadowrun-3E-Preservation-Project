@@ -1,0 +1,114 @@
+id: equipment.source7124.small-craft-p175-176
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "175-176"
+pdf_pages: "184-185"
+content_class:
+  - equipment_stat
+  - rule_exact
+  - rule_procedure
+
+banca:
+  applicability: "statistics apply to bancas and similar small river boats"
+  rowing_rules:
+    speed_rating: "(sum of all rowers' Strength Attributes) / 2"
+    acceleration: 1
+    action: "Complex Action"
+  variants:
+    non_powered:
+      handling: 3
+      speed: "Varies"
+      acceleration: 1
+      body: 2
+      armor: 0
+      signature: 10
+      autonav: 0
+      sensor: null
+      cost_nuyen: 150
+      seating: "8, front to back"
+      entry_points: "Open"
+      cargo_cf: 4
+      load_kg: 40
+      fuel: "None"
+      economy: "NA"
+      other_features: "None"
+    outboard_motor:
+      handling: 3
+      speed: 30
+      acceleration: 4
+      body: 2
+      armor: 0
+      signature: 5
+      autonav: 0
+      sensor: null
+      cost_nuyen: 300
+      seating: "8, front to back"
+      entry_points: "Open"
+      cargo_cf: 4
+      load_kg: 40
+      fuel: "Gasoline (10 liters)"
+      economy: "7 km/liter"
+      other_features: "None"
+    sail:
+      handling: 3
+      speed: 30
+      acceleration: 3
+      body: 2
+      armor: 0
+      signature: 10
+      autonav: 0
+      sensor: null
+      cost_nuyen: 150
+      seating: "8, front to back"
+      entry_points: "Open"
+      cargo_cf: 4
+      load_kg: 40
+      fuel: "Sail"
+      economy: "NA"
+      other_features: "None"
+
+mitsuhama_anago:
+  handling: 3
+  speed: 30
+  acceleration: 3
+  body: 3
+  armor: 0
+  signature: 5
+  autonav: 1
+  sensor: 0
+  sonar: 0
+  cost_nuyen: 15000
+  seating: "1 bucket + 1 bucket + 6 hand-holds"
+  entry_points: "Open"
+  depth_m: 75
+  cargo_cf: 2
+  load_kg: 400
+  fuel: "Electric (75 PF)"
+  economy: "1 km/PF"
+  other_features: "Underwater movement (no life support)"
+  variant_note: "Fugu armed variant exists; no separate statistics are supplied here."
+
+hughes_wk_2s_sea_stallion:
+  handling: 5
+  speed: 190
+  acceleration: 14
+  body: 4
+  armor: 0
+  signature: 3
+  autonav: 3
+  sensor: 3
+  cost_nuyen: 925000
+  seating: "2 bucket + 3 bucket (x 3)"
+  entry_points: "2 + 1 double-sized"
+  cargo_cf: 46
+  load_kg: 2000
+  landing_takeoff_profile: "VTOL"
+  fuel: "Jet (1,250 liters)"
+  economy: "0.2 km/liter"
+  other_features:
+    - "2 fuselage torpedo mounts (2,000 kg total ordnance weight)"
+    - "magnetic anomaly detector"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "175-176", pdf_pages: "184-185", relation: exact_equipment_stats}
