@@ -1,0 +1,48 @@
+id: equipment.source7124.standard-diving-gear-p172-173
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "172-173"
+pdf_pages: "181-182"
+content_class:
+  - equipment_stat
+  - rule_exact
+
+standard_gear:
+  carried_weight_note: "listed weights are for dry-land carry; when worn for diving, equipment incurs no weight penalty"
+  items:
+    breathing_regulator: {weight_kg: 2.5, cost_nuyen: 720, availability: "4/12 hours", street_index: 1}
+    buoyancy_compensator_and_weight_belt: {weight_kg: 12, cost_nuyen: 475, availability: "4/12 hours", street_index: 1}
+    face_mask_and_snorkel: {weight_kg: null, cost_nuyen: 120, availability: "4/12 hours", street_index: 1}
+    fins: {weight_kg: 0.7, cost_nuyen: 90, availability: "4/12 hours", street_index: 1}
+    scuba_tank: {weight_kg: 18, cost_nuyen: 3000, availability: "4/12 hours", street_index: 1}
+    wet_suit: {weight_kg: 1.2, cost_nuyen: 290, availability: "4/12 hours", street_index: 1}
+
+drysuit:
+  weight_kg: 3.5
+  cost_nuyen: 1500
+  availability: "4/36 hours"
+  street_index: 1.25
+  cold_resistance_body_test_modifier: -2
+
+diving_armor:
+  concealability: null
+  ballistic: 4
+  impact: 2
+  weight_kg: 2
+  availability: "5/48 hours"
+  cost_nuyen: 1750
+  street_index: 1.25
+
+dual_tank_manifold: {weight_kg: 0.1, cost_nuyen: 200, availability: "4/18 hours", street_index: 1}
+full_face_mask: {weight_kg: null, cost_nuyen: 360, availability: "4/24 hours", street_index: 1.25}
+enclosed_breathing_helmet: {weight_kg: null, cost_nuyen: 960, availability: "5/96 hours", street_index: 1.5}
+oxsys_artificial_gill:
+  weight_kg: 0.5
+  cost_nuyen: 3250
+  availability: "4/12 hours"
+  street_index: 1
+  source_depth_guidance_m: "<7"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "172-173", pdf_pages: "181-182", relation: exact_equipment_stats}
