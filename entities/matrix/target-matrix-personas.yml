@@ -1,0 +1,130 @@
+id: catalog.personas.target-matrix
+record_type: entity_catalog
+name: "Target: Matrix - Personas"
+domain: matrix_personas
+status: ingested
+source_period: "2060"
+source: source.fasa-7219
+printed_pages: "82-93"
+pdf_pages: "83-94"
+
+entities:
+  - id: persona.target-matrix.anubis
+    name: "Anubis"
+    real_name: "Anatoli Skolnikov"
+    age: 20
+    nationality: "Russian"
+    metatype: "Human"
+    area_of_operation: ["Seattle","worldwide Matrix"]
+    specialties: ["Matrix assassinations"]
+    traits: ["calculating","ambitious","reserved","detail-oriented"]
+    context:
+      - "Professional Matrix operative associated with targeted intrusion/assassination work."
+      - "Uses an Anubis-themed persona."
+  - id: persona.target-matrix.fastjack
+    name: "FastJack"
+    real_name: "unknown"
+    metatype: "Human"
+    area_of_operation: "worldwide"
+    specialties: ["decking","programming"]
+    traits: ["dedicated","overachiever","cautious","confident"]
+    context:
+      - "Long-established elite decker and programmer."
+      - "Maintains extensive professional experience and broad Matrix contacts."
+  - id: persona.target-matrix.grid-reaper
+    name: "Grid Reaper"
+    real_name: "Aless E. Dowmer"
+    age: 19
+    nationality: "Ute"
+    metatype: "Ghoul"
+    area_of_operation: ["Seattle","worldwide Matrix"]
+    specialties: ["intrusion","system crashing"]
+    traits: ["renegade","rebellious","problematic with authority","immature"]
+    context:
+      - "Young Matrix operative active after the Chicago containment period."
+      - "Persona uses a reaper visual motif."
+  - id: persona.target-matrix.link
+    name: "Link"
+    real_name: "unknown"
+    area_of_operation: "worldwide"
+    specialties: ["information brokerage","fixing","fencing"]
+    traits: ["unflappable","self-reliant","resourceful","extremely private"]
+    context:
+      - "Matrix information broker who operates largely through remote contacts and messaging."
+      - "Identity and physical nature are deliberately obscured."
+  - id: persona.target-matrix.red-wraith
+    name: "Red Wraith"
+    real_name: "Daniel Bogdanovich"
+    age: 21
+    nationality: "UCAS"
+    metatype: "Human"
+    area_of_operation: "worldwide"
+    specialties: ["physical intrusion","Matrix penetration"]
+    traits: ["persistent","survival-oriented","resourceful","thorough"]
+    context:
+      - "Operative rebuilt with extensive implants after severe injury."
+      - "Uses a ghostly red Matrix persona."
+  - id: persona.target-matrix.silvery-k
+    name: "Silvery K"
+    real_name: "Kimberly Robinson"
+    age: 20
+    nationality: "UCAS"
+    metatype: "Human"
+    distinguishing_features: ["albinism","allergy to sunlight"]
+    area_of_operation: ["Denver","Nexus"]
+    specialties: ["system administration","security","ID-forging"]
+    traits: ["reclusive","responsible","intelligent"]
+    context:
+      - "System administrator/security specialist with close Nexus ties."
+  - id: persona.target-matrix.slamm-0
+    name: "Slamm-0!"
+    real_name: "unknown"
+    age: 19
+    nationality: "UCAS"
+    metatype: "Human"
+    area_of_operation: ["Seattle","worldwide Matrix"]
+    specialties: ["intrusion","system crashing"]
+    traits: ["renegade","rebellious","problematic with authority","immature"]
+    context:
+      - "Second-generation freelance shadow operative raised in a Matrix-active family."
+      - "Known for aggressive intrusion style and conspicuous Matrix persona."
+  - id: persona.target-matrix.smiling-bandit
+    name: "The Smiling Bandit"
+    real_name: "unknown"
+    metatype: "Human"
+    area_of_operation: "worldwide Matrix"
+    specialties: ["Matrix exploration","scientific research"]
+    traits: ["prankster","scientifically curious","methodical"]
+    context:
+      - "Research-oriented Matrix explorer known for debate, experimentation, and humor."
+  - id: persona.target-matrix.snow-tiger
+    name: "Snow Tiger"
+    real_name: "Song Min"
+    age: 28
+    nationality: "Chinese"
+    metatype: "Human"
+    area_of_operation: ["Hong Kong","worldwide Matrix"]
+    specialties: ["data collection"]
+    traits: ["cautious","acquisitive","suspicious"]
+    context:
+      - "Corporate-trained Matrix operative turned independent shadowrunner."
+      - "Strong Hong Kong corporate and Matrix background."
+  - id: persona.target-matrix.michael-sutherland
+    name: "Michael Sutherland"
+    real_name: "Michael James Sutherland"
+    age: 36
+    nationality: "British"
+    metatype: "Human"
+    area_of_operation: "worldwide"
+    specialties: ["corporate Matrix security","cybercombat"]
+    traits: ["control-oriented","fastidious","loyal"]
+    context:
+      - "Former corporate Matrix-security professional with extensive Wuxing-related experience."
+      - "Uses a flamboyant historical/fantasy Matrix persona."
+
+normalization_note:
+  - "This chapter primarily provides biography, reputation, specialties, and operational context."
+  - "Any explicit numeric persona/deck statistics in later Game Information are normalized separately and control for mechanical use."
+
+sources:
+  - {source: source.fasa-7219, printed_pages: "82-93", pdf_pages: "83-94", relation: defines_entities}
