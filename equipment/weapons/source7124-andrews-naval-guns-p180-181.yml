@@ -1,0 +1,88 @@
+id: equipment.source7124.andrews-naval-guns-p180-181
+record_type: equipment_catalog
+status: ingested
+source: source.fasa-7124
+printed_pages: "180-181"
+pdf_pages: "189-190"
+content_class: [equipment_stat, rule_exact, rule_procedure]
+
+an_edq_12_andrews:
+  type: "L-ATGM"
+  concealability: "NA"
+  ammo: 50
+  mode: "SA/BF"
+  damage: "20D"
+  weight_kg: 1200
+  cost_nuyen: 600000
+  installation:
+    power_requirement: "ship must be nuclear-powered"
+    turret_requirement: "medium or larger remote turret"
+  missile_intercept:
+    hit_outcomes:
+      - "target missile control circuits fail and missile falls off target"
+      - "target missile detonates in flight"
+    probability_note: "Outcomes are equally likely; gamemaster discretion."
+    off_target_reference: "Area-Effect Scatter rules, Rigger 2 p.60"
+  target_classes: [surface_ships, aircraft, missiles]
+  versus_surface_ship_damage: "9LN"
+  range_power_reduction:
+    medium: -2
+    long: -4
+    extreme: -6
+  anti_vehicle_rule:
+    automatic_damage_stage_down: false
+    armor_reduction: "Only half the vehicle Armor Rating, rounded down, reduces Power."
+  recharge:
+    full_recharge_minutes_inactive: 10
+    interim_rate: "1 shot per 4 Combat Turns"
+    interruption_rule: "Weapon must remain inactive for all 4 turns; firing within 3 or fewer Combat Turns wastes accumulated recharge."
+  rigger_backlash_reference: "Loral-Vought Zapper Static Discharge Rockets, Rigger 2 p.94"
+
+naval_gun_general:
+  ammunition: "high-explosive shells"
+  damage_codes: "Each naval gun has one normal-target Damage Code and one ship-damage code."
+  normal_target_resolution: "Use Manual Gunnery or Indirect Fire rules as appropriate; Rigger 2 p.56."
+  shell_power_loss: "-1 Power for every 2 meters traveled."
+  turret_weapon_value:
+    light: 7
+    medium: 10
+  turret_reference: "Rigger 2 p.135"
+
+light_naval_gun:
+  concealability: "NA"
+  ammo: 500
+  mode: "SA"
+  damage: "20D/8LN"
+  weight_kg: 250
+  cost_nuyen: 225000
+  ammunition_per_100_shots:
+    concealability: "NA"
+    damage: "As weapon"
+    weight_kg: 2500
+    cost_nuyen: 8000
+  range:
+    short: "100-2,500 m"
+    medium: "2.5-6 km"
+    long: "6-12 km"
+    extreme: "12-18 km"
+
+medium_naval_gun:
+  concealability: "NA"
+  ammo: 500
+  mode: "SS"
+  damage: "25D/11MN"
+  weight_kg: 600
+  cost_nuyen: 475000
+  ammunition_per_100_shots:
+    concealability: "NA"
+    damage: "As weapon"
+    weight_kg: 7500
+    cost_nuyen: 15000
+  range:
+    short: "100-4,000 m"
+    medium: "4-12 km"
+    long: "12-18 km"
+    extreme: "18-25 km"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "180-181", pdf_pages: "189-190", relation: exact_equipment_stats_and_rules}
