@@ -1,0 +1,159 @@
+id: catalog.organizations.cyberpirates-caribbean-players-b
+record_type: entity_catalog
+name: "Cyberpirates - Caribbean Players II"
+domain: organizations
+status: ingested
+source_period: "2059"
+source: source.fasa-7124
+printed_pages: "49-53"
+pdf_pages: "50-54"
+
+entities:
+  - id: organization.gingerbread-gang
+    name: "The Gingerbread Gang"
+    type: pirate_network
+    leader:
+      id: person.gingerbread-man
+      name: "The Gingerbread Man"
+    lieutenants:
+      ship_captains: 30
+      naming_pattern: "many use nursery-rhyme aliases"
+      notable_tactician: "Miss Muffet"
+    symbol: "gingerbread figure with a skull motif"
+    noted_ports:
+      - "San Juan"
+      - "Lesser Antilles"
+    approximate_size:
+      active: 300
+      supporters_and_affiliates: "1,000+"
+    source_notes:
+      - "The organization is described as using concealed sea-cave facilities."
+      - "Internal competition is public and performative, but the group is also described as having substantial Matrix support and a wide contact network."
+      - "The source presents the gang as using false identities and dispersed logistical support to complicate enforcement."
+
+  - id: corporation.gunderson-corporation
+    name: "Gunderson Corporation"
+    type: corporation
+    leadership:
+      - "CEO Harvin Gunderson"
+    business:
+      - "transport and freight"
+      - "security services"
+    notable_units:
+      - "Atlantic Security"
+    source_notes:
+      - "The source describes the company as a major shipping operator and frequent target of high-value piracy."
+      - "Atlantic Security is presented as the corporation's regional response arm."
+
+  - id: government.republic-of-haiti-2059
+    name: "Republic of Haiti"
+    type: government
+    president:
+      id: person.pierre-barbin
+      name: "Pierre 'Le Prof' Barbin"
+      elected: 2052
+    noted_ports:
+      - "Jeremie"
+      - "Miragoane"
+      - "Port-au-Prince"
+      - "Port-de-Paix"
+      - "Cap Haitien"
+    source_notes:
+      - "The source portrays the government as economically weak and politically repressive."
+      - "Claims concerning corruption, political violence and external influence are source-period setting statements or attributed commentary rather than generalized rules."
+
+  - id: organization.interpol-2059-caribbean
+    name: "Interpol - Caribbean Operations"
+    type: international_law_enforcement
+    chief_officer:
+      id: person.vladimir-stravinsky
+      name: "Vladimir Stravinsky"
+    source_notes:
+      - "The source describes Interpol as operating with limited resources in the Caribbean League."
+      - "It uses national intelligence contacts and occasionally employs deniable local operatives for selected investigations."
+      - "Publicity and jurisdictional support are described as important constraints on regional activity."
+
+  - id: corporation.jhih
+    name: "JHIH"
+    type: medical_corporation
+    president_ceo:
+      id: person.james-houzer-jr
+      name: "James Houzer Jr."
+    caribbean_divisional_manager:
+      id: person.caroline-burke
+      name: "Caroline Burke"
+    divisional_locations:
+      - "Port-au-Prince, Haiti"
+      - "Miami, Florida"
+      - "Cockburn Town, Turks & Caicos Islands"
+    source_notes:
+      - "The source describes JHIH as a medical-services and research corporation with a major Caribbean presence."
+      - "Its Haiti facility is presented as a heavily secured research complex."
+      - "Claims about unethical research practices are contested in source commentary and remain attributed."
+
+  - id: organization.kingston-machine-posse
+    name: "The Kingston Machine Posse"
+    type: criminal_information_network
+    resident_shadow_trader:
+      id: person.fin
+      name: "Fin"
+    noted_ports:
+      - "Sint Maarten"
+      - "Kingston"
+      - "Corpus Christi"
+      - "Panama"
+    source_notes:
+      - "The source estimates that the network directly controls roughly fifteen percent of Kingston's criminal networks while maintaining broader information contacts."
+      - "Fin is presented as the central information broker."
+
+  - id: corporation.natural-vat-technologies
+    name: "Natural Vat Technologies, Inc."
+    type: biotechnology_corporation
+    ceo:
+      id: person.armando-marquez
+      name: "Armando Marquez"
+    location: "Borinquen"
+    relationships:
+      - "The source links the company to Productos Azteca and Aztechnology."
+    business:
+      - "mycoprotein and synthetic-food production"
+      - "biotechnology"
+    security_notes:
+      - "Facilities near San Juan are described as benefiting from nearby corporate security forces."
+      - "Claims about covert shipments and local rivalries remain attributed where presented through Shadowland commentary."
+
+  - id: organization.novilunio
+    name: "Novilunio"
+    type: pirate_network
+    leader:
+      id: person.chispa
+      name: "Chispa"
+    lieutenants: "unknown"
+    symbol: "star-like field with a black center"
+    noted_ports:
+      - "Florida Keys"
+    approximate_size:
+      active: "20-40"
+    source_notes:
+      - "The source describes the group as a small but dangerous regional raiding organization with a concealed base."
+      - "Rumors about the group's succession, external sponsorship and strategic plans are retained as attributed speculation."
+
+  - id: organization.voice-of-ogoun
+    name: "The Voice of Ogoun"
+    type: initiatory_religious_group
+    leadership: "disputed"
+    membership:
+      initiates: 90
+      broader_following: 1200
+    source_notes:
+      - "The source describes the group as an influential initiatory organization within the Caribbean League."
+      - "Internal leadership competition is a major source-period issue."
+    dunkelzahn_will_hook:
+      award: "one year of talon clippings to the current head houngan of the Caribbean League"
+      estimated_value_per_clipping_nuyen: 100000
+      original_deadline: "2060-12-31 12:59:59 EST"
+      contingency: "if no accepted leader emerges, the estate evaluates the situation and may set a new deadline"
+      provenance: "source-period campaign objective and economic estimate, not a general item-price rule"
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "49-53", pdf_pages: "50-54", relation: regional_entities}
