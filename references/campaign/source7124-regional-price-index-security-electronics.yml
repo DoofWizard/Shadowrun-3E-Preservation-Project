@@ -1,0 +1,19 @@
+id: reference.rules.source7124-price-index-security-electronics
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact, equipment_stat]
+unit: "percent_of_Seattle_base_cost"
+regions: [Caribbean, Philippines, Gold_and_Ivory_Coasts, Arctic, Australia, Mediterranean, Southeast_Asia, South_Africa, CAS]
+
+price_index:
+  Surveillance: {Caribbean: 180, Philippines: 110, Gold_and_Ivory_Coasts: 150, Arctic: 150, Australia: 140, Mediterranean: 90, Southeast_Asia: 150, South_Africa: 150, CAS: 250}
+  B_and_E_Electronics: {Caribbean: 140, Philippines: 250, Gold_and_Ivory_Coasts: 175, Arctic: 400, Australia: 200, Mediterranean: 70, Southeast_Asia: 250, South_Africa: 300, CAS: 300}
+
+category_scope:
+  B_and_E_Electronics: "Source category includes microtronics tool kits and maglock passkeys."
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
