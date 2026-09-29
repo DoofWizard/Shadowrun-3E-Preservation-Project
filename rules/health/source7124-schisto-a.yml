@@ -1,0 +1,27 @@
+id: rule.health.source7124-schisto-a
+record_type: rule
+status: ingested
+source: source.fasa-7124
+printed_pages: "150-151"
+pdf_pages: "159-160"
+content_class: [rule_exact, rule_procedure]
+
+exposure:
+  trigger: "Character dips in or drinks from an African river."
+  roll: "1D6"
+  infected_on: 1
+
+incubation_days: 30
+
+initial_condition:
+  stun: Serious
+  physical: Serious
+  test: "Body (12)"
+  effect: "Every 2 successes reduces damage by 1 box, starting with Stun."
+
+ongoing_condition:
+  interval: "[Body × hour] intervals"
+  damage: "1 box per interval"
+  further_reduction_test: false
+  sequence: "Stun boxes first, then Physical boxes."
+  physical_overflow_applies: false
