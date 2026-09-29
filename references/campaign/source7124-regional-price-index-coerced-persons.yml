@@ -1,0 +1,27 @@
+id: reference.rules.source7124-price-index-coerced-persons
+record_type: reference
+status: ingested
+source: source.fasa-7124
+printed_pages: "137-138"
+pdf_pages: "146-147"
+content_class: [rule_exact]
+unit: "percent_of_Seattle_base_cost"
+
+category:
+  canonical_key: Coerced_Persons
+  source_row: "people-market row 2 on printed p.138"
+  semantics: "coerced persons treated as a market category in the fictional source"
+
+price_index:
+  Caribbean: 50
+  Philippines: 50
+  Gold_and_Ivory_Coasts: 50
+  Arctic: "500+"
+  Australia: 100
+  Mediterranean: 100
+  Southeast_Asia: 30
+  South_Africa: 120
+  CAS: 100
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "137-138", pdf_pages: "146-147", relation: exact_table}
