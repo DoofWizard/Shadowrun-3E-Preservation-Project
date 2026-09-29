@@ -1,0 +1,64 @@
+id: rule.security.sotf-shasta-lodge
+record_type: rule
+name: "Survival of the Fittest - Shasta Lodge Security"
+domain: security
+status: ingested
+source: source.fanpro-10665
+printed_pages: "28-30"
+pdf_pages: "29-31"
+
+physical_security:
+  cameras:
+    coverage: "about 15 meters in any direction around the lodge exterior"
+    attack_target_number: "8 plus range modifiers"
+    evasion_test: "Open Stealth Test; each camera rolls 5 dice per turn of exposure"
+    notes:
+      - "Physical illusions may deceive the camera system."
+      - "Spirit Concealment may assist."
+  exterior_maglocks: "card-reader maglocks"
+  doors_and_windows:
+    barrier_rating: 8
+    alarm: "silent alarm and security notification"
+  outer_astral_ward:
+    rating: 6
+    effects:
+      - "authorized shamans and their spirits may pass"
+      - "astral intruders are blocked"
+      - "an attack alerts lodge shamans"
+      - "a shaman investigates astrally within two Combat Turns"
+
+staffing:
+  security_personnel_on_duty: 6
+  distribution:
+    reception: 3
+    system_monitoring: 1
+    secure_areas: 2
+  shamans_available: "at least 3; up to about 12 for a general alarm"
+
+matrix:
+  mainframe_rating: "Red-9/13/11/13/13/13/13"
+  security_sheaf:
+    - {step: 2, event: "Crippler (jammer)-10"}
+    - {step: 4, event: "Tar Pit-8 (Armor)"}
+    - {step: 7, event: "Crippler (marker)-8 / Expert Offense-11"}
+    - {step: 9, event: "Passive Alert"}
+    - {step: 12, event: "Probe-10; trap Sparky-10; trap Black-8"}
+    - {step: 16, event: "Construct-11; trap Blaster-11"}
+    - {step: 20, event: "Killer-10; trap Killer-10"}
+    - {step: 24, event: "Active Alert"}
+    - {step: 27, event: "Crippler (acid)-8 (Shielding)"}
+    - {step: 31, event: "Lethal Black IC-11"}
+    - {step: 34, event: "Killer-10 (Shifting); trap Black-8"}
+    - {step: 37, event: "Non-Lethal Black IC-8"}
+    - {step: 39, event: "Psychotropic Black IC (positive conditioning)-8"}
+    - {step: 43, event: "Shutdown"}
+  control: "successful Control Slave operation can override cameras and maglocks"
+  kallisti_storage:
+    state: "offline isolated storage"
+    connection: "about one minute plus Computer (4) Test"
+    file_size: "500 Mp"
+    protection: "Scramble IC 8"
+    sheaf: "same as mainframe but shutdown at step 20"
+
+sources:
+  - {source: source.fanpro-10665, printed_pages: "28-30", pdf_pages: "29-31"}
