@@ -1,0 +1,39 @@
+id: rule.source7124.ship-damage-scale-p166
+record_type: rule_set
+status: ingested
+source: source.fasa-7124
+printed_pages: "166"
+pdf_pages: "175"
+content_class:
+  - rule_exact
+  - rule_procedure
+
+ship_damage_code:
+  naval_suffix: "N"
+  example: "10SN = Serious ship damage"
+
+ship_resistance:
+  uses_full_bulwark_to_reduce_power: true
+  automatic_stage_down_against_standard_scale_attacks: false
+
+standard_scale_effects:
+  ship_hull_damage: false
+  valid_targets: [crew, cargo, equipment]
+  below_deck_barrier_rating: "8 × (Hull + Bulwark)"
+
+naval_scale_to_standard_scale_conversion:
+  resistance_power: "5 × listed Power Rating"
+  base_damage_level: Deadly
+  overdamage_points:
+    LN: 2
+    MN: 5
+    SN: 10
+    DN: 20
+  overdamage_resolution:
+    successes_per_overdamage_point_removed: 2
+    apply_leftover_successes_to_normal_damage_after_overdamage: true
+    vehicle_automatic_overdamage_reduction: 1
+    vehicle_full_armor_may_reduce_normal_damage_level: true
+
+sources:
+  - {source: source.fasa-7124, printed_pages: "166", pdf_pages: "175", relation: exact_rule}
