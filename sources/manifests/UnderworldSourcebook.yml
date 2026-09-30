@@ -1,0 +1,30 @@
+id: source.fasa-7123
+status: ingesting
+depth: directed
+
+done: {p: 3, pdf: 7}
+next: {p: 6, pdf: 8}
+pending: []
+
+routes:
+  - [2, 3, orientation]
+  - [6, 9, directed]
+  - [10, 26, directed]
+  - [27, 37, directed]
+  - [38, 50, directed]
+  - [51, 59, directed]
+  - [60, 67, directed]
+  - [68, 78, directed]
+  - [79, 87, directed]
+  - [88, 101, deep]
+  - [102, 110, deep]
+
+records: []
+
+mapping:
+  - ["6-110", "8-112"]
+
+source_integrity:
+  - "Cataloged PDF has a malformed terminal xref/page-tree structure."
+  - "All printed content pages 6-110 are recoverable from existing page objects; repaired session view maps printed p6 to PDF p8 and printed p110 to PDF p112."
+  - "No source bytes were altered in Google Drive."
