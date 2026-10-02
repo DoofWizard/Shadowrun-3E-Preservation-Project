@@ -1,0 +1,71 @@
+id: gangs.source7123.first-tier
+record_type: organization_reference
+status: ingested
+source: source.fasa-7123
+printed_pages: "102-104"
+pdf_pages: "104-106"
+content_class:
+  - rule_exact
+  - world_fact
+  - campaign_guidance
+framing: newsroom_neutral
+
+ancients:
+  gang_focus: "elf go-gang"
+  leader: "Sting"
+  lieutenants:
+    - "Each Ancients faction has a lieutenant."
+    - "Each faction consists of 10-20 gangers and has its own rating, though none are less than Equal."
+    - "Green Lucifer is lieutenant for all Ancients factions in Seattle."
+  gang_rating: "Superior"
+  head_count:
+    seattle: "Approximately 100-200 members"
+  satellite_forces:
+    Boston: "approximately 50"
+    New_York: "100-?; source gives more than 100 members, mostly heavy recruiting, with new factions in New Jersey and Baltimore"
+    Milwaukee: "approximately 25"
+    Chicago: "unknown since the Wall went up; rumor says some Ancients remain"
+    Los_Angeles: "75"
+    Denver: "75"
+    Atlanta: "50"
+    Miami: "25"
+    England: "approximately 50"
+    Tir_na_nOg: "100-200, mostly inactive or in training"
+    France: "50"
+    Germany: "50"
+    Spain: "25"
+  note: "No outside branch is rated lower than Equal."
+
+cutters:
+  leader: "Blake"
+  lieutenants: 2
+  named_lieutenants:
+    - Springblossom
+    - Vladimir
+  gang_rating: "Superior"
+  head_count:
+    seattle: "Approximately 25-50 members"
+    note: "Source describes this as a reduction of roughly 75 percent from the gang's previous strength."
+  satellite_forces:
+    Los_Angeles: 25
+    Denver: 25
+    Las_Vegas: 25
+    Atlanta: 15
+    Miami: 15
+    New_Orleans: 15
+    Detroit: 10
+    Toronto: 10
+    New_York: 50
+    Washington_FDC: 5
+    Caribbean_League: 5
+    Great_Lakes_pre_Chicago_shutdown: "more than 100 across Chicago, Detroit and Toronto factions"
+  initiation_reference:
+    - "Prospective recruits are expected to demonstrate independent revenue generation under observation; the source allows two further attempts within a two-month period after a failed attempt, after which the recruit is released."
+
+mechanics_audit:
+  findings:
+    - "Gang Rating, faction rating floors, headcounts, branch counts and retry/time values are preserved exactly as campaign-facing profile data."
+    - "No individual NPC attribute/skill stat blocks are printed on pp.102-104."
+
+sources:
+  - {source: source.fasa-7123, printed_pages: "102-104", pdf_pages: "104-106", relation: gang_profile}
