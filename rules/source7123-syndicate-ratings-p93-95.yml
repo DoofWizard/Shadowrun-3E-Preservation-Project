@@ -1,0 +1,123 @@
+id: rules.source7123.syndicate-ratings
+record_type: rule_procedure
+status: ingested
+source: source.fasa-7123
+printed_pages: "93-95"
+pdf_pages: "95-97"
+content_class:
+  - rule_exact
+  - rule_procedure
+framing: exact_mechanics
+
+comparative_scale:
+  net_value_approximation: "For a rough comparison with the Corporate Asset system, use half a syndicate's Net Rating to determine its Net Value as a megacorporation."
+  standing:
+    - {standing: "First-tier syndicate", net_rating: "110+"}
+    - {standing: "Second-tier syndicate", net_rating: "90-109"}
+    - {standing: "Third-tier syndicate", net_rating: "60-89"}
+    - {standing: "Small-time operation", net_rating: "Less than 60"}
+
+markets:
+  rating_range: "1-10"
+  names:
+    - Computer Crime
+    - Controlled Substances
+    - Counterfeiting and Forgery
+    - Fencing
+    - Fixing
+    - Gambling
+    - Hijacking
+    - Kidnapping
+    - Loansharking
+    - Pornography
+    - Prostitution
+    - Protection
+    - Robbery
+    - Shadow Services
+    - Smuggling
+    - White-Collar Crime
+
+operations:
+  names:
+    - Enforcement
+    - Fiscal
+    - Intelligence
+    - Management
+    - Reputation
+  fiscal_limit: "Fiscal Rating represents the maximum rating of all other Operations except Reputation."
+
+seattle_syndicate_rating_table:
+  columns: [Mafia, Yakuza, Triads, Seoulpa_Rings]
+  markets:
+    Computer_Crime: [4, 6, 3, 7]
+    Controlled_Substances: [8, 8, 10, 6]
+    Counterfeiting_and_Forgery: [6, 5, 5, 5]
+    Fencing: [8, 8, 6, 5]
+    Fixing: [7, 8, 6, 2]
+    Gambling: [8, 9, 8, 3]
+    Hijacking: [7, 5, 4, 5]
+    Kidnapping: [7, 5, 6, 4]
+    Loansharking: [6, 7, 4, 2]
+    Pornography: [8, 7, 5, 2]
+    Prostitution: [7, 9, 5, 1]
+    Protection: [8, 7, 8, 6]
+    Robbery: [5, 4, 4, 7]
+    Shadow_Services: [6, 6, 5, 4]
+    Smuggling: [7, 7, 8, 6]
+    White_Collar_Crime: [8, 10, 6, 2]
+  operations:
+    Enforcement: [8, 8, 7, 5]
+    Fiscal: [8, 9, 7, 5]
+    Intelligence: [6, 7, 7, 4]
+    Management: [8, 8, 6, 5]
+    Reputation: [7, 8, 8, 4]
+  printed_net_rating: [146, 151, 126, 90]
+  audit_note: "Printed row values and printed Net Ratings are preserved literally; do not silently recompute or correct them."
+
+shadowrun_effect_table:
+  - {effect: "Negligible: the syndicate hardly notices", potential_loss_gain: 0}
+  - {effect: "Minor: the syndicate can compensate easily", potential_loss_gain: 1}
+  - {effect: "Appreciable: the syndicate can compensate, but with difficulty", potential_loss_gain: 2}
+  - {effect: "Major: the syndicate must take extreme measures to recover", potential_loss_gain: 3}
+  guidance:
+    - "Most shadowruns produce a 0 or 1 point effect."
+    - "The gamemaster determines a Potential Loss/Gain rating for each shadowrun and tracks those values."
+    - "Ratings may be adjusted as often or infrequently as desired; quarterly adjustment is recommended."
+
+rating_adjustment_test:
+  resource_pool: "For each syndicate, Resource Pool equals its total Operations Rating. Seattle Mafia example: 37."
+  steps:
+    - "1. Assess Effects: total recorded Losses and Gains since the last adjustment; some may cancel. Adjust affected Market Ratings accordingly before testing. A loss to one syndicate may be a gain to another."
+    - "If a shadowrun causes one syndicate to take over a market from another, the new controlling syndicate receives only 1 point of Gain regardless of the effect's significance."
+    - "2. Determine Test Order: test Markets directly affected by shadowruns first, positive and negative; test every Operation second; the gamemaster may then adjust/test other Markets of choice."
+    - "3. Make the Tests: roll dice equal to the adjusted base rating against a Target Number equal to the initial Market or Operations Rating before Loss/Gain adjustments."
+    - "Resource Pool dice may augment a test. The maximum Resource Pool dice allocated to one Market or Operation equals the adjusted base Market/Operations Rating."
+    - "Once Resource Pool dice are used, they are gone and do not refresh; unused Resource Pool dice cannot be saved for the next quarter."
+  example:
+    - "Seattle Mafia Smuggling Rating 7 suffers Loss 2: adjusted base 5; roll 5 dice against Target Number 7."
+    - "Allocating 3 Resource Pool dice yields 8 dice against TN 7; the Mafia Resource Pool falls from 37 to 34."
+  rating_adjustment_table:
+    - {successes: "0", result: "Reduce the Base Rating by 1D6/2 (round up)"}
+    - {successes: "1-3", result: "Base Rating remains the same"}
+    - {successes: "4-6", result: "Increase Base Rating by 1"}
+    - {successes: "7+", result: "Increase Base Rating by 2"}
+  example_result:
+    - "Four successes increase the adjusted Seattle Mafia Smuggling base from 5 to 6."
+
+gang_rating_rules:
+  - "Most gangs have Net Ratings of 25 or less; major gangs such as the Ancients or Cutters can have Net Ratings as high as 60."
+  - "Gangs usually operate in only a few Markets and usually have Operations Ratings of 3 or less."
+  gang_reputation_table:
+    - {leader_gang_reputation: "20-19", crimetrack_reputation: 0, standing: "Tier 3"}
+    - {leader_gang_reputation: "18-17", crimetrack_reputation: 1, standing: "Tier 3"}
+    - {leader_gang_reputation: "16-15", crimetrack_reputation: 2, standing: "Tier 2"}
+    - {leader_gang_reputation: "14-13", crimetrack_reputation: 3, standing: "Tier 2"}
+    - {leader_gang_reputation: "12-11", crimetrack_reputation: 4, standing: "Tier 1"}
+    - {leader_gang_reputation: "10-9", crimetrack_reputation: 5, standing: "Tier 1"}
+    - {leader_gang_reputation: "8-7", crimetrack_reputation: 6, standing: "Tier 1"}
+    - {leader_gang_reputation: "6-5", crimetrack_reputation: 7, standing: "Minor Syndicate"}
+    - {leader_gang_reputation: "4-3", crimetrack_reputation: 8, standing: "Minor Syndicate"}
+    - {leader_gang_reputation: "2 or less", crimetrack_reputation: 9, standing: "Minor Syndicate"}
+
+sources:
+  - {source: source.fasa-7123, printed_pages: "93-95", pdf_pages: "95-97", relation: rule_procedure}
