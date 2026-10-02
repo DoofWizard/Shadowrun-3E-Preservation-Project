@@ -2,9 +2,28 @@ id: source.fasa-7122
 status: ingesting
 depth: directed
 
-done: null
-next: null
+done: {p: 10, pdf: 11}
+next: {p: 11, pdf: 12}
 pending: []
-routes: []
-records: []
-mapping: []
+
+routes:
+  - [2, 6, orientation]
+  - [7, 10, directed]
+  - [11, 20, directed]
+  - [21, 35, directed]
+  - [36, 55, directed]
+  - [56, 72, directed]
+  - [73, 73, orientation]
+  - [74, 87, deep]
+  - [88, 101, directed]
+  - [102, 112, directed]
+
+records:
+  - ["7-10", 84f490ea3ce836ab97b43aa6e50b93e941d42cc5]
+
+mapping:
+  - ["2-112", "3-113"]
+
+source_integrity:
+  - "Cataloged PDF is a 114-page image-only scan."
+  - "Printed p2 maps to PDF p3; printed p112 maps to PDF p113; PDF p114 is the back cover."
