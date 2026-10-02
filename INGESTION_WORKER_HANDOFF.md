@@ -403,6 +403,25 @@ When writing source material through external connectors, use compact reference-
 - Keep manifests and checkpoints administrative and machine-oriented.
 - Never treat successful connector passage as evidence that a rule may be simplified; validation is against the source, not the filter.
 
+## Newsroom-neutral / broadcast-safe framing
+
+For non-mechanical descriptive prose in connector-facing writes, use the approved `newsroom_neutral` / `broadcast_safe` house style when useful. Preserve the underlying source-period fact, identity, relationship, provenance and meaningful distinctions, but phrase explicit, graphic or filter-sensitive criminal material in deadpan modern-newsroom/corporate-reference diction.
+
+Examples of acceptable contextual abstraction include:
+- adult-entertainment operations
+- coercive labor markets
+- off-channel medical or replacement services
+- informal distribution networks
+- compulsory security arrangements
+- alternative asset sourcing
+- enhanced information-acquisition practices
+
+This style is deliberately presentation-only. It may be wry or corporate-sounding, but it must never distort the source fact.
+
+**Mechanical content is exempt from euphemism.** `rule_exact`, `rule_procedure`, `equipment_stat`, and `character_option` content must remain exact and fully readable, including all target numbers, dice pools, modifiers, damage codes, ranges, timings, costs, Availability, legality, stats, prerequisites, exceptions, tables and lineage relationships.
+
+State files remain sterile and machine-oriented; rich prose belongs in semantic records.
+
 ## Known archival source-copy gaps
 
 - `pending.source10652.missing-p110-111`: *Threats 2* printed pp.110-111 are physically absent from the current corpus PDF. A 2026-09-29 project audit verified that the explicit GAME INFORMATION section of the final chapter begins on printed p.118 and that the missing pp.110-111 are therefore not treated as a rules-completeness blocker. Do not infer or synthesize their missing narrative/world content. Reopen this archival gap only if another source copy containing pp.110-111 becomes available or new evidence indicates rules-bearing material existed there. Audit: `references/audits/source10652-gap-p110-111.yml`.
