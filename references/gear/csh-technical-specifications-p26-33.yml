@@ -1,0 +1,71 @@
+id: reference.gear.csh-technical-specifications-p26-33
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: "26-33"
+pdf_pages: "27-34"
+content_class: [equipment_stat, world_fact, campaign_guidance]
+edition_scope: "Second Edition (2055) technical reference, historical lineage only"
+attribution: "Knight Errant reference narration; stated specifications are not verified SR3 game stats"
+
+security_budget_reference:
+  maximum_suggested_system_cost_percent_of_asset_value: 10
+  nature: "Author's rule of thumb, not a purchase price or game mechanic."
+perimeter_detector_specification:
+  device: taut_wire_capacitance
+  triggered_by_living_body_within_meters: 2
+  note: "This is source-described detector proximity, not a sensor Test Target Number."
+alarm_device_families:
+  perimeter: [taut_wire, electromechanical_contact, pressure_mat, photoelectric_beam]
+  area: [ultrasonic, microwave, passive_infrared, air_pressure]
+  proximity: [capacitance_sensor, vibration_detector]
+maglock_model_levels:
+  type_1:
+    onboard_power: true
+    integrated_system_control: false
+    key_codes_per_lock: 1
+    copies_of_shared_key: unrestricted
+  type_2:
+    integrated_system_open_close_monitoring: true
+    key_codes_per_lock: 1
+    copies_of_shared_key: unrestricted
+  type_3:
+    matrix_capable: true
+    can_function_as_io_port: true
+    per_user_keys: true
+    can_record_user_identification: true
+  type_4:
+    closed_circuit_simsense_security_rigger_control: true
+    per_user_keys: true
+    can_record_user_identification: true
+  monitored_type_3_and_type_4_tampering: "When connected to protected-area technical security, source says bypass attempts trigger alarms."
+maglock_authority:
+  types: [user, submaster, master, root_master]
+  root_master_scope: "All corporate sites programmed to accept it; required for other-key reprogramming."
+  recommended_rekey_interval_months_at_most: 6
+  lost_root_master_response: "Replace firmware for all maglocks programmed for that root key."
+identification:
+  maglock_inputs: [numeric_keypad, alphanumeric_keypad, magnetic_stripe_card, microchip_card]
+  passes: "Microchip identification cards with proximity readers."
+  biometrics: [fingerprint, palm_print, voice_verification, retinal_scan, multiple_indicators, vital_sign_detection]
+closed_circuit_imaging:
+  formats: [CCTV, CCT]
+  described_cameras_per_system_up_to: 100
+  possible_links: [cable, microwave_transceiver]
+closed_circuit_simsense:
+  interfaces: [security_control_rig, attached_sensors, alarm_devices, access_controls, drones, simlinks]
+  auxiliary_operator_role: "Secondary riggers can monitor the primary operator's input."
+drone_taxonomy:
+  semi_mobile: "Route-constrained platforms; external power with possible backup."
+  free_ranging: "Independent power; airborne, marine, amphibious or land-based variants."
+detector_categories:
+  weapons: "Magnetic-anomaly detection (MAD) in door frames or free-standing frames."
+  chemical: "Detection of explosive-compound traces and ammunition propellant."
+  cyberware: "Sonic and magnetic scanning compared with profile-library imagery."
+  cyberware_exception: "Organic and vat-grown components and organically masked Alpha/Beta cyberware may be more difficult to detect."
+mechanics_audit:
+  numeric_and_classification_fidelity: "All 10%, 2 m, Type 1-4, six-month, and 100-camera source statements retained without invented game roll effects."
+  game_stats_not_supplied: [target_number, dice_pool, damage_code, availability, legality, retail_price]
+  rules_lineage: "Technical setting/campaign reference only; no SR3 override."
+sources:
+  - {source: source.fasa-7118, printed_pages: "26-33", pdf_pages: "27-34", relation: historical_technical_specification}
