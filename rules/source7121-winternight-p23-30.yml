@@ -1,0 +1,78 @@
+id: rules.source7121.winternight
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "23-30"
+pdf_pages: "24-31"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - world_fact
+framing: exact_mechanics
+
+organization:
+  cells:
+    membership: "3 to 20 members"
+    notes:
+      - "Cell leaders may communicate with one another and with cell members through message drones."
+      - "Strike cells often resemble a shadowrunning or small mercenary team and include at least one Toxic Wolf shaman."
+      - "Most other members of strike teams may not know they are working for Winternight."
+
+toxic_shamans:
+  raven: "Toxic Raven shamans are Avengers."
+  wolf: "Toxic Wolf shamans are Poisoners."
+  threat_array:
+    - "A Winternight group containing more than one toxic shaman may pool Threat Ratings into a Threat Array."
+    - "The gamemaster may reassign Threat dice to participating shamans according to the needs of the story."
+    - "Only toxic shamans belonging to the same Winternight cell may combine Threat Ratings."
+    - "If a contributing shaman dies, immediately subtract that shaman's Threat Rating from the Threat Array."
+    - "All contributors must be within line of sight of each other on the same plane, physical or astral."
+    - "Threat Array dice may be reassigned a number of times each day equal to the highest Threat Rating in the group."
+
+berserker_chips:
+  possible_increases:
+    Strength: 2
+    Quickness: 2
+    Willpower: 2
+    Initiative_Dice: "1D6"
+  penalties:
+    - "Reduce Intelligence and/or Charisma by a number equal to the total increases."
+    - "The reductions remain in effect for a number of days equal to the total increases."
+    - "Example: a chip providing all listed increases decreases Intelligence by 3 and Charisma by 4, or any combination totaling 7, for 7 days."
+    - "The increases and decreases are in addition to cyberware or bioware modifications."
+    - "Characters may exceed racial maximums while chipped, but no statistic can be reduced below 1."
+  pain_effect:
+    - "The user suffers no negative modifiers for accumulating Physical or Stun damage."
+    - "A chipped character continues attacking until exceeding Damage Overflow boxes, at which point the character dies."
+  removal:
+    body_test:
+      timing: "Immediately upon removing the chip if the character was not killed outright while chipped."
+      target_number: "Twice the number of rounds the chip was used, plus any wound modifiers."
+      failure: "No successes means the character dies from total system failure."
+    willpower_test:
+      target_number: "Number of rounds the chip was used + number of boxes of Physical damage suffered while chipped + number of times the character has used a berserker chip."
+      failure: "No successes means the character is addicted to the berserker chip."
+      optional_consequences: "The gamemaster determines addiction details; possible effects include permanent loss of Intelligence, Charisma, Willpower or Essence, or permanent Stun damage."
+  destruction:
+    - "A berserker chip is single-use; using it burns it out and erases its data."
+    - "If the user dies while chipped, or if the chip is removed, a thermite charge destroys the chip."
+
+drones:
+  safety_signal:
+    interval: "once each minute"
+    missing_signal_effect:
+      - "The drones enter Alpha Strike Mode beyond the rigger's control."
+      - "They discharge all remaining ammunition at the nearest target and self-destruct."
+  other_self_destruct_triggers:
+    - out_of_ammunition
+    - out_of_fuel
+    - disabled
+    - tampered_with_between_missions
+    - command_from_rigger
+  common_combat_drones:
+    - Dobermans
+    - Steel_Lynxes
+    - Wandjinas
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "28-30", pdf_pages: "29-31", relation: rule_exact}
