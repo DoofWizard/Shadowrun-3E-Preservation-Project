@@ -1,0 +1,60 @@
+id: rules.source7121.halberstam
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "38-44"
+pdf_pages: "39-45"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - world_fact
+framing: newsroom_neutral
+
+dr_halberstam:
+  name: "Dr. Ronald Thomas Halberstam"
+  source_period_profile:
+    - "Former UCAS Data Systems researcher associated with the Matrix Born project."
+    - "The source presents his later work as covert biological-knowbot research using disembodied juvenile brains as Matrix hosts."
+
+subjects:
+  age_range: "6 to 12"
+  active_inventory:
+    total_in_vats: "4 to 6"
+    maximum_in_matrix_at_once: 2
+  diagnostics:
+    - "Each subject is taken off-line for a couple of hours every three days."
+    - "Biological knowbots must recharge every 72 hours, when the brain is removed from the Matrix for diagnostics."
+
+biological_knowbot_creation:
+  base_reference: "Semi-autonomous knowbot creation rules, Virtual Realities 2.0 pp.140-141."
+  exceptions:
+    - "MPCP Rating = Intelligence of the brain + 1D6."
+    - "The biological knowbot uses the same Utility Pool as a semi-autonomous knowbot."
+    - "It cannot change utilities or adapt new utilities on the fly."
+    - "Changing the initial programming requires a minimum of (MPCP Rating x 2) days."
+
+damage:
+  base_reference: "Standard damage rules from Virtual Realities 2.0."
+  modifications:
+    - "Every point of damage reduces the biological knowbot's Body Rating by 1."
+    - "If Body Rating is reduced to 0, the brain loses 1 point of Intelligence for every point of damage taken."
+    - "Recalculate the knowbot's statistics as Intelligence changes."
+    - "A biological knowbot usually flees the first time it is damaged."
+    - "Halberstam can heal Body damage while the brain is off-line but cannot replace lost Intelligence."
+    - "Unlike a semi-autonomous knowbot, a biological knowbot always returns to its native host even with IC following it."
+
+willis_typical_biological_knowbot:
+  Intelligence: 5
+  MPCP: 10
+  Bod: 6
+  Evasion: 9
+  Masking: 7
+  Sensor: 8
+  Computer_Skill: 10
+  Utility_Pool: 15
+  Response: "10 + 1D6"
+  Utilities: "Chosen by gamemaster"
+  Threat_Professional_Rating: "2/1 (if needed)"
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "43-44", pdf_pages: "44-45", relation: rule_exact}
