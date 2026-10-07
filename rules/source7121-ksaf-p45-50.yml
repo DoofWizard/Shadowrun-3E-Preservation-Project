@@ -1,0 +1,38 @@
+id: rules.source7121.ksaf
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "45-50"
+pdf_pages: "46-51"
+content_class:
+  - rule_exact
+  - campaign_guidance
+  - world_fact
+framing: newsroom_neutral
+
+organization:
+  name: "KSAF"
+  management:
+    president: "Helena Rossum"
+    matrix_consultant: "Fredrick Kargon"
+    chief_reporter: "Joann Conolly"
+  staff_reference: "20 or so additional cameramen, anchors and editors."
+
+sender_messages:
+  - "KSAF receives predictive messages containing a location, day, time and assignment."
+  - "If the station receives the same message one or more additional times, it sends a crew."
+  - "Fewer than 10 messages may indicate the event is less likely to occur, less significant, or may not become apparent for a long time."
+
+ksaf_matrix_system:
+  normal_security: "Red-7"
+  sender_download:
+    - "The message is instantly downloaded to a chip when it arrives and the chip is immediately ejected."
+    - "The download cannot be interrupted except by shutting down the entire host; if interrupted that way, message protection corrupts the contents beyond retrieval."
+    - "The ejection program boots from the chip and does not appear on KSAF nodes or hosts."
+  game_security:
+    - "For game play, security on the host receiving the message doubles from Red-7 to Red-14 for the duration of the download."
+    - "The gamemaster chooses the quantity, severity and type of IC according to the decker's skills and the situation."
+    - "Common defenses include data bombs, scramble IC, worms of any variety and psychotropic IC, using Virtual Realities 2.0 pp.38-52."
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "48-50", pdf_pages: "49-51", relation: rule_exact}
