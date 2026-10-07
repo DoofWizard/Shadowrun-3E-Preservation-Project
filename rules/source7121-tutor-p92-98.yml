@@ -1,0 +1,60 @@
+id: rules.source7121.tutor
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "92-98"
+pdf_pages: "101-107"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - world_fact
+framing: exact_mechanics
+
+spirit_tap:
+  general:
+    - "Tutor may incorporate Spirit Tap into a spell formula, causing magic-users to tap the spirit for power when casting spells, summoning/conjuring spirits and resisting Drain."
+    - "Spirit Tap reduces the Drain of the spell by one level."
+    - "Spirit Tap boosts spell effects in an unpredictable manner."
+    - "The gamemaster may choose the effect based on spell Force or roll on the Spell Force Increase Table."
+  spell_force_increase_table:
+    - {die_roll: "1 or 6", effect: "Force remains unchanged"}
+    - {die_roll: "2", effect: "Force increases by 1"}
+    - {die_roll: "3", effect: "Force increases by 2"}
+    - {die_roll: "4", effect: "Force increases by 3"}
+    - {die_roll: "5", effect: "Force is doubled"}
+  standard_limits:
+    - "All standard penalties for casting a spell greater than the caster's Magic Rating apply."
+    - "The magic-user receives Spirit Tap bonuses without penalty for a number of castings equal to Tutor's Force Rating."
+    - "With the printed Tutor statistics, the caster can use a Spirit Tap spell 10 times without penalty."
+  permanent_stun:
+    - "The next use after the free uses causes 1 box of Stun Damage that cannot be healed by conventional methods or ordinary magical means."
+    - "Each subsequent over-limit use adds another such box; the source example makes the twelfth use cause the second box."
+    - "All ordinary Stun modifiers apply."
+  healing_by_deal:
+    - "The only way to heal this Spirit Tap Stun normally is to make a deal with Tutor."
+    - "If the character refuses to deal, the character can heal 1 box of Spirit Tap damage for each Magic Rating point sacrificed."
+  severing_link:
+    - "Tutor may break the Spirit Tap link to force a character to comply."
+    - "All spells incorporating Spirit Tap immediately stop working."
+    - "The mage or shaman immediately loses 1 Magic Pool die for every Spirit Tap spell learned."
+    - "If more dice are lost than currently remain in the Magic Pool, the remaining magic loss becomes Stun damage that cannot be healed."
+    - "The Magic Pool regenerates 1 die per month until it reaches its original number."
+    - "This Stun can only be healed by making a deal with Tutor."
+  learning_from_other_mage:
+    rule: "If a character learns a Spirit Tap spell from a mage rather than from Tutor, increase the target number for learning the spell by 2."
+
+tutor_stats:
+  type: "Great Form Spirit"
+  Force_Rating: 10
+  Spirit_Energy: 6
+  Powers:
+    - Astral_Gateway
+    - Aura_Masking
+    - Dispelling
+    - Human_Form
+    - Possession
+    - Sorcery
+    - Spirit_Tap
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "97-98", pdf_pages: "106-107", relation: rule_exact}
