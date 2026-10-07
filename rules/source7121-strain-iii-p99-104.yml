@@ -1,0 +1,67 @@
+id: rules.source7121.strain-iii
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "99-104"
+pdf_pages: "108-113"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - world_fact
+framing: exact_mechanics
+
+nature:
+  - "Strain III is an astral entity existing solely on the astral plane and affecting astrally active items, beings and constructs."
+  - "It is not dual-natured and does not affect normal auras or inactive magical items."
+
+feeding:
+  attachment_to_magical_item:
+    test: "Success Test using the Force Rating of Strain III against the Force Rating of the item, spell or ward."
+    success: "One success means the virus attaches to the item and starts feeding."
+  active_item_observation:
+    - "An active magical item exposed to Strain III usually loses 1 Rating Point approximately 36 hours after initial contact."
+    - "Sustained, quickened or anchored spells and wards lose Rating Points at the same rate as magical items."
+  force_gain:
+    rule: "Strain III increases its Force by 1 for every point of Force or Essence drained."
+  dual_natured_creatures:
+    test: "Success Test using the Force of Strain III against a target number equal to the creature's Essence."
+    success: "One success allows the virus to begin feeding on the victim's magical energies."
+    death: "When Strain III reduces its victim to 0 Essence, the victim dies."
+
+force_feeding_table:
+  - {stage: "Dormant", Force: "1-5", feeding_rate: "1 point per 36 hours"}
+  - {stage: "Active", Force: "6-9", feeding_rate: "1 point per 24 hours"}
+  - {stage: "Mature", Force: "10+", feeding_rate: "1 point per 12 hours"}
+
+worked_example:
+  - "A Force 4 Dormant Strain III entity that attaches to a Force 5 weapon focus absorbs 1 point after 36 hours and a second point after 72 hours."
+  - "Because the Dormant entity gains 1 Force for each point drained, after 72 hours it reaches Force 6, becomes Active and begins draining the focus at 1 point per 24 hours."
+
+deactivated_items:
+  residual_test:
+    - "If an item is deactivated before entering an infected area, use the normal attachment test and add 1 to the target number for every hour the item has been deactivated."
+    - "One success means the virus lingers near the item for a number of hours equal to 12 + the Force of the item."
+  outcomes:
+    - "If the character does not activate the item within that time, the virus dissipates without damaging the item."
+    - "If the item is activated during that period, the virus begins to feed and eventually drains the item."
+    - "If the character deactivates the item before the virus drains it, the virus subsequently dissipates within a number of hours equal to 12 + the Force of the item, minus the number of Force Points the virus drained while the item was active."
+
+destroying_strain_iii:
+  methods:
+    - "Use the Sterilize or Cure Disease spells in astral space."
+    - "Deny the virus food."
+  spell_test:
+    - "While in astral space, cast Sterilize or Cure Disease on the item on which Strain III is feeding."
+    - "Increase the target number for the spell by 1 for each Force Point of the virus."
+    - "For every 2 successes, reduce the Force of the virus by 1."
+    - "When Force reaches 0, the virus is destroyed."
+
+host_loss_and_reproduction:
+  - "When the magical host is reduced to 0, the virus searches for a new host."
+  - "It floats in astral space for a number of weeks equal to its Force Rating."
+  - "If it finds no host within that time, it loses 1 point of Force for each subsequent week in which it fails to find a host, until it feeds again or dies."
+  - "At Force 10 or higher, it must split apart into smaller entities."
+  - "The gamemaster chooses how it divides, but all new entities must have Force 1-5 and therefore begin Dormant."
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "102-104", pdf_pages: "111-113", relation: rule_exact}
