@@ -1,0 +1,112 @@
+id: rules.source7121.mr-darke
+record_type: rule_reference
+status: ingested
+source: source.fasa-7121
+printed_pages: "17-22"
+pdf_pages: "18-23"
+content_class:
+  - rule_exact
+  - rule_procedure
+  - world_fact
+framing: exact_mechanics
+
+mr_darke:
+  attributes: {B: 5, Q: 4, S: 4, C: 3, I: 6, W: 6, E: 6, M: 10, R: 5}
+  initiative: "5 + 2D6"
+  threat_professional_rating: "9*/4"
+  initiate_grade: 6
+  skills:
+    Armed_Combat: 4
+    Firearms: 5
+    Magical_Theory: 4
+    Sorcery: 6
+    Unarmed_Combat: 4
+  spells:
+    combat:
+      Death_Touch: 4
+      Hellblast: 5
+      Rot: 4
+      Sleep: 7
+    detection:
+      Animal_Spy: 3
+      Foretelling: 3
+      Mind_Probe: 4
+      Mindlink_individual: 3
+    health:
+      Decrease_Reaction_minus_2: 4
+      Heal: 4
+      Increase_Reaction_plus_1: 4
+    manipulation:
+      Anti_Bullet_Barrier: 5
+      Control_Actions: 5
+      Control_Emotions: 5
+      Control_Thoughts: 5
+      Flamethrower: 8
+      Influence: 7
+      Terrorize: 5
+    illusion:
+      Agonizing_Pain: 5
+      Dream: 8
+      Invisibility: 5
+      Mask: 8
+  gear:
+    - "Power Focus (3)"
+    - "Spell Lock (Anti-Bullet Barrier 5)"
+    - "Spell Lock [Increased Reflexes (+1)]"
+    - "Other gear as needed."
+  threat_rating_note: "Reduce Mr. Darke's Threat Rating to 8 on the physical plane and to 6 when outside of Aztlan."
+
+crawlers:
+  limits:
+    controlled_at_once: 6
+  attributes:
+    B: 10
+    Q: "8 x 5"
+    S: 12
+    C: 6
+    I: 6
+    W: 8
+    E: "(6)"
+    R: 7
+    Armor: "8/10"
+  initiative: "7 + 4D6"
+  threat_professional_rating:
+    astral: "6/4"
+    physical: "4/4"
+  attacks:
+    count: 3
+    tentacle_attack:
+      quantity: 2
+      damage: "12M Stun"
+    mouth_bite_venom:
+      trigger: "If both tentacles hit."
+      effect: "Every 2 net Melee Combat successes reduce the victim's Reaction by 1."
+      opposition: "Successes may be offset by the victim's Melee Combat successes and by a standard Damage Resistance Test."
+      recovery: "Reaction reduction wears off at 1 point per minute after the fight has ended."
+      scope: "Reaction reductions affect cyberware, bioware and magical bonuses to Reaction as well."
+
+gum_toads:
+  limits:
+    controlled_at_once: 6
+  attributes:
+    B: 12
+    Q: "3 x 2"
+    S: 7
+    C: 2
+    I: 4
+    W: 4
+    E: "(6)"
+    R: 3
+    Armor: "3/3"
+  initiative: "3 + 2D6"
+  threat_professional_rating:
+    astral: "6/4"
+    physical: "4/4"
+  attacks:
+    - "7M"
+    - "Melee Attack Body Slam (6 dice)"
+  powers:
+    - Binding
+
+sources:
+  - {source: source.fasa-7121, printed_pages: "21-22", pdf_pages: "22-23", relation: rule_exact}
