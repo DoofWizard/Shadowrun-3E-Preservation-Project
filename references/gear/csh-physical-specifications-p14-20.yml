@@ -1,0 +1,57 @@
+id: reference.gear.csh-physical-specifications-p14-20
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: "14-20"
+pdf_pages: "15-21"
+content_class: [equipment_stat, campaign_guidance]
+edition_scope: "Shadowrun Second Edition / 2055 corporate-catalog design guidance; legacy lineage only"
+attribution: "Knight Errant promotional design recommendations, not tested SR3 rules"
+
+perimeter_fence_design:
+  chain_link:
+    minimum_height_m: 2.5
+    maximum_ground_gap_cm: 5
+    barbed_overhang_angle_degrees: 45
+    minimum_extra_overhang_height_cm: 25
+    nearby_vertical_obstacle_threshold_m: 3
+    drainage_opening_without_bars_max_area_sq_cm: 625
+    note: "Specifications are as stated in the fictional Knight Errant reference."
+  concertina:
+    typical_stretched_length_m: 15
+    typical_height_m: 1
+    installation_description: "Two stacked coils or three coils arranged in a pyramid (source-period reference)."
+  electrified_wire_effect_categories:
+    - {level: low, stated_effect: "Trigger alarm without damage"}
+    - {level: intermediate, stated_effect: "May stun or interfere with installed cyberware"}
+    - {level: high, stated_effect: "Can produce permanent harm"}
+    - {numeric_game_damage_code_supplied: false}
+
+security_lighting:
+  recommended_visible_coverage_distance_m: 50
+  recommended_perimeter_luminaire_standoff_m: 10
+  efficacy_lumens_per_watt:
+    mercury_vapor: [30, 63]
+    high_pressure_sodium: [63, 140]
+    low_pressure_sodium: [100, 183]
+  gaseous_discharge_cold_ignition_time_minutes: [2, 5]
+  gaseous_discharge_hot_restart: "Longer than cold ignition; no exact interval supplied"
+  quartz_recommended_minimum_power_w: 1500
+  other_lighting_types: [incandescent, fluorescent, active_infrared]
+  infrared_visibility_claim: "Describes active infrared illumination as compatible with thermographic and augmented vision; no numeric game modifier provided."
+
+door_and_lock_design:
+  suggested_one_piece_steel_frame_gauge_options: [12, 16]
+  suggested_maximum_door_lock_frame_clearance_cm: 0.325
+  suggested_minimum_padlock_shackle_diameter_cm: 1.3
+  discussed_lock_types: [pin_tumbler, padlock, maglock, electronic_identification_lock]
+  window_materials: [wired_glass, tempered_glass, safety_glass, reinforced_armor_glass, polycarbonate_glazing, fiber_weave_composite, ballistic_composite]
+  other_systems: [monowire_fence, sound_generator, concealed_gun_port, sensor_triggered_shutter, netgun, drones]
+
+mechanical_fidelity:
+  - "All numbers above are preserved as source technical specifications, without conversion into game Difficulty/Target Numbers, Damage Codes, or SR3 costs."
+  - "No standalone SR2/SR3 test sequence, target-number modifier, price, Availability, legality code, damage code, dice pool or stat block occurs in the inspected specification passages."
+  - "Specific gear/catalog rules later in printed pp.66-93 and GM rules in pp.94-105 require separate deep-scanning; no supersession inferred."
+
+sources:
+  - {source: source.fasa-7118, printed_pages: "14-20", pdf_pages: "15-21", relation: historical_technical_design_reference}
