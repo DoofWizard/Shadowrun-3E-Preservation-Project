@@ -1,0 +1,25 @@
+name: Shadowrun ingestion gate
+on:
+  push:
+    paths:
+      - 'tools/ingestion/**'
+      - '.github/workflows/shadowrun-ingestion-gate.yml'
+  pull_request:
+    paths:
+      - 'tools/ingestion/**'
+      - '.github/workflows/shadowrun-ingestion-gate.yml'
+jobs:
+  preservation-gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install PyYAML==6.0.2
+      - name: Existing editorial validation tests
+        run: python tools/ingestion/connector_preflight.py --self-test
+      - name: New submission gate tests
+        run: python -m unittest discover -s tools/ingestion -p 'test_ingestion_gate.py' -v
