@@ -1,0 +1,113 @@
+id: audit.source7118.editorial-recovery-2026-10-08
+status: resolved
+source_id: source.fasa-7118
+pending_id: pending.source7118.technical-context-p24-33
+scope: pending_normalization_recovery_only
+printed_range:
+- 24
+- 33
+pdf_range:
+- 25
+- 34
+fresh_source:
+  drive_id: 1mDbTm9h3NAGW24Ala3O64fP6Y5Xr9-Rz
+  bytes: 42071607
+  sha256: a956f6f4593e49073f3dc8c23af15f53095c8a436ea0af4ab80af3d0a9a59066
+  pdf_page_count: 138
+  text_layer_in_range: absent
+  review_method: rendered_page_images_no_ocr
+original_failure:
+  rejected_payload_available: false
+  provider_error_available: false
+  root_cause: unknown
+  inferred_filter_trigger: null
+  inferred_version_conflict: null
+preserved_existing_record:
+  id: reference.gear.csh-technical-specifications-p26-33
+  commit: ef5850a6a6027a0c52d26e9b4a19f1f2a2e123c0
+  blob_sha_before: a362d2f67a736f1fad7cf4f1ddf2aeba0526e49f
+  blob_sha_after: a362d2f67a736f1fad7cf4f1ddf2aeba0526e49f
+  rewritten: false
+editorial_preflight:
+  path: tools/ingestion/connector_preflight.py
+  commit: 82e070bf0a79b9d3742c1f194f61bda4202932f4
+  github_blob_sha: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  runtime: 3.13.5
+  test_command: python tools/ingestion/connector_preflight.py --self-test
+  tests_run: 29
+  tests_failed: 0
+  qualification: local_container_not_CI
+  source_semantics_proof: not_provided_by_checker
+  connector_acceptance_prediction: false
+accepted_records:
+- status: pass
+  record_id: reference.gear.csh-technical-specifications-addendum-p26-33
+  content_class: equipment_stat
+  immutable_sha256: b09899195f93b4f80cafe866cbf33082ca401f763192a720ed2b18366c4a1a97
+  source_accuracy: visual_review_of_pending_range
+  connector_acceptance: verified
+  baseline_file_sha256: 1642952fe793ba755a3baf219aaef6ba87e8bc8e3512a6c6fbff4a0d201f38b1
+  candidate_file_sha256: 06108be2219ba722b7ec0c669d78e485f3373ca97fd9d06cdb63ea5524456820
+  path: references/gear/csh-technical-specifications-addendum-p26-33.yml
+  commit: 4fda2f2bc9b08837ed9a31ea42092ce63cef9a72
+  github_blob_sha: 97a15462a2b57c0e5fd02884809c98a0238fad75
+  candidate_bytes_match_github_blob: true
+- status: pass
+  record_id: reference.security.csh-technical-context-p24-33
+  content_class: world_fact
+  immutable_sha256: fb38718936bf04687eb25add80d270d14e5b503a3d0238331071dc19ed27ce38
+  source_accuracy: visual_review_of_pending_range
+  connector_acceptance: verified
+  baseline_file_sha256: dc57b5f9739aeb8bee6bd2e0d30903daf78a91595c02e182efca7b3f78e2c7c1
+  candidate_file_sha256: 86b153933047d50bc0b6e1c0b18e55846525234563bd81e134a79904c3d8df5c
+  path: references/security/csh-technical-context-p24-33.yml
+  commit: 6224136ad4d06486b28d5d6cedc20566a8a66eb8
+  github_blob_sha: ef1bf0d5a2dcdab6323a0f60e92e7d33110c0086
+  candidate_bytes_match_github_blob: true
+- status: pass
+  record_id: reference.security.csh-technical-guidance-p26-31
+  content_class: campaign_guidance
+  immutable_sha256: 8b038ac442329d56c842c44299bab327794dd1da5abe3fd65f92d14114ce4965
+  source_accuracy: visual_review_of_pending_range
+  connector_acceptance: verified
+  baseline_file_sha256: 4fff0674f94ddf8c5b3762e4f64176a84d434a1a1c3e0d662c2c4965cd16cf4f
+  candidate_file_sha256: e45172ed8795ed1cfd0597a9e0eddceef9dffe7168dcdb2ca6f3850c76868562
+  path: references/security/csh-technical-guidance-p26-31.yml
+  commit: 5d8181eec5d5d91e4b9715c7f38296865fd528c4
+  github_blob_sha: 029dae17cff00198e0aca83e37974be7ee341d3e
+  candidate_bytes_match_github_blob: true
+- status: pass
+  record_id: reference.security.csh-technical-claims-p24-33
+  content_class: attributed_claim
+  immutable_sha256: fb83ebfe280626e65d44007eaef90d610e10b3a373af5850fd921eb78c86ef85
+  source_accuracy: visual_review_of_pending_range
+  connector_acceptance: verified
+  baseline_file_sha256: 68ffb4299b35a4c555f5a173fa7876538c2ad5b2ceea0d74d39f1c8d9b64d866
+  candidate_file_sha256: ecde674a22cf5dbb62b584615bf6ec25a8d571b4868f4aacc9bcd02e18a035bc
+  path: references/security/csh-technical-claims-p24-33.yml
+  commit: 900872722bd58d9a19b214ba1527a1de851d8643
+  github_blob_sha: 4006d30f05bcd2f2e5450d263e49643d655ef0b6
+  candidate_bytes_match_github_blob: true
+coverage:
+  new_semantic_records: 4
+  attributed_assertions: 26
+  source_period: 2055
+  edition_relation: historical_reference_not_SR3_override
+  art_only_printed_pages:
+  - 25
+  figure_prose_terminology_distinction_preserved: true
+  new_unscanned_pages_processed: false
+durability:
+  semantic_records_committed_first: true
+  manifest_commit: c3d44d5f8b8465a38efd81f4ed68cb83fa967cbd
+  checkpoint_commit: 829ed7e094efe459572ddc61fd99a24595838523
+  recovery_retirement_commit: 2cb3b3c44e12cfa21c1283a108f17303716b0b07
+  manifest_done:
+    p: 33
+    pdf: 34
+  manifest_next:
+    p: 34
+    pdf: 35
+  pending: []
+  source_status: ingesting
+worker_contract_commit: b35dbfc7f6ca34848afcbbc4933dd70bc4e411e2
