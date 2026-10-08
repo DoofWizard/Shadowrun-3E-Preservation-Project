@@ -53,6 +53,15 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
         if item.get('status')!='verified' or item.get('protocol')!='sr3-gate/v1':fail('unverified_record')
         if item.get('source')!=manifest['id'] or item.get('readback_blob_sha')!=item.get('expected_blob_sha'):fail('provenance_mismatch')
         if not HEX40.fullmatch(str(item.get('commit_sha',''))):fail('missing_commit')
+        p=item.get('printed_pages','')
+        q=item.get('pdf_pages','')
+        def range_pair(x):
+            m=re.fullmatch(r'([0-9]+)(?:-([0-9]+))?',str(x))
+            if not m:fail('invalid_record_range')
+            return int(m.group(1)),int(m.group(2) or m.group(1))
+        first,last=range_pair(p)
+        pdf_first,pdf_last=range_pair(q)
+        if not (expected_start<=first<=last<next_printed and expected_pdf<=pdf_first<=pdf_last<next_pdf and last-first==pdf_last-pdf_first):fail('record_outside_slice')
         if item['path'] in seen:fail('duplicate_path')
         seen.add(item['path'])
     return {'authorized':True,'source':manifest['id'],'from':[expected_start,expected_pdf],
