@@ -15,6 +15,29 @@ The active MAIN SOURCE MANIFEST is the sole per-source progress authority. The c
 
 The transactional durability protocol and mechanical-fidelity invariant in `INGESTION_WORKER_HANDOFF.md` remain mandatory. The contract below makes the existing newsroom convention executable; it does not add another model call, research pass or corpus migration.
 
+## Submission gate — mandatory new-write sequence (2026-10-08)
+
+The manual FASA7118 pp.34–61 transcription skipped the previously documented preflight. Merely reminding a worker is not enough. The following gate is now REQUIRED before any NEW semantic GitHub write by manual or scheduled workers.
+
+Read and execute tools/ingestion/ingestion_gate.py in the working environment, alongside connector_preflight.py. This validates what is written; it does not rewrite or censor source facts and does not perform an extra model call.
+
+1. Independently produce a source-reviewed baseline and one-semantic-class candidate. Preserve exact mechanics and attribution. Obtain the SHA-256 of the FRESH cataloged PDF.
+2. BEFORE creating/updating a new semantic file, execute:
+   python tools/ingestion/ingestion_gate.py prepare BASELINE.yml CANDIDATE.yml references/path.yml source.id PDF_SHA256 > plan.json
+   Require exit code 0 and status preflighted. Submit EXACT candidate bytes. A directly authored GitHub file without the gate must be treated as an incomplete transaction, not successful ingestion.
+3. FETCH that exact GitHub path after the write. Obtain actual returned commit SHA and read-back Git blob SHA. Execute:
+   python tools/ingestion/ingestion_gate.py confirm plan.json CANDIDATE.yml COMMIT_SHA READBACK_BLOB_SHA > verified.json
+   Require exit code 0 and status verified. Commit SHA alone is insufficient.
+4. Re-fetch the main manifest and checkpoint. Before advancing the manifest call:
+   python tools/ingestion/ingestion_gate.py authorize-advance current_manifest.yml current_checkpoint.yml verified.json FIRST_PRINTED FIRST_PDF NEXT_PRINTED NEXT_PDF
+   Require authorized true. With multiple semantic records supply a JSON ARRAY of verified receipts. Stop on stale heads, pending IDs, duplicate files, missed pages, or out-of-route ranges.
+5. Update the authoritative manifest against the current blob SHA. Verify it. Then update WORKER_CHECKPOINT.yml against its current SHA and verify matching boundaries. Only a complete record/manifest/checkpoint sequence permits a further slice.
+6. If the baseline, PDF hash, validation runtime, connector readback or current manifest cannot be verified, stop this RUN safely and use the existing pending/recovery protocol. NEVER skip the gate or disable the hourly automation.
+
+The guard cannot independently verify that source extraction was complete or that neutral prose is semantically faithful; direct source-image review remains mandatory. It also cannot prevent an actor with direct GitHub write rights from bypassing it. GitHub Actions tests gate code; do not claim branch-protection enforcement without verification.
+
+Preflight evidence for the already accepted FASA7118 pp.34–61 manual run is absent. Do not invent retroactive receipts, do not rescan previously verified pages without a specific audit reason, and do not pretend GitHub acceptance proves full fidelity. Record this audit debt separately while preserving the real progress boundary.
+
 ## Mandatory editorial preflight for new semantic writes
 
 Read and use `tools/ingestion/connector_preflight.py` in the current working container. Dependencies: Python 3.10+ and PyYAML. Its synthetic qualification is available with `--self-test`; do not repeatedly claim those tests as new ingestion progress.
