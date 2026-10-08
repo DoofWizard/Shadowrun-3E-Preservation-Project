@@ -29,6 +29,13 @@ class GateTests(unittest.TestCase):
     def test_good(self):
         self.assertTrue(authorize_advance(self.manifest,self.checkpoint,
             [self.receipt],62,63,66,67)['authorized'])
+    def test_single_receipt(self):
+        self.assertTrue(authorize_advance(self.manifest,self.checkpoint,
+            self.receipt,62,63,66,67)['authorized'])
+    def test_record_outside_slice(self):
+        self.receipt['printed_pages']='70-71'
+        self.bad(lambda:authorize_advance(self.manifest,self.checkpoint,
+            [self.receipt],62,63,66,67))
     def test_no_preflight(self):
         self.bad(lambda:confirm({'status':'ready'},self.c,'b'*40,'c'*40))
     def test_mutation(self):
