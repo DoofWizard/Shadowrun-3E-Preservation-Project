@@ -1,0 +1,205 @@
+id: reference.gear.csh-technical-specifications-addendum-p26-33
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: 26-33
+pdf_pages: 27-34
+content_class:
+- equipment_stat
+edition_scope: Second Edition; source-period 2055; historical reference, not an SR3 override
+framing: reference_exact
+summary: Additional source-described specifications and exceptions. Existing committed specifications
+  remain unchanged.
+related_records:
+- reference.gear.csh-technical-specifications-p26-33
+data:
+  record_relationship: Supplement to the existing technical reference; no replacement or inferred rules
+    supersession.
+  source_attribution: Knight Errant technical-reference narration; source-described equipment characteristics,
+    not independently verified SR3 statistics.
+  perimeter_devices:
+    printed_pages: 26-27
+    pdf_pages: 27-28
+    taut_wire_false_alarm_condition: Living animals within detection range can cause false alarms.
+    electromechanical_variants:
+    - magnetic_or_conducting_contact
+    - mechanical_frame_switch
+    - conductive_window_foil
+    pressure_device: Conductive mat whose switch closes under pressure.
+    photoelectric_device:
+      components:
+      - sending_unit
+      - receiving_unit
+      light_types:
+      - visible
+      - invisible
+      - laser
+      alarm_condition: Interrupted beam; receiver detects absence of the expected light.
+      options:
+      - reflectors_for_multiple_crossings
+      - photocells_sensitive_to_specific_light_types
+  area_devices:
+    printed_page: 27
+    pdf_page: 28
+    ultrasonic:
+      signal: high_frequency_sound
+      detection: changed_return_wave_pattern
+      programmable_ignored_sounds:
+      - doorbells
+      - telecom_incoming_message_signals
+    microwave:
+      signal: high_frequency_electromagnetic_waves
+      detection: changed_echo_pattern
+      wall_and_window_penetration: true
+      false_alarm_sources:
+      - incidental_moving_objects
+      - authorized_personnel
+    passive_infrared:
+      calibration: Wider body-temperature range required for metahumanity.
+      source_relative_false_alarm_claim: More susceptible to false alarms than any other motion-detector
+        type.
+    air_pressure:
+      classification: pressure_detection_not_motion_detection
+      sensor: diaphragm
+      detection: Ambient air-pressure changes in a room or area.
+      examples:
+      - movement
+      - door_opening_or_closing
+      blind_spots: false
+      required_analysis: Computer distinguishes normal barometric fluctuations.
+  proximity_devices:
+    printed_page: 28
+    pdf_page: 29
+    capacitance:
+      configurable_trigger_distance: within several feet, or on contact, as stated without a precise rating
+      uses:
+      - specific_objects
+      - storage_sites
+      - rooms
+      - smart_gun_emplacements
+      discrimination: Metahuman bodies versus other moving objects; not an employee identity check.
+    vibration:
+      sensor: contact_microphone_on_or_near_protected_object
+      alarm_condition: Detected vibration outside programmed exclusions.
+      programmable_exclusions:
+      - creaking_floors
+      - telecom_beeps
+      - mouse_activity
+      - thunder
+      - gunfire
+      - traffic
+  maglock_key_scope:
+    printed_page: 30
+    pdf_page: 31
+    user:
+      types_1_2: Key specific to each lock.
+      types_3_4: Key specific to each user.
+    submaster:
+      opens: All maglocks within a specified area, such as a wing or building.
+      recommended_holders:
+      - high_level_executives
+      - on_duty_security_guards
+    master:
+      opens: All maglocks in a corporate compound.
+      usual_keys_per_site: 1
+      usual_holder: site_senior_security_officer
+    root_master:
+      intended_uses:
+      - installation
+      - rekeying
+      - surprise_inspections
+      - access_to_all_sensitive_areas
+      recommended_holders: Most senior security executives only.
+  maglock_configuration:
+    printed_pages: 29-30
+    pdf_pages: 30-31
+    type_2_prevalence: Most commonly used type, per source.
+    type_4_relative_cost: Most expensive and versatile type, generally for high-security areas.
+    types_3_4_rekeying: Can be rekeyed from the central security system.
+    departing_employee: Delete the user key from the system.
+    new_employee: Program the user key on the first day of work.
+    missing_submaster_or_master: Program a new key and delete the old one as soon as the loss is discovered.
+    logging: Keypad and card-reader styles can record identity and opening/closing time.
+    copy_control: Keys normally include programs preventing unauthorized copies.
+    key_location: Security personnel may track keys through magical means; no Test supplied.
+  pass_system:
+    printed_pages: 30-31
+    pdf_pages: 31-32
+    signal: Low-powered microchip identification signal read by proximity readers.
+    authorized_response: Unlock the protected door or barrier.
+    unauthorized_response:
+    - door_does_not_respond
+    - more_commonly_alert_control_center_or_security_rigger
+    followup_interface:
+    - closed_circuit_television
+    - intercom
+  biometrics:
+    printed_page: 31
+    pdf_page: 32
+    fingerprint_capacity_source_wording: Thousands of different prints.
+    most_secure_indicator_count: two or more
+    example_combination:
+    - voice_verification
+    - retinal_scan
+    liveness: Current systems can detect employee vital signs.
+  imaging:
+    printed_page: 31
+    pdf_page: 32
+    minimum_components:
+    - fixed_camera
+    - receiver_monitor
+    - cable_link
+    multi_camera_control: Camera control unit links cameras to a monitor bank.
+    mounts:
+    - fixed
+    - movable
+    low_light: Source describes imaging in extreme low light beyond metahuman visual capability.
+  drones:
+    printed_page: 32
+    pdf_page: 33
+    sensor_payloads:
+    - video
+    - audio
+    - thermal
+    - motion_detection
+    weapon_payload_examples:
+    - ballistic
+    - nerve_gas
+    - net
+    - taser
+    control_modes:
+    - independent_programming
+    - system_control_rig
+    - combined
+    functions:
+    - patrol
+    - spotlight_illumination
+    - laser_targeting
+    - weapon_response
+    semi_mobile:
+      route_guidance:
+      - tracks
+      - wires
+      internal_guidance: Generally absent.
+      power: External electrical supply; some models have limited backup.
+    free_ranging:
+      patrol_modes:
+      - specified_area
+      - random_patterns
+      reporting_modes:
+      - all_sensory_input
+      - specific_event_alerts
+  detectors:
+    printed_pages: 32-33
+    pdf_pages: 33-34
+    weapon_detection: MAD circuitry compares ferrous-metal signal patterns with weapon patterns and alarms
+      on a match.
+    chemical_detection: Airborne traces from explosive compounds and propellant used in modern caseless
+      ammunition.
+    cyberware_scanner_modes:
+    - CCSS_integrated
+    - independent
+    cyberware_detection_scope: Generally detects and identifies standard and restricted cyberware containing
+      non-organic components; previously recorded organic/Alpha/Beta exceptions remain applicable.
+  game_resolution: No additional target numbers, dice pools, damage codes, Availability, legality or retail
+    prices supplied by this range.
