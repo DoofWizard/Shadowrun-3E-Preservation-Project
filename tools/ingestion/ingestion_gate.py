@@ -46,7 +46,8 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
     if manifest.get('pending') or checkpoint.get('pending_normalization') or checkpoint.get('open_conflicts'):fail('unresolved_pending')
     if next_printed<=expected_start or next_pdf<=expected_pdf or next_printed-expected_start!=next_pdf-expected_pdf:fail('invalid_range')
     if not any(r[0]<=expected_start and r[1]>=next_printed-1 for r in manifest.get('routes',[])):fail('not_one_route')
-    if not verified:fail('no_verified_records')
+    if isinstance(verified, dict): verified=[verified]
+    if not isinstance(verified, list) or not verified:fail('no_verified_records')
     seen=set()
     for item in verified:
         if item.get('status')!='verified' or item.get('protocol')!='sr3-gate/v1':fail('unverified_record')
