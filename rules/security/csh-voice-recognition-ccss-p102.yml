@@ -1,0 +1,47 @@
+id: rule.security.csh-voice-recognition-ccss-p102
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: '102'
+pdf_pages: '111'
+edition_scope: Historical Corporate Security Handbook (Second Edition); not an automatic Shadowrun 3E override
+content_class:
+- rule_procedure
+data:
+  source_section: Gamemaster Information / Voice Recognition Systems / CCSS
+  voice_recognition:
+    system_rating_range: 1-10
+    response: An authorized voice response is required within the device time limit or an alarm sounds.
+    input: Recording, other voice simulation, or the genuine authorized voice.
+    recognition_test:
+      dice: Recognition System Rating
+      target_number: Deception System Rating
+    deception_test:
+      dice: Deception System Rating
+      target_number: Recognition System Rating
+    comparison: Most successes wins.
+    tie: Neither wins; system requests a new response and another attempt is possible.
+    voice_mask_exclusion: Voice-mask system in Street Samurai Catalog only distorts voice; cannot replicate authorized voice
+      for this purpose.
+  closed_circuit_simsense:
+    controller: Rigger controls parts of the connected technical system with access controls and alarms.
+    actively_controlled_devices: Maximum count equal to rigger Intelligence (example Intelligence 5 controls five components).
+    inactive_components: Operate on autopilot; anomalies or automatic alerts reach rigger through main computer.
+    passive_awareness: CCSS rigger must make Perception Test to notice changes in units connected to circuit.
+    rigger_perception_test_table:
+    - situation: Binary state, e.g. door open/closed
+      target_number: 5
+    - situation: Attempted lock tampering without alarm
+      target_number: 3
+    - situation: Successful lock tampering
+      target_number: 3 x tamper successes
+    - situation: Alarm or sensor triggered
+      target_number: Automatic
+    - situation: Device destroyed
+      target_number: 4
+    - situation: Device carefully deactivated
+      target_number: 6
+  lineage: Historical Second Edition GM security-system procedures; no inferred supersession.
+framing: reference_exact
+headline: Voice recognition and CCSS game procedures
+summary: Exact historical game rules, tables, modifiers and provenance for this source section.
