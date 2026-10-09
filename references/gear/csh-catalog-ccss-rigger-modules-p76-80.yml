@@ -1,0 +1,131 @@
+record_type: reference
+status: ingested
+source: source.fasa-7118
+edition_scope: FASA7118 Corporate Security Handbook; Second Edition Ares catalog Fall 2055; historical reference,
+  not automatic SR3 supersession
+id: reference.gear.csh-catalog-ccss-rigger-modules-p76-80
+printed_pages: 76-80
+pdf_pages: 77-81
+content_class:
+- equipment_stat
+framing: reference_exact
+headline: 'Ares 2055 catalog equipment: CCSS decoder, emulation utility, SCRE, rigger modules, encryption'
+summary: Exact source-era item costs, Availability, Street Index, rating restrictions, software sizing, hardware
+  forms and dependencies.
+related_records:
+- rule.security.csh-rigger-control-procedures-p76-79
+- reference.security.csh-catalog-claims-p76-80
+data:
+  source_period: Fall 2055
+  lineage: Second Edition source-period catalog equipment reference; no inferred replacement of Third Edition mechanics.
+  printed_page_76_closed_circuit_simsense:
+    printed_page: 76
+    pdf_page: 77
+    product: Closed-Circuit Simsense (CCSS)
+    manufacturer: CerebroTech
+    operator: trained security rigger
+    system: security-system devices, surveillance/control devices, security drones
+    function: CCSS-equipped devices provide sensory feedback as events occur at a protected site; door, fence and
+      window events are named examples.
+    rigger_view: Rigger senses and hears through networked devices, including surveillance/control devices and drones.
+    decoder_requirement: A CCSS decoder must be installed in the rigger’s remote-control deck or security station;
+      security devices must be modified to handle CCSS protocols.
+    catalog_rows:
+    - item: CCSS Decoder
+      mount: External
+      availability: 8/2 weeks
+      cost_nuyen: 10000
+      street_index: 3
+    - item: CCSS Decoder
+      mount: Internal
+      availability: 12/3 weeks
+      cost_nuyen: 7500
+      street_index: 3
+    - item: CCSS Device Retrofit
+      availability: N/A
+      cost_expression: 25 percent of original cost
+      street_index: N/A
+    - item: CCSS Device
+      availability: N/A
+      cost_expression: +20 percent of original cost
+      street_index: N/A
+    - item: CCSS Drone/Vehicle Modification
+      availability: N/A
+      cost_nuyen: 1500
+      street_index: N/A
+    cross_reference: Closed-Circuit Simsense, Gamemaster Information p.102
+  printed_page_77_protocol_emulation_utility:
+    printed_page: 77
+    pdf_page: 78
+    product: Rigger Protocol Emulation Utility
+    form: Deck software utility allowing a decker to emulate protocols used by riggers, security systems and drones;
+      translates deck software inputs and outputs into rigged-system hardware language.
+    protocol_ratings: Available at differing ratings; higher-rated module contains all protocols in lower-rated
+      modules.
+    size_mp_expression: (Rating × Rating) × 4
+    availability: Varies by rating; see Utility Programs p.262, SRII
+    cost: Varies by rating; see Utility Programs p.262, SRII
+    street_index: Varies by rating; see Utility Programs p.262, SRII
+    cross_reference: Utility Programs p.262, SRII
+  printed_page_78_system_control_rig_emulator:
+    printed_page: 78
+    pdf_page: 79
+    product: System-Control Rig Emulator (SCRE)
+    manufacturer: Ares Security International
+    function: Interface between a cyberdeck and rigged security system or remote-control deck, emulating the machine
+      language of the standard system control rig; intended for system diagnostics.
+    external_form: External module attaches between the cyberdeck and rigged security system or remote-control deck.
+    internal_form: Internal module installs directly in a cyberdeck.
+    dependency: Rigger Protocol Emulation Utility required to use SCRE.
+    catalog_rows:
+    - item: System-Control Rig Emulator
+      mount: External
+      availability: 6/72 hrs
+      cost_nuyen: 25000
+      street_index: 2
+    - item: System-Control Rig Emulator
+      mount: Internal
+      availability: 8/72 hrs
+      cost_nuyen: 20000
+      street_index: 2
+  printed_page_79_protocol_emulation_module:
+    printed_page: 79
+    pdf_page: 80
+    product: Rigger Protocol Emulation Module
+    function: Allows a rigger to emulate protocols including CCSS used by contemporary rigged security systems and
+      drones for diagnostics.
+    external_form: Mounted inline between the rigger’s system-control-rig dataport and the system being diagnosed.
+    internal_form: Installed in remote-control deck; remote systems require the internal module.
+    maximum_rating: 10
+    rating_effect: Higher-rated modules carry more protocols in firmware.
+    catalog_rows:
+    - item: Rigger Protocol Emulation Module
+      mount: External
+      availability_expression: (Rating)/(Rating) days
+      cost_expression_nuyen: 5,000 × Rating
+      street_index: 2
+    - item: Rigger Protocol Emulation Module
+      mount: Internal
+      availability_expression: (Rating + 2)/(Rating) days
+      cost_expression_nuyen: 4,500 × Rating
+      street_index: 2
+  printed_page_80_decryption_module:
+    printed_page: 80
+    pdf_page: 81
+    product: Rigger Decryption Module
+    function: Cryptographic firmware routines for testing encryption of rigged security systems and drones; more
+      protocols at higher ratings.
+    external_form: Mounted inline between the rigger’s system-control-rig dataport and the system being diagnosed.
+    internal_form: Installed inside remote-control deck; remote systems require the internal module.
+    maximum_rating: 10
+    catalog_rows:
+    - item: Rigger Decryption Module
+      mount: External
+      availability_expression: (Rating)/(Rating) days
+      cost_expression_nuyen: 7,500 × Rating
+      street_index: 2
+    - item: Rigger Decryption Module
+      mount: Internal
+      availability_expression: (Rating + 2)/(Rating) days
+      cost_expression_nuyen: 7,000 × Rating
+      street_index: 2
