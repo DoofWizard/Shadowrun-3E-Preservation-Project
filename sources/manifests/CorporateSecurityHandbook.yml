@@ -2,9 +2,14 @@ id: source.fasa-7118
 status: ingesting
 depth: directed
 
-done: {p: 103, pdf: 112}
-next: {p: 104, pdf: 113}
-pending: []
+done: {p: 105, pdf: 114}
+next: {p: 106, pdf: 115}
+pending:
+  - id: pending.source7118.p104-105-semantic
+    printed_range: [104, 105]
+    pdf_range: [113, 114]
+    reason: semantic_create_tool_safety_rejection
+    record_paths: [rules/security/csh-gm-system-resolution-p104-105.yml, options/security/csh-goose-adept-p104-105.yml]
 resolved_pending:
   - pending.source7118.catalog-claims-p76-80
   - pending.source7118.catalog-mechanics-p70-71
@@ -100,4 +105,4 @@ source_integrity:
   pdf_page_count: 138
   text_layer: absent
   interstitial_art_pdf_pages: [82, 89]
-  next_printed_page_pdf_mapping: {printed: 104, pdf: 113}
+  next_printed_page_pdf_mapping: {printed: 106, pdf: 115}
