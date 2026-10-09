@@ -1,0 +1,179 @@
+id: reference.gear.csh-sentinel-guardian-drone-catalog-p89-93
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: 89-93
+pdf_pages: 98-102
+edition_scope: FASA7118 Corporate Security Handbook, Ares Catalog 2055, historical Second Edition; no inferred SR3
+  supersession
+content_class:
+- equipment_stat
+related_records:
+- reference.security.csh-drone-catalog-comments-p89-93
+data:
+  source_period: Ares Catalog 2055
+  gear:
+  - id: ares-sentinel
+    printed_page: 89
+    pdf_page: 98
+    type: stationary Sentinel drone, indoor/outdoor
+    handling: 5
+    speed: N/A
+    body_armor: 4/12
+    signature: 8
+    autopilot: 3
+    storage: N/A
+    cost_nuyen: 40000
+    economy: N/A
+    power: 2 PF
+    operational_duration: Building supplied/unlimited
+    backup_battery_duration_hours: 2
+    setup_breakdown_time: N/A
+    sensor_package: Security II (5)
+    recoil_compensation_points: 6
+    additional_features:
+    - Integrated thermographic and pulse-radar sensors
+    - Fiber-Optic Observation Network compatibility; one optical port installed
+    - Remote operation standard; direct neural control possible
+    - CCSS closed-circuit simsense protocols
+    - Indoor ceiling mounting; outdoor stationary pole or platform mounting
+    - Badge proximity interrogation system, Technical Security p.30
+    - Neuro-Stun VII gas-delivery system on indoor model
+    - Firm-point accepts any Ares Sentinel weapons pod
+    outdoor_variant_cost_additional_nuyen: 10000
+    outdoor_variant_difference: Fully weatherproofed; normally omits gas-delivery system
+    availability: Normally not on street; at gamemaster discretion
+  - id: ares-sentinel-p
+    printed_page: 90
+    pdf_page: 99
+    type: semi-mobile monorail-mounted Sentinel P drone, indoor/outdoor
+    handling: 5
+    speed: '10'
+    body_armor: 4/12
+    signature: 6
+    autopilot: 3
+    storage: N/A
+    cost_nuyen: 60000
+    economy: N/A
+    power: 2 PF
+    operational_duration: Building supplied/unlimited
+    backup_battery_duration_hours: 2
+    setup_breakdown_time: N/A
+    sensor_package: Security I (4)
+    recoil_compensation_points: 4
+    additional_features:
+    - EMMA ElectroMagnetic Movement and Articulation track technology
+    - At building power failure safety clamps secure drone to rail and internal battery supplies backup power
+    - Badge proximity interrogation system, Technical Security p.30
+    - Firm-point for any Ares Sentinel weapons pod
+    weatherproof_outdoor_variant_additional_cost_nuyen: 10000
+    monorail_cost_nuyen_per_meter: 100
+    monorail_width_cm: 10
+    monorail_install_locations: Indoor walls/ceilings or tops of outdoor fence, wall or barrier; track can connect
+      to building electrical supply
+    availability: Normally not on street; at gamemaster discretion
+  - id: ares-guardian
+    printed_page: 91
+    pdf_page: 100
+    type: free-ranging vector-thrust Guardian drone
+    handling: 4/6
+    speed: 30/60
+    body_armor: 4/12
+    signature: 6
+    autopilot: 3
+    storage_cf: 20
+    cost_nuyen: 75000
+    economy: 5 km per PF
+    power: 30 PF
+    operational_duration: 2 hours limited by battery power
+    setup_breakdown_time: 3 minutes
+    sensor_package: Security I (4)
+    availability: 8/8 days
+    street_index: 2
+    features:
+    - Microturret accepts Ares Sentinel weapons pods
+    - Rear turret external tank and compressed-air mounts for Ares Cascade delivery system
+    - Additional 3 CF for vehicle control gear or electronic options
+  - id: sentinel-weapons-pods
+    printed_page: 92
+    pdf_page: 101
+    type: interchangeable Ares Sentinel and Guardian drone weapons pods
+    pods:
+    - level: I
+      weapons_ammunition:
+      - weapon: Ares Squirt
+        ammo: 40
+      - weapon: Defiance Super Shock
+        ammo: 20
+      availability: 5/1 week
+      cost_nuyen: 3000
+      street_index: 2
+    - level: II
+      weapons_ammunition:
+      - weapon: Ares Viper Slivergun
+        ammo: 75
+      - weapon: Narcoject Pistol
+        ammo: 20
+      availability: 6/1 week
+      cost_nuyen: 3500
+      street_index: 2
+    - level: III
+      weapons_ammunition:
+      - weapon: HK227-S
+        ammo: 150
+      - weapon: Narcoject Rifle
+        ammo: 20
+      availability: 6/2 weeks
+      cost_nuyen: 5000
+      street_index: 2
+    - level: IV
+      weapons_ammunition:
+      - weapon: Ares MP-LMG
+        ammo: 500
+      - weapon: Ares Cascade
+        ammo: compressed gas
+      availability: 8/2 weeks
+      cost_nuyen: 7500
+      street_index: 2
+      allowed_drone: Ares Guardian only
+    guardian_built_in_canister_storage: Two sets of 100-shot canisters, DMSO gel and chemical reserve
+    level_iv_cascade_capacity: Twin compressed-gas canisters, up to 200 shots
+    cascade_recharge_cost_nuyen: 100
+    exchange_action_economy: Removing a pod is one Complex Action; installing a pod is another Complex Action; two
+      Complex Actions total to change a pod
+    compatibility: Ares Sentinel and Guardian drones; other drones require major hardware and firmware modification
+    drone_system_adjustment: CerebroTech processor firmware automatically adjusts internal inertial compensators
+      and target information for changed pod
+  - id: sentinel-drone-storage
+    printed_page: 93
+    pdf_page: 102
+    type: Ares Sentinel Drone Storage System
+    base_cost_nuyen: 100000
+    standard_capacity:
+      ares_sentinel_p_drones: 3
+      ares_guardian_drones: 2
+      ares_sentinel_weapons_pods: 10
+    features:
+    - Self-contained, building power operation
+    - Weatherproofing available
+    - Automated rearming operated by security-rigger rearm command; CerebroTech processor performs change
+    options:
+    - name: Backup Power Supply (2 hours)
+      additional_cost_nuyen: 5000
+    - name: Additional Sentinel P Storage
+      additional_cost_nuyen_per_drone: 5000
+    - name: Additional Guardian Storage
+      additional_cost_nuyen_per_drone: 7500
+    - name: Additional Weapons Pod Storage
+      additional_cost_nuyen_per_drone_as_printed: 1500
+    - name: Additional Rearming System
+      additional_cost_nuyen: 10000
+    - name: Weatherproofing
+      additional_cost_nuyen: 10000
+    rearming_design: Standard system described as changing two pods at a time
+    additional_rearming_system_rule: At most one rearming system per three drone-storage capacity upgrades
+    rearming_speed: Each rearming system changes one weapons pod per Combat Turn
+    street_availability: Not normally available on street; at gamemaster discretion
+framing: reference_exact
+headline: 'Ares Sentinel, Sentinel P and Guardian drone systems: exact 2055 equipment statistics'
+summary: Source-period drone stats, sensor grades, costs, ammo, mounting rules, swap actions and automatic rearming.
