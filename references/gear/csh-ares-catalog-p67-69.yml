@@ -1,0 +1,130 @@
+id: reference.gear.csh-ares-catalog-p67-69
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: 67-69
+pdf_pages: 68-70
+edition_scope: Second Edition legacy mechanics, in-world Fall 2055 catalog; historical
+  lineage, not automatic SR3 replacement
+content_class:
+- equipment_stat
+framing: reference_exact
+headline: Ares 2055 historical equipment statistics
+summary: Exact game statistics, price tables, restrictions and cross-references for
+  SuperSquirt II, Cascade and ELD-AR, including an unresolved printed ammunition discrepancy.
+data:
+  source_identity:
+    section: Ares Security International Fall 2055 Catalog
+    manufacturer_or_supplier: Ares Arms, as presented by catalog
+    source_period: '2055'
+    provenance_note: Product numbers and special cases are historical source descriptions,
+      not confirmed SR3 current statistics.
+  equipment:
+  - id: gear.ares-supersquirt-ii
+    name: Ares SuperSquirt II
+    printed_page: 67
+    pdf_page: 68
+    statline:
+      type: Light
+      conceal: 7
+      ammo_literal: 20*
+      mode: SA
+      damage: Special
+      weight: 2
+      availability: 9/14 days
+      cost_nuyen: 800
+      street_index: 1.5
+    game_details:
+      gel_carrier: DMSO; cross-reference Shadowtech p. 92
+      gel_reservoir_capacity_shots: 20
+      delivery_supply_note: Gel supply and chemical supply are carried in two separate
+        clips.
+      extra_gel_reservoir_clip_cost_nuyen: 10
+      compressed_co2_recharge_cost_nuyen: 50
+      projected_effect: Catalog specifies compressed-air operation without noise or
+        recoil.
+      drone_mount: permitted
+      accessory_slots:
+        top: not_permitted
+        barrel: not_permitted
+        underbarrel: not_permitted
+      lineage: Variant of Ares Squirt in Shadowtech p. 92; source explicitly says
+        variant rather than SR3 supersession.
+  - id: gear.ares-cascade-rifle
+    name: Ares Cascade Rifle
+    printed_page: 68
+    pdf_page: 69
+    statline:
+      type_literal: '*'
+      conceal: 4
+      ammo_literal: 60**
+      mode: SA
+      damage: Special
+      weight: 5.5
+      availability: 12/14 days
+      cost_nuyen: 1800
+      street_index: 2
+    game_details:
+      firing_modes:
+      - name: narrow_stream
+        range_category: SMG
+      - name: wide_spray
+        range_category: shotgun
+        effective_choke: 2
+        choke_adjustable: false
+        shotgun_spread_reference: Shadowrun Second Edition p. 95
+        special: Source says power reduction applies to the chemical user to reflect
+          dispersal.
+      gel_carrier: DMSO gel reservoir, described as a clip; separate second clip holds
+        the chemical.
+      reservoir_capacity_body_text_shots: 100
+      reservoir_capacity_table_literal: 60**
+      source_discrepancy: Table says Ammo 60**, but the explanatory paragraph states
+        a reservoir good for 100 shots; unresolved source-internal difference, do
+        not infer correction.
+      extra_gel_reservoir_clip_cost_nuyen: 20
+      compressed_co2_recharge_cost_nuyen: 50
+      drone_mount: permitted
+      accessory_slots:
+        top: standard_permitted
+        barrel: not_permitted
+        underbarrel: standard_permitted
+      relative_description: Successor to Ares Squirt according to advertising; improved
+        reach, accuracy, and reservoir are vendor claims.
+  - id: gear.ares-eld-ar
+    name: Ares ELD-AR Assault Rifle
+    printed_page: 69
+    pdf_page: 70
+    statline:
+      type: Assault
+      conceal: 4
+      ammo_literal: 50 (c)
+      mode: SA/BF
+      damage_literal: Special*
+      weight: 4.5
+      availability: 9/7 days
+      cost_nuyen: 950
+      street_index: 2
+    game_details:
+      normal_ammunition: Gel-coated marking rounds with biodegradable paint or another
+        marking agent.
+      paint_ammunition_price:
+        cost_nuyen: 5
+        quantity: 10
+      normal_paint_round_damage: 4L Stun
+      specialty_round_kit_cost_nuyen: 300
+      specialty_round_damage: May depend on contents; no fixed damage code is supplied.
+      compressed_air_refill_cost_nuyen: 50
+      recoil: Source describes negligible recoil absorbed by stock; no numeric recoil
+        modifier stated.
+      sound_suppressor_rule: Treat weapon as having a sound suppressor.
+      drone_mount: permitted
+      accessory_slots:
+        top: standard_permitted
+        barrel: not_permitted
+        underbarrel: standard_permitted
+      users_described:
+      - UCAS military
+      - corporate security forces
+  missing_further_rules_in_range: No other target numbers, modifiers, dice pools,
+    or accessory prices stated for these three items.
