@@ -1,0 +1,189 @@
+id: rule.security.csh-gm-security-levels-perimeters-p94-98
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: 94-98
+pdf_pages: 103-107
+edition_scope: Historical FASA7118 Second Edition security-system rules; not automatic SR3 supersession
+content_class:
+- rule_exact
+data:
+  source_period: Corporate Security Handbook, Gamemaster Information, printed pp94-98
+  historical_lineage: Original historical source rules/options; not inferred to replace Shadowrun Third Edition.
+  security_system_design:
+    printed_page: 94
+    pdf_page: 103
+    five_components:
+    - physical
+    - technical
+    - magical
+    - Matrix
+    - personnel
+    level_selection: Gamemaster selects level separately for each component and optional individual equipment ratings.
+    default_item_rating: Equipment normally has Rating equal to selected component security level.
+    lower_level_item_rule_of_thumb: For equipment first available at a lower security level than selected, give it Rating
+      twice the selected level; gamemaster discretion.
+    access_to_items: The section allows appropriate security gear purchases for runners with sufficient resources; items
+      need not be stationary or inaccessible to player characters.
+  art_only_pages:
+  - printed_page: 95
+    pdf_page: 104
+  - printed_page: 97
+    pdf_page: 106
+  component_levels:
+    printed_pages: 96-98
+    pdf_pages: 105-107
+    scale: 0-4
+    scale_meanings:
+      '0': none
+      '1': minimal
+      '2': standard
+      '3': higher-level
+      '4': maximum current
+    active_passive: Level 4 usually active; levels 3 or lower usually passive
+    inheritance: Each higher level includes equipment available at all lower levels
+    physical_components:
+    - barriers
+    - lighting
+    - guards
+    - security-trained animals
+    technical_components:
+    - alarms and access controls
+    - surveillance equipment
+    physical_subcomponents_ratable_individually: true
+    technical_subcomponents_ratable_individually: true
+    magical_scope: On-site magically active Magical Security Department staff and special equipment; not special-assignment
+      magicians in other departments.
+    matrix_scope: Protection of corporate private Matrix
+    personnel_scope: Screening, educating and investigating employees
+    levels:
+      physical_security:
+        '0': No substantial barriers or special lighting; no guards or trained animals on premises.
+        '1': All interior doors reinforced; perimeter lighting; guards at exterior entrances only; mundane security animals
+          on-site.
+        '2': Perimeter fences and perimeter lighting with spotlights at key locations; security guards patrol on fixed
+          schedule accompanied by mundane security animals.
+        '3': Exterior and interior walls reinforced slab-to-slab above drop ceiling; extensive site/perimeter lighting
+          with spotlights at all perimeter points; officers assigned to exterior and important interior entrances; additional
+          randomized animal-accompanied patrols.
+        '4': Living walls at pertinent locations to prevent astral intrusion; interior/exterior special lighting including
+          active infrared, low-level or magical; constant patrols with paranormal and/or cybered trained animals.
+      technical_security:
+        '0': No alarms, access controls, or surveillance equipment.
+        '1': Type 1 maglocks on interior doors and perimeter gates; Type 2 maglocks on exterior doors; exterior CCTV
+          monitoring.
+        '2': Exterior door/window sensors and fence alarms; Type 2 maglocks interior; Type 3 maglocks exterior; interior
+          CCTV; corporate motor-pool rigger doubles as on-call security rigger.
+        '3': Interior volumetric and door sensors; Type 3 maglocks on all doors; biometric maglocks in extremely sensitive
+          areas; drones patrol perimeter/grounds; full-time security rigger on-site/on-call monitors perimeter fence
+          and all exterior doors by CCSS.
+        '4': Type 4 maglocks and some biometric systems; drones patrol major interior hallways; extensive CCSS and stationary
+          drone emplacements.
+      magical_security:
+        '0': No magical security on-site.
+        '1': Security magician on-call, usually corporate magician doubling as security magician when needed.
+        '2': Full-time security magician on-site.
+        '3': Site protected by wards and/or a fiber-optic observation network for the security magician.
+        '4': Watchers, nature spirits and/or elementals augment astral patrols, alarms, or fast-response teams.
+      matrix_security:
+        '0': Corporation has no Matrix or does not protect it.
+        '1': Corporate deckers double as security deckers and are on-call.
+        '2': Full-time security deckers on-site; only access corporate Matrix during external alert.
+        '3': Site security deckers access corporate Matrix during internal alerts.
+        '4': Security decker is in site Matrix 24 hours a day.
+      personnel_security:
+        '0': No personnel security measures.
+        '1': Background checks of new employees generally limited to credit/criminal computer checks, supervisor from
+          latest employment and one or two friends.
+        '2': 'Full background investigations: nationwide criminal-computer checks; prior supervisors and coworkers at
+          all employers up to 15 years; neighbors, college professors, friends and enemies.'
+        '3': Active security awareness programs.
+        '4': Periodic employee loyalty checks and re-investigations; all employees take lie-detector tests to verify
+          supplied/obtained information.
+  illustrative_component_rating:
+    printed_page: 98
+    pdf_page: 107
+    selected_component: Technical security surveillance Level 3 (above average)
+    level3_components:
+    - exterior perimeter drones
+    - interior and exterior CCTV
+    - limited CCSS
+    drones: No individual rating; GM selects appropriate type/designs new
+    cctv_rating: 6
+    cctv_rationale: Equipment is available at Levels 1 and 2, which are below selected surveillance Level 3; assigned
+      twice 3
+    ccss_rating: 3
+    ccss_rationale: First available at Level 3, so same Rating as selected surveillance level
+  overall_security_level:
+    printed_page: 98
+    pdf_page: 107
+    formula: Sum five component levels, divide by 6, round down.
+    impact: Used to adjudicate security-system bypass as a whole, even after individual components are bypassed; defeating
+      a security system cross-ref printed p104.
+    morale_training_fatigue_modifiers: Training, morale and fatigue may adjust OSL; modifiers cumulative
+    example: A Level 3 system with trained/motivated employees may raise OSL to at most 4; same setup with inadequate
+      staff may lower to 2.
+    clamp_min: 0
+    clamp_max: 5
+  corporate_shadowfiles_conversion:
+    printed_page: 98
+    pdf_page: 107
+    formula: For a megacorporation with Corporate Shadowfiles Security Rating, divide listed Rating by 2 and round down
+      to find OSL.
+    source_rating_max: 5
+    note: Book rating is a corporate average; individual locations may vary.
+  natural_perimeter_barriers:
+    printed_page: 98
+    pdf_page: 107
+    examples:
+    - hedges
+    - tree lines
+    - dense brush
+    - hills
+    dense_brush_stealth_modifier: +2 to Stealth Tests while traversing
+    solid_obstacles: Solid/area-wide obstacles must be skirted.
+  manmade_perimeter_barriers:
+    printed_page: 98
+    pdf_page: 107
+    examples:
+    - walls
+    - fences
+    - artificial lakes
+    - artificial hills
+    firearm_interaction: Fences normally cannot be damaged by firearms because of lattice openings; rounds pass through.
+    references:
+    - SRII Barriers pp98-99
+    - Fields of Fire climbing walls/fences pp74-75
+    - Fields of Fire swimming pp77
+  wire_visibility:
+    printed_page: 98
+    pdf_page: 107
+    types:
+    - barbed
+    - razor
+    - concertina
+    - monowire
+    perception_test_target_number_adjustments:
+    - situation: Visibility
+      modifier: See SRII p89
+    - situation: Obscured by brush
+      modifier: +1 to +4 depending on brush
+    - situation: Character distracted/running
+      modifier: '+2'
+    - situation: Illumination level fluctuates
+      modifier: Add +1 to the modifier for the worst illumination level
+    wire_table: See next printed p99 for exact wire type, Perception target, damage and Barrier Ratings.
+    trip_wires: Use same Visibility rating as monowire, but usually trigger alarm and no damage. GM can choose monowire
+      tripwire, applying monowire damage in wire table p99.
+  trip_beams:
+    printed_page: 98
+    pdf_page: 107
+    device_description: Laser/high-intensity light beams across area and detector; optional mirrors/reflectors increase
+      coverage; interrupting beam triggers alarm.
+    overt_emitter_detector: Perception (2) Test with appropriate Visibility modifiers (SRII p89)
+    deliberately_concealed_emitter_detector: Additional +4 target-number modifier on top of appropriate Visibility modifiers
+    continued_on_next_page: Beam bypass mechanics and further rules continue on printed p99/PDF108; do not regard this
+      subsection as finished.
+framing: reference_exact
+headline: Security system level 0-4, OSL and perimeter-detection rules from FASA7118
+summary: Five system components and all tier descriptions, exact OSL formulas and initial physical security modifiers.
