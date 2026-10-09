@@ -1,0 +1,153 @@
+id: rule.security.csh-wire-motion-pressure-maglocks-p99-100
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: 99-100
+pdf_pages: 108-109
+edition_scope: Historical Corporate Security Handbook (Second Edition) rules; not automatic Shadowrun 3E supersession
+content_class:
+- rule_exact
+data:
+  source_period: Corporate Security Handbook Gamemaster Information
+  lineage: Historical Second Edition mechanics and cross-references; no inferred SR3 supersession.
+  wire_table:
+    printed_page: 99
+    pdf_page: 108
+    columns:
+    - type
+    - Perception target
+    - damage Grab/Walking/Running
+    - Barrier Rating
+    rows:
+    - wire_type: Barbed
+      perception_target: 2
+      damage_grab: 3L
+      damage_walking: 4L
+      damage_running: 6L
+      barrier_rating: 6
+    - wire_type: Razor
+      perception_target: 2
+      damage_grab: 4L
+      damage_walking: 5L
+      damage_running: 4M
+      barrier_rating: 6
+    - wire_type: Concertina
+      perception_target: 0
+      damage_grab: 4M
+      damage_walking: 5M
+      damage_running: 8M
+      barrier_rating: 6
+    - wire_type: Monowire
+      perception_target: 6
+      damage_grab: 4S
+      damage_walking: 5S
+      damage_running: 7S
+      barrier_rating: 5
+    damage_armor: Impact armor offers one-half standard protection (round down).
+    damage_pool: Combat Pool dice cannot be used for the Damage Resistance Test.
+    wire_cutting:
+    - Damage must be applied directly to the wire.
+    - Wire clippers double effective character Strength when cutting.
+    - 'Strength Test vs wire Barrier: every 2 successes increase effective cutting Strength by 1.'
+  trip_beams_continuation:
+    printed_page: 99
+    pdf_page: 108
+    ordinary_bypass: Quickness Test target number 4-8 based on beam coverage (GM discretion); some impossible to bypass.
+    rerouting_beams: Requires knowledge of emitter/reflector design. Quickness (8) Test with design schematics and time; target
+      12 with picture only; target 16 with neither.
+    rerouting_base_time: 1 week
+    magical_countermeasures: GM may allow spells specifically designed to fool detection.
+    proxy_emitter: 200 nuyen per additional emitter, 1 required per detector; create a stand-in beam at detector.
+    proxy_emitter_test: Reaction (4) Test to set up; failing means broken beam triggers alarm
+  technical_security_rating_table:
+    printed_page: 100
+    pdf_page: 109
+    rows:
+    - security_level: 0
+      alarms_interior_exterior: '0'
+      maglocks: '0'
+      CCTV_exterior_interior: '0'
+      CCSS: '0'
+    - security_level: 1
+      alarms_interior_exterior: '0'
+      maglocks: 2-3
+      CCTV_exterior_interior: 2-3/0
+      CCSS: '0'
+    - security_level: 2
+      alarms_interior_exterior: 2-3/0
+      maglocks: 4-5
+      CCTV_exterior_interior: 4-5/2-3
+      CCSS: '0'
+    - security_level: 3
+      alarms_interior_exterior: 4-5/2-3
+      maglocks: 6-7
+      CCTV_exterior_interior: 6-7/4-5
+      CCSS: 3-4
+    - security_level: 4
+      alarms_interior_exterior: 6-7/4-5
+      maglocks: 8+
+      CCTV_exterior_interior: 8+/6-7
+      CCSS: 5-6
+    biometric_maglock_modifier: +2 to Rating provided for security level
+    rating_discretion: Individual devices may be assigned higher ratings at unusually sensitive sites.
+  motion_sensor:
+    printed_pages: 99-100
+    pdf_pages: 108-109
+    basic_detector_cost_nuyen: 40
+    ultrasonic_detection_range_meters: 5
+    movement_rule: Move at 0.5 meter per Combat Turn and succeed Stealth Test vs sensor Rating (Alarms column) or component
+      security level; failed test sets off alarm.
+    fast_movement_test_modifier: When moving faster than 1 meter per Combat Turn, +1 target number for each additional 0.25
+      meter moved.
+  ultrasound_emitter_detector:
+    printed_pages: 99-100
+    pdf_pages: 108-109
+    weight_kg: 0.5
+    concealability: 8
+    availability: (Rating x 2)/72 hrs
+    cost_nuyen_formula: Rating x 400
+    street_index: 3
+    detection_spoof: Opposed Test between device Rating and motion sensor Rating (or security-level Rating).
+    baseline_success_movement_meters_per_combat_turn: 2
+    stealth_bonus: Successful Stealth Test adds dice to opposed Test in same Combat Turn.
+    slower_movement_modifier: For each 0.5 meter slower than 2 meters/Combat Turn, target number for opposed test reduced
+      by 1.
+    faster_movement_modifier: For each extra 0.25 meter beyond 2 meters/Combat Turn, target number increased by 1.
+  pressure_mesh_pads:
+    printed_page: 100
+    pdf_page: 109
+    detection: Perception Test vs table target number, applying Wire modifiers from printed p98.
+    after_step_detection: After missing first Perception Test, second Perception Test same target number with -2 modifier;
+      failure triggers alarm.
+    successful_after_step: On success detect sensor underfoot, may attempt to remove pressure before sensitivity threshold.
+    reaction_test: Reaction Test against appropriate sensor sensitivity level plus natural Body Rating; running modifier +2.
+    pressure_table:
+    - type: Pressure Mesh
+      perception_target: 8
+      sensitivity_normal: 7
+      sensitivity_animals: 4
+      sensitivity_drones: 3
+    - type: Pressure Pad
+      perception_target: 6
+      sensitivity_normal: 7
+      sensitivity_animals: 3
+      sensitivity_drones: 4
+  vibration_detectors:
+    printed_page: 100
+    pdf_page: 109
+    test: Stealth Skill Success Test every turn vs vibration-analysis software Rating; 1 success avoids detection for that
+      turn.
+    safe_movement_max_meters_per_turn: 0.5
+    movement_1_meter_modifier: +3 target number to Stealth Test at 1 meter/turn
+    movement_over_1_meter: Automatically triggers vibration detector.
+    typical_analysis_rating: 6 to 10+
+  keypad_maglocks_start:
+    printed_page: 100
+    pdf_page: 109
+    keypad_rating_range: 0-10 (custom systems; local store stock)
+    without_code: Unless code is known, must remove casing and tamper with electronics.
+    casing_step: Electronics (B/R) Test vs casing Barrier Rating to remove casing.
+    continued_on_next_page: Page 100 ends mid-sentence; casing Barrier and circuit-tampering rules continue on printed p101.
+framing: reference_exact
+headline: Historical wire damage, sensor and technical security rating tables
+summary: Exact wire damage, alarms, motion/pressure/vibration sensor tests, drone-safety and technical security rating values.
