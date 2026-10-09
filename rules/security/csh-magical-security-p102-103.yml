@@ -1,0 +1,107 @@
+id: rule.security.csh-magical-security-p102-103
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: 102-103
+pdf_pages: 111-112
+edition_scope: Historical Corporate Security Handbook (Second Edition); not an automatic Shadowrun 3E override
+content_class:
+- rule_procedure
+data:
+  source_section: Gamemaster Information / Magical Security / Fiber-Optic Image Links / Astral Patrolling
+    / Fat Bacteria
+  fiber_optic_image_links:
+    source_page: 102
+    line_of_sight: Spellcasting through continuous fiber-optic links is allowed; an electronic system enhancing,
+      strengthening or rebroadcasting the signal interrupts the optical path.
+    maximum_useful_length_m: 2500
+    spellcasting_test_target_modifier: +1 per 500 m (or part thereof) between caster and target, up to 2500
+      m
+    drain_target_modifier: +2 per 500 m
+    spirit_conjuring_via_link: false
+    prism_camera_switch_manual_action: Simple Action
+    prism_camera_switch_cybernetic_action: Free Action
+  astral_patrols:
+    source_page: 103
+    eligible_entities:
+    - Elementals
+    - nature spirits
+    - watchers
+    typical_patrolled_area_m2_per_spirit: 10000
+    detection_base_target_number: 2
+    patrol_area_modifiers:
+    - area_m2: < 2000
+      modifier: '+0'
+    - area_m2: 2001-5000
+      modifier: '+1'
+    - area_m2: 5001-10000
+      modifier: '+2'
+    - area_m2: 10001-20000
+      modifier: '+4'
+    - area_m2: 20001-40000
+      modifier: '+6'
+    - area_m2: 40001-80000
+      modifier: '+8'
+    terrain_modifiers:
+    - terrain: Open (open, flat countryside)
+      modifier: '-4'
+    - terrain: Normal (typical countryside)
+      modifier: '-2'
+    - terrain: Restricted (light woods, suburban streets)
+      modifier: '+0'
+    - terrain: Tight (urban mazes, dense woods)
+      modifier: '+2'
+    - terrain: Complex (building interiors)
+      modifier: '+4'
+    other_modifiers:
+    - condition: Background count
+      modifier: +Level
+    - condition: Intruders have active magical items or spells
+      modifier: -1 per 2 Rating Points
+    - condition: Intruders are present astrally
+      modifier: -1 per 2 Magic Attribute Points
+      exception: Unless masked
+    - condition: Intruders include or are spirits
+      modifier: -1 per 2 Rating Points
+    - condition: Nature spirit has search power
+      modifier: '-2'
+    - condition: Additional spirits patrol the same area
+      modifier: -1 per spirit
+    response_after_detection: Spirit follows assigned instructions, engages or alerts security; some can
+      trigger alarms or deterrents.
+  fat_bacteria:
+    source_page: 103
+    fast_astral_movement: false
+    maximum_astral_movement: Astral Quickness x 4
+    astral_perception_target_number_modifier: '+4'
+    affects_spellcasting: false
+    affects_astral_combat: false
+  FAB_netgun:
+    source_page: 103
+    victim_astral_reaction_test_target_numbers:
+      standard_size_net: 5
+      large_net: 8
+      standard_net_vs_large_target: 3
+    escape_successes_required: More than twice the attack success count
+    escape_impossible_if: Twice attacker successes exceeds victim Astral Reaction dice plus available Astral
+      Pool dice
+    on_entanglement: Victim is immobile and unable to take any action
+    escape_retry_rate: Once per Combat Turn
+    escape_test_modifier: -1 for every turn remaining entangled
+  FAB_ultraviolet:
+    source_page: 103
+    search_perception_base_target_number: 6
+    area_modifier: +1 target number per 50 square meters searched
+    searchers_modifier: -1 target number per two people searching
+    spotting_threshold_successes: 1
+    attack_target_penalty_after_detection: '+4'
+    attack_penalty_reduction: -1 for each additional Perception Test success
+    penalty_zero_at_total_successes: 5
+    bonus_from_six_or_more_successes: false
+    stealth_if_intruder_aware:
+      target_number: Searchers Intelligence
+      each_stealth_success: Reduces searchers Perception success total by 1
+  lineage: Historical Second Edition magical-security resolution; no inferred SR3 supersession.
+framing: reference_exact
+headline: Magical security game-resolution procedures
+summary: Exact historical astral, FAB, optical spellcasting and detection modifiers.
