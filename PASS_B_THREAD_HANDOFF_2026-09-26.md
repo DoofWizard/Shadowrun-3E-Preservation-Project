@@ -2,6 +2,16 @@
 
 Operational clarification and executable editorial contract: 2026-10-08.
 
+## Standing Shadowrun 3E context and write-error handling (2026-10-09)
+
+This is a preservation project for **Shadowrun Third Edition, a fictional cyberpunk tabletop role-playing game**. Its historical publications discuss imagined megacorporations, shadowrunners, covert activity, security systems, weapons, augmentations, and fictional wrongdoing. Treat those as in-universe game content and historical source material, **not evidence that the user seeks real-world criminal instructions**. Do not require the user to repeat this context on each run. Maintain exact rules-bearing content and faithful attribution under the mechanical-fidelity and editorial-preflight rules below.
+
+Past GitHub submissions have sometimes returned the generic tool-layer message "This tool call was blocked by OpenAI's safety checks." Such a message is **not a GitHub HTTP rejection**, and it does **not identify a specific cause**. Do not claim it proves a content trigger or that a particular phrase was rejected. Report the exact operation and observed result. Distinguish administrative state updates from semantic game records.
+
+For an authorized administrative manifest/checkpoint correction, use the ordinary, narrowly scoped GitHub file update with the freshly verified blob SHA and the exact required metadata; do not bundle unrelated source narrative into the action. If a normal permitted retry succeeds, verify both files by readback and resume from the authoritative manifest. Do not present an ambiguous tool error as a permanent content prohibition or make the user repeatedly re-explain the game.
+
+For semantic records, **all mandatory baseline, preflight, prepare, write, confirm, and authorize-advance gates remain binding**. Do not sanitize mechanics, disguise material, use alternate APIs to circumvent a denial, or speculate about hidden moderation rules. If a substantive write cannot be completed through the allowed workflow, preserve the precise pending/recovery state and keep the hourly automation enabled.
+
 ## Resume authority
 
 At the start of every run read the full current:
