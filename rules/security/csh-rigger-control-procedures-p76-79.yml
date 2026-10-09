@@ -1,0 +1,56 @@
+record_type: reference
+status: ingested
+source: source.fasa-7118
+edition_scope: FASA7118 Corporate Security Handbook; Second Edition Ares catalog Fall 2055; historical reference,
+  not automatic SR3 supersession
+id: rule.security.csh-rigger-control-procedures-p76-79
+printed_pages: 76-79
+pdf_pages: 77-80
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: Historical CCSS passive monitoring, control penalties, SCRE installation and capacity procedures
+summary: Exact source-era CCSS status monitoring, action requirements, target-number and Initiative changes, Control
+  Pool formula, installation test and slave-node limit.
+related_records:
+- reference.gear.csh-catalog-ccss-rigger-modules-p76-80
+data:
+  lineage: Historical Second Edition procedures in FASA7118; no assumed SR3 replacement.
+  closed_circuit_simsense:
+    printed_page: 76
+    pdf_page: 77
+    cyberlink_only: A simple cyberlink hookup to an integrated control center allows a rigger to actively or deliberately
+      monitor and control a remote device.
+    ccss_status_awareness: A CCSS link grants passive awareness of the device; the rigger is automatically aware
+      of any changes in device status without having to expend an action.
+    active_control_requires_action: true
+    active_control_text: Active control of the device still requires an appropriate action.
+    cross_reference: Closed-Circuit Simsense, Gamemaster Information p.102
+  rigger_protocol_emulation_utility:
+    printed_page: 77
+    pdf_page: 78
+    conditions: Delay from using an SCRE (see p.78) and an emulation utility together.
+    tests_using_device_target_number_modifier: '+2'
+    initiative_modifier: '-2'
+    response_increase_dice_from_cyberdeck: 0
+    control_pool: One-half rating of emulation utility, rounded up
+    control_pool_formula: ceil(utility_rating / 2)
+    utility_size_mp: (Rating × Rating) × 4
+    rated_utility_lookup: Utility Programs p.262, SRII
+  scre_internal_installation:
+    printed_page: 78
+    pdf_page: 79
+    installed_in: cyberdeck
+    task: Computer (B/R) task
+    base_time: 24 hours
+    required_test: Computer (B/R) Test
+    target_number: 5
+    prerequisite: Rigger Protocol Emulation Utility required to use SCRE.
+  protocol_emulation_module_control_cap:
+    printed_page: 79
+    pdf_page: 80
+    controlled_device_limit: Number of devices a rigger may control equals number of slave nodes on remote-control
+      deck.
+    remote_system_module_requirement: Remote systems require internal protocol-emulation module installed inside
+      remote-control deck.
+    maximum_module_rating: 10
