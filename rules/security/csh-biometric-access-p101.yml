@@ -1,0 +1,82 @@
+id: rule.security.csh-biometric-access-p101
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: '101'
+pdf_pages: '110'
+edition_scope: Historical Corporate Security Handbook (Second Edition); not an automatic Shadowrun 3E override
+content_class:
+- rule_procedure
+data:
+  source_section: Gamemaster Information / Technical Security
+  lineage: Historical Second Edition procedures; no inferred supersession.
+  keypad_case_removal:
+    prerequisite: Remove the physical casing before circuit access; the book begins this continuation on printed p101.
+    test: Electronics (B/R) Test against the casing Barrier Rating
+    minimum_successes: 1
+    base_time_seconds: 60
+    extra_successes: Reduce base time under Shadowrun Second Edition standard task-time rules (p68).
+    zero_successes: Casing remains attached.
+    anti_tamper:
+      typical_rating: 1-4
+      modifier: Add anti-tamper alarm Rating to the Electronics (B/R) Test target number.
+      minimum_successes: 1
+      failure: Alarm activates.
+  keypad_circuit_override:
+    prerequisite: After casing is opened, reach keypad circuits.
+    test: Electronics Test vs keypad system Rating as target number
+    base_time_seconds: 60
+    minimum_successes: 1
+    extra_successes: Reduce base time.
+    zero_successes: Monitoring computer detects attempted entry and triggers passive alert.
+    situational_modifiers: Apply Build/Repair Skill Situational Modifiers (Shadowrun Second Edition p154) or Build/Repair
+      Table (p183).
+  sequencer:
+    prerequisite: Casing must be removed; device attaches to keypad circuits.
+    available_ratings: 1-6
+    opposed_test:
+      sequencer_dice: Device Rating
+      sequencer_target_number: Keypad Rating
+      keypad_dice: Keypad Rating
+      keypad_target_number: Sequencer Rating
+      minimum_sequencer_successes: 1
+      base_time_seconds: 10
+      extra_successes: Can reduce base time.
+      ties: No result.
+      keypad_exceeds_sequencer_successes: Monitoring system triggers passive alert.
+  cardreader:
+    rated_range: 1-10
+    casing_prerequisite: Remove casing before circuit tampering, as with keypads.
+    circuit_test: Electronics Test target number 2 x Cardreader Rating
+    base_time_seconds: 60
+    passcard:
+      names:
+      - passcard
+      - passkey
+      - skeleton card
+      inserted_in: Same card slot as legitimate passcard; casing stays on.
+      dice: Passcard Rating
+      target_number: Cardreader Rating
+      base_time_seconds: 10
+      failure: Alarm activates.
+  print_scanners:
+    fingerprint_or_palm_rating: 1-10
+    synthetic_print_rating: 1-8, determined by production technology
+    synthetic_print_intelligence_test:
+      target_number: 3
+      success: Original casting accurately produces a usable artificial print.
+    actual_removed_finger_or_hand:
+      initial_rating: 8
+      decay_without_care: Lose 1 Rating point per hour after removal from owner.
+      decay_with_care: Lose 1 Rating point per 3 hours.
+      applies_if_owner_deceased: true
+      attached_to_living_owner: Always functions properly.
+    authentication_test:
+      scanner_dice: Scanner Rating
+      target_number: Rating of phony print
+      one_or_more_scanner_successes: Fake is detected; passive alarm triggers.
+    defeat_by_tampering: Same method as keypad; +4 target-number modifier.
+  next_page_continuation: Voice recognition system procedures begin on printed page 102.
+framing: reference_exact
+headline: Historical biometric access game tests
+summary: Precise keypad, cardreader, biometric scanner, and sequencer game-resolution procedures.
