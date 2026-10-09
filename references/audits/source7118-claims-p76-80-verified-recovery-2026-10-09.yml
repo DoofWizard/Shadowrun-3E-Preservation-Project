@@ -1,0 +1,55 @@
+id: audit.source7118.claims-p76-80-verified-recovery
+status: verified
+scope: accepted_commentary_correction_and_pending_reconciliation
+source_id: source.fasa-7118
+source_edition: Second Edition; source-period Fall 2055
+printed_pages: [76, 80]
+pdf_pages: [77, 81]
+fresh_catalog_pdf:
+  drive_id: 1mDbTm9h3NAGW24Ala3O64fP6Y5Xr9-Rz
+  sha256: a956f6f4593e49073f3dc8c23af15f53095c8a436ea0af4ab80af3d0a9a59066
+  page_count: 138
+  review_method: visual_page_images_no_ocr
+review:
+  attributed_comments: 21
+  source_period_claims_separate_from_mechanics: true
+  speaker_timestamp_page_and_uncertainty_checked: true
+  restored_details:
+    - printed_page_77_shared_account_identity
+    - printed_page_78_scre_console_backup_claim
+    - printed_page_78_shadowrunning_team_hypothetical
+  mechanical_data_changed: false
+  no_inferred_sr3_supersession: true
+earlier_attempt:
+  pending_id: pending.source7118.catalog-claims-p76-80
+  observed_failure: tool_safety_checks_blocked
+  provider_status: unknown
+  blocked_candidate_sha256: ee759fa41363aaff7844383ee171267b329461cabfe0dc64c0749bdef13daaa1
+  blocked_candidate_committed: false
+  original_accepted_commit: cd9b252b7e10b4d47a91408b40c0e3dfcff3ea97
+  original_accepted_blob: 1594e326b9012014dc871010e31469aab441df47
+new_write_gate:
+  script_blobs:
+    connector_preflight_py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    ingestion_gate_py: 9078df2f478a4aa507bf4d739bcc569b9d61395f
+  source_review_baseline_sha256: a221ac860fda82c7766bbfeafdd9ffb09bfc2431137e752187f7ccaf19b67e8e
+  candidate_sha256: 52b12716b0f86237a5a5e351268afed1b1e215d1bd740fda192d6fbc8d6b76f1
+  immutable_sha256: c009d7aeb7054d632e59c5a0fa88bae8650d196147b4fa7ed36223b7f08b74b2
+  preflight: pass
+  prepare: preflighted
+  confirm: verified
+  semantic_repo_path: references/security/csh-catalog-claims-p76-80.yml
+  semantic_commit: 677afedd4ded3889490ff723d43194f3c330cc82
+  expected_and_observed_blob: 2a1b64457e37015ce0920425849cc1ed784dddeb
+  source_accuracy_assessment: direct_page_review_separate_from_machine_gate
+  connector_acceptance: github_write_and_readback_verified
+durability:
+  manifest_commit: 82edf213fce0a3964e7d2a70bcaaf2e2c19883c1
+  checkpoint_commit: 5f5f581adc5dcf7298ed5a5e90d121da0c7ffe98
+  done: {printed_page: 80, pdf_page: 81}
+  next: {printed_page: 81, pdf_page: 82}
+  pending: []
+  next_page_replayed: false
+  authorize_advance: not_invoked_for_existing_pending_reconciliation_no_new_range
+other_audit_debt_unchanged:
+  - references/audits/source7118-manual-p34-61-validation-gap.yml
