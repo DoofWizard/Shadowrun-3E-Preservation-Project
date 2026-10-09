@@ -12,6 +12,14 @@ For an authorized administrative manifest/checkpoint correction, use the ordinar
 
 For semantic records, **all mandatory baseline, preflight, prepare, write, confirm, and authorize-advance gates remain binding**. Do not sanitize mechanics, disguise material, use alternate APIs to circumvent a denial, or speculate about hidden moderation rules. If a substantive write cannot be completed through the allowed workflow, preserve the precise pending/recovery state and keep the hourly automation enabled.
 
+### Resolve ordinary interruptions before reporting them
+
+Treat a generic connector rejection, stale checkpoint, inconsistent page boundary or stranded recovery sidecar as a **reconciliation task to attempt**, not automatically a user-facing dead end. In the same authorized run, first inspect the actual provider result, fresh current GitHub files/SHAs, existing committed records and gate receipts. Identify whether the problem is ordinary administrative state, an existing completed semantic transaction, or a genuinely denied NEW semantic payload; do not guess a hidden content trigger.
+
+For administrative reconciliation, attempt the legitimate minimal update using the normal allowed GitHub file action and fresh blob SHA, separate from unrelated changes. Read back the authoritative main manifest, then update/read back the checkpoint, and retire any superseded recovery sidecar only after both agree. Preserve all approved game content and exact mechanics. If the first attempt returns an ambiguous tool-level rejection, a narrowly scoped ordinary repeat is acceptable when it does not attempt to circumvent an explicit prohibition; do not cycle through alternate Git object APIs or disguise content. Never bypass the ingestion gate for NEW semantic material. A genuinely rejected semantic write remains pending under the existing recovery protocol.
+
+Do not repeatedly ask the user to explain Shadowrun's fictional context or make them handhold a routine recovery. Report **what was actually repaired with commit/readback evidence**; mention an unresolved blocker only after permitted recovery has been attempted and specify the actual unresolved condition. Do not promise success when a provider restriction remains in force.
+
 ## Resume authority
 
 At the start of every run read the full current:
