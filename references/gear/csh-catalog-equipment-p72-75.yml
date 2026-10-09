@@ -1,0 +1,130 @@
+id: reference.gear.csh-catalog-equipment-p72-75
+record_type: reference
+status: ingested
+source: source.fasa-7118
+printed_pages: '72-75'
+pdf_pages: '73-76'
+content_class:
+- equipment_stat
+edition_scope: 'Second Edition; Ares Security International Fall 2055 catalog; historical reference, not an inferred SR3 replacement'
+framing: reference_exact
+headline: 'Ares catalog security hardware: lighting, maglocks, ICC and optical network'
+summary: 'Exact listed costs, Availability, Street Index values, operational constraints, capabilities and source-era page references.'
+related_records:
+- reference.gear.csh-technical-specifications-p26-33
+- reference.gear.csh-technical-specifications-addendum-p26-33
+data:
+  source_period: 'Fall 2055'
+  rules_lineage: 'Original source-period equipment reference; no inferred supersession of SR3 rules'
+  page_72_portable_security_lighting:
+    printed_page: 72
+    pdf_page: 73
+    vendor: Ares Security International
+    product_family: 'Portable Security Lighting'
+    variants: ['low-wattage', 'active infrared', 'ultraviolet']
+    common_battery: 'long-life lithium batteries'
+    pricing_table:
+    - {technology: 'Low-wattage', form: 'Flashlight', availability: 'Always', cost_nuyen: 10, street_index: '1'}
+    - {technology: 'Low-wattage', form: 'Top/Underbarrel-mounted', availability: '2/24 hrs', cost_nuyen: 100, street_index: '1'}
+    - {technology: 'Low-wattage', form: 'Portable Floodlight', availability: 'Always', cost_nuyen: 150, street_index: '1'}
+    - {technology: 'Active Infrared', form: 'Flashlight', availability: '4/48 hrs', cost_nuyen: 100, street_index: '2'}
+    - {technology: 'Active Infrared', form: 'Top/Underbarrel-mounted', availability: '6/48 hrs', cost_nuyen: 250, street_index: '2'}
+    - {technology: 'Active Infrared', form: 'Portable Floodlight', availability: '5/48 hrs', cost_nuyen: 350, street_index: '2'}
+    - {technology: 'Ultraviolet', form: 'Flashlight', availability: '4/4 days', cost_nuyen: 200, street_index: '2'}
+    - {technology: 'Ultraviolet', form: 'Top/Underbarrel-mounted', availability: '6/4 days', cost_nuyen: 500, street_index: '2'}
+    - {technology: 'Ultraviolet', form: 'Portable Floodlight', availability: '8/4 days', cost_nuyen: 750, street_index: '2'}
+    lighting_effects:
+      low_wattage:
+        eligible_vision: 'low-light (natural or enhanced)'
+        clear_vision_range_meters: {flashlight: 20, 'top/underbarrel-mounted': 20, 'portable floodlight': 100}
+        normal_human_vision: 'No effect except faint indirect lighting.'
+      active_infrared:
+        eligible_vision: 'thermographic (natural or enhanced)'
+        clear_vision_range_meters: {flashlight: 20, 'top/underbarrel-mounted': 20, 'portable floodlight': 100}
+        normal_human_vision: 'No effect.'
+      ultraviolet:
+        usage: 'Used with FAB-UV (see FAB-Ultraviolet, Gamemaster Information p.103).'
+        illumination_range_meters: {flashlight: 5, 'top/underbarrel-mounted': 5, 'portable floodlight': 35}
+        normal_human_vision: 'No effect.'
+  page_73_maglocks:
+    printed_page: 73
+    pdf_page: 74
+    vendor: Ares Security International
+    product_family: Maglocks
+    configuration_description:
+      type_I: 'Basic/padlock-priced maglock.'
+      type_II: 'Common-area security maglock.'
+      type_III: 'Higher-security area maglock.'
+      type_IV: 'Closed-circuit simsense protected area maglock.'
+    lithium_backup_battery:
+      type_I_life_years: 5
+      type_II_through_IV_life_years: 1
+    panicbutton_hookup_option: 'Available for Types II-IV; NOT Type I.'
+    pricing_table:
+    - {type: 'Type I Maglock', allowed_rating: '1-3', availability: 'Rating/2 days', cost_expression_nuyen: '75 × Rating', street_index: '0.75'}
+    - {type: 'Type II Maglock', allowed_rating: '4-6', availability: 'Rating/3 days', cost_expression_nuyen: '100 × Rating', street_index: '1'}
+    - {type: 'Type III Maglock', allowed_rating: '7-9', availability: 'Rating/3.5 days', cost_expression_nuyen: '150 × Rating', street_index: '1.25'}
+    - {type: 'Type IV Maglock', allowed_rating: '10', availability: 'Rating/4 days', cost_expression_nuyen: '250 × Rating', street_index: '1.5'}
+    - {type: 'Biometric Maglock', permitted_configurations: 'Type III or Type IV', availability: 'Rating/5 days', cost_expression_nuyen: '350 × Rating', street_index: '2'}
+    biometric_bypass_rule: 'For attempts to bypass a biometric maglock, add 2 to its effective rating.'
+    cross_reference: 'Maglocks, Gamemaster Information p.100'
+  page_74_integrated_control_center:
+    printed_page: 74
+    pdf_page: 75
+    manufacturers: ['Ares Security International', 'Fuchi Cyber']
+    product: 'Integrated Control Center (ICC)'
+    intended_use: 'Mid- to large-sized security-system command, control and communications.'
+    required_components: 'Three individual operator stations and one command console.'
+    operator_station_1:
+      label: OS1
+      function: 'Central control of surveillance/control devices, CCTV, CCT, CCSS and security drones.'
+      basic_capacity_cyberlinks: 12
+      basic_capacity_drones: 3
+      control_interface: 'Ares Security patented chair via cybernetic links.'
+    operator_station_2:
+      label: OS2
+      function: 'Main CPU and computer controls, both cyberterminal and cyberdeck CPU links, and I/O node to the protected area Matrix.'
+      baseline_cpu_equivalent: 'Fuchi Cyber-4'
+      decker_support: 'Supports a security decker conducting Matrix security and computer support.'
+    operator_station_3:
+      label: OS3
+      function: 'Integrates magical security and monitors pre-established wards.'
+      fiber_optic_observation_network_hookups: 6
+      installed_prism_switches: 'six-position motorized prism switches'
+      effect: 'Provides a security magician immediate visual access to almost anywhere in protected area.'
+    command_console:
+      function: 'Radio communication with officers throughout the protected area and audio/video links to all three operator stations.'
+    pricing_table:
+    - {item: 'Basic ICC', cost_nuyen: 500000}
+    - {item: 'CPU Upgrade: Fuchi Cyber-6', additional_cost_nuyen: 100000}
+    - {item: 'CPU Upgrade: Fuchi Cyber-7', additional_cost_nuyen: 250000}
+    - {item: 'CPU Upgrade: Fairlight Excalibur', additional_cost_nuyen: 500000}
+    - {item: 'Cyberlink Upgrade: Additional Links', additional_cost_nuyen: 5000, units: '4 links'}
+    - {item: 'Drone Slave Port Upgrade: Slave Port', additional_cost_nuyen: 25000, units: 'per port'}
+    - {item: 'Fiber-Optic Image Link: Nine-Position Motorized Prism Switch', additional_cost_nuyen: 20000}
+    - {item: 'Fiber-Optic Image Link: Twelve-Position Motorized Prism Switch', additional_cost_nuyen: 25000}
+    - {item: 'Fiber-Optic Image Link: Image Links', additional_cost_nuyen: 3000, units: 'per optical camera'}
+    additional_links_package_rule: 'Additional cyberlinks only available in four-zone packages; maximum number of zones is four times the number of slave ports.'
+    prism_switch_interconnection_rule: 'Multiple image-links may be installed, but one prism switch must be delegated to interconnect image-links.'
+    street_availability: 'ICC and upgrades normally not available on street; Availability at gamemaster discretion.'
+    cross_reference: 'Gamemaster Information section.'
+  page_75_fiber_optic_observation_network:
+    printed_page: 75
+    pdf_page: 76
+    vendor: Ares Security International
+    product: 'Fiber-Optic Observation Network'
+    purpose: 'Allows a security magician to see a desired target at a distance, without exposing the magician directly to that target.'
+    construction: 'Machine-pulled fiber-optic cables run from control console to precision-ground optical lens; specially designed goggles permit direct optical viewing without electronics.'
+    target_visibility: 'The magician sees through the lens; extends apparent line of sight beyond physical eyes, permitting spell targeting when the target can be seen.'
+    optional_display: 'Optical monitor.'
+    multi_camera_selection: 'Prism switches available as six-, nine-, and twelve-position models.'
+    pricing_table:
+    - {item: 'Fiber-Optic Cable', cost_nuyen: 100, unit: 'per meter'}
+    - {item: 'Camera', cost_nuyen: 10000}
+    - {item: 'Goggles', cost_nuyen: 5000}
+    - {item: 'Prism Switch: Six Position', cost_nuyen: 15000}
+    - {item: 'Prism Switch: Nine Position', cost_nuyen: 20000}
+    - {item: 'Prism Switch: Twelve Position', cost_nuyen: 25000}
+    - {item: 'Optical Monitor', cost_nuyen: 15000}
+    street_availability: 'Not normally available on street; Availability at gamemaster discretion.'
+    cross_reference: 'Fiber-Optic Image Links, Gamemaster Information p.102'
