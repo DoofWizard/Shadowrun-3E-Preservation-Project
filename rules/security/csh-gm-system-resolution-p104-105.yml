@@ -1,0 +1,77 @@
+id: rule.security.csh-gm-system-resolution-p104-105
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: '104-105'
+pdf_pages: '113-114'
+edition_scope: Historical Corporate Security Handbook, Second Edition; not an automatic Shadowrun Third Edition override
+content_class:
+- rule_procedure
+data:
+  source_sections:
+  - 'GM Information / Defeating a Security System / Using Dice Rolls (printed 104, PDF 113)'
+  - 'GM Information / Rigger Combat / Decking a Rigged System (printed 104-105, PDF 113-114)'
+  security_component_tests:
+    printed_page: 104
+    procedure: A character makes an appropriate skill test for each component of a security system to be bypassed.
+    test_target_number: Twice the Security Level of the component being bypassed
+    successes_required: Overall Security Level (OSL); see printed page 98
+    result_on_success: The component is defeated temporarily.
+    result_on_failure: An alarm goes off.
+    sequential_requirement: Make the necessary skill tests whenever components must be bypassed, including when leaving by the same route.
+  rigger_access:
+    printed_pages: '104-105'
+    steps_in_order:
+    - Find a hardware access point.
+    - Use a Dataline Tap if necessary.
+    - Defeat Encryption if any.
+    - Adjust to the system's protocols.
+    access_device_rule: Use a Remote Control Deck (RCD) for remote-control systems or drones; use a dataline tap for hardwired systems.
+    system_frequencies: The outside rigger needs to determine the target system's protocols and remote frequencies.
+    dataline_tap_test:
+      printed_page: 105
+      dice: Dataline Tap Rating plus character Electronics skill
+      target_number: Twice the security level of the surveillance equipment
+      successes_required: Overall Security Level (OSL), or one success if OSL is 0
+    decryption_test:
+      printed_page: 105
+      device: Decryption Module (Ares Security Catalog, printed 80)
+      dice: Decryption Module Rating plus rigger Intelligence
+      target_number: Encryption level (twice the security level for alarm/access control)
+      successes_required: Overall Security Level (OSL), or one success if OSL is 0
+      failure: Security system goes on alert.
+    protocol_emulation_test:
+      printed_page: 105
+      device: Rigger Protocol Emulation Module (RPEM) installed in RCD (Ares Security Catalog, printed 79)
+      dice: RPEM Rating plus rigger Intelligence
+      target_number: Twice the security level of the surveillance equipment
+      successes_required: Overall Security Level (OSL), or one success if OSL is 0
+      failure: Security system goes on alert.
+  rigger_vs_rigger_combat:
+    printed_page: 105
+    initiative: Each opponent rolls rigged Initiative and dice in the normal Combat Turn sequence; highest result acts first.
+    attacker_choice: Attack or disengage.
+    attack_test: Opposed Willpower Test
+    attacker_control_pool: May add Control Pool dice, up to a maximum equal to attacking rigger's Willpower.
+    winner: The rigger with greater net successes wins the opposed test.
+    damage_code: '(Willpower)L Stun'
+    damage_level_increase: Increase Damage Level by 1 for every 2 successes generated.
+    damage_resistance: Losing rigger makes Body Test; may augment with Control Pool dice up to a maximum equal to losing rigger's Body.
+    attack_action: Complex Action
+    disengage_action: Free Action; control goes to the other rigger.
+    reenter_action: Complex Action
+    end_condition: Continue normal combat until one rigger disengages or passes out; winner then controls the rigged system or drones.
+  decking_a_rigged_system:
+    printed_page: 105
+    required_hardware: Cyberdeck with System Control Rig Emulator utility and its software.
+    baseline: Use rigger-versus-rigger combat rules with the listed exceptions.
+    matrix_programs: No Matrix programs can be used.
+    all_tests_modifier: '+2'
+    decker_initiative_modifier: '-2'
+    response_increase_bonus_dice: 0
+    decker_control_pool: One-half of the System Control Rig Emulator utility Rating, rounded up
+    damage_taken: As from black IC (Shadowrun Second Edition printed page 171)
+  lineage: Historical Second Edition GM mechanics; no inferred Shadowrun Third Edition supersession.
+framing: reference_exact
+headline: Security-system tests and rigged-system game procedures
+summary: Historical game tests and rigger/decker resolution with exact mechanical values.
