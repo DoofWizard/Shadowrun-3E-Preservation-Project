@@ -1,0 +1,119 @@
+id: rule.chicago.bug_city.cermak_radiation_p134
+record_type: historical_tabletop_environmental_procedure
+status: source_reviewed
+source: source.fasa-7117
+printed_pages: '134'
+pdf_pages: '143'
+edition_scope: Historical Shadowrun Second Edition mechanics from Bug City (2056 game setting); no inferred SR3
+  replacement
+content_class:
+- rule_procedure
+data:
+  source_anchor: 'Bug City printed p.134 / PDF p.143, GAME INFORMATION: RADIATION HAZARD'
+  context:
+    setting_location: Cermak Blast epicenter, Chicago Containment Zone
+    genre: fictional cyberpunk-fantasy tabletop role-playing game
+    exposure_unit: rads absorbed over time; an irradiated object may later irradiate someone nearby
+    geographical_behavior: exposure rate increases as a character approaches the blast center; the source notes
+      the represented zone is smaller than a physical blast model would predict
+  cermak_blast_irradiation_table:
+  - distance_meters: 200+
+    radiation_rate: negligible
+    effect: no_effect
+  - distance_meters: 200-150
+    radiation_rate: 2 rads per day
+  - distance_meters: 150-125
+    radiation_rate: 2 rads per hour
+  - distance_meters: 125-100
+    radiation_rate: 2 rads per minute
+  - distance_meters: 100-75
+    radiation_rate: 1 rad per second
+    rads_per_combat_turn: 3
+  - distance_meters: 75-50
+    radiation_rate: 5 rads per second
+    rads_per_combat_turn: 15
+  - distance_meters: 50-25
+    radiation_rate: 50 rads per second
+    rads_per_combat_turn: 150
+  - distance_meters: 25-0
+    radiation_rate: 500 rads per second
+    rads_per_combat_turn: 1500
+  prolonged_exposure:
+    trigger: Make a Body Test whenever accumulated radiation level increases by 100 rads.
+    target_number: Radiation level / 50, rounded up.
+    examples:
+    - radiation_rads: 100
+      body_test_target_number: 2
+    - radiation_rads: 200
+      body_test_target_number: 4
+    - radiation_rads: 400
+      body_test_target_number: 8
+    prevention: At least 1 success avoids radiation poisoning at this check.
+    failure: No successes results in radiation sickness.
+    protection:
+      ordinary_protection: Ordinary anti-radiation clothing and hospital X-ray vests do not protect against exposure
+        measured in rads rather than millirads.
+      genuine_suit_availability: Military and certain elite corporate units have genuine radiation suits.
+      suit_rating_range: 1-20
+      shielded_rate_rads_per_combat_turn: Suit rating x 100 equals the rads per Combat Turn that the wearer ignores.
+  direct_exposure:
+    trigger: At initial exposure and every Combat Turn thereafter while the character remains within range of the
+      radiation.
+    test: Body-based Damage Resistance Test.
+    target_number_formula: (radiation level / 100) / 2; the text does not supply a separate rounding rule here.
+    examples:
+    - radiation_level_rads: 400
+      damage_resistance_target_number: 2
+    - radiation_level_rads: 800
+      damage_resistance_target_number: 4
+    - radiation_level_rads: 1200
+      damage_resistance_target_number: 6
+    damage: Base Physical damage boxes equal the target number; every Damage Resistance Test success reduces the
+      damage by 1 box.
+  radiation_sickness:
+    start: Radiation sickness manifests approximately 24 hours after peak exposure.
+    interval: Every 24 hours after peak exposure, make a Body Test.
+    body_test_target_number: 2 x (rads absorbed at peak exposure / 100).
+    failure_damage: Fewer than 1 success causes the indicated Stun wound.
+    wound_table:
+    - total_rads_at_peak: 100-400
+      wound: Light Stun
+    - total_rads_at_peak: 500-800
+      wound: Moderate Stun
+    - total_rads_at_peak: 900-1000
+      wound: Serious Stun
+    - total_rads_at_peak: 1100+
+      wound: Deadly Stun
+    healing: Stun from radiation sickness cannot heal normally until the Stun damage column is filled and the character
+      starts taking Physical damage from the sickness; only then can that Physical damage heal normally, by medical
+      or magical means.
+    persistent_radiation: In the 2056 setting, neither medicine nor magic removes irradiation from the body.
+    remission: Seven consecutive successful daily Body Tests (one full week) end radiation sickness symptoms.
+    after_remission: The irradiated character still accumulates radiation and must repeat the radiation Body Test
+      process on crossing another 100-rad threshold.
+    long_term_consequence: The source states that failure to achieve seven successive successful Body Tests eventually
+      kills the character.
+  irradiated_object_transfer:
+    direct_contact: A person in direct contact absorbs half of the irradiated object's radiation level.
+    example: An object irradiated at 15 rads/Combat Turn exposes a person in direct contact at 7.5 rads/Combat Turn.
+    distance_percentage_of_object_rads_per_combat_turn:
+    - distance_meters: 0.5
+      percentage: 50
+    - distance_meters: 1
+      percentage: 25
+    - distance_meters: 2
+      percentage: 10
+    - distance_meters: 4
+      percentage: 1
+    - distance_meters: 8
+      percentage: 0.01
+    - distance_meters: 16
+      percentage: 0.0001
+    - distance_meters: 32
+      percentage: 1.0e-05
+  lineage: Historical SR2 Bug City optional exposure model; no explicit SR3 conversion, replacement, or supersession
+    in this source section.
+summary: Second Edition radiation exposure, protective suits, damage resistance, illness, and irradiated-object
+  transfer with original tests and numeric tables.
+framing: reference_exact
+headline: Bug City Cermak Blast radiation — exact historical game rules
