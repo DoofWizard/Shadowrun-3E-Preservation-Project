@@ -35,6 +35,14 @@ A later publication is never assumed to overwrite an earlier rule solely because
 | Cannon Companion (FASA7908) | ingesting | Detailed sequential ingest begins next |
 | Rigger 3 (FASA7910) | structural_scan | TOC/domain map complete; detailed ingest next |
 
+## Completed Bug City source
+
+| Source | Status | Verified scope |
+| --- | --- | --- |
+| Bug City (FASA7117) | complete | Sequential coverage through printed p.160/PDF169; game information through p.151, illustration p.152, index pp.153-160. Historical Second Edition mechanics retain source provenance and explicit relationships without inferred SR3 supersession. Manifest and checkpoint agree, with no pending normalization. |
+
+Completion verified on 2026-10-11: [manifest commit](https://github.com/DoofWizard/Shadowrun-3E-Preservation-Project/commit/34a6719befed317ba0c803ebf4d9334dad42d006), [checkpoint commit](https://github.com/DoofWizard/Shadowrun-3E-Preservation-Project/commit/3bc992688e9d64ffaa80f9e1e6df41e9425fe70c). The final recovery session advanced from printed p.137/PDF146 through p.160/PDF169 in five fully reconciled slices, adding 19 source-reviewed, gate-confirmed records. The former p.138 write rejection did not recur in this session; its historical root cause remains unconfirmed. Recovery sidecars were retained with retirement evidence.
+
 ## Corpus inventory
 
 The complete 97-item Drive inventory is stored in `sources/catalog.yml`. Every item remains in the queue until it is marked complete here or in its source manifest.
