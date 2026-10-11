@@ -1,0 +1,88 @@
+id: rule.chicago.bug_city.cermak_radiation_hazard_p134_135
+record_type: historical_game_environmental_radiation_rules
+status: source_reviewed
+source: source.fasa-7117
+printed_pages: 134-135
+pdf_pages: 143-144
+edition_scope: Fictional Shadowrun Second Edition Cermak Blast hazard mechanics; not scientifically predictive or an SR3 replacement
+content_class:
+- rule_procedure
+data:
+  source_sections:
+  - Radiation Hazard
+  - Cermak Blast Irradiation Table
+  - Prolonged Exposure
+  - Direct Exposure
+  context: The Cermak blast vicinity is irradiated; the source expressly frames this as an approximate game simulation.
+  cermak_distance_rate_table_p134:
+  - - distance_m: 200+
+    - dose_rate: Negligible (no effect)
+  - - distance_m: 200-150
+    - dose_rate: 2 rads per day
+  - - distance_m: 150-125
+    - dose_rate: 2 rads per hour
+  - - distance_m: 125-100
+    - dose_rate: 2 rads per minute
+  - - distance_m: 100-75
+    - dose_rate: 1 rad per second
+    - per_combat_turn: 3 rads
+  - - distance_m: 75-50
+    - dose_rate: 5 rads per second
+    - per_combat_turn: 15 rads
+  - - distance_m: 50-25
+    - dose_rate: 50 rads per second
+    - per_combat_turn: 150 rads
+  - - distance_m: 25-0
+    - dose_rate: 500 rads per second
+    - per_combat_turn: 1,500 rads
+  prolonged_exposure:
+    trigger: For each 100 additional cumulative rads, character makes a Body Test.
+    test_target_number: Ceiling(total rads / 50); 100 rads Body (2), 200 Body (4), 400 Body (8).
+    success_condition: At least 1 success avoids radiation poisoning; 0 successes inflicts radiation sickness.
+  radiation_protective_suits:
+    rating_range: 1-20
+    effect: Ignore rating x 100 rads per Combat Turn.
+    restriction: Only true radiation-protected suits; ordinary X-ray vests do not protect against doses measured in rads.
+  sickness_progression:
+    onset: About 24 hours after peak exposure.
+    frequency: Body Test every 24 hours after peak exposure.
+    test_target_number: 2 x peak-absorbed rads / 100.
+    failure: Fewer than 1 success inflicts the listed wound according to peak dose.
+    wound_table:
+    - - peak_rads: 100-400
+      - wound: Light Stun
+    - - peak_rads: 500-800
+      - wound: Moderate Stun
+    - - peak_rads: 900-1000
+      - wound: Serious Stun
+    - - peak_rads: 1100+
+      - wound: Deadly Stun
+    healing: Stun from sickness cannot heal normally before recovery; Physical overflow damage can be treated normally when the Stun column fills; medical
+      or magical treatment does not remove irradiation itself.
+    recovery: Seven consecutive successful daily Body Tests end current sickness symptoms, but irradiation remains; repeat at the next 100-rad threshold.
+  irradiated_objects:
+    direct_contact: A contaminated object transfers half its dose rate on direct contact (15 rads/Combat Turn object gives 7.5 rads/Combat Turn on contact).
+    distance_percent_of_object_rads_per_combat_turn:
+    - - distance_m: '0.5'
+      - percent: '50'
+    - - distance_m: '1'
+      - percent: '25'
+    - - distance_m: '2'
+      - percent: '10'
+    - - distance_m: '4'
+      - percent: '1'
+    - - distance_m: '8'
+      - percent: '.01'
+    - - distance_m: '16'
+      - percent: '.0001'
+    - - distance_m: '32'
+      - percent: '.00001'
+  direct_exposure:
+    timing: At initial exposure and each Combat Turn thereafter in range.
+    damage_resistance: Body Damage Resistance Test; target number = (radiation level / 100) / 2.
+    examples: Up to 400 rads -> TN 2; 800 -> TN 4; 1,200 -> TN 6.
+    damage: Base Physical damage boxes equal the target number; each Damage Resistance Test success reduces damage by 1 box (continuation printed p.135).
+  lineage: Fictional historical tabletop game rule only; never substitute for actual radiation safety guidance.
+summary: Complete game radiation-hazard simulation with explicit distance, dose, protection, sickness and damage calculations.
+framing: reference_exact
+headline: Cermak radiation hazard — historical game rules
