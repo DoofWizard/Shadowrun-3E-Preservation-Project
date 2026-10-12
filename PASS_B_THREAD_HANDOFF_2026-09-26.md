@@ -130,3 +130,25 @@ When the active source is complete, take the first source in checkpoint.next_sou
 The original 2026-09-26 handoff recorded source.fanpro-10666 through printed p45/PDF p47, resuming at p46/PDF p48 (Celedyr), with last_commit 0e2c3c4f4f3a8d6e8fbc4df1b9990c1c15e84457. Earlier ranges were pp7-23, pp24-34 and pp35-45.
 
 Historical pending IDs were pending.dragons.draco-foundation-p24-34, pending.dragons.range-7-23, pending.ssg.game-info-p118-126 and pending.ssg.detailed-lifestyles-p127-144. These are archival context only. Their present status comes from current main source manifests; never copy this historical list into current open conflicts or resume state.
+
+
+## Current preservation method and throughput override (2026-10-11)
+
+Use `tools/ingestion/preservation_method.py` and the detailed current section
+"Preservation Method v1 — source facts first, nonblocking recovery" in
+`INGESTION_WORKER_HANDOFF.md` for NEW records. This supplements, never
+weakens, the existing real `connector_preflight.py`, `ingestion_gate.py`
+and `transaction_recovery.py` gates. It adds offline initial archival
+presentation, actual fresh-PDF-hash verification, and conservative write
+failure/readback decisions; it does not submit to GitHub or change any source
+facts. GitHub provider restrictions cannot be prevented or predicted by this
+method. Respect explicit refusals, use no alternate write API or evasion.
+
+The older two-slice limit in this historical handoff is superseded by the
+current user's ceiling of **eight coherent bounded slices per hourly run**, in
+up to two batches of four. Eight is never a quota; the worker must reserve
+sufficient time for full gate receipts and readback. One scheduled worker only.
+Local blockers become deferred recovery debt while independent source sections
+continue, but a gap can never be counted as completed or moved through the
+contiguous authorized manifest/checkpoint boundary. Source completion requires
+the usual full source-completion gate.
