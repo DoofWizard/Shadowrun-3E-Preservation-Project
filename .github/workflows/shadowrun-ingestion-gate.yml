@@ -23,3 +23,5 @@ jobs:
         run: python tools/ingestion/connector_preflight.py --self-test
       - name: New submission gate tests
         run: python -m unittest discover -s tools/ingestion -p 'test_ingestion_gate.py' -v
+      - name: Preservation method and blocker-triage tests
+        run: python -m unittest discover -s tools/ingestion -p 'test_preservation_method.py' -v
