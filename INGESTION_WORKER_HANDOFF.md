@@ -438,3 +438,92 @@ Do not repeatedly stop at the first generic semantic `create_file` failure after
 5. Continue useful ingestion immediately after successful reconciliation. Do not let an obsolete recovery receipt or stale status stall further work.
 
 Example of a **successful but not guaranteed** recovery: the Prime Runners Alice Adams p8-9 profile and forum were independently re-reviewed against source images; factual/editorial corrections received fresh `prepare`, normal GitHub creation, exact blob readback, and `confirm`. The preexisting stat and guidance records were preserved; the verified manifest/checkpoint advanced in commits `f489bfd7f2c7b275f20a7249d7225ad7650de4dc` and `be29391f6467229e1a51bc744b10f20bbc52b38c`. This does **not** prove what caused any earlier tool-layer rejection.
+
+
+## Preservation Method v1 — source facts first, nonblocking recovery
+
+New offline helper: `tools/ingestion/preservation_method.py`. Tests:
+`tools/ingestion/test_preservation_method.py`. This is a reliability and
+archival-fidelity method, not a tool-layer filter workaround. It never contacts
+GitHub, rewrites facts, predicts connector acceptance, or performs a retry.
+
+**Before first submission, not as a reaction to a denial:**
+
+1. Read the FULL live handoffs, active source manifest and checkpoint; reconcile
+   live commits, pending IDs, source order, sidecars and accepted records. Reacquire
+   the current catalogued PDF from Drive, inspect its actual source images, and
+   record its freshly measured SHA-256. Run
+   `python tools/ingestion/preservation_method.py verify-source FRESH.pdf LIVE_MANIFEST.yml`;
+   require `source_pdf_hash_verified`. This is a hash check, not proof that
+   anyone read or transcribed the source or checked printed/PDF mapping.
+2. Independently extract the source-reviewed structured BASELINE with exactly
+   one content class per file. Put all facts and claims (including attribution,
+   coercion/consent, certainty, negation, relationships and source anchors) in
+   `data`; put all exact numeric/ordered mechanics there unchanged. Do NOT
+   assume headline/summary-only content is preserved, nor infer SR3 supersession
+   for historical SR2 or other editions. Never construct a fake independent
+   baseline from a later candidate.
+3. Optionally run
+   `python tools/ingestion/preservation_method.py compose-first BASELINE.yml CANDIDATE.yml`
+   to add an archival root framing and a minimal citation-like headline/summary
+   *only when missing*. Existing summaries/headlines are retained, not erased.
+   The helper preserves every frozen field byte-for-structure and refuses to
+   overwrite an existing candidate. Protected classes get `reference_exact`;
+   nonmechanical classes get `newsroom_neutral`. The substantive record is
+   deliberately in readable structured `data`, never hidden/encoded.
+4. Run the ACTUAL `transaction_recovery.py stage` using the independently
+   reviewed baseline, exact candidate bytes, intended GitHub path, source ID,
+   the fresh verified PDF SHA and a LOCAL trusted journal directory. This invokes
+   the real `ingestion_gate.py prepare` and preserves exact candidate bytes,
+   plan and immutable digests. Do not submit an unprepared record.
+5. Submit exactly those bytes through the normal authorized GitHub
+   `create_file`/`update_file` operation. Re-fetch the exact path and blob
+   SHA. Run ACTUAL `ingestion_gate.py confirm` with the real commit SHA and
+   observed blob SHA. No tool message, commit SHA alone, or local tests are
+   proof of successful ingestion.
+
+**On a write error (same run, bounded diagnosis):**
+
+- Identify exact operation, path, fresh blob SHA and HTTP status *only if
+  observed*. Save the actual diagnostic in the trusted local journal using
+  `python tools/ingestion/preservation_method.py log-failure JOURNAL create|update "OBSERVED ERROR"`
+  and add `--http-status N` only for a genuinely observed provider status.
+  Use `--explicit-restriction` only when explicit. This helper delegates to
+  the existing evidence-based `transaction_recovery.classify_failure`.
+- Fresh-fetch/read back the normal GitHub path. Run
+  `python tools/ingestion/preservation_method.py decide JOURNAL --remote-absent`
+  ONLY after a verified 404, or pass `--observed-blob SHA [--commit-sha SHA]`
+  when a blob exists. Missing readback remains UNKNOWN, never assumed absent.
+- If the expected blob is already present, run the ACTUAL confirm gate, then
+  reconcile authorized manifest/checkpoint in durable order. If a different
+  blob exists, investigate rather than overwrite. If stale SHA/permissions,
+  investigate and make only a legitimate ordinary correction.
+- An ambiguous rejection does not identify a forbidden phrase. Do not blindly
+  resubmit identical bytes, reverse-engineer filters, use alternate Git APIs,
+  encode/hide denied content, or guess causes. Only a distinct independently
+  source-reviewed, genuinely better archival presentation may be prepared
+  through the standard preflight, and only when no explicit restriction applies.
+  Retain the original source-reviewed baseline and previous receipts; never
+  change protected mechanics, substantive facts or edition provenance.
+- If an explicit semantic restriction exists, stop attempts on that material
+  and preserve the pending record. If unresolved, log the precise deferred
+  source/page/path/hash/error evidence. Keep the contiguous authorized boundary
+  unchanged and mirror the pending ID in the checkpoint. Continue independently
+  scannable later material with the SAME source PDF and normal gates, retaining
+  out-of-order verified receipts separately from authorized page advancement.
+  No gap may be counted as completed or used to authorize source completion.
+  Do not create a parallel worker or change the existing hourly cadence.
+
+**Commit advancement remains strict:** semantic write/readback/confirm FIRST;
+`ingestion_gate.py authorize-advance` or existing legitimate
+`transaction_recovery.py authorize` next; authoritative main manifest
+fresh-SHA write/readback SECOND; mirrored checkpoint write/readback THIRD.
+Only contiguous fully reconciled pages may advance. The tool is a *preparation
+and diagnostic wrapper*, never a replacement for any existing semantic gate.
+
+**Reporting:** record actual contiguous start/end and net authorized pages,
+independently verified ahead-of-boundary records separately, semantic and
+administrative commit/readback IDs, deferred blockers with exact observed
+operation/status, and next true unscanned page. The nightly/hourly worker may
+make productive forward verified records despite localized recovery debt; it
+must not report the outstanding gap as complete.
