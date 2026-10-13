@@ -79,4 +79,47 @@ class GateTests(unittest.TestCase):
         self.bad(lambda:authorize_advance(self.manifest,self.checkpoint,
             [self.receipt,self.receipt],62,63,66,67))
 
+
+    def test_recovery_does_not_swallow_forward_records(self):
+        from transaction_recovery import render_manifest
+        original = """id: source.test
+status: ingesting
+done: {p: 61, pdf: 62}
+next: {p: 62, pdf: 63}
+pending:
+  - id: pending.test
+    reason: queued_for_recovery
+verified_ahead_of_contiguous_boundary:
+  - path: rules/demo/already-verified.yml
+    commit: bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+deferred_forward_writes:
+  - path: rules/demo/still-deferred.yml
+    candidate_sha256: cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc
+resolved_pending: []
+open_conflicts: []
+routes:
+  - [62, 65, directed]
+records:
+  - ["previous", bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb]
+source_end:
+  printed_page: 70
+source_integrity:
+  page_mapping: historical_original
+"""
+        auth={'authorized':True, 'source':'source.test',
+              'pending_id':'pending.test', 'from':[62,63], 'next':[66,67],
+              'records':[{'path':self.receipt['path'],
+                          'commit_sha':self.receipt['commit_sha']}]}
+        before=yaml.safe_load(original)
+        after=yaml.safe_load(render_manifest(
+            original,auth,{self.receipt['path']:'accepted-p62-65'}))
+        self.assertEqual(set(before),set(after))
+        for key in before:
+            if key not in {'done','next','pending','resolved_pending','records'}:
+                self.assertEqual(after[key],before[key],key)
+        self.assertEqual(after['pending'],[])
+        self.assertEqual(after['done'],{'p':65,'pdf':66})
+        self.assertEqual(after['next'],{'p':66,'pdf':67})
+        self.assertEqual(len(after['records']),2)
+
 if __name__=='__main__': unittest.main()
