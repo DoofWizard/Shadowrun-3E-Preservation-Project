@@ -218,6 +218,10 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     parsed=parse_yaml(s)
     require(parsed['done']=={'p':end-1,'pdf':end_pdf-1} and parsed['next']=={'p':end,'pdf':end_pdf},'render_boundary_error')
     require(not parsed.get('pending'),'pending_not_cleared')
+    # Fail closed if a future edit damages any unrelated manifest field.
+    protected=set(m)-{'done','next','pending','resolved_pending','records'}
+    require(set(parsed)==set(m) and all(parsed[k]==m[k] for k in protected),
+            'unrelated_manifest_field_changed')
     keys=[r[0] for r in parsed['records']];require(len(keys)==len(set(keys)),'duplicate_record_index')
     return s
 
