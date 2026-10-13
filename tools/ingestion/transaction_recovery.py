@@ -198,7 +198,15 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     s=original
     s=_replace_one(s,r'^done:.*$',f'done: {{p: {end-1}, pdf: {end_pdf-1}}}')
     s=_replace_one(s,r'^next:.*$',f'next: {{p: {end}, pdf: {end_pdf}}}')
-    s=_replace_one(s,r'^pending:[\s\S]*?(?=^resolved_pending:)', 'pending: []\n\n') if pending else s
+    if pending:
+        # Limit removal to the pending root mapping: verified-forward and
+        # deferred-forward evidence may occur before resolved_pending.
+        match=re.search(r'^pending:[^\n]*(?:\n|$)',s,flags=re.M)
+        require(match is not None,'pending_field_missing')
+        next_root=re.search(r'^[A-Za-z_][A-Za-z0-9_]*:',s[match.end():],flags=re.M)
+        require(next_root is not None,'pending_end_missing')
+        pending_end=match.end()+next_root.start()
+        s=s[:match.start()]+'pending: []\n'+s[pending_end:]
     if pending_id not in m.get('resolved_pending',[]):
         if 'resolved_pending: []' in s:
             s=s.replace('resolved_pending: []','resolved_pending:\n  - '+pending_id,1)
