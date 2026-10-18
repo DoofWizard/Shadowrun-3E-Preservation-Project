@@ -1,0 +1,39 @@
+id: source7116.threat_ratings.combat.magic
+record_type: historical_rules_reference
+status: source_reviewed
+source: source.fasa-7116
+printed_pages: '100'
+pdf_pages: '109'
+edition_scope: Historical Shadowrun Second Edition, FASA7116 Prime Runners (1994); not a Shadowrun Third Edition
+  conversion.
+content_class:
+- rule_exact
+data:
+  combat:
+    scope: ranged, armed and unarmed combat
+    initiative_action_adjustment_for_combat_threat_index:
+    - actions_in_combat_turn: 2
+      increase_percent: 50
+    - actions_in_combat_turn: 3
+      increase_percent: 100
+    - actions_in_combat_turn: 4
+      increase_percent: 150
+    player_character_comparison: A player character Combat Pool rating may be adjusted in the same way for comparing
+      an encounter.
+    other_factors: Firepower differences and weapon Reach can change the balance; the Threat Index alone is insufficient.
+  magical:
+    applies_like: Magic Pool dice
+    spell_defense_allocation:
+      spell_defense_points_per_allocated_magical_threat_die: 2
+      allocated_dice_unavailable_for_other_magical_success_tests: true
+    comparison_initiate_grade_adjustment: Add one-half an initiate’s grade to Magical Threat Index for comparisons.
+    conjuring_exception:
+      conjuring_adepts_have_magical_threat_ratings: false
+      suggested_comparison_index: one-third of the NPC Conjuring Skill, rounded to nearest whole number
+      spirit_balance_guidance: Consider conjured and accompanying spirits across the whole encounter rather than
+        applying their contribution to a single individual.
+    situational_balance: Spells, foci, spirits and similar resources alter magical encounter balance.
+headline: 'Prime Runners p100: combat magic historical mechanics'
+summary: Exact source-period Threat Rating values, applicability, exceptions, and edition provenance are preserved
+  in structured fields.
+framing: reference_exact
