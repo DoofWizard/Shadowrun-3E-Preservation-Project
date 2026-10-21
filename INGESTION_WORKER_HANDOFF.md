@@ -527,3 +527,10 @@ administrative commit/readback IDs, deferred blockers with exact observed
 operation/status, and next true unscanned page. The nightly/hourly worker may
 make productive forward verified records despite localized recovery debt; it
 must not report the outstanding gap as complete.
+
+
+## Default response to ambiguous fictional-biography connector rejections
+
+When a published fictional RPG character, family, or organization record is rejected with an ambiguous connector safety-check message, use the required **fictional-source provenance diagnostic** before generating another version: [docs/ingestion/fictional-source-context-rejection-playbook.md](docs/ingestion/fictional-source-context-rejection-playbook.md).
+
+The worker must independently confirm the original fictional publication and source page, lead with explicit truthful fictional-game context in schema-permitted root headline/summary and the ordinary commit message, preserve every substantive fact and mechanic, rerun the actual staging and confirmation gates, and make no more than one normal submission after a legitimate source-reviewed change. Missing contextual identification is a **hypothesis**, never a claim of established root cause. Respect explicit restrictions, never evade a denial, and defer unchanged rejected bytes.
