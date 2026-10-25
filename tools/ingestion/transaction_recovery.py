@@ -131,7 +131,11 @@ def _gate_authorize(manifest,checkpoint,receipts,start,start_pdf,next_printed,ne
 
 def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:int,next_printed:int,next_pdf:int,expected_paths:list[str]):
     state(manifest,checkpoint)
-    require((next_printed-start)==(next_pdf-start_pdf)>0,'invalid_range')
+    from ingestion_gate import source7116_color_plate_jump
+    crosses_plates=manifest.get('id')=='source.fasa-7116' and start<=64<next_printed
+    plate_jump=source7116_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
+    require(not crosses_plates or plate_jump,'unverified_color_plate_boundary')
+    require(plate_jump or (next_printed-start)==(next_pdf-start_pdf)>0,'invalid_range')
     require(manifest.get('next')=={'p':start,'pdf':start_pdf},'stale_boundary')
     require(manifest.get('status')=='ingesting','source_not_ingesting')
     pending=[x['id'] for x in manifest.get('pending',[])]
@@ -146,7 +150,14 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
         require(r.get('pdf_sha256')==manifest.get('source_pdf_sha256'),'source_pdf_mismatch')
         require(r.get('readback_blob_sha')==r.get('expected_blob_sha') and bool(HEX40.fullmatch(str(r.get('commit_sha','')))),'readback_not_verified')
         p,q=pages(r.get('printed_pages')),pages(r.get('pdf_pages'))
-        require(len(p)==len(q) and min(q)-min(p)==start_pdf-start,'receipt_page_mismatch')
+        require(len(p)==len(q),'receipt_page_mismatch')
+        if plate_jump:
+            first,last=min(p),max(p)
+            require(not first<=64<last,'plate_crossing_record_requires_separate_pagination')
+            offset=1 if last<=64 else 9
+            require(min(q)==first+offset and max(q)==last+offset,'receipt_page_mismatch')
+        else:
+            require(min(q)-min(p)==start_pdf-start,'receipt_page_mismatch')
         require(p.issubset(set(range(start,next_printed))) and q.issubset(set(range(start_pdf,next_pdf))),'receipt_outside_slice')
         coverage|=p
     require(coverage==set(range(start,next_printed)),'uncovered_pages')
