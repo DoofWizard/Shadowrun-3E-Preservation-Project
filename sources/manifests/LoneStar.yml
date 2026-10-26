@@ -1,0 +1,58 @@
+id: source.fasa-7115
+status: ingesting
+depth: directed
+catalog_number: FASA7115
+title: Lone Star Sourcebook
+edition_scope: Historical FASA Shadowrun sourcebook (1994); compatible with original and Second Edition per printed p5; no inferred Third Edition supersession
+source_pdf_sha256: c24e67bec3b2e2659236f96cfa334f06cde95ad4f76958e09943379060e69c28
+source_pdf_page_count: 145
+done: {p: 1, pdf: 2}
+next: {p: 2, pdf: 3}
+pending: []
+verified_ahead_of_contiguous_boundary: []
+deferred_forward_writes: []
+resolved_deferred_forward_writes: []
+resolved_pending: []
+open_conflicts: []
+routes:
+  - [2, 3, orientation_toc_and_credits]
+  - [4, 4, missing_original_page_hold]
+  - [5, 8, orientation]
+  - [9, 26, corporate_structure]
+  - [27, 67, enforcement_arm]
+  - [68, 87, corporate_arm]
+  - [88, 97, personnel]
+  - [98, 105, operational_procedures]
+  - [106, 111, intelligence_gathering]
+  - [112, 119, new_equipment]
+  - [120, 121, gamemaster_information]
+  - [122, 125, deep_equipment_and_matrix]
+  - [126, 131, deep_personnel_stats]
+  - [132, 133, deep_vehicle_stats]
+  - [134, 136, index]
+records: []
+source_end:
+  printed_page: 136
+  pdf_page: 144
+  back_cover_pdf_page: 145
+source_integrity:
+  text_layer: absent
+  source_class: sourcebook_mixed_corporate_and_mechanics
+  table_of_contents_printed_pages: [2, 3]
+  table_of_contents_pdf_pages: [3, 4]
+  page_mapping: printed_p2-3_equals_pdf_plus_one; printed_p4_absent; printed_p5-80_equals_pdf; eight_unnumbered_color_plates_pdf81-88; printed_p81-136_equals_pdf_minus_eight
+  color_plates_pdf_pages: [81, 88]
+  visually_checked_mapping:
+    printed_2: 3
+    printed_3: 4
+    printed_5: 5
+    printed_80: 80
+    printed_81: 89
+    printed_136: 144
+  unresolved_source_copy_gaps:
+    - id: source7115.missing-printed-p4
+      printed_page: 4
+      toc_heading: Welcome to Shadowland
+      evidence: PDF4 displays printed p3; next PDF5 displays printed p5; no scanned printed p4
+      contiguous_authorization: blocked_at_p4_until_source_copy_or_project_level_resolution
+  next_unscanned_forward: {printed_page: 2, pdf_page: 3}
