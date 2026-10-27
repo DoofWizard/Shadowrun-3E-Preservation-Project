@@ -67,14 +67,47 @@ def source7116_color_plate_jump(manifest, start, start_pdf, next_printed, next_p
               for x in ahead if x.get('gate')=='verified' and x.get('range_printed')==[]}
     return required.issubset(recorded)
 
+def source7115_color_plate_jump(manifest, start, start_pdf, next_printed, next_pdf):
+    """Validate Lone Star's actual eight unnumbered plates after printed p80.
+
+    Printed p80 is PDF80; PDF81-88 are original recruitment-art plates,
+    and printed p81 resumes at PDF89. No semantic page is synthesized or
+    counted as a printed-page receipt. This exemption is source-hash-bound.
+    """
+    if manifest.get('id') != 'source.fasa-7115': return False
+    integrity=manifest.get('source_integrity',{})
+    mapping=integrity.get('page_mapping','')
+    verified=integrity.get('visually_checked_mapping',{})
+    if (manifest.get('source_pdf_sha256') != 'c24e67bec3b2e2659236f96cfa334f06cde95ad4f76958e09943379060e69c28'
+        or 'eight_unnumbered_color_plates_pdf81-88' not in mapping
+        or verified.get('printed_80') != 80
+        or verified.get('printed_81') != 89
+        or integrity.get('color_plates_pdf_pages') != [81,88]):
+        return False
+    if (not 5 <= start <= 80 or start_pdf != start
+        or (next_printed,next_pdf) != (81,89)):
+        return False
+    return any(
+        item.get('path') == 'references/lone-star/unnumbered-recruitment-color-plates-pdf81-88.yml'
+        and item.get('range_printed') == []
+        and item.get('range_pdf') == [81,88]
+        and item.get('gate') == 'verified'
+        and bool(HEX40.fullmatch(str(item.get('commit',''))))
+        and bool(HEX40.fullmatch(str(item.get('blob',''))))
+        for item in manifest.get('verified_ahead_of_contiguous_boundary',[]))
+
 def authorize_advance(manifest, checkpoint, verified, expected_start, expected_pdf, next_printed, next_pdf):
     if manifest['id']!=checkpoint['active_source'] or manifest['status']!='ingesting':fail('source_state_mismatch')
     if manifest['done']!={'p':checkpoint['completed_through']['printed_page'],'pdf':checkpoint['completed_through']['pdf_page']}:fail('manifest_checkpoint_disagree')
     if manifest['next']!={'p':expected_start,'pdf':expected_pdf} or checkpoint['resume_at']!={'printed_page':expected_start,'pdf_page':expected_pdf}:fail('stale_boundary')
     if manifest.get('pending') or checkpoint.get('pending_normalization') or checkpoint.get('open_conflicts'):fail('unresolved_pending')
     crosses_plates=manifest['id']=='source.fasa-7116' and expected_start<=64<next_printed
-    plate_jump=source7116_color_plate_jump(manifest,expected_start,expected_pdf,next_printed,next_pdf)
-    if crosses_plates and not plate_jump:fail('unverified_color_plate_boundary')
+    prime_plate_jump=source7116_color_plate_jump(manifest,expected_start,expected_pdf,next_printed,next_pdf)
+    lone_plate_jump=source7115_color_plate_jump(manifest,expected_start,expected_pdf,next_printed,next_pdf)
+    plate_jump=prime_plate_jump or lone_plate_jump
+    crosses_lone_plates=manifest['id']=='source.fasa-7115' and expected_start<=80<next_printed
+    if crosses_lone_plates and not lone_plate_jump:fail('unverified_lone_star_color_plate_boundary')
+    if crosses_plates and not prime_plate_jump:fail('unverified_color_plate_boundary')
     if next_printed<=expected_start or next_pdf<=expected_pdf or (not plate_jump and next_printed-expected_start!=next_pdf-expected_pdf):fail('invalid_range')
     if not any(r[0]<=expected_start and r[1]>=next_printed-1 for r in manifest.get('routes',[])):fail('not_one_route')
     if isinstance(verified, dict): verified=[verified]
@@ -115,15 +148,18 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
             )
             if not matched:fail('overlap_requires_exact_verified_forward_entry')
         covered.update(range(max(expected_start,first),last+1))
-        if plate_jump:
+        if prime_plate_jump:
             if first<=64<last:fail('plate_crossing_record_requires_separate_pagination')
             offset=1 if last<=64 else 9
             if pdf_first!=first+offset or pdf_last!=last+offset:fail('plate_receipt_mapping_mismatch')
+        if lone_plate_jump:
+            if last>80 or pdf_first!=first or pdf_last!=last:fail('lone_star_plate_receipt_mapping_mismatch')
         if item['path'] in seen:fail('duplicate_path')
         seen.add(item['path'])
     if covered!=set(range(expected_start,next_printed)):fail('uncovered_pages')
+    last_pdf=80 if lone_plate_jump else next_pdf-1
     return {'authorized':True,'source':manifest['id'],'from':[expected_start,expected_pdf],
-            'to':[next_printed-1,next_pdf-1], 'records':[{'path':x['path'],'commit':x['commit_sha']} for x in verified]}
+            'to':[next_printed-1,last_pdf], 'records':[{'path':x['path'],'commit':x['commit_sha']} for x in verified]}
 
 def main():
     import argparse
