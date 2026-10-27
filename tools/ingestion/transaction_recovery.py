@@ -103,10 +103,16 @@ def inspect(journal:Path, observed_blob_sha:str|None, commit_sha:str|None):
     return {'status':'verified','receipt':{**plan,'status':'verified','commit_sha':commit_sha,'readback_blob_sha':observed_blob_sha}}
 
 def pages(x):
-    m=re.fullmatch(r'(\d+)(?:-(\d+))?',str(x))
-    require(m is not None,'invalid_page_range')
-    first,last=int(m[1]),int(m[2] or m[1]);require(first<=last,'invalid_page_range')
-    return set(range(first,last+1))
+    """Accept exact disjoint source page citations using the authoritative gate parser.
+
+    A record citing printed pages 126, 128 does not cover the intervening
+    full-page illustration on p127. Reject unsorted/overlapping citations.
+    """
+    from ingestion_gate import parsed_printed_or_pdf_page_set
+    try:
+        return parsed_printed_or_pdf_page_set(x)
+    except ValueError as exc:
+        raise RecoveryError('invalid_page_range') from exc
 
 def state(manifest,checkpoint):
     require(manifest.get('id')==checkpoint.get('active_source'),'source_mismatch')
