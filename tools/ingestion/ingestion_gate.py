@@ -96,6 +96,24 @@ def source7115_color_plate_jump(manifest, start, start_pdf, next_printed, next_p
         and bool(HEX40.fullmatch(str(item.get('blob',''))))
         for item in manifest.get('verified_ahead_of_contiguous_boundary',[]))
 
+def parsed_printed_or_pdf_page_set(value):
+    """Read exact, sorted source-page references without inventing intervening pages.
+
+    Legacy contiguous ranges ("126-128") still work. Disjoint printed pages
+    ("126, 128") represent exactly those two pages, not the art interleaf p127.
+    Every item is explicit; overlapping/unsorted references fail closed.
+    """
+    if not isinstance(value, str) or not re.fullmatch(r'[0-9]+(?:-[0-9]+)?(?:,\s*[0-9]+(?:-[0-9]+)?)*', value):
+        fail('invalid_record_range')
+    ordered=[]
+    for token in value.split(','):
+        bounds=token.strip().split('-')
+        first=int(bounds[0]);last=int(bounds[-1])
+        if first>last:fail('invalid_record_range')
+        ordered.extend(range(first,last+1))
+    if ordered!=sorted(set(ordered)):fail('duplicate_or_unsorted_record_pages')
+    return set(ordered)
+
 def authorize_advance(manifest, checkpoint, verified, expected_start, expected_pdf, next_printed, next_pdf):
     if manifest['id']!=checkpoint['active_source'] or manifest['status']!='ingesting':fail('source_state_mismatch')
     if manifest['done']!={'p':checkpoint['completed_through']['printed_page'],'pdf':checkpoint['completed_through']['pdf_page']}:fail('manifest_checkpoint_disagree')
@@ -120,14 +138,12 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
         if not HEX40.fullmatch(str(item.get('commit_sha',''))):fail('missing_commit')
         p=item.get('printed_pages','')
         q=item.get('pdf_pages','')
-        def range_pair(x):
-            m=re.fullmatch(r'([0-9]+)(?:-([0-9]+))?',str(x))
-            if not m:fail('invalid_record_range')
-            return int(m.group(1)),int(m.group(2) or m.group(1))
-        first,last=range_pair(p)
-        pdf_first,pdf_last=range_pair(q)
-        if not (first<=last<next_printed and pdf_first<=pdf_last<next_pdf and last-first==pdf_last-pdf_first):fail('record_outside_slice')
-        if not plate_jump and first-expected_start != pdf_first-expected_pdf:fail('record_page_mapping_mismatch')
+        print_pages=parsed_printed_or_pdf_page_set(p)
+        pdf_pages=parsed_printed_or_pdf_page_set(q)
+        first,last=min(print_pages),max(print_pages)
+        pdf_first,pdf_last=min(pdf_pages),max(pdf_pages)
+        if not (first<=last<next_printed and pdf_first<=pdf_last<next_pdf and len(print_pages)==len(pdf_pages)):fail('record_outside_slice')
+        if not plate_jump and any(pdf_page-print_page!=expected_pdf-expected_start for print_page,pdf_page in zip(sorted(print_pages),sorted(pdf_pages))):fail('record_page_mapping_mismatch')
         if first<expected_start or pdf_first<expected_pdf:
             # A verified source record can begin on the last already-authorized page
             # and finish in the new slice. Retain its full printed/PDF provenance;
@@ -147,13 +163,13 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
                 for entry in manifest.get('verified_ahead_of_contiguous_boundary',[])
             )
             if not matched:fail('overlap_requires_exact_verified_forward_entry')
-        covered.update(range(max(expected_start,first),last+1))
+        covered.update(page for page in print_pages if page>=expected_start)
         if prime_plate_jump:
             if first<=64<last:fail('plate_crossing_record_requires_separate_pagination')
             offset=1 if last<=64 else 9
-            if pdf_first!=first+offset or pdf_last!=last+offset:fail('plate_receipt_mapping_mismatch')
+            if any(pdf_page-print_page!=offset for print_page,pdf_page in zip(sorted(print_pages),sorted(pdf_pages))):fail('plate_receipt_mapping_mismatch')
         if lone_plate_jump:
-            if last>80 or pdf_first!=first or pdf_last!=last:fail('lone_star_plate_receipt_mapping_mismatch')
+            if last>80 or print_pages!=pdf_pages:fail('lone_star_plate_receipt_mapping_mismatch')
         if item['path'] in seen:fail('duplicate_path')
         seen.add(item['path'])
     if covered!=set(range(expected_start,next_printed)):fail('uncovered_pages')
