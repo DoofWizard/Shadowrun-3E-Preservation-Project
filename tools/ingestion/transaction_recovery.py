@@ -158,8 +158,15 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
             require(min(q)==first+offset and max(q)==last+offset,'receipt_page_mismatch')
         else:
             require(min(q)-min(p)==start_pdf-start,'receipt_page_mismatch')
-        require(p.issubset(set(range(start,next_printed))) and q.issubset(set(range(start_pdf,next_pdf))),'receipt_outside_slice')
-        coverage|=p
+        # The gate below independently checks exact original provenance against
+        # verified-ahead state whenever an existing receipt crosses the prior
+        # authorized boundary. Only its intersection counts toward this slice.
+        current_pages=set(range(start,next_printed))
+        current_pdf_pages=set(range(start_pdf,next_pdf))
+        require(bool(p & current_pages) and bool(q & current_pdf_pages)
+                and max(p)<next_printed and max(q)<next_pdf
+                and min(p)-start==min(q)-start_pdf,'receipt_outside_slice')
+        coverage|=p & current_pages
     require(coverage==set(range(start,next_printed)),'uncovered_pages')
     require(any(int(r[0])<=start and int(r[1])>=next_printed-1 for r in manifest.get('routes',[])),'not_one_route')
     clean_m=copy.deepcopy(manifest);clean_c=copy.deepcopy(checkpoint)
