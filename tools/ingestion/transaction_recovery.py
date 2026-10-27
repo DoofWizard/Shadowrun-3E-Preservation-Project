@@ -131,10 +131,14 @@ def _gate_authorize(manifest,checkpoint,receipts,start,start_pdf,next_printed,ne
 
 def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:int,next_printed:int,next_pdf:int,expected_paths:list[str]):
     state(manifest,checkpoint)
-    from ingestion_gate import source7116_color_plate_jump
+    from ingestion_gate import source7116_color_plate_jump,source7115_color_plate_jump
+    prime_plate_jump=source7116_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
+    lone_plate_jump=source7115_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
     crosses_plates=manifest.get('id')=='source.fasa-7116' and start<=64<next_printed
-    plate_jump=source7116_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
-    require(not crosses_plates or plate_jump,'unverified_color_plate_boundary')
+    crosses_lone_plates=manifest.get('id')=='source.fasa-7115' and start<=80<next_printed
+    plate_jump=prime_plate_jump or lone_plate_jump
+    require(not crosses_plates or prime_plate_jump,'unverified_color_plate_boundary')
+    require(not crosses_lone_plates or lone_plate_jump,'unverified_lone_star_color_plate_boundary')
     require(plate_jump or (next_printed-start)==(next_pdf-start_pdf)>0,'invalid_range')
     require(manifest.get('next')=={'p':start,'pdf':start_pdf},'stale_boundary')
     require(manifest.get('status')=='ingesting','source_not_ingesting')
@@ -151,11 +155,13 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
         require(r.get('readback_blob_sha')==r.get('expected_blob_sha') and bool(HEX40.fullmatch(str(r.get('commit_sha','')))),'readback_not_verified')
         p,q=pages(r.get('printed_pages')),pages(r.get('pdf_pages'))
         require(len(p)==len(q),'receipt_page_mismatch')
-        if plate_jump:
+        if prime_plate_jump:
             first,last=min(p),max(p)
             require(not first<=64<last,'plate_crossing_record_requires_separate_pagination')
             offset=1 if last<=64 else 9
             require(min(q)==first+offset and max(q)==last+offset,'receipt_page_mismatch')
+        elif lone_plate_jump:
+            require(max(p)<=80 and min(q)==min(p) and max(q)==max(p),'receipt_page_mismatch')
         else:
             require(min(q)-min(p)==start_pdf-start,'receipt_page_mismatch')
         # The gate below independently checks exact original provenance against
@@ -165,7 +171,7 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
         current_pdf_pages=set(range(start_pdf,next_pdf))
         require(bool(p & current_pages) and bool(q & current_pdf_pages)
                 and max(p)<next_printed and max(q)<next_pdf
-                and min(p)-start==min(q)-start_pdf,'receipt_outside_slice')
+                and (plate_jump or min(p)-start==min(q)-start_pdf),'receipt_outside_slice')
         coverage|=p & current_pages
     require(coverage==set(range(start,next_printed)),'uncovered_pages')
     require(any(int(r[0])<=start and int(r[1])>=next_printed-1 for r in manifest.get('routes',[])),'not_one_route')
@@ -214,7 +220,78 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     pending_id=authorization['pending_id'];pending=m.get('pending',[])
     require(not pending or len(pending)==1 and pending[0].get('id')==pending_id,'unrelated_pending')
     s=original
-    s=_replace_one(s,r'^done:.*$',f'done: {{p: {end-1}, pdf: {end_pdf-1}}}')
+    from ingestion_gate import source7115_color_plate_jump
+    lone_plate_jump=source7115_color_plate_jump(m,start,start_pdf,end,end_pdf)
+    if m.get('id')=='source.fasa-7115' and start<=80<end:
+        require(lone_plate_jump,'unverified_lone_star_color_plate_boundary')
+    done_pdf=80 if lone_plate_jump else end_pdf-1
+    s=_replace_one(s,r'^done:.*
+    s=_replace_one(s,r'^next:.*$',f'next: {{p: {end}, pdf: {end_pdf}}}')
+    if pending:
+        # Limit removal to the pending root mapping: verified-forward and
+        # deferred-forward evidence may occur before resolved_pending.
+        match=re.search(r'^pending:[^\n]*(?:\n|$)',s,flags=re.M)
+        require(match is not None,'pending_field_missing')
+        next_root=re.search(r'^[A-Za-z_][A-Za-z0-9_]*:',s[match.end():],flags=re.M)
+        require(next_root is not None,'pending_end_missing')
+        pending_end=match.end()+next_root.start()
+        s=s[:match.start()]+'pending: []\n'+s[pending_end:]
+    if pending_id not in m.get('resolved_pending',[]):
+        if 'resolved_pending: []' in s:
+            s=s.replace('resolved_pending: []','resolved_pending:\n  - '+pending_id,1)
+        else:
+            s=s.replace('resolved_pending:\n','resolved_pending:\n  - '+pending_id+'\n',1)
+    new=''.join(f'  - ["{key}", {req[path]}]\n' for path,key in record_keys.items() if key not in index)
+    require('source_end:\n' in s,'missing_source_end')
+    s=s.replace('source_end:\n',new+'source_end:\n',1)
+    parsed=parse_yaml(s)
+    require(parsed['done']=={'p':end-1,'pdf':done_pdf} and parsed['next']=={'p':end,'pdf':end_pdf},'render_boundary_error')
+    require(not parsed.get('pending'),'pending_not_cleared')
+    # Fail closed if a future edit damages any unrelated manifest field.
+    protected=set(m)-{'done','next','pending','resolved_pending','records'}
+    require(set(parsed)==set(m) and all(parsed[k]==m[k] for k in protected),
+            'unrelated_manifest_field_changed')
+    keys=[r[0] for r in parsed['records']];require(len(keys)==len(set(keys)),'duplicate_record_index')
+    return s
+
+def render_checkpoint(manifest_after:str,checkpoint_before:str,manifest_commit:str):
+    m=parse_yaml(manifest_after);c=parse_yaml(checkpoint_before)
+    require(bool(HEX40.fullmatch(manifest_commit)),'missing_manifest_commit')
+    require(m.get('id')==c.get('active_source'),'source_mismatch')
+    n=m['next'];d=m['done']
+    target=f'completed_through: {{printed_page: {d["p"]}, pdf_page: {d["pdf"]}}}'
+    out=_replace_one(checkpoint_before,r'^completed_through:.*$',target)
+    out=_replace_one(out,r'^resume_at:.*$',f'resume_at: {{printed_page: {n["p"]}, pdf_page: {n["pdf"]}}}')
+    pend=[x['id'] for x in m.get('pending',[])]
+    pendtxt='pending_normalization: []' if not pend else 'pending_normalization:\n'+''.join('  - '+p+'\n' for p in pend).rstrip('\n')
+    out=_replace_one(out,r'^pending_normalization:[\s\S]*?(?=^open_conflicts:)',pendtxt+'\n',)
+    out=_replace_one(out,r'^last_commit:.*$','last_commit: '+manifest_commit)
+    c2=parse_yaml(out);state(m,c2)
+    return out
+
+def cli():
+    a=argparse.ArgumentParser(description=__doc__); subs=a.add_subparsers(dest='mode',required=True)
+    p=subs.add_parser('stage');p.add_argument('baseline',type=Path);p.add_argument('candidate',type=Path);p.add_argument('path');p.add_argument('source');p.add_argument('pdf_sha');p.add_argument('journal',type=Path)
+    p=subs.add_parser('inspect');p.add_argument('journal',type=Path);p.add_argument('--observed-blob');p.add_argument('--commit')
+    p=subs.add_parser('audit');p.add_argument('manifest',type=Path);p.add_argument('checkpoint',type=Path)
+    p=subs.add_parser('authorize');p.add_argument('manifest',type=Path);p.add_argument('checkpoint',type=Path);p.add_argument('receipts',type=Path);p.add_argument('pending');p.add_argument('start',type=int);p.add_argument('start_pdf',type=int);p.add_argument('next',type=int);p.add_argument('next_pdf',type=int);p.add_argument('paths',nargs='+')
+    p=subs.add_parser('manifest-proposal');p.add_argument('manifest',type=Path);p.add_argument('authorization',type=Path);p.add_argument('keys',type=Path);p.add_argument('output',type=Path)
+    p=subs.add_parser('checkpoint-proposal');p.add_argument('manifest_after',type=Path);p.add_argument('checkpoint_before',type=Path);p.add_argument('manifest_commit');p.add_argument('output',type=Path)
+    args=a.parse_args()
+    try:
+        if args.mode=='stage': result=stage(args.baseline,args.candidate,args.path,args.source,args.pdf_sha,args.journal)
+        elif args.mode=='inspect':result=inspect(args.journal,args.observed_blob,args.commit)
+        elif args.mode=='audit':result=state(parse_yaml(args.manifest.read_text()),parse_yaml(args.checkpoint.read_text()))
+        elif args.mode=='authorize':result=authorize(parse_yaml(args.manifest.read_text()),parse_yaml(args.checkpoint.read_text()),json.loads(args.receipts.read_text()),args.pending,args.start,args.start_pdf,args.next,args.next_pdf,args.paths)
+        elif args.mode=='manifest-proposal':
+            args.output.write_text(render_manifest(args.manifest.read_text(),json.loads(args.authorization.read_text()),json.loads(args.keys.read_text())),encoding='utf-8');result={'status':'proposal_created','path':str(args.output)}
+        else:
+            args.output.write_text(render_checkpoint(args.manifest_after.read_text(),args.checkpoint_before.read_text(),args.manifest_commit),encoding='utf-8');result={'status':'proposal_created','path':str(args.output)}
+        print(json.dumps(result,sort_keys=True));return 0
+    except (RecoveryError,KeyError,TypeError,ValueError,OSError) as exc:
+        print(json.dumps({'status':'blocked','reason':str(exc) if isinstance(exc,RecoveryError) else type(exc).__name__}));return 1
+if __name__=='__main__':sys.exit(cli())
+,f'done: {{p: {end-1}, pdf: {done_pdf}}}')
     s=_replace_one(s,r'^next:.*$',f'next: {{p: {end}, pdf: {end_pdf}}}')
     if pending:
         # Limit removal to the pending root mapping: verified-forward and
