@@ -1,5 +1,9 @@
 # Ingestion worker handoff — efficiency and thread rollover protocol
 
+## Source-gap continuity-first check (2026-10-26)
+
+Before treating a missing printed page as an ingestion blocker or declaring it blank, inspect the original scan's before/after page images, sentence/table/section continuity, page numbering, and table-of-contents/index references. Ordinary scan omissions are often intentional blanks, but record the evidence and distinguish a benign omission from a named missing section. Apply `docs/ingestion/scan-gap-continuity-protocol.md`; never invent an unseen source page, infer facts, alter printed/PDF mapping, or bypass semantic/authorization gates. The FASA7115 printed-p4 case currently has contradictory TOC evidence and is not verified blank. This triage is part of the existing single worker, not a separate task.
+
 ## Purpose
 
 This document is the operational handoff for the active Shadowrun 3E ingestion worker.
