@@ -80,6 +80,7 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
     if isinstance(verified, dict): verified=[verified]
     if not isinstance(verified, list) or not verified:fail('no_verified_records')
     seen=set()
+    covered=set()
     for item in verified:
         if item.get('status')!='verified' or item.get('protocol')!='sr3-gate/v1':fail('unverified_record')
         if item.get('source')!=manifest['id'] or item.get('readback_blob_sha')!=item.get('expected_blob_sha'):fail('provenance_mismatch')
@@ -92,13 +93,35 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
             return int(m.group(1)),int(m.group(2) or m.group(1))
         first,last=range_pair(p)
         pdf_first,pdf_last=range_pair(q)
-        if not (expected_start<=first<=last<next_printed and expected_pdf<=pdf_first<=pdf_last<next_pdf and last-first==pdf_last-pdf_first):fail('record_outside_slice')
+        if not (first<=last<next_printed and pdf_first<=pdf_last<next_pdf and last-first==pdf_last-pdf_first):fail('record_outside_slice')
+        if not plate_jump and first-expected_start != pdf_first-expected_pdf:fail('record_page_mapping_mismatch')
+        if first<expected_start or pdf_first<expected_pdf:
+            # A verified source record can begin on the last already-authorized page
+            # and finish in the new slice. Retain its full printed/PDF provenance;
+            # never re-label its pages or make a synthetic receipt for the suffix.
+            if (plate_jump or first>=expected_start or pdf_first>=expected_pdf
+                or last<expected_start or pdf_last<expected_pdf
+                or manifest.get('done',{}).get('p')!=expected_start-1
+                or manifest.get('done',{}).get('pdf')!=expected_pdf-1):
+                fail('untrusted_prior_page_overlap')
+            matched=any(
+                entry.get('gate')=='verified'
+                and entry.get('path')==item['path']
+                and entry.get('commit')==item['commit_sha']
+                and entry.get('blob')==item['readback_blob_sha']
+                and entry.get('range_printed')==[first,last]
+                and entry.get('range_pdf')==[pdf_first,pdf_last]
+                for entry in manifest.get('verified_ahead_of_contiguous_boundary',[])
+            )
+            if not matched:fail('overlap_requires_exact_verified_forward_entry')
+        covered.update(range(max(expected_start,first),last+1))
         if plate_jump:
             if first<=64<last:fail('plate_crossing_record_requires_separate_pagination')
             offset=1 if last<=64 else 9
             if pdf_first!=first+offset or pdf_last!=last+offset:fail('plate_receipt_mapping_mismatch')
         if item['path'] in seen:fail('duplicate_path')
         seen.add(item['path'])
+    if covered!=set(range(expected_start,next_printed)):fail('uncovered_pages')
     return {'authorized':True,'source':manifest['id'],'from':[expected_start,expected_pdf],
             'to':[next_printed-1,next_pdf-1], 'records':[{'path':x['path'],'commit':x['commit_sha']} for x in verified]}
 
