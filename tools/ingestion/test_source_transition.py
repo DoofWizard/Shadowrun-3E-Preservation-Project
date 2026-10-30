@@ -5,6 +5,7 @@ from pathlib import Path
 import unittest
 from ingestion_gate import authorize_advance, InvalidRecord
 from transaction_recovery import RecoveryError, parse_yaml, git_blob
+import transaction_recovery as recovery
 import source_transition as t
 
 ROOT = Path(__file__).resolve().parents[2]
@@ -160,6 +161,33 @@ class TransitionTests(unittest.TestCase):
         result = t.audit(self.old, self.before, (ROOT / t.MANIFEST).read_bytes(),
                          (ROOT / t.RECEIPT).read_bytes(), cp)
         self.assertEqual(result['status'], 'consistent_provisional_transition')
+
+    def test_two_normal_recovery_advances_preserve_transition_and_debt(self):
+        manifest_raw, checkpoint_raw = self.target, self.activate()
+        for first, last in [(2, 3), (4, 5)]:
+            with self.subTest(first=first):
+                m, c = parse_yaml(manifest_raw), parse_yaml(checkpoint_raw)
+                path = f'references/test-only/pages-{first}-{last}.yml'
+                # Synthetic test-only receipt; never used for repository credit.
+                receipt = {'protocol': 'sr3-gate/v1', 'status': 'verified',
+                           'source': t.TARGET, 'pdf_sha256': t.TARGET_SHA,
+                           'printed_pages': f'{first}-{last}',
+                           'pdf_pages': f'{first+1}-{last+1}',
+                           'commit_sha': 'a' * 40, 'readback_blob_sha': 'b' * 40,
+                           'expected_blob_sha': 'b' * 40, 'path': path}
+                auth = recovery.authorize(m, c, [receipt], f'test-{first}',
+                                          first, first+1, last+1, last+2, [path])
+                manifest_raw = recovery.render_manifest(manifest_raw.decode(), auth,
+                                                         {path: f'test-{first}'}).encode()
+                checkpoint_raw = recovery.render_checkpoint(manifest_raw.decode(),
+                                                             checkpoint_raw.decode(), 'c'*40).encode()
+                updated = parse_yaml(manifest_raw)
+                self.assertEqual(updated['routes'], m['routes'])
+                self.assertEqual(updated['source_integrity'], m['source_integrity'])
+                self.assertEqual(len(updated['records']), first // 2)
+                self.assertEqual(t.audit(self.old, self.before, manifest_raw,
+                                         self.receipt, checkpoint_raw)['status'],
+                                 'consistent_provisional_transition')
 
 
 if __name__ == '__main__':
