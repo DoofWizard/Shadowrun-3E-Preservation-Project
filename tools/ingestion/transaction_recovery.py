@@ -153,6 +153,19 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
     require(len(set(expected_paths))==len(expected_paths) and expected_paths,'invalid_expected_paths')
     require(isinstance(receipts,list) and len(receipts)==len(expected_paths),'receipt_count_mismatch')
     require(set(x.get('path') for x in receipts)==set(expected_paths),'incomplete_or_extra_receipts')
+    if manifest['id']=='source.fasa-7215' and start<=81<next_printed:
+        from ingestion_gate import source7215_land_interleaf
+        require(source7215_land_interleaf(manifest,start,start_pdf,next_printed,next_pdf,receipts),
+                'unverified_fasa7215_unnumbered_land_interleaf')
+        clean_m=copy.deepcopy(manifest);clean_c=copy.deepcopy(checkpoint)
+        clean_m['pending']=[];clean_c['pending_normalization']=[]
+        gate_result=_gate_authorize(clean_m,clean_c,receipts,start,start_pdf,next_printed,next_pdf)
+        require(gate_result.get('authorized') is True and gate_result.get('unnumbered_plate_only') is True,
+                'interleaf_gate_did_not_authorize')
+        return {'authorized':True,'protocol':'sr3-recovery/v1','source':manifest['id'],
+                'pending_id':pending_id,'from':[start,start_pdf],'next':[next_printed,next_pdf],
+                'unnumbered_plate_only':True,'new_printed_pages':0,
+                'records':[{k:r[k] for k in ('path','commit_sha','expected_blob_sha')} for r in receipts]}
     coverage=set()
     for r in receipts:
         require(r.get('protocol')=='sr3-gate/v1' and r.get('status')=='verified','unverified_receipt')
@@ -245,8 +258,15 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     lone_plate_jump=source7115_color_plate_jump(m,start,start_pdf,end,end_pdf)
     if m.get('id')=='source.fasa-7115' and start<=80<end:
         require(lone_plate_jump,'unverified_lone_star_color_plate_boundary')
-    done_pdf=80 if lone_plate_jump else end_pdf-1
-    s=_replace_root_field(s,'done',f'done: {{p: {end-1}, pdf: {done_pdf}}}')
+    land_plate=(m.get('id')=='source.fasa-7215' and (start,start_pdf,end,end_pdf)==(81,82,82,83)
+                and authorization.get('unnumbered_plate_only') is True
+                and set(req)=={'references/smuggler-havens/smuggling-on-land-unnumbered-plate-pdf82.yml'}
+                and m.get('done')=={'p':80,'pdf':81})
+    if m.get('id')=='source.fasa-7215' and start<=81<end:
+        require(land_plate,'unverified_fasa7215_unnumbered_land_interleaf')
+    done_printed=80 if land_plate else end-1
+    done_pdf=82 if land_plate else 80 if lone_plate_jump else end_pdf-1
+    s=_replace_root_field(s,'done',f'done: {{p: {done_printed}, pdf: {done_pdf}}}')
     s=_replace_root_field(s,'next',f'next: {{p: {end}, pdf: {end_pdf}}}')
     if pending:
         # Limit removal to the pending root mapping: verified-forward and
@@ -272,7 +292,7 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
             # source_end are located. Never append a record to the routes list.
             s=s[:field_end].rstrip('\n')+'\n'+new+s[field_end:]
     parsed=parse_yaml(s)
-    require(parsed['done']=={'p':end-1,'pdf':done_pdf} and parsed['next']=={'p':end,'pdf':end_pdf},'render_boundary_error')
+    require(parsed['done']=={'p':done_printed,'pdf':done_pdf} and parsed['next']=={'p':end,'pdf':end_pdf},'render_boundary_error')
     require(not parsed.get('pending'),'pending_not_cleared')
     # Fail closed if a future edit damages any unrelated manifest field.
     protected=set(m)-{'done','next','pending','resolved_pending','records'}
