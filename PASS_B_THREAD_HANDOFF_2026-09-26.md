@@ -121,7 +121,7 @@ After Dragons of the Sixth World:
 
 Then proceed through SR3-era adventures/campaigns. Legacy SR1/SR2 lineage is Pass C.
 
-When the active source is complete, take the first source in checkpoint.next_sources; otherwise use this fixed order. Create a missing source manifest and durably checkpoint the transition before scanning. Reacquire the cataloged Drive source fresh every run. Use directed depth with a deep scan of every rules-bearing subsection. Preserve printed/PDF provenance and do not infer supersession. Do not mark a source complete with required pending normalization or unresolved completeness-blocking gaps.
+When the active source is complete, take the first source in checkpoint.next_sources; otherwise use this fixed order. The sole owner-authorized provisional exception is FASA7115 -> FASA7215 under `docs/ingestion/provisional-source-transition.md`: audit its receipt and archived outgoing checkpoint, carry the unverified p4 manual-review obligation, and use the live active checkpoint. This does not mark Lone Star complete or waive any semantic/page gate. Create a missing source manifest and durably checkpoint the transition before scanning. Reacquire the cataloged Drive source fresh every run. Use directed depth with a deep scan of every rules-bearing subsection. Preserve printed/PDF provenance and do not infer supersession. Do not mark a source complete with required pending normalization or unresolved completeness-blocking gaps.
 
 `pending.source10652.missing-p110-111` is resolved and nonblocking under `references/audits/source10652-gap-p110-111.yml`. Reopen only for a new source copy or new evidence. Do not reconstruct missing narrative or re-add it to open conflicts.
 
