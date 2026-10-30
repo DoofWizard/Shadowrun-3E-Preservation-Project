@@ -1,10 +1,31 @@
 state_protocol_version: 2
 phase: pass_b
-active_source: source.fasa-7115
+active_source: source.fasa-7215
 source_status: ingesting
-completed_through: {printed_page: 136, pdf_page: 144}
-resume_at: {printed_page: 137, pdf_page: 145}
-last_commit: 320fe2618d0e6a9ea58f48e8d23f260ad5fbbd39
+completed_through:
+  printed_page: 0
+  pdf_page: 0
+resume_at:
+  printed_page: 2
+  pdf_page: 3
+last_commit: a7fd64683efc6b425210d5e337e7114adfa6dec9
 pending_normalization: []
 open_conflicts: []
-next_sources: [source.fasa-7215]
+next_sources: []
+provisional_source_transition:
+  receipt: sources/transitions/FASA7115-to-FASA7215.yml
+  receipt_commit: 46bd930be5be28239c390d19d583f6053231f564
+  receipt_blob: 5d99ed21a4665aaa1648ccd0861838674af9b586
+  outgoing_checkpoint_archive: sources/transitions/FASA7115-to-FASA7215.checkpoint-before.yml
+  outgoing_checkpoint_blob: af15219f0bc1464d562a52737a033bfab31a81c8
+manual_review_obligations:
+- id: source7115.missing-printed-p4
+  source: source.fasa-7115
+  printed_page: 4
+  physical_pdf_page: null
+  status: unverified_deferred_manual_review
+  manually_verified: false
+  presumed_blank: false
+  manual_verification_required: true
+  source_completion_blocked: true
+  source_manifest: sources/manifests/LoneStar.yml
