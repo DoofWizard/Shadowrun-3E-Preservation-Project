@@ -213,6 +213,21 @@ def _replace_one(text:str,pattern:str,replacement:str):
     require(count==1,'state_field_missing')
     return result
 
+
+def _root_field_span(text:str, key:str):
+    """Locate one root field including its block-style YAML children."""
+    matches=list(re.finditer(r'^'+re.escape(key)+r':[^\n]*(?:\n|$)',text,flags=re.M))
+    require(len(matches)==1,'state_field_missing_or_duplicate')
+    match=matches[0]
+    following=re.search(r'^[A-Za-z_][A-Za-z0-9_]*:',text[match.end():],flags=re.M)
+    end=match.end()+following.start() if following else len(text)
+    return match.start(),end
+
+
+def _replace_root_field(text:str,key:str,replacement:str):
+    start,end=_root_field_span(text,key)
+    return text[:start]+replacement.rstrip('\n')+'\n'+text[end:]
+
 def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     m=parse_yaml(original)
     require(authorization.get('authorized') is True and authorization.get('source')==m.get('id'),'authorization_mismatch')
@@ -231,8 +246,8 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
     if m.get('id')=='source.fasa-7115' and start<=80<end:
         require(lone_plate_jump,'unverified_lone_star_color_plate_boundary')
     done_pdf=80 if lone_plate_jump else end_pdf-1
-    s=_replace_one(s,r'^done:.*$',f'done: {{p: {end-1}, pdf: {done_pdf}}}')
-    s=_replace_one(s,r'^next:.*$',f'next: {{p: {end}, pdf: {end_pdf}}}')
+    s=_replace_root_field(s,'done',f'done: {{p: {end-1}, pdf: {done_pdf}}}')
+    s=_replace_root_field(s,'next',f'next: {{p: {end}, pdf: {end_pdf}}}')
     if pending:
         # Limit removal to the pending root mapping: verified-forward and
         # deferred-forward evidence may occur before resolved_pending.
@@ -248,8 +263,14 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
         else:
             s=s.replace('resolved_pending:\n','resolved_pending:\n  - '+pending_id+'\n',1)
     new=''.join(f'  - ["{key}", {req[path]}]\n' for path,key in record_keys.items() if key not in index)
-    require('source_end:\n' in s,'missing_source_end')
-    s=s.replace('source_end:\n',new+'source_end:\n',1)
+    if new:
+        field_start,field_end=_root_field_span(s,'records')
+        if not m['records']:
+            s=s[:field_start]+'records:\n'+new+s[field_end:]
+        else:
+            # Append inside the records field regardless of where routes or
+            # source_end are located. Never append a record to the routes list.
+            s=s[:field_end].rstrip('\n')+'\n'+new+s[field_end:]
     parsed=parse_yaml(s)
     require(parsed['done']=={'p':end-1,'pdf':done_pdf} and parsed['next']=={'p':end,'pdf':end_pdf},'render_boundary_error')
     require(not parsed.get('pending'),'pending_not_cleared')
@@ -266,13 +287,16 @@ def render_checkpoint(manifest_after:str,checkpoint_before:str,manifest_commit:s
     require(m.get('id')==c.get('active_source'),'source_mismatch')
     n=m['next'];d=m['done']
     target=f'completed_through: {{printed_page: {d["p"]}, pdf_page: {d["pdf"]}}}'
-    out=_replace_one(checkpoint_before,r'^completed_through:.*$',target)
-    out=_replace_one(out,r'^resume_at:.*$',f'resume_at: {{printed_page: {n["p"]}, pdf_page: {n["pdf"]}}}')
+    out=_replace_root_field(checkpoint_before,'completed_through',target)
+    out=_replace_root_field(out,'resume_at',f'resume_at: {{printed_page: {n["p"]}, pdf_page: {n["pdf"]}}}')
     pend=[x['id'] for x in m.get('pending',[])]
     pendtxt='pending_normalization: []' if not pend else 'pending_normalization:\n'+''.join('  - '+p+'\n' for p in pend).rstrip('\n')
-    out=_replace_one(out,r'^pending_normalization:[\s\S]*?(?=^open_conflicts:)',pendtxt+'\n',)
-    out=_replace_one(out,r'^last_commit:.*$','last_commit: '+manifest_commit)
+    out=_replace_root_field(out,'pending_normalization',pendtxt)
+    out=_replace_root_field(out,'last_commit','last_commit: '+manifest_commit)
     c2=parse_yaml(out);state(m,c2)
+    changed={'completed_through','resume_at','pending_normalization','last_commit'}
+    require(set(c2)==set(c) and all(c2[k]==c[k] for k in set(c)-changed),
+            'unrelated_checkpoint_field_changed')
     return out
 
 def cli():
