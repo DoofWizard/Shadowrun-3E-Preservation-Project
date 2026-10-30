@@ -1,0 +1,35 @@
+protocol: sr3-provisional-source-transition/v1
+status: authorized_provisional_transition
+authorization: owner_request_2026_10_30_FASA7115_p4_deferred_manual_review
+from_source: source.fasa-7115
+to_source: source.fasa-7215
+outgoing_source_state: extraction_finished_manual_review_deferred
+source_complete: false
+source_completion_allowed: false
+authorized_page_advance: 0
+outgoing_done:
+  p: 136
+  pdf: 144
+outgoing_next:
+  p: 137
+  pdf: 145
+outgoing_pdf_sha256: c24e67bec3b2e2659236f96cfa334f06cde95ad4f76958e09943379060e69c28
+outgoing_manifest_blob: fcdf013acc415b4443c8691d9b10a362d8ff8249
+outgoing_checkpoint_blob: af15219f0bc1464d562a52737a033bfab31a81c8
+outgoing_checkpoint_archive: sources/transitions/FASA7115-to-FASA7215.checkpoint-before.yml
+successor_manifest: sources/manifests/TargetSmugglerHavens.yml
+successor_manifest_blob: 28f33eecb768c1eb4c9ee3d8ea12c0ce8884abfd
+successor_pdf_sha256: 6d7e2f400eefd2c1edb99babe4cb7ed1ec3237be00c3c5423fc9428a23afc636
+verified_forward_entries_preserved: 163
+manual_review_obligations:
+- id: source7115.missing-printed-p4
+  source: source.fasa-7115
+  printed_page: 4
+  physical_pdf_page: null
+  status: unverified_deferred_manual_review
+  manually_verified: false
+  presumed_blank: false
+  manual_verification_required: true
+  source_completion_blocked: true
+  source_manifest: sources/manifests/LoneStar.yml
+worker_policy: existing_single_hourly_worker_schedule_unchanged
