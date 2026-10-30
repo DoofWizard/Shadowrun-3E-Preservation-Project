@@ -83,6 +83,12 @@ Adventure prose itself is not reproduced.
 
 ## Per-source completion checklist
 
+Source transition and full completion are distinct. The owner-authorized
+FASA7115 -> FASA7215 provisional transition is defined in
+`docs/ingestion/provisional-source-transition.md`. It preserves Lone Star p4 as
+unverified, carries manual-review debt, and credits no pages. It does not satisfy
+or replace this completion checklist.
+
 A source is complete only when:
 - its table of contents/domains have been mapped,
 - every mechanical addition has a canonical record or relationship,
