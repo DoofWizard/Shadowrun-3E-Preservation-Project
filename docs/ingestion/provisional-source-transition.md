@@ -79,6 +79,13 @@ baseline, preflight, stage/prepare, normal write, exact readback, confirm,
 authorize-advance, manifest then checkpoint. Neither this audit nor CI proves
 source fidelity. All original gates remain mandatory and unmodified.
 
+The recovery renderers accept an initially empty record index and either inline
+or block-style YAML boundaries. They append records inside the records field,
+preserve route placement, and retain transition/manual-review fields when moving
+the checkpoint. The regression suite exercises two consecutive ordinary
+authorize -> manifest-proposal -> checkpoint-proposal advances without crediting
+any real source pages or changing authorization requirements.
+
 Start by reconciling p2-3/PDF3-4. The existing opening record has a mixed
 unnumbered/numeric citation that the numeric page-advance gate cannot consume.
 Preserve that record. Recover its authentic receipts where available, and prepare
