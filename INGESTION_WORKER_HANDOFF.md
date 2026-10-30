@@ -1,5 +1,17 @@
 # Ingestion worker handoff — efficiency and thread rollover protocol
 
+## Provisional source transition (2026-10-30)
+
+The owner authorized FASA7115 -> FASA7215 with Lone Star printed p4 still
+unverified and deferred for manual review. Read the live `WORKER_CHECKPOINT.yml`;
+when its provisional transition link is present, follow
+`docs/ingestion/provisional-source-transition.md` and run the startup audit there.
+The outgoing source remains incomplete, its manifest and archived checkpoint
+remain intact, and the active checkpoint carries the manual-review obligation.
+This transition credits zero pages and does not promote existing forward records.
+Continue FASA7215 through the ordinary integrity gates with the same single hourly
+worker and unchanged schedule. The completion rules below still apply.
+
 ## Source-gap continuity-first check (2026-10-26)
 
 Before treating a missing printed page as an ingestion blocker or declaring it blank, inspect the original scan's before/after page images, sentence/table/section continuity, page numbering, and table-of-contents/index references. Ordinary scan omissions are often intentional blanks, but record the evidence and distinguish a benign omission from a named missing section. Apply `docs/ingestion/scan-gap-continuity-protocol.md`; never invent an unseen source page, infer facts, alter printed/PDF mapping, or bypass semantic/authorization gates. The FASA7115 printed-p4 case currently has contradictory TOC evidence and is not verified blank. This triage is part of the existing single worker, not a separate task.
