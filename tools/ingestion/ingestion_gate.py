@@ -96,6 +96,36 @@ def source7115_color_plate_jump(manifest, start, start_pdf, next_printed, next_p
         and bool(HEX40.fullmatch(str(item.get('blob',''))))
         for item in manifest.get('verified_ahead_of_contiguous_boundary',[]))
 
+def source7215_land_interleaf(manifest, start, start_pdf, next_printed, next_pdf, receipts):
+    """Verify ONE original unnumbered illustration, never an invented printed p81.
+
+    FASA7215: printed p80 = PDF81, original PDF82 is a full-bleed
+    unnumbered plate, printed p82 = PDF83. This check is source-hash,
+    position, page-image-review, and exact semantic-receipt bound.
+    It authorizes zero numbered pages and does not waive other gates.
+    """
+    if manifest.get('id') != 'source.fasa-7215': return False
+    integrity=manifest.get('source_integrity',{})
+    reviewed=integrity.get('visually_checked_mapping',{})
+    if (manifest.get('source_pdf_sha256') != '6d7e2f400eefd2c1edb99babe4cb7ed1ec3237be00c3c5423fc9428a23afc636'
+        or (start,start_pdf,next_printed,next_pdf) != (81,82,82,83)
+        or manifest.get('done') != {'p':80,'pdf':81}
+        or reviewed.get('printed_80') != 81
+        or reviewed.get('unnumbered_land_interleaf_pdf') != 82
+        or reviewed.get('printed_82') != 83
+        or not isinstance(receipts,list) or len(receipts)!=1):
+        return False
+    r=receipts[0]
+    return (r.get('path')=='references/smuggler-havens/smuggling-on-land-unnumbered-plate-pdf82.yml'
+        and r.get('printed_pages')=='unnumbered illustration between pp80 and 82'
+        and r.get('pdf_pages')=='82'
+        and r.get('protocol')=='sr3-gate/v1' and r.get('status')=='verified'
+        and r.get('source')==manifest['id']
+        and r.get('pdf_sha256')==manifest['source_pdf_sha256']
+        and r.get('readback_blob_sha')==r.get('expected_blob_sha')
+        and r.get('expected_blob_sha')=='dfd05d7c8ab6c9202d79987b672c02a322de5bd5'
+        and bool(HEX40.fullmatch(str(r.get('commit_sha','')))))
+
 def parsed_printed_or_pdf_page_set(value):
     """Read exact, sorted source-page references without inventing intervening pages.
 
@@ -130,6 +160,14 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
     if not any(r[0]<=expected_start and r[1]>=next_printed-1 for r in manifest.get('routes',[])):fail('not_one_route')
     if isinstance(verified, dict): verified=[verified]
     if not isinstance(verified, list) or not verified:fail('no_verified_records')
+    if manifest['id']=='source.fasa-7215' and expected_start<=81<next_printed:
+        if not source7215_land_interleaf(manifest,expected_start,expected_pdf,next_printed,next_pdf,verified):
+            fail('unverified_fasa7215_unnumbered_land_interleaf')
+        if not any(row[0]<=81<=row[1] for row in manifest.get('routes',[])):
+            fail('interleaf_not_in_routed_section')
+        return {'authorized':True,'source':manifest['id'],'from':[81,82],
+                'to':[80,82], 'records':[{'path':verified[0]['path'],'commit':verified[0]['commit_sha']}],
+                'unnumbered_plate_only':True,'new_printed_pages':0}
     seen=set()
     covered=set()
     for item in verified:
