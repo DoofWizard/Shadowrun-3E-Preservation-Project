@@ -178,6 +178,32 @@ def source7214_chicago_interleaf(manifest, start, start_pdf, next_printed, next_
         and r.get('expected_blob_sha')=='7ea366fabfd32b543069765b55783162eb7a6d08'
         and bool(HEX40.fullmatch(str(r.get('commit_sha','')))))
 
+def source7214_city_maps_interleaf(manifest, start, start_pdf, next_printed, next_pdf, receipts):
+    """Source-exact unnumbered Boston/Detroit map plate at FASA7214 PDF104.
+
+    Between printed pp102 and 104 the scan has one sideways city-map plate,
+    not a printed p103. Gate exactly the original hash, prior boundary, accepted
+    GitHub blob, literal citation, and the single zero-numbered-page transaction.
+    This is NOT a generic missing-page exception.
+    """
+    if manifest.get('id') != 'source.fasa-7214': return False
+    if (manifest.get('source_pdf_sha256') !=
+            'dc016e418a24fad63d56fba4f2f7f657cb1c0d995cdabd648ba9c6109e33f8f8'
+        or (start,start_pdf,next_printed,next_pdf) != (103,104,104,105)
+        or manifest.get('done') != {'p':102,'pdf':103}
+        or not isinstance(receipts,list) or len(receipts)!=1):
+        return False
+    r=receipts[0]
+    return (r.get('path')=='references/target-ucas/boston-detroit-unnumbered-city-maps-pdf104.yml'
+        and r.get('printed_pages')=='unnumbered map page between printed p102 and p104'
+        and r.get('pdf_pages')=='104'
+        and r.get('protocol')=='sr3-gate/v1' and r.get('status')=='verified'
+        and r.get('source')==manifest['id']
+        and r.get('pdf_sha256')==manifest['source_pdf_sha256']
+        and r.get('readback_blob_sha')==r.get('expected_blob_sha')
+        and r.get('expected_blob_sha')=='d3b7c2a2a043614961f592518f32b0a31896e200'
+        and bool(HEX40.fullmatch(str(r.get('commit_sha','')))))
+
 def parsed_printed_or_pdf_page_set(value):
     """Read exact, sorted source-page references without inventing intervening pages.
 
@@ -231,6 +257,14 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
             fail('unverified_fasa7214_unnumbered_chicago_interleaf')
         return {'authorized':True,'source':manifest['id'],'from':[69,70],
                 'to':[68,70], 'records':[{'path':verified[0]['path'],'commit':verified[0]['commit_sha']}],
+                'unnumbered_plate_only':True,'new_printed_pages':0}
+    if manifest['id']=='source.fasa-7214' and expected_start<=103<next_printed:
+        if not source7214_city_maps_interleaf(manifest,expected_start,expected_pdf,next_printed,next_pdf,verified):
+            fail('unverified_fasa7214_unnumbered_city_maps_interleaf')
+        if not any(row[0]<=103<=row[1] for row in manifest.get('routes',[])):
+            fail('city_maps_interleaf_not_in_routed_section')
+        return {'authorized':True,'source':manifest['id'],'from':[103,104],
+                'to':[102,104], 'records':[{'path':verified[0]['path'],'commit':verified[0]['commit_sha']}],
                 'unnumbered_plate_only':True,'new_printed_pages':0}
     seen=set()
     covered=set()
