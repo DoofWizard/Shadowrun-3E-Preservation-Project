@@ -137,15 +137,16 @@ def _gate_authorize(manifest,checkpoint,receipts,start,start_pdf,next_printed,ne
 
 def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:int,next_printed:int,next_pdf:int,expected_paths:list[str]):
     state(manifest,checkpoint)
-    from ingestion_gate import source7116_color_plate_jump,source7115_color_plate_jump
+    from ingestion_gate import source7116_color_plate_jump,source7115_color_plate_jump,source7213_color_plates_interleaf
     prime_plate_jump=source7116_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
     lone_plate_jump=source7115_color_plate_jump(manifest,start,start_pdf,next_printed,next_pdf)
     crosses_plates=manifest.get('id')=='source.fasa-7116' and start<=64<next_printed
     crosses_lone_plates=manifest.get('id')=='source.fasa-7115' and start<=80<next_printed
     plate_jump=prime_plate_jump or lone_plate_jump
+    aztlan_plates=source7213_color_plates_interleaf(manifest,start,start_pdf,next_printed,next_pdf,receipts)
     require(not crosses_plates or prime_plate_jump,'unverified_color_plate_boundary')
     require(not crosses_lone_plates or lone_plate_jump,'unverified_lone_star_color_plate_boundary')
-    require(plate_jump or (next_printed-start)==(next_pdf-start_pdf)>0,'invalid_range')
+    require(aztlan_plates or plate_jump or (next_printed-start)==(next_pdf-start_pdf)>0,'invalid_range')
     require(manifest.get('next')=={'p':start,'pdf':start_pdf},'stale_boundary')
     require(manifest.get('status')=='ingesting','source_not_ingesting')
     pending=[x['id'] for x in manifest.get('pending',[])]
@@ -153,6 +154,17 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
     require(len(set(expected_paths))==len(expected_paths) and expected_paths,'invalid_expected_paths')
     require(isinstance(receipts,list) and len(receipts)==len(expected_paths),'receipt_count_mismatch')
     require(set(x.get('path') for x in receipts)==set(expected_paths),'incomplete_or_extra_receipts')
+    if manifest['id']=='source.fasa-7213' and (start,start_pdf)==(97,98):
+        require(aztlan_plates,'unverified_fasa7213_eight_color_plates')
+        clean_m=copy.deepcopy(manifest);clean_c=copy.deepcopy(checkpoint)
+        clean_m['pending']=[];clean_c['pending_normalization']=[]
+        gate_result=_gate_authorize(clean_m,clean_c,receipts,start,start_pdf,next_printed,next_pdf)
+        require(gate_result.get('authorized') is True and gate_result.get('unnumbered_plate_only') is True,
+                'aztlan_color_plates_gate_did_not_authorize')
+        return {'authorized':True,'protocol':'sr3-recovery/v1','source':manifest['id'],
+                'pending_id':pending_id,'from':[start,start_pdf],'next':[next_printed,next_pdf],
+                'unnumbered_plate_only':True,'new_printed_pages':0,
+                'records':[{k:r[k] for k in ('path','commit_sha','expected_blob_sha')} for r in receipts]}
     if manifest['id']=='source.fasa-7215' and start<=81<next_printed:
         from ingestion_gate import source7215_land_interleaf
         require(source7215_land_interleaf(manifest,start,start_pdf,next_printed,next_pdf,receipts),
@@ -321,8 +333,14 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
                      and m.get('done')=={'p':102,'pdf':103})
     if m.get('id')=='source.fasa-7214' and start<=103<end:
         require(city_maps_plate,'unverified_fasa7214_unnumbered_city_maps_interleaf')
-    done_printed=102 if city_maps_plate else 68 if chicago_plate else 46 if detroit_plate else 80 if land_plate else end-1
-    done_pdf=104 if city_maps_plate else 70 if chicago_plate else 48 if detroit_plate else 82 if land_plate else 80 if lone_plate_jump else end_pdf-1
+    aztlan_plate=(m.get('id')=='source.fasa-7213' and (start,start_pdf,end,end_pdf)==(97,98,97,106)
+                  and authorization.get('unnumbered_plate_only') is True
+                  and set(req)=={'references/aztlan/unnumbered-color-plates-pdf98-105.yml'}
+                  and m.get('done')=={'p':96,'pdf':97})
+    if m.get('id')=='source.fasa-7213' and (start,start_pdf)==(97,98):
+        require(aztlan_plate,'unverified_fasa7213_eight_color_plates')
+    done_printed=96 if aztlan_plate else 102 if city_maps_plate else 68 if chicago_plate else 46 if detroit_plate else 80 if land_plate else end-1
+    done_pdf=105 if aztlan_plate else 104 if city_maps_plate else 70 if chicago_plate else 48 if detroit_plate else 82 if land_plate else 80 if lone_plate_jump else end_pdf-1
     s=_replace_root_field(s,'done',f'done: {{p: {done_printed}, pdf: {done_pdf}}}')
     s=_replace_root_field(s,'next',f'next: {{p: {end}, pdf: {end_pdf}}}')
     if pending:
