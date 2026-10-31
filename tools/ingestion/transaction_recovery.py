@@ -179,6 +179,19 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
                 'pending_id':pending_id,'from':[start,start_pdf],'next':[next_printed,next_pdf],
                 'unnumbered_plate_only':True,'new_printed_pages':0,
                 'records':[{k:r[k] for k in ('path','commit_sha','expected_blob_sha')} for r in receipts]}
+    if manifest['id']=='source.fasa-7214' and start<=69<next_printed:
+        from ingestion_gate import source7214_chicago_interleaf
+        require(source7214_chicago_interleaf(manifest,start,start_pdf,next_printed,next_pdf,receipts),
+                'unverified_fasa7214_unnumbered_chicago_interleaf')
+        clean_m=copy.deepcopy(manifest);clean_c=copy.deepcopy(checkpoint)
+        clean_m['pending']=[];clean_c['pending_normalization']=[]
+        gate_result=_gate_authorize(clean_m,clean_c,receipts,start,start_pdf,next_printed,next_pdf)
+        require(gate_result.get('authorized') is True and gate_result.get('unnumbered_plate_only') is True,
+                'chicago_interleaf_gate_did_not_authorize')
+        return {'authorized':True,'protocol':'sr3-recovery/v1','source':manifest['id'],
+                'pending_id':pending_id,'from':[start,start_pdf],'next':[next_printed,next_pdf],
+                'unnumbered_plate_only':True,'new_printed_pages':0,
+                'records':[{k:r[k] for k in ('path','commit_sha','expected_blob_sha')} for r in receipts]}
     coverage=set()
     for r in receipts:
         require(r.get('protocol')=='sr3-gate/v1' and r.get('status')=='verified','unverified_receipt')
@@ -283,8 +296,14 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
                    and m.get('done')=={'p':46,'pdf':47})
     if m.get('id')=='source.fasa-7214' and start<=47<end:
         require(detroit_plate,'unverified_fasa7214_unnumbered_detroit_interleaf')
-    done_printed=46 if detroit_plate else 80 if land_plate else end-1
-    done_pdf=48 if detroit_plate else 82 if land_plate else 80 if lone_plate_jump else end_pdf-1
+    chicago_plate=(m.get('id')=='source.fasa-7214' and (start,start_pdf,end,end_pdf)==(69,70,70,71)
+                   and authorization.get('unnumbered_plate_only') is True
+                   and set(req)=={'references/target-ucas/chicago-unnumbered-art-pdf70.yml'}
+                   and m.get('done')=={'p':68,'pdf':69})
+    if m.get('id')=='source.fasa-7214' and start<=69<end and start>=69:
+        require(chicago_plate,'unverified_fasa7214_unnumbered_chicago_interleaf')
+    done_printed=68 if chicago_plate else 46 if detroit_plate else 80 if land_plate else end-1
+    done_pdf=70 if chicago_plate else 48 if detroit_plate else 82 if land_plate else 80 if lone_plate_jump else end_pdf-1
     s=_replace_root_field(s,'done',f'done: {{p: {done_printed}, pdf: {done_pdf}}}')
     s=_replace_root_field(s,'next',f'next: {{p: {end}, pdf: {end_pdf}}}')
     if pending:
