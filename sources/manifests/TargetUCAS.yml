@@ -1,5 +1,5 @@
 id: source.fasa-7214
-status: ingesting
+status: complete
 depth: directed
 catalog_number: FASA7214
 title: 'Target: UCAS'
@@ -163,6 +163,8 @@ records:
   - ["world.target_ucas.chicago_ghouls_history_cabrini_p98_99", 5d471601ecd32a6401054ded31044e55bb7c6c2c]
   - ["reference.target_ucas.boston_detroit_unnumbered_maps_pdf104", 550d3cdf845def96bd264a689fbc60be7760db2b]
   - ["reference.target_ucas.printed_alphabetical_index_p104", 92bb45b1026b2dc2398022f7e6c28f50488075bc]
+  - ["reference.target_ucas.publication_cover_contents_credits_1997", c53dddaa5e68bab8106fe0c2244e562ff0780811]
+  - ["reference.target_ucas.unnumbered_back_cover_pdf106", ec0810a3f6d801791475221a76a86ef6f8a753ca]
 routes:
   - [2, 3, contents_and_credits]
   - [4, 5, shadowland_v21]
@@ -173,7 +175,22 @@ routes:
   - [68, 85, chicago]
   - [86, 104, game_information_and_index]
 source_end:
-  status: awaiting_page_scan_and_original_end_matter_review
+  status: complete
+  full_source_completion_checklist: passed_after_original_image_review_and_verified_semantic_receipts
+  completion_receipt_protocol: sr3-targetucas-source-end-check/v1
+  final_numbered: {printed_page: 104, physical_pdf_page: 105}
+  terminal_resume_sentinel: {printed_page: 105, physical_pdf_page: 106}
+  unnumbered_opening_pdf_pages: [1, 2]
+  unnumbered_internal_illustration_pdf_pages: [48, 70, 104]
+  unnumbered_end_matter_pdf_pages: [106]
+  source_final_physical_pdf_page: 106
+  source_original_pdf_sha256: dc016e418a24fad63d56fba4f2f7f657cb1c0d995cdabd648ba9c6109e33f8f8
+  numbered_printed_pages_covered: 100
+  invented_printed_p47_or_p69_or_p103_or_p105: false
+  extra_numbered_pages_authorized_by_end_matter: 0
+  opening_mixed_record: {id: reference.target_ucas.publication_cover_contents_credits_1997, commit: c53dddaa5e68bab8106fe0c2244e562ff0780811, blob: ccd3e924c21dfe6ae5cc06490591184424df8c55}
+  terminal_back_cover_record: {id: reference.target_ucas.unnumbered_back_cover_pdf106, commit: ec0810a3f6d801791475221a76a86ef6f8a753ca, blob: e5884aa7aca335f82c5dee6d9428489b3e8799f6}
+  source_end_note: Physical PDF1-2 original cover/title and PDF106 back cover remain unnumbered. Physical PDF48, PDF70 and PDF104 contain unnumbered illustrations between printed folios. The entire numbered run ends at printed p104/PDF105, and neither a fictional printed p105 nor an unobserved PDF107 is credited. Opening and endmatter were independently reviewed, staged and confirmed against existing GitHub commits; no duplicate semantic write occurred.
 source_integrity:
   visually_checked_mapping: {printed_2: 3, printed_3: 4}
   start_review: Original PDF3 table of contents and PDF4 printed credits independently inspected; pp2-3 correspond to physical PDF3-4, and cover/title are PDF1-2.
