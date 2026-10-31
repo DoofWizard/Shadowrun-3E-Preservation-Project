@@ -126,6 +126,32 @@ def source7215_land_interleaf(manifest, start, start_pdf, next_printed, next_pdf
         and r.get('expected_blob_sha')=='dfd05d7c8ab6c9202d79987b672c02a322de5bd5'
         and bool(HEX40.fullmatch(str(r.get('commit_sha','')))))
 
+def source7214_detroit_interleaf(manifest, start, start_pdf, next_printed, next_pdf, receipts):
+    """Authorize the verified full-page Detroit illustration, not a fabricated p47.
+
+    FASA7214 printed p46 = PDF47; PDF48 is an unnumbered illustration;
+    printed p48 resumes at PDF49. No printed folio 47 is present. This
+    exceptional zero-numbered-page step is bound to the exact cataloged
+    PDF, source-review provenance and already accepted illustration bytes.
+    """
+    if manifest.get('id') != 'source.fasa-7214': return False
+    if (manifest.get('source_pdf_sha256') !=
+            'dc016e418a24fad63d56fba4f2f7f657cb1c0d995cdabd648ba9c6109e33f8f8'
+        or (start,start_pdf,next_printed,next_pdf) != (47,48,48,49)
+        or manifest.get('done') != {'p':46,'pdf':47}
+        or not isinstance(receipts,list) or len(receipts)!=1):
+        return False
+    r=receipts[0]
+    return (r.get('path')=='references/target-ucas/detroit-unnumbered-art-pdf48.yml'
+        and r.get('printed_pages')=='unnumbered illustration between printed 46 and 48'
+        and r.get('pdf_pages')=='48'
+        and r.get('protocol')=='sr3-gate/v1' and r.get('status')=='verified'
+        and r.get('source')==manifest['id']
+        and r.get('pdf_sha256')==manifest['source_pdf_sha256']
+        and r.get('readback_blob_sha')==r.get('expected_blob_sha')
+        and r.get('expected_blob_sha')=='13321b9fd88d11d9eba455877012704cb7d2ce17'
+        and bool(HEX40.fullmatch(str(r.get('commit_sha','')))))
+
 def parsed_printed_or_pdf_page_set(value):
     """Read exact, sorted source-page references without inventing intervening pages.
 
@@ -167,6 +193,12 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
             fail('interleaf_not_in_routed_section')
         return {'authorized':True,'source':manifest['id'],'from':[81,82],
                 'to':[80,82], 'records':[{'path':verified[0]['path'],'commit':verified[0]['commit_sha']}],
+                'unnumbered_plate_only':True,'new_printed_pages':0}
+    if manifest['id']=='source.fasa-7214' and expected_start<=47<next_printed:
+        if not source7214_detroit_interleaf(manifest,expected_start,expected_pdf,next_printed,next_pdf,verified):
+            fail('unverified_fasa7214_unnumbered_detroit_interleaf')
+        return {'authorized':True,'source':manifest['id'],'from':[47,48],
+                'to':[46,48], 'records':[{'path':verified[0]['path'],'commit':verified[0]['commit_sha']}],
                 'unnumbered_plate_only':True,'new_printed_pages':0}
     seen=set()
     covered=set()
