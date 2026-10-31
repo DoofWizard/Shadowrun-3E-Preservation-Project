@@ -1,5 +1,5 @@
 id: source.fasa-7215
-status: ingesting
+status: complete
 depth: directed
 catalog_number: FASA7215
 title: 'Target: Smuggler Havens'
@@ -192,6 +192,9 @@ records:
   - ["world.target_smuggler_havens.fictional_border_patrols_p108_109", 083680dcd95d75eaa8b0ea37a7fd88950247a8fa]
   - ["reference.target_smuggler_havens.land_campaign_adventure_ideas_p109_110", 71cf944eaba9a61134d10b1fce0ef443cb823716]
   - ["rule.target_smuggler_havens.border_random_encounters_p110", feca7b080b6eb1d0a640b66a44d3bbcacbfaae5f]
+  - ["reference.target_smuggler_havens.opening_cover_contents_credits_pdf1_4", bdee8577331388fd33e3135ecf1df1ce9267deb1]
+  - ["reference.target_smuggler_havens.endmatter_publisher_ads_pdf112_113", 11d6117022b648026bd3d131396e434b3a6772ff]
+  - ["reference.target_smuggler_havens.back_cover_publisher_metadata_pdf114", 63ffd45c8c6213d7017db4e05a37a4459ef48c70]
 routes:
   - [2, 3, contents_and_credits]
   - [4, 5, shadowland_orientation]
@@ -202,7 +205,17 @@ routes:
   - [79, 89, land_smuggling]
   - [90, 110, deep_game_information]
 source_end:
-  status: requires_worker_end_matter_reconciliation
+  status: complete
+  full_source_completion_checklist: passed_after_source_image_review_and_verified_receipts
+  final_numbered: {printed_page: 110, physical_pdf_page: 111}
+  terminal_resume_sentinel: {printed_page: 111, physical_pdf_page: 112}
+  unnumbered_opening_pdf_pages: [1, 2]
+  unnumbered_internal_illustration_pdf_page: 82
+  unnumbered_end_matter_pdf_pages: [112, 113, 114]
+  source_final_physical_pdf_page: 114
+  invented_printed_p81_or_p111: false
+  extra_numbered_pages_authorized_by_end_matter: 0
+  end_matter_note: Original PDF112-113 are publisher advertisements and PDF114 is the back cover; all are unnumbered; source review and existing semantic confirmation receipts support their indexing without a numeric page advance.
 source_integrity:
   visually_checked_mapping: {printed_2: 3, printed_3: 4, printed_80: 81, unnumbered_land_interleaf_pdf: 82, printed_82: 83}
   start_review: Original PDF3 and PDF4 visually reviewed on 2026-10-30; printed p2 and p3. TOC routes inspected. This is routing evidence, not a semantic authorization receipt.
