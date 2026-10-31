@@ -67,6 +67,35 @@ def source7116_color_plate_jump(manifest, start, start_pdf, next_printed, next_p
               for x in ahead if x.get('gate')=='verified' and x.get('range_printed')==[]}
     return required.issubset(recorded)
 
+def source7213_color_plates_interleaf(manifest, start, start_pdf, next_printed, next_pdf, receipts):
+    """Authorize eight genuine unnumbered Aztlan art plates, with ZERO printed pages.
+
+    Printed p96 is PDF97. PDF98-105 are the eight color plates.
+    The next numbered printed p97 is PDF106. Require exact original-image
+    mapping, cataloged PDF SHA, and individually confirmed artwork bytes.
+    """
+    if manifest.get('id') != 'source.fasa-7213': return False
+    integrity = manifest.get('source_integrity', {})
+    reviewed = integrity.get('visually_checked_mapping', {})
+    if (manifest.get('source_pdf_sha256') != '0c1e458594700995c3eefee0dcd2ac4a6f9671dd7683add94661ab0490a23753'
+        or (start, start_pdf, next_printed, next_pdf) != (97, 98, 97, 106)
+        or manifest.get('done') != {'p': 96, 'pdf': 97}
+        or reviewed.get('printed_96') != 97
+        or reviewed.get('printed_97') != 106
+        or reviewed.get('unnumbered_color_plates_pdf') != [98, 105]
+        or not isinstance(receipts, list) or len(receipts) != 1):
+        return False
+    receipt = receipts[0]
+    return (receipt.get('path') == 'references/aztlan/unnumbered-color-plates-pdf98-105.yml'
+        and receipt.get('printed_pages') == 'unnumbered color plates after printed p96'
+        and receipt.get('pdf_pages') == '98-105'
+        and receipt.get('protocol') == 'sr3-gate/v1' and receipt.get('status') == 'verified'
+        and receipt.get('source') == manifest['id']
+        and receipt.get('pdf_sha256') == manifest['source_pdf_sha256']
+        and receipt.get('readback_blob_sha') == receipt.get('expected_blob_sha')
+        and receipt.get('expected_blob_sha') == '2d93a0c39bb5d7466265bffaac4bf63c2083a6e0'
+        and bool(HEX40.fullmatch(str(receipt.get('commit_sha', '')))))
+
 def source7115_color_plate_jump(manifest, start, start_pdf, next_printed, next_pdf):
     """Validate Lone Star's actual eight unnumbered plates after printed p80.
 
@@ -227,6 +256,12 @@ def authorize_advance(manifest, checkpoint, verified, expected_start, expected_p
     if manifest['done']!={'p':checkpoint['completed_through']['printed_page'],'pdf':checkpoint['completed_through']['pdf_page']}:fail('manifest_checkpoint_disagree')
     if manifest['next']!={'p':expected_start,'pdf':expected_pdf} or checkpoint['resume_at']!={'printed_page':expected_start,'pdf_page':expected_pdf}:fail('stale_boundary')
     if manifest.get('pending') or checkpoint.get('pending_normalization') or checkpoint.get('open_conflicts'):fail('unresolved_pending')
+    if manifest['id'] == 'source.fasa-7213' and (expected_start, expected_pdf) == (97, 98):
+        if not source7213_color_plates_interleaf(manifest, expected_start, expected_pdf, next_printed, next_pdf, verified):
+            fail('unverified_fasa7213_eight_color_plates')
+        return {'authorized': True, 'source': manifest['id'], 'from': [97, 98],
+                'to': [96, 105], 'records': [{'path': verified[0]['path'], 'commit': verified[0]['commit_sha']}],
+                'unnumbered_plate_only': True, 'new_printed_pages': 0}
     crosses_plates=manifest['id']=='source.fasa-7116' and expected_start<=64<next_printed
     prime_plate_jump=source7116_color_plate_jump(manifest,expected_start,expected_pdf,next_printed,next_pdf)
     lone_plate_jump=source7115_color_plate_jump(manifest,expected_start,expected_pdf,next_printed,next_pdf)
