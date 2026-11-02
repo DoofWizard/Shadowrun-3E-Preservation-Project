@@ -1,0 +1,70 @@
+{
+  "id": "rule.brainscan.rising_power_security_host_and_response_p21",
+  "record_type": "rule",
+  "status": "source_reviewed_forward",
+  "source": "source.fasa-7331",
+  "printed_pages": "21",
+  "pdf_pages": "22",
+  "edition_scope": "FASA Corporation, Brainscan (2000), original fictional Shadowrun Third Edition campaign, FASA7331; no implicit Second Edition conversions",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Fictional Shadowrun Third Edition Brainscan, FASA Corporation (2000), FASA7331, printed p21/PDF22: Rising Power — exact SR3 substation tests, alarms and Matrix security sheaf",
+  "summary": "Original published fictional tabletop-game source FASA Brainscan (FASA7331, Shadowrun Third Edition, 2000), source.fasa-7331, printed 21/physical PDF22; source-reviewed as rule_exact.",
+  "data": {
+    "perimeter": {
+      "fence_barrier_rating": 6,
+      "gate_lock_rating": 5,
+      "gate_lock_anti_tampering_rating": 2,
+      "lock_rule_reference": "SR3 p235",
+      "building_door_maglock_rating": 3,
+      "gate_open_pause_seconds": 15,
+      "cameras": "Two perimeter corner cameras and one building interior camera; exterior camera sweep is one minute per one-way arc."
+    },
+    "host": {
+      "security_rating": "Green-5/9/9/10/8/10",
+      "required_tests": [
+        "Logon to Host",
+        "Locate Slave to find Power Monitoring subsystem",
+        "Upload Data to deliver payload"
+      ],
+      "optional_tests": [
+        "Locate Slave to determine camera controller",
+        "Edit File to erase traces from recorded system files"
+      ],
+      "host_context": "Original SR3 Matrix test procedure for a fictional substation; no real-world system details."
+    },
+    "security_sheaf": [
+      {
+        "trigger_step": 4,
+        "event": "Probe-4"
+      },
+      {
+        "trigger_step": 9,
+        "event": "Probe-6"
+      },
+      {
+        "trigger_step": 13,
+        "event": "Crippler (Marker)-6"
+      },
+      {
+        "trigger_step": 17,
+        "event": "Passive Alert, Killer-6"
+      },
+      {
+        "trigger_step": 21,
+        "event": "Tar Pit-6"
+      },
+      {
+        "trigger_step": 25,
+        "event": "Active Alert, Killer-8"
+      }
+    ],
+    "alert_condition": "At Passive Alert, or if either maglock defeats a tampering attempt, an automated call goes to the local Lone Star precinct. The printed SR3 actions are a successful Tap Commcall test to detect the call and a successful Make Commcall test to prevent it reaching Lone Star.",
+    "passive_response": "Two-officer Lone Star patrol arrives approximately D6 minutes after the alert; they may pass without entering if nothing suspicious is visible.",
+    "active_response": "A patrol arrives in 1D6 ÷ 2 minutes and exits the vehicle to inspect the perimeter; an astrally projecting Lone Star mage and/or reporting spotter drone may be involved.",
+    "child_alarm_response": "If armed characters prompt Tommy to flee and summon adults, the book calls for Lone Star arrival in 2D6 minutes with 1D3 patrol cars, two officers per car. This response is contingent, not a guaranteed scripted event.",
+    "historical_rules_scope": "The printed mechanics are those of Shadowrun Third Edition. No modernization or substitution with current cybersecurity practice."
+  },
+  "framing": "reference_exact"
+}
