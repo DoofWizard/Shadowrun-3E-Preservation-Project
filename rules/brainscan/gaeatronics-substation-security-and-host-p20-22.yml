@@ -1,0 +1,60 @@
+id: rule.brainscan.gaeatronics_substation_security_p20_22
+record_type: rule
+status: source_reviewed_forward
+source: source.fasa-7331
+printed_pages: 20-22
+pdf_pages: 21-23
+edition_scope: FASA Corporation Brainscan (2000), fictional Shadowrun Third Edition
+  original campaign; no inferred cross-edition conversion
+content_class:
+- rule_exact
+headline: 'Fictional Shadowrun SR3 Brainscan (FASA Corporation 2000, FASA7331), printed
+  pp20-22/PDF21-23: Substation access ratings and original host sheaf'
+summary: 'FASA Shadowrun Third Edition Brainscan (source.fasa-7331), original published
+  GM scenario, printed pp20-22/PDF21-23: Full original local Gaeatronics substation
+  security game values and incident timing, not real-world security guidance.'
+data:
+  facility: Fictional Gaeatronics power substation in eastern Tacoma, Shadowrun Third
+    Edition
+  access:
+    fence_barrier_rating: 6
+    outside_gate_maglock_rating: 5
+    gate_maglock_antitampering_rating: 2
+    door_maglock_rating: 3
+    gate_behavior: On opening, pauses 15 seconds and begins closing.
+    exterior_cameras: Fixed cameras on two fence corners, footage stored for later
+      review; a one-way camera sweep takes one minute.
+  host:
+    security_code: Green-5/9/9/10/8/10
+    steps:
+    - trigger_step: 4
+      event: Probe-4
+    - trigger_step: 9
+      event: Probe-6
+    - trigger_step: 13
+      event: Crippler (Marker)-6
+    - trigger_step: 17
+      event: Passive Alert; Killer-6
+    - trigger_step: 21
+      event: Tar Pit-6
+    - trigger_step: 25
+      event: Active Alert; Killer-8
+    game_tests_to_install_payload:
+    - Logon to Host
+    - Locate Slave (Power Monitoring subsystem)
+    - Upload Data
+    optional_tests:
+    - Locate Slave (security cameras)
+    - Edit File (erase footage)
+    alarm_logic: On passive alert or tampering defeat, host commcalls Lone Star; Tap
+      Commcall may detect that message, and successful Make Commcall may block it.
+  fictional_lone_star_response:
+    child_tommy_screaming: After 2D6 minutes, 1D3 patrol cars, two officers each.
+    initial_electronic_alarm: Two officers in one passing patrol, arriving approximately
+      1D6 minutes after dispatch.
+    active_alert: Patrol comes in 1D6 / 2 minutes; an astrally projecting mage and/or
+      spotter drone also respond.
+  references:
+    printed_pages: 20-22
+    pdf_pages: 21-23
+framing: reference_exact
