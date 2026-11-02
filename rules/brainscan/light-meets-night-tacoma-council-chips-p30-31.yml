@@ -1,0 +1,77 @@
+id: rule.brainscan.light_meets_night_two_chip_analysis_p30_31
+record_type: rule
+status: source_reviewed_forward
+source: source.fasa-7331
+printed_pages: 30-31
+pdf_pages: 31-32
+edition_scope: FASA Corporation Brainscan (2000), original Shadowrun Third Edition
+  campaign (FASA7331); preserve original SR3 game values and narrative rather than
+  converting editions
+content_class:
+- rule_exact
+headline: 'Fictional tabletop RPG archive: Brainscan, FASA Corporation (2000), Shadowrun
+  Third Edition, FASA7331/source.fasa-7331, printed pp30-31/physical PDF pp31-32 —
+  two scenario computer-chip examination tables'
+summary: Historical source-review record from the fictional Shadowrun SR3 campaign
+  Brainscan (FASA Corporation, 2000, FASA7331/source.fasa-7331); printed pp30-31,
+  physical PDF pp31-32. Original game Computer tests, memory thresholds, research
+  timing, success-grade results, and attribution to two fictional scenario chips.
+  These are game-resolution tables, not real-world cyber procedures.
+data:
+  scene: 'Light Meets Night: Legwork; The Chip (Tacoma Power Substation) and The Chip
+    (Council Island Inn)'
+  tacoma_chip:
+    printed_page: 30
+    physical_pdf_page: 31
+    contents:
+    - Morris-provided campaign chip with payload and power-substation background file,
+      including exterior map, building address and host overview.
+    - Source says payload is to be uploaded to the power substation's Power Monitoring
+      subsystem and the chip includes a self-destruct utility intended to make itself
+      unusable after campaign delivery.
+    - 'Technical description: Green-level host described as minimal IC; normally off
+      the Matrix, briefly connects about once per hour via a vanishing SAN to exchange
+      performance data and instructions with a Gaetronics host.'
+    required_memory_mp_at_least: 300
+    skill: Computer
+    target_number: 5
+    inspection_time: roughly 30 minutes per success; lower information tier may be
+      inspected faster
+    outcomes:
+      all_ones: Program appears intended to overwrite substation consumption records.
+      '0': A utility-program classification is apparent.
+      '1': Program seems to copy consumption records.
+      '2': Copied records appear destined for an anonymous Matrix node whenever the
+        substation host connects.
+      '3': Program additionally monitors incoming data from the main Gaetronics host;
+        no recording is indicated.
+      4_plus: A specified incoming character sequence triggers the utility to erase
+        itself and additional substation computer files.
+  council_island_inn_chip:
+    printed_page: 31
+    physical_pdf_page: 32
+    contents:
+    - Similar fictional scenario payload chip plus file with exterior inn/grounds
+      map and the target bungalow indicated; instructions call for destruction of
+      the chip after payload delivery.
+    required_memory_mp_at_least: 200
+    skill: Computer
+    target_number: 6
+    inspection_time: roughly 30 minutes per success; lower information tier may be
+      inspected faster
+    outcomes:
+      all_ones: Looks like an email program.
+      '0': Only the program's coding appearance is apparent.
+      '1': Looks like an email virus that attaches a copy of itself to outgoing messages.
+      2_to_3: Targets a defined list of email addresses on a Gaetronics Matrix host.
+      4_plus: At the destination the program is meant to begin broadcasting data packets
+        onward to another node.
+  cross_chip_connection:
+    printed_page: 31
+    physical_pdf_page: 32
+    determination: Sufficient successes on both examinations reveal that the Council
+      Island outgoing packets match those which trigger the Tacoma program to delete
+      itself.
+  lineage: Original Shadowrun Third Edition scenario procedures, with no implicit
+    real-world applicability.
+framing: reference_exact
