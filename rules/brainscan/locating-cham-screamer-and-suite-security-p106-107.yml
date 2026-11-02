@@ -1,0 +1,44 @@
+id: rule.brainscan.screamer_search_cham_and_suite_security_p106_107
+record_type: rule
+status: source_reviewed_forward
+source: source.fasa-7331
+printed_pages: 106-107
+pdf_pages: 107-108
+edition_scope: FASA Corporation, Brainscan (2000), original Shadowrun Third Edition fictional tabletop
+  RPG campaign, FASA7331/source.fasa-7331; no inferred historical conversions
+content_class:
+- rule_exact
+data:
+  dataline_tap_test:
+    test: Electronics B/R (8) Test
+    condition: Required to install the dataline tap without alerting Deus when a runner rather than
+      Devon performs the installation.
+    zero_successes: Deus becomes aware of the tap and its physical location.
+    one_success: Deus takes 3D6 turns to pinpoint the source.
+    two_or_more_successes: Deus does not notice the installation.
+  if_deus_tracks_source:
+    test: Sensor (10) Test
+    success: Decker notices Deus observing; Deus can then dump the decker from the Matrix without
+      a test, alerting its drones and minions.
+    failure: No visible AI icon appears, but the AI can still watch the intruder.
+  search_screamer_host:
+    method: Once logged into the controlling host, use the Locate Slave operation with Cham Lam Won’s
+      screamer ID.
+    required_successes: 4
+    result: Data showing the last doorway through which Cham passed.
+    fallback: Devon performs the search if the runners do not.
+  272nd_floor_rules:
+    astral_background_count: 2
+    outer_suite_windows: One-way transparent plasteel, Barrier rating 12.
+    suite_door: Rating 5 maglock requiring fingerprint and passcode.
+    emergency_fire_door: Rating 5 alarm connected to adjoining suites.
+  precision: Preserves original game tests, successes, dice, host state, modifiers, numeric security
+    ratings and condition branches; not instructions for real hardware.
+headline: 'Fictional Shadowrun tabletop RPG: FASA Corporation Brainscan (2000), original Third Edition,
+  FASA7331/source.fasa-7331, printed pp106-107/physical PDF pp107-108 — Electronics B/R and Sensor
+  tests, Locate Slave result and suite security ratings'
+summary: Archival rule_exact reference from fictional FASA Corporation Brainscan (2000), original
+  Shadowrun Third Edition FASA7331/source.fasa-7331, printed 106-107 / physical PDF 107-108. Book-narrator
+  fiction, named in-world claims, conditional GM scenarios and exact RPG mechanics retain distinct
+  source status.
+framing: reference_exact
