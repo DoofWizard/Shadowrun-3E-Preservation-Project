@@ -1,0 +1,128 @@
+{
+  "id": "rule.renraku_arcology_shutdown.scire_matrix_access_shafts_uv_sheaf_p78_79",
+  "record_type": "rule",
+  "status": "reviewed_forward_unindexed",
+  "source": "source.fasa-7328",
+  "printed_pages": "78-79",
+  "pdf_pages": "79-80",
+  "edition_scope": "FASA Corporation, Renraku Arcology: Shutdown (FASA7328, 1998), original Shadowrun Third Edition-compatible fictional tabletop RPG; no later-edition conversion",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "source_scope": "Exact original Shadowrun Third Edition-era Matrix fiction and game procedures, with the book's Virtual Realities 2.0 and SR3 historical lineage; no modern hacking instructions.",
+    "jack_in": {
+      "deus_presence": "Deus notices characters using existing jackpoints into Renraku's Black Tower; GM decides whether the AI allows their activity or sends minions.",
+      "alternative_access": "At a feed using fiber-optic trunk or remote-slave-device jackpoints, make Electronics B/R Test Target Number 8.",
+      "success_results": [
+        {
+          "successes": 0,
+          "effect": "Deus notices tampering and is aware of intruder physical location."
+        },
+        {
+          "successes": 1,
+          "effect": "Deus notices but needs 3D6 turns to pinpoint physical source."
+        },
+        {
+          "successes": "2+",
+          "effect": "Deus does not detect intrusion."
+        }
+      ],
+      "consequence": "If Deus detects decker presence, GM may eject decker from Matrix with no test."
+    },
+    "scire_grid": {
+      "nature": "SCIRE PLTG is a private LTG-scale grid with multiple host tiers, some host icons left visible despite inaccessible external logons.",
+      "tiering": "First tier host opens checkpoint to second tier, then to private third-tier hosts and deeper networks; the printed example has Support Services host leading to public Ventilation, Water and Power hosts.",
+      "shaft_mechanics": "To enter a shaft, decker first knows LTG number of destination host; perform Locate Access Node operation with PLTG, then Login to Host operation at shaftpoint. Successful logon deposits character in destination host shaftpoint. Moving to further tiers requires separate Login to Host operation for every intervening tier.",
+      "untargeted_shaft": "Logon to LTG with Target Number 6 allows roaming virtual shafts without a destination; failing Login returns icon to previously logged shaftpoint."
+    },
+    "express_feature": {
+      "function": "Built-in priority datastream for validated users to bypass tiered hosts; source says unauthorized access is high-risk and may deposit icons in random hosts.",
+      "authorized_requirements": "Supervisor passcode or validation as Supervisor on PLTG, then Control operation on PLTG (Complex action); no utilities aid this test.",
+      "unauthorized_requirements": "First Decrypt Access operation with PLTG, then Login to Host. If both succeed, roll 1D6 for result.",
+      "one_d6_results": [
+        {
+          "roll": 1,
+          "result": "Infinite ride; decker must jack out."
+        },
+        {
+          "roll": 2,
+          "result": "Detected and dumped to a security host to encounter otaku, IC or Deus."
+        },
+        {
+          "roll": 3,
+          "result": "No progress; returned to original host."
+        },
+        {
+          "roll": "4-6",
+          "result": "Deposited in random host."
+        }
+      ],
+      "alert_note": "Supervisor authorization or use of passcode attracts Deus's attention."
+    },
+    "security_tallies": "Tally values may not always follow across a grid or host; checkpoint hosts can accumulate tallies from other hosts, and some SCIRE high-security hosts accumulate unauthorized Express Feature tallies.",
+    "uv_hosts": {
+      "fiction": "Deus created ultraviolet Matrix hosts for its experiments and favored Banded otaku; some UV private realms are inaccessible except when taken there by Deus.",
+      "character_rules": "Deckers in these hosts use their physical Body, Strength and Quickness ratings and actual meat-body damage; utilities manifest as physical tools or objects, while mental Attributes remain unchanged.",
+      "skills": "Uses actual character skills, though source allows substituting half Computer Skill (rounded according to base rules) for unpossessed skills.",
+      "jack_out_damage": "Jack out of a UV host: 12D Stun from dump shock; 10S with ICCM (both source alternatives retained).",
+      "otaku_initiative": "+1D6 Initiative for Deus's otaku while in their personal UV realms.",
+      "entry": "Otaku can use Complex Access on PLTG to access their realm; ordinary deckers able to enter previously by watching an otaku or with assistance cannot use utilities; no voluntary entry into Deus's host unless Deus brings them."
+    },
+    "scire_plTg_security_sheaf": {
+      "host": "SCIRE PLTG — NA/UCAS-SEA/REN",
+      "color_and_ratings": "Red 6/12/16/10/10/10",
+      "events": [
+        {
+          "trigger_step": 3,
+          "event": "Probe 6 (Shielding)"
+        },
+        {
+          "trigger_step": 6,
+          "event": "Trace 7 (Shielding)"
+        },
+        {
+          "trigger_step": 10,
+          "event": "Trap Trace 9—Blaster 7"
+        },
+        {
+          "trigger_step": 13,
+          "event": "Passive Alert, Probe 9 (Shielding)"
+        },
+        {
+          "trigger_step": 16,
+          "event": "Party IC—Mask Ripper 4 (Shifting), Evasion Ripper 4 (Armor), Blaster 4 (Expert Offense)"
+        },
+        {
+          "trigger_step": 20,
+          "event": "Active Alert, Tar Pit 7"
+        },
+        {
+          "trigger_step": 23,
+          "event": "Cascading Blaster 7 (Armor)"
+        },
+        {
+          "trigger_step": 26,
+          "event": "Cascading Blaster 10 (Expert Offense)"
+        },
+        {
+          "trigger_step": 28,
+          "event": "Psychotropic Black IC 8 (Cyberphobia)"
+        },
+        {
+          "trigger_step": 30,
+          "event": "Shutdown"
+        }
+      ]
+    },
+    "cross_references": [
+      "Virtual Realities 2.0 p35 Supervisor validation",
+      "Virtual Realities 2.0 p37 ultraviolet hosts",
+      "SR3 p200 jackpoints",
+      "SR3 p204 checkpoint hosts"
+    ]
+  },
+  "headline": "Fictional tabletop RPG archive | SCIRE PLTG access, express shafts, ultraviolet hosts and security sheaf — Renraku Arcology: Shutdown (FASA Corporation, FASA7328, 1998, Shadowrun Third Edition), source.fasa-7328, printed pp78-79/PDF pp79-80",
+  "summary": "Original FASA Corporation Renraku Arcology: Shutdown, FASA7328 (1998), source.fasa-7328 printed 78-79, PDF 79-80. Game information, provenance and contextual mechanics only.",
+  "framing": "reference_exact"
+}
