@@ -1,10 +1,10 @@
 state_protocol_version: 2
 phase: pass_b
-active_source: source.fasa-7213
-source_status: complete
-completed_through: {printed_page: 184, pdf_page: 193}
-resume_at: {printed_page: 185, pdf_page: 194}
-last_commit: 6691063a555c6f1e11c247deada26f9cf7cbaacd
+active_source: source.fasa-7212
+source_status: ingesting
+completed_through: {printed_page: 0, pdf_page: 0}
+resume_at: {printed_page: 2, pdf_page: 3}
+last_commit: 1675e8ba49efac522b5db48c783a967a8be7d09f
 pending_normalization: []
 open_conflicts: []
 next_sources: []
@@ -25,3 +25,11 @@ manual_review_obligations:
   manual_verification_required: true
   source_completion_blocked: true
   source_manifest: sources/manifests/LoneStar.yml
+ordinary_source_transition:
+  from_source: source.fasa-7213
+  outgoing_source_manifest_blob: 08665ab72e8fb5572f50b8ae9a885f095c6ad324
+  outgoing_source_completion_receipt: sources/completions/FASA7213-source-end-2026-10-31.yml
+  outgoing_source_completion_receipt_blob: 76ef7eb42c589e6f59f47ff7233318402edc142e
+  successor_manifest: sources/manifests/Denver.yml
+  successor_manifest_blob: 98b66b8fb00541944f3176bc6647e5ab54dc59f5
+  source_recovery_state: original_pdf_truncated_prefix_only
