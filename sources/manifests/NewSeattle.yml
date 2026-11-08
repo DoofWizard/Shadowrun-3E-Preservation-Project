@@ -24,7 +24,7 @@ routing:
   - {range: "133-137", section: "Index", treatment: "reference only"}
 
 notes:
-  - "Sequential deep scan completed through printed p.119 / PDF p.120. Game Information pp.108-119 was read in full. rule.security.seattle-security-response-template and reference.new-seattle-game-information were normalized. Preserve pending.newseattle.lone-star-loadout-p112 and pending.newseattle.law-enforcement-archetypes-p113-114 because their richer normalization payloads were rejected by the connector. The Location Index begins on printed p.120 / PDF p.121."
+  - "Sequential deep scan completed through printed p.119 / PDF p.120. Game Information pp.108-119 was read in full. rule.security.seattle-security-response-template and reference.new-seattle-game-information were normalized. The formerly pending Lone Star loadout p112 and law-enforcement archetypes pp113-114 are now source-reviewed and independently confirmed as noncontiguous semantic records in the supplement register; no new source-page boundary authorization is implied. The Location Index begins on printed p.120 / PDF p.121."
   - "Sequential directed scan completed The Seattle Underworld through printed p.107 / PDF p.108. Mafia, yakuza, Triad, Seoulpa-ring and major-gang organization profiles were read sequentially with source-period provenance; shadowtalk speculation was kept separate. A richer organization-catalog normalization payload was rejected by the connector, so preserve pending.newseattle.underworld-p97-107 until fully normalized. Game Information begins on printed p.108 / PDF p.109."
   - "Sequential directed scan verified The Corporate Sector through printed p.96 / PDF p.97. The p.82 corporate-economy overview and p.83 United Corporate Council were normalized. Corporate profiles, facilities, security systems and Matrix/security implications on pp.83-96 were fully read with provenance, but the richer normalization payload was rejected by the connector; preserve pending.newseattle.corporate-profiles-p83-96 until fully normalized. The Seattle Underworld begins on printed p.97 / PDF p.98."
   - "Sequential directed scan verified The Body Politic through printed p.81 / PDF p.82. Government structure/officeholders, district mayors, city-service contractors, emergency and Grid-Guide implications, security-provider jurisdiction, magical-policing and military deployment, policlubs, and foreign relations were all read with page provenance. Rich normalization was rejected by the connector, so preserve pending.newseattle.body-politic-p73-81 until fully normalized. The Corporate Sector begins on printed p.82 / PDF p.83."
@@ -145,4 +145,13 @@ verified_source_reviewed_supplemental_records:
     gate: verified
     content_class: equipment_stat
     record_id: equipment.seattle.lone_star_thunderbolt_and_standard_loadout_p112
+    contiguous_advance: false
+  - range_printed: [113, 114]
+    range_pdf: [114, 115]
+    path: rules/security/new-seattle-law-enforcement-npc-archetypes-p113-114.yml
+    commit: 747522b51904c2423109ca9aee48abb064d3e2a4
+    blob: da1c4641f57e753b876e2b0eadaf18b0e84f66f1
+    gate: verified
+    content_class: rule_exact
+    record_id: rule.npc.new_seattle_law_enforcement_officers_p113_114
     contiguous_advance: false
