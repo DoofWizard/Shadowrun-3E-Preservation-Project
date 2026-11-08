@@ -13,7 +13,7 @@ headline: 'Fictional Shadowrun RPG source audit — FASA Corporation, Corporate 
   source.fasa-7118, printed p58/PDF59: Knight Errant executive-threat classifications'
 summary: FASA Corporation’s fictional Shadowrun Second Edition Corporate Security Handbook (FASA7118, 1995), source.fasa-7118,
   printed p58/PDF59. The Knight Errant in-world narrator separately classifies potential sources of danger and four broad forms
-  of executive-security threat; these are source-era provider descriptions, not independent factual claims about real people or
+  of executive-security threat (with extraction/kidnapping grouped together); these are source-era provider descriptions, not independent factual claims about real people or
   new game rules.
 data:
   speaker_and_context:
@@ -35,11 +35,15 @@ data:
   - category: blackmail
     source_distinction: Demand for money or valuable information under threatened exposure of a past criminal act or discreditable
       information.
-  - category: unfriendly extraction
-    source_distinction: Forcible displacement of a person to pressure them to break or change ties to an employer, distinct from
-      a demand for ransom.
-  - category: kidnapping
-    source_distinction: Seizing and detaining a person for ransom, which the fictional narrator says can involve money or information.
+  - category: unfriendly extraction/kidnapping
+    source_grouping: The fictional narrator lists these together as one of four broad categories, while differentiating
+      coercive relocation from ransom detention.
+    source_distinctions:
+    - kind: unfriendly extraction
+      detail: Forcible displacement of a person to pressure them to break or change ties to an employer, distinct from
+        a demand for ransom.
+    - kind: kidnapping
+      detail: Seizing and detaining a person for ransom, which the fictional narrator says can involve money or information.
   - category: assassination
     source_distinction: Targeted killing, classified separately from coercive threats or detention.
   - category: physical threats
