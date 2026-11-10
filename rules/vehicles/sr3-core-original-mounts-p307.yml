@@ -1,0 +1,115 @@
+id: rule.vehicles.sr3-core-original-mounts-p307
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: FASA Corporation Shadowrun, Third Edition original FASA7001 game procedure; distinguish later Rigger 3 refinements
+printed_pages: '307'
+pdf_pages: '316'
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Third Edition
+    source_kind: fictional tabletop role-playing game rulebook
+    printed_page: 307
+    physical_pdf_page: 316
+  scope: Printed SR3 core vehicle-mount and vehicle-weapon procedures only; later Rigger 3 procedures are distinct lineage,
+    not retroactively substituted.
+  capacity:
+    points_per_hardpoint: 2
+    points_per_firmpoint: 1
+    total_mount_points_maximum: vehicle Body Rating
+    heavy_vehicle_weapons: MMGs and larger mount on hardpoints
+    smaller_weapons: LMGs, assault rifles and smaller may mount on firmpoints
+    source_example_body_4:
+    - 2 hardpoints
+    - 1 hardpoint + 2 firmpoints
+    - 4 firmpoints
+  fixed_mount:
+    may_use: firmpoint or hardpoint
+    arc: Fixed, usually forward or backward
+    side_firing: When side-firing fixed mount is used, add weapon recoil to vehicle Handling and driver must make a Crash
+      Test
+    recoil: Reduce recoil modifiers by half, negating the doubled recoil modifier of heavy weapons
+    operator: May be operated by the character rigging the vehicle
+    external_signature: External fixed mounts reduce vehicle Signature by 1
+    installation:
+      test: Vehicle B/R
+      target_number: 4
+      base_time_hours: 24
+  pintle_mount:
+    mounting: Reinforced holes and swivels on side of vehicle
+    firing_arc_degrees: 60
+    recoil_compensation_points: 2
+    installation:
+      test: Vehicle B/R
+      target_number: 2
+      base_time_hours: 12
+  turret:
+    capacity_hardpoints: 2
+    additional_cargo_factor: 2
+    signature_change: -1
+    firing_arc_degrees: 360
+    elevation_degrees: 45
+    recoil: Halves recoil modifiers
+    operator: Manned by a gunner
+    installation:
+      test: Vehicle B/R
+      target_number: 4
+      base_time_hours: 72
+  mini_turret:
+    capacity_hardpoints: 1
+    additional_cargo_factor: 1
+    signature_change: -1
+    weapon_size_limit: MMG-sized and smaller
+  aircraft_missile_mounts:
+    maximum_external_mount_count: craft Body Rating
+    capacity_per_mount_kg: 300
+    body_mount_points_counted: false
+    cost: Negligible in original source
+  vehicle_weapons:
+    ares_vermicide_autocannon:
+      has_autoloader: true
+      fire_mode: semi-automatic
+    water_cannon:
+      p307_narrator_mode: always autofire, 10 shots per action
+      recoil_penalty: none
+      hit_effect: Knockdown Test at target number equal to full weapon Power
+      reload: no reload if connected to a water source
+      source_internal_conflict: Original printed p312/PDF320 table lists Water Cannon mode as SA; preserve conflict for engine
+        adjudication, do not silently choose one
+  related_canon:
+  - rule.vehicles.weapon-mounts (later Rigger 3 source.r3, printed pp135-142)
+  - equipment.vehicles.sr3-core-drones-mounts-weapons-p312 (original SR3 p312 table)
+  test_vectors_specification_only_not_executed:
+  - id: mount.body4.capacity
+    body: 4
+    hardpoints: 1
+    firmpoints: 2
+    points_used: 4
+    expected_legal: true
+  - id: mount.body4.exceeds
+    body: 4
+    hardpoints: 2
+    firmpoints: 1
+    points_used: 5
+    expected_legal: false
+  - id: turret.body4.cf
+    turrets: 1
+    base_cargo_factor: 10
+    additional_cargo_factor: 2
+    expected_total: 12
+  - id: aircraft.missile.body3
+    body: 3
+    external_mounts: 3
+    kg_per_mount_limit: 300
+    expected_max_kg: 900
+  unresolved: Original p307 narrative versus original p312 Water Cannon firing-mode contradiction, and later Rigger 3 refinements,
+    require explicit ruleset precedence; no inferred supersession.
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional vehicle-mount rules printed p307/PDF316
+summary: Exact early-SR3 tabletop rigging mount points, firing arcs, installation target numbers and times, recoil/signature/cargo
+  effects, and explicitly retained water-cannon mode ambiguity against p312.
