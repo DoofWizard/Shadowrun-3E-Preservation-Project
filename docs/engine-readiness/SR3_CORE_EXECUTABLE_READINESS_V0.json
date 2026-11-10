@@ -41,6 +41,90 @@
         "exact_readback": true
       },
       "significance": "Only bounded programming arithmetic, plans, suite sizes, memory, test TN, failure period and team calculations. Does not make entire Matrix programming pp76-94 normalized or fully implemented."
+    },
+    "incremental_original_core_rigging_and_optional_damage_2026_11_10": {
+      "source": {
+        "title": "Shadowrun, Third Edition",
+        "publisher": "FASA Corporation",
+        "edition": "Shadowrun Third Edition",
+        "catalog": "FASA7001",
+        "sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+      },
+      "original_page_images_independently_reviewed": [
+        {
+          "printed": 306,
+          "pdf": 315,
+          "section": "Rigger and Vehicle Gear original market table and install prerequisites"
+        },
+        {
+          "printed": 126,
+          "pdf": 127,
+          "section": "Optional Deadlier Over-Damage (including stricter and even-deadlier thresholds)"
+        }
+      ],
+      "source_verification": "Fresh cataloged Google Drive FASA7001 downloaded and SHA-256 equality actually verified by executed tools/ingestion/preservation_method.py verify-source against live SR3 main manifest.",
+      "reused_accepted_canonical_records": [
+        {
+          "id": "equipment.rigging.sr3-core-rigger-vehicle-gear-p306",
+          "path": "equipment/sr3-core-rigger-vehicle-gear-p306.yml",
+          "blob": "7fcf9e1360c733c1115612fcdddf5b44f01f6a8d",
+          "designation": "Original core equipment and prerequisites; accepted record reused, not re-ingested."
+        },
+        {
+          "id": "rule.combat.sr3-core-optional-deadlier-overdamage-p126",
+          "path": "rules/combat/sr3-core-optional-deadlier-overdamage-p126.yml",
+          "commit": "5c2a657871754f502cb8918f16aecf04af82180b",
+          "blob": "c14f073f4d76397ea3f0440a3226c21f81cb6de0",
+          "designation": "Source-verified and indexed original optional rule, NOT baseline combat damage."
+        }
+      ],
+      "consumer_changes": [
+        {
+          "path": "tools/engine_readiness/rigging_gear_core.py",
+          "commit": "deb26dcfd5f3b0e5d686866258ca40168735142a",
+          "blob": "456ab14980da2b0cf4a9e482c9750d3092d4f4ca",
+          "scope": "Bounded p306 market, rated remote ECCM, mandatory interfaces/cargo, nondefault revision lineage."
+        },
+        {
+          "path": "tools/engine_readiness/test_rigging_gear_core.py",
+          "commit": "422fe024cd8907771e91ee1451fdd4f7ea315e49",
+          "blob": "ac3b63746b3afb2713bb7ad4c9807dc804bf1c81",
+          "new_test_methods_passed": 28
+        },
+        {
+          "path": "tools/engine_readiness/overdamage_core.py",
+          "commit": "0cff7dbe4ed2aae95fb914d09cd42782a3a6d046",
+          "blob": "7244dd57cb037b6eb1a8309765f1aab3a4ee9556",
+          "scope": "Optional-only Deadlier Over-Damage; Power thresholds exact, stage D, surplus pairs, physical versus Body Overflow destinations."
+        },
+        {
+          "path": "tools/engine_readiness/test_overdamage_core.py",
+          "commit": "279eec372703db1aa543d0e10062ebdd98fc7ca1",
+          "blob": "7e9975254a4b63be3afe243658aff4b786955d00",
+          "new_test_methods_passed": 14
+        }
+      ],
+      "regression_execution": {
+        "local_new_unit_tests_passed": 42,
+        "fail": 0,
+        "actual_test_commands": [
+          "PYTHONPATH=tools/engine_readiness python -m unittest discover -s tools/engine_readiness -p 'test_rigging_gear_core.py' -v",
+          "PYTHONPATH=tools/engine_readiness python -m unittest discover -s tools/engine_readiness -p 'test_overdamage_core.py' -v"
+        ],
+        "readback_bytes_match_exact_local_tested_git_blob": true,
+        "full_current_repository_suite_run": false
+      },
+      "evidence_layers": {
+        "original_source_page_scan": "two original printed pages freshly reviewed",
+        "canonical_normalization": "both relevant records previously accepted and indexed",
+        "consumer_code": "two bounded adapters actually tested, 42 newly added unit test methods passed",
+        "source_authorization": "no new semantic record, no new printed page authorization, Denver source state unchanged"
+      },
+      "next_dependencies": [
+        "Real remote-control Vehicle Tests, signal jamming, and combat under FASA7001 and Rigger 3 lineage",
+        "Optional overdamage integration with existing damage staging and Condition Monitor rather than creating an unconditional rule",
+        "Complete Matrix programming pp76-94, SSG Game Information pp118-126, SR3 p308 page-image gap and advanced source detail"
+      ]
     }
   },
   "checked_source_pages": [
@@ -68,6 +152,11 @@
       "printed": "275-282",
       "physical_pdf": "284-291",
       "subject": "Historical Street Gear source inspection; several exact tables still not normalized"
+    },
+    {
+      "printed": "306",
+      "physical_pdf": "315",
+      "subject": "Original rigging-gear table and vehicle-interface prerequisites; 28 bounded consumer tests"
     }
   ],
   "lanes": [
@@ -162,15 +251,17 @@
       "canonical_reference": [
         "procedures/combat/ranged-attack.yml",
         "rules/combat/dodge-test.yml",
-        "rules/combat/damage-staging.yml"
+        "rules/combat/damage-staging.yml",
+        "rules/combat/sr3-core-optional-deadlier-overdamage-p126.yml"
       ],
-      "implementation": "tools/engine_readiness/core_extensions.py",
+      "implementation": "tools/engine_readiness/core_extensions.py; tools/engine_readiness/overdamage_core.py (original p126 OPTIONAL-only, 14 tested vectors)",
       "state": "code_tested_partial",
       "missing": [
         "weapon class/Power/armor adjusted TN and full dice-pool integration",
         "situational and firing-mode modifiers",
         "melee full resolution",
-        "complex attack/defense state transitions"
+        "complex attack/defense state transitions",
+        "Full optional overdamage integration with actual attack excess-success calculation and Condition Monitor; do not enable by default"
       ],
       "source_page": "printed pp113-114/PDF114-115"
     },
@@ -332,13 +423,18 @@
       "id": "rigging",
       "canonical_reference": [
         "subsystems/vehicles/design.yml",
-        "sources/manifests/Rigger3.yml"
+        "sources/manifests/Rigger3.yml",
+        "equipment/sr3-core-rigger-vehicle-gear-p306.yml"
       ],
-      "implementation": "not_in_58_test_subset",
-      "state": "canonical_present_code_unverified",
+      "implementation": "tools/engine_readiness/rigging_gear_core.py (p306 numeric/prerequisite subset; 28 source-linked tests)",
+      "state": "code_tested_partial",
       "missing": [
-        "vehicle construction/handling/remote-control/drone controller tests"
-      ]
+        "Vehicle Tests and network/radio jamming interactions",
+        "Installation in persisted vehicle gear/cargo state",
+        "Rigger 3 and FanPro Rigger 3 Revised lineage and option precedence",
+        "Complete drone handling, rigging skill tests and control-system interactions"
+      ],
+      "source_page": "printed p306/PDF315"
     },
     {
       "id": "cyberware-and-advanced-character-options",
@@ -429,7 +525,7 @@
         "printed": 126,
         "physical_pdf": 127
       },
-      "presence_audit": "No separately named canonical rule observed in inspected rules/condition, rules/combat, options/combat directory listings or original numeric condition record. This bounded inspection does not prove repo-wide absence.",
+      "presence_audit": "Historical bounded audit did not find the record. Fresh live GitHub rules/combat listing and source manifest now independently confirm it was ALREADY accepted and indexed; do not duplicate.",
       "optional_not_baseline": true,
       "source_verified_specification": {
         "enablement": "Gamemaster may opt into this additional damage procedure; not baseline automatic processing.",
@@ -476,8 +572,9 @@
           "expected_added_physical_monitor_points": 2
         }
       ],
-      "canonical_status": "needs independent repo-wide reuse audit and gated normalization only if genuinely absent",
-      "executable_status": "not implemented or tested in this audit"
+      "canonical_status": "verified source-reviewed canonical rule already present at rules/combat/sr3-core-optional-deadlier-overdamage-p126.yml, original FASA7001 printed p126/PDF127, indexed semantic commit 5c2a657871754f502cb8918f16aecf04af82180b and blob c14f073f4d76397ea3f0440a3226c21f81cb6de0",
+      "executable_status": "Bounded optional-only adapter and 14 new tests executed successfully; not a fully integrated combat engine.",
+      "reconciliation": "Recovered by checking current GitHub contents in rules/combat, not by new semantic ingestion; source manifest and Denver state unchanged."
     },
     "active_worker_protection": {
       "source": "source.fasa-7212",
