@@ -1,0 +1,132 @@
+id: rule.condition.sr3-core-deadly-permanent-injury-p127-128
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 127-128
+pdf_pages: 128-129
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), baseline Third
+  Edition Deadly Wounds and Permanent Damage, not a later optional healing substitution
+content_class:
+- rule_exact
+headline: 'Fictional tabletop combat consequence: FASA Corporation Shadowrun Third
+  Edition FASA7001, printed pp127-128/PDF128-129, Deadly Wounds and Permanent Damage'
+summary: Exact historical fictional Shadowrun Third Edition (FASA Corporation, FASA7001)
+  Deadly-wound permanent-injury test, its three success outcomes, original die tables,
+  and replacement-body-part game statistics from printed pp127-128/PDF128-129. This
+  is archival tabletop game mechanics, not a statement about actual medicine.
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog_number: FASA7001
+  edition: Shadowrun Third Edition
+  printed_pages:
+  - 127
+  - 128
+  physical_pdf_pages:
+  - 128
+  - 129
+  original_section: Deadly Wounds and Permanent Damage
+  trigger: The original source calls for this test when a fictional character suffers
+    a Deadly wound; resulting harm may include vital organs, limbs or biological systems.
+  initial_body_test:
+    target_number: 4
+    trauma_patch_used_target_number_modifier: 2
+    dermal_armor_note: The source says dermal armor also counts for this test, without
+      stating a numeric effect in this paragraph; resolve dermal armor effects under
+      its separate canonical rules.
+    result_determination: Count Body Test successes, then apply the appropriate 0,
+      1, or 2-or-more success result from the original publication.
+  zero_success_result:
+    permanence: A vital organ, body part or biological system is gravely damaged.
+    required_care: The fictional patient requires continuous treatment by another
+      character with the Biotech Skill even after stabilization.
+    healing_base_time_multiplier: 2
+    replacement: The original game requires an organ or other body-part replacement;
+      the GM chooses the affected part when the narrative calls for that and a 1D6
+      table determines the named Attribute loss.
+    attribute_loss_points: 1
+    racial_modified_limit_reduction_for_lost_attribute: 1
+    attribute_points_can_be_healed_back: false
+    source_exception: The lost attribute may be compensated by cybernetic or other
+      means, but normal recovery does not restore the lost point.
+    d6_attribute_table:
+      '1': Body
+      '2': Strength
+      '3': Quickness
+      '4': Intelligence
+      '5': Willpower
+      '6': Reaction
+  one_success_result:
+    permanence: A limb or eye is injured beyond ordinary healing; a natural or cybernetic
+      replacement is needed.
+    additional_costs_and_wait: The original passage adds ordinary replacement costs
+      and may delay healing until the replacement is obtained.
+    healing_base_time_multiplier: 1.5
+    d6_part_table:
+      '1': Right arm
+      '2': Left arm
+      '3': Right leg
+      '4': Left leg
+      '5': Ear; second D6 1-3 = right, 4-6 = left.
+      '6': Eye; second D6 1-3 = right, 4-6 = left.
+  two_or_more_success_result:
+    lasting_part_or_organ_damage: false
+    source_outcome: No limb or organ damage according to this separate original permanent-damage
+      check.
+  natural_replacement_table:
+    source_page: 128
+    title: Body Part Types Table
+    columns:
+    - body_part
+    - base_growth_time
+    - cost_nuyen
+    rows:
+    - body_part: Eye or Small Organ
+      growth_weeks: 3
+      price_nuyen: 7500
+    - body_part: Large Organ
+      growth_weeks: 5
+      price_nuyen: 15000
+    - body_part: Hand or Foot
+      growth_weeks: 6
+      price_nuyen: 15000
+    - body_part: Limb
+      growth_weeks: 8
+      price_nuyen: 25000
+    source_context: The publication describes DNA-matched grown replacements, potential
+      in-world transplant rejection and gamemaster adjudication; costs and times are
+      game-world inventory values, not actual medical procedure guidance.
+  cybernetic_replacement:
+    source_page: 128
+    edition_scope: The original fictional GM determines the surgery time, nuyen cost
+      and possible failed-surgery outcome for cybernetic replacement; this section
+      does not supply exact numeric substitutes.
+  lineage:
+    related_condition: rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+    related_healing: rules/healing/sr3-core-natural-recovery-numeric-p126-128.yml
+    source_scope: Separate original Deadly-Wounds consequence; normal healing rules
+      do not imply it has already been evaluated.
+  example_vectors_specification_only:
+  - id: deadly.body_test.trauma_patch
+    base_target_number: 4
+    patch_modifier: 2
+    expected_target_number: 6
+  - id: deadly.zero_success.attribute_d6_4
+    successes: 0
+    die: 4
+    attribute_lost: Intelligence
+    points_lost: 1
+    racial_modified_limit_reduction: 1
+    healing_base_time_multiplier: 2
+  - id: deadly.one_success.ear_right
+    successes: 1
+    injury_die: 5
+    side_die: 3
+    injured_part: Right ear
+    healing_base_time_multiplier: 1.5
+  - id: deadly.two_successes
+    successes: 2
+    permanent_part_loss_by_this_test: false
+  code_status: Specification vectors only, no executed engine validation or source-level
+    cross-supplement supersession inferred.
+framing: reference_exact
