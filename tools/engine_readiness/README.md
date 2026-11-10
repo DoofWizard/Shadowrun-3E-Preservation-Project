@@ -8,7 +8,7 @@ Run from repo root with Python 3.10+:
 python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v
 ```
 
-The 40 deterministic regression vectors cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
+The 54 deterministic regression vectors cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
 
 | Tested behavior | Canonical source | Book page |
 | --- | --- | --- |
@@ -21,10 +21,13 @@ The 40 deterministic regression vectors cover a limited source-reviewed portion 
 | Initiative ties: first-pass score, adjusted/natural Reaction, repeated d6 | `rules/initiative/initiative-ties.yml` plus `core_extensions.py` | FASA7001 p102/PDF103 |
 | Ranged outcome: Dodge > attack is complete dodge; otherwise add dodge to resistance | `rules/combat/dodge-test.yml`, `rules/combat/damage-staging.yml`, `core_extensions.py` | FASA7001 p113/PDF114 |
 | Damage staging boundaries: above Deadly stays Deadly; below Light = no damage | `rules/combat/damage-staging.yml`; executable correction in `rules_probe.py` | FASA7001 p113/PDF114 |
+| Condition Monitor: L/M/S/D = 1/3/6/10 boxes, separate Physical/Stun tracks, Stun-to-Physical overflow, cumulative wound modifiers, Body death threshold | `rules/condition/condition-monitor.yml` (general canonical anchor), `condition_core.py` (bounded source-checked executable adapter) | FASA7001 pp125–126/PDF126–127 |
 
-**Deliberate fail-closed boundaries:** `initiative_passes()` still rejects ties unless the caller separately applies the new **two-actor** `initiative_tie_winner()` adapter; multi-actor ties and voluntary delays are not implemented. The printed p280 ammunition belt Quickness/2 table does not itself state rounding for odd Quickness, so the probe raises `UnresolvedRule`. Ranged attack outcome assumes the caller already resolved attack/dodge/Body dice and their target numbers; it does not calculate weapon Power, armor, Combat Pool availability or the Condition Monitor. No open-test, magic, Matrix, social, cyberware or complete encounter implementation is claimed.
+**Deliberate fail-closed boundaries:** `initiative_passes()` still rejects ties unless the caller separately applies the new **two-actor** `initiative_tie_winner()` adapter; multi-actor ties and voluntary delays are not implemented. The printed p280 ammunition belt Quickness/2 table does not itself state rounding for odd Quickness, so the probe raises `UnresolvedRule`. Ranged attack outcome assumes the caller already resolved attack/dodge/Body dice and their target numbers; it does not calculate weapon Power, armor, or Combat Pool availability. The separate `condition_core.py` adapter applies final staged damage boxes and baseline incapacitation, **not** advanced healing, action interrupts, or Man & Machine p131's additional consciousness mechanics. No open-test, magic, Matrix, social, cyberware or complete encounter implementation is claimed.
 
 **Core source mapping verified:** early core printed pp54, 102 and 113 appear at physical PDF pp55, 103 and 114 respectively; later printed pp275–282 appear at PDF pp284–291. Do **not** apply a single fixed offset across the whole book. The source manifest separately documents an unresolved p307→p309 scan discontinuity (possible absent printed p308).
+
+**Consumer-code-only status:** `core_extensions.py` and `condition_core.py` derive executable calculations from source-reviewed original pages, but they are **not** canonically normalized records and no archival transaction receipt or source manifest advancement is claimed for those new adapters. The source is FASA7001, original PDF SHA-256 `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914`.
 
 **Open canonical normalization:** the master character-creation table's numeric values are implemented in a **source-checked consumer adapter**, but the existing `rules/character-creation/priority-system.yml` describes the table without encoding those numbers. It still needs ordinary source-reviewed canonical record staging and gate confirmation. Likewise verify the p113 damage boundaries and all deferred core tables against the authoritative canonical record set; a passing adapter test is not an ingestion authorization.
 
