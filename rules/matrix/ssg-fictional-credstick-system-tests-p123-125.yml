@@ -1,0 +1,137 @@
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition,
+  optional fictional tabletop Matrix/identity-game mechanics; supplement does not
+  override base SR3 without explicit statement
+content_class:
+- rule_procedure
+framing: reference_exact
+id: rule.economy.ssg-fictional-credstick-system-tests-p123-125
+printed_pages: 123-125
+pdf_pages: 124-126
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FanPro Sprawl Survival
+  Guide (FanPro10667, 2003), printed pp123-125/PDF124-126 — Matrix credstick game
+  tests'
+summary: Source-reviewed optional cyberpunk RPG game checks for fictional credstick
+  authentication, balances, reader interactions, and abstract skill-test outcomes;
+  precise target-number table and timing, not real-world financial procedures.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    year: 2003
+    edition: Shadowrun Third Edition
+    fictional_tabletop_setting: true
+    printed_pages:
+    - 123
+    - 124
+    - 125
+    physical_pdf_pages:
+    - 124
+    - 125
+    - 126
+  scope_and_lineage:
+    status: optional_extension
+    base_rule_dependency: Shadowrun Third Edition core credstick, Matrix encryption
+      and Electronics B/R mechanics; this section explicitly does not supersede the
+      basic SR3 rules
+    other_intervening_material: Printed p124/PDF125 Common Costs table is separately
+      preserved as reference.economy.ssg-common-costs-p124
+  credstick_beacons:
+    fictional_detection_purpose: Localized marketing and identification signals; device
+      responds to nearby queries rather than broadcasting continuously
+    beacon_flux_rating: 0
+    beacon_signaler_flux_rating: 0
+    typical_range_meters: 10
+  credstick_hacking_table:
+    fictional_credstick_type_target_number_and_encryption_rating:
+      certified: 12
+      standard_registered: 10
+      silver_registered: 12
+      gold_registered: 14
+      platinum_registered: 16
+      ebony_registered: 18
+    all_numbers_are_game_test_TNs_or_fictional_encryption_ratings: true
+  fictional_credstick_access_game_test:
+    required_rule: Electronics B/R Test at listed credstick-table target number
+    opening_requirement_successes: 1
+    zero_successes: Fictional anti-tamper circuitry irretrievably erases its stored
+      ID and electronic funds; erased registered device can be reconfigured with a
+      different serial/identity in the source scenario, erased certified device is
+      valueless
+    note: This is a skill-test abstraction, not a physical/electronic access method.
+  fictional_certified_balance_scenario:
+    scope: Only certified-value money is represented on the physical device; funds
+      in a registered account remain in a fictional bank account and cannot be changed
+      by altering device memory.
+    dependencies:
+    - SR3 core Data Encryption, printed p292
+    - SR3 Computer (Hardware) game test
+    first_test: Defeat fictional device encryption rating from credstick table
+    second_test: Computer (Hardware) Test with target number equal to the credstick-table
+      value
+    failure_consequence: The source applies its anti-tamper/data erasure consequence
+    fabricated_value_optional_test:
+      test: Computer (Programming) Test
+      target_number: 12
+      base_time_minutes_per_fictional_nuyen: 1
+      counterfeiting_utility_target_number_reduction: Subtract selected Counterfeiting
+        utility rating from programming test target number
+      game_validation: First verification reader rolls its own rating dice against
+        a target number equal to the number of successes on the fictional programming
+        test. Any reader success detects counterfeit value and triggers the book's
+        fictional lock/freeze/alert outcome; a failure allows initial acceptance,
+        but the book notes banks may later investigate.
+  fictional_data_edit_test:
+    prerequisite: Fictional encryption rating defeated
+    test: Computer (Programming) Test
+    base_target_number: Credstick-table target number
+    base_time_hours: 1
+    read_write_utility: Subtract Read/Write utility rating from target number
+    applications: Source describes fictional changes to identity, log, biometric and
+      account metadata.
+  fictional_hardware_device_test:
+    test: Electronics B/R Test
+    target_number: 8
+    base_time_hours: 1
+    optional_scope: Examples are imaginary attached tracking/surveillance devices;
+      source leaves other imagined devices to gamemaster discretion.
+  fictional_reader_access:
+    physical_reader_test: Electronics B/R (18) Test
+    zero_successes: Reader notifies its fictional bank/authorities and shuts down
+    reactivation_conditions:
+    - Electronics B/R (18) Test
+    - Defeat reader Rating 18 encryption
+    disconnect_timeout_minutes: 10
+    disconnect_effect: Bank will stop accepting reader transmissions until a service
+      technician verifies it
+    via_Matrix_published_game_defenses:
+      pavlov_data_bomb_rating: 12
+      scramble_ic_rating: 18
+      game_operations:
+      - Control Slave
+      - Monitor Slave
+    no_real_world_method: All names and ratings refer only to the published cyberpunk
+      game system.
+  utility_catalog_reference:
+    utility: Counterfeiting
+    published_multiplier: 10
+    published_options_count: 1
+  code_test_vectors_specification_only:
+  - id: credstick.type.gold
+    input_type: gold_registered
+    expected_game_TN: 14
+  - id: credstick.type.ebony
+    input_type: ebony_registered
+    expected_game_TN: 18
+  - id: credstick.balance.programming_TN_reduction
+    source_base_TN: 12
+    fictional_utility_rating: 4
+    expected_game_TN: 8
+  - id: credstick.reader.disconnect
+    minutes_disconnected: 11
+    expected_fictional_bank_approval: suspended_pending_service_verification
+  code_validation_status: Source-reviewed proposal only; no executable SR3 engine
+    test run.
