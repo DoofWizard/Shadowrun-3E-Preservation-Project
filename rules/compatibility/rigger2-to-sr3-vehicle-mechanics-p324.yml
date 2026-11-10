@@ -1,0 +1,65 @@
+id: rule.compatibility.rigger2-to-sr3-vehicle-mechanics-p324
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '324'
+pdf_pages: '332'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001 sourcebook-conversion rules for historical Rigger 2 vehicles
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FASA Corporation FASA7001 printed p324/PDF332, exact vehicle and Rigger 2 sourcebook conversion modifiers'
+summary: 'Third Edition conversion-only rules for fictional Rigger 2 vehicle initiative, maneuvering, ranged defense, weapon and spell damage, and passenger protection. The existing general precedence record is reused, not replaced.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: FASA Corporation
+  catalog_number: FASA7001
+  operative_edition: 'Third Edition conversion of Second Edition-era Rigger 2'
+  printed_page: 324
+  physical_pdf_page: 332
+  chapter: 'Sourcebook Updates — Converting Sourcebook Material / Rigger 2'
+  precedence:
+    original_source: 'Rigger 2 (historical, pre-SR3 vehicle rules)'
+    effect: 'Rigger 2 supersedes other older vehicle rules except on conflicts with SR3; use SR3 unless this conversion section explicitly directs otherwise.'
+    later_rigger3: 'No automatic precedence or inferred supersession by later SR3 Rigger 3 is asserted here.'
+  vehicle_passenger_initiative:
+    first_initiative_pass: 'A passenger cannot act before the rigger acts; a passenger with higher Initiative must hold the action.'
+    later_initiative_passes: 'The Combat Turn proceeds normally.'
+  crash_test:
+    default_sr3: 'SR3 Crash Test simplifies the Deceleration Stress Test from Rigger 2 printed p22.'
+    using_full_rigger2: 'Use the Rigger 2 Deceleration Stress Test if actually using Rigger 2.'
+  rigged_driving_tests:
+    noncombat_modifier_magnitude: 'VCR Rating'
+    combat_modifier_magnitude: '2 * VCR Rating'
+    reversal: 'The source explicitly reverses its Rigger 2 presentation.'
+    numeric_sign: 'The source paragraph states modifier magnitude without a sign; do not invent the sign in this conversion-only record.'
+  rigged_vehicle_ranged_dodge:
+    substitute_pool: 'Control Pool, not Combat Pool'
+    target_number: 'Vehicle Handling Rating plus standard Driving Test modifiers, including damage and restricted terrain where applicable.'
+  vehicle_weapon_damage:
+    applicable_rules: 'Use SR3 vehicle damage rules, not Rigger 2.'
+    power_reduction: 'Power of attack reduced by half, round down.'
+    damage_level_reduction: 'Damage Level reduced by one level.'
+    hardened_armor: 'Apply the resulting damage against hardened armor. Modified Power must be greater than armor to have any effect; armor also reduces Power.'
+  vehicle_spell_damage:
+    applicable_rules: 'SR3 overrides Rigger 2 vehicle spell damage.'
+    combat_spell_target_number_formula: '8 + vehicle Body + (Armor Rating / 2)'
+    armor_half_rounding: 'Not specified explicitly in this conversion paragraph; no additional rounding rule inferred.'
+    resistance: 'Vehicles do not make Damage Resistance Tests versus combat spells.'
+    defense: 'Vehicles may be protected by Spell Defense.'
+    elemental_manipulation: 'Treat elemental manipulation spells as normal weapons.'
+  passengers_under_attack:
+    pool: 'Combat Pool'
+    maximum_dice: 'floor(Combat Pool / 2)'
+    allowed_purposes: [dodge damage, resist damage]
+  existing_canonical_relationships:
+    - compatibility.rigger2.general-precedence
+    - compatibility.sourcebooks.general-precedence
+  unexecuted_test_vectors:
+    - {case: driving_noncombat, vcr_rating: 3, expected_modifier_magnitude: 3, sign: unresolved}
+    - {case: driving_combat, vcr_rating: 3, expected_modifier_magnitude: 6, sign: unresolved}
+    - {case: passenger_pool, combat_pool: 7, expected_max_dice: 3}
+    - {case: spell_target_number_component, body: 4, armor: 6, expected_target_number: 15}
+  source_limits:
+    - 'All effects represent fictional tabletop resolution, not real-world driving or vehicle procedures.'
+    - 'Vehicle Hardened Armor and Damage Level mechanics require the linked canonical SR3 damage subsystem for executable resolution.'
+    - 'The printed paragraph does not independently authorize a full Rigger 3 supersession decision or all crash-test modifiers.'
