@@ -1,0 +1,51 @@
+{
+  "id": "rule.compatibility.sr2-to-sr3-magic-conversion-p324",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "324",
+  "pdf_pages": "332",
+  "edition_scope": "FASA Corporation, Shadowrun Third Edition (FASA7001); historical conversion of Second Edition characters, not an optional sourcebook override",
+  "content_class": ["rule_procedure"],
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun Third Edition (FASA Corporation, FASA7001), printed p324/PDF332: Second Edition magic conversion procedures",
+  "summary": "Original Third Edition Sourcebook Updates rules for converting imaginary Second Edition adepts, spells, fetishes, spell locks and astral initiative; distinct from current-edition character creation.",
+  "data": {
+    "publication": "Shadowrun, Third Edition",
+    "publisher": "FASA Corporation",
+    "catalog_number": "FASA7001",
+    "printed_page": 324,
+    "physical_pdf_page": 332,
+    "section": "Sourcebook Updates: Converting Characters / Magic",
+    "scope": "Historical SR2 character conversion into SR3 only; use contemporary Third Edition costs and spell descriptions where directed, with no inferred automatic upgrade from later books.",
+    "adept_conversion": {
+      "sr2_magical_adept": "Becomes an SR3 Aspected magician and gains astral perception.",
+      "sr2_physical_adept": "Becomes an SR3 adept; recalculate Power Point costs under SR3 prices; some powers cost less, so remaining points may permit new powers.",
+      "changed_powers": ["Improved Ability", "Increased Reflexes"],
+      "changed_powers_instruction": "Reconcile each affected converted character's powers individually under SR3 definitions."
+    },
+    "totems": "Shamanic characters recheck their totem modifiers against SR3 core printed p162; some modifiers changed.",
+    "spell_conversion": {
+      "altered_spells": "Adjust converted spells to SR3 changes or redefinitions.",
+      "combined_spells": "If multiple former spells have become one SR3 spell, convert only one to the combined spell; the gamemaster awards a different spell at the rating of the unused former spell. The text uses Power Bolt and Power Dart as the example.",
+      "expendable_fetish_limit_removed": "Expendable-fetish-limited spells no longer exist. On conversion make the spell Exclusive, or decrease its Force by 2.",
+      "reusable_fetish_and_exclusive_limits": "Source redefines these limitations: optionally apply the limit to a spell cost rather than adjust its Force, reducing that cost by 1 or 2, or apply the limit to Force for Drain; in that latter case pay 1 or 2 Karma for the spell or decrease its actual Force. Consult the SR3 spell rules for the applicable limit rather than guessing which amount applies."
+    },
+    "spell_locks": {
+      "sr3_status": "Spell locks no longer exist in SR3.",
+      "per_original_lock": "Choose to convert into a Force 3 sustaining focus (SR3 printed p190), or sell for 45000 nuyen.",
+      "focus_upgrade": "At gamemaster discretion, buy up from Force 3 at 15000 nuyen per added Force point, maximum Force 6; not an automatic entitlement."
+    },
+    "astral_initiative": {
+      "formula": "Intelligence + 20 + 1D6",
+      "scope": "Converted characters' new Astral Initiative"
+    },
+    "cross_references": ["references/conversion/sr3-323-325.yml", "rules/magic/magician-types.yml", "rules/magic/sustaining-foci.yml"],
+    "example_vectors_not_executed": [
+      {"case": "astral_intelligence_5", "intelligence": 5, "expected_before_d6": 25, "dice": "1D6"},
+      {"case": "spell_lock_2_focus", "original_spell_locks": 2, "chosen_conversion": "Force 3 sustaining foci", "expected_focus_count": 2},
+      {"case": "focus_upgrade_force_5", "starting_force": 3, "desired_force": 5, "added_nuyen": 30000, "gm_permission_required": true}
+    ],
+    "implementation_status": "Archival procedural source review, not a running engine or authorization of a contiguous Denver page."
+  }
+}
