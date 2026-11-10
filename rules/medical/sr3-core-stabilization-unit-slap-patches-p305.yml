@@ -1,0 +1,118 @@
+id: rule.medical.sr3-core-stabilization-unit-slap-patches-p305
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '305'
+pdf_pages: '314'
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001); original SR3
+  fictional tabletop medical-support and slap-patch game mechanics, not later-edition
+  substitutions
+content_class:
+- rule_procedure
+headline: 'Fictional Shadowrun Third Edition tabletop rules from FASA Corporation
+  Shadowrun, Third Edition FASA7001, original printed p305/PDF314: stabilization unit
+  and four slap-patch procedures'
+summary: Original-source-verified medical adjunct procedures and exact conditional
+  dice, target-number, duration and Condition Monitor effects from FASA Corporation
+  Shadowrun Third Edition FASA7001, printed p305/PDF314; rules for a fictional tabletop
+  game.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog_number: FASA7001
+    edition: Shadowrun Third Edition
+    source_id: source.sr3-core
+    printed_page: 305
+    physical_pdf_page: 314
+  source_scope: 'Published fictional cyberpunk tabletop role-playing game: equipment
+    and spell-independent medical assistance rules; all listed effects are in-game
+    dice abstractions.'
+  stabilization_unit:
+    depiction: Enclosed capsule depicted as standard DocWagon ambulance equipment,
+      used to hold a critically wounded character until appropriate in-world medical
+      care is available.
+    automatic_stabilization_for_character_placed_inside: true
+    healing_tests_target_number_modifier: -2
+    scope_of_modifier: Any healing test made to recover from wounds while the source
+      unit is in use; not an increase to the healer skill or Body attribute.
+  slap_patch_general:
+    delivery_description: Source depicts adhesive fictional drug dispensers used against
+      a character skin.
+    dermal_armor_rule: Reduce the patch rating by the rating of the recipient dermal
+      armor; the source specifies rating reduction, not a new target-number modifier.
+    blood_filtration_exception: A recipient blood filtration implant renders a trauma
+      patch ineffective.
+  patches:
+    antidote:
+      effect_context: A broad-spectrum in-game antidote for a toxin.
+      immediate_application_condition: After exposure, before the toxin Damage Resistance
+        Test.
+      toxin_power_modifier: Subtract the effective Antidote Patch rating from toxin
+        Power.
+      continued_exposure: The patch continues modifying toxin Power while the character
+        remains exposed.
+      deadly_physical_damage_condition: If the recipient takes Deadly Physical Damage,
+        add patch Rating in dice to any stabilization tests; the original passage
+        refers to core printed p129.
+      stacking: Multiple Antidote Patches have no additional effect.
+    stimulant:
+      in_game_effect: A stimulant that temporarily suppresses Stun damage in a character
+        Condition Monitor.
+      immediate_stun_boxes_removed: Remove a number of Stun Damage boxes equal to
+        the effective patch Rating.
+      magician_side_effect_test: A magician using the patch makes a Magic Test with
+        a target number equal to patch Rating.
+      magician_failure: On failure, follow the source procedure for possible Magic
+        loss as though the magician had taken a Deadly wound; consult the original
+        Third Edition Magic-loss rule.
+      effect_duration_minutes: 2D6
+      effect_end: Restore the Stun boxes temporarily removed plus one additional Stun
+        box when the effect wears off.
+    tranq:
+      source_purpose: The book depicts anesthetizing patients for medical care and
+        also reports in-world use to sedate prisoners; the latter is not assumed consensual.
+      opposed_test: 'The Tranq Patch and recipient make an Opposed Test: the recipient
+        Body attribute opposes the effective Patch Rating.'
+      successful_patch_condition: The patch rolls more successes than the recipient.
+      stun_boxes_applied: Fill one Stun Damage box for each net patch success in that
+        Opposed Test.
+      unresolved_other_outcomes: The p305 passage does not state a further damage
+        result for tied or losing patch tests.
+    trauma:
+      in_game_scope: The source depicts this as a last-resort game aid for a dying
+        fictional character without immediate medical care.
+      described_game_application_location: Over the fictional recipient heart.
+      effect: Provides the character a second chance against death under Damage and
+        Healing; the source directs readers to original core printed p125 for operative
+        death/stabilization rules.
+      numeric_detail: No independent trauma-patch test threshold is stated in the
+        printed p305 passage; refer to original core p125 and other governing stabilization
+        rules.
+      exception: Blood filtration implants make the Trauma Patch ineffective under
+        the source general rule.
+  cross_references:
+  - procedures/healing/natural-and-medical.yml
+  - rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+  - rules/healing/sr3-core-natural-recovery-numeric-p126-128.yml
+  engine_examples_unexecuted:
+  - id: stabilize_unit_tn
+    original_game_healing_TN: 6
+    unit_modifier: -2
+    expected_modified_TN: 4
+  - id: antidote_toxin_power
+    initial_toxin_power: 9
+    effective_antidote_patch_rating: 3
+    expected_reduced_toxin_power: 6
+  - id: stimulant_stun_end
+    effective_patch_rating: 3
+    expected_initial_stun_boxes_temporarily_removed: 3
+    expected_stun_boxes_restored_at_end: 4
+  - id: tranq_net_success
+    patch_successes: 3
+    recipient_successes: 1
+    expected_stun_boxes_filled: 2
+  implementation_state: Original page-image review and repository transaction confirmation
+    do not establish engine execution; none of these examples were run as code in
+    this record.
+framing: reference_exact
