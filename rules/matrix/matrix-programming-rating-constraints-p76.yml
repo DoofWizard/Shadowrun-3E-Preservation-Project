@@ -1,0 +1,70 @@
+{
+  "id": "rule.matrix.program-rating-constraints-p76",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "76",
+  "pdf_pages": "77",
+  "edition_scope": "FASA Corporation Matrix (FASA7909), Shadowrun Third Edition; fictional tabletop programming limits, not real-world software guidance",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop Shadowrun Third Edition Matrix, FASA Corporation FASA7909, printed p76/PDF77: exact programmer skill ceilings and effective rating floor",
+  "summary": "The original Matrix (FASA7909), Shadowrun Third Edition, printed p76/PDF77, distinguishes ordinary program rating limits from cyberterminal/cyberdeck persona program limits and sets a floor for size/time calculations after effective-rating reductions; these are archival game mechanics, not engine tests.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "printed_page": 76,
+      "physical_pdf_page": 77
+    },
+    "source_heading": "PROGRAM RATINGS / PROGRAM SIZE",
+    "ordinary_program_rating_limit": {
+      "limit": "unmodified program rating <= programmer Computer (Programming) skill",
+      "exception": "Only where the original rules explicitly note another limit"
+    },
+    "persona_program_rating_limit": {
+      "applies_to": "cyberterminal or cyberdeck persona programs",
+      "limit": "floor(1.5 * programmer Computer (Programming) skill)"
+    },
+    "effective_rating_floor_for_design": {
+      "trigger": "modifiers reduce effective program rating below 1",
+      "rating_to_use": 1,
+      "uses": [
+        "design time",
+        "memory requirements"
+      ]
+    },
+    "program_size_reference": {
+      "formula": "program rating squared times program multiplier",
+      "canonical_numeric_reference": "rules/matrix/matrix-programming-size-plan-suite-team-p78-80.yml",
+      "note": "Formula is already independently preserved in the cited p78-80 record; not a new table registration."
+    },
+    "consumer_examples_unexecuted": [
+      {
+        "id": "program_rating.skill4_ordinary",
+        "computer_programming_skill": 4,
+        "max_unmodified_ordinary_program_rating": 4
+      },
+      {
+        "id": "persona_rating.skill5",
+        "computer_programming_skill": 5,
+        "max_persona_program_rating": 7
+      },
+      {
+        "id": "design_floor.reduced_to_zero",
+        "effective_rating_after_modifiers": 0,
+        "design_time_and_memory_rating": 1
+      }
+    ],
+    "lineage": {
+      "relation": "extends",
+      "umbrella": "procedures/matrix/programming.yml",
+      "scope": "Core numeric limits for the original fictional Shadowrun Third Edition Matrix programming subsystem. No later supersession asserted."
+    },
+    "code_readiness": "Original-page-reviewed archived exact rule, not code-validated or a complete programming implementation."
+  }
+}
