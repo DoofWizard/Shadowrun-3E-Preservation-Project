@@ -1,0 +1,54 @@
+id: rule.skills.srcomp-athletics-climbing-falling-escape
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 44-46
+pdf_pages: 45-47
+edition_scope: Shadowrun Third Edition, FASA7905a Shadowrun Companion Athletics skill extension
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: "Shadowrun Companion climbing, falling, rappelling and escape rules (FASA Corporation, FASA7905a, Shadowrun Third Edition, printed pp44-46/PDF45-47)."
+summary: "Source-derived tabletop Athletics rules for climb surfaces/height, fall power/levels, rappelling and Escape Artist timing/ratings; original p45/PDF46 is full-page illustration."
+data:
+  publication: {title: Shadowrun Companion, publisher: FASA Corporation, catalog: FASA7905a, edition: Shadowrun Third Edition, printed_pages: [44, 45, 46], pdf_pages: [45, 46, 47]}
+  status_in_engine: Published Companion additional Athletics skill-use procedures. Damage modifiers apply from SR3 core p126. Do not generalize beyond this historical edition or infer supersession.
+  source_page_art: Original printed p45/PDF46 is a full-page illustration without a rules table; rules continue on printed p46/PDF47.
+  climbing:
+    ordinary_test: {skill: Athletics (Climbing), action: Complex, target_number: surface base TN + height and environmental modifiers}
+    surface_target_number: {easily_climbable_chain_link_fence: 3, broken_surface_debris_tree_loose_stone: 5, flat_surface_brick_wall_or_old_building: 8, sheer_surface_metal_wall_seamless_stone: 14}
+    modifiers:
+      height_less_than_2m: 0
+      height_2_to_4m: 2
+      height_greater_than_4m: 4
+      slippery_or_wet: 2
+      greased_or_gel_treated: 4
+    unassisted_upward_meters_per_combat_phase: '(Quickness + Strength) / 8, rounded down, +1 meter per Climbing Test success'
+    unassisted_downward_meters_per_combat_phase: 'Twice the average of Quickness and Strength, +1 meter per success'
+    assisted_upward: 'Requires climbing gear; base climbing TN -10, with one Climbing Test per three minutes to reflect gear positioning; slower than unassisted climbing.'
+    rappelling:
+      downward_speed_meters_per_simple_action: 20
+      action_budget: 'At most one of two Simple Actions during a Combat Phase may be used to rappel; second may be another action such as firing.'
+      simultaneous_action_modifier: '+4 to both Firearms and Climbing Tests when combining shooting with rappelling'
+      descend_additional_meters: 'Climbing (4) Test grants +1 meter per success on that Combat Phase.'
+      landing_test: 'At base, make another Climbing (4) Test; failure means a 4-meter fall and the appropriate damage.'
+    rule_of_one: 'Rule of One on any Climbing Test means character plummets; gamemaster may allow Quickness (6) Test to catch a hold.'
+  falling:
+    damage_power: 'Half the distance fallen (in meters), minus half of character Impact Armor Rating rounded DOWN; the source does not separately state how to round the distance term.'
+    athletics_reduction: 'Athletics Test TN equals total fall distance in meters; each success reduces fall Power by 1.'
+    distance_damage_level: {'1_to_2_m': Light, '3_to_6_m': Moderate, '7_to_20_m': Serious, '21_m_or_more': Deadly}
+    falling_action_once_per_initiative_pass: true
+    estimated_distance_per_falling_action_meters: '40 times number of Initiative Passes (including current) already spent in rapid descent.'
+    falling_character_initiative_each_turn_until_landing: 30
+    damage_resistance: 'Use standard SR3 damage-resistance/staging after power and wound level adjustments; no unsupported floor/rounding added.'
+  escape_artist:
+    test: Athletics (Escape Artist) specialized skill; TN depends on restraint.
+    restraint_target_numbers: {ropes: 4, handcuffs: 6, straitjacket: 8, containment_manacles: 10}
+    success_time_minutes: '5 x target number / number of successes; source does not specify rounding to whole minutes.'
+    failure_retry_delay_minutes: '5 x target number (base escape time) before next attempt.'
+    adept_pain_resistance: 'An adept with Pain Resistance reduces Escape Artist Test TN by 1 per wound level they can resist with the power; wound penalties resisted do not count toward this TN reduction.'
+  source_test_vectors_not_executed:
+    - {id: srcomp.climb.brick_3m_wet, surface_TN: 8, height_modifier: 2, wet_modifier: 2, expected_TN: 12}
+    - {id: srcomp.fall.4m_no_armor, distance_meters: 4, impact_armor: 0, expected_power_before_other_modifiers: 2, expected_damage_level: Moderate}
+    - {id: srcomp.escape.handcuffs_two_successes, TN: 6, successes: 2, expected_minutes: 15}
+  dependencies: [rule.tests.making-tests, rule.tests.target-numbers, rule.combat.damage-resistance, rule.combat.damage-staging, rule.initiative.initiative-passes]
