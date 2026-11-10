@@ -1,0 +1,90 @@
+id: rule.matrix.programming-numeric-plan-suite-team-p78-80
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '78-80'
+pdf_pages: '79-81'
+edition_scope: 'FASA Corporation Matrix (FASA7909), Shadowrun Third Edition source supplement, optional programming resources where explicitly selected; not historical SR2 rules'
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop Matrix supplement: FASA Corporation FASA7909 printed pp78-80/PDF79-81 numeric programming plans, suites, test and team rules'
+summary: 'FASA Corporation Matrix FASA7909 (Shadowrun Third Edition), original printed pp78-80/PDF79-81: program sizes, planning, memory, programming-test modifiers, failure, task period, programming suites, mainframe environment, and teams; exact original mechanical values, not an engine-validated implementation.'
+data:
+  publication: 'Matrix'
+  publisher: 'FASA Corporation'
+  catalog_number: 'FASA7909'
+  original_edition: 'Shadowrun Third Edition'
+  original_printed_pages: [78, 79, 80]
+  physical_pdf_pages: [79, 80, 81]
+  application: 'Fictional Matrix tabletop program writing and group programming; supplements procedure.matrix.programming without replacing other SR3 rules.'
+  program_size:
+    unit: 'Megapulses (Mp)'
+    rating_range_in_original_table: [1, 14]
+    multiplier_range_in_original_table: [1, 10]
+    exact_table_formula_mp: 'program rating squared times program size multiplier'
+    examples: [{rating: 6, multiplier: 4, mp: 144}, {rating: 14, multiplier: 10, mp: 1960}]
+    base_programming_days: 'full Mp size after program-option changes; original base equals program size in days'
+  plan:
+    design_skill: 'Appropriate Program Design Knowledge skill, such as Combat Utility Design'
+    design_test_base_tn: 4
+    planning_table_target_modifiers:
+      rating_1_to_4: -1
+      rating_5_to_9: 0
+      rating_10_or_more: 1
+      per_program_option: 1
+    each_success_computer_programming_tn_modifier: -1
+    hours_formula: '(program rating + number of program options) * program size multiplier'
+    plan_memory_mp: 'floor(program size Mp / 10)'
+    no_plan_computer_programming_tn_modifier: 2
+  required_programming_computer:
+    minimum_active_memory_mp: 'at least the program size Mp'
+    minimum_storage_memory_mp: 'at least the program size Mp'
+    double_required_memory_computer_programming_tn_modifier: -2
+    double_memory_condition: 'Both required available memory and programming computer capacity are judged under source text; do not treat insufficient memory as a mere modifier.'
+  programming_suite:
+    complimentary_dice: 'suite rating, capped at character Computer (Programming) skill'
+    counts_against_computer_memory: true
+    cannot_self_program_above_own_computer_programming_skill: true
+    program_size_multiplier: 15
+    suite_memory_mp_formula: '15 * suite rating squared'
+    original_table_rating_range: [1, 10]
+    original_table_examples: [{rating: 1, mp: 15}, {rating: 5, mp: 375}, {rating: 10, mp: 1500}]
+    may_have_self_coder_option: true
+  mainframe_programming:
+    charge_nuyen_per_day: 'host Security Value * 100'
+    access: 'requires paying for time or gaining system access; no real-world technique is provided'
+    complimentary_test_dice: 'host Security Value'
+    computer_programming_tn_modifier_by_security_color: {blue: -1, green: -2, orange: -3, red: -4}
+    no_suite_complimentary_dice_inferred_for_the_same_host: 'Source says environment adds complementary dice equal to host Security Value; do not double-count distinct suites without other source support.'
+    allowable_host_security_value: 'not higher than twice character Computer (Programming) skill'
+  programming_test:
+    skill: 'Computer (Programming)'
+    base_target_number: 'unmodified program rating; options do not themselves raise this base rating'
+    minimum_target_number: 2
+    modifier_table:
+      double_memory: -2
+      plan_each_success: -1
+      no_program_plan: 2
+      mainframe_blue: -1
+      mainframe_green: -2
+      mainframe_orange: -3
+      mainframe_red: -4
+    complementary_sources: 'programming suite or mainframe Security Value; Task Pool may be used; Hacking Pool may not'
+    success_task_period_days: 'ceil(program size Mp / Computer (Programming) test successes)'
+    zero_successes: 'gamemaster rolls 2D6; base period divided by roll, rounded up, yielding days programmed before unusably flawed work must be redone'
+    labor_hours_per_task_day: 8
+  team_programming:
+    maximum_number_of_members: 'floor(highest team-member Computer (Programming) skill / 2)'
+    maximum_program_rating: 'highest team-member Computer (Programming) skill'
+    group_test: 'one Computer (Programming) test, dice equal to floor(average programming skill across team); Task Pool added to member skill before average as described'
+    computer_requirements: 'each member must possess the minimum computer resources to work on that program'
+    min_days_each_member: 'ceil(single-programmer task-period days / (team size + 1))'
+  source_executable_examples_unrun:
+    - {id: utility_mp, rating: 8, multiplier: 4, expected_mp: 256}
+    - {id: suite_mp, suite_rating: 6, expected_mp: 540}
+    - {id: plan_hours, rating: 6, options: 1, multiplier: 4, expected_hours: 28}
+    - {id: plan_memory, program_mp: 256, expected_plan_mp: 25}
+    - {id: programming_days, program_mp: 256, successes: 8, expected_days: 32}
+    - {id: four_member_team, solo_days: 32, members: 4, expected_minimum_per_member_days: 7}
+  existing_umbrella_procedure: 'procedures/matrix/programming.yml (existing canonical stages, not replaced)'
+  pending_scope: 'Does not claim the remaining Matrix FASA7909 programming printed pp76-94 options and advanced structures are normalized.'
