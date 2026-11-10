@@ -114,9 +114,11 @@ def staged_damage(base: str, attack_successes: int, resistance_successes: int) -
     net = attack_successes - resistance_successes
     delta = abs(net) // 2 * (1 if net >= 0 else -1)
     index = levels.index(base) + delta
-    if not 0 <= index < len(levels):
-        raise UnresolvedRule("damage boundary: consult complete condition-monitor rules")
-    return levels[index]
+    # FASA7001 printed p113/PDF114: above Deadly remains Deadly;
+    # staging below Light inflicts no damage.
+    if index < 0:
+        return "none"
+    return levels[min(index, len(levels) - 1)]
 
 
 def reloading_options(code: str, quickness: int | None = None) -> list[tuple[str, int | str]]:
