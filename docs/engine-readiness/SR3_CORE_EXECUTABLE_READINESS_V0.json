@@ -1,0 +1,215 @@
+{
+  "schema_version": "sr3-core-executable-readiness/0.1",
+  "status": "work_in_progress",
+  "source": {
+    "publication": "Shadowrun, Third Edition",
+    "publisher": "FASA Corporation",
+    "catalog_number": "FASA7001",
+    "edition": "SR3",
+    "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+    "manifest": "sources/manifests/SR3.yml",
+    "manifest_status": "scan_complete_normalization_pending"
+  },
+  "assurance": {
+    "tests_run_locally": 58,
+    "pass": 58,
+    "fail": 0,
+    "test_command": "python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v",
+    "code_readback_verified": true,
+    "canonical_ingestion_completed_by_this_file": false,
+    "scope": "Selected deterministic source-linked core mechanics, not full rules-engine fidelity"
+  },
+  "checked_source_pages": [
+    {
+      "printed": "54-55",
+      "physical_pdf": "55-56",
+      "subject": "Priority numeric table and basic magical-character restrictions"
+    },
+    {
+      "printed": "102",
+      "physical_pdf": "103",
+      "subject": "Initiative passes and tie-breaking"
+    },
+    {
+      "printed": "113-114",
+      "physical_pdf": "114-115",
+      "subject": "Dodge vs resistance, damage staging and boundaries"
+    },
+    {
+      "printed": "125-126",
+      "physical_pdf": "126-127",
+      "subject": "Condition Monitor boxes, Stun overflow, wound modifiers and Body-dependent death"
+    },
+    {
+      "printed": "275-282",
+      "physical_pdf": "284-291",
+      "subject": "Historical Street Gear source inspection; several exact tables still not normalized"
+    }
+  ],
+  "lanes": [
+    {
+      "id": "dice-test-kernel",
+      "canonical_reference": [
+        "rules/tests/making-tests.yml",
+        "rules/tests/rule-of-six.yml",
+        "rules/tests/target-numbers.yml"
+      ],
+      "implementation": "tools/engine_readiness/rules_probe.py",
+      "state": "code_tested_partial",
+      "missing": [
+        "all Open Test and extended-test interactions",
+        "complete GM-directed edge-case library"
+      ]
+    },
+    {
+      "id": "priority-character-creation",
+      "canonical_reference": [
+        "rules/character-creation/priority-system.yml",
+        "procedures/character-creation/standard.yml"
+      ],
+      "implementation": "tools/engine_readiness/core_extensions.py",
+      "state": "code_tested_partial",
+      "missing": [
+        "source-reviewed canonical numeric Master Character Creation Table record through ordinary transaction gates",
+        "full racial modifier point spending and magical option rules",
+        "full equipment/contact/lifestyle shopping"
+      ],
+      "source_page": "printed p54/PDF55"
+    },
+    {
+      "id": "initiative",
+      "canonical_reference": [
+        "rules/initiative/initiative-passes.yml",
+        "rules/initiative/initiative-ties.yml"
+      ],
+      "implementation": "tools/engine_readiness/core_extensions.py",
+      "state": "code_tested_partial",
+      "missing": [
+        "three-or-more-way ties",
+        "damage taken mid-turn and reordered remaining passes",
+        "delayed actions and voluntary tie delays"
+      ],
+      "source_page": "printed p102/PDF103"
+    },
+    {
+      "id": "ranged-combat",
+      "canonical_reference": [
+        "procedures/combat/ranged-attack.yml",
+        "rules/combat/dodge-test.yml",
+        "rules/combat/damage-staging.yml"
+      ],
+      "implementation": "tools/engine_readiness/core_extensions.py",
+      "state": "code_tested_partial",
+      "missing": [
+        "weapon class/Power/armor adjusted TN and full dice-pool integration",
+        "situational and firing-mode modifiers",
+        "melee full resolution",
+        "complex attack/defense state transitions"
+      ],
+      "source_page": "printed pp113-114/PDF114-115"
+    },
+    {
+      "id": "condition-monitor",
+      "canonical_reference": [
+        "rules/condition/condition-monitor.yml",
+        "rules/condition/damage-levels.yml"
+      ],
+      "implementation": "tools/engine_readiness/condition_core.py",
+      "state": "code_tested_partial",
+      "missing": [
+        "ordinary source-reviewed numeric condition/damage/modifier canonical records via transaction gate",
+        "healing and first aid",
+        "optional Man & Machine p131 consciousness override",
+        "ongoing damage/interrupts and separate optional overdamage"
+      ],
+      "source_page": "printed pp125-126/PDF126-127"
+    },
+    {
+      "id": "street-gear-and-equipment",
+      "canonical_reference": [
+        "sources/manifests/SR3.yml",
+        "rules/firearms/accessory-mounts.yml"
+      ],
+      "implementation": "reloading tested only",
+      "state": "normalization_pending",
+      "missing": [
+        "remaining printed pp275-282 source tables despite verified partial records",
+        "later printed pp305-311 gear",
+        "source-scan suspected omitted printed p308",
+        "edition-conversion source detail"
+      ]
+    },
+    {
+      "id": "magic",
+      "canonical_reference": [
+        "subsystems/magic/sorcery.yml",
+        "rules/magic/drain.yml"
+      ],
+      "implementation": "not_in_58_test_subset",
+      "state": "canonical_present_code_unverified",
+      "missing": [
+        "comprehensive spellcasting/sustaining/drain/conjuring/foci/regeneration interaction tests"
+      ]
+    },
+    {
+      "id": "matrix",
+      "canonical_reference": [
+        "rules/matrix/system-test.yml",
+        "procedures/matrix/programming.yml"
+      ],
+      "implementation": "not_in_58_test_subset",
+      "state": "canonical_partial_code_unverified",
+      "missing": [
+        "Matrix FASA7909 printed pp76-94 programming details",
+        "IC/System/Security Tally end-to-end tests"
+      ]
+    },
+    {
+      "id": "rigging",
+      "canonical_reference": [
+        "subsystems/vehicles/design.yml",
+        "sources/manifests/Rigger3.yml"
+      ],
+      "implementation": "not_in_58_test_subset",
+      "state": "canonical_present_code_unverified",
+      "missing": [
+        "vehicle construction/handling/remote-control/drone controller tests"
+      ]
+    },
+    {
+      "id": "cyberware-and-advanced-character-options",
+      "canonical_reference": [
+        "sources/manifests/M&M.yml",
+        "sources/manifests/SRComp.yml"
+      ],
+      "implementation": "not_in_58_test_subset",
+      "state": "canonical_partial_code_unverified",
+      "missing": [
+        "exact Essence, grade, Bio Index, surgery, healing and alternate character option interactions; Companion deferred pp32-58 check"
+      ]
+    }
+  ],
+  "blockers": [
+    {
+      "kind": "suspected_source_image_gap",
+      "source": "FASA7001",
+      "printed_page": 308,
+      "observed": "PDF316 shows printed p307; PDF317 shows printed p309",
+      "action": "do not fabricate or claim full completion"
+    },
+    {
+      "kind": "source_dependency",
+      "source": "FASA7909",
+      "printed_pages": "76-94",
+      "action": "reconcile Matrix programming through actual gates"
+    }
+  ],
+  "next_minimum_game_checkpoint": [
+    "validated chargen numerical table and racial constraints",
+    "complete ranged/melee attack and defense including Armor Power, pools and modifiers",
+    "track damage, healing and initiative through full Combat Turns",
+    "choose and test minimum playable magic, Matrix and rigging adapters",
+    "source-reviewed canonical transaction receipts for numerical gaps"
+  ],
+  "note": "Code adapters are not semantic archive substitutions. Source manifests and hourly ingestion worker remain authoritative; no Denver printed-page advancement is implied."
+}
