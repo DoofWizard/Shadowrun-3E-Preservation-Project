@@ -1,0 +1,67 @@
+id: rule.compatibility.sr2-to-sr3-numeric-character-conversion-p323
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '323'
+pdf_pages: '331'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001 original conversion guidance for historical Shadowrun Second Edition characters
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FASA Corporation FASA7001 printed p323/PDF331, exact numeric Second Edition character, skill, knowledge, and Karma conversion rules'
+summary: 'Original Third Edition Sourcebook Updates numerical and conditional conversion of fictional SR2 character skills, languages, knowledge points, Etiquette and Karma Pool; existing broad character and skill conversion canonical records remain in force as umbrella concepts.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: FASA Corporation
+  catalog_number: FASA7001
+  operative_edition: 'Third Edition, with historical Second Edition character inputs'
+  original_printed_page: 323
+  physical_pdf_page: 331
+  chapter: 'Sourcebook Updates — Converting Characters'
+  conversion_status: 'Historical conversion-only, approximate rather than mechanically identical characters'
+  skill_cases:
+    equivalent_skill: 'If an SR2 skill exists in the SR3 list with essentially equivalent effect, carry forward its existing rating.'
+    sr2_concentration_with_sr3_specialization: 'If a corresponding SR3 specialization exists, rename the SR2 concentration as that specialization; retain the same numeric ratings.'
+    sr2_concentration_with_sr2_specialization:
+      choice: 'Select the corresponding SR3 base skill; select either SR2 concentration or SR2 specialization as the SR3 specialization.'
+      modifier_to_converted_base_skill_rating: 1
+      modifier_to_selected_converted_specialization_rating: 1
+      example_from_original: 'SR2 Bike 2, Racing 4, Yamaha Rapier 6 -> SR3 Bike 3 (Yamaha Rapier 7).'
+    sr2_concentration_becomes_sr3_base_skill:
+      effect: 'For most SR2 combat and knowledge concentrations converted into base SR3 skills, ignore the SR2 base rating and use the concentration rating directly.'
+      source_examples:
+        - 'SR2 Biology 3 (Botany 5) -> SR3 Botany 5.'
+        - 'SR2 Firearms 4 (Pistols 6, Ares Predator 8) -> SR3 Pistols 6 (Ares Predator 8).'
+    etiquette:
+      default_sr3_base_rating_offset_from_sr2_rating: -2
+      specializations: 'Select the same SR2 concentration as SR3 Etiquette specialization, at the original concentration rating.'
+      multiple_old_etiquette_skills: 'Use the highest SR2 Etiquette rating to determine the base SR3 Etiquette rating.'
+      source_example: 'SR2 Etiquette (Tribal) 2 and Etiquette (Media) 6 -> SR3 Etiquette 4 (Media 6).'
+    gunner_division: 'An SR2 Gunnery 3 (Machine Guns 5) may become SR3 Heavy Weapons 5 or Gunnery 5; the gamemaster may instead split it to Heavy Weapons 3 and Gunnery 2.'
+  additional_skills:
+    knowledge_points_formula: 'Intelligence * 5'
+    deduct_existing_knowledge_skill_ratings: true
+    use_remaining_points_to_purchase: 'Further knowledge skills under SR3 character creation rules.'
+    source_example: 'Intelligence 6 -> 30 points; existing Magic Background 4 plus Parazoology 3 = 7; 30-7=23 points remaining to spend on knowledge skills.'
+    language_read_write_skill: 'Give a Read/Write Skill at half the rating of each Language Skill, rounded down.'
+  dice_pools_and_threat:
+    unchanged_existing_pools: [Combat Pool, Control Pool]
+    replacement_pool: 'Spell Pool replaces Magic Pool.'
+    pools_to_recalculate: [Astral Combat Pool, Hacking Pool]
+    npc_threat_rating: 'Nonplayer characters and critters no longer use Threat Ratings; calculate appropriate dice pools as for characters.'
+  karma_pool:
+    applies_to_character_races: [elf, dwarf, ork, troll]
+    new_pool_formula: 'max(1, floor(old Karma Pool / 2))'
+    adjustment_to_good_karma: 'Add the difference old Karma Pool minus new Karma Pool to the existing Good Karma.'
+    other_races: 'No further change is inferred from this particular paragraph.'
+  related_existing_canonical_records:
+    - compatibility.sr2.character-conversion
+    - compatibility.sr2.skill-conversion
+  unexecuted_test_vectors:
+    - {case: knowledge_balance, intelligence: 6, existing_knowledge_skill_ratings: [4, 3], expected_remaining_points: 23}
+    - {case: metahuman_karma, race: elf, old_karma_pool: 7, expected_pool: 3, expected_good_karma_add: 4}
+    - {case: language_read_write, language_rating: 5, expected_read_write_rating: 2}
+    - {case: equivalent_specialization, sr2_base: 2, sr2_concentration: 4, sr2_specialization: 6, expected_sr3_base: 3, expected_sr3_specialization: 7}
+  source_integrity_notes:
+    - 'These are conversion instructions for an imaginary tabletop ruleset, not descriptions of real people.'
+    - 'The rules distinguish where the GM may select or split converted skills; no single choice is imposed.'
+    - 'The book calls the conversion approximate; the exact SR3 base skill list and character creation rules remain separate dependencies.'
