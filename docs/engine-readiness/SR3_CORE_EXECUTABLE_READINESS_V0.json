@@ -190,6 +190,57 @@
         "paint Availability/Street Index column ambiguity"
       ],
       "scope": "Data-driven consumer and limited tests; no new canonical semantic record or source completion inferred; Denver manifest and checkpoint untouched."
+    },
+    "incremental_matrix_frames_2026_11_10": {
+      "date": "2026-11-10",
+      "source": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition",
+      "original_source_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe",
+      "source_pages": {
+        "printed": [
+          89,
+          90
+        ],
+        "physical_pdf": [
+          90,
+          91
+        ]
+      },
+      "fresh_verify_source_executed": true,
+      "source_page_images_independently_inspected": true,
+      "canonical_record": {
+        "id": "rule.matrix.frames-agents-design-operation-p88-91",
+        "path": "rules/matrix/matrix-frames-agents-design-operation-p88-91.yml",
+        "blob": "36eb028588d78f6a736c00c28ac7cc4fda5c4187"
+      },
+      "adapter": {
+        "path": "tools/engine_readiness/matrix_frames_core.py",
+        "commit_sha": "c19cd037e1e28e29365d4b9945bc8ad98c600e69",
+        "blob_sha": "69b05ef094f62ae7e11071c3c43abeabf0beeed6",
+        "readback_verified": true
+      },
+      "tests": {
+        "path": "tools/engine_readiness/test_matrix_frames_core.py",
+        "commit_sha": "33a639d58621ef402d63f26799d6465fc91e11f7",
+        "blob_sha": "9f481be0d09cd2d17a3207dee1b83c8bfab3c3bb",
+        "readback_verified": true,
+        "locally_executed_command": "python -m unittest discover -s tools/engine_readiness -p 'test_matrix_frames_core.py' -v",
+        "new_methods_pass": 16,
+        "new_methods_fail": 0,
+        "full_repo_suite_run": false
+      },
+      "source_test_vectors": [
+        "Computer (Programming) skill 8: core limits dumb 16, smart 12, agent 8",
+        "agent core 8: 48 Frame Points, 16 Persona Points, Hacking Pool 8, base size 640Mp",
+        "agent with four purchased extra Initiative dice: total 5D6 costing 12 Frame Points",
+        "utility load average Rating 5: TN5 and 50 base days"
+      ],
+      "limitations": [
+        "No automatic program utility choice or rating validation",
+        "No Hacking Pool expenditure, Matrix actions, IC or autonomous AI",
+        "No inferred frame types beyond original dumb/smart/agent",
+        "Existing Matrix pp76-94 detailed normalization deferral remains open despite accepted records"
+      ],
+      "source_ingestion_change": false
     }
   },
   "checked_source_pages": [
@@ -232,6 +283,11 @@
       "printed": "122-123",
       "physical_pdf": "123-124",
       "subject": "FanPro10667 SSG household drone models/market and electronic paper/ColorChange paint; consumer-only verification; full Game Information pending"
+    },
+    {
+      "printed": "89-90",
+      "physical_pdf": "90-91",
+      "subject": "Matrix FASA7909 frame/agent construction budgets and reprogramming; consumer-only, not new canonical semantic record"
     }
   ],
   "lanes": [
@@ -591,6 +647,31 @@
         "fractional area rounding/installation not specified",
         "full FASA7910/FanPro10662 drone movement and acquisition lineage not implemented",
         "Sprawl Survival Guide Game Information pp118-126 canonical normalization deferral not declared resolved"
+      ]
+    },
+    {
+      "id": "matrix-frames-agents-budget",
+      "source": "FASA7909 Matrix (FASA Corporation, Shadowrun Third Edition), printed pp89-90/PDF90-91",
+      "canonical_reference": [
+        "rules/matrix/matrix-frames-agents-design-operation-p88-91.yml"
+      ],
+      "designation": "verified_original_optional_programming_mechanics",
+      "implementation": "tools/engine_readiness/matrix_frames_core.py",
+      "tests": "tools/engine_readiness/test_matrix_frames_core.py",
+      "state": "code_tested_partial",
+      "test_vectors": {
+        "skill8_max_dumb": 16,
+        "skill8_max_smart": 12,
+        "skill8_max_agent": 8,
+        "agent8_size_mp": 640,
+        "agent8_hacking_pool": 8,
+        "agent8_frame_points": 48,
+        "source_utility_reload_days_rating5": 50
+      },
+      "missing": [
+        "Options and payload constraints per selected utility remain caller responsibility",
+        "Complete Matrix p76-94 recovery not reclassified or marked complete",
+        "Full intrusion/simulation/AI not implemented"
       ]
     }
   ],
