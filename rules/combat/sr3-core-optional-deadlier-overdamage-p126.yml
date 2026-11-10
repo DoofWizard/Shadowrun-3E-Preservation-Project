@@ -1,0 +1,75 @@
+id: rule.combat.sr3-core-optional-deadlier-overdamage-p126
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '126'
+pdf_pages: '127'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third
+  Edition optional combat rule, not effective unless selected by the gamemaster
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001), fictional tabletop
+  RPG, printed p126/PDF127: optional Deadlier Over-Damage rule'
+summary: Historical optional damage mechanic from the published fictional tabletop
+  game Shadowrun, Third Edition (FASA Corporation, FASA7001), printed p126/PDF127.
+  It is an elective gamemaster rule, not the baseline Condition Monitor procedure.
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog: FASA7001
+  edition: Shadowrun Third Edition
+  printed_page: 126
+  physical_pdf_page: 127
+  original_section: Deadlier Over-Damage
+  designation: optional gamemaster combat rule
+  baseline_relation: Additional damage procedure offered by the original source; it
+    does not automatically replace ordinary damage staging and Condition Monitor thresholds.
+  primary_option:
+    trigger_comparison: Attack Power strictly greater than target Body Rating multiplied
+      by 1.5.
+    source_multiplier: 1.5
+    comparison_operator: '>'
+  more_deadly_variant:
+    trigger_comparison: For an even deadlier campaign option, Attack Power strictly
+      greater than target Body Rating.
+    source_multiplier: 1
+    comparison_operator: '>'
+  staged_damage_precondition: After the weapon Damage Level has been staged up to
+    Deadly (D), only additional successes beyond those needed to reach D create over-damage.
+  extra_success_conversion:
+    additional_successes_per_damage_point: 2
+    resulting_extra_damage_points: 1
+    source_rounding_note: The passage specifies one point for every two extra successes;
+      it does not separately state handling for a lone excess success.
+  damage_type_destination:
+    deadly_stun: Additional points are applied to the target Physical Condition Monitor,
+      rather than adding further Stun boxes.
+    deadly_physical: Additional points are applied to the target Body Overflow.
+  mechanics_lineage:
+    extends:
+    - rules/combat/damage-staging.yml
+    - rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+    status: Original source optional rule, not a later supplement or a default SR3
+      replacement.
+  example_vectors_specification_only:
+  - id: overdamage.primary.threshold_equality
+    body: 4
+    attack_power: 6
+    default_multiplier: 1.5
+    primary_option_applies: false
+  - id: overdamage.primary.physical_deadly
+    body: 4
+    attack_power: 7
+    damage_level_after_staging: Deadly
+    damage_kind: Physical
+    additional_successes_after_deadly: 4
+    additional_body_overflow_points: 2
+  - id: overdamage.primary.stun_deadly
+    body: 4
+    attack_power: 7
+    damage_level_after_staging: Deadly
+    damage_kind: Stun
+    additional_successes_after_deadly: 4
+    additional_physical_monitor_points: 2
+  code_status: Specifications only; no executable implementation or test pass is claimed.
+framing: reference_exact
