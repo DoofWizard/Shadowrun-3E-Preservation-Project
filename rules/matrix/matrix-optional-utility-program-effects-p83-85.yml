@@ -1,0 +1,213 @@
+{
+  "id": "rule.matrix.optional-utility-program-options-p83-85",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "83-85",
+  "pdf_pages": "84-86",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), original Shadowrun Third Edition tabletop RPG supplemental/optional software-program mechanics; not modern computer guidance and not inferred baseline SR3 replacement",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation's fictional tabletop Matrix sourcebook (FASA7909), Shadowrun Third Edition, original printed pp83-85/PDF84-86: optional utility-program rules",
+  "summary": "FASA Corporation, Matrix (FASA7909), fictional Shadowrun Third Edition tabletop source, printed pp83-85/PDF84-86. Individual utility option design modifiers, target restrictions, cybercombat conditions, compression, memory, reliability, and distinct prerequisites; independently reviewed original-page imagery.",
+  "data": {
+    "publication": "Matrix",
+    "publisher": "FASA Corporation",
+    "catalog": "FASA7909",
+    "edition": "Shadowrun Third Edition",
+    "archival_context": "Mechanics of fictional Matrix cyberdeck utility programs in the published role-playing game. Each design-rating modifier applies to the game utility's design, not a real computer.",
+    "physical_pdf_pages": [
+      84,
+      85,
+      86
+    ],
+    "printed_pages": [
+      83,
+      84,
+      85
+    ],
+    "general_scope": {
+      "mechanic_type": "optional utility-program design variants; GM may enable optional program-option rules",
+      "compatibility": "Only utility programs can take utility options; eligibility and interactions remain class-specific as printed, not universally additive.",
+      "source_of_general_rating_size_cost_math": "rules/matrix/matrix-program-options-sizing-rating-cost-p82-83.yml",
+      "option_rating_maximum": "Where an option has its own rating, no greater than the utility program's base rating (p82).",
+      "design_rating_vs_effective_rating": "Per already-canonical p82-83 record, a design rating modifier is NOT automatically a change to base Programming Test TN; do not confuse design rating with utility's effective rating."
+    },
+    "utility_options": {
+      "Adaptive": {
+        "printed_page": 83,
+        "design_rating_modifier": "+2",
+        "effect": "The utility may be run at any selected rating no higher than its own base rating; a user with differently rated cyberterminals can select a suitable rating for each. The source does not say it bypasses terminal limitations."
+      },
+      "Area": {
+        "printed_page": 83,
+        "design_rating_modifier": "+area option rating",
+        "effect": "One Attack Test addresses multiple game targets simultaneously, all on the same system; declare targets; increase each target's target number by the total number of targeted icons; allocate the attack result separately to each. Area additionally increases by 2 the effective armor of protected persona/IC when the target has an armor IC option; the source also discusses area countermeasures.",
+        "example_context": "Source's fictional Area-2 versus two security deckers has target-number +2 for each; the defending icons' Armor-2 becomes effective Armor-4 against the Area-equipped attack."
+      },
+      "Bug_Ridden": {
+        "printed_page": 83,
+        "design_rating_modifier": "none",
+        "optional_bug_rules_required": true,
+        "occurrence_factor_formula": "12 minus Bug-Ridden rating",
+        "effect": "Applies only if optional bug rules from p81 are being used; a gamemaster may determine how frequently the utility exhibits faults according to Occurrence Factor."
+      },
+      "Chaser": {
+        "printed_page": 83,
+        "design_rating_modifier": "+1",
+        "effect": "Offensive utility follows shifts of IC target: Shift IC's ordinary +2 to be hit is cancelled; versus Shield IC this utility incurs an ADDITIONAL +2 TN penalty; mutually exclusive with Penetration."
+      },
+      "Crashguard": {
+        "printed_page": 83,
+        "design_rating_modifier": "+Crashguard rating",
+        "effect": "While the utility is in active memory, apply a -1 target-number modifier per Crashguard rating point to the utility's Opposed Test when tar baby/tar pit IC attacks to crash it."
+      },
+      "DINAB": {
+        "printed_pages": [
+          83,
+          84
+        ],
+        "design_rating_modifier": "ceiling(DINAB option rating / 2)",
+        "programmer_prerequisite": "Computer skill rating at least the DINAB rating",
+        "activation_action": "Free Action",
+        "independent_execution": "DINAB-controlled utility takes one full Combat Phase immediately when activated and one per later Combat Turn; it rolls 1D6 for Initiative on subsequent Combat Turns. It operates the utility's ordinary function without further user direction.",
+        "override": "User must override DINAB to issue orders or control with own Computer skill; override is a Free Action in addition to the normal action for the program's use.",
+        "degradation": "Loses 1 DINAB rating point when a System Test defeats it, when it fails to hit a target in cybercombat, or when its target reduces all damage it inflicts to zero.",
+        "all_ones": "If all dice in a test come up 1, the DINAB-controlled utility crashes; user must load a fresh copy before further use.",
+        "restore": "Swap Memory reloads and restores degraded DINAB or crashed DINAB-equipped programs."
+      },
+      "Limit": {
+        "printed_page": 84,
+        "design_rating_modifier": "-1",
+        "effect": "Utility works against only ONE target category selected at design (e.g. personae, IC programs, frames or SKs as applicable); does not function against other target classes."
+      },
+      "Noise": {
+        "printed_page": 84,
+        "design_rating_modifier": "minus Noise option rating",
+        "effect": "Decreases the target number for the System Test in which the noise utility is used by its Noise rating, but is conspicuous and does not conceal the decker's activity."
+      },
+      "One_Shot": {
+        "printed_page": 84,
+        "design_rating_modifier": "special",
+        "use_limit": "One activation; utility vanishes from active memory after execution; a fresh copy must be loaded using Swap Memory to use again.",
+        "actual_size": "-75% compared with equivalent utility without the option",
+        "design_size": "+50% compared with equivalent utility without the option",
+        "tar_baby_tar_pit": "If tar baby/tar pit IC crashes any active one-shot equipped utility, it destroys EVERY active-memory copy of that program even when multiple copies exist."
+      },
+      "Optimization": {
+        "printed_page": 84,
+        "design_rating_modifier": "special",
+        "actual_size": "-50%",
+        "design_size": "+100%",
+        "effect": "Option affects distinct actual and design sizes; apply general program option order from p82-83."
+      },
+      "Penetration": {
+        "printed_pages": [
+          84,
+          85
+        ],
+        "design_rating_modifier": "+1",
+        "effect": "Against Shield-option IC cancels Shield's usual +2 attacker TN. Against Shift-option IC suffers an additional +2 attacker TN on top of Shift's ordinary +2 penalty (total +4). Cannot be combined on the same utility with Chaser."
+      },
+      "Selective": {
+        "printed_page": 85,
+        "design_rating_modifier": "+1",
+        "effect": "When attacking one target icon, first verify that target bears the special passkey selected at design. If absent, the utility operates normally. If present, utility does NOT function against that target. Can protect identified friendly deckers from a security IC offensive utility."
+      },
+      "Sensitive": {
+        "printed_page": 85,
+        "design_rating_modifier": "special",
+        "effect": "Program operates only against a chosen manufacturer's, system language's, specific icon type's or comparable defined system class; ineffective for other systems. Requires relevant specific-system Knowledge skill. Programming Test uses the average of Computer (Programming) and relevant Knowledge skill.",
+        "actual_size": "-50%",
+        "design_size": "-50%"
+      },
+      "Sneak": {
+        "printed_page": 85,
+        "design_rating_modifier": "+2 per Sneak option rating point",
+        "effect": "While the Sneak utility performs a System Test, add +1 to the game decker's Detection Factor for each Sneak rating point; intended for covert fictional Matrix operations."
+      },
+      "Squeeze": {
+        "printed_page": 85,
+        "design_rating_modifier": "+1",
+        "actual_size_while_uploaded": "-50%",
+        "design_size": "The +1 Squeeze design-rating modifier affects the utility's design size; the utility's actual compressed upload size receives the separate 50% reduction, as the source explicitly distinguishes.",
+        "decompression": "Compressed utility cannot be used until decompressed; costs one Complex Action. When combined with Compression, actual upload size reduced by 75%, requires TWO Complex Actions to undo both effects.",
+        "memory_requirement": "Cyberterminal must have sufficient free active memory for decompressed full-size utility."
+      },
+      "Stealth": {
+        "printed_page": 85,
+        "design_rating_modifier": "+Stealth option rating",
+        "effect": "Whenever a decker crashes IC using a Stealth-equipped utility, reduce the resulting Security Tally increase by the Stealth rating; references SR3 printed p212."
+      },
+      "Targeting": {
+        "printed_page": 85,
+        "design_rating_modifier": "+2",
+        "effect": "Against a cybercombat target, offensive utility attack TN is reduced by 2."
+      }
+    },
+    "explicit_distinctions": [
+      "Do not merge Noise (reduces utility System Test TN), Sneak (raises Detection Factor), Stealth (reduces Security Tally increase when crashing IC), and Targeting (reduces attack TN); these operate at distinct rules stages.",
+      "Do not treat Penetration and Chaser as combinable or confuse Shield and Shift IC defenses.",
+      "Keep Option Design Rating modifier separate from base programmer rating cap, actual memory size, design size/price and Test TN.",
+      "DINAB failures and all-ones crash are different thresholds and consequences."
+    ],
+    "canonical_links": [
+      "options/matrix/program-options.yml",
+      "rules/matrix/matrix-program-options-sizing-rating-cost-p82-83.yml",
+      "procedures/matrix/programming.yml"
+    ],
+    "verified_original_visuals": [
+      {
+        "printed": 83,
+        "pdf": 84
+      },
+      {
+        "printed": 84,
+        "pdf": 85
+      },
+      {
+        "printed": 85,
+        "pdf": 86
+      }
+    ],
+    "example_vectors_specification_only": [
+      {
+        "id": "option.noise_rating3",
+        "noise_rating": 3,
+        "expected_system_test_tn_delta": -3
+      },
+      {
+        "id": "option.sneak_rating2",
+        "sneak_rating": 2,
+        "expected_detection_factor_delta": 2,
+        "expected_design_rating_modifier": 4
+      },
+      {
+        "id": "option.penetration_vs_shift",
+        "standard_shift_tn_delta": 2,
+        "additional_penetration_tn_delta": 2,
+        "expected_total_tn_delta": 4
+      },
+      {
+        "id": "option.one_shot_actual_size_100",
+        "unmodified_actual_mp": 100,
+        "expected_actual_mp": 25
+      },
+      {
+        "id": "option.squeeze_and_compression_100",
+        "unmodified_actual_mp": 100,
+        "expected_uploaded_mp": 25,
+        "complex_actions_to_uncompress": 2
+      },
+      {
+        "id": "option.dinab_rating5",
+        "dinab_rating": 5,
+        "expected_design_rating_delta": 3
+      }
+    ],
+    "remaining_deferred": "Separate IC options and Self-Coder Programming Suite options beginning printed p85 are NOT claimed by this utility-options record. Full Matrix pp76-94 deferred status stays open.",
+    "code_status": "Structured original book mechanics with specification examples; NOT executable source-code tests nor entire programming subsystem."
+  }
+}
