@@ -1,0 +1,189 @@
+id: equipment.ssg-household-drone-distinctive-features-p121-123
+record_type: equipment
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: 121-123
+pdf_pages: 122-124
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition; source-specific household
+  drone fittings and optional robotic features
+content_class:
+- equipment_stat
+framing: reference_exact
+headline: Fictional Shadowrun tabletop household drone fittings from FanPro Sprawl Survival Guide (FanPro10667),
+  Third Edition, printed pp121-123/PDF122-124
+summary: Source-specific household drone machinery, adaptation pools, autosofts, arm strengths, tank capacities
+  and winch exceptions; complements, rather than duplicates, accepted printed-p122 model/stat market table.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    publication_year: 2003
+    catalog_number: FanPro10667
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    source_kind: fictional tabletop role-playing game supplement
+  printed_pages:
+  - 121
+  - 122
+  - 123
+  physical_pdf_pages:
+  - 122
+  - 123
+  - 124
+  section: Game Information / Household Drones
+  scope: Fictional tabletop model options and configuration details. Published performance and prices live
+    in the existing model table, not duplicated here.
+  existing_model_table_dependency: equipment.ssg-household-drone-tables-p122
+  model_features:
+  - model: VOR Robotics House Helper
+    market_table_name: V.R. House Helper
+    printed_page: 121
+    similar_models:
+    - Mitsuhama Floormaster
+    - Dassault CleanBuddy
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - 'Special Machinery: vacuum, wetvac, brushes, sprayer'
+    liquid_tank_liters_total: 2
+  - model: Mazda Dust Devil
+    printed_page: 121
+    similar_models:
+    - Mitsuhama Redcap
+    - IFMU Mr. Dust 3000
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - 'Special Machinery: vacuum, wetvac, brushes, sprayer'
+    liquid_tank_liters_total: 2
+    distinct_from_house_helper: Four wheels rather than two tracks.
+  - model: IFMU Mr. Green 3500
+    printed_page: 121
+    similar_models:
+    - GM Garden Gnome
+    - Chrysler-Nissan Caretaker
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Autosoft Interpreter
+    - 'Special Machinery: lawnmower, sprinkler, shears, sprayer'
+    autosoft_name: Gardening
+    autosoft_rating: 1
+    liquid_tank_liters_total: 5
+  - model: IFMU Mr. Fireman 3500
+    printed_page: 121
+    similar_models:
+    - Renraku HouseGuard series
+    - Aztechnology Red Devil series
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Autosoft Interpreter
+    - 'Special Machinery: smoke/fire detector, sprayer'
+    autosoft_name: Firefighting
+    autosoft_rating: 2
+    fire_extinguisher_liters: 10
+  - model: Renraku StreetCleaner
+    printed_page: 122
+    similar_models:
+    - IFMU Mr. Sweep 2500
+    - GM StreetSweeper
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - 'Special Machinery: sweep and brush system'
+    water_tank_liters: 10
+  - model: IFMU Mr. Bright 3000
+    printed_page: 122
+    similar_models:
+    - Renraku WindowWash
+    - GM-Nissan Cleaner
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - 'Special Machinery: window cleaning gear and foot suction system'
+    water_tank_liters: 5
+    winch_capacity_kg: 25
+    winch_qualification: Business model only; do not assign to household model.
+  - model: Mitsuhama Butlerbot
+    printed_page: 122
+    similar_models:
+    - Astin Jeeves
+    - Chrysler-Nissan Robomaid
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Robotic Pilot
+    - Fuzzy Logic Augmentation
+    - 'Mechanical Arm: Strength 4'
+    - 'Special Machinery: multiple cleaning implements'
+    adaptation_pool: 2
+    mechanical_arm_strength: 4
+    beverage_water_cleaning_tanks_liters_total: 5
+  - model: Renraku Barback
+    printed_page: 122
+    similar_models:
+    - Saab Autoserver
+    - Mitsuhama Ultra-Waitron
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Robotic Pilot
+    - Fuzzy Logic Augmentation
+    - '2 Mechanical Arms: Strength 6'
+    adaptation_pool: 2
+    mechanical_arm_count: 2
+    mechanical_arm_strength: 6
+  - model: GM Mr. Fix-It
+    printed_pages:
+    - 122
+    - 123
+    similar_models:
+    - Mitsuhama LaborSaver
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Autosoft Interpreter
+    - 'Special Machinery: toolkit'
+    - '2 Mechanical Arms: Strength 4'
+    autosoft_skill_domain: any Build/Repair skill
+    autosoft_rating: 3
+    mechanical_arm_count: 2
+    mechanical_arm_strength: 4
+  - model: Ares Felix the SynthCat
+    printed_page: 123
+    similar_models:
+    - IFMU Kitty and Doggy 4000
+    - Renraku HomePet series
+    - VOR Growler
+    - Honda K-9
+    - Mitsuhama Beastie Series
+    features:
+    - Remote Control Interface
+    - Rigger Adaptation
+    - Robotic Pilot
+    - Improved Neural Network 1
+    improved_neural_network_rating: 1
+    adaptation_pool: 2
+  model_variant_notes:
+  - IFMU Mr. Bright 3000 household model is separately represented in the published stat table; its commercial
+    winch is explicitly not supplied by default.
+  - The accepted p122 market/stat table has 11 entries; these feature descriptions cover ten named models and
+    do not fabricate a separate feature set for the unnamed Household model.
+  test_vectors_specification_only:
+  - id: butlerbot_pool_arm
+    model: Mitsuhama Butlerbot
+    expected_adaptation_pool: 2
+    expected_arm_strength: 4
+  - id: barback_arm_pair
+    model: Renraku Barback
+    expected_mechanical_arm_count: 2
+    expected_arm_strength: 6
+  - id: bright_home_winch
+    model: IFMU Mr. Bright 3000 Household model
+    expected_winch_included: false
+  - id: mr_fixit_skillsoft
+    model: GM Mr. Fix-It
+    expected_autosoft_rating: 3
+  code_validation_status: Original printed pages reviewed, accepted p122 stat-record reused; no engine tests
+    run.
