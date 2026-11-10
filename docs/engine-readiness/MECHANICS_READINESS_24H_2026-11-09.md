@@ -131,3 +131,23 @@ Original baseline/candidate stage journals, exact UTF-8 GitHub readbacks, gate c
 - See `tools/engine_readiness/README.md` for exact audited boundaries. `UnresolvedRule` is deliberately raised where a calculation or tie-break needs other records or source reinspection.
 
 **Next fastest mechanical work:** finish source-verifiable missing SR3 Street Gear numeric tables, p305–311 and conversion material; finish Companion pp32–58 options; then Matrix FASA7909 programming pp76–94 and FanPro10667 Sprawl Survival Guide game information pp118–126. Reuse verified canonical IDs and preserve legal optional/supersession semantics; never substitute scanned prose or archival item counts for implemented mechanics.
+
+### New source-confirmed optional training resolution
+
+**Canonical ID:** `rule.training.srcomp-optional-skill-attribute-training`; `rules/skills/srcomp-optional-training-exact-p48-51.yml`. FASA Corporation *Shadowrun Companion* FASA7905a, SR3, original printed pp48–51/PDF49–52, original PDF SHA-256 as above. Exact normal GitHub record commit `c00381b6ef94e22f6c6f1f97f095999f10afe6d1`, readback blob `94221abe39c32a5f4234999cf56c87e0eb5d80a9`, `ingestion_gate.py confirm` verified. The existing higher-level `option.training.optional-training-rules` remains the option toggle; this **extends** it with source-specific executable inputs instead of replacing the baseline SR3 Karma system.
+
+**State:** source-reviewed, normalized, independently confirmed and indexed; **optional, not active by default**. No engine tests executed. The source provides days-per-Karma multipliers, Skill Test TN, success rounding, interruptions, instructor qualifications and *success bonuses rather than bonus dice*, virtual instructor restriction, hour limits and suggested nuyen fee tables. The pp44–47 Athletics / fatigue / water mechanics and pp52–58 hiring/contact material are **not** declared complete by this record.
+
+Additional candidate assertions for later implementation, not executed:
+
+| Vector | Source inputs | Expected outcome |
+| --- | --- | --- |
+| `training.knowledge.2success` | 3 Good Karma spent to improve Knowledge skill; 2 Skill Test successes | Base `3*15=45` training days; `ceil(45/2)=23` days. |
+| `training.active.instructor_bonus` | 6 Good Karma for Active skill; initial training Skill Test 2 successes; instructor achieves 2 successes on Instruction (4) | Base `6*7=42`; instructor adds **1 success to student's Skill Test success total** (not a die), resulting `ceil(42/3)=14` days. |
+| `training.knowledge.failed_skill_test` | Knowledge-skill base 45 days; 0 test successes | `ceil(45*1.5)=68` training days. |
+| `training.interruption` | Intelligence 5, new skill rating 3, 5 remaining training days; training interrupted 14 days | Interruption threshold `5+3=8` days is exceeded, so 10 extra training days are added to the remaining time. |
+| `training.attribute.instructor` | 21 Good Karma for Charisma; Attribute (6) Test 2 successes; qualifying instructor adds 1 student success | `21*7=147` days; divided by 3 successes yields 49 days. |
+| `training.daily.limit` | Willpower 6 | Normal maximum `ceil(6/2)+4=7` hours training per day. Additional practice is only effective if declared and supported by a Willpower TN 10 Test. |
+| `training.fees.instruction_4` | Instructor Instruction rating 4, before other fee modifiers | Suggested fee 100 nuyen/day; class setting, specialization, subject rating and hours modifiers must then be applied per source with no invented rounding or precedence. |
+
+**Total in Companion postcompletion recovery manifest after this update:** eight verified supplemental mechanics records. This number is a manifest count, not eight newly authorized contiguous pages or eight code-ready features.
