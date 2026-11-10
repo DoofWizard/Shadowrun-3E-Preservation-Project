@@ -1,0 +1,88 @@
+id: rule.skills.srcomp-athletics-motion-fatigue-water
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 47-48
+pdf_pages: 48-49
+edition_scope: Shadowrun Third Edition, FASA7905a Shadowrun Companion Athletics skill extension
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: 'Source-reviewed fictional Athletics jump, sprint, fatigue and swimming game rules, FASA Corporation Shadowrun Companion FASA7905a SR3, printed pp47-48/PDF48-49.'
+summary: 'Published Shadowrun tabletop skill-use mechanics for movement, jumping, throwing, breath-holding, water survival and exact positive/negative target-number modifiers.'
+data:
+  publication: {title: Shadowrun Companion, publisher: FASA Corporation, catalog: FASA7905a, edition: Shadowrun Third Edition, printed_pages: [47, 48], pdf_pages: [48, 49]}
+  scope: Additional Athletics skill-use and environment mechanics in historical Third Edition. Not a new core movement subsystem; follow SR3 core where these pages refer back to it.
+  jumping:
+    running_horizontal: {test: Athletics, target_number: 'desired horizontal distance in meters', successes_needed: 1, maximum_meters: Quickness}
+    standing_horizontal_or_vertical: {test: Athletics, target_number: '2 x desired distance in meters', successes_needed: 1, maximum_meters: 'Quickness / 3'}
+    at_maximum_distance_open_test: 'For attempted maximum-range jumps, Open Test with Athletics; distance equals Open Test highest roll / 2 for running jumps or / 3 for standing jumps, rounded down, capped by Quickness meters.'
+    without_athletics: 'Default to Quickness instead of Body with standard -4 defaulting modifier.'
+    failed_jump: 'Failed jump or drop may cause falling, resolved separately.'
+  lifting_and_throwing:
+    unassisted_lift_from_ground_kg: '25 x Strength, without test.'
+    additional_lift: {test: Strength, target_number: 'ceil(weight of object in kilograms / 10)', weight_bonus_per_success: '10% of weight, rounded down'}
+    overhead_lift_kg: '12 x Strength with standard Strength Test.'
+    thrown_distance_meters: 'Strength minus floor(weight kilograms / 50); Strength Test target number ceil(weight kilograms / 10), +1 additional meter per 2 successes.'
+  running:
+    test: Athletics (Running) target number 4
+    action: Complex
+    benefit: 'Each success raises effective Quickness by 1 for that Combat Phase when measuring running distance.'
+    terrain: 'Gamemaster may apply appropriate terrain modifiers.'
+    baseline_link: 'Use ordinary movement/running-distance rules from SR3 core p108.'
+  fatigue:
+    applicable_to: 'Sprinting, and separately swimming; a character cannot maintain full sprint forever.'
+    base_period_combat_turns: 'ceil(Body / 2), minimum not specified.'
+    after_period: '4L Stun fatigue damage, stage down with Athletics or Athletics (Running) Test.'
+    successive_periods: 'Each repeated test (successful or not) permits another base period, then fatigue damage recurs with Power doubled on each subsequent test (4L, 8L, ...).'
+    while_not_sprinting: 'Gamemaster may increase the base period for jogging or ordinary running.'
+    consequence: 'Full Stun Condition Monitor from Fatigue causes collapse from exhaustion but not unconsciousness; Fatigue does not combine with other Stun damage for unconsciousness or death.'
+    damage_scope: 'Damage functions like game Stun for ordinary mechanics except exhaustion and separation from other Stun as explicitly printed.'
+  swimming:
+    action: Complex
+    speed: 'One fifth of normal Running rate; apply ordinary running speed/distance method, dividing resulting distances by 5.'
+    test: Athletics or Swimming specialization TN 4
+    effect_per_success: 'Increase effective Quickness by 1 for that Combat Phase.'
+    swim_fins: 'At one half the ordinary walking/running rate instead of ordinary swimming rate.'
+    fatigue: 'Same fatigue mechanic as running.'
+  holding_breath:
+    baseline_seconds: 45
+    baseline_combat_turns: 15
+    extension: 'Athletics (4) Test; +20 percent of 45 seconds per success (round down), alternatively +3 Combat Turns per success.'
+    after_time_expires: 'Take 1 box of Stun each Combat Phase in which character has an action; cannot resist this damage.'
+    after_stun_full: 'Character passes out; lungs attempt to fill with air again, continuing to take Physical damage at same rate once Stun is fully filled.'
+  treading_water:
+    initial_and_repeat_test: 'Athletics (Treading Water) Test base TN 2, on first falling into water and once each Strength minutes thereafter.'
+    damage_per_test: 'Character accumulates Light Stun fatigue from treading tests; Body resists Light Stun at Power equal to cumulative number of tests, including when floating afterward.'
+    survival_float: 'On success remains able to tread, swim or float as applicable; on failure begins drowning.'
+    survival_float_equipment: 'With a survival float, test and resist only every 15 minutes regardless of Strength; rough seas may shorten period at gamemaster discretion.'
+    after_failed_treading: 'After taking 1 Light Stun, Body (8) Test allows resume treading, swimming or floating, but earlier fatigue/damage still applies.'
+    after_failed_resumption: 'After final 45 seconds of air, no further swim/tread/float attempt until successful Damage Resistance Test or rescue.'
+    modifiers_table:
+      cyberlimb_or_torso: '+1 per replaced part'
+      aluminium_or_titanium_bone_lacing: 2
+      waterlogged_clothing: 1
+      dead_weight_kg: '+1 per 2 kilograms of clothes/armor carried'
+      seal_shapeshifter: -2
+      elf: -1
+      dwarf_or_human: 0
+      ork_or_troll: 1
+      obese: -2
+      physically_fit: 0
+      out_of_shape: 1
+      very_muscular_or_very_low_body_fat: 1
+      supported_by_mildly_buoyant_object: -1
+      supported_by_very_buoyant_object_life_jacket: -2
+      wounded: 'Apply standard damage modifiers'
+      rough_seas: '+2 to +4'
+  floating:
+    test: Body (4) using all applicable Treading Water target-number modifiers
+    successful_duration_combat_turns: 'Body x successes'
+    failure: 'Must tread/swim, or character begins drowning.'
+  source_test_vectors_not_executed:
+    - {id: srcomp.swim.speed, running_meters: 30, expected_normal_swim_meters: 6}
+    - {id: srcomp.run.successes, starting_quickness: 4, athletics_successes: 3, expected_phase_quickness: 7}
+    - {id: srcomp.fatigue.body5, body: 5, expected_first_sprint_period_turns: 3, first_fatigue_damage: 4L}
+    - {id: srcomp.tread.elf_lifejacket_waterlogged, base_TN: 2, elf_modifier: -1, jacket_modifier: -2, waterlogged_modifier: 1, sum_before_general_TN_floor: 0}
+    - {id: srcomp.holdbreath.2successes, base_turns: 15, successes: 2, expected_turns: 21}
+  dependencies: [rule.tests.making-tests, rule.tests.target-numbers, rule.combat.damage-resistance, rule.movement.combat-movement, rule.initiative.initiative-passes]
