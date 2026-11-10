@@ -43,7 +43,7 @@
       "printed_page": 38,
       "source": "source.sr3-core",
       "entrypoint": "success_test",
-      "status": "reference_code_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.success-test",
@@ -51,7 +51,7 @@
       "printed_page": 39,
       "source": "source.sr3-core",
       "entrypoint": "success_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.target-numbers",
@@ -59,7 +59,7 @@
       "printed_page": 38,
       "source": "source.sr3-core",
       "entrypoint": "success_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.rule-of-one",
@@ -67,7 +67,7 @@
       "printed_page": 38,
       "source": "source.sr3-core",
       "entrypoint": "success_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.rule-of-six",
@@ -75,7 +75,7 @@
       "printed_page": 38,
       "source": "source.sr3-core",
       "entrypoint": "success_test, open_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.open-test",
@@ -83,7 +83,7 @@
       "printed_page": 39,
       "source": "source.sr3-core",
       "entrypoint": "open_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.success-contest",
@@ -91,7 +91,7 @@
       "printed_page": 39,
       "source": "source.sr3-core",
       "entrypoint": "compare_successes",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.tests.opposed-test",
@@ -99,7 +99,7 @@
       "printed_page": 39,
       "source": "source.sr3-core",
       "entrypoint": "opposed_test",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.initiative.initiative",
@@ -107,7 +107,7 @@
       "printed_page": 42,
       "source": "source.sr3-core",
       "entrypoint": "initiative",
-      "status": "test_vector_written"
+      "status": "test_executed"
     },
     {
       "id": "rule.initiative.initiative-passes",
@@ -115,7 +115,7 @@
       "printed_page": 102,
       "source": "source.sr3-core",
       "entrypoint": "initiative_passes",
-      "status": "test_vector_written"
+      "status": "test_executed"
     }
   ],
   "gated_systems": [
@@ -194,5 +194,15 @@
       "authored_no_roll"
     ],
     "deterministic_requirement": "SR3 rule checks and die streams are handled by a traceable rules resolver; authored narrative defines flavor and nonmechanical outcomes without overwriting mechanical results."
+  },
+  "reference_validation": {
+    "execution": "github_actions",
+    "workflow": "VGA SCUMM SR3 adapter tests",
+    "workflow_run_id": 42746223491,
+    "commit_sha": "6daf2174cc14f6a4d3199893191e92197c139279",
+    "result": "success",
+    "tests_passed": 16,
+    "fixture_checks": "passed",
+    "distinction": "The 16 passing tests validate the authored adapter behavior and fixture structure; they do NOT independently verify original publisher source pages, edge cases, advanced mechanics, or gameplay integration."
   }
 }
