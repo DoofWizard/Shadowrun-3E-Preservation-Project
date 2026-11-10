@@ -1,0 +1,160 @@
+id: rule.matrix.utility-option-effects-p83-85
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 83-85
+pdf_pages: 84-86
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition; selected optional utility-program design
+  and execution effects, not default bonuses or an SR2 conversion
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'FASA7909 Matrix fictional tabletop source, printed pp83-85/PDF84-86: utility-option effects'
+summary: Source-reviewed Matrix utility options and numeric interactions for Shadowrun Third Edition gameplay; programming
+  examples and conditional option availability are distinct from effective baseline rules.
+data:
+  publication: Matrix
+  publisher: FASA Corporation
+  catalog_number: FASA7909
+  edition: Shadowrun Third Edition
+  fictional_source: Published fictional cyberpunk tabletop role-playing game rules; utility and intrusion-countermeasure
+    programs are in-game constructs.
+  original_printed_pages:
+  - 83
+  - 84
+  - 85
+  physical_pdf_pages:
+  - 84
+  - 85
+  - 86
+  option_scope:
+    status: optional_when_selected
+    program_category: utility programs
+    source_defines_each_option_separately: true
+    cross_reference: rules/matrix/matrix-program-options-sizing-rating-cost-p82-83.yml
+  utility_options:
+    adaptive:
+      design_rating_modifier: '+2'
+      effect: The utility may be run at any rating at or below its base program rating for compatibility with differing
+        cyberterminals.
+    area:
+      design_rating_modifier: +area rating
+      maximum_targets: Area rating
+      target_constraint: All targets must be on the same system.
+      test: The user makes one Attack Test and applies its result to every selected target.
+      target_number_modifier: +number of targets selected for each target
+      armor_interaction: 'Persona Armor utility and IC Armor option protect against area attacks: each protected
+        effective armor rating increases by 2.'
+    bug_ridden:
+      design_rating_modifier: none
+      conditional_rule: Only when the optional programming bug rules on printed p81 are in use.
+      occurrence_factor_formula: 12 minus bug-ridden rating
+      intended_scope: Gamemaster-selected program option.
+    chaser:
+      design_rating_modifier: '+1'
+      against_shift_ic: Negates Shift IC normal +2 target-number penalty.
+      against_shield_ic: Adds another +2 target-number modifier beyond Shield IC normal +2, making +4 total.
+      incompatible_with:
+      - penetration on the same utility
+    crashguard:
+      design_rating_modifier: +crashguard rating
+      condition: Only while the utility is in active memory.
+      versus_tar_baby_or_tar_pit: When Tar Baby or Tar Pit IC attacks the utility, its Opposed Test receives a -1
+        modifier per Crashguard rating point.
+    dinab:
+      design_rating_modifier: +ceil(DINAB rating / 2)
+      built_in_skill: Program Computer Skill equal to DINAB rating.
+      activation: A user Free Action activates automated operation.
+      turn_allotment: The controlled utility gets one full Combat Phase per Combat Turn, immediately when first
+        activated.
+      subsequent_initiative: Roll 1D6 on subsequent turns.
+      override: A user Free Action is required to override automated control, plus whatever actions the requested
+        utility operation ordinarily requires.
+      end: The utility automatically stops upon finishing its assigned task.
+      degrade_on_failure: Reduce DINAB rating by 1 each time a test fails, including failure in a System Test, missed
+        cybercombat attack, or all inflicted damage being resisted.
+      crash_trigger: If a test results in all 1s, the utility crashes.
+      repair: Swap Memory restores degraded DINAB options and crashed DINAB-equipped programs.
+    limit:
+      design_rating_modifier: '-1'
+      effect: Utility works against only one selected type of target, such as personas, IC, frames or SKs; ineffective
+        against other target classes.
+    noise:
+      design_rating_modifier: -noise rating
+      effect: For a System Test using a noise-equipped operational utility, the character Detection Factor is reduced
+        by the noise rating.
+    one_shot:
+      design_rating_modifier: special
+      actual_size_change_percent: -75
+      design_size_change_percent: 50
+      consumption: Program vanishes after a single execution; another copy must be loaded through Swap Memory to
+        reuse.
+      tar_baby_pit: If Tar Baby or Tar Pit IC trashes the one-shot utility, all copies of it in active memory are
+        wiped.
+    optimization:
+      design_rating_modifier: special
+      actual_size_change_percent: -50
+      design_size_change_percent: 100
+    penetration:
+      design_rating_modifier: '+1'
+      against_shield_ic: Negates Shield IC normal +2 target-number modifier.
+      against_shift_ic: Applies an additional +2 target-number penalty alongside Shift IC normal +2, making +4 total.
+      incompatible_with:
+      - chaser on same utility
+    selective:
+      design_rating_modifier: '+1'
+      target_filter: Before acting against an icon, the utility tests for the specially designated passkey; it will
+        not function against an icon bearing the key; other icons remain targets.
+    sensitive:
+      design_rating_modifier: special
+      scope: Functions only on one selected kind of Matrix system (manufacturer, programming language or sculpted-iconography
+        style).
+      programming_test_skill: Average of Computer (Programming) and relevant Computer Architecture Knowledge skill.
+      actual_size_change_percent: -50
+      design_size_change_percent: -50
+    sneak:
+      design_rating_modifier: +2 per point of Sneak rating
+      detection_factor_bonus: +1 per point of Sneak rating when making a System Test with the Sneak-equipped utility
+    squeeze:
+      design_rating_modifier: '+1'
+      actual_size_change_percent: -50
+      design_size_change_percent_from_this_option: 0
+      decompression: One Complex Action, no test, is required to decompress before use.
+      with_compressor: Combined size reduction is 75%; two separate Complex Actions are required to undo compressor
+        and squeeze effects, one per option.
+      memory_requirement: Enough free active memory for fully decompressed utility is required.
+    stealth:
+      design_rating_modifier: +stealth rating
+      security_tally: When using a Stealth-equipped utility to crash IC, reduce the resulting security tally increase
+        by the Stealth rating.
+    targeting:
+      design_rating_modifier: '+2'
+      cybercombat_attack_target_number_modifier: -2
+      scope: Offensive utility in cybercombat.
+  nonduplicate_p82_83_core:
+  - option rating ceiling
+  - rating-vs-programming-TN rule
+  - sequential percentage sizing
+  - 200 nuyen per design Mp price are already in canonical p82-83 record
+  specification_only_examples:
+  - id: area2
+    targets_on_same_system: 2
+    original_attack_target_number: 4
+    expected_each_target_number: 6
+  - id: dinab_failed_test
+    dinab_rating_before: 3
+    test_failed: true
+    dice_all_ones: false
+    dinab_rating_after: 2
+    crashed: false
+  - id: dinab_crash
+    test_result: all_ones
+    crashed: true
+  - id: penetration_versus_shift
+    shift_base_penalty: 2
+    penetration_extra_penalty: 2
+    total_target_number_penalty: 4
+  - id: sneak2
+    sneak_rating: 2
+    detection_factor_bonus: 2
+  code_status: Exact game rule reference only; no executed code validation from this ingestion record.
