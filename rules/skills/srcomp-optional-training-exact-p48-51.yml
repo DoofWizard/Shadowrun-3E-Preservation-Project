@@ -1,0 +1,96 @@
+id: rule.training.srcomp-optional-skill-attribute-training
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 48-51
+pdf_pages: 49-52
+edition_scope: Shadowrun Third Edition optional Shadowrun Companion skill and attribute training
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: FASA Corporation Shadowrun Companion FASA7905a, Shadowrun Third Edition fictional optional training mechanics, printed pp48-51/PDF49-52; exact time, TN, and fees.
+summary: 'Published tabletop training-time rule: skill/attribute improvement days, instructor and virtual teacher procedures, interruption effects, fees, and hours per day.'
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 48
+    - 51
+    pdf_pages:
+    - 49
+    - 52
+  optional_status: Applies only when the gamemaster elects the Companion training rules, supplementing the SR3 Good Karma advancement requirements; not a replacement for the default system.
+  skill_training:
+    base_days_per_Good_Karma_spent:
+      Active_Skill: 7
+      Knowledge_or_Language_Skill: 15
+    specialization: Every specialization is improved separately under these optional training durations.
+    learning_test:
+      skill: the skill being trained; may default to a related skill or Attribute under standard rules
+      target_number_formula: new skill rating + 2
+      gamemaster_modifier_if_often_used_in_play: -1
+      success_count_greater_than_zero: final training days = ceil(base days / Skill Test successes)
+      zero_successes: final training days = ceil(base days x 1.5)
+    break_in_training:
+      uninterrupted_default: true
+      threshold_days_of_no_training: Intelligence rating + new skill rating
+      if_absence_reaches_threshold: extra training days = 2 x days of training still remaining when interrupted
+      repeatable: May incur extra training time more than once.
+    learn_new_skill:
+      initial_rating: 1
+      independent_learning: Do-it-yourself method may be used except for skills the gamemaster restricts.
+      test_and_time: Apply skill-learning test and training-time rules above; the character can default to another skill or Attribute under ordinary SR3 rules.
+  instructors:
+    qualifying_subject_skill_rating_minimum: 3
+    subject_skill_must_meet_or_exceed_student_desired_rating: true
+    teaching_test: Instruction Test TN 4, or Charisma Test TN 8 when defaulting without Instruction Skill.
+    bonus_student_training_test_successes: floor(instructor teaching successes / 2)
+    teaching_test_zero_successes: Instructor cannot teach the student; student owes one day of instructor pay and adds 1.5 training days.
+    student_learning_new_skill_bonus_target_number: -1
+    if_instructor_leaves_before_end: Double the remaining training time; instructor normally trains with student for the whole period.
+    virtual_instructor: A virtual instructor has effective ratings in the skill taught and Instruction; cannot make the Instruction Test to reduce base training time; other standard instructor rules apply.
+  instructor_fees:
+    suggested_daily_nuyen_by_instruction_rating:
+      '1': 40
+      '2': 50
+      '3': 75
+      '4': 100
+      '5': 200
+      '6': 400
+      7_plus: 400 + 100 x (rating - 6)
+    skill_rating_fee_modifier:
+      rating_2_or_3: -25% per day
+      rating_4_or_5: none
+      rating_6_or_7: +25% per day
+      rating_8_plus: +50% per day
+    other_fee_modifiers:
+      specialization: +50% of total fee
+      classroom: -50% of total fee
+      more_than_four_hours_daily: +50% of daily fee
+    gm_discretion: These are suggested rates, not mandatory rates.
+  training_day:
+    hours_per_standard_training_day: 4
+    maximum_daily_hours_formula: ceil(Willpower / 2) + 4; never more than 24
+    beyond_limit: Declare extra practice hours and take Willpower (10) Test; effective extra hours cannot exceed either successes or declared extra hours.
+    total_time_formula: required hours = training days x 4; actual calendar days = ceil(required hours / effective daily training hours)
+  attribute_training:
+    base_days_formula: required Good Karma points x 7
+    attribute_test_target_number: 6
+    reduction: final training days = ceil(base training days / Attribute Test successes) when at least one success is obtained.
+    instructor_optional_restrictions: Gamemaster may require instructor for improving above the Racial Modified Limit and/or for Willpower, Intelligence and Charisma.
+    attribute_instructor_requirement: Instructor Instruction skill rating must exceed the Attribute rating sought; normal minimum subject-skill qualification does not apply.
+    teaching_bonus: Instructor Instruction (4) successes grant one extra Attribute Test success per two successes, following the skill-training instructor method.
+  source_examples:
+    knowledge_training: 3 Karma x 15 = 45 days; 2 Skill Test successes -> ceil(45/2)=23 days.
+    skill_training_with_instructor: 6 Karma x 7 = 42 days; 2 Skill Test successes -> 21 days; instructor with 2 Instruction successes adds 1 success -> ceil(42/3) = 14 days.
+    attribute_training_with_instructor: 21 Good Karma x 7 days per Karma = 147 days; 2 Attribute Test successes plus 1 success from instructor -> 49 days.
+  lineage:
+    extends: option.training.optional-training-rules
+    interfaces:
+    - rule.advancement.skill-improvement
+    - rule.advancement.attribute-improvement
+    - rule.skills.instruction
+    relation: Exact source-specific optional procedure; core SR3 Karma costs still come from existing advancement records.
