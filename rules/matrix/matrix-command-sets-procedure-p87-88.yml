@@ -1,0 +1,144 @@
+{
+  "id": "rule.matrix.command-sets-procedure-p87-88",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "87-88",
+  "pdf_pages": "88-89",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition programming chapter; original supplemental game mechanics, no inferred later supersession",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop RPG Shadowrun Third Edition Matrix (FASA Corporation FASA7909), printed pp87-88/PDF88-89: command-set creation, activation, and resolution",
+  "summary": "Source-reviewed original Matrix FASA7909 command-set rules for the fictional Shadowrun Third Edition tabletop game: skill-linked script complexity, Complex Action composition, variable-size prior programming, Null Operation gate, +1 scheduled-operation TN, excluded Hacking Pool, host-success detection threshold, and shutdown/removal, with the printed worked example. Not an executable test receipt.",
+  "data": {
+    "archival_context": {
+      "publication": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "printed_pages": [
+        87,
+        88
+      ],
+      "pdf_pages": [
+        88,
+        89
+      ],
+      "content_context": "Fictional game mechanics from the printed Programming chapter; not real computer operations."
+    },
+    "section": "COMMAND SETS",
+    "concept": "A command set is a fictional Matrix program consisting of a timed sequence of system operations, without utilities embedded in the command-set program itself.",
+    "on_the_fly_creation": {
+      "prerequisite": "The game character has gained access to the host before creating the command set.",
+      "skill": "Computer (Programming)",
+      "maximum_operations_formula": "floor(Computer (Programming) skill / 2)",
+      "maximum_inclusive": true,
+      "composition_cost": "One Complex Action per scheduled system operation.",
+      "parameters_required": [
+        "List of game system operations",
+        "Execution order",
+        "Scheduled activation time for each operation"
+      ]
+    },
+    "preprogrammed_command_set": {
+      "condition": "For a command set exceeding the on-the-fly operation threshold, the game character must write a small program in advance and upload it.",
+      "design_size_mp": "1D6 × 5 Mp",
+      "program_rating": "Number of system operations in the command set",
+      "maximum_operation_count_formula": "Computer (Programming) skill",
+      "note": "Source supplies this maximum for pre-programmed command sets; no higher cap is inferred."
+    },
+    "activation": {
+      "game_operation": "Null Operation",
+      "requirement": "A successful Null Operation System Test is required for the command set to remain on the fictional host.",
+      "security_value_adjustment": "Modifier determined by the delay until the LAST scheduled operation, referencing Null Operation on SR3 printed p218; full lookup is not reproduced here.",
+      "failure": "Host discovers and removes the command set before its first scheduled operation.",
+      "success": "Record activation net successes as the host-detection threshold while operations are scheduled."
+    },
+    "operation_resolution": {
+      "when_rolled": "Immediately when the command set activates, for each scheduled operation; the source resolves effects as if they will execute later.",
+      "test_type": "System Test for each designated operation",
+      "active_memory_utilities": "Utilities already loaded in the character's active memory when the command set activates may be used for these tests.",
+      "target_number_modifier": 1,
+      "hacking_pool_allowed": false,
+      "character_actions_spent_for_tests": 0,
+      "character_security_tally_increased_by_precheck": false,
+      "gamemaster_secrecy": "GM keeps the success results secret from the player.",
+      "host_success_tally": "Accumulate host successes associated with each operation when the scheduled operations trigger.",
+      "command_set_detected_and_stopped_when": "Accumulated host successes reach or exceed the net successes from the activation Null Operation."
+    },
+    "detection_and_removal": {
+      "detection": "Successful Analyze Subsystem operation on the Control subsystem reveals command sets active on that host.",
+      "removal": "Crash Application operation removes a command set.",
+      "host_shutdown": "Host shutdown causes all of that host's command sets to be lost."
+    },
+    "printed_worked_example": {
+      "attribution": "FASA7909 fictional GM example, begins printed p87 and concludes on printed p88.",
+      "programmer_computer_skill": 8,
+      "on_the_fly_operations": 3,
+      "complex_actions_to_compose": 3,
+      "activation_hacking_pool_dice": 4,
+      "activation_host_control_rating": 10,
+      "activation_deception_utility_rating": 8,
+      "activation_modified_target_number": 2,
+      "activation_character_successes": 7,
+      "delay": "Less than 24 hours before final operation",
+      "example_host_base_security_value": 5,
+      "example_host_security_value_modifier": 5,
+      "example_host_test_dice": 10,
+      "example_detection_factor_target_number": 8,
+      "example_host_successes": 1,
+      "example_activation_net_successes": 6,
+      "scheduled_operation_tn_modifier": 1,
+      "hacking_pool_usable_in_scheduled_operations": false,
+      "sample_host_tally_after_first_operation": 1,
+      "sample_host_tally_after_second_operation": 5,
+      "third_operation": "Crash Host executes before the example tally has reached 6",
+      "caution": "These are the source's worked-example values, not a complete general Null Operation timing-modifier table."
+    },
+    "relationships": {
+      "extends_existing": "subsystems/matrix/command-sets.yml",
+      "related_core": [
+        "procedures/matrix/system-operation.yml",
+        "rules/matrix/system-test.yml",
+        "procedures/matrix/programming.yml"
+      ],
+      "deferred_detail": "Source's Null Operation time-to-security-modifier lookup is cross-referenced in SR3 printed p218; that full lookup is not independently re-reviewed in this record."
+    },
+    "example_test_vectors_specification_only": [
+      {
+        "id": "commandset.simple8",
+        "computer_programming_skill": 8,
+        "max_on_the_fly_operations": 4
+      },
+      {
+        "id": "commandset.simple3",
+        "computer_programming_skill": 3,
+        "max_on_the_fly_operations": 1
+      },
+      {
+        "id": "commandset.compose3",
+        "operations": 3,
+        "complex_actions": 3
+      },
+      {
+        "id": "commandset.preprogrammed8",
+        "computer_programming_skill": 8,
+        "max_preprogrammed_operations": 8
+      },
+      {
+        "id": "commandset.program_size4",
+        "d6_result": 4,
+        "expected_design_size_mp": 20
+      },
+      {
+        "id": "commandset.tally_threshold",
+        "activation_net_successes": 6,
+        "host_tally_after_second": 5,
+        "expected_shutdown": false
+      }
+    ],
+    "code_status": "No executable code test or complete command-set implementation is certified by this preservation record."
+  }
+}
