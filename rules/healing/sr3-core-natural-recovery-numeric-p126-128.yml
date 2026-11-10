@@ -1,0 +1,166 @@
+id: rule.healing.sr3-core-natural-recovery-numeric-p126-128
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 126-128
+pdf_pages: 127-129
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001); baseline Third
+  Edition Stun and Physical healing, not the later optional Man & Machine replacement
+content_class:
+- rule_exact
+headline: 'Fictional Shadowrun Third Edition tabletop rules: FASA Corporation FASA7001,
+  printed pp126-128/PDF127-129, original healing and doctoring tables'
+summary: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001) printed pp126-128/PDF127-129:
+  numeric baseline recovery for Stun and Physical Condition Monitors, healing-stage
+  timing, source-listed doctoring modifiers and medical costs. These are fictional
+  tabletop-game statistics, not real medical advice.'
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog: FASA7001
+  edition: Third Edition
+  printed_pages:
+  - 126
+  - 127
+  - 128
+  physical_pdf_pages:
+  - 127
+  - 128
+  - 129
+  status: Original Third Edition baseline; supplemental optional healing rules cannot
+    replace these without an explicit campaign selection.
+  stun_recovery:
+    source_page: 126
+    test_attribute: Use the higher of Body or Willpower.
+    target_number: 2
+    modifiers: Apply appropriate Stun or Physical injury modifiers to the test.
+    base_recovery_minutes_per_box: 60
+    time_formula: One Stun box recovered after 60 minutes divided by test successes;
+      then remove that one box.
+    unconscious_wake_threshold: A character unconscious from Deadly Stun remains unconscious
+      until their Stun damage has fallen to Serious.
+    rest_condition: Recovering from Stun damage requires complete rest.
+    interrupted_rest: Interrupted rest aborts the current recovery process; roll the
+      Body/Willpower Test again against the present condition. The result cannot be
+      better than the first test.
+    medical_treatment: The original section says medical treatment does not help recovery
+      from Stun; stimulant patches provide a temporary solution with drawbacks.
+    zero_success_boundary: The original Stun passage specifies time divided by successes
+      and gives no division-by-zero recovery duration; do not invent a zero-success
+      automatic healing period.
+  physical_recovery:
+    source_pages:
+    - 126
+    - 127
+    medical_care_needed_test: Use a Body Test versus target number derived from overall
+      Physical wound level; only natural Body Rating counts, not cyberware.
+    medical_care_test_timing: May be made at any time; if made during Combat, the
+      character forfeits their entire next Combat Turn.
+    medical_care_test_outcomes:
+      one_or_more_successes: Character can heal without medical attention.
+      zero_successes: Medical attention is required before healing can occur.
+      deadly_exception: Deadly wounds always require medical attention.
+    intervention_sequence: First aid and magical healing are applied before the medical-attention
+      requirement test.
+    stages: 'One stage reduces a whole wound level: Deadly to Serious, Serious to
+      Moderate, Moderate to Light, and Light to no damage; update the Condition Monitor
+      to the number of boxes for the next level rather than merely removing a fixed
+      box count.'
+    per_stage_time_rule: Use the current level Healing Table; divide the listed base
+      time by Body Test successes and never reduce below the minimum time in the table,
+      regardless of test result or quality of care.
+    healing_table:
+    - level: Deadly
+      base_time_days: 30
+      minimum_time_days: 3
+      test_target_number: 10
+      minimum_lifestyle: Hospitalized
+    - level: Serious
+      base_time_days: 20
+      minimum_time_days: 2
+      test_target_number: 8
+      minimum_lifestyle: High
+    - level: Moderate
+      base_time_days: 10
+      minimum_time_days: 1
+      test_target_number: 6
+      minimum_lifestyle: Middle
+    - level: Light
+      base_time_hours: 24
+      minimum_time_hours: 2
+      test_target_number: 4
+      minimum_lifestyle: Low
+    lifestyle: Minimum lifestyle varies by wound level. If the patient cannot support
+      it, the gamemaster may assign extra modifiers; monthly lifestyle cost divided
+      by 30 gives the daily amount.
+    medical_service: When a real medical doctor participates, apply the source Doctoring
+      Table, not just generic Biotech Skill.
+    magic_timing_and_exclusivity: Treat must be used within one hour of injury; Heal
+      can be used at any time. Successful use of either precludes further healing
+      or treating spells and first aid for that injury.
+  doctoring_table:
+    source_page: 128
+    modifiers:
+      intensive_care_hospital_only: -2
+      long_term_magical_care: -2
+      conditions_select_one:
+        not_in_hospital_or_clinic: 2
+        bad_conditions: 3
+        terrible_conditions: 4
+      patient_is_magician: 2
+      natural_body_rating:
+        1-3: 0
+        4-6: -1
+        7-9: -2
+        10+: -3
+      natural_willpower_rating:
+        1-3: 0
+        4-6: -1
+        7-9: -2
+        10+: -3
+    natural_rating_exclusion: The table says not to count magical spell-based or cybernetic
+      attribute modifications for natural Body and Willpower modifier bands.
+  medical_costs_table:
+    source_page: 128
+    currency: nuyen
+    paramedic_first_aid_one_time:
+      Deadly: 400
+      Serious: 200
+      Moderate: 100
+      Light: 50
+    doctor_service_per_day:
+      Deadly: 400
+      Serious: 200
+      Moderate: 100
+      Light: 50
+    hospitalization_per_day_includes_doctor: 500
+    intensive_care_per_day_deadly_only: 1000
+  lineage:
+    extends: procedures/healing/natural-and-medical.yml
+    existing_condition: rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+    optional_supersession_separate: options/healing/box-by-box.yml (Man & Machine
+      p134) applies only if selected, not as automatic SR3 baseline.
+    source_boundary: Printed p128 also contains Deadly Wounds and Permanent Damage
+      and separate body-part growth data; those additional injury and replacement
+      rules are not asserted complete by this recovery-table record.
+  example_vectors_specification_only:
+  - id: stun.2successes.1box
+    base_minutes: 60
+    successes: 2
+    expected_minutes_per_box: 30
+  - id: physical.serious.4successes
+    base_days: 20
+    successes: 4
+    minimum_days: 2
+    expected_days_per_stage: 5
+  - id: physical.deadly.20successes.minimum
+    base_days: 30
+    successes: 20
+    minimum_days: 3
+    expected_days_per_stage: 3
+  - id: doctoring.natural_body_4
+    natural_body: 4
+    expected_table_modifier: -1
+  code_status: Original-source numeric specification only; no newly executed healing
+    runtime test is claimed.
+framing: reference_exact
