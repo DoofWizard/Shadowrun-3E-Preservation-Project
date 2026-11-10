@@ -1,0 +1,55 @@
+id: equipment.firearms.sr3-core-shotgun-heavy-model-features-p279
+record_type: equipment
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '279'
+pdf_pages: '288'
+edition_scope: 'FASA Corporation Shadowrun, Third Edition FASA7001, original fictional tabletop firearm-model options'
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'Published fictional FASA Corporation Shadowrun Third Edition FASA7001 model-specific shotgun/heavy-weapon options, printed p279/PDF288'
+summary: 'Original source equipment details and optional configurations supplement the already accepted p278–279 market rows; source-specific integrated features remain conditional, not generalized weapon bonuses.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  catalog_number: FASA7001
+  edition: 'Third Edition'
+  printed_page: 279
+  physical_pdf_page: 288
+  section: 'Street Gear — Firearms / Heavy Weapons'
+  models:
+    - model: 'Enfield AS-7'
+      original_equipment: 'Integral top-mounted laser sight.'
+      original_ammunition_feed: '10-shot clip, or 50-shot drum.'
+      drum_variant: {ammunition_capacity_rounds: 50, concealability_modifier: -3, added_weight_kg: 2}
+      ammunition_condition: 'Shotgun flechette rounds change Damage Code to 8D(f); slug baseline 8S is already in the separate p278 market table.'
+    - model: 'Defiance T-250'
+      short_barrel_range_condition: 'Short-barrel variant uses heavy-pistol ranges; separate p278–279 market source supplement already preserves its alternate damage and Concealability.'
+    - model: 'Ingram Valiant LMG'
+      integrated_recoil_pad: {mount: 'hip brace', recoil_compensation_rating: 1}
+      standard_gas_vent: {mount: 'barrel', recoil_compensation_rating: 2}
+      original_belt_feed: 'Ammo bin slung over the back or hip to feed belt ammunition.'
+    - model: 'RPK HMG'
+      original_mount: 'Usually mounted on a fold-out tripod.'
+      ammunition_feed: 'Can use belt feeds.'
+    - model: 'Ultimax MMG'
+      original_mounts: 'Typically mounted on a tripod; also may be carried on a gyro-stabilized mount.'
+      ammunition_feed: 'Accepts belt feeds.'
+    - model: 'Ares Vigorous Assault Cannon'
+      original_projectile_condition: 'Fires shells equivalent to explosive bullets without their inherent instability.'
+      ammunition_feed: 'Can use belted ammunition.'
+    - model: 'IWS Multi-Launcher'
+      original_capacity: 'Reusable break-open launcher holding up to four missiles.'
+      transport_description: 'Sighting mechanism, shoulder brace, and exhaust tube are collapsible when disassembled.'
+      source_limit: 'No specific assembly action count or new combat modifier is supplied by this paragraph.'
+  reuse_existing_canonical:
+    - 'equipment.firearms.sr3-core-firearms-heavy-market-p278-279'
+    - 'equipment.firearms.sr3-core-integrated-features-p277'
+    - 'rule.firearms.accessory-mounts'
+    - 'rule.firearms.sr3-core-accessory-functions-p280-281'
+  engine_conditions: 'Apply modifiers only to the named original fictional model and exact configuration; use the existing market table for base values and original combat rules for effect stacking.'
+  unexecuted_test_vectors:
+    - {case: enfield_drum, model: 'Enfield AS-7', option: drum, expected_round_capacity: 50, expected_concealability_change: -3, expected_weight_change_kg: 2}
+    - {case: enfield_clip, model: 'Enfield AS-7', option: clip, expected_round_capacity: 10, expected_drum_modifiers: false}
+    - {case: ingram_integrals, model: 'Ingram Valiant LMG', expected_recoil_pad_rating: 1, expected_gas_vent_rating: 2}
+  code_validation: 'No engine implementation or tests run; source-reviewed reference only.'
