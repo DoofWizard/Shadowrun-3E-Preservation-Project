@@ -1,0 +1,104 @@
+id: rule.condition.sr3-damage-monitor-numeric-p125-126
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 125-126
+pdf_pages: 126-127
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001); original SR3
+  Condition Monitor and damage modifiers; later optional supplement not inferred
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001), fictional tabletop
+  RPG, printed pp125-126/PDF126-127: Condition Monitor tables'
+summary: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001), printed pp125-126/PDF126-127:
+  exact numeric damage levels, cumulative condition tracks, Physical/Stun overflow,
+  and wound/initiative modifiers for this fictional tabletop game. This archive record
+  is not an executable implementation.'
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog: FASA7001
+  printed_pages:
+  - 125
+  - 126
+  physical_pdf_pages:
+  - 126
+  - 127
+  damage_level_table:
+    Light: 1
+    Moderate: 3
+    Serious: 6
+    Deadly: 10
+  condition_tracks:
+    Physical:
+      capacity_boxes: 10
+      purpose: Wounds and Physical damage
+    Stun:
+      capacity_boxes: 10
+      purpose: Stun, fatigue and similar injury
+    accumulation: Final staged damage adds its box count to existing boxes on its
+      own track; condition levels are cumulative within one track.
+    stun_overflow: Stun boxes in excess of 10 transfer to Physical boxes; this renders
+      the character unconscious until Stun has healed sufficiently.
+    physical_overflow: Physical boxes beyond 10 form Physical overflow; instant death
+      occurs only when overflow exceeds Body Rating.
+    untreated_overflow: A character with Physical overflow below the fatal threshold
+      can survive with prompt medical assistance; if left untreated, take an additional
+      Physical box every Body Rating Combat Turns; see original p126.
+  damage_modifiers_table:
+    rows:
+    - level: Uninjured
+      injury_target_number_modifier: 0
+      initiative_total_modifier: 0
+    - level: Light
+      injury_target_number_modifier: 1
+      initiative_total_modifier: -1
+    - level: Moderate
+      injury_target_number_modifier: 2
+      initiative_total_modifier: -2
+    - level: Serious
+      injury_target_number_modifier: 3
+      initiative_total_modifier: -3
+    source_rule: Use highest condition level in each separate track; combine Physical
+      and Stun penalties cumulatively, not cumulatively within a track.
+    exceptions: Injury TN penalty applies to most Success Tests, except resisting
+      or avoiding damage; Initiative modifier applies after initiative dice; initiative
+      total zero or less prevents actions that Combat Turn.
+  wound_table_printed_126:
+    Light: 2
+    Moderate: 4
+    Serious: 6
+    role: Target Number in original printed Wound Table under Healing Physical Damage;
+      not an attack TN or damage staging result.
+  relationships_to_existing:
+  - rules/condition/damage-levels.yml defines the damage-level names but omits exact
+    table boxes.
+  - rules/condition/condition-monitor.yml summarizes the separate tracks without numeric
+    overflow and threshold procedures.
+  - modifier.condition.wounds is the named existing modifier link; this record preserves
+    the original exact table values.
+  test_vectors_specification_only:
+  - id: damage.serious
+    final_damage_level: Serious
+    expected_added_boxes: 6
+  - id: stun.overflow
+    starting_stun_boxes: 6
+    incoming_stun_level: Serious
+    expected_stun_boxes: 10
+    expected_added_physical_boxes: 2
+  - id: overflow.body5
+    body: 5
+    physical_boxes: 15
+    expected_instant_death: false
+  - id: overflow.body5_exceeded
+    body: 5
+    physical_boxes: 16
+    expected_instant_death: true
+  - id: modifiers.stunM_physicalL
+    stun_boxes: 3
+    physical_boxes: 1
+    expected_injury_tn_modifier: 3
+    expected_initiative_modifier: -3
+  code_status: Source-reviewed numeric record; consumer prototype is not a canonical
+    ingestion receipt or full engine validation.
