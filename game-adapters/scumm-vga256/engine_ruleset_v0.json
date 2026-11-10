@@ -1,0 +1,198 @@
+{
+  "schema_version": "engine_ruleset_v0.1",
+  "adapter": "scumm-vga256",
+  "snapshot_date": "2026-11-09",
+  "presentation": {
+    "target": "VGA 256-color point-and-click adventure",
+    "reference_canvas": [
+      320,
+      200
+    ],
+    "style": "authored indexed-palette scene art, verb/hotspot/inventory UI; simulation not limited by pixel resolution",
+    "runtime": "engine-neutral contract; Godot presentation candidate"
+  },
+  "authority": {
+    "source_repository": "DoofWizard/Shadowrun-3E-Preservation-Project",
+    "primary_edition": "Shadowrun Third Edition",
+    "original_pages_reverified_for_this_adapter": false,
+    "archived_canonical_records_inspected": true,
+    "policy": "Reference resolver behavior is provisional until independently verified against original publisher pages and exact source fixtures. Do not convert Second Edition source procedures silently or treat scanned material as executed code.",
+    "source_manifest": "sources/manifests/SR3.yml",
+    "pending_original_source_review": [
+      "SR3 printed pp275-282 dense gear tables",
+      "SR3 printed pp305-311 dense gear tables",
+      "SR3 edition-conversion page bounds not verified",
+      "Companion printed pp32-43 and 44-58 optional character material",
+      "Matrix printed pp76-94 program options and autonomous code",
+      "Sprawl Survival Guide printed pp118-126 Game Information"
+    ]
+  },
+  "status_scale": [
+    "record_mapped",
+    "reference_code_written",
+    "test_vector_written",
+    "test_executed",
+    "source_reverified_for_adapter",
+    "cross_source_reconciled",
+    "game_integrated"
+  ],
+  "rule_bindings": [
+    {
+      "id": "rule.tests.making-tests",
+      "path": "rules/tests/making-tests.yml",
+      "printed_page": 38,
+      "source": "source.sr3-core",
+      "entrypoint": "success_test",
+      "status": "reference_code_written"
+    },
+    {
+      "id": "rule.tests.success-test",
+      "path": "rules/tests/success-test.yml",
+      "printed_page": 39,
+      "source": "source.sr3-core",
+      "entrypoint": "success_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.target-numbers",
+      "path": "rules/tests/target-numbers.yml",
+      "printed_page": 38,
+      "source": "source.sr3-core",
+      "entrypoint": "success_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.rule-of-one",
+      "path": "rules/tests/rule-of-one.yml",
+      "printed_page": 38,
+      "source": "source.sr3-core",
+      "entrypoint": "success_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.rule-of-six",
+      "path": "rules/tests/rule-of-six.yml",
+      "printed_page": 38,
+      "source": "source.sr3-core",
+      "entrypoint": "success_test, open_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.open-test",
+      "path": "rules/tests/open-test.yml",
+      "printed_page": 39,
+      "source": "source.sr3-core",
+      "entrypoint": "open_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.success-contest",
+      "path": "rules/tests/success-contest.yml",
+      "printed_page": 39,
+      "source": "source.sr3-core",
+      "entrypoint": "compare_successes",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.tests.opposed-test",
+      "path": "rules/tests/opposed-test.yml",
+      "printed_page": 39,
+      "source": "source.sr3-core",
+      "entrypoint": "opposed_test",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.initiative.initiative",
+      "path": "rules/initiative/initiative.yml",
+      "printed_page": 42,
+      "source": "source.sr3-core",
+      "entrypoint": "initiative",
+      "status": "test_vector_written"
+    },
+    {
+      "id": "rule.initiative.initiative-passes",
+      "path": "rules/initiative/initiative-passes.yml",
+      "printed_page": 102,
+      "source": "source.sr3-core",
+      "entrypoint": "initiative_passes",
+      "status": "test_vector_written"
+    }
+  ],
+  "gated_systems": [
+    {
+      "lane": "character_creation",
+      "anchor": "procedures/character-creation/standard.yml",
+      "status": "mapped_not_executable",
+      "blocker": "priority table exact numerical values, character validation, optional extensions"
+    },
+    {
+      "lane": "combat",
+      "anchor": "procedures/combat/ranged-attack.yml",
+      "status": "mapped_not_executable",
+      "blocker": "complete ordered attack/dodge/resist/stage/condition test fixtures and modifiers; special melee-tie handling"
+    },
+    {
+      "lane": "magic",
+      "anchor": "rules/magic/drain.yml",
+      "status": "mapped_not_executable",
+      "blocker": "casting and Drain complete exceptions and source-reviewed examples"
+    },
+    {
+      "lane": "matrix",
+      "anchor": "rules/matrix/system-test.yml",
+      "status": "mapped_not_executable",
+      "blocker": "synchronized System and Security test flow, Security Tally, Matrix pp76-94 programming gaps"
+    },
+    {
+      "lane": "rigging",
+      "anchor": "sources/manifests/Rigger3.yml",
+      "status": "mapped_not_executable",
+      "blocker": "vehicle test tables, drone operations, optional rules"
+    },
+    {
+      "lane": "advancement",
+      "anchor": "rules/advancement/skill-improvement.yml",
+      "status": "mapped_not_executable",
+      "blocker": "numeric Karma cost examples, linked-attribute thresholds, rounding"
+    }
+  ],
+  "supplemental_standards": [
+    {
+      "id": "supplemental.music",
+      "name": "Music",
+      "authority": "new_game_standard",
+      "status": "design_pending",
+      "supersedes_sr3": false,
+      "note": "World music, performance or soundtrack behavior should be authored without pretending SR3 defines it."
+    },
+    {
+      "id": "supplemental.shadow-beat",
+      "name": "Shadow Beat",
+      "authority": "new_game_standard",
+      "status": "definition_pending",
+      "supersedes_sr3": false,
+      "note": "User-confirmed name: Shadow Beat, NOT Shadow Weave. No mechanics asserted until designed."
+    }
+  ],
+  "planned_game_action_contract": {
+    "type": "intent",
+    "fields": [
+      "actor_id",
+      "verb",
+      "object_id",
+      "scene_id",
+      "prerequisites",
+      "rules_refs",
+      "authored_outcomes",
+      "time_cost_policy",
+      "state_changes"
+    ],
+    "valid_resolver_states": [
+      "sr3_implemented",
+      "sr3_mapped_not_implemented",
+      "supplemental_standard",
+      "authored_no_roll"
+    ],
+    "deterministic_requirement": "SR3 rule checks and die streams are handled by a traceable rules resolver; authored narrative defines flavor and nonmechanical outcomes without overwriting mechanical results."
+  }
+}
