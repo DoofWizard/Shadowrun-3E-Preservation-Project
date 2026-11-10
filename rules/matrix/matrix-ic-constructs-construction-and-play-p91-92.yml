@@ -1,0 +1,111 @@
+id: rule.matrix.ic-constructs-construction-and-play-p91-92
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 91-92
+pdf_pages: 92-93
+edition_scope: FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition; original
+  fictional tabletop IC construction and cybercombat mechanics; optional supplemental
+  system, no inferred supersession
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'Shadowrun Third Edition fictional tabletop RPG, Matrix (FASA Corporation
+  FASA7909), printed pp91-92/PDF92-93: IC Construct mechanics'
+summary: Source-reviewed Matrix (FASA7909), published by FASA Corporation for the
+  fictional Shadowrun Third Edition tabletop game, printed pp91-92/PDF92-93. Preserves
+  exact numerical IC-construct construction limits, budgets, security-code pools and
+  cybercombat behavior; not real-world software guidance or an executed engine test.
+data:
+  archival_publication:
+    title: Matrix
+    publisher: FASA Corporation
+    catalog_number: FASA7909
+    edition: Shadowrun Third Edition
+    genre: fictional tabletop role-playing game rules supplement
+    printed_pages:
+    - 91
+    - 92
+    physical_pdf_pages:
+    - 92
+    - 93
+  section: IC CONSTRUCTS / CONSTRUCT CORES / OPERATING CONSTRUCTS
+  classification: An IC Construct is a host-controlled game program consisting of
+    a core and multiple carried intrusion-countermeasure game programs; the fictional
+    host directs it, unlike persona-directed smart frames and agents.
+  construction:
+    core_rating_ceiling:
+      lesser_of:
+      - Programmer Computer (Programming) skill rating
+      - Host Security Value
+    core_size_multiplier: 3
+    core_size_lookup: Apply multiplier 3 using the existing Program Size Table from
+      Matrix printed p78; do not infer a direct core-rating multiplication formula.
+    persona_attributes_or_persona_points: none
+    pilot_rating_or_frame_points: none
+    ic_payload_rating_budget_formula: Core rating × 2
+    initiative: Calculate as for other IC programs, using the construct core rating.
+    hacking_pool_by_host_security_color:
+      Blue: 0
+      Green: 1
+      Orange: 2
+      Red: 3
+    programming_options:
+      construct: Any game IC programming option ordinarily available to an IC program
+        may be placed on the construct; the chosen option applies to the construct
+        as a whole, including carried IC programs.
+      carried_ic: Individual IC game programs carried by the construct may not themselves
+        have separate IC options.
+  cybercombat:
+    usual_activation: Included in the fictional host Security Sheaf and activated
+      at a specified step.
+    test_rating: Use host/grid Security Value for the construct Attack Tests and Damage
+      Resistance Tests.
+    carried_ic_effects: Use the rating of each particular carried IC program to determine
+      that IC program’s own effect.
+    action_selection: Each Combat Phase choose which loaded IC game program to use;
+      a carried IC does not take a separate turn from the construct.
+    condition_monitor: The entire construct is one icon with one Condition Monitor;
+      resolve attacks against it as one entity.
+    targets:
+      nontriggered_icons: May attack a game icon without that icon first generating
+        the Security Tally that triggered the construct.
+      different_targets_one_phase: May attack more than one different target during
+        the same Combat Phase, subject to its ordinary available actions.
+      typical_security_safeguard: Source describes an ordinary in-world tactical preference
+        to focus on alerting icons; it does not make that a general mandatory rules
+        restriction.
+      probe_ic_one_target: If a carried IC is Probe IC, it can probe only one intruder
+        at a time.
+      probe_ic_switch_target_action: Simple Action
+  links:
+    extends_summary: subsystems/matrix/ic.yml
+    relates_to:
+    - subsystems/matrix/frames-agents.yml
+    - rules/matrix/matrix-ic-option-effects-p85-87.yml
+    lookup_dependencies:
+    - Matrix printed p78 Program Size Table
+    - Matrix host/grid security rules
+    - SR3 Condition Monitor and combat action economy
+  executable_vectors_not_executed:
+  - id: construct.skill8_security6
+    programmer_computer_programming_skill: 8
+    host_security_value: 6
+    allowed_maximum_core_rating: 6
+  - id: construct.core5_blue
+    core_rating: 5
+    ic_payload_rating_budget: 10
+    security_color: Blue
+    hacking_pool: 0
+  - id: construct.core5_red
+    core_rating: 5
+    ic_payload_rating_budget: 10
+    security_color: Red
+    hacking_pool: 3
+  - id: construct.probe_switch
+    carried_ic_type: Probe
+    prior_probe_targets: 1
+    max_simultaneous_probe_targets: 1
+    action_required_to_change_target: Simple Action
+  code_validation: Not executed. The tests above specify expected fictional game outcomes
+    only.
