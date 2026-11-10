@@ -1,0 +1,78 @@
+id: rule.matrix.ssg-household-telecom-host-operations-p120
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition; optional household Matrix
+  game procedures, not a replacement for the core or Matrix supplement
+printed_pages: '120'
+pdf_pages: '121'
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: Fictional Shadowrun Third Edition tabletop household Matrix host operations — FanPro Sprawl Survival Guide
+  (FanPro10667), printed p120/PDF121
+summary: Source-reviewed game-reference reporting of FanPro’s published household telecom Matrix operation examples,
+  source dependencies and explicit gamemaster options; no real-world access procedure or newly invented TN is asserted.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    publication_year: 2003
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    kind: fictional tabletop RPG sourcebook
+    printed_page: 120
+    physical_pdf_page: 121
+  section: Game Information / Subverting Telecom Systems
+  scope: The source supplies an example of fictional Matrix access to household telecom systems; these operations
+    reuse the published SR3/Matrix rules and do not introduce an independent success-test algorithm.
+  wireless_node:
+    detection: The text refers to a scanner from the Shadowrun Third Edition core rulebook, printed p289.
+    access: The text refers to a radio interface from Matrix, printed p61.
+    typical_flux_rating:
+    - 0
+    - 1
+    encryption_qualification: Privacy-conscious residents may use broadcast encryption, core p289; no fixed encryption
+      rating is stated.
+  host_and_access:
+    minimum_illustrative_host: Blue-4 with ACIFS 8/8/6/6/6 and one Probe-2 IC; this precise numeric equipment fact
+      is already recorded in equipment.ssg-home-telecom-public-dataterm-p118-121 and is referenced, not duplicated
+      as a second mechanical discovery.
+    access_condition: The source conditions Matrix access on knowing the fictional telecom jackpoint/MXP address;
+      it does not grant universal automatic entry.
+    gamemaster_option: The author explicitly permits alternate telecom system configurations at gamemaster discretion.
+  published_matrix_operation_examples:
+  - game_operation: Edit File
+    fictional_effect: Access resident files, including journals and personal data, with an example of editing host
+      logs.
+  - game_operation: Download Data
+    fictional_effect: Retrieve the household terminal’s stored biometric scan records.
+  - game_operation: Tap Comm
+    fictional_effect: Observe fictional communications routed through the terminal.
+  - game_operation: Monitor Slave
+    fictional_effect: Interact with household appliances, cameras, sensors, and connected domestic drones as game-controlled
+      slaves.
+  fictional_domestic_drone_subsection: The adjacent Telecom Drone Command subsection is already separately normalized
+    as rule.ssg-domestic-drone-command-p120 and should be reused for consumer package ratings and components.
+  cross_references:
+  - source: Shadowrun Third Edition
+    printed_page: 289
+    topic: scanner and household encryption
+  - source: Matrix
+    printed_page: 61
+    topic: radio interface
+  - source: SR3 / Matrix
+    concept: existing Matrix System Operations and slave tests
+  code_test_vectors_specification_only:
+  - id: ssg_telecom_typical_flux
+    expected_options:
+    - 0
+    - 1
+  - id: ssg_telecom_access
+    known_jackpoint_address: false
+    expected_source_granted_automatic_entry: false
+  - id: ssg_telecom_camera_interaction
+    expected_operation: Monitor Slave
+  code_readiness: This is a source-reviewed dependency mapping, not executed Matrix code; matrix action resolution
+    and access tests remain external to this record.
