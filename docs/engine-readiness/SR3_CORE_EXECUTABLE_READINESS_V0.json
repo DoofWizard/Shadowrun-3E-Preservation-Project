@@ -125,6 +125,19 @@
         "Optional overdamage integration with existing damage staging and Condition Monitor rather than creating an unconditional rule",
         "Complete Matrix programming pp76-94, SSG Game Information pp118-126, SR3 p308 page-image gap and advanced source detail"
       ]
+    },
+    "incremental_legacy_conversion_2026_11_10": {
+      "original_source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "local_command": "python -m unittest discover -s /mnt/data/sr3_work/tools/engine_readiness -p test_legacy_conversion_core.py -v",
+      "results": "8 methods passed; no assertion that the current full GitHub suite was run",
+      "consumer_module_commit": "c45cec10b97da51af438e003b46407130d2a5c2b",
+      "consumer_module_blob": "6f2ab4edaced54fb74211eb9da2cf9147650d2ae",
+      "test_file_commit": "b7dd0e81ed4cc24d53da2a1d3afb78496af36e9b",
+      "test_file_blob": "19d5436d966fa977950f1aaf223facfc1c55fa29",
+      "source_manifest_index_commit": "70f4a797a4ff5e94dc447ac1bdfda0a26723d7de",
+      "source_manifest_index_blob": "f04f6c0888f4e954d9625e354f6b56f51aee5704",
+      "gate_status": "two new semantic receipts verified; consumer code is not an ingestion receipt",
+      "denver_boundary": "unchanged printed p45/PDF46"
     }
   },
   "checked_source_pages": [
@@ -157,6 +170,11 @@
       "printed": "306",
       "physical_pdf": "315",
       "subject": "Original rigging-gear table and vehicle-interface prerequisites; 28 bounded consumer tests"
+    },
+    {
+      "printed": "323-325",
+      "physical_pdf": "331-333",
+      "subject": "Third Edition historical Second Edition character, magic, equipment, Rigger 2 and Virtual Realities 2.0 conversion"
     }
   ],
   "lanes": [
@@ -447,6 +465,50 @@
       "missing": [
         "exact Essence, grade, Bio Index, surgery, healing and alternate character option interactions; Companion deferred pp32-58 check"
       ]
+    },
+    {
+      "id": "historical-sr2-sourcebook-conversion",
+      "canonical_reference": [
+        "rules/compatibility/sr2-to-sr3-numeric-character-conversion-p323.yml",
+        "rules/compatibility/sr2-to-sr3-magic-conversion-p324.yml",
+        "rules/compatibility/sr2-to-sr3-gear-cyberware-conversion-p324.yml",
+        "rules/compatibility/rigger2-to-sr3-vehicle-mechanics-p324.yml",
+        "rules/compatibility/vr2-to-sr3-matrix-mechanics-p325.yml"
+      ],
+      "source": "FASA Corporation, Shadowrun Third Edition FASA7001 original printed pp323-325 / physical PDF331-333, historical SR2 conversion only",
+      "designation": "historical_conversion_not_operative_sr3_character_creation",
+      "implementation": "tools/engine_readiness/legacy_conversion_core.py",
+      "tests": "tools/engine_readiness/test_legacy_conversion_core.py",
+      "state": "code_tested_partial",
+      "independently_source_checked": "original PDF SHA256 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914 and original images PDF331-333",
+      "canonical_new_semantic_receipts": {
+        "magic": {
+          "commit": "96cf62200aefeb8da0a61301d839cc48e85137ac",
+          "blob": "5cacc9b05e9208aa61745e727af5a78eb60cbbea"
+        },
+        "gear_cyberware": {
+          "commit": "a6d1cb82b66343c106e701bbc3bb71f267f4f990",
+          "blob": "dc0aa83235b139824a72423f66c7c293154310e7"
+        }
+      },
+      "actually_tested_examples": [
+        "SR2 elf Karma Pool 7/Good Karma 10 => SR3 pool 3/Good Karma 14",
+        "Intelligence 6, existing knowledge ratings 4+3 => 23 unspent knowledge points",
+        "Astral Initiative Intelligence 5 plus a rolled 1D6 of 6 => 31",
+        "Two spell locks => two Force 3 sustaining foci, or 90000 nuyen",
+        "GM-approved focus upgrade Force 3 to Force 5 => +30000 nuyen",
+        "Rigger 2 passenger Combat Pool 7 => maximum 3 dice",
+        "VR2 Ripper five test successes => MPCP rating reduced by two",
+        "Unalerted VR2 host 3D6 of 1+2+3 => six minutes"
+      ],
+      "missing": [
+        "full SR2 skill name and specialization mapping and GM choice",
+        "reusable/exclusive fetish spell-cost-versus-Drain adjustments remain contextual and must not be guessed",
+        "SR3 cyberlimb Synthetic/Obvious Concealability lookup remains separate",
+        "full crash/damage and Matrix operations require canonical SR3 resolution; no later book supersession inferred",
+        "complete engine integration and current repository-wide regression not executed for this addition"
+      ],
+      "source_status": "new two semantic records individually staged, source verified, fresh readback confirmed and indexed in live SR3 main manifest; no Denver advancement"
     }
   ],
   "blockers": [
