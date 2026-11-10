@@ -138,6 +138,58 @@
       "source_manifest_index_blob": "f04f6c0888f4e954d9625e354f6b56f51aee5704",
       "gate_status": "two new semantic receipts verified; consumer code is not an ingestion receipt",
       "denver_boundary": "unchanged printed p45/PDF46"
+    },
+    "incremental_ssg_market_2026_11_10": {
+      "date": "2026-11-10",
+      "source": "FanPro, Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition",
+      "original_source_sha256": "b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f",
+      "source_pages": {
+        "printed": [
+          122,
+          123
+        ],
+        "physical_pdf": [
+          123,
+          124
+        ]
+      },
+      "verified_source_command": "python tools/ingestion/preservation_method.py verify-source FRESH_SSG.pdf sources/manifests/SprawlSurvivalGuide.yml",
+      "source_page_images_independently_inspected": true,
+      "canonical_paths": [
+        "equipment/ssg-household-drone-market-p122.yml",
+        "equipment/ssg-electronic-paper-colorchange-p123.yml"
+      ],
+      "adapter": {
+        "path": "tools/engine_readiness/ssg_market_core.py",
+        "commit_sha": "6aacedd9e52731afdf9ebaff518e060edc3bdeab",
+        "blob_sha": "62c12e8d530d775b7c0462e4908b2bd8f739d005",
+        "readback_verified": true
+      },
+      "tests": {
+        "path": "tools/engine_readiness/test_ssg_market_core.py",
+        "commit_sha": "c89720c220b8cc63ac03537df88a272b46cc006d",
+        "blob_sha": "48b05a3b0ae9993880667c8d2ada495845950807",
+        "readback_verified": true,
+        "executed_command": "python -m unittest discover -s tools/engine_readiness -p 'test_ssg_market_core.py' -v",
+        "new_methods_pass": 15,
+        "new_methods_fail": 0,
+        "whole_current_repo_suite_run": false
+      },
+      "validated_examples": [
+        "SynthCat market 9500 nuyen",
+        "Mitsuhama Butlerbot original pilot notation 2 (4)",
+        "IFMU Mr. Bright business/household rows remain separate",
+        "standard/tabloid electronic paper 2/5 nuyen",
+        "3 square meters ColorChange paint 225 nuyen, separate controller 2000 nuyen"
+      ],
+      "fail_closed": [
+        "unknown drone variants",
+        "unmatched paired table rows",
+        "unsourced edition",
+        "fractional-area rounding",
+        "paint Availability/Street Index column ambiguity"
+      ],
+      "scope": "Data-driven consumer and limited tests; no new canonical semantic record or source completion inferred; Denver manifest and checkpoint untouched."
     }
   },
   "checked_source_pages": [
@@ -175,6 +227,11 @@
       "printed": "323-325",
       "physical_pdf": "331-333",
       "subject": "Third Edition historical Second Edition character, magic, equipment, Rigger 2 and Virtual Realities 2.0 conversion"
+    },
+    {
+      "printed": "122-123",
+      "physical_pdf": "123-124",
+      "subject": "FanPro10667 SSG household drone models/market and electronic paper/ColorChange paint; consumer-only verification; full Game Information pending"
     }
   ],
   "lanes": [
@@ -509,6 +566,32 @@
         "complete engine integration and current repository-wide regression not executed for this addition"
       ],
       "source_status": "new two semantic records individually staged, source verified, fresh readback confirmed and indexed in live SR3 main manifest; no Denver advancement"
+    },
+    {
+      "id": "sprawl-survival-household-gear-market",
+      "canonical_reference": [
+        "equipment/ssg-household-drone-market-p122.yml",
+        "equipment/ssg-electronic-paper-colorchange-p123.yml"
+      ],
+      "source": "FanPro10667 Sprawl Survival Guide (FanPro, Shadowrun Third Edition), printed p122-123/PDF123-124",
+      "designation": "source_reviewed_optional_equipment_and_fixed_market_tables",
+      "implementation": "tools/engine_readiness/ssg_market_core.py",
+      "tests": "tools/engine_readiness/test_ssg_market_core.py",
+      "state": "code_tested_partial",
+      "test_vectors": {
+        "synthcat_nuyen": 9500,
+        "butlerbot_pilot": "2 (4)",
+        "standard_paper_nuyen": 2,
+        "tabloid_paper_nuyen": 5,
+        "paint_three_m2_nuyen": 225,
+        "controller_nuyen": 2000
+      },
+      "missing": [
+        "paint market table Availability vs Street Index anomaly remains unresolved",
+        "fractional area rounding/installation not specified",
+        "full FASA7910/FanPro10662 drone movement and acquisition lineage not implemented",
+        "Sprawl Survival Guide Game Information pp118-126 canonical normalization deferral not declared resolved"
+      ]
     }
   ],
   "blockers": [
