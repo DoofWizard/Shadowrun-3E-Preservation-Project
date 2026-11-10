@@ -1,0 +1,80 @@
+id: rule.health.sr3-core-slap-patches-p305
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: FASA Corporation Shadowrun, Third Edition, FASA7001 original fictional tabletop rules; no later edition replacement
+  inferred
+printed_pages: '305'
+pdf_pages: '314'
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Third Edition
+    medium: fictional tabletop role-playing game rulebook
+    printed_page: 305
+    physical_pdf_page: 314
+  scope: Original SR3 in-game slap-patch mechanics. Source examples are fictional clinical/scenario descriptions, not real-world
+    treatment directions.
+  common:
+    delivery: Slap patches in the game must contact patient skin
+    dermal_armor: Armor Rating subtracts from Patch Rating for patch effect
+    blood_filtration: Blood-filtration implants render antidote, stimulant and tranq patches ineffective, but do not render
+      trauma patches ineffective.
+    types:
+    - antidote
+    - stimulant
+    - tranq
+    - trauma
+  antidote:
+    purpose: Assists resistance to the game-defined toxin effect
+    activation_timing: Immediately after exposure, before the Damage Resistance Test
+    power_adjustment: Subtract Patch Rating from the toxin Power while exposure continues
+    deadly_damage_exception: If user sustains Deadly physical damage, add Patch Rating dice to any stabilization tests (cross-reference
+      printed p129)
+    stacking: Multiple antidote patches have no additional effect
+  stimulant:
+    purpose: Temporarily keeps a character awake
+    stun_boxes_reduced: Subtract boxes equal to Patch Rating from Stun Condition Monitor when applied
+    magic_loss_risk: Magician makes Magic Test with target number equal to Patch Rating; failure follows the Magic-loss procedure
+      as if the magician had taken a Deadly wound (cross-reference printed p125)
+    wear_off_minutes: 2D6
+    wear_off_result: Restore the temporarily removed Stun boxes and add one additional Stun box
+  tranq:
+    game_context: Fictional in-game anesthetic for medical attention; the book additionally describes a possible scenario
+      involving involuntary sedation of prisoners, which is not a general recommendation
+    test: Opposed Test between patch and patient, with patient Body Attribute tested against Patch Rating
+    effect_if_patch_wins: For each net success achieved by patch, fill one box on patient Stun Condition Monitor
+    effect_if_patch_does_not_win: No new Stun boxes from this patch test
+  trauma:
+    purpose: An in-game second chance against death when other medical care is unavailable
+    placement_in_source: Over fictional character heart
+    exact_resolution_reference: Damage and Healing, printed p125; the p305 summary does not supply a separate numeric threshold
+  related_procedure: procedure.healing.natural-and-medical
+  examples_specification_only_not_executed:
+  - id: antidote_power
+    tox_power: 7
+    patch_rating: 3
+    expected_power_during_effect: 4
+  - id: stimulant_wear_off
+    initial_stun_boxes: 5
+    patch_rating: 2
+    stun_boxes_during_effect: 3
+    expected_stun_boxes_after_wearoff: 6
+  - id: tranq_net_success
+    patch_successes: 4
+    patient_successes: 2
+    additional_stun_boxes: 2
+  - id: dermal_rating
+    patch_rating: 4
+    dermal_armor_rating: 1
+    effective_rating: 3
+  source_integrity: Preserve the original edition and printed/PDF map; table market prices occur separately on printed p304;
+    no real-world applicability is asserted.
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop patch rules, printed p305/PDF314
+summary: Original SR3 slap-patch effects, tests, timing, damage-box arithmetic, Magic-loss risk and conditional exclusions
+  in a published fictional game; distinct from real-world clinical procedures.
