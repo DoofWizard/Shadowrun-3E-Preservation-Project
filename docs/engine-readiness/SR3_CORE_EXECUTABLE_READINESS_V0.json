@@ -99,7 +99,48 @@
         "full equipment/contact/lifestyle shopping"
       ],
       "source_page": "printed p54/PDF55",
-      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit c6f4dfc6c5125d61a087ec4fe488773d2566c939; executable consumer remains partial."
+      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit c6f4dfc6c5125d61a087ec4fe488773d2566c939; executable consumer remains partial.",
+      "source_reviewed_test_vectors": [
+        {
+          "id": "core.priority.A.attributes",
+          "input": {
+            "category": "Attributes",
+            "priority": "A"
+          },
+          "expected_points": 30,
+          "source": "FASA7001 Third Edition printed p54/PDF55",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.priority.C.skills",
+          "input": {
+            "category": "Skills",
+            "priority": "C"
+          },
+          "expected_points": 34,
+          "source": "FASA7001 Third Edition printed p54/PDF55",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.priority.E.resources",
+          "input": {
+            "category": "Resources",
+            "priority": "E"
+          },
+          "expected_nuyen": 5000,
+          "source": "FASA7001 Third Edition printed p54/PDF55",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.priority.troll_race",
+          "input": {
+            "race": "Troll"
+          },
+          "expected_priority": "C",
+          "source": "FASA7001 Third Edition printed p54/PDF55",
+          "status": "specification_only"
+        }
+      ]
     },
     {
       "id": "initiative",
@@ -148,7 +189,65 @@
         "ongoing damage/interrupts and separate optional overdamage"
       ],
       "source_page": "printed pp125-126/PDF126-127",
-      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit d8569cc0f7c80c25e2a067db21ca4cfff7aff5bf; executable consumer remains partial."
+      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit d8569cc0f7c80c25e2a067db21ca4cfff7aff5bf; executable consumer remains partial.",
+      "source_reviewed_test_vectors": [
+        {
+          "id": "core.damage.D.add",
+          "input": {
+            "staged_damage": "Deadly"
+          },
+          "expected_added_boxes": 10,
+          "source": "FASA7001 printed p125/PDF126",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.stun.overflow",
+          "input": {
+            "stun_boxes": 6,
+            "staged_damage": "Serious",
+            "track": "Stun"
+          },
+          "expected": {
+            "stun_boxes": 10,
+            "new_physical_boxes": 2
+          },
+          "source": "FASA7001 printed p125/PDF126",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.physical.body5_boundary",
+          "input": {
+            "body": 5,
+            "physical_boxes": 15
+          },
+          "expected_immediate_death": false,
+          "source": "FASA7001 printed p125/PDF126",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.physical.body5_exceeded",
+          "input": {
+            "body": 5,
+            "physical_boxes": 16
+          },
+          "expected_immediate_death": true,
+          "source": "FASA7001 printed p125/PDF126",
+          "status": "specification_only"
+        },
+        {
+          "id": "core.condition.wounds_M_L",
+          "input": {
+            "stun_boxes": 3,
+            "physical_boxes": 1
+          },
+          "expected": {
+            "injury_TN_modifier": 3,
+            "initiative_modifier": -3
+          },
+          "source": "FASA7001 printed p126/PDF127",
+          "status": "specification_only"
+        }
+      ]
     },
     {
       "id": "street-gear-and-equipment",
@@ -276,5 +375,121 @@
     "choose and test minimum playable magic, Matrix and rigging adapters",
     "source-reviewed canonical transaction receipts for numerical gaps"
   ],
-  "note": "Code adapters are not semantic archive substitutions. Source manifests and hourly ingestion worker remain authoritative; no Denver printed-page advancement is implied. Update 2026-11-10: numeric priority and Condition Monitor canonical records have confirmed ingestion receipts; new Matrix p78-80 consumer tests are code-only, not source transaction receipts; Denver boundary unchanged p45/PDF46."
+  "note": "Code adapters are not semantic archive substitutions. Source manifests and hourly ingestion worker remain authoritative; no Denver printed-page advancement is implied. Update 2026-11-10: numeric priority and Condition Monitor canonical records have confirmed ingestion receipts; new Matrix p78-80 consumer tests are code-only, not source transaction receipts; Denver boundary unchanged p45/PDF46.",
+  "targeted_original_page_audit_2026_11_10": {
+    "assessment": "Evidence-only bounded original-page audit. No new canonical semantic record or executed ingestion transaction, no new code tests, and no source completion authorization.",
+    "source": {
+      "publication": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7001",
+      "edition": "Third Edition",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source_verification": {
+      "method": "Fresh Google Drive PDF locally SHA256-hashed against live SR3 manifest; preservation_method.py verify-source command not executed in this audit.",
+      "result": "matched",
+      "original_images_visually_reviewed": [
+        {
+          "printed": 54,
+          "pdf": 55
+        },
+        {
+          "printed": 125,
+          "pdf": 126
+        },
+        {
+          "printed": 126,
+          "pdf": 127
+        },
+        {
+          "printed": 280,
+          "pdf": 289
+        }
+      ]
+    },
+    "reuse_conclusions": [
+      {
+        "canonical_path": "rules/character-creation/sr3-master-priority-numeric-p54.yml",
+        "canonical_commit": "c6f4dfc6c5125d61a087ec4fe488773d2566c939",
+        "result": "Original priority A-E table numerics/race/magic baseline already present and registered; do not duplicate."
+      },
+      {
+        "canonical_path": "rules/condition/sr3-damage-monitor-numeric-p125-126.yml",
+        "canonical_commit": "d8569cc0f7c80c25e2a067db21ca4cfff7aff5bf",
+        "result": "Original condition boxes, accumulation, Stun overflow, Body threshold and modifier signs already present and registered; do not duplicate."
+      },
+      {
+        "canonical_path": "rules/firearms/sr3-core-accessory-functions-p280-281.yml",
+        "result": "Original accessory operational conditions from inspected p280 already normalized; do not duplicate."
+      }
+    ],
+    "distinct_unresolved_mechanic": {
+      "topic": "Optional Deadlier Over-Damage",
+      "source_page": {
+        "printed": 126,
+        "physical_pdf": 127
+      },
+      "presence_audit": "No separately named canonical rule observed in inspected rules/condition, rules/combat, options/combat directory listings or original numeric condition record. This bounded inspection does not prove repo-wide absence.",
+      "optional_not_baseline": true,
+      "source_verified_specification": {
+        "enablement": "Gamemaster may opt into this additional damage procedure; not baseline automatic processing.",
+        "triggering_power_condition": "Attack Power must be strictly greater than 1.5 times target Body; equals does not qualify.",
+        "triggering_damage_condition": "Attack was staged up to Deadly, and attack has remaining extra successes.",
+        "conversion": "Every two additional successes cause 1 more Damage Point.",
+        "destination": "For Deadly Stun add extra points to Physical Condition Monitor; for Deadly Physical add to Body Overflow.",
+        "open_questions": [
+          "Remainder handling for odd excess-success counts should follow the full staging rules; do not invent rounding.",
+          "Multi-source lineage and interaction with existing damage staging/optional rules must be reconciled before implementation."
+        ]
+      },
+      "specification_only_vectors": [
+        {
+          "id": "optional.overdamage.threshold.equal",
+          "input": {
+            "body": 4,
+            "attack_power": 6,
+            "damage_level_after_staging": "Deadly",
+            "excess_successes": 4
+          },
+          "expected": "optional overdamage not triggered by Power=1.5x Body"
+        },
+        {
+          "id": "optional.overdamage.physical",
+          "input": {
+            "body": 4,
+            "attack_power": 7,
+            "damage_type": "Physical",
+            "damage_level_after_staging": "Deadly",
+            "excess_successes": 4
+          },
+          "expected_added_body_overflow_points": 2
+        },
+        {
+          "id": "optional.overdamage.stun",
+          "input": {
+            "body": 4,
+            "attack_power": 7,
+            "damage_type": "Stun",
+            "damage_level_after_staging": "Deadly",
+            "excess_successes": 4
+          },
+          "expected_added_physical_monitor_points": 2
+        }
+      ],
+      "canonical_status": "needs independent repo-wide reuse audit and gated normalization only if genuinely absent",
+      "executable_status": "not implemented or tested in this audit"
+    },
+    "active_worker_protection": {
+      "source": "source.fasa-7212",
+      "source_manifest": "sources/manifests/Denver.yml",
+      "completed_through_printed": 45,
+      "completed_through_pdf": 46,
+      "next_missing_printed_pages": [
+        46,
+        47
+      ],
+      "verified_forward_records_existing": 136,
+      "modified": false
+    }
+  }
 }
