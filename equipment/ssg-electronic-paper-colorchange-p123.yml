@@ -1,0 +1,87 @@
+id: equipment.ssg-electronic-paper-colorchange-p123
+record_type: equipment
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: '123'
+pdf_pages: '124'
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition; fictional consumer
+  equipment with printed table-column anomaly
+content_class:
+- equipment_stat
+framing: reference_exact
+headline: Fictional tabletop equipment, Sprawl Survival Guide, FanPro, FanPro10667, Shadowrun Third Edition,
+  printed p123/PDF124
+summary: Original printed electronic paper and ColorChange paint device and price information; column alignment
+  preserved as printed, with unresolved source-layout ambiguity.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    publication_year: 2003
+    catalog_number: FanPro10667
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    source_kind: fictional tabletop role-playing game supplement
+  printed_page: 123
+  physical_pdf_page: 124
+  section: Game Information / Electronic Paper and ColorChange Paint
+  source_style: Published in-universe equipment descriptions and nuyen values, not real-world commercial products.
+  electronic_paper:
+    medium: Flexible display with replaceable visual data
+    standard_sheet_capacity_Mp: 20
+    tabloid_capacity_Mp: 50
+    published_cost_expression: Mp x .1¥
+    unlisted_capacities: Source lists standard and tabloid forms; no further capacity values stated.
+  colorchange_paint:
+    operation: Source describes electrically triggered color changes in a continuous painted surface; must
+      incorporate a controller unit.
+    cost_per_square_meter_nuyen: 75
+    approx_coverage_square_meters_per_liter: 10
+    base_coat: Fine conductive mesh applied before paint
+    coating_continuity: Coating must be continuous and unbroken to function.
+    material_limitation: Not suitable for fabrics or other substrates requiring flexibility.
+    display_limitation: Cannot match the precise detail of ruthenium polymers; no quantitative disguise or
+      camouflage modifier is given.
+    controller_cost_nuyen: 2000
+    controller_price_includes_setup: true
+    usual_installation: Installed as part of a central home telecom.
+  market_table_exact_as_typeset:
+    published_header_sequence:
+    - Item
+    - Cost
+    - Availability
+    - Street Index
+    rows_under_printed_headers:
+    - item: Electronic Paper
+      cost: Mp x .1¥
+      availability: Always
+      street_index: '.5'
+    - item: ColorChange Paint
+      cost: 75¥/m²
+      availability: '1.5'
+      street_index: 4/3 days
+    - item: Paint Controller Unit
+      cost: 2,000¥
+      availability: '1'
+      street_index: 4/7 days
+    column_ambiguity: Printed header alignment apparently places multiplier-form values under Availability
+      and rating/time-form values under Street Index for the two paint rows. Transcribed literally without
+      silently swapping source columns.
+    engine_disposition: Not code-ready for Availability/Street Index fields until independent source-layout
+      or errata clarification; prices remain directly source-verifiable.
+  test_vectors_specification_only:
+  - id: electronic_paper_standard_sheet
+    capacity_Mp: 20
+    cost_formula: 20 * .1
+    expected_nuyen: 2
+  - id: electronic_paper_tabloid
+    capacity_Mp: 50
+    cost_formula: 50 * .1
+    expected_nuyen: 5
+  - id: paint_three_square_meters
+    area_m2: 3
+    unit_cost_nuyen: 75
+    expected_paint_nuyen: 225
+    controller_nuyen_separate: 2000
+  code_validation_status: Source-page image reviewed; no executable tests run and printed table-header ambiguity
+    remains open.
