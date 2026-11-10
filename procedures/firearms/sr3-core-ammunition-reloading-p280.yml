@@ -1,0 +1,73 @@
+id: procedure.firearms.sr3-core-ammunition-reloading
+record_type: procedure
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '280'
+pdf_pages: '289'
+edition_scope: Current Shadowrun Third Edition core rules (FASA7001)
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: FASA Corporation Shadowrun, Third Edition (FASA7001) original fictional tabletop firearm reloading table,
+  printed p280/PDF289; source-reviewed exact action costs.
+summary: Complete printed SR3 ammunition-reloading action alternatives for clip, break action, internal magazine,
+  cylinder and belt feed; preserves Quickness formulas and unspecified rounding.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Shadowrun Third Edition
+    printed_page: 280
+    pdf_page: 289
+  scope: Firearms whose ammunition codes are labeled (c), (b), (m), (cy) or (belt) in the original SR3 core weapon
+    catalog.
+  method_codes:
+    c: Removable Clip
+    b: Break Action
+    m: Internal Magazine
+    cy: Cylinder
+    belt: Belt Feed
+  ammo_reloading_table:
+  - method: Removable Clip
+    code: c
+    action: Simple Action
+    result: Remove or insert a clip.
+  - method: Removable Clip
+    code: c
+    action: Complex Action
+    result: Load a removable clip with a number of cartridges equal to Quickness.
+    rounds_formula: Quickness
+  - method: Break Action
+    code: b
+    action: Complex Action
+    result: Insert two rounds into the opened breech.
+    rounds: 2
+  - method: Internal Magazine
+    code: m
+    action: Complex Action
+    result: Load the internal magazine with a number of cartridges equal to Quickness.
+    rounds_formula: Quickness
+  - method: Cylinder
+    code: cy
+    action: Complex Action
+    result: Insert a number of cartridges equal to Quickness into the cylinder.
+    rounds_formula: Quickness
+  - method: Cylinder
+    code: cy
+    action: Complex Action
+    result: Use a speed loader.
+  - method: Belt Feed
+    code: belt
+    action: Complex Action
+    result: Insert an ammunition belt.
+  - method: Belt Feed
+    code: belt
+    action: Complex Action
+    result: Load cartridges into an ammunition belt.
+    rounds_formula: Quickness / 2
+    rounding: Not specified in this table; do not invent one.
+  source_relationship:
+    uses: rule.firearms.ammunition
+    applies_to: weapons with matching ammunition codes
+    mechanic_origin: Core SR3 Street Gear; not an optional Cannon Companion rule.
