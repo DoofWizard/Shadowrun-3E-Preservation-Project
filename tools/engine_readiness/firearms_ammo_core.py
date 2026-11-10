@@ -12,13 +12,14 @@ from rules_probe import UnresolvedRule
 
 
 # Source p111 table's named firearm/weapon categories. No 'rifle' umbrella.
+# Specialized taser/cannon/launcher projectiles have source-specific rules
+# not resolved here, and must be checked separately.
 # For a pistol-format shotgun, the p279 explicit exception points to the
 # single Shotgun category in that table, despite different physical form.
 FIREARM_RANGE_CLASSES = frozenset({
-    "hold_out_pistol", "light_pistol", "heavy_pistol", "smg", "taser",
+    "hold_out_pistol", "light_pistol", "heavy_pistol", "smg",
     "shotgun", "sporting_rifle", "sniper_rifle", "assault_rifle",
     "light_machine_gun", "medium_machine_gun", "heavy_machine_gun",
-    "assault_cannon", "grenade_launcher", "missile_launcher",
 })
 SHOTGUN_FORMS = {"shotgun_pistol": "shotgun", "shotgun_rifle": "shotgun"}
 
