@@ -1,0 +1,170 @@
+id: equipment.vehicles.sr3-core-road-water-market-p309
+record_type: equipment
+status: source_reviewed
+source: source.sr3-core
+edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop vehicle market; later
+  Rigger 3 rule lineage distinct
+printed_pages: '309'
+pdf_pages: '317'
+content_class:
+- equipment_stat
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog_number: FASA7001
+    edition: Third Edition
+    source_type: fictional tabletop role-playing game rulebook
+    printed_page: 309
+    physical_pdf_page: 317
+  field_interpretation: Retains original in-game stats and exact source slash strings, seating/entry-point notation
+    and the printed missing Pilot/Autonav markers as null. In-world scene descriptions attributed to book, not real-world
+    vehicle facts.
+  vehicle_rows:
+  - name: Ares Roadmaster
+    source_group: trucks and hovercraft
+    handling_original: 4/10
+    speed_original: 90
+    acceleration: 3
+    body: 5
+    armor: 0
+    signature: 2
+    autonav: 2
+    pilot: null
+    sensor: 0
+    cargo_original: 80
+    load_kg: 2000
+    seating_original: 2 bucket, 1 folding bench
+    entry_points_original: 2 + 1T
+    cost_nuyen: 45000
+    availability_original: 3/3 days
+    street_index: 1
+    source_description: Book describes a fictional cargo transport whose interchangeable components permit security
+      conversion.
+  - name: Ford-Canada Bison
+    source_group: trucks and hovercraft
+    handling_original: 4/3
+    speed_original: 135
+    acceleration: 6
+    body: 4
+    armor: 4
+    signature: 3
+    autonav: 3
+    pilot: null
+    sensor: 1
+    cargo_original: 67
+    load_kg: 2000
+    seating_original: 2 bucket, 2 folding bench
+    entry_points_original: 2 + 1d + 1g
+    cost_nuyen: 150000
+    availability_original: 8/8 days
+    street_index: 2
+    source_description: Book describes an off-road vehicle with off-road suspension and balloon tires.
+    other_features:
+    - Concealed armor (Concealability 7)
+    - Living amenities (basic)
+  - name: Chrysler-Nissan Giza — passenger
+    source_group: hovercraft
+    handling_original: 4
+    speed_original: 120
+    acceleration: 5
+    body: 4
+    armor: 0
+    signature: 2
+    autonav: 2
+    pilot: null
+    sensor: 0
+    cargo_original: 6
+    load_kg: 250
+    seating_original: 4 bucket (2 front, 2 rear) (x5)
+    entry_points_original: 2 + 1 + 2 + T/2 + 1d
+    cost_nuyen: 50000
+    availability_original: 3/3 days
+    street_index: 1
+    source_description: Passenger configuration of a fictional air-cushion vehicle that can convert to cargo use.
+  - name: Chrysler-Nissan Giza — cargo
+    source_group: hovercraft
+    handling_original: 4
+    speed_original: 120
+    acceleration: 5
+    body: 4
+    armor: 0
+    signature: 2
+    autonav: 2
+    pilot: null
+    sensor: 0
+    cargo_original: 66
+    load_kg: 1000
+    seating_original: 2 bucket
+    entry_points_original: 2 + 1 + 2 + T/2 + 1d
+    cost_nuyen: 50000
+    availability_original: 3/3 days
+    street_index: 1
+    source_description: Cargo configuration of same fictional Giza model; not a separate purchasable model.
+  - name: Samuvani CrisCraft Otter
+    source_group: boats
+    handling_original: 4
+    speed_original: 45
+    acceleration: 6
+    body: 5
+    armor: 0
+    signature: 3
+    autonav: 2
+    pilot: null
+    sensor: 1
+    cargo_original: 18
+    load_kg: 300
+    seating_original: 2 bucket (f), 2 folding bench (x2) (r)
+    entry_points_original: o
+    cost_nuyen: 27500
+    availability_original: 2/2 days
+    street_index: 1
+    source_description: Book describes a fictional open-hull mid-size utility and pleasure boat.
+  - name: Sendanko Marlin
+    source_group: boats
+    handling_original: 3
+    speed_original: 30
+    acceleration: 3
+    body: 3
+    armor: 0
+    signature: 6
+    autonav: 0
+    pilot: null
+    sensor: null
+    cargo_original: 12
+    load_kg: 150
+    seating_original: 2 bucket (f), 2 bench (r)
+    entry_points_original: o
+    cost_nuyen: 22500
+    availability_original: 2/2 days
+    street_index: 0.75
+    source_description: Book describes a fictional pleasure sailboat; an in-world media story associates it with
+      fictional smuggler Janos Smoot.
+  distinct_purchase_models: 5
+  table_rows: 6
+  links:
+  - equipment.vehicles.sr3-core-aircraft-security-drone-market-p310-311
+  - subsystem.vehicles.design (later Rigger 3 rules)
+  test_vectors_specifications_not_executed:
+  - id: giza.cargo.delta
+    model: Chrysler-Nissan Giza
+    passenger_cargo_factor: 6
+    cargo_cargo_factor: 66
+    expected_increase: 60
+  - id: bison.conceal
+    model: Ford-Canada Bison
+    armor: 4
+    concealed_armor_concealability: 7
+    cost_nuyen: 150000
+  - id: marlin.missing_pilot
+    model: Sendanko Marlin
+    pilot: null
+    autonav: 0
+    speed: 30
+  page_mapping_note: Original printed p309 has physical PDF p317; printed p308 is absent/unverified in this cataloged
+    scan and was not inferred.
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional truck, hovercraft and boat market printed
+  p309/PDF317
+summary: Six original FASA7001 table configurations for five fictional road/water vehicle models, preserving exact
+  Body, Handling, Speed, Armor, Load, Cargo, amenities, price, Availability, Street Index and missing-value distinctions.
