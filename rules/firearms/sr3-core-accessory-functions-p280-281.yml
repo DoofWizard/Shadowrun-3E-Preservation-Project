@@ -1,0 +1,95 @@
+id: rule.firearms.sr3-core-accessory-functions-p280-281
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '280-281'
+pdf_pages: '289-290'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001, original Third Edition weapon-accessory mechanics
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FASA Corporation FASA7001 printed pp280-281/PDF289-290, original firearm-accessory modifiers and use conditions'
+summary: 'Original game-rule conditions, action timings, equipment effects and numerical modifiers for the firearm accessories described on printed pp280-281; preserves historical source values without suggesting actual weapons use.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: FASA Corporation
+  catalog_number: FASA7001
+  edition: Shadowrun Third Edition
+  printed_pages: [280, 281]
+  physical_pdf_pages: [289, 290]
+  context: 'Fictional tabletop firearm accessory rules. Existing canonical rule.firearms.accessory-mounts describes mount locations; the original p282 purchase table is independently registered.'
+  accessory_effects:
+    bipod:
+      requires: 'Weapon fired low to ground, user sitting or lying; underbarrel mount.'
+      deployment: 'Simple Action'
+      recoil_compensation_points: 2
+      concealability_change: 0
+    concealable_holster:
+      pistol_concealability_bonus: 2
+      placement: 'Wearer may position the custom-fitted holster as described in the original fictional equipment entry.'
+    gas_vent:
+      mount: barrel
+      removable_after_installation: false
+      model_II: {recoil_compensation_points: 2, concealability_modifier: -1}
+      model_III: {recoil_compensation_points: 3, concealability_modifier: -2}
+    gyro_stabilization:
+      standard_rating: 5
+      deluxe_rating: 6
+      rule: 'Offsets recoil and movement modifiers up to the gyro rating.'
+      impact_armor_bonus: 4
+      ballistic_armor_bonus: 4
+      melee_target_number_modifier_to_wearer: 4
+      combat_pool_dice_allowed: half
+      concealability: 'Not concealable.'
+      harness_entry_time_minutes: 5
+      quick_release_action: 'One Complex Action'
+      attach_or_remove_weapon_action: 'Two Complex Actions'
+    imaging_scopes:
+      mount: top
+      compatible_with_smartlink: false
+      install_or_remove: 'One Complex Action'
+      magnification_range_modifier: 'Per original p110 range table; not inferred on these pages.'
+      concealability_magnifying: -1
+      concealability_low_light: -2
+      concealability_thermographic: -2
+      combined_system_cost: 'Sum of the component costs.'
+    laser_sight:
+      firearm_test_target_number_modifier: -1
+      compatible_with_smartlink: false
+      mount_positions: [underbarrel, top]
+      concealability_modifier: -1
+      install_or_remove: 'One Complex Action'
+    shock_pads:
+      recoil_compensation_points: 1
+      eligible_mount: 'Rigid shoulder stock of rifle, assault rifle or shotgun, or hip brace of a heavy automatic weapon.'
+    silencer:
+      compatible_firing_modes: [single-shot, semi-automatic]
+      revolver_compatible: false
+      target_number_modifier_to_notice_or_locate_fire: 4
+      concealability_modifier: -2
+      install_or_remove: 'One Complex Action'
+    smart_goggles:
+      compatible_weapon: 'Smartgun-equipped fictional weapon with fiber-optic connection.'
+      vision_feedback: 'Crosshairs and remaining ammunition appear in the goggles.'
+      helmet_or_mirrored_sunglasses_cost_multiplier: 2
+      low_light_or_infrared_additional_cost_nuyen: 1000
+    smartgun_system:
+      internal_installation: 'Installed at manufacture; doubles the weapon cost.'
+      external_mount: [top, underbarrel]
+      external_transfer_alignment_time: 'One hour of maintenance and alignment'
+      requires_receptor: 'Smart goggles or smartlink; without one the hardware has no operative effect.'
+      firearm_test_target_number_modifier: -2
+    sound_suppresser:
+      compatible_firing_modes: [burst-fire, full-auto]
+      target_number_modifier_to_notice_or_locate_fire: 2
+      replacement_interval_rounds: 300
+      concealability_modifier: -2
+      install_or_remove: 'Two Complex Actions'
+    spare_clips:
+      price_nuyen_per_unloaded_clip: 5
+      capacity: 'Maximum rounds available for the original weapon.'
+      interchangeable_between_weapons: false
+      same_class_exception: false
+  source_boundaries:
+    - 'The core text supplies these use modifiers on printed pp280-281; the separate table on p282 contains market statistics and is not reproduced here.'
+    - 'The original gyro description says half the Combat Pool dice may be used; a rounding method is not specified here.'
+    - 'Any later Cannon Companion mechanics require separate lineage review; no later rule has been declared superseding in this record.'
