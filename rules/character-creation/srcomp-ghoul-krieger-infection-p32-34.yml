@@ -1,0 +1,102 @@
+id: rule.character-creation.srcomp-ghoul-krieger-infection
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 32-34
+pdf_pages: 33-35
+edition_scope: Shadowrun Third Edition optional Shadowrun Companion fictional ghoul infection and transformation
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: "Source-reviewed fictional Krieger-strain HMHVV gameplay procedure from FASA Corporation Shadowrun Companion (FASA7905a, Shadowrun Third Edition), printed pp32-34/PDF33-35."
+summary: "Optional Shadowrun tabletop ghoul mechanics: exact infection success table, stage-three Willpower (6), numeric traits, mental/Essence outcomes and cyberware/bioware effects; fictional source, not real-world guidance."
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages: [32, 33, 34]
+    pdf_pages: [33, 34, 35]
+  rule_scope: The Companion's optional fictional ghoul-character and Krieger-strain HMHVV transformation procedure, not advice about real-world infectious diseases or diet.
+  fiction_context:
+    setting: The fictional Shadowrun tabletop world has ghoul metahumans and an invented Human-Metahuman Vampiric Virus called the Krieger strain.
+    attribution: Treat sourcebook narrator descriptions, fictional social context, and optional gamemaster rulings distinctly.
+  infection_exposure:
+    fictional_transmission: Via bodily fluids; the book describes a carrier bite or scratch as common situations.
+    initial_test: Unaugmented Body Test
+    target_number: Carrier's Essence rating
+    table_name: Krieger Strain Infection Table
+    results_by_successes:
+      "0": Infected; proceeds toward transformation.
+      "1": Permanent effect at gamemaster discretion, such as lasting blindness or skin discoloration; character does not actually become a ghoul.
+      "2": Sickness without infection; weakness, dizziness and illness last approximately ten days.
+      "3": No effect; source notes the character may nevertheless be an asymptomatic carrier.
+    no_effect_threshold: 3
+    distinction: Zero successes means infection; one or two means adverse nontransformation results; three or more resists illness, but possible carrier status remains a stated uncertainty.
+  infection_course:
+    approximate_total_days: 90
+    number_of_stages: 3
+    approximate_stage_days: 30
+    stage_1: No outward signs; book states the invented infection can still be treated if detected.
+    stage_2: Fictional clinical progression with failing eyesight, cravings for raw meat, inability to keep normal food down and discomfort.
+    stage_3: Final bodily and mental transformation; determine Attribute changes with the stage-three table below.
+  third_stage:
+    test: Willpower Test
+    target_number: 6
+    use_karma_on_test: false
+    results_by_successes:
+      "0":
+        intelligence_modifier: -2
+        charisma_modifier: -2
+        fiction_effect: Severe inability to interact with metahumans; book compares reasoning to that of an animal.
+      "1":
+        intelligence_modifier: -1
+        charisma_modifier: -1
+        fiction_effect: Some personality remains.
+      "2":
+        charisma_modifier: -1
+        fiction_effect: Personality mostly intact.
+      "3":
+        additional_attribute_modifiers: none
+        fiction_effect: Standard functional ghoul, almost complete retention of personality and intellect.
+      4_plus:
+        willpower_modifier: 1
+        fiction_effect: Better than normal according to the optional table.
+    cumulative_with: Ghoul Characteristics Table traits and modifiers on printed p34/PDF35.
+  ghoul_characteristics:
+    body_modifier: 2
+    strength_modifier: 1
+    charisma_modifier: -1
+    intelligence_modifier: -1
+    essence_modifier: -1
+    magic_rating_modifier: -1
+    running_multiplier_modifier: 1
+    other_traits:
+    - Mild Allergy (sunlight) Flaw; refer to Companion p18.
+    - Enhanced hearing and smell; target number modifier -2 for Perception Tests using these senses.
+    - Blind Flaw; refer to Companion p19.
+    - Sensitive System Flaw; refer to Companion p21.
+    - Dietary Requirement (raw flesh).
+    - Dual-natured being; refer to SR3 p260.
+    - Immunity to VITAS plague.
+    fictional_dietary_note: The sourcebook's fiction states a ghoul must consume approximately 1 percent of body weight in raw metahuman flesh weekly; the book says cooked meat is indigestible to ghouls. This is in-world fictional biology, not practical guidance.
+  survival_and_attribute_rules:
+    intelligence_or_charisma_below_1: The book considers these characters insane or mindless and turns them into gamemaster-controlled NPCs.
+    alternate_gm_discretion: Instead of dropping Intelligence or Charisma below 1, the gamemaster may subtract 2 points from another Attribute.
+    essence_zero_or_less: The character dies under the source's fictional transformation rule.
+    racial_modified_limits: Ghoul Characteristics Table modifiers alter Racial Modified Limits and therefore Attribute Maximums; third-stage test result modifiers do not alter those limits.
+  awakened_character_rules:
+    retained: Magical abilities and known spells survive ghoul transformation.
+    willpower_test_for_use: Willpower (6) Test; source says successful use is unlikely without successes.
+    magic_rating_reduction: -1 from ghoul characteristics, with potential curtailment of magic abilities.
+    adept_magic_zero: Adept with no full Magic Point remaining loses adept powers.
+    optional_gamemaster_permission: A gamemaster may allow geasa to counter the Magic Rating loss under Magic in the Shadows.
+  existing_augmentations_during_transformation:
+    bioware: Automatically lost and absorbed into new fictional biology; no continuing benefit or penalty.
+    structural_cyberware: Remains as a body modification unaffected by transformation; examples include cyberlimbs, bone lacing, dermal plating, fingertip/tooth compartments and flare compensation.
+    headware_memory: Remains, but its in/out devices do not function during the transformation.
+    other_cyberware: Broken by transformation and requires cybernetic repair or surgery to function.
+  lineage:
+    relation: Optional SR3 Companion procedure, not an automatic conversion for historical Second Edition sources.
+    linked_rules: [subsystem.character.edges-flaws, rule.character-creation.priority-system]
