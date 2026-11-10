@@ -108,3 +108,26 @@ The following examples come from the reviewed original Companion pages and are *
 | Rigging | `subsystems/vehicles/design.yml` (repository anchor; precise original printed/PDF pages not checked in this session) | Record exists; source-image verification, complete design inputs and implementation tests remain. |
 
 **Separation of claims:** source PDF and cited Companion pages were checked; the seven optional records are GitHub-confirmed and indexed; other listed canonical paths were checked for existence and stated edition/source references only. No `engine_ruleset_v0` executable code was generated or tested by this document. This snapshot does not mark any unresolved source range complete, does not change Denver, and should be revised with concrete tests only after running them.
+
+## Manual recovery checkpoint (source-confirmed core and regression harness)
+
+**Recorded 2026-11-10 UTC.** No other book, page or rule family is implicitly marked complete by this update. This is an incremental proof-of-work and specific remaining-dependency handoff.
+
+**Source-verified core repair — FASA7001, Shadowrun Third Edition:** Original 112,507,704-byte PDF freshly retrieved from the connected Drive source; SHA-256 pinned in `sources/manifests/SR3.yml` as `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914`. Source verification and original page inspection performed before candidate freeze.
+
+| Accepted source-reviewed mechanics | Printed/PDF | Verified semantic commit | Git blob |
+| --- | --- | --- | --- |
+| `procedure.firearms.sr3-core-ammunition-reloading` — action/Quickness reloading table | p280/PDF289 | `ef9eea41d7f38ab23cbea11cb4ffa4100287fa17` | `6699745b7bad26e3ad808e360edb4f66f7f86fe7` |
+| `equipment.ammunition.sr3-core-catalog-p281` — rocket/missile and ammunition acquisition/statistics tables | p281/PDF290 | `f47bf0b36ea35db0e83c714ba6d89468bbfa6d49` | `28ec27bdfe39c4838e8aa92282cb0ba7b20cc27a` |
+
+Original baseline/candidate stage journals, exact UTF-8 GitHub readbacks, gate confirmations and editorial receipts were produced. Both rows are registered as *noncontiguous verified supplements* in authoritative source-manifest blob `71b8bb8d0bd7fadd9204069b070207ca3e98af31`, administrative commit `87c7ac7e9abf5af57ddde015222ec948318bbe6e`. Other dense p275–282 rows, p305–311, and conversion details are explicitly STILL OPEN.
+
+**Companion optional-character recovery:** `sources/manifests/SRComp.yml` registers **seven** source-reviewed and confirmed semantic contributions from original FASA7905a printed pp34–43 (PDF35–44): shapeshifter creation, signed racial modifiers, numeric attribute limits, regeneration/silver/weapon-focus rules, dual nature, albinism and fourteen metahuman variants. The companion still has outstanding review obligations outside these accepted records, especially the rest of pp32–58. Do not assume all deferred Companion content is resolved.
+
+**Executable test harness (source-linked but not comprehensive):**
+- `tools/engine_readiness/rules_probe.py` — GitHub commit `1fca98d292559bdf4be69cdb94ec364a5a258ba9`, verified blob `6b74c7e6f173e9b03dcfee00e286a64313caadfc`.
+- `tools/engine_readiness/test_rules_probe.py` — GitHub commit `394388be7ddfc718c071707232b0ff07315804d7`, verified blob `89b454ced73bc0793fe5aea1bcff85e0703b0b20`.
+- Local command `python -m unittest discover -s /mnt/data/sr3_manual_sprint/engine_harness -p 'test_*.py' -v` completed **22 tests, all passing**. Re-run after pulling repository files with `python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v`. Tests exercise the limited dice, initiative, net-success staging and confirmed p280 reloading functions; they **do not** validate the full engine, full sourcebooks or magic/Matrix/rigging.
+- See `tools/engine_readiness/README.md` for exact audited boundaries. `UnresolvedRule` is deliberately raised where a calculation or tie-break needs other records or source reinspection.
+
+**Next fastest mechanical work:** finish source-verifiable missing SR3 Street Gear numeric tables, p305–311 and conversion material; finish Companion pp32–58 options; then Matrix FASA7909 programming pp76–94 and FanPro10667 Sprawl Survival Guide game information pp118–126. Reuse verified canonical IDs and preserve legal optional/supersession semantics; never substitute scanned prose or archival item counts for implemented mechanics.
