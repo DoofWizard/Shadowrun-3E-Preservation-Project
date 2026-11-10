@@ -21,8 +21,10 @@ class SourceReviewedSR3AmmunitionClasses(unittest.TestCase):
         self.assertFalse(ammunition_classes_compatible("medium_machine_gun", "heavy_machine_gun"))
     def test_unknown_rifle_umbrella_fails_closed(self):
         with self.assertRaises(UnresolvedRule):ammunition_classes_compatible("rifle", "rifle")
-    def test_user_supplied_weapon_model_not_valid_class(self):
-        with self.assertRaises(UnresolvedRule):source_range_class("Enfield AS-7")
+    def test_user_supplied_weapon_model_and_special_projectiles_not_assumed(self):
+        for unknown in ("Enfield AS-7", "taser", "assault_cannon", "grenade_launcher", "missile_launcher"):
+            with self.subTest(class_name=unknown), self.assertRaises(UnresolvedRule):
+                source_range_class(unknown)
     def test_shotgun_exception_is_normalization_not_wholesale_conversion(self):
         self.assertEqual(source_range_class("shotgun_rifle"),"shotgun")
     def test_non_string_class_rejected(self):
