@@ -1,0 +1,102 @@
+id: rule.character-creation.sr3-master-priority-numeric-p54
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '54'
+pdf_pages: '55'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001); original SR3
+  baseline; no inferred optional-rule replacement
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001), fictional tabletop
+  RPG, printed p54/PDF55: Master Character Creation Table numbers'
+summary: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001), printed p54/PDF55:
+  exact starting Attributes, Skills, Resources, racial priority and Magic priority
+  rows from the fictional tabletop game. This archive record is not an executable
+  implementation.'
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog: FASA7001
+  printed_page: 54
+  physical_pdf_page: 55
+  original_table: MASTER CHARACTER CREATION TABLE
+  priority_rows:
+    A:
+      attributes: 30
+      skills: 50
+      resources_nuyen: 1000000
+      race: null
+      magic: Full Magician
+    B:
+      attributes: 27
+      skills: 40
+      resources_nuyen: 400000
+      race: null
+      magic: Adept/Aspected Magician
+    C:
+      attributes: 24
+      skills: 34
+      resources_nuyen: 90000
+      race: Troll/Elf
+      magic: null
+    D:
+      attributes: 21
+      skills: 30
+      resources_nuyen: 20000
+      race: Dwarf/Ork
+      magic: null
+    E:
+      attributes: 18
+      skills: 27
+      resources_nuyen: 5000
+      race: Human
+      magic: null
+  assignment:
+    categories:
+    - Race
+    - Magic
+    - Attributes
+    - Skills
+    - Resources
+    priorities:
+    - A
+    - B
+    - C
+    - D
+    - E
+    rule: Assign each of the five priority levels once, to one different category;
+      no priority reused.
+    race_restrictions:
+      Human: E
+      Dwarf: D
+      Ork: D
+      Troll: C
+      Elf: C
+    magical_restrictions:
+      Full Magician: A
+      Adept/Aspected Magician: B
+    mundane_character: A character who is not Awakened assigns Magic to any priority
+      not otherwise assigned to Race or the other categories; there is no standalone
+      mundane Magic award.
+  relationship_to_existing: Numerically extends rules/character-creation/priority-system.yml;
+    does not duplicate or replace that general procedure.
+  test_vectors_specification_only:
+  - id: priority.a_attributes
+    category: Attributes
+    priority: A
+    expected_points: 30
+  - id: priority.c_skills
+    category: Skills
+    priority: C
+    expected_points: 34
+  - id: priority.e_resources
+    category: Resources
+    priority: E
+    expected_nuyen: 5000
+  - id: race.elf_priority
+    race: Elf
+    expected_priority: C
+  code_status: Source-reviewed numeric record; executable prototype is noncanonical
+    and not an ingestion receipt.
