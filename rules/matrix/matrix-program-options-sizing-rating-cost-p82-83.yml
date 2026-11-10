@@ -1,0 +1,104 @@
+id: rule.matrix.program-options-sizes-ratings-costs-p82-83
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 82-83
+pdf_pages: 83-84
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition source; optional Matrix program
+  options when selected, not inferred to replace SR3 core
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop Matrix (FASA Corporation, FASA7909), printed pp82-83/PDF83-84:
+  program option rating, sizing and cost rules'
+summary: Exact optional game mechanics from FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional
+  tabletop RPG, printed pp82-83/PDF83-84; verified rating cap, actual/design Mp size and order, programming
+  TN, 200 nuyen/Mp price, source examples. Not an engine-test receipt.
+data:
+  publication: Matrix
+  publisher: FASA Corporation
+  catalog_number: FASA7909
+  edition: Shadowrun Third Edition
+  original_printed_pages:
+  - 82
+  - 83
+  physical_pdf_pages:
+  - 83
+  - 84
+  option_scope:
+    optional: true
+    applies_to:
+    - utility programs
+    - IC programs
+    utility_ic_options_compatibility: distinct option lists; each option may have narrower allowed program
+      classes; gamemaster chooses whether options are allowed
+    unrelated_shield_penetration_and_command_set_details: deferred; no compatibility invented
+  size_definitions:
+    actual_size_mp: program memory occupied on cyberterminal or other computer
+    design_size_mp: program size used as base time for programming and its retail price
+    without_options: single base program size in Mp
+    with_options: different design and actual sizes may apply
+    option_rating_modifiers: apply all option changes to program rating before percentage size changes
+    percent_size_modifiers: apply sequentially, not by adding percentages together
+    multiple_reductions_example:
+      original_size_mp: 180
+      first_size_reduction_percent: 50
+      after_first_mp: 90
+      second_size_reduction_percent: 50
+      final_size_mp: 45
+  maximum_base_rating:
+    source_character_limit: programmer Computer (Programming) skill maximum applies to base program rating
+      only
+    option_added_effective_rating: does not count against maximum base rating designer can create
+    example:
+      skill: 8
+      base_program_rating: 8
+      optional_boosted_effective_rating: may exceed 8 under a source-defined option; not a new base rating
+  programming_test:
+    base_target_number: base program rating, unaffected by option-derived effective-rating increase
+    example:
+      base_rating: 4
+      area_option_rating: 4
+      programming_test_target_number: 4
+      not: 8
+  options_with_own_ratings:
+    maximum_option_rating: no more than base program rating of program
+    example:
+      base_rating: 4
+      area_option_max_rating: 4
+  retail_price:
+    multiplier_nuyen_per_design_mp: 200
+    uses: design size Mp after applicable option changes
+    original_p83_examples:
+    - base_rating: 6
+      program: Attack-6M
+      no_options_design_mp: 108
+      street_price_nuyen: 21600
+    - base_rating: 6
+      program: Attack-6M with stealth-4
+      effective_rating: 10
+      design_size_mp: 300
+      street_price_nuyen: 60000
+  canonical_links:
+    extends:
+    - options/matrix/program-options.yml
+    - procedures/matrix/programming.yml
+    related_numeric:
+    - rules/matrix/matrix-programming-size-plan-suite-team-p78-80.yml
+    remaining_deferred: Individual utility/IC option benefits, compatibility, command sets, self-coded agents
+      and purchased-program rules in printed pp83-94 still require separate source-faithful normalization.
+  test_vectors_specification_only:
+  - id: two_sequential_50_percent_reductions
+    starting_mp: 180
+    expected_final_mp: 45
+  - id: base_programming_tn_unmodified
+    base_rating: 4
+    area_option_rating: 4
+    expected_programming_tn: 4
+  - id: street_price_108mp
+    design_mp: 108
+    expected_nuyen: 21600
+  - id: street_price_300mp
+    design_mp: 300
+    expected_nuyen: 60000
+  code_status: Structured original-source mechanical reference, no consumer code/test passed.
