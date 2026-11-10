@@ -1,0 +1,82 @@
+id: rule.matrix.ssg-dataterm-host-sheaf-p120
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: '120'
+pdf_pages: '121'
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667), Shadowrun Third Edition; fixed source example,
+  no supersession of core Matrix rules
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Fictional tabletop game host response table — FanPro Sprawl Survival Guide (FanPro10667), Third
+  Edition, printed p120/PDF121
+summary: Exact in-game dataterm host security code and twelve trigger steps from published Shadowrun Third
+  Edition source; no real-world implementation or advice.
+data:
+  publication: Sprawl Survival Guide
+  publisher: FanPro
+  catalog_number: FanPro10667
+  edition: Shadowrun Third Edition
+  fictional_source: Published fictional cyberpunk tabletop role-playing game; host security codes and
+    intrusion countermeasures are game abstractions.
+  original_printed_pages:
+  - 120
+  physical_pdf_pages:
+  - 121
+  table_title: Dataterm Host Table
+  security_code: Green 4-8/8/8/8/8
+  trigger_step_events:
+  - trigger_step: 5
+    event: Probe
+    event_rating: 6
+  - trigger_step: 10
+    event: Probe
+    event_rating: 8
+  - trigger_step: 15
+    event: Scout
+    event_rating: 6
+  - trigger_step: 20
+    event: Trace
+    event_rating: 8
+  - trigger_step: 25
+    event: Passive Alert
+  - trigger_step: 30
+    event: Probe
+    event_rating: 6
+    trap_event: Killer
+    trap_rating: 8
+  - trigger_step: 35
+    event: Trace
+    event_rating: 8
+    trap_event: Blaster
+    trap_rating: 8
+  - trigger_step: 40
+    event: Blaster
+    event_rating: 8
+  - trigger_step: 45
+    event: Active Alert
+  - trigger_step: 50
+    event: Blaster
+    event_rating: 10
+  - trigger_step: 55
+    event: Blaster
+    event_rating: 10
+  - trigger_step: 60
+    event: Shutdown
+  semantics: Entries are the published tabletop example security sheaf, not generic real-world system
+    instructions or a universal host table.
+  engine_test_vectors:
+  - id: ssg_dataterm_step_25
+    trigger_step: 25
+    expected_event: Passive Alert
+  - id: ssg_dataterm_step_30
+    trigger_step: 30
+    expected_event: Probe
+    rating: 6
+    trap_event: Killer
+    trap_rating: 8
+  - id: ssg_dataterm_step_60
+    trigger_step: 60
+    expected_event: Shutdown
+  engine_execution_status: Specifications only; no engine code exercised by this record.
