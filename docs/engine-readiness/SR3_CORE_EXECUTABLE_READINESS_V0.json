@@ -17,7 +17,31 @@
     "test_command": "python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v",
     "code_readback_verified": true,
     "canonical_ingestion_completed_by_this_file": false,
-    "scope": "Selected deterministic source-linked core mechanics, not full rules-engine fidelity"
+    "scope": "Selected deterministic source-linked core mechanics, not full rules-engine fidelity",
+    "incremental_matrix_proof": {
+      "date": "2026-11-10",
+      "run_context": "Local, original 58-test core archive plus new Matrix consumer tests. Not a full current repository suite run.",
+      "old_core_tests": 58,
+      "new_matrix_tests": 24,
+      "local_total_pass": 82,
+      "local_total_fail": 0,
+      "original_source": "FASA Corporation, Matrix, FASA7909, Shadowrun Third Edition, printed pp76,78-80/PDF77,79-81",
+      "original_source_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe",
+      "source_page_scan_finding": "Printed p77/PDF78 is full-page art, not a gap in programming rules.",
+      "adapter": {
+        "path": "tools/engine_readiness/matrix_programming_core.py",
+        "commit": "b60941258488741448da566439485dbd067f1f20",
+        "blob": "2094aa512e78b8633d549b9229ff46e0f46338eb",
+        "exact_readback": true
+      },
+      "tests": {
+        "path": "tools/engine_readiness/test_matrix_programming_core.py",
+        "commit": "8edc56c0f0038edc965d932ae249f92617d4ba56",
+        "blob": "7d63a88b95ca1214deba9c70bb410ab49f4ddd43",
+        "exact_readback": true
+      },
+      "significance": "Only bounded programming arithmetic, plans, suite sizes, memory, test TN, failure period and team calculations. Does not make entire Matrix programming pp76-94 normalized or fully implemented."
+    }
   },
   "checked_source_pages": [
     {
@@ -65,16 +89,17 @@
       "id": "priority-character-creation",
       "canonical_reference": [
         "rules/character-creation/priority-system.yml",
-        "procedures/character-creation/standard.yml"
+        "procedures/character-creation/standard.yml",
+        "rules/character-creation/sr3-master-priority-numeric-p54.yml"
       ],
       "implementation": "tools/engine_readiness/core_extensions.py",
       "state": "code_tested_partial",
       "missing": [
-        "source-reviewed canonical numeric Master Character Creation Table record through ordinary transaction gates",
         "full racial modifier point spending and magical option rules",
         "full equipment/contact/lifestyle shopping"
       ],
-      "source_page": "printed p54/PDF55"
+      "source_page": "printed p54/PDF55",
+      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit c6f4dfc6c5125d61a087ec4fe488773d2566c939; executable consumer remains partial."
     },
     {
       "id": "initiative",
@@ -112,17 +137,18 @@
       "id": "condition-monitor",
       "canonical_reference": [
         "rules/condition/condition-monitor.yml",
-        "rules/condition/damage-levels.yml"
+        "rules/condition/damage-levels.yml",
+        "rules/condition/sr3-damage-monitor-numeric-p125-126.yml"
       ],
       "implementation": "tools/engine_readiness/condition_core.py",
       "state": "code_tested_partial",
       "missing": [
-        "ordinary source-reviewed numeric condition/damage/modifier canonical records via transaction gate",
         "healing and first aid",
         "optional Man & Machine p131 consciousness override",
         "ongoing damage/interrupts and separate optional overdamage"
       ],
-      "source_page": "printed pp125-126/PDF126-127"
+      "source_page": "printed pp125-126/PDF126-127",
+      "source_record_status": "Numerically source-reviewed, GitHub-confirmed, and indexed; semantic commit d8569cc0f7c80c25e2a067db21ca4cfff7aff5bf; executable consumer remains partial."
     },
     {
       "id": "street-gear-and-equipment",
@@ -155,13 +181,52 @@
       "id": "matrix",
       "canonical_reference": [
         "rules/matrix/system-test.yml",
-        "procedures/matrix/programming.yml"
+        "procedures/matrix/programming.yml",
+        "rules/matrix/matrix-programming-rating-constraints-p76.yml",
+        "rules/matrix/matrix-programming-size-plan-suite-team-p78-80.yml"
       ],
-      "implementation": "not_in_58_test_subset",
-      "state": "canonical_partial_code_unverified",
+      "implementation": "tools/engine_readiness/matrix_programming_core.py",
+      "state": "code_tested_partial",
       "missing": [
-        "Matrix FASA7909 printed pp76-94 programming details",
-        "IC/System/Security Tally end-to-end tests"
+        "All other Matrix programming pp76-94 option, software purchase, autonomous agent, IC, worm and application interactions beyond the reviewed numeric subset",
+        "Full Matrix system-test, security tally and opposition encounters; no intrusion runtime",
+        "Programming suite equipment eligibility, utility multipliers and final option-adjusted size must be resolved by other effective canonical records",
+        "Full-current-repo test run and multi-source interaction tests"
+      ],
+      "source_assurance": {
+        "scan_coverage": "Original printed pp76,78-80 inspected for implemented subset; p77/PDF78 verified illustration",
+        "normalized_record_coverage": "FASA7909 source manifest registers 11 distinct verified post-completion records across the programming range, but full pp76-94 deferral explicitly unresolved",
+        "code_validated_readiness": "24 new unit tests pass against exact GitHub-readback consumer bytes; 82 pass in local bounded archive suite; other Matrix programming rules and interactive runtime untested"
+      },
+      "test_vectors": [
+        {
+          "id": "matrix.size.rating6_multiplier4",
+          "expected_megapulses": 144,
+          "source": "FASA7909 p78/PDF79"
+        },
+        {
+          "id": "matrix.plan.rating6_one_option_multiplier4",
+          "expected_hours": 28,
+          "expected_plan_memory_mp": 25,
+          "source": "FASA7909 pp78-79/PDF79-80"
+        },
+        {
+          "id": "matrix.programming_success.mp256_eight_successes",
+          "expected_days": 32,
+          "source": "FASA7909 p79/PDF80"
+        },
+        {
+          "id": "matrix.team.four_member",
+          "skills": [
+            5,
+            2,
+            8,
+            7
+          ],
+          "expected_test_dice": 5,
+          "expected_days": 7,
+          "source": "FASA7909 p80/PDF81"
+        }
       ]
     },
     {
@@ -205,11 +270,11 @@
     }
   ],
   "next_minimum_game_checkpoint": [
-    "validated chargen numerical table and racial constraints",
+    "core priority numeric table verified and indexed; still need complete racial/magic creation logic",
     "complete ranged/melee attack and defense including Armor Power, pools and modifiers",
     "track damage, healing and initiative through full Combat Turns",
     "choose and test minimum playable magic, Matrix and rigging adapters",
     "source-reviewed canonical transaction receipts for numerical gaps"
   ],
-  "note": "Code adapters are not semantic archive substitutions. Source manifests and hourly ingestion worker remain authoritative; no Denver printed-page advancement is implied."
+  "note": "Code adapters are not semantic archive substitutions. Source manifests and hourly ingestion worker remain authoritative; no Denver printed-page advancement is implied. Update 2026-11-10: numeric priority and Condition Monitor canonical records have confirmed ingestion receipts; new Matrix p78-80 consumer tests are code-only, not source transaction receipts; Denver boundary unchanged p45/PDF46."
 }
