@@ -1,0 +1,147 @@
+id: rule.matrix.frames-agents-design-operation-p88-91
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 88-91
+pdf_pages: 89-92
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition; frames and agents as optional distinct
+  constructed game programs, not rules for real software
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition Matrix (FASA Corporation FASA7909), printed pp88-91/PDF89-92: frame
+  and agent construction and operation rules'
+summary: Original-game exact ratings, multiplier, point budgets, Hacking Pool, action economy, utility loading,
+  Matrix security and command comprehension of dumb frames, smart frames and agents.
+data:
+  publication: Matrix
+  publisher: FASA Corporation
+  catalog_number: FASA7909
+  edition: Shadowrun Third Edition
+  original_printed_pages:
+  - 88
+  - 89
+  - 90
+  - 91
+  physical_pdf_pages:
+  - 89
+  - 90
+  - 91
+  - 92
+  classification:
+    dumb_frame: Follows controlling persona direct instructions or triggers; lacks independent decision capability.
+    smart_frame: Independent limited pilot capable of interpreting more complex instructions.
+    agent: More capable independently acting frame, with learning/adaptation and its own Hacking Pool; not a true
+      AI.
+  core:
+    rating_used_as: MPCP rating for tests requiring an MPCP.
+    programmer_computer_programming_skill_limit:
+      dumb_frame: 2 × Computer (Programming) skill
+      smart_frame: floor(1.5 × Computer (Programming) skill)
+      agent: 1 × Computer (Programming) skill
+    size_multiplier_for_core:
+      dumb_frame: 3
+      smart_frame: 6
+      agent: 10
+    size_formula: Cross-index core rating and its size multiplier using Program Size Table, printed p78; do not
+      assume rating times multiplier.
+    icon_rating: Equal to frame core rating.
+  persona_attributes:
+    dumb_frame:
+      total_persona_points: core rating
+    smart_frame:
+      total_persona_points: core rating
+    agent:
+      total_persona_points: 2 × core rating
+    constraint: Divide among Bod, Evasion, Masking and Sensor; no single attribute exceeds core rating. An attribute
+      may be 0.
+  frame_points:
+    dumb_frame: 2 × core rating
+    smart_frame: 4 × core rating
+    agent: 6 × core rating
+    unallocated_points: Lost after design.
+  pilot:
+    dumb_frame: No Pilot rating; obeys direct instructions.
+    smart_frame_and_agent:
+      min_rating: 1
+      max_rating: Minimum of core rating and programmer Computer (Programming) skill rating.
+      frame_point_cost_per_rating: 2
+    effect: Acts as built-in Computer Skill for the tests this independent program makes.
+  reaction_initiative:
+    dumb_frame: Use controlling persona Reaction and Initiative; no independent scores.
+    smart_frame_and_agent:
+      reaction: Equal to core rating.
+      base_initiative_dice: 1D6
+      extra_initiative_die_cost_frame_points: 3
+      max_total_initiative_dice:
+        smart_frame: 4D6
+        agent: 5D6
+  hacking_pool:
+    dumb_frame: 0
+    smart_frame: 0
+    agent: Equal to core rating, spent under ordinary decker Hacking Pool rules.
+  utility_payload:
+    frame_point_cost_per_utility_rating: 1
+    total_payload: Sum of ratings of loaded utilities cannot exceed purchased payload.
+    single_utility_rating_ceiling: No loaded utility may have rating greater than frame core.
+  options_compatibility:
+    dumb_and_smart_frames:
+    - optimization
+    - squeeze utility options
+    agent:
+    - IC options except cascading, party cluster and trap
+  utility_loading:
+    requirement: A complete object-code utility must be loaded; a partially copied utility is invalid.
+    reprogram_after_load: Modifying the frame or agent utility selection requires a Computer (Programming) Test;
+      test target number is average rating of utilities loaded, rounded up.
+    reprogram_time: (average utility rating)^2 × 2 days; source example uses average 5 -> 50 days.
+    size: Actual frame/agent size is actual frame core size plus actual sizes of loaded utilities and options.
+  execution:
+    upload: The controlling persona logs on to host or grid and uploads frame/agent; it starts running after upload.
+    memory: Running frame or agent does not consume controller active memory. Compressed or squeezed designs must
+      be decompressed before running.
+    instructions: The controlled frame or agent normally accepts orders only from its controlling persona, except
+      where another persona spoofs an authorized command.
+    security: Frame or agent generates its own Security Tally, separate from controller; triggered IC targets frame/agent,
+      and tracing a frame/agent follows loader original datatrail.
+    override: Controller may perform operations with own Computer skill and Hacking Pool through the program instead;
+      user must spend the normal operation action, not a Simple Action merely for issuing command.
+  dumb_frame_actions:
+    utility_activation_by_command: Controller uses Simple Action to trigger one utility even if the utility would
+      ordinarily require a Complex Action.
+    no_repeat_without_second_command: true
+    max_one_action_per_initiative_pass: true
+    immediate_then_later: Two controller Simple Actions activating two Complex-Action utilities in the same pass
+      result in the first frame action in that pass and the second in the next pass, using controller initiative.
+    logoff: Dumb frame left on host when controller logs off crashes immediately unless controller performs Logon
+      operation to another system on its behalf.
+  smart_frame_agent_actions:
+    issuing_command: Simple Action, controlling persona and program must be on same system.
+    command_recipients: Can command one independent program at a time unless all commanded programs receive identical
+      instructions.
+    comprehension: GM determines complexity with Difficulty Number Table from SR3 p92; program makes Comprehension
+      Test using Pilot against target number. At least one success understands and executes, additional successes
+      improve interpretation.
+    controller_help: Controller may add Computer (Programming) dice, equal to or less than program Pilot, to Comprehension
+      Test.
+    agent_hacking_pool: Agents may add their own Hacking Pool to Comprehension Tests.
+  specification_only_examples:
+  - id: design_limits_skill8
+    programming_skill: 8
+    dumb_max_core: 16
+    smart_max_core: 12
+    agent_max_core: 8
+  - id: agent8
+    core: 8
+    frame_points: 48
+    persona_points: 16
+    hacking_pool: 8
+  - id: agent8_initiative_plus4
+    extra_initiative_dice: 4
+    frame_point_cost: 12
+    total_initiative_dice: 5
+  - id: utility_loading_average5
+    average_rating: 5
+    base_time_days: 50
+  outstanding: IC Constructs and worms from following printed pp91–94 need distinct source-review; no code-tested
+    readiness claim.
