@@ -1,0 +1,148 @@
+record_type: equipment
+status: source_reviewed
+source: source.sr3-core
+edition_scope: FASA Corporation Shadowrun Third Edition original core rulebook FASA7001,
+  fictional tabletop RPG, no later edition conversion
+content_class:
+- equipment_stat
+framing: reference_exact
+id: equipment.rigging.sr3-core-rigger-vehicle-gear-p306
+printed_pages: '306'
+pdf_pages: '315'
+headline: Original FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop
+  rigger/vehicle equipment Street Gear, printed p306/PDF315
+summary: Exact in-game interface, remote deck, ECCM, jacks and accessory entries with
+  prerequisites, cargo/Load constraints, legality codes, costs and example vectors.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog_number: FASA7001
+    edition: Shadowrun Third Edition
+    source_type: Fictional tabletop role-playing game rulebook
+    printed_page: 306
+    pdf_page: 315
+  context: Exact fictional SR3 Street Gear vehicle-interface and rigger-equipment
+    statistics and game prerequisites; these are game numbers.
+  heading: RIGGER AND VEHICLE GEAR
+  vehicle_control_adjustments:
+  - name: Datajack Port
+    availability_original: 3/72 hrs
+    cost_original_nuyen: 2500
+    street_index: 1.5
+    legality: Legal
+    motorcycles_cost_nuyen: 5000
+    cargo_factor: 1
+    load_kg: 15
+  - name: Remote Control Gear
+    availability_original: 4/72 hrs
+    cost_original_nuyen: 2,500 × vehicle Body
+    street_index: 2
+    legality: Legal
+    cargo_space_consumed: 0
+    prerequisite: Vehicle Sensor Rating of 1 or higher
+    grants_vehicle_pilot_rating: 1
+  - name: Vehicle Control Gear
+    availability_original: 4/7 days
+    cost_original_nuyen: 2500
+    street_index: 2
+    legality: Legal
+    cargo_factor: 1
+    load_kg: 10
+  rigger_equipment:
+  - name: Remote Control Deck
+    availability_original: 4/72 hrs
+    cost_original_nuyen: 5,000 × Rating
+    street_index: 2
+    weight: 3
+    legality: Legal
+  - name: Remote Control ECCM (Ratings 1–3)
+    availability_original: 4/7 days
+    cost_original_nuyen: Rating × 7,500
+    street_index: 2
+    weight: 1.5
+    legality: Legal
+    rating_range:
+    - 1
+    - 3
+  - name: Remote Control ECCM (Ratings 4–6)
+    availability_original: 6/14 days
+    cost_original_nuyen: Rating × 15,000
+    street_index: 3
+    weight: 2
+    legality: 6P–V
+    rating_range:
+    - 4
+    - 6
+  - name: Remote Control ECCM (Ratings 7–9)
+    availability_original: 12/28 days
+    cost_original_nuyen: Rating × 35,000
+    street_index: 4
+    weight: 2.5
+    legality: 5P–W
+    rating_range:
+    - 7
+    - 9
+  - name: Remote Control ECCM (Rating 10)
+    availability_original: 18/45 days
+    cost_original_nuyen: 500000
+    street_index: null
+    weight: 2.5
+    legality: 4P–W
+    rating_range:
+    - 10
+    - 10
+    street_index_original: —
+  - name: Hitcher Jacks
+    availability_original: 2/48 hours
+    cost_original_nuyen: Rating × 100 per jack
+    street_index: 1
+    weight: 0
+    legality: Legal
+  - name: Audio/Visual Screen Displays
+    availability_original: 2/24 hours
+    cost_original_nuyen: 100
+    street_index: 1
+    weight: 0.5
+    legality: Legal
+  - name: Intercom Speaker
+    availability_original: 2/24 hours
+    cost_original_nuyen: 25
+    street_index: 1
+    weight: 0
+    legality: Legal
+  interface_procedures:
+    datajack_port: Enables neural vehicle control via datajack but is insufficient
+      for a person with a VCR; without a VCR it provides +1 to the driver’s Reaction
+      for Vehicle Tests and vehicle combat.
+    remote_control_gear: Permits vehicle data reception/transmission over a rigger
+      network for drone use. Requires Sensor Rating ≥1; adaptation grants vehicle
+      Pilot Rating 1 and consumes no cargo space.
+    vehicle_control_gear: An in-vehicle black box translates machine code into neurological
+      stimuli and vice versa; a VCR user may rig the vehicle. Requires a datajack
+      port or remote-control gear and vehicle Sensor Rating ≥1. Consumes 1 Cargo Factor
+      and 10 kg Load.
+    remote_control_deck: Portable deck for controlling vehicles over a radio link,
+      subject to jamming and conditions; hitcher jacks, displays, and intercom are
+      referenced as accessories.
+    remote_control_eccm: Functions as ECCM for a rigger remote deck against interference
+      and jamming; cross-reference Electronic Countermeasures, printed p138.
+    military_vehicles_legality: The gamemaster determines the Legality Code for fictional
+      military and security vehicles; the table does not give a fixed code.
+  computed_example_vectors_only_not_engine_tested:
+  - example: Remote Control Gear Body 4
+    source_formula: 2,500 × Body
+    expected_cost_nuyen: 10000
+  - example: Remote Control Deck Rating 3
+    source_formula: 5,000 × Rating
+    expected_cost_nuyen: 15000
+  - example: Remote Control ECCM Rating 5
+    source_formula: Rating × 15,000
+    expected_cost_nuyen: 75000
+  - example: Vehicle Control Gear install
+    required_sensor_rating_minimum: 1
+    required_control_interface: Datajack Port or Remote Control Gear
+    cargo_factor_consumed: 1
+    load_kg_consumed: 10
+  legal_status_note: The original table uses exactly Legal, 6P–V, 5P–W and 4P–W; no
+    later-edition conversion is inferred.
