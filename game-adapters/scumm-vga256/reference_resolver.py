@@ -62,7 +62,8 @@ def success_test(
     Example: success_test([[6, 1], [3], [1]], 7) has one success.
     For TN <= 6, a 6 succeeds without a continuation.
     """
-    _integer(base_target, "base_target") if base_target >= 0 else _integer(base_target, "base_target", -1000000)
+    if isinstance(base_target, bool) or not isinstance(base_target, int):
+        raise ValueError("base_target must be an integer")
     mods = tuple(modifiers)
     for mod in mods:
         if isinstance(mod, bool) or not isinstance(mod, int):
