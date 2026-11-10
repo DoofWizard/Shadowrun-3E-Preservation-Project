@@ -64,9 +64,11 @@ class SR3SourceVectors(unittest.TestCase):
     def test_one_net_success_no_stage(self):
         self.assertEqual(staged_damage("M",2,1), "M")
 
-    def test_staging_boundary_refused(self):
-        with self.assertRaises(UnresolvedRule):
-            staged_damage("D",5,1)
+    def test_staging_caps_at_deadly(self):
+        self.assertEqual(staged_damage("D",5,1), "D")
+
+    def test_staging_below_light_zero_damage(self):
+        self.assertEqual(staged_damage("L",1,5), "none")
 
     def test_clip_reload(self):
         self.assertEqual(reloading_options("c",4),[("Simple","clip insert/remove"),("Complex",4)])
