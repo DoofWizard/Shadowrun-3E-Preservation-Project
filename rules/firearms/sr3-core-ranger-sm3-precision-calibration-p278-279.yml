@@ -1,0 +1,42 @@
+id: rule.firearms.sr3-core-ranger-sm3-precision-calibration-p278-279
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '278-279'
+pdf_pages: '287-288'
+edition_scope: 'FASA Corporation Shadowrun, Third Edition, FASA7001; original fictional SR3 firearm model rules, not real-world technical instructions'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA Shadowrun Third Edition (FASA7001) fictional firearm rules: Ranger Arms SM-3 source details, printed pp278-279/PDF287-288'
+summary: 'Source-reviewed original two-page Shadowrun Third Edition model-specific Ranger Arms SM-3 rifle equipment and combat-resolution conditions, separately from the existing firearms market table.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  catalog_number: FASA7001
+  original_printed_pages: [278, 279]
+  original_physical_pdf_pages: [287, 288]
+  section: 'Street Gear — Firearms, Ranger Arms SM-3'
+  fictional_model: 'Ranger Arms SM-3'
+  integral_features:
+    barrel_mount: 'Combined Rating 2 gas-vent recoil compensator and silencer.'
+    top_mount: 'Rating 3 image-magnifying scope equipped with thermographic or low-light circuits.'
+  portability_rule:
+    published_form: 'The fictional rifle can be disassembled fully into a standard briefcase.'
+    assembly_action_cost: '3 Complex Actions'
+    disassembly_action_cost: '3 Complex Actions'
+  sniper_role_alignment_rule:
+    applicability: 'Applies to the SM-3 when carried and used as a combat weapon outside its intended sniper role.'
+    source_die_expression: '2D6'
+    fictional_risk_measure: 'The number of turns the rifle is carried and used in that combat role is the chance on a 2D6 roll that precision alignment is lost.'
+    alignment_loss_effect: '+2 to all target numbers for tests using this rifle.'
+    printed_example: 'After 3 turns of combat carry/use, a 2D6 roll of 3 triggers the +2 target-number modifier.'
+    interpretation_limit: 'The excerpt illustrates the 3-versus-3 outcome but does not specify a separate repair procedure, modifier duration or numerical reset threshold; none is supplied by this record.'
+  relationship_to_existing_source_records:
+    base_market_statistics: 'equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml'
+    accessory_mount_rules: 'rules/firearms/accessory-mounts.yml'
+    precedence: 'Source-specific SM-3 rule; not a general modifier for all rifles.'
+  unexecuted_example_test_vectors:
+    - {id: source_sm3_example, out_of_role_turns: 3, d6_sum: 3, expected_target_number_modifier: 2, source: 'printed p279 worked example'}
+    - {id: sm3_assembly, operation: assemble, expected_complex_actions: 3}
+    - {id: sm3_disassembly, operation: disassemble, expected_complex_actions: 3}
+  engine_status: 'Source-reviewed normalization only; no executable rule tests have been run.'
