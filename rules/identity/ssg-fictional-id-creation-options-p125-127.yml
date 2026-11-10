@@ -1,0 +1,138 @@
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition,
+  optional fictional tabletop Matrix/identity-game mechanics; supplement does not
+  override base SR3 without explicit statement
+content_class:
+- rule_procedure
+framing: reference_exact
+id: rule.identity.ssg-fictional-id-creation-options-p125-127
+printed_pages: 125-127
+pdf_pages: 126-128
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FanPro Sprawl Survival
+  Guide (FanPro10667, 2003), printed pp125-127/PDF126-128 — optional identity-game
+  checks and Edges/Flaws'
+summary: Original-source-reviewed Shadowrun gamemaster options for an invented-world
+  identity rating, exact dice/time/cost formulas, and effects of named fictional ID
+  Edges and Flaws. Does not describe actual identity systems.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    year: 2003
+    edition: Shadowrun Third Edition
+    fictional_tabletop_setting: true
+    printed_pages:
+    - 125
+    - 126
+    - 127
+    physical_pdf_pages:
+    - 126
+    - 127
+    - 128
+  gamemaster_scope:
+    fictional_rules_only: true
+    source_procedure: The book optionally allows fictional player-characters to develop
+      or alter invented-world IDs; outcomes are set by dice tests and GM discretion.
+    base_core_reference: SR3 core false-ID acquisition prices are referenced at printed
+      p239 of the core book; no blanket supersession is stated.
+  optional_id_rating_creation_game_test:
+    primary_skill: Computer (Decking)
+    complementary_skill: Data Archive Familiarity Knowledge skill per Matrix printed
+      p25
+    game_test_target_number_formula: 2 x desired fictional ID rating
+    base_time_days_formula: desired fictional ID rating x 10
+    required_contacts_count: Number of appropriate fictional professional/institutional
+      contacts equals desired ID rating
+    contact_deficit_penalty: Each missing qualifying contact adds +1 to the test target
+      number and +10 to base time days
+    successes_greater_than_zero: 'Divide adjusted base days by number of successes
+      achieved (source example: 50 / 2 = 25 days)'
+    zero_successes: The invented-world attempt is unsuccessful and half the base time
+      is consumed
+    fictional_nuyen_cost_formula: desired ID rating squared x 100
+    deleting_an_existing_fictional_ID: Same time/cost process as creating one; details
+      of more limited alterations are left to the gamemaster
+  published_example:
+    desired_rating: 4
+    rating_base_TN: 8
+    rating_base_days: 40
+    qualifying_contacts_available: 3
+    contacts_required: 4
+    contact_deficit: 1
+    modified_TN: 9
+    modified_base_days: 50
+    successes: 2
+    expected_total_days: 25
+    fictional_nuyen_cost: 1600
+  id_edges_flaws_optional_policy:
+    attachment: Edges and Flaws belong to fictional ID records rather than the character;
+      gamemaster may apply them
+    automatic_point_values: false
+    creator_and_purchaser_knowledge: A GM can keep an ID's flaws unknown to player-characters
+    random_assignment_optional:
+      die: 1D6
+      result_1: One fictional ID Flaw
+      result_6: One fictional ID Edge
+      results_2_through_5: No automatic Edge or Flaw specified
+    less_expensive_IDs: 20 percent decrease in fictional purchase price for each Flaw
+    premium_IDs: 20 percent increase in fictional purchase price for each Edge
+    recommended_maximum_edges_or_flaws: 3
+  id_edge_effects:
+    aging_well:
+      every_n_months: Original ID rating in months
+      change_in_game_rating: 1
+      effect: Rating increases as fictional corroborating records accumulate
+    home_turf:
+      special_jurisdiction_effective_rating: ceil(base_rating x 1.5)
+      jurisdiction: Exactly one GM-selected locality; otherwise ordinary rating
+    positive_confusion:
+      modifier_to_tests_tracking_character_by_ID: +2 target number
+    teflon_identity:
+      numeric_rule: none specified
+      narrative_effect: GM uses improbable nonappearance of adverse fictional ID records;
+        not blanket immunity from pursuit
+    upstanding_citizen:
+      applicable_social_tests_TN_modifier: -1
+      condition: Character has done nothing to disturb the approving fictional observer
+    watertight:
+      opposed_ID_vs_scanner_test_TN_modifier: -1
+  id_flaw_effects:
+    dead_mans_shoes:
+      numeric_rule: none specified
+      effect: Fictional identity was recycled from a deceased individual; lingering
+        earlier associations may matter
+    deterioration:
+      rating_loss: -1
+      frequency_months: current/original ID rating as described by book; source does
+        not explicitly clarify dynamic vs fixed interval
+      ambiguity: Do not silently assume a new interval after rating changes
+    evil_twin:
+      numeric_rule: none specified
+      effect: Fictional mistaken association with another person's unfavorable conduct
+    expiration_date:
+      months_after_creation: ID rating x result of 1D6
+      gamemaster_reversal: GM discretion after expiry with effort/cost; not automatically
+        reversible
+    limitation:
+      effective_rating_in_designated_jurisdiction: floor(base ID rating / 2)
+      exception: A rating-1 ID automatically fails within the specified jurisdiction;
+        gamemaster selects one jurisdiction
+    major_goof:
+      automated_ID_test_modifier: none
+      human_observer_test: Intelligence (4) Test to notice glaring identity-data inconsistency
+  code_test_vectors_specification_only:
+  - id: id.rating4.three_contacts.two_successes
+    expected_TN: 9
+    expected_days: 25
+    expected_nuyen: 1600
+  - id: id.home_turf.rating3
+    expected_local_rating: 5
+  - id: id.limitation.rating1
+    expected_local_validation: automatic_failure
+  - id: id.expiration.rating3.die4
+    expected_months: 12
+  code_validation_status: Source-reviewed optional game rules, no new executable engine
+    tests; outstanding optional later lifestyle rules are separate.
