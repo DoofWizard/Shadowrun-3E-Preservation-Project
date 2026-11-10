@@ -1,0 +1,118 @@
+id: rule.matrix.program-market-and-verification-tables-p94
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '94'
+pdf_pages: '95'
+edition_scope: Original Matrix sourcebook by FASA Corporation (FASA7909), Shadowrun
+  Third Edition; fictional tabletop market and knowledge-test mechanics, not a real-world
+  software purchase procedure
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition Matrix (FASA Corporation FASA7909), printed
+  p94/PDF95: Program Prices and Verifying Programs exact tables'
+summary: 'Source-reviewed original fictional tabletop Matrix rules from FASA Corporation,
+  Matrix (FASA7909), Shadowrun Third Edition printed p94/PDF95: pricing, availability,
+  market discounts, and game Computer (Programming) Tests for checking source-code
+  contents; example vectors are not run.'
+data:
+  original_publication:
+    title: Matrix
+    publisher: FASA Corporation
+    catalog_number: FASA7909
+    edition: Shadowrun Third Edition
+    printed_page: 94
+    physical_pdf_page: 95
+    subject: fictional in-game software market and verification mechanics
+  buying_programs:
+    program_prices_table:
+    - rating_range: 1-3
+      price_nuyen_formula: Design program size in Mp × 100
+      availability_target_number: 2
+      availability_time_days: 7
+      street_index: 1
+    - rating_range: 4-6
+      price_nuyen_formula: Design program size in Mp × 200
+      availability_target_number: 4
+      availability_time_days: 7
+      street_index: 1.5
+    - rating_range: 7-9
+      price_nuyen_formula: Design program size in Mp × 500
+      availability_target_number: 8
+      availability_time_days: 14
+      street_index: 2
+    - rating_range: 10+
+      price_nuyen_formula: Design program size in Mp × 1000
+      availability_target_number: 16
+      availability_time_days: 30
+      street_index: 3
+    price_basis: Published values include both program object code and a copy of source
+      code.
+    object_code_only: Reduce price by 25 percent for a copy of object code only.
+    existing_occ_burned_code: If the object code has already been burned on an OCC,
+      add 10 percent to the cost; the source does not specify a special discount
+      ordering.
+    program_options_rating: Option ratings do not change this price table.
+    special_availability: Agents, IC constructs and IC programs have both the Availability
+      target number and time period doubled.
+    upstream_dependency: Use original Matrix program Design Size in Mp and rating;
+      neither actual compressed size nor options are assumed as substitutes for Design
+      Size.
+  verifying_program_contents:
+    scope: Character checks a purchased fictional game program for its identity, rating
+      and optional features.
+    online_method: Successful Analyze Icon operation while in the fictional Matrix.
+    offline_method:
+      skill_test: Computer (Programming) Test
+      target_number: 4
+      memory_requirement: Cyberterminal must have enough memory to hold the analyzed
+        program.
+      base_time: 5 minutes per Mp of program size
+      information_by_number_of_successes:
+        '1': Nature of program and its actual size in Mp
+        '2': Program rating
+        '3': One programming option
+        '4': Rating of one option
+        5+: Further option identities or option ratings, one per additional success
+      repeat_check: After a successful test, character may rerun the test with a +2
+        target-number modifier to learn further information.
+  links:
+    adds_numbers_to_existing: rules/matrix/buying-programs.yml
+    relates_to:
+    - procedures/matrix/programming.yml
+    - rules/matrix/matrix-program-options-sizing-rating-cost-p82-83.yml
+  specification_only_test_vectors:
+  - id: market.rating5_design108
+    rating: 5
+    design_size_mp: 108
+    program_list_price_nuyen: 21600
+    availability_tn: 4
+    availability_days: 7
+    street_index: 1.5
+  - id: market.rating7_design80
+    rating: 7
+    design_size_mp: 80
+    program_list_price_nuyen: 40000
+    availability_tn: 8
+    availability_days: 14
+  - id: market.rating5_object_only
+    base_full_price_nuyen: 20000
+    object_code_only_price_nuyen: 15000
+  - id: market.ic_availability
+    rating: 5
+    program_type: IC program
+    availability_tn: 8
+    availability_days: 14
+  - id: verification.rating_and_option
+    program_size_mp: 100
+    test_target_number: 4
+    base_analysis_minutes: 500
+    successes: 4
+    revealed:
+    - Program nature and actual size
+    - Program rating
+    - One option
+    - Its rating
+  code_validation: Source-reviewed archival mechanics and unexecuted test specifications,
+    not executable engine proof.
