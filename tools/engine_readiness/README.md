@@ -8,7 +8,7 @@ Run from repo root with Python 3.10+:
 python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v
 ```
 
-The 54 deterministic regression vectors cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
+The 58 deterministic regression vectors cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
 
 | Tested behavior | Canonical source | Book page |
 | --- | --- | --- |
@@ -22,6 +22,7 @@ The 54 deterministic regression vectors cover a limited source-reviewed portion 
 | Ranged outcome: Dodge > attack is complete dodge; otherwise add dodge to resistance | `rules/combat/dodge-test.yml`, `rules/combat/damage-staging.yml`, `core_extensions.py` | FASA7001 p113/PDF114 |
 | Damage staging boundaries: above Deadly stays Deadly; below Light = no damage | `rules/combat/damage-staging.yml`; executable correction in `rules_probe.py` | FASA7001 p113/PDF114 |
 | Condition Monitor: L/M/S/D = 1/3/6/10 boxes, separate Physical/Stun tracks, Stun-to-Physical overflow, cumulative wound modifiers, Body death threshold | `rules/condition/condition-monitor.yml` (general canonical anchor), `condition_core.py` (bounded source-checked executable adapter) | FASA7001 pp125–126/PDF126–127 |
+| Integration vectors: starting character → scripted success tests → ranged attack outcome → Condition Monitor damage and penalties | `test_core_integration.py` (consumer harness only) | FASA7001 pp38,54,113,125–126 |
 
 **Deliberate fail-closed boundaries:** `initiative_passes()` still rejects ties unless the caller separately applies the new **two-actor** `initiative_tie_winner()` adapter; multi-actor ties and voluntary delays are not implemented. The printed p280 ammunition belt Quickness/2 table does not itself state rounding for odd Quickness, so the probe raises `UnresolvedRule`. Ranged attack outcome assumes the caller already resolved attack/dodge/Body dice and their target numbers; it does not calculate weapon Power, armor, or Combat Pool availability. The separate `condition_core.py` adapter applies final staged damage boxes and baseline incapacitation, **not** advanced healing, action interrupts, or Man & Machine p131's additional consciousness mechanics. No open-test, magic, Matrix, social, cyberware or complete encounter implementation is claimed.
 
