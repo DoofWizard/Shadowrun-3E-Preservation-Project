@@ -8,7 +8,7 @@ Run from repo root with Python 3.10+:
 python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v
 ```
 
-The 58 deterministic regression vectors cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
+The original deterministic regression vectors (extended below) cover a limited source-reviewed portion of existing canonical records and new bounded consumer adapters:
 
 | Tested behavior | Canonical source | Book page |
 | --- | --- | --- |
@@ -35,3 +35,17 @@ The 58 deterministic regression vectors cover a limited source-reviewed portion 
 **Readiness categories:** `record_exists` ≠ `source_verified` ≠ `normalized_exact` ≠ `cross_source_reconciled` ≠ `code_tested`. This executable probe only tests the specific documented slices listed above; it does not establish broad engine implementation readiness.
 
 See `docs/engine-readiness/MECHANICS_READINESS_24H_2026-11-09.md` and the relevant original source manifests. For any new mechanic, preserve precise source edition/page, author an original-page-reviewed record and complete the established transaction gates before referencing the record as authoritative. Do not modify the preservation worker.
+
+## Verified consumer-code checkpoint — 2026-11-10 (FASA7001 original, not semantic ingestion)
+
+Independent local source check: freshly downloaded Google Drive FASA Corporation *Shadowrun, Third Edition* core source **FASA7001** matched SHA-256 `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914` through the actual repository `preservation_method.py verify-source` command. Original source images were inspected for printed p111/PDF112, p279/PDF288, and p307/PDF316. Printed p308 remains absent between core p307/PDF316 and p309/PDF317; no source page or fact was fabricated.
+
+The locally executed test command `python -m unittest discover -s tools/engine_readiness -p 'test_*.py' -v` passed **129/129 tests** (79 existing + 50 new), with Python compilation passing for three new bounded adapters. All 29 original connector-preflight self-tests also passed. These are **consumer executable tests**, not GitHub ingestion gates or verification of a fully implemented game.
+
+| Newly executable bounded adapter / tests | Existing source-reviewed canonical record(s) | Source-specific implementation boundary |
+| --- | --- | --- |
+| `vehicle_mounts_core.py` + `test_vehicle_mounts_core.py`: 25 vectors | `rule.vehicles.sr3-core-original-mounts-p307` / `rules/vehicles/sr3-core-original-mounts-p307.yml` | Original FASA7001 p307/PDF316: point capacity, hardpoint vs firmpoint, mini/full turret, installation TN/base time, side-fire handling plus required Crash Test, exact even recoil halving, Signature only where explicitly sourced, and aircraft missile racks up to Body and 300kg each. Odd recoil rounding, unresolved Signature cases, Rigger 3 lineage, launch control and water-cannon mode conflict stay fail-closed |
+| `firearms_ammo_core.py` + `test_firearms_ammo_core.py`: 11 vectors | `rule.firearms.sr3-core-ammunition-class-compatibility-p279` / `rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml` | FASA7001 p279/PDF288 and Weapon Range Table p111/PDF112: class matching and explicit shotgun pistol/rifle ammo compatibility; no guessed caliber, weapon model, ammunition TYPE or unknown-class conversions |
+| `weapon_range_core.py` + `test_weapon_range_core.py`: 14 vectors | `rule.combat.range-target-number` / `rules/combat/range-target-number.yml` | FASA7001 p111/PDF112: 13 numeric firearm/heavy-weapon rows and exact Short/Medium/Long/Extreme base TNs 4/5/6/9; source-linked integration into existing ranged outcome + Condition Monitor. Grenade/missile minimum-range rules, STR-scaled thrown weapons, unique weapon-model exceptions and Cannon Companion additions stay outside this adapter |
+
+**Edition lineage constraint:** Original FASA7001 vehicle mounts must not silently be replaced by FASA7910 *Rigger 3* or newly recovered FanPro10662 *Rigger 3 Revised*. A short-barrel Defiance T-250 can use heavy-pistol *range* per FASA7001 p279 while still sharing shotgun *ammunition*; the code explicitly keeps range identity separate from ammo class. No new semantic record, source status or administrative boundary was claimed or advanced. Denver FASA7212 continues to require missing printed pp46–47, and the existing hourly task remains unmodified.
