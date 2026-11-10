@@ -1,0 +1,81 @@
+id: rule.compatibility.vr2-to-sr3-matrix-mechanics-p325
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '325'
+pdf_pages: '333'
+edition_scope: 'FASA Corporation, Shadowrun Third Edition (FASA7001); sourcebook conversion of historical Virtual Realities 2.0 Matrix rules, not a new real-world technology standard'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition tabletop RPG: FASA Corporation FASA7001 printed p325/PDF333, Virtual Realities 2.0 Matrix conversion and exact IC modifiers'
+summary: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001), printed p325/PDF333: conversion-only rule precedence, reset timing, IC Hardening, Matrix actions, damage tracks, and Ripper IC mechanics for the fictional tabletop RPG.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  catalog_number: 'FASA7001'
+  source_section: 'Sourcebook Updates — Virtual Realities 2.0'
+  operative_edition: 'Third Edition with historical Virtual Realities 2.0 sourcebook inputs'
+  original_printed_page: 325
+  physical_pdf_page: 333
+  historical_scope: 'These amendments interpret Virtual Realities 2.0 fictional Matrix tabletop rules under SR3 and are conversion-only; they do not silently supersede later Matrix FASA7909.'
+  precedence:
+    baseline: 'Virtual Realities 2.0 rules supersede previous Shadowrun Matrix rules.'
+    exception: 'When Virtual Realities 2.0 conflicts with rules presented in Shadowrun Third Edition, use the Third Edition rules.'
+  operational_changes:
+    host_alert_reset:
+      affected_system_colors: [Green, Orange, Red]
+      condition: 'The decker has not triggered a passive or active alert.'
+      reset_time_minutes: '3D6'
+      caveat: 'No reset entitlement is specified for a triggered passive or active alert.'
+    hardening:
+      protection_against_black_ic:
+        power_reduction_per_hardening_point: 1
+        affected_target: 'Power of damage from black IC to the on-line icon or actual decker'
+        applies_during: 'Resistance Tests'
+      gray_ic_after_icon_crash:
+        applies_when: 'Gray IC crashes the icon and makes an Attack Test.'
+        attack_target_number_increase_per_hardening_point: 1
+      utility_scope:
+        explicitly_included: [Black Hammer, Killjoy]
+        explicitly_excluded: 'Other attack utilities; no general attack-utility benefit is inferred.'
+    sensor_test_to_notice_new_icons:
+      action_type: 'Free Action'
+      scope: 'New icons within sensor range'
+      source_cross_reference: 'SR3 printed p209'
+    slow_utility_against_ic:
+      suppression_requirement: 'After using Slow utility on an IC program, suppressing that IC requires 1 point of Detection Factor.'
+      explicitly_not_used: 'Masking'
+    system_operations:
+      revised_in_sr3: [Edit File, Make Comcall, Tap Comcall]
+      original_cross_reference: 'SR3 operations descriptions starting at printed p214'
+      limit: 'This conversion note does not independently reproduce the revised SR3 operations.'
+    icon_condition_monitor:
+      condition_monitor_source: 'Use standard SR3 Condition Monitor, printed p125, rather than the Virtual Realities 2.0 monitor on its p124.'
+      number_of_damage_tracks: 1
+      stun_damage_possible: false
+      note: 'This is an icon rule, not the two-track character Physical/Stun Condition Monitor.'
+    tar_baby_ic:
+      target_utility_type: 'Each Tar Baby IC program is preprogrammed to target exactly one chosen utility type.'
+      types: [operational, offensive, defensive, special]
+      chosen_by: 'Gamemaster'
+    ripper_ic:
+      baseline_behavior: 'Ripper IC attacks in the same way as Crippler IC.'
+      trigger: 'An icon Attribute is reduced to 0 by the Ripper program.'
+      ripper_test:
+        dice_pool: 'Ripper IC Rating'
+        target_number: 'Deck MPCP Rating'
+        hardening_effect: 'Hardening increases the target number.'
+        mpcp_rating_reduction: '1 for every 2 successes'
+        success_pair_count: 'floor(successes / 2)'
+      damage_repair: 'Replacing the persona chip is the only way the source describes repairing this MPCP damage.'
+  dependencies_to_validate:
+    - 'Existing SR3 Matrix system and IC attack resolution'
+    - 'Virtual Realities 2.0 historical source identity; not an SR3 rules import without conversion'
+    - 'Shadowrun Third Edition p125 Condition Monitor'
+    - 'Later Shadowrun Matrix FASA7909 precedence needs independent comparison'
+  test_vectors_specification_only:
+    - {id: black_ic_hardening, original_power: 8, hardening: 3, expected_power_after_hardening: 5}
+    - {id: gray_ic_hardening, base_attack_target_number: 4, hardening: 2, expected_target_number: 6, prerequisite: 'Gray IC has crashed the icon'}
+    - {id: ripper_success_pairs, ripper_test_successes: 5, expected_mpcp_rating_reduction: 2}
+    - {id: tar_baby_one_class, utility_type: defensive, expected_targeted_classes: 1}
+  execution_status: 'Original-page source-reviewed historical conversion record; example inputs not executed against an engine.'
