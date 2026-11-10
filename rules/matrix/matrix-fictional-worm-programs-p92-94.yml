@@ -1,0 +1,206 @@
+{
+  "id": "rule.matrix.worm-infection-and-variants-p92-94",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "92-93-94",
+  "pdf_pages": "93-94-95",
+  "edition_scope": "FASA Corporation, Matrix, FASA7909, Shadowrun Third Edition; original historical tabletop mechanics; no inferred later supersession.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop rules from Matrix (FASA Corporation FASA7909, Shadowrun Third Edition), printed pp92-93-94/physical PDF93-94-95: fictional worm-program infection, detection, response, and six variant effects",
+  "summary": "Original published Matrix tabletop-game rules (FASA Corporation, FASA7909, Shadowrun Third Edition), original printed pp92-93-94/physical PDF93-94-95: fictional worm-program infection, detection, response, and six variant effects. Numerical outcomes, conditions and choices are archival game rules; no real-world computer instructions or engine-test claims.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "genre": "published fictional tabletop role-playing game",
+      "printed_pages": [
+        92,
+        93,
+        94
+      ],
+      "physical_pdf_pages": [
+        93,
+        94,
+        95
+      ]
+    },
+    "source_sections": [
+      "WORMS",
+      "THE BAIT",
+      "INFECTION",
+      "PREVENTION",
+      "INFECTED CYBERTERMINALS",
+      "TYPES OF WORMS",
+      "Crashworms",
+      "Dataworms",
+      "Deathworms",
+      "Spawnworms",
+      "Ringworms",
+      "Tapeworms"
+    ],
+    "scope": "Imaginary software-infection and cybercombat mechanics for the Shadowrun Matrix subsystem, not operational computer-security guidance.",
+    "common": {
+      "affected_device": "Game cyberterminal (MPCP); no direct effects on other computers or programs except source-defined infection of files/programs and icon interactions.",
+      "permitted_options_only": [
+        "optimization (Matrix p84)",
+        "selective (Matrix p85)"
+      ],
+      "size_and_programming": "Apply the standard program sizing/programming rules, including listed variant size multipliers.",
+      "seed_host_subsystem": "Use the Matrix Infect system operation, cross-referenced to original printed p99.",
+      "infect_file_or_program": {
+        "test": "Computer Test",
+        "target_number_formula": "10 - Worm rating",
+        "needed_successes": "At least equal to target program rating; for files without a rating, one success suffices."
+      },
+      "upon_access_test": {
+        "triggers": [
+          "reading/opening an infected file",
+          "running an infected program",
+          "performing an operation on an infected subsystem"
+        ],
+        "roll": "Worm Rating Test against cyberterminal MPCP rating as target number",
+        "normal_infection": "One success infects MPCP.",
+        "hardened_terminal": "Number of successes must exceed cyberterminal hardening rating.",
+        "network_effect": "Worms on an infected cyberterminal try to infect another linked cyberterminal.",
+        "payload_size": "Worm size is added to the size of any file or program it infects."
+      },
+      "detection_and_removal": {
+        "subsystem": "Analyze Subsystem operation may detect worm; infected subsystem attempts infection when being analyzed.",
+        "files_programs_in_matrix": "Analyze Icon operation before access",
+        "offline": "Verify Software Contents from Matrix printed p94",
+        "subsystem_cleanup": "Successful Disinfect operation (Matrix p98)",
+        "file_or_program_cleanup": {
+          "test": "Computer Test",
+          "target_number_formula": "target program rating + Worm rating - Disinfect utility rating (if used)",
+          "needed_successes": 1
+        },
+        "mpcp_cleanup": "Use same Computer Test as file/program cleanup to determine whether MPCP is infected."
+      }
+    },
+    "variants": [
+      {
+        "name": "Crashworm",
+        "size_multiplier": 2,
+        "effect": {
+          "on_activation": "Roll Worm Rating versus infected utility rating as target number; if successful, utility suffers errors and rolls on the Glitch Table (Matrix p82).",
+          "crashguard": "If utility has crashguard option, add crashguard rating as a modifier to the Worm test target number."
+        }
+      },
+      {
+        "name": "Dataworm",
+        "size_multiplier": 3,
+        "effect": {
+          "fictional_behavior": "Logs in-world persona actions and periodically attempts to dispatch a report to its sponsor.",
+          "when": "Each connection to a grid",
+          "trigger_die": "1D6 result 1 causes reporting attempt",
+          "detection": {
+            "test": "Sensor Test",
+            "target_number_formula": "4 + Worm rating",
+            "on_success": "User notices attempted report and may conduct game cybercombat."
+          },
+          "game_icon": {
+            "initiative": "+3D6",
+            "evasion_rating": "Worm rating",
+            "offensive_capability": false,
+            "escape": "If it evades until end of a Combat Turn, it escapes.",
+            "legitimate_icon_report_appearance": true
+          }
+        }
+      },
+      {
+        "name": "Deathworm",
+        "size_multiplier": 2,
+        "effect": {
+          "affected_tests": "All tests made by infected terminal's persona, including Attack and Resistance Tests in cybercombat.",
+          "target_number_modifier_formula": "floor(Worm rating / 2)",
+          "sign": "positive"
+        }
+      },
+      {
+        "name": "Spawnworm",
+        "size_multiplier": 2,
+        "effect": {
+          "initial_test": "Worm Rating versus MPCP rating",
+          "on_success": "Reduce rating of highest-rated running program by one per net success.",
+          "subsequent_turns": "At end of each subsequent Combat Turn continue draining same number of rating points until that program crashes; then target next highest-rated utility, repeating until all running programs crash."
+        }
+      },
+      {
+        "name": "Ringworm",
+        "size_multiplier": 2,
+        "effect": {
+          "test": "Worm Rating (Icon Rating) Test",
+          "on_success": "Alter persona icon appearance; number of successes controls extent of alteration."
+        }
+      },
+      {
+        "name": "Tapeworm",
+        "size_multiplier": 2,
+        "effect": {
+          "trigger": "After file download completes on infected game terminal",
+          "test": "Worm Rating (MPCP) Test",
+          "on_success": "Downloaded file's game information becomes irretrievably corrupted."
+        }
+      }
+    ],
+    "cross_references": [
+      "Matrix p82 Glitch Table",
+      "Matrix p84 optimization and p85 selective options",
+      "Matrix p98 Disinfect operation",
+      "Matrix p99 Infect operation",
+      "Matrix p94 software verification"
+    ],
+    "consumer_vectors_not_executed": [
+      {
+        "id": "infection.normal",
+        "worm_rating": 5,
+        "mpcp": 4,
+        "hardening_rating": 0,
+        "test_successes": 1,
+        "expected_infected": true
+      },
+      {
+        "id": "infection.hardened",
+        "worm_rating": 5,
+        "mpcp": 4,
+        "hardening_rating": 2,
+        "test_successes": 2,
+        "expected_infected": false
+      },
+      {
+        "id": "deathworm.odd",
+        "worm_rating": 5,
+        "expected_target_number_modifier": 2
+      },
+      {
+        "id": "deathworm.even",
+        "worm_rating": 6,
+        "expected_target_number_modifier": 3
+      },
+      {
+        "id": "dataworm.sensor",
+        "worm_rating": 4,
+        "expected_sensor_target_number": 8
+      },
+      {
+        "id": "cleanup",
+        "program_rating": 4,
+        "worm_rating": 3,
+        "disinfect_rating": 2,
+        "expected_target_number": 5
+      },
+      {
+        "id": "file_infection",
+        "worm_rating": 5,
+        "expected_target_number": 5
+      }
+    ],
+    "code_readiness": "Source-reviewed manuscript facts; not executed as software."
+  }
+}
