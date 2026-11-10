@@ -63,3 +63,48 @@ Prioritize source-reviewed examples for:
 ## 24-hour reporting
 
 Each subsequent run report should list: actual mechanically important rules normalized with exact paths/commits/blobs and readback/gate result; how many priority obligations were closed versus merely reviewed; the exact newly discovered gaps; target example/test-vector progress; and separately the authoritative Denver printed/PDF boundary and any unrelated forward work. **Never use the count of lore or illustration records as a proxy for game-engine readiness.** At sprint expiry, restore the prior normal transcription priority automatically while keeping the existing hourly task enabled and its original schedule unchanged.
+
+## Source-verified Companion mechanics supplement — November 9 late session
+
+The **fresh original cataloged PDF** from connected Google Drive, *Shadowrun Companion* by FASA Corporation (FASA7905a, Shadowrun Third Edition), has SHA-256 `8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5`, matching the live Companion manifest. Original page images for the below ranges were inspected. The Companion manifest registers **seven** optional mechanics records (including already registered earlier records) with ordinary GitHub readback and transaction confirmation. These are source-reviewed **normalized optional rules**, not a tested game implementation, not a resolution of all Companion pp32–58 debt, and not contiguous Denver progress.
+
+| Engine input and canonical record ID | Original source (printed/PDF) | Standing | Still missing for code readiness |
+| --- | --- | --- | --- |
+| `option.character-creation.shapeshifter-player-characters` | FASA7905a pp34–35/PDF35–36 | verified, optional | SR3 base priority/point-buy integration, complete alternate-character prerequisite checks, implementation tests |
+| `rule.character-creation.srcomp-shapeshifter-racial-modifiers` | FASA7905a p36/PDF37 | verified, optional exact table, seven species | Correct application/precedence with separately calculated human/animal ratings |
+| `rule.character-creation.srcomp-shapeshifter-attribute-limits` | FASA7905a p37/PDF38 | verified, optional exact table, 7 × 9 limit/maximum pairs | Validation against form-specific advancement and caps |
+| `rule.character-creation.srcomp-shapeshifter-regeneration-silver` | FASA7905a pp36–37/PDF37–38 | verified, optional procedure | Dependencies on Critters Regeneration, SR3 Deadly damage and medical rules, Magic loss, Hand of God, focus and Drain resolution |
+| `rule.character-creation.srcomp-shapeshifter-dual-nature` | FASA7905a p36/PDF37 | verified, optional procedure | Astral access, ward detection/collision, Masking, Combat Pool and projected-form handling |
+| `option.character-creation.srcomp-metahuman-albinism` | FASA7905a p37/PDF38 | verified, optional | Edge/Flaw spending, Willpower racial-modified-limit propagation and racial maximum validation |
+| `option.character-creation.srcomp-metahuman-variants` | FASA7905a pp37–43/PDF38–44 | verified, optional, 14 variants | Variant modifier precedence, vision/armor, movement, allergies, immunity choice and social-Reaction integration |
+
+### Test vectors — specifications only, not executed
+
+The following examples come from the reviewed original Companion pages and are **candidate executable assertions** for a future engine. No runtime or unit-test success is claimed.
+
+| ID | Input | Expected source-rule outcome |
+| --- | --- | --- |
+| `shifter.deadly.ordinary.d6_1` | Normal Deadly physical injury; 1D6 = 1 | Regeneration fails; ordinary medical/damage rules determine survival rather than automatically asserting immediate death. |
+| `shifter.deadly.ordinary.d6_2` | Normal Deadly physical injury; 1D6 = 2 | Regeneration succeeds; damage penalties apply in the injury Combat Turn, damage vanishes at start of next Combat Turn. |
+| `shifter.deadly.massive.d6_2` | Deadly injury with massive tissue trauma; 1D6 = 2 | Regeneration fails (the exceptional failure set is 1 or 2). |
+| `shifter.deadly.silver.d6_2` | Deadly silver injury; 1D6 = 2 | Regeneration fails and death is immediate under the special silver rule. |
+| `shifter.silver.weapon_4L` | A knife doing 4L damage is made of silver | Weapon damage becomes 6M, and contact also causes a separate automatic Light Wound; preserve both effects. |
+| `shifter.focus.force_3` | Deadly weapon-focus injury, focus Force 3 | First roll an Essence Test against target number 6; zero successes means death, at least one permits the normal regeneration roll. |
+| `shifter.astral.perception` | Shapeshifter invokes astral perception | Simple Action; astral presence cannot be turned off. |
+| `variant.cyclops.ranged_TN4` | Cyclops ranged attack, ordinary pre-variant target number 4 | Apply +2 ranged target-number modifier for depth-perception limitation: TN 6. |
+| `variant.albino.willpower` | Optional albino, Willpower before this feature 3, applicable racial modified Willpower limit before feature 6 | Willpower becomes 4 and the racial modified Willpower limit becomes 7; one listed Flaw is mandatory without compensation. |
+| `variant.koborokuru.immunity` | Koborokuru character at creation | Two Natural Immunity Edges (1-point and 3-point), no balancing Flaw, identify one natural and one man-made toxin; running multiplier 3. |
+
+### Other engine lanes — sampled repository anchors, not yet source-image reverified
+
+| Lane | Existing canonical IDs / repository-attributed printed page | Present status / missing implementation inputs |
+| --- | --- | --- |
+| Dice / tests | `rule.tests.making-tests`, `rule.tests.target-numbers`, `rule.tests.rule-of-six` (SR3 core; exact original pages **not** independently rechecked here) | Canonical records exist; rule-of-six exclusion for Initiative is expressed; need source-page comparison, interpreter semantics and tests. |
+| Priority creation / advancement | `rule.character-creation.priority-system` (core p54), `rule.advancement.skill-improvement` (core p245) | Canonical records exist; verify master table values, effective rules and rounding, implement tests. |
+| Initiative / combat | `rule.initiative.initiative-passes` (core p102), `procedure.combat.ranged-attack` (core p109), `rule.combat.damage-staging` (core p113) | Canonical records exist; no code-test claim; need full action-cycle, pool-refresh, attack/resistance and timing test fixture. |
+| Magic | `rule.magic.drain` (core p162), optional Companion shapeshifter Drain above | Canonical record exists; need unified Force/Drain and special regeneration with exact timing. |
+| Matrix / programming | `rule.matrix.system-test` (core p209), `procedure.matrix.programming` (Matrix p76) | Canonical records exist but FASA7909 pp76–94 deferred normalization still open; missing complete effective programming options/size/time/ratings reconciliation and executable program tests. |
+| Cyberware / bioware | `rule.cyberware.essence` (core p296), optional Companion cyberware rejection above | Canonical records exist; core Street Gear pp275–282 and pp305–311 and cross-source equipment audit remain open. |
+| Rigging | `subsystems/vehicles/design.yml` (repository anchor; precise original printed/PDF pages not checked in this session) | Record exists; source-image verification, complete design inputs and implementation tests remain. |
+
+**Separation of claims:** source PDF and cited Companion pages were checked; the seven optional records are GitHub-confirmed and indexed; other listed canonical paths were checked for existence and stated edition/source references only. No `engine_ruleset_v0` executable code was generated or tested by this document. This snapshot does not mark any unresolved source range complete, does not change Denver, and should be revised with concrete tests only after running them.
