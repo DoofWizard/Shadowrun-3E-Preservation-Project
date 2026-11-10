@@ -1,0 +1,106 @@
+id: rule.character-creation.srcomp-shapeshifter-regeneration-silver
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 36-37
+pdf_pages: 37-38
+edition_scope: Shadowrun Third Edition optional Shadowrun Companion shapeshifter rules
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: FASA Corporation Shadowrun Companion, FASA7905a, SR3 optional fictional shapeshifter injury rules, original
+  printed pp36-37/PDF37-38; exact regeneration and silver exceptions.
+summary: Source-reviewed conditional regeneration, weapon-focus and silver damage, Physical Drain recovery, Karma
+  prohibition and cyberware rejection; preserves the original tabletop mechanics.
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 36
+    - 37
+    pdf_pages:
+    - 37
+    - 38
+  rule_scope: Optional fictional shapeshifter player characters; use ordinary Critters regeneration where the Companion
+    does not give a specific condition or exception.
+  regeneration:
+    can_regenerate_in_human_form: true
+    can_regenerate_in_animal_form: true
+    trigger: Deadly Physical damage from a single attack OR cumulative Physical damage reaching Deadly on the Condition
+      Monitor.
+    die: 1D6
+    ordinary_injury:
+      failure_on:
+      - 1
+      failure_result: Does not regenerate; character may die without ordinary medical attention, resolved by standard
+        damage/medical rules.
+      success_rolls:
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+    massive_tissue_injury:
+      examples:
+      - burns
+      - trauma
+      failure_on:
+      - 1
+      - 2
+      success_rolls:
+      - 3
+      - 4
+      - 5
+      - 6
+    on_success: The character has ordinary damage penalties during the Combat Turn of injury; the injury disappears
+      at the start of the next Combat Turn.
+    karma_spending: Do not use Karma on the shapeshifter Regeneration Test, except the gamemaster-authorized Hand
+      of God rule in the SR3 core book p248.
+    brain_or_spinal_cord_damage: The Companion states severe brain/spinal-cord damage can defeat normal regenerative
+      protection; do not silently treat it as always curable.
+  weapon_focus_exception:
+    trigger: Deadly damage directly from a weapon focus, or damage from a weapon focus bringing cumulative damage
+      into Deadly.
+    first_test: Essence Test
+    target_number_formula: 2 x weapon-focus Force
+    zero_successes: Automatic death.
+    one_or_more_successes: Only then attempt the normal shapeshifter Regeneration Test; normal injury exceptions still
+      apply.
+  magic_and_drain:
+    magician_surviving_deadly: Check for Magic Rating loss under the usual SR3 rules even if the magician regenerates.
+    physical_spellcasting_drain_recovery: Shapeshifter magicians regenerate Physical damage from spellcasting Drain
+      at 1 Condition Monitor box per minute.
+    deadly_physical_drain:
+      die: 1D6
+      failure_on:
+      - 1
+      - 2
+      failure: Character does not regenerate; apply the appropriate normal rules.
+  silver:
+    traits:
+    - Severe Allergy
+    - Vulnerability
+    touch: Silver contact causes pain and burn-like marks; make a Willpower target-number 6 test to resist the impulse
+      to withdraw.
+    willpower_target_number: 6
+    silver_weapon_power_bonus: 2
+    silver_weapon_damage_level_bonus: 1
+    silver_contact_extra_damage: Automatically adds a separate Light Wound on contact.
+    ordinary_silver_injury: As with other damage, effects ordinarily persist through the current Combat Turn and disappear
+      at the start of the next Combat Turn if regeneration succeeds.
+    deadly_damage_trigger: A silver weapon deals Deadly damage in one attack, or a combination of silver and nonsilver
+      damage reaches Deadly.
+    deadly_regeneration_failure_on:
+    - 1
+    - 2
+    deadly_regeneration_failure_result: Death is immediate when the 1D6 result is 1 or 2.
+  cyberware_rejection:
+    can_willingly_keep_implants: false
+    description: The Companion says shapeshifter regeneration makes intentional cyberware implantation untenable;
+      successful implants are normally expelled by regeneration.
+  lineage:
+    extends: rule.critter-power.regeneration
+    relation: specific optional shapeshifter player-character conditions; never generalize to every critter.
