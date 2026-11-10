@@ -1,0 +1,36 @@
+id: rule.firearms.sr3-core-ammunition-class-compatibility-p279
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '279'
+pdf_pages: '288'
+edition_scope: 'FASA Corporation Shadowrun, Third Edition FASA7001, original tabletop fiction mechanics'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional FASA Corporation Shadowrun Third Edition FASA7001 ammunition compatibility game rule, printed p279/PDF288'
+summary: 'Original fictional Shadowrun Third Edition firearm-class ammunition interchangeability procedure; the published Weapon Range Table, not a guessed caliber or model name, decides eligible classes.'
+data:
+  publication: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  catalog_number: FASA7001
+  edition: 'Shadowrun Third Edition'
+  printed_page: 279
+  physical_pdf_page: 288
+  section: 'Street Gear — Ammunition'
+  ammunition_class_compatibility:
+    original_criterion: 'Ammunition is defined by the class of firearm for which it was made.'
+    transferable_when: 'Both firearms are in the same ammunition-sharing gun class.'
+    class_authority: 'Weapon Range Table, original printed p111, governs which gun types can share ammunition.'
+    light_pistols: 'All light pistols can share ammunition with other light pistols.'
+    shotguns: 'Shotguns can share ammunition whether configured as pistols or rifles.'
+    not_authorized: 'No universal interchangeability across different firearm classes is stated.'
+  related_source_records:
+    - 'rule.firearms.ammunition'
+    - 'equipment.ammunition.sr3-core-catalog-p281'
+    - 'equipment.firearms.sr3-core-firearms-heavy-market-p278-279'
+  constraints: 'Retain firearm-class criteria and the special shotgun exception; no real ammunition manufacture, caliber data or source-unspecified conversions are added.'
+  unexecuted_test_vectors:
+    - {case: light_pistol_to_light_pistol, from_class: light_pistol, to_class: light_pistol, expected_compatible: true}
+    - {case: shotgun_pistol_to_shotgun_rifle, from_class: shotgun_pistol, to_class: shotgun_rifle, expected_compatible: true}
+    - {case: different_classes_unlisted, from_class: light_pistol, to_class: rifle, expected: 'not authorized by p279; consult p111 classes'}
+  engine_status: 'Source-reviewed rule, not executed against a code implementation.'
