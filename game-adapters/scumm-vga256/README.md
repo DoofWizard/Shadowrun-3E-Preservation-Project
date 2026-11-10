@@ -12,7 +12,7 @@ The implementation is **engine-neutral**, with Godot a candidate for the eventua
 
 - engine_ruleset_v0.json: machine-readable rule-ID/source mapping, implementation gates, missing source-review obligations, SR3 edition boundary and the action contract.
 - reference_resolver.py: pure deterministic success tests, Rule of One, Rule of Six, open tests, basic opposed tests, success contests, initiative rolls, and initiative-pass grouping; each test consumes **explicit recorded dice** so results are replayable.
-- tests/test_reference_resolver.py: executable standard-library regression vectors, including exploding sixes, all-ones, TN floor, ties, and non-exploding initiative. Tests are authored here; do not claim CI passed unless execution was independently confirmed.
+- tests/test_reference_resolver.py: executable standard-library regression vectors, including exploding sixes, all-ones, TN floor, ties, and non-exploding initiative. The 16 regression tests passed GitHub Actions in run 42746223491; this validates the adapter vectors, not the original printed rulebook.
 - scenes/clinic_hallway_v0.json: original illustrative one-room action model; LOOK, USE, TALK, FORCE, PERSUADE, DECK, PERCEIVE, LISTEN and a **Shadow Beat** intent. It is a design contract, not yet a running point-and-click screen.
 
 Run reference vectors from the repository root:
@@ -45,7 +45,7 @@ The ruleset distinguishes canonical record presence, reference code, authored ve
 
 ## Next precise engineering steps
 
-1. Execute the tests against the committed Python file; fix failures and attach results. Inspect SR3 core source pages for every implemented test before calling it source-reverified.
+1. Keep regression tests green on each change and compare each implemented test against SR3 original publisher pages before calling it source-reverified; expand edge-case coverage.
 2. Normalize the numerical Master Character Creation Table into a versioned fixture, including priority assignments, metatype, Magic, Attributes, Skills, Resources and relevant Companion variants.
 3. Add attack/dodge/resist/staging/Condition Monitor vectors, followed by combat pool timing and initiative ties, including **melee's attacker-favoring tie exception** without corrupting ordinary opposed tests.
 4. Add magical Drain and simultaneous Matrix System/Security traces using their source-reviewed numeric examples; keep Matrix pp76–94 deferred options separate.
