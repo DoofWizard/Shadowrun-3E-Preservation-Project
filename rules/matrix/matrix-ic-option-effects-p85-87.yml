@@ -1,0 +1,132 @@
+id: rule.matrix.ic-option-effects-p85-87
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 85-87
+pdf_pages: 86-88
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition; optional IC-specific properties and
+  programming-suite effect, not implicit changes to SR3 core Matrix rules
+content_class:
+- rule_exact
+framing: reference_exact
+headline: 'FASA7909 Matrix fictional tabletop source, printed pp85-87/PDF86-88: IC design option effects'
+summary: Optional intrusion-countermeasure properties, numeric cascading IC ceiling by Security Code, Expert options,
+  cluster coordination, shielding, shifting, trap triggers, and self-coder programming-suite mechanics; not executable
+  code.
+data:
+  publication: Matrix
+  publisher: FASA Corporation
+  catalog_number: FASA7909
+  edition: Shadowrun Third Edition
+  fictional_source: Published fictional cyberpunk tabletop role-playing game rules; utility and intrusion-countermeasure
+    programs are in-game constructs.
+  original_printed_pages:
+  - 85
+  - 86
+  - 87
+  physical_pdf_pages:
+  - 86
+  - 87
+  - 88
+  option_scope:
+    status: optional_when_selected
+    program_category: intrusion countermeasure (IC)
+    some_options_incompatible: true
+  ic_options:
+    armor:
+      design_rating_modifier: '+2'
+      incoming_attack_power_modifier: -2
+      area_attack_interaction: IC Armor rating increases by 2 against an incoming Area-equipped utility.
+    cascading:
+      design_rating_modifier: '+3'
+      scope: Proactive IC programs
+      on_missed_attack: Security Value for later Attack Tests increases by +1 per attack that misses; increases
+        are cumulative.
+      on_hit_fully_resisted: IC rating increases by +1 when a successful attack has all damage/effects resisted;
+        increases are cumulative.
+      maximum_increase_by_system_security_code:
+        Blue:
+          max_increase: 1
+        Green:
+          fraction_of_original_rating: 0.25
+          minimum_increase: 2
+        Orange:
+          fraction_of_original_rating: 0.5
+          minimum_increase: 3
+        Red:
+          fraction_of_original_rating: 1.0
+          minimum_increase: 4
+      rounding: The original table does not explicitly prescribe rounding of fractional percentage ceilings; leave
+        such cases unresolved until a governing rule is source-verified.
+    expert_defense:
+      design_rating_modifier: '+1'
+      per_option_point_resistance_test_dice: 1
+      per_option_point_attack_test_dice: -1
+      max_rating: 3
+      incompatible_with:
+      - expert offense
+    expert_offense:
+      design_rating_modifier: '+1'
+      per_option_point_attack_test_dice: 1
+      per_option_point_damage_resistance_test_dice: -1
+      max_rating: 3
+      incompatible_with:
+      - expert defense
+    optimization:
+      design_rating_modifier: special
+      actual_size_change_percent: -50
+      design_size_change_percent: 100
+      relation: Identical to Optimization utility option.
+    party_cluster:
+      design_rating_modifier: '+3'
+      trigger: All IC in cluster grouped and activated in same trigger step.
+      maximum_sum_member_ratings: 2 × system Security Value
+      individual_targeting: Every party IC program remains a separately targetable IC.
+      cluster_attack_test_target_number_modifier: +1 per additional party IC in cluster
+      incoming_attack_test_target_number_modifier: +total number of party IC components for targeting a cluster
+        member
+      incoming_area_option_exception: Utilities with Area option ignore party-cluster target-number penalty.
+      persistence: Modifiers remain even after a component IC has crashed.
+    sensitive:
+      design_rating_modifier: special
+      effect: Functions exactly as Sensitive utility option; type restrictions, programming-skill averaging, design/actual
+        size reduction apply.
+    shield:
+      design_rating_modifier: '+2'
+      incoming_cybercombat_target_number_modifier: 2
+      penetration_utility: Penetration-equipped utility ignores Shield +2 target-number modifier.
+      chaser_utility: Chaser-equipped utility uses +4 target-number modifier rather than normal +2.
+    shift:
+      design_rating_modifier: '+2'
+      incoming_cybercombat_target_number_modifier: 2
+      chaser_utility: Chaser-equipped utility ignores Shift +2 target-number modifier.
+      penetration_utility: Penetration-equipped utility uses +4 target-number modifier rather than normal +2.
+    trap:
+      design_rating_modifier: +1 per linked IC program
+      trigger: Linked IC (usually gray or black) is triggered when the trap-equipped IC is destroyed in cybercombat.
+      linked_ic_response: Each triggered IC immediately pursues offending icon.
+      nontrigger: Neutralizing IC without destroying it does not trigger linked IC.
+      scope: Only the IC that triggers another IC needs this option; the triggered IC itself need not have Trap.
+  programming_suite_only_option:
+    self_coder:
+      design_rating_modifier: +self-coder rating
+      scope: Programming suites only, not ordinary utility or IC options
+      built_in_programming_skill: Suite Computer Skill equal to self-coder rating
+      procedure: Programming with self-coder follows team-programming rules as though self-coder joined the team.
+      rating_impact: If a suite with self-coder is used to program more than half a program (as measured by programming
+        days), finished program functions at a rating 1 lower than designed.
+  specification_only_examples:
+  - id: expert_offense_2
+    system_security_value: 6
+    attack_dice_expected: 8
+    damage_resistance_dice_expected: 4
+  - id: shift_vs_chaser
+    normal_shift_tn_penalty: 2
+    actual_chaser_tn_penalty: 0
+  - id: shield_vs_chaser
+    normal_shield_tn_penalty: 2
+    actual_chaser_tn_penalty: 4
+  - id: blue_cascade
+    system_security_code: Blue
+    max_cumulative_increase: 1
+  code_status: Source-reviewed tabletop game options only; no runnable engine tests are claimed.
