@@ -1,0 +1,74 @@
+id: rule.firearms.sr3-core-tripod-ultrasound-usage-p282
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '282'
+pdf_pages: '291'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), historical original core rules; later changes
+  not inferred
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001), fictional tabletop-game firearm accessories, printed
+  p282/PDF291: tripod and ultrasound operation'
+summary: 'Source-attributed fictional tabletop-RPG mechanics from the original FASA Corporation Shadowrun, Third Edition
+  (FASA7001) printed p282/PDF291: the heavy-weapon tripod setup requirements and the lighting/invisibility target-number
+  modifier rule for ultrasound systems.'
+data:
+  publication: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  source_catalog: FASA7001
+  printed_page: 282
+  pdf_page: 291
+  rule_origin: Original printed accessory paragraphs above the FIREARM AND WEAPON ACCESSORIES catalog table; source
+    edition is Shadowrun Third Edition.
+  active_scope: Equipment use and combat modifiers in the fictional Shadowrun Third Edition tabletop rules.
+  procedures:
+  - name: Tripod
+    eligible_use: Heavy weapons
+    setup_action: Simple Action
+    usable_postures:
+    - prone
+    - sitting
+    recoil_compensation_points: 6
+    concealability: Not concealable
+    source_text_distinction: Source rules distinguish a tripod from lighter bipods and say it must be used from prone
+      or sitting; they do not specify unsupported standing operation.
+  - name: Ultrasound systems
+    form_factors:
+    - Ultrasound Sight attached underbarrel or top-mounted
+    - Ultrasound Goggles; visors may also be built into a helmet or sunglasses
+    affected_target_number_modifiers:
+    - lighting
+    - invisibility
+    effect: Each target-number modifier arising from lighting or invisibility is reduced to one half of its original
+      value, rounded up.
+    rounding: round up (ceiling) after halving
+    unaffected_modifiers: The original printed passage specifies lighting and invisibility only; do not halve unrelated
+      test modifiers without independent source support.
+    fictional_presentation: Ultrasound devices function as fictional in-game perception accessories, as described
+      in the sourcebook.
+  dependencies:
+  - rules/firearms/accessory-mounts.yml
+  - rules/combat/range-target-number.yml
+  - equipment/sr3-core-firearm-weapon-accessory-market-p282.yml
+  example_inputs_not_executed:
+  - id: ultrasound.lighting.odd
+    lighting_modifier_before: 3
+    lighting_modifier_after: 2
+    invisibility_modifier_before: 0
+    invisibility_modifier_after: 0
+    note: Ceiling of one-half of 3 is 2; no other modifiers modeled.
+  - id: ultrasound.two_penalties
+    lighting_modifier_before: 4
+    lighting_modifier_after: 2
+    invisibility_modifier_before: 3
+    invisibility_modifier_after: 2
+    note: Both source-identified modifier categories reduced individually and rounded up.
+  - id: tripod.setup
+    tripod_setup_action: Simple Action
+    posture: prone
+    recoil_compensation_points: 6
+    note: Only after tripod is set up and posture condition met; original does not give a standing-use exception.
+  scope_limit: This record is an original-source exact procedural supplement, not a source-manifest contiguous advancement
+    and not an engine test pass. No implicit supersession of later rules.
