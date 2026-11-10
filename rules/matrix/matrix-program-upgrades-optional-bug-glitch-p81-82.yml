@@ -1,0 +1,156 @@
+id: rule.matrix.program-upgrades-optional-bug-and-glitch-p81-82
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: 81-82
+pdf_pages: 82-83
+edition_scope: FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition source supplement; optional
+  bugs only when selected; no inferred replacement of SR3 core
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition Matrix (FASA Corporation FASA7909), printed pp81-82/PDF82-83:
+  source-code upgrades and optional program bug resolution'
+summary: Original fictional tabletop rules from FASA Corporation Matrix (FASA7909), Shadowrun Third Edition,
+  printed pp81-82/PDF82-83. Exact source mechanics for programming upgrades and OPTIONAL bugs/glitches (tests,
+  table, language modifiers, debugging); not a real-world programming workflow or an engine-tested implementation.
+data:
+  publication: Matrix
+  publisher: FASA Corporation
+  catalog_number: FASA7909
+  edition: Shadowrun Third Edition
+  source_context: Fictional Matrix programming tabletop mechanics. Base upgrading is part of the source
+    procedure; the additional bug/glitch system is expressly optional.
+  original_printed_pages:
+  - 81
+  - 82
+  physical_pdf_pages:
+  - 82
+  - 83
+  copying_source_code: Making, upgrading or modifying program copies requires possession of the program
+    source code; finished object code is separate from editable source code (source discussion continues
+    from prior page).
+  upgrading:
+    source_code_required: true
+    possible_changes:
+    - raise program rating
+    - lower program rating
+    - add program options
+    - remove program options
+    treat_as_programming_test: true
+    base_programming_time_from_scratch: Compute new version base time using same programming-time formula
+      as an original program.
+    difference_formula: new version base time minus old version base time
+    minimum_time: at least 25 percent of time to write entire new program from scratch
+    minimum_when_original_size_retained: If upgrade would produce an original-size program, use this 25
+      percent minimum.
+    actual_time: Apply the regular Computer (Programming) Test and related programming rules to the upgrade;
+      no additional mechanic inferred.
+  optional_bug_rules:
+    scope: Only when gamemaster selects optional bugs rules; computer code is fictional tabletop activity.
+    bug_occurrence_open_test:
+      skill: Computer (Programming)
+      test_type: Open Test
+      programming_team_skill: average of team members Computer (Programming) skills
+      result_name: Occurrence factor
+      trigger: Once per Occurrence-factor number of uses of program, gamemaster rolls on Glitch Table.
+      bug_test_modifiers:
+        program_difficulty: -ceil(program_rating / 2)
+        program_rating_less_than_half_character_skill: 3
+        program_options: -ceil(number_of_options / 2)
+        programmed_by_team: -ceil(team_members / 2)
+        programmed_on_mainframe: -2
+        each_programming_success_not_used_to_reduce_base_time: 3
+        programming_language: See language table; language choice is required when the optional subsystem
+          is used.
+      programming_languages:
+      - name: HoloLISP
+        bug_test_modifier: 0
+        other_effect: none
+      - name: InterMod
+        bug_test_modifier: 4
+        other_effect: program effective rating -1
+      - name: MatComDev
+        bug_test_modifier: 2
+        other_effect: Computer (Programming) Test +1 TN
+      - name: MCT Iconix 7
+        bug_test_modifier: -1 per program option
+        other_effect: Computer (Programming) Test -1 TN
+      - name: Metacomm
+        bug_test_modifier: -3
+        other_effect: Computer (Programming) Test -2 TN
+      - name: Novatech VRDrive 3
+        bug_test_modifier: 1
+        other_effect: Glitch Table result +2
+      - name: Oblong
+        bug_test_modifier: 3
+        other_effect: Computer (Programming) Test +2 TN
+      - name: Renraku Teng
+        bug_test_modifier: -5
+        other_effect: programming base time divided by 2
+      language_prerequisite: Character must know selected programming language; an equivalent Language skill
+        governs it.
+      upgrade_language_restriction: Once program is created with one language, it may only be upgraded using
+        the same programming language.
+      preemptive_debugging: Programmer may use Computer (Programming) test successes to debug rather than
+        reduce task period; each success diverted this way adds +3 to Bug Open Test.
+    glitch_roll:
+      dice: 2D6, sum, Rule of Six applied independently to both dice
+      trigger: Every Occurrence-factor-th use, at GM-chosen moment
+    glitch_results:
+    - sum: 2
+      effect: minor glitch; program continues; effective rating -1, minimum 1
+    - sum: 3-4
+      effect: major glitch; performance impeded; effective rating halved, round down, minimum 1
+    - sum: 5-6
+      effect: general protection fault; program crashes; may be used again only after reload
+    - sum: 7-8
+      effect: run-time error; program crashes unrecoverably, cannot reload; cyberterminal must reboot; as
+        if crashed by pit IC
+    - sum: 9-10
+      effect: resource allocation error; program crashes, cannot reload, and still consumes same active-memory
+        amount until computer reboot
+    - sum: 11+
+      effect: system crash; cyberterminals apply floor(glitch_total/2) boxes to persona Condition Monitor;
+        other computers crash immediately
+    post_program_debugging:
+      requires_source_code: true
+      base_time_hours: program Mp size, measured in hours
+      test: Computer (Programming) Test, target number equal to program rating
+      non_original_author_tn_modifier: 2
+      per_success_choice: Each success may increase Occurrence factor by 1, or be allocated to reducing
+        debugging base time by division; no unspecified rounding rule inferred.
+      narrator_recommendation: When Occurrence factor is sufficiently high (12 or greater recommended),
+        gamemaster may stop tracking glitches; optional judgment, not an automatic threshold.
+  canonical_links:
+    extends:
+    - procedures/matrix/programming.yml
+    - options/matrix/program-options.yml
+    does_not_duplicate:
+    - rules/matrix/matrix-programming-size-plan-suite-team-p78-80.yml
+    pending: Full programming printed pp76-94 option tables, command sets, autonomous programs and purchased-program
+      details remain open.
+  source_examples_specification_only:
+  - id: upgrade_time_minimum
+    new_program_base_days: 100
+    old_base_days: 90
+    expected_upgrade_base_days: 25
+  - id: bugs_tn_less_than_half_skill
+    program_rating: 3
+    computer_programming_skill: 8
+    expected_bug_test_modifier: 3
+  - id: bugs_program_options
+    program_options: 5
+    expected_bug_test_modifier: -3
+  - id: bugs_programming_team
+    team_members: 3
+    expected_bug_test_modifier: -2
+  - id: glitch_minor
+    dice_total: 2
+    prior_program_effective_rating: 1
+    expected_effective_rating: 1
+  - id: glitch_system_crash
+    dice_total: 11
+    expected_persona_damage_boxes: 5
+  code_status: Structured source-reviewed game rules only; no executable consumer tests or implementation
+    validation.
