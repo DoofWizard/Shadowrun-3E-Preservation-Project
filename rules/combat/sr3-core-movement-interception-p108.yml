@@ -1,0 +1,92 @@
+id: rule.combat.sr3-core-movement-interception-numeric-p108
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '108'
+pdf_pages: '109'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001, original fictional
+  tabletop mechanics; later optional and revised supplements not silently adopted
+content_class:
+- rule_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional combat movement
+  and interception, printed p108/PDF109
+summary: Original human/metatype movement multipliers, per-pass distance, walking/running
+  target modifiers, Athletics effects and interception procedure from printed p108.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Original Shadowrun Third Edition
+    medium: published fictional tabletop role-playing game rulebook
+    printed_pages:
+    - 108
+    physical_pdf_pages:
+    - 109
+    source_file_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_section: 'Combat: Movement Rate, Walking, Running and Interception'
+  movement_rates:
+    walking_meters_per_combat_turn: Quickness Rating
+    running_meters_per_combat_turn: Quickness multiplied by metatype Running Modifier
+    running_modifier_by_metatype:
+      Human: 3
+      Dwarf: 2
+      Elf: 3
+      Ork: 3
+      Troll: 3
+    per_initiative_pass: Divide full Combat Turn walking/running movement by number
+      of Initiative Passes, rounding up to whole meters.
+    unspent_pass_distance: Distance permitted in one pass is not banked for a later
+      pass.
+    movement_without_available_action: May continue running/walking in later Initiative
+      Passes with no action; moves after acting characters.
+    minimum_declared_rate: Any movement, even one meter, counts as the declared walking
+      or running mode for action modifiers.
+    timing: A character can declare a movement mode after beginning the turn stationary.
+  walking:
+    success_test_modifier: 1
+    rough_terrain_or_obstacle_modifier: 2
+    application: A walking character combining movement with actions requiring Success
+      Tests receives the applicable target-number modifier.
+  running:
+    success_test_modifier: 4
+    difficult_ground_target_modifier: 6
+    athletics_running_test:
+      action: Complex
+      skill: Athletics (Running)
+      target_number: 4
+      effect_per_success: +1 effective Quickness for movement in the relevant Combat
+        Phase only.
+  interception:
+    distance_threshold_meters: 1
+    trigger: A character moves within one meter of another opponent without attacking
+      that opponent.
+    opponent_action: Eligible opponent may take a free melee attack.
+    attack_skill: Readied melee weapon uses its appropriate combat Skill Rating; otherwise
+      Unarmed Combat.
+    base_attack_target_number: 4
+    modifier_scope: Only reach, movement and attacking character injury/condition
+      modify the interception attack TN.
+    defense: Moving character is assumed to be in Full Defense.
+    damage_effect: If the moving character takes damage from interception, their movement
+      stops.
+    combat_pool: Eligible Combat Pool dice may augment these rolls.
+  canonical_reuse:
+  - rule.combat.movement
+  - rule.combat.interception
+  - rule.initiative.initiative-passes
+  engine_examples_not_executed:
+  - case: dwarf_run
+    quickness: 5
+    metatype: Dwarf
+    running_distance_m_per_turn: 10
+  - case: human_per_pass
+    quickness: 5
+    metatype: Human
+    initiative_passes: 2
+    running_distance_m_per_pass: 8
+  - case: athletics_run_bonus
+    athletics_successes: 2
+    effective_quickness_in_phase: 7
+    base_quickness: 5
+framing: reference_exact
