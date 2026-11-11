@@ -1,0 +1,153 @@
+id: rule.dice-pools.sr3-core-formulas-allocation-p43-44
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 43-44
+pdf_pages: 44-45
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001, original fictional
+  tabletop mechanics; later optional and revised supplements not silently adopted
+content_class:
+- rule_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop
+  dice-pool formulas, printed pp43-44/PDF44-45
+summary: Numeric formulas and permissible allocations for the five original dice pools,
+  Combat Pool defense and armor limits, exclusions, and turn refresh; original SR3
+  mechanics only.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Original Shadowrun Third Edition
+    medium: published fictional tabletop role-playing game rulebook
+    printed_pages:
+    - 43
+    - 44
+    physical_pdf_pages:
+    - 44
+    - 45
+    source_file_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_section: 'Game Concepts: Dice Pools and original Dice Pool Table'
+  dice_pool_table:
+    rounding_rule: All divided Dice Pool Table formulas round down.
+    entries:
+    - pool: Astral Combat
+      numerator_attributes:
+      - Intelligence
+      - Charisma
+      - Willpower
+      divisor: 2
+      scope: Astral-plane combat, replacing the ordinary physical Combat Pool on that
+        plane
+    - pool: Combat
+      numerator_attributes:
+      - Quickness
+      - Intelligence
+      - Willpower
+      divisor: 2
+      scope: Eligible ordinary offensive and defensive combat tests
+    - pool: Control
+      formula: Reaction modified only by Vehicle Control Rig cyberware
+      divisor: null
+      scope: A VCR-equipped rigger currently controlling a rigged vehicle; no other
+        source of Reaction bonuses contributes
+    - pool: Hacking
+      numerator_components:
+      - Intelligence
+      - Cyberdeck MPCP rating
+      divisor: 3
+      scope: Eligible Matrix tests for a character possessing a cyberdeck
+    - pool: Spell
+      numerator_attributes:
+      - Intelligence
+      - Willpower
+      - Magic
+      divisor: 3
+      scope: Eligible Sorcery-related tests, spell resistance and spell defense
+  general_allocation:
+    mechanism: Add drawn pool dice to ordinary test dice and mark drawn dice unavailable
+      until a valid refresh.
+    starting_availability: Full named pools available when the encounter Combat Turn
+      begins.
+    refresh: Usual pools refresh to their current full value at the beginning of each
+      new Combat Turn.
+    unused_dice: Unspent dice are not banked across Combat Turns.
+    karmapool_exception: The Karma Pool follows a separate refresh rule recorded in
+      original p104/PDF105; it is not one of the five numeric formulas from original
+      pp43-44.
+  combat_pool:
+    offense: May supplement eligible combat-skill success tests.
+    offensive_dice_cap: Additional Combat Pool dice for an offensive test cannot exceed
+      the applicable rated combat skill used.
+    defense: May allocate any currently available Combat Pool dice to Dodge or Damage
+      Resistance Tests; the offense skill-rating cap does not apply to these two defenses.
+    surprise: An unaware defender cannot allocate Combat Pool dice to defend against
+      an attack; surprised targets are excluded.
+    magic_boundary: Ordinary spell-related tests cannot draw Combat Pool, except a
+      defender may use it to dodge and resist an Elemental Manipulation spell as a
+      normal ranged attack.
+    skill_defaulting: Skill Defaulting imposes additional source-specified limitations
+      on Combat Pool allocations; see original printed p84 rather than inferring an
+      unrestricted cap.
+    heavy_armor:
+      when: A worn armor Ballistic Rating or Impact Rating exceeds the character's
+        Quickness.
+      reduction: Reduce the Combat Pool by one die for each complete two points by
+        which the relevant armor rating exceeds Quickness.
+      base: The source compares each armor type against Quickness; do not add both
+        ratings or reduce a different dice pool.
+      related_source: FASA7001 printed p285 details Armor and Combat Pool.
+  astral_combat_pool:
+    use: Astral-combat tests only; uses astral attributes rather than physical Quickness.
+  control_pool:
+    eligible: Maneuver and other direct rigged-vehicle control tests, including avoiding
+      and resisting damage against that rigged vehicle.
+    ineligible: Not usable on control tests when the rigger is not personally rigging
+      that vehicle; requires VCR cyberware.
+    per_test_cap: Pool dice added to a single control test cannot exceed the base
+      number of skill dice involved.
+  hacking_pool:
+    eligible: Matrix System, attack, defense, maneuver, programming and permitted
+      attribute tests.
+    ineligible: No Body or Willpower tests to resist damaging effects of gray or black
+      IC, and no Etiquette (Matrix) Test.
+    per_test_cap: Additional pool dice cannot exceed the base skill dice for the test.
+    character_requirement: Only a character with a cyberdeck has this pool.
+  spell_pool:
+    eligible: Sorcery, Spell Success, Drain Resistance, Spell Defense and Dispelling
+      where otherwise allowed.
+    ineligible: Conjuring and all non-sorcery magical tests are not eligible.
+    sorcery_test_cap: Pool dice added to a Sorcery Test cannot exceed the base Sorcery
+      Skill dice.
+    drain_test_cap: There is no per-test cap on available Spell Pool dice allocated
+      to Drain Resistance.
+  canonical_reuse:
+  - rule.dice-pools.general
+  - rule.dice-pools.combat-pool
+  - rule.dice-pools.control-pool
+  - rule.dice-pools.hacking-pool
+  - rule.dice-pools.spell-pool
+  - rule.magic.astral-combat
+  lineage: This preserves original core numerics alongside separate Rigger 3, Matrix
+    and Magic in the Shadows rules; no inferred override.
+  engine_example_specifications_not_executed:
+  - case: combat_pool_rounddown
+    quickness: 5
+    intelligence: 4
+    willpower: 4
+    expected_dice: 6
+  - case: spell_pool_rounddown
+    intelligence: 4
+    willpower: 5
+    magic: 6
+    expected_dice: 5
+  - case: offense_skill_cap
+    combat_pool: 6
+    pistols_skill: 4
+    maximum_offensive_pool_dice: 4
+  - case: armor_reduction
+    quickness: 4
+    ballistic_armor: 8
+    base_combat_pool: 7
+    expected_combat_pool_after_reduction: 5
+framing: reference_exact
