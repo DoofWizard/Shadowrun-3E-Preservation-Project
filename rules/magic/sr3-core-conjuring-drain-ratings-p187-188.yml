@@ -1,0 +1,91 @@
+id: rule.magic.sr3-core-conjuring-drain-ratings-p187-188
+printed_pages: 187-188
+pdf_pages: 196-197
+content_class:
+- rule_exact
+headline: Original fictional Shadowrun Third Edition FASA7001 Conjuring Drain table,
+  printed pp187-188 / physical PDF196-197 (FASA Corporation)
+summary: Source-reviewed original core numeric Conjuring Drain Level thresholds relative
+  to Charisma, target-number/attribute test, dice allocation, Physical Drain threshold
+  and maximum permitted summoned Force; does not silently incorporate Magic in the
+  Shadows supplements.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: original Shadowrun Third Edition
+    source_id: source.sr3-core
+    kind: published fictional tabletop role-playing game rules
+  original_pages:
+    printed:
+    - 187
+    - 188
+    physical_pdf:
+    - 196
+    - 197
+    source_section: Conjuring Drain table and continuation
+  drain_level_table:
+    table_damage_type_label: Stun damage (unless Physical-Drain condition applies)
+    comparison_attribute: Conjurer’s Charisma
+    thresholds_ordered:
+    - when: Spirit Force <= Charisma/2
+      base_drain_level: L
+    - when: Charisma/2 < Spirit Force <= Charisma
+      base_drain_level: M
+    - when: Charisma < Spirit Force <= 1.5 * Charisma
+      base_drain_level: S
+    - when: Spirit Force > 1.5 * Charisma
+      base_drain_level: D
+    rounding_not_provided: The printed table expresses relative thresholds without
+      specifying a rounding algorithm; do not silently floor or ceil the Charisma
+      fractions.
+  drain_resistance:
+    resisting_attribute: Charisma
+    target_number: Spirit Force Rating
+    allowed_source_adjustments: Charisma dice as adjusted by applicable totem modifiers
+      and spirit foci under source restrictions
+    extra_dice: The original text allows allocation of Conjuring dice from the summoning/Conjuring
+      Test to assist resisting Drain; preserve the allocation tradeoff rather than
+      treating those dice as automatically free.
+    damage_staging: Use accepted original core Drain Resistance staging; this record
+      defines its base Level and resistance TN.
+  physical_drain_condition: Drain is Physical rather than Stun if the summoned spirit
+    Force exceeds summoner current Magic Attribute.
+  summoning_force_cap:
+    maximum_force: 2 * summoner current Magic Attribute
+    source_rule: A magician cannot summon a spirit above this Force cap.
+  canonical_reuse:
+  - rule.magic.drain
+  - rule.magic.sr3-core-drain-power-force-resistance-p162
+  - procedure.magic.summon-elemental
+  - procedure.magic.summon-nature-spirit
+  - rule.dice-pools.spell-pool
+  source_limits:
+  - The table controls Conjuring Drain, not spell-specific Sorcery Drain.
+  - Spirit services, binding and detailed summon prerequisites are independent procedures.
+  - Do not infer Conjuring dice allocations without applying corresponding source
+    rules.
+  example_specifications_not_executed:
+  - charisma: 4
+    spirit_force: 2
+    expected_level: L
+  - charisma: 4
+    spirit_force: 4
+    expected_level: M
+  - charisma: 4
+    spirit_force: 5
+    expected_level: S
+  - charisma: 4
+    spirit_force: 7
+    expected_level: D
+  - charisma: 4
+    magic: 3
+    spirit_force: 7
+    expected_summon_legal: false
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 mechanics;
+  later supplements and historical prior editions are separate
+framing: reference_exact
