@@ -1,0 +1,214 @@
+id: rule.actions.sr3-core-combat-phase-action-timing-p104-108
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 104-108
+pdf_pages: 105-109
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001, original fictional
+  tabletop mechanics; later optional and revised supplements not silently adopted
+content_class:
+- rule_procedure
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional Combat
+  Phase actions, printed pp104-108/PDF105-109
+summary: Original SR3 Combat Phase declaration sequence, Free/Simple/Complex action
+  allowance, quick draw, aim, ready and selected action prerequisites; excludes separately
+  archived full movement calculations.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Original Shadowrun Third Edition
+    medium: published fictional tabletop role-playing game rulebook
+    printed_pages:
+    - 104
+    - 105
+    - 106
+    - 107
+    - 108
+    physical_pdf_pages:
+    - 105
+    - 106
+    - 107
+    - 108
+    - 109
+    source_file_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_section: 'Combat: Combat Turn Sequence, The Combat Phase and original Free/Simple/Complex
+    Action lists'
+  turn_sequence:
+  - At the start of a new Combat Turn refresh applicable dice pools; original p104/PDF105
+    expressly makes Karma Pool refresh every 24 hours or at gamemaster discretion.
+  - Determine Initiative for all eligible participants and establish descending order.
+  - Act in descending Initiative order during each Initiative Pass; declare then resolve
+    the acting character's Combat Phase.
+  - Subtract 10 from each Initiative Score after the pass; characters above zero may
+    act in the next pass.
+  - Immediately apply wound-related Initiative Score modifiers after damage occurs;
+    source says do not postpone them until the next pass or turn.
+  - When no participant retains a positive Initiative Score, begin the next Combat
+    Turn.
+  action_economy:
+    during_own_phase: Either two Simple Actions or one Complex Action, plus any valid
+      Free Action.
+    free_replaces_simple: A Free Action may be selected in place of a Simple Action.
+    free_in_other_phases: One Free Action per character during any character's Combat
+      Phase, not only the actor's phase.
+    free_count_cap: A character cannot take more than one Free Action in the same
+      Combat Phase.
+    first_phase_limit: No Free Action before the character's first own Combat Phase
+      in the first Initiative Pass.
+    free_outside_own_phase: A Free Action from a nonacting character resolves after
+      the current actor's actions.
+    declaration_timing: Free Actions must be declared at the beginning of the Combat
+      Phase in which they are taken.
+    simple_action_timing: Simple Actions are only available during the character's
+      own Combat Phase.
+    complex_action_timing: Only one Complex Action per Combat Phase and it precludes
+      Simple Actions during that phase.
+    delay: An eligible character may declare a Delayed Action; the existing canonical
+      delayed-action restrictions still apply.
+  selected_free_actions:
+  - action: Call a Shot
+    condition: A called shot must be immediately followed by Aim, Fire Weapon, Throw
+      Weapon, or Melee/Unarmed Attack; Aim is expressly eligible, not only an immediate
+      attack.
+  - action: Change Smartgun Fire Mode
+    condition: Ready smartlinked firearm; includes smartlinked shotgun choke changes.
+  - action: Drop Sustained Spell
+    condition: Magician releases a spell being sustained.
+  - action: Drop Prone
+    condition: Allowed at any time; a sustaining magician must check Willpower against
+      spell Force to avoid losing concentration.
+  - action: Delay Action
+    condition: Only in a Combat Phase where the character can legally act.
+  - action: Eject Smartgun Clip
+    condition: Requires a ready firearm and smartlink command; inserting a replacement
+      still costs a Simple Action.
+  - action: Spell Defense
+    condition: A magician may allocate Spell Defense dice as a Free Action.
+  - action: Observe
+    condition: Only immediately obvious information; active detailed Perception requires
+      the separate Simple Action.
+  - action: Activate Cyberware
+    condition: Cyberware that does not require continuous active control.
+  - action: Deactivate Focus
+    condition: Awakened character deactivates an already bonded focus.
+  - action: Drop Object
+    condition: Can drop objects in both hands with one Free Action.
+  - action: Gesture
+    condition: One gesture may be executed per Free Action.
+  - action: Speak a Word
+    condition: Speech beyond the word/action is subject to practical GM control of
+      excessive conversation.
+  selected_simple_actions:
+  - action: Fire Weapon
+    rule: Ready SS, SA or BF firearm may fire in one Simple Action; each separately
+      held weapon requires its own Simple Action. SS firearm may fire at most once
+      in the Combat Phase.
+  - action: Change Gun Mode
+    rule: Simple Action normally; properly smartlinked ready gun permits Free Action.
+  - action: Change Position
+    rule: Stand up or lie down with one Simple Action; wounded character standing
+      must first pass a Willpower(2) Test, with injury modifiers.
+  - action: Ready Weapon
+    rule: Ready one ordinary weapon by Simple Action; may ready small throwing weapons
+      numbering one half Quickness, rounded down.
+  - action: Insert Clip
+    rule: Simple Action only after old clip has already been removed.
+  - action: Remove Clip
+    rule: Simple Action unless smartlink special Free Action eject applies.
+  - action: Observe in Detail
+    rule: Simple Action grants a detailed Perception Test.
+  - action: Shift Perception
+    rule: Simple Action for magician to switch between astral and physical perception,
+      not astral projection.
+  - action: Take Aim
+    rule: One Simple Action per aim increment, qualifying prepared ranged weapon;
+      see distinct numerical limits below.
+  - action: Throw Weapon
+    rule: A ready thrown weapon may be thrown in one Simple Action.
+  - action: Pick Up / Put Down Object
+    rule: A reachable object can be picked up or held object set down for one Simple
+      Action.
+  - action: Use Simple Object
+    rule: One Simple Action for a genuinely simple mechanism, such as a button.
+  - action: Activate Focus
+    rule: Normally a Simple Action; activating a sustaining focus also requires casting
+      the spell as a Complex Action.
+  - action: Command Spirit
+    rule: One Simple Action to issue a common command to controlled nature/elemental
+      spirit(s).
+  quick_draw:
+    weapon_requirement: Pistol or pistol-sized firearm with Concealability Rating
+      4 or greater.
+    test: Reaction
+    target_number: 4
+    successes_to_clear_weapon: 1
+    improper_holster_target_number_modifier: 2
+    simultaneous_two_guns_modifier_per_test: 2
+    failure: A failed Quick Draw Test prevents firing that gun during the same Combat
+      Phase.
+    successful_result: May ready and immediately fire the qualifying gun within the
+      Quick Draw Simple Action; only weapons normally fireable as Simple Actions qualify.
+  take_aim:
+    actions_per_increment: One Simple Action
+    target_number_change_per_action: -1
+    max_aim_actions: Half of applicable base ranged combat skill or specialization,
+      rounded down.
+    allowed_persistence: May extend across Combat Phases, Initiative Passes and Combat
+      Turns.
+    benefit_lost_when: Any other kind of action, including a Free Action, is taken.
+    pool_restriction: While sustaining aim across multiple Combat Phases, using dice
+      from a pool forfeits the accumulated aim benefit.
+  selected_complex_actions:
+  - action: Fire Automatic Weapon
+    rule: Full-auto attack is a Complex Action.
+  - action: Melee or Unarmed Attack
+    rule: Uses one Complex Action.
+  - action: Fire Mounted or Vehicle Weapon
+    rule: Uses one Complex Action.
+  - action: Cast Spell
+    rule: Magician casts a spell with a Complex Action.
+  - action: Call Elemental
+    rule: Magician calls standby elemental with a Complex Action.
+  - action: Summon Nature Spirit
+    rule: Shaman summons with a Complex Action.
+  - action: Astral Projection
+    rule: Project to or return from astral projection using a Complex Action.
+  - action: Banish Spirit
+    rule: Requires Complex Action.
+  - action: Control Spirit
+    rule: Seize control from another magician with a Complex Action.
+  - action: Erase Astral Signature
+    rule: Requires one Complex Action per Force point in the signature.
+  - action: Reload Firearm
+    rule: Non-clip firearms require Complex Action reload, subject to printed p280
+      exceptions and feed rules.
+  - action: Use Skill
+    rule: Complex Action unless a more specific action procedure applies.
+  - action: Use Complex Object
+    rule: Complex Action; source says not while running.
+  related_existing_records:
+  - rule.actions.combat-phase-actions
+  - rule.combat.combat-turn-sequence
+  - procedure.combat.combat-turn-sequence
+  - rule.initiative.delayed-actions
+  - rule.combat.movement
+  - procedure.firearms.sr3-core-ammunition-reloading
+  coverage_limit: Covers original general action costs and explicitly detailed restrictions.
+    Reuse existing separate rules for spell resolution, exact reload subtypes, movement,
+    attacks, recoil and martial arts.
+  engine_example_specifications_not_executed:
+  - case: phase_actions
+    ordinary_simple_allowance: 2
+    ordinary_complex_allowance: 1
+    exclusive: true
+  - case: aim_cap
+    base_pistols_skill: 5
+    max_take_aim_actions: 2
+    potential_base_tn_reduction: -2
+  - case: quickdraw_improper_holster
+    base_target_number: 4
+    improper_modifier: 2
+    expected_target_number: 6
+framing: reference_exact
