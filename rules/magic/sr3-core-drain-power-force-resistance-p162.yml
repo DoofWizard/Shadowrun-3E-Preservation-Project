@@ -1,0 +1,81 @@
+id: rule.magic.sr3-core-drain-power-force-resistance-p162
+printed_pages: '162'
+pdf_pages: '163'
+content_class:
+- rule_exact
+headline: 'Fictional Shadowrun Third Edition core (FASA Corporation FASA7001): Drain
+  procedure, printed p162 / physical PDF163'
+summary: FASA Corporation original Shadowrun Third Edition rules specify Drain Power
+  for Sorcery versus Conjuring, resistance Attributes, sustained-spell penalties,
+  two-success Damage Level reductions, and the distinct Stun/Physical results. Cross-referenced
+  spells/Conjuring details are not assumed resolved.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: original Shadowrun Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    nature: published fictional tabletop role-playing game sourcebook
+  source_page:
+    printed:
+    - 162
+    physical_pdf:
+    - 163
+    heading: DRAIN
+  drain_code:
+    components:
+    - Power Rating
+    - Damage Level
+    meaning: These measure the fictional magician’s exertion and resulting damage
+      from specified magical skill use, including casting spells and summoning spirits.
+  sorcery:
+    base_drain_power: floor(chosen spell Force / 2) + spell-specific Drain Power modifier
+    rounding: Force is halved and rounded down before applying the spell-specific
+      modifier
+    base_drain_level: Given by the individual spell description; no generic Damage
+      Level is invented
+    resistance_attribute: Willpower
+    referenced_spells_list: The original spell descriptions begin at printed p191;
+      spell-specific codes are dependencies, not copied from this page.
+  conjuring:
+    base_drain_power: Force Rating of the spirit being summoned
+    base_drain_level: Determined by comparison between the spirit Force and magician
+      Charisma under the Conjuring procedure (source reference printed p187); numeric
+      bands not provided on reviewed p162
+    resistance_attribute: Charisma
+  limited_spells:
+    provision: Certain limited spells reduce their effective Force for Drain calculation
+    dependency: See original printed p180 for the relevant limitation; no general
+      reduction value is inferred from printed p162.
+  sustaining_existing_spells:
+    per_sustained_spell_power_modifier: 2
+    application: Add +2 to Drain Power for each spell the magician is already sustaining
+      when making a Drain check.
+  resistance:
+    test: Resistance Attribute Test, with separately eligible pool dice under the
+      normal pool rules
+    two_successes_reduce_damage_level_by: 1
+    no_damage_boundary: Staging Drain Damage Level below Light means no Drain damage.
+  damage_kind:
+    normal: Stun
+    becomes_physical_if: Force of magic attempted exceeds the magician’s Magic Attribute
+    astral_projection_exception: Drain caused by magical activity performed while
+      astrally projecting is Physical regardless of the Force value
+    physical_drain_healing: The core text states Physical Drain cannot be healed using
+      magic, only rest and medical attention.
+  existing_canonical_reuse:
+  - rule.magic.drain
+  - rule.dice-pools.spell-pool
+  - rule.combat.damage-staging
+  - rule.condition.sr3-damage-monitor-numeric-p125-126
+  lineage: Preserve original FASA7001 content; optional Magic in the Shadows modifications
+    and source-specific spell/Conjuring procedures must be reconciled separately.
+  review_limit: Exact numeric spell Drain codes, limited-spell Force reductions and
+    Conjuring Damage Level comparison table were not claimed from printed p162 alone.
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: FASA Corporation, Shadowrun Third Edition, FASA7001, original core
+  only; advanced supplements and later editions require separate lineage evidence
+framing: reference_exact
