@@ -1,0 +1,213 @@
+{
+  "schema_version": "sr3-canonical-rules-digest/0.1",
+  "purpose": "Machine-readable source-record entrypoint for digesting FASA Corporation Shadowrun Third Edition fictional tabletop rules; references only accepted canonical records and reports actual unresolved dependencies. This file is documentation, not an ingestion gate or a rules-engine implementation.",
+  "publication": {
+    "title": "Shadowrun, Third Edition",
+    "publisher": "FASA Corporation",
+    "edition": "Shadowrun Third Edition",
+    "catalog": "FASA7001",
+    "source_id": "source.sr3-core",
+    "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+  },
+  "indexed_on": "2026-11-10",
+  "canonical_source_records": [
+    {
+      "id": "rule.dice-pools.sr3-core-formulas-allocation-p43-44",
+      "path": "rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml",
+      "content_class": "rule_exact",
+      "printed": [
+        43,
+        44
+      ],
+      "pdf": [
+        44,
+        45
+      ],
+      "effective": "original_SR3_core",
+      "designation": "source_reviewed_gate_confirmed",
+      "commit": "95451cc029ad5074850a372927716c3f84d50604",
+      "blob": "e5983f50b6858a6f48340bf095acafb5c181d908",
+      "new_exact_inputs": [
+        "Five original dice-pool formulas and rounded-down division",
+        "Offensive Combat Pool cap by relevant Skill Rating",
+        "Defense allocations and surprise exclusion",
+        "Heavy armor penalty relative to Quickness",
+        "Spell/Control/Hacking/Astral eligibility and limits"
+      ],
+      "engine_validated_this_pass": false
+    },
+    {
+      "id": "rule.actions.sr3-core-combat-phase-action-timing-p104-108",
+      "path": "rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml",
+      "content_class": "rule_procedure",
+      "printed": [
+        104,
+        108
+      ],
+      "pdf": [
+        105,
+        109
+      ],
+      "effective": "original_SR3_core",
+      "designation": "source_reviewed_gate_confirmed",
+      "commit": "6f7ca750a9fdf5240b2ed0cce269e77ec45feecd",
+      "blob": "b9612a61e963c4a3a146568462992310899dfe85",
+      "new_exact_inputs": [
+        "Two Simple or one Complex plus eligible Free Actions",
+        "Free Action timing and first-pass limit",
+        "Quick Draw Reaction TN and holster modifiers",
+        "Take Aim increments, cap and forfeiture",
+        "Named Simple/Complex/Free Action prerequisites"
+      ],
+      "engine_validated_this_pass": false
+    },
+    {
+      "id": "rule.combat.sr3-core-movement-interception-numeric-p108",
+      "path": "rules/combat/sr3-core-movement-interception-p108.yml",
+      "content_class": "rule_exact",
+      "printed": [
+        108
+      ],
+      "pdf": [
+        109
+      ],
+      "effective": "original_SR3_core",
+      "designation": "source_reviewed_gate_confirmed",
+      "commit": "9ea762eed3ac33748c767f9580bdd2d171655be1",
+      "blob": "d9a14d83a66f683b9a15d6b1f50920da3ebc1ea0",
+      "new_exact_inputs": [
+        "Metatype movement multipliers and per-pass rounding",
+        "Walking/running action TN modifiers",
+        "Athletics (Running) TN4 Complex Action",
+        "One-meter interception attack conditions"
+      ],
+      "engine_validated_this_pass": false
+    },
+    {
+      "id": "rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113",
+      "path": "rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml",
+      "content_class": "rule_procedure",
+      "printed": [
+        113
+      ],
+      "pdf": [
+        114
+      ],
+      "effective": "original_SR3_core",
+      "designation": "source_reviewed_gate_confirmed",
+      "commit": "68df7d0cb4d7f93b1b37ebfd757748627ef416d5",
+      "blob": "c228c30fd4c9f5972f3b23087b7328946ff696b1",
+      "new_exact_inputs": [
+        "Dodge base TN4 and rate-of-fire/shotgun modifiers",
+        "Weapon Power minus armor resistance TN, minimum 2",
+        "Dodge successes included in resistance totals",
+        "Two-success damage staging and caps"
+      ],
+      "engine_validated_this_pass": false,
+      "open_source_tension": "p113 references Damage Modifiers on Dodge; original p126 exempts resisting or avoiding damage from the general Injury Modifier. Do not assume precedence without errata/source review."
+    }
+  ],
+  "existing_canonical_dependencies": {
+    "tests": [
+      "rule.tests.making-tests",
+      "rule.tests.rule-of-one",
+      "rule.tests.rule-of-six",
+      "rule.tests.target-numbers"
+    ],
+    "initiative": [
+      "rule.initiative.initiative",
+      "rule.initiative.initiative-passes",
+      "rule.initiative.delayed-actions"
+    ],
+    "attack": [
+      "procedure.combat.ranged-attack",
+      "rule.combat.range-target-number",
+      "rule.combat.damage-resistance",
+      "rule.combat.damage-staging",
+      "rule.combat.dodge-test"
+    ],
+    "condition": [
+      "rule.condition.sr3-damage-monitor-numeric-p125-126"
+    ],
+    "magic": [
+      "rule.magic.drain",
+      "rule.magic.spell-defense"
+    ],
+    "matrix": [
+      "rule.matrix.system-test"
+    ],
+    "rigging": [
+      "rule.vehicles.sr3-core-original-mounts-p307",
+      "rule.vehicles.weapon-mounts"
+    ]
+  },
+  "unresolved_for_engine_digest": [
+    "Adjudicate p113/p126 injury-modifier wording before applying wound TN changes to Dodge.",
+    "Preserve original FASA7001 vs later Cannon Companion, Matrix, Rigger 3 and new Rigger 3 Revised lineage; no inferred supersession.",
+    "Confirm legal full character state and pool-modifier updates before a complete combat simulator.",
+    "Integrate full spell, Matrix and vehicle/rigging resolution separately; existing source records are not equivalent to code-validated subsystems.",
+    "Core FASA7001 printed p308 source image remains absent; do not fabricate missing page content.",
+    "Denver FASA7212 printed pp46-47 remain missing and block contiguous advancement, not access to the above verified core records."
+  ],
+  "layers": {
+    "original_source_pdf_hash_verified": true,
+    "original_page_images_reviewed": [
+      {
+        "printed": [
+          43,
+          44
+        ],
+        "physical_pdf": [
+          44,
+          45
+        ]
+      },
+      {
+        "printed": [
+          104,
+          108
+        ],
+        "physical_pdf": [
+          105,
+          109
+        ]
+      },
+      {
+        "printed": [
+          113
+        ],
+        "physical_pdf": [
+          114
+        ]
+      },
+      {
+        "printed": [
+          126
+        ],
+        "physical_pdf": [
+          127
+        ],
+        "purpose": "cross-check existing injury exception"
+      }
+    ],
+    "new_semantic_records_committed_and_gate_confirmed": 4,
+    "main_SR3_manifest_readback_verified": true,
+    "source_wide_normalization_complete": false,
+    "code_tests_run_in_this_ingestion_pass": false,
+    "new_contiguous_denver_pages_authorized": 0
+  },
+  "worker": {
+    "automation_count_changed": false,
+    "schedule_changed": false,
+    "authoritative_active_source": "source.fasa-7212",
+    "completed_through": {
+      "printed": 45,
+      "pdf": 46
+    },
+    "next": {
+      "printed": 46,
+      "pdf": 47
+    },
+    "denver_gap_retained": true
+  }
+}
