@@ -10,7 +10,7 @@
     "edition": "original Shadowrun Third Edition",
     "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
     "source_manifest": "sources/manifests/SR3.yml",
-    "verified_manifest_blob_sha": "3c72edce200219152b3da98557b02af8bf95620e",
+    "verified_manifest_blob_sha": "5b51a1470a9987d1a0567950ccce82b657094285",
     "manifest_status": "scan_complete_normalization_pending"
   },
   "safe_digestion_contract": {
@@ -274,6 +274,76 @@
       "blob_sha": "c14f073f4d76397ea3f0440a3226c21f81cb6de0",
       "readback_sha_checked_on_date": "2026-11-10",
       "engine_code_validated_by_this_checkpoint": false
+    },
+    {
+      "id": "rule.magic.sr3-core-conjuring-drain-ratings-p187-188",
+      "path": "rules/magic/sr3-core-conjuring-drain-ratings-p187-188.yml",
+      "printed_pages_exact": [
+        187,
+        188
+      ],
+      "physical_pdf_pages_exact": [
+        196,
+        197
+      ],
+      "source": "source.sr3-core",
+      "edition_scope": "FASA7001 original core",
+      "content_group": "magic_core",
+      "optional": false,
+      "default_effective": true,
+      "selected_for_safe_targeted_digest": true,
+      "source_review_status": "source_reviewed_and_git_commit_gate_confirmed_as_indexed",
+      "commit_sha": "cdfc51d3957dd028dba07590c0ae24196013c3b0",
+      "blob_sha": "7ff5701f5f895143d3605e5305c308fe754d768f",
+      "readback_sha_checked_on_date": "2026-11-10",
+      "engine_code_validated_by_this_checkpoint": false,
+      "numeric_digest_boundary": "Conjuring Drain table and Force/Charisma thresholds source-confirmed; do not infer rounding of fractional Charisma threshold"
+    },
+    {
+      "id": "rule.magic.sr3-core-learning-limited-spells-p180-181",
+      "path": "rules/magic/sr3-core-learning-limited-spells-p180-181.yml",
+      "printed_pages_exact": [
+        180,
+        181
+      ],
+      "physical_pdf_pages_exact": [
+        189,
+        190
+      ],
+      "source": "source.sr3-core",
+      "edition_scope": "FASA7001 original core",
+      "content_group": "magic_core",
+      "optional": false,
+      "default_effective": true,
+      "selected_for_safe_targeted_digest": false,
+      "source_review_status": "source_reviewed_and_git_commit_gate_confirmed_as_indexed",
+      "commit_sha": "ceacada9954682372f08cfbe8822c7f254594e12",
+      "blob_sha": "05efd79647109fd7b847f98a528aeb92189c6e3f",
+      "readback_sha_checked_on_date": "2026-11-10",
+      "engine_code_validated_by_this_checkpoint": false,
+      "numeric_digest_boundary": "Most spell-learning requirements source-reviewed; p180 target-number formula conflicts with p181 worked example. Preserve ambiguity and fail closed for automatic numeric TN calculation"
+    },
+    {
+      "id": "rule.magic.sr3-core-multicast-area-shaping-p181",
+      "path": "rules/magic/sr3-core-multicast-area-shaping-p181.yml",
+      "printed_pages_exact": [
+        181
+      ],
+      "physical_pdf_pages_exact": [
+        190
+      ],
+      "source": "source.sr3-core",
+      "edition_scope": "FASA7001 original core",
+      "content_group": "magic_core",
+      "optional": false,
+      "default_effective": true,
+      "selected_for_safe_targeted_digest": true,
+      "source_review_status": "source_reviewed_and_git_commit_gate_confirmed_as_indexed",
+      "commit_sha": "aa55ec6fcdb7a46c5e7ca4913d5b0a5ecbe2df1e",
+      "blob_sha": "b9de86d955271b0f7c627597f1a399dd859d1dab",
+      "readback_sha_checked_on_date": "2026-11-10",
+      "engine_code_validated_by_this_checkpoint": false,
+      "numeric_digest_boundary": "Original multi-spell Sorcery allocation and radius shaping; individual spell effects and Drain codes still require own sources"
     }
   ],
   "safely_digestible_groups": {
@@ -303,7 +373,9 @@
         "rule.magic.sr3-core-magic-essence-loss-numeric-p158-160",
         "rule.magic.sr3-core-exclusive-action-limitations-p160-162",
         "rule.magic.sr3-core-drain-power-force-resistance-p162",
-        "rule.magic.sr3-core-noticing-magic-perception-p162"
+        "rule.magic.sr3-core-noticing-magic-perception-p162",
+        "rule.magic.sr3-core-conjuring-drain-ratings-p187-188",
+        "rule.magic.sr3-core-multicast-area-shaping-p181"
       ],
       "scope": "Original core Magic, Essence, burnout, exclusion, noticing and generic Drain procedure; spell- and Conjuring-specific inputs still required"
     },
@@ -355,14 +427,15 @@
       "safe_handling": "retain dependency"
     },
     {
-      "type": "numeric_cross_reference",
+      "type": "resolved_original_core_numeric_cross_reference",
       "topic": "Conjuring Drain",
-      "detail": "Spirit Force vs magician Charisma Damage Level comparison is cross-referenced to printed p187, not fully normalized by new p162 generic Drain record",
+      "detail": "Original FASA7001 printed pp187-188/PDF196-197 Conjuring Drain table now independently source-reviewed and gate-confirmed; check threshold rounding and later supplements rather than inventing.",
       "printed_source_pages": [
         162,
         187
       ],
-      "safe_handling": "retain dependency"
+      "safe_handling": "use verified original threshold table with explicit unspecified rounding",
+      "resolved_by": "rule.magic.sr3-core-conjuring-drain-ratings-p187-188"
     },
     {
       "type": "numeric_cross_reference",
@@ -404,12 +477,23 @@
       "topic": "Denver",
       "detail": "Different FASA7212 Second Edition source missing printed pp46-47; unrelated to safety of the exact accepted FASA7001 slices but remains a Pass B contiguous-progress blocker",
       "safe_handling": "do not advance"
+    },
+    {
+      "type": "source_internal_numeric_conflict",
+      "topic": "Learning spells and Limited Spells",
+      "detail": "Printed p180 says Sorcery learning TN is twice desired Force. Printed p181 Force-8 worked example instead starts TN8 and reduces by2 to TN6, not from 16. Both claims retained. No unreviewed errata correction or inferred mechanic.",
+      "printed_source_pages": [
+        180,
+        181
+      ],
+      "safe_handling": "do not auto-select one learning TN without source/errata ruling",
+      "canonical_record": "rule.magic.sr3-core-learning-limited-spells-p180-181"
     }
   ],
   "unresolved_for_whole_ruleset": [
     "Full legal character construction and advancement, not merely priority budgets",
     "Complete melee/ranged optional attack situations and wound/Dodge ambiguity",
-    "All spell-specific Drain and Conjuring rule tables, complete spellcasting and astral interactions",
+    "Spell-specific Drain codes, spell-learning TN source ambiguity, full Sorcery and astral interactions; Conjuring Drain original numeric table now available",
     "Matrix system/cybercombat and FASA7909 detailed programming rules",
     "Rigger 3 Revised versus original Rigger 3 exact edition lineage and integrated vehicles/drones",
     "Cyberware, bioware and magic interactions including Essence loss and optional supplements",
@@ -424,7 +508,8 @@
     "full_core_normalization_complete": false,
     "full_engine_validation_run_this_digest": false,
     "game_ready_certification": false,
-    "new_authorized_contiguous_Denver_printed_pages": 0
+    "new_authorized_contiguous_Denver_printed_pages": 0,
+    "original_core_magic_records_current_run": 7
   },
   "preservation_state_not_modified": {
     "active_source": "source.fasa-7212",
@@ -438,5 +523,16 @@
     "checkpoint_not_updated": true,
     "hourly_worker_schedule_not_changed": true
   },
-  "related_digest": "docs/engine-readiness/CANONICAL_RULES_DIGEST_ENTRYPOINT_2026-11-10.json"
+  "related_digest": "docs/engine-readiness/CANONICAL_RULES_DIGEST_ENTRYPOINT_2026-11-10.json",
+  "partially_digestible_groups": {
+    "spell_learning_with_numeric_conflict": {
+      "refs": [
+        "rule.magic.sr3-core-learning-limited-spells-p180-181"
+      ],
+      "scope": "Learning prerequisites, test type, stated Karma/duration, fetish/exclusive properties can be described from original source; automatic learning TN generation must remain blocked by contradictory printed p180 vs p181 statements",
+      "auto_resolve_numeric_learning_target_number": false
+    }
+  },
+  "digest_revision": "0.2",
+  "digest_revision_note": "Three additional current-turn confirmed original core magic records indexed: Conjuring Drain, limited spell-learning ambiguity and multicasting radius."
 }
