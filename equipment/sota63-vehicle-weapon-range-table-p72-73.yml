@@ -1,0 +1,129 @@
+id: equipment.sota63-vehicle-weapon-range-table-p72-73
+record_type: equipment
+status: source_reviewed
+source: source.fanpro-10664
+printed_pages: 72-73
+pdf_pages: 73-74
+edition_scope: 'Optional artillery game equipment in FanPro State of the Art: 2063
+  (FanPro10664), Shadowrun Third Edition, Soldiers of Fortune; historical fictional
+  game only'
+content_class:
+- equipment_stat
+headline: 'Fictional Shadowrun Third Edition vehicle weapon ranges in FanPro State
+  of the Art: 2063 (FanPro10664), printed pp72-73/PDF73-74'
+summary: Exact fictional vehicle-weapon-range table and optional heavy-mortar/light-howitzer
+  game stat cards, with range-specific target numbers, scatter dice and fictional
+  ammunition storage capacity; no engineering instructions.
+data:
+  publication:
+    title: 'State of the Art: 2063'
+    publisher: FanPro
+    catalog_number: FanPro10664
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 72
+    - 73
+    physical_pdf_pages:
+    - 73
+    - 74
+  section: Soldiers of Fortune / Game Information / New Equipment / Vehicle Weapons
+    / Vehicle Weapon Ranges
+  source_context: Optional tabletop game rules for mercenary campaigns. These source-specific
+    vehicle weapon range TNs do not silently modify ordinary Shadowrun Third Edition
+    personal firearm distance bands.
+  range_table:
+    columns:
+    - vehicle_weapon
+    - short_range_m
+    - medium_range_m
+    - long_range_m
+    - extreme_range_m
+    - scatter
+    target_numbers:
+      short: 4
+      medium: 5
+      long: 8
+      extreme: 9
+    rows:
+    - vehicle_weapon: Heavy Mortar
+      short_range_m:
+      - 200
+      - 800
+      medium_range_m:
+      - 801
+      - 2000
+      long_range_m:
+      - 2000
+      - 6000
+      extreme_range_m:
+      - 6001
+      - 8000
+      scatter: 3D6 x 5 meters
+    - vehicle_weapon: Light Howitzer
+      short_range_m:
+      - 0
+      - 1000
+      medium_range_m:
+      - 1001
+      - 3500
+      long_range_m:
+      - 3501
+      - 7500
+      extreme_range_m:
+      - 7501
+      - 12500
+      scatter: 3D6 x 10 meters
+    source_boundary_overlap: Heavy Mortar medium ends at 2,000 and long begins at
+      2,000 in the printed table; preserve overlap without silently choosing one band.
+    out_of_range_note: Do not infer targeting results for values not assigned to a
+      band; apply other canonical game rules only if independently verified.
+  weapon_properties:
+  - model: Heavy Mortar
+    weapon_value: 4
+    rounds_per_cf_ammunition_storage: 20
+    maximum_shots_per_combat_turn: 1
+    shot_limit_applies_even_if_actions_remain: true
+    ammo_table:
+      ammo: 1
+      mode: special
+      damage: As mortar
+      weight: 150
+      availability: 15/21 days
+      cost_nuyen: 10000
+      street_index: 3
+      legality: 1-K
+    use_scope: Vehicle-mounted heavy mortar with fictional indirect-fire game designation.
+  - model: Light Howitzer
+    weapon_value: 6
+    shells_per_cf_ammunition_storage: 10
+    minimum_storage_cf: 2
+    ammo_table:
+      ammo: 1
+      mode: SS
+      damage: As shell
+      weight: 1000
+      availability: —
+      cost_nuyen: 100000
+      street_index: —
+      legality: 1-K
+    use_scope: Fictional indirect-fire artillery game model, not a real howitzer design.
+  not_normalized_here:
+  - Fictional shell variants and their optional damage modifiers in printed pp73-74
+    are a distinct content slice and not all contained in this record.
+  - The source refers to other Shadowrun and Cannon Companion indirect-fire rules
+    but this record does not claim cross-book supersession.
+  example_vectors_unexecuted:
+  - weapon: Heavy Mortar
+    range_m: 700
+    expected_band: short
+    expected_base_tn: 4
+  - weapon: Light Howitzer
+    range_m: 4000
+    expected_band: long
+    expected_base_tn: 8
+  - weapon: Heavy Mortar
+    range_m: 2000
+    result: ambiguous_overlap_retain_source_notation
+  engine_status: Source-original exact fictional game stat table; not executable or
+    Denver contiguous-page authorization.
+framing: reference_exact
