@@ -1,0 +1,200 @@
+id: equipment.sota63-artillery-shells-game-stats-p73-74
+record_type: equipment
+status: source_reviewed
+source: source.fanpro-10664
+printed_pages: 73-74
+pdf_pages: 74-75
+edition_scope: 'Historical FanPro 2003 State of the Art: 2063 (FanPro10664) optional
+  Shadowrun Third Edition tabletop armament; fictional dice-and-statistics only'
+content_class:
+- equipment_stat
+headline: 'Fictional FanPro State of the Art: 2063 (FanPro10664, Shadowrun Third Edition),
+  printed pp73–74/PDF74–75: exact artillery shell game table'
+summary: 'Tabletop-only fictional mortar/howitzer shell values and game resolution
+  effects: damage codes, magic-system-independent target-number adjustments, modifiers,
+  availability, nuyen costs and source cross-references; not real-world operational
+  instructions.'
+data:
+  publication:
+    title: 'State of the Art: 2063'
+    publisher: FanPro
+    edition: Shadowrun Third Edition
+    catalog_number: FanPro10664
+    source_id: source.fanpro-10664
+    publication_year: 2003
+    printed_pages:
+    - 73
+    - 74
+    physical_pdf_pages:
+    - 74
+    - 75
+  chapter: Soldiers of Fortune
+  section: Game Information / New Equipment / Ammunition and Explosives / Mortar-Howitzer
+    Shell table
+  source_scope: Optional fictional SR3 tabletop game-only parameters. The source distinguishes
+    mortar shells from howitzer shells as non-interchangeable; numerical values here
+    are role-playing-game stats, not usable weapon specifications.
+  columns:
+  - shell_type
+  - concealability
+  - damage_code
+  - blast
+  - weight
+  - availability
+  - cost_nuyen
+  - street_index
+  - legality
+  exact_rows:
+  - - Anti-Personnel
+    - '2'
+    - 24D (f)
+    - −1/m
+    - '12'
+    - 24/3 wks
+    - 500¥
+    - '4'
+    - 1-K
+  - - Anti-Vehicle
+    - '2'
+    - 20D
+    - −8/m
+    - '12'
+    - 24/4 wks
+    - 500¥
+    - '5'
+    - 1-K
+  - - High Explosive
+    - '2'
+    - 6LN
+    - −1/m
+    - '12'
+    - 24/3 wks
+    - 500¥
+    - '4'
+    - 1-K
+  - - ICM
+    - '2'
+    - 4LN
+    - Special
+    - '12'
+    - 24/4 wks
+    - 750¥
+    - '5'
+    - 1-K
+  - - DP-ICM
+    - '2'
+    - 4LN
+    - Special
+    - '12'
+    - 24/4 wks
+    - 750¥
+    - '5'
+    - 1-K
+  - - Seeker
+    - —
+    - As round
+    - As round
+    - '+2'
+    - +2/+1 wk
+    - +2,000¥
+    - '+1'
+    - As round
+  - - Smoke
+    - '2'
+    - —
+    - —
+    - '12'
+    - 18/3 wks
+    - 300¥
+    - '3'
+    - 1-K
+  - - Smoke (IR)
+    - '2'
+    - —
+    - —
+    - '12'
+    - 18/4 wks
+    - 400¥
+    - '3'
+    - 1-K
+  - - Solar
+    - '2'
+    - Special
+    - Special
+    - '12'
+    - 18/4 wks
+    - 400¥
+    - '3'
+    - 1-K
+  variant_rules:
+    anti_personnel: Apply the SR3 p116 flechette ammunition rules when resolving this
+      fictional shell.
+    anti_vehicle: Use the SR3 anti-vehicle ammunition rules; no new conversion formula
+      is supplied in these pages.
+    high_explosive: The book presents the standard fictional explosive shell as a
+      baseline choice.
+    icm:
+      affected_area_radius_m: 20
+      game_effect: Each target inside the stated fictional area receives the shell’s
+        printed damage code.
+    dp_icm:
+      affected_area_radius_m: 20
+      game_effect: All targets receive the same printed game damage code; vehicles
+        do not reduce Power or Damage Level for this hit but use their full Armor
+        rating.
+    jammer:
+      source_page: 73
+      rating: 4
+      flux: 8
+      effect_scope: In the tabletop rules, the shell affects standard radio communications,
+        sensors and remote-control networks within its computed zone.
+      radius_formula_as_printed: (2D6 meters × Gunnery Test successes) + 10 meters
+      other_transmissions: Systems outside the fictional effect zone are unaffected.
+      cross_references:
+      - SR3 Jammers p291
+      - SR3 Electronic Countermeasures p138
+    seeker:
+      game_effect: Uses a target-designation system for indirect fire; apply Cannon
+        Companion p99 indirect-fire rules.
+      inheritance: Damage and blast remain those of the underlying shell, as indicated
+        by As round table cells.
+    solar:
+      flash_duration_minutes: 5
+      vision_tests_target_number_modifier_at_reference_distance: 8
+      tn_modifier_change_per_10_meters: −1 per 10 meters from the fictional impact
+        point
+      flare_compensation_initial_reduction: 2
+      tn_modifier_reduction_per_combat_turn: 2
+      bright_area_radius_m: 100
+      direct_view_glare_visibility_modifier: 4
+      direct_view_glare_with_flare_compensation: 2
+      illumination_duration_minutes: 5
+      source_scope: Visibility and test effects for tabletop gameplay only.
+    smoke:
+      smoke_cloud_radius_m: 30
+      duration_minutes: 4
+      effect: Obscures standard vision; consult Cannon Companion p106 smoke modifiers.
+    smoke_ir:
+      smoke_cloud_radius_m: 30
+      duration_minutes: 4
+      effect: Fictional infrared variant also obscures thermographic vision.
+  table_notation:
+    dash: Original printed dash, not numeric zero.
+    special: Source directs resolution to special rules.
+    as_round: Use the base-shell entry rather than invent independent values.
+    seeker_modifiers: Leading plus signs are additions to the base round’s printed
+      values, including Availability and Street Index.
+  existing_related_records:
+  - path: equipment/sota63-vehicle-weapon-range-table-p72-73.yml
+    scope: Already indexed mortar/howitzer range bands and launch platform stats;
+      not repeated here.
+  - path: equipment/sota63-mercenary-field-gear-p73-75.yml
+    scope: Already indexed general survival gear and pouches, distinct from shell
+      variants.
+  coverage_limit: Only fictional shell table and shell-specific game modifiers on
+    printed pp73-74/PDF74-75. The separate explosive-device table and any real-world
+    construction, detonation or tactical instructions are intentionally outside this
+    record.
+  engine_status: Historical numerical game equipment record; no executable example
+    claimed tested.
+framing: reference_exact
