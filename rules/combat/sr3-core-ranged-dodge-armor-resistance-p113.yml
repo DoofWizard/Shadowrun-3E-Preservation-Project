@@ -1,0 +1,99 @@
+id: rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '113'
+pdf_pages: '114'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001, original fictional
+  tabletop mechanics; later optional and revised supplements not silently adopted
+content_class:
+- rule_procedure
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional ranged
+  attack defenses, printed p113/PDF114
+summary: Precise original target-number and dice-pool sequence for ranged Dodge, armor-adjusted
+  Damage Resistance, and two-success staging; identify the p113/p126 injury-modifier
+  source tension without selecting an unsupported precedence.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Original Shadowrun Third Edition
+    medium: published fictional tabletop role-playing game rulebook
+    printed_pages:
+    - 113
+    physical_pdf_pages:
+    - 114
+    source_file_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_section: 'Combat: Attacker Success Test, Dodge Test, Damage Resistance Test
+    and Determine Outcome'
+  attack_success_test:
+    pool: Applicable ranged Combat Skill plus eligible Combat Pool dice.
+    target_number: Final modified attack target number from range and other modifiers.
+    zero_attack_successes: Miss; no Dodge or Damage Resistance needed to establish
+      a damaging hit.
+  dodge_test:
+    dice: Any currently available dice the defender elects to spend from Combat Pool.
+    base_target_number: 4
+    additional_target_number_modifiers:
+    - condition: Burst-fire/full-auto attack
+      value: +1 TN per completed 3 rounds fired
+    - condition: Shotgun spread at defender location
+      value: +1 TN for each meter of spread at that position
+    - condition: Original p113 cites Damage Modifiers (p126)
+      value: Preserve reference; p126 qualifies injury modifier on resisting/avoiding
+        damage.
+    complete_dodge: If Dodge successes are greater than attacker successes, attack
+      is avoided and deals no damage.
+    partial_dodge: If not enough to avoid the attack, every Dodge success is added
+      to defender successes for damage resolution.
+    prerequisites: Defender must be aware and legally able to allocate Combat Pool
+      to Dodge.
+  damage_resistance_test:
+    dice: Adjusted Body Attribute (including allowed dermal armor adjustment) plus
+      any currently available Combat Pool dice.
+    target_number_formula: max(2, attacking weapon Power Rating - applicable worn
+      armor rating)
+    source_armor_example:
+      attacking_weapon_power: 9
+      defender_ballistic_armor: 4
+      damage_resistance_target_number: 5
+    minimum_target_number: 2
+    dice_resolution: Apply Rule of One and Rule of Six; each die equaling or exceeding
+      TN counts one success.
+    dodge_contribution: Add prior Dodge Test successes to the Damage Resistance Test
+      successes for final damage staging.
+  determine_outcome:
+    net_successes: Attacker successes minus total defender Dodge+Damage Resistance
+      successes.
+    staging: One Damage Level upward for every two net attacker successes, or one
+      downward for every two net defender successes.
+    no_damage: When staged below Light, the attack produces no damage.
+    damage_cap: Deadly is the maximum ordinary Damage Level.
+    tie: When successes tie, original base Damage Level remains unchanged.
+    condition_monitor: Apply final staged Damage Level using the existing Condition
+      Monitor numeric record.
+  source_internal_tension:
+    p113: Dodge Test paragraph expressly includes a reference to Damage Modifiers
+      on printed p126.
+    p126: General Injury Modifier description expressly exempts resisting or avoiding
+      damage.
+    disposition: Retain both original statements without silently applying contradictory
+      injury TN changes. Source/errata precedence must be reviewed before an executable
+      Dodge modifier is declared complete.
+  canonical_reuse:
+  - procedure.combat.ranged-attack
+  - rule.combat.dodge-test
+  - rule.combat.damage-resistance
+  - rule.combat.damage-staging
+  - rule.condition.sr3-damage-monitor-numeric-p125-126
+  engine_example_not_executed:
+    attacker_successes: 5
+    defender_dodge_successes: 2
+    defender_body_successes: 1
+    weapon_power: 9
+    ballistic_armor_rating: 4
+    resistance_tn: 5
+    base_damage_level: M
+    final_damage_level: S
+framing: reference_exact
