@@ -1,0 +1,108 @@
+id: rule.magic.sr3-core-learning-limited-spells-p180-181
+printed_pages: 180-181
+pdf_pages: 189-190
+content_class:
+- rule_procedure
+headline: Original fictional Shadowrun Third Edition FASA7001 learning and limiting
+  spells, printed pp180-181 / physical PDF189-190 (FASA Corporation)
+summary: Exact source learning procedure, instructor test, Karma, lodge/library requirements
+  and fetish/exclusive limits with a source-internal worked-example target-number
+  inconsistency explicitly deferred for safe numeric digestion.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: original Shadowrun Third Edition
+    source_id: source.sr3-core
+    kind: published fictional tabletop role-playing game rules
+  original_pages:
+    printed:
+    - 180
+    - 181
+    physical_pdf:
+    - 189
+    - 190
+    source_sections:
+    - Learning Spells
+    - Limited Spells
+    - Fetish / Exclusive
+  learning_source:
+    allowed:
+    - teacher who already knows the spell
+    - appropriate spell formula from same tradition
+    teacher_cap: Teacher can teach any Force up to the rating of the teacher’s known
+      spell.
+    teacher_price: Typically 1000 nuyen times desired spell Force plus living expenses.
+    shamanic_lodge_requirement: Shaman must study in a lodge whose rating is at least
+      desired Force.
+    hermetic_library_requirement: Mage requires Sorcery library rating at least desired
+      Force.
+  sorcery_learning_test:
+    test: Sorcery Test
+    printed_general_target_number_formula: 2 * desired spell Force
+    complementary_skill: Magic Background Skill may complement the Sorcery Test
+    source_modifiers:
+    - shamanic totem bonuses/penalties as applicable
+    - suitable elemental aid for a mage
+    - injury modifiers
+    - distraction from sustained spells
+    - environmental conditions
+    instructor_instruction_test:
+      target_number: 4
+      added_student_die_per_instructor_success_pair: 1
+      virtual_instructor_eligible: false
+  learning_duration:
+    base_days: desired spell Force
+    divide_by: number of Sorcery learning test successes
+    minimum_days: 1
+    rounding_note: The reviewed text says divide with a one-day minimum but does not
+      settle general fractional-day rounding.
+    zero_successes: Failed learning attempt wastes days equal to desired Force and
+      costs no Karma; teacher still expects payment.
+  good_karma_cost: desired spell Force (before valid limited-spell adjustment)
+  limited_spells:
+    limit_types:
+    - name: Fetish
+      modifier: -1
+      casting_prerequisite: The caster must have the enchanted, reusable fetish for
+        the spell category touching the body while casting.
+      replacement: Loss requires a new fetish to be made and attuned for hours equal
+        to spell Force.
+    - name: Exclusive
+      modifier: -2
+      casting_prerequisite: Casting and sustaining the selected spell are Exclusive
+        actions under original core printed p160.
+    choice_point: Caster selects each limit’s purpose when first learning that limited
+      version.
+    purposes:
+    - Reduce spell Force when calculating Drain
+    - Reduce spell-learning Sorcery Test TN and Good Karma cost
+    two_limits: One spell may have Fetish and Exclusive limits at once, but they must
+      be assigned different purposes; do not double-apply both to the same benefit.
+    versions: Unlimited and limited versions are separate learned spells; learning
+      a later unlimited version requires another learning procedure.
+  worked_example_and_source_ambiguity:
+    narrated_case: The printed p181 example describes a magician with Magic 6 learning
+      a Force 8 Fireball, choosing Exclusive −2 to make effective Force 6 for Drain.
+      The alternate learning choice reports TN6 (8−2) and 6 Karma.
+    general_rule_p180: The adjacent learning procedure specifies learning-test target
+      number twice desired Force (2 * Force).
+    example_p181: The worked example instead takes original TN8 for a Force8 spell,
+      then −2 = TN6.
+    disposition: Retain both published statements. Do not implement a single automatic
+      learning TN for limited spells based on this inconsistent example until errata
+      or a source-grounded ruling is documented.
+    readiness: partial_source_fidelity_verified_but_numeric_learning_TN_ambiguous
+  canonical_reuse:
+  - procedure.magic.learning-spells
+  - rule.magic.sr3-core-drain-power-force-resistance-p162
+  - rule.magic.sr3-core-exclusive-action-limitations-p160-162
+  - rule.dice-pools.spell-pool
+  source_scope: Original FASA7001 spell learning/limits only; no external errata invented.
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 mechanics;
+  later supplements and historical prior editions are separate
+framing: reference_exact
