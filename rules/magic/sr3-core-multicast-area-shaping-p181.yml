@@ -1,0 +1,76 @@
+id: rule.magic.sr3-core-multicast-area-shaping-p181
+printed_pages: '181'
+pdf_pages: '190'
+content_class:
+- rule_exact
+headline: Original fictional Shadowrun Third Edition FASA7001 multiple spellcasting
+  and area radius, printed p181 / physical PDF190 (FASA Corporation)
+summary: Exact original core simultaneous-spell dice allocation and +2-per-extra-spell
+  Drain modifier, area-spell starting radius based on Magic, and shrinking/enlarging
+  radius through withheld Sorcery dice.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: original Shadowrun Third Edition
+    source_id: source.sr3-core
+    kind: published fictional tabletop role-playing game rules
+  original_pages:
+    printed:
+    - 181
+    physical_pdf:
+    - 190
+    source_section: 'Spellcasting: Preparation and Spell Targeting'
+  action: A Complex Action may include multiple spells only under the permitted Sorcery
+    skill and dice-splitting constraints.
+  simultaneous_spells:
+    maximum_spell_count: current Sorcery Skill Rating
+    minimum_base_sorcery_dice_per_spell: 1
+    pool_allocation: Caster splits both Sorcery dice and any allocated Spell Pool
+      dice among the spells.
+    spell_order: Caster chooses the resolution order.
+    same_spell_can_be_repeated: One spell may be cast on multiple distinct targets
+      in the same action under the same caps.
+    drain: Make separate Drain Resistance Tests for each spell.
+    extra_spell_drain_target_number_per_additional_spell: 2
+    modifier_applies_to: Each of the simultaneous spells’ Drain Resistance Tests,
+      not just the later spells.
+  area_spells:
+    initial_radius_meters: Caster current Magic Attribute
+    targeting: All valid targets inside radius of effect can be affected, friend and
+      foe, including caster.
+    reduce_radius: For every 2 Sorcery dice withheld from Sorcery Test, reduce radius
+      by 1 meter.
+    increase_radius: For every 1 Sorcery die withheld from Sorcery Test, increase
+      radius by 1 meter.
+    withheld_dice: Dice reserved to reshape the area are unavailable for other Sorcery
+      Tests during that casting.
+  dependency_boundary: Separate spell targeting, eligible targets, Force, resistances,
+    and any spell-specific radius restrictions remain under their respective original
+    core records.
+  canonical_reuse:
+  - procedure.magic.spellcasting
+  - rule.magic.spell-targeting
+  - rule.dice-pools.spell-pool
+  - rule.magic.sr3-core-drain-power-force-resistance-p162
+  example_specs_not_executed:
+  - sorcery: 4
+    simultaneous_spell_count: 3
+    minimum_sorcery_dice_allocated_across_spells: 3
+    extra_spells: 2
+    drain_tn_addition_each: 4
+  - magic: 6
+    area_radius_initial: 6
+    withheld_to_increase: 2
+    radius_increased_to: 8
+  - magic: 6
+    area_radius_initial: 6
+    withheld_to_decrease: 2
+    radius_decreased_to: 5
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 mechanics;
+  later supplements and historical prior editions are separate
+framing: reference_exact
