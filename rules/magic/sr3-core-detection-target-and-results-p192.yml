@@ -1,0 +1,103 @@
+{
+  "id": "rule.magic.sr3-core-detection-target-and-results-p192",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "edition_scope": "Published fictional tabletop RPG Shadowrun, Third Edition; FASA Corporation original Third Edition core rulebook FASA7001; source-specific rules only.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "printed_pages": "192",
+  "pdf_pages": "201",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop detection spell target/result mechanics, printed p192/PDF201",
+  "summary": "Original p192 target-number rows, success-result thresholds, area detection and resistance procedure, transcribed from the original published source without inferring unstated caps or higher-success thresholds.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source_section": "Magic / Street Grimoire / Detection Spells, printed p192, physical PDF201",
+    "detection_range": {
+      "formula_meters": "spell Force multiplied by caster Magic Attribute",
+      "sensor_orientation": "New sense normally directional, like sight; area detection is omnidirectional."
+    },
+    "area_detection": {
+      "one_sorcery_test": true,
+      "per_target_evaluation": "Compare the one Sorcery Test successes against each potential target in sense range, using both the target-number and results tables.",
+      "specific_target_test_required": false,
+      "new_target_enters_range": "New targets are detected as they enter the spell range; original Sorcery Test successes continue to apply."
+    },
+    "subject_and_resistance": {
+      "eligible_subject": "Any willing subject, including caster.",
+      "grant_sense_touch_required": true,
+      "unwilling_detector_resistance": "An involuntarily detected subject may make a normal Spell Resistance Test with Willpower, reducing caster successes even if unaware."
+    },
+    "detection_spell_target_number_table": [
+      {
+        "subject": "Target is in sight of caster",
+        "target_number": 4
+      },
+      {
+        "subject": "Target is out of sight of caster",
+        "target_number": 6
+      },
+      {
+        "subject": "Target is on a different plane",
+        "target_number": 10
+      },
+      {
+        "subject": "Target is behind an astral barrier",
+        "target_number_modifier": "+spell Force"
+      }
+    ],
+    "detection_spell_results_table": [
+      {
+        "successes": "1",
+        "result": "Only general knowledge, no details."
+      },
+      {
+        "successes": "2",
+        "result": "Detailed information, but some minor parts are inaccurate."
+      },
+      {
+        "successes": "3",
+        "result": "All details accurate, but minor parts are obscure or missing."
+      },
+      {
+        "successes": "4",
+        "result": "Accurate and detailed information."
+      }
+    ],
+    "limitations": "The printed target table says +Force for an astral barrier; it does not provide a separate base TN in that row. Results rows are 1, 2, 3, 4; this record does not fabricate an explicit rule for 5 or more successes.",
+    "prior_canon_reused": [
+      "rules/magic/spell-characteristics.yml",
+      "rules/magic/spell-resistance.yml"
+    ],
+    "source_review": {
+      "physical_pdf_page": 201,
+      "original_printed_page": 192,
+      "reviewed_text_fields": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.detection_range.*",
+        "data.area_detection.*",
+        "data.subject_and_resistance.*",
+        "data.detection_spell_target_number_table[*].*",
+        "data.detection_spell_results_table[*].*",
+        "data.limitations",
+        "data.prior_canon_reused[*]",
+        "data.source_review.*"
+      ],
+      "basis": "Direct independent examination of original scanned p192/PDF201 tables and surrounding rule prose; the receipt is not proof of full-book fidelity."
+    }
+  }
+}
