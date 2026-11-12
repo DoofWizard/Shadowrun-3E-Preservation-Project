@@ -1,0 +1,132 @@
+{
+  "id": "rule.magic.sr3-core-focus-bonding-karma-table-numeric-p190",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "190",
+  "pdf_pages": "199",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition core rulebook (FASA7001); original fictional Third Edition tabletop magic mechanics, printed p190/PDF199; no later-book supersession inferred.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop RPG, printed p190/PDF199: original seven-row Focus Bonding Karma table",
+  "summary": "Source-reviewed exact historical FASA7001 Third Edition Focus Bonding Karma formulas (0; Force multipliers 1, 3, 2, 5, 1; and Weapon Reach formula), time cost and ownership conditions, absent numerically from earlier generic archival focus rule. Game mechanics only.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source": {
+      "printed_page": 190,
+      "physical_pdf_page": 199,
+      "source_section": "Magic / Foci / Bonding / FOCUS BONDING TABLE"
+    },
+    "focus_bonding_table": {
+      "formula_units": "Karma points",
+      "rows": [
+        {
+          "focus_type": "Expendable Spell Focus",
+          "karma_cost_formula": "0",
+          "requires_bonding": false
+        },
+        {
+          "focus_type": "Specific Spell Focus",
+          "karma_cost_formula": "1 × Force"
+        },
+        {
+          "focus_type": "Spell Category Focus",
+          "karma_cost_formula": "3 × Force"
+        },
+        {
+          "focus_type": "Spirit Focus",
+          "karma_cost_formula": "2 × Force"
+        },
+        {
+          "focus_type": "Power Focus",
+          "karma_cost_formula": "5 × Force"
+        },
+        {
+          "focus_type": "Sustaining Focus",
+          "karma_cost_formula": "1 × Force"
+        },
+        {
+          "focus_type": "Weapon Focus",
+          "karma_cost_formula": "(3 + Weapon Reach) × Force"
+        }
+      ],
+      "source_note": "The table prints 0 for expendable focus and does not require any Karma to bond one; the later p190 prose specifies that expendable foci do not require bonding."
+    },
+    "bonding_rules": {
+      "bonding_time_hours_formula": "Focus Force",
+      "special_materials_required": false,
+      "pay_karma_at_ritual_end": true,
+      "concurrent_owners_maximum": 1,
+      "use_restriction": "Only the bonded owner can use a nonexpendable focus.",
+      "rebond_if_transferred": true,
+      "astral_signature": "A bonded focus carries its owner astral signature; the source connects this to astral tracking."
+    },
+    "source_market_separation": "Purchasing the mundane base item and any nuyen price of a magical focus is distinct from paying the bonding Karma; no monetary price substituted for these exact Karma costs.",
+    "accepted_generic_canon_reused": [
+      "rules/magic/focus-bonding.yml",
+      "rules/magic/focus-activation.yml",
+      "rules/magic/spell-foci.yml",
+      "rules/magic/spirit-foci.yml",
+      "rules/magic/power-foci.yml",
+      "rules/magic/sustaining-foci.yml",
+      "rules/magic/weapon-foci.yml",
+      "equipment/sr3-core-magical-equipment-market-p305.yml"
+    ],
+    "proposed_test_vectors_not_executed": [
+      {
+        "id": "specific_force4",
+        "type": "Specific Spell Focus",
+        "force": 4,
+        "expected_karma_cost": 4,
+        "expected_bonding_hours": 4
+      },
+      {
+        "id": "spell_category_force3",
+        "type": "Spell Category Focus",
+        "force": 3,
+        "expected_karma_cost": 9
+      },
+      {
+        "id": "power_force2",
+        "type": "Power Focus",
+        "force": 2,
+        "expected_karma_cost": 10
+      },
+      {
+        "id": "weapon_reach2_force3",
+        "type": "Weapon Focus",
+        "reach": 2,
+        "force": 3,
+        "expected_karma_cost": 15
+      }
+    ],
+    "engine_status": "canonical_table_source_reviewed_not_engine_executed",
+    "editorial_review": {
+      "reviewed_text_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source.*",
+        "data.focus_bonding_table.*",
+        "data.bonding_rules.*",
+        "data.source_market_separation",
+        "data.accepted_generic_canon_reused[*]",
+        "data.proposed_test_vectors_not_executed[*].*",
+        "data.engine_status",
+        "data.editorial_review.*"
+      ],
+      "review_basis": "Original printed p190 physical PDF199 image directly examined, including all seven rows, adjacent ritual and focus descriptions, and compared existing accepted canonical general focus records. Local receipt is not source-completeness or code-readiness proof."
+    }
+  }
+}
