@@ -1,0 +1,88 @@
+{
+  "id": "rule.combat.sr3-core-knockdown-numeric-p124",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "124",
+  "pdf_pages": "125",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original Third Edition fictional tabletop combat game rules printed p124 / physical PDF125; no later edition substituted",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop game combat rules, printed p124/PDF125: exact Knockdown Table and situational tests",
+  "summary": "Original FASA7001 core rules for fictional combat knockdown Body Tests, wound-level success thresholds, ranged/melee target numbers and exception states; source-exact mechanics, not physical-world instructions.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "printed_page": 124,
+      "physical_pdf_page": 125,
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_type": "Published fictional tabletop role-playing game."
+    },
+    "scope": "Original published Third Edition Knockdown and Knockdown Table on printed p124; supplements prior generic rule.combat.knockdown without importing external rules.",
+    "knockdown_body_test": {
+      "when": "Character is struck in ranged or melee combat.",
+      "ranged_target_number": "Half of attack Power, rounded down.",
+      "melee_target_number": "Opponent's Strength.",
+      "gel_round_exception": "Against gel rounds the Body Test target number equals full attack Power."
+    },
+    "knockdown_table": {
+      "columns": [
+        "wound_level",
+        "minimum_successes_to_remain_standing"
+      ],
+      "rows": [
+        {
+          "wound_level": "Light",
+          "minimum_successes_to_remain_standing": 2
+        },
+        {
+          "wound_level": "Moderate",
+          "minimum_successes_to_remain_standing": 3
+        },
+        {
+          "wound_level": "Serious",
+          "minimum_successes_to_remain_standing": 4
+        },
+        {
+          "wound_level": "Deadly",
+          "minimum_successes_to_remain_standing": null,
+          "printed_value": "NA; always knocked down"
+        }
+      ]
+    },
+    "outcomes": {
+      "no_successes": "Character falls prone.",
+      "one_or_more_but_below_minimum": "Character remains on feet but staggers one or two meters backward from direction of attack.",
+      "blocked_stagger": "When unable to stagger away, character has +2 target number modifier to all tests until able to move away.",
+      "deadly_wound": "Character always falls, regardless of successes."
+    },
+    "cross_references": [
+      "rules/combat/knockdown.yml",
+      "rules/firearms/sr3-core-special-ammunition-numeric-p116-117.yml",
+      "rules/combat/damage-resistance.yml"
+    ],
+    "example_vectors_source_rules_not_executed": [
+      {
+        "wound_level": "Moderate",
+        "body_test_successes": 3,
+        "expected_standing": true
+      },
+      {
+        "wound_level": "Serious",
+        "body_test_successes": 2,
+        "expected_stagger": true
+      },
+      {
+        "wound_level": "Deadly",
+        "body_test_successes": 8,
+        "expected_prone": true
+      }
+    ]
+  },
+  "framing": "reference_exact"
+}
