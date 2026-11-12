@@ -1,0 +1,162 @@
+id: rule.security.sr3-core-search-voice-sentry-numeric-p236
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '236'
+pdf_pages: '245'
+edition_scope: Original fictional FASA Corporation Shadowrun, Third Edition, FASA7001,
+  printed p236/physical PDF245; historical Third Edition mechanics, not later supplement
+  replacement.
+content_class:
+- rule_exact
+headline: 'Fictional FASA Corporation Shadowrun Third Edition (FASA7001) printed p236/PDF245:
+  exact physical-search, voice-security and automated-sentry game rules'
+summary: 'Original fictional tabletop-game source p236: complete Physical Search Modifiers
+  Table, voice-recognition fictional game tests and automatic security-system ratings
+  and timing. No real-world security or weapon advice.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    kind: fictional_tabletop_roleplaying_game
+    pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pages:
+    printed: 236
+    physical_pdf: 245
+    section: Running the Shadows / Physical Search Modifiers / Voice Recognition Systems
+      / Active Security Measures
+  physical_search_table:
+    operation: Modifiers are target-number modifiers to the relevant original game
+      search test; the source gives a categorical automatic result for the longest
+      search, not an ordinary number.
+    searcher_professionalism:
+    - - Average/Amateur, Professional Rating 1
+      - 2
+    - - Semi-trained, Professional Rating 2
+      - 1
+    - - Trained or better, Professional Rating 3 or 4
+      - 0
+    search_time:
+    - - Cursory, quick pat-down
+      - 1-2 seconds
+      - 2
+    - - Brisk, fast pat-down
+      - 3-5 seconds
+      - 1
+    - - Standard
+      - 6-20 seconds
+      - 0
+    - - Detailed
+      - 21-60 seconds
+      - -1
+    - - Deliberate
+      - 1-2 minutes
+      - -2
+    - - Practically a fraggin strip search
+      - 3-5 minutes
+      - -3
+    - - Strip search
+      - 6-10 minutes
+      - Weapon found
+    searcher_condition:
+    - - Intimidated/Fearful
+      - 2
+    - - Working under normal conditions
+      - 0
+    - - Incomplete control
+      - -2
+    professional_rating_reference: Original p236 table refers to non-player Professional
+      Rating rules, printed p248. The printed sign of Incomplete control is -2; no
+      inversion inferred.
+  voice_recognition:
+    game_system_rating_range:
+    - 1
+    - 10
+    example_equipment_ratings:
+    - - pocket recorders
+      - 1
+    - - professional recording decks
+      - 6
+    deception_test:
+      type: Opposed Test
+      attacking_dice_or_rating: recorded/voice-deception gear rating
+      defending_dice_or_rating: fictional voice recognition system rating
+      system_wins: The game system creates a passive alert.
+      tie: Neither wins; the game system repeats its request.
+      new_attempt: The fictional character may attempt the deception test again.
+    tampering: The game text routes direct tampering to the keypad procedure, with
+      +4 added to that test target number.
+    source_cross_reference: Original printed p301 for cyberware voice modulators;
+      not presumed identical to a device recording.
+  active_security:
+    gm_discretion: The narrator places selection and staffing of active protections
+      under gamemaster discretion, with challenge calibrated to the fictional runner
+      characters.
+    types: Examples include trained guards, patrolling drones, automated guns, sliding
+      barriers, doors and guard animals.
+    ordinary_automatic_gun:
+      designation: Dumb gun, a nonspecific area-fire system.
+      max_arc_degrees: 180
+      skill_by_fire_arc:
+      - arc_degrees: 60 or less
+        effective_appropriate_skill: 4
+      - arc_degrees: 60-120
+        effective_appropriate_skill: 3
+      - arc_degrees: full 180
+        effective_appropriate_skill: 2
+      example_weapon: The book commonly models these as equivalent to an HK227 at
+        full autofire, using appropriate game ammunition.
+      activation: Activated by outside command; fires at a valid target entering the
+        covered arc.
+      repeat_attack_timing: If the game target remains in the fire arc, attack again
+        each Initiative Pass; cross-reference printed p102.
+      sensing_limit: Rudimentary targeting recognizes a potential game target within
+        the arc.
+    smart_sentry_gun:
+      designation: Smart/autonomous/sentry game system; selectively tracks and engages
+        targets.
+      imaginary_sensors:
+      - low-light
+      - thermographic
+      - ultrasound
+      firing_modes: Burst or autofire as appropriate, subject to GM discretion.
+      ammunition_at_least_rounds: 1000
+      tripod_recoil_compensation_points: 6
+      full_traverse_degrees: 360
+      optional_vertical_pivot_max_inclination_degrees: 20
+      optional_vertical_pivot_max_declination_degrees: -10
+      effective_appropriate_skill_rating: 6
+      initiative: 25 + 2D6
+      acts: System delays its own actions as needed.
+      maximum_rounds_per_action: 15
+      usual_burst_structure: Five 3-round bursts
+      multiple_targets_per_action: true
+      weapon_description: Game source describes an assault-rifle or light-machine-gun
+        mechanism with minigun-rate ammunition feed; model options not generalized
+        to real equipment.
+  scope_and_lineage:
+    original_full_image: Physically inspected original scan printed p236/PDF245, with
+      separately enlarged Physical Search Modifiers and automatic-gun sections.
+    p235_dependencies: Maglock/keypad/card/print-scanner rule detail is on preceding
+      original p235 and not normalized in this p236 record.
+    p237_followup: Later active security passages may continue and require distinct
+      audit; this record does not declare chapter completion.
+    other_reused_canon:
+    - procedure.security.maglock-bypass
+    - rule.perception.perception-test
+    reviewed_field_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.original_pages.*
+    - data.physical_search_table.*
+    - data.voice_recognition.*
+    - data.active_security.*
+    - data.scope_and_lineage.*
+    limitation: Source-review receipt and passing gate validate staging/byte invariants,
+      not full source completeness or runnable game logic.
+framing: reference_exact
