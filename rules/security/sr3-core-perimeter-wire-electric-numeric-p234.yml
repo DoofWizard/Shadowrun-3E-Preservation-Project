@@ -1,0 +1,136 @@
+id: rule.security.sr3-core-perimeter-wire-electric-numeric-p234
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '234'
+pdf_pages: '243'
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001), original Third
+  Edition fictional tabletop rules, printed p234/physical PDF243; not an assumed modern
+  or Second Edition replacement.
+content_class:
+- rule_exact
+headline: 'Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation FASA7001),
+  printed p234/PDF243: original perimeter wire and charged-fence numeric rules'
+summary: Original published fictional Shadowrun Third Edition rules for perimeter
+  obstacles, charged fence effects, barbed/concertina/monofilament wire source table
+  and Perception modifiers, printed p234/PDF243. Historical game mechanics, not real-world
+  security advice.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_id: FASA7001
+    source_id: source.sr3-core
+    kind: fictional_tabletop_roleplaying_game
+    pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source:
+    chapter: Running the Shadows
+    section: Manmade Perimeter Barriers / Electric Fences / Wire / Trip Wires
+    printed_page: 234
+    physical_pdf_page: 243
+  ordinary_perimeter_barriers:
+    materials_reference: Barrier ratings for wall and barrier materials appear on
+      original Combat printed p124; do not infer those rows here.
+    firearms_limitation: The narrator states ordinary firearm rounds generally pass
+      through a fence lattice without damaging the fence.
+    athletics: Climbing or swimming an obstruction requires an appropriate Athletics
+      Test. Solid or area-wide obstructions must be circumvented.
+  charged_fence:
+    contact_damage_code: 4D
+    damage_analogy: As a shock weapon; original page cites printed p124.
+    free_hands_test:
+      attributes_allowed:
+      - Willpower
+      - Body
+      target_number: 6
+      purpose: Free paralyzed hands from a charged fence.
+    no_success: Character remains in contact and receives another 4D shock on the
+      next Initiative Pass.
+    knockout: Unconsciousness caused by fence shock triggers one final 4D shock before
+      muscles relax and the character falls.
+    persistent_effect: Long-term stun effects of the shock apply regardless of how
+      many shocks occurred or when unconsciousness happened.
+  wire_table:
+    columns:
+    - type
+    - perception_target_number
+    - grab_damage
+    - walking_damage
+    - running_damage
+    - barrier_rating
+    rows:
+    - - Barbed
+      - 4
+      - 3L
+      - 4L
+      - 6L
+      - 6
+    - - Concertina
+      - 3
+      - 4M
+      - 5M
+      - 8M
+      - 6
+    - - Monofilament
+      - 8
+      - 7S
+      - 9S
+      - 11S
+      - 5
+    impact_armor: Impact armor offers half its normal protection against this damage,
+      rounded down.
+    combat_pool: Combat Pool dice do not assist the Damage Resistance Test.
+    barrier_damage: Damage directed at the wire is required; the original does not
+      treat firearm shots traversing gaps as fence damage.
+    wire_clipper_game_rule: Wire clippers double effective character Strength for
+      purposes of damaging the wire.
+    strength_test:
+      opposes: Wire Barrier Rating
+      every_successes: 2
+      increment_effective_strength: 1
+      scope: Game test to cut/damage the fictional wire; no unstated time or equipment
+        value inferred.
+  wire_spotting_perception_target_modifiers:
+  - - Obscured in brush
+    - +1 to +4
+  - - Character distracted/running
+    - '+2'
+  - - Illumination level fluctuates
+    - Add +1 to modifier for worst level
+  trip_wires:
+    visual_detection: All have same visibility as monowire from the Wire Table, Perception
+      target number 8 before applicable modifiers.
+    ordinary_result: Most trip wires sound the alarm without damage.
+    optional_gm_variant: 'At gamemaster discretion, a fictional facility may employ
+      monowire as a trip wire: apply monowire Wire Table damage as well as activating
+      the alarm. The option is not a universal default.'
+  lineage:
+    original_core_provenance: Original Shadowrun Third Edition core, not automatically
+      replaced by Second Edition Corporate Security Handbook wire numbers or later
+      State of the Art 2063 tables.
+    distinct_references:
+    - rules/security/csh-wire-motion-pressure-maglocks-p99-100.yml
+    - rules/security/sota63-fences-wire-electrical-tests-p95-96.yml
+    completion_scope: Technical Security sensor and maglock text begins on printed
+      p234 but continues on p235; source-specific separate review required.
+  review:
+    original_page_image: Direct visual inspection of original FASA7001 scan printed
+      p234/physical PDF243 and enlarged wire table, notes, electric fence section
+      and trip-wire passages.
+    all_reviewed_text_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source.*
+    - data.ordinary_perimeter_barriers.*
+    - data.charged_fence.*
+    - data.wire_table.*
+    - data.wire_spotting_perception_target_modifiers[*][*]
+    - data.trip_wires.*
+    - data.lineage.*
+    - data.review.*
+    limitations: Local editorial review, source hash and machine transaction gates
+      do not prove completeness of the whole core book or executable engine tests.
+framing: reference_exact
