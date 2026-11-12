@@ -1,0 +1,96 @@
+{
+  "id": "rule.combat.sr3-core-shotgun-spread-choke-numeric-p117",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "117",
+  "pdf_pages": "118",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third Edition fictional tabletop game rules, printed p117 / physical PDF p118; no later-edition conversion",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Original FASA Corporation Shadowrun, Third Edition FASA7001 printed 117/physical PDF 118: shotgun shot-spread choke, damage and target-number modifiers",
+  "summary": "Original fiction-based tabletop RPG mechanics from FASA Corporation's Shadowrun, Third Edition (catalog FASA7001), printed 117/physical PDF 118; numeric conditions and exceptions are game-only.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fiction_context": "Published fictional cyberpunk tabletop role-playing game rules; numeric modifiers are game abstractions, not real-world guidance.",
+      "printed_pages": [
+        117
+      ],
+      "physical_pdf_pages": [
+        118
+      ]
+    },
+    "scope": "Original Third Edition Combat chapter rules for shot rather than slug shotgun loads. Accepted generic rule.combat.shotgun-spread omits the quantitative spread/choke/target conditions.",
+    "shell_types": {
+      "slug": "Normal shotgun slug damage remains in effect; the source states slugs have little effect against Twenty-first-century body armor.",
+      "shot": "Use the flechette rules against the printed weapon Damage Code when shot shells are loaded."
+    },
+    "choke": {
+      "minimum": 2,
+      "maximum": 10,
+      "interpretation": "For every distance equal to the choke setting, the shot pattern becomes one meter wider, with an additional half meter to each side of centerline.",
+      "choke_2_examples": [
+        {
+          "distance_meters": 2,
+          "spread_width_meters": 1
+        },
+        {
+          "distance_meters": 4,
+          "spread_width_meters": 2
+        },
+        {
+          "distance_meters": 6,
+          "spread_width_meters": 3
+        }
+      ],
+      "choke_5_examples": [
+        {
+          "distance_meters": 5,
+          "spread_width_meters": 1
+        },
+        {
+          "distance_meters": 10,
+          "spread_width_meters": 2
+        },
+        {
+          "distance_meters": 15,
+          "spread_width_meters": 3
+        }
+      ]
+    },
+    "spread_modifiers": {
+      "each_spread_increment_power_change": -1,
+      "each_spread_increment_attack_target_number_change": -1,
+      "zero_power_exception": "When Power reaches 0, shot is ineffective; the source describes no further effects."
+    },
+    "multiple_targets": {
+      "who_is_targeted": "Every character within the spread is a valid target.",
+      "resolution": "The attacker makes one Success Test; each affected target makes a Dodge Test and/or Damage Resistance Test against the attack successes.",
+      "intervening_targets": "Target receives one extra Damage Resistance die for each other target inside the spread in front of the target.",
+      "source_example": {
+        "intervening_targets": 3,
+        "extra_resistance_dice": 3
+      }
+    },
+    "equipment_interactions": {
+      "smartlinked_shotgun_with_shot_rounds_target_number_modifier": -1,
+      "smart_goggles_bonus": false,
+      "laser_sight_bonus": false,
+      "cybernetic_choke_adjustment_extra_cost_fraction": 0.1,
+      "cybernetic_choke_adjustment_context": "The book describes choke adjustment as a separately priced fictional smartgun option."
+    },
+    "source_cross_references": [
+      "rules/combat/shotgun-spread.yml",
+      "rules/firearms/ammunition.yml",
+      "rules/firearms/firing-modes.yml"
+    ]
+  },
+  "framing": "reference_exact"
+}
