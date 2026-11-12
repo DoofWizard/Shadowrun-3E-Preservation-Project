@@ -1,0 +1,71 @@
+{
+  "id": "rule.initiative.sr3-core-delayed-actions-exact-p103",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "103",
+  "pdf_pages": "104",
+  "edition_scope": "Original published FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop initiative and action timing, printed p103/physical PDF104, no later edition imported",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "FASA Corporation fictional Shadowrun, Third Edition (FASA7001, source.sr3-core), printed p103/PDF104: exact Delayed Actions timing, next-pass consequences and initiative tie constraints",
+  "summary": "Historical SR3 tabletop action economy procedures from FASA's Shadowrun, Third Edition FASA7001 printed p103/physical PDF104, preserving pass limits and conditions.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        103
+      ],
+      "physical_pdf_pages": [
+        104
+      ],
+      "context": "Published fictional tabletop RPG; Initiative timing describes in-game turn ordering."
+    },
+    "scope": "Original FASA7001 printed p103/PDF104 Delayed Actions and Delaying into Next Initiative Pass; exact procedural restrictions supplement generic rule.initiative.delayed-actions.",
+    "declaration": "A delayed action must be declared when players are declaring actions; the player can declare delay on any eligible action in any Initiative Pass.",
+    "same_pass_delay": {
+      "choice": "The character may delay an action until a later Combat Phase in the same Initiative Pass.",
+      "intervention": "During declaration of the later Combat Phase, the delaying character declares intervention and acts before the character normally taking that phase.",
+      "multiple_delayers": "If more than one character delays to the same Combat Phase, determine their action order as in an Initiative tie.",
+      "voluntary_ordering": "Characters can voluntarily act after another only when their ordinary Initiative order would otherwise let them act first."
+    },
+    "next_pass_delay": {
+      "allowed": true,
+      "restriction_earliest_phase": "The delaying character cannot choose a Combat Phase earlier than the highest Initiative Score for that next Initiative Pass.",
+      "effect_on_regular_action": "If the delayed action is taken in the next Initiative Pass, the character loses the regular action otherwise gained during that pass.",
+      "no_two_actions_same_pass": true,
+      "remaining_passes": "If eligible, the character still receives a regular action in subsequent passes.",
+      "expiration": "The delayed action must be used before the Combat Phase when the character would normally get the next action; if not, that delayed action is lost, though the ordinary new action remains available and itself may be delayed."
+    },
+    "end_of_turn_delay": {
+      "condition": "A character delaying the last eligible action of the Combat Turn.",
+      "end_point": "The very end of the Combat Turn, Combat Phase 1 of the final Initiative Pass.",
+      "multiple_characters_same_endpoint": "Order is determined as for Initiative ties."
+    },
+    "score_recalculation": {
+      "ordinary_delay": "Delay alone does not reduce the original Initiative Score.",
+      "between_passes": "After a pass, subtract 10 from the original score as usual for the next pass; do not grant a new phase for the delayed action."
+    },
+    "thresholds": {
+      "maximum_actions_per_character_per_initiative_pass": 1,
+      "pass_score_subtraction": 10
+    },
+    "examples_source_book": [
+      "Printed p103 explicitly describes one delayed actor intervening before another's normal phase.",
+      "Printed p103 demonstrates delaying into the next pass and losing a normally scheduled action in that pass."
+    ],
+    "cross_references": [
+      "rules/initiative/delayed-actions.yml",
+      "rules/initiative/initiative-passes.yml",
+      "rules/initiative/initiative-ties.yml",
+      "rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml"
+    ]
+  },
+  "framing": "reference_exact"
+}
