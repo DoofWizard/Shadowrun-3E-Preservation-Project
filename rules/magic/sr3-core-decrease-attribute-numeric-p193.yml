@@ -1,0 +1,90 @@
+{
+  "id": "rule.magic.sr3-core-decrease-attribute-numeric-p193",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "193",
+  "pdf_pages": "202",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional tabletop RPG core Health spells printed p193/physical PDF202.",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Decrease Attribute and Decrease Cybered Attribute numerical mechanics printed p193/PDF202",
+  "summary": "Exact original spell target numbers, Type, Sustain and Drain, opposed Resistance, two-net-success reductions, Force cap, cyberware alternatives and zero-Attribute conditions.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source_section": "Magic / Health Spells / Decrease (Attribute) and Decrease (Cybered Attribute), p193/PDF202",
+    "variants": [
+      {
+        "name": "Decrease (Attribute)",
+        "type": "Mana (M)",
+        "target_number_formula": "10 - target Essence",
+        "duration": "Sustained (S)",
+        "drain": "+1(S)",
+        "applies_to": "Physical and Mental Attributes not modified by cyberware."
+      },
+      {
+        "name": "Decrease (Cybered Attribute)",
+        "type": "Physical (P)",
+        "target_number_formula": "10 - target Essence",
+        "duration": "Sustained (S)",
+        "drain": "+2(S)",
+        "applies_to": "Physical or Mental Attributes modified by cyberware only."
+      }
+    ],
+    "resistance": "Target resists with the affected Attribute against the spell; only net caster successes count after resistance.",
+    "reduction": {
+      "successes_per_attribute_point": 2,
+      "maximum_points_reduced": "Spell Force",
+      "effect": "Each 2 net caster successes reduce affected Attribute by 1."
+    },
+    "zero_attribute_conditions": {
+      "physical_attribute_zero": "The affected character is paralyzed.",
+      "mental_attribute_zero": "The affected character stands about mindlessly."
+    },
+    "inclusion_exclusion": {
+      "included": "Separate versions for each Physical and Mental Attribute.",
+      "excluded_special_attributes": [
+        "Essence",
+        "Magic",
+        "Reaction"
+      ]
+    },
+    "edition_qualifiers": [
+      "The core page supplies different Drain and Type for ordinary and cybered target variants; do not treat them as freely interchangeable.",
+      "The printed Force cap applies to amount reduced, not an undocumented damage code."
+    ],
+    "accepted_generic_dependencies": [
+      "rules/magic/spell-characteristics.yml",
+      "rules/attributes/attribute-ratings.yml"
+    ],
+    "editorial_review": {
+      "printed_page": 193,
+      "physical_pdf_page": 202,
+      "text_paths_reviewed": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.variants[*].*",
+        "data.resistance",
+        "data.reduction.*",
+        "data.zero_attribute_conditions.*",
+        "data.inclusion_exclusion.*",
+        "data.edition_qualifiers[*]",
+        "data.accepted_generic_dependencies[*]",
+        "data.editorial_review.*"
+      ],
+      "basis": "Direct original printed p193 / PDF202 scan image checked against both spell headings and paragraph; local receipt is not complete-book fidelity proof."
+    }
+  }
+}
