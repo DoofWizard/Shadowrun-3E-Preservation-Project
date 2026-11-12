@@ -1,0 +1,232 @@
+{
+  "id": "rule.matrix.sr3-core-matrix-utility-multipliers-effects-p220-222",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "220-222",
+  "pdf_pages": "229-231",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core; original published fictional tabletop RPG mechanics, printed pp220–222/physical PDF pp229–231, no later-edition substitution",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "kind": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        220,
+        222
+      ],
+      "physical_pdf_pages": [
+        229,
+        231
+      ]
+    },
+    "heading": "The Matrix / Utilities, Operational Utilities, Special/Offensive/Defensive Utilities",
+    "scope": "Original fictional tabletop cyberdeck software ratings, program multipliers, in-game tests and effects, not instructions concerning real computers.",
+    "general": {
+      "standard_utility_test_modifier": "For named System Operations, decrease the fictional System Test target number by the running operational utility Rating; absence of the utility does not prohibit an operation.",
+      "normal_memory_precondition": "Unless a specific rule says otherwise, the utility must be preloaded into the cyberdeck active memory; utility programs exist in source-code and copy formats.",
+      "program_size_reference": "The multiplier belongs to Program Size Table printed p223, separately normalized; size equals program Rating squared times multiplier.",
+      "utility_categories": [
+        "operational",
+        "special",
+        "offensive",
+        "defensive"
+      ]
+    },
+    "operational_utilities": [
+      {
+        "name": "Analyze",
+        "program_size_multiplier": 3,
+        "system_operations": [
+          "Analyze Host",
+          "Analyze IC",
+          "Analyze Icon",
+          "Analyze Security",
+          "Analyze Subsystem",
+          "Locate IC"
+        ],
+        "effect": "Reduces fictional host System Test target numbers for identifying its IC, programs, resources and events."
+      },
+      {
+        "name": "Browse",
+        "program_size_multiplier": 1,
+        "system_operations": [
+          "Locate Access Node",
+          "Locate File",
+          "Locate Slave"
+        ],
+        "effect": "Reduces Index Test target numbers when locating specific data or addresses; distinct from searches by Analyze and Scanner."
+      },
+      {
+        "name": "Commlink",
+        "program_size_multiplier": 1,
+        "system_operations": [
+          "Make Comcall",
+          "Tap Comcall"
+        ],
+        "effect": "Reduces target numbers for tests affecting fictional decker communication links."
+      },
+      {
+        "name": "Deception",
+        "program_size_multiplier": 2,
+        "system_operations": [
+          "Graceful Logoff",
+          "Logon to LTG",
+          "Logon to RTG",
+          "Logon to Host"
+        ],
+        "effect": "Unless a rule says otherwise, reduces all Access Test target numbers."
+      },
+      {
+        "name": "Decrypt",
+        "program_size_multiplier": 1,
+        "system_operations": [
+          "Decrypt Access",
+          "Decrypt File",
+          "Decrypt Slave"
+        ],
+        "effect": "Reduces target numbers to defeat fictional scramble IC."
+      },
+      {
+        "name": "Read/Write",
+        "program_size_multiplier": 2,
+        "system_operations": [
+          "Download Data",
+          "Edit File",
+          "Upload Data"
+        ],
+        "effect": "Reduces target numbers for transfer, modification and creation of fictional Matrix data."
+      },
+      {
+        "name": "Relocate",
+        "program_size_multiplier": 2,
+        "system_operations": [
+          "opposition to Track location cycle"
+        ],
+        "resolution": "During a hostile Track location cycle, the decker using Relocate makes a Computer Test at target number equal to tracking opponent Sensor Rating minus Relocate Rating; the tracking decker makes an MPCP Test against the Relocate Utility Rating. If the relocating decker wins the Success Contest, Track fails completely; the tracking decker must successfully attack again before using that Track utility on this opponent."
+      },
+      {
+        "name": "Scanner",
+        "program_size_multiplier": 3,
+        "system_operations": [
+          "Locate Decker"
+        ],
+        "effect": "Reduces the target numbers of fictional Matrix searches for deckers."
+      },
+      {
+        "name": "Spoof",
+        "program_size_multiplier": 3,
+        "system_operations": [
+          "Control Slave",
+          "Edit Slave",
+          "Monitor Slave"
+        ],
+        "effect": "Reduces target numbers on System Tests affecting simulated host and subsystem slave devices."
+      }
+    ],
+    "special_offensive_defensive_utilities": [
+      {
+        "name": "Sleaze",
+        "program_size_multiplier": 3,
+        "effect": "The utility Rating contributes to the decker Detection Factor; Detection Factor is (Masking Rating + Sleaze Rating) / 2 rounded up."
+      },
+      {
+        "name": "Track",
+        "program_size_multiplier": 8,
+        "role": "offensive anti-decker trace program within the fictional Matrix cybercombat system",
+        "on_successful_attack": "Record attacker successes; targeted decker makes Evasion Test with target number equal to Track Rating. Fewer Evasion successes than attack successes locks the simulated trace utility onto the icon and starts its location cycle.",
+        "location_cycle": "Divide 10 by the attacker net successes to determine how many Combat Turns the utility needs to locate the target jackpoint. Only fully completed turns count; if the decker destroys the utility before the last Initiative Pass ends, that turn is not counted.",
+        "escape": "The target may log off or jack out; the Track utility makes Graceful Logoff more difficult; Relocate can defeat a particular Track location cycle."
+      },
+      {
+        "name": "Attack",
+        "program_size_multipliers_by_damage_level": {
+          "Light": 2,
+          "Moderate": 3,
+          "Serious": 4,
+          "Deadly": 5
+        },
+        "targets": [
+          "persona icons",
+          "IC icons"
+        ],
+        "scope": "Only on-line icons, not decker meatbody or cyberdeck; cybercombat damage is applied to icon Condition Monitor."
+      },
+      {
+        "name": "Black Hammer",
+        "program_size_multiplier": 20,
+        "targets": [
+          "decker icons"
+        ],
+        "effect": "A lethal black-IC-type offensive utility against the fictional decker, not the deck; its effect follows lethal Black IC game rules on printed p230, not fully reproduced on p221."
+      },
+      {
+        "name": "Killjoy",
+        "program_size_multiplier": 10,
+        "targets": [
+          "decker icons"
+        ],
+        "effect": "As Black Hammer except it inflicts Stun damage to the fictional decker; source refers to nonlethal Black IC."
+      },
+      {
+        "name": "Slow",
+        "program_size_multiplier": 4,
+        "targets": [
+          "proactive IC"
+        ],
+        "opposed_roll": "Security Value versus Slow Rating; Slow net successes must exceed IC successes to take effect.",
+        "effect": "IC loses one action for every 2 net successes scored by Slow; IC dies if no actions remain.",
+        "security_tally": "Temporarily disabling IC in this manner prevents it raising decker Security Tally. Suppressing such IC requires one point of Detection Factor for each IC program suppressed.",
+        "initiative_exception": "If IC was not suppressed at start of next Combat Turn, GM rolls its normal Initiative and it resumes where left off. Reactive IC is immune."
+      },
+      {
+        "name": "Armor",
+        "program_size_multiplier": 3,
+        "effect": "Reduce Power of icon damage inflicted by attack utilities or killer IC by the Armor Rating, but against black IC only protect the icon, not collateral damage to decker body/deck.",
+        "degradation": "Loses 1 Rating Point whenever decker takes damage (whenever the utility fails to absorb all damage from a hit); Swap Memory can replace with a fresh copy."
+      },
+      {
+        "name": "Cloak",
+        "program_size_multiplier": 3,
+        "effect": "Reduces Evasion Test target numbers during fictional cybercombat maneuvers; detailed maneuvers cross-reference p224."
+      },
+      {
+        "name": "Lock-On",
+        "program_size_multiplier": 3,
+        "effect": "Reduces target number for opposed Sensor Tests during fictional cybercombat maneuvers; detailed maneuvers cross-reference p224."
+      },
+      {
+        "name": "Medic",
+        "program_size_multiplier": 4,
+        "action": "Complex",
+        "roll": "Dice equal to the Medic utility Rating against the wound-level target-number table.",
+        "target_numbers": {
+          "Light": 4,
+          "Moderate": 5,
+          "Serious": 6
+        },
+        "success": "Each success repairs 1 box of on-line icon Condition Monitor.",
+        "degradation": "Loses 1 Rating Point on every use even if there are no successes; Swap Memory may replace with fresh copy."
+      }
+    ],
+    "limits": {
+      "new_programs_not_code_tested": true,
+      "later_black_ic_rules_on_p230_not_imported": true,
+      "source_reviewed_pages": [
+        220,
+        221,
+        222
+      ]
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop Shadowrun Third Edition (FASA Corporation FASA7001): exact core Matrix utility multipliers and consequences, printed pp220–222/PDF229–231",
+  "summary": "Independently reviewed printed pp220–222 of the original FASA7001 fictional game book: core utility rating multipliers, operations, hostile Track and icon combat effects, and Medic target numbers. No executable implementation or whole-source completeness claimed."
+}
