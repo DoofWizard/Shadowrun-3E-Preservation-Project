@@ -1,0 +1,134 @@
+id: rule.magic.sr3-core-transformation-manipulations-exact-p198
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '198'
+pdf_pages: '207'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional
+  tabletop-RPG rules, printed p198 / physical PDF207; no later-edition conversions.
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop RPG
+  printed p198/PDF207: transformation manipulation spell mechanics'
+summary: Original-source-reviewed Armor, Physical Barrier, Astral Barrier, Ice Sheet,
+  Ignite, Light, Petrify and Shadow spell parameters, precise tests and exceptions;
+  no real-world magical claim.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    nature: published fictional tabletop role-playing game
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pages:
+  - printed: 198
+    physical_pdf: 207
+    heading: Transformation Manipulations
+  source_scope: Original Third Edition fictional magician spells that alter or transform
+    matter or energy; effects and tests are fictional game mechanics.
+  spells:
+  - name: Armor
+    type: P
+    target: 6
+    duration: S
+    drain: +2(M)
+    field_rating: One Sorcery success creates an Armor Rating equal to spell Force;
+      additional successes do not raise the rating.
+    stacking: Spell Armor Rating adds to worn physical armor; compatible with other
+      armor types.
+  - name: Physical Barrier
+    type: P
+    target: 6
+    duration: S
+    drain: +2(S)
+    shared_barrier_rule: One Sorcery success forms Barrier Rating equal to spell Force;
+      each two successes raises Barrier Rating by 1.
+    shape: Dome radius and height equal to spell normal radius; alternate wall height
+      Force meters and length caster Magic Attribute meters. Size can vary as for
+      area spells (source p181).
+    physical_interactions: Molecules and smaller objects, including air and gases,
+      can pass. Larger objects hit normal physical wall; physical attacks can damage
+      barrier.
+    combat: Barrier imposes +1 Visibility Modifier on attacks through it. At beginning
+      of next Combat Turn, lost Barrier Rating points are restored. If penetrated,
+      barrier collapses and the spell ends.
+    exceptions: Does not stop non-elemental spells; elemental spells may be impeded.
+      Physical Barrier cannot be used on astral plane.
+  - name: Astral Barrier
+    type: M
+    target: 6
+    duration: S
+    drain: +1(S)
+    shared_barrier_rule: Uses same formation, shape and barrier-strength mechanics
+      as Physical Barrier.
+    planes: Operates on astral plane only; not dual-natured, and does not work on
+      physical plane.
+  - name: Ice Sheet
+    type: P
+    target: 4
+    duration: I
+    drain: +1(S)
+    radius: Radius equal to caster Magic Attribute in meters.
+    avoid_fall_test: Any character crossing the sheet makes Quickness Test against
+      TN equal to spell Force to avoid falling prone.
+    success_based_modifier: For each two Sorcery successes, increase Quickness Test
+      TN by +1, to maximum additional modifier of spell Force.
+    vehicles: Vehicles traversing ice must make Crash Test (see original printed p147).
+    melt_rate: Melts at 1 square meter per minute at normal temperatures.
+  - name: Ignite
+    type: P
+    target: 4
+    duration: P
+    drain: +1(D)
+    ignition_threshold: Half the target Body or Barrier Rating.
+    ignition_time: Base 10 turns divided by Sorcery successes above ignition Threshold;
+      counted successes limited to spell Force.
+    combustion: Once ignited, target burns normally until consumed or fire extinguished.
+    living_target: Living target suffers 6M fire damage on first turn; Power increases
+      by 1 each subsequent Combat Turn; normal Damage Resistance Test at end of each
+      turn with Impact Armor protection.
+    carry_on_hazard: A victim carrying ammo or explosives may have them explode, as
+      described in the flamethrower rule on printed p197.
+    unextinguished_duration: If not extinguished, flames burn out after 1D6 Combat
+      Turns.
+  - name: Light
+    type: P
+    target: 4
+    duration: P
+    drain: +2(M)
+    radius: Mobile point of illumination covers caster Magic Attribute meters of radius.
+    visibility: Cannot blind; counters darkness Visibility Modifiers at +1 per Sorcery
+      success, up to spell Force.
+  - name: Petrify
+    type: P
+    target: B
+    duration: S
+    drain: +1(S)
+    threshold: Half of living target Body.
+    subject: Living tissue transforms to stone-like calcium carbonate. Target is unconscious
+      under effect; any harm to transformed body still affects character normally.
+    exclusions: Nonliving clothing, equipment and cyberware are unaffected.
+    barrier_rating: Body plus Petrify spell Force for the petrified subject.
+  - name: Shadow
+    type: P
+    target: 4
+    duration: S
+    drain: +2(M)
+    radius: Area of darkness covers caster Magic Attribute meters.
+    visibility: Each Sorcery success imposes +1 Visibility Modifier against targets
+      inside the area, capped at smaller of +8 and spell Force.
+  notation: Type P physical and M mana; durations I instant, S sustained, P permanent;
+    spell Drain notation retains original target-number/level symbols.
+  lineage: Original FASA7001 core spell listing only; no supplement or later-edition
+    substitution.
+  editorial_distinctions:
+  - One Barrier effect operates physically; the Astral variant works solely on the
+    astral plane.
+  - Optional hazard to carried equipment is not represented as automatic detonation.
+  - Petrify affects living tissue involuntarily if spell is successfully used; equipment
+    and cyberware are excluded from transformation.
+  code_status: Transcribed original-page mechanical data; no claim of runnable engine
+    or whole-source completion.
+framing: reference_exact
