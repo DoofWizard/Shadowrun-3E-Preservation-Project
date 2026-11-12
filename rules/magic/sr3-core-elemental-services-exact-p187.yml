@@ -1,0 +1,94 @@
+{
+  "id": "rule.magic.sr3-core-elemental-services-exact-p187",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "187",
+  "pdf_pages": "196",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition fictional tabletop role-playing game, FASA7001, printed p187/physical PDF p196; no later editions or supplements",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "FASA7001 fictional SR3 elemental five-service rules, radius, spell assistance and sustaining costs, printed p187/PDF196",
+  "summary": "Original FASA Corporation Shadowrun Third Edition game-only elemental service mechanics: one service at time, 24-hour presence costs, Magic/Charisma/Willpower radius, force expenditures, bounded spell sustains and remote service.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fictional_ttrpg": true,
+      "printed_pages": [
+        187
+      ],
+      "physical_pdf_pages": [
+        196
+      ]
+    },
+    "topic": "Bound hermetic elemental five-service action economy and Force expenditure under original fictional SR3 Conjuring",
+    "control_and_calls": {
+      "service_types": [
+        "Aid Sorcery",
+        "Aid Study",
+        "Spell Sustaining",
+        "Physical Service",
+        "Remote Service"
+      ],
+      "one_active_service_at_a_time": true,
+      "each_service_initiated_cost": 1,
+      "presence_duration_extra_cost": "Every 24 hours that elemental is actually present on the astral or physical plane consumes one additional service, even while performing another service",
+      "bound_offstage_exception": "No extra 24-hour cost while awaiting master’s call",
+      "command_radius_meters_formula": "(Summoner Willpower + Charisma + Magic) × 10 meters",
+      "outside_radius": "Elemental refuses to leave radius except as Remote Service or standby; if forced outside, remaining services canceled but last command still fulfilled",
+      "transfer_master": "Ordering elemental to obey another magical or mundane character costs one service; mundane may receive allowed services but cannot use elemental to cast spells",
+      "summoner_knockout_or_death": "Elemental becomes uncontrolled"
+    },
+    "aid_sorcery": {
+      "purpose": "Provide extra dice for Sorcery Tests in one appropriate spell category, including spell defense/dispelling",
+      "cost": "One elemental service for this task",
+      "one_elemental_at_a_time": true,
+      "one_force_lost_per_extra_die": 1,
+      "per_element_association": {
+        "fire": "Combat",
+        "air": "Detection",
+        "water": "Illusion",
+        "earth": "Manipulation",
+        "none": "Health"
+      },
+      "when_force_zero": "Elemental disappears",
+      "recalled_if_still_bound": "May summon again with an Exclusive Complex Action at full Force if still bound"
+    },
+    "aid_study": {
+      "cost": "One service",
+      "up_to_dice": "Elemental Force",
+      "use": "Assist learning one spell in matching category; only one elemental, one time for a particular spell",
+      "physical_presence_required": false
+    },
+    "physical_service": {
+      "cost": "One service",
+      "function": "Materializes to perform a physical task or use powers, including combat under source-specific rules"
+    },
+    "spell_sustaining": {
+      "cost": "One service",
+      "temporary": "Elemental uses Force to sustain an appropriate-category spell for one Combat Turn per Force point; disappears at Force zero",
+      "mage_may_resume": "Mage can take over sustaining the spell before elemental vanishes",
+      "long_term_binding": "May bind elemental to one appropriate-category spell, irrevocably depleting its Force",
+      "long_term_duration_days": "Initial Force, with 1 permanent Force point spent per day or part of a day",
+      "depleted_bound_spirit": "Disappears and cannot be recalled",
+      "spell_ends_early": "Spirit can be released but remains free of its binding and cannot be recalled"
+    },
+    "remote_service": {
+      "cost": "One service",
+      "purpose": "Elemental pursues a specific task outside normal control radius",
+      "other_services_forfeited": true,
+      "remains_bound_while_remote": true,
+      "counts_against_charisma_binding_limit": true,
+      "cannot_recall_once_sent": true,
+      "completion": "After completing remote service elemental becomes free and disappears; if destroyed, service ends"
+    },
+    "source_limits": "Literal original print p187, physical PDF196; generic existing rule.magic.spirit-services remains canonical anchor; do not import later Magic in the Shadows options."
+  },
+  "framing": "reference_exact"
+}
