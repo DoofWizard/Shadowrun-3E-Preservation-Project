@@ -1,0 +1,158 @@
+id: rule.perception.sr3-core-perception-numeric-tables-p231-232
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 231-232
+pdf_pages: 240-241
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), Third
+  Edition only; rules from printed pp231-232 / physical PDF240-241.
+content_class:
+- rule_exact
+headline: 'Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation, FASA7001):
+  exact Perception Test values, printed pp231-232/PDF240-241'
+summary: 'Source-reviewed original Shadowrun Third Edition fictional tabletop game
+  rules from FASA Corporation FASA7001: baseline Perception TN, situation/vision/sound/smell/touch/taste
+  TN modifiers and Perception success-result thresholds. No real-world surveillance
+  recommendation.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_id: FASA7001
+    source_id: source.sr3-core
+    kind: fictional_tabletop_roleplaying_game
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_source:
+    section: Running the Shadows / Perception
+    printed_pages:
+    - 231
+    - 232
+    physical_pdf_pages:
+    - 240
+    - 241
+  perception_test:
+    dice: Intelligence Rating dice
+    default_target_number: 4
+    team_group_dice: average Intelligence Rating of the team plus one die for each
+      team member
+    team_group_disallowed_when_surprise_possible: true
+    outcome: One success means something was noticed; use the printed p232 Success
+      Table for detail levels.
+    conditional_bonus: The source says certain complementary skills such as Stealth
+      (Awareness) may add to Perception Tests.
+  general_target_number_modifiers:
+  - - Perceiver is distracted
+    - 2
+  sight_target_number_modifiers:
+  - - Very small object
+    - 6
+  - - Object partially hidden
+    - 2
+  - - Object brightly colored
+    - -2
+  - - Action very obvious
+    - -4
+  - - Action not obvious
+    - 4
+  visibility_numeric_table:
+    source_page: Printed 232 / PDF241 repeats the exact Combat p112 visibility matrix.
+      Reuse accepted rule.combat.sr3-core-visibility-numeric-p111-112; direct visual
+      comparison shows all eight source-row values and cybernetic/natural slash notation
+      agree.
+    canonical_record: rules/combat/sr3-core-visibility-numeric-p111-112.yml
+    original_table_row_count: 8
+    columns:
+    - condition
+    - normal
+    - low_light
+    - thermographic
+    not_duplicated_reason: Original exact matrix is already accepted in a canonical
+      source-reviewed rule; this record establishes the p232 appearance and authoritative
+      cross-reference.
+  sound_target_number_modifiers:
+  - - Single gunshot
+    - -2
+  - - Silenced single gunshot
+    - 0
+  - - Burst fire
+    - -4
+  - - Sound-suppressed burst fire
+    - -2
+  - - Full autofire
+    - -6
+  - - Sound-suppressed autofire
+    - -4
+  - - Grenade blast
+    - -8
+  - - A person's yell
+    - -2
+  - - Sound is rooms away
+    - 2
+  - - Sound is on same floor
+    - 4
+  - - Sound is floors away
+    - 6
+  - - Perceiver has active sound enhancements
+    - Rating, or -2
+  smell_target_number_modifiers:
+  - - Odor obvious
+    - -4
+  - - Other odors present
+    - 2
+  taste_target_number_modifiers:
+  - - Taste obvious
+    - -4
+  - - Perceiver has a cold
+    - 2
+  perception_success_thresholds:
+  - successes: 1
+    meaning: Something is there.
+  - successes: 2
+    meaning: Something definitely is there; the perceiver suspects its general type.
+  - successes: 3
+    meaning: The perceiver knows the type of thing and suspects its exact nature.
+  - successes: 4+
+    meaning: The perceiver knows what it is, but cannot supply specifics without further
+      information or examination.
+  original_table_cross_reference:
+    visibility_footnote: Source refers to Combat printed p111 for visibility conditions;
+      where slash values appear, the first is cybernetic vision and second is natural
+      vision.
+    other_canonical_records:
+    - rule.perception.perception-test
+    - modifier.perception.conditions
+    - rule.combat.sr3-core-visibility-numeric-p111-112
+    scope: TN adjustments for Perception Tests, distinct from an attack test and distinct
+      from environmental attack-modifier application.
+  review_scope:
+    original_image_inspection: Printed 231 / PDF240 directly inspected for baseline
+      TN and team test. Printed 232 / PDF241 directly inspected enlarged for each
+      non-visibility modifier and success threshold; p232 visibility matrix independently
+      matched to accepted p111-112 literal rows.
+    reviewed_fields:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.original_source.*
+    - data.perception_test.*
+    - data.general_target_number_modifiers[*]
+    - data.sight_target_number_modifiers[*]
+    - data.visibility_numeric_table.*
+    - data.sound_target_number_modifiers[*]
+    - data.smell_target_number_modifiers[*]
+    - data.touch_target_number_modifiers[*]
+    - data.taste_target_number_modifiers[*]
+    - data.perception_success_thresholds[*].*
+    - data.original_table_cross_reference.*
+    - data.review_scope.*
+    limitation: Editorial review and gate checks verify structured editorial/byte
+      constraints; they do not prove exhaustiveness of the entire core book nor runnable
+      consumer code.
+  touch_target_number_modifiers:
+  - - Temperature extreme (hot or cold)
+    - -4
+  - - Perceiver wearing gloves
+    - 2
+framing: reference_exact
