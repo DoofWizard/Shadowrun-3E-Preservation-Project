@@ -1,0 +1,71 @@
+{
+  "id": "rule.magic.sr3-core-dispelling-exact-p184",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "184",
+  "pdf_pages": "193",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition fictional tabletop role-playing game, FASA7001, printed p184/physical PDF p193; no later editions or supplements",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "FASA7001 fictional SR3 Dispelling, Force TN, permanent successes, Threshold and Drain, printed p184/PDF193",
+  "summary": "Original FASA Corporation Shadowrun Third Edition tabletop sustained-spell dispelling: Complex Action, Sorcery/Spell Pool against Force, permanent success reduction, Threshold exception, Drain and cooperative tests.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fictional_ttrpg": true,
+      "printed_pages": [
+        184
+      ],
+      "physical_pdf_pages": [
+        193
+      ]
+    },
+    "topic": "Dispelling existing sustained spells under original fictional tabletop SR3 Sorcery mechanics",
+    "eligibility": {
+      "target_spell": "Existing sustained spell",
+      "must_see_target_of_spell": true,
+      "same_plane_required": true,
+      "action": "Complex Action"
+    },
+    "dispelling_test": {
+      "dice": "Sorcery dice, plus any dice allocated from Spell Pool",
+      "target_number": "Force of spell being dispelled",
+      "spell_success_reduction": "Each success permanently reduces original casting Sorcery Test successes by 1",
+      "spell_ends_if_remaining_successes": 0,
+      "threshold_exception": "A spell whose source description specifies a Threshold ends when remaining successes fall below that Threshold, even if greater than zero."
+    },
+    "drain": {
+      "test_after": "Each Dispelling Test",
+      "resistance": "Dispeller makes a Drain Resistance Test as if casting the spell being dispelled",
+      "physical_damage_condition": "If spell Force exceeds dispeller Magic Attribute, resulting Drain causes Physical damage; otherwise standard Drain rules apply."
+    },
+    "cooperation": {
+      "multiple_magicians_allowed": true,
+      "combined_successes": "Add their individual Dispelling Test successes to reduce remaining spell successes",
+      "drain_each_resists_separately": true
+    },
+    "source_example": {
+      "spell": "Petrify",
+      "force": 4,
+      "original_caster_successes": 5,
+      "dispeller_sorcery_skill": 6,
+      "dispeller_spell_pool_dice": 2,
+      "dispelling_test_target_number": 4,
+      "dispelling_successes": 3,
+      "remaining_spell_successes": 2,
+      "target_body": 6,
+      "spell_threshold": "Half target Body = 3; two remaining successes is below threshold, so Petrify ends",
+      "drain_code": "3S",
+      "drain_track": "Stun if spell Force does not exceed dispeller Magic Attribute"
+    },
+    "scope_and_precedence": "Numerical/procedural closure for existing rule.magic.dispelling abstract SR3 core record; no later supplemental spell mechanics imported."
+  },
+  "framing": "reference_exact"
+}
