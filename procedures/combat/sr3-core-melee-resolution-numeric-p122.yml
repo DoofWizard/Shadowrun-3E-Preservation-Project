@@ -1,0 +1,78 @@
+{
+  "id": "procedure.combat.sr3-core-melee-resolution-numeric-p122",
+  "record_type": "procedure",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "122",
+  "pdf_pages": "123",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third Edition fictional tabletop game, printed 122/physical PDF 123, no later rules substituted",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "Fictional FASA Corporation Shadowrun, Third Edition FASA7001, printed 122/physical PDF 123: five-step opposed melee resolution with exact numeric damage staging",
+  "summary": "Original FASA Corporation Shadowrun Third Edition FASA7001 tabletop RPG source-review of five-step opposed melee resolution with exact numeric damage staging; numerical dice, modifiers, exceptions and source scope preserved.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fiction_context": "Original published fictional cyberpunk tabletop-RPG mechanics, not real-world actions or equipment specifications.",
+      "printed_pages": [
+        122
+      ],
+      "physical_pdf_pages": [
+        123
+      ]
+    },
+    "scope": "Original Third Edition opposed melee Combat procedure, retaining numerical roll, comparison, staging and Impact Armor resistance, distinct from generic accepted procedure.combat.melee-attack.",
+    "ordered_procedure": [
+      {
+        "step": 1,
+        "name": "Attacker's Success Test",
+        "dice": "Base Combat Skill dice plus eligible allocated Combat Pool dice",
+        "base_target_number": 4,
+        "modifiers": "Apply source situation/Reach modifiers.",
+        "result": "Count successes."
+      },
+      {
+        "step": 2,
+        "name": "Defender's Success Test",
+        "dice": "Base Combat Skill dice plus eligible allocated Combat Pool dice",
+        "base_target_number": 4,
+        "modifiers": "Apply source situation/Reach modifiers.",
+        "result": "Count successes."
+      },
+      {
+        "step": 3,
+        "name": "Compare Successes",
+        "winner": "Character with more successes strikes the opponent (this may be the declared defender).",
+        "tie": "Favors attacker.",
+        "net_successes": "Winning character's successes minus opponent's successes."
+      },
+      {
+        "step": 4,
+        "name": "Determine Damage",
+        "staging": "Raise Damage Level one step for each 2 net attacker/winner successes.",
+        "after_deadly": "Once Damage Level reaches Deadly, add +1 Power per 2 remaining successes instead of further increasing level."
+      },
+      {
+        "step": 5,
+        "name": "Resist Damage",
+        "defending_dice": "Target character Body dice (eligible Combat Pool follows original melee rules).",
+        "damage_resistance_target_number": "Attacker's weapon/Strength-adjusted Power minus target's Impact Armor Rating.",
+        "resistance_staging": "Reduce Damage Level by one step for every 2 Damage Resistance successes."
+      }
+    ],
+    "tie_and_outcomes_note": "Winning opposed melee success rolls can represent attack or counterstrike; a tie favors the declared attacker as the original source specifies.",
+    "cross_references": [
+      "procedures/combat/melee-attack.yml",
+      "rules/combat/damage-staging.yml",
+      "rules/combat/damage-resistance.yml",
+      "rules/combat/sr3-core-melee-reach-cyberweapon-friends-p121-122.yml"
+    ]
+  },
+  "framing": "reference_exact"
+}
