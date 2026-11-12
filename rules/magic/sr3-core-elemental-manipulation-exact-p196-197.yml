@@ -1,0 +1,57 @@
+id: rule.magic.sr3-core-elemental-manipulation-exact-p196-197
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '196-197'
+pdf_pages: '205-206'
+edition_scope: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop RPG Magic chapter, printed pp196-197 / physical PDF205-206; no cross-edition substitution.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001) fictional tabletop RPG printed pp196-197/PDF205-206: elemental manipulation casting, damage and spell statistics'
+summary: 'Original in-game elemental manipulation hit TN, Armor, secondary-effect tests, threshold modifiers and six spell variants, separated from ordinary combat spells.'
+data:
+  publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog_id: FASA7001, source_id: source.sr3-core, original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914}
+  printed_to_pdf: [{printed: 196, physical_pdf: 205}, {printed: 197, physical_pdf: 206}]
+  section: 'Magic / Manipulation Spells / Elemental Manipulations'
+  basic_mechanics:
+    attack_test: 'Use Sorcery as the ranged combat skill against TN 4, provided the target is in line of sight; do not substitute regular Combat Spell resistance as the initial attack.'
+    damage_level_choice: 'Caster chooses the Base Damage Level at cast time; base Damage Level determines the base Drain Level.'
+    armor: 'Impact Armor protects against attack damage at half normal rating, rounded down.'
+    primary_damage: 'Use spell Damage Code as described in Combat; physical elemental impact includes secondary environmental effects.'
+  secondary_effect_test:
+    trigger: 'After primary damage, consider nonliving targets exposed to side effects.'
+    roll: '2D6'
+    success: 'Roll result greater than or equal to the target Object Resistance Rating (p182) with listed damage-level modification.'
+    base_damage_S_object_resistance_modifier: 2
+    base_damage_M_object_resistance_modifier: 4
+    base_damage_L_secondary_effect: 'No secondary effects.'
+    gamemaster_discretion: 'Source asks gamemaster to evaluate environmental side effects for each situation.'
+  spell_lines:
+    - {name: Acid Stream, type: P, target: 4, duration: I, drain: '+1(Damage Level +1)', coverage: single_target}
+    - {name: Toxic Wave, type: P, target: 4, duration: I, drain: '+1(Damage Level +2)', coverage: area}
+    - {name: Flamethrower, type: P, target: 4, duration: I, drain: '+1(Damage Level +1)', coverage: single_target}
+    - {name: Fireball, type: P, target: 4, duration: I, drain: '+1(Damage Level +2)', coverage: area}
+    - {name: Lightning Bolt, type: P, target: 4, duration: I, drain: '+1(Damage Level +1)', coverage: single_target}
+    - {name: Ball Lightning, type: P, target: 4, duration: I, drain: '+1(Damage Level +2)', coverage: area}
+  secondary_effects:
+    acid:
+      source_pages: [196, 197]
+      atmosphere: 'Acid creates a temporary cloud; +4 to all test TNs for affected subjects through the rest of that combat turn; affected ground is treacherous during the rest of the turn.'
+      material: 'Acid secondary effects may reduce both Ballistic and Impact Armor Rating by 1, may harm tires or nearby objects, and can persist after the acid cloud evaporates.'
+      cast_note: 'Acid Stream is single target; Toxic Wave is area, and the acid evaporates during the turn after casting.'
+    fire:
+      source_page: 197
+      highly_flammable_object_resistance: '-1 to Object Resistance for especially flammable material in secondary-effect assessment.'
+      continued_fire: 'Burning clothing produces 6M damage at end of each combat turn until extinguished; source treats secondary environmental ignition separately from initial spell damage.'
+      fuel_tank_object_resistance: '+2 Object Resistance for vehicle fuel unless openly exposed.'
+      cast_note: 'Flamethrower affects one target; Fireball affects area.'
+    lightning:
+      source_page: 197
+      electronics_resistance: '-1 to equipment resistance when lightning shorts or overloads electronics.'
+      armor: 'Metallic armor offers no special lightning protection; insulation or grounding may reduce damage Power at gamemaster discretion.'
+      cast_note: 'Lightning Bolt is single target; Ball Lightning is area.'
+  source_qualifications:
+    - 'These are fictional spell mechanics from a game rulebook, not real chemical/electrical or other operational directions.'
+    - 'No damage-code letter is invented: base Damage Level is selected at spellcasting and the drain string is kept verbatim as an original-game formula.'
+    - 'Secondary-effect success is not automatic from hitting; Object Resistance and optional GM judgment remain separately required.'
+  code_status: 'Original-source canonical normalization; no runnable mechanics claimed.'
