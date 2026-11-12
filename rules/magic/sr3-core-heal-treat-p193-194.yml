@@ -1,0 +1,93 @@
+{
+  "id": "rule.magic.sr3-core-heal-treat-p193-194",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "edition_scope": "Original fictional tabletop role-playing game Shadowrun, Third Edition published by FASA Corporation; FASA7001 original Third Edition mechanics, printed pp193-194, physical PDF202-203.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "printed_pages": "193-194",
+  "pdf_pages": "202-203",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop Heal and Treat Health spell mechanics, printed pp193-194/PDF202-203",
+  "summary": "Original Heal and Treat target, casting deadline, one-heal-per-injury-set, box-repair and permanence-time division formulas including Treat half-time rounding, Wound Level Drain and healing timing.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source_section": "Magic / Street Grimoire / Health Spells / Heal and Treat; printed pp193-194/PDF202-203",
+    "health_school": "Health spells require the caster to touch the target; these heal physical injuries, not automatically erase fatigue, mental conditions or Drain.",
+    "spells": [
+      {
+        "name": "Heal",
+        "type": "Mana (M)",
+        "target_number_formula": "10 - Essence of patient",
+        "duration": "Permanent (P)",
+        "drain": "(Patient Wound Level)",
+        "casting_deadline": "Any time after the physical injury, subject to one magical heal per particular injury set."
+      },
+      {
+        "name": "Treat",
+        "type": "Mana (M)",
+        "target_number_formula": "10 - Essence of patient",
+        "duration": "Permanent (P)",
+        "drain": "-1(Patient Wound Level)",
+        "casting_deadline": "Must be applied within 1 hour of injury."
+      }
+    ],
+    "healing_result": {
+      "each_sorcery_success": "1 box of physical damage healed, or allocated to decreasing time for spell permanence",
+      "maximum_healed_boxes": "Spell Force",
+      "permanence_time_formula": "Base permanence time divided by successes allocated to time reduction.",
+      "allocation": "Caster may divide total successes between boxes restored and time reduction."
+    },
+    "permanence_difference": {
+      "heal": "Uses normal permanence time for the spell.",
+      "treat": "Takes one-half normal permanence time, rounded down."
+    },
+    "one_magical_heal_per_injuries": "A character can receive magical healing only once for any single set of injuries; Heal and Treat cannot both be applied to the same set in succession.",
+    "drain_condition": "At the moment of casting, Drain Level of each spell is based on the patient Wound Level; printed Heal uses unmodified parenthetical Wound Level and Treat shows -1(Wound Level).",
+    "limitations": [
+      "The original printed text explicitly describes healing physical injury; this is not the Combat/Condition damage staging procedure.",
+      "Base permanence-time table comes from the wider spell rules; no unsupported base time inserted into this record."
+    ],
+    "accepted_generic_dependencies": [
+      "rules/magic/spell-characteristics.yml",
+      "procedures/healing/natural-and-medical.yml"
+    ],
+    "source_review": {
+      "printed_pages": [
+        193,
+        194
+      ],
+      "physical_pdf_pages": [
+        202,
+        203
+      ],
+      "text_paths_reviewed": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.health_school",
+        "data.spells[*].*",
+        "data.healing_result.*",
+        "data.permanence_difference.*",
+        "data.one_magical_heal_per_injuries",
+        "data.drain_condition",
+        "data.limitations[*]",
+        "data.accepted_generic_dependencies[*]",
+        "data.source_review.*"
+      ],
+      "basis": "Reviewed original printed p193/PDF202 Heal and Treat labels and printed p194/PDF203 continuation prose; all original numerical target, deadline, permanence and wound conditions checked."
+    }
+  }
+}
