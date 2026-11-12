@@ -1,0 +1,122 @@
+{
+  "id": "rule.matrix.sr3-core-matrix-ic-white-gray-black-exact-p227-230",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "227-230",
+  "pdf_pages": "236-239",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core: fictional tabletop role-playing game IC mechanics; original printed pp227–230/physical PDF236–239, Third Edition only",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "kind": "published fictional cyberpunk tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        227,
+        230
+      ],
+      "physical_pdf_pages": [
+        236,
+        239
+      ]
+    },
+    "heading": "The Matrix / Intrusion Countermeasures: White IC, Gray IC, Black IC",
+    "white_ic": {
+      "scope": "Attacks fictional decker online persona/icon ratings, not permanent cyberdeck ratings or utilities.",
+      "crippler": {
+        "types": [
+          "acid: Bod",
+          "binder: Evasion",
+          "jammer: Sensor",
+          "marker: Masking"
+        ],
+        "attack": "Proactive IC makes Attack Test as a Success Contest; decker rolls the named affected icon Attribute against IC Rating.",
+        "effect": "For every 2 IC net successes decrease that icon Attribute 1 Rating Point, minimum Attribute 1.",
+        "protections": "Neither Armor nor Hardening protects against this rule."
+      },
+      "killer": {
+        "trigger": "Proactive damage attack on persona icon.",
+        "power": "Killer IC Rating",
+        "damage_level_blue_green": "Moderate",
+        "damage_level_orange_red": "Serious",
+        "staging": "Every 2 host Attack successes stage up one damage level; crashing decker icon by filling its Condition Monitor dumps its user from the Matrix. Armor can reduce icon damage."
+      },
+      "probe": {
+        "trigger": "Reactive IC checks unauthorized fictional in-game system activity.",
+        "test": "Once per decker System Test, gamemaster rolls Probe IC Rating against decker Detection Factor.",
+        "security_tally": "Add each Probe success to Security Tally."
+      },
+      "scramble": {
+        "scope": "Reactive protection for access, files or slave subsystem of a fictional host.",
+        "defense": "Decker must decrypt Scramble IC before using protected game operations.",
+        "failed_decrypt": "Gamemaster rolls Scramble Test against target number equal to decker Computer Skill; successful test destroys the protected data.",
+        "successful_decrypt": "Removes scramble protection; does not itself add Security Tally. Offensive utility attacks against Scramble IC may still add Security Tally unless the decker suppresses the IC."
+      },
+      "tar_baby": {
+        "trigger": "Reactive IC triggers against utility program use; GM selects target utility type.",
+        "contest": "Opposed: Tar Baby Test against target number equal to utility Rating; utility program test against Tar Baby Rating.",
+        "ic_wins": "Both active utility and Tar Baby IC crash; Security Tally is not increased by this crash. A new utility copy must be loaded with Swap Memory.",
+        "utility_wins": "Utility survives; GM makes secret Sensor Test to determine whether decker notices the IC."
+      }
+    },
+    "gray_ic": {
+      "scope": "Fictional IC can permanently lower cyberdeck ratings or destroy resident game utilities rather than only attack persona icons.",
+      "blaster": {
+        "same_damage_as": "Killer IC cybercombat damage; Armor reduces icon damage.",
+        "after_crash": "Blaster Test using IC Rating against deck MPCP Rating (Hardening increases target number); each 2 successes reduces MPCP permanently by 1.",
+        "rating_consequence": "Persona rating total may not exceed three times adjusted MPCP Rating."
+      },
+      "ripper": {
+        "same_as": "White Crippler until icon Attribute reaches zero.",
+        "permanent_damage": "Ripper Test IC Rating against MPCP Rating (Hardening increases target number); each 2 successes permanently lowers MPCP Rating by 1.",
+        "variants": [
+          "acid-rip: Bod",
+          "bind-rip: Evasion",
+          "jam-rip: Sensor",
+          "mark-rip: Masking"
+        ]
+      },
+      "sparky": {
+        "after_crash": "Sparky Test IC Rating against MPCP Rating plus 2 (Hardening increases target number); each 2 successes permanently lowers MPCP Rating 1.",
+        "body_damage": "On crashing persona, attack is (IC Rating)M Stun damage to fictional decker, stage 1 damage level per 2 Sparky successes; decker Body Resistance Test against Power minus Hardening.",
+        "example": "Sparky-8 with 2 successes lowers MPCP by 1 and stages 8M to 8S; Body 4 and Hardening 1 resists against target 7."
+      },
+      "tar_pit": {
+        "trigger": "Tar Baby-like reactive attack, but if Tar Pit wins opposed utility contest it corrupts all copies including offline on-deck storage.",
+        "followup": "Tar Pit Test IC Rating against MPCP Rating (Hardening increases target number); if any successes, corrupts all on-deck copies; off-deck backup enables recovery by later reload."
+      }
+    },
+    "black_ic": {
+      "scope": "Original tabletop hostile IC attacks fictional decker through the game ASIST interface and has distinct rules from white/gray IC.",
+      "escape": "After first successful hit, spend a Complex Action for Willpower Test against Black IC Rating to jack out. Success permits exit but IC makes one more cybercombat attack first; IC also makes an automatic attack if a companion at the physical jackpoint pulls the plug when the cyberdeck indicates black IC activity.",
+      "lethal": {
+        "power": "IC Rating",
+        "damage_blue_green": "Moderate Physical",
+        "damage_orange_red": "Serious Physical",
+        "staging": "Each 2 IC Attack successes stages damage one level.",
+        "dual_resistance": "Separate Body resistance for damage to decker physical Condition Monitor and icon Bod resistance for persona icon, each with Power reduced by Hardening; Armor can protect icon only. Hacking Pool does not add dice to decker Body Resistance Test; Karma Pool may.",
+        "last_attack": "If IC kills icon while decker still connected, it makes a final automatic attack on MPCP at twice its Rating; if it reduces MPCP to zero, all downloaded/stored on-deck data is destroyed and connected storage is erased."
+      },
+      "nonlethal": {
+        "effect": "Mental/Stun damage against decker, Willpower resistance instead of Body, including unconsciousness and possible overflow into Physical Condition Monitor.",
+        "last_attack": "Even after decker unconsciousness breaks Matrix connection, one final IC shot at MPCP and data may occur."
+      }
+    },
+    "limits": [
+      "Only original printed pp227–230/physical PDF236–239 were inspected.",
+      "The p227–228 Crippler passage was treated as one continued original section; no source page skipped.",
+      "Mechanics are fictional game rules, not technical security instructions.",
+      "No runnable engine tests and no complete core/source gate claimed."
+    ]
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop Shadowrun Third Edition (FASA Corporation FASA7001) source.sr3-core: original white/gray/black IC exact mechanics printed pp227–230/PDF236–239",
+  "summary": "Independently original-page-reviewed historical fictional Matrix IC tests, ratings, combat and resistance mechanics, including special-case black IC and cyberdeck Hardening, without modern-edition substitution."
+}
