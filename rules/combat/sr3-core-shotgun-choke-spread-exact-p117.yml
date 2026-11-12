@@ -1,0 +1,70 @@
+id: rule.combat.sr3-core-shotgun-choke-spread-exact-p117
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '117'
+pdf_pages: '118'
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001); original Third
+  Edition fictional tabletop game mechanics, no later supplements substituted.
+content_class:
+- rule_procedure
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules,
+  printed p117/PDF118: exact shotgun choke, spread, damage and defense resolution'
+summary: Original SR3 shotgun shot/choke step, Power and target-number adjustment,
+  target resistance and cyber-choke source mechanics; separate from optional later-edition
+  rules.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    fictional_tabletop_source: true
+    printed_pages:
+    - 117
+    physical_pdf_pages:
+    - 118
+  scope: Fictional tabletop game resolution for shotgun shot rounds, not real-world
+    shotgun use.
+  shot_versus_slug:
+    published_street_gear_models_use_slug_rounds: true
+    shot_loaded_instead_follows: Flechette ammunition damage rules; the publication
+      notes poorer effectiveness against conventional body armor.
+  choke:
+    minimum_setting: 2
+    maximum_setting: 10
+    rule: For each choke-setting meters of shot travel, spread increases one meter
+      across the corridor.
+    original_example:
+      choke_setting: 5
+      path_width_at_five_meters: 1
+      path_width_at_ten_meters: 2
+      path_width_at_fifteen_meters: 3
+      path_width_at_twenty_meters: 4
+  spread:
+    per_one_meter_of_spread_increase:
+      weapon_power_modifier: -1
+      attacker_target_number_modifier: -1
+    no_effect_if_power_reaches_zero: true
+    all_characters_in_area_valid_targets: true
+    attacker_rolls_one_success_test: true
+    each_target_defense: Dodge Test and/or Damage Resistance Test compared to the
+      same attack successes
+    additional_damage_resistance_dice: One extra die for each other target within
+      the spread in front of the character being hit, under the source positioning
+      example.
+    source_example:
+      character_behind_three_others: 3 additional Damage Resistance dice
+  smart_equipment:
+    cybernetically_adjustable_choke_additional_weapon_cost_percentage: 10
+    smartlinked_shotgun_using_shot_target_number_modifier: -1
+    smart_goggles_modifier_from_this_rule: 0
+    laser_sights_modifier_from_this_rule: 0
+  relationships:
+    baseline_abstract_anchor: rule.combat.shotgun-spread
+    flechette_numeric: rule.firearms.sr3-core-special-ammunition-effects-p116-117
+    canon_firearm_mounted_accessories: rules/firearms/accessory-mounts.yml
+  source_scope_limit: Shotgun shot/choke procedures only. Slug ammunition follows
+    ordinary shotgun damage codes; later Cannon Companion rules are separate.
+framing: reference_exact
