@@ -1,0 +1,124 @@
+{
+  "id": "rule.combat.sr3-core-barrier-rating-effect-exact-p124-125",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "124-125",
+  "pdf_pages": "125-126",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original published Third Edition tabletop RPG, printed pp124-125, physical PDF pp125-126; no later-edition rules substituted",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA Corporation's fictional Shadowrun, Third Edition (FASA7001), printed pp124-125/physical PDF pp125-126: barrier material ratings, firing-through and breach thresholds",
+  "summary": "Source-exact numeric and conditional tabletop game mechanics from FASA's Shadowrun, Third Edition (FASA7001), printed pp124-125/physical PDF pp125-126; supplements generic canonical summaries without replacing them.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_type": "Published fictional tabletop role-playing game; exact rules are in-game abstractions.",
+      "printed_pages": "124-125",
+      "physical_pdf_pages": "125-126"
+    },
+    "scope": "Original Combat chapter Barriers, Firing Through, Breaking Through and printed numeric Barrier Rating/Effect tables; independently supplements rules/combat/barriers.yml.",
+    "barrier_rating_table": {
+      "columns": [
+        "material",
+        "barrier_rating"
+      ],
+      "rows": [
+        {
+          "material": "Standard Glass",
+          "barrier_rating": 2
+        },
+        {
+          "material": "Cheap Material/Regular Tires",
+          "barrier_rating": 3
+        },
+        {
+          "material": "Average Material/Ballistic Glass",
+          "barrier_rating": 4
+        },
+        {
+          "material": "Heavy Material",
+          "barrier_rating": 6
+        },
+        {
+          "material": "Reinforced/Armored Glass",
+          "barrier_rating": 8
+        },
+        {
+          "material": "Structural Material",
+          "barrier_rating": 12
+        },
+        {
+          "material": "Heavy Structural Material",
+          "barrier_rating": 16
+        },
+        {
+          "material": "Armored/Reinforced Material",
+          "barrier_rating": 24
+        },
+        {
+          "material": "Hardened Material",
+          "barrier_rating": 32
+        }
+      ],
+      "construction_variants": {
+        "security_doors": "Twice the material's normal Barrier Rating.",
+        "glass_doors": "Half the rating of the glass."
+      }
+    },
+    "firing_through": {
+      "ranged_attack_target_number_modifier_if_opaque_barrier": 8,
+      "modifier_name": "Blind Fire",
+      "transparent_barrier_exception": "The +8 Blind Fire modifier does not apply if the barrier is transparent.",
+      "test": "Attacker makes ordinary ranged-weapon Success Test.",
+      "attack_power_subtractions": "Subtract both target's appropriate Armor Rating and adjusted Barrier Rating.",
+      "source_example": {
+        "target_armor": 3,
+        "barrier_rating": 4,
+        "total_power_reduction": 7
+      },
+      "stopping_condition": "If Barrier Rating exceeds attack Power, the barrier stops the attack; the barrier itself may still be damaged.",
+      "melee_blunt_barrier_rating": "Normal rating against blunt attacks such as fists or clubs.",
+      "melee_edged_barrier_rating": "Twice normal rating against edged melee weapons."
+    },
+    "barrier_effect_table": {
+      "adjustment_context": "Compare attack Power to the adjusted Barrier Rating for the applicable attack type.",
+      "rows": [
+        {
+          "power_relation": "Power less than half the adjusted Barrier Rating",
+          "effect": "No effect; barrier holds with minor cosmetic damage."
+        },
+        {
+          "power_relation": "Power equal to or greater than half adjusted Barrier Rating",
+          "effect": "Barrier damaged; reduce Barrier Rating by 1."
+        },
+        {
+          "power_relation": "Power greater than adjusted Barrier Rating",
+          "effect": "For each increment equal to half the Barrier Rating by which attack Power exceeds that rating, open a one-half-meter hole and reduce Barrier Rating by 1."
+        }
+      ],
+      "threshold_note": "The third row adds breach behavior to the damage case; preserve both conditions instead of treating the table as exclusive unrelated outcomes."
+    },
+    "breaking_through": {
+      "ranged_firearms_barrier_rating_multiplier": 2,
+      "melee_attacks_barrier_rating_multiplier": 2,
+      "combat_spells_barrier_rating_multiplier": 2,
+      "elemental_manipulation_spells_barrier_rating_multiplier": 1,
+      "ordinary_door_opens_at_rating_fraction": 0.5,
+      "security_door_opens_at_rating": 0,
+      "reason_for_multiplier": "Source distinguishes concentrated breach efforts from merely firing through.",
+      "reference": "Source text explicitly refers to Blast against Barriers on printed p119."
+    },
+    "cross_references": [
+      "rules/combat/barriers.yml",
+      "Original printed 124-125 / PDF125-126"
+    ]
+  },
+  "framing": "reference_exact"
+}
