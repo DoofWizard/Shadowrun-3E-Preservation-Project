@@ -1,0 +1,143 @@
+id: rule.matrix.sr3-core-security-sheaf-alert-ic-p211-212
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 211-212
+pdf_pages: 220-221
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional
+  tabletop Matrix rules printed pp211-212/physical PDF220-221; not later-edition conversion.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
+  Security Sheaves, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
+summary: Original numerical security trigger-step sample, optional randomized modifiers,
+  passive-alert modifier, active-alert and reset rules, regional-grid security tally
+  persistence, and IC crash/suppression consequences.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    nature: fictional tabletop role-playing game sourcebook
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pages:
+  - printed: 211
+    physical_pdf: 220
+    headings:
+    - Security Sheaves
+    - Trigger Steps
+    - Multiple Triggers
+    - Grid Security Tallies
+    - Alerts
+  - printed: 212
+    physical_pdf: 221
+    headings:
+    - Active Alert
+    - Host/Grid Reset
+    - Triggering IC
+    - Proactive vs. Reactive
+    - Crashing IC
+    - Suppressing IC
+    - IC Ratings
+  security_sheaf:
+    source_definition: A security sheaf is the host/grid ordered list of security
+      tally thresholds and reactions; triggered events may include IC activation and
+      changes in alert status.
+    trigger_step_rule: A system activates one or more countermeasures when the decker
+      Security Tally reaches or exceeds a sheaf step; if one action jumps across two
+      or more steps, all crossed trigger events occur at once.
+    sample_sheaf:
+    - trigger_step: 3
+      event: Probe-5
+    - trigger_step: 7
+      event: Probe-7
+    - trigger_step: 10
+      event: Killer-8; Passive Alert
+    - trigger_step: 13
+      event: Killer-10; Active Alert
+    gamemaster_authority: GM may set the security trigger steps and reactions directly;
+      source also presents optional randomized generation.
+    random_step_increment: Roll 1D6 minus 2, then apply Security Code modifier. Add
+      result to prior trigger step; use lowest values in code range for high-security,
+      highest for softer systems.
+    code_modifier_and_resulting_ranges:
+    - security_code: Blue
+      die_modifier: '+4'
+      final_range: 5-7
+    - security_code: Green
+      die_modifier: '+3'
+      final_range: 4-6
+    - security_code: Orange
+      die_modifier: '+2'
+      final_range: 3-5
+    - security_code: Red
+      die_modifier: '+1'
+      final_range: 2-4
+    one_gamemaster_example: A Blue host might use trigger steps 6, 12, 19, 24, 31,
+      36, 42 and so on; this is illustrative, not mandatory.
+  alerts:
+    states:
+    - No Alert
+    - Passive Alert
+    - Active Alert
+    no_alert: Usually triggers reactive IC.
+    passive_alert: System suspects intrusion, but has not confirmed it; proactively
+      activated white or gray IC may be used.
+    passive_alert_modifier: While on passive alert, increase ALL Subsystem Ratings
+      by +2.
+    passive_alert_step_guidance: Passive Alert is typically third or fourth trigger
+      step, not a mandatory fixed step.
+    active_alert: System has verified unauthorized icon; proactively activated IC
+      may include black IC and monitoring/response is heightened.
+    active_alert_step_guidance: Usually second or third step after passive alert;
+      guidance, not fixed.
+  grid_security_tally:
+    per_decker_scope: Retain accumulated tally while moving among LTGs and parent
+      RTG within the same RTG system; it does NOT carry into another RTG.
+    original_example: Within UCAS-SEA RTG, the example tally 2 on LTG UCAS-SEA-2206,
+      plus 1 on central RTG, plus 2 on LTG UCAS-SEA-4206 totals 5.
+    private_ltg_exception: A security tally from a parent RTG remains in force on
+      a PLTG reached from that RTG; PLTG may activate its security events on receiving
+      the existing tally.
+  host_grid_reset:
+    general: After decker logs off, active IC and other security may continue briefly.
+      System may reset once its trigger alert falls below the active levels.
+    blue_normal_reset: 2D6 minutes, and Security Tally drops to 0.
+    green_orange_red_normal_reset: 3D6 minutes if the decker did not trigger passive
+      or active alert.
+    alert_reset_rate: When the decker triggered alert on Green, Orange or Red host/grid,
+      reduce Security Tally 1D6 every 5, 10 or 15 minutes respectively; system resets
+      when tally is below the activation threshold.
+    continuing_ic: Any running IC remains active until tally falls below the trigger
+      step that activated that IC.
+    early_relogon: If decker reconnects before reset, tally starts from the level
+      held when the intrusion occurred; resetting does not erase the prior tally earlier.
+  ic_activation:
+    proactive: Once alerted to intruder presence, proactive IC may initiate cybercombat
+      and take initiative and attacks as hostile computer opponents.
+    reactive: Reactive IC remains inactive until Security Tally threshold or protected
+      host location/resource triggers it; then performs specified operations until
+      destroyed or deceived, otherwise continues until leaving.
+    crash: Crashing or defeating IC in Matrix cybercombat adds the Rating of crashed
+      IC to the decker Security Tally, irrespective of the ordinary System Test contests.
+    suppression:
+      permission: When crashing IC, decker may declare suppression instead of simply
+        destroying it.
+      detection_factor_effect: Reduce decker Detection Factor by 1 for each suppressed
+        IC program while it remains suppressed in that system; the change represents
+        exposure from keeping the IC suppressed.
+      release: Each released program restores 1 point to Detection Factor and increases
+        Security Tally by appropriate IC Rating; suppression may be dropped one program
+        at a time.
+      exit_scope: A decker cannot continue suppressing IC in a system they have left.
+    ic_rating_use: IC Rating is used as a target for certain tests and to resist attacks
+      by programs; in cybercombat the IC uses the host Security Value as its Attack
+      Skill dice and as dice for damage resistance, not IC Rating for those dice pools.
+  source_limits: This record covers printed pp211-212 only. Specific IC behavior and
+    cybercombat are cross-referenced at printed pp222-227 and are not claimed normalized
+    here.
+  code_status: Original page mechanical transcription and review, not an executable
+    Matrix security simulator or full source-completion gate.
