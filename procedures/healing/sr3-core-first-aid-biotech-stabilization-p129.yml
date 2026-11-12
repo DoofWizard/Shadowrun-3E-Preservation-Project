@@ -1,0 +1,142 @@
+{
+  "id": "procedure.healing.sr3-core-first-aid-biotech-stabilization-p129",
+  "record_type": "procedure",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "129",
+  "pdf_pages": "130",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop game Combat/Using Biotech procedure",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "FASA Corporation original Shadowrun, Third Edition (FASA7001) fictional tabletop Combat rules, printed p129/PDF130: First Aid target numbers, Biotech actions and deadly-wound stabilization",
+  "summary": "Original source-reviewed tabletop mechanics: Light/Moderate/Serious/Deadly First Aid TN 4/6/8/10, 5/10/15/Special turns, all printed modifiers, one-level healing cap, special deadly and trauma-patch stabilization and original eligibility limits.",
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_kind": "original published fictional tabletop role-playing game rulebook",
+      "printed_page": 129,
+      "physical_pdf_page": 130
+    },
+    "scope": "In-game Using Biotech / First Aid Table and associated deadly-wound and trauma-patch stabilization rules. This is tabletop adjudication, not real-world clinical guidance.",
+    "eligibility": {
+      "first_aid_within_hours_after_injury": 1,
+      "first_aid_after_magic_healing_permitted": false,
+      "damage_type_allowed": "Physical",
+      "stun_recovery_from_first_aid_permitted": false,
+      "stun_recovery_source": "In the original passage, only rest and sleeping recover Stun damage."
+    },
+    "first_aid_test": {
+      "test": "Biotech Success Test",
+      "target_number_based_on": "Current Damage Level, before treatment, plus source-listed situational modifiers",
+      "table": [
+        {
+          "damage_level": "Light",
+          "target_number": 4,
+          "base_treatment_time_combat_turns": 5
+        },
+        {
+          "damage_level": "Moderate",
+          "target_number": 6,
+          "base_treatment_time_combat_turns": 10
+        },
+        {
+          "damage_level": "Serious",
+          "target_number": 8,
+          "base_treatment_time_combat_turns": 15
+        },
+        {
+          "damage_level": "Deadly",
+          "target_number": 10,
+          "base_treatment_time_combat_turns": null,
+          "base_treatment_time_original": "Special"
+        }
+      ],
+      "target_number_modifiers": {
+        "patient_awakened": 2,
+        "bad_conditions": 1,
+        "terrible_conditions": 3,
+        "patient_body_ranges": [
+          {
+            "min": 1,
+            "max": 3,
+            "modifier": 0
+          },
+          {
+            "min": 4,
+            "max": 6,
+            "modifier": -1
+          },
+          {
+            "min": 7,
+            "max": 9,
+            "modifier": -2
+          },
+          {
+            "min": 10,
+            "max": null,
+            "modifier": -3
+          }
+        ],
+        "no_medkit_available": 4
+      },
+      "bad_conditions_definition": "Nonmedical or uncontrollable environment.",
+      "terrible_conditions_definition": "A location in which further damage or infection can occur.",
+      "success_effect": "At least one Biotech success reduces the current Damage Level by exactly one, for Light/Moderate/Serious treatment.",
+      "per_application_healing_limit_levels": 1,
+      "time_formula": "Base treatment time (Combat Turns) divided by number of Biotech Test successes.",
+      "rounding": "No rounding method is specified on printed p129.",
+      "interruption": "Any serious interruption aborts treatment; the first-aid character must repeat the Biotech test."
+    },
+    "deadly_wound_first_aid": {
+      "first_test": "Biotech Test (source First Aid Table Deadly TN 10 with applicable modifiers)",
+      "on_at_least_one_success": "Stabilize patient; stop additional damage-box overflow for a number of Combat Turns equal to the patient Body Rating.",
+      "on_biotech_failure": "Patient makes a Body Test versus Target Number 10.",
+      "body_test_attribute": "Natural Body Rating only; cyberware and other enhancements do not apply.",
+      "on_body_test_success": "Self-stabilizes.",
+      "on_body_test_failure": "Character dies when damage taken exceeds Body Rating.",
+      "no_extra_deadly_healing": "This Deadly procedure stabilizes rather than reducing the Deadly Damage Level."
+    },
+    "trauma_patch_exception": {
+      "application": "The printed fiction describes the adhesive trauma patch over the wounded character heart.",
+      "effect": "Allows an additional Body Test to stabilize.",
+      "body_test_base_target_number": 4,
+      "target_number_increase": "Increase by the rating of any dermal armor or blood filters present; if both have ratings the paragraph gives no additional formula for combination.",
+      "success": "Stabilizes patient and stops accumulating additional overflow damage boxes.",
+      "printed_cross_reference": "Deadly Wounds and Permanent Damage, printed p127."
+    },
+    "professional_help": "Upon arrival of better-equipped in-game professional care, make a further Biotech Test and Body Test; the source cites a clinic/hospital or better-skilled medic as examples.",
+    "related_accepted_canon": [
+      "procedures/healing/natural-and-medical.yml",
+      "rules/healing/sr3-core-natural-recovery-numeric-p126-128.yml",
+      "rules/medical/sr3-core-stabilization-unit-slap-patches-p305.yml"
+    ],
+    "test_vectors_unexecuted": [
+      {
+        "case": "serious_biotech_3_successes",
+        "damage_level": "Serious",
+        "base_treatment_time_combat_turns": 15,
+        "biotech_successes": 3,
+        "expected_treatment_time_combat_turns": 5,
+        "expected_damage_level": "Moderate"
+      },
+      {
+        "case": "awakened_bad_conditions_body5_no_medkit",
+        "damage_level": "Moderate",
+        "base_target_number": 6,
+        "awakened_modifier": 2,
+        "bad_conditions_modifier": 1,
+        "body_modifier": -1,
+        "no_medkit_modifier": 4,
+        "expected_target_number": 12
+      }
+    ],
+    "limits": "Source p129 supplies no rounding convention for nonintegral treatment time; no real-world medical steps or inferred numerical mechanics are added."
+  }
+}
