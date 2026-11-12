@@ -1,0 +1,175 @@
+{
+  "id": "rule.matrix.sr3-core-grid-comcall-monitoring-operations-p218-219",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "218-219",
+  "pdf_pages": "227-228",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional tabletop Matrix procedures; preserve numeric/sign/range conditions and do not import later-edition rules",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game rulebook",
+      "original_printed_pages": [
+        218,
+        219
+      ],
+      "physical_pdf_pages": [
+        227,
+        228
+      ]
+    },
+    "source_heading": "The Matrix / System Operations: grids, comcalls, monitored systems and inactivity",
+    "framing_context": "Exact historical rules for fictional Matrix deckers/hosts/commcodes in FASA's tabletop RPG, not present-day telecommunications or actual systems.",
+    "operations": [
+      {
+        "name": "Logon to LTG",
+        "test": "Access",
+        "utility": "Deception",
+        "action": "Complex",
+        "resolution": "System Test against LTG Access Rating; host/grid successes increase the decker's Security Tally on that grid, including on a failed attempt.",
+        "failed_logon_memory": {
+          "typical_duration_minutes": "1D3 × 5",
+          "certainty": "The source says public LTGs typically remember unauthorized attempts this long; not universally guaranteed."
+        },
+        "different_jackpoint": "Moving to another jackpoint before a new fictional LTG logon begins with a new Security Tally.",
+        "successful_connections": [
+          "Logon to controlling RTG",
+          "Logon to PLTG attached to this LTG if its address is known",
+          "Logon to an attached host if its address is known"
+        ]
+      },
+      {
+        "name": "Logon to RTG",
+        "test": "Access",
+        "utility": "Deception",
+        "action": "Complex",
+        "target": "RTG Access Rating (the LTG's local changes do not automatically transfer).",
+        "relation": "From an LTG may log on to its controlling RTG; RTG may route to attached LTGs or another RTG.",
+        "security_tally": "RTG carries the same tally across the decker's actions on any LTG under that RTG and on the RTG itself.",
+        "gamemaster_discretion": "Gamemaster may assign temporary changes to RTG ratings without treating local LTG changes as automatically inherited."
+      },
+      {
+        "name": "Make Comcall",
+        "test": "Files",
+        "utility": "Commlink",
+        "action": "Complex",
+        "operation_type": "monitored",
+        "role": "Fictional RTG caller establishes a communication with a commcode on an LTG controlled by the RTG; may move RTGs and combine multiple calls as a conference.",
+        "each_link_requires": "One additional System Test for each call added.",
+        "license_exception": "An in-world RTG vendor license/passcode may authorize calls and connection without those tests; licenses are described as usually restricted to corporate deckers.",
+        "tracking_exception": "Tap Comcall cannot trace licensed vendor calls, although another decker may use Track utility against involved commcodes as the source describes.",
+        "detection": "Opposed Sensor-versus-Device Rating Test may detect taps or tracers; an opposing Evasion-versus-Device Rating Test may neutralize them.",
+        "participation_changes": "Dropping a participant from a call or joining an intercepted call requires a Files Test.",
+        "usual_charge_nuyen_per_caller_per_minute": 100
+      },
+      {
+        "name": "Monitor Slave",
+        "test": "Slave",
+        "utility": "Spoof",
+        "action": "Simple",
+        "operation_type": "monitored",
+        "effect": "Receive ongoing data being transmitted by a fictional remote device, while maintaining the operation."
+      },
+      {
+        "name": "Null Operation",
+        "test": "Control",
+        "utility": "Deception",
+        "action": "Complex",
+        "gm_initiation": "The gamemaster may require one or more Null Operations while a decker is inactive or waiting for an ongoing event or maintaining a separate monitored operation.",
+        "secret_gm_action": "The gamemaster may secretly perform these tests for a character.",
+        "opposing_security_value": "Use the host's base Security Value for the contest.",
+        "inactivity_threshold_modifiers": [
+          {
+            "condition": "less than 10 seconds inactive",
+            "security_value_modifier": 0
+          },
+          {
+            "condition": "more than 10 seconds, less than 1 minute inactive",
+            "security_value_modifier": 1
+          },
+          {
+            "condition": "more than 1 minute, less than 1 hour inactive",
+            "security_value_modifier": 2
+          },
+          {
+            "condition": "more than 1 hour, less than 12 hours inactive",
+            "security_value_modifier": 4
+          },
+          {
+            "condition": "additional complete 12-hour periods",
+            "security_value_additional_per_period": 1
+          }
+        ],
+        "boundary_note": "The source states strict 'less than' and 'more than' thresholds; it does not explicitly adjudicate exact boundary instants at 10 seconds, 1 minute, 1 hour or 12 hours.",
+        "host_reaction": "Security Test successes may raise tally and trigger host responses or IC under normal security sheaf rules."
+      },
+      {
+        "name": "Swap Memory",
+        "test": "None",
+        "utility": "None",
+        "action": "Simple",
+        "operation_type": "ongoing_upload_after_memory_action",
+        "effect": "Load a utility into the decker's active deck memory and initiate its upload to the on-line icon.",
+        "if_insufficient_active_memory": "First spend a Free Action to unload a program from active memory; no System Test is required for the memory swapping actions.",
+        "time_reference": "The utility uploads automatically as an ongoing operation, subject to original page214 timing rules."
+      },
+      {
+        "name": "Tap Comcall",
+        "test": "Special",
+        "utility": "Commlink",
+        "action": "Complex",
+        "operation_type": "monitored",
+        "game_scope": "Locate active fictional commcodes, trace or monitor calls using system tests; this is an invented-world roleplaying procedure.",
+        "initial_index": "A decker on an RTG controlling an LTG may use an Index Test to determine whether its commcodes are in use.",
+        "code_query_exception": "If checking a commcode on its parent RTG, the original Index Test target number modifier is −2.",
+        "trace": "A Control Test locates calling commcodes; in a conference, each net success reveals the commcode of one participant.",
+        "origin_host_for_decker_made_call": "The Control Test may reveal the RTG where the calling decker is active; Track utility attempts to find the decker are considered attacks and reveal the tracker to the target.",
+        "record_call": "A Files Test permits recording an intercepted fictional call; each minute occupies 1 Mp of deck storage.",
+        "encrypted_call": {
+          "opposed_test": "Computer Skill versus encryption device's Device Rating; Decrypt utility reduces the decker's target number.",
+          "retry_penalty": "After the first failed decryption, each additional attempt adds +2 to the target number.",
+          "unaffected": "The number of phones/encryption devices in the call does not alter this target number; tests against call scrambling do not contribute to the decker's RTG Security Tally."
+        },
+        "dataline_scanner": {
+          "scanner_rating_range": [
+            1,
+            10
+          ],
+          "test": "Opposed Computer Skill versus scanner Device Rating; Commlink utility reduces decker's target number.",
+          "multiple_scanners": "Use the highest Scanner Device Rating for the test; reduce decker successes by one per scanner involved.",
+          "tally": "This test does not affect RTG Security Tally regardless of outcome."
+        },
+        "persistence": "Once a commcode is tapped, the decker can follow the same commcode across later calls; if already tapped, no new Index Test is required just to determine when it becomes active.",
+        "new_call": "Additional tests still apply to trace or tap new calls and to overcome new scanner or encryption measures.",
+        "call_participation": "The decker may join or disconnect participants using Make Comcall operation and Files Test where required."
+      }
+    ],
+    "scope": {
+      "original_image_review": "Source-reviewed printed pp218–219/physical PDF227–228; no claims about contents of printed p220 or later.",
+      "preexisting_generic": [
+        "procedures/matrix/system-operation.yml",
+        "rules/matrix/system-test.yml",
+        "rules/matrix/sr3-core-system-tests-action-security-tally-p209-210.yml"
+      ],
+      "previously_new_canonical": [
+        "rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml",
+        "rules/matrix/sr3-core-data-decrypt-edit-locate-p216-217.yml"
+      ],
+      "upload_data_continuation_note": "Upload Data begins at the bottom of printed p219 but operative consequences continue on p220; not normalized here to avoid incomplete reconstruction.",
+      "code_execution_not_proven": true,
+      "full_core_source_completeness_not_proven": true
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop Shadowrun, Third Edition (FASA Corporation FASA7001), original printed pp218–219/PDF227–228: Matrix LTG/RTG, comcall, monitoring, inactivity and memory operations",
+  "summary": "Original-page-verified mechanical procedures for a published fictional tabletop RPG; exact System Test associations, Security Tally and timing/target-number modifiers from FASA Corporation's Shadowrun Third Edition (FASA7001)."
+}
