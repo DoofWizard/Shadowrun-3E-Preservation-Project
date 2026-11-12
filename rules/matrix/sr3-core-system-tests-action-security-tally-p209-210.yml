@@ -1,0 +1,151 @@
+id: rule.matrix.sr3-core-system-tests-action-security-tally-p209-210
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 209-210
+pdf_pages: 218-219
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional
+  cyberpunk tabletop game Matrix rules printed pp209-210/physical PDF218-219; no later
+  rules.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
+  System Tests, action economy and Security Tally, original printed pp209-210/PDF218-219
+summary: Source-checked Matrix System Test opposed success contests and running Security
+  Tally, noncombat action allocation, new-icon/IC Sensor outcomes, location-limited
+  grid logons and the printed worked Logon example.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    nature: Published fictional cyberpunk tabletop role-playing game source
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pages:
+  - printed: 209
+    physical_pdf: 218
+    headings:
+    - Noticing New Icons
+    - Noticing Triggered IC
+    - Non-Combat Actions
+    - System Tests
+  - printed: 210
+    physical_pdf: 219
+    headings:
+    - System Tests continued
+    - System Operations on Grids
+    - Security Tally
+    - Security Sheaves
+  system_test:
+    fictional_action: A decker using unauthorized host/grid operations submits a system
+      operation associated with one of the five subsystem ratings.
+    user_skill: Computer Skill, or Decking specialization
+    target_number: Relevant subsystem rating (Access, Control, Index, Files or Slave),
+      modified by the utility appropriate to the selected System Operation.
+    defender_roll: Host or grid makes a Security Test, rolling dice equal to the Security
+      Value against target number equal to the decker Detection Factor.
+    outcome: The decker wins the opposed Success Contest and succeeds if decker successes
+      equal or exceed host/grid successes; the system wins with more successes.
+    security_tally: Regardless of the outcome, add every host/grid Security Test success
+      to the previous Security Test successes against that decker on that host/grid.
+      Include gross host successes, not net successes.
+    naming: Tests commonly named after the relevant subsystem (Access Test, Files
+      Test, Index Test, Control Test, Slave Test).
+    operations_reference: Each operation is associated with Free, Simple or Complex
+      Action and a subsystem; the separate full operations table is printed p214 and
+      is not reproduced here.
+  worked_logon_example:
+    decker: HeadCrash
+    computer_skill: 6
+    deck: MPCP-8/6/6/6
+    running_utilities:
+      Sleaze: 5
+      Deception: 4
+    detection_factor: ceil((Masking Rating 6 + Sleaze 5) / 2) = 6
+    target_host: Red-8, Access rating 11
+    operation: Logon to Host, Computer (Access) Test
+    user_target_number: Access 11 minus Deception 4 = 7
+    host_security_test: Security Value 8 dice, target number Detection Factor 6
+    decker_dice:
+    - 2
+    - 2
+    - 3
+    - 4
+    - 5
+    - 9
+    decker_successes: 1
+    host_dice:
+    - 1
+    - 2
+    - 2
+    - 2
+    - 3
+    - 3
+    - 5
+    - 5
+    host_successes: 0
+    contest_result: User successfully logs on; this particular example causes zero
+      additional host successes.
+    no_deception_exception: Without the Deception utility the target number is 11;
+      the listed decker dice would then yield zero successes and the example would
+      fail.
+  noncombat_action_economy:
+    initiative_roll: None for noncombat Matrix activity.
+    reaction: Decker Reaction Attribute augmented by Response Increase
+    actions_per_three_second_turn: ceil(augmented Reaction / 10) + one additional
+      action for each Initiative Die beyond the standard 1D6
+    turn_duration_seconds: 3
+    sequencing_example: A decker with two actions performs one operation on first
+      Initiative Pass and a second on the next pass; a Logon/Analyze Host sequence
+      is illustrated.
+    reactive_ic_timing: Reactive IC acting at the end of a Combat Turn executes its
+      task after all deckers take their allotted actions for that turn.
+  noticing_icons:
+    on_new_icon: Free Sensor Test, no utilities, to identify a new icon in the current
+      occupied area.
+    target_if_decker: New decker icon Masking Rating plus Sleaze utility rating.
+    target_if_program: Other program/icon Rating.
+    successes_one: Detect that the new icon is present.
+    successes_two: Also reveal icon type.
+    successes_three_or_more: Also reveal icon rating.
+    awareness_limit: Without any success, unaware of presence until icon chooses to
+      reveal itself or attacks; a Locate Icon operation may be used if suspicious.
+    noticed_icon_remains_visible: After locating an icon it remains visible unless
+      it evades (combat maneuver cross-reference original p224).
+  noticing_triggered_ic:
+    contextual_rule: Decker must first locate an IC before countering it; proactive
+      IC becomes conspicuous when attacking, reactive IC may trigger secretly.
+    reactive_sensor_test: Gamemaster makes a secret Sensor Test with target number
+      equal to the triggered IC Rating.
+    successes_one: Inform decker that their actions triggered IC.
+    successes_two: Also disclose type of IC triggered.
+    successes_three_or_more: Also disclose IC Rating and location.
+    active_ic_suspicion: Decker may use Locate IC operation to verify suspected active
+      IC (p217).
+  exit_the_matrix:
+    voluntary: Jacking out is Free Action unless being attacked by black IC; the exception
+      cross-references printed p230.
+    involuntary: Forcibly kicked-out decker suffers dump shock; detailed mechanics
+      cross-referenced printed p227.
+  grid_logon_scope:
+    jackpoint: Telecom jacking point permits only Logon to LTG; user then locates
+      desired host/grid.
+    dedicated_workstation: Dedicated workstation/slave/remote/console permits only
+      Logon to Host, and only the host controlling the accessed device.
+    from_ltg: May Logon to RTG (parent), Logon to Host on connected host or Logon
+      to LTG to a PLTG attached to this LTG.
+    from_rtg: May Logon to RTG (another RTG, described as long-distance), Logon to
+      LTG attached to RTG, or Locate Access Node.
+    from_pltg: May use any System Operation available on public RTGs and LTGs.
+    always_allowed: Graceful Logoff available at any time regardless of jackpoint
+      scope.
+  security_sheaf_deferred_to_following_page: Security Sheaf defines trigger-step responses;
+    detailed thresholds, alerts and original sample table start at printed p211, not
+    assumed covered by this record.
+  source_scope_note: Mechanics are for fictional deckers and hosts in the original
+    tabletop Matrix; not instructions for accessing actual computer networks.
+  code_status: Original-page source-review only; independent executable tests and
+    whole-core completion are not established.
