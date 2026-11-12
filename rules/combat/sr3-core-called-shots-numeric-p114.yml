@@ -11,9 +11,10 @@ content_class:
 - rule_exact
 headline: 'FASA Corporation fictional tabletop RPG Shadowrun, Third Edition (FASA7001)
   original p114/PDF115: called-shot limits and exact effects'
-summary: Original published SR3 core p114/PDF115 called-shot action, permitted firing
-  modes, +4 target number and choose-one consequences; separates later Shadowrun Companion
-  optional melee extension.
+summary: 'FASA Corporation Shadowrun Third Edition FASA7001 original printed p114/PDF115
+  called shots: +4 TN, three permitted firearm modes, choice of two effects; preserve
+  the original p105/PDF106 free-action list''s melee follow-up as an unresolved core
+  internal tension, not a blanket prohibition.'
 data:
   publication:
     title: Shadowrun, Third Edition
@@ -28,8 +29,10 @@ data:
   source_heading: 'Combat: Called Shots'
   declaration:
     free_action: Call a Shot
-    timing: At time of attack; optional prior Aim is a separate Simple Action under
-      the cited p106 Aim rule.
+    timing: The printed p114 Called Shots description allows Aim then a Call a Shot
+      Free Action at attack; the separate printed p105 Free Actions entry says Call
+      a Shot must immediately be followed by Aim, Fire Weapon, Throw Weapon or Melee/Unarmed
+      Attack. Preserve both source orderings without choosing one silently.
     accessible_location_decider: Gamemaster determines whether the declared vulnerable
       point is accessible.
   original_core_mode_restriction:
@@ -38,7 +41,13 @@ data:
     - semi-automatic
     - burst-fire
     full_auto_allowed_in_original_core_called_shot: false
-    melee_allowed_in_original_core_called_shot: false
+    p114_firearm_modes_only_statement: Printed p114 explicitly limits called shots
+      with weapons that FIRE to single-shot, semi-automatic and burst-fire modes.
+    melee_followup_listed_original_p105: true
+    melee_core_permission_resolution: 'Internal inconsistency/unresolved scope: p105
+      Free Action entry includes Melee/Unarmed Attack as an immediate follow-up; p114
+      limits called shots to weapons using three firing modes. Do not infer an unqualified
+      original-core melee prohibition or permission.'
   option_select_one:
   - choice: increase_damage_level
     target_number_modifier: 4
@@ -52,13 +61,14 @@ data:
     condition: Target such as tires or windows, if specific location is accessible.
   lineage_and_preexisting_canon:
     core_reference: rules/combat/called-shots.yml
-    optional_later_extension: rules/combat/combat-options.yml, optional Shadowrun
-      Companion advanced melee Called Shot, pp85-86; not present in the original FASA7001
-      p114 permission.
-    reconciliation_note: The generic canonical called-shots.yml has broad ranged-or-melee
-      wording but cites original SR3 p114 alone. This source-exact core restriction
-      must be differentiated from the separate optional Companion melee extension;
-      do not silently mark either superseded.
+    optional_later_extension: Shadowrun Companion optional advanced melee Called Shot
+      (original Companion pp85-86) adds or clarifies melee outcomes; original FASA7001
+      p105 separately lists melee/unarmed as a valid Call a Shot follow-up, so do
+      not claim the core had no melee mention.
+    reconciliation_note: The p114 narrative restricts firearm modes while the p105
+      Free Action entry explicitly lists melee/unarmed. The generic called-shots.yml
+      and optional Companion combat-options.yml may reflect different scopes; source-internal
+      tension remains unadjudicated.
   example_vectors_not_executed:
   - firing_mode: burst-fire
     attack_base_target_number: 5
@@ -70,10 +80,11 @@ data:
     original_core_called_shot_permitted: false
   editorial_review:
     stage: original_page_review_before_baseline_freeze
-    evidence: Original FASA7001 physical PDF115, printed p114, upper and lower columns
-      of the Called Shots and Damage Codes page independently inspected; compared
-      to current generic called-shots and Shadowrun Companion optional combat-options
-      records.
+    evidence: Original FASA7001 printed p105/PDF106 Free Actions Call a Shot entry
+      and printed p114/PDF115 Called Shots entry independently re-reviewed as page
+      images after detecting a genuine internal cross-reference tension. Existing
+      original action timing record independently compared; first accepted baseline
+      and candidate retained unchanged in prior journal.
     text_field_paths_reviewed:
     - headline
     - summary
@@ -86,6 +97,34 @@ data:
     - data.lineage_and_preexisting_canon.*
     - data.example_vectors_not_executed[*].*
     - data.editorial_review.*
+    - data.source_internal_tension.*
+    - data.editorial_review.correction_reason
+    - data.editorial_review.prior_baseline_retained_at
     limit: Reviewed field paths and schema preflight are not proof of exhaustive source
       fidelity or engine implementation.
+    correction_reason: The prior baseline's absolute melee_allowed_in_original_core_called_shot=false
+      erroneously collapsed the original p105 melee/unarmed follow-up into the narrower
+      p114 firearm-mode sentence. This correction preserves each printed claim with
+      its source/page, does not invent a later supersession, and retains all unchanged
+      numeric called-shot rules.
+    prior_accepted_commit: 8f4c2c20c14f94e4f76451215d78197c8b545782
+    prior_accepted_blob: 166fc44ba57cfb6a92caab8a6847c7fd0f0e996d
+    prior_baseline_retained_at: journal_p114/baseline.yml (working receipt; not GitHub
+      publication)
+    assertion_preservation: All unchanged target-number, mode, damage-step, cap, choice
+      and vehicle subtarget assertions remain identical; revised melee boolean is
+      replaced by explicit source-specific p105 and p114 claims, with original source
+      contradiction noted.
+  source_internal_tension:
+    printed_page_105_physical_pdf_106: Original Free Actions / Call a Shot entry lists
+      Aim, Fire Weapon, Throw Weapon and Melee/Unarmed Attack as allowable immediately
+      following actions.
+    printed_page_114_physical_pdf_115: Original Called Shots paragraph says called
+      shots can only be made with weapons firing in SS, SA or BF modes; separate examples
+      cover damage-level increase and vehicle-sized subtargets.
+    relation: These are distinct original Third Edition source claims; the p105 melee
+      listing conflicts with a literal blanket reading of p114. No unstated erratum,
+      precedence or optional house rule is adopted.
+    scope: Source-specific correction to overbroad boolean in the first accepted p114
+      record, not a replacement of p105 accepted action economy.
 framing: reference_exact
