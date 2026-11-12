@@ -1,0 +1,105 @@
+id: rule.firearms.sr3-core-special-ammunition-effects-p116-117
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 116-117
+pdf_pages: 117-118
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001); original Third
+  Edition fictional tabletop game mechanics, no later supplements substituted.
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules,
+  printed pp116-117/PDF117-118: special ammunition exact effects'
+summary: Source-reviewed original SR3 ammunition armor, Power, Damage Level, target-number
+  and adverse-outcome mechanics from fictional tabletop combat; source-specific conditions
+  and ambiguity retained.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    fictional_tabletop_source: true
+    printed_pages:
+    - 116
+    - 117
+    physical_pdf_pages:
+    - 117
+    - 118
+  scope: Original in-game ammunition effects for fictional Shadowrun Third Edition
+    ranged attacks; not real-world weapons guidance or a later supplement replacement.
+  general:
+    ammunition_types_cannot_be_mixed_in_clip: true
+    clip_change_during_combat_allowed: true
+    base_weapon_damage_assumes_standard_ammunition: true
+    special_ammunition_source_market_reference: Street Gear, printed p279
+  armor_piercing_discarding_sabot:
+    game_abbreviation: APDS
+    ballistic_armor_for_game_damage_resistance: floor(Ballistic Armor Rating / 2)
+    barrier_rating_for_game_effects: floor(Barrier Rating / 2)
+    against_vehicles_and_drones: Treated as normal ammunition; APDS is not anti-vehicular.
+    vehicle_rule_source_reference: Core Vehicle Damage from Weapons, printed p149
+  explosive_rounds:
+    power_rating_bonus: 1
+    barrier_rating_multiplier_for_attack_target_number: 2
+    barrier_rating_for_damage_when_barrier_hit: One-half of the original Barrier Rating;
+      the printed paragraph does not give a rounding instruction.
+    source_misfire_trigger: A die rolled for the attack test coming up 1; do not infer
+      a separate all-dice/Rule-of-One threshold without reconciling original wording.
+    misfire_result: The character firing suffers a separate attack with the normal,
+      unmodified weapon Damage Code; the outgoing attack misses.
+    misfire_attack_generated_successes: 1D6
+    misfire_defender_damage_resistance_test: true
+    misfire_defender_combat_pool_dice_allowed: false
+  ex_explosive_rounds:
+    power_rating_bonus: 2
+    other_rules: Uses the original Explosive Round procedures; greater market cost/scarcity
+      is source-attributed and not converted into an invented price.
+  flechette_rounds:
+    against_unarmored_target_damage_level_step_bonus: 1
+    source_example:
+      normal_code: 9M
+      flechette_code: 9S
+    against_armored_target_armor_rating: max(2 * Impact Armor, normal Ballistic Armor)
+    barrier_rating_multiplier: 2
+    vehicle_armor_multiplier: 2
+    dermal_armor_negates_damage_level_bonus: true
+    weapon_damage_code_suffix: (f) indicates a model whose published Damage Code already
+      includes flechette effects.
+  gel_rounds:
+    power_rating_modifier: -2
+    damage_level: Unchanged relative to base weapon
+    damage_track: Stun rather than Physical
+    knockdown_body_test_target_number: Attack Power after the source gel Power modifier,
+      under original Knockdown rules printed p124.
+  tracer_rounds:
+    firing_mode: Full-auto only
+    clip_loading: Every third round is tracer; expressly excepted from single-type-per-clip
+      restriction.
+    affected_users: Users of firearms without smartgun systems
+    effective_range: Beyond Short range
+    target_number_modifier_per_three_rounds: -1
+    cumulative_examples:
+    - rounds_fired: 3
+      target_number_modifier: -1
+    - rounds_fired: 6
+      target_number_modifier: -2
+    - rounds_fired: 9
+      target_number_modifier: -3
+    damage_calculation: Do not add the tracer round as a Power bonus for three-round,
+      multiple-round or short burst calculations; apply the corresponding Damage Level
+      increase.
+    source_example:
+      smg_base_damage: 5M
+      full_auto_rounds: 10
+      damage_code_with_tracer: 12D
+      damage_code_without_tracer: 15D
+  provenance_limitations:
+  - Exact source mechanics from FASA7001 p116-117; p279-281 market values and ammunition-class
+    compatibility are separately indexed.
+  - Other source-defined types (e.g., normal rounds and stun ammunition) are not assumed
+    to receive these special modifiers.
+  - Source misfire trigger and half-Barrier rounding remain textual ambiguities; no
+    unsupported interpretation imposed.
+framing: reference_exact
