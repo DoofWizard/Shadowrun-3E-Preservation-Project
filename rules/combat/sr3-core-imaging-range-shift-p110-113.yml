@@ -1,0 +1,91 @@
+{
+  "id": "rule.combat.sr3-core-imaging-range-shift-p110-113",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "110,113",
+  "pdf_pages": "111,114",
+  "edition_scope": "Original fictional Shadowrun, Third Edition tabletop role-playing game (FASA Corporation; FASA7001), printed p110/PDF111 and cross-reference p113/PDF114, without later supplement substitutions.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional FASA Corporation Shadowrun, Third Edition tabletop game FASA7001: rated image modification shifts range categories, printed p110/PDF111 and p113/PDF114",
+  "summary": "Original published Shadowrun, Third Edition (FASA Corporation, FASA7001) fictional tabletop combat rule: each image-modification rating shifts one range category toward Short; rating 2 changes Long TN6 to Short TN4, and never shifts below Short. Original printed p110/PDF111; printed p113/PDF114 cross-reference.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "fictional_game": true,
+      "sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        110,
+        113
+      ],
+      "physical_pdf_pages": [
+        111,
+        114
+      ]
+    },
+    "source_section": "Combat / Range and Base Target Number / Image Modification Systems; later Image Magnification cross-reference",
+    "range_category_sequence": [
+      "Short",
+      "Medium",
+      "Long",
+      "Extreme"
+    ],
+    "base_target_number_by_category": {
+      "Short": 4,
+      "Medium": 5,
+      "Long": 6,
+      "Extreme": 9
+    },
+    "imaging_effect": {
+      "range_category_shift_toward_short_per_rating": 1,
+      "minimum_resulting_category": "Short",
+      "apply_to": "Attacker base target number of rated weapon at target distance, by moving left across source Weapon Range Table categories",
+      "not_a_physical_range_change": "This is game target-number treatment for imaging equipment, not a statement that the weapon physically gains or loses range."
+    },
+    "source_example": {
+      "scope_rating": 2,
+      "ordinary_category": "Long",
+      "shifted_category": "Short",
+      "ordinary_base_target_number": 6,
+      "new_base_target_number": 4,
+      "number_of_range_categories_shifted": 2
+    },
+    "source_lower_bound_example": {
+      "starting_category": "Medium",
+      "scope_rating": 2,
+      "resulting_category": "Short",
+      "condition": "The shift cannot carry the category below Short."
+    },
+    "cross_reference": "Printed p113/PDF114 repeats that imaging magnification reduces range category and its associated base target number and directs the reader to imaging scopes in Street Gear printed p280.",
+    "canonical_reuse": [
+      "rule.combat.range-target-number defines existing base range TNs and weapon bands",
+      "rule.firearms.sr3-core-accessory-functions-p280-281 retains imaging scope mount and compatibility, but did not numerically normalize this rating-based category shift"
+    ],
+    "editorial_source_review": {
+      "observed": "Original scan images printed p110/PDF111 and printed p113/PDF114 examined for range system, rated shift, floor and cross-reference.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.range_category_sequence[*]",
+        "data.base_target_number_by_category.*",
+        "data.imaging_effect.*",
+        "data.source_example.*",
+        "data.source_lower_bound_example.*",
+        "data.cross_reference",
+        "data.canonical_reuse[*]",
+        "data.editorial_source_review.*"
+      ],
+      "limitations": "Reviewed text paths and source hash are not conclusive source-completion or executable engine-test evidence."
+    }
+  }
+}
