@@ -1,0 +1,140 @@
+{
+  "id": "rule.character-creation.sr3-core-racial-modifiers-numeric-p56",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "56",
+  "pdf_pages": "57",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition FASA7001 original fictional tabletop character-creation metatype modifiers; original edition, no later changes inferred.",
+  "content_class": [
+    "character_option"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 56,
+      "physical_pdf_page": 57,
+      "type": "fictional tabletop role-playing game"
+    },
+    "source_table_title": "RACIAL MODIFICATIONS TABLE",
+    "attribute_columns": [
+      "Body",
+      "Quickness",
+      "Strength",
+      "Charisma",
+      "Intelligence",
+      "Willpower"
+    ],
+    "metatypes": [
+      {
+        "name": "Dwarf",
+        "attribute_modifiers": {
+          "Body": 1,
+          "Strength": 2,
+          "Willpower": 1
+        },
+        "innate_features": [
+          "Thermographic Vision"
+        ],
+        "source_resistance": {
+          "applies_to": [
+            "disease",
+            "toxin"
+          ],
+          "body_attribute_bonus_to_resistance_test": 2
+        }
+      },
+      {
+        "name": "Elf",
+        "attribute_modifiers": {
+          "Quickness": 1,
+          "Charisma": 2
+        },
+        "innate_features": [
+          "Low-Light Vision"
+        ]
+      },
+      {
+        "name": "Ork",
+        "attribute_modifiers": {
+          "Body": 3,
+          "Strength": 2,
+          "Charisma": -1,
+          "Intelligence": -1
+        },
+        "innate_features": [
+          "Low-Light Vision"
+        ]
+      },
+      {
+        "name": "Troll",
+        "attribute_modifiers": {
+          "Body": 5,
+          "Quickness": -1,
+          "Strength": 4,
+          "Intelligence": -2,
+          "Charisma": -2
+        },
+        "innate_features": [
+          "Thermographic Vision"
+        ],
+        "reach_modifier_for_armed_and_unarmed_combat": 1,
+        "dermal_armor_source_parenthetical_body_bonus": 1
+      }
+    ],
+    "undeclared_attributes_in_table": "No extra modifier is listed for any omitted Attribute on a metatype row. Human has no separate modifier row in this original table; do not synthesize an extra human benefit.",
+    "game_creation_sequence": "Apply these metatype modifiers to initially assigned Physical and Mental Attribute points; modifiers are separate from advancement Racial Modified Limits and Attribute Maxima.",
+    "canonical_dependencies_reused": [
+      "rules/character-creation/attribute-assignment.yml",
+      "rules/character-creation/racial-modifiers.yml",
+      "rules/advancement/sr3-core-racial-attribute-limits-numeric-p245.yml"
+    ],
+    "example_specifications_not_executed": [
+      {
+        "id": "ork_body",
+        "unmodified_body": 3,
+        "source_racial_modifier": 3,
+        "expected_starting_body": 6
+      },
+      {
+        "id": "troll_charisma",
+        "unmodified_charisma": 6,
+        "source_racial_modifier": -2,
+        "expected_starting_charisma": 4
+      },
+      {
+        "id": "dwarf_toxin",
+        "body_rating_before_resistance_bonus": 4,
+        "source_resistance_bonus": 2,
+        "expected_dice_for_body_resistance": 6
+      }
+    ],
+    "editorial_source_review": {
+      "image_evidence": "Original Shadowrun, Third Edition printed p56 / physical PDF57 inspected directly; includes the full four-row table and adjacent Character Creation explanation.",
+      "reviewed_text_fields": [
+        "edition_scope",
+        "data.publication.*",
+        "data.source_table_title",
+        "data.attribute_columns[*]",
+        "data.metatypes[*].name",
+        "data.metatypes[*].innate_features[*]",
+        "data.metatypes[*].source_resistance.*",
+        "data.undeclared_attributes_in_table",
+        "data.game_creation_sequence",
+        "data.canonical_dependencies_reused[*]",
+        "data.example_specifications_not_executed[*].id",
+        "data.editorial_source_review.*"
+      ],
+      "assertion_scope": "These are narrator-presented values and characteristics of imaginary metatypes in the original role-playing game; no claims about actual humans are made.",
+      "source_fidelity_limit": "No whole-book completeness or executable engine test follows solely from this source review and write-gate receipt."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation fictional Shadowrun Third Edition FASA7001 metatype modifiers and original special traits, printed p56/PDF57",
+  "summary": "Four original game metatype rows with exact signed starting Attribute modifiers, special vision, resistance, Reach and dermal-armor parentheticals; distinct from advanced racial attribute limits."
+}
