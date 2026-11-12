@@ -1,0 +1,115 @@
+{
+  "id": "rule.magic.sr3-core-health-survival-and-support-spells-p194",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "194",
+  "pdf_pages": "203",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition original FASA7001 fictional tabletop RPG Health Spells, printed p194/physical PDF203, not a later-edition conversion.",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Health spells: Hibernation, Oxygenate, Prophylaxis, Resist Pain, Stabilize, Healthy Glow, p194/PDF203",
+  "summary": "Original target numbers, durations, drain, success-to-dice and metabolic multipliers, Force and overflow thresholds, alcohol-resistance condition, pain limits, deadlines and appearance duration as printed.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "section": "Magic / Health spells, printed p194 / physical PDF203",
+    "spells": [
+      {
+        "name": "Healthy Glow",
+        "type": "Mana (M)",
+        "target_number": 4,
+        "duration": "Permanent (P)",
+        "drain": "Light (L)",
+        "effect": "Cosmetic rejuvenation; the nominally permanent result wears off after a number of hours equal to Force multiplied by 24.",
+        "wear_off_hours": "Force * 24"
+      },
+      {
+        "name": "Hibernate",
+        "type": "Mana (M)",
+        "target_number": 4,
+        "duration": "Sustained (S)",
+        "drain": "+1(M)",
+        "subject": "Voluntary or unconscious target, caster touch required.",
+        "relevant_successes": "Sorcery Test successes capped at spell Force.",
+        "metabolic_slowdown_factor": "2 * relevant successes",
+        "example": "4 relevant successes slow metabolism by a factor of 8; survival example one day of air supports eight days."
+      },
+      {
+        "name": "Oxygenate",
+        "type": "Physical (P)",
+        "target_number": 4,
+        "duration": "Sustained (S)",
+        "drain": "+2(L)",
+        "extra_body_dice": "1 Body die for every 2 Sorcery successes",
+        "resistance_scope": "Suffocation, strangulation, inhaled gas and other oxygen deprivation; can support breathing underwater."
+      },
+      {
+        "name": "Prophylaxis",
+        "type": "Mana (M)",
+        "target_number": 4,
+        "duration": "Sustained (S)",
+        "drain": "+1(L)",
+        "resistance_dice_formula": "1 additional die per 2 Sorcery successes, up to spell Force",
+        "resistance_scope": "Infection, drugs and toxins, beneficial or harmful.",
+        "beneficial_drug_reduction": "Reduce effect by 1 for every 2 spell successes.",
+        "alcohol_immunity": "At least 2 spell successes prevent effects of alcohol while spell persists."
+      },
+      {
+        "name": "Resist Pain",
+        "type": "Mana (M)",
+        "target_number": 4,
+        "duration": "Permanent (P)",
+        "drain": "-2(Damage)",
+        "effect": "Each Sorcery success suppresses the wound modifier from one box of Physical damage, capped by spell Force.",
+        "does_not": "Heal actual damage, affect Stun wound modifiers or counteract a Deadly injury.",
+        "use_limit": "Only once per set of injuries.",
+        "persistence": "Wears off if damage rises beyond the resisted Condition Level, or wounds heal."
+      },
+      {
+        "name": "Stabilize",
+        "type": "Mana (M)",
+        "target_number": "4 + minutes since subject suffered Deadly Physical damage",
+        "duration": "Permanent (P)",
+        "drain": "+1(M)",
+        "minimum_force": "Spell Force must equal or exceed overflow damage suffered.",
+        "effect": "On a successful spell, stabilizes the subject and prevents death from the injury.",
+        "body_test_for_death": "No Body Test required to determine whether the subject dies if effective Stabilize is applied."
+      }
+    ],
+    "qualifiers": [
+      "The original describes Healthy Glow as technically permanent but wearing off after Force times 24 hours.",
+      "The Force limit explicit for Hibernate successes and Prophylaxis dice must not automatically be imposed on Oxygenate without source evidence.",
+      "Resist Pain leaves underlying Physical damage and Condition Monitor unchanged; its output is modifier suppression only.",
+      "Stabilize applies following Deadly Physical damage, with each elapsed minute making casting more difficult; overflow Force requirement is independent."
+    ],
+    "prior_canon_reused": [
+      "rules/magic/spell-characteristics.yml",
+      "rules/condition/damage-levels.yml"
+    ],
+    "editorial_review": {
+      "original_source": "Original printed p194 / physical PDF203 page image independently viewed and matched to each spell entry; fictional-game source, not physical medicine advice",
+      "reviewed_text_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.section",
+        "data.spells[*].*",
+        "data.qualifiers[*]",
+        "data.prior_canon_reused[*]",
+        "data.editorial_review.*"
+      ],
+      "not_full_source_completeness": "Local editorial receipt and structural schema cannot establish whole-book fidelity or runnable engine tests."
+    }
+  }
+}
