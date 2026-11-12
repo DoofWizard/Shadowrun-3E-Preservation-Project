@@ -1,0 +1,80 @@
+id: rule.combat.sr3-core-monofilament-and-bullwhip-specific-p275-276
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 275-276
+pdf_pages: 284-285
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001); fictional
+  tabletop-RPG core Street Gear, not a real-world combat guide or later-edition rule.
+content_class:
+- rule_exact
+headline: 'Fictional Shadowrun Third Edition tabletop rule, FASA Corporation FASA7001,
+  original printed pp275-276/PDF284-285: monofilament whip mishap and bullwhip snare.'
+summary: The original fictional tabletop source separately specifies monofilament-whip
+  self-hit tests, damage resistance and armor/barrier treatment, plus ordinary bullwhip
+  armor reduction and a separate entangling Open Test.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_pages:
+    - 275
+    - 276
+    physical_pdf_pages:
+    - 284
+    - 285
+    medium: fictional tabletop role-playing game core rulebook
+  monofilament_whip_p275:
+    base_damage_code: 10S
+    source_mechanics: A monofilament whip has Reach 2 in the original Personal Weapons
+      table; these rules concern the fictional tabletop attack-resolution exception.
+    self_hit_risk_triggers:
+    - condition: The attack misses solely because the defender Combat Pool dice successes
+        exceed the attacker successes
+      restriction: Only possible under the optional Full Defense rule on printed p123.
+    - condition: Attacker rolls more 1s than successes on the attack roll
+    self_hit_resolution:
+      test_name: Whip Test
+      target_number: 6
+      dice: Source calls for a separate Whip Test and does not supply a distinct rating/dice-pool
+        formula in this paragraph.
+      no_successes_result: The fictional whip strikes its wielder.
+      if_successes: The paragraph does not state that the wielder is struck when the
+        Whip Test produces one or more successes.
+    self_hit_damage_resistance:
+      test: Damage Resistance Test
+      dice: Body dice plus Combat Pool dice
+      incoming_damage_code: 10S
+    armor_and_barriers:
+      impact_armor_protects: true
+      impact_armor_rating_formula: floor(Impact Armor Rating / 2)
+      impact_armor_rounding: Round down
+      barrier_rating_multiplier: 2
+      barrier_scope: Against a monofilament whip, Barrier Ratings are doubled.
+  ordinary_bullwhip_p276:
+    base_damage_code: (STR)L
+    armored_target_damage_reduction: Bullwhip damage is reduced by twice the target
+      Impact Armor Rating. The original text does not say to apply the same rule to
+      monofilament whips.
+    optional_snarling_attack:
+      choice: May attempt entanglement instead of damage
+      open_test_dice_formula: 'Net successes on the Attack Test: one die per net success'
+      open_test_value: Highest die result of the Open Test
+      escaping_strength_test: A Strength Success Test whose target number is the highest
+        Open Test result
+      escape_action_cost: Complex Action
+      if_zero_net_successes: The original text does not specify a usable Open Test
+        die or special success when none are granted.
+  cross_references:
+    optional_full_defense: Original Combat printed p123/PDF124
+    personal_weapon_market_table: equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml
+    general_melee_rule: Original Combat printed pp121-123; do not infer additional
+      damage arithmetic from Street Gear.
+  review_scope_note: Exact printed p275/PDF284 and p276/PDF285 original page images
+    independently inspected. Structural tests and this review do not establish completion
+    of adjacent chapters, engine readiness or the entire source.
+framing: reference_exact
