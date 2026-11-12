@@ -1,0 +1,180 @@
+{
+  "id": "rule.matrix.sr3-core-interrogation-analysis-operations-p214-215",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "214-215",
+  "pdf_pages": "223-224",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); exact original Third Edition Matrix procedure, not a later Matrix supplement conversion",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game rulebook",
+      "original_printed_pages": [
+        214,
+        215
+      ],
+      "physical_pdf_pages": [
+        223,
+        224
+      ]
+    },
+    "source_heading": "The Matrix / System Operations; Interrogations; Ongoing Operations; Monitored Operations; Operations Descriptions",
+    "editorial_scope": "Rules for fictional deckers interacting with fictional game host/grid systems; no operation here describes real-world computer intrusion or controls.",
+    "system_operations": {
+      "three_components": [
+        "System Test",
+        "appropriate utility",
+        "Free, Simple or Complex Action"
+      ],
+      "possible_subsystem_tests": [
+        "Access",
+        "Control",
+        "Index",
+        "Files",
+        "Slave"
+      ],
+      "original_success_contest_cross_reference": "The host/grid rolls its opposing Security Test against the decker's Detection Factor; core printed p209 explains this contest, not a new test from p214.",
+      "creation_discretion": "The gamemaster may invent additional fictional system operations beyond the guideline list."
+    },
+    "interrogations": {
+      "effect": "Searching the fictional host/grid for a particular file, data item or slave control is repeatable; track the decker's accumulated successes for a given interrogation.",
+      "default_successes_to_locate": 5,
+      "success_threshold_relation": "Locate the sought objective when cumulative successes reach 5 or more.",
+      "alternate_threshold": "The gamemaster may independently specify a different number of successes for a piece of information or set a particular threshold for revealing requested details.",
+      "question_target_number_modifiers": [
+        {
+          "condition": "vague or general questions",
+          "modifier": 1
+        },
+        {
+          "condition": "extremely vague or general questions",
+          "modifier": 2
+        },
+        {
+          "condition": "well-phrased, very relevant or insightful questions",
+          "modifier_options": [
+            -1,
+            -2
+          ],
+          "source_choice": "Source permits −1 or −2; no automatic choice."
+        }
+      ],
+      "information_absent": {
+        "trigger": "The requested information is not in the host/grid.",
+        "reveal_to_decker_after_at_least_successes": 3
+      },
+      "source_examples_of_operations": [
+        "Locate Access Node",
+        "Locate File",
+        "Locate Slave"
+      ],
+      "distributed_database_exception": "A located item may be only a pointer to data hosted elsewhere; the source refers to its distributed-database discussion, printed p205."
+    },
+    "ongoing_operations": {
+      "behavior": "Once the original System Test starts an ongoing operation, it runs without further instructions until completed.",
+      "named_operations": [
+        "Download Data",
+        "Swap Memory",
+        "Upload Data"
+      ],
+      "time_unit": "seconds for the individual operation",
+      "combat_turn_duration_seconds": 3,
+      "conversion": "Divide seconds by 3 and round up to obtain full Combat Turns for scheduling; an operation may complete partway through a Combat Turn.",
+      "source_time_examples": [
+        {
+          "operation_seconds": 6,
+          "full_turns": 2
+        },
+        {
+          "operation_seconds": 7,
+          "whole_turns": 2,
+          "remaining_seconds": 1,
+          "completion_may_occur_mid_combat_turn": true
+        }
+      ]
+    },
+    "monitored_operations": {
+      "initial_action": "Perform the operation's initial System Test.",
+      "maintenance_action": "Spend a Free Action each Initiative Pass to maintain an active monitored operation.",
+      "interruption": "If any such maintenance Free Action is missed, the operation aborts; to restart it, repeat the operation's System Test.",
+      "possible_in_world_consequence": "The fictional scenario describes a video feed resuming and revealing other characters when Edit Slave monitoring is allowed to abort; not an automatic extra game modifier.",
+      "named_operations": [
+        "Control Slave",
+        "Edit Slave",
+        "Make Comcall",
+        "Monitor Slave",
+        "Tap Comcall"
+      ]
+    },
+    "listed_operations": [
+      {
+        "name": "Analyze Host",
+        "test": "Control",
+        "utility": "Analyze",
+        "action": "Complex",
+        "on_success": "For each net success, the decker chooses one item of host information: its Security Rating (code and value) or a rating of one of its five subsystems.",
+        "all_information_successes_at_least": 7,
+        "prerequisite": "Decker must be on the host; the original explicitly excludes a remote sneak preview from the grid."
+      },
+      {
+        "name": "Analyze IC",
+        "test": "Control",
+        "utility": "Analyze",
+        "action": "Free",
+        "prerequisite": "Specific IC program already located, either using Locate IC or because it attacked.",
+        "on_success": "Reveal IC type, rating, and its options or defenses."
+      },
+      {
+        "name": "Analyze Icon",
+        "test": "Control",
+        "utility": "Analyze",
+        "action": "Free",
+        "on_success": "Reveal general category of analyzed icon (such as IC, persona or application).",
+        "target_number_reduction": "Decker may reduce Control Test target number by Sensor Rating and by running Analyze utility; original does not permit the target number below 2.",
+        "target_number_minimum": 2
+      },
+      {
+        "name": "Analyze Security",
+        "test": "Control",
+        "utility": "Analyze",
+        "action": "Simple",
+        "on_success": "Reveal host Security Rating, decker's current Security Tally including points added by this Analyze Security test, and host alert status."
+      },
+      {
+        "name": "Analyze Subsystem",
+        "test": "Targeted Subsystem",
+        "utility": "Analyze",
+        "action": "Simple",
+        "on_success": "Reveal unusual defenses or tricks on the targeted subsystem, including scrambled IC."
+      },
+      {
+        "name": "Control Slave",
+        "test": "Slave",
+        "utility": "Spoof",
+        "action": "Complex",
+        "on_success": "Permits control of a fictional remote device managed by the host's Slave subsystem.",
+        "special_process_condition": "For a manufacturing or scientific process, use the average of Computer Skill and an applicable B/R or Knowledge Skill as the System Test skill rating, instead of Computer Skill alone.",
+        "page_boundary": "The scientific and medical example begins here and continues beyond printed p215; no rounding or additional condition is invented here."
+      }
+    ],
+    "overlap_and_limits": {
+      "already_recorded_system_test": "rule.matrix.sr3-core-system-tests-action-security-tally-p209-210",
+      "separate_canonical_overview": "rule.matrix.system-test",
+      "source_review_range_only": "Original printed pp214–215 / physical PDF223–224; later individual system operations and further examples are outside this record.",
+      "executable_tests_run": false,
+      "whole_core_normalization_complete": false
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation FASA7001), original printed pp214–215/PDF223–224: interrogation thresholds, monitored/ongoing Matrix actions and Analyze operations",
+  "summary": "Historical game procedures from FASA Corporation's published fictional Shadowrun, Third Edition core rulebook (FASA7001); exact in-game interrogation modifiers, timing, security analysis, and action classes, without substituting later editions."
+}
