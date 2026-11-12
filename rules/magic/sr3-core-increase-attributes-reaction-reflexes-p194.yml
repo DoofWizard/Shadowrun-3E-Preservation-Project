@@ -1,0 +1,119 @@
+{
+  "id": "rule.magic.sr3-core-increase-attributes-reaction-reflexes-p194",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "edition_scope": "Original fictional tabletop role-playing game Shadowrun, Third Edition published by FASA Corporation; FASA7001 original Third Edition mechanics, printed pp193-194, physical PDF202-203.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "printed_pages": "194",
+  "pdf_pages": "203",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Health spells: original Increase Attributes, Reaction and Reflexes numbers, printed p194/PDF203",
+  "summary": "Original p194 attribute/initiative spell Force caps, successes, target types, Drain modifiers, cyberware limitations and incompatible initiative enhancements, preserving each distinct spell variant.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source_section": "Magic / Street Grimoire / Health Spells / Increase (Attribute), Increase Reaction, Increase Reflexes; original printed p194/PDF203",
+    "health_spell_touch_rule": "All core Health spells require caster touch on the subject; spells increasing Attributes/Reaction/Reflexes here require voluntary subjects.",
+    "increase_attribute": {
+      "original_name": "Increase (Attribute)",
+      "type": "Mana (M)",
+      "target": "Attribute",
+      "duration": "Sustained (S)",
+      "drain": "+1(M)",
+      "test_target_number": "Current Attribute rating to be increased",
+      "successes_per_rating_point": 2,
+      "maximum_added_rating": "Spell Force",
+      "exclusion": "Does not affect Attributes modified by cyberware",
+      "reaction_interaction": "Quickness and Intelligence changes increase Reaction normally",
+      "stacking": "Each Attribute can be affected by only one Increase Attribute spell at a time."
+    },
+    "increase_cybered_attribute": {
+      "original_name": "Increase (Cybered Attribute)",
+      "type": "Physical (P)",
+      "target": "Attribute",
+      "duration": "Sustained (S)",
+      "drain": "+2(M)",
+      "procedure": "Uses Increase (Attribute) numerical procedure but only increases Attributes modified by cyberware."
+    },
+    "increase_reaction": {
+      "type": "Mana (M)",
+      "target": "Reaction",
+      "duration": "Sustained (S)",
+      "drain": "+1(S)",
+      "successes_per_reaction_point": 2,
+      "maximum_added_reaction": "Spell Force",
+      "target_rule": "Voluntary subject; someone whose Reaction is already improved by cyberware cannot be affected."
+    },
+    "increase_reflexes_variants": [
+      {
+        "name": "Increase Reflexes +1",
+        "type": "Mana (M)",
+        "target": "Reaction",
+        "duration": "Sustained (S)",
+        "drain": "+1(S)",
+        "bonus_initiative_dice": 1
+      },
+      {
+        "name": "Increase Reflexes +2",
+        "type": "Mana (M)",
+        "target": "Reaction",
+        "duration": "Sustained (S)",
+        "drain": "+1(D)",
+        "bonus_initiative_dice": 2
+      },
+      {
+        "name": "Increase Reflexes +3",
+        "type": "Mana (M)",
+        "target": "Reaction",
+        "duration": "Sustained (S)",
+        "drain": "+3(D)",
+        "bonus_initiative_dice": 3
+      }
+    ],
+    "increase_reflexes_common": {
+      "trigger": "Successful casting on voluntary target",
+      "not_compatible_with": "Any cyberware-enhanced Reaction or Initiative dice, or any other initiative-dice increases including adept Improved Reflexes.",
+      "does_not_change": "Initiative improvements here concern extra initiative dice, not an unstated Reaction increase."
+    },
+    "qualifiers": [
+      "The original book labels Drain codes using its Magic drain notation; plus signs remain as printed.",
+      "The original p194 spell list supplies separate spell characteristics for each increase-reflexes tier rather than combining their Drain values.",
+      "The source does not state a different success-count threshold for Increase Reflexes +1/+2/+3 in this passage; a successful spell is the stated condition."
+    ],
+    "accepted_generic_dependencies": [
+      "rules/magic/spell-characteristics.yml",
+      "rules/attributes/reaction.yml"
+    ],
+    "source_review": {
+      "printed_page": 194,
+      "physical_pdf_page": 203,
+      "text_paths_reviewed": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.health_spell_touch_rule",
+        "data.increase_attribute.*",
+        "data.increase_cybered_attribute.*",
+        "data.increase_reaction.*",
+        "data.increase_reflexes_variants[*].*",
+        "data.increase_reflexes_common.*",
+        "data.qualifiers[*]",
+        "data.accepted_generic_dependencies[*]",
+        "data.source_review.*"
+      ],
+      "basis": "Independently viewed and reviewed original published printed p194 / PDF203 page image, checking every spell header and adjacent source prose. This review receipt is not proof of full source completion."
+    }
+  }
+}
