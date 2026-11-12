@@ -1,0 +1,123 @@
+{
+  "id": "rule.lifestyle.sr3-core-numeric-cost-payment-permanent-p240-241",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "240-241",
+  "pdf_pages": "249-250",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop RPG lifestyle expenditure, upkeep and permanent-residence mechanics, printed pp240–241/PDF249–250.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA7001 original Shadowrun Third Edition fictional lifestyle price and upkeep numbers, printed pp240–241/PDF249–250",
+  "summary": "Exact original in-game nuyen lifestyle costs, guest surcharge, hospitalization, missed-month 1D6 downgrade logic, permanent-lifestyle multiplier, and 2D6/1D6 resale price fractions.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "publication_type": "original fictional cyberpunk tabletop role-playing game core rulebook",
+      "original_printed_pages": [
+        240,
+        241
+      ],
+      "original_physical_pdf_pages": [
+        249,
+        250
+      ]
+    },
+    "source_section": "Running the Shadows: Lifestyles of the Rich and Shadowy; Keeping Up the Payments; Buying a Lifestyle",
+    "context": "These are character lifestyle expenditures and dice abstractions inside a fictional published tabletop role-playing game, not real financial advice.",
+    "monthly_lifestyle_costs_nuyen": [
+      {
+        "level": "Luxury",
+        "monthly_cost_nuyen": 100000
+      },
+      {
+        "level": "High",
+        "monthly_cost_nuyen": 10000
+      },
+      {
+        "level": "Middle",
+        "monthly_cost_nuyen": 5000
+      },
+      {
+        "level": "Low",
+        "monthly_cost_nuyen": 1000
+      },
+      {
+        "level": "Squatter",
+        "monthly_cost_nuyen": 100
+      },
+      {
+        "level": "Streets",
+        "monthly_cost_nuyen": 0,
+        "printed_description": "Free"
+      }
+    ],
+    "hospitalized": {
+      "qualification": "Special fictional lifestyle only when the character is sick or injured; cannot be permanently owned as a lifestyle.",
+      "basic_care_nuyen_per_day": 500,
+      "intensive_care_nuyen_per_day": 1000,
+      "patient_pay_until": "Pay until discharged or otherwise no longer hospitalized."
+    },
+    "guest_support": {
+      "host_minimum_lifestyle": "Middle",
+      "hosting_at_own_standard_per_guest_fraction_of_host_monthly_cost": 0.1,
+      "hosting_at_lower_standard_per_guest_fraction_of_guest_monthly_cost": 0.1,
+      "source_condition": "Applies as the book describes to each guest; not a flat 10% of all guests combined."
+    },
+    "monthly_missed_payments": {
+      "roll": "1D6 at end of each missed-payment month",
+      "compare": "If die result is greater than consecutive months of missed payments, the character's credit (priced as a fraction of lifestyle cost) covers the missed payment.",
+      "failed_condition": "If die result is less than or equal to consecutive missed months, downgrade current lifestyle one level.",
+      "consequence": "Character loses the former home and owes one month of the former lifestyle cost as debt."
+    },
+    "permanent_lifestyle": {
+      "purchase_cost_multiplier_of_monthly_cost": 100,
+      "example_luxury_nuyen": 10000000,
+      "real_estate_loss_possible": true,
+      "source_qualification": "A permanent lifestyle may be lost through events during the campaign; buying it does not immunize it from narrative changes."
+    },
+    "permanent_lifestyle_resale": {
+      "eligible_levels": "Middle or better",
+      "ordinary_sale_test": "2D6",
+      "ordinary_resale_fraction_per_die_result": 0.1,
+      "ordinary_sale_condition": "Character has a couple of months to broker a legitimate sale.",
+      "without_sin_test": "1D6",
+      "without_sin_resale_fraction_per_die_result": 0.1,
+      "without_sin_condition": "Book uses the fictional shadowperson without a SIN exception.",
+      "source_implication": "Multiply the dice total by 10 percent of original lifestyle purchase price for proceeds; do not treat as monthly rent."
+    },
+    "multiple_lifestyles": "The original book allows maintaining multiple independently purchased lifestyles and shared team safehouses; the numeric maintenance rules continue to apply to each purchased lifestyle.",
+    "reused_canon": [
+      "rules/lifestyle/maintenance.yml (general upkeep summary)",
+      "rules/lifestyle/multiple-and-team.yml (shared lifestyles and safehouses)"
+    ],
+    "source_review": {
+      "image_provenance": "Original FASA7001 scanned PDF physical pages 249–250 = printed pp240–241 visually inspected, including each listed cost and both resale dice distinctions.",
+      "reviewed_human_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.context",
+        "data.monthly_lifestyle_costs_nuyen[*].level",
+        "data.hospitalized.*",
+        "data.guest_support.*",
+        "data.monthly_missed_payments.*",
+        "data.permanent_lifestyle.*",
+        "data.permanent_lifestyle_resale.*",
+        "data.multiple_lifestyles",
+        "data.reused_canon[*]",
+        "data.source_review.*"
+      ],
+      "limits": "This receipt records original page review and field provenance, not exhaustive core-source completion or executable engine verification."
+    }
+  }
+}
