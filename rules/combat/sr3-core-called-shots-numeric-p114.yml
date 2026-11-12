@@ -1,0 +1,91 @@
+id: rule.combat.sr3-core-called-shots-numeric-p114
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '114'
+pdf_pages: '115'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition FASA7001, fictional
+  tabletop game core rules printed p114/physical PDF115; no later optional rules silently
+  converted to core.
+content_class:
+- rule_exact
+headline: 'FASA Corporation fictional tabletop RPG Shadowrun, Third Edition (FASA7001)
+  original p114/PDF115: called-shot limits and exact effects'
+summary: Original published SR3 core p114/PDF115 called-shot action, permitted firing
+  modes, +4 target number and choose-one consequences; separates later Shadowrun Companion
+  optional melee extension.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    fictional_tabletop_publication: true
+    printed_page: 114
+    physical_pdf_page: 115
+  source_heading: 'Combat: Called Shots'
+  declaration:
+    free_action: Call a Shot
+    timing: At time of attack; optional prior Aim is a separate Simple Action under
+      the cited p106 Aim rule.
+    accessible_location_decider: Gamemaster determines whether the declared vulnerable
+      point is accessible.
+  original_core_mode_restriction:
+    allowed_firing_modes:
+    - single-shot
+    - semi-automatic
+    - burst-fire
+    full_auto_allowed_in_original_core_called_shot: false
+    melee_allowed_in_original_core_called_shot: false
+  option_select_one:
+  - choice: increase_damage_level
+    target_number_modifier: 4
+    damage_level_steps: 1
+    damage_level_cap: D (Deadly)
+    condition: Player choice with gamemaster agreement.
+  - choice: specific_vehicle_or_larger_subtarget
+    target_number_modifier: 4
+    damage: Normal damage rules against selected part of vehicle or comparably sized
+      target
+    condition: Target such as tires or windows, if specific location is accessible.
+  lineage_and_preexisting_canon:
+    core_reference: rules/combat/called-shots.yml
+    optional_later_extension: rules/combat/combat-options.yml, optional Shadowrun
+      Companion advanced melee Called Shot, pp85-86; not present in the original FASA7001
+      p114 permission.
+    reconciliation_note: The generic canonical called-shots.yml has broad ranged-or-melee
+      wording but cites original SR3 p114 alone. This source-exact core restriction
+      must be differentiated from the separate optional Companion melee extension;
+      do not silently mark either superseded.
+  example_vectors_not_executed:
+  - firing_mode: burst-fire
+    attack_base_target_number: 5
+    called_shot_modifier: 4
+    expected_attack_target_number: 9
+    damage_level: M
+    increase_damage_option_expected_level: S
+  - firing_mode: full-auto
+    original_core_called_shot_permitted: false
+  editorial_review:
+    stage: original_page_review_before_baseline_freeze
+    evidence: Original FASA7001 physical PDF115, printed p114, upper and lower columns
+      of the Called Shots and Damage Codes page independently inspected; compared
+      to current generic called-shots and Shadowrun Companion optional combat-options
+      records.
+    text_field_paths_reviewed:
+    - headline
+    - summary
+    - edition_scope
+    - data.publication.*
+    - data.source_heading
+    - data.declaration.*
+    - data.original_core_mode_restriction.*
+    - data.option_select_one[*].*
+    - data.lineage_and_preexisting_canon.*
+    - data.example_vectors_not_executed[*].*
+    - data.editorial_review.*
+    limit: Reviewed field paths and schema preflight are not proof of exhaustive source
+      fidelity or engine implementation.
+framing: reference_exact
