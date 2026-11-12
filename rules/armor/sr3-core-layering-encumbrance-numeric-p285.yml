@@ -1,0 +1,84 @@
+{
+  "id": "rule.armor.sr3-core-layering-encumbrance-numeric-p285",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "285",
+  "pdf_pages": "294",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop combat and armor rules, not later-edition updates.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun Third Edition rules (FASA Corporation FASA7001), printed p285/PDF294: exact layering, armor encumbrance and worked numeric example",
+  "summary": "Original FASA7001 fictional tabletop source-reviewed Quickness-linked armor layering, movement and Combat Pool modifiers, including the printed Twitch example; no inferred repair of any source arithmetic ambiguity.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "printed_page": 285,
+      "physical_pdf_page": 294,
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game"
+    },
+    "combat_pool_penalty": {
+      "trigger": "Ballistic or Impact Armor points higher than character Quickness",
+      "rate": "Lose 1 Combat Pool die per 2 armor points above Quickness",
+      "source_example": {
+        "quickness": 3,
+        "armor_jacket_ballistic": 5,
+        "armor_jacket_impact": 3,
+        "combat_pool_dice_lost": 1
+      }
+    },
+    "layering": {
+      "effective_armor_per_type": "Take the highest-rated piece plus half (rounded down) of the next highest-rated piece for that protection type.",
+      "not_unlimited_stacking": "Source does not authorize adding every layer at full strength.",
+      "typical_layering": "Generally only a coat or jacket over clothing-style armor.",
+      "helmet_shield": "Helmet or shield armor bonus is added to other armor; these do not count as layering but do count for the Quickness penalty."
+    },
+    "quickness_penalty": {
+      "rating_basis": "Add together worn items Ballistic Armor Ratings; compute separately from the sum of worn Impact Armor Ratings.",
+      "test_modifier": "For each point by which the total exceeds Quickness, apply +1 target number to all Quickness-related tests and tests using Quickness-linked skills.",
+      "movement": "Reduce Quickness by the applicable modifier to determine movement rate (source references printed p108)."
+    },
+    "original_worked_example": {
+      "character": "Twitch, a fictional wired elf samurai",
+      "quickness": 6,
+      "armor_items": [
+        {
+          "item": "armor vest with plates",
+          "ballistic": 4,
+          "impact": 3
+        },
+        {
+          "item": "lined coat",
+          "ballistic": 4,
+          "impact": 2
+        },
+        {
+          "item": "small riot shield",
+          "ballistic": 1,
+          "impact": 2
+        }
+      ],
+      "effective_ballistic": 7,
+      "effective_impact": 6,
+      "sum_ballistic": 9,
+      "sum_impact": 7,
+      "quickness_test_target_modifier": 3,
+      "combat_pool_dice_lost_reported": 4,
+      "source_explicit_numbers": "The original example expressly gives 7/6 protection, 9/7 total, +3 to Quickness tests and 4 Combat Pool dice lost.",
+      "interpretation_limit": "Keep the worked example as printed rather than silently deriving a rounding convention or changing it to match a guessed formula."
+    },
+    "canonical_relationships": [
+      "rule.armor.combat-pool-penalty",
+      "rule.armor.layering",
+      "rule.armor.armor-ratings"
+    ],
+    "no_engine_claim": "Historical tabletop rule-source numeric supplement, not executed code or general proof of core completeness."
+  }
+}
