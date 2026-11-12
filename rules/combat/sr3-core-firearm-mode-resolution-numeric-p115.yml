@@ -1,0 +1,127 @@
+id: rule.combat.sr3-core-firearm-mode-resolution-numeric-p115
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '115'
+pdf_pages: '116'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original published
+  Third Edition fictional tabletop role-playing game; no later-edition conversion
+  or real-world firearms instruction.
+content_class:
+- rule_exact
+headline: 'FASA Corporation fictional Shadowrun, Third Edition tabletop RPG, FASA7001,
+  original printed p115/PDF116: semi-automatic, burst and full-auto resolution numbers'
+summary: 'Original source-reviewed Shadowrun Third Edition (FASA Corporation, FASA7001)
+  Combat chapter p115/PDF116: action costs, per-shot rolls, pool allocation, recoil,
+  minimum/maximum rounds, Power and Damage Level staging with short-ammunition exceptions.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_medium: published fictional tabletop role-playing game
+    printed_pages:
+    - 115
+    physical_pdf_pages:
+    - 116
+  source_heading: Combat — Semi-Automatic Mode, Burst-Fire Mode, Short Bursts and
+    Full-Auto Mode
+  semi_automatic:
+    maximum_shots_per_combat_phase: 2
+    action_per_shot: Simple Action
+    first_shot_recoil_modifier: 0
+    second_shot_recoil_modifier_if_same_phase: 1
+    compensation: Recoil compensation can cancel the +1 modifier on the second shot.
+    separate_success_test_for_each_shot: true
+    combat_pool_dice: Allocate Combat Pool dice separately for each shot, if used.
+  burst_fire:
+    rounds_in_full_burst: 3
+    action_per_burst: Simple Action
+    maximum_bursts_per_combat_phase: 2
+    recoil_modifier_per_full_burst: 3
+    recoil_compensation: Can neutralize the recoil modifier.
+    separate_success_test_per_burst: true
+    combat_pool_dice: Allocate separately to each burst, if used.
+    power_rating_increase_per_full_burst: 3
+    damage_level_step_increase_per_full_burst: 1
+    printed_example:
+      base_damage_code: 5M
+      three_round_burst_damage_code: 8S
+  insufficient_ammunition:
+    two_round_short_burst:
+      condition: Burst ends one round short because clip has insufficient ammunition.
+      power_increase: 2
+      damage_level_step_increase: 0
+      recoil_modifier: 2
+    one_round_remaining:
+      condition: Burst has only one round due to insufficient ammunition.
+      resolution: Treat as a single-shot attack.
+  full_auto:
+    action: Complex Action
+    declare_rounds_at_specific_target: true
+    minimum_rounds_per_burst: 3
+    maximum_rounds_one_combat_phase: 10
+    recoil_modifier_per_round: 1
+    recoil_compensation: Applied to the cumulative recoil modifier under original
+      firearm rules.
+    success_test: A separate Success Test is made for each full-auto burst; Combat
+      Pool may augment separately.
+    power_increase_per_round: 1
+    damage_level_step_increase_every_full_rounds: 3
+    damage_level_step_maximum: D (Deadly)
+    insufficient_ammunition_exception: If ammunition is insufficient for the declared
+      burst, use the printed Short Bursts rule on this page.
+  relationship_to_accepted_canon:
+    reuses:
+    - rule.combat.burst-fire-effects
+    - rule.combat.full-auto-effects
+    - rule.firearms.firing-modes
+    - rule.combat.sr3-core-full-auto-target-sweep-numeric-p116
+    distinct_numeric_closure: Existing generic summaries omit the full p115 sequencing,
+      per-shot/per-burst Combat Pool allocation, +1-per-round full-auto Power rule,
+      3- and 10-round bounds, and two-round/one-round ammunition exceptions. This
+      is a new exact original-page supplement, not an update to those records.
+    out_of_scope: Multiple-target sweep, smartgun exception and target-number accumulation
+      belong to the separately accepted p116 record.
+  example_vectors_not_run:
+  - scenario: Semi-automatic two shots in one phase without recoil compensation
+    expected_attack_recoil_modifiers:
+    - 0
+    - 1
+    success_tests: 2
+  - scenario: Three-round burst using 5M baseline
+    expected_damage_code: 8S
+    recoil_modifier_before_compensation: 3
+  - scenario: Two-round short burst using 5M baseline
+    expected_damage_code: 7M
+    recoil_modifier_before_compensation: 2
+  - scenario: Full auto four rounds using 5M baseline
+    expected_damage_code: 9S
+    recoil_modifier_before_compensation: 4
+  - scenario: Full auto ten rounds using 5M baseline
+    expected_damage_code: 15D
+    recoil_modifier_before_compensation: 10
+  editorial_review:
+    review_stage: original_page_before_baseline_freeze
+    evidence: Independently inspected original FASA7001 physical PDF page 116 showing
+      printed page number 115 and all four cited Combat headings, compared against
+      existing three generic canonical records and accepted full-auto p116 supplement.
+    reviewed_text_field_paths:
+    - headline
+    - summary
+    - edition_scope
+    - data.publication.*
+    - data.source_heading
+    - data.semi_automatic.*
+    - data.burst_fire.*
+    - data.insufficient_ammunition.*
+    - data.full_auto.*
+    - data.relationship_to_accepted_canon.*
+    - data.example_vectors_not_run[*].scenario
+    - data.editorial_review.*
+    fidelity_limit: Path-based local editorial receipt does not prove completeness
+      or engine execution. No real-world firearm techniques are asserted.
+framing: reference_exact
