@@ -1,0 +1,58 @@
+id: rule.magic.sr3-core-control-manipulation-numeric-p196
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '196'
+pdf_pages: '205'
+edition_scope: 'FASA Corporation, Shadowrun, Third Edition, FASA7001, original third-edition fictional tabletop RPG, printed p196 / physical PDF205; not a later edition rule.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition (FASA7001), fictional tabletop RPG printed p196/PDF205: control-manipulation numeric spell rules'
+summary: 'Four original in-game control-manipulation spells with Type, Target, Duration, Drain, resistance, Threshold, opposed-command exceptions and agency distinguished.'
+data:
+  publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog_id: FASA7001, source_id: source.sr3-core, pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914}
+  original_source: {printed_page: 196, physical_pdf_page: 205, section: 'Magic / Manipulation Spells / Control Manipulations'}
+  general_manipulation_rule:
+    requires_line_of_sight: true
+    threshold_definition: 'Many manipulation spells need a minimum number of Sorcery successes, called Threshold; after Resistance Test, spell fails when caster successes do not reach Threshold.'
+  control_manipulation_shared:
+    affects: 'Actions or thoughts of living fictional game targets; not independent voluntary consent.'
+    resistance_attribute: Willpower
+    threshold_calculation: 'Half of target Willpower, rounded down.'
+    resistance_test: 'Target uses Willpower to resist; successful resistance may break ongoing effect under per-spell restrictions.'
+  spells:
+    - name: Control Actions
+      type: M
+      target: W
+      duration: S
+      drain: '+1(M)'
+      effect: 'Caster controls target bodily actions, not consciousness; subject retains normal abilities but their test target numbers increase by +4 due to resistance.'
+    - name: Control Emotion
+      type: M
+      target: W
+      duration: S
+      drain: '+1(M)'
+      effect: 'Caster creates an overwhelming felt emotion; subject believes the feeling. If their action conflicts with the induced emotion, a +2 distraction modifier applies; acting against the emotion requires a Willpower Test versus Force, and the +2 modifier persists even after that test succeeds.'
+      not_full_thought_control: true
+    - name: Control Thoughts
+      type: M
+      target: W
+      duration: S
+      drain: '+1(S)'
+      effect: 'Caster directs the target thoughts and commands using a Simple Action. A deeply opposed instruction can be resisted with Willpower versus Force for each command. If caster is absent, one success frees target from spell; if caster present, opposing Willpower Tests are made and one net success frees the target.'
+      command_action: Simple Action
+      absent_caster_escape_successes: 1
+      present_caster_escape_net_successes: 1
+    - name: Influence
+      type: M
+      target: W
+      duration: P
+      drain: S
+      effect: 'A persistent implanted suggestion is experienced by the target as their own idea and later fades after being acted upon. A credible objection can prompt the target to use Willpower resistance as described under Control Thoughts. The caster may withdraw the suggestion at any time.'
+  links:
+    general_spell_targeting: rules/magic/spell-targeting.yml
+    general_spell_resistance: rules/magic/spell-resistance.yml
+  source_specific_limits:
+    - 'Ordinary manipulation Threshold and line-of-sight are not a replacement for spell-level targets or durations.'
+    - 'The text is a factual account of fictional tabletop mechanics; compulsion and externally controlled acts are not voluntary behavior.'
+  runtime_status: 'Canonical numeric original-page extraction only; not a runnable implementation or completion gate.'
