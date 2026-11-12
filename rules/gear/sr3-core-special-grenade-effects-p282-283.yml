@@ -1,0 +1,126 @@
+{
+  "id": "rule.gear.sr3-core-special-grenade-effects-p282-283",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "282-283",
+  "pdf_pages": "291-292",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop role-playing game, original edition, no later-source conversion.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional FASA Corporation Shadowrun, Third Edition (FASA7001) tabletop game, printed pp282–283/PDF291–292: exact grenade effects and conditionals",
+  "summary": "Original source-reviewed FASA7001 Third Edition game-only rules for gas and smoke duration/area, flash effects, mini-grenade exceptions and abstract explosives Damage Codes on printed pp282–283/PDF291–292. Distinct from the accepted p118–119 grenade attack procedure and p283 purchase table.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "original_printed_pages": [
+        282,
+        283
+      ],
+      "original_pdf_pages": [
+        291,
+        292
+      ],
+      "media": "published fictional tabletop roleplaying game rulebook"
+    },
+    "source_context": "The source describes imagined equipment and adjudication inside a tabletop role-playing game, not real-world instructions.",
+    "grenade_categories_p282": {
+      "hand_grenade_fuse_interval_seconds": [
+        2,
+        120
+      ],
+      "hand_grenade_detonation": "The fictional timed grenade has its own setting for the game; blast and resolving a grenade attack defer to original Combat printed p118.",
+      "offensive_vs_defensive": "Offensive effects cover a wider radius than defensive; source p283 shows offensive blast −1 Power per meter, defensive −1 Power per half meter.",
+      "concussion": "The game represents concussion grenades as Stun damage, with blast rules in Combat.",
+      "anti_personnel": "The published AP grenade variant follows the original flechette-ammunition mechanics from Combat printed p116.",
+      "mini_grenade": "The in-game launcher version uses the same effect categories as the corresponding larger grenade; safety and pricing exceptions appear on printed pp282–283."
+    },
+    "special_effects_p283": {
+      "gas": {
+        "source_example": "Neuro-Stun VII gas",
+        "effect_radius_meters": 10,
+        "effect_duration_combat_turns": 2,
+        "wind_condition": "In windy game scenes duration may be shorter, at gamemaster discretion.",
+        "game_mechanics_reference": "Use the published fictional toxin effects; no new damage test invented from the market row."
+      },
+      "smoke": {
+        "area_diameter_meters": 20,
+        "effect_duration_combat_turns": 2,
+        "wind_condition": "May be shorter in windy areas at gamemaster discretion.",
+        "effect": "Obscures normal visibility, invoking the relevant visibility modifiers on game tests."
+      },
+      "infrared_smoke": {
+        "effect": "Specifically obstructs thermographic vision in addition to the smoke cover described by the publication.",
+        "area_diameter_meters": 20
+      },
+      "flash_pak": {
+        "target_facing_device_modifier": 4,
+        "modifier_with_flare_compensation": 2,
+        "poor_or_no_light_modifiers": "Source states poor/no-light modifiers are negated by the strobing device.",
+        "strobing_target_number_modifier": 2,
+        "distinction": "Apply game penalty and light-modifier changes according to their separately stated conditions rather than silently replacing all lighting penalties with zero."
+      },
+      "mini_grenade": {
+        "launcher_safety_distance_meters": 5,
+        "manual_game_safety_exception": {
+          "test": "Electronics B/R",
+          "target_number": 6,
+          "base_time_minutes": 5,
+          "context": "Exceptional in-game safety-feature override, not instructions for actual equipment."
+        },
+        "availability_adjustment": "+2 compared with type",
+        "cost_multiplier": 2,
+        "street_index_adjustment": 1
+      },
+      "fictional_explosive_game_damage": {
+        "per_kilo": "Damage Code equals (Rating)D per in-game kilogram, as stated by the original source.",
+        "multiple_kilo_formula": "(Rating × √kilograms)D",
+        "blast_power_reduction": "Source's base Rating per meter, not the multiplied damage Power.",
+        "source_note": "Mathematical tabletop Damage Code; does not describe manufacture or real-world explosive performance."
+      }
+    },
+    "relationships": {
+      "already_canonical": [
+        "rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml",
+        "equipment/sr3-core-explosives-original-market-p283.yml"
+      ],
+      "scope": "Supplement specific Street Gear effects; no duplication of Combat attack/defense dice, scatter table, or market rows."
+    },
+    "editorial_receipt": {
+      "source_images": [
+        {
+          "printed": 282,
+          "pdf": 291
+        },
+        {
+          "printed": 283,
+          "pdf": 292
+        }
+      ],
+      "reviewed_human_text_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.source_context",
+        "data.publication.*",
+        "data.grenade_categories_p282.*",
+        "data.special_effects_p283.gas.*",
+        "data.special_effects_p283.smoke.*",
+        "data.special_effects_p283.infrared_smoke.*",
+        "data.special_effects_p283.flash_pak.*",
+        "data.special_effects_p283.mini_grenade.*",
+        "data.special_effects_p283.fictional_explosive_game_damage.*",
+        "data.relationships.*",
+        "data.editorial_receipt.*"
+      ],
+      "limitation": "Reviewed pages and local structural gates do not themselves certify full source coverage or game engine validation."
+    }
+  }
+}
