@@ -1,0 +1,75 @@
+{
+  "id": "rule.magic.sr3-core-spell-resistance-effect-exact-p183",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "183",
+  "pdf_pages": "192",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition fictional tabletop role-playing game, FASA7001, printed p183/physical PDF p192; no later editions or supplements",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA7001 fictional SR3 Spell Resistance, Force TN, resisted-success effects and elemental exceptions, printed p183/PDF192",
+  "summary": "Source-verified original Shadowrun Third Edition FASA7001 game-only spell resistance target numbers, caster-vs-resister successes, damage stages and distinct elemental manipulation dodge/Damage Resistance rules.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fictional_ttrpg": true,
+      "printed_pages": [
+        183
+      ],
+      "physical_pdf_pages": [
+        192
+      ]
+    },
+    "topic": "Core Sorcery spell resistance and success-resolution of fictional spell effects",
+    "living_target_resistance": {
+      "unless_willing": "Living targets may always make a Spell Resistance Test against a spell unless the target is willing",
+      "dice_attribute": "Attribute targeted by spell, usually Body, Intelligence or Willpower",
+      "target_number": "Force of spell",
+      "target_number_modifiers": "None except where specifically noted by spell",
+      "nonliving_nonmagical_resistance_allowed": false
+    },
+    "standard_spell_resolution": {
+      "if_no_resistance": "Apply all casting Sorcery Test successes; one success always ensures some spell effect against a nonresisting target, if validly cast",
+      "opposition": "Compare caster Sorcery successes against target Spell Resistance successes",
+      "spell_fails_if": "Defender successes greater than or equal to caster successes",
+      "net_successes": "Caster Sorcery successes minus target Spell Resistance successes, if positive",
+      "damage_staging": "For damage spells, stage Damage Level up one step for each two net Sorcery successes"
+    },
+    "elemental_manipulation_exception": {
+      "casting_attack": "Uses normal ranged attack resolution, as described by printed p109",
+      "eligible_defense": "Attack can be dodged",
+      "test_if_hit": "Target makes Damage Resistance Test under ranged combat rather than ordinary Spell Resistance Test",
+      "combat_pool": "Combat Pool dice may be used to resist elemental spell",
+      "staging_from_caster": "Stage Damage Level up once per two Ranged Combat Test successes",
+      "defender_staging": "Stage down using Damage Resistance Test",
+      "secondary_effect_exception": "Even when Damage Level is staged down to nothing, secondary elemental effect may still cause harm; resolve using spell description and p196 effects."
+    },
+    "example_vectors_specification_only_not_engine_tested": [
+      {
+        "caster_successes": 4,
+        "target_resistance_successes": 2,
+        "expected_net_successes": 2,
+        "expected_standard_damage_staging_steps": 1
+      },
+      {
+        "caster_successes": 3,
+        "target_resistance_successes": 3,
+        "spell_affects_target": false
+      }
+    ],
+    "canonical_relationships": [
+      "rule.magic.spell-resistance",
+      "rule.magic.spell-defense",
+      "procedure.magic.spellcasting"
+    ],
+    "source_scope_limit": "Original magic chapter printed p183; apply spell-specific resistibility, effect, Damage Code and secondary effects before using this general procedure."
+  },
+  "framing": "reference_exact"
+}
