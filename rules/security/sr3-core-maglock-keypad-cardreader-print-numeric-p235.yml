@@ -1,0 +1,126 @@
+{
+  "id": "rule.security.sr3-core-maglock-keypad-cardreader-print-numeric-p235",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "235",
+  "pdf_pages": "244",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition FASA7001: numeric dice/test abstractions for fictional security systems, original printed p235/PDF244; not real access-control or biometric instructions.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "headline": "Original FASA Corporation Shadowrun Third Edition FASA7001 fictional keypad, cardreader and print-scanner game tests, p235/PDF244",
+  "summary": "Original p235/PDF244 game-only keypad Rating 0–10, electronic test TNs/times, anti-tamper Ratings, sequencer opposed tests, cardreader multipliers, and imaginary fingerprint/retina-system rating resolution.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "publication_type": "original fictional cyberpunk tabletop RPG core rulebook",
+      "printed_page": 235,
+      "physical_pdf_page": 244
+    },
+    "source_section": "Running the Shadows: TECHNICAL SECURITY / MAGLOCKS / Keypads / Cardreaders / Print Scanners",
+    "scope": "This archive represents numerical tabletop mechanics, game ratings, dice and fictional device comparisons. It does not instruct anyone to bypass functioning real-world security or manipulate real biometric systems.",
+    "keypads": {
+      "rating_min": 0,
+      "rating_max": 10,
+      "source_label": "Original ratings 0 (store-available) to 10 (custom-designed).",
+      "remove_case": {
+        "test": "Electronics Build/Repair Test",
+        "target_number": "Barrier Rating of fictional keypad casing; usually equal to keypad system Rating, but source permits different ratings.",
+        "minimum_successes": 1,
+        "base_time_seconds": 60,
+        "extra_successes": "Reduce base time under original Taking Time rules, printed p92.",
+        "failure": "No casing access on a failed test."
+      },
+      "anti_tamper": {
+        "rating_min": 1,
+        "rating_max": 4,
+        "modifier_to_casing_electronics_br_target_number": "Add anti-tamper system Rating",
+        "minimum_successes": 1,
+        "failure": "Triggers a fictional security alarm; gamemaster may keep target number secret."
+      },
+      "electronic_test": {
+        "test": "Electronics Test",
+        "target_number": "Keypad security System Rating",
+        "base_time_seconds": 60,
+        "minimum_successes": 1,
+        "extra_successes": "Reduce time under original Taking Time rules, p92.",
+        "failure": "Fictional computer notices attempted access and triggers a Passive Alert."
+      }
+    },
+    "sequencers": {
+      "test": "Opposed Test of sequencer Rating versus maglock Rating",
+      "base_time_seconds": 10,
+      "success": "Sequencer rating side wins: fictional lock bypassed.",
+      "extra_successes": "Reduce original base time.",
+      "failure": "If maglock wins, a Passive Alert is triggered.",
+      "tie": "No explicit tie outcome added on this page; use applicable opposed-test general rules."
+    },
+    "cardreaders": {
+      "rating_min": 1,
+      "rating_max": 10,
+      "case_test": "Electronics Test; target number equals twice Cardreader Rating",
+      "case_time_seconds": 60,
+      "subsequent_electronics_test_target_number_modifier": 2,
+      "circuit_test": "Uses the same abstract game system test as keypad with +2 TN",
+      "passkey_test": "Maglock passkey uses same Opposed Test as a sequencer; the source specifies it does not require the same case-opening action."
+    },
+    "print_scanners": {
+      "finger_or_palm_scanner_rating_min": 1,
+      "finger_or_palm_scanner_rating_max": 10,
+      "retina_scanner_rating_min": 3,
+      "retina_scanner_rating_max": 9,
+      "fictional_imitation_prop_rating_min": 1,
+      "fictional_imitation_prop_rating_max": 8,
+      "fictional_game_prop_cost_nuyen_per_rating": 200,
+      "source_game_creation_check": {
+        "test": "Intelligence Test",
+        "target_number": 3,
+        "minimum_successes": 1,
+        "source_context": "Game abstract for creation of a fictional scanned-identity prop, not a technical process."
+      },
+      "unattached_source_print_rating": 8,
+      "unattached_source_print_rating_loss_per_hour": 1,
+      "game_rating_loss_with_preservation_per_hours": 3,
+      "original_ruling_for_living_source": "The source states that a legitimate print attached to a living person succeeds normally; consent is not assumed for the fictional scenario.",
+      "scanner_check": {
+        "type": "Opposed Test",
+        "sides": [
+          "print-scanner Rating",
+          "game prop Rating"
+        ],
+        "if_scanner_records_at_least_one_success": "Original p235: detects the fake and triggers a passive alert; do not replace the stated 'at least 1 success' condition with net successes."
+      },
+      "source_note": "All detection chances are tabletop Ratings, not empirically validated hardware security properties."
+    },
+    "cross_references": {
+      "reused_general_summary": "procedures/security/maglock-bypass.yml",
+      "subsequent_accepted_voice_and_security": "rules/security/sr3-core-search-voice-sentry-numeric-p236.yml",
+      "later_supersession": "Advanced security sourcebooks have their own distinct editions and are not silently substituted for FASA7001."
+    },
+    "source_review": {
+      "original_page": "Visually inspected original FASA7001 printed p235, physical PDF244, both columns including keypad, case/time tests, cardreader, sequencer and print-scanner paragraphs.",
+      "text_fields_reviewed": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.scope",
+        "data.keypads.*",
+        "data.sequencers.*",
+        "data.cardreaders.*",
+        "data.print_scanners.*",
+        "data.cross_references.*",
+        "data.source_review.*"
+      ],
+      "limits": "Game mechanics, test names and page provenance independently checked; editorial/staging receipts do not prove entire rulebook correctness or engine testing."
+    }
+  }
+}
