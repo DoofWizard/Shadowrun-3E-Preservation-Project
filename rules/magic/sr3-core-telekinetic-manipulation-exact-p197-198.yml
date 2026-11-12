@@ -1,0 +1,68 @@
+id: rule.magic.sr3-core-telekinetic-manipulation-exact-p197-198
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '197-198'
+pdf_pages: '206-207'
+edition_scope: 'Original Shadowrun, Third Edition, FASA Corporation (FASA7001), fictional tabletop rules, printed pp197-198 / physical PDF206-207; historical Third Edition not later game conversions.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop RPG printed pp197-198/PDF206-207: telekinetic manipulation spells and exact modifiers'
+summary: 'Source-reviewed Fling, Levitate, Magic Fingers, Clout and Poltergeist stat lines, original force/mass constraints, movement, resistance and Quickness-based damage rules.'
+data:
+  publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', catalog: FASA7001, edition: 'Third Edition', source_id: source.sr3-core, original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914}
+  original_pages: [{printed: 197, pdf: 206}, {printed: 198, pdf: 207}]
+  general: 'Telekinetic manipulations in the source exert fictional magical force on physical objects.'
+  spells:
+    - name: Clout
+      source_printed: 197
+      type: P
+      target: 4
+      duration: I
+      drain: '(Damage Level)'
+      damage: 'Stun damage; Sorcery Test replaces the normal Combat Skill Test for a ranged attack, Impact Armor protects against damage.'
+    - name: Fling
+      source_printed: 197
+      type: P
+      target: 'See text'
+      duration: I
+      drain: '+1(M)'
+      max_object_mass: 'No more than caster Magic Attribute in kilograms.'
+      magic_strength: 'Strength for thrown object equals spell Force.'
+      touch_requirement: 'Caster must touch object before it is flung.'
+      hit_resolution: 'Use normal Ranged Combat Test with Sorcery replacing Combat Skill; normal thrown-weapon range calculations based on spell effective Strength.'
+    - name: Levitate
+      source_printed: 197
+      type: P
+      target: 4
+      duration: S
+      drain: '+2(M)'
+      movement_m_per_turn: 'Caster Magic Attribute multiplied by Sorcery successes, capped at spell Force successes.'
+      mass_target_modifier: '+1 Sorcery Test target number per full 100 kilograms of object mass.'
+      object_as_weapon: 'Movement Rate divided by 10 gives Power for M Stun damage to an object hit; no rounding convention is stated here. Gamemaster may permit physical damage for dangerous/sharp objects.'
+      held_object_resistance: 'A living holder may make Strength Test to resist lifting an object they hold; caster needs at least 1 net success to levitate it.'
+      living_target_resistance: 'A living being targeted against will may resist with Strength or Willpower, whichever higher; caster may also levitate self.'
+    - name: Magic Fingers
+      source_printed: 197
+      type: P
+      target: 6
+      duration: S
+      drain: '+2(M)'
+      effective_attributes: 'Sorcery successes become remote magical hands Strength and Quickness, each capped at spell Force.'
+      fine_control_modifier: '+2 to target numbers for any skill used through magical fingers, due to reduced fine control.'
+      interactions: 'Source permits handling objects and uses ordinary skills through the remote effect; optional Quickness Test for tiny objects at gamemaster discretion.'
+    - name: Poltergeist
+      source_printed: [197, 198]
+      type: P
+      target: 4
+      duration: S
+      drain: '+1(M)'
+      area_mass_limit: 'Small objects up to 1 kilogram in mass within the affected area; source does not specify a combined-mass cap.'
+      visibility_modifier: '+2 Visibility Modifier throughout effect area.'
+      damage: 'Base Light Stun from small flying objects. Each combat turn, target rolls Quickness, not Body, for Damage Resistance Test with TN equal to spell Force; Impact Armor protects.'
+      hazardous_debris_exception: 'Physical damage from unusually dangerous debris is optional gamemaster judgment, not automatic.'
+  editorial_distinctions:
+    - 'Stat notation, mass restrictions, timing and resistance conditions are original-game facts; this record does not assert real-world supernatural effects.'
+    - 'The caster controlling a levitation effect is distinct from a living subject resisting being moved against their will.'
+    - 'Clout and Poltergeist cause fictional Stun damage; possible GM-assigned physical damage is limited to the explicit exceptions.'
+  code_status: 'Verified original-page transcription only, not an executable engine or complete rulebook certification.'
