@@ -1,0 +1,91 @@
+{
+  "id": "rule.firearms.sr3-core-special-ammunition-numeric-p116-117",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "116-117",
+  "pdf_pages": "117-118",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third Edition fictional tabletop game rules, printed p116-117 / physical PDF p117-118; no later-edition conversion",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Original FASA Corporation Shadowrun, Third Edition FASA7001 printed 116-117/physical PDF 117-118: special-ammunition numerical effects and exceptions",
+  "summary": "Original fiction-based tabletop RPG mechanics from FASA Corporation's Shadowrun, Third Edition (catalog FASA7001), printed 116-117/physical PDF 117-118; numeric conditions and exceptions are game-only.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fiction_context": "Published fictional cyberpunk tabletop role-playing game rules; numeric modifiers are game abstractions, not real-world guidance.",
+      "printed_pages": [
+        116,
+        117
+      ],
+      "physical_pdf_pages": [
+        117,
+        118
+      ]
+    },
+    "scope": "Original core Combat chapter rules for fictional firearm ammunition; the accepted Street Gear market tables on printed pp279-281 separately supply availability and prices. Do not substitute later-edition or supplemental values.",
+    "clip_type_restriction": {
+      "default": "A firearm clip carries only one type of ammunition.",
+      "tracer_exception": "Tracers are the explicitly allowed mixed-clip exception: every third round; only usable in full-auto weapons.",
+      "clip_swap": "Clips may be changed during Combat; cross-reference core Combat p106 for applicable action timing."
+    },
+    "apds": {
+      "target": "Defender Ballistic Armor Rating or an object's Barrier Rating",
+      "effect": "Halve the applicable rating, rounding down.",
+      "vehicle_or_drone_exception": "Against vehicles and drones APDS is treated as normal ammunition; it is not an anti-vehicle rule."
+    },
+    "explosive": {
+      "weapon_attack_power_modifier": 1,
+      "barrier_attack_target_number": "Twice the normal Barrier Rating",
+      "barrier_damage_resistance_rating": "Barrier takes successful attack damage as if its Barrier Rating were halved.",
+      "misfire_trigger": "Every die rolled for the attack test shows 1",
+      "misfire_attack_misses": true,
+      "misfire_self_damage": "The attacking game character suffers a separate attack using the weapon's normal Damage Code, without explosive ammunition's +1 Power.",
+      "misfire_successes_dice": "1D6 yields the number of successes for the separate self-damage attack.",
+      "misfire_defense": "Damage Resistance Test permitted, but no Combat Pool dice may be used.",
+      "ex_explosive": {
+        "weapon_attack_power_modifier": 2,
+        "other_conditions": "Uses the other standard explosive-round rules."
+      }
+    },
+    "flechette": {
+      "unarmored_damage_level": "Increase base Damage Level by one step.",
+      "unarmored_example": {
+        "normal_damage_code": "9M",
+        "flechette_damage_code": "9S"
+      },
+      "armored_defender": "Armor rating for the attack is the greater of twice Impact Armor or unmodified Ballistic Armor.",
+      "barrier": "Double Barrier Rating against flechette.",
+      "vehicle": "Double vehicle armor rating against flechette.",
+      "dermal_armor": "Dermal armor negates the one-level damage increase.",
+      "precalculated_weapon_damage_code": "A weapon with flechette already incorporated in the table Damage Code has an (f) suffix; do not add the damage increase twice."
+    },
+    "gel": {
+      "attack_power_modifier": -2,
+      "damage_level": "Retains weapon's normal Damage Level.",
+      "damage_type": "Stun rather than Physical.",
+      "knockdown_body_test_target_number": "Power of the gel-round attack."
+    },
+    "tracer": {
+      "weapon_mode": "Full-auto only",
+      "clip_loading": "Every third round",
+      "non_smartgun_only": true,
+      "range_condition": "Beyond Short range",
+      "cumulative_attack_target_number_modifier": "-1 for each three rounds fired, cumulative (-1 after 3, -2 after 6, -3 after 9, and so forth).",
+      "damage": "For a full-auto burst, do not add the Power increase that would otherwise derive from tracer rounds, but do apply the full-auto Damage Level increase.",
+      "original_example": {
+        "base_weapon_damage_code": "5M",
+        "rounds_fired": 10,
+        "tracer_burst_damage_code": "12D",
+        "comparison_normal_burst_damage_code": "15D"
+      }
+    }
+  },
+  "framing": "reference_exact"
+}
