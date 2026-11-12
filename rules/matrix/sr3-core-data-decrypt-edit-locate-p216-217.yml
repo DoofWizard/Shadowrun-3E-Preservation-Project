@@ -1,0 +1,194 @@
+{
+  "id": "rule.matrix.sr3-core-data-decrypt-edit-locate-p216-217",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "216-217",
+  "pdf_pages": "225-226",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), published fictional Third Edition game operations only; not later Matrix supplement rules",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game rulebook",
+      "printed_pages": [
+        216,
+        217
+      ],
+      "physical_pdf_pages": [
+        225,
+        226
+      ]
+    },
+    "source_heading": "The Matrix / System Operations / Operations Descriptions",
+    "editorial_scope": "Original fictional SR3 tabletop cyberdeck game-system tests and outcomes only; not actual computer-access instructions.",
+    "operation_definitions": [
+      {
+        "name": "Decrypt Access",
+        "test": "Access",
+        "utility": "Decrypt",
+        "action": "Simple",
+        "effect": "In the game, defeat scramble IC guarding entry to a host.",
+        "prerequisite": "On a scrambled SAN, this must succeed before Logon to Host may be attempted."
+      },
+      {
+        "name": "Decrypt File",
+        "test": "Files",
+        "utility": "Decrypt",
+        "action": "Simple",
+        "effect": "In the game, defeat scramble IC on a file.",
+        "prerequisite": "Must succeed on a scrambled file before performing other operations on the file; in particular, a scrambled file cannot be downloaded first."
+      },
+      {
+        "name": "Decrypt Slave",
+        "test": "Slave",
+        "utility": "Decrypt",
+        "action": "Simple",
+        "effect": "In the game, defeat scramble IC on a Slave subsystem.",
+        "prerequisite": "Must succeed before performing any Slave Tests against a scrambled Slave subsystem."
+      },
+      {
+        "name": "Download Data",
+        "test": "Files",
+        "utility": "Read/Write",
+        "action": "Simple",
+        "operation_type": "ongoing",
+        "effect": "Copies a file from the fictional host into the decker's active memory, storage memory or off-line storage as allowed by deck I/O speed.",
+        "interruption": "Completes only after the full file transfer, unless the decker logs off, crashes or terminates it early; an incomplete copy is corrupt and worthless by default.",
+        "gm_optional_partial_recovery": {
+          "condition": "If a partially transferred file contains information important to the adventure, the gamemaster may allow a damaged but readable partial copy.",
+          "reconstruction_time_days_formula": "(full_file_size_Mp / amount_downloaded_Mp) * 2",
+          "possible_pertinent_information_fraction": "amount_downloaded_Mp / full_file_size_Mp",
+          "source_example": {
+            "full_file_size_Mp": 100,
+            "downloaded_Mp": 10,
+            "reconstruction_base_time_days": 20,
+            "pertinent_information_chance_percent": 10
+          },
+          "gm_resolution": "After reconstruction, the gamemaster determines whether the damaged copy contains pertinent data; a probability is a stated example, not a guaranteed result."
+        }
+      },
+      {
+        "name": "Edit File",
+        "test": "Files",
+        "utility": "Read/Write",
+        "action": "Simple",
+        "direct_edit_scope": "Create, change or erase small amounts of file data (approximately a short line of print).",
+        "larger_edit_preparation": "For larger edits, prepare replacement data off-line, upload it, then use one Edit File operation to insert the prepared material into the target file, irrespective of size.",
+        "creation": "Successful System Test may create a file; the new file has counterfeit headers that may be noticed.",
+        "same_host_copy": "Copying a file from a secure to a less secure location on the same host requires two System Tests: first a Files Test, then a test against the subsystem controlling the destination location.",
+        "header_authentication": {
+          "action": "After alteration, insertion or deletion, the decker may try to authenticate the file's header using a Control Test.",
+          "target_number_modifier": "Read/Write utility lowers target number.",
+          "on_success": "Record the Control Test's successes for later tamper checks.",
+          "if_not_successfully_authenticated": "Make a Masking (Files) Test; its success count gives the number of hours before the fictional host notices the alteration and reports it.",
+          "unauthorized_change_detection": "If an unauthorized alteration has not been authenticated, a simple Files Test reveals tampering; authenticated headers require more Files Test successes than the decker's prior header-authentication Control Test successes."
+        },
+        "deletion_discretion": "The gamemaster decides whether backup file copies are available and how deletion affects the adventure."
+      },
+      {
+        "name": "Edit Slave",
+        "test": "Slave",
+        "utility": "Spoof",
+        "action": "Complex",
+        "operation_type": "monitored",
+        "effect": "Change the data sent to or received from a fictional remote device controlled by a host's Slave subsystem.",
+        "continuation": "Operation starts on p216 and continues at top of printed p217; explicitly identified as a monitored operation."
+      },
+      {
+        "name": "Graceful Logoff",
+        "test": "Access",
+        "utility": "Deception",
+        "action": "Complex",
+        "success": "Disconnect safely from host and return to LTG without dump shock; a successful operation clears traces of the decker and his actions from host security/memory records.",
+        "tracked_exception": "If a Track IC utility is in its location cycle, add that utility's Rating to the target number of the Graceful Logoff attempt."
+      },
+      {
+        "name": "Locate Access Node",
+        "test": "Index",
+        "utility": "Browse",
+        "action": "Complex",
+        "operation_type": "interrogation",
+        "effect": "Locate LTG codes that allow access to the desired hosts; may also locate telecom-call codes.",
+        "query_target_modifiers": [
+          {
+            "condition": "only company or person name known",
+            "modifier": 1
+          },
+          {
+            "condition": "more specific but not definite target",
+            "modifier": 0
+          },
+          {
+            "condition": "definite precise target",
+            "modifier": -1
+          }
+        ],
+        "repeat": "After locating an LTG code, no repeat is needed for the same host unless its owners change the address."
+      },
+      {
+        "name": "Locate Decker",
+        "test": "Index",
+        "utility": "Scanner",
+        "action": "Complex",
+        "resolution": "First make the normal System Test, then make an Open-ended Sensor Test.",
+        "detection": "Detect other fictional deckers whose Masking Rating is at most the result of the Sensor Test; if target runs Sleaze, add its Rating to that target's Masking for this comparison.",
+        "tracking": "Once located, user can notice if the target logs off or jacks out.",
+        "voluntary_contact": "Friendly deckers may automatically make themselves visible to one another."
+      },
+      {
+        "name": "Locate File",
+        "test": "Index",
+        "utility": "Browse",
+        "action": "Complex",
+        "operation_type": "interrogation",
+        "prerequisite": "The decker must have some specific information about the target file; a generic demand for valuable data is insufficient.",
+        "success": "Locate the system address of that file."
+      },
+      {
+        "name": "Locate IC",
+        "test": "Index",
+        "utility": "Analyze",
+        "action": "Complex",
+        "follows": "Locate Decker rules, except a successful System Test automatically locates IC without an extra Sensor Test.",
+        "exception": "IC remains found unless it makes a maneuver to evade detection."
+      },
+      {
+        "name": "Locate Slave",
+        "test": "Index",
+        "utility": "Analyze",
+        "action": "Complex",
+        "operation_type": "interrogation",
+        "follows": "Locate File rules for identifying a particular fictional remote device.",
+        "successes_to_find_specific_slave": 3,
+        "exception_to_general_threshold": "Original p217 explicitly requires only three System Test successes, rather than the general five-success interrogation rule recorded from p214."
+      },
+      {
+        "name": "Logon to Host",
+        "test": "Access",
+        "utility": "Deception",
+        "action": "Complex",
+        "effect": "Standard System Test for fictional host logon; host Security Test successes still add to the decker's Security Tally.",
+        "host_information_limit": "The decker does not learn the host Access Rating until the first attempted entry."
+      }
+    ],
+    "scope_and_overlap": {
+      "prior_sysops_record": "rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml",
+      "generic_canonical": "procedures/matrix/system-operation.yml",
+      "original_combat_system_tests": "rules/matrix/sr3-core-system-tests-action-security-tally-p209-210.yml",
+      "intentional_scope": "Distinct detailed operations beginning on original p216 and continuing through p217; no claim to cover later operations on p218 onward.",
+      "future_game_implementation_tested": false,
+      "source_complete": false
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation FASA7001), printed pp216–217/PDF225–226: exact Matrix decrypt, data, file, slave, logoff and Locate operations",
+  "summary": "Original-source-verified FASA Corporation Shadowrun, Third Edition (FASA7001) in-game system operation actions, utility/test associations and numeric timing, modifier, success and exception conditions, not real-world operational guidance."
+}
