@@ -1,0 +1,62 @@
+{
+  "id": "rule.combat.sr3-core-full-auto-target-sweep-numeric-p116",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "116",
+  "pdf_pages": "117",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third Edition fictional tabletop game rules, printed p116 / physical PDF p117; no later-edition conversion",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Original FASA Corporation Shadowrun, Third Edition FASA7001 printed 116/physical PDF 117: full-auto multiple-target sweep and smartgun exceptions",
+  "summary": "Original fiction-based tabletop RPG mechanics from FASA Corporation's Shadowrun, Third Edition (catalog FASA7001), printed 116/physical PDF 117; numeric conditions and exceptions are game-only.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fiction_context": "Published fictional cyberpunk tabletop role-playing game rules; numeric modifiers are game abstractions, not real-world guidance.",
+      "printed_pages": [
+        116
+      ],
+      "physical_pdf_pages": [
+        117
+      ]
+    },
+    "scope": "Original Third Edition Combat chapter procedure for full-automatic fire against multiple targets in a single Combat Phase; supplements the accepted summary rule.combat.full-auto-effects.",
+    "multiple_targets": {
+      "mode": "Full-auto; attacker sweeps fire from one target to the next.",
+      "normal_rounds_wasted_per_meter_between_targets": 1,
+      "smartgun_exception": "A smartgun system prevents those rounds from being wasted during a sweep.",
+      "target_number_modifier_per_new_target_engaged": 2,
+      "modifier_timing": "Accumulate +2 for each new target engaged during the same Combat Phase.",
+      "no_implied_effect": "The source paragraph does not independently change the attack's damage/defense procedures."
+    },
+    "source_cross_references": [
+      "rules/combat/full-auto-effects.yml",
+      "rules/firearms/firing-modes.yml",
+      "rules/combat/recoil-strength.yml"
+    ],
+    "example_vectors_specification_only_not_executed": [
+      {
+        "meters_between_targets": 2,
+        "smartgun": false,
+        "expected_rounds_wasted": 2
+      },
+      {
+        "meters_between_targets": 2,
+        "smartgun": true,
+        "expected_rounds_wasted": 0
+      },
+      {
+        "new_targets_beyond_first": 2,
+        "expected_cumulative_target_number_modifier": 4
+      }
+    ]
+  },
+  "framing": "reference_exact"
+}
