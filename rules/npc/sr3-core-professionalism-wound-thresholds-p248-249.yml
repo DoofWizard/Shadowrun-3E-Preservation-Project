@@ -1,0 +1,99 @@
+id: rule.npc.sr3-core-professionalism-wound-thresholds-p248-249
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 248-249
+pdf_pages: 257-258
+edition_scope: Original FASA Corporation Shadowrun, Third Edition core FASA7001; fictional
+  tabletop non-player-character professionalism and combat withdrawal guidance.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_kind: published fictional tabletop role-playing game
+    printed_pages:
+    - 248
+    - 249
+    physical_pdf_pages:
+    - 257
+    - 258
+  section: Non-Player Characters — NPC Professionalism
+  professionalism_purpose: The original game gives the gamemaster fictional NPC courage/professionalism
+    ratings that help judge continued fighting after injuries; ratings guide judgment
+    rather than forcibly constrain GM decisions.
+  optional_willpower_test:
+    gm_may_use: true
+    applicable_categories:
+    - Average
+    - Semi-Trained
+    - Trained
+    exempt_category: Professional
+    test_attribute: Willpower
+    target_number: 4
+    trigger: An NPC has been wounded and the gamemaster is deciding whether the NPC
+      can continue fighting.
+    source_boundary: The source does not provide a separate numerical success threshold
+      for remaining in combat beyond the standard game test rules.
+  category_guidance:
+  - category: Average
+    original_examples:
+    - pedestrians
+    - untrained civilians
+    wound_threshold: Light
+    response: The book says such NPCs stop fighting or flee immediately after a Light
+      wound.
+  - category: Semi-Trained
+    original_examples:
+    - street cops
+    - low-ranking corporate security guards
+    wound_threshold: Moderate
+    response: The book says such NPCs stop fighting or flee immediately after a Moderate
+      wound.
+  - category: Trained
+    original_examples:
+    - bodyguards
+    - mercenaries
+    - experienced street cops
+    - corporate security guards
+    wound_threshold: Serious
+    response: The book says such NPCs stop fighting or withdraw immediately after
+      a Serious wound.
+  - category: Professional
+    original_examples:
+    - shadowrunners
+    - elite law enforcement
+    - elite security characters
+    wound_threshold: null
+    response: The book describes fighting to the end unless personal motivation dictates
+      otherwise; no fixed wound threshold is supplied.
+  interpretation: Preserve both descriptive wound thresholds and the gamemaster-optional
+    Willpower (4) check; do not recast all categories as mandatory automatic effects,
+    or subject Professionals to the optional check.
+  reused_existing_overview: rules/npc/professionalism.yml
+  editorial_review:
+    source_images:
+    - Printed p248, physical PDF257
+    - Printed p249, physical PDF258
+    reviewed_text_field_paths:
+    - edition_scope
+    - data.publication.*
+    - data.section
+    - data.professionalism_purpose
+    - data.optional_willpower_test.*
+    - data.category_guidance[*].*
+    - data.interpretation
+    - data.reused_existing_overview
+    - data.editorial_review.*
+    source_coverage_limit: Reviewed original publisher/edition image and field meanings;
+      no claim of comprehensive all-source coverage or implemented engine tests.
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional NPC professionalism
+  numeric guidance, printed pp248-249/PDF257-258
+summary: Original non-player-character wound thresholds by training category and optional
+  Willpower target number 4 for wounded nonprofessional NPCs; retain GM judgment.
