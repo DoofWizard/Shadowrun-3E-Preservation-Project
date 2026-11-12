@@ -1,0 +1,83 @@
+id: rule.hazards.sr3-core-disease-toxin-repeated-body-test-p249-250
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 249-250
+pdf_pages: 258-259
+edition_scope: Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional
+  tabletop game resistance rules, not real-world disease or treatment advice.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_kind: fictional tabletop role-playing game
+    printed_pages:
+    - 249
+    - 250
+    physical_pdf_pages:
+    - 258
+    - 259
+  original_section: Beyond the Shadows — Diseases and Toxins
+  characteristics:
+  - The original tabletop fictional toxin or disease has a Power, Damage Code and
+    Speed.
+  - On reaching its specified Speed interval following exposure, an affected character
+    makes a Body Test to resist in-game damage.
+  initial_resistance_test:
+    attribute: Body
+    target_number: substance Power
+    damage_staging: Every two successes reduce the Damage Level by one step.
+  ongoing_exposure_or_infection:
+    condition: The character remains in contact with the toxin or infected with the
+      disease after the relevant Speed interval.
+    repeat_test_after_each_speed_interval: true
+    test_attribute: Body
+    target_number_modifier: 4
+    qualifier: The original passage says repeat tests have a +4 target-number modifier.
+      It does not specify cumulative +4 on each further test; no cumulative increase
+      is inferred.
+    continue_until: Exposure or infection is no longer ongoing under original scenario
+      conditions.
+  original_antidote_vaccine_distinction:
+    antidotes: The source describes game antidotes usually reducing disease/toxin
+      Power and generally being used after exposure, before game damage is applied.
+    vaccines: The source describes vaccines administered before exposure that can
+      provide immunity so the character need not make the Body Test.
+    deadly_damage_cross_reference: For Deadly damage, the correct in-game antidote
+      is treated as professional attention under the Deadly Wounds and First Aid chapter,
+      printed p129; no independent real medical instruction is stated.
+  canonical_overviews_reused:
+  - rules/hazards/diseases-and-toxins.yml
+  - rules/hazards/toxins-diseases.yml
+  source_exclusions: This record is the source-specific exact resistance/ongoing-exposure
+    procedure only; original fictional substance entity stats are separate, no distinct
+    substance is replicated.
+  editorial_review:
+    source_images:
+    - Printed p249/PDF258
+    - Printed p250/PDF259
+    reviewed_text_field_paths:
+    - edition_scope
+    - data.publication.*
+    - data.original_section
+    - data.characteristics[*]
+    - data.initial_resistance_test.*
+    - data.ongoing_exposure_or_infection.*
+    - data.original_antidote_vaccine_distinction.*
+    - data.canonical_overviews_reused[*]
+    - data.source_exclusions
+    - data.editorial_review.*
+    source_fidelity_limit: Human page review and actual transaction gate provide archival
+      support, not exhaustive source-completion or medical validity.
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional disease/toxin
+  repeated resistance tests, printed pp249-250/PDF258-259
+summary: Original tabletop resistance checks at Speed intervals, Body versus Power,
+  two successes per Damage Level stage, and +4 target-number modifier to repeated
+  ongoing-exposure tests; source-specific exceptions retained.
