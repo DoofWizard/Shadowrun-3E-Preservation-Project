@@ -1,0 +1,98 @@
+{
+  "id": "rule.combat.sr3-core-melee-modifiers-table-exact-p123",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "123",
+  "pdf_pages": "124",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original published Third Edition tabletop RPG, printed pp123, physical PDF pp124; no later-edition rules substituted",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA Corporation's fictional Shadowrun, Third Edition (FASA7001), printed pp123/physical PDF pp124: melee modifiers and multiple-target test conditions",
+  "summary": "Source-exact numeric and conditional tabletop game mechanics from FASA's Shadowrun, Third Edition (FASA7001), printed pp123/physical PDF pp124; supplements generic canonical summaries without replacing them.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_type": "Published fictional tabletop role-playing game; exact rules are in-game abstractions.",
+      "printed_pages": "123",
+      "physical_pdf_pages": "124"
+    },
+    "scope": "Original Melee Modifiers Table and simultaneous-target rules; supplement previously indexed p121-122 Reach and friends mechanics.",
+    "table": {
+      "columns": [
+        "situation",
+        "target_number_modifier"
+      ],
+      "rows": [
+        {
+          "situation": "Called Shot",
+          "modifier": "+4"
+        },
+        {
+          "situation": "Character has friends in the melee",
+          "modifier": "-1 per friend, maximum -4"
+        },
+        {
+          "situation": "Opponent has friends in the melee",
+          "modifier": "+1 per friend, maximum +4"
+        },
+        {
+          "situation": "Visibility impaired",
+          "modifier": "Consult Visibility Table, printed p112; apply half values rounded down except Full Darkness"
+        },
+        {
+          "situation": "Character is wounded",
+          "modifier": "Damage Modifier, printed p126"
+        },
+        {
+          "situation": "Character weapon has longer Reach",
+          "modifier": "-1 per point longer"
+        },
+        {
+          "situation": "Character weapon has inferior Reach",
+          "modifier": "+1 per point shorter"
+        },
+        {
+          "situation": "Character attacking multiple targets",
+          "modifier": "+2 per additional target"
+        },
+        {
+          "situation": "Character has superior position",
+          "modifier": "-1"
+        },
+        {
+          "situation": "Opponent prone",
+          "modifier": "-2"
+        }
+      ],
+      "reach_table_note": "Only one of the opposed Reach modifiers may be applied, either to attacker or defender."
+    },
+    "superior_position": {
+      "criteria": [
+        "Standing on higher ground at least one-half meter above opponent",
+        "Standing on stable ground while opponent is not",
+        "Standing while opponent is not standing",
+        "Opponent is in a restricted position while character is not"
+      ],
+      "table_tn_modifier": -1
+    },
+    "simultaneous_multiple_targets": {
+      "action_type": "Complex Action",
+      "first_target": "First attack at normal modified target number.",
+      "additional_target_modifier_each": 2,
+      "combat_pool": "Dice from Combat Pool must be allocated separately for each attack."
+    },
+    "cross_references": [
+      "rules/combat/sr3-core-melee-reach-cyberweapon-friends-p121-122.yml",
+      "procedures/combat/sr3-core-melee-resolution-numeric-p122.yml",
+      "Original printed p123/PDF124"
+    ]
+  },
+  "framing": "reference_exact"
+}
