@@ -1,0 +1,121 @@
+{
+  "id": "rule.matrix.sr3-core-cybercombat-hit-damage-maneuvers-p224-227",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "224-227",
+  "pdf_pages": "233-236",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core; fictional tabletop Matrix cybercombat rules, original printed pp224–227/physical PDF pp233–236, no later edition",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "kind": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        224,
+        227
+      ],
+      "physical_pdf_pages": [
+        233,
+        236
+      ]
+    },
+    "heading": "The Matrix / Cybercombat: Target Numbers, Combat Maneuvers, Resolving Attacks, Icon Damage, Condition Monitors, Simsense Overload, Dump Shock",
+    "scope": "These rules govern fictional icons and deckers in the original role-playing game, not real networks or physical attacks.",
+    "cybercombat_target_numbers": {
+      "columns": [
+        "host_security_code",
+        "target_intruding_icon",
+        "target_legitimate_icon"
+      ],
+      "rows": [
+        [
+          "Blue",
+          6,
+          3
+        ],
+        [
+          "Green",
+          5,
+          4
+        ],
+        [
+          "Orange",
+          4,
+          5
+        ],
+        [
+          "Red",
+          3,
+          6
+        ]
+      ],
+      "status_rule": "An icon using a valid host passcode is Legitimate; other icons, including IC, count as Intruding. A deanonymized decker may have the passcode invalidated after logging out, yet retain it during combat as the book describes."
+    },
+    "ic_damage_level_by_host_security_code": {
+      "Blue": "Moderate",
+      "Green": "Moderate",
+      "Orange": "Serious",
+      "Red": "Serious"
+    },
+    "actions": {
+      "attack": "Simple Action; use an offensive utility already loaded in deck memory",
+      "combat_maneuver": "Simple Action",
+      "jack_out": "Free Action, unless attacked and held by black IC; without a successful Graceful Logoff, applies dump shock",
+      "speak_a_word": "Direct physical-world speech uses standard verbal action rules and the Matrix Initiative communication penalty",
+      "terminate_download_upload": "Can be done at any time",
+      "unload_program": "Free program memory for Swap Memory",
+      "unsuppress_ic": "Release suppressed IC; normal immediate Security Tally or action consequences resume"
+    },
+    "maneuvers": {
+      "common": "Opposed test: maneuvering icon Evasion against opponent Sensor (or IC Security Value in place of its missing Sensor/Evasion); if either side has a relevant utility Cloak or Lock-On, reduce its target number by that utility Rating; Hacking Pool may be allocated. Maneuver requires strictly more successes; net successes measure effect.",
+      "evade_detection": "After success, opponent must locate icon again with Locate IC or Locate Decker; IC re-detects after net successes in Combat Turns, shortened 1 turn per new point of Security Tally generated during evasion. IC returns at end of the final turn and may act in next turn.",
+      "parry_attack": "Net successes increase opposing icon next attack target number; benefit expires at that next attack or if opponent successfully evades detection. If opposing icon instead succeeds at position attack, parry bonus remains and is applied to attack.",
+      "position_attack": "On maneuver success, reduce the next attack target number by net successes or increase next attack Power by net successes; on opposition success, opposing icon gets that benefit. Benefit ends after the next attack."
+    },
+    "attack_resolution": {
+      "attack_test": "Attacker rolls offensive utility program Rating dice (may add Hacking Pool) against target number from cybercombat status/security-code table, with applicable modifiers.",
+      "successes": "Record successes on Attack Test; every 2 successes stages damage up one Damage Level.",
+      "power": "Attack utility and killer IC icon-damage Power equals program Rating.",
+      "resistance": "Target persona makes Bod Rating Damage Resistance Test; damaged IC uses host Security Value instead. Armor utility reduces incoming attack Power. Every 2 successes on resistance stages damage down one Damage Level.",
+      "condition_monitor": "Icons track one Damage track, not separate Stun/Physical. Filling 10 boxes crashes icon. A crashed persona disconnects its decker and triggers dump shock."
+    },
+    "overload_damage": {
+      "in_world_trigger": "White/gray IC damage to an icon can cause simsense overload to the fictional decker physical body.",
+      "willpower_test_target_by_icon_damage_level": {
+        "Light": 2,
+        "Moderate": 3,
+        "Serious": 5
+      },
+      "on_failure": "Fictional decker suffers one Light Stun wound (fills 1 Mental Condition Monitor box).",
+      "black_ic_exception": "This overload test does not apply when black IC damages the icon; those effects are resolved under black IC rules."
+    },
+    "dump_shock": {
+      "trigger": "Decker crashes off Matrix or jacks out without Graceful Logoff.",
+      "damage_power": "Host Security Value",
+      "damage_type": "Stun",
+      "damage_level_by_host_security_code": {
+        "Blue": "Light",
+        "Green": "Moderate",
+        "Orange": "Serious",
+        "Red": "Deadly"
+      }
+    },
+    "boundaries": [
+      "p224–225 combat maneuvers source-checked through p225 position-attack",
+      "p226–227 Simsense Overload and Dump Shock source-checked through p227",
+      "White IC and Cripplers begin p227 and continue beyond this scope; no complete IC list claimed",
+      "No independent runnable engine validation or whole-rulebook completeness is claimed"
+    ]
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop RPG Shadowrun Third Edition, FASA Corporation FASA7001: original cybercombat target-number tables, opposed maneuvers, damage, simsense overload and dump shock printed pp224–227/PDF233–236",
+  "summary": "Historically source-reviewed numerical mechanics for the fictional Third Edition Matrix; four host-code hit target-number rows, IC damage and dump-shock levels, attack staging, resistance and maneuver duration, with conditions and exclusions."
+}
