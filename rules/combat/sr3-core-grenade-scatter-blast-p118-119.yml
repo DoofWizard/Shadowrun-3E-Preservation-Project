@@ -1,0 +1,127 @@
+id: rule.combat.sr3-core-grenade-scatter-blast-p118-119
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 118-119
+pdf_pages: 119-120
+edition_scope: FASA Corporation Shadowrun, Third Edition (FASA7001), original Third
+  Edition fictional tabletop combat procedures only; no Cannon Companion substitution.
+content_class:
+- rule_procedure
+headline: Fictional FASA Corporation Shadowrun Third Edition FASA7001 tabletop grenade
+  resolution, original printed pp118-119/PDF119-120
+summary: Exact source-reviewed in-game grenade attack TN bands, scatter, detonation
+  timing, blast reduction, resistance, barriers and explicit optional modifiers; distinct
+  from real-world guidance.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog_number: FASA7001
+    edition: Third Edition
+    source_id: source.sr3-core
+    printed_pages:
+    - 118
+    - 119
+    physical_pdf_pages:
+    - 119
+    - 120
+  scope: The published fictional game resolves thrown/launched grenade effects using
+    abstract target numbers, scatter dice and Damage Codes; not instructions concerning
+    physical explosives.
+  attack_test:
+    uses: Relevant game Combat Skill, including eligible Combat Pool dice
+    target_number: Grenade Range Table target number for range category plus the original
+      ranged-combat situational modifiers
+    record_attack_successes: true
+  grenade_range_table:
+    target_numbers:
+      short: 4
+      medium: 5
+      long: 8
+      extreme: 9
+    rows:
+    - type: Standard thrown
+      short: 0 through STR × 3
+      medium: above short through STR × 5
+      long: through STR × 10
+      extreme: through STR × 20
+      base_scatter: 1D6 meters
+    - type: Aerodynamic thrown
+      short: 0 through STR × 3
+      medium: above short through STR × 5
+      long: through STR × 20
+      extreme: through STR × 30
+      base_scatter: 2D6 meters
+    - type: Grenade Launcher
+      short: 5 through 50 meters; 5-meter launcher minimum
+      medium: 51 through 100 meters
+      long: 101 through 150 meters
+      extreme: 151 through 300 meters
+      base_scatter: 3D6 meters
+  scatter:
+    direction_die: 1D6; use original printed p118 source diagram, with 1 meaning forward
+      past target and 4 backward toward attacker.
+    scatter_distance: Determine base distance from grenade range table, then reduce
+      by successes.
+    scatter_reduction_meters_per_success:
+      standard: 2
+      aerodynamic: 4
+      launcher: 4
+    final_location: When scatter is zero or less grenade reaches the intended target;
+      otherwise detonation is offset in rolled direction by remaining scatter.
+  grenade_launcher_minimum:
+    arm_distance_meters: 5
+    source_reason: Abstract in-game safety design; launcher grenade does not function
+      before reaching this distance.
+    game_optional_disable: A Simple Action outside a Combat Turn may disable the source
+      safety feature, subject to original p118 text.
+  detonation_timing:
+    default: Next Combat Phase of the character making the grenade attack
+    if_character_no_more_phases_this_turn: End of next Initiative Pass
+    if_launched_in_last_initiative_pass: End of the same Combat Turn
+  blast_effects:
+    affected_targets: Any target inside the source grenade blast area
+    target_damage_resistance_test: Body against blast Power after distance reduction
+      minus target Impact Armor Rating; eligible Combat Pool dice may augment.
+    compare_successes: Compare defending target’s successes against attacker’s grenade
+      attack successes.
+    net_two_success_staging: One Damage Level increased per two net attacker successes;
+      reduced one level per two net target successes.
+  original_grenade_damage_table:
+  - type: Offensive
+    damage_code: 10S
+    power_reduction: -1 Power per meter of distance from blast point
+  - type: Defensive
+    damage_code: 10S
+    power_reduction: -1 Power per half meter
+  - type: Concussion
+    damage_code: 12M Stun
+    power_reduction: -1 Power per meter
+  anti_personnel_grenades: Use the original flechette damage mechanics from printed
+    p116 for these fictional-game AP grenades; no independent expansion invented.
+  barriers:
+    blast_power_for_initial_barrier_test: Remaining blast Power after distance reduction
+    effective_barrier_rating_for_initial_comparison: 2 × the barrier’s original Barrier
+      Rating
+    if_barrier_falls: Blast can continue; reduce its Power by the original Barrier
+      Rating.
+    if_barrier_holds: The original confined-space rebounding procedure may apply.
+    source_confined_space_example: A rebound with original wave Power 6 and returning
+      Power 2 yields combined Power 8 for a second hit; preserve this source example
+      rather than designing a physical-wave model.
+  optional_explosives_damage:
+    explicitly_optional: true
+    gm_damage_staging_test: Roll dice equal to half the in-game grenade/explosive
+      Power, rounded up, against target number 4; use the successes to stage its Damage
+      Level.
+    relation: Distinct from standard source grenade damage/staging; use only if GM
+      enables this optional variant.
+  source_scope_and_lineage:
+  - The printed p120 example continues the optional explosives discussion; this record
+    does not assert that illustrative paragraph is exhaustively normalized.
+  - Existing procedure.combat.grenade-attack is an abstract anchor; do not duplicate
+    it as a competing effective procedure.
+  - Existing rule.combat.grenade-launched-weapon-ranges is attributed to Cannon Companion;
+    do not treat its launcher additions as if they appeared in the original p119 table.
+framing: reference_exact
