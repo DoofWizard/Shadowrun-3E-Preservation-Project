@@ -1,0 +1,112 @@
+{
+  "id": "rule.combat.sr3-core-recoil-accounting-numeric-p110-113",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "110-113",
+  "pdf_pages": "111-114",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition fictional tabletop role-playing game FASA7001 printed pp110-113, physical PDF111-114; no Cannon Companion or later rules substituted.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional FASA Corporation Shadowrun Third Edition (FASA7001) tabletop game: numerical recoil and compensation from original printed pp110–113/PDF111–114",
+  "summary": "Source-reviewed original fictional tabletop rulebook Shadowrun, Third Edition (FASA Corporation, FASA7001): SA second shot +1, burst +3 per burst, FA +1 per round, uncompensated heavy-weapon/shotgun burst recoil doubled, recoil compensation and gyro deductions applied in source order, printed pp110–113/PDF111–114.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "fictional_tabletop_game": true,
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        110,
+        111,
+        112,
+        113
+      ],
+      "physical_pdf_pages": [
+        111,
+        112,
+        113,
+        114
+      ]
+    },
+    "source_section": "Combat / Ranged Combat / Recoil / Ranged Combat Modifiers Table / Recoil Compensation / Gyro-Stabilization",
+    "recoil_target_number_rules": [
+      {
+        "fire_mode": "semi-automatic",
+        "target_number_modifier": 1,
+        "condition": "Second shot only during that Combat Phase; applies to second shot, not the first shot."
+      },
+      {
+        "fire_mode": "burst-fire",
+        "target_number_modifier_per_burst": 3,
+        "accumulation": "Cumulative during Combat Phase. First 3-round burst +3, second 3-round burst +6 total before compensation."
+      },
+      {
+        "fire_mode": "full-auto",
+        "target_number_modifier_per_round": 1,
+        "accumulation": "Cumulative number of rounds fired during the Combat Phase; seven rounds produce +7 recoil. A first five-round burst produces +5; a second five-round burst that phase produces +10 total before compensation."
+      }
+    ],
+    "heavy_weapon_exception": {
+      "classes": [
+        "light machine gun",
+        "medium machine gun",
+        "heavy machine gun",
+        "assault cannon"
+      ],
+      "multiplier_for_uncompensated_recoil": 2,
+      "order": "First subtract applicable recoil compensation from the accumulated recoil, then double the remainder.",
+      "printed_example": {
+        "full_auto_rounds": 10,
+        "compensation_points": 6,
+        "remainder": 4,
+        "final_recoil_target_number_modifier": 8
+      }
+    },
+    "burst_fire_shotgun_exception": {
+      "multiplier_for_uncompensated_recoil": 2,
+      "condition": "Shotgun fired in burst-fire mode, not all shotgun modes."
+    },
+    "recoil_compensation": {
+      "reduction_target_number_modifier_per_point": 1,
+      "applies_only_to": "Weapon recoil; it does not reduce other situational modifiers such as movement."
+    },
+    "gyro_stabilization": {
+      "reduction_target_number_modifier_per_point": 1,
+      "can_offset": [
+        "recoil modifiers",
+        "walking or running movement modifiers"
+      ],
+      "stacking": "Cumulative with ordinary recoil compensation, and reduces the combined applicable modifiers by its rating."
+    },
+    "canonical_anchors_reused": [
+      "modifier.combat.recoil",
+      "rule.combat.burst-fire-effects",
+      "rule.combat.full-auto-effects",
+      "rule.firearms.sr3-core-accessory-functions-p280-281"
+    ],
+    "source_review": {
+      "images": "Original printed p110–113 physically scanned PDF111–114 visually checked for semi-auto, burst, full-auto, weapon-class exceptions, illustrative numbers and gyro/recoil accounting.",
+      "reviewed_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.recoil_target_number_rules[*].*",
+        "data.heavy_weapon_exception.*",
+        "data.burst_fire_shotgun_exception.*",
+        "data.recoil_compensation.*",
+        "data.gyro_stabilization.*",
+        "data.canonical_anchors_reused[*]",
+        "data.source_review.*"
+      ],
+      "coverage_limit": "Does not replace existing recoil accessory availability, weapon statistics, or consumer implementation; editorial receipt and structural gate do not prove full book coverage."
+    }
+  }
+}
