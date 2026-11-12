@@ -1,0 +1,98 @@
+{
+  "id": "rule.combat.sr3-core-rocket-missile-numeric-p120",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "120",
+  "pdf_pages": "121",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001); original Third Edition fictional tabletop game, printed 120/physical PDF 121, no later rules substituted",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Fictional FASA Corporation Shadowrun, Third Edition FASA7001, printed 120/physical PDF 121: rocket and missile game attack/scatter/timing with original table",
+  "summary": "Original FASA Corporation Shadowrun Third Edition FASA7001 tabletop RPG source-review of rocket and missile game attack/scatter/timing with original table; numerical dice, modifiers, exceptions and source scope preserved.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fiction_context": "Original published fictional cyberpunk tabletop-RPG mechanics, not real-world actions or equipment specifications.",
+      "printed_pages": [
+        120
+      ],
+      "physical_pdf_pages": [
+        121
+      ]
+    },
+    "scope": "Original Third Edition core Combat chapter's fictional rocket and missile rules; historical game numbers and launching procedures, separate from prices and later supplemental rules.",
+    "projectiles": {
+      "rocket": "Original source's non-guided launch-type game projectile.",
+      "missile": "Original source's guided missile with an Intelligence Rating; its abstract internal electronic guidance adds game dice."
+    },
+    "types": {
+      "he": "High-explosive (HE) rocket / (HEM) missile",
+      "ap": "Anti-personnel (AP) rocket / (APM) missile; original source invokes flechette rules.",
+      "av": "Anti-vehicle (AV) rocket / (AVM) missile; original source halves target Barrier Rating, rounding down, for barrier interactions."
+    },
+    "test": {
+      "rocket": "Resolve as grenade-launcher attack according to original printed p118 procedure.",
+      "missile": "Launcher character rolls Launch Weapons Skill and eligible Combat Pool dice, plus dice equal to missile Intelligence Rating.",
+      "missile_target_number": "Vehicle Signature Rating regardless of range.",
+      "missile_urban_target_number_modifier": 2,
+      "missile_urban_condition": "Game environment is a major city, industrial park, or another non-residential urban area."
+    },
+    "scatter": {
+      "initial_scatter_dice": "2D6 meters",
+      "rockets_distance_reduction_meters_per_attack_success": 1,
+      "missiles_distance_reduction_meters_per_attack_success": 1,
+      "missiles_additional_reduction_meters_per_intelligence_point": 1
+    },
+    "timing": "All rocket/missile attacks arrive on Combat Phase 1 of the last Initiative Pass of the Combat Turn in which the rocket or missile was launched.",
+    "printed_rocket_missile_table": {
+      "columns": [
+        "type",
+        "damage_code",
+        "power_level_reduction",
+        "scatter"
+      ],
+      "rows": [
+        {
+          "type": "HER/HEM",
+          "damage_code": "16D",
+          "power_level_reduction": "-1 per meter",
+          "scatter": "2D6 meters"
+        },
+        {
+          "type": "APR/APM",
+          "damage_code": "16D",
+          "power_level_reduction": "-1 per half-meter",
+          "scatter": "2D6 meters"
+        },
+        {
+          "type": "AVR/AVM",
+          "damage_code": "16D",
+          "power_level_reduction": "-8 per meter",
+          "scatter": "2D6 meters"
+        }
+      ]
+    },
+    "cross_references": [
+      "Original printed p118 grenade-launcher procedure",
+      "Original printed p149 vehicle damage rules",
+      "equipment/sr3-core-ammunition-rockets-missiles-pricing-p281.yml"
+    ],
+    "samples_specification_only_not_engine_tested": [
+      {
+        "missile_intelligence_rating": 3,
+        "attack_successes": 2,
+        "initial_scatter_meters": 9,
+        "expected_reduction_meters": 5,
+        "remaining_scatter_meters": 4
+      }
+    ]
+  },
+  "framing": "reference_exact"
+}
