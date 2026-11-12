@@ -1,0 +1,134 @@
+{
+  "id": "rule.identity.sr3-core-credstick-tiers-forgery-numeric-p239",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "239",
+  "pdf_pages": "248",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop game economic and identity-test rules, original printed p239/PDF248 only; no real-world financial identity workflow is prescribed.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA7001 original fictional Shadowrun Third Edition: credstick transaction ceilings and forged-credit identity rules, printed p239/PDF248",
+  "summary": "Numerical original FASA7001 p239/PDF248 game rules for five credstick classes, four counterfeit-game cost and Availability brackets, half upfront fictional fixer fee, and opposing fictional verification ratings.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "publication_type": "original fictional cyberpunk tabletop role-playing game core rulebook",
+      "original_printed_pages": [
+        239
+      ],
+      "original_physical_pdf_pages": [
+        248
+      ]
+    },
+    "source_section": "Running the Shadows: Credsticks and ID; Forging Credsticks and IDs",
+    "scope": "Numerical adjudication of imagined credsticks, in-game currency, fictional identification levels and dice checks; no practical real-world forgery technique or financial instructions.",
+    "registered_credstick_tiers": [
+      {
+        "name": "Standard",
+        "transaction_limit_nuyen": 5000,
+        "verification": "Passcode"
+      },
+      {
+        "name": "Silver",
+        "transaction_limit_nuyen": 20000,
+        "verification": "Fingerprint"
+      },
+      {
+        "name": "Gold",
+        "transaction_limit_nuyen": 200000,
+        "verification": "Voiceprint"
+      },
+      {
+        "name": "Platinum",
+        "transaction_limit_nuyen": 1000000,
+        "verification": "Retinal scan"
+      },
+      {
+        "name": "Ebony",
+        "transaction_limit_nuyen": null,
+        "transaction_limit_original": "Unlimited",
+        "verification": "Cellular scan"
+      }
+    ],
+    "printed_transaction_amounts_note": "The printed source gives transaction amount bands beginning at 1 nuyen for all finite tiers, not a cumulative wallet balance limit. Ebony is Unlimited.",
+    "certified_credsticks": "Original game text says a certified credstick is unregistered, denominated by stored funds, and does not require an identity check; these are source assertions about fictional monetary items.",
+    "creation_cost_and_availability": [
+      {
+        "rating_min": 1,
+        "rating_max": 4,
+        "cost_formula_nuyen": "Rating × Rating × 1,000",
+        "availability_original": "Rating/24 hours",
+        "street_index": 1
+      },
+      {
+        "rating_min": 5,
+        "rating_max": 8,
+        "cost_formula_nuyen": "Rating × 5,000",
+        "availability_original": "Rating/72 hours",
+        "street_index": 1
+      },
+      {
+        "rating_min": 9,
+        "rating_max": 12,
+        "cost_formula_nuyen": "Rating × 10,000",
+        "availability_original": "Rating/14 days",
+        "street_index": 1
+      },
+      {
+        "rating_min": 13,
+        "rating_max": null,
+        "cost_formula_nuyen": "Rating × 50,000",
+        "availability_original": "Rating/30 days",
+        "street_index": 1
+      }
+    ],
+    "advance_payment": {
+      "minimum_fraction": 0.5,
+      "recipient": "fictional fixer",
+      "condition": "At least half the total in-game creation price must be paid in advance."
+    },
+    "use_of_forged_credstick": {
+      "check_type": "Opposed Test",
+      "opposed_values": [
+        "fake credstick Rating",
+        "verification system Rating"
+      ],
+      "normal_resolution": "More successes wins.",
+      "tie_resolution": "On equal successes the verifying system queries the fictional bearer; any incorrect answer results in rejection of the credstick or ID.",
+      "source_scope": "The original passage gives no new target-number constant or interrogation skill modifier beyond these ratings; page 92 governs separately named Interrogation Tests."
+    },
+    "reuse_without_duplication": [
+      "procedures/identity/forge-credstick.yml (previously summarized stages, without original numeric tier/cost table)"
+    ],
+    "source_review": {
+      "original_images": "Original published PDF physical page 248, printed page 239; both columns and original CREDSTICK TABLE and CREATING A CREDSTICK TABLE visually inspected.",
+      "reviewed_human_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.scope",
+        "data.registered_credstick_tiers[*].name",
+        "data.registered_credstick_tiers[*].verification",
+        "data.printed_transaction_amounts_note",
+        "data.certified_credsticks",
+        "data.creation_cost_and_availability[*].cost_formula_nuyen",
+        "data.creation_cost_and_availability[*].availability_original",
+        "data.advance_payment.*",
+        "data.use_of_forged_credstick.*",
+        "data.reuse_without_duplication[*]",
+        "data.source_review.*"
+      ],
+      "limits": "Original printed source, not modern financial policy. Field review and gate tests do not prove full sourcebook completion."
+    }
+  }
+}
