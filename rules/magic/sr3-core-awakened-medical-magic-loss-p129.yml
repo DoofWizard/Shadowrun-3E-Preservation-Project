@@ -1,0 +1,81 @@
+{
+  "id": "rule.magic.sr3-core-awakened-medical-magic-loss-p129",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "129",
+  "pdf_pages": "130",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop-RPG Combat medical-Magic interaction, not a modern clinical claim",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop game Combat printed p129/PDF130: Awakened first-aid modifier and Magic-loss conditions",
+  "summary": "Source-reviewed exact original in-game medical Magic-loss interaction: +2 Awakened Biotech target modifier, Deadly/missing-modifier trigger, 2D6 threshold and two-roll conjunction, and original-tissue replacement condition; separate existing Magic Loss rules reused.",
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 129,
+      "physical_pdf_page": 130,
+      "source_type": "original published fictional tabletop role-playing game rulebook"
+    },
+    "section": "MAGICAL CHARACTERS AND DAMAGE (Combat)",
+    "treatment_modifier": {
+      "awakened_character_first_aid_target_number_modifier": 2,
+      "scope": "This +2 is a modifier to the in-game Biotech treatment target number, not to the Magic-loss dice roll itself."
+    },
+    "magic_loss_eligibility": {
+      "trigger_deadly_wound": true,
+      "trigger_treatment_without_awakened_modifier": true,
+      "distinction": "The original source says an Awakened character suffering a Deadly wound OR treated without +2 for Awakened treatment risks magic loss.",
+      "test": "Roll 2D6 for a Magic-loss check.",
+      "roll_result_for_loss": "If 2D6 result is less than or equal to the character current Magic Rating, permanently reduce Magic Rating by 1.",
+      "rolls_when_deadly_and_modifier_omitted": 2,
+      "combined_trigger": "When an Awakened character is treated for Deadly wounds without applying the +2 Awakened treatment target-number modifier, roll 2D6 twice for Magic loss.",
+      "cross_reference": "Original source explicitly refers to Magic Loss, printed p160/PDF161."
+    },
+    "body_replacement_lineage": {
+      "own_tissue_requirement": "An Awakened character requiring a replacement limb or organ must have it cloned from the original tissue to avoid the risk of a similar Magic loss.",
+      "different_dna_effect": "Any other DNA pattern, even that of another Awakened character, automatically reduces the character Magic Rating by 1.",
+      "restoration_condition": "If the substitute body part is later replaced with tissue cloned from the character original tissue, the source says doing so restores these replacement-related lost Magic points.",
+      "procedure_risk": "The source describes organ implant replacement as major surgery that may itself risk additional Magic loss; it does not state a separate numeric surgery test on this page.",
+      "scope_limitation": "These are imagined in-world character and replacement-body-part mechanics, not real-world medical or biological procedures."
+    },
+    "canonical_dependencies": [
+      "rules/magic/magic-loss.yml",
+      "rules/magic/sr3-core-magic-essence-loss-numeric-p158-160.yml",
+      "procedures/healing/sr3-core-first-aid-biotech-stabilization-p129.yml",
+      "rules/condition/sr3-core-deadly-permanent-injury-p127-128.yml"
+    ],
+    "example_vectors_unexecuted": [
+      {
+        "case": "awakened_medical_tn",
+        "initial_biotech_target_number": 8,
+        "awakened_modifier": 2,
+        "expected_tn": 10
+      },
+      {
+        "case": "magic_loss_check",
+        "magic_rating": 5,
+        "dice_results": [
+          2,
+          3
+        ],
+        "sum": 5,
+        "expected_magic_after_loss": 4
+      },
+      {
+        "case": "deadly_no_plus2",
+        "is_deadly_wound": true,
+        "awakened_modifier_applied": false,
+        "magic_loss_rolls": 2
+      }
+    ],
+    "limits": "The source specifies no independent additional numeric check for cloned-tissue replacement surgery; no inferred further rule or later-edition conversion is introduced."
+  }
+}
