@@ -1,0 +1,91 @@
+# Non-authoritative read-only audit queue. This is NOT a semantic rule record or source completion receipt.
+schema_version: sr3-core-closure-queue/v1
+date: "2026-11-11"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_id: "FASA7001"
+  source_manifest: "sources/manifests/SR3.yml"
+  source_id: "source.sr3-core"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+source_status_observed: scan_complete_normalization_pending
+source_read_method:
+  fresh_drive_pdf_hash_computed: true
+  bytes: 112507704
+  physical_pdf_pages: 345
+  local_hash_matches_live_manifest: true
+  actual_preservation_method_verify_source_executed_this_audit: false
+  sampled_original_images_inspected:
+    - {printed: 307, physical_pdf: 316}
+    - {printed: 309, physical_pdf: 317}
+  note: "The original PDF is an image scan; this audit is NOT a complete original-page fidelity or rule inventory pass."
+completion:
+  complete_core_rule_normalization: false
+  completeness_gate_passed: false
+  numeric_table_inventory_fully_verified: false
+  full_core_original_image_review_this_audit: false
+  code_ready: false
+  do_not_derive_percentage: true
+existing_verified_core_anchors_reuse_do_not_resubmit:
+  - {path: "rules/character-creation/sr3-master-priority-numeric-p54.yml", printed: [54,54], pdf: [55,55], status: accepted_source_reviewed}
+  - {path: "rules/condition/sr3-damage-monitor-numeric-p125-126.yml", printed: [125,126], pdf: [126,127], status: accepted_source_reviewed}
+  - {path: "rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml", printed: [43,44], pdf: [44,45], status: accepted_source_reviewed}
+  - {path: "rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml", printed: [104,108], pdf: [105,109], status: accepted_source_reviewed}
+  - {path: "rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml", printed: [113,113], pdf: [114,114], status: accepted_source_reviewed}
+  - {path: "rules/magic/sr3-core-drain-power-force-resistance-p162.yml", printed: [162,162], pdf: [163,163], status: accepted_source_reviewed}
+  - {path: "rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml", printed: [279,279], pdf: [288,288], status: accepted_source_reviewed}
+  - {path: "procedures/firearms/sr3-core-ammunition-reloading-p280.yml", printed: [280,280], pdf: [289,289], status: accepted_source_reviewed}
+  - {path: "rules/vehicles/sr3-core-original-mounts-p307.yml", printed: [307,307], pdf: [316,316], status: accepted_source_reviewed}
+  - {path: "rules/compatibility/sr2-to-sr3-magic-conversion-p324.yml", printed: [324,324], pdf: [332,332], status: accepted_source_reviewed}
+closure_queue:
+  - id: core.street-gear-numeric-reconciliation
+    priority: P0
+    printed_pages: [275,282]
+    physical_pdf_pages: [284,291]
+    evidence: "Live manifest records several market tables and accessory/reloading rules; its remaining_explicit_debt still identifies other dense numeric equipment/weapon/ammunition material."
+    next: "Construct an original-image row-level table inventory; match each source entry to accepted canonical records; stage only genuinely absent source assertions."
+    state: unresolved_exact_coverage
+  - id: core.street-gear-final-numeric-reconciliation
+    priority: P0
+    printed_pages: [305,311]
+    physical_pdf_pages: "314-319 observed; p308 unobserved"
+    evidence: "Live manifest explicitly defers detailed printed pp305-311 normalization despite several accepted medical/rigging/vehicle market records."
+    next: "Validate each present printed page's full rows, options and modifiers against accepted canonical records. Do not infer unavailable p308."
+    state: unresolved_exact_coverage
+  - id: core.scan-omission-p308
+    priority: P0_source_gap
+    printed_pages: [308,308]
+    physical_pdf_pages: null
+    preceding: {printed: 307, physical_pdf: 316, original_image_inspected: true}
+    following: {printed: 309, physical_pdf: 317, original_image_inspected: true}
+    evidence: "The inspected scan jumps directly from printed 307 to printed 309; content, if any, is not authenticated."
+    next: "Request/compare an independent legitimate edition-identical scan or documented print-continuity evidence; leave uncertain if unavailable."
+    state: original_page_unobserved
+  - id: core.edition-conversion-reconciliation
+    priority: P0
+    printed_pages: [323,325]
+    physical_pdf_pages: [331,333]
+    evidence: "Live manifest contains multiple accepted conversion mechanics, including historical magic/gear/cyberware/rigger/Matrix; source's remaining_explicit_debt has not been formally cleared."
+    next: "Validate exact conversion assertions/conditions against original images and accepted files; formally clear only source-verified obligations."
+    state: closure_audit_required
+  - id: core.full-mechanics-section-inventory
+    priority: P0
+    printed_pages: null
+    physical_pdf_pages: null
+    evidence: "Live source manifest broadly labels earlier chapters represented, which does not prove every rule, table, numeric exception, optional mechanic or prerequisite was normalized."
+    next: "Enumerate every rules-bearing core section with source-specific printed/PDF mapping, required content classes and existing canonical IDs; review all missing fields before closure."
+    required_lanes: [dice_tests, character_creation, skills, combat_initiative, movement_damage_healing, magic_conjuring_astral, matrix, vehicles_rigging, cyberware_bioware, gear_price_availability, advancement_contacts, shadowrunning_environment, critters, edition_conversion]
+    state: completeness_audit_required
+separate_noncore_source:
+  id: "source.fasa-7212"
+  printed_pages: [46,47]
+  status: archived_losses_by_owner_not_core_dependency
+  no_recovery_search: true
+  retain_authoritative_denver_boundary: "completed through printed 45 / PDF46; do not pretend 46-47 were ingested"
+  note: "The core-rule closure queue cannot authorize or change Denver's manifest or checkpoint."
+worker_invariants:
+  - "Single existing hourly task only; no new task and no schedule change."
+  - "Every semantic addition requires actual independent page review, baseline/candidate stage+prepare, ordinary GitHub contents write, exact SHA readback+confirm, authorized source-specific indexing."
+  - "Do not count locally tested consumer adapters as canonical ingestion receipts."
+  - "Do not declare complete until exact source fidelity, all required classes, accepted records and legitimate completion gates are verified."
