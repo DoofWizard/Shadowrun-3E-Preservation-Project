@@ -1,0 +1,161 @@
+{
+  "id": "rule.magic.sr3-core-spirit-control-banishing-exact-p189",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "189",
+  "pdf_pages": "198",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) printed p189/PDF198 fictional tabletop magic rules; no later supplement or edition substituted.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun Third Edition tabletop magic (FASA Corporation, FASA7001), printed p189/PDF198: exact Conjuring control and banishing procedures",
+  "summary": "Source-reviewed original FASA7001 Third Edition fictional roleplaying mechanics: opposing Conjuring/Force/Magic tests, action limits, spirit-service results, Drain, temporary attribute loss and contest outcomes on p189/PDF198; no later-edition rule imported.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "medium": "published fictional tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+    },
+    "source": {
+      "printed_page": 189,
+      "physical_pdf_page": 198,
+      "section": "Magic / Conjuring / Controlling, Uncontrolled Elementals, Banishing, Astral Conjuring"
+    },
+    "controlling_spirits": {
+      "eligible_challenger": "Magician with Conjuring; only a shaman can seize a nature spirit and only a mage can seize an elemental.",
+      "action": "Exclusive Complex Action",
+      "incumbent_may_resist": "The original controller may resist even when absent, physically unavailable or without actions remaining.",
+      "test": "Both magicians roll Conjuring against target number equal to spirit Force.",
+      "target_number_formula": "spirit Force",
+      "original_summoner_dice_bonus": "The original summoner adds Charisma dice to the opposed control test.",
+      "conditional_bonus": "Applicable spirit-focus dice and totem modifiers are permitted only when their ordinary eligibility applies.",
+      "results": [
+        {
+          "case": "controller_has_more_successes",
+          "effect": "Control unchanged; challenger resists Drain as if summoning this spirit."
+        },
+        {
+          "case": "challenger_has_more_successes",
+          "effect": "Challenger takes control, gaining one service per net success; both magicians make Drain Resistance Tests."
+        },
+        {
+          "case": "no_successes_by_either",
+          "effect": "Both magicians check Drain; uncontrolled elemental becomes uncontrolled, while nature spirit vanishes."
+        }
+      ],
+      "scope_limit": "The printed passage explicitly addresses no-success ties; do not invent treatment of a tie in positive successes without other governing opposed-test rules."
+    },
+    "uncontrolled_elemental": {
+      "regain_control": "A mage can try to gain control of an uncontrolled elemental via Conjuring as if banishing it.",
+      "successful_result": "Elemental is controlled and bound, owing one service.",
+      "extra_services_test": "Roll Conjuring with target number equal to elemental Force; eligible spirit-focus dice apply.",
+      "extra_services_formula": "floor(successes / 2)",
+      "extra_service_unit": "one extra service per two successes"
+    },
+    "banishing": {
+      "purpose": "The game contest ends the spirit presence on the physical and astral planes.",
+      "eligible_traditions": "Either magical tradition may banish either described spirit type.",
+      "action": "Exclusive Complex Action",
+      "banisher_test": {
+        "dice": "Conjuring; also add Charisma dice if the banisher summoned the spirit",
+        "target_number": "spirit Force",
+        "conditional_dice": "Applicable spirit-focus dice and totem modifiers"
+      },
+      "spirit_test": {
+        "dice": "spirit Force",
+        "target_number": "banisher Magic Attribute"
+      },
+      "success_comparison": [
+        {
+          "case": "spirit_more_successes",
+          "effect": "Temporarily reduce banisher Magic Attribute by one for each net spirit success."
+        },
+        {
+          "case": "banisher_more_successes",
+          "effect": "Reduce spirit Force by one for each net banisher success."
+        },
+        {
+          "case": "tied_successes",
+          "effect": "Neither participant gains ground; contest continues."
+        }
+      ],
+      "round_loop": "The current winner decides whether to conduct another round; neither combatant can take other actions until the winner next reaches a Combat Phase. Repeat until a participant reaches zero or the current winner elects to break off.",
+      "termination": [
+        {
+          "when": "spirit Force becomes 0",
+          "result": "Spirit destroyed."
+        },
+        {
+          "when": "banisher Magic Attribute becomes 0",
+          "result": "Banisher takes Deadly Stun Damage and loses consciousness; spirit is free; additionally immediately check for permanent Magic Loss under printed p160."
+        }
+      ],
+      "recovery": "Temporary reduction of surviving banisher Magic/remaining spirit Force from banishing returns at one point per hour; a destroyed spirit is not automatically restored by this sentence."
+    },
+    "astral_conjuring": {
+      "conjuring_exclusive": "Conjuring Exclusive actions are unavailable while projecting astrally.",
+      "command_sequence": "A conjurer may summon first, then astrally project and command the summoned spirit while astral.",
+      "banishing_while_astrally_projecting": false,
+      "banishing_while_astrally_perceiving": false,
+      "alternative": "The book describes astral combat for dealing with hostile spirits on their home turf."
+    },
+    "accepted_general_canon_reused": [
+      "rules/magic/banishing.yml",
+      "rules/magic/controlling-spirits.yml",
+      "rules/magic/spirit-services.yml",
+      "rules/magic/spirit-foci.yml",
+      "rules/magic/drain.yml"
+    ],
+    "examples_specification_not_engine_test": [
+      {
+        "id": "control_net2",
+        "challenger_successes": 4,
+        "incumbent_successes": 2,
+        "expected_services_owed_to_challenger": 2,
+        "drain_tests": "both"
+      },
+      {
+        "id": "uncontrolled_extra_services",
+        "conjuring_successes": 5,
+        "expected_additional_services": 2
+      },
+      {
+        "id": "banish_lose2",
+        "spirit_successes": 3,
+        "banisher_successes": 1,
+        "expected_temp_magic_reduction": 2
+      },
+      {
+        "id": "banish_win3",
+        "banisher_successes": 5,
+        "spirit_successes": 2,
+        "expected_force_reduction": 3
+      }
+    ],
+    "implementation_state": "source_reviewed_not_engine_executed",
+    "editorial_review": {
+      "reviewed_text_field_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source.*",
+        "data.controlling_spirits.*",
+        "data.uncontrolled_elemental.*",
+        "data.banishing.*",
+        "data.astral_conjuring.*",
+        "data.accepted_general_canon_reused[*]",
+        "data.examples_specification_not_engine_test[*].*",
+        "data.implementation_state",
+        "data.editorial_review.*"
+      ],
+      "evidence": "Direct printed p189/physical PDF198 source-image review, compared accepted general controlling and banishing rules. Explicit action and TN, attributions and distinctions retained. This does not certify source completeness or engine validation."
+    }
+  }
+}
