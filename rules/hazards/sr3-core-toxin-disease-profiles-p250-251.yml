@@ -1,0 +1,125 @@
+id: rule.hazards.sr3-core-toxin-disease-profiles-p250-251
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 250-251
+pdf_pages: 259-260
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop role-playing game;
+  printed pp250-251, physical PDF259-260; no later rules imported.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Fictional tabletop RPG numeric profiles — FASA Corporation Shadowrun, Third Edition (FASA7001), original
+  printed pp250-251/PDF259-260
+summary: Published original FASA7001 fictional game effects and numeric toxin/disease profiles, including Damage
+  Codes, Speed, conditional +2 modifiers, Willpower floor and two stated in-world Fugu prices.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    source_type: fictional tabletop role-playing game rulebook
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_pages:
+    - 250
+    - 251
+    physical_pdf_pages:
+    - 259
+    - 260
+  section: 'Beyond the Shadows — Toxins and Diseases: individual fictional game profiles'
+  profiles:
+  - name: Neuro-stun VIII
+    printed_page: 250
+    damage_code: 6S Stun
+    speed: 1 Combat Turn
+    game_effects:
+      contact_or_inhalation_as_source_depiction: true
+      even_if_damage_resisted: The character experiences in-game disorientation for approximately one hour.
+      target_number_modifier_during_disorientation: 2
+  - name: Narcoject
+    printed_page: 250
+    damage_code: 6D Stun
+    speed: Immediate
+    game_description: The book depicts this fictional game toxin as injected, including with in-world drug darts;
+      the source states no additional side effects.
+  - name: Gamma-Scopolamine
+    printed_page: 250
+    damage_code: 10D Stun
+    speed: Immediate
+    game_effects:
+      source_depicted_delivery: Injection in the fictional setting.
+      deadly_stun: The source equates Deadly Stun with full paralysis; lesser damage still imposes an additional
+        +2 to ordinary Stun-wound modifiers.
+      lesser_damage_extra_target_number_modifier: 2
+      worked_example:
+        stun_level: Serious
+        target_number_modifier_total: 5
+        initiative_modifier_total: -5
+      full_effect_duration_hours: 1
+      residual_effect_duration_after_full_effect_hours: 1
+      residual_in_world_claim: The book depicts a residual effect as a truth-serum claim; this is fictional game-world
+        portrayal, not a reliable real-world medical claim.
+      willpower_modifier: -2
+      willpower_floor: 1
+      willpower_modifier_scope: For the duration of the fictional chemical effect, as described on original printed
+        p250.
+  - name: Fugu Family
+    printed_pages:
+    - 250
+    - 251
+    speed: Instantaneous
+    variants:
+    - name: Fugu-5
+      damage_code: 3D
+      in_world_price_per_dose_nuyen: 10000
+    - name: Fugu-6
+      damage_code: 6D
+      in_world_price_per_dose_nuyen: 20000
+    - name: Fugu-8
+      damage_code: 8D
+      in_world_price_per_dose_nuyen: null
+    resisted_damage_side_effects: The source states there are no side effects if the character successfully resists
+      damage.
+    source_world_context: The book describes a manufactured fictional neurotoxin family and in-world coercive use;
+      the entry does not supply any real-world synthesis or procurement instructions.
+    price_limit: Printed p251 supplies dose costs for watered-down Fugu-5 and Fugu-6; no Fugu-8 price is specified
+      there.
+  - name: VITAS-3
+    printed_page: 251
+    damage_code: 6D
+    speed: 12 hours
+    source_description: The fictional rulebook describes viral disease transmitted through close contact or shared
+      confined space; after the game incubation period, fever, chills and vomiting last until the in-game damage
+      has been reduced to Light.
+  related_existing_canon_reused:
+  - rule.hazards.diseases-and-toxins
+  - rule.hazards.toxins-diseases
+  - rule.hazards.sr3-core-disease-toxin-repeated-body-test-p249-250
+  - rule.condition.condition-monitor
+  boundary_note: This is a source-specific numerical profile record. It does not replicate the already accepted
+    generic Body-versus-Power, 2-success staging, or +4 ongoing-exposure procedure from pp249-250. The book does
+    not supply separate explicit Power ratings for these named profiles here, so no Power value is inferred from
+    the Damage Code.
+  engine_status: Source-image-reviewed exact tabletop stats; no executable consumer integration or full-source closure
+    claimed.
+  editorial_review:
+    original_images_inspected:
+    - FASA7001 printed p250/physical PDF259 (named toxins and source-specific modifiers)
+    - FASA7001 printed p251/physical PDF260 (Fugu continuation and VITAS-3)
+    reviewed_text_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.section
+    - data.profiles[*].*
+    - data.profiles[*].game_effects.*
+    - data.profiles[*].variants[*].*
+    - data.related_existing_canon_reused[*]
+    - data.boundary_note
+    - data.engine_status
+    - data.editorial_review.*
+    evidence_limit: Human source-image review and structural gate receipt establish provenance and exact reviewed
+      claims, but are not an exhaustive rulebook completeness certification.
