@@ -1,0 +1,98 @@
+id: rule.matrix.sr3-core-host-rating-table-exact-p205
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '205'
+pdf_pages: '214'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional
+  tabletop RPG Matrix chapter printed p205/physical PDF214, not another edition.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
+  host-rating randomization table, printed p205/PDF214
+summary: Original core Matrix host creation rules and exact Easy/Average/Hard Security
+  Value and subsystem dice formulas; randomized ratings are optional gamemaster tools.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    nature: Published fictional cyberpunk tabletop role-playing game
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pages:
+  - printed: 205
+    physical_pdf: 214
+    heading: Host Rating Table / System Ratings
+  intrusion_difficulty_classifications:
+  - Easy
+  - Average
+  - Hard
+  optional_randomized_host_rating_table:
+  - intrusion_difficulty: Easy
+    security_value: 1D3 + 3
+    subsystem_ratings: 1D3 + 7
+  - intrusion_difficulty: Average
+    security_value: 1D3 + 6
+    subsystem_ratings: 2D3 + 9
+  - intrusion_difficulty: Hard
+    security_value: 2D3 + 6
+    subsystem_ratings: 1D6 + 12
+  rating_generation_authority: The gamemaster establishes a host System Rating using
+    Intrusion Difficulty; the source permits these dice rolls OR gamemaster discretion,
+    not a universal mandatory randomizer.
+  named_system_rating_fields:
+  - Security Rating
+  - Access
+  - Control
+  - Index
+  - Files
+  - Slave
+  host_security_rating:
+    components:
+    - Security Code (a color)
+    - Security Value (a number)
+    security_codes:
+    - code: Blue
+      description: little or no security
+    - code: Green
+      description: average security
+    - code: Orange
+      description: significant security
+    - code: Red
+      description: high security
+    numeric_typical_range: 4 to 12; higher values also possible
+    security_value_role: Security Value specifies number of dice gamemaster rolls
+      to oppose a decker System Test and number of dice for Security Tests; original
+      text cross-refers to printed p209.
+  subsystem_ratings:
+    exactly_five:
+    - Access
+    - Control
+    - Index
+    - Files
+    - Slave
+    mechanic: Each subsystem rating is the target number for unauthorized manipulation
+      tests against that subsystem. The source example uses Computer Skill against
+      Access and Files Ratings for a Success Contest to read files; the complete System
+      Test procedure is cross-referenced on printed p209.
+  system_access_nodes:
+    term: SAN
+    source_definition: System-access nodes connect host computers to grids and to
+      other hosts.
+    gm_network_choice: Gamemaster chooses the LTG a host connects to, and whether
+      access is PLTG-only or host-host-only; the printed p205 passage does not define
+      a unique topology for all hosts.
+  distributed_databases:
+    original_game_procedure: In the described fictional Matrix, apparent files may
+      be references to other hosts; gamemaster rolls 1D6 to decide how many reference-link
+      steps exist in a given file chain.
+    certainty: Gamemaster adjudication of the game-world network, not an invariable
+      property of physical databases.
+  provenance_limits: Original printed p205 source image reviewed; follow-on p206 procedure
+    and printed p209 System Tests are separate dependencies, not inferred or included
+    as already normalized.
+  code_status: Source-transcribed rule and options; no certified executable Matrix
+    engine or whole-book closure.
