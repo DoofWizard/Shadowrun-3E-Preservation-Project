@@ -1,0 +1,85 @@
+id: rule.security.sr3-core-door-window-alarm-motion-sensor-p234-235
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '234-235'
+pdf_pages: '243-244'
+edition_scope: >-
+  Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop
+  role-playing game mechanics from printed pp234-235 / physical PDF243-244.
+  The abstract dice tests do not describe effective real-world security practices.
+content_class:
+  - rule_exact
+headline: >-
+  FASA Corporation Shadowrun, Third Edition FASA7001 fictional game alarm-contact
+  and motion-sensor tests, printed pp234-235/PDF243-244
+summary: >-
+  Original tabletop rules for door/window contact alarms and ultrasound motion
+  sensors: Perception TN 6, complementary Electronics B/R, system-Rating tests,
+  5-meter sensor range, Stealth opposition, and +1 TN per additional quarter-meter
+  above one meter of movement per Combat Turn.
+framing: reference_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    nature: published fictional cyberpunk tabletop role-playing game
+    printed_pages: [234, 235]
+    physical_pdf_pages: [243, 244]
+  source_section: Running the Shadows / Technical Security / Door and Window Alarms / Motion Sensors
+  door_window_alarms:
+    source_printed_page: 234
+    game_device: The source depicts contact alarms that activate when an original circuit is broken by an opened game-world door or window.
+    contact_location_test:
+      dice: Perception Test
+      target_number: 6
+      complementary_skill: Electronics Build/Repair may be used as a Complementary Skill.
+    contact_resolution_test:
+      dice: Electronics Test
+      target_number: Rating of the fictional security system
+      modifier_reference: The original Build/Repair Table on printed p95 supplies relevant modifiers.
+      certainty: The passage supplies no new time duration or automatic successes for this test; none are inferred.
+  motion_sensors:
+    source_printed_pages: [234, 235]
+    fictional_ultrasound_field_radius_meters: 5
+    gradual_movement:
+      nominal_meters_per_combat_turn: 0.5
+      test: Opposed Stealth (Sensor Rating) Test
+      failed_test: The fictional alarm activates.
+    quicker_movement:
+      threshold_meters_per_combat_turn: 1
+      additional_meters_step: 0.25
+      target_number_increase_per_step: 1
+      condition: The modifier applies for each additional quarter-meter moved beyond 1 meter in a Combat Turn.
+      no_unprinted_rule: The passage does not state a separate success threshold or a universal effect for other movement speeds.
+    additional_option:
+      item: The original game references an ultrasound emitter/detector on printed p293 as a possible in-game countermeasure.
+      scope: No equipment statistics or distinct resolution rule for this item are inferred from pp234-235.
+  cross_references:
+    - rules/security/sr3-core-perimeter-wire-electric-numeric-p234.yml
+    - rules/security/sr3-core-maglock-keypad-cardreader-print-numeric-p235.yml
+    - rules/skills/sr3-core-build-repair-tn-time-p95.yml
+  historical_scope: >-
+    These game-abstract Ratings, dice, distances and combat turns are original
+    Third Edition rules, distinct from supplemental or later-edition treatments.
+  review_receipt:
+    original_page_images: >-
+      Original cataloged scan independently inspected at physical PDF243 (printed234)
+      and PDF244 (printed235), specifically the bottom-right Technical Security
+      passages and the p235 upper-left Motion Sensors continuation.
+    reviewed_human_readable_field_paths:
+      - edition_scope
+      - headline
+      - summary
+      - data.publication.*
+      - data.source_section
+      - data.door_window_alarms.*
+      - data.motion_sensors.*
+      - data.cross_references[*]
+      - data.historical_scope
+      - data.review_receipt.*
+    limits: This local editorial receipt and structural gate tests do not establish completeness of the entire source or executable engine fidelity.
