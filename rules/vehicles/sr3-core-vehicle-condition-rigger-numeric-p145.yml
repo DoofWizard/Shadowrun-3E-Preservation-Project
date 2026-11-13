@@ -1,0 +1,88 @@
+{
+  "id": "rule.vehicles.sr3-core-vehicle-condition-rigger-p145",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "145",
+  "pdf_pages": "146",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop rules, printed 145/physical PDF 146; no later-edition substitutions",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation FASA7001), original vehicle rules pp145/PDF146",
+  "summary": "Exact core vehicle Condition Monitor states, vehicle speed penalty meaning, rigger feedback Damage Resistance Test, first-pass passenger initiative and group positioning modifiers. Historical in-game numbers and original source conditions retained; not a vehicle-operating manual.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game rulebook"
+    },
+    "fictional_scope": "Rules for imaginary tabletop vehicle combat and character state; numeric values are game abstractions, not physical-world vehicle instructions.",
+    "source_section": "Vehicles and Drones — Multiple Vehicle Combat, Passenger Actions During Vehicle Combat, Vehicle Damage and Rigger Damage",
+    "vehicle_condition_monitor": {
+      "damage_tracks": "Vehicles take only Physical damage, never Stun",
+      "named_conditions": [
+        "Light",
+        "Moderate",
+        "Serious",
+        "Destroyed"
+      ],
+      "destroyed_equivalent": "Destroyed is equivalent to the Deadly condition level in the character damage system",
+      "modifier_categories": [
+        "Target Numbers for tests involving the vehicle",
+        "Driver initiative",
+        "Vehicle Speed Rating"
+      ],
+      "maximum_speed_rule": "Maximum vehicle speed equals 1.5 times Speed Rating; a Speed Rating reduction also reduces maximum speed",
+      "source_boundary": "Original p145 supplies monitor states and effect semantics; exact Light/Moderate/Serious modifier rows are printed on p147 and are separately normalized."
+    },
+    "rigger_feedback": {
+      "trigger": "A rigged vehicle reaches Serious damage or is Destroyed",
+      "controlling_rigger_damage_resistance_test": {
+        "target_damage_code": "6M Physical",
+        "dice": "Rigger Body dice",
+        "combat_pool_dice_allowed": false,
+        "control_pool_dice_allowed": false
+      },
+      "game_context": "The feedback applies to the controlling rigger, not automatically to every passenger."
+    },
+    "multi_vehicle_combat": {
+      "grouping_condition": "Multiple vehicles cooperating on a common goal can be treated as a group in one opposed vehicle-combat maneuver",
+      "maneuver_score_basis": "Use the fastest vehicle in the group to determine a combined Maneuver Score",
+      "relative_group_size_effect": "Modify Vehicle Test target numbers by one per additional vehicle on one side compared with the other",
+      "original_example": {
+        "group_vehicle_count": 3,
+        "opponent_vehicle_count": 1,
+        "group_target_number_modifier": -2,
+        "single_opponent_target_number_modifier": 2
+      },
+      "scope": "Only cooperative vehicle group positioning contests, not a bonus to unrelated tests."
+    },
+    "passengers": {
+      "eligible_actions": "Use vehicle electronics, fire vehicle weapons, hang on, cast spells or fire at other vehicles while riding",
+      "first_initiative_pass": "If a passenger has higher Initiative than the controlling rigger, the passenger must hold their first action until the rigger's first Initiative Phase",
+      "subsequent_passes": "Subsequent Initiative Passes follow normal order",
+      "limitation": "Passengers do not control their surroundings or the rigger's movements."
+    },
+    "reuse_existing": "The accepted rule.vehicles.damage and rule.vehicles.maneuver-score summarize these pages but do not normalize the new source-specific 6M feedback test and group-of-three −2/+2 example; use existing core Driving and Vehicle Combat subsystems for implementation.",
+    "editorial_receipt": {
+      "original_source": "Freshly re-acquired FASA7001 cataloged PDF, exact SHA-256 verified with preservation_method.py against live source manifest",
+      "source_images": "Printed 145 / physical PDF 146 original scanned page images directly inspected before baseline was composed",
+      "reviewed_human_readable_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.fictional_scope",
+        "data.* (all nested narrative fields, names, table headers, condition strings and source-specific exceptions)",
+        "data.editorial_receipt.*"
+      ],
+      "independent_review_limit": "Editorial review and structural checks do not establish exhaustive book coverage, successful GitHub commits or executable engine testing."
+    }
+  }
+}
