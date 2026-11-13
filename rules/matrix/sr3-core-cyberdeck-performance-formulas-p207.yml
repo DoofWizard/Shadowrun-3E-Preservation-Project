@@ -1,0 +1,81 @@
+id: rule.matrix.sr3-core-cyberdeck-performance-formulas-p207
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '207'
+pdf_pages: '216'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop RPG, printed p207/physical
+  PDF216; original Third Edition source, not later editions.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_id: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    genre: published fictional cyberpunk tabletop role-playing game
+  original_source:
+    printed_page: 207
+    physical_pdf_page: 216
+    section: The Matrix / Active and Storage Memory, I/O Speed, Response Increase, Detection Factor and Hacking Pool
+  active_memory:
+    unit: Mp
+    rule: At any moment, sum of Mp sizes of all concurrently running utility programs must be no larger than Active Memory
+      rating.
+    source_example:
+      active_Mp: 200
+      max_combined_running_utility_Mp: 200
+  storage_memory:
+    rule: All utility programs require storage space even while in active memory; stored data and downloaded files also count
+      toward total Storage Memory Mp.
+    memory_swap: A stored program is loaded into Active Memory by Swap Memory operation, referenced on original printed p214.
+    limit: Total stored Mp may not exceed Storage Memory; a deck with 500 Mp remaining cannot download more than 500 Mp of
+      data.
+  io_speed:
+    unit: Mp per Combat Turn
+    rule: All uploads and downloads use the full I/O speed rating of the cyberdeck.
+  response_increase:
+    per_point_Reaction_bonus: 2
+    per_point_Initiative_dice_bonus: 1D6
+    absolute_max_rating: 3
+    MPCP_limited_max_formula: floor(MPCP Rating / 4)
+    fraction_rounding: down
+    source_example: MPCP 3 or less cannot support any Response Increase.
+  detection_factor:
+    source_formula_when_sleaze_running: ceil((persona Masking Rating + Sleaze program rating) / 2)
+    source_example:
+      deck_MPCP: 8
+      Masking: 6
+      Sleaze: 8
+      Detection_Factor: 7
+    without_sleaze: Half of the Masking Rating; source p207 does not state a rounding rule for this case.
+    purpose: Gamemaster uses Detection Factor as target number on in-game System tests to detect presence or prevent activities.
+  hacking_pool:
+    source_formula: floor((decker Intelligence Rating + deck MPCP Rating) / 3)
+    fraction_rounding: down
+    cumulative_Intelligence_bonus: Increases to Intelligence from cyberware or magic also apply to Hacking Pool.
+    allowed_uses:
+    - Matrix System Tests
+    - Matrix attack tests
+    - Matrix defense tests
+    - Matrix maneuvers
+    - Matrix Attribute Tests
+    not_allowed: Cannot apply Hacking Pool dice to Body or Willpower Tests resisting damaging Gray or Black IC; only separately
+      applicable Karma Pool, enhancements, or boosts may assist.
+  hardening_utilities: Hardening protects from Black Hammer and Killjoy utilities, but not from other attack utilities (source
+    p207).
+  reuse:
+  - rules/matrix/cyberdeck-ratings.yml
+  - rules/matrix/detection-factor.yml
+  - rules/matrix/matrix-initiative.yml
+  scope: These p207 core numeric procedures extend previously ingested overview records without replacing later supplements
+    or inventing rounding.
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop-RPG rules, printed p207/PDF216: exact
+  original cyberdeck memory, response, detection and Hacking Pool rules'
+summary: Independent source-page transcription of original The Matrix / Active and Storage Memory, I/O Speed, Response Increase,
+  Detection Factor and Hacking Pool from FASA7001 p207/PDF216; exact original-game numbers, conditions and exceptions, not
+  real-world operations.
