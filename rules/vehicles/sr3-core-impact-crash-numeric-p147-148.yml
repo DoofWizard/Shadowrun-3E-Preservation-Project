@@ -3,180 +3,167 @@
   "record_type": "rule",
   "status": "source_reviewed",
   "source": "source.sr3-core",
-  "printed_pages": "147-148",
-  "pdf_pages": "148-149",
-  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), historical original fictional tabletop rulebook printed 147-148/PDF148-149; no assumed later Rigger 3 substitution",
   "content_class": [
     "rule_exact"
   ],
-  "framing": "reference_exact",
-  "headline": "Fictional tabletop game Shadowrun, Third Edition (FASA Corporation FASA7001), vehicle mechanics printed 147-148/PDF148-149",
-  "summary": "Source-exact vehicle Damage Modifier and Impact Damage Levels tables, Crash Test conditions and modifiers, passenger impact, barrier and pedestrian collision outcomes. Source-faithful Third Edition numeric conditions, not real-world vehicle operations.",
+  "printed_pages": "147-148",
+  "pdf_pages": "148-149",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop rulebook printed 147-148/physical PDF 148-149, no later-edition rule substitutions.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
       "publisher": "FASA Corporation",
-      "catalog_number": "FASA7001",
       "edition": "Third Edition",
+      "catalog_number": "FASA7001",
       "source_id": "source.sr3-core",
-      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
-      "source_type": "published fictional tabletop role-playing game"
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "medium": "Original fictional tabletop role-playing game rulebook"
     },
-    "fictional_scope": "Exact source-derived tabletop fictional vehicle procedures, tests and damage codes, not instructions for operating real-world vehicles",
-    "source_section": "Vehicles and Drones — Vehicle Damage from Impact; Crashing; Colliding with Objects",
-    "vehicle_damage_modifiers": [
+    "source_section": "Vehicles and Drones / Vehicle Damage from Impact, Crashing and Collisions",
+    "original_core_scope": "Tabletop vehicle damage, crash and passenger injury abstractions, not real-world driving or collisions.",
+    "damage_modifiers": [
       {
-        "damage_level": "Light",
-        "target_number_modifier": 1,
-        "initiative_modifier": -1,
+        "level": "Light",
+        "test_target_number_modifier": 1,
+        "initiative_penalty": -1,
         "speed_rating_reduction_percent": 0
       },
       {
-        "damage_level": "Moderate",
-        "target_number_modifier": 2,
-        "initiative_modifier": -2,
+        "level": "Moderate",
+        "test_target_number_modifier": 2,
+        "initiative_penalty": -2,
         "speed_rating_reduction_percent": 25
       },
       {
-        "damage_level": "Serious",
-        "target_number_modifier": 3,
-        "initiative_modifier": -3,
+        "level": "Serious",
+        "test_target_number_modifier": 3,
+        "initiative_penalty": -3,
         "speed_rating_reduction_percent": 50
       }
     ],
-    "source_speed_note": "Speed Rating reduction also reduces maximum vehicle speed, which is Speed Rating multiplied by 1.5.",
     "impact_damage_levels": [
       {
-        "speed_meters_per_turn": "1-20",
-        "level": "Light"
+        "meters_per_turn": "1-20",
+        "damage_level": "Light"
       },
       {
-        "speed_meters_per_turn": "21-60",
-        "level": "Moderate"
+        "meters_per_turn": "21-60",
+        "damage_level": "Moderate"
       },
       {
-        "speed_meters_per_turn": "61-200",
-        "level": "Serious"
+        "meters_per_turn": "61-200",
+        "damage_level": "Serious"
       },
       {
-        "speed_meters_per_turn": "201+",
-        "level": "Destroyed"
+        "meters_per_turn": "201+",
+        "damage_level": "Destroyed"
       }
     ],
-    "collision_power": {
-      "crash": "Vehicle's speed divided by 10, rounded up",
-      "ram": "Difference between the vehicles' speeds divided by 10, rounded up",
-      "published_example": "Ramming at 300 against 152 meters per turn yields 148 difference, Power 15."
+    "impact_power": {
+      "crash": "Vehicle speed / 10 rounded up.",
+      "ramming": "Absolute speed difference of colliding vehicles / 10 rounded up.",
+      "original_example": "Speeds 300 and 152 meters per turn produce difference 148 and Power 15."
     },
-    "resisting_impact": {
-      "dice": "Vehicle controller rolls dice equal to vehicle Body, plus available Control Pool dice up to driving skill",
-      "target_number": "Power of impact attack",
-      "armor_exception": "Neither vehicle Armor nor any other listed factor reduces attack Power for this impact test",
-      "stage_down": "Every 2 successes lowers Damage Level one level",
-      "target_number_floor": 2
+    "vehicle_impact_resistance": {
+      "dice": "Vehicle Body Rating plus available rigger Control Pool dice, up to the rigger's Vehicle Skill Rating.",
+      "target_number": "Impact attack Power.",
+      "armor_exception": "Neither vehicle armor nor other ordinary factors reduce the Power of the impact attack.",
+      "staging": "For each 2 successes on the Damage Resistance Test, decrease Damage Level one step."
     },
-    "passenger_impact": {
-      "damage": "Same impact Power as vehicle, one lower Damage Level",
-      "seat_belt": "Seat belt reduces the passenger Damage Level by one additional level",
-      "combat_pool": "Passenger cannot use Combat Pool dice for damage resistance",
-      "control_pool": "Control Pool dice used by rigger in the Crash Test also add to passenger resistance dice"
+    "passenger_impact_resistance": {
+      "power": "The Power of the impact attack faced by the vehicle.",
+      "damage_level": "Use the level of damage that the vehicle ACTUALLY took after its own damage-stage reductions; do not automatically reduce the original Damage Level by one for every passenger.",
+      "seat_belt_or_safety_restraint": "Stages down passenger Damage Level by an additional one step.",
+      "combat_pool": "Passengers cannot use Combat Pool dice for this Damage Resistance Test.",
+      "control_pool": "Control Pool dice used by the rigger in the Crash Test also add to dice rolled for passenger Damage Resistance Tests.",
+      "armor": "Only Impact Armor protects against impact damage."
     },
     "crash_test": {
       "trigger": [
-        "Vehicle takes damage during a ramming action",
-        "Vehicle suffers Serious damage from one attack, including weapon or spell attacks",
-        "Vehicle Condition Monitor reaches Destroyed",
-        "Vehicle decelerates more than Acceleration Rating × 4"
+        "Vehicle takes damage during a ramming action.",
+        "Vehicle takes Serious Damage from a single attack, including a fictional weapon or spell attack.",
+        "Vehicle Condition Monitor reaches Destroyed.",
+        "Vehicle decelerates more than 4 times its Acceleration Rating."
       ],
-      "test": "Driving Test with base target equal to vehicle Handling Rating and modifiers from original Crash Test Modifiers Table",
-      "rigger_bonus": "Autonav and Control Pool dice may be added, each up to the rating of the driving skill",
-      "failure": "Vehicle crashes to a complete stop and controller makes another impact damage resistance test"
+      "procedure": "Driving Test against base Target Number of vehicle Handling Rating plus Crash Test Modifiers.",
+      "additional_dice": "Rigger may add a number of Autonav dice equal to the vehicle's Autonav Rating, plus available Control Pool dice up to the rating of the Driving Skill used for the Crash Test.",
+      "failure": "Vehicle crashes to a complete stop and controller makes another vehicle Damage Resistance Test against impact."
     },
-    "crash_modifiers": {
-      "driver_wounded": "Add applicable current damage modifier",
-      "vehicle_damaged": "Add applicable current damage modifier",
+    "crash_test_modifiers": {
+      "driver_wounded": "Apply corresponding current character Damage Modifier.",
+      "vehicle_damaged": "Apply corresponding Vehicle Damage Modifier.",
       "terrain": [
-        {
-          "condition": "Open",
-          "modifier": -1
-        },
-        {
-          "condition": "Normal",
-          "modifier": 0
-        },
-        {
-          "condition": "Restricted",
-          "modifier": 2
-        },
-        {
-          "condition": "Tight",
-          "modifier": 4
-        }
+        [
+          "Open",
+          -1
+        ],
+        [
+          "Normal",
+          0
+        ],
+        [
+          "Restricted",
+          2
+        ],
+        [
+          "Tight",
+          4
+        ]
       ],
-      "vehicle_speed": [
-        {
-          "original_condition": "Less than driver's Reaction ×20",
-          "modifier": 0
-        },
-        {
-          "original_condition": "Less than driver's Reaction ×30",
-          "modifier": 1
-        },
-        {
-          "original_condition": "Less than driver's Reaction ×40",
-          "modifier": 2
-        },
-        {
-          "original_condition": "More than driver's Reaction ×40",
-          "modifier": 4
-        }
+      "speed_by_driver_reaction": [
+        [
+          "Less than Reaction ×20",
+          0
+        ],
+        [
+          "Less than Reaction ×30",
+          1
+        ],
+        [
+          "Less than Reaction ×40",
+          2
+        ],
+        [
+          "More than Reaction ×40",
+          4
+        ]
       ],
-      "boundary_qualification": "The original text leaves equality to Reaction ×40 unstated; do not invent threshold behavior"
+      "speed_boundary": "The printed table does not separately specify equality at Reaction ×40; do not silently assign an invented rule."
     },
-    "barrier_collision": {
-      "comparison": "Vehicle speed compared with Barrier Rating ×20",
-      "at_or_below": "Vehicle stops on collision; core crash rules resolve vehicle/passenger damage",
-      "above": "Barrier collapses, vehicle continues and loses speed equal to Barrier Rating ×20",
-      "collision_damage_power": "Barrier Rating ×20",
-      "damage_level": "Original impact speed band",
-      "passengers_without_safety_gear": "When the vehicle breaches a barrier, passengers resist the vehicle impact Power but one Damage Level lower"
+    "wall_barrier_collision": {
+      "threshold": "Compare vehicle speed (meters per turn) against Barrier Rating ×20.",
+      "speed_at_or_below_threshold": "Vehicle stops on intact wall/barrier; ordinary crash rules apply.",
+      "speed_above_threshold": "Wall/barrier collapses; vehicle continues with speed reduced by Barrier Rating ×20.",
+      "damage_power": "Barrier Rating itself, NOT Barrier Rating ×20; this is distinct from the breakthrough threshold and speed loss.",
+      "damage_level": "Use vehicle speed LOSS in the original Impact Damage Levels Table.",
+      "passengers_if_barrier_breached": "Restrained passengers take no damage; unrestrained passengers resist the standard impact Power with one step lower Damage Level."
     },
-    "vehicle_pedestrian": {
-      "pedestrian_damage_power": "Vehicle speed divided by 10",
-      "pedestrian_damage_level": "One step higher than Impact Damage Levels Table speed band",
-      "pedestrian_resistance": "Standard character Damage Resistance Test; Impact Armor and available Combat Pool dice can reduce damage",
-      "vehicle_resistance": "Vehicle resists its own impact damage one Damage Level lower than corresponding speed band",
-      "source_caveat": "No additional rounding instruction in this original pedestrian passage"
+    "pedestrian_collision": {
+      "pedestrian_power": "Vehicle speed / 10; passage does not specify rounding.",
+      "pedestrian_level": "One Damage Level higher than the impact-speed band.",
+      "pedestrian_resistance": "Standard Damage Resistance Test with Impact Armor and available Combat Pool.",
+      "vehicle_damage_level": "Vehicle resists one Damage Level below the Impact Damage Levels Table band for its speed; the source example states a vehicle moving 1–20 meters per turn takes no damage from this collision."
     },
-    "example_vectors_specification_only": [
-      {
-        "vehicle_speed": 45,
-        "impact_level": "Moderate"
-      },
-      {
-        "faster_vehicle_speed": 300,
-        "slower_vehicle_speed": 152,
-        "expected_ramming_power": 15
-      },
-      {
-        "vehicle_damage_level": "Moderate",
-        "expected_target_modifier": 2,
-        "expected_initiative_modifier": -2,
-        "expected_speed_rating_reduction_pct": 25
-      }
-    ],
-    "source_review_receipt": {
-      "original_images": "Independently inspected fresh SHA-verified original printed pp147-148 corresponding physical PDF148-149 prior to baseline freeze",
-      "reviewed_human_readable_fields": [
+    "provenance_correction": {
+      "reason": "Fresh original p147-148 image review identified two material errors in an earlier non-indexed candidate: passengers do not automatically use a one-step-lower Damage Level than the vehicle actually suffered; wall collision damage Power is the Barrier Rating, not Barrier Rating times 20.",
+      "prior_blob": "a4b6e8dea5f30da8fda02fd42fe57826955ac72e",
+      "prior_record_preserved_in_git_history": true,
+      "prior_source_text_not_treated_as_authoritative": "Original printed page images control the correction; the new baseline was independently authored and reviewed before candidate presentation."
+    },
+    "editorial_review": {
+      "original_pages": "Original cataloged FASA7001 scan freshly reacquired, SHA-256 matched the live SR3 manifest; printed 147-148/physical PDF 148-149 inspected visually before the source-reviewed baseline was authored.",
+      "reviewed_text_paths": [
         "edition_scope",
         "headline",
         "summary",
         "data.publication.*",
-        "data.fictional_scope",
-        "data.* including all nested tables, explanatory conditions, source examples and qualifiers",
-        "data.source_review_receipt.*"
+        "data.* (including nested explanatory language, table labels, conditions, exceptions, and source examples)",
+        "data.editorial_review.*"
       ],
-      "source_fidelity_limit": "Editorial receipt and passing preflight are not exhaustive book completeness certification or runnable engine test."
+      "method": "Original page images independently checked, in-game fictional rules reported neutrally in the third person. Local gate checks do not independently establish source fidelity or completeness."
     }
-  }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop rules — Vehicles and Drones / Vehicle Damage from Impact, Crashing and Collisions, original printed 147-148/PDF 148-149",
+  "summary": "Corrected original numeric impact, crash, barrier and pedestrian damage tests; expressly distinguishes passenger staged Damage Level and barrier damage Power from the separate speed threshold, with complete table rows and exceptions."
 }
