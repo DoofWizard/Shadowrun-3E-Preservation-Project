@@ -1,0 +1,70 @@
+id: rule.matrix.sr3-core-mpcp-persona-hardening-p206
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '206'
+pdf_pages: '215'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop RPG, printed p206/physical
+  PDF215; original Third Edition source, not later editions.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_id: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    genre: published fictional cyberpunk tabletop role-playing game
+  original_source:
+    printed_page: 206
+    physical_pdf_page: 215
+    section: The Matrix / Cyberdecks / Deck Ratings and Hardening
+  persona_limits:
+    master_persona_control_program: MPCP
+    persona_programs:
+    - Bod
+    - Evasion
+    - Masking
+    - Sensor
+    combined_persona_rating_max_formula: 3 × deck MPCP Rating
+    per_persona_program_rating_max_formula: deck MPCP Rating
+    max_utility_program_rating_formula: deck MPCP Rating
+    original_example:
+      deck_mpcp: 8
+      unmodified_persona:
+        Bod: 6
+        Evasion: 6
+        Masking: 6
+        Sensor: 6
+      redistributed_persona:
+        Bod: 8
+        Evasion: 5
+        Masking: 6
+        Sensor: 5
+      combined_total: 24
+    notation: MPCP/Bod/Evasion/Masking/Sensor
+  operation:
+    simultaneous_deckers_per_deck: 1
+    physical_requirements:
+    - Decker physically attaches a fiber-optic jack to the datajack.
+    - Cyberdeck physically connects to a Matrix jackpoint.
+    persona_software_concept: Bod, Sensor, Evasion and Masking are persona programs representing the persona attributes in
+      Matrix tests; utilities are separately rated programs.
+  hardening:
+    per_point_reduction_to_black_IC_damage_power: 1
+    applies_to: Power of Black IC damage dealt to in-game icon or actual decker for Resistance Tests
+    gray_IC_crashed_icon_exception: When a decker icon has been crashed by Gray IC and that IC makes an Attack Test, the target
+      number for the Attack Test increases by +1 per Hardening point.
+    limits: Do not apply Black IC Power reduction to all attack utilities; follow p207 distinction.
+  reuse:
+    general_record: rules/matrix/cyberdeck-ratings.yml
+    unresolved_by_general_record: General existing rating overview lacks exact 3×MPCP pool cap, example, hardening values
+      and physical simultaneous connection conditions.
+  fidelity: All numeric values and source conditions are from p206 original FASA7001 printed page.
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop-RPG rules, printed p206/PDF215: MPCP persona
+  ceilings, deck operating conditions, and Hardening modifiers'
+summary: Independent source-page transcription of original The Matrix / Cyberdecks / Deck Ratings and Hardening from FASA7001
+  p206/PDF215; exact original-game numbers, conditions and exceptions, not real-world operations.
