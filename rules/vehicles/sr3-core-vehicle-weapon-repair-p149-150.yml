@@ -5,102 +5,88 @@
   "source": "source.sr3-core",
   "printed_pages": "149-150",
   "pdf_pages": "150-151",
-  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), historical original fictional tabletop rulebook printed 149-150/PDF150-151; no assumed later Rigger 3 substitution",
+  "edition_scope": "Original FASA Corporation Shadowrun Third Edition FASA7001, fictional tabletop source printed 149-150 / physical PDF 150-151; no later edition substitutions",
   "content_class": [
     "rule_exact"
   ],
-  "framing": "reference_exact",
-  "headline": "Fictional tabletop game Shadowrun, Third Edition (FASA Corporation FASA7001), vehicle mechanics printed 149-150/PDF150-151",
-  "summary": "Original FASA7001 vehicle attack Power halving, damage staging, anti-vehicle exception, passenger cover and Combat Pool restrictions, and numeric Build/Repair procedures. Source-faithful Third Edition numeric conditions, not real-world vehicle operations.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
       "publisher": "FASA Corporation",
-      "catalog_number": "FASA7001",
       "edition": "Third Edition",
+      "catalog_number": "FASA7001",
       "source_id": "source.sr3-core",
-      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
-      "source_type": "published fictional tabletop role-playing game"
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "publication_type": "original fictional tabletop RPG rulebook"
     },
-    "fictional_scope": "Exact source-derived tabletop fictional vehicle procedures, tests and damage codes, not instructions for operating real-world vehicles",
-    "source_section": "Vehicles and Drones — Vehicle Damage from Weapons; Repairing Vehicles continuation",
-    "target_declaration": "A firing character declares whether an attack is against the fictional vehicle itself or a passenger; procedures differ.",
-    "attacks_against_vehicle": {
-      "normal_attack_power": "Halve Power, round down",
-      "normal_damage_level": "Reduce by one: D→S, S→M, M→L",
-      "light_restriction": "Ordinary weapons that reduce to Light Damage cannot affect vehicles unless special ammunition is used",
-      "grenades_and_explosives": "Use same ordinary one-step Damage Level reduction except for anti-vehicle ammunition",
-      "anti_vehicle_ammunition": {
-        "examples": [
-          "missiles",
-          "rockets",
-          "mortar shells"
-        ],
-        "power": "Halve Power, round down",
-        "damage_level": "Do not reduce Damage Level",
-        "kind": "Shaped-charge, penetrating warhead ammunition specially designed for this fictional vehicle combat"
-      },
-      "hardened_armor": "If modified attack Power does not exceed Armor, the attack has no effect; vehicle Armor also reduces the resulting attack Power",
-      "vehicle_resistance": {
-        "dice": "Vehicle Body + available rigger Control Pool dice up to rigger Rigging Skill Rating",
-        "target_number": "Modified weapon attack Power",
-        "stage_down_rule": "Every 2 successes decreases Damage Level one step"
-      },
-      "crash": "Any attack that causes Serious vehicle Damage triggers a Crash Test; fully filled vehicle Condition Monitor causes automatic crash",
-      "body_zero": "Any attacker success automatically destroys vehicle Body 0"
+    "fictional_context": "Archival statements of numerical game mechanics within an imaginary setting, not physical-world tactics, advice or claims.",
+    "source_section": "Vehicles and Drones / Attacks against Vehicles, Passengers and Components, Vehicle Repair",
+    "declared_target": "Before making the fictional ranged attack, character specifies whether they aim at the vehicle itself or a passenger; separate rules apply.",
+    "ordinary_attack_vs_vehicle": {
+      "power": "For non-AV weapons against vehicles, halve weapon Power and round down before applying armor rules.",
+      "damage_level": "For non-AV weapon attacks, stage base Damage Level down one: Deadly to Serious, Serious to Moderate, Moderate to Light.",
+      "light_base_damage": "Ordinary Light-Damage weapons have no effect on vehicles except with special ammunition.",
+      "explosives": "Grenades and ordinary explosives face the same stage-down; anti-vehicle munitions such as missiles, rockets and mortar shells do not stage down.",
+      "armor": "Vehicle Armor Rating subtracts from non-AV weapon Power. If the weapon's base Power before burst/full-auto rate enhancements does not exceed Armor Rating, the attack does no damage."
     },
-    "called_shots_external_parts": {
-      "requires": "Declared Called Shot to a vehicle component (examples: tires, antenna or external weapon)",
-      "damage_staging": "Ignore normal Called Shot staged-up Damage Level",
-      "components": "Some components have independent Body/Armor; GM may make fragile parts succumb to Light damage or reinforced parts require Serious damage"
+    "anti_vehicle_ammunition": {
+      "definition": "Fictional shaped-charge, penetrating warhead ammunition designed to damage vehicles; the book lists rockets, missiles and mortar shells among examples.",
+      "exception": "AV attacks do not halve their base Power and do not reduce their base Damage Level by one as normal vehicle attacks do.",
+      "armor_reduction": "Instead of subtracting the FULL vehicle Armor Rating from AV Power, first halve vehicle Armor Rating and round down, then subtract that reduced Armor value from AV attack Power.",
+      "ineffective_threshold": "If AV weapon Power does not exceed the reduced (halved and rounded-down) vehicle Armor Rating, the AV attack does no damage.",
+      "numeric_source_example_status": "No 10S-to-5S AV example is stated on this printed page; the earlier version's invented 10S-to-5S AV transformation must not be used as a rule."
     },
-    "passengers": {
-      "attack_target_number_modifier": 3,
-      "attack_power_reduction": "Subtract higher of vehicle Body Rating or Armor Rating from attacking Power",
-      "damage_level": "Do not reduce the attacking weapon Damage Level",
-      "hard_cover_exception": "Vehicle Body or Armor exceeding weapon unmodified Power prevents damage to passenger",
-      "passenger_combat_pool_limit": "Half usual Combat Pool, round down, for Dodge or Damage Resistance tests",
-      "secondary_vehicle_damage": "Deadly initial Damage Level hit against passenger simultaneously inflicts Light Damage on vehicle; vehicle cannot resist it"
+    "resistance_and_crash": {
+      "test": "Vehicle controlling player makes Damage Resistance Test using vehicle Body dice plus available Control Pool dice up to rigger's Vehicle/Driving Skill Rating.",
+      "target_number": "Modified weapon Power of the attack.",
+      "staging": "Compare successes between attack and vehicle defense; apply standard Damage Level staging.",
+      "rigger_dodge": "Riggers may attempt ranged-attack dodge using Control Pool instead of Combat Pool; dodge target number is vehicle Handling Rating plus applicable Driving Test and Dodging Test modifiers.",
+      "forced_crash": "A vehicle taking Serious Damage from a single attack must make Crash Test; if its Vehicle Condition Monitor fills, it automatically crashes.",
+      "body_zero": "For a vehicle with Body Rating 0, any success by attacker automatically destroys it."
+    },
+    "external_components": {
+      "called_shot": "An attacker makes a Called Shot to vehicle external component, e.g. tire, antenna or vehicle-mounted weapon.",
+      "not_normal_called_shot_bonus": "Does NOT increase the attack's Damage Level by one under standard called-shot staging.",
+      "independent_ratings": "Some components, e.g. external fuel tanks, have separate Body and Armor.",
+      "gamemaster_threshold": "Normally Moderate damage to vehicle can destroy an external component; a GM may set Light for fragile antennas or Serious for reinforced weapon turrets."
+    },
+    "passenger_fire": {
+      "power": "For attack specifically aimed at passenger, subtract whichever is higher of vehicle Body or Armor Rating from weapon Power; do not lower Damage Level.",
+      "cover_immunity": "If vehicle Body or Armor is higher than weapon's unmodified Power, passenger cannot be harmed by this attack.",
+      "combat_pool": "Passenger can use only half their Combat Pool dice, rounding down, for Dodge or Damage Resistance.",
+      "rigger_inside": "A targeted rigger jacked into a vehicle has +3 target number to Damage Resistance; cannot dodge while jacked in.",
+      "deadly_collateral": "An attack inflicting Deadly Damage Level against passenger also inflicts Light Damage on vehicle at the same moment, which vehicle cannot resist."
     },
     "repair": {
-      "repair_test": "Vehicle Build/Repair Test",
-      "target_number": "Number of vehicle damage boxes to repair + 2",
-      "base_time": "16 hours × number of damage boxes to repair",
-      "success_time_rule": "Divide base time by successes on the initial Vehicle Build/Repair Test",
-      "replacement_parts_cost": "Five percent of total current vehicle cost per damage box repaired",
-      "example": "Six damage boxes require replacement parts costing thirty percent of vehicle cost",
-      "parts_procurement": "Acquire replacement parts via their Availability Codes and Street Index; wait full Availability period before commencing repairs",
-      "vehicle_unavailability": "Vehicle cannot be used during repairs",
-      "interrupted_repairs": "If work is interrupted by a need to move the vehicle, spend one extra hour to pack up and return to a workable location before repair resumes"
+      "skill_and_tn": "Vehicle Build/Repair Test target number = number of vehicle Condition Monitor damage boxes to repair + 2.",
+      "duration": "Base 16 hours per damage box; divide by initial Build/Repair Test successes for actual repair time.",
+      "parts_cost": "Replacement parts cost 5% of current vehicle total cost, including modifications, per damage box.",
+      "original_example": "Six boxes cost 30% of vehicle total cost for replacement parts.",
+      "parts_procurement": "Replacement parts use original vehicle Availability Code and Street Index; acquisition tests use appropriate Vehicle Build/Repair Skills. Full availability time must pass before repairs begin.",
+      "cannot_use_vehicle": "Vehicle unavailable for use during repair work.",
+      "interruptions": "If vehicle must be used mid-repair, an additional one hour is needed to put it back together and return it to operating condition before use; repair continues from previous progress when vehicle is brought back for work."
     },
-    "examples_specification_only": [
-      {
-        "weapon_damage": "10S",
-        "modified_normal_vehicle_damage_before_armor": "5M"
-      },
-      {
-        "anti_vehicle_weapon_damage": "10S",
-        "modified_damage_before_armor": "5S"
-      },
-      {
-        "repair_boxes": 6,
-        "repair_test_target_number": 8,
-        "base_time_hours": 96,
-        "parts_percentage_total_vehicle_cost": 30
-      }
-    ],
+    "correction_detail": {
+      "prior_blob": "2e7faa4c8e6d86108b0f06134d45af13007e6a6f",
+      "source_error": "Earlier indexed record incorrectly represented anti-vehicle Power as halved, and constructed an unsupported 10S to 5S AV example. Original printed p149 instead exempts AV ammunition from ordinary Power halving and stage-down, and halves vehicle Armor Rating before applying its protective subtraction.",
+      "preservation": "Old version remains available in Git history. New independently authored source baseline and same-substance candidate staged under normal gates."
+    },
     "source_review_receipt": {
-      "original_images": "Independently inspected fresh SHA-verified original printed pp149-150 corresponding physical PDF150-151 prior to baseline freeze",
-      "reviewed_human_readable_fields": [
+      "provenance": "Fresh 112,507,704-byte original FASA7001 cataloged Google Drive PDF hash verified against live source manifest; original printed 149-150 / physical PDF 150-151 independently inspected before authoring baseline.",
+      "reviewed_text_paths": [
         "edition_scope",
         "headline",
         "summary",
         "data.publication.*",
-        "data.fictional_scope",
-        "data.* including all nested tables, explanatory conditions, source examples and qualifiers",
+        "data.fictional_context",
+        "data.* including all nested procedural and numerical text, printed examples and exceptions",
         "data.source_review_receipt.*"
       ],
-      "source_fidelity_limit": "Editorial receipt and passing preflight are not exhaustive book completeness certification or runnable engine test."
+      "editorial_fidelity": "Published fictional game-narrator mechanics retained with scope and uncertainty. Structural preflight does not prove source accuracy or code correctness.",
+      "correction_note": "Earlier candidate had wrong AV Power transformation"
     }
-  }
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop rules: FASA Corporation Shadowrun, Third Edition FASA7001 — Vehicles and Drones / Attacks against Vehicles, Passengers and Components, Vehicle Repair, printed 149-150/PDF 150-151",
+  "summary": "Corrected original p149 anti-vehicle ammunition Power/Armor ordering and preserved vehicle, component, passenger and 16-hours-per-box repair mechanics without fabricated AV attack values."
 }
