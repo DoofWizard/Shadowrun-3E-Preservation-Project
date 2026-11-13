@@ -1,0 +1,72 @@
+{
+  "id": "rule.skills.sr3-core-reading-writing-free-ratings-p91",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "91-91",
+  "pdf_pages": "92-92",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition, original FASA7001 fictional tabletop RPG rulebook; source.sr3-core; printed pp91-91, physical PDF pp92-92; no later-edition conversion.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Original fictional Shadowrun Third Edition FASA7001 skills mechanics, printed pp91-91 / physical PDF pp92-92",
+  "summary": "Original fictional Third Edition literacy mechanics: starting Reading/Writing rating is half the spoken Language Skill rounded down, with a special no-R/W case for starting spoken ratings at most 1 and no automatic later advancement.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "original_printed_pages": [
+        91
+      ],
+      "physical_pdf_pages": [
+        92
+      ],
+      "genre": "published fictional tabletop role-playing game"
+    },
+    "source_sections": [
+      "READING AND WRITING"
+    ],
+    "source_rules": {
+      "skill_category": "Reading and Writing (R/W) ratings are associated with a particular spoken Language Skill, but for improvement are separate skills.",
+      "starting_rating": {
+        "formula": "floor(corresponding spoken Language Skill rating / 2)",
+        "rounding": "round down",
+        "creation_cost": "Assigned free at character creation, rather than purchased separately."
+      },
+      "starting_illiteracy_condition": {
+        "if_starting_spoken_language_rating_at_most": 1,
+        "result": "No associated R/W Skill is granted; the character must learn that R/W Skill separately."
+      },
+      "later_advancement": {
+        "automatic_from_spoken_language_skill_improvement": false,
+        "rule": "Increasing a spoken Language Skill later does not automatically improve the corresponding R/W Skill. The R/W Skill must be improved separately under the rules for improving skills."
+      },
+      "testing": {
+        "narrator_guidance": "Reading and Writing Skills exist to handle consequential reading/writing situations; they are not intended to require dice rolls every time ordinary literacy is used."
+      },
+      "reused_existing_canon": [
+        "rules/skills/language-skills.yml",
+        "rules/skills/language-use.yml"
+      ]
+    },
+    "editorial_review": {
+      "source_inspection": "Original cataloged source PDF page images independently reviewed in this run on 2026-11-13 before preparing baseline and candidate; original edition and printed/PDF page mapping checked.",
+      "reviewed_human_readable_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_sections[*]",
+        "data.source_rules.*",
+        "data.editorial_review.*"
+      ],
+      "book_narrator_v_gm_distinction": "Book-narrator established mechanics and explicit optional GM allowances are separately tagged; no optional allowance is converted into a universal rule.",
+      "limit": "The page-specific editorial review and structural gate do not certify exhaustive original-book fidelity or full core engine readiness."
+    }
+  }
+}
