@@ -1,0 +1,92 @@
+id: rule.vehicles.sr3-core-flux-range-modifiers-p136-137
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 136-137
+pdf_pages: 137-138
+edition_scope: Original fictional Shadowrun, Third Edition tabletop RPG; FASA Corporation FASA7001, printed 136-137,
+  physical PDF 137-138; not later-edition conversion.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_pages:
+  - printed: 136
+    physical_pdf: 137
+  - printed: 137
+    physical_pdf: 138
+  rules_section: Flux Ratings, Signal Range and Modifiers
+  original_mechanics:
+    flux_rating_by_device:
+    - device: Remote-control deck
+      rating: 2
+    - device: Sensors and ECM
+      rating: Device Rating x 1.5, round up
+    - device: Other electronic transmitters including radios
+      rating: Device Rating
+    - device: Cyberware
+      rating: 0
+    flux_to_range:
+    - flux: 0
+      range_m: 250
+    - flux: 1
+      range_m: 1000
+    - flux: 2
+      range_m: 2000
+    - flux: 3
+      range_m: 4000
+    - flux: 4
+      range_m: 6000
+    - flux: 5
+      range_m: 9000
+    - flux: 6
+      range_m: 12000
+    - flux: 7
+      range_m: 16000
+    - flux: 8
+      range_m: 20000
+    - flux: 9
+      range_m: 25000
+    - flux: 10+
+      range_km: 2 x Flux Rating + 10
+    range_geometry: Transmitter/sensor signal coverage is 360-degree around device, not straight-line firing cone.
+    operating_flux: An electronic transmitter can operate at any Flux Rating down to 0, reducing signature; increasing
+      above standard requires external modifications unless vehicle-engine boost is permitted.
+    engine_boost:
+      max_single_device_increase: floor(vehicle Body Rating / 2)
+      max_all_simultaneous_increases: vehicle Body Rating; shared across boosted electronic devices
+      applicability: Electronic devices connected to vehicle via electronics port may use vehicle electrical power
+    situational_flux_rating_modifiers:
+    - condition: High elevation
+      modifier: 4
+    - condition: ECM in use
+      modifier: '- ECM Level / 2; the book directs subtracting half the ECM Level from transmitter modified Flux
+        Rating'
+    - condition: Electrical storm
+      modifier: -2
+    - condition: Encryption in use for radio or remote-control deck
+      modifier: -0.5
+    - condition: Humid air
+      modifier: -0.5
+    - condition: Urban environment
+      modifier: -1
+    rounding: After applying situational modifiers to Flux Rating, round DOWN to nearest one-half (0.5) rather than
+      whole integer, then consult Flux Range table.
+    range_modifiers_application: Applied to transmitter Flux Rating before looking up range. Urban effect additionally
+      applies within 1 kilometer of high-voltage power line; electrical storm covers thunderstorms/solar flares.
+  scope_and_lineage:
+    reuses: Existing source-specific Flux baselines, if present, must not be overwritten; no physical RF design
+      advice
+    exclude: No assumption this is a later Rigger edition override
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Flux Ratings, Signal Range
+  and Modifiers; printed pp136-137/PDF137-138
+summary: Original-edition numerical and procedural flux ratings, signal range and modifiers rules, preserved with
+  published conditions and exceptions, not real-world instructions or later supplement conversions.
