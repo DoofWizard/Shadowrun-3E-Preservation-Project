@@ -1,0 +1,114 @@
+{
+  "id": "rule.social.sr3-core-fast-talk-worked-target-number-p94",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "94",
+  "pdf_pages": "95",
+  "edition_scope": "Published fictional tabletop role-playing game Shadowrun, Third Edition (FASA Corporation, FASA7001), original printed p94/physical PDF95; edition-specific in-game Social Skill example, not a real-world procedure.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 94,
+      "physical_pdf_page": 95,
+      "context": "Fictional cyberpunk tabletop game with a published numerical social-interaction example"
+    },
+    "source_section": "Skills — Etiquette discussion and Dodger Fast Talk worked example, printed p94",
+    "example_context": {
+      "source_character": "Dodger",
+      "in_world_role": "Fictional player character",
+      "fictional_interlocutor": "Gate guard at a Mitsuhama subsidiary",
+      "source_scene": "Dodger attempts to gain unauthorized entry using an invalid identification card and a Fast Talk (Negotiation specialization) Social Skill Test; this is a game-narrated worked example, not procedural advice.",
+      "distinguishing_rule": "Although embedded in the Etiquette section, the worked roll is Negotiation (Fast Talk), not an Etiquette Skill Test."
+    },
+    "skill": {
+      "base_skill": "Negotiation",
+      "base_rating": 2,
+      "specialization": "Fast Talk",
+      "specialization_rating": 4,
+      "dice_rolled": 4,
+      "base_target_attribute": "Opposing NPC Intelligence",
+      "base_target_number": 3,
+      "distinguishing_context": "The surrounding Etiquette rule separately uses opposing Charisma as its base target number, while this worked Fast Talk Negotiation roll explicitly uses opposing Intelligence."
+    },
+    "source_target_number_components": [
+      {
+        "reason": "Guard is suspicious in the fictional scene",
+        "signed_modifier": 2,
+        "scope": "Social Modifiers Table NPC attitude"
+      },
+      {
+        "reason": "Admitting unauthorized personnel would harm the guard",
+        "signed_modifier": 4,
+        "scope": "Social Modifiers Table desired outcome"
+      },
+      {
+        "reason": "Dodger displays a fictional ID card as supporting evidence",
+        "signed_modifier": -1,
+        "scope": "GM-assigned situational modifier; not an automatic card bonus"
+      },
+      {
+        "reason": "Dodger promises favorable professional recognition, making the proposed outcome advantageous to the guard",
+        "signed_modifier": -2,
+        "scope": "Social Modifiers Table desired outcome as narrated in the example"
+      }
+    ],
+    "arithmetic": {
+      "base_tn": 3,
+      "positive_modifiers_sum": 6,
+      "negative_modifiers_sum": -3,
+      "final_tn": 6,
+      "book_calculation": "3 + 2 + 4 = 9; 9 - 3 = 6"
+    },
+    "dice_example": {
+      "rolled_values": [
+        6,
+        6,
+        6,
+        4
+      ],
+      "target_number": 6,
+      "success_count": 3,
+      "one_success": "One success would suffice to pass the guard temporarily in the illustrated fictional scene; it does not necessarily avoid later scrutiny.",
+      "two_successes": "Had the character rolled two successes, the guard would investigate later, after noticing problems in the story.",
+      "three_successes": "The source GM decides the guard is sufficiently convinced to defer checking the identification log until the end of the shift; the document is invalid and this subsequent check raises an alarm.",
+      "outcome_discretion": "The timing and repercussions are narrative GM adjudication in a published sample scenario, not fixed universal success thresholds for all Social Skill Tests."
+    },
+    "reused_canon": [
+      "rules/social/etiquette-use.yml",
+      "rules/social/charisma-linked-tests.yml",
+      "rules/social/sr3-core-social-modifier-tables-p94.yml",
+      "rules/social/negotiation-leadership.yml"
+    ],
+    "editorial_source_review": {
+      "original_image": "Fresh original FASA Corporation Third Edition FASA7001 scan, printed p94 / physical PDF95, visually inspected in this run: right-column Etiquette paragraphs and full Dodger worked example with left-column Social Modifiers Table for signs.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.example_context.*",
+        "data.skill.*",
+        "data.source_target_number_components[*].*",
+        "data.arithmetic.*",
+        "data.dice_example.*",
+        "data.reused_canon[*]",
+        "data.editorial_source_review.*",
+        "headline",
+        "summary"
+      ],
+      "assertion_fidelity": "Preserves source characters, fictional unauthorized-entry allegation, game-skill identity, all signed TN components and target number, rolled dice, one/two/three-success alternatives, later guard verification and alarm; GM discretion is distinct from universal game mechanics.",
+      "limitation": "This local source-image review and editorial receipt do not establish whole-page exhaustive coverage, engine test execution or full-source completion."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001, source.sr3-core), original printed p94/PDF95: fictional Fast Talk social test worked numerical example",
+  "summary": "Original published fictional tabletop RPG numerical Negotiation (Fast Talk) worked test: NPC Intelligence 3, suspicious +2, harmful outcome +4, GM evidence -1 and advantage -2 yield TN 6; three 6s on four dice yield three successes, with game-narrated alternative outcomes."
+}
