@@ -1,0 +1,82 @@
+{
+  "id": "rule.drones.sr3-core-remote-network-dump-shock-p156",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "156",
+  "pdf_pages": "157",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition, FASA7001, original printed page 156/physical PDF page 157; fictional tabletop RPG mechanics only; no later-edition substitutions.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        156
+      ],
+      "physical_pdf_pages": [
+        157
+      ],
+      "context": "Archival mechanics of the published fictional tabletop role-playing game; not actual remote-control operations."
+    },
+    "section": "Vehicles and Drones / Dump Shock (original SR3 core)",
+    "disorientation": {
+      "trigger": "The rigger is dumped from a remote-control network.",
+      "baseline_duration_combat_turns": 10,
+      "test_modifier_during_baseline_duration": 2,
+      "modifier_applies_to": "All of the rigger's Success Tests during the disoriented period.",
+      "in_game_damage_resistance": {
+        "damage_code": "(RC deck Rating + 4)S Stun",
+        "power_formula": "remote-control deck Rating + 4",
+        "damage_level": "Serious",
+        "damage_type": "Stun",
+        "cause": "Neural biofeedback in the fictional cybernetic interface."
+      }
+    },
+    "involuntary_vehicle_disconnection": {
+      "condition": "Involuntarily jacked out of a vehicle other than as a result of vehicle destruction.",
+      "damage_code": "5S Stun",
+      "adds_disorientation": true,
+      "distinct_from": "Remote-control network biofeedback uses the RC deck Rating +4 damage Power formula."
+    },
+    "shorter_disorientation_option": {
+      "test_attribute": "Willpower",
+      "target_number": 4,
+      "successes": "Number of successes on the Willpower Test.",
+      "formula_seconds": "30 / successes, rounded up.",
+      "formula_combat_turns": "Resulting seconds / 3, rounded up.",
+      "zero_successes": "The formula is undefined for zero successes; do not invent a reduced duration, retain the baseline 10 Combat Turns.",
+      "game_seconds_per_combat_turn": 3
+    },
+    "cross_references": [
+      "rules/drones/dump-shock.yml (later Rigger 3 rule distinct from this original SR3 core numerical procedure)",
+      "rules/vehicles/asist-backlash.yml",
+      "rules/condition/damage-levels.yml"
+    ],
+    "source_review": {
+      "source_image": "Original FASA7001 scan printed p156/physical PDF157, independently rendered and visually read before baseline freeze",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.disorientation.*",
+        "data.involuntary_vehicle_disconnection.*",
+        "data.shorter_disorientation_option.*",
+        "data.cross_references",
+        "data.source_review.*"
+      ],
+      "editorial_method": "Third-person reporting of fictional published book-narrator mechanics; dice/testing and action procedures are not presented as real-world guidance.",
+      "fidelity_limit": "This review verifies only the cited printed page and stated rule excerpt; no claim of full source completeness or executable engine validation."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop game: remote-control dump shock numeric resolution, original printed p156/PDF157",
+  "summary": "Archival source-reviewed original-edition fictional game mechanic from published FASA7001 printed p156/PDF157, retaining explicit dice, timing, exceptions and qualifications; not a real-world technical procedure."
+}
