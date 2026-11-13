@@ -1,0 +1,96 @@
+id: rule.vehicles.sr3-core-hiding-relocating-p144-145
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 144-145
+pdf_pages: 145-146
+edition_scope: Original fictional Shadowrun, Third Edition tabletop RPG; FASA Corporation FASA7001, printed 144-145,
+  physical PDF 145-146; not later-edition conversion.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_pages:
+  - printed: 144
+    physical_pdf: 145
+  - printed: 145
+    physical_pdf: 146
+  rules_section: Vehicle Hiding, Escape and Relocating
+  original_mechanics:
+    hiding:
+      test: Driving Skill Test against Handling Rating plus Hiding Modifiers
+      on_success: Hiding vehicle breaks contact and receives Escape Bonus equal to number of successes on Hiding
+        Test, added to Driver Points from next Combat Turn until pursuer relocates hiding vehicle or stops pursuit.
+      relocation_extra_penalty: Relocating vehicle adds the number of Hiding successes to its Relocating Test target
+        number.
+    hiding_target_modifiers:
+    - condition: Hiding Maneuver Score exceeds opponent score by 10 or less
+      modifier: -2
+    - condition: Hiding Maneuver Score exceeds opponent score by more than 10
+      modifier: -4
+    - condition: Opponent Maneuver Score exceeds hiding by 10 or less
+      modifier: 3
+    - condition: Opponent Maneuver Score exceeds hiding by more than 10
+      modifier: 6
+    - condition: Hiding vehicle exceeds its Speed Rating
+      modifier: 2
+    - condition: Hiding vehicle autonav active
+      modifier: + Autonav Rating
+    - condition: Escaping from more than one vehicle
+      modifier: +1 per additional vehicle
+    - condition: Open terrain
+      modifier: 4
+    - condition: Normal terrain
+      modifier: 2
+    - condition: Restricted terrain
+      modifier: 0
+    - condition: Tight terrain
+      modifier: -2
+    - condition: Driver has compatible VCR implant
+      modifier: '- (VCR Rating x 2)'
+    relocating:
+      test: Pursuer makes Sensor Test (typically Active vs hiding Signature), or Perception Test if not rigged,
+        with Relocating modifiers.
+      on_success: Pursuer spots/re-establishes contact with hiding vehicle, driver and passengers may act against
+        it on their next available actions.
+      retry_limits: Player characters may keep attempting; GM non-player drivers attempt for up to 5 Combat Turns
+        before abandoning pursuit.
+    relocating_target_modifiers:
+    - condition: Relocating Maneuver Score exceeds hiding score by 10 or less
+      modifier: -2
+    - condition: Relocating Maneuver Score exceeds hiding score by more than 10
+      modifier: -4
+    - condition: Hiding Maneuver Score exceeds relocating score by 10 or less
+      modifier: 2
+    - condition: Hiding Maneuver Score exceeds relocating score by more than 10
+      modifier: 4
+    - condition: Relocating vehicle exceeds Speed Rating
+      modifier: 4
+    - condition: Relocating vehicle autonav active
+      modifier: '- Autonav Rating'
+    - condition: Target hiding vehicle
+      modifier: + successes generated on Hiding Test
+    - condition: Hiding vehicle in Open terrain
+      modifier: -3
+    - condition: Hiding vehicle in Normal terrain
+      modifier: -1
+    - condition: Hiding vehicle in Restricted terrain
+      modifier: 0
+    - condition: Hiding vehicle in Tight terrain
+      modifier: 3
+    terrain_condition: Relocating terrain modifiers reflect terrain occupied by hiding vehicle, not pursuer.
+  scope_and_lineage:
+    reuses: rule.vehicles.sensor-tests for sensory detection and maneuver-score for relative scores
+    exclude: No assumption of guaranteed relocation without actual test successes
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Vehicle Hiding, Escape and
+  Relocating; printed pp144-145/PDF145-146
+summary: Original-edition numerical and procedural vehicle hiding, escape and relocating rules, preserved with published
+  conditions and exceptions, not real-world instructions or later supplement conversions.
