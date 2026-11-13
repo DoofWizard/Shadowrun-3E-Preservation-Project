@@ -1,0 +1,76 @@
+id: rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '132'
+pdf_pages: '133'
+edition_scope: Original fictional tabletop game Shadowrun, Third Edition, published by FASA Corporation, catalog
+  FASA7001, printed p132/PDF133, no later edition substitution.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_pages:
+  - printed: 132
+    physical_pdf: 133
+    headings:
+    - Speed
+    - Acceleration
+    - Decelerating
+  vehicle_speed:
+    unit: meters per 3-second Combat Turn
+    meaning: The maximum safe speed sustainable over a distance.
+    ground_vehicle_offroad: Any ground vehicle traveling off road halves its Speed Rating unless it has off-road
+      suspension.
+    fixed_wing_aircraft_speed: The source reports two Speed ratings; higher is maximum safe flight speed and
+      lower is stall speed, the minimum needed to remain airborne.
+    beyond_safe_speed: A vehicle may travel up to 1.5 times its Speed Rating under exceptional conditions,
+      but suffers increased difficulty on most Success Tests in Vehicle Combat (original p138 supplies those
+      penalties; not inferred here).
+    kilometers_per_hour_multiplier: 1.2
+    miles_per_hour_multiplier: 0.75
+  acceleration:
+    application: During vehicle combat the controller makes a Driving Test to speed up when fleeing or pursuing.
+    per_success_speed_gain: Add Acceleration Rating for each Driving Test success to the vehicle Speed, applied
+      at the next Initiative Pass.
+    example:
+      starting_meters_per_turn: 50
+      acceleration_rating: 10
+      driving_skill_dice: 4
+      driving_target_number_handling: 3
+      successes: 2
+      next_pass_meters_per_turn: 70
+  deceleration:
+    safe_limit_meters_per_turn_per_combat_turn: Acceleration Rating multiplied by 4.
+    when_exceeds_limit: Require a Crash Test against base target number equal to vehicle Handling Rating.
+    additional_target_number: For each 20 meters per Combat Turn or portion in excess of the safe deceleration
+      limit, increase Crash Test target number by +1.
+    worked_example:
+      initial_speed: 70
+      final_speed: 0
+      acceleration_rating: 10
+      safe_deceleration: 40
+      excess_deceleration: 30
+      handling: 3
+      added_target_number: 2
+      final_crash_target_number: 5
+  relationship:
+    generic_accepted_attributes: rule.vehicles.attributes
+    generic_driving_test: rule.vehicles.driving-test
+    vehicle_combat_modifiers: Source printed p138 referenced, not inferred
+  source_limits:
+  - Original source printed p132 alone; does not resolve vehicle crash/damage p147 or over-speed test modifications
+    p138.
+  - The driving and crash examples are fictional tabletop game mechanics, not road safety instructions.
+framing: reference_exact
+headline: FASA Corporation Shadowrun, Third Edition FASA7001 original fictional vehicle speed and deceleration
+  mechanics, printed p132/PDF133
+summary: Exact game speed units, conversion multipliers, per-success acceleration, safe deceleration limit
+  and +1-per-20-excess Crash Test target modifier.
