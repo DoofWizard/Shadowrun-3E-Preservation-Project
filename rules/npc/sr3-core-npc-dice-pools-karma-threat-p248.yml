@@ -1,0 +1,89 @@
+{
+  "id": "rule.npc.sr3-core-npc-dice-pools-karma-threat-p248",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "248",
+  "pdf_pages": "257",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop NPC mechanics, original printed p248/PDF257; does not substitute rules from later books.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 248,
+      "physical_pdf_page": 257,
+      "kind": "published fictional tabletop role-playing game"
+    },
+    "original_section": "Beyond the Shadows — Non-Player Characters / Dice Pools",
+    "source_distinctions": {
+      "npc_source": "The gamemaster may use the book's sample characters or contacts as printed, adapt their statistics, or create a new fictional NPC appropriate to the story.",
+      "npc_build_is_not_player_balanced": "The source explicitly states that NPCs need not be balanced against the player-character creation system and the gamemaster may assign Attributes, skills and equipment as needed.",
+      "optional_variation": "The neighboring Metahuman Variation Table may add random variety to NPC Attributes or skills; its exact 2D6 values are normalized separately."
+    },
+    "dice_pool_procedure": {
+      "rule": "NPCs use the same named dice pools and ordinary restrictions as player characters, subject to the actual game role and eligibility.",
+      "calculation_reference": "Compute each applicable ordinary dice pool using the original Third Edition printed p44 formulas; do not invent a separate NPC-only dice pool formula.",
+      "applicable_population": "Fictional game NPCs; Karma Pool guidance also expressly includes critters.",
+      "karma_pool_baseline": "The book says an NPC or critter Karma Pool should equal the average Karma Pool of the player characters, adjusted for the threat level the gamemaster wants it to represent.",
+      "average_basis": "Player characters' Karma Pool (not Total Karma awards, Good Karma, or average combat skills).",
+      "threat_scaling": "Gamemaster adjusts for the NPC or critter threat level; the source does not prescribe a fixed addition, multiplier or rounding method in this section.",
+      "status": "Gamemaster guidance for NPC construction and encounter balance, not a source-imposed mandatory numerical NPC template."
+    },
+    "source_cross_references": [
+      "rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml — exact dice-pool formulas and eligibility retained, no duplicated formulas",
+      "rules/karma/karma-pool.yml — general Karma Pool and refresh",
+      "rules/npc/professionalism.yml — separately published NPC wounded-combat behavior",
+      "rules/npc/sr3-core-metahuman-variation-table-p248.yml — separate optional 2D6 Attribute-points table"
+    ],
+    "test_vectors_not_executed": [
+      {
+        "case": "equal_party_karma_pool",
+        "player_character_pool_sizes": [
+          3,
+          4,
+          5
+        ],
+        "arithmetic_average": 4,
+        "example_unadjusted_npc_pool": 4,
+        "requires_gm_threat_adjustment_decision": true
+      },
+      {
+        "case": "nonintegral_party_average",
+        "player_character_pool_sizes": [
+          2,
+          3
+        ],
+        "arithmetic_average": 2.5,
+        "source_rounding_rule": "not specified in this excerpt",
+        "do_not_assign_final_integer_without_gm_decision": true
+      }
+    ],
+    "editorial_review": {
+      "source_image": "Original FASA7001 printed p248/physical PDF257, right column 'NON-PLAYER CHARACTERS', 'DICE POOLS', and following 'NPC PROFESSIONALISM'; separate pp248-249 professionalism canonical record already accepted.",
+      "reviewed_text_field_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.original_section",
+        "data.source_distinctions.*",
+        "data.dice_pool_procedure.*",
+        "data.source_cross_references[*]",
+        "data.test_vectors_not_executed[*].*",
+        "data.editorial_review.*"
+      ],
+      "attribution": "Original game narrator describes optional gamemaster techniques for fictional NPCs and critters; no real-person profiling.",
+      "limits": "No quantitative threat multiplier or rounding rule invented; page review and structural transaction gate are not full source fidelity or runnable engine tests."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001), printed p248/PDF257 — fictional NPC dice-pool and Karma Pool threat guidance",
+  "summary": "Original tabletop NPCs use character dice-pool formulas from p44; the gamemaster bases NPC/critter Karma Pool on the player-character average adjusted to threat, without an invented fixed rounding or scaling constant."
+}
