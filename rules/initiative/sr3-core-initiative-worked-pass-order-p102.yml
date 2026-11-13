@@ -1,0 +1,142 @@
+id: rule.initiative.sr3-core-initiative-worked-pass-order-p102
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '102'
+pdf_pages: '103'
+edition_scope: Original fictional Shadowrun, Third Edition tabletop RPG, FASA Corporation catalog FASA7001,
+  printed p102/physical PDF103; not a later-edition substitute.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_page:
+    printed: 102
+    physical_pdf: 103
+    sections:
+    - Determining the Order
+    - The Initiative Pass
+    - Damage and Initiative
+    - Initiative Ties
+  purpose: Original-published numeric worked example exercising initiative-pass ordering and changes due
+    to wounds, for deterministic tabletop resolution and source-validated engine tests.
+  initiative_pass_procedure:
+    first_pass: Resolve characters in descending Initiative Score, each eligible character acting once.
+    each_subsequent_pass: Subtract 10 from all remaining Initiative Scores; resolve only scores greater
+      than 0 in descending order.
+    termination: End the Combat Turn after no score remains greater than 0; reroll Initiative for the
+      next Combat Turn.
+    no_negative_score_action: A character with Initiative Score 0 or lower gets no action in that pass.
+  worked_initial_scores:
+  - character: Mike
+    initiative: 37
+  - character: GM Goon 1
+    initiative: 26
+  - character: Dave
+    initiative: 22
+  - character: GM Goon 2
+    initiative: 19
+  - character: Sharon
+    initiative: 18
+  - character: Rich
+    initiative: 17
+  - character: GM Goon 3
+    initiative: 15
+  - character: Carmella
+    initiative: 9
+  worked_passes_no_injuries:
+  - pass: 1
+    acting_in_order:
+    - character: Mike
+      score: 37
+    - character: GM Goon 1
+      score: 26
+    - character: Dave
+      score: 22
+    - character: GM Goon 2
+      score: 19
+    - character: Sharon
+      score: 18
+    - character: Rich
+      score: 17
+    - character: GM Goon 3
+      score: 15
+    - character: Carmella
+      score: 9
+  - pass: 2
+    acting_in_order:
+    - character: Mike
+      score: 27
+    - character: GM Goon 1
+      score: 16
+    - character: Dave
+      score: 12
+    - character: GM Goon 2
+      score: 9
+    - character: Sharon
+      score: 8
+    - character: Rich
+      score: 7
+    - character: GM Goon 3
+      score: 5
+  - pass: 3
+    acting_in_order:
+    - character: Mike
+      score: 17
+    - character: GM Goon 1
+      score: 6
+    - character: Dave
+      score: 2
+  - pass: 4
+    acting_in_order:
+    - character: Mike
+      score: 7
+  wound_examples:
+  - character: Dave
+    wound: Moderate
+    wound_initiative_modifier: -2
+    first_pass_initial_score: 22
+    after_immediate_damage_score: 20
+    second_pass_score: 10
+    third_pass_score: 0
+    third_pass_eligible: false
+    source_explanation: Wound is applied in first pass after Dave acts; he loses his third pass because
+      his score reaches zero.
+  - character: Sharon
+    wound: Moderate
+    wound_initiative_modifier: -2
+    first_pass_initial_score: 18
+    injury_before_first_action: true
+    score_after_damage: 16
+    first_pass_position: After Rich (17) instead of before, because GM Goon 2 acts before Sharon and inflicts
+      the wound.
+  damage_rule:
+    preexisting_wounds: Subtract applicable wound modifiers from the Initiative Score whenever Initiative
+      is rolled.
+    midturn_wounds: Apply wound modifier to current Initiative Score immediately on taking the wound;
+      may change ordering or remove later passes.
+    already_acted_pass: Taking damage after acting in a pass does not grant an additional action in that
+      pass.
+  initiative_ties_source_order:
+  - Character with highest Initiative Score in the first Initiative Pass goes first
+  - Highest adjusted Reaction
+  - Highest unaugmented Reaction
+  - Roll 1D6 repeatedly until no longer tied
+  canonical_reuse:
+  - rule.initiative.initiative-passes
+  - rule.initiative.damage-and-initiative
+  - rule.initiative.initiative-ties
+  scope_note: This new record captures the original numeric worked vector and conditional state changes;
+    the separately accepted general rule records remain canonical and are not resubmitted.
+framing: reference_exact
+headline: 'Original fictional tabletop rules: FASA Corporation Shadowrun, Third Edition (FASA7001), printed
+  p102/PDF103, initiative pass worked example'
+summary: Source-checked numerical 8-character/4-pass initiative example, including injury-induced order
+  changes, score reductions and source tie sequence.
