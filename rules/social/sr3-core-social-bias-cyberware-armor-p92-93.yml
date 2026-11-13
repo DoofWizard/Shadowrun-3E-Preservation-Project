@@ -1,0 +1,118 @@
+{
+  "id": "rule.social.sr3-core-social-bias-cyberware-armor-p92-93",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "92-93",
+  "pdf_pages": "93-94",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop-RPG core rules, printed pp92-93/physical PDF pp93-94; no SR2 or later-edition substitution.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Shadowrun Third Edition FASA7001 fictional tabletop social rules, printed pp92–93/PDF93–94: NPC bias, cyberware and visible-armor modifiers",
+  "summary": "Source-reviewed fictional NPC prejudice generation, Charisma mitigation, Essence-linked social target-number modifiers, visible-armor adjustments and case-by-case GM exceptions; not claims about actual people. Original text-field editorial review completed before candidate staging.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "original_printed_pages": [
+        92,
+        93
+      ],
+      "physical_pdf_pages": [
+        93,
+        94
+      ],
+      "genre": "published fictional cyberpunk tabletop role-playing game"
+    },
+    "source_sections": [
+      "Skills / Racism (fictional NPC prejudice rule)",
+      "Skills / Cyberware and Social Interaction",
+      "Skills / Armor and Society"
+    ],
+    "fictional_npc_prejudice_generation": {
+      "source_status": "Original rulebook's gamemaster procedure for fictional NPCs, not a generalization about actual communities.",
+      "initial_test": "Roll 2D6 and subtract 6; positive result represents NPC's Racism Points, nonpositive result is not biased by this mechanic.",
+      "racial_bias_d6_table": [
+        {
+          "die": 1,
+          "category": "All except NPC's own fictional metatype"
+        },
+        {
+          "die": 2,
+          "category": "Humans"
+        },
+        {
+          "die": 3,
+          "category": "Elves"
+        },
+        {
+          "die": 4,
+          "category": "Dwarfs"
+        },
+        {
+          "die": 5,
+          "category": "Orks"
+        },
+        {
+          "die": 6,
+          "category": "Trolls"
+        }
+      ],
+      "reroll_condition": "If d6 identifies NPC's own fictional metatype, disregard and re-roll; continue until the game narrator's condition of two races or all races is met.",
+      "charisma_linked_skill_modifier": "Add source Racism Points to the character's Charisma-linked Skill Test TN when the affected fictional metatype applies.",
+      "offset_test": {
+        "dice": "Character's Charisma rating",
+        "target_number": "Twice NPC Racism Points (GM-only hidden rating)",
+        "offset_per_success": 1,
+        "offset_scope": "Only offsets Racism Points; successes do not also help the primary Charisma-linked Skill Test.",
+        "prohibition": "If defaulting to Charisma for the Skill Test, no separate Charisma Test may offset Racism Points."
+      }
+    },
+    "cyberware_social_modifiers": {
+      "mechanical_tn": "The original printed p93 states +1 to Charisma/Charisma-linked Skill Test target numbers for every 2 points of Essence lost (or portion thereof ABOVE .5) below normal Essence 6, in applicable game situations; a fractional remainder of .5 or less is NOT independently enough for an extra +1.",
+      "gm_moderation": "Apply only as appropriate to social situation and visible effects; invisible implants and commonly accepted equipment such as datajacks may be ignored.",
+      "special_minimum_rule": "Source narrator additionally says gamemaster should always apply at least +1 to cyberware with Essence loss greater than 2.5, absent exceptional circumstances.",
+      "scope_note": "Preserve the exact 'portion thereof above .5' qualifier and the separately stated greater-than-2.5 minimum, with the original GM context discretion; neither is silently altered to a simple rounding-ceiling rule."
+    },
+    "visible_armor_social_modifiers": {
+      "non_abusive_social_skill_in_luxury_context": {
+        "target_number_modifier": 2,
+        "condition": "In the book's fictional social situation, conspicuous armor is seen by high-status characters, with a non-abusive Social Skill Test."
+      },
+      "intimidation_test": {
+        "target_number_modifier": -1,
+        "condition": "Visible armor may make the fictional character more intimidating."
+      },
+      "context": "The narrator says high-class establishments may refuse entry or respond socially; that is optional scene description, not an automatic universal entry rule."
+    },
+    "accepted_canon_reused": [
+      "rules/social/charisma-linked-tests.yml",
+      "rules/social/interrogation-intimidation.yml",
+      "rules/social/negotiation-leadership.yml"
+    ],
+    "editorial_source_review": {
+      "original_images": "Original printed p92/PDF93 and p93/PDF94 independently inspected, including Racism Table, cyberware Essence threshold, armor modifiers and the defaulting restriction.",
+      "reviewed_text_field_paths": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_sections[*]",
+        "data.fictional_npc_prejudice_generation.*",
+        "data.cyberware_social_modifiers.*",
+        "data.visible_armor_social_modifiers.*",
+        "data.accepted_canon_reused[*]",
+        "data.editorial_source_review.*"
+      ],
+      "certainty": "Conditional fictional game narration and GM options preserved; no inference about actual people or real-world discrimination recommendations.",
+      "limitation": "Local editorial review establishes reviewed paths and provenance only, not whole-book source fidelity or engine execution.",
+      "revised_source_check": "Freshly re-inspected original printed p93/PDF94 image before first GitHub write. Corrected the originally staged but unwritten 'portion thereof' phrasing to 'portion thereof above .5'; prior staged baseline and candidate remain retained. Independently reviewed all outgoing textual paths."
+    }
+  }
+}
