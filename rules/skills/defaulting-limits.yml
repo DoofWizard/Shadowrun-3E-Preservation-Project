@@ -1,44 +1,99 @@
-id: rule.skills.defaulting-limits
-record_type: rule
-name: "Limits on Defaulting"
-domain: skills
-status: ingested
-
-effective:
-  status: current
-  source: source.sr3-core
-  page: 85
-  basis: defines
-
-scope:
-  applies_to:
-    - rule.skills.defaulting
-  excludes: []
-
-resolution:
-  summary: "Defaulting is not permitted when the modified target number would be 8 or higher. When a defaulted test is an Open Test, subtract the defaulting modifier from the highest die result instead of adding it to a target number."
-  inputs:
-    - "modified target number"
-    - "default route modifier"
-    - "Open Test result when applicable"
-  outputs:
-    - "whether defaulting is permitted"
-    - "modified Open Test result"
-  steps: []
-
-links:
-  uses:
-    - rule.skills.defaulting
-  affects: []
-  modified_by: []
-  interacts_with:
-    - rule.tests.open-test
-
-sources:
-  - source: source.sr3-core
-    page: 85
-    relation: defines
-    note: "Limits on Defaulting"
-
-notes:
-  - "Some skills/actions have no default regardless of target number."
+{
+  "id": "rule.skills.defaulting-limits",
+  "record_type": "rule",
+  "name": "Limits on Defaulting",
+  "domain": "skills",
+  "status": "ingested",
+  "effective": {
+    "status": "current",
+    "source": "source.sr3-core",
+    "page": 85,
+    "basis": "defines"
+  },
+  "scope": {
+    "applies_to": [
+      "rule.skills.defaulting"
+    ],
+    "excludes": []
+  },
+  "resolution": {
+    "summary": "Under the original FASA7001 printed p85 rule, defaulting is barred if an action's ordinary modified target number is 8 or higher BEFORE adding the defaulting-route modifier. A test whose ordinary modified target number is below 8 does not become barred merely because adding +2/+3/+4 brings the resulting target number to 8 or more. For a defaulted Open Test, subtract the defaulting modifier from the highest die result.",
+    "inputs": [
+      "modified target number before defaulting-route adjustment",
+      "selected default route and its +2/+3/+4 adjustment",
+      "whether the required skill/action allows defaulting",
+      "Open Test highest die result when applicable"
+    ],
+    "outputs": [
+      "whether default is legal under original predefault cutoff",
+      "target number with route modifier or adjusted Open Test result"
+    ],
+    "steps": [
+      "Check whether the skill/action independently permits a default route.",
+      "Compute all applicable nondefault test modifiers and evaluate the resulting target number BEFORE adding the defaulting-route penalty.",
+      "If that predefault modified target number is 8 or higher, defaulting is forbidden.",
+      "Otherwise apply the legal default-route dice and target-number modifier; the subsequent higher target number is not an additional exclusion under this threshold.",
+      "If the defaulted test is an Open Test, apply the route penalty by subtracting it from the highest Open Test die result rather than increasing a target number."
+    ]
+  },
+  "links": {
+    "uses": [
+      "rule.skills.defaulting"
+    ],
+    "affects": [],
+    "modified_by": [],
+    "interacts_with": [
+      "rule.tests.open-test"
+    ]
+  },
+  "sources": [
+    {
+      "source": "source.sr3-core",
+      "page": 85,
+      "relation": "defines",
+      "note": "Limits on Defaulting"
+    }
+  ],
+  "notes": [
+    "Original p85/PDF86 expressly places the ≥8 cutoff before the defaulting modifier is applied; the prior record incorrectly stated the threshold without this essential chronology.",
+    "The Default Table on this source page lists skill-to-skill +2, specialization +3, and linked Attribute +4; default route and dice-pool restrictions remain independently governed by rule.skills.defaulting.",
+    "Some skills/actions have no default regardless of target number.",
+    "Independent original-page review supports this correction; it does not certify all core skills, the source-completion gate, or executable test coverage."
+  ],
+  "source": "source.sr3-core",
+  "printed_pages": "85",
+  "pdf_pages": "86",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition, original FASA7001 fictional tabletop RPG, original printed p85/physical PDF86; Second Edition and later supplements do not substitute.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 85,
+      "physical_pdf_page": 86,
+      "source_kind": "fictional tabletop role-playing game rules"
+    },
+    "original_heading": "LIMITS ON DEFAULTING",
+    "source_specific_threshold": {
+      "measure": "target number after applicable nondefault modifiers but BEFORE adding the defaulting-route modifier",
+      "prohibited_when_predefault_target_number_greater_than_or_equal_to": 8,
+      "allowed_at_predefault_target_number_7": true,
+      "adding_default_modifier_after_permission_check": "A subsequent +2, +3, or +4 modifier does not itself make the route unavailable by the printed p85 cutoff; still observe independent source exclusions and routing limits.",
+      "other_skill_prohibitions": "Some particular skills and actions have no default route even when their target numbers are low."
+    },
+    "open_test_rule": {
+      "precondition": "Skill requires an Open Test and a permitted defaulting route exists.",
+      "resolution": "Instead of adding the route modifier to a target number, subtract that defaulting modifier from the highest die result on the Open Test."
+    },
+    "source_scope": "Published game-mechanics reporting only; this is an exact original Third Edition ruling, not a new optional house rule."
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop Limits on Defaulting, printed p85/PDF86: predefault target-number cutoff",
+  "summary": "Source-reviewed correction: the original printed p85 ≥8 defaulting cutoff is evaluated before adding the +2/+3/+4 default penalty, plus the Open Test adjustment; preserves named source restrictions."
+}
