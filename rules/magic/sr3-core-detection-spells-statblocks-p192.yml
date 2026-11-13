@@ -1,0 +1,127 @@
+{
+  "id": "rule.magic.sr3-core-detection-spells-statblocks-p192",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "192",
+  "pdf_pages": "201",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition (FASA7001), original Third Edition published fictional tabletop role-playing game core magic rules; neither later supplement nor real-world analysis.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional FASA Corporation Shadowrun, Third Edition FASA7001, original printed p192/PDF201: eight detection spell profiles and numeric conditions",
+  "summary": "Original FASA7001 fictional tabletop detection spell profiles for Analyze Device, Analyze Truth, Clairaudience, Clairvoyance, Combat Sense, Detect Enemies, Detect Individual, and Detect Life with source Type/Target/Duration/Drain and exact effects or exclusions; companion generic TN and successes tables already accepted.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 192,
+      "physical_pdf_page": 201,
+      "medium": "fictional tabletop role-playing game core book"
+    },
+    "chapter": "Magic / Street Grimoire / Detection Spells",
+    "already_accepted_generic_rules": "rules/magic/sr3-core-detection-target-and-results-p192.yml includes Force × caster Magic range, area/line-of-sight distinctions, one area Sorcery Test with per-target evaluation, willing recipient touch, and four-row Detection Spell TN and Results tables; do not duplicate.",
+    "spell_profiles": [
+      {
+        "name": "Analyze Device",
+        "type": "P",
+        "target": "OR",
+        "duration": "S",
+        "drain": "+1(M)",
+        "effect": "Subject can analyze purpose and operation of a device or equipment in detection sense range.",
+        "numeric_resolution": "Every two successes grant one point of corresponding or logical Background or Build/Repair Skill for the device, to a maximum skill rating or bonus equal to spell Force.",
+        "target_number_modifier_for_prior_familiarity": -2,
+        "maximum": "Force of spell limits resultant skill rating or bonus; no extra unprinted rounding or stacking assumed."
+      },
+      {
+        "name": "Analyze Truth",
+        "type": "M",
+        "target": "W",
+        "duration": "S",
+        "drain": "L",
+        "effect": "Subject may tell whether target statements are truthful.",
+        "minimum_successes": 1,
+        "falsehood_limit": "Half-truths and falsehoods that the target believes true are not detected.",
+        "communication_limits": "The spell does not analyze written or electronic communication; subject must hear the target's statement in person."
+      },
+      {
+        "name": "Clairaudience",
+        "type": "M",
+        "target": "6",
+        "duration": "S",
+        "drain": "M",
+        "effect": "Subject hears distant sounds within new sense range as if physically present.",
+        "restrictions": "Requires concentration; subject cannot use ordinary hearing while the spell is used. Does not convey visual images."
+      },
+      {
+        "name": "Clairvoyance",
+        "type": "M",
+        "target": "6",
+        "duration": "S",
+        "drain": "M",
+        "effect": "Subject sees distant scenes within sense range as if physically present.",
+        "restrictions": "Requires concentration; subject cannot use ordinary vision or astral perception while using the sense, and cannot target spells through clairvoyance.",
+        "other_senses": "Subject's natural/cybernetic vision enhancements work through the spell, but it does not convey sound."
+      },
+      {
+        "name": "Combat Sense",
+        "type": "M",
+        "target": "4",
+        "duration": "S",
+        "drain": "S",
+        "effect": "Subject subconsciously senses imminent dangerous situations within the sense range.",
+        "pool_effect": "Add one die to subject's Combat Pool for every two successes on Sorcery Test while sustained.",
+        "maximum_added_combat_pool_dice": "Force of the spell",
+        "resistance": "The spell is not resisted because its only affected subject is willing recipient; no hostile target directly affected."
+      },
+      {
+        "name": "Detect Enemies",
+        "type": "M",
+        "target": "See Detection Spell Target Number table on original printed p192",
+        "duration": "S",
+        "drain": "M",
+        "effect": "Detects living targets within range whose hostile intent is directed toward the spell subject.",
+        "exclusions": "Not traps, not random shooting into a crowd without hostility aimed at subject, and not other people whose hostile intentions do not concern subject.",
+        "included": "An ambush or other surprise attack directed at subject is detectable."
+      },
+      {
+        "name": "Detect Individual",
+        "type": "M",
+        "target": "See Detection Spell Target Number table on original printed p192",
+        "duration": "S",
+        "drain": "L",
+        "effect": "Detects presence of one specifically named individual within spell sense range.",
+        "selection": "Caster names target individual on casting; the paragraph does not authorize identifying every person in range."
+      },
+      {
+        "name": "Detect Life",
+        "type": "M",
+        "target": "See Detection Spell Target Number table on original printed p192",
+        "duration": "S",
+        "drain": "L",
+        "effect": "Detects all living beings within sense range and their number and relative locations.",
+        "crowd_limit": "In a crowded area results merge into a blurred mass, so the spell is described as virtually useless."
+      }
+    ],
+    "review": {
+      "original_image": "Original FASA7001 physically printed p192/PDF page 201, directly inspected after hash-verified Drive retrieval.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.chapter",
+        "data.already_accepted_generic_rules",
+        "data.spell_profiles[*].*",
+        "data.review.*"
+      ],
+      "first_pass_status": "Original source identities and all stat lines, numeric target numbers, Drain categories, optional/condition limitations independently checked before source baseline freeze.",
+      "limits": "This editorial review does not establish completeness of all spells or functional engine test status; rules remain game-only and exact named spell dependencies are separated from generic detect TN tables."
+    }
+  }
+}
