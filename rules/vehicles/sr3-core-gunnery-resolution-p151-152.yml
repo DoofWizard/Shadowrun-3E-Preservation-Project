@@ -1,0 +1,75 @@
+{
+  "id": "rule.vehicles.sr3-core-gunnery-resolution-p151-152",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "151-152",
+  "pdf_pages": "152-153",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition, catalog FASA7001, source-authentic fictional tabletop game, printed 151-152/physical PDF152-153, no later Rigger 3 substitution",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun, Third Edition tabletop rules (FASA Corporation FASA7001) vehicle gunnery/drone data, printed 151-152/PDF152-153",
+  "summary": "Manual and sensor-enhanced vehicle gunnery action procedures, LOS and relative-motion requirements, weapon recoil and explicit sensor lock sequence. Original edition game-only conditions and exceptions retained.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog": "FASA7001",
+      "source_id": "source.sr3-core",
+      "verified_source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "publication_type": "fictional tabletop role-playing game rulebook"
+    },
+    "context": "Exact source-specific fictional cyberpunk tabletop game mechanics. Neither physical-world vehicle combat guidance nor a claim that runnable code exists.",
+    "source_section": "Vehicles and Drones — Vehicle Gunnery; Manual Gunnery; Sensor-Enhanced Gunnery",
+    "manual_gunnery": {
+      "action": "Fire using Gunnery Skill (or appropriate non-mounted weapon skill when firing handheld weapons) and ordinary ranged combat rules",
+      "vehicle_in_motion": "Apply original Manual Gunnery Modifiers Table printed p153",
+      "smartlink": "A manually aimed vehicle-mounted weapon is not eligible for personal smartlink-assisted firing",
+      "scope_and_laser": "Original standard ranged equipment rules govern if actually applicable",
+      "manual_recoil": "Fixed vehicle mounts and turrets halve recoil, rounding down, before ordinary weapon accessory recoil compensation; heavy weapons' uncompensated recoil doubling is canceled by this vehicle mount halving",
+      "unmounted_weapon": "A passenger firing an unmounted weapon from vehicle uses corresponding skill and receives source +2 Firing Unmounted Weapons modifier in the original table"
+    },
+    "moving_relative_conditions": {
+      "relative_motion": "Moving toward each other reduces modifier; moving apart raises it; moving at right angles has different sign",
+      "very_slow": "If both attacker and target move less than 5 meters per Combat Turn, treat attack as standard ranged combat",
+      "only_one_moving": "If attacker or target moves fewer than 5 meters per turn, add +1 for every 30 meters the other vehicle moves that turn",
+      "table_authority": "Use original manual modifier rows printed p153, separately normalized"
+    },
+    "sensor_enhanced": {
+      "prerequisite": "Attacking vehicle or drone must detect target with successful Sensor Test before sensor-enhanced attack",
+      "sensor_test_target": "Target's Signature Rating",
+      "sensor_lock": "At least one Sensor Test success establishes a weapons lock",
+      "lock_action": "Sensor Test is a Complex Action",
+      "attack_test": "Gunnery Skill + floor(attacking vehicle Sensor Rating / 2) dice",
+      "unrigged_drone_exception": "When drone is not controlled by rigger, substitute drone Pilot Rating for Gunnery Skill",
+      "attack_target_number": "Target Signature Rating adjusted by original Sensor-Enhanced Gunnery Modifiers Table printed p154",
+      "attack_action": "Sensor-Enhanced Gunnery Test is a Complex Action",
+      "missing_lock": "Sensor-enhanced gunnery attack prohibited if vehicle sensors cannot lock on to target"
+    },
+    "sensor_vs_manual": "Sensor-enhanced fire relies on a sensor lock and may be affected by ECM; manual aiming is a separate attack, not automatically improved by Sensor Rating.",
+    "original_example": {
+      "sensor_rating": 3,
+      "skill_rating": 4,
+      "expected_bonus_sensor_dice": 1,
+      "expected_gunnery_test_dice": 5,
+      "sensor_lock_required": true
+    },
+    "source_lineage": "Existing rule.vehicles.gunnery summarizes this original vehicle subsystem, but its steps do not encode the exact two Complex Actions and Sensor Rating half-dice formula.",
+    "first_pass_editorial_source_review": {
+      "visual_provenance": "Original cataloged FASA7001 PDF, independently inspected original printed page(s) 151-152, physical PDF image(s) 152-153 after matching actual SHA-256 against the live source manifest",
+      "all_reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.context",
+        "data.* (all nested rule texts, classifications, table row labels, source examples, limitations and test descriptions)",
+        "data.first_pass_editorial_source_review.*"
+      ],
+      "review_limit": "First-pass review and structural gates do not themselves prove exhaustive source fidelity or complete code implementation."
+    }
+  }
+}
