@@ -1,0 +1,95 @@
+{
+  "id": "rule.magic.sr3-core-detection-spells-continuation-p193",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "193",
+  "pdf_pages": "202",
+  "edition_scope": "FASA Corporation original Shadowrun, Third Edition (FASA7001), fictional tabletop role-playing game core spell profiles only; no later supplements or real-world effects implied.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation fictional Shadowrun, Third Edition FASA7001, printed p193/PDF202: original Detect Life Form/Magic/Object and Mindlink spell profiles",
+  "summary": "Original source-verified fictional tabletop detection magic continuation on FASA7001 printed p193/PDF202: four distinct named spells with exact Mana/Physical type, target, sustained duration, Drain and conditional targeting or two-subject rules, while existing Mind Probe and generic Detection TN records are reused.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 193,
+      "physical_pdf_page": 202,
+      "kind": "fictional tabletop role-playing game core source"
+    },
+    "section": "Magic / Street Grimoire / Detection Spells, continued",
+    "spells": [
+      {
+        "name": "Detect (Life Form)",
+        "type": "M",
+        "target": "See Detection Spell Target Number table on original p192",
+        "duration": "S",
+        "drain": "-1(L)",
+        "game_effect": "Detects living beings of one specified type within sense range, reporting number and relative location.",
+        "requires_distinct_spell_per_type": "Separate spell needed for each different type of life form; source examples include orks, elves and dragons, not one universal selectable species at casting."
+      },
+      {
+        "name": "Detect Magic",
+        "type": "M",
+        "target": "See Detection Spell Target Number table on original p192",
+        "duration": "S",
+        "drain": "L",
+        "game_effect": "Detects presence of foci, spells and spirits within sense range.",
+        "explicit_exclusions": "Cannot detect Awakened characters or effects of permanent spells after those spells become permanent."
+      },
+      {
+        "name": "Detect (Object)",
+        "type": "P",
+        "target": "See Detection Spell Target Number table on original p192",
+        "duration": "S",
+        "drain": "+1(M)",
+        "game_effect": "Detects one specified type of object within spell sense range, reporting number and relative location.",
+        "requires_distinct_spell_per_type": "Different object types require separate spells, with source examples guns, computers and explosives."
+      },
+      {
+        "name": "Mindlink",
+        "type": "M",
+        "target": "4",
+        "duration": "S",
+        "drain": "S",
+        "game_effect": "Two voluntary participants exchange conversation, emotions and mental images.",
+        "success_threshold": "One Sorcery Test success suffices to establish the link.",
+        "casting_condition": "Both subjects must be within the caster line of sight to establish the link.",
+        "after_casting": "Participants remain within the spell's sense range, but may move out of the caster's line of sight."
+      }
+    ],
+    "reuse_without_duplication": [
+      "rules/magic/sr3-core-detection-target-and-results-p192.yml (generic detection target/success tables)",
+      "rules/magic/sr3-core-mind-probe-successes-p193.yml (existing accepted Mind Probe spell, successes 1-2/3-4/5+, repeat-attempt penalty)",
+      "rules/magic/spell-characteristics.yml"
+    ],
+    "source_scope_limits": {
+      "original_p193_coverage": "These four detection spell entries are on the first half of original printed p193/PDF202. Remaining Health spells and the Mind Probe table are distinct mechanical content classes or already accepted.",
+      "not_inferred": "No species-independent Detect Life Form spell, no magical detection of all Awakened people, no two-way Mindlink without consent, no spell-target TN invented for table-dependent spells.",
+      "engine_status": "Source exact-game archival only; no executable spell profiles or tests run."
+    },
+    "review": {
+      "original_page": "Hash-matched cataloged PDF physical p202 with visibly printed p193, inspected spell headings and every Type/Target/Duration/Drain line and condition.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.section",
+        "data.spells[*].*",
+        "data.reuse_without_duplication[*]",
+        "data.source_scope_limits.*",
+        "data.review.*"
+      ],
+      "first_pass_editorial": "Fictional publication/source is explicit; affected subject willingness is kept distinct from hostile targeting; named spell categories and exclusions preserved before baseline freeze.",
+      "caveat": "This local source review documents paths and provenance but alone cannot certify exhaustive normalization of the magic chapter."
+    }
+  }
+}
