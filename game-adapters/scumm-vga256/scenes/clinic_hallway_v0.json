@@ -1,0 +1,184 @@
+{
+  "schema_version": "scumm_vga256_scene_v0.1",
+  "id": "scene.clinic.hallway",
+  "title": "Clinic Hallway — engine adapter demonstration",
+  "authorship": "Original test scenario, not sourced from any published Shadowrun adventure",
+  "art": {
+    "target_resolution": [
+      320,
+      200
+    ],
+    "color_depth": "indexed 8-bit/256 colors",
+    "background_asset": "not_yet_created",
+    "walkbox_asset": "not_yet_created"
+  },
+  "state_model": {
+    "persistent_world_flags": [
+      "clinic.alarm_raised",
+      "clinic.receptionist_trust",
+      "clinic.entry_logged"
+    ],
+    "local_flags": [
+      "door.open",
+      "clue.reception_hours_seen"
+    ],
+    "character_fields": [
+      "inventory",
+      "skills",
+      "attributes",
+      "conditions",
+      "contacts"
+    ],
+    "time_handling": "Time actions must eventually use verified SR3 or specifically labelled authored policy; none silently advances a fixed number of turns here."
+  },
+  "hotspots": [
+    {
+      "id": "reception_notice",
+      "name": "Reception Notice",
+      "verbs": [
+        {
+          "verb": "LOOK",
+          "resolver_state": "authored_no_roll",
+          "preconditions": [],
+          "narrative": "A printed visiting-hours notice names the night supervisor.",
+          "state_changes": [
+            "clue.reception_hours_seen=true"
+          ],
+          "rules_refs": []
+        }
+      ]
+    },
+    {
+      "id": "staff_door",
+      "name": "Staff Entrance",
+      "verbs": [
+        {
+          "verb": "LOOK",
+          "resolver_state": "authored_no_roll",
+          "preconditions": [],
+          "narrative": "A card reader protects the service corridor.",
+          "rules_refs": []
+        },
+        {
+          "verb": "USE",
+          "with_object": "borrowed_staff_pass",
+          "resolver_state": "authored_no_roll",
+          "preconditions": [
+            "inventory.has(borrowed_staff_pass)"
+          ],
+          "state_changes": [
+            "door.open=true",
+            "clinic.entry_logged=true"
+          ],
+          "rules_refs": [],
+          "note": "Authored object condition; electronic pass behavior is not claimed to be an SR3 security rule."
+        },
+        {
+          "verb": "FORCE",
+          "resolver_state": "sr3_mapped_not_implemented",
+          "preconditions": [],
+          "rules_refs": [
+            "rule.tests.success-test",
+            "rules/combat/barriers.yml"
+          ],
+          "blocking_issue": "Strength/barrier/destruction action requires source-verified rule ID, equipment and alert outcomes."
+        }
+      ]
+    },
+    {
+      "id": "night_receptionist",
+      "name": "Night Receptionist",
+      "verbs": [
+        {
+          "verb": "TALK",
+          "resolver_state": "authored_no_roll",
+          "preconditions": [],
+          "narrative": "The receptionist can discuss visiting hours and policy.",
+          "rules_refs": []
+        },
+        {
+          "verb": "PERSUADE",
+          "resolver_state": "sr3_mapped_not_implemented",
+          "preconditions": [],
+          "rules_refs": [
+            "rule.tests.opposed-test"
+          ],
+          "blocking_issue": "Select social skill, opposing ratings, roleplaying modifiers and provenance before providing any roll target."
+        }
+      ]
+    },
+    {
+      "id": "public_terminal",
+      "name": "Lobby Terminal",
+      "verbs": [
+        {
+          "verb": "LOOK",
+          "resolver_state": "authored_no_roll",
+          "preconditions": [],
+          "narrative": "An aging console offers patient information.",
+          "rules_refs": []
+        },
+        {
+          "verb": "DECK",
+          "resolver_state": "sr3_mapped_not_implemented",
+          "preconditions": [
+            "character.can_deck"
+          ],
+          "rules_refs": [
+            "rule.matrix.system-test"
+          ],
+          "blocking_issue": "Concurrent System/Security Test, utility reductions and tally require complete engine validation."
+        }
+      ]
+    },
+    {
+      "id": "astral_approach",
+      "name": "Astral Reconnaissance",
+      "verbs": [
+        {
+          "verb": "PERCEIVE",
+          "resolver_state": "sr3_mapped_not_implemented",
+          "preconditions": [
+            "character.is_awakened"
+          ],
+          "rules_refs": [
+            "rules/magic/astral-perception.yml"
+          ],
+          "blocking_issue": "Astral perception, wards, magical action costs and entities must be implemented from cited source."
+        }
+      ]
+    },
+    {
+      "id": "jukebox",
+      "name": "Lobby Jukebox",
+      "verbs": [
+        {
+          "verb": "LISTEN",
+          "resolver_state": "supplemental_standard",
+          "standard_id": "supplemental.music",
+          "rules_refs": [],
+          "blocking_issue": "Music presentation standard to be designed; no SR3 mechanical authority."
+        },
+        {
+          "verb": "SHADOW BEAT",
+          "resolver_state": "supplemental_standard",
+          "standard_id": "supplemental.shadow-beat",
+          "rules_refs": [],
+          "blocking_issue": "Shadow Beat is a user-named future standard; exact affordances and mechanics remain undefined."
+        }
+      ]
+    }
+  ],
+  "outcome_policy": {
+    "no_softlock": "Multiple paths are intended; no claim of complete alternatives until their gated mechanics are executable.",
+    "no_false_authority": "Never infer a rule merely from hotspot labels, fictional scenario text or a source YAML path.",
+    "failure": "A failed rule test may set persistent flags or open a fallback branch, but the consequences must be specified and logged as authored narrative rather than fabricated SR3 mechanics.",
+    "logging_fields": [
+      "source_rule_ids",
+      "rule_trace",
+      "world_state_before",
+      "world_state_after",
+      "narrative_event"
+    ]
+  }
+}
