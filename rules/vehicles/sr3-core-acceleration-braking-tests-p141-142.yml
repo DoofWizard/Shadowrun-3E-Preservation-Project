@@ -1,0 +1,71 @@
+id: rule.vehicles.sr3-core-acceleration-braking-tests-p141-142
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 141-142
+pdf_pages: 142-143
+edition_scope: Original fictional Shadowrun, Third Edition tabletop RPG; FASA Corporation FASA7001, printed 141-142,
+  physical PDF 142-143; not later-edition conversion.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_pages:
+  - printed: 141
+    physical_pdf: 142
+  - printed: 142
+    physical_pdf: 143
+  rules_section: Vehicle Accelerating and Braking
+  original_mechanics:
+    action_type: Accelerating or braking is a Complex Action during Vehicle Combat; driver changes speed.
+    test: Driving Test using appropriate Vehicle Skill, base target number equal to vehicle Handling Rating plus
+      Accelerating/Braking modifiers.
+    target_number_modifiers:
+    - condition: Vehicle Maneuver Score exceeds opponent score by 10 or less
+      modifier: -2
+    - condition: Vehicle Maneuver Score exceeds opponent score by more than 10
+      modifier: -4
+    - condition: Opponent Maneuver Score exceeds vehicle score by 10 or less
+      modifier: 2
+    - condition: Opponent Maneuver Score exceeds vehicle score by more than 10
+      modifier: 4
+    - condition: Vehicle fleeing more than one pursuing vehicle
+      modifier: +1 for each additional pursuer
+    - condition: Vehicle exceeds its Speed Rating
+      modifier: 1
+    - condition: Vehicle autonav active
+      modifier: + Autonav Rating
+    - condition: Open terrain
+      modifier: -1
+    - condition: Normal terrain
+      modifier: 0
+    - condition: Restricted terrain
+      modifier: 1
+    - condition: Tight terrain
+      modifier: 3
+    - condition: Driver has compatible vehicle control rig implant
+      modifier: '- (VCR Rating x 2)'
+    successful_test_speed_delta: Vehicle Acceleration Rating multiplied by successes; add for acceleration or subtract
+      for braking.
+    maximum_speed: No vehicle may exceed its Speed Rating multiplied by 1.5.
+    crash_exception: A vehicle decelerating by more than 4 x Acceleration Rating must make a Crash Test.
+    pursuit_ramming_window: If pursuing vehicle speed increase is at least 2 x distance separating it from target,
+      it can ram the vehicle or pedestrian on controlling player next available action.
+    table_key: Relative Maneuver Score is compared to chased/pursuing vehicle; use highest opposing score when more
+      than one opponent is involved. Switching autonav on or off costs a Simple Action; free if rigger jacked into
+      vehicle.
+  scope_and_lineage:
+    reuses: rule.vehicles.driving-test and rule.vehicles.maneuver-score, plus numeric score table printed p140
+    avoid: Do not merge original SR3 procedure with later Rigger editions
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Vehicle Accelerating and
+  Braking; printed pp141-142/PDF142-143
+summary: Original-edition numerical and procedural vehicle accelerating and braking rules, preserved with published
+  conditions and exceptions, not real-world instructions or later supplement conversions.
