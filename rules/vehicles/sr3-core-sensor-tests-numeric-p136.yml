@@ -1,0 +1,76 @@
+id: rule.vehicles.sr3-core-sensor-tests-numeric-p136
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '136'
+pdf_pages: '137'
+edition_scope: Original fictional Shadowrun, Third Edition tabletop RPG; FASA Corporation FASA7001, printed 136-136,
+  physical PDF 137-137; not later-edition conversion.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Original published fictional cyberpunk tabletop role-playing game
+  original_pages:
+  - printed: 136
+    physical_pdf: 137
+  rules_section: Sensor Tests and Results
+  original_mechanics:
+    test_procedure:
+      passive_rigger: Roll Intelligence dice as standard Perception Test with appropriate modifiers; gamemaster
+        chooses passive or active use
+      passive_drone: Use Pilot Rating instead of Intelligence
+      active_sensor: Roll dice equal to vehicle Sensor Rating against target number equal to target Signature, plus
+        Sensor Test modifiers
+      successes: Interpret using published Sensor Tests Results Table; gamemaster may choose whether test is appropriate
+    sensor_test_target_number_modifiers:
+    - condition: ECM in use
+      modifier: Variable; Electronic Countermeasures printed p138
+    - condition: ECCM in use
+      modifier: Variable; Electronic Countermeasures printed p138
+    - condition: Direct uninterrupted line of sight
+      modifier: -2
+    - condition: Urban setting
+      modifier: 1
+    - condition: Fog, smog, precipitation
+      modifier: 1
+    - condition: Restricted terrain
+      modifier: 1
+    - condition: Concealed by nature spirit
+      modifier: + spirit Force Rating
+    - condition: Tight terrain
+      modifier: 2
+    - condition: Sensing vehicle damaged
+      modifier: + current Damage Modifier; original damage table printed p147
+    - condition: Concealed by illusion spell
+      modifier: Variable; individual spell description; resistance test if applicable
+    sensor_test_results:
+    - successes: 0
+      result: No contact
+    - successes: 1
+      result: Basic contact; detect target, distance, direction of travel, speed and general type (building/aircraft/ground
+        vehicle/life form); no more detailed identification
+    - successes: 2
+      result: General contact; general subtype (radar dish/helicopter/hovercraft/dragon, etc.)
+    - successes: 3
+      result: Positive contact; specific type or model (as source examples)
+    - successes: 4+
+      result: Identify distinguishing features relative to other members of its type
+    passive_active_modes: Active tests can warn of vehicles/objects and use vehicle Sensor dice; a rigger may also
+      perceive through visual feeds as passive Perception test.
+  scope_and_lineage:
+    reuses: rule.vehicles.sensor-tests for descriptive test overview; new record closes only exact p136 table/results
+      numerics
+    exclude: Do not claim these conditions universally override Sourcebook-specific spells or Electronic Countermeasure
+      rolls
+framing: reference_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Sensor Tests and Results;
+  printed pp136-136/PDF137-137
+summary: Original-edition numerical and procedural sensor tests and results rules, preserved with published conditions
+  and exceptions, not real-world instructions or later supplement conversions.
