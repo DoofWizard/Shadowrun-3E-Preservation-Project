@@ -1,0 +1,96 @@
+id: rule.matrix.sr3-core-access-topology-route-conditions-p203-204
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 203-204
+pdf_pages: 212-213
+edition_scope: Original fictional tabletop game Shadowrun, Third Edition (FASA Corporation, FASA7001); printed pp203-204/physical
+  PDF pp212-213, without later edition substitutions.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    medium: Published fictional tabletop cyberpunk role-playing game
+  original_pages:
+  - printed: 203
+    physical_pdf: 212
+    headings:
+    - Private LTGs
+    - Regulations and Entry Points
+    - Off-Line Hosts
+    - Matrix Topology
+    - Open Access
+  - printed: 204
+    physical_pdf: 213
+    headings:
+    - Tiered Access
+    - Host-Host Access
+    - Private Grid Access
+  gameplay_routing_model:
+    open_access:
+      layout: Hosts attached directly to one LTG
+      route: Any host attached to the currently accessible LTG can be approached from that grid without first traversing
+        a different host.
+      current_host_exit: The book explicitly permits disconnecting from an already entered host and accessing another
+        without terminating the overall Matrix run.
+    tiered_access:
+      first_tier_host: The first-tier host A is the sole direct host connection to the public grid in the source
+        diagram.
+      second_tier_hosts:
+      - B
+      - C
+      - D
+      route_to_second_tier: The fictional decker must first pass through A before entering B, C, or D.
+      second_tier_to_second_tier: To move from B to C or D, the decker must re-enter first-tier host A rather than
+        bypass A.
+      first_tier_roles: The source allows a first-tier system to act as a switch passing authorized users to second-tier
+        hosts or to a private local telecommunications grid.
+      chokepoint_design: Chokepoint is a possible security-intensive variation of tiered access with a strongly
+        protected first-tier host and relatively less secure second-tier hosts; described as design variation rather
+        than compulsory layout.
+    host_to_host:
+      network: Hosts are linked directly to other hosts and perform distinct tasks while sharing data.
+      route_rule: The decker can access more deeply linked hosts only by passing through hosts that are connected
+        in the fictional topology.
+      diagram_example: In the p204 diagram, access to Host E from the LTG proceeds through the connected access
+        hosts B, C and D; there is no direct public LTG-to-E link shown.
+      not_universal: The particular diagram is illustrative; it is not a fixed required topology for every host-to-host
+        network.
+    private_grid:
+      restricted: The PLTG is an owner-controlled fictional grid not generally open to the public.
+      entry_routes: The publication describes multiple owner-defined entry points linking public grids, or entry
+        via a host connected to the PLTG.
+      post_entry: Once the decker has accessed any host in the private grid, the source says the decker can access
+        any other host connected to that grid; this does not waive separate operation tests elsewhere in the Matrix
+        chapter.
+      internal_topology: Hosts within a PLTG may themselves use tiered or host-to-host configurations.
+      optional_difficulty_guidance: For custom-designed PLTGs, the book recommends considering Orange or Red Security
+        Codes and Easy Intrusion Difficulty (cross-reference printed p205), as GM discretion rather than a mandatory
+        rating.
+    offline_host:
+      network_route: A host deliberately kept off the Matrix has no route through normal connected public/private
+        grids.
+      source_scenario: For this fictional game, direct physical access to the location and its jackpoint is required
+        to interact with an off-line host.
+      certainty: The book explicitly distinguishes disconnected hosts from remotely accessible connected ones.
+  relationships:
+    existing_general_topology: rule.matrix.topology
+    existing_regional_grid_ratings: rule.matrix.sr3-core-na-rtg-system-ratings-p202-203
+    subsequent_grid_logon_conditions: rule.matrix.sr3-core-system-tests-action-security-tally-p209-210
+  constraints:
+  - These are published original-game topology and routing conditions, not real-world network-access instructions.
+  - A drawn example does not establish numerical Access or Security ratings for every host.
+  - Topology does not grant automatic success on a separate Host/Grid System Test.
+  - Scope is printed pp203-204; this record does not claim complete Matrix chapter implementation.
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop Matrix routing rules: printed
+  pp203-204 / PDF212-213'
+summary: Original game route conditions for open LTG access, mandatory first-tier host traversal and return, directly
+  linked hosts, restricted PLTG entry/access, and off-line hosts. The illustrated networks are examples, not mandatory
+  universal configurations.
