@@ -1,0 +1,89 @@
+{
+  "id": "rule.magic.sr3-core-health-antidote-cure-disease-detox-p193",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "193",
+  "pdf_pages": "202",
+  "edition_scope": "FASA Corporation original Shadowrun, Third Edition core (FASA7001), fictional tabletop role-playing game spells and dice only; no real medical or toxicological applicability or later rules imports.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Original fictional FASA Corporation Shadowrun, Third Edition FASA7001 Health spells printed p193/PDF202: Antidote, Cure Disease and Detox",
+  "summary": "Three original Shadowrun Third Edition fictional tabletop Health spell profiles with mana Type, toxin/disease targets, permanent Duration, exact Drain and conditional Force/success rules; distinct from previously accepted Heal/Treat, Decrease Attribute and later p194 Health spell records.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 193,
+      "physical_pdf_page": 202,
+      "medium": "fictional tabletop role-playing game core sourcebook"
+    },
+    "section": "Magic / Street Grimoire / Health Spells, original p193",
+    "health_spells_general": "The source describes fantasy magical spells which can repair or affect physical injury, diseases, poisons, or physical/mental attributes. A caster must touch spell target for the Health spells described in this section; the game narrator also describes a voluntary hand-contact tradition.",
+    "spells": [
+      {
+        "name": "Antidote",
+        "type": "M",
+        "target": "Toxin Strength",
+        "duration": "P",
+        "drain": "(Toxin Damage Level)",
+        "effect": "Assists fictional victim overcoming a poison by reducing toxin Power.",
+        "per_sorcery_success": "-1 toxin Power",
+        "maximum_total_reduction": "Spell Force",
+        "casting_requirement": "Cast before the toxin inflicts game damage; subsequent reduction helps Damage Resistance Tests."
+      },
+      {
+        "name": "Cure Disease",
+        "type": "M",
+        "target": "Disease Power",
+        "duration": "P",
+        "drain": "(Disease Damage Level)",
+        "effect": "Helps fictional patient overcome a disease after infection.",
+        "per_sorcery_success": "-1 disease Power",
+        "maximum_total_reduction": "Spell Force",
+        "timing": "May be cast at any time after infection.",
+        "does_not_heal_prior_damage": true,
+        "requires_separate_healing_spell_for_prior_damage": true
+      },
+      {
+        "name": "Detox",
+        "type": "M",
+        "target": "Toxin Strength",
+        "duration": "P",
+        "drain": "-2(Toxin Damage Level)",
+        "effect": "Eliminates fictional drug or poison effects when spell Force is at least toxin Power.",
+        "minimum_force_condition": "Spell Force must equal or exceed toxin Power rating.",
+        "minimum_successes_for_symptom_elimination": 1,
+        "damage_boundary": "Does not heal or prevent toxin-inflicted damage.",
+        "other_effect": "Eliminates fictional side effects including dizziness, hallucinations, nausea and pain while meeting conditions; the text distinguishes side effects from injury."
+      }
+    ],
+    "related_preexisting_canon": [
+      "rules/magic/sr3-core-heal-treat-p193-194.yml (separate existing Health spells and healing timing)",
+      "rules/magic/sr3-core-decrease-attribute-numeric-p193.yml (other spell profiles)",
+      "rules/magic/sr3-core-health-survival-and-support-spells-p194.yml (adjacent other Health spells)"
+    ],
+    "review": {
+      "source_image": "Original printed p193, physical PDF p202, inspected original right-column Health spell headings, Type/Target/Duration/Drain and conditions.",
+      "reviewed_text_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.section",
+        "data.health_spells_general",
+        "data.spells[*].*",
+        "data.related_preexisting_canon[*]",
+        "data.review.*"
+      ],
+      "editorial": "First-pass fictional publication attribution and neutral reference phrasing with original conditions/timing, Force thresholds and negation maintained; no health instructions for people.",
+      "source_limit": "Review log and local structural checks are not source-completeness or executable test evidence."
+    }
+  }
+}
