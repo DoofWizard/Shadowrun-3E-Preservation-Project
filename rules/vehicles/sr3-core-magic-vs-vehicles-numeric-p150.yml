@@ -1,0 +1,80 @@
+{
+  "id": "rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "150",
+  "pdf_pages": "151",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), historical original fictional tabletop rulebook printed 150/PDF151; no assumed later Rigger 3 substitution",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop game Shadowrun, Third Edition (FASA Corporation FASA7001), vehicle mechanics printed 150/PDF151",
+  "summary": "Original SR3 vehicle spell tests, armor-gated spells, object-target scope and passenger line-of-sight cover modifiers; retains elemental versus combat spell distinctions. Source-faithful Third Edition numeric conditions, not real-world vehicle operations.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_type": "published fictional tabletop role-playing game"
+    },
+    "fictional_scope": "Exact source-derived tabletop fictional vehicle procedures, tests and damage codes, not instructions for operating real-world vehicles",
+    "source_section": "Vehicles and Drones — Vehicles and Magic / Elemental Manipulation Spells / Spells Against Characters in Vehicles",
+    "target_validity": {
+      "physical_spell": "Only spells producing physical effects may affect a vehicle; mana spells do not affect the vehicle itself even when a rigger is linked",
+      "exceptions": "Mana spells may affect rigger only if the caster can separately target the rigger",
+      "visible_occupant": "Open or open-topped vehicles allow targeting visible occupants; fully enclosed occupants hidden from line of sight are not directly targetable",
+      "single_target_combat_spell": "Targets entire vehicle with components and accessories, not separately one tire or window",
+      "area_effect": "Affected vehicle, occupants and cargo are all within the effect when the area encompasses them"
+    },
+    "combat_spells": {
+      "vehicle_target_number": "8 + vehicle Body + floor(vehicle Armor Rating / 2)",
+      "armor_rounding": "The source explicitly says round down for half Armor Rating",
+      "vehicle_resistance": "Vehicles do not roll Damage Resistance Tests against combat spells",
+      "spell_defense": "Spell Defense dice may protect vehicle; spell has no effect if their successes equal or exceed spellcaster Sorcery Test successes",
+      "armor_vs_force": "Even where combat spells affect vehicles regardless of armor normally, the source says the spell has no effect if vehicle Armor Rating is equal to or greater than spell Force",
+      "example_original": {
+        "force": 6,
+        "spell": "Power Bolt",
+        "target": "Ford Americar Body 3 Armor 2",
+        "target_number": 12,
+        "spellcaster_successes": 3,
+        "spell_defense_successes": 1,
+        "net_successes": 2,
+        "vehicle_damage": "Serious",
+        "source_determination": "Original in-world example shows successful Sorcery Test and Defense staging"
+      }
+    },
+    "elemental_manipulations": {
+      "target_number": "Base target number 4 as for ranged attacks, subject to applicable modifiers",
+      "hardened_armor": "Treat like normal weapon attacks against vehicle hardened armor",
+      "vehicle_damage": "Reduce spell Damage Level one step and halve spell Power/Force in vehicle damage calculations",
+      "source_exception": "If halved spell Force does not exceed Armor Rating, spell does not affect the vehicle"
+    },
+    "passenger_visibility": {
+      "ordinary_vehicle_windows": "The source notes that tinted glass may allow only restricted sight of passengers",
+      "limited_sight": "Apply normal cover modifier to Sorcery Test, not automatic targeting through opaque surfaces",
+      "heavily_tinted_or_opaque": "Lack of direct line of sight prohibits selecting interior occupants",
+      "original_example": "Magician outside an enclosed vehicle who sees only limited silhouettes through a window takes +4 Partial Cover modifier, if target visibility permits casting",
+      "area_spell": "An area effect may affect the vehicle and passengers together rather than a direct single-target spell illegally bypassing enclosure"
+    },
+    "lineage": "Original FASA7001 printed p150, distinct from Rigger 3 spells/vehicle later rules and ordinary SR3 Spell Defense.",
+    "source_review_receipt": {
+      "original_images": "Independently inspected fresh SHA-verified original printed pp150 corresponding physical PDF151 prior to baseline freeze",
+      "reviewed_human_readable_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.fictional_scope",
+        "data.* including all nested tables, explanatory conditions, source examples and qualifiers",
+        "data.source_review_receipt.*"
+      ],
+      "source_fidelity_limit": "Editorial receipt and passing preflight are not exhaustive book completeness certification or runnable engine test."
+    }
+  }
+}
