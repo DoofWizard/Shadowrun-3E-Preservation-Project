@@ -2,8 +2,8 @@ id: equipment.vehicles.sr3-core-road-water-market-p309
 record_type: equipment
 status: source_reviewed
 source: source.sr3-core
-edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop vehicle market; later
-  Rigger 3 rule lineage distinct
+edition_scope: Original FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop vehicle
+  market; later Rigger 3 rule lineage distinct
 printed_pages: '309'
 pdf_pages: '317'
 content_class:
@@ -17,9 +17,9 @@ data:
     source_type: fictional tabletop role-playing game rulebook
     printed_page: 309
     physical_pdf_page: 317
-  field_interpretation: Retains original in-game stats and exact source slash strings, seating/entry-point notation
-    and the printed missing Pilot/Autonav markers as null. In-world scene descriptions attributed to book, not real-world
-    vehicle facts.
+  field_interpretation: Retains original in-game stats and exact source slash strings, seating/entry-point
+    notation and the printed missing Pilot/Autonav markers as null. In-world scene descriptions attributed
+    to book, not real-world vehicle facts.
   vehicle_rows:
   - name: Ares Roadmaster
     source_group: trucks and hovercraft
@@ -39,8 +39,8 @@ data:
     cost_nuyen: 45000
     availability_original: 3/3 days
     street_index: 1
-    source_description: Book describes a fictional cargo transport whose interchangeable components permit security
-      conversion.
+    source_description: Book describes a fictional cargo transport whose interchangeable components
+      permit security conversion.
   - name: Ford-Canada Bison
     source_group: trucks and hovercraft
     handling_original: 4/3
@@ -63,7 +63,7 @@ data:
     other_features:
     - Concealed armor (Concealability 7)
     - Living amenities (basic)
-  - name: Chrysler-Nissan Giza — passenger
+  - name: Chrysler-Nissan G12A — passenger
     source_group: hovercraft
     handling_original: 4
     speed_original: 120
@@ -81,8 +81,9 @@ data:
     cost_nuyen: 50000
     availability_original: 3/3 days
     street_index: 1
-    source_description: Passenger configuration of a fictional air-cushion vehicle that can convert to cargo use.
-  - name: Chrysler-Nissan Giza — cargo
+    source_description: Passenger configuration of a fictional air-cushion vehicle that can convert
+      to cargo use.
+  - name: Chrysler-Nissan G12A — cargo
     source_group: hovercraft
     handling_original: 4
     speed_original: 120
@@ -100,7 +101,8 @@ data:
     cost_nuyen: 50000
     availability_original: 3/3 days
     street_index: 1
-    source_description: Cargo configuration of same fictional Giza model; not a separate purchasable model.
+    source_description: Cargo configuration of same fictional G12A model; not a separate purchasable
+      model.
   - name: Samuvani CrisCraft Otter
     source_group: boats
     handling_original: 4
@@ -138,8 +140,8 @@ data:
     cost_nuyen: 22500
     availability_original: 2/2 days
     street_index: 0.75
-    source_description: Book describes a fictional pleasure sailboat; an in-world media story associates it with
-      fictional smuggler Janos Smoot.
+    source_description: Book describes a fictional pleasure sailboat; an in-world media story associates
+      it with fictional smuggler Janos Smoot.
   distinct_purchase_models: 5
   table_rows: 6
   links:
@@ -147,7 +149,7 @@ data:
   - subsystem.vehicles.design (later Rigger 3 rules)
   test_vectors_specifications_not_executed:
   - id: giza.cargo.delta
-    model: Chrysler-Nissan Giza
+    model: Chrysler-Nissan G12A
     passenger_cargo_factor: 6
     cargo_cargo_factor: 66
     expected_increase: 60
@@ -161,10 +163,29 @@ data:
     pilot: null
     autonav: 0
     speed: 30
-  page_mapping_note: Original printed p309 has physical PDF p317; printed p308 is absent/unverified in this cataloged
-    scan and was not inferred.
+  source_fidelity_correction:
+    corrected_original_model_label: Chrysler-Nissan G12A
+    previous_erroneous_archive_label: Chrysler-Nissan Giza
+    evidence: 'Direct visual review of the original FASA7001 printed p309 / physical PDF317: the
+      source heading is CHRYSLER-NISSAN G12A. The prior archive misread the numeral 1 as I and 2
+      as Z, creating the false name Giza.'
+    invariants: Only the incorrect model label in the two G12A configuration rows and related example
+      identifier was corrected; vehicle numerical statistics, original conditions and page provenance
+      remain unchanged.
+    correction_character: Original-source fidelity correction, not a newly introduced vehicle or
+      hypothetical model alias.
+    reviewed_text_field_paths:
+    - data.vehicle_rows[*].name
+    - data.test_vectors_specifications_not_executed[*].model
+    - data.source_fidelity_correction.*
+    - headline
+    - summary
+    - edition_scope
+    - data.publication.*
+  page_mapping_note: Original printed p309 has physical PDF p317; printed p308 is absent/unverified
+    in this cataloged scan and was not inferred.
 framing: reference_exact
-headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional truck, hovercraft and boat market printed
-  p309/PDF317
-summary: Six original FASA7001 table configurations for five fictional road/water vehicle models, preserving exact
-  Body, Handling, Speed, Armor, Load, Cargo, amenities, price, Availability, Street Index and missing-value distinctions.
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional vehicle models, including
+  restored Chrysler-Nissan G12A label, printed p309/PDF317
+summary: Exact source-checked six vehicle table configurations for five original FASA7001 fictional
+  models; p309/PDF317 Chrysler-Nissan G12A identity corrected without changing any game statistics.
