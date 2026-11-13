@@ -1,0 +1,196 @@
+{
+  "id": "option.magic.sr3-core-adept-powers-foundations-p168-169",
+  "record_type": "option",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "168-169",
+  "pdf_pages": "169-170",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original published fictional tabletop RPG; source option.magic.sr3-core-adept-powers-foundations-p168-169 original printed 168-169, physical PDF 169-170; not later edition.",
+  "content_class": [
+    "character_option"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "nature": "Original published fictional cyberpunk tabletop role-playing game",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_page_pairs": [
+        [
+          168,
+          169
+        ],
+        [
+          169,
+          170
+        ]
+      ]
+    },
+    "source_section": "Adept power-point economy, attribute boost, combat sense and improved powers",
+    "power_point_economy": {
+      "starting_power_points": "Equal to adept Magic Attribute.",
+      "purchase_cost": "Power Point spent permanently to acquire a chosen power; Power Points cannot be reassigned.",
+      "magic_loss": "Losing a Magic point removes one point worth of powers; the adept's player chooses lost powers.",
+      "per_power_level_cap": "No power may have more levels than the adept's current Magic Attribute.",
+      "additional_power_points": "During game play, two Good Karma points buy one additional Power Point.",
+      "magical_scope": "Adept cannot astrally project and cannot astrally perceive unless the Astral Perception power is selected; adepts can use Sorcery in astral combat under the specific core restriction."
+    },
+    "powers": [
+      {
+        "name": "Astral Perception",
+        "power_point_cost": 2,
+        "effect": "Grants astral perception using the ordinary core rules, not astral projection."
+      },
+      {
+        "name": "Attribute Boost",
+        "cost_per_level": 0.25,
+        "eligible_attributes": [
+          "Strength",
+          "Body",
+          "Quickness"
+        ],
+        "excluded": [
+          "Mental",
+          "Special"
+        ],
+        "activation": "Magic Test against a target number equal to one-half the unaugmented Attribute, rounded up; at least one success required.",
+        "boost_per_power_level": 1,
+        "duration_combat_turns": "equal to successful Magic Test successes",
+        "maximum_boosted_value": "twice Racial Modified Limit",
+        "drain_test": "After boost ends, Willpower Drain Resistance against target equal to one-half the boosted Attribute, rounded up.",
+        "drain_levels": [
+          {
+            "when": "boosted Attribute at or below Racial Modified Limit",
+            "level": "Light"
+          },
+          {
+            "when": "above Racial Modified Limit but no higher than Racial Attribute Maximum",
+            "level": "Moderate"
+          },
+          {
+            "when": "above Racial Attribute Maximum up to twice Racial Modified Limit",
+            "level": "Serious"
+          }
+        ],
+        "drain_reduction": "Every two successes reduces Drain level one step; any Drain damage is Stun.",
+        "compatibility": "Cannot combine with cyberware augmentation or spell-based attribute increases; may combine with Improved Physical Attribute."
+      },
+      {
+        "name": "Body Control",
+        "cost_per_level": 0.25,
+        "effect": "Each level adds one die to Resistance Tests against toxins and diseases."
+      },
+      {
+        "name": "Combat Sense",
+        "levels": [
+          {
+            "level": 1,
+            "cost": 1,
+            "additional_combat_pool_dice": 1,
+            "reaction_test_fraction": "1/4"
+          },
+          {
+            "level": 2,
+            "cost": 2,
+            "additional_combat_pool_dice": 2,
+            "reaction_test_fraction": "1/2"
+          },
+          {
+            "level": 3,
+            "cost": 3,
+            "additional_combat_pool_dice": 3,
+            "reaction_test_fraction": "Full"
+          }
+        ],
+        "effect": "Use the listed fraction of Combat Pool dice with Reaction Test for surprise; also gain the listed Combat Pool dice."
+      },
+      {
+        "name": "Enhanced Perception",
+        "cost_per_level": 0.5,
+        "effect": "Each level adds one die to Perception Tests including astral perception.",
+        "additional_dice_cap": "Cannot exceed lower of Intelligence or Magic."
+      },
+      {
+        "name": "Improved Ability",
+        "cost_per_die_physical_skills": 0.25,
+        "cost_per_die_combat_skills": 0.5,
+        "physical_skill_examples": [
+          "Athletics",
+          "Diving",
+          "Stealth"
+        ],
+        "combat_skill_examples": [
+          "Pistols",
+          "SMGs",
+          "Rifles",
+          "Unarmed Combat",
+          "Edged Weapons",
+          "Gunnery"
+        ],
+        "use": "Adds dice to a specific Active Skill rather than increasing the skill rating; applies to that skill's specializations.",
+        "defaulting_rule": "When defaulting to the improved skill, use only half the bonus dice, rounded down.",
+        "bonus_dice_cap": "Cannot exceed lower of base skill rating or Magic Attribute."
+      },
+      {
+        "name": "Improved Physical Attribute",
+        "cost_per_level": 0.5,
+        "eligible_attributes": [
+          "Strength",
+          "Body",
+          "Quickness"
+        ],
+        "increment_per_level": 1,
+        "high_attribute_cost": "Levels exceeding Racial Modified Limit cost twice the ordinary cost (1 Power Point each).",
+        "karma_advancement": "An adept increasing the Attribute later through Karma counts magical improvement in the Attribute total; Quickness increases Reaction and Combat Pool normally."
+      },
+      {
+        "name": "Improved Reflexes",
+        "level_costs": [
+          {
+            "level": 1,
+            "cost": 2
+          },
+          {
+            "level": 2,
+            "cost": 3
+          },
+          {
+            "level": 3,
+            "cost": 5
+          }
+        ],
+        "per_level": {
+          "reaction_bonus": 2,
+          "initiative_dice_bonus": 1
+        },
+        "max_level": 3,
+        "restriction": "Cannot be combined with technological or other magical enhancements to Reaction or Initiative."
+      },
+      {
+        "name": "Improved Sense",
+        "cost_per_improvement": 0.25,
+        "effect": "Adds a specific natural sensory enhancement; several options have source-specific tests on printed p170. Comparable cyberware senses may be reproduced, but this does not inherit cyberware package discounts."
+      }
+    ],
+    "source_review": {
+      "original_images": "Printed pp168-169 / PDF169-170 independently examined 2026-11-13; exact costs, fractional Combat Pool allocation, caps, incompatibilities and Drain table inspected before freeze.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "data.publication.*",
+        "data.power_point_economy.*",
+        "data.powers[*].*",
+        "data.source_review.*",
+        "headline",
+        "summary",
+        "framing"
+      ],
+      "distinctions": "Exact Third Edition character options and rulebook conditions; fractional costs and numeric signs kept literal, later-edition options excluded."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop core Adept power-point economy, attribute boost, combat sense and improved powers; printed 168-169/physical PDF 169-170",
+  "summary": "Original core adept power-point and special-ability costs, limits, Attribute Boost Drain, Combat Sense and Improved Reflexes tables, with source exceptions."
+}
