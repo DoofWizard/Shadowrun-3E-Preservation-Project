@@ -1,0 +1,106 @@
+{
+  "id": "rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "149-150",
+  "pdf_pages": "150-151",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), historical original fictional tabletop rulebook printed 149-150/PDF150-151; no assumed later Rigger 3 substitution",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional tabletop game Shadowrun, Third Edition (FASA Corporation FASA7001), vehicle mechanics printed 149-150/PDF150-151",
+  "summary": "Original FASA7001 vehicle attack Power halving, damage staging, anti-vehicle exception, passenger cover and Combat Pool restrictions, and numeric Build/Repair procedures. Source-faithful Third Edition numeric conditions, not real-world vehicle operations.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_type": "published fictional tabletop role-playing game"
+    },
+    "fictional_scope": "Exact source-derived tabletop fictional vehicle procedures, tests and damage codes, not instructions for operating real-world vehicles",
+    "source_section": "Vehicles and Drones — Vehicle Damage from Weapons; Repairing Vehicles continuation",
+    "target_declaration": "A firing character declares whether an attack is against the fictional vehicle itself or a passenger; procedures differ.",
+    "attacks_against_vehicle": {
+      "normal_attack_power": "Halve Power, round down",
+      "normal_damage_level": "Reduce by one: D→S, S→M, M→L",
+      "light_restriction": "Ordinary weapons that reduce to Light Damage cannot affect vehicles unless special ammunition is used",
+      "grenades_and_explosives": "Use same ordinary one-step Damage Level reduction except for anti-vehicle ammunition",
+      "anti_vehicle_ammunition": {
+        "examples": [
+          "missiles",
+          "rockets",
+          "mortar shells"
+        ],
+        "power": "Halve Power, round down",
+        "damage_level": "Do not reduce Damage Level",
+        "kind": "Shaped-charge, penetrating warhead ammunition specially designed for this fictional vehicle combat"
+      },
+      "hardened_armor": "If modified attack Power does not exceed Armor, the attack has no effect; vehicle Armor also reduces the resulting attack Power",
+      "vehicle_resistance": {
+        "dice": "Vehicle Body + available rigger Control Pool dice up to rigger Rigging Skill Rating",
+        "target_number": "Modified weapon attack Power",
+        "stage_down_rule": "Every 2 successes decreases Damage Level one step"
+      },
+      "crash": "Any attack that causes Serious vehicle Damage triggers a Crash Test; fully filled vehicle Condition Monitor causes automatic crash",
+      "body_zero": "Any attacker success automatically destroys vehicle Body 0"
+    },
+    "called_shots_external_parts": {
+      "requires": "Declared Called Shot to a vehicle component (examples: tires, antenna or external weapon)",
+      "damage_staging": "Ignore normal Called Shot staged-up Damage Level",
+      "components": "Some components have independent Body/Armor; GM may make fragile parts succumb to Light damage or reinforced parts require Serious damage"
+    },
+    "passengers": {
+      "attack_target_number_modifier": 3,
+      "attack_power_reduction": "Subtract higher of vehicle Body Rating or Armor Rating from attacking Power",
+      "damage_level": "Do not reduce the attacking weapon Damage Level",
+      "hard_cover_exception": "Vehicle Body or Armor exceeding weapon unmodified Power prevents damage to passenger",
+      "passenger_combat_pool_limit": "Half usual Combat Pool, round down, for Dodge or Damage Resistance tests",
+      "secondary_vehicle_damage": "Deadly initial Damage Level hit against passenger simultaneously inflicts Light Damage on vehicle; vehicle cannot resist it"
+    },
+    "repair": {
+      "repair_test": "Vehicle Build/Repair Test",
+      "target_number": "Number of vehicle damage boxes to repair + 2",
+      "base_time": "16 hours × number of damage boxes to repair",
+      "success_time_rule": "Divide base time by successes on the initial Vehicle Build/Repair Test",
+      "replacement_parts_cost": "Five percent of total current vehicle cost per damage box repaired",
+      "example": "Six damage boxes require replacement parts costing thirty percent of vehicle cost",
+      "parts_procurement": "Acquire replacement parts via their Availability Codes and Street Index; wait full Availability period before commencing repairs",
+      "vehicle_unavailability": "Vehicle cannot be used during repairs",
+      "interrupted_repairs": "If work is interrupted by a need to move the vehicle, spend one extra hour to pack up and return to a workable location before repair resumes"
+    },
+    "examples_specification_only": [
+      {
+        "weapon_damage": "10S",
+        "modified_normal_vehicle_damage_before_armor": "5M"
+      },
+      {
+        "anti_vehicle_weapon_damage": "10S",
+        "modified_damage_before_armor": "5S"
+      },
+      {
+        "repair_boxes": 6,
+        "repair_test_target_number": 8,
+        "base_time_hours": 96,
+        "parts_percentage_total_vehicle_cost": 30
+      }
+    ],
+    "source_review_receipt": {
+      "original_images": "Independently inspected fresh SHA-verified original printed pp149-150 corresponding physical PDF150-151 prior to baseline freeze",
+      "reviewed_human_readable_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.fictional_scope",
+        "data.* including all nested tables, explanatory conditions, source examples and qualifiers",
+        "data.source_review_receipt.*"
+      ],
+      "source_fidelity_limit": "Editorial receipt and passing preflight are not exhaustive book completeness certification or runnable engine test."
+    }
+  }
+}
