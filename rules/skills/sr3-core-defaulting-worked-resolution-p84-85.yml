@@ -1,0 +1,141 @@
+{
+  "record_type": "rule",
+  "status": "reviewed",
+  "source": "source.sr3-core",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition, FASA7001 original Third Edition fictional tabletop RPG, physical-page maps verified against original scanned PDF; no implicit later-edition replacement",
+  "framing": "reference_exact",
+  "id": "rule.skills.sr3-core-defaulting-worked-resolution-p84-85",
+  "printed_pages": "84-85",
+  "pdf_pages": "85-86",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_kind": "published fictional tabletop role-playing game rules",
+      "printed_pages": [
+        84,
+        85
+      ],
+      "physical_pdf_pages": [
+        85,
+        86
+      ]
+    },
+    "source_sections": [
+      "DEFAULTING",
+      "THE DEFAULTING PROCESS",
+      "From Skill to Skill",
+      "From Skill to Specialization",
+      "From Skill to Attribute",
+      "DEFAULT TABLE",
+      "LIMITS ON DEFAULTING"
+    ],
+    "default_routes": [
+      {
+        "to": "Specialization",
+        "target_number_modifier": 3,
+        "dice_source": "rating of the specialization",
+        "additional_dice_pool": "up to half of related base skill, rounded down"
+      },
+      {
+        "to": "Skill",
+        "target_number_modifier": 2,
+        "dice_source": "rating of skill used for default",
+        "additional_dice_pool": "up to half of skill used, rounded down"
+      },
+      {
+        "to": "Attribute",
+        "target_number_modifier": 4,
+        "dice_source": "linked Attribute rating",
+        "additional_dice_pool": "none"
+      }
+    ],
+    "limitations": [
+      "Choose a permissible route from a skill within its allowed linked-attribute group; cannot default to an unrelated Attribute or to another Attribute.",
+      "A character cannot default from an Attribute or a specialization; default routes start from a base skill or use that skill's linked Attribute.",
+      "Defaulting is barred where the modified target number is 8 or greater BEFORE applying the defaulting-route modifier, and some actions explicitly prohibit defaulting independently of the number.",
+      "For defaulting on an Open Test, subtract the route's modifier from the highest die result instead of adding the modifier to a target number."
+    ],
+    "published_worked_examples": [
+      {
+        "id": "ratchet-shotgun-to-assault-rifle",
+        "skill_used": "Shotguns",
+        "skill_rating": 5,
+        "required_skill": "Assault Rifles",
+        "target_number_before_default": 3,
+        "default_route": "Skill",
+        "modifier": 2,
+        "resulting_target_number": 5,
+        "dice_from_skill": 5,
+        "max_additional_combat_pool_dice": 2
+      },
+      {
+        "id": "ratchet-edged-weapons-to-sword-specialization",
+        "skill_used": "Edged Weapons",
+        "base_skill_rating": 4,
+        "available_specialization": "Sword",
+        "specialization_rating": 6,
+        "default_route": "Specialization",
+        "target_number_before_default": 4,
+        "modifier": 3,
+        "resulting_target_number": 7,
+        "dice_from_specialization": 6,
+        "max_additional_combat_pool_dice": 2
+      },
+      {
+        "id": "ratchet-biotech-to-intelligence",
+        "missing_skill": "Biotech",
+        "linked_attribute": "Intelligence",
+        "attribute_rating": 5,
+        "target_number_before_default": 7,
+        "modifier": 4,
+        "resulting_target_number": 11,
+        "dice_from_attribute": 5,
+        "additional_dice_pool_allowed": false
+      },
+      {
+        "id": "ratchet-climbing-or-stealth-open-test",
+        "denied_route": {
+          "skill": "Athletics",
+          "target_number_before_default": 8,
+          "default_to": "Body",
+          "reason": "Defaulting barred by the printed 8-or-higher predefault TN limit"
+        },
+        "permitted_alternative": {
+          "required_skill": "Stealth",
+          "test_type": "Open Test",
+          "default_to": "Quickness",
+          "attribute_rating": 6,
+          "dice_results": [
+            1,
+            4,
+            4,
+            8,
+            8,
+            9
+          ],
+          "highest_result": 9,
+          "modifier_subtracted": 4,
+          "final_open_test_result": 5
+        }
+      }
+    ],
+    "editorial_note": "These are fictional in-book character/dice examples illustrating published resolution steps; not independent physical-world guidance.",
+    "source_reviewed_text_paths": [
+      "data.source_sections",
+      "data.default_routes",
+      "data.limitations",
+      "data.published_worked_examples",
+      "data.editorial_note"
+    ]
+  },
+  "headline": "FASA Corporation's published fictional tabletop RPG Shadowrun, Third Edition (FASA7001 printed pp84-85/PDF85-86 defaulting procedure, source.sr3-core): original rules and numeric references",
+  "summary": "Historical Third Edition game mechanics from FASA Corporation's Shadowrun, Third Edition (FASA7001), FASA7001 printed pp84-85/PDF85-86 defaulting procedure; faithfully reports original numeric source conditions, with later supplements kept distinct."
+}
