@@ -1,0 +1,142 @@
+{
+  "id": "rule.magic.sr3-core-combat-spells-statblocks-p191",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "191",
+  "pdf_pages": "200",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original Third Edition fictional tabletop role-playing game core rules; no second-edition or later supplement substitution.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun, Third Edition tabletop combat spell statistics, FASA Corporation FASA7001, original printed p191 / physical PDF200",
+  "summary": "Original FASA Corporation FASA7001 published fictional game combat spells: Death Touch, Manabolt, Manaball, Powerbolt, Powerball, Stunbolt and Stunball, with exact Mana/Physical type, W/B resistance target, instant duration, Drain notation, area or single target, and eligibility restrictions.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 191,
+      "physical_pdf_page": 200,
+      "medium": "published fictional tabletop role-playing game core rulebook"
+    },
+    "section": "Street Grimoire / Combat Spells",
+    "generic_combat_spell_rules": {
+      "effect": "The game depicts these spells as causing damage directly while bypassing physical armor and other nonmagical defenses.",
+      "eligible_targets": "An eligible target in the caster's line of sight, subject to each spell's own eligibility and range rules.",
+      "damage_level_selection": "The fictional caster chooses the base Damage Level when casting; the chosen Damage Level sets the base Drain Level.",
+      "stat_notation": "Type M is mana, Type P is physical; W uses target Willpower and B uses target Body. Duration I denotes Instant. Drain entries preserve the page's modifiers to the caster-chosen Damage Level.",
+      "nonliving_object_rule": "Physical combat spells can affect nonliving objects; the book directs readers to the Object Resistance Table, original printed p182."
+    },
+    "spells": [
+      {
+        "name": "Death Touch",
+        "type": "M",
+        "target": "W",
+        "duration": "I",
+        "drain": "(Damage Level - 1)",
+        "scope": "single target; touch required",
+        "damage_kind": "physical",
+        "eligible_targets": "living and magical only",
+        "resistance": "Willpower",
+        "notes": "Touch is an explicit requirement rather than a ranged combat spell."
+      },
+      {
+        "name": "Manabolt",
+        "type": "M",
+        "target": "W",
+        "duration": "I",
+        "drain": "(Damage Level)",
+        "scope": "single target",
+        "damage_kind": "physical",
+        "eligible_targets": "living and magical only",
+        "resistance": "Willpower or Force, as applicable to target"
+      },
+      {
+        "name": "Manaball",
+        "type": "M",
+        "target": "W",
+        "duration": "I",
+        "drain": "(Damage Level + 1)",
+        "scope": "area spell",
+        "damage_kind": "physical",
+        "eligible_targets": "living and magical only",
+        "resistance": "Willpower or Force, as applicable to target"
+      },
+      {
+        "name": "Powerbolt",
+        "type": "P",
+        "target": "B",
+        "duration": "I",
+        "drain": "+1(Damage Level)",
+        "scope": "single target",
+        "damage_kind": "physical",
+        "eligible_targets": "living and nonliving",
+        "resistance": "Body for living targets; nonliving object Target Number comes from original Object Resistance Table printed p182"
+      },
+      {
+        "name": "Powerball",
+        "type": "P",
+        "target": "B",
+        "duration": "I",
+        "drain": "+1(Damage Level + 1)",
+        "scope": "area spell",
+        "damage_kind": "physical",
+        "eligible_targets": "living and nonliving",
+        "resistance": "Body for living targets; nonliving objects use original Object Resistance Table printed p182"
+      },
+      {
+        "name": "Stunbolt",
+        "type": "M",
+        "target": "W",
+        "duration": "I",
+        "drain": "-1(Damage Level)",
+        "scope": "single target",
+        "damage_kind": "stun",
+        "eligible_targets": "living and magical, under mana-spell targeting rules",
+        "resistance": "Willpower"
+      },
+      {
+        "name": "Stunball",
+        "type": "M",
+        "target": "W",
+        "duration": "I",
+        "drain": "-1(Damage Level + 1)",
+        "scope": "area spell",
+        "damage_kind": "stun",
+        "eligible_targets": "living and magical, under mana-spell targeting rules",
+        "resistance": "Willpower"
+      }
+    ],
+    "source_boundaries": {
+      "no_engine_execution": "Source-faithful mechanics normalization only; no executable spellcasting tests have been run.",
+      "source_page": "Original printed p191/PDF200; generic Spellcasting and Drain rules from other pages are not restated or modified.",
+      "reuse_records": [
+        "rules/magic/spell-characteristics.yml",
+        "rules/magic/spell-resistance.yml",
+        "rules/magic/sr3-core-drain-power-force-resistance-p162.yml"
+      ],
+      "not_inferred": "No extra drain value, Force cap, resist-roll success threshold or targeting exception is invented."
+    },
+    "editorial_source_review": {
+      "phase": "First pass before freeze, based on original page image",
+      "source_image": "Freshly downloaded and SHA-verified original FASA7001 PDF, physical page 200 displaying printed p191, including the combat spell column and statistical lines.",
+      "text_fields_reviewed": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.section",
+        "data.generic_combat_spell_rules.*",
+        "data.spells[*].*",
+        "data.source_boundaries.*",
+        "data.editorial_source_review.*"
+      ],
+      "scope_check": "Game-book narration and game-rule conditions only. All seven named original spell statistics, plus touch, living/nonliving, single/area, Stun/Physical and drain distinctions, separately checked. Does not establish full-source completion."
+    }
+  }
+}
