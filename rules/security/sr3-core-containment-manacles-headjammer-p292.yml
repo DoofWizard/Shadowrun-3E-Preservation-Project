@@ -1,0 +1,77 @@
+{
+  "id": "rule.security.sr3-core-containment-manacles-headjammer-p292",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "292",
+  "pdf_pages": "301",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001): original published fictional tabletop Street Gear security-device mechanics printed p292/PDF301, not real-world device operations",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional containment-manacle and headjammer game damage rules, printed p292/PDF301",
+  "summary": "Original publisher-described coercive security devices: each activation turn requires the captive to resist separate 5S Physical and 4M Stun damage; attempted implanted communication while wearing a headjammer inflicts (Rating)S Stun and interrupts the signal.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "medium": "published fictional tabletop role-playing game",
+      "printed_page": 292,
+      "physical_pdf_page": 301
+    },
+    "source_section": "Street Gear — Security Devices",
+    "containment_manacles": {
+      "description": "The book depicts wrist/ankle restraints clamping with pressure against tendons and bone when an involuntarily restrained prisoner's razors, spurs, or comparable cyberware extend.",
+      "trigger": "Each turn the specified cyberware is activated.",
+      "damage_resistance": [
+        {
+          "code": "5S",
+          "track": "Physical",
+          "requirement": "The captive must resist 5S Physical damage."
+        },
+        {
+          "code": "4M",
+          "track": "Stun",
+          "requirement": "The captive must separately resist 4M Stun damage."
+        }
+      ],
+      "coercion": "The narrative concerns an imprisoned captive, not a consensual voluntary application.",
+      "limitations": "No independent universal target number or automatic damage boxes are given; 5S and 4M are independent damage codes."
+    },
+    "headjammer": {
+      "description": "The source describes a headset with straps locking onto a prisoner's head.",
+      "trigger": "Any time that prisoner attempts to use an implanted phone or radio.",
+      "damage": "(Rating)S Stun",
+      "additional_effect": "The described in-game device jams the attempted implanted phone/radio signal.",
+      "coercion": "Presented as an imposed prisoner restraint, not described as consensual use.",
+      "limitations": "Source supplies no additional test threshold, duration, or fixed Rating value."
+    },
+    "reused_canon": [
+      "equipment.sr3-core-original-security-devices-market-p294",
+      "rule.security.sr3-core-countermeasure-device-ratings-p293",
+      "rule.security.sr3-core-motion-sensor-restraints-gear-p293"
+    ],
+    "source_review_receipt": {
+      "original_page_image": "Fresh SHA-verified original FASA7001 printed p292/physical PDF301, lower-right security-device descriptions independently visually reviewed before baseline freeze.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.containment_manacles.*",
+        "data.containment_manacles.damage_resistance[*].*",
+        "data.headjammer.*",
+        "data.reused_canon[*]",
+        "data.source_review_receipt.*"
+      ],
+      "distinct_debt": "Previously indexed p294 market rows include item prices only; p292 damage conditions were absent from accepted nearby canonical security rule records.",
+      "limitations": "First-pass text review and gate preparation do not establish full source fidelity or engine tests."
+    }
+  }
+}
