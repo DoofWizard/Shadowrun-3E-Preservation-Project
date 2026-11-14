@@ -1,0 +1,117 @@
+id: rule.tests.sr3-core-test-types-opposed-open-examples-p39
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '39'
+pdf_pages: '40'
+edition_scope: FASA Corporation Shadowrun, Third Edition, FASA7001 original fictional
+  tabletop game, printed p39 / physical PDF40, without later-edition conversion
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop
+  rules: success/opposed/contest/open tests, printed p39/PDF40'
+summary: Exact original p39 numeric Opposed Test, Success Contest and Open Test examples,
+  no-target-number open-test maximum, tie condition and approximately three-second
+  Combat Turn; supplements accepted general test rules.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    genre: Fictional cyberpunk tabletop role-playing game
+  source_section: Game Concepts - Different Types of Tests, Time and Combat Turns
+  original_printed_page: 39
+  physical_pdf_page: 40
+  four_original_test_types:
+  - Success Test
+  - Opposed Test
+  - Success Contest
+  - Open Test
+  success_test:
+    dice_pool_size: Relevant skill or Attribute Rating
+    pass_threshold: At least one individual die meets or exceeds target number
+    result_quality: More successes generally mean more impact or information; individual
+      game rules may specify outcomes
+  opposed_test:
+    contest: Participants roll own relevant skill/Attribute dice versus opponent's
+      corresponding rating as target number
+    compare: Greater number of successes wins
+    tie: Usually no effect or change
+    source_worked_example:
+      fictional_actor: Max
+      actor_strength_rating: 4
+      opponent: Fictional security guard
+      guard_strength_rating: 5
+      actor_target_number: 5
+      actor_rolls:
+      - 5
+      - 5
+      - 6
+      - 6
+      actor_successes: 4
+      guard_target_number: 4
+      guard_rolls:
+      - 1
+      - 2
+      - 2
+      - 5
+      - 6
+      guard_successes: 2
+      outcome: Max keeps the door shut while his team escapes
+  success_contest:
+    test_construction: Two opposing Success Tests, possibly against different target-number
+      sources rather than counterpart skill ratings
+    compare: Participant with more successes achieves the contested objective
+    tie: Usually nothing happens
+    source_worked_example:
+      fictional_decker: Dodger
+      dodger_computer_skill: 8
+      host_access_rating: 6
+      dodger_test: Computer versus Access Rating, Target Number 6
+      dodger_successes: 3
+      fictional_host_security_value: 4
+      fictional_host_detection_factor: 8
+      host_test: Security versus Detection Factor, Target Number 8
+      host_successes: 1
+      result: Dodger gains entry to the fictional computer host
+  open_test:
+    fixed_target_number: null
+    rolled_dice_count: Appropriate Skill or Attribute Rating
+    procedure: Apply Rule of Six to each rolled die where appropriate, keep only the
+      greatest individual die total
+    use: May determine target number for later tests
+    source_worked_example:
+      fictional_character: Sue
+      dice_count: 5
+      initial_rolls:
+      - 1
+      - 3
+      - 4
+      - 6
+      - 6
+      sixes_rerolled_as:
+      - 2
+      - 6
+      additional_six_reroll: 4
+      highest_single_die_total: 16
+      component_rolls_of_high_die:
+      - 6
+      - 6
+      - 4
+  time:
+    typical_combat_turn_approx_seconds: 3
+    each_character_acts: In Initiative Pass order, with Combat Phases for individual
+      turns
+    precise_timing_scope: Source calls Combat Turn roughly three seconds, not a rigid
+      stopwatch for every fictional scene
+  canonical_general_rules_reused:
+  - rule.tests.success-test
+  - rule.tests.opposed-test
+  - rule.tests.open-test
+  - rule.tests.rule-of-six
+  semantic_delta: Original numeric worked cases and Success Contest distinction, not
+    a claim these test categories were previously absent
+framing: reference_exact
