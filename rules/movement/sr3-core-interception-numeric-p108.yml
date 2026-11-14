@@ -1,0 +1,77 @@
+{
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "108",
+  "pdf_pages": "109",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop Combat chapter, printed p108/physical PDF109; original SR3 mechanics only, no later-edition substitutions.",
+  "id": "rule.movement.sr3-core-interception-numeric-p108",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_printed_pages": [
+        108
+      ],
+      "physical_pdf_pages": [
+        109
+      ],
+      "medium": "published fictional cyberpunk tabletop role-playing game core rulebook"
+    },
+    "section": "Combat / Movement / Interception",
+    "trigger": {
+      "distance_meters_at_most": 1,
+      "condition": "A moving character attempts to pass an opponent without attacking that opponent.",
+      "consequence": "The opponent may make a free melee attack against the passing character.",
+      "not_automatic": "Merely moving close to an opponent is not enough without the stated passing-without-attacking condition."
+    },
+    "attacker": {
+      "if_readied_weapon": "Use the opponent's normal applicable Melee Combat Skill Rating.",
+      "otherwise": "Use the opponent's Unarmed Combat Skill.",
+      "test_target_number": 4,
+      "allowed_target_number_modifiers": [
+        "Reach",
+        "movement",
+        "attacker's condition"
+      ],
+      "source_restriction": "Only these modifiers apply to the interception attack."
+    },
+    "defender": {
+      "posture": "Assumed to be in Full Defense, under the original Combat chapter rule on printed p123.",
+      "result_if_damaged": "If the passing character takes damage, the character is intercepted and may not continue movement.",
+      "combat_pool": "Combat Pool dice may augment the applicable rolls."
+    },
+    "canon_reused": [
+      "rules/movement/interception.yml",
+      "rules/movement/combat-movement.yml",
+      "rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml"
+    ],
+    "editorial_source_review": {
+      "original_source_image": "Original FASA7001 printed page 108/physical PDF109, lower right Interception heading and all its numeric conditions directly inspected.",
+      "text_field_paths_reviewed": [
+        "edition_scope",
+        "data.publication.*",
+        "data.section",
+        "data.trigger.*",
+        "data.attacker.*",
+        "data.defender.*",
+        "data.canon_reused[*]",
+        "data.editorial_source_review.*",
+        "headline",
+        "summary"
+      ],
+      "distinctions": "Optional interception attack, exact 1-meter trigger, weapon-ready skill choice, TN4, modifier restriction and Full Defense; damage is the explicit condition that halts movement. No extra real-world tactical instructions.",
+      "limit": "Historical fictional RPG rules source review, not engine execution or a whole-source completeness gate."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation fictional Shadowrun Third Edition (FASA7001 source.sr3-core), Combat Interception printed p108/PDF109: one-meter trigger and exact melee procedure",
+  "summary": "Source-exact tabletop Interception procedure: passing within one meter, optional free melee attack, target number 4, allowed modifiers, Full Defense, Combat Pool and damage-caused movement interruption."
+}
