@@ -1,0 +1,75 @@
+id: rule.combat.sr3-core-laser-sight-weather-distance-p112
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '112'
+pdf_pages: '113'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop combat modifiers,
+  printed p112 / original scanned physical PDF113, no later Cannon Companion revision
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    fictional_work_type: published cyberpunk tabletop role-playing game
+    printed_pages:
+    - 112
+    physical_pdf_pages:
+    - 113
+  source_heading: Ranged Combat Modifiers Table / Laser Sight
+  source_original_range_limit:
+    maximum_distance_meters: 50
+    condition: Laser sight target-number bonus applies only to fictional tabletop attacks at or within 50 meters
+      from the weapon.
+  source_environment_exclusions:
+  - Mist
+  - Light smoke
+  - Heavy smoke
+  - Fog
+  - Rain
+  environment_rule: The original combat paragraph states these environmental conditions counteract the laser sight
+    benefit, rather than simply stacking the sight bonus with all visibility modifiers.
+  existing_modifier_reused:
+    game_target_number_bonus: '-1'
+    original_sources:
+    - rules/firearms/sr3-core-sighting-suppression-accessories-p281.yml
+    - rules/firearms/sr3-core-accessory-functions-p280-281.yml
+    new_substance_only: Original p112 50-meter operating cutoff and weather/obscuration conditions, absent from
+      the cited earlier canonical accessory-function records.
+  example_vectors_unexecuted:
+  - distance_meters: 50
+    condition: clear
+    sight_bonus_target_number: -1
+  - distance_meters: 51
+    condition: clear
+    sight_bonus_target_number: 0
+  - distance_meters: 20
+    condition: light smoke
+    sight_bonus_target_number: 0
+  source_review_receipt:
+    original_image: FASA7001 printed p112 / physical PDF113, right-hand Laser Sight paragraph and Ranged Combat
+      Modifiers Table
+    cross_reference: Original Street Gear p281 / PDF290 and canonical accessory records
+    reviewed_human_text_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source_heading
+    - data.source_original_range_limit.*
+    - data.source_environment_exclusions[*]
+    - data.environment_rule
+    - data.existing_modifier_reused.*
+    - data.example_vectors_unexecuted[*].*
+    - data.source_review_receipt.*
+    limitations: This is a missing conditional rule amendment, not a replacement for original equipment prices or
+      a claim of engine execution; game-only context, source and qualifiers verified independently.
+headline: FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop laser sight modifiers, printed p112/PDF113
+summary: Original game-only laser-sight -1 target-number modifier is restricted to 50 meters and negated by mist,
+  smoke, fog or rain; the existing p281 equipment effects are reused.
+framing: reference_exact
