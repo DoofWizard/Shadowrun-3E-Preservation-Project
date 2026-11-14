@@ -1,0 +1,69 @@
+{
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "id": "rule.security.sr3-core-surveillance-concealability-tracking-p291",
+  "printed_pages": "291",
+  "pdf_pages": "300",
+  "edition_scope": "Original FASA Corporation Shadowrun Third Edition FASA7001 published fictional tabletop surveillance-device rules printed p291/PDF300; optional gamemaster advice distinguished from automatic mechanics",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 original fictional tracking signal and optional concealability price rule p291/PDF300",
+  "summary": "Original p291 fictional game distinction between standard and activation-on-demand tracking signals, an AOD five-second transmission window, and explicitly gamemaster-suggested 50% higher device cost per extra Concealability point.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "medium": "published fictional tabletop role-playing game",
+      "printed_page": 291,
+      "physical_pdf_page": 300
+    },
+    "source_section": "Street Gear — Surveillance Measures",
+    "tracking_signal": {
+      "description": "The fictional combined GPS and homing-signal transmitter comes as standard and activation-on-demand (AOD) models.",
+      "standard_mode": "Once activated, the standard model constantly transmits coordinates until manually switched off.",
+      "aod_mode": "An activation-on-demand model transmits only in response to a coded signal from the locator.",
+      "aod_transmission_duration_seconds": 5,
+      "source_condition": "The five-second duration concerns the AOD model after a coded activation signal, not all tracking signals.",
+      "source_coercion_example": "The book depicts a criminal-justice ankle-band variant used by authorities to keep track of a criminal; no consent is implied."
+    },
+    "locator": {
+      "function": "The original fictional Signal Locator receives coordinates and shows position on a map while within transmission range.",
+      "aod_activation": "A locator may send a code sequence to activate an activation-on-demand signal.",
+      "triangulation": "The source mentions linking multiple locators to triangulate when GPS data is unavailable; no numeric locator-triangulation test is supplied."
+    },
+    "improved_concealability_optional_gm_rule": {
+      "status": "gamemaster_suggestion_not_mandatory_fixed_price",
+      "cost_increase_per_added_concealability_point_percent": 50,
+      "formula": "Increase device price by 50% of the reference price for each extra Concealability point, under the gamemaster's suggested optional pricing.",
+      "qualification": "Book says the exact increases are up to the gamemaster; 50% is only the suggested amount, not an automatically universal market modifier."
+    },
+    "reused_canon": [
+      "equipment.sr3-core-surveillance-countermeasures-market-p292",
+      "equipment.sr3-core-surveillance-security-market-numeric-p290"
+    ],
+    "source_review_receipt": {
+      "source_image": "Fresh original SHA-verified FASA7001 printed p291/PDF300 both columns independently reviewed before baseline freeze.",
+      "reviewed_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.tracking_signal.*",
+        "data.locator.*",
+        "data.improved_concealability_optional_gm_rule.*",
+        "data.reused_canon[*]",
+        "data.source_review_receipt.*"
+      ],
+      "debt": "Market rows omit the original p291 optional pricing formula and exact AOD five-second in-world operation distinction.",
+      "limitations": "No new operational tracking methods are inferred; source review does not establish whole-core completeness or engine tests."
+    }
+  }
+}
