@@ -1,0 +1,68 @@
+{
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "framing": "reference_exact",
+  "id": "rule.security.sr3-core-dataline-tap-codebreaker-p290",
+  "printed_pages": "290",
+  "pdf_pages": "299",
+  "edition_scope": "FASA Corporation original Shadowrun, Third Edition FASA7001 fictional tabletop Street Gear surveillance gear rating descriptions, printed p290/PDF299; not real-world electronic interception or later editions",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 original fictional Data Codebreaker and Dataline Tap game ratings p290/PDF299",
+  "summary": "Original fictional security-game Data Codebreaker MPCP rating, rating-dependent Tap signal Flux and prices, plus Micro-Recorder capacity; distinct from previously accepted market-table prices.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "medium": "published fictional tabletop role-playing game",
+      "printed_page": 290,
+      "physical_pdf_page": 299
+    },
+    "source_section": "Street Gear — Surveillance Measures",
+    "data_codebreaker": {
+      "source_narrative": "The original game describes a device with the fictional Decrypt utility for entering encrypted data from disk or fiber optic input."
+    },
+    "dataline_tap": {
+      "description": "Fictional tap placed in a data line; source describes receiving a copied signal via Matrix or radio in the story.",
+      "radio_signal_flux_rating_formula": "Tap Rating / 4, rounded down",
+      "cost_receiver_nuyen_per_rating": 1000,
+      "cost_transmitter_nuyen_per_rating": 1500,
+      "cost_context": "Receiver and transmitter variants are separately priced in the original p290 descriptive paragraph; source p292 market table has the generic dataline-tap entry.",
+      "required_rating": "The original source says the Tap Rating must equal the MPCP of the fictional cyberdeck being used.",
+      "fictional_illicit_jackpoint_context": "The narrator says fictional deckers can use the Dataline Tap to create an illegal Matrix jackpoint; this is tabletop-game source reporting, not a real-network procedure."
+    },
+    "micro_recorder": {
+      "recording_duration_hours": 6,
+      "radio_model_flux_rating": "Radio transmitter Flux Rating equals the micro-recorder Device Rating.",
+      "source_context": "The source describes voice activation, a transmission-capable optional model, and remote activation as fictional gear features."
+    },
+    "reused_canon": [
+      "equipment.sr3-core-surveillance-countermeasures-market-p292",
+      "rule.communications.sr3-core-data-encryption-decryption-p292"
+    ],
+    "source_review_receipt": {
+      "original_page": "Fresh SHA-verified original FASA7001 printed p290/PDF299 lower-half source text independently inspected before baseline freeze.",
+      "reviewed_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.data_codebreaker.*",
+        "data.dataline_tap.*",
+        "data.micro_recorder.*",
+        "data.reused_canon[*]",
+        "data.source_review_receipt.*"
+      ],
+      "debt": "Previously accepted p292 surveillance table normalizes prices only; original p290 conditional narrative rating formulas not duplicated elsewhere in accepted p289-291 communications rules.",
+      "limits": "First-pass source review and offline preflight do not certify total core mechanical fidelity or code tests.",
+      "first_pass_correction": "Source p290 right-column text explicitly assigns the equal-MPCP requirement and illegal-jackpoint scenario to the Dataline Tap, not the separate left-column Data Codebreaker; independently re-reviewed before either baseline/candidate freeze or any GitHub write."
+    }
+  }
+}
