@@ -1,0 +1,80 @@
+id: rule.attributes.sr3-core-human-rating-maximum-reaction-essence-magic-p41
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '41'
+pdf_pages: '42'
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001 original fictional
+  tabletop game rules, printed p41/physical PDF42; source-specific and not replaced
+  by optional supplements
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 original fictional RPG:
+  human attribute rating table, derived Reaction, Essence and Magic, printed p41/PDF42'
+summary: Source-printed six human rating labels, natural rating and metatype-based
+  maxima, derived Reaction rounding, starting Essence and Magic-loss relationship,
+  with original worked Essence 4.5 example.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    nature: Published fictional tabletop RPG
+  printed_page: 41
+  physical_pdf_page: 42
+  human_attribute_ratings_as_printed:
+  - rating: 1
+    description: Weak
+  - rating: 2
+    description: Underdeveloped
+  - rating: 3
+    description: Typical
+  - rating: 4
+    description: Improved
+  - rating: 5
+    description: Superior
+  - rating: 6
+    description: Maximum unmodified human
+  reaction:
+    formula: (Quickness + Intelligence) / 2
+    rounding: Round down to whole number
+    base_inputs: Quickness and Intelligence Ratings
+  character_creation_natural_attribute_limits:
+    applies_to: Physical and Mental Attributes
+    racial_base: 6
+    metatype_adjustments: Add or subtract applicable racial modifiers to the base
+      during character creation
+    natural_maximum: 1.5 times metatype creation maximum
+    source_cross_reference: Racial Attribute Limit Table, printed p245 / PDF254
+    cyberware_magic_exception: Augmented attributes may exceed natural racial maximum
+    physical_adept_exception: Improved Physical Attribute power and other such abilities
+      count as natural rather than augmented ratings
+  essence:
+    starting_rating: 6
+    no_start_above_six: true
+    reduction_causes: Cyberware implants and improperly healed damage; the source
+      additionally describes chemical or toxin abuse, prolonged neglect, long-term
+      drug addiction and chip-related permanent damage as potential causes of Essence
+      loss
+    basic_rule_floor_exclusive: 0
+    effect: Under the basic original rules, Essence may not be 0 or below
+  magic:
+    only_magically_capable_characters_have_magic: true
+    starting_if_magically_capable: 6
+    current_rating_formula: Magic declines when Essence declines, with the example
+      giving Magic Rating 4 for Essence 4.5; the text treats starting Magic 6 as equal
+      to starting Essence and rounds downward in this example
+    source_example:
+      essence_rating: 4.5
+      resulting_magic_rating: 4
+    character_with_no_magic_rating: Has no magical abilities
+  canonical_related:
+  - rules/character-creation/priority-system.yml
+  - rules/character-creation/sr3-master-priority-numeric-p54.yml
+  - rules/advancement/sr3-core-racial-attribute-limits-numeric-p245.yml
+  semantic_delta: Original complete six-row human rating scale and early core derived-attribute
+    examples, not superseding established character creation details
+framing: reference_exact
