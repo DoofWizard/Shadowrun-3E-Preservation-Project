@@ -1,0 +1,107 @@
+id: rule.combat.sr3-core-launcher-range-minimum-original-p110-111
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 110-111
+pdf_pages: 111-112
+edition_scope: Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop combat, printed pp110-111
+  / physical PDF111-112; original core lineage, not Cannon Companion revision
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    fictional_work_type: published cyberpunk tabletop role-playing game
+    printed_pages:
+    - 110
+    - 111
+    physical_pdf_pages:
+    - 111
+    - 112
+  source_headings:
+  - Range and Base Target Number
+  - Minimum Ranges
+  - Weapon Range Table
+  missing_original_core_table_row:
+    weapon_class: Missile Launcher
+    measurement: meters
+    short:
+      minimum: 20
+      maximum: 150
+      minimum_range_asterisk: true
+    medium:
+      minimum: 151
+      maximum: 450
+    long:
+      minimum: 451
+      maximum: 1200
+    extreme:
+      minimum: 1201
+      maximum: 3000
+  minimum_range_rule:
+    source_printed_page: 110
+    rule: An asterisk on the original core weapon table indicates that the specified weapon cannot fire at a game
+      target closer than the first Short-range value.
+    missile_launcher_minimum_meters: 20
+    grenade_launcher_minimum_meters: 5
+    grenade_launcher_cross_reference: Already recorded in rule.combat.sr3-core-grenade-scatter-blast-p118-119 (original
+      p119 grenade range table).
+  range_target_numbers:
+    short: 4
+    medium: 5
+    long: 6
+    extreme: 9
+    exception_note: Original grenade-launcher Long range 101-150 meters uses target number 8 per printed p111 double
+      asterisk and printed p119 grenade table; retained in existing grenade record. Guided-missile target number
+      is separately governed by vehicle Signature under printed p120.
+  original_source_reuse:
+    accepted_generic_range_anchor: 'rules/combat/range-target-number.yml: already includes most original firearm/impact-projectile
+      range rows mixed with later Cannon Companion rows; no duplicate 19-row catalog added here.'
+    accepted_grenade_anchor: rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml
+    accepted_guided_missile_anchor: rules/combat/sr3-core-rocket-missile-numeric-p120.yml
+    accepted_later_launcher_ranges: rules/combat/grenade-launched-weapon-ranges.yml, attributed to source.cc, NOT
+      original FASA7001
+  example_vectors_unexecuted:
+  - weapon: Missile Launcher
+    range_m: 19
+    expected: below original weapon minimum; unavailable as ordinary missile-launcher shot
+  - weapon: Missile Launcher
+    range_m: 20
+    expected_range: Short
+    table_base_target_number: 4
+  - weapon: Missile Launcher
+    range_m: 451
+    expected_range: Long
+    table_base_target_number: 6
+    exception: Guided missile against vehicle instead uses source p120 Signature TN independent of range
+  source_review_receipt:
+    original_images:
+    - original FASA7001 printed p110 / physical PDF111
+    - original FASA7001 printed p111 / physical PDF112
+    - cross-checked printed p119 / PDF120, p120 / PDF121
+    reviewed_human_text_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source_headings[*]
+    - data.missing_original_core_table_row.*
+    - data.minimum_range_rule.*
+    - data.range_target_numbers.*
+    - data.original_source_reuse.*
+    - data.example_vectors_unexecuted[*].*
+    - data.source_review_receipt.*
+    editorial_notes: Game abstract target numbers only; source labels, footnote qualifiers, minimum distances and
+      original-versus-later supplement attribution independently reviewed. This receipt and gate do not establish
+      complete source fidelity or executable code.
+headline: 'FASA Corporation Shadowrun, Third Edition FASA7001 fictional game: original missile-launcher range bands
+  and minimum-range footnotes, printed pp110-111/PDF111-112'
+summary: Source-only original missile-launcher 20-150/151-450/451-1200/1201-3000 meter game ranges, 20m minimum,
+  and original grenade minimum/long-range TN cross-references. Accepted general table rows and later Cannon Companion
+  rows are reused, not duplicated.
+framing: reference_exact
