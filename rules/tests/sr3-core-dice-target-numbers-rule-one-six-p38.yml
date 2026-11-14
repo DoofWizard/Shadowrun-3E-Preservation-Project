@@ -1,0 +1,94 @@
+id: rule.tests.sr3-core-dice-target-numbers-rule-one-six-p38
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '38'
+pdf_pages: '39'
+edition_scope: FASA Corporation, Shadowrun, Third Edition, FASA7001; original fictional
+  tabletop-game rules, printed p38, physical PDF39; no inferred later-edition replacement
+content_class:
+- rule_exact
+headline: 'FASA Corporation Shadowrun, Third Edition (FASA7001) fictional RPG: original
+  making-tests dice, target-number and Rule of One/Six mechanics, printed p38/PDF39'
+summary: Original FASA7001 tabletop-game p38 numeric test resolution, target-number
+  floor, modifiers, all-ones failures, exploding sixes and two source examples; existing
+  general canonical test rules remain in force.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    genre: Fictional cyberpunk tabletop role-playing game
+  original_section: Game Concepts - Making Tests, Making Dice Rolls, Target Numbers,
+    Modifiers, Rule of One, Rule of Six
+  printed_page: 38
+  physical_pdf_page: 39
+  basic_success_resolution:
+    dice_type: d6
+    dice_number: Appropriate Attribute or Skill Rating or rule-specified number
+    comparison: Each die separately meets or exceeds the target number; do not sum
+      separate dice
+    per_success: One success per qualifying individual die
+    greater_successes: Usually a better result, subject to the specific rule
+    worked_example:
+      fictional_character: Nik
+      number_of_dice: 4
+      target_number: 4
+      shown_rolls:
+      - 2
+      - 3
+      - 4
+      - 6
+      successes: 2
+  target_number:
+    selected_by: Gamemaster or specific original rule
+    average_task_example: 4
+    near_impossible_example: 10
+    floor: 2
+    floor_even_after_modifiers: true
+    reference_to_later_difficulty_table: Printed p92, physical PDF93
+  modifiers:
+    default_application: Add or subtract signed modifiers from target number unless
+      explicitly stated otherwise
+    separate_dice_modifier: A modifier explicitly expressed as additional or fewer
+      dice alters number rolled, not target number
+    worked_target:
+      base_target_number: 5
+      modifier: -3
+      resulting_target_number: 2
+    dice_modifier_example: A +2 dice bonus provides two additional dice, not a two-point
+      target-number shift.
+  rule_of_one:
+    individual_face_one: Automatic failure for that die regardless of target number
+    all_dice_face_one: Catastrophic mistake despite any normal test threshold
+    consequences: Determined by the gamemaster in the fictional game, with any more
+      specific rule applying as written
+  rule_of_six:
+    triggering_roll: 6 on an individual die
+    procedure: Re-roll that die and add successive rolls to the original die score;
+      if another 6 occurs, roll again and add, as needed
+    target_number_comparison: Count a success when an individual die's cumulative
+      value reaches or exceeds target number
+    initiative_tests_excluded: true
+    original_examples:
+    - first_roll: 6
+      second_roll: 5
+      total: 11
+    - target_number: 14
+      successive_rolls:
+      - 6
+      - 6
+      - 2
+      total: 14
+      success: true
+  preexisting_canonical_general_rules:
+  - rule.tests.success-test
+  - rule.tests.rule-of-one
+  - rule.tests.rule-of-six
+  semantic_delta: Source-printed numerical worked examples, target-number floor and
+    default sign/application distinctions; no replacement of the general accepted
+    canonical test records
+framing: reference_exact
