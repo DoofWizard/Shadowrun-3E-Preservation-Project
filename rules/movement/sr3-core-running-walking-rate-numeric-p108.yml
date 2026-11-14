@@ -1,0 +1,131 @@
+{
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "108",
+  "pdf_pages": "109",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop Combat chapter, printed p108/physical PDF109; original SR3 mechanics only, no later-edition substitutions.",
+  "id": "rule.movement.sr3-core-running-walking-rate-numeric-p108",
+  "content_class": [
+    "rule_exact"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_printed_pages": [
+        108
+      ],
+      "physical_pdf_pages": [
+        109
+      ],
+      "medium": "published fictional cyberpunk tabletop role-playing game core rulebook"
+    },
+    "section": "Combat / Movement, Movement Rate, Running Table, Walking, Running",
+    "race_running_modifier_table": [
+      {
+        "metatype": "Human",
+        "running_quickness_multiplier": 3
+      },
+      {
+        "metatype": "Dwarf",
+        "running_quickness_multiplier": 2
+      },
+      {
+        "metatype": "Elf",
+        "running_quickness_multiplier": 3
+      },
+      {
+        "metatype": "Ork",
+        "running_quickness_multiplier": 3
+      },
+      {
+        "metatype": "Troll",
+        "running_quickness_multiplier": 3
+      }
+    ],
+    "movement_rates": {
+      "walking_meters_per_combat_turn": "Quickness",
+      "running_meters_per_combat_turn": "Quickness × the racial running modifier",
+      "time_scope": "One Combat Turn",
+      "one_combat_turn_seconds": 3,
+      "initiative_pass_allocation": "Maximum distance in a pass is the selected full-turn movement rate divided by the total Initiative Passes that turn, rounded up.",
+      "no_carryover": "A character forfeits the available distance of a pass in which no movement occurs; the unspent movement cannot be made up in later passes.",
+      "without_available_action": "Characters may move in an Initiative Pass in which they have no actions, after all other characters have taken their actions.",
+      "action_economy": "Walking or running does not change the number of Free, Simple or Complex Actions available; a character may begin stationary and declare movement in a later Combat Phase.",
+      "movement_classification": "Even one meter counts as movement at the declared rate and incurs applicable modifiers; a stationary pass reduces remaining total-turn movement allowance."
+    },
+    "walking_modifiers": [
+      {
+        "condition": "Walking while performing an action that requires a Success Test",
+        "target_number_modifier": 1
+      },
+      {
+        "condition": "Walking over rough terrain or through obstacles",
+        "target_number_modifier": 2,
+        "qualification": "The source states this modifier separately; no unstated cumulative interpretation is imposed."
+      }
+    ],
+    "running_modifiers": [
+      {
+        "condition": "Any test attempted while running",
+        "target_number_modifier": 4
+      },
+      {
+        "condition": "Tests attempted while running over difficult ground",
+        "target_number_modifier": 6
+      }
+    ],
+    "athletics_running_option": {
+      "action": "Complex Action (Use Skill)",
+      "skill": "Athletics (Running)",
+      "test_target_number": 4,
+      "bonus": "Increase effective Quickness by 1 for each success on the Athletics (Running) test for the current Combat Phase."
+    },
+    "source_worked_example": {
+      "character": "Twitch",
+      "metatype": "Elf",
+      "quickness": 6,
+      "initiative_passes": 3,
+      "walking_rate_meters_per_turn": 6,
+      "running_rate_meters_per_turn": 18,
+      "walking_rate_meters_per_pass": 2,
+      "running_rate_meters_per_pass": 6,
+      "first_pass": "Remains stationary while firing",
+      "second_pass": "Declares running, travels 6 meters",
+      "third_pass": "Runs another 6 meters",
+      "total_meters_run": 12,
+      "forfeited_first_pass_run_allowance_meters": 6
+    },
+    "canon_reused": [
+      "rules/movement/combat-movement.yml",
+      "rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml"
+    ],
+    "editorial_source_review": {
+      "original_source_image": "Original cataloged FASA7001 PDF physical page 109, visibly printed page 108, visually examined at high resolution after matching original PDF SHA256 to authoritative source manifest.",
+      "text_field_paths_reviewed": [
+        "edition_scope",
+        "data.publication.*",
+        "data.section",
+        "data.race_running_modifier_table[*].*",
+        "data.movement_rates.*",
+        "data.walking_modifiers[*].*",
+        "data.running_modifiers[*].*",
+        "data.athletics_running_option.*",
+        "data.source_worked_example.*",
+        "data.canon_reused[*]",
+        "data.editorial_source_review.*",
+        "headline",
+        "summary"
+      ],
+      "fidelity_limit": "Exact original game-only movement distances, timing, example and signed target modifiers; this source review is not an executable test or full-core completion receipt."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation fictional Shadowrun Third Edition (FASA7001 source.sr3-core) Combat Movement, original printed p108/PDF109: complete racial running multipliers and movement timing",
+  "summary": "Source-exact original Third Edition tabletop racial Running Table (Human 3, Dwarf 2, Elf 3, Ork 3, Troll 3), walking/running rates, pass allocation, terrain modifiers, Athletics test and Twitch worked example."
+}
