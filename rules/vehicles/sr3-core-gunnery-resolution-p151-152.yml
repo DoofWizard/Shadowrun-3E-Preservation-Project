@@ -11,7 +11,7 @@
   ],
   "framing": "reference_exact",
   "headline": "Fictional Shadowrun, Third Edition tabletop rules (FASA Corporation FASA7001) vehicle gunnery/drone data, printed 151-152/PDF152-153",
-  "summary": "Manual and sensor-enhanced vehicle gunnery action procedures, LOS and relative-motion requirements, weapon recoil and explicit sensor lock sequence. Original edition game-only conditions and exceptions retained.",
+  "summary": "Original FASA7001 fictional SR3 manual and sensor-enhanced vehicle-gunnery procedures, printed pp151-152/PDF152-153. Corrects dual-hardware smartlink qualification and retains permitted Combat Pool on sensor-enhanced Gunnery Tests, with Signature/ECM distinctions and exact action conditions.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -27,10 +27,12 @@
     "manual_gunnery": {
       "action": "Fire using Gunnery Skill (or appropriate non-mounted weapon skill when firing handheld weapons) and ordinary ranged combat rules",
       "vehicle_in_motion": "Apply original Manual Gunnery Modifiers Table printed p153",
-      "smartlink": "A manually aimed vehicle-mounted weapon is not eligible for personal smartlink-assisted firing",
+      "smartlink": "Source p151: Smartlink modifiers apply only when both the gunner and the vehicle-mounted weapon are fitted with smartlink hardware; vehicle mounting alone neither grants nor forbids the bonus.",
       "scope_and_laser": "Original standard ranged equipment rules govern if actually applicable",
       "manual_recoil": "Fixed vehicle mounts and turrets halve recoil, rounding down, before ordinary weapon accessory recoil compensation; heavy weapons' uncompensated recoil doubling is canceled by this vehicle mount halving",
-      "unmounted_weapon": "A passenger firing an unmounted weapon from vehicle uses corresponding skill and receives source +2 Firing Unmounted Weapons modifier in the original table"
+      "unmounted_weapon": "A passenger firing an unmounted weapon from vehicle uses corresponding skill and receives source +2 Firing Unmounted Weapons modifier in the original table",
+      "manual_aim_signature": "Manual weapon aiming does not reduce the firing vehicle's Signature Rating, unlike sensor aiming.",
+      "manual_aim_ecm": "Manual weapon aiming is not susceptible to electronic countermeasures (ECM), unlike sensor aiming."
     },
     "moving_relative_conditions": {
       "relative_motion": "Moving toward each other reduces modifier; moving apart raises it; moving at right angles has different sign",
@@ -47,7 +49,8 @@
       "unrigged_drone_exception": "When drone is not controlled by rigger, substitute drone Pilot Rating for Gunnery Skill",
       "attack_target_number": "Target Signature Rating adjusted by original Sensor-Enhanced Gunnery Modifiers Table printed p154",
       "attack_action": "Sensor-Enhanced Gunnery Test is a Complex Action",
-      "missing_lock": "Sensor-enhanced gunnery attack prohibited if vehicle sensors cannot lock on to target"
+      "missing_lock": "Sensor-enhanced gunnery attack prohibited if vehicle sensors cannot lock on to target",
+      "combat_pool": "The attacking player may add Combat Pool dice to the Sensor-Enhanced Gunnery Test; this follows the sensor lock requirement and is not an exception permitting bonus dice for secondary drone tests."
     },
     "sensor_vs_manual": "Sensor-enhanced fire relies on a sensor lock and may be affected by ECM; manual aiming is a separate attack, not automatically improved by Sensor Rating.",
     "original_example": {
@@ -59,17 +62,37 @@
     },
     "source_lineage": "Existing rule.vehicles.gunnery summarizes this original vehicle subsystem, but its steps do not encode the exact two Complex Actions and Sensor Rating half-dice formula.",
     "first_pass_editorial_source_review": {
-      "visual_provenance": "Original cataloged FASA7001 PDF, independently inspected original printed page(s) 151-152, physical PDF image(s) 152-153 after matching actual SHA-256 against the live source manifest",
+      "visual_provenance": "Original FASA Corporation Shadowrun, Third Edition, catalog FASA7001, source.sr3-core original printed pages 151-152/physical PDF152-153, visually re-reviewed 2026-11-14 after fresh exact SHA-256 source verification. Correction grounded in printed p151 smartlink, Signature and ECM clauses and p152 Combat Pool permission; historical accepted blob retained in local correction receipt.",
       "all_reviewed_text_paths": [
+        "id",
+        "record_type",
+        "status",
+        "source",
+        "printed_pages",
+        "pdf_pages",
         "edition_scope",
+        "content_class",
+        "framing",
         "headline",
         "summary",
-        "data.publication.*",
+        "data.publication.title",
+        "data.publication.publisher",
+        "data.publication.edition",
+        "data.publication.catalog",
+        "data.publication.source_id",
+        "data.publication.verified_source_sha256",
+        "data.publication.publication_type",
         "data.context",
-        "data.* (all nested rule texts, classifications, table row labels, source examples, limitations and test descriptions)",
+        "data.source_section",
+        "data.manual_gunnery.*",
+        "data.moving_relative_conditions.*",
+        "data.sensor_enhanced.*",
+        "data.sensor_vs_manual",
+        "data.original_example.*",
+        "data.source_lineage",
         "data.first_pass_editorial_source_review.*"
       ],
-      "review_limit": "First-pass review and structural gates do not themselves prove exhaustive source fidelity or complete code implementation."
+      "review_limit": "Source-page re-review verifies identified assertions; it does not independently prove full-section completeness, engine correctness or connector acceptance."
     }
   }
 }
