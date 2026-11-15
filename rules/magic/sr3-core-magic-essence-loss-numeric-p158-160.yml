@@ -67,7 +67,13 @@ data:
     test_dice: 2D6, ordinary sum
     result_if_sum_less_than_or_equal_to_current_magic: Reduce the Magic Attribute
       by 1
-    result_if_sum_greater_than_current_magic: No Magic loss from that test
+    result_if_sum_greater_than_current_magic: No Magic loss except the separate automatic-loss result when the 2D6 sum is exactly 2.
+    always_loss_total_on_two_d6: 2
+    always_loss_rule: The source explicitly states that a 2D6 total of 2 always causes one point of Magic loss, even when the sum exceeds the current Magic Attribute.
+    original_source_test_cases:
+    - {current_magic: 1, two_d6_total: 2, magic_after: 0, reason: automatic two exception}
+    - {current_magic: 3, two_d6_total: 4, magic_after: 3, reason: result above Magic}
+    - {current_magic: 4, two_d6_total: 4, magic_after: 3, reason: result equals Magic}
     critical_boundary: The source does not say that every named event always results
       in loss without the specified check.
   burnout:
