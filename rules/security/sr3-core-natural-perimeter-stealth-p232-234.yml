@@ -1,0 +1,86 @@
+{
+  "id": "rule.security.sr3-core-natural-perimeter-stealth-p232-234",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "232-234",
+  "pdf_pages": "241-243",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop RPG core rules, printed pp232 and 234 / physical PDF241 and PDF243; the intervening printed p233/PDF242 is an illustration, not additional mechanics.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional natural-perimeter stealth modifier and obstruction rules, pp232-234/PDF241-243",
+  "summary": "Original FASA7001 printed pp232,234/PDF241,243 natural-perimeter barrier game mechanics: traversing dense brush modifies Stealth Open Tests by -2, solid or area-wide barriers require a detour, and optional alarm/wire augmentation cross-references accepted source rules; original p233 is art.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "kind": "published fictional tabletop role-playing game core rulebook"
+    },
+    "source_section": "Running the Shadows / Security Systems / Physical Security / Natural Perimeter Barriers",
+    "source_page_pairs": [
+      {
+        "printed_page": 232,
+        "physical_pdf_page": 241,
+        "substance": "Natural Perimeter Barriers heading, natural obstruction categories and Stealth modifier clause begins here"
+      },
+      {
+        "printed_page": 233,
+        "physical_pdf_page": 242,
+        "substance": "Full-page illustration; no new textual mechanics extracted or interpolated"
+      },
+      {
+        "printed_page": 234,
+        "physical_pdf_page": 243,
+        "substance": "Opening upper-left lines complete the Stealth condition and the solid or area-wide obstruction requirement before Manmade Perimeter Barriers heading"
+      }
+    ],
+    "natural_obstacles": [
+      "hedges",
+      "tree lines",
+      "dense brush",
+      "hills"
+    ],
+    "dense_brush": {
+      "applicability": "Character traverses dense brush and makes a Stealth Open Test during that traversal.",
+      "modifier_to_stealth_open_test": -2,
+      "mandatory_when_applicable": true,
+      "not_perception_target_number": "This modifier applies to the Stealth Open Test, not directly to a Perception Test or a general attack target number."
+    },
+    "impassable_or_broad_obstruction": {
+      "source_requirement": "Solid or area-wide natural obstructions must be skirted.",
+      "scope": "The source does not specify a universal Athletics TN, fixed detour distance, or travel-time modifier in this subsection."
+    },
+    "supplementary_security": {
+      "description": "The original published game text says natural barriers are often supplemented by perimeter alarms and/or wires.",
+      "mandatory_for_every_natural_barrier": false,
+      "separate_canonical_rules": [
+        "rules/security/sr3-core-perimeter-wire-electric-numeric-p234.yml",
+        "rules/security/sr3-core-door-window-alarm-motion-sensor-p234-235.yml"
+      ]
+    },
+    "source_review_receipt": {
+      "source": "Freshly downloaded original cataloged FASA7001 345-physical-page PDF SHA256 matched to live source manifest; independent original image inspection of printed p232/PDF241, full-art p233/PDF242, and printed p234/PDF243 continuation.",
+      "reviewed_human_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.source_page_pairs[*].*",
+        "data.natural_obstacles[*]",
+        "data.dense_brush.*",
+        "data.impassable_or_broad_obstruction.*",
+        "data.supplementary_security.*",
+        "data.source_review_receipt.*"
+      ],
+      "reuse_check": "Existing source-specific p234 Perimeter Wire and Electric numeric record concerns manmade barriers and wire tests; it does not encode the p232 natural dense-brush -2 Stealth Open Test. Perception numeric p231-232 record separately covers sight, sound, smell, touch, taste, and does not state this physical-barrier Stealth modifier.",
+      "limits": "Archival original Third Edition tabletop mechanics only. No real-world physical security or bypass guidance, no engine test, no whole-source normalization or contiguous advancement claimed."
+    }
+  }
+}
