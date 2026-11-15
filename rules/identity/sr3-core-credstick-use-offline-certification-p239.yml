@@ -1,0 +1,85 @@
+id: rule.identity.sr3-core-credstick-use-offline-certification-p239
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '239'
+pdf_pages: '248'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional
+  tabletop rules, printed p239 / physical PDF248; no later-edition conversion
+content_class:
+- rule_procedure
+headline: FASA Corporation Shadowrun, Third Edition FASA7001 — fictional credstick
+  use and transaction validation, printed p239/PDF248
+summary: Original game-source rules for registered and certified credsticks, off-network
+  transaction validity, and financial-function loss; no real-world banking or identification
+  procedure.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_page: 239
+    physical_pdf_page: 248
+    type: published fictional cyberpunk tabletop role-playing game
+  source_heading: Running the Shadows — Credsticks and ID / Certified Credsticks
+  registered_credstick:
+    fictional_function: Functions both as electronic identification and as access
+      to the account associated with its registered bearer.
+    game_identity_contents:
+    - Licenses and permits held by the bearer
+    - Emergency medical information
+    - Other encoded personal identifiers described by the book
+    financial_use: The game setting describes its use to deposit, withdraw, or transfer
+      account funds through a connected reader, with an identity check.
+    offline_transaction_recording: A credstick can record transactions not yet included
+      in the financial network.
+    subsequent_verification_required: These off-network transactions must be validated
+      by reconnecting to the network periodically; the source specifies no exact validation
+      interval.
+    no_validation_outcomes:
+    - All off-network transactions recorded in this manner are invalidated.
+    - The credstick's financial function is cancelled.
+    unasserted_effect: The original passage does not say that the loss of financial
+      function automatically erases identification data.
+  certified_credstick:
+    registration: Not registered to a named bearer.
+    encoded_value: Worth only the amount of credit encoded on the particular game
+      item.
+    identification_required_to_use: false
+    can_serve_as_identification: false
+    transfer_of_possession: May be used by someone other than the original recipient.
+    source_analogy: The book compares it to an anonymous cash-like bearer instrument
+      in the fictional setting.
+  canonical_reuse:
+  - rules/identity/sr3-core-credstick-tiers-forgery-numeric-p239.yml
+  - procedures/identity/forge-credstick.yml
+  distinctions: The existing accepted numeric record covers five registered classes,
+    maximum transaction amounts, fictional forgery costs, Availability, and opposed-verification
+    rules; this record adds only the original printed use/validity lifecycle not already
+    normalized there.
+  source_review:
+    inspected_original_image: Original FASA7001 scan printed 239, physical PDF248,
+      both columns under Credsticks and ID, Certified Credsticks, and Forging Credsticks
+      and IDs; original page viewed after independent SHA-256 verification.
+    reviewed_text_fields:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source_heading
+    - data.registered_credstick.*
+    - data.registered_credstick.game_identity_contents[*]
+    - data.registered_credstick.no_validation_outcomes[*]
+    - data.certified_credstick.*
+    - data.canonical_reuse[*]
+    - data.distinctions
+    - data.source_review.*
+    reporting_method: Third-person reporting about a fictional published role-playing
+      game's mechanics; quoted identities and claims are attributed to the book rather
+      than asserted about real people.
+    limitation: This editorial/source-review receipt is not an independently executable
+      proof of complete original-source coverage or game-engine validation.
+framing: reference_exact
