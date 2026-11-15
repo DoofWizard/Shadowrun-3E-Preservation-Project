@@ -11,7 +11,7 @@ content_class:
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
   Security Sheaves, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
-summary: Original FASA7001 printed pp211-212/PDF220-221 security sheaf thresholds,
+summary: Corrected original FASA7001 printed pp211-212/PDF220-221 division-by-two (not subtraction) trigger-step roll, thresholds,
   alert modifiers, reset decay, IC suppression and the source-verified Selena/Cybersushi
   early-relogon example distinguishing the current reset tally from the pre-logout
   peak.
@@ -61,7 +61,7 @@ data:
       event: Killer-10; Active Alert
     gamemaster_authority: GM may set the security trigger steps and reactions directly;
       source also presents optional randomized generation.
-    random_step_increment: Roll 1D6 minus 2, then apply Security Code modifier. Add
+    random_step_increment: Roll 1D6 divided by 2, then apply Security Code modifier. Add
       result to prior trigger step; use lowest values in code range for high-security,
       highest for softer systems.
     code_modifier_and_resulting_ranges:
