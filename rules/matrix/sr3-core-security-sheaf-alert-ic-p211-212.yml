@@ -11,9 +11,10 @@ content_class:
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
   Security Sheaves, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
-summary: Original numerical security trigger-step sample, optional randomized modifiers,
-  passive-alert modifier, active-alert and reset rules, regional-grid security tally
-  persistence, and IC crash/suppression consequences.
+summary: Original FASA7001 printed pp211-212/PDF220-221 security sheaf thresholds,
+  alert modifiers, reset decay, IC suppression and the source-verified Selena/Cybersushi
+  early-relogon example distinguishing the current reset tally from the pre-logout
+  peak.
 data:
   publication:
     title: Shadowrun, Third Edition
@@ -113,8 +114,29 @@ data:
       when tally is below the activation threshold.
     continuing_ic: Any running IC remains active until tally falls below the trigger
       step that activated that IC.
-    early_relogon: If decker reconnects before reset, tally starts from the level
-      held when the intrusion occurred; resetting does not erase the prior tally earlier.
+    early_relogon: If a decker logs onto a host/grid without authorization before
+      its reset has finished, that decker's Security Tally begins at the CURRENT reduced
+      tally level reached during the in-progress reset, not the earlier peak tally
+      before logout. This conditional carry-over applies to any new unauthorized decker
+      entering that host/grid during reset.
+    source_worked_reset_example:
+      original_printed_page: 212
+      physical_pdf_page: 221
+      fictional_decker_previous: Selena
+      fictional_decker_new: Cybersushi
+      host_security_code: Orange
+      security_tally_before_previous_logoff: 18
+      elapsed_since_previous_logoff: half an hour
+      security_tally_during_reset_at_new_logon: 6
+      passive_alert_trigger_step: 5
+      passive_alert_status_at_tally_6: still active
+      killer_ic_trigger_step: 12
+      killer_ic_status_at_tally_6: shut down
+      gameplay_consequence: The fresh unauthorized session inherits tally 6, remains
+        under passive alert because step 5 is exceeded, and does not retain the Killer
+        IC activated at step 12.
+      source_characterization: A narrated example in FASA Corporation's fictional
+        Shadowrun, Third Edition tabletop source, not a universal starting tally.
   ic_activation:
     proactive: Once alerted to intruder presence, proactive IC may initiate cybercombat
       and take initiative and attacks as hostile computer opponents.
