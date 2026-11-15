@@ -1,0 +1,84 @@
+{
+  "id": "rule.contacts.sr3-core-legwork-contact-fees-alert-rush-p254",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "254",
+  "pdf_pages": "263",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop role-playing game Contacts chapter, printed p254/physical PDF263; neither current real-world services nor later Companion add-ons.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "publication_type": "published fictional tabletop role-playing game core rulebook",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 254,
+      "physical_pdf_page": 263
+    },
+    "source_section": "Contacts / Legwork: information fees, checking around, rushing contact meetings",
+    "context": "Optional original gamemaster procedures governing fictional NPC contact assistance and game currency, not real-world information brokering.",
+    "information_fee": {
+      "gamemaster_discretion": "The source permits the GM to set the contact fee directly; this formula is an optional basis, not a mandatory charge.",
+      "fee_nuyen_formula": "(contact Charisma × contact Intelligence × 50) ÷ runner Etiquette Test successes",
+      "fee_currency": "nuyen",
+      "base_multiplier": 50,
+      "inputs": [
+        "contact Charisma",
+        "contact Intelligence",
+        "number of successes on the player character Etiquette Test"
+      ],
+      "zero_success_handling": "The printed formula does not specify how to divide by zero successes; do not synthesize a price on an unsuccessful test.",
+      "final_payment": "GM may adjust the base fee for the particular contact; standard Negotiation procedures determine the final payment.",
+      "payment_narrative": "Whether payment is required and whether information or a favor is owed in return is presented as a roleplaying consideration, not as an automatic debt."
+    },
+    "ongoing_contact_inquiry": {
+      "actor": "Gamemaster rolls for the fictional NPC contact on the runner’s behalf.",
+      "action": "Contact checks around or keeps an ear to the ground for requested information.",
+      "resolution_test": "Appropriate Etiquette Test for the contact",
+      "original_target_number_modifier": 2,
+      "base_target_number": "Target number in the relevant published success table, modified by +2; the original does not provide one universal value for every inquiry.",
+      "positive_success_result": "On any success, the contact reports information appropriate to that success table.",
+      "reporting_delay": "2D6 hours, or time determined by gamemaster.",
+      "fee_calculation": "Cost of general information gathering is determined by the same optional information-fee procedure as above."
+    },
+    "rushed_meeting": {
+      "first_test": "If a player wants to rush a contact meeting, make an Etiquette Test to arrange the rushed meeting.",
+      "second_test": "The subsequent Etiquette Test to obtain desired information from the contact suffers a +2 TN modifier for the hassle.",
+      "information_test_target_number_modifier": 2,
+      "limits": "The page gives no fixed target number or defined time saving for the initial rushed-meeting arrangement; do not invent either."
+    },
+    "canonical_reuse": [
+      "rule.contacts.legwork",
+      "rule.contacts.searching-matrix",
+      "rule.contacts.sr3-core-contact-levels-bonuses-p254-256",
+      "rule.contacts.contact-levels"
+    ],
+    "source_review": {
+      "original_page": "Fresh cataloged original FASA7001 physical PDF263 visibly printed p254, left column upper and middle passages (fee, check around, rush meeting), independently inspected.",
+      "reviewed_text_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_section",
+        "data.context",
+        "data.information_fee.*",
+        "data.ongoing_contact_inquiry.*",
+        "data.rushed_meeting.*",
+        "data.canonical_reuse[*]",
+        "data.source_review.*"
+      ],
+      "substance_comparison": "Existing legwork record gives only general Etiquette Test/successes with costs unspecified. Existing Matrix and contact-level records separately cover searches and bonus dice. This record supplies only the exact fee calculation, +2 inquiry test, 2D6 reporting delay and +2 rushed-information TN.",
+      "limitation": "Source review and structural gates do not establish whole-chapter source completion or engine-tested readiness."
+    }
+  },
+  "headline": "Shadowrun, Third Edition (FASA Corporation FASA7001), fictional tabletop contact legwork numerical fees, checking-around and rushed-meeting procedures, printed p254/PDF263",
+  "summary": "Original source-preserving fictional-game contact fee formula Charisma × Intelligence × 50 divided by successes; GM discretion, +2 ongoing inquiry with 2D6-hour reporting, and separate +2 rushed-meeting information penalty."
+}
