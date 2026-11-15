@@ -569,6 +569,80 @@
       "net_authorized_contiguous_pages": 0,
       "formal_page_authorization_performed": false,
       "full_source_completion_certified": false
+    },
+    {
+      "id": "rigging_gear_mounts_printed_306_307_20261115_0627",
+      "printed_pages": [
+        306,
+        307
+      ],
+      "physical_pdf_pages": [
+        315,
+        316
+      ],
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "content_classes": [
+        "equipment_stat",
+        "rule_exact",
+        "rule_procedure"
+      ],
+      "original_page_images_checked": true,
+      "review_scope": "FASA Corporation published fictional Shadowrun Third Edition FASA7001: Remote Control Deck, ECCM 1-10 exact market values, adaptation interfaces, vehicle mount capacities/arc/recoil and Jackrabbit electric-methanol source table.",
+      "already_accepted_paths": [
+        "equipment/sr3-core-rigger-vehicle-gear-p306.yml",
+        "rules/vehicles/sr3-core-rigger-control-adaptation-p306.yml",
+        "rules/vehicles/sr3-core-autonav-operating-limits-p306.yml",
+        "rules/vehicles/sr3-core-original-mounts-p307.yml",
+        "rules/vehicles/sr3-core-drone-autopilot-default-gear-p307.yml",
+        "equipment/sr3-core-jackrabbit-electric-methanol-market-p307.yml"
+      ],
+      "result": "Original pp306-307 relevant numeric, conditions and procedures compared against named accepted records. No distinct missing rules identified in this bounded scope. Earlier p312 water-cannon fire-mode contradiction remains explicitly unresolved; p308 not assessed.",
+      "new_semantic_commits": 0,
+      "source_section_row_review_closed": true,
+      "formal_page_authorization_performed": false
+    },
+    {
+      "id": "vehicle_market_printed_309_311_20261115_0627",
+      "printed_pages": [
+        309,
+        311
+      ],
+      "physical_pdf_pages": [
+        317,
+        319
+      ],
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "content_classes": [
+        "equipment_stat"
+      ],
+      "original_page_images_checked": true,
+      "review_scope": "Original vehicle tables: p309 six rows/five models, pp310-311 eleven rows/ten models; each printed model name, table column, seating/entry-point, cost/availability, feature entries and nonnumeric qualifiers reviewed against indexed canon.",
+      "already_accepted_paths": [
+        "equipment/sr3-core-road-water-market-p309.yml",
+        "equipment/sr3-core-aircraft-security-drone-market-p310-311.yml"
+      ],
+      "source_fidelity_error": "Original p309 heading visibly reads CHRYSLER-NISSAN GIZA. Previously indexed accepted record falsely asserted G12A and a prior correction note falsely claimed the source used numerals. This was a source error, not an alternative model or edition.",
+      "verified_semantic_corrections": [
+        {
+          "path": "equipment/sr3-core-road-water-market-p309.yml",
+          "commit": "7bab25414af4bfded32852d5b02dd166b9978d36",
+          "blob": "69b68875c7a5b0ba5d8bfb6467fe3bf991f725d5",
+          "gate": "verified",
+          "reviewed_text_fields": [
+            "data.vehicle_rows[*].name",
+            "data.test_vectors_specifications_not_executed[*].model",
+            "data.source_fidelity_correction.*",
+            "headline",
+            "summary"
+          ]
+        }
+      ],
+      "authoritative_manifest_commit": "acb939884085a7649f0318ea4f740b15d79aafbb",
+      "authoritative_manifest_blob": "51a24a750324973e572ac7f3840df2687d3afc83",
+      "result": "17 original model-configuration rows reconciled across pp309-311; one wrong archive identity source-corrected through ordinary full transaction, other accepted numeric fields reused. Printed p308 remains unobserved; neither the missing page nor surrounding entire vehicle chapter is certified.",
+      "source_section_row_review_closed": true,
+      "formal_page_authorization_performed": false,
+      "full_core_completion_certified": false
     }
   ],
   "constraints": [
@@ -579,7 +653,7 @@
     "Denver FASA7212 printed pp46-47 remain archived losses; authoritative Denver boundary stays printed p45/PDF46.",
     "Do not duplicate accepted records, advance global checkpoint or equate scanning with numeric table closure across the whole source."
   ],
-  "next_source_review_priority": "Proceed to a distinct unfinished FASA7001 mechanics chapter rather than rescan the now-reconciled Contacts printed pp253–259. Test original-source exception/table coverage against accepted canon; prioritize actual missing substance; do not manufacture duplicate records or claim global boundary advance.",
+  "next_source_review_priority": "Move to a distinct unfinished FASA7001 core subsection, preferably original Magic/Conjuring or unclosed core tables; do not rescan reconciled vehicle pp306-307/309-311. Original p308 remains unresolved and excludes contiguous advancement.",
   "live_manifest_after_ic_correction": {
     "path": "sources/manifests/SR3.yml",
     "blob": "d16b7707d7523126063d4329bab972d914f233c5",
@@ -599,5 +673,12 @@
     "indexed_postscan_verified_records": 340,
     "status": "scan_complete_normalization_pending",
     "contiguous_advance": false
+  },
+  "live_manifest_after_vehicle_giza_reconciliation": {
+    "path": "sources/manifests/SR3.yml",
+    "verified_blob": "51a24a750324973e572ac7f3840df2687d3afc83",
+    "source": "source.sr3-core",
+    "contiguous_advance": false,
+    "postscan_record_count_unchanged": true
   }
 }
