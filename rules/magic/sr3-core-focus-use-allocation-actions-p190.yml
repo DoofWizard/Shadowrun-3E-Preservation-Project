@@ -1,0 +1,110 @@
+{
+  "id": "rule.magic.sr3-core-focus-use-allocation-actions-p190",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "190",
+  "pdf_pages": "199",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition, FASA7001, fictional Third Edition tabletop RPG; original printed p190 / physical PDF199. Historical original magic rules, not a later sourcebook substitution.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Shadowrun, Third Edition (FASA Corporation FASA7001), fictional tabletop Magic foci operational use and dice allocation, printed p190/PDF199",
+  "summary": "Source-reviewed original focus activation/deactivation, intelligence cap, replenishment, expendable/specific/category/spirit/power focus Force-dice allocation and explicit forbidden uses; separate numeric Karma bonding and p191 sustaining/weapon conditions are reused.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fictional_medium": "published tabletop role-playing game rulebook"
+    },
+    "original_page": {
+      "printed": 190,
+      "physical_pdf": 199,
+      "section": "Magic / Focus Bonding, Activation and Spell/Spirit/Power Foci"
+    },
+    "activation": {
+      "requires_activation_before_use": true,
+      "activate_default_action": "Simple Action",
+      "weapon_focus_use_action": "Complex Action as normal melee weapon combat",
+      "casting_into_sustaining_focus": "Exclusive Complex Action",
+      "deactivate_action": "Free Action",
+      "maximum_simultaneously_active_foci": "Owner's Intelligence Rating",
+      "ordinary_maintained_proximity": "After activation focus functions while worn, held, carried in pocket or pouch on owner's person.",
+      "separation": "Snatched, dropped, or otherwise separated focus immediately deactivates; benefits are lost until recovered and reactivated."
+    },
+    "spell_foci_common": {
+      "force_bonus_dice": "Additional dice equal to focus Force",
+      "refresh": "For nonexpendable spell foci, available bonus dice refresh at the start of the next Combat Turn, as dice pools do."
+    },
+    "expendable_spell_focus": {
+      "bonding_required": false,
+      "chosen_scope": "One spell category (Combat, Detection, and so on) selected when created.",
+      "one_activation_use": "After activation the focus Force can be applied as additional dice to either the Sorcery Test or Drain Resistance Test, not both.",
+      "consumption": "Used once and consumed; its dice are lost after use.",
+      "casting_action": "Single Exclusive Complex Action to cast using an expendable spell focus, regardless of Force."
+    },
+    "specific_spell_focus": {
+      "choice": "One named spell selected when the focus is purchased; use does not extend to unrelated spells.",
+      "bonus_dice": "Focus Force bonus dice may be split as desired between the eligible spell's Sorcery Test and its Drain Resistance Test.",
+      "not_allowed": [
+        "Spell Defense",
+        "Dispelling"
+      ]
+    },
+    "spell_category_focus": {
+      "choice": "One spell category selected when focus is purchased.",
+      "bonus_dice": "Focus Force bonus dice may be split as desired between Sorcery Test and Drain Resistance for eligible spells.",
+      "additional_allowed": [
+        "Spell Defense against spells in chosen category",
+        "Dispelling spells in chosen category"
+      ],
+      "allocation": "Bonus dice may be divided across eligible tests as owner desires."
+    },
+    "spirit_focus": {
+      "chosen_type": "One elemental or nature-spirit type declared when focus is purchased; no all-types benefit.",
+      "bonus_dice": "Focus Force extra dice on Conjuring Tests or Drain Resistance Tests involving spirits of chosen type.",
+      "allocation": "May divide bonus dice between eligible Conjuring and Drain Resistance tests."
+    },
+    "power_focus": {
+      "effective_magic_attribute": "Adds focus Force to owner's Magic Attribute only for source-listed determinations: whether Drain causes Physical or Stun damage and maximum Force of a summoned spirit.",
+      "bonus_dice": "Focus Force extra dice for Sorcery, Conjuring, or Drain Resistance Tests.",
+      "spell_defense_allowed": true,
+      "allocation": "Owner can divide bonus dice among eligible tests each Combat Turn as desired."
+    },
+    "reused_distinct_canon": [
+      "rules/magic/sr3-core-focus-bonding-karma-table-numeric-p190.yml",
+      "rules/magic/sr3-core-sustaining-and-weapon-foci-conditions-p191.yml",
+      "rules/magic/focus-activation.yml",
+      "rules/magic/spell-foci.yml",
+      "rules/magic/spirit-foci.yml",
+      "rules/magic/power-foci.yml"
+    ],
+    "source_scope_limit": "Only assertions independently visible on FASA7001 printed p190/PDF199; no optional later Magic in the Shadows focus addiction, no fabricated Focus Force cap or additional Spell Defense category.",
+    "editorial_review": {
+      "source_image": "Original cataloged 345-page FASA7001 image scan physical PDF199 shows visibly printed p190; seven-row Karma table is already separately accepted; both text columns and type-specific allocation were independently inspected.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.original_page.*",
+        "data.activation.*",
+        "data.spell_foci_common.*",
+        "data.expendable_spell_focus.*",
+        "data.specific_spell_focus.*",
+        "data.spell_category_focus.*",
+        "data.spirit_focus.*",
+        "data.power_focus.*",
+        "data.reused_distinct_canon[*]",
+        "data.source_scope_limit",
+        "data.editorial_review.*"
+      ],
+      "fidelity_caveat": "A local source-review receipt and structural tests do not prove comprehensive source fidelity; this records the independently inspected source assertions."
+    }
+  }
+}
