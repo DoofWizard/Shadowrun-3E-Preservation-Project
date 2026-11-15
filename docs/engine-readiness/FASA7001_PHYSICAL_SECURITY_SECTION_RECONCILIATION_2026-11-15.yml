@@ -1,0 +1,79 @@
+# Bounded original-source section evidence; this is documentation, not a semantic rule record or source-completion gate.
+schema_version: sr3-bounded-section-audit/v1
+date: "2026-11-15"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_number: FASA7001
+  source_id: source.sr3-core
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_verification:
+  drive_source_id: 1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri
+  fresh_original_bytes: 112507704
+  physical_pdf_pages_total: 345
+  local_sha256_computed: true
+  preservation_method_verify_source_executed: true
+  original_page_images_inspected: true
+subsection:
+  name: "Running the Shadows: Physical Security"
+  printed_range: [232, 237]
+  physical_pdf_range: [241, 246]
+  full_page_art_not_missing_mechanics: {printed: 233, physical_pdf: 242}
+  source_mechanics:
+    - name: "Natural Perimeter Barriers, Stealth Open Test modifier and traversal"
+      original_printed: [232, 234]
+      status: new_source_specific_rule_indexed
+      canonical_path: rules/security/sr3-core-natural-perimeter-stealth-p232-234.yml
+      semantic_commit: 31964d6b75c891232f91a77bbaed823f6e13c38a
+      confirmed_blob: 2125d453d5f3d349925561ff6a96ac9968abef14
+      checked_fields: ["dense brush -2 Stealth Open Test", "must skirt solid/area-wide obstacles", "wires/alarms often supplemented, not mandatory"]
+    - name: "Perception tests and full modifier tables"
+      original_printed: [231, 232]
+      status: source_reviewed_existing_reused
+      canonical_path: rules/perception/sr3-core-perception-numeric-tables-p231-232.yml
+    - name: "Manmade barriers, charged fences, wire table and trip-wire options"
+      original_printed: [234, 234]
+      status: source_reviewed_existing_reused
+      canonical_path: rules/security/sr3-core-perimeter-wire-electric-numeric-p234.yml
+    - name: "Door/window contacts and motion sensors"
+      original_printed: [234, 235]
+      status: source_reviewed_existing_reused
+      canonical_path: rules/security/sr3-core-door-window-alarm-motion-sensor-p234-235.yml
+    - name: "Maglock keypads, sequencers, cardreaders and print scanners"
+      original_printed: [235, 236]
+      status: source_reviewed_existing_reused
+      canonical_path: rules/security/sr3-core-maglock-keypad-cardreader-print-numeric-p235.yml
+    - name: "Physical Search Modifiers, voice recognition and sentry systems"
+      original_printed: [236, 236]
+      status: existing_canon_corrected_and_reindexed
+      canonical_path: rules/security/sr3-core-search-voice-sentry-numeric-p236.yml
+      semantic_commit: bc412681049e16e52da05357942b6efbbc6e4744
+      confirmed_blob: 66a1bda0a9602a9fcf9b419ec8643df52212c6c8
+      corrected_field: "Searcher in complete control, minus-two TN modifier (not incomplete control)"
+      preserved: ["all other search-professionalism and time rows", "voice test and response exceptions", "sentry rating/initiative/ammunition/fire-arc rows"]
+    - name: "Weapon and cyberware scanners"
+      original_printed: [237, 237]
+      status: source_reviewed_existing_reused
+      canonical_path: rules/security/sr3-core-weapon-cyberware-detection-p237.yml
+    - name: "Magical and Matrix security"
+      original_printed: [237, 237]
+      status: source_prose_cross_references_reused
+      canonical_sources: ["rules/magic/sr3-core-astral-barriers-wards-numeric-p174.yml", "rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml"]
+      note: "Printed p237 references already indexed separate chapters; no new test, TN or table assigned in these two summary paragraphs"
+  review_result: "Bounded source-to-canon check reconciled the above original game mechanics and preserved the distinct rule/test/table fields. This is not authorization that every original core section is complete."
+  authorization:
+    two_new_or_corrected_semantic_commits_gate_confirmed: true
+    main_manifest_index_readback_verified: true
+    new_contiguous_authorized_printed_pages: 0
+    source_specific_full_core_completion_gate_passed: false
+    executable_game_engine_tests_run: false
+unresolved_core:
+  - "Whole-book original-image-to-field completeness and numeric exception audit"
+  - "Printed p308 absent from known original PDF copy; no reconstruction"
+  - "Original p180–181 spell-learning TN conflict remains explicitly ambiguous"
+separate_denver:
+  archived_losses_printed_pages: [46, 47]
+  completed_through_printed: 45
+  completed_through_pdf: 46
+  no_checkpoint_or_source_boundary_change: true
