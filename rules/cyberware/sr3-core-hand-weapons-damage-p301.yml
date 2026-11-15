@@ -1,0 +1,89 @@
+{
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "301",
+  "pdf_pages": "310",
+  "edition_scope": "Original FASA Corporation Shadowrun, Third Edition, catalog FASA7001/source.sr3-core, fictional tabletop core printed p301/physical PDF310; preserving edition-specific game mechanics.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "id": "rule.cyberware.sr3-core-hand-weapons-damage-p301",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 original fictional cyberweapon damage formulas, printed p301/PDF310",
+  "summary": "Published tabletop Handblade (STR + 3)L, Hand Razors (STR)L, Improved Razors (STR + 2)L and Spur (STR)M; purchase statistics and dual-implant combat modifiers are separately canonical.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 301,
+      "physical_pdf_page": 310,
+      "kind": "published fictional tabletop RPG"
+    },
+    "section": "Street Gear: Bodyware",
+    "damage_codes": [
+      {
+        "item": "Handblade",
+        "printed": "(STR + 3)L",
+        "strength_offset": 3,
+        "damage_level": "L"
+      },
+      {
+        "item": "Hand Razors",
+        "printed": "(STR)L",
+        "strength_offset": 0,
+        "damage_level": "L"
+      },
+      {
+        "item": "Improved Hand Razors",
+        "printed": "(STR + 2)L",
+        "strength_offset": 2,
+        "damage_level": "L"
+      },
+      {
+        "item": "Spur",
+        "printed": "(STR)M",
+        "strength_offset": 0,
+        "damage_level": "M"
+      }
+    ],
+    "variant_conditions": [
+      "The source calls handblades available as retractable versions but gives no second damage formula.",
+      "The original distinguishes retractable Hand Razors from the improved razors; the +2 Strength offset is specific to improved razors.",
+      "Spurs are available in retractable and smaller-blade configurations; this paragraph supplies no separate damage code for those configurations."
+    ],
+    "math_reading": "STR is character Strength, with +3 or +2 applied to damage Power where indicated; L and M are the original printed Damage Levels, not attack Target Numbers.",
+    "derived_qa_example_not_in_book": {
+      "strength": 4,
+      "handblade": "7L",
+      "hand_razors": "4L",
+      "improved_razors": "6L",
+      "spur": "4M"
+    },
+    "reused_canon": {
+      "original_p302_market": "equipment.cyberware.sr3-core-bodyware-market-augmentations-p302",
+      "original_p121_122_dual_cyberweapons": "rule.combat.sr3-core-melee-reach-cyberweapon-friends-p121-122"
+    },
+    "original_page_review": {
+      "source": "Original SHA-matched cataloged 345-page FASA7001 scan, physical PDF310 displaying printed folio p301, left/right column visually inspected; source hash independently computed and preservation_method.py verify-source executed.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.section",
+        "data.damage_codes[*].*",
+        "data.variant_conditions[*]",
+        "data.math_reading",
+        "data.derived_qa_example_not_in_book.*",
+        "data.reused_canon.*",
+        "data.original_page_review.*"
+      ],
+      "limits": "Historical game damage formulas only; not later Man & Machine values, weapon construction details, or a complete-source certification."
+    }
+  }
+}
