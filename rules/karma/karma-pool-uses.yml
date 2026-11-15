@@ -27,7 +27,7 @@ resolution:
 uses:
   reroll_failures:
     cost: "1 point for the first re-roll, then 2 additional points for the second, 3 additional for the third, and so on."
-    effect: "Re-roll failed dice; a die showing 1 on a re-roll cannot be re-rolled again."
+    effect: "Re-roll failed dice in the test. Once a die comes up as a success, that die may not be re-rolled again; a failed die that shows 1 is not independently barred from another re-roll by this sentence. The separate all-ones Rule-of-One exception still forbids re-rolling an oops roll."
   avoid_oops:
     cost: "1 point"
     effect: "Turn an all-ones Rule-of-One disaster into an ordinary failure; does not re-roll the test."
@@ -61,3 +61,68 @@ sources:
     note: "Re-Rolling Failures / Avoiding an Oops / Open Tests / Buying Additional Dice / Buying Successes / Extended Actions"
 
 notes: []
+
+source: source.sr3-core
+printed_pages: '246'
+pdf_pages: '255'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), published
+  fictional tabletop role-playing game, printed p246/physical PDF255. No later-edition
+  substitution.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_page: 246
+    physical_pdf_page: 255
+    source_kind: published fictional tabletop role-playing game
+  source_section: Beyond the Shadows — Karma Pools / Re-Rolling Failures, original
+    printed p246/PDF255
+  corrected_mechanic: The original rule permits a player to reroll failed dice at
+    escalating Karma Pool cost; a die that has become a success may not be rerolled.
+    A failed reroll showing 1 remains a failed die; do not invent a universal ban
+    on another reroll because that particular die shows 1. The all-ones Rule of One
+    is an expressly separate limit and cannot be rerolled.
+  escalating_costs_per_reroll:
+  - 1
+  - 2
+  - 3
+  existing_canon_reused:
+  - rules/advancement/sr3-core-karma-pool-spending-optional-p246-248.yml
+  - rules/karma/karma-pool.yml
+  source_review:
+    original_page_image: FASA7001 source PDF physical page 255, visibly printed p246,
+      upper-right Re-Rolling Failures paragraph inspected directly against prior accepted
+      wording.
+    human_text_paths_reviewed:
+    - name
+    - resolution.summary
+    - uses.reroll_failures.cost
+    - uses.reroll_failures.effect
+    - uses.avoid_oops.*
+    - uses.open_test_reroll.*
+    - uses.buy_dice.*
+    - uses.buy_successes.*
+    - uses.extended_actions.*
+    - sources[*].note
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source_section
+    - data.corrected_mechanic
+    - data.existing_canon_reused[*]
+    - data.source_review.*
+    factual_change: Replace incorrectly asserted ban on further re-rolling a die merely
+      because it rolled 1 with source rule prohibiting re-roll of a die after success;
+      preserve all other canonical mechanics and explicit all-ones exception.
+    limits: Independent original page inspection and editorial review do not independently
+      establish full-core completeness or executable-engine correctness.
+headline: "FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional tabletop Karma Pool rerolls: p246/PDF255"
+summary: "Source-corrected p246 Karma Pool reroll rule: only failed dice are eligible and dice that have become successes cannot be rerolled; the all-ones oops restriction is distinct."
+framing: reference_exact
