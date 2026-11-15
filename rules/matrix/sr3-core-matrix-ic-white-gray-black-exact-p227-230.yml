@@ -63,7 +63,14 @@
         "trigger": "Reactive IC triggers against utility program use; GM selects target utility type.",
         "contest": "Opposed: Tar Baby Test against target number equal to utility Rating; utility program test against Tar Baby Rating.",
         "ic_wins": "Both active utility and Tar Baby IC crash; Security Tally is not increased by this crash. A new utility copy must be loaded with Swap Memory.",
-        "utility_wins": "Utility survives; GM makes secret Sensor Test to determine whether decker notices the IC."
+        "utility_wins": "Utility survives; GM makes secret Sensor Test to determine whether decker notices the IC.",
+        "targeted_utility_types": [
+          "operational",
+          "offensive",
+          "defensive",
+          "special"
+        ],
+        "passive_utility_exclusion": "Tar baby IC does not attack completely passive utility programs, with Armor and Sleaze named as examples in the original printed p228."
       }
     },
     "gray_ic": {
@@ -90,7 +97,7 @@
       },
       "tar_pit": {
         "trigger": "Tar Baby-like reactive attack, but if Tar Pit wins opposed utility contest it corrupts all copies including offline on-deck storage.",
-        "followup": "Tar Pit Test IC Rating against MPCP Rating (Hardening increases target number); if any successes, corrupts all on-deck copies; off-deck backup enables recovery by later reload."
+        "followup": "After Tar Pit crashes a utility program, the gamemaster makes a Tar Pit Test using IC Rating against the cyberdeck MPCP Rating; Hardening raises this target number. Any success corrupts all on-deck copies in active and storage memory. A separate offline backup may exist, but the decker cannot access that backed-up utility for the rest of the current Matrix run."
       }
     },
     "black_ic": {
@@ -146,5 +153,5 @@
   },
   "framing": "reference_exact",
   "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional IC rules, permanent effects and Black IC worked example, original printed pp227–230/PDF236–239",
-  "summary": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) printed pp227–230/PDF236–239: exact fictional white/gray/black IC mechanics including lethal damage, permanent-effect GM discretion, Hardening and the original Red-8/Cybersushi numeric example; no later-edition substitution."
+  "summary": "FASA Corporation Shadowrun Third Edition FASA7001 original fictional Matrix IC rules (printed pp227-230/PDF236-239), including source-correct Tar Baby passive-program exclusion, Tar Pit on-deck corruption and post-run backup access restriction, and original white/gray/black IC mechanical tests."
 }
