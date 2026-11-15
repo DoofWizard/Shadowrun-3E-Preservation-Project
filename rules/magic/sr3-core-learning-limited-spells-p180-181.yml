@@ -5,9 +5,7 @@ content_class:
 - rule_procedure
 headline: Original fictional Shadowrun Third Edition FASA7001 learning and limiting
   spells, printed pp180-181 / physical PDF189-190 (FASA Corporation)
-summary: Exact source learning procedure, instructor test, Karma, lodge/library requirements
-  and fetish/exclusive limits with a source-internal worked-example target-number
-  inconsistency explicitly deferred for safe numeric digestion.
+summary: FASA7001 original spell-learning rules, teacher and formula traditions, variable-Drain formula pricing, learning tests, Karma, and fetish/exclusive limits; conflicting worked-example TN retained.
 data:
   publication:
     title: Shadowrun, Third Edition
@@ -31,6 +29,11 @@ data:
     allowed:
     - teacher who already knows the spell
     - appropriate spell formula from same tradition
+    teacher_tradition: Teacher and student must follow the same magical tradition; a spell formula must also match the student's tradition.
+    formula_sources: Spell formulas may be obtained from talismongers and sometimes through the fictional Matrix, subject to the same-tradition requirement.
+    formula_pricing_reference: Formula costs vary by spell and are specified in the original Street Gear section referenced on printed p270; no universal price is asserted.
+    variable_drain_formula_pricing: For a spell with variable Drain Code, use its highest applicable Drain Code to determine the formula price.
+    teacher_time_commitment: A teacher cannot do other work while coaching a student through the learning period.
     teacher_cap: Teacher can teach any Force up to the rating of the teacher’s known
       spell.
     teacher_price: Typically 1000 nuyen times desired spell Force plus living expenses.
@@ -73,6 +76,8 @@ data:
       modifier: -2
       casting_prerequisite: Casting and sustaining the selected spell are Exclusive
         actions under original core printed p160.
+    drain_type_effect: When a limit reduces spell Force for calculating Drain, it also determines whether the resulting Drain is Stun or Physical damage.
+    fetish_category_scope: Fetishes sold by talismongers are made for one spell category and may be used only with spells in that category.
     choice_point: Caster selects each limit’s purpose when first learning that limited
       version.
     purposes:
@@ -94,6 +99,14 @@ data:
       learning TN for limited spells based on this inconsistent example until errata
       or a source-grounded ruling is documented.
     readiness: partial_source_fidelity_verified_but_numeric_learning_TN_ambiguous
+  reviewed_original_pages_2026_11_15:
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_pages: [180, 181]
+    physical_pdf_pages: [189, 190]
+    fictional_publication: Shadowrun, Third Edition, FASA Corporation, FASA7001, original Third Edition tabletop RPG
+    editorial_review: New source conditions independently read from original page images before baseline freeze; all existing game assertions and the p180-p181 contradictory worked-example target numbers retained.
+    reviewed_text_field_paths: [headline, summary, edition_scope, data.publication, data.learning_source, data.sorcery_learning_test, data.learning_duration, data.limited_spells, data.worked_example_and_source_ambiguity, data.canonical_reuse, data.source_scope, data.reviewed_original_pages_2026_11_15, framing]
+    limit: This page-image review and structural tests do not establish complete Magic chapter or source fidelity.
   canonical_reuse:
   - procedure.magic.learning-spells
   - rule.magic.sr3-core-drain-power-force-resistance-p162
