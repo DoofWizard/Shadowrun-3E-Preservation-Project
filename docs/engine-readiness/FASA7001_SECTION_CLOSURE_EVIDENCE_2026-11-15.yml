@@ -1,0 +1,78 @@
+# Bounded source-image-to-canon closure evidence, not semantic ingestion or a source-completion gate.
+schema_version: sr3-source-section-evidence/v1
+date: "2026-11-15"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog: "FASA7001"
+  source_id: "source.sr3-core"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+source_validation:
+  drive_source_id: "1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri"
+  fresh_pdf_sha256_computed: true
+  preservation_method_verify_source_executed: true
+  original_page_images_independently_inspected: true
+  evidence_limit: "Page-image inspection, accepted-record review and transaction preflight do not themselves prove full rulebook fidelity or engine execution."
+subsection_reviews:
+  - id: "street-gear.ammunition"
+    original_printed_pages: [279, 281]
+    physical_pdf_pages: [288, 290]
+    boundary: "Original AMMUNITION heading on p279 through ammunition rocket/missile market table on p281; excludes unrelated firearm catalog material above this heading."
+    status: "source_reviewed_existing_plus_new_canon; no source-specific contiguous authorization"
+    checked_lanes: [rule_exact, equipment_stat]
+    verified_reuse:
+      - "rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml"
+      - "rules/firearms/sr3-core-special-ammunition-effects-p116-117.yml"
+      - "rules/combat/sr3-core-rocket-missile-numeric-p120.yml"
+      - "equipment/sr3-core-ammunition-rockets-missiles-pricing-p281.yml"
+      - "rules/firearms/sr3-core-loading-system-and-recoil-notation-p276.yml"
+    newly_ingested:
+      path: "rules/firearms/sr3-core-ammunition-heat-gel-rocket-miss-p279-280.yml"
+      commit: "104aef5c7396641f0d84414bdadad895ea335fdb"
+      blob: "f76dacbe7dab820e01fc91441f9c998cf4077219"
+      gate: "verified"
+      source_verified_substance: "Gel armor interaction, intense-heat conditional caveat for fictional explosive rounds, and AVR/AVM missed attack causing no detonation; source has no additional numerical formulas for these remarks."
+    retained_limits: "Original generic Combat formulas remain in already accepted records; no inferred numeric detonations, armor multipliers, or later-edition substitutions."
+  - id: "street-gear.reloading-and-firearm-accessories"
+    original_printed_pages: [280, 282]
+    physical_pdf_pages: [289, 291]
+    boundary: "Original RELOADING FIREARMS and FIREARM ACCESSORIES paragraphs, exact Ammo Reloading Table, original accessory prose and FIREARM AND WEAPON ACCESSORIES purchase table; p282 EXPLOSIVES transition is separate."
+    status: "source_reviewed_accepted_canon_reused; no source-specific contiguous authorization"
+    checked_lanes: [rule_exact, rule_procedure, equipment_stat]
+    verified_reuse:
+      - "procedures/firearms/sr3-core-ammunition-reloading-p280.yml"
+      - "rules/firearms/accessory-mounts.yml"
+      - "rules/firearms/sr3-core-accessory-functions-p280-281.yml"
+      - "rules/firearms/sr3-core-tripod-ultrasound-use-p282.yml"
+      - "equipment/sr3-core-firearm-weapon-accessory-market-p282.yml"
+    coverage: "Source reloading action costs and Quickness formulas; mounting restrictions; recoil, sight, visor and smartgun modifiers; numerical accessory table and conditional legality cells compared against original page images."
+  - id: "sourcebook-updates.sr2-rigger2-vr2"
+    original_printed_pages: [323, 325]
+    physical_pdf_pages: [331, 333]
+    boundary: "Complete original SOURCEBOOK UPDATES conversion section as printed on pp323-325. Historical Second Edition, Rigger 2, and Virtual Realities 2.0 lineages remain separate."
+    status: "source_reviewed_accepted_canon_reused; no source-specific contiguous authorization"
+    checked_lanes: [rule_exact, rule_procedure]
+    verified_reuse:
+      - "rules/compatibility/sr2-to-sr3-numeric-character-conversion-p323.yml"
+      - "rules/compatibility/sr2-to-sr3-existing-knowledge-active-skill-credit-p323.yml"
+      - "rules/compatibility/sr2-to-sr3-magic-conversion-p324.yml"
+      - "rules/compatibility/sr2-to-sr3-gear-cyberware-conversion-p324.yml"
+      - "rules/compatibility/rigger2-to-sr3-vehicle-mechanics-p324.yml"
+      - "rules/compatibility/sr3-core-vr2-matrix-update-p325.yml"
+      - "rules/compatibility/vr2-to-sr3-matrix-mechanics-p325.yml"
+    coverage: "Original conversion formulas, worked examples, choices, conditions, exceptions, Rigger 2 precedence/vehicle damage, Matrix Hardening and Ripper IC numerical effects matched to existing reviewed canon; no new duplicate records."
+    caveats: "These conversion instructions are historical source-specific procedures, not general permission to replace original SR3 rules or a later advanced edition."
+administrative_completion:
+  manifest_source: "sources/manifests/SR3.yml"
+  new_verified_semantic_records_this_run: 1
+  new_indexed_records_this_run: 1
+  new_contiguous_authorized_printed_pages_this_run: 0
+  whole_core_complete: false
+  source_completion_gate_passed: false
+  unresolved: ["Full original-source core rule coverage and exception audit", "Suspected unavailable printed p308", "Spell-learning TN inconsistency on printed pp180-181"]
+separate_denver_source:
+  completed_through_printed: 45
+  completed_through_pdf: 46
+  lost_printed_pages_archived: [46, 47]
+  no_recovery_search_or_boundary_mutation: true
