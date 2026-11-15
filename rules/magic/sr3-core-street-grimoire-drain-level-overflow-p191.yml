@@ -1,0 +1,71 @@
+{
+  "id": "rule.magic.sr3-core-street-grimoire-drain-level-overflow-p191",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "191",
+  "pdf_pages": "200",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), published fictional tabletop RPG original Third Edition Magic/Street Grimoire spell-stat interpretation, printed p191 / PDF200.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun Third Edition (FASA7001) fictional game Street Grimoire Drain code and over-Deadly staging, original printed p191/PDF200",
+  "summary": "Original p191 exact interpretation of spell Type, Target, Duration and Drain entries, including half-Force rounded down, variable damage-related Drain Level, and +2 Drain Power for each Drain Level increase above Deadly. Does not revise separately accepted p162 Drain Resistance procedure.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_id": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "fictional_medium": "published tabletop role-playing game rulebook"
+    },
+    "original_page": {
+      "printed": 191,
+      "physical_pdf": 200,
+      "section": "Magic / Street Grimoire introduction, Type, Target, Duration, Drain"
+    },
+    "spell_profile_fields": {
+      "type": "Mana (M) or Physical (P) as printed in each spell entry.",
+      "target": "Where entry uses W, B or I, use the target's Willpower, Body or Intelligence as printed; nonliving objects use the original Object Resistance (OR) table where the spell specifies OR.",
+      "variable_target": "Other spells can state an individual numeric or specially defined target number.",
+      "duration_codes": {
+        "I": "Instant",
+        "S": "Sustained",
+        "P": "Permanent"
+      },
+      "unwilling_target": "Spells against an unwilling target require normal Spell Resistance Test as referenced to original p183."
+    },
+    "drain_code": {
+      "power_base": "Half of spell Force, rounded down, plus the spell-specific Drain Power modifier.",
+      "damage_level_base": "The Drain Level listed in spell's profile is the initial Drain Damage Level.",
+      "variable_damage_level": "Some spells, particularly those that inflict or heal damage, base their Drain Level on the Damage Level the caster chooses the spell to cause or heal.",
+      "over_deadly": "If a Drain Level modifier would raise Drain beyond Deadly, retain Deadly and add +2 to the Drain Power for each level above Deadly.",
+      "drain_level_order": "Determine the variable spell Drain Level (if any), apply its specified modifier, then translate increments beyond Deadly into the +2-per-level Power increase.",
+      "no_extra_inferred_caps": "Do not impose an unrelated Force ceiling or change the p162 two-success damage-level staging rule."
+    },
+    "related_canon_reused": [
+      "rules/magic/sr3-core-drain-power-force-resistance-p162.yml",
+      "rules/magic/sr3-core-combat-spells-statblocks-p191.yml",
+      "rules/magic/spell-characteristics.yml",
+      "rules/magic/spell-resistance.yml"
+    ],
+    "editorial_review": {
+      "original_source_image": "Cataloged original FASA7001 printed p191 physical PDF200 upper-right Street Grimoire definitions visually reviewed; p162 normalized Drain procedure was independently compared and reused.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.original_page.*",
+        "data.spell_profile_fields.*",
+        "data.drain_code.*",
+        "data.related_canon_reused[*]",
+        "data.editorial_review.*"
+      ],
+      "source_fidelity_limitation": "Direct original-page review supports these asserted fields; a review receipt is not an exhaustive whole-book completion certificate."
+    }
+  }
+}
