@@ -10,8 +10,8 @@
     "equipment_stat"
   ],
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop RPG, original printed p283/PDF292: exact equipment-market grenade/explosives entries",
-  "summary": "Original published fictional FASA7001 Third Edition in-game market table: eight grenade rows, three rated explosive rows and two accessory rows, with exact Availability, price, legal, blast and conditional mini-grenade notation from printed p283/PDF292.",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) original fictional tabletop Explosives market and accessory ratings; printed p283/physical PDF292",
+  "summary": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original printed p283/PDF292: all source-verified grenade/explosives market rows plus separately specified accessory timer range 2 seconds–2 hours and radio-detonator Flux Rating 1; distinguishes the separate hand-grenade timer and preserves source-specific conditions.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -226,7 +226,41 @@
         "rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml",
         "rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml"
       ],
-      "out_of_scope": "Equipment description effects in prose on original printed pp282–283 and character state modifiers require their own rule-class completeness review. Do not count this table as full explosives rules closure."
+      "out_of_scope": "Equipment description effects in prose on original printed pp282–283 and character state modifiers require their own rule-class completeness review. Do not count this table as full explosives rules closure.",
+      "explosive_accessory_functional_rating_p283": {
+        "source_heading": "Street Gear / Explosives / Plastic Explosives, accessory functional statistics",
+        "timer_adjustable_minimum_seconds": 2,
+        "timer_adjustable_maximum_seconds": 7200,
+        "timer_original_duration_text": "2 seconds to 2 hours",
+        "radio_detonator_flux_rating": 1,
+        "source_scope": "These are separate market accessory properties in original printed p283/PDF292; a hand grenade has its separately documented 2-to-120-second setting under the original p282 grenades paragraph.",
+        "reference_existing_hand_grenade_rule": "rules/gear/sr3-core-special-grenade-effects-p282-283.yml"
+      },
+      "first_pass_source_review_2026_11_16": {
+        "publication": "FASA Corporation, Shadowrun, Third Edition (FASA7001), published fictional tabletop role-playing game.",
+        "source_id": "source.sr3-core",
+        "printed_page": 283,
+        "physical_pdf_page": 292,
+        "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+        "previous_accepted_blob": "57b21e120322cebee5643be016b81b83ceca84b3",
+        "source_image_observation": "Original printed p283/PDF292 lower-left Explosives paragraph explicitly gives a timer range of 2 seconds to 2 hours and radio-detonator Flux Rating of 1. The original p282/PDF291 hand-grenade 2-second-to-2-minute interval is a separate game item.",
+        "preservation": "All accepted grenade, commercial explosive, accessory market rows, availability, monetary price, legality, blast values and source qualifiers are retained. No new real-world equipment instruction, later-edition conversion, unprinted target number or new product effect is inferred.",
+        "reviewed_text_field_paths": [
+          "edition_scope",
+          "headline",
+          "summary",
+          "data.publication.*",
+          "data.scope",
+          "data.tables[*].title",
+          "data.tables[*].columns[*]",
+          "data.tables[*].rows[*][*]",
+          "data.source_qualifiers.*",
+          "data.source_qualifiers.explosive_accessory_functional_rating_p283.*",
+          "data.source_qualifiers.first_pass_source_review_2026_11_16.*",
+          "data.original_page_image_review.*"
+        ],
+        "verification_scope": "Exact source-page correction and adjacent already-canonical rule reuse; not whole-core normalization or executable engine testing."
+      }
     },
     "original_page_image_review": {
       "printed_page": 283,
