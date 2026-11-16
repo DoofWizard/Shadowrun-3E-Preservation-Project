@@ -8,7 +8,7 @@ edition_scope: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001), f
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA Corporation Shadowrun Third Edition (FASA7001) fictional tabletop RPG printed pp196-197/PDF205-206: elemental manipulation casting, damage and spell statistics'
-summary: 'Original in-game elemental manipulation hit TN, Armor, secondary-effect tests, threshold modifiers and six spell variants, separated from ordinary combat spells.'
+summary: 'FASA7001 source-verified elemental manipulation: Serious base damage adds +2 to Object Resistance and Deadly adds +4 (not Moderate); all six spell profiles, attack TN, Impact Armor and environmental effects preserved.'
 data:
   publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog_id: FASA7001, source_id: source.sr3-core, original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914}
   printed_to_pdf: [{printed: 196, physical_pdf: 205}, {printed: 197, physical_pdf: 206}]
@@ -23,7 +23,7 @@ data:
     roll: '2D6'
     success: 'Roll result greater than or equal to the target Object Resistance Rating (p182) with listed damage-level modification.'
     base_damage_S_object_resistance_modifier: 2
-    base_damage_M_object_resistance_modifier: 4
+    base_damage_D_object_resistance_modifier: 4
     base_damage_L_secondary_effect: 'No secondary effects.'
     gamemaster_discretion: 'Source asks gamemaster to evaluate environmental side effects for each situation.'
   spell_lines:
@@ -54,4 +54,15 @@ data:
     - 'These are fictional spell mechanics from a game rulebook, not real chemical/electrical or other operational directions.'
     - 'No damage-code letter is invented: base Damage Level is selected at spellcasting and the drain string is kept verbatim as an original-game formula.'
     - 'Secondary-effect success is not automatic from hitting; Object Resistance and optional GM judgment remain separately required.'
-  code_status: 'Original-source canonical normalization; no runnable mechanics claimed.'
+  source_review_2026_11_15:
+    original_publication: 'FASA Corporation, Shadowrun, Third Edition (FASA7001), a published fictional tabletop RPG.'
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    original_printed_pages: [196, 197]
+    original_physical_pdf_pages: [205, 206]
+    originally_accepted_blob: b0f110144739efba9436ba7b40de5712ac84ec87
+    source_proven_error: 'The original p196 source distinguishes base Serious Damage (+2 Object Resistance) from base Deadly Damage (+4 Object Resistance). The accepted key incorrectly labeled the +4 case Moderate Damage.'
+    assertion_preservation: 'Every previously accepted unaffected spell stat line, area/single-target distinction, elemental secondary-effect procedure, original TN sign, damage-level selection, and source limitation remains unchanged; only the +4 source-condition key was corrected.'
+    reviewed_text_paths: [headline, summary, edition_scope, data.publication, data.printed_to_pdf, data.section, data.basic_mechanics, data.secondary_effect_test, data.spell_lines, data.secondary_effects, data.source_qualifications, data.code_status, data.source_review_2026_11_15]
+    limit: 'Direct page-image review verifies the stated correction; this does not establish full chapter completeness, successful connector acceptance, or executable engine tests.'
+  code_status: 'Original-source canonical normalization; no runnable mechanics claimed.' 
