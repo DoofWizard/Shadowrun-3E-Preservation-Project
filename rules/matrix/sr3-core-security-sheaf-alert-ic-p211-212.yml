@@ -10,7 +10,7 @@ content_class:
 - rule_exact
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
-  Security Sheaves, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
+  Security Sheaves, multiple triggers, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
 summary: Corrected original FASA7001 printed pp211-212/PDF220-221 division-by-two (not subtraction) trigger-step roll, thresholds,
   alert modifiers, reset decay, IC suppression and the source-verified Selena/Cybersushi
   early-relogon example distinguishing the current reset tally from the pre-logout
@@ -48,8 +48,9 @@ data:
       tally thresholds and reactions; triggered events may include IC activation and
       changes in alert status.
     trigger_step_rule: A system activates one or more countermeasures when the decker
-      Security Tally reaches or exceeds a sheaf step; if one action jumps across two
-      or more steps, all crossed trigger events occur at once.
+      Security Tally reaches or exceeds a sheaf step. When several actions add many
+      tally points at once and cross two or more steps, all crossed trigger events
+      occur together, as the original printed p211 Multiple Triggers rule states.
     sample_sheaf:
     - trigger_step: 3
       event: Probe-5
@@ -93,6 +94,9 @@ data:
       step, not a mandatory fixed step.
     active_alert: System has verified unauthorized icon; proactively activated IC
       may include black IC and monitoring/response is heightened.
+    active_alert_responders: Trigger steps may activate corporate or law-enforcement
+      security deckers as a possible response on original printed p212, not an
+      automatic or mandatory response.
     active_alert_step_guidance: Usually second or third step after passive alert;
       guidance, not fixed.
   grid_security_tally:
