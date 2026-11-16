@@ -1,0 +1,81 @@
+{
+  "id": "audit.fasa7001.canonical-unindexed-rule-conflicts-2026-11-15",
+  "publication": {
+    "title": "Shadowrun, Third Edition",
+    "publisher": "FASA Corporation",
+    "catalog": "FASA7001",
+    "source_id": "source.sr3-core",
+    "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+    "original_pdf_pages": 345
+  },
+  "original_source_review": [
+    {
+      "section": "Core projectile Strength requirements",
+      "printed_pages": "117-118",
+      "physical_pdf_pages": "118-119",
+      "verified": "Printed p117 says low-Strength bow attacks incur +1 attack target number per point below minimum. Printed p118 says low-Strength crossbows instead require one additional Ready Weapon action for reloading per point below minimum."
+    },
+    {
+      "section": "Magic Spellcraft, Conjuring and Street Grimoire",
+      "printed_pages": "180-198",
+      "physical_pdf_pages": "189-207",
+      "verified": "Bounded comparison of accepted original-source Sorcery, Conjuring, foci, combat, detection, health, illusion and manipulation records; no distinct new rule error established in inspected fields. The printed p180-181 limited-spell-learning example conflicts with prose; prior accepted canon already flags the inconsistency. Original printed p179 and p185 are illustrations, not missing rule text."
+    },
+    {
+      "section": "Matrix core access, subsystem ratings and introductory operations",
+      "printed_pages": "199-210",
+      "physical_pdf_pages": "208-219",
+      "verified": "Compared accepted 19 North American RTG numeric rows, topology, subsystem ratings, deck formula and stock table, Cyberterminal, System Test, Security Tally and noticing-icon procedures with original page images; no distinct source-proven correction established in these compared fields. Printed p201 is illustration."
+    }
+  ],
+  "authoritative_manifest_at_audit": {
+    "path": "sources/manifests/SR3.yml",
+    "git_blob": "82b7027b55b280dc896c3e6b9f4e6aad0483e5cf",
+    "indexed_records": 355,
+    "status": "scan_complete_normalization_pending",
+    "full_core_normalization_complete": false
+  },
+  "git_tree_census": {
+    "recursive_tree_sha": "1f0bee6c16d89a2f68da70174e37f185620a7815",
+    "truncated": false,
+    "source_specific_matching_paths": 347,
+    "unindexed_source_specific_paths": 3
+  },
+  "unindexed_records": [
+    {
+      "path": "rules/combat/sr3-core-projectile-strength-minimum-numeric-p117.yml",
+      "blob": "a24babe78130abbf55e230ec7fecc36a0c8a40d8",
+      "disposition": "UNINDEXED STALE MECHANIC: incorrectly extends bow's +1 attack-TN-per-Strength-deficit condition to crossbows. Do not index or treat as normative.",
+      "authoritative_indexed_path": "rules/combat/sr3-core-projectile-strength-minimum-p117-118.yml",
+      "authoritative_blob": "180166d3979caf3ae02d43c57aafc72929d96a34"
+    },
+    {
+      "path": "rules/combat/sr3-core-shotgun-spread-choke-numeric-p117.yml",
+      "blob": "319b6b8e9c2ed74c785605e3abbbacd3ff2b60c4",
+      "disposition": "UNINDEXED duplicate. Reuse source-reviewed accepted shotgun choke/spread procedure; do not duplicate index.",
+      "authoritative_indexed_path": "rules/combat/sr3-core-shotgun-choke-spread-exact-p117.yml",
+      "authoritative_blob": "7250d36655aafac22d131f9f66f3f421a05502ba"
+    },
+    {
+      "path": "equipment/sr3-core-bodyware-market-augmentations-p302.yml",
+      "blob": "ddadc8f711a4a9cab614f29a4ebc694a3b333d83",
+      "disposition": "UNINDEXED partial subset. Reuse full already indexed original 39-row Bodyware market table.",
+      "authoritative_indexed_path": "equipment/sr3-core-bodyware-numeric-market-p302.yml",
+      "authoritative_blob": "6997115ab492fab51c4506717af490e798af7cb4"
+    }
+  ],
+  "engine_consumer_caveat": "A future recursive YAML loader could ingest the unindexed stale record; this audit does not assert whether an engine currently does so. Derive active canonical rules from the authoritative manifest, not all repository files. Do not alter or index duplicate semantic files without their normal transaction gates.",
+  "result": {
+    "new_semantic_records": 0,
+    "new_contiguous_authorized_pages": 0,
+    "manifest_mutated": false,
+    "checkpoint_mutated": false,
+    "whole_core_complete": false
+  },
+  "remaining": [
+    "Whole-core exhaustive numeric-table/exception and content-class review still required.",
+    "Original printed p308 is a separately documented unresolved scan anomaly; do not reconstruct missing content.",
+    "Native executable engine tests remain a distinct acceptance milestone.",
+    "This is bounded source and current Git-tree census, not proof of entire source completeness."
+  ]
+}
