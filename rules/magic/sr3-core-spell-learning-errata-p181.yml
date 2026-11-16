@@ -1,0 +1,113 @@
+id: rule.magic.sr3-core-spell-learning-errata-p181
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 180-181
+pdf_pages: 189-190
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional
+  tabletop game, original printed pp180-181/PDF189-190; specifically distinguished
+  from FASA-issued original-Third-Edition errata version 1.5 dated 1998-11-02, not
+  a later-edition conversion.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_pages:
+    - 180
+    - 181
+    physical_pdf_pages:
+    - 189
+    - 190
+    type: historical fictional tabletop role-playing game
+  original_scan_unchanged:
+    p180_general_target_number: Twice the desired Force of the spell
+    p181_worked_example: Force 8 Fireball with Exclusive -2 applied for learning says
+      target number 6; the example disagrees with the printed p180 general 2 × Force
+      rule.
+    accepted_original_record: rule.magic.sr3-core-learning-limited-spells-p180-181
+    original_record_sha: a4b4b2c8a89f75f7d1c4dd56c5f9087d19d499a3
+    original_record_disposition: Retain its faithful original-scan transcription,
+      including the inconsistent worked example. Do not silently replace source text
+      with erratum.
+  historical_same_edition_erratum:
+    issuer: FASA Corporation
+    credited_author: Sharon Turner Mulvihill
+    title: Shadowrun 3rd Edition Errata
+    original_version: '1.5'
+    published_date: '1998-11-02'
+    printed_page_addressed: 181
+    later_collected_version: 4.1 dated 2004-02-28, reflecting correction in corrected
+      printings
+    archived_1998_url: https://www.oocities.org/timessquare/castle/2966/sr3_errata.html
+    archived_2004_url: https://www.nullsheen.com/posts/erratasr3/
+    scope: Replace only the second paragraph of the printed p181 Spell Learning Example.
+      This erratum resolves the example inconsistency; it does not redefine the generic
+      source p180 learning procedure.
+    corrected_formula: 2 × original spell Force minus applicable Exclusive spell-learning
+      modifier
+    corrected_example_force: 8
+    corrected_example_general_target_number: 16
+    corrected_example_exclusive_learning_modifier: -2
+    corrected_example_target_number: 14
+    corrected_example_good_karma_cost: 6
+    applicability: The specific -2 Exclusive limit must be selected for learning-test
+      target-number and Karma reduction; a limit instead allocated to Drain does not
+      grant that learning discount. The original limit-assignment conditions remain
+      in the accepted p180-181 rule.
+  precedence_and_engine_use:
+    original_baseline: Use published original core mechanics as the baseline; keep
+      original example as a documented historical typo.
+    same_edition_erratum_overlay: For a rules-as-corrected SR3 consumer, use target
+      number 14 and 6 Karma in the stated Force 8 Exclusive-learning worked example,
+      and retain the original general learning target-number formula.
+    not_an_original_page_statement: true
+    no_cross_edition_import: true
+    result_status: source_verified_external_same_edition_erratum_not_executable_tested
+  specification_vectors_not_executed:
+  - force: 8
+    spell_learning_limit_modifier: -2
+    expected_learning_target_number: 14
+    expected_good_karma_cost: 6
+  - force: 8
+    spell_learning_limit_modifier: 0
+    expected_learning_target_number: 16
+    expected_good_karma_cost: 8
+  source_review:
+    original_page_evidence: Fresh independently SHA256-verified 345-page FASA7001
+      scan; original printed p180/PDF189 general formula and printed p181/PDF190 incorrect
+      original worked example individually inspected as page images.
+    independent_errata_evidence: Published FASA Corporation 1998 version 1.5 errata
+      credited to Sharon Turner Mulvihill, independently cross-checked against archived
+      2004 version 4.1 original-Third-Edition errata wording; both agree on 16-2=14
+      and six Karma.
+    reviewed_human_text_paths:
+    - edition_scope
+    - data.publication.*
+    - data.original_scan_unchanged.*
+    - data.historical_same_edition_erratum.*
+    - data.precedence_and_engine_use.*
+    - data.specification_vectors_not_executed[*]
+    - data.source_review.*
+    - headline
+    - summary
+    - framing
+    assertion_protection: Preserves original contradictory printed value for source
+      fidelity, cites publisher correction separately and does not silently replace
+      it, invent generalized limits or treat later editions as authority.
+    limitation: Errata overlay is not independently transcribed from the original
+      physical FASA7001 PDF; this record requires both the original page scan and
+      the historical same-edition erratum sources. Local transaction checks cannot
+      certify full-source closure or runnable engine behavior.
+headline: 'FASA Corporation Shadowrun, Third Edition FASA7001 fictional spell-learning
+  example correction: original pp180-181/PDF189-190 versus publisher SR3 errata v1.5
+  (1998)'
+summary: Retains original contradictory Force 8 worked example for source fidelity,
+  while a separate publisher-issued original Third Edition erratum establishes corrected
+  learning TN14 (16−2) and 6 Karma; original p180 2×Force rule remains authoritative.
+framing: reference_exact
