@@ -10,7 +10,7 @@
     "rule_procedure"
   ],
   "headline": "FASA7001 fictional SR3 exact shamanic and hermetic summoning, Force tests, time, cost and service conditions, printed p186/PDF195",
-  "summary": "Source-reviewed original FASA Corporation Shadowrun Third Edition FASA7001 game Conjuring mechanics: Exclusive actions, Force-based tests, success-to-service mapping, ritual time, material costs, interrupted rituals and binding caps.",
+  "summary": "Source-reviewed original FASA Corporation Shadowrun, Third Edition FASA7001 fictional Conjuring rules at printed p186/PDF195: nature-spirit and elemental summoning tests, ritual time, cost, binding and conditional Force (6) recognition, escape or attack behavior after summoner incapacitation by Drain.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -66,7 +66,19 @@
       "successes": "Each success yields one bound service owed by elemental",
       "zero_successes": "Elemental fails to appear",
       "successful_summon": "Elemental materializes outside hermetic circle",
-      "drain": "Summoner rolls Charisma against Force, with applicable reserved dice/focus, after ritual, including unsuccessful attempts"
+      "drain": "Summoner rolls Charisma against Force, with applicable reserved dice/focus, after ritual, including unsuccessful attempts",
+      "uncontrolled_elemental_on_drain": {
+        "trigger": "When Conjuring Drain kills or knocks the summoner unconscious, the summoned elemental becomes uncontrolled.",
+        "recognition_test": {
+          "dice": "elemental Force Rating",
+          "target_number": 6,
+          "minimum_successes_to_flee": 1
+        },
+        "at_least_one_success": "The elemental recognizes its opportunity and flees immediately, vanishing from both the physical and astral planes.",
+        "zero_successes_master_alive": "The uncontrolled elemental attacks its former master, disregarding whatever defenses may be present.",
+        "zero_successes_master_dead": "The elemental attacks the nearest living beings in a rampage until killed, banished, or controlled by another magician.",
+        "scope": "This conditional applies to the original p186 summoning-Drain incapacitation or death outcome; it is not asserted as a general rule for unrelated uncontrolled spirits."
+      }
     },
     "binding_capacity": {
       "elementals_owed_to_one_mage_maximum": "Summoner Charisma Attribute",
@@ -78,7 +90,31 @@
       "rule.magic.sr3-core-conjuring-drain-ratings-p187-188",
       "rule.magic.spirit-services"
     ],
-    "provenance_limit": "The page is printed 186 and physical PDF195; PDF194 is a full-page unnumbered illustration. No numeric material is reconstructed from the artwork."
+    "provenance_limit": "The page is printed 186 and physical PDF195; PDF194 is a full-page unnumbered illustration. No numeric material is reconstructed from the artwork.",
+    "source_review_correction": {
+      "original_publication": "FASA Corporation, Shadowrun, Third Edition, FASA7001, published fictional tabletop roleplaying rules",
+      "original_image": "Independently inspected printed p186, physical PDF195, right-column Summoning Elementals passage in the SHA-256 verified original 345-page scan.",
+      "old_accepted_blob_preserved": "aaac92a4f60f2b0eb6eb9d12af2393fd9eb0c0c4",
+      "distinct_gap": "Previously indexed p186 summoning record covered how Drain is resisted but omitted its explicit Force-versus-target-6 recognition check and distinct flee, attack-former-master, and rampage-until-controlled results.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.topic",
+        "data.nature_spirit_summoning.*",
+        "data.hermetic_elemental_preparation.*",
+        "data.hermetic_elemental_summoning.*",
+        "data.hermetic_elemental_summoning.uncontrolled_elemental_on_drain.*",
+        "data.binding_capacity.*",
+        "data.canonical_relationships[*]",
+        "data.provenance_limit",
+        "data.source_review_correction.*",
+        "framing"
+      ],
+      "assertion_equivalence": "All previously indexed substantive statements, timing, numerical spell and spirit ratings, edition and provenance were kept unchanged; this adds only the independently observed original p186 conditional that had been omitted.",
+      "not_a_full_magic_chapter_certification": true
+    }
   },
   "framing": "reference_exact"
 }
