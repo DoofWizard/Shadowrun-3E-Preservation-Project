@@ -101,7 +101,7 @@ data:
     cost_nuyen: 50000
     availability_original: 3/3 days
     street_index: 1
-    source_description: Cargo configuration of same fictional G12A model; not a separate purchasable
+    source_description: Cargo configuration of same fictional Chrysler-Nissan Giza model; not a separate purchasable
       model.
   - name: Samuvani CrisCraft Otter
     source_group: boats
@@ -177,10 +177,33 @@ data:
     - summary
     - edition_scope
     - data.publication.*
+    residual_description_correction_2026_11_16:
+      original_publication: FASA Corporation, Shadowrun, Third Edition FASA7001, fictional tabletop game, printed p309/physical PDF317.
+      cataloged_source_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+      previous_accepted_blob: 69b68875c7a5b0ba5d8bfb6467fe3bf991f725d5
+      original_page_review: 'Directly examined original printed p309/PDF317 image, including heading CHRYSLER-NISSAN GIZA and both passenger/cargo rows; independently cross-checked five vehicle models and all six numeric table configurations. Original scan contains no G12A model title.'
+      corrected_text_field: data.vehicle_rows[3].source_description
+      specific_correction: 'The prior accepted record corrected both Giza model names but retained a fictitious G12A designation in the cargo description. The correction restores the source-identical Chrysler-Nissan Giza model in this remaining nested descriptive field.'
+      old_baseline_retained: 'An exact-byte copy of previous GitHub accepted blob is retained in the local transaction source-review archive; historical original error identification remains unchanged in previous_erroneous_archive_label.'
+      preserve: 'All six vehicle configurations, six sets of published numeric ratings, nuyen costs, availability, street indices, passenger/cargo distinction, unnumbered missing p308 uncertainty, and prior editorial provenance remain substantively unchanged.'
+      reviewed_human_text_field_paths:
+      - edition_scope
+      - data.publication.*
+      - data.field_interpretation
+      - data.vehicle_rows[*].*
+      - data.distinct_purchase_models
+      - data.table_rows
+      - data.links[*]
+      - data.test_vectors_specifications_not_executed[*].*
+      - data.source_fidelity_correction.*
+      - data.page_mapping_note
+      - headline
+      - summary
+      - framing
+      closure_limitation: This original-page re-review corrects a distinct source fidelity error; numeric coverage in the other core chapters and printed p308 are not certified complete.
   page_mapping_note: Original printed p309 has physical PDF p317; printed p308 is absent/unverified
     in this cataloged scan and was not inferred.
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional vehicle models, including
   restored Chrysler-Nissan Giza label, printed p309/PDF317
-summary: Exact source-checked six vehicle table configurations for five original FASA7001 fictional
-  models; p309/PDF317 Chrysler-Nissan Giza identity corrected without changing any game statistics.
+summary: Original FASA7001 p309/PDF317 fictional trucks, hovercraft and boat tables; all six vehicle configurations retained, with the residual G12A misnaming corrected in the Giza cargo description and numerical statistics unchanged.
