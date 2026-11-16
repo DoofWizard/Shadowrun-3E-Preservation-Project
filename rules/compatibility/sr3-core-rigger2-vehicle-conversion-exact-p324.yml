@@ -1,0 +1,120 @@
+{
+  "id": "rule.compatibility.sr3-core-rigger2-vehicle-conversion-exact-p324",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "324",
+  "pdf_pages": "332",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop-RPG Sourcebook Updates for the historical Rigger 2 sourcebook, printed p324/physical PDF332; no later-edition or Rigger 3 substitution.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop Rigger 2 compatibility: complete vehicle, rigger and passenger exceptions, printed p324/PDF332",
+  "summary": "Original FASA7001 p324/PDF332 coherent Rigger 2 sourcebook update: conditional precedence, passenger first-pass initiative, retained Rigger 2 deceleration test, VCR Driving Test reductions, Control Pool dodge TN, SR3 weapon/spell vehicle damage, and rounded-down passenger half-Combat-Pool defense; related core records reused.",
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7001",
+      "edition": "Third Edition",
+      "source_id": "source.sr3-core",
+      "medium": "original published fictional cyberpunk tabletop role-playing game",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "original_printed_page": 324,
+      "physical_pdf_page": 332
+    },
+    "source_heading": "Sourcebook Updates / RIGGER 2",
+    "historical_lineage": {
+      "general_precedence": "The book states Rigger 2 supersedes earlier Shadowrun vehicle rules, except where they conflict with Shadowrun, Third Edition.",
+      "conflict_precedence": "Use SR3 rules in a dispute, except where the particular sourcebook update specifically directs otherwise; this is not an automatic Rigger 2 override of SR3.",
+      "edition_limit": "This paragraph concerns historical Rigger 2 compatibility under original SR3, not later Rigger sourcebooks."
+    },
+    "passenger_first_initiative_pass": {
+      "restriction": "A passenger may not act before the rigger during the first Initiative Pass.",
+      "higher_scoring_passenger": "A passenger with a higher Initiative Score must hold the action until the rigger acts.",
+      "subsequent_passes": "Combat Turn proceeds in normal initiative sequence in subsequent passes."
+    },
+    "deceleration_stress_test": {
+      "original_rigger_2_reference": "Rigger 2 printed p22 Deceleration Stress Test",
+      "sr3_core_default": "The SR3 basic rigging rules simplify the situation to a Crash Test.",
+      "if_using_rigger_2": "Use the original Rigger 2 Deceleration Stress Test when choosing to use the Rigger 2 rules, rather than imposing the simplified SR3 Crash Test for that option."
+    },
+    "rigger_driving_test_modifiers": {
+      "noncombat_magnitude": "Vehicle Control Rig Rating",
+      "combat_magnitude": "Twice Vehicle Control Rig Rating",
+      "direction_evidence": "The p324 update specifies modifier magnitudes; the independently accepted SR3 printed p134 Driving Test modifier table specifies subtracting the VCR rating from the target number (doubled in combat).",
+      "reverses_rigger_2": "The publication explicitly says the noncombat/combat modifiers reverse those presented in Rigger 2.",
+      "conditions": "Apply under the relevant vehicle control rig, adapted-vehicle and original SR3 Driving Test prerequisites; no universal modifier without a functioning rigger connection is asserted."
+    },
+    "rigger_ranged_dodge": {
+      "scope": "The rigger can attempt to dodge ranged combat attacks using vehicle combat rules.",
+      "replacement_pool": "Control Pool dice instead of Combat Pool dice",
+      "target_number_formula": "Vehicle Handling Rating + standard Driving Test modifiers",
+      "examples_of_conditions": "Vehicle damage and restricted terrain are source-named examples of applicable modifiers.",
+      "related_core_rule": "Original printed p113 Dodging Test; other conditions and ordinary allocation restrictions are not repealed."
+    },
+    "weapon_attacks_against_vehicles": {
+      "source_precedence": "Use SR3 vehicle-damage rules rather than Rigger 2 in this conflict.",
+      "step_order": [
+        "Halve the attack Power, rounding down.",
+        "Reduce the Damage Level by one level.",
+        "Apply the resulting damage against hardened vehicle armor; modified Power must exceed the Armor Rating to have any effect.",
+        "For a penetrating attack, the Armor Rating also reduces the modified Power."
+      ],
+      "source_relationship": "The same exact normal-weapon damage procedure is already normalized for SR3 printed p132 in rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132; this record preserves p324 conversion precedence, not an independent new damage calculation."
+    },
+    "magic_damage_to_vehicles": {
+      "source_precedence": "SR3 spell-versus-vehicle rules replace Rigger 2 rules in any conflict.",
+      "combat_spell_target_number": "8 + vehicle Body + one-half vehicle Armor Rating",
+      "half_armor_rounding": "The printed p324 update does not separately specify rounding; use the governing original SR3 p150 numeric rule rather than invent a new p324 convention.",
+      "vehicle_resistance_test_allowed": false,
+      "spell_defense_allowed": true,
+      "elemental_manipulation": "Resolve elemental manipulation spells as normal weapons against vehicles rather than using the ordinary combat-spell resolution.",
+      "source_relationship": "Original printed p150 rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150 already normalizes the operative spell target, armor/Force restrictions and elemental manipulation treatment; this p324 record supplies the Rigger 2 conversion precedence."
+    },
+    "passenger_defense": {
+      "trigger": "A vehicle containing passengers is under attack.",
+      "dice_pool": "Passengers may use their Combat Pool to dodge or resist damage.",
+      "maximum_available_combat_pool_dice": "floor(passenger Combat Pool / 2)",
+      "rounding": "Round down as explicitly printed.",
+      "scope_limit": "This is a game-only permission for passengers, not an automatic reduction to the vehicle driver’s separate Control Pool."
+    },
+    "accepted_distinct_original_canon_reused": [
+      "rules/vehicles/sr3-core-driving-test-modifiers-p134.yml",
+      "rules/vehicles/sr3-core-vehicle-condition-rigger-numeric-p145.yml",
+      "rules/vehicles/sr3-core-vehicle-body-armor-weapon-damage-p132.yml",
+      "rules/vehicles/sr3-core-magic-vs-vehicles-numeric-p150.yml",
+      "references/conversion/sr3-323-325.yml"
+    ],
+    "distinct_source_gap_review": {
+      "what_is_distinct": "The general p323-325 reference has no numeric Rigger 2 compatibility rules. Existing p132, p134, p145, p150 records normalize operative SR3 procedures; none of those source-specific records archives the entire original p324 Rigger 2 exception, optional deceleration-source selection, and passenger-half-pool statement together with original subsection provenance.",
+      "not_duplicating": "This record encodes the complete coherent Rigger 2-to-SR3 historical subsection and explicitly reuses already accepted SR3 core vehicle rules, with no replay of those accepted records.",
+      "not_certifying": "A source image and field review cannot certify all FASA7001 normalization or runnable-engine test coverage."
+    },
+    "source_editorial_review": {
+      "original_image": "Independently inspected FASA7001 345-physical-page original source printed p324/physical PDF332, entire RIGGER 2 subsection including both columns beneath heading, with PDF SHA verified against the current SR3 main manifest on 2026-11-16.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_heading",
+        "data.historical_lineage.*",
+        "data.passenger_first_initiative_pass.*",
+        "data.deceleration_stress_test.*",
+        "data.rigger_driving_test_modifiers.*",
+        "data.rigger_ranged_dodge.*",
+        "data.weapon_attacks_against_vehicles.*",
+        "data.magic_damage_to_vehicles.*",
+        "data.passenger_defense.*",
+        "data.accepted_distinct_original_canon_reused[*]",
+        "data.distinct_source_gap_review.*",
+        "data.source_editorial_review.*",
+        "framing"
+      ],
+      "assertion_distinctions": "Existing source assertions, conditional Rigger 2 supersession, optional retention of Deceleration Stress Test, initiative chronology, exact +/subtraction directions where corroborated, action/Pool choices, rounding and driver-versus-passenger distinctions are preserved. Fictional historical publisher/book narrator only.",
+      "gate_limit": "This is editorial/source review, not itself an ingestion gate, blob readback, full-section authorization or source-completion result."
+    }
+  }
+}
