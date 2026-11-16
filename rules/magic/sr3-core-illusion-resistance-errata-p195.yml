@@ -1,0 +1,86 @@
+id: rule.magic.sr3-core-illusion-resistance-errata-p195
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '195'
+pdf_pages: '204'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional
+  tabletop game printed p195/PDF204, preserved separately from same-Third-Edition
+  publisher errata version 4.1, dated 2004-02-28 (thirteenth corrected printing).
+  No later-edition conversion.
+content_class:
+- rule_exact
+data:
+  original_publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_page: 195
+    physical_pdf_page: 204
+  original_scan_text:
+    printed_rule: The observer must obtain MORE successes than the illusion spellcaster
+      on a Resistance Test to recognize an illusion as unreal.
+    canonical_source_record: rule.magic.sr3-core-illusion-target-and-resistance-p195
+    canonical_source_record_blob: dd3c77ab17ceef7d7f4b54075ddbe03efa1d1457
+    preservation: Keep original scanned wording and original canonical record unchanged,
+      including its strict greater-than comparison.
+  official_same_edition_erratum:
+    publisher_line: Shadowrun Third Edition original same-edition publisher errata,
+      v4.1 dated 2004-02-28; correction marked [13] for thirteenth corrected printing.
+    publisher_original_web_source: shadowrunrpg.com, historical original; archived
+      copy at https://www.nullsheen.com/posts/erratasr3/
+    affected_page_and_section: Printed p195, Illusion Spells, third paragraph, third
+      sentence.
+    replacement_rule: Observer recognizes the illusion is not real when Resistance
+      Test successes are EQUAL TO OR GREATER THAN the spellcaster successes.
+    comparator: '>='
+    opposed_successes_equal: Observer sees through the illusion in corrected SR3,
+      unlike the original scanned first-print wording.
+    opposed_successes_less: Observer remains affected by the illusion unless a separate
+      source condition applies.
+    applies_to: Recognizing illusory unreality under the general Illusion Spells rule
+      only, not a universal change to opposed combat, spell damage, or other success-contest
+      rules.
+    no_cross_edition_import: true
+  test_vectors_specifications_only:
+  - caster_successes: 3
+    observer_resistance_successes: 2
+    recognizes_illusion: false
+  - caster_successes: 3
+    observer_resistance_successes: 3
+    recognizes_illusion: true
+  - caster_successes: 3
+    observer_resistance_successes: 4
+    recognizes_illusion: true
+  source_review:
+    original_image: Original physical PDF204 displays printed p195; independently
+      visually inspected sentence saying observer must generate more successes than
+      spellcaster.
+    errata_evidence: Historically archived publisher SR3 errata Version 4.1 dated
+      2004-02-28 specifies equal-or-more Resistance successes, correction [13]; copy
+      is explicitly attributed to former shadowrunrpg.com source. The corrected later
+      printing is corroborated by a separate public digital reproduction of SR3 p195,
+      not treated as the baseline FASA7001 scan.
+    human_paths_reviewed:
+    - edition_scope
+    - data.original_publication.*
+    - data.original_scan_text.*
+    - data.official_same_edition_erratum.*
+    - data.test_vectors_specifications_only[*]
+    - data.source_review.*
+    - headline
+    - summary
+    - framing
+    fidelity_limit: This adds a historical same-edition correction overlay; the source
+      scan and existing original rule are not silently rewritten. Transaction gate
+      and review are not full-chapter closure or executable engine test evidence.
+headline: 'FASA Corporation Shadowrun, Third Edition FASA7001 fictional Illusion Spells:
+  printed p195/PDF204 original resistance comparison versus publisher corrected same-edition
+  errata v4.1'
+summary: The original p195 scan requires MORE observer successes; SR3 publisher errata
+  v4.1 [13] changes that Illusion Resistance comparison to EQUAL OR MORE, so a tie
+  now permits observer recognition without altering the preserved original source.
+framing: reference_exact
