@@ -26,7 +26,7 @@
       "twice_comfortable_load_kg": "Strength × 10",
       "twice_effect": "Equivalent to a Light Stun wound after carrying this load for Body Rating Combat Turns; then gain one box of Stun per Combat Turn until load is dropped or character becomes unconscious.",
       "three_times_comfortable_load_kg": "Strength × 15",
-      "three_times_effect": "Equivalent to Moderate Stun wound; cannot run, movement rate is halved.",
+      "three_times_effect": "After carrying Strength × 15 kg for Body Rating Combat Turns, the character becomes fatigued to a state equivalent to a Moderate Stun wound; the character cannot run and the movement rate is halved.",
       "four_times_comfortable_load_kg": "Strength × 20",
       "four_times_effect": "Equivalent to Serious Stun wound for Body Rating Combat Turns; cannot run, movement rate is one-quarter normal; heavier loads cause exertion failure.",
       "stun_delay_turns": "Body Rating Combat Turns where the source gives a duration before the Stun condition takes effect; follow printed source's distinction between imposed condition and accumulating Stun boxes.",
@@ -63,10 +63,35 @@
         "data.editorial_review.*"
       ],
       "provenance": "Original printed p274/PDF283 right column independently visually reviewed.",
-      "source_fidelity_warning": "Retains Stun Condition Level vs Stun damage boxes distinction; no subsequent-edition mechanical conversion."
+      "source_fidelity_warning": "Retains Stun Condition Level vs Stun damage boxes distinction; no subsequent-edition mechanical conversion.",
+      "source_fidelity_revision_2026_11_17": {
+        "published_source": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop RPG",
+        "physical_pdf_page": 283,
+        "printed_page": 274,
+        "verified_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+        "source_visual_read": "Direct examination of original printed p274/PDF283 right column under HAULING THE LOAD; the paragraph explicitly states threefold burden produces Moderate Stun-equivalent fatigue after Body Rating Combat Turns.",
+        "prior_accepted_blob": "422058819746adaecf9aed6173da42c8e19b2a9b",
+        "prior_defect": "The three_times_effect semantic field omitted the Body Rating Combat Turn delay despite the printed source; a separate generic prose duration field did not bind that delay to the triple-load effect.",
+        "corrected_field": "data.carry.three_times_effect",
+        "reused_existing": "rules/gear/encumbrance.yml already independently expresses the triple-load delay, so no duplicate generic record is created.",
+        "reviewed_text_paths": [
+          "edition_scope",
+          "headline",
+          "summary",
+          "data.publication.*",
+          "data.original_source_section",
+          "data.carry.*",
+          "data.lifting.*",
+          "data.source_examples[*].origin",
+          "data.source_scope",
+          "data.editorial_review.*"
+        ],
+        "same_substance_candidate_requirement": "Only schema-permitted root summary differs between this corrected baseline and submitted candidate; no source numbers or conditions are changed in candidate.",
+        "engine_validation": "No engine implementation or executable game test is claimed by the source-only correction."
+      }
     }
   },
   "framing": "reference_exact",
   "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional Hauling the Load Strength and Body mechanics, printed p274/PDF283",
-  "summary": "Original game encumbrance thresholds, stun timing, Body-duration exceptions, movement limits and lifting-versus-carrying rules, preserved as exact numeric inputs."
+  "summary": "Original FASA7001 tabletop encumbrance: Body-Rating-Combat-Turn onset at double, triple and quadruple load, explicit Stun escalation, movement limits and lifting rules, printed p274/PDF283."
 }
