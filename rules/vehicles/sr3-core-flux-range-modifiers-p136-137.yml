@@ -66,9 +66,8 @@ data:
     situational_flux_rating_modifiers:
     - condition: High elevation
       modifier: 4
-    - condition: ECM in use
-      modifier: '- ECM Level / 2; the book directs subtracting half the ECM Level from transmitter modified Flux
-        Rating'
+    - condition: ECCM in use
+      modifier: 'The original table specifies minus transmitter Rating / 2; the accompanying text instead says subtract half of ECCM Level. Both source expressions are retained as an unresolved operand ambiguity; this is not an ECM-in-use modifier.'
     - condition: Electrical storm
       modifier: -2
     - condition: Encryption in use for radio or remote-control deck
@@ -88,5 +87,5 @@ data:
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Flux Ratings, Signal Range
   and Modifiers; printed pp136-137/PDF137-138
-summary: Original-edition numerical and procedural flux ratings, signal range and modifiers rules, preserved with
-  published conditions and exceptions, not real-world instructions or later supplement conversions.
+summary: Original-edition flux ratings and ranges, including the ECCM modifier and its printed table-versus-explanatory-key
+  operand conflict; no invented resolution or later supplement conversion.
