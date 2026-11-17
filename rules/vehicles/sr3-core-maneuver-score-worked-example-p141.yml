@@ -1,0 +1,125 @@
+id: rule.vehicles.sr3-core-maneuver-score-worked-example-p141
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '141'
+pdf_pages: '142'
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), published fictional tabletop game
+  worked Vehicle Maneuver Score procedure, printed p141/physical PDF142; historical core only.
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional vehicle maneuver worked example,
+  p141/PDF142
+summary: 'Source-verified original fictional vehicle-combat worked calculation: Rigger X Maneuver Score 37, two
+  pursuing cruisers 33 and 40, with source dice rerolls, terrain, speed and Control Pool conditions.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_page: 141
+    physical_pdf_page: 142
+    medium: fictional cyberpunk tabletop role-playing game
+  section: Vehicles and Drones / Vehicle Combat Turn / published Rigger X maneuver example
+  rigger_x:
+    vehicle: Westwind 2000 sports car
+    speed_meters_per_combat_turn: 250
+    vehicle_points: 3
+    terrain: Normal
+    terrain_points: -2
+    speed_points: 25
+    partial_maneuver_score: 26
+    vehicle_skill: Car
+    skill_rating: 5
+    control_pool_total: 7
+    control_pool_dice_allocated_to_open_test: 4
+    open_test_initial_dice:
+    - 1
+    - 2
+    - 2
+    - 3
+    - 3
+    - 3
+    - 3
+    - 5
+    - 6
+    open_test_six_reroll:
+    - 5
+    driver_points: 11
+    final_maneuver_score: 37
+    remaining_control_pool_dice: 3
+  pursuing_cruisers:
+    count: 2
+    vehicle_class: Car/Pickup Truck
+    speed_meters_per_combat_turn: 275
+    vehicle_points_each: 0
+    terrain: Normal
+    terrain_points_each: -2
+    speed_points_each: 27
+    partial_maneuver_score_each: 25
+    driver_car_skill_each: 5
+    control_pool_allocated: 0
+    cruiser_1:
+      open_test_initial_dice:
+      - 2
+      - 3
+      - 5
+      - 6
+      - 6
+      six_rerolls:
+      - 1
+      - 2
+      driver_points: 8
+      final_maneuver_score: 33
+    cruiser_2:
+      open_test_initial_dice:
+      - 3
+      - 4
+      - 5
+      - 6
+      - 6
+      six_rerolls_in_order:
+      - 4
+      - 6
+      - 3
+      driver_points: 15
+      final_maneuver_score: 40
+  source_interpretation:
+    all_dice_notation: Lists the printed example die outcomes for the Vehicle Skill Open Test, including rerolling
+      a 6, not a general-purpose random roll guarantee.
+    control_pool: Rigger X commits four of seven dice to this test, leaving three for other purposes in the Combat
+      Turn; non-rigged cruisers receive none.
+    scoring_formula: Vehicle Points + Terrain Points + floor(Speed meters/Combat Turn / 10) + highest accumulated
+      Open Test die result.
+    result_scope: Original table example calculates Maneuver Scores before the characters roll for Initiative; it
+      does not predetermine winners of the encounter.
+  related_accepted_rules:
+  - rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140
+  - rule.vehicles.sr3-core-acceleration-braking-tests-p141-142
+  editorial_source_review:
+    visual_source: Fresh SHA-256-verified original p141 image at physical PDF142, both columns including Rigger
+      X and two Lone Star Cruiser dice lists, partial scores and totals reviewed directly; intervening full-page
+      physical PDF140 illustration does not supply missing printed p139 rule text.
+    reviewed_text_paths:
+    - id
+    - record_type
+    - status
+    - source
+    - printed_pages
+    - pdf_pages
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.section
+    - data.rigger_x.*
+    - data.pursuing_cruisers.*
+    - data.source_interpretation.*
+    - data.related_accepted_rules[*]
+    - data.editorial_source_review.*
+    limitation: A specification and original printed example, not an executed game-engine test or authorization
+      to advance Denver checkpoint.
