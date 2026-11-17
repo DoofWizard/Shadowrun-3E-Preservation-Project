@@ -39,7 +39,19 @@
         ],
         "attack": "Proactive IC makes Attack Test as a Success Contest; decker rolls the named affected icon Attribute against IC Rating.",
         "effect": "For every 2 IC net successes decrease that icon Attribute 1 Rating Point, minimum Attribute 1.",
-        "protections": "Neither Armor nor Hardening protects against this rule."
+        "protections": "Neither Armor nor Hardening protects against this rule.",
+        "source_example_p228": {
+          "host_security_code": "Orange",
+          "host_security_value": 6,
+          "ic_type": "Acid Crippler",
+          "ic_rating": 4,
+          "ic_attack_successes": 4,
+          "decker_icon_bod_before": 6,
+          "decker_bod_test_target_number": 4,
+          "decker_resistance_successes": 2,
+          "net_ic_successes": 2,
+          "decker_icon_bod_after": 5
+        }
       },
       "killer": {
         "trigger": "Proactive damage attack on persona icon.",
@@ -70,7 +82,15 @@
           "defensive",
           "special"
         ],
-        "passive_utility_exclusion": "Tar baby IC does not attack completely passive utility programs, with Armor and Sleaze named as examples in the original printed p228."
+        "passive_utility_exclusion": "Tar baby IC does not attack completely passive utility programs, with Armor and Sleaze named as examples in the original printed p228.",
+        "source_example_p228": {
+          "utility": "Analyze",
+          "utility_rating": 6,
+          "tar_baby_rating": 8,
+          "tar_baby_test_target_number": 6,
+          "analyze_program_test_target_number": 8,
+          "outcome": "Tar Baby wins the opposed test, crashing both itself and the triggering Analyze utility."
+        }
       }
     },
     "gray_ic": {
@@ -78,7 +98,17 @@
       "blaster": {
         "same_damage_as": "Killer IC cybercombat damage; Armor reduces icon damage.",
         "after_crash": "Blaster Test using IC Rating against deck MPCP Rating (Hardening increases target number); each 2 successes reduces MPCP permanently by 1.",
-        "rating_consequence": "Persona rating total may not exceed three times adjusted MPCP Rating."
+        "rating_consequence": "Persona rating total may not exceed three times adjusted MPCP Rating.",
+        "source_example_p229": {
+          "ic_type": "Blaster",
+          "ic_rating": 6,
+          "decker_mpcp_before": 6,
+          "decker_hardening": 2,
+          "blaster_test_target_number": 8,
+          "blaster_test_successes": 2,
+          "decker_mpcp_after": 5,
+          "maximum_persona_rating_total_after_damage": 15
+        }
       },
       "ripper": {
         "same_as": "White Crippler until icon Attribute reaches zero.",
@@ -93,7 +123,7 @@
       "sparky": {
         "after_crash": "Sparky Test IC Rating against MPCP Rating plus 2 (Hardening increases target number); each 2 successes permanently lowers MPCP Rating 1.",
         "body_damage": "On crashing persona, attack is (IC Rating)M Stun damage to fictional decker, stage 1 damage level per 2 Sparky successes; decker Body Resistance Test against Power minus Hardening.",
-        "example": "Sparky-8 with 2 successes lowers MPCP by 1 and stages 8M to 8S; Body 4 and Hardening 1 resists against target 7."
+        "example": "Original printed p229 HeadCrash example: Sparky IC Rating 8 scores 2 successes, reducing MPCP by 1 and staging 8M to 8S Stun. The fictional decker's Body 4 and Hardening 1 give four Body resistance dice against target number 7; one success does not stage damage down."
       },
       "tar_pit": {
         "trigger": "Tar Baby-like reactive attack, but if Tar Pit wins opposed utility contest it corrupts all copies including offline on-deck storage.",
@@ -153,5 +183,5 @@
   },
   "framing": "reference_exact",
   "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional IC rules, permanent effects and Black IC worked example, original printed pp227–230/PDF236–239",
-  "summary": "FASA Corporation Shadowrun Third Edition FASA7001 fictional Matrix IC rules (printed pp227–230/PDF236–239): source-correct Scramble IC destruct-code failure outcome and distinct lethal Black IC icon-crash/decker-death trigger for final MPCP attack, with original white, gray and black IC tests."
+  "summary": "FASA Corporation Shadowrun Third Edition FASA7001 fictional Matrix IC (printed pp227–230/PDF236–239): source-reviewed Crippler, Tar Baby, Blaster and Sparky worked test vectors, Scramble destruct-code failure exception and lethal Black IC final MPCP death-trigger condition."
 }
