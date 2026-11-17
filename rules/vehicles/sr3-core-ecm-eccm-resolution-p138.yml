@@ -46,11 +46,20 @@ data:
         treat electronic shielding as automatic immunity.
     worked_example_reference: The book gives an ECM Rating 3 / Flux 10 vs Sensor Rating 8 / Flux 8 example with
       Signature increment of +2, followed by ECCM Rating 4 and net mitigation of 1.
+    same_page_flux_worked_example:
+      base_deck_flux_rating: 6
+      high_elevation_modifier: 4
+      encryption_modifier: -0.5
+      eccm_rating: 3
+      eccm_flux_modifier: -1.5
+      effective_flux_rating: 8
+      effective_range_km: 20
+      source_consistency: The p138 worked example subtracts ECCM Rating divided by 2. This agrees with the p137 explanatory key but conflicts with the p137 table wording of transmitter Rating divided by 2; preserve both original statements.
   scope_and_lineage:
     reuses: rule.vehicles.sensor-tests defines resulting target Signature use
     exclude: Original SR3 tabletop numerical opposed roll, not a real-world jamming procedure
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop rules — Electronic Countermeasures
   and Counter-Countermeasures; printed pp138-138/PDF139-139
-summary: Original-edition numerical and procedural electronic countermeasures and counter-countermeasures rules,
-  preserved with published conditions and exceptions, not real-world instructions or later supplement conversions.
+summary: Original-edition ECM and ECCM opposed contests plus the source p138 Flux calculation (ECCM 3 yields minus 1.5),
+  preserving the p137 table/key discrepancy rather than silently replacing it.
