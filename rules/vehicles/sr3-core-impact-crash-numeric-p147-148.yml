@@ -147,11 +147,11 @@
         "trigger_impact_damage_band": "Destroyed",
         "trigger_minimum_speed_m_per_turn": 201,
         "source_condition": "Only if the corresponding Damage Level on the original Impact Damage Levels Table is Destroyed.",
-        "source_rule": "Increase the Power of the vehicle-pedestrian collision by half of its original value, rounded up.",
-        "added_power_formula": "ceil(original_collision_power / 2)",
-        "total_power_formula": "original_collision_power + ceil(original_collision_power / 2)",
+        "source_rule": "Increase the Power of the vehicle-pedestrian collision by half of its original value, rounded down.",
+        "added_power_formula": "floor(original_collision_power / 2)",
+        "total_power_formula": "original_collision_power + floor(original_collision_power / 2)",
         "nonapplicability": "No added half-Power from this clause for Light, Moderate, or Serious impact bands; it does not modify the distinct wall/barrier collision or vehicle-ramming rules.",
-        "rounding_limit": "The rounding-up instruction expressly applies to half the original Power; the source passage does not state a separate rounding convention for its initial vehicle speed divided by 10.",
+        "rounding_limit": "The rounding-down instruction expressly applies to half the original Power; the source passage does not state a separate rounding convention for its initial vehicle speed divided by 10.",
         "application_examples_not_engine_tests": [
           {
             "speed_m_per_turn": 200,
@@ -202,7 +202,7 @@
       ],
       "review_evidence": "Original printed p148/PDF149 Vehicle-Pedestrian Collisions paragraph visually reviewed with the preceding p147/PDF148 Impact Damage Levels Table and existing accepted core vehicle damage record.",
       "previous_indexed_blob": "8eb381790d7522fd4c9a644a5089933f801287b7",
-      "previously_omitted_clause": "Original vehicle-pedestrian Damage Level Destroyed band increases collision Power by one-half of the original Power, rounded up.",
+      "previously_omitted_clause": "Original vehicle-pedestrian Damage Level Destroyed band increases collision Power by one-half of the original Power, rounded down (corrected against original page image on 2026-11-17; the 2026-11-15 normalization mistakenly said up).",
       "source_assertion_preservation": "All prior table rows, speed and crash formulas, passenger restraint, vehicle wall and barrier, pedestrian base damage, and separate source-proven earlier archival correction are retained without change. No later-edition values or arbitrary starting-Power rounding introduced.",
       "reviewed_human_text_paths": [
         "edition_scope",
@@ -226,9 +226,30 @@
         "framing"
       ],
       "limitation": "Direct source-image review verifies this exact missing condition, not entire-book normalization, actual engine execution or permitted source-boundary advancement."
+    },
+    "source_review_2026_11_17_half_power_rounding": {
+      "original_publication": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop role-playing game.",
+      "source_id": "source.sr3-core",
+      "sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "original_pages": {
+        "printed": 148,
+        "physical_pdf": 149
+      },
+      "source_image_finding": "Original printed p148/PDF149, Vehicle-Pedestrian Collisions paragraph, states the half-Power increase for Destroyed-band collisions is rounded DOWN, not up.",
+      "reversed_earlier_encoding": "Previously indexed blob 57fc1d1abe70c7ce0906647c93bdf70ad40dfee5 encoded ceil(original_collision_power / 2) and described rounded up; both were source-inaccurate.",
+      "preserved_other_rules": "Impact-speed damage bands, vehicle crash and ramming Power (separate rounded-up rules), crash modifiers, pedestrian base Power uncertainty, condition requiring Destroyed impact band, passenger restraints, armor, and source examples retained.",
+      "reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.original_core_scope",
+        "data.* including nested tests, modifiers, conditions, exceptions, damage tables and source-review receipts"
+      ],
+      "limitations": "This source-page correction does not certify entire vehicle section or engine execution."
     }
   },
   "framing": "reference_exact",
   "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop rules — Vehicles and Drones / Vehicle Damage from Impact, Crashing and Collisions, original printed 147-148/PDF 148-149",
-  "summary": "FASA Corporation Shadowrun, Third Edition (FASA7001), fictional vehicle collision rules, printed pp147–148/PDF148–149: source-corrected Destroyed-band pedestrian collision adds half the original attack Power (rounded up); all existing impact, crash, barrier and resistance mechanics are unchanged."
+  "summary": "Original FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop vehicle damage rules, printed pp147-148/PDF148-149: Destroyed-band pedestrian collision adds half original Power rounded down; other independently reviewed damage and crash mechanics unchanged."
 }
