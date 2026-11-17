@@ -9,8 +9,8 @@
   "content_class": [
     "rule_procedure"
   ],
-  "headline": "FASA7001 fictional SR3 elemental five-service rules, radius, spell assistance and sustaining costs, printed p187/PDF196",
-  "summary": "Original FASA Corporation Shadowrun Third Edition game-only elemental service mechanics: one service at time, 24-hour presence costs, Magic/Charisma/Willpower radius, force expenditures, bounded spell sustains and remote service.",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001), fictional elemental services and Spell Defense beneficiary/allocation rules, printed p187/PDF196",
+  "summary": "Original FASA7001 p187 exact elemental service and Force-spending procedures, including source-specified Aid Sorcery protection for mundane and Awakened recipients, and the same-time Sorcery-dice allocation requirement; unrelated values unchanged.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -58,7 +58,9 @@
         "none": "Health"
       },
       "when_force_zero": "Elemental disappears",
-      "recalled_if_still_bound": "May summon again with an Exclusive Complex Action at full Force if still bound"
+      "recalled_if_still_bound": "May summon again with an Exclusive Complex Action at full Force if still bound",
+      "protected_beneficiaries": "The original printed p187 rule explicitly allows an elemental to protect mundane or Awakened characters with Spell Defense, using its allocated Aid Sorcery dice; this does not permit a mundane to cast a spell.",
+      "allocation_timing": "The extra elemental dice must be allocated at the same time and in the same manner as regular Sorcery dice, including when assigned to Spell Defense."
     },
     "aid_study": {
       "cost": "One service",
@@ -88,7 +90,32 @@
       "cannot_recall_once_sent": true,
       "completion": "After completing remote service elemental becomes free and disappears; if destroyed, service ends"
     },
-    "source_limits": "Literal original print p187, physical PDF196; generic existing rule.magic.spirit-services remains canonical anchor; do not import later Magic in the Shadows options."
+    "source_limits": "Literal original print p187, physical PDF196; generic existing rule.magic.spirit-services remains canonical anchor; do not import later Magic in the Shadows options.",
+    "source_review_2026_11_17": {
+      "publication": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original published fictional tabletop role-playing game; catalog source.sr3-core.",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 187,
+      "physical_pdf_page": 196,
+      "source_observation": "The Aid Sorcery paragraph explicitly permits an elemental to protect mundanes (or Awakened) with Spell Defense, and requires the extra dice to be allocated at the same time and in the same manner as regular Sorcery dice.",
+      "correction_scope": "Add source-stated eligible protected recipients and dice-allocation timing; neither changes extra dice/Force cost, element-category limitations, one-elemental rule, nor transfers spellcasting to nonmagicians.",
+      "preserved_previous_blob": "34c512887bacbc583194d1f82a723c32d061efb4",
+      "reviewed_human_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.topic",
+        "data.control_and_calls.*",
+        "data.aid_sorcery.*",
+        "data.aid_study.*",
+        "data.physical_service.*",
+        "data.spell_sustaining.*",
+        "data.remote_service.*",
+        "data.source_limits",
+        "data.source_review_2026_11_17.*"
+      ],
+      "caveat": "Independent direct original-page comparison establishes these specific assertions only; structure/preflight does not prove full section coverage or runnable engine execution."
+    }
   },
   "framing": "reference_exact"
 }
