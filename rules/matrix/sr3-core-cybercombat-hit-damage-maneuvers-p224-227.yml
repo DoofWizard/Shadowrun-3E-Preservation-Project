@@ -78,7 +78,14 @@
       "common": "Opposed test: maneuvering icon Evasion against opponent Sensor (or IC Security Value in place of its missing Sensor/Evasion); if either side has a relevant utility Cloak or Lock-On, reduce its target number by that utility Rating; Hacking Pool may be allocated. Maneuver requires strictly more successes; net successes measure effect.",
       "evade_detection": "After success, opponent must locate icon again with Locate IC or Locate Decker; IC re-detects after net successes in Combat Turns, shortened 1 turn per new point of Security Tally generated during evasion. IC returns at end of the final turn and may act in next turn.",
       "parry_attack": "Net successes increase opposing icon next attack target number; benefit expires at that next attack or if opponent successfully evades detection. If opposing icon instead succeeds at position attack, parry bonus remains and is applied to attack.",
-      "position_attack": "On maneuver success, reduce the next attack target number by net successes or increase next attack Power by net successes; on opposition success, opposing icon gets that benefit. Benefit ends after the next attack."
+      "position_attack": "On maneuver success, reduce the next attack target number by net successes or increase next attack Power by net successes; on opposition success, opposing icon gets that benefit. Benefit ends after the next attack.",
+      "attribute_prerequisites_original_p224": {
+        "non_ic_icon_without_evasion_can_initiate_maneuver": false,
+        "non_ic_icon_without_sensor_can_oppose_maneuver": false,
+        "unopposed_maneuver_zero_successes_still_fails": true,
+        "ic_rating_substitution_unchanged": "For IC, use the host Security Value in place of its missing Evasion or Sensor Attribute as the already indexed Opposed Test rule directs.",
+        "source_rule": "The original source explicitly disallows non-IC programs without Evasion from attempting combat maneuvers, disallows non-IC programs without Sensor from opposing maneuvers, and requires a maneuvering icon to roll a success even when the opponent cannot oppose."
+      }
     },
     "attack_resolution": {
       "attack_test": "Attacker rolls offensive utility program Rating dice (may add Hacking Pool) against target number from cybercombat status/security-code table, with applicable modifiers.",
@@ -171,7 +178,12 @@
         ],
         "other": "Attempt to jack out after successful black-IC hit, subject to Willpower Test against black IC Rating and IC's final attack"
       },
-      "source_rule_limits": "These are original game action classifications; they do not substitute an action classification for other editions or later Matrix books"
+      "source_rule_limits": "These are original game action classifications; they do not substitute an action classification for other editions or later Matrix books",
+      "buffered_message_visible_icon_permission": {
+        "source_statement": "The original p224 communication paragraph says the other character can also operate an icon the decker can see.",
+        "prerequisites": "A second character is connected to the decker using the source-named communication devices; the icon in question is one the decker can see.",
+        "limits": "This paragraph grants no extra Matrix initiative, remote control rating, or bypass of other icon actions; no such effects are inferred."
+      }
     },
     "original_page_test_vectors_p225_226": {
       "evade_detection_p225": {
@@ -217,6 +229,34 @@
         "final_icon_damage_level": "Moderate",
         "explanation": "Three IC successes stage Serious to Deadly once; Armor reduces Power from 6 to 2; four Bod resistance successes stage Deadly down twice to Moderate"
       }
+    },
+    "source_review_correction_2026_11_17_p224": {
+      "original_publication": "FASA Corporation, Shadowrun, Third Edition, FASA7001, published fictional tabletop role-playing game, printed p224 / physical PDF233.",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "old_accepted_git_blob": "930c19a67ea1f7f5f66e1dae4b105a3cd1b0e0d3",
+      "original_image_review": "Original source-image inspection of the lower-right Cybercombat Combat Maneuvers passage (non-IC Evasion/Sensor eligibility and zero-success failure) and left-column Speak a Word paragraph (second-character visible-icon permission), plus adjoining pp223/225-227 context.",
+      "source_fidelity_change": "Add two missing, conditional source rules to existing Matrix actions/maneuvers record. All old numeric tables, modifier values, categories, damage outcomes, IC-specific substitution, and test vectors are unchanged.",
+      "reviewed_human_readable_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.heading",
+        "data.scope",
+        "data.cybercombat_target_numbers.*",
+        "data.ic_damage_level_by_host_security_code.*",
+        "data.actions.*",
+        "data.maneuvers.*",
+        "data.attack_resolution.*",
+        "data.overload_damage.*",
+        "data.dump_shock.*",
+        "data.boundaries[*]",
+        "data.action_classes_original_p223_224.*",
+        "data.original_page_test_vectors_p225_226.*",
+        "data.source_review_correction_2026_11_17_p224.*",
+        "framing"
+      ],
+      "preservation_limit": "Source review and independent transaction gates do not prove a whole chapter or whole source complete, nor provide executable code implementation."
     }
   },
   "framing": "reference_exact",
