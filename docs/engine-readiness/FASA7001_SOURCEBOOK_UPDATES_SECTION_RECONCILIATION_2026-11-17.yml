@@ -1,0 +1,85 @@
+schema_version: fasa7001-source-reviewed-section-evidence/v1
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  source_id: source.sr3-core
+  catalog_number: FASA7001
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pdf_page_count: 345
+reviewed_on: "2026-11-17"
+section:
+  title: "Sourcebook Updates: character conversion; Rigger 2; Virtual Realities 2.0"
+  printed_pages: [323, 325]
+  physical_pdf_pages: [331, 333]
+  original_images_independently_checked:
+    - {printed: 323, physical_pdf: 331, notes: "Complete two-column original source: skills, knowledge/active allocation, Read/Write, dice pools, NPC Threat Ratings, Karma conversion"}
+    - {printed: 324, physical_pdf: 332, notes: "Complete original source: magic, gear, cyberware, sourcebook conflict precedence, historical Rigger 2 exceptions"}
+    - {printed: 325, physical_pdf: 333, notes: "Complete left-column original source text: VR2.0 reset, Hardening, Matrix actions, icon condition and IC; right column is illustration"}
+review_provenance:
+  fresh_original_cataloged_drive_pdf_downloaded_and_rehashed: true
+  actual_preservation_method_verify_source_passed: true
+  actual_connector_preflight_regressions_passed: 29
+  compared_with_latest_accepted_git_blobs: true
+  record_field_review: "Mechanics, source/edition lineage, qualifiers, character agency, trigger conditions, signs, rounding, formulas, original worked examples and complete source-text-bearing portions."
+  no_semantic_candidate_created_for_this_section: "Reused the listed accepted source-reviewed records; no distinct missing source rule, numeric value, exception or wrong condition was demonstrated during this original-page comparison."
+scope:
+  source_image_mechanics_reconciliation_status: source_review_completed_for_this_natural_section
+  accepted_canonical_mechanics_reused: true
+  new_semantic_records_from_this_section: 0
+  full_source_normalization_complete: false
+  legitimate_contiguous_page_advance: false
+  executable_engine_tests_run: false
+  whole_FASA7001_source_completion_gate_passed: false
+  note: "This documentation receipt does not replace an ingestion_gate semantic transaction or authorize pages. No existing authoritative manifest/checkpoint boundary changes."
+rules_checked:
+  - printed: [323, 323]
+    pdf: [331, 331]
+    content_classes: [rule_exact, rule_procedure]
+    exact_fields_reviewed:
+      - "SR2 same-skill ratings, concentration/specialization transformations and Bike/Firearms examples"
+      - "Etiquette base -2, highest SR2 Etiquette skill and optional Gunnery vs Heavy Weapons splits"
+      - "Intelligence x5 Knowledge allocation; existing Knowledge ratings deducted, corresponding Active Skill point credit; 30-7=23 and 7 Active example"
+      - "Read/Write half Language Skill rating rounded down"
+      - "Combat/Control unchanged, Magic replaced by Spell Pool, Astral/Hacking recalculated, NPC/critters lose Threat Ratings"
+      - "Metahuman Karma Pool half rounded down with minimum 1; removed points become Good Karma"
+    canonical_records:
+      - {path: "rules/compatibility/sr2-to-sr3-numeric-character-conversion-p323.yml", blob: b54198aa355ea736e5f781fe42b45ae0b9c0419c}
+      - {path: "rules/compatibility/sr2-to-sr3-existing-knowledge-active-skill-credit-p323.yml", blob: 3cfc62e295c6047598268ad2fd1cb95e8bbc2aa1}
+      - {path: "rules/skills/sr3-core-sr2-character-conversion-exact-p323.yml", blob: 88f92a7190bb18247d2fb3cb87724c030abca26c}
+    residual_missing_source_fields_identified: []
+  - printed: [324, 324]
+    pdf: [332, 332]
+    content_classes: [rule_exact, rule_procedure]
+    exact_fields_reviewed:
+      - "SR2 magical adepts and physical adept conversion, changed power costs, totem and merged spells"
+      - "Expendable/reusable fetish/exclusive-limited spell conversions and related Force or Karma distinctions"
+      - "Spell Lock to Force 3 Sustaining Focus or 45000 nuyen, optional Force upgrade 15000 per point capped at 6, Astral Initiative Intelligence+20+1D6"
+      - "Old gear substitution/sale, Datasoft Link renaming to Knowsoft Link, obvious vs synthetic cyberlimb selection"
+      - "Original Rigger 2/SR3 precedence, passenger first Initiative Pass, conditional Deceleration Stress Test choice"
+      - "VCR Driving Test modifiers, Control Pool dodge, vehicle armor/damage and spell handling, passenger half Combat Pool rounded down"
+    canonical_records:
+      - {path: "rules/compatibility/sr2-to-sr3-magic-conversion-p324.yml", blob: 5cacc9b05e9208aa61745e727af5a78eb60cbbea}
+      - {path: "rules/compatibility/sr2-to-sr3-gear-cyberware-conversion-p324.yml", blob: dc0aa83235b139824a72423f66c7c293154310e7}
+      - {path: "rules/compatibility/sr3-core-rigger2-vehicle-conversion-exact-p324.yml", blob: 115e74cc50b9c5ce32cf79a7c3cc91201f63c414}
+      - {path: "rules/compatibility/rigger2-to-sr3-vehicle-mechanics-p324.yml", blob: 300e79d26d4a1d5953745d3904974bd6dc798e06}
+      - {path: "rules/compatibility/sr3-core-rigger2-vehicle-update-p324.yml", blob: 4cc4e36d8fec9f3985afe44cdde1d20618b6b8c5}
+    residual_missing_source_fields_identified: []
+  - printed: [325, 325]
+    pdf: [333, 333]
+    content_classes: [rule_exact]
+    exact_fields_reviewed:
+      - "VR2.0 to SR3 precedence, Green/Orange/Red reset 3D6 minutes conditional on no triggered alert"
+      - "Hardening damage Power reductions, gray-IC icon-crash condition, Black Hammer/Killjoy only"
+      - "New-icon Sensor check Free Action, Slow-IC suppression uses Detection Factor not Masking"
+      - "Edit File/Make Comcall/Tap Comcall reference, one icon damage track and no icon Stun"
+      - "Tar Baby one pre-selected utility type; Ripper IC after Attribute zero: Rating test against MPCP+Hardening, every two successes lowers MPCP one, persona chip replacement"
+    canonical_records:
+      - {path: "rules/compatibility/sr3-core-vr2-matrix-update-p325.yml", blob: 7da7a7c47eb11eab3d90ae12cb251f8ba19b022d}
+      - {path: "rules/compatibility/vr2-to-sr3-matrix-mechanics-p325.yml", blob: ce844f873d5649a1e5a278682d5610d3c5d1fa38}
+      - {path: "rules/matrix/sr3-core-vr2-specific-conversion-p325.yml", blob: 9a0cba27b904dddcab4b72c94d364ee23b62964f}
+    residual_missing_source_fields_identified: []
+outside_scope_and_remaining_debt:
+  - "FASA7001 original printed p308 remains unobserved between printed 307/PDF316 and 309/PDF317; no image/content reconstructed."
+  - "Other core sections retain whole-source completeness and engine-readiness audit obligations."
+  - "Denver FASA7212 printed pp46–47 are archived source losses; authoritative boundary stays printed p45/PDF46, not a core sourcebook conversion dependency."
