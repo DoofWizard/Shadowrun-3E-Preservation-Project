@@ -1,0 +1,57 @@
+receipt_type: original_source_bounded_section_reconciliation
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  edition: Third Edition
+  source_id: source.sr3-core
+  catalog_number: FASA7001
+  medium: original fictional cyberpunk tabletop role-playing game
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_section: "Street Gear: general device, acquisition, legality and encumbrance procedures"
+printed_pages: [270, 271, 272, 273, 274]
+physical_pdf_pages: [279, 280, 281, 282, 283]
+visual_review:
+  - "Printed p270/PDF279: introductory gear Device Rating, starting-character limits, Concealability/search round down, Weight and Availability"
+  - "Printed p271/PDF280: original full-page illustration; no missing rule text asserted"
+  - "Printed p272/PDF281: racial-fit surcharges and driving modifier, rated upgrades, acquisition and Cheshire example"
+  - "Printed p273/PDF282: Street Index, negotiation, legality, retail transactions and source qualifiers"
+  - "Printed p274/PDF283: Seattle local fines 23-row table, permits, Hauling the Load and lifting timing"
+content_classes_checked: [rule_exact, rule_procedure]
+verified_existing_canon:
+  - path: rules/gear/sr3-core-gear-ratings-modification-upgrade-p270-272.yml
+    blob: 0161aa0d4ea621a420dd0649e773598f2ef16a58
+    checked: "Device/Availability starting ceilings, concealability rounding, dwarf/troll gear costs, +3 unsuitable-vehicle Driving Test, equipment Rating upgrade calculation"
+  - path: procedures/gear/sr3-core-equipment-availability-street-negotiation-p272-273.yml
+    blob: 80a50ffd493f2f92b5afcf69a6c2cc54f7c3e465
+    checked: "Etiquette successes and acquisition timing, optional two-days/0.1 Street Index TN steps, negotiation 5-percent net-success adjustments, Cheshire numeric example"
+  - path: rules/gear/sr3-core-gear-legality-permits-fines-p273-274.yml
+    blob: a0e4c6fcd4f5f00a1437168f227c136c07448ae1
+    checked: "Legality-code test and modifiers, qualifying permits, costs, Seattle fines/punishment game table with null cells"
+  - path: rules/gear/racial-modification.yml
+    blob: d651d685ca5ae7a68d91ff87add74eb3fc1cae4b
+    checked: "Previously accepted general metatype gear modification; not resubmitted"
+  - path: rules/gear/upgrading.yml
+    blob: fe5fdbdc61021f4a46ac3df8bfc377171551de58
+    checked: "Previously accepted general upgrade procedure; not resubmitted"
+  - path: rules/gear/encumbrance.yml
+    blob: d7f92ba42da73dd2abe8ce25c0d1da6ac3225e95
+    checked: "Previously accepted duration at threefold carrying threshold; not resubmitted"
+source_fidelity_correction:
+  path: rules/gear/sr3-core-hauling-load-strength-body-p274.yml
+  prior_blob: 422058819746adaecf9aed6173da42c8e19b2a9b
+  corrected_blob: 818563e0825fe4f7eab67de60bf2ccc4e3018365
+  ordinary_contents_commit: 46f4f3de90b4aa7112db3d95216526de7bdd283f
+  field: data.carry.three_times_effect
+  exact_issue: "The old field omitted the Body-Rating-Combat-Turn delay for Strength × 15 kg even though the original p274 printed rule explicitly imposes that onset condition."
+  corrected_effect: "Moderate Stun-equivalent fatigue only after Body Rating Combat Turns; cannot run; movement halved."
+  source_reviewed_baseline_and_candidate: true
+  staged_prepared_and_confirmed: true
+  manifest_reindex_commit: 10eff09048724dcbdd72a8dcb40ba279c584e4b1
+  manifest_reindex_blob: 96dc09bc4f55b3651599cc79eea3ad72a37063a3
+  contiguous_advance: false
+bounded_reconciliation:
+  source_checked_fields_complete_for_this_bounded_section: true
+  genuinely_missing_normalized_subfields_after_correction: []
+  editorial_method: "Original publication source claims remain distinct from real-world procedures; reviewed nested field paths, source qualifiers, optional gamemaster rules and original game arithmetic."
+  limits: "This records bounded source comparison, NOT a chapter/full-rulebook source-completion certificate, global page authorization, external ruleset supersession or game-engine execution."
+  next_priorities: "Continue other not-yet-closed FASA7001 core sections and original-source ambiguities, including suspected printed p308 scan omission; no source contents invented."
