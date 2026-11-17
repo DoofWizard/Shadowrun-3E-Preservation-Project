@@ -1,0 +1,158 @@
+id: rule.spirits.sr3-core-dragon-statblocks-and-great-modifiers-p268-269
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 268-269
+pdf_pages: 277-278
+edition_scope: FASA Corporation, Shadowrun, Third Edition, FASA7001 original fictional
+  tabletop Spirits and Dragons rules, printed pp268-269/physical PDF277-278; not later-edition
+  dragon mechanics.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Original FASA Corporation Shadowrun Third Edition (FASA7001) dragon numeric
+  profiles, printed p268/PDF277 and great-dragon modifiers p269/PDF278
+summary: Source-reviewed original tabletop three printed dragon subtype statblocks
+  and separate additive great-dragon adjustments; preserve their attacks, Reach, armor,
+  flight multiplier, dual-nature marker and Initiative dice without inferring absent
+  Eastern Dragon numeric values.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog_number: FASA7001
+    edition: Third Edition
+    source_id: source.sr3-core
+    kind: published fictional tabletop role-playing game
+    original_source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_pages:
+    - 268
+    - 269
+    physical_pdf_pages:
+    - 277
+    - 278
+  section: 'Spirits and Dragons: Dragons and Great Dragons; exact numeric creature
+    stat keys from printed pp268-269'
+  stat_legend:
+    B: Body/combined Ballistic and Impact Armor rating (two slash-separated numbers)
+    Q: Quickness and primary movement multiplier in parentheses
+    S: Strength
+    C: Charisma
+    I: Intelligence
+    W: Willpower
+    E: Essence with Z denoting dual-natured creature
+    R: Reaction
+    INTV: Initiative as Reaction + dice
+    Attacks: Source damage code and natural Reach bonus; definitions from printed
+      p265/PDF274
+  original_dragon_type_profiles:
+  - name: Sirrush
+    B: 14/8
+    Q: 8 (x3)
+    S: 35
+    C: 9
+    I: 8
+    W: 8
+    E: (2D6)Z
+    R: 8
+    INTV: 8 + 2D6
+    Attacks: 14D, +2 Reach
+    source_printed_page: 268
+    physical_pdf_page: 277
+  - name: Feathered Serpent
+    B: 12/8
+    Q: 6 (x4)
+    S: 30
+    C: 8
+    I: 8
+    W: 8
+    E: (2D6)Z
+    R: 9
+    INTV: 9 + 2D6
+    Attacks: 12D, +2 Reach
+    source_printed_page: 268
+    physical_pdf_page: 277
+  - name: Western Dragon
+    B: 15/8
+    Q: 7 (x3)
+    S: 40
+    C: 8
+    I: 8
+    W: 8
+    E: (2D6)Z
+    R: 7
+    INTV: 7 + 2D6
+    Attacks: 14D, +3 Reach
+    source_printed_page: 268
+    physical_pdf_page: 277
+  great_dragon_profile:
+    source_printed_page: 269
+    physical_pdf_page: 278
+    B: ' +10/12'
+    Q: '+3'
+    S: '+10'
+    C: '+5'
+    I: '+5'
+    W: '+5'
+    E: 12Z
+    R: '+3'
+    INTV: +1D6
+    Attacks: 16D, +4 Reach
+    modifier_rule: Attributes with a preceding plus sign are added to the normal Attributes
+      for the great dragon's type. Treat B +10/12 as Body +10 and the printed Armor
+      modifier 12 as presented; do not substitute the absolute Essence 12Z or 16D
+      attack code into an addition formula.
+    qualification: The printed note explicitly addresses + prefixes. Do not add a
+      prefix where the publication did not print one; Great Dragon effects are not
+      a generic modifier to every critter.
+  common_dragon_abilities_from_p268:
+    communication: Dragons use line-of-sight telepathic communication instead of verbal
+      speech; ordinary sound sensing devices cannot receive it.
+    common_powers:
+    - Astral Armor
+    - Enhanced Senses (Wide-Band Hearing, Low-Light Vision, Thermographic Vision)
+    - Hardened Armor
+    powers_observed_in_individuals:
+    - Animal Control (Reptiles)
+    - Influence
+    - Magical Skills
+    - Innate Spell (Flamethrower)
+    - Noxious Breath
+    - Venom
+  eastern_dragon_numeric_scope: Eastern Dragon description appears on printed p268,
+    but these inspected p268-269 source images do not provide a separately labeled
+    Eastern Dragon numerical statblock. No numerical profile is inferred for that
+    type.
+  canon_reused:
+  - entities/dragons/sr3-baseline-catalog.yml (dragon taxonomy and named great dragons
+    from p268-269)
+  - entities/dragons/dragon.yml (baseline dragon concept)
+  - rules/spirits/sr3-core-spirit-dragon-combat-initiative-statistics-p265.yml (stat
+    legend and combat framework)
+  - rules/spirits/sr3-core-dragon-spirit-dice-pools-p266.yml (dice pools; not repeated
+    numerically here)
+  editorial_review:
+    source_image_provenance: Independently inspected the original cataloged 345-page
+      FASA Corporation Shadowrun, Third Edition FASA7001 source at printed p268/physical
+      PDF277 (all dragon profiles, both columns), and printed p269/physical PDF278
+      (great-dragon modifier table and note), after actual SHA256 match and preservation_method.py
+      verify-source.
+    all_reviewed_human_readable_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.section
+    - data.stat_legend.*
+    - data.original_dragon_type_profiles[*].*
+    - data.great_dragon_profile.*
+    - data.common_dragon_abilities_from_p268.*
+    - data.eastern_dragon_numeric_scope
+    - data.canon_reused[*]
+    - data.editorial_review.*
+    separate_content_classes: Dragon in-world biography and history on p269 remain
+      in existing entity baseline records and are not expanded in this single rule_exact
+      mechanical record. No character lore is turned into a mechanical stat.
+    fidelity_limit: Independent page-image review proves specific printed numeric
+      content; passing schema and source-hash tests is not a whole-section or whole-core
+      completion certificate.
