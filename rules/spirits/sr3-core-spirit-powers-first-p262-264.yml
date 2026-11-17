@@ -125,12 +125,25 @@
         "water": {
           "damage": "(Force)M Stun",
           "power_increase_per_spirit_action_since_engulfment": 1,
-          "additional_effect": "Deadly Stun victims still risk suffocation, subject to fictional game sequence."
+          "additional_effect": "After engulfed victims take Deadly Stun damage and lose consciousness, they remain exposed to damage on subsequent spirit actions, now as Physical damage, and eventually drown.",
+          "physical_damage_after_unconsciousness": {
+            "trigger": "Deadly Stun damage and unconsciousness during Water Engulf",
+            "damage_type": "Physical",
+            "timing": "Continues on the spirit actions already specified by Engulf",
+            "eventual_outcome": "Drowning if the power continues",
+            "no_invented_damage_code": true
+          }
         },
         "air": {
           "damage": "(Force)S Stun",
           "resistance_attribute": "higher of target Willpower or Body",
-          "defense": "Breathing equipment does not prevent effect as published; unconscious victims may suffocate."
+          "defense": "Breathing gear and other protective systems provide no defense; after being rendered unconscious, the victim begins taking Physical damage and eventually suffocates.",
+          "physical_damage_after_unconsciousness": {
+            "trigger": "Unconsciousness during Air Engulf",
+            "damage_type": "Physical",
+            "eventual_outcome": "Suffocation if the power continues",
+            "no_invented_damage_code": true
+          }
         },
         "earth": {
           "damage": "(Force)S",
