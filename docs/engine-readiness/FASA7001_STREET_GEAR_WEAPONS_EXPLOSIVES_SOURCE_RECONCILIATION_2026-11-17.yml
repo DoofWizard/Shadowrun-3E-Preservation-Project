@@ -1,0 +1,82 @@
+schema_version: "sr3-core-source-section-review/v1"
+review_date: "2026-11-17"
+source:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog: "FASA7001"
+  id: "source.sr3-core"
+  nature: "fictional tabletop role-playing game, original rules"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+  physical_pdf_pages_total: 345
+  google_drive_source_id: "1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri"
+  actual_verify_source_command: "python tools/ingestion/preservation_method.py verify-source 'FASA7001 - Shadowrun Core Rules  3rd Ed.pdf' sources/manifests/SR3.yml"
+  verify_source_result: "source_pdf_hash_verified"
+  preflight_regression_tests: "29 passed"
+scope:
+  natural_sections: ["Street Gear / Personal Weapons", "Impact Projectile Weapons", "Firearms and Heavy Weapons", "Ammunition and Reloading", "Firearm Accessories", "Explosives"]
+  original_printed_pages_inclusive: [275, 283]
+  original_physical_pdf_pages_inclusive: [284, 292]
+  exclude: "Armor starts in the right column of printed p283; that distinct section has a prior original-source reconciliation. The absent printed p308 is outside this slice."
+  review_classes: ["equipment_stat", "rule_exact", "rule_procedure"]
+source_to_accepted_canon:
+  - original_printed: "275-276"
+    physical_pdf: "284-285"
+    verified_reuse:
+      - "equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml"
+      - "rules/combat/sr3-core-monofilament-and-bullwhip-specific-p275-276.yml"
+      - "rules/combat/sr3-core-shock-glove-strike-charge-p275-276.yml"
+      - "rules/projectile/sr3-core-crossbow-recocking-p276.yml"
+    source_conditions: "Personal/impact/throwing weapon market rows and Strength minima; separate whip armor and escape, monofilament self-hit, shock-glove effects and crossbow distinctions."
+  - original_printed: "276-279"
+    physical_pdf: "285-288"
+    verified_reuse:
+      - "rules/firearms/accessory-mounts.yml"
+      - "rules/firearms/sr3-core-loading-system-and-recoil-notation-p276.yml"
+      - "equipment/sr3-core-firearms-integrated-features-p277.yml"
+      - "equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml"
+      - "equipment/sr3-core-firearm-model-options-numeric-p278-279.yml"
+      - "equipment/sr3-core-rifle-model-integral-options-p278.yml"
+      - "rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml"
+      - "rules/firearms/sr3-core-ammunition-heat-gel-rocket-miss-p279-280.yml"
+    source_conditions: "Named model variations, integrated stocks/optics, heavy-weapon and firearm table values, conditional recoil notation, original class-specific accessory restrictions and ammunition exceptions."
+  - original_printed: "280-282"
+    physical_pdf: "289-291"
+    verified_reuse:
+      - "procedures/firearms/sr3-core-ammunition-reloading-p280.yml"
+      - "rules/firearms/sr3-core-accessory-functions-p280-281.yml"
+      - "equipment/sr3-core-ammunition-rockets-missiles-pricing-p281.yml"
+      - "equipment/sr3-core-firearm-weapon-accessory-market-p282.yml"
+      - "rules/firearms/sr3-core-tripod-ultrasound-use-p282.yml"
+    source_conditions: "Reloading table actions/Quickness formula and no inferred rounding; six rockets/missiles, ten ammunition entries, ammo Concealability and Availability footnotes; accessory ratings, action costs and compatibility; tripod Legal cell remains blank in the original image."
+  - original_printed: "282-283"
+    physical_pdf: "291-292"
+    verified_reuse:
+      - "rules/gear/sr3-core-special-grenade-effects-p282-283.yml"
+      - "equipment/sr3-core-explosives-original-market-p283.yml"
+    source_conditions: "Hand grenade impact or two-second-to-two-minute timer, distinct commercial timer two-second-to-two-hour range, original grenade/explosive market rows and modifiers, blast and game-only effects."
+independently_checked_high_risk_details:
+  - "Printed p276 monofilament and ordinary bullwhip have DIFFERENT Impact Armor formulas and optional escape test."
+  - "Printed p277 SMG and shotgun accessory exclusions differ from conventional handgun rules; accepted mount canon preserves both."
+  - "Printed p280 an integral accessory consumes a mount but does not incur the after-purchase Concealability penalty."
+  - "Printed p281 Belt 100 is not a ten-round package; table footnotes adjust ammunition Concealability per extra ten rounds and belted Availability by rounds/100."
+  - "Printed p282 Tripod entry has a blank Legal field; it is not silently assigned 'Legal'."
+  - "Printed p283 commercial explosive accessory timer is distinct from p282 hand grenade timer."
+review_result:
+  source_checked_scope: "The identified numeric tables, model-specific equipment descriptions, operational conditions, exceptions and pricing qualifiers in this bounded Weapons-through-Explosives passage have source-reviewed accepted canonical records; no distinct missing claim was established in this comparison."
+  new_semantic_records_this_review: 0
+  source_reviewed_new_candidate_created: false
+  formal_source_completion_gate_passed: false
+  contiguous_page_advance: false
+  source_wide_status: "scan_complete_normalization_pending"
+  not_an_executable_engine_test: true
+  next_distinct_work: "Proceed to other non-certified core rules sections; do not repeatedly resubmit the accepted weapons/accessory tables. Original p308 remains unverified and is not filled."
+denver_archival_disposition:
+  archived_missing_printed_pages: [46, 47]
+  authoritative_completed_through: {printed: 45, physical_pdf: 46}
+  no_recovery_search: true
+  no_checkpoint_mutation: true
+editorial_and_provenance:
+  review_method: "Original source images inspected for printed pp275-283/PDF284-292, including fine-print table qualifiers; compared with separately fetched accepted GitHub contents and its existing source-reviewed fields."
+  reviewed_human_field_groups: ["title and edition", "source and printed-to-PDF coordinates", "market row labels and literal numeric units", "source optionality, conditional negatives and exceptions", "named in-world examples and GM discretion", "all prose in this source-review receipt"]
+  caveat: "This source-comparison receipt is useful bounded reuse evidence, not a substitute for separate semantic transaction gates, whole-core source-completion authorization, or an executable game engine."
