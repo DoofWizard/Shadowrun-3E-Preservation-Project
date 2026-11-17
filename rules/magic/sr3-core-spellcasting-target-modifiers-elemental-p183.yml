@@ -1,80 +1,85 @@
-id: rule.magic.sr3-core-spellcasting-target-modifiers-elemental-p183
-record_type: rule
-status: source_reviewed
-source: source.sr3-core
-printed_pages: '183'
-pdf_pages: '192'
-edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional
-  tabletop RPG rules, printed p183/physical PDF192; no external edition or errata
-  inferred
-content_class:
-- rule_exact
-headline: FASA Corporation Shadowrun, Third Edition (FASA7001) fictional spellcasting
-  target-number conditions, printed p183/PDF192
-summary: Original magic rules for sustained-spell +2 TN per spell, touch-range visibility
-  exception, elemental manipulation base TN4 regardless of range when visible, and
-  applicable ranged-combat modifiers and evasion.
-data:
-  publication:
-    title: Shadowrun, Third Edition
-    publisher: FASA Corporation
-    edition: Third Edition
-    catalog_number: FASA7001
-    source_id: source.sr3-core
-    pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
-    printed_page: 183
-    physical_pdf_page: 192
-    nature: published fictional tabletop roleplaying rules
-  source_section: Spellcasting / Spell Targeting continuation / Elemental Manipulation
-    Spells
-  sustained_spells:
-    modifier_per_active_sustained_spell_to_new_spellcasting_target_number: 2
-    scope: Each spell the caster is currently sustaining increases the target number
-      of a subsequently cast spell by +2.
-  touch_range:
-    cover_or_visibility_spellcasting_target_modifiers_apply: false
-    condition: Spellcaster must touch intended target. When the target resists contact,
-      resolve the separate Unarmed Combat Test under normal melee modifiers; the touch
-      attack is not exempt from those modifiers.
-  elemental_manipulations:
-    casting_test: Sorcery as ranged-combat skill, following ordinary ranged attack
-      mechanics in the original book
-    base_target_number: 4
-    base_target_number_ignores_range: true
-    line_of_sight_requirement: Caster must be able to see the target; the range-independent
-      base TN does not override target visibility.
-    additional_target_modifiers:
-    - cover
-    - visibility
-    - injury
-    - sustaining spells
-    defense: These elemental manipulation attacks may be dodged under the relevant
-      ranged combat rules; resistance is a Damage Resistance Test rather than ordinary
-      spell resistance.
-  related_accepted_core_records:
-  - rule.magic.sr3-core-spell-type-category-touch-range-p178
-  - rule.magic.sr3-core-physical-spell-los-optics-digital-p181
-  - rule.magic.sr3-core-sorcery-test-object-resistance-p182
-  - rule.magic.sr3-core-spell-resistance-effect-exact-p183
-  source_review:
-    scope: The stated modifiers and targeting exceptions were independently read from
-      the original printed p183/physical PDF192 page image. Source mechanics are presented
-      as fictional tabletop tests, not real-world instructions.
-    text_paths_reviewed:
-    - headline
-    - summary
-    - edition_scope
-    - data.publication.*
-    - data.source_section
-    - data.sustained_spells.*
-    - data.touch_range.*
-    - data.elemental_manipulations.*
-    - data.related_accepted_core_records[*]
-    - data.source_review.*
-    reuse_limit: Existing accepted records retain their distinct spell resistance,
-      targeting, elemental effect, and attack-contact procedures; this record adds
-      the precise p183 default TN and conditional modifiers.
-    source_fidelity_limit: A first-pass page review and structural gates support these
-      cited assertions only; no whole-chapter completion or executable engine validation
-      is claimed.
-framing: reference_exact
+{
+  "id": "rule.magic.sr3-core-spellcasting-target-modifiers-elemental-p183",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "183",
+  "pdf_pages": "192",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop RPG rules, printed p183/physical PDF192; no external edition or errata inferred",
+  "content_class": [
+    "rule_exact"
+  ],
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional spellcasting target-number conditions, printed p183/PDF192",
+  "summary": "FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional tabletop RPG printed p183/PDF192: Spellcasting TN modifiers, elemental manipulation and touch exceptions, and source-verified astral barrier +Force crossing penalty except creator spellcasting, with accepted p174 canon reused.",
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 183,
+      "physical_pdf_page": 192,
+      "nature": "published fictional tabletop roleplaying rules"
+    },
+    "source_section": "Spellcasting / Spell Targeting continuation / Elemental Manipulation Spells",
+    "sustained_spells": {
+      "modifier_per_active_sustained_spell_to_new_spellcasting_target_number": 2,
+      "scope": "Each spell the caster is currently sustaining increases the target number of a subsequently cast spell by +2."
+    },
+    "touch_range": {
+      "cover_or_visibility_spellcasting_target_modifiers_apply": false,
+      "condition": "Spellcaster must touch intended target. When the target resists contact, resolve the separate Unarmed Combat Test under normal melee modifiers; the touch attack is not exempt from those modifiers."
+    },
+    "elemental_manipulations": {
+      "casting_test": "Sorcery as ranged-combat skill, following ordinary ranged attack mechanics in the original book",
+      "base_target_number": 4,
+      "base_target_number_ignores_range": true,
+      "line_of_sight_requirement": "Caster must be able to see the target; the range-independent base TN does not override target visibility.",
+      "additional_target_modifiers": [
+        "cover",
+        "visibility",
+        "injury",
+        "sustaining spells"
+      ],
+      "defense": "These elemental manipulation attacks may be dodged under the relevant ranged combat rules; resistance is a Damage Resistance Test rather than ordinary spell resistance."
+    },
+    "related_accepted_core_records": [
+      "rule.magic.sr3-core-spell-type-category-touch-range-p178",
+      "rule.magic.sr3-core-physical-spell-los-optics-digital-p181",
+      "rule.magic.sr3-core-sorcery-test-object-resistance-p182",
+      "rule.magic.sr3-core-spell-resistance-effect-exact-p183",
+      "rule.magic.sr3-core-astral-barriers-wards-numeric-p174"
+    ],
+    "source_review": {
+      "scope": "The stated modifiers and targeting exceptions were independently read from the original printed p183/physical PDF192 page image. Source mechanics are presented as fictional tabletop tests, not real-world instructions. Independently rechecked the entire original FASA7001 printed p183/PDF192 Spellcasting continuation on 2026-11-17 and found the previously missing exception allowing the barrier creator to cast across their own barrier without the otherwise applicable +Force Spellcasting TN; all other original p183 modifiers preserved.",
+      "text_paths_reviewed": [
+        "headline",
+        "summary",
+        "edition_scope",
+        "data.publication.*",
+        "data.source_section",
+        "data.sustained_spells.*",
+        "data.touch_range.*",
+        "data.elemental_manipulations.*",
+        "data.related_accepted_core_records[*]",
+        "data.source_review.*",
+        "data.astral_barrier_spellcasting.*"
+      ],
+      "reuse_limit": "Existing accepted records retain their distinct spell resistance, targeting, elemental effect, and attack-contact procedures; this record adds the precise p183 default TN and conditional modifiers.",
+      "source_fidelity_limit": "A first-pass page review and structural gates support these cited assertions only; no whole-chapter completion or executable engine validation is claimed. This revision is limited to the source-proven barrier-crossing spell TN and creator exception; the earlier p174 barrier procedure remains accepted unchanged."
+    },
+    "astral_barrier_spellcasting": {
+      "barriers_covered": [
+        "hermetic circle",
+        "shamanic lodge",
+        "ward"
+      ],
+      "crossing_effect": "Add the magical astral barrier Force to the Spellcasting Test target number when a spell is cast across the barrier boundaries.",
+      "creator_exception": "The Force target-number addition does not apply to spells cast by the creator of the barrier.",
+      "source_scope": "Original FASA7001 printed p183/PDF192 Spellcasting targeting continuation; reuses the independently accepted p174 astral barrier rule and does not introduce a new barrier-creation procedure."
+    }
+  },
+  "framing": "reference_exact"
+}
