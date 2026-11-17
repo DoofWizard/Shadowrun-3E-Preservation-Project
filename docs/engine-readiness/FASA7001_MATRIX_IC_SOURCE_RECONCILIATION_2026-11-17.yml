@@ -1,0 +1,83 @@
+# Bounded source-review subsection reconciliation. This is NOT FASA7001 or chapter completion and cannot authorize contiguous advancement.
+schema_version: sr3-source-reconciliation/v1
+review_date: "2026-11-17"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_number: "FASA7001"
+  source_id: "source.sr3-core"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+  original_pdf_physical_pages: 345
+section:
+  chapter: "The Matrix"
+  heading: "Intrusion Countermeasures: White IC, Gray IC, Black IC"
+  printed_pages: [227, 230]
+  physical_pdf_pages: [236, 239]
+  source_images_independently_inspected: [236, 237, 238, 239]
+  original_source_hash_verified_this_run: true
+  source_verifier_executed: true
+  status: "bounded_original_image_rule_and_example_reconciliation"
+  full_chapter_closed: false
+  full_core_source_complete: false
+  formal_contiguous_advancement: false
+canonical:
+  path: "rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml"
+  id: "rule.matrix.sr3-core-matrix-ic-white-gray-black-exact-p227-230"
+  content_class: rule_exact
+  gate: verified
+  final_semantic_commit: "682da0c8b58ad4d5b9d12cc8315e50d0c664343a"
+  final_semantic_blob: "9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3"
+  index_path: "sources/manifests/SR3.yml"
+  final_manifest_commit: "14d91772320458336541c9027e7272248e4bb47b"
+  final_manifest_blob: "bb25e8865d08de79f64a5133c954085613436cdc"
+  index_count: 1
+  contiguous_advance: false
+source_reviewed_corrections:
+  - printed_page: 230
+    physical_pdf_page: 239
+    field: "data.black_ic.lethal.last_attack"
+    old_condition: "incorrectly triggered final double-Rating MPCP attack when only persona icon is killed"
+    source_condition: "final double-Rating MPCP attack happens when lethal Black IC kills the physical decker; icon crash while decker alive leaves Matrix connected and adds 2 to effective IC Rating"
+    semantic_commit: "2cda071e8d8bdddb465a596b1b1eb7001c95b48c"
+    manifest_commit: "40c73cf2093352057c7442d87bcaf223de8c083d"
+  - printed_page: 228
+    physical_pdf_page: 237
+    field: "data.white_ic.scramble.failed_decrypt"
+    old_gap: "on-failure outcome of the subsequent Scramble destruction test omitted"
+    source_condition: "if the Scramble Test fails, the decker suppresses destruct code and data is not destroyed by that test; success destroys data"
+    semantic_commit: "4e3cb4210d9f6068dc02925002380ad3f8b8f8bc"
+    manifest_commit: "2eced9d7512314c24b039665101a1a1c5e098865"
+  - printed_pages: [228, 229]
+    physical_pdf_pages: [237, 238]
+    fields:
+      - "data.white_ic.crippler.source_example_p228"
+      - "data.white_ic.tar_baby.source_example_p228"
+      - "data.gray_ic.blaster.source_example_p229"
+      - "data.gray_ic.sparky.example"
+    original_worked_test_vectors:
+      crippler: "Acid-4, 4 IC successes vs 2 Bod-resistance successes; Bod 6 becomes 5"
+      tar_baby: "Tar Baby-8 opposed to Analyze-6; target numbers 6 and 8; Tar Baby wins, both utility and IC crash"
+      blaster: "Blaster-6 vs MPCP-6 Hardening-2; target number 8 and 2 successes; MPCP becomes 5 and persona total ceiling 15"
+      sparky: "Sparky-8 with 2 successes; Body 4, Hardening 1 yields TN 7; one Body success does not stage 8S damage down"
+    semantic_commit: "682da0c8b58ad4d5b9d12cc8315e50d0c664343a"
+    manifest_commit: "14d91772320458336541c9027e7272248e4bb47b"
+reuse:
+  - "Original white IC Crippler, Killer, Probe, Scramble and Tar Baby mechanics retained"
+  - "Original gray IC Blaster, Ripper, Sparky and Tar Pit mechanics retained"
+  - "Original lethal and nonlethal Black IC attack, escape, resistance and aftereffects retained"
+  - "Previously normalized Black IC p230 worked example retained"
+reviews_and_gates:
+  independent_original_pdf_image_review: true
+  new_baselines_and_same_substance_candidates_source_reviewed: true
+  stage_and_prepare_executed_each_revision: true
+  ordinary_github_contents_update_and_exact_readback_each_revision: true
+  ingestion_gate_confirm_verified_each_revision: true
+  manifest_reindex_readback_each_revision: true
+  connector_preflight_regression_tests_passed: 29
+  executable_engine_tests_run: false
+remaining:
+  - "No full chapter/source completeness gate has passed; Matrix-wide gaps outside this bounded IC subsection remain to be audited"
+  - "No executable game-engine implementation/regression suite is certified by this archival normalization"
+  - "Unverified original printed p308 scan anomaly is separate, not inferred or cleared"
+  - "Global Denver FASA7212 archival printed pp46-47 are not part of this core section"
