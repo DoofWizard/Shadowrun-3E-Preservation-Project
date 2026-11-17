@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Original FASA Corporation Shadowrun Third Edition (FASA7001) fictional security countermeasure game ratings, printed p293/PDF302",
-  "summary": "Original game-only numerical rules for biometric maglock rating adjustment, panicbutton, skilltwitcher, squealer and gas detector; no real-world instructions or equipment performance claims. The rules are archived as fictional RPG source assertions, not guidance for real-world security equipment.",
+  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001), original fictional p293/PDF302 countermeasure and gas-alarm action rules",
+  "summary": "Original in-game Gas Detection System permits a Reaction (6) test to act with a Delayed Action or available current-Combat-Phase action, subject to initial same-pass gas exposure. All prior countermeasure numerical values remain.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -51,8 +51,13 @@
       "base_target_number": 6,
       "exposure_time_modifier": "For each additional second of exposure, reduce the Detection Test target number by 1",
       "character_reaction_test_target_number": 6,
-      "reaction_success_consequence": "Character may react appropriately as if holding a Delayed Action; source expressly says character cannot act during the current Combat Phase and is exposed to gas during the Initiative Pass in which the alarm sounds.",
-      "source_scope": "Fictional game detector and turn-resolution modifiers, not a real-world gas sensor operating procedure."
+      "reaction_success_consequence": "A character wearing or near a gas detector may make a Reaction (6) Test to take appropriate action if a Delayed Action is available OR the character can act in that Combat Phase, and the character is initially exposed to the gas during the Initiative Pass when the alarm sounds. The original source does not prohibit current-phase action.",
+      "source_scope": "Fictional game detector and turn-resolution modifiers, not a real-world gas sensor operating procedure.",
+      "reaction_action_eligibility": [
+        "delayed_action_available",
+        "can_act_in_that_combat_phase"
+      ],
+      "initial_exposure_timing": "Character is initially exposed to the gas during the Initiative Pass in which the detector alarm sounds."
     },
     "already_accepted_related_canon": [
       "rule.security.sr3-core-maglock-keypad-cardreader-print-numeric-p235",
@@ -75,6 +80,31 @@
         "data.source_review_receipt.*"
       ],
       "scope_limit": "This record captures the specified exact rules from p293 only; neighboring ultrasound, restraint and surveillance passages still need independent coverage. Staging does not establish whole-page completeness or runnable game validation."
+    },
+    "source_review_correction_20261117_gas_action": {
+      "publication": "FASA Corporation, Shadowrun, Third Edition, FASA7001; published fictional tabletop RPG; printed p293 / physical PDF302.",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "previous_accepted_blob": "7cd511c134a5b3a354b0f04a0487bcc0ccd8060a",
+      "independent_original_image_review": "Fresh original p293/PDF302 visually inspected, enlarged lower-left Gas Detection System text, on 2026-11-17.",
+      "exact_correction": "Previous accepted gas_detection_system.reaction_success_consequence incorrectly asserted that the source forbids current-Combat-Phase action. Original text expressly allows the alternate condition that the character can act in that Combat Phase, or has a Delayed Action available, and is initially exposed during the Initiative Pass when the alarm sounds.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.original_section",
+        "data.biometric_maglock.*",
+        "data.panicbutton.*",
+        "data.skilltwitcher.*",
+        "data.squealer.*",
+        "data.gas_detection_system.*",
+        "data.already_accepted_related_canon[*]",
+        "data.source_review_receipt.*",
+        "data.source_review_correction_20261117_gas_action.*",
+        "framing"
+      ],
+      "preserved_existing_assertions": "The Gas Detector Rating TN6 test, exposure-time -1 TN per additional second, Reaction TN6, other p293 device ratings, original source/edition, record content class, and all already accepted links remain unchanged. No real-world instructions or invented action timing.",
+      "limits": "The source-review receipt and offline validation do not establish whole-book completion or executable tests."
     }
   }
 }
