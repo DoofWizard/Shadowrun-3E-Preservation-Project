@@ -1,0 +1,63 @@
+# Evidence for a bounded source-review of the published fictional SR3 original, not a semantic record.
+schema_version: sr3-bounded-source-section-review/v1
+review_date: '2026-11-17'
+publication:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  edition: 'Third Edition'
+  catalog_number: 'FASA7001'
+  source_id: 'source.sr3-core'
+  cataloged_original_drive_id: '1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri'
+  original_pdf_sha256: '7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914'
+  physical_page_count: 345
+source_review:
+  section: 'Sourcebook Updates: original Second Edition conversion and Rigger 2 / Virtual Realities 2.0 procedures'
+  printed_pages: [323, 324, 325]
+  physical_pdf_pages: [331, 332, 333]
+  original_page_images_independently_visually_inspected: true
+  fresh_source_hash_compared_to_live_manifest: true
+  preservation_method_verify_source_executed: true
+  review_method: 'Cross-check all three original printed page images against already accepted canonical conversion records, numeric fields, limits, options, exceptions, sourcebook lineage and worked examples; reuse existing accepted records.'
+  original_content_classes: [rule_exact, rule_procedure]
+checked_subsections:
+  - name: 'SR2 character conversion'
+    printed_page: 323
+    pdf_page: 331
+    fields: 'Skill equivalences, original concentration/specialization conversion (+1 where specified), Etiquette reduction and multiple concentrations, sample conversion cases, Intelligence x5 additional skills, Read/Write language rounding, pools and historical metatype Karma Pool rule'
+    canonical_path: 'rules/skills/sr3-core-sr2-character-conversion-exact-p323.yml'
+    observed_blob: '88f92a7190bb18247d2fb3cb87724c030abca26c'
+  - name: 'Magic, cyberware and general sourcebook conversion'
+    printed_page: 324
+    pdf_page: 332
+    fields: 'Adept reclassification, totem review, combined/limited spells, Karma/Force alternatives, spell-lock conversion, focus Force cap and cost, astral initiative, gear approximation/sale, Datasoft/Knowsoft rename, synthetic/obvious cyberlimbs and SR3 conflict precedence'
+    canonical_path: 'rules/magic/sr3-core-sr2-magic-gear-cyberware-conversion-exact-p324.yml'
+    observed_blob: '7e44f15809b0d5a10432b10016d9d345c3a0ca83'
+  - name: 'Rigger 2 historical vehicle conversion'
+    printed_page: 324
+    pdf_page: 332
+    fields: 'Rigger/passenger first-pass initiative, optional legacy Deceleration Stress Test, VCR noncombat/combat Driving modifier magnitude and sign context, Control Pool ranged dodge, weapon damage halving and one-level reduction, spell versus vehicle resistance and passenger Combat Pool half rounded down'
+    canonical_paths:
+      - path: 'rules/compatibility/sr3-core-rigger2-vehicle-update-p324.yml'
+        blob: '4cc4e36d8fec9f3985afe44cdde1d20618b6b8c5'
+      - path: 'rules/compatibility/sr3-core-rigger2-vehicle-conversion-exact-p324.yml'
+        blob: '115e74cc50b9c5ce32cf79a7c3cc91201f63c414'
+  - name: 'Virtual Realities 2.0 Matrix conversion'
+    printed_page: 325
+    pdf_page: 333
+    fields: '3D6-minute alert-conditional reset, Hardening against black/gray IC and restricted utilities, free Sensor Test, Slow suppression spending Detection Factor, Comcall operation changes, single icon Condition Monitor without Stun, Tar Baby utility types and Ripper MPCP loss/repair'
+    canonical_path: 'rules/matrix/sr3-core-vr2-specific-conversion-p325.yml'
+    observed_blob: '2c176f9d0dd11d5d76d721f73887113be9995329'
+reconciliation:
+  original_page_assertions_in_checked_subsections_not_matched_to_canon: []
+  new_semantic_revision_in_this_section: false
+  status: 'bounded_source_checked_reuse; no distinct missing rule was established'
+  previous_canon_reused_without_duplicate_submission: true
+  not_a_formal_contiguous_page_authorization: true
+  newly_authorized_printed_pages: 0
+  no_claim_of_executable_engine_tests: true
+  full_fasa7001_normalization_complete: false
+  full_source_completion_gate_passed: false
+  unrelated_core_debt_retained:
+    - 'Dense remaining mechanical content-class closure outside this bounded section'
+    - 'Printed p308 scan anomaly remains unverified and was not reconstructed'
+  denver_archival_boundary_unchanged: 'FASA7212 completed-through printed p45/PDF46; pp46-47 archived losses'
