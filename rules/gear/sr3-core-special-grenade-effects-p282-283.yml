@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Fictional FASA Corporation Shadowrun, Third Edition (FASA7001) tabletop game, printed pp282–283/PDF291–292: exact grenade effects and conditionals",
-  "summary": "Original source-reviewed FASA7001 Third Edition game-only rules for gas and smoke duration/area, flash effects, mini-grenade exceptions and abstract explosives Damage Codes on printed pp282–283/PDF291–292. Distinct from the accepted p118–119 grenade attack procedure and p283 purchase table.",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001, fictional tabletop RPG, printed pp282–283/PDF291–292: corrected hand-grenade impact-versus-timed setting and existing effects",
+  "summary": "Original-source-reviewed FASA7001 tabletop grenade categories and numerical effects, preserving 2–120 second timed option and the separate source-stated impact option, with all previous accepted fields unchanged.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -36,11 +36,19 @@
         2,
         120
       ],
-      "hand_grenade_detonation": "The fictional timed grenade has its own setting for the game; blast and resolving a grenade attack defer to original Combat printed p118.",
+      "hand_grenade_detonation": "The original p282 tabletop hand-grenade description allows either detonation on impact or a time setting between 2 seconds and 2 minutes. These source options do not replace the Combat grenade attack/blast resolution on original p118.",
       "offensive_vs_defensive": "Offensive effects cover a wider radius than defensive; source p283 shows offensive blast −1 Power per meter, defensive −1 Power per half meter.",
       "concussion": "The game represents concussion grenades as Stun damage, with blast rules in Combat.",
       "anti_personnel": "The published AP grenade variant follows the original flechette-ammunition mechanics from Combat printed p116.",
-      "mini_grenade": "The in-game launcher version uses the same effect categories as the corresponding larger grenade; safety and pricing exceptions appear on printed pp282–283."
+      "mini_grenade": "The in-game launcher version uses the same effect categories as the corresponding larger grenade; safety and pricing exceptions appear on printed pp282–283.",
+      "hand_grenade_trigger_options": {
+        "impact": "The fictional hand grenade may be set to detonate on impact.",
+        "timed": {
+          "minimum_seconds": 2,
+          "maximum_seconds": 120,
+          "original_phrase_equivalence": "The book states two seconds through two minutes, inclusive as endpoint timings; no intermediate electronic mechanism, test or bonus is inferred."
+        }
+      }
     },
     "special_effects_p283": {
       "gas": {
@@ -121,6 +129,28 @@
         "data.editorial_receipt.*"
       ],
       "limitation": "Reviewed pages and local structural gates do not themselves certify full source coverage or game engine validation."
+    },
+    "source_review_correction_20261116_impact": {
+      "source": "Original FASA Corporation Shadowrun, Third Edition FASA7001, original fictional tabletop game printed p282/physical PDF291",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "old_accepted_blob": "0bbe094e1446e8110c270459bed21a18c34050ed",
+      "original_page_image_evidence": "Direct visual inspection of printed p282/PDF291 right column under Hand Grenades; explicitly distinguishes impact-trigger option from programmable delay of 2 seconds to 2 minutes.",
+      "reason": "The accepted numerical interval was correct, but its hand-grenade detonation description omitted the impact option, a gameplay choice at the same original source passage.",
+      "substance_preservation": "The accepted gas, smoke, AP/defensive/offensive, mini-grenade, explosive mathematical and market/cross-reference fields remain identical. No electronics or real-world activation procedure is modeled.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_context",
+        "data.grenade_categories_p282.*",
+        "data.special_effects_p283.*",
+        "data.relationships.*",
+        "data.editorial_receipt.*",
+        "data.source_review_correction_20261116_impact.*",
+        "framing"
+      ],
+      "limitations": "This targeted source-image review and transaction receipt are not full Street Gear normalization certification or engine test proof."
     }
   }
 }
