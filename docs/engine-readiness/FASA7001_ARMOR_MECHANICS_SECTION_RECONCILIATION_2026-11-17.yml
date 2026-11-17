@@ -1,0 +1,68 @@
+# Non-authoritative, original-image-based FASA7001 coherent armor mechanics closure evidence.
+# NOT a semantic record, source-completion gate, transaction receipt, or contiguous page advancement.
+schema_version: sr3-source-section-review/v1
+review_date: "2026-11-17"
+review_subject: "Armor and Armor and Combat Pool / Layering Armor, original printed pp283-285"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_number: FASA7001
+  source_id: source.sr3-core
+  original_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pdf_pages: 345
+source_review:
+  fresh_cataloged_original_drive_pdf_sha256_verified: true
+  actual_preservation_method_verify_source_succeeded: true
+  original_page_images_directly_viewed:
+    - {printed: 283, physical_pdf: 292, scope: "ARMOR introduction in right column; separate explosives text excluded"}
+    - {printed: 284, physical_pdf: 293, scope: "24-row CLOTHING AND ARMOR table, remaining Armor prose, security options"}
+    - {printed: 285, physical_pdf: 294, scope: "Armor and Combat Pool; Layering Armor, original Twitch worked example"}
+  gate_script_self_tests: "29 passing connector_preflight self-tests; not source or semantic gate proof"
+  content_classes_checked: [equipment_stat, rule_exact]
+  caveat: "This is rules-bearing field-level reconciliation, not a transcription of all nonmechanical clothing lore."
+reused_accepted_canonical:
+  - id: rule.armor.sr3-core-dermal-armor-attack-body-vs-healing-p283
+    path: rules/armor/sr3-core-dermal-armor-attack-body-vs-healing-p283.yml
+    live_blob: 66b58a7bc9846c36a844b8bf9d857b5cb3ec7bae
+    printed: [283, 283]
+    pdf: [292, 292]
+    checked: ["natural/cybernetic dermal armor increases Body against attacks", "does not aid healing"]
+  - id: equipment.sr3-core-clothing-armor-market-numeric-p284
+    path: equipment/sr3-core-clothing-armor-market-numeric-p284.yml
+    live_blob: 2365dc9fd1122c6bed7762c8129768b6cc9b6239
+    printed: [284, 284]
+    pdf: [293, 293]
+    checked: ["24 printed rows in five categories", "Conceal/Ballistic/Impact/Weight/Availability/Cost/Street Index/Legality columns", "signed helmet bonuses and variable armor weight"]
+  - id: rule.armor.sr3-core-camouflage-shield-security-effects-p284
+    path: rules/armor/sr3-core-camouflage-shield-security-effects-p284.yml
+    live_blob: 8038766cc2a88f677c0279034c5cb3fcfa84343d
+    printed: [284, 284]
+    pdf: [293, 293]
+    checked: ["camouflage appropriate +4 versus inappropriate -2 TN and reversible pattern", "shield bash (Strength - 2)L Stun", "shield melee TN +2 to both sides and Reach 2 bypass", "lined coat and security long coat +50 percent concealability", "security armor helmet communications vision and environmental price options", "chemical seal activation Complex Action"]
+  - id: rule.armor.sr3-core-layering-encumbrance-numeric-p285
+    path: rules/armor/sr3-core-layering-encumbrance-numeric-p285.yml
+    live_blob: ec3863609e23f04bebfecf92f499c49d6bf0ff48
+    printed: [285, 285]
+    pdf: [294, 294]
+    checked: ["Combat Pool effect of worn Ballistic/Impact above Quickness", "highest layer plus floor(half next highest), by protection type", "layering restriction and helmet/shield exclusion", "raw armor rating Quickness-linked TN/movement modifier", "published Twitch protection totals 7/6, raw 9/7, +3 Quickness TN, 4 Combat Pool dice lost"]
+legacy_canon_cross_reference_not_re-gated:
+  - {id: rule.armor.armor-ratings, path: rules/armor/armor-ratings.yml, live_blob: 6b510a05b146e09e3650bbf9a2a25dfcd31211cf}
+  - {id: rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113, path: rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml, live_blob: c228c30fd4c9f5972f3b23087b7328946ff696b1}
+section_disposition:
+  rules_and_numeric_rows_reconciled_against_existing_records: true
+  distinct_missing_rules_or_numeric_fields_identified_in_review: []
+  new_semantic_record_required_by_this_bounded_review: false
+  rules_source_assertions_represented: true
+  unclosed_executable_ambiguities:
+    - "Printed p285 Twitch example reports 4 Combat Pool dice lost despite a stated per-2-points-above-Quickness penalty; preserve source example and nominal rule separately until valid adjudication; do not invent a hidden rounding or precedence formula."
+  engine_implementation_tests_run: false
+  formal_source_completion_gate_passed: false
+  global_checkpoint_advanced: false
+  complete_fasa7001_core: false
+  note: "Mechanical source coverage for this bounded natural Armor section is reconciled; unresolved source-internal example interpretation is an engine-readiness blocker, not an absent transcription field. No full-book closure claim."
+separate_denver_archival_constraint:
+  source_id: source.fasa-7212
+  archived_missing_printed_pages: [46, 47]
+  authoritative_completed_through: {printed: 45, pdf: 46}
+  no_recovery_or_checkpoint_change: true
