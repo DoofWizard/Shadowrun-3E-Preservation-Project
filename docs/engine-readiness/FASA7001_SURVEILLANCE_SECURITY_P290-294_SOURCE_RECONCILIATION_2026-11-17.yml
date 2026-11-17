@@ -1,0 +1,77 @@
+# Bounded, original-source-reconciled evidence for published fictional Shadowrun Third Edition.
+schema_version: sr3-source-section-reconciliation/v1
+date: "2026-11-17"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_id: "FASA7001"
+  source_id: "source.sr3-core"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+source_pages:
+  printed: [290, 294]
+  physical_pdf: [299, 303]
+  image_reviews:
+    - {printed: 290, pdf: 299, topics: "Surveillance/communications market, Micro-Camcorder, Micro-Recorder, Dataline Tap, Data Codebreaker"}
+    - {printed: 291, pdf: 300, topics: "Camera links, tracking/locator variants, voice identification, bug scanning, encryption rating, jammer, concealability options and countermeasure tests"}
+    - {printed: 292, pdf: 301, topics: "20 original surveillance market rows, data decryption, containment, headjammer, jackstopper and other security descriptions"}
+    - {printed: 293, pdf: 302, topics: "Security-device game conditions including maglocks, Sequencer casing, gas tests, ultrasound, restraints, passkeys, survival gear"}
+    - {printed: 294, pdf: 303, topics: "22 security device plus six countermeasure market rows, survival mechanics continuation"}
+verification:
+  fresh_cataloged_pdf_reacquired: true
+  actual_pdf_sha256_recomputed_and_matched: true
+  actual_preservation_method_verify_source: passed
+  connector_preflight_synthetic_self_tests: 29_passed
+  semantic_transaction:
+    path: "rules/security/sr3-core-sequencer-keypad-access-prerequisite-p293.yml"
+    id: "rule.security.sr3-core-sequencer-keypad-access-prerequisite-p293"
+    content_class: rule_procedure
+    substantive_gap: "Original printed p293/PDF302 requires the keypad casing be removed to attach a Sequencer to the circuitry; previously accepted p235 opposed-rating procedure does not explicitly include this cross-page prerequisite"
+    independent_baseline_candidate_and_transaction_recovery_stage: verified
+    ingestion_gate_prepare_and_confirm: verified
+    candidate_sha256: "d477006914d86e77ab7249cfd658203dd50422bf5fe02bf115c907b563562087"
+    semantic_commit: "f32c4fa3dd84f5e5e2e77df16cfcd95737bc2630"
+    semantic_blob: "936d0ee5181cfb8f154a513049f4cace69446720"
+    manifest_commit: "b758a6d20b72ba973b5fe22ce8d2abcda8711a15"
+    manifest_blob: "771a1f93247fdec18392234ec1a4279fdcdbefac"
+    indexed_once: true
+    contiguous_advance: false
+  reused_source_proven_canon: 18
+  accepted_records_with_overlapping_printed_range:
+    - {id: "equipment.sr3-core-surveillance-security-market-numeric-p290", path: "equipment/sr3-core-surveillance-security-market-numeric-p290.yml", blob: "f99799117581d0b33fa973b7a1fece2d9122be61"}
+    - {id: "rule.communications.sr3-core-broadcast-ecm-scanner-mechanics-p289-291", path: "rules/communications/sr3-core-broadcast-ecm-scanner-mechanics-p289-291.yml", blob: "5a861db8b064c58772ce77c05bfcb471c9e1c26d"}
+    - {id: "equipment.sr3-core-surveillance-countermeasures-market-p292", path: "equipment/sr3-core-surveillance-countermeasures-market-p292.yml", blob: "3f925fbdcc3a1a12632f2baf6f64f24c79df814d"}
+    - {id: "equipment.sr3-core-data-encryption-decryption-market-p293", path: "equipment/sr3-core-data-encryption-decryption-market-p293.yml", blob: "ae47f184313a2a976dc50f1e8ab9e7ce829a3845"}
+    - {id: "rule.communications.sr3-core-data-encryption-decryption-p292", path: "rules/communications/sr3-core-data-encryption-decryption-p292.yml", blob: "6d0424ce4c48c7323e5fd683b314bc42420163a0"}
+    - {id: "equipment.sr3-core-original-security-devices-market-p294", path: "equipment/sr3-core-original-security-devices-market-p294.yml", blob: "f7d24d55184cf8bd78cc6b425f66d0375886d674"}
+    - {id: "rule.survival.sr3-core-gear-effects-p293-294", path: "rules/survival/sr3-core-gear-effects-p293-294.yml", blob: "621d73f2994e356139faa5624a516f224b488043"}
+    - {id: "rule.security.sr3-core-countermeasure-device-ratings-p293", path: "rules/security/sr3-core-countermeasure-device-ratings-p293.yml", blob: "154add7e67038d0f5e1433b82a06e360b483cb0a"}
+    - {id: "rule.security.sr3-core-motion-sensor-restraints-gear-p293", path: "rules/security/sr3-core-motion-sensor-restraints-gear-p293.yml", blob: "a33e8b72458d4e8f6d95bfa6a87df15fe4065110"}
+    - {id: "rule.security.sr3-core-containment-manacles-headjammer-p292", path: "rules/security/sr3-core-containment-manacles-headjammer-p292.yml", blob: "039c92f892168a1c944347fd168d11498391cf98"}
+    - {id: "rule.security.sr3-core-jackstopper-clearing-procedure-p292-293", path: "rules/security/sr3-core-jackstopper-clearing-procedure-p292-293.yml", blob: "48e445aae90d3f38da5a7dcf0799d2d1d96584e9"}
+    - {id: "rule.security.sr3-core-dataline-tap-codebreaker-p290", path: "rules/security/sr3-core-dataline-tap-codebreaker-p290.yml", blob: "39f718f8fb1b4709b2b953ac2b3de751c85f95a0"}
+    - {id: "rule.security.sr3-core-surveillance-opposed-tests-p291", path: "rules/security/sr3-core-surveillance-opposed-tests-p291.yml", blob: "15edd72fa26410daca8dbbeff0612f785ec1f308"}
+    - {id: "rule.security.sr3-core-surveillance-concealability-tracking-p291", path: "rules/security/sr3-core-surveillance-concealability-tracking-p291.yml", blob: "c2925342ae978a0a17c84374ed0b1cc61bc6d2dc"}
+    - {id: "rule.security.sr3-core-microcam-and-camera-link-functions-p290-291", path: "rules/security/sr3-core-microcam-and-camera-link-functions-p290-291.yml", blob: "a208173737912ed700a6b0a3ab3fb3d87d8caae7"}
+    - {id: "rule.communications.sr3-core-data-encryption-system-rating-p291", path: "rules/communications/sr3-core-data-encryption-system-rating-p291.yml", blob: "97bdf559688e40459170efbf727a0b1fa7828198"}
+    - {id: "rule.security.sr3-core-maglock-passkey-residual-condition-p293", path: "rules/security/sr3-core-maglock-passkey-residual-condition-p293.yml", blob: "a66fe25cdcf7641aa65747e244f8243253363243"}
+    - {id: "rule.security.sr3-core-sequencer-keypad-access-prerequisite-p293", path: "rules/security/sr3-core-sequencer-keypad-access-prerequisite-p293.yml", blob: "936d0ee5181cfb8f154a513049f4cace69446720"}
+  original_exceptions_cross_checked:
+    micro_camcorder_video_cartridge_hours: 3
+    separate_micro_recorder_audio_hours: 6
+    data_encryption_system_rating_equals_device_rating: true
+    passkey_possible_scrambled_sluggish_state_not_mandatory: true
+    sequencer_casing_prerequisite: true
+    gas_detector_current_phase_or_delayed_action_conditions: true
+    optional_concealability_price_increase_per_point_percent: 50
+    optional_concealability_is_gamemaster_suggestion: true
+    original_gear_table_dashes_are_not_zero: true
+  remaining_exact_subfields_in_bounded_section: "No further distinct unnormalized source assertion was established by this bounded comparison; absence of findings is not a chapter-wide completion certificate."
+limitations:
+  formal_authorize_advance_executed: false
+  net_new_contiguous_pages_authorized: 0
+  source_completion_gate_passed: false
+  engine_test_vectors_executed: false
+  unrelated_original_scan_p308: unverified_not_reconstructed
+  original_denver_boundary: "FASA7212 printed p45/PDF46; printed pp46-47 are owner-archived losses, no recovery search or falsely credited progress"
+  do_not_treat_documentation_as_semantic_ingestion: true
