@@ -92,7 +92,13 @@
       "successes": "Record successes on Attack Test; every 2 successes stages damage up one Damage Level.",
       "power": "Attack utility and killer IC icon-damage Power equals program Rating.",
       "resistance": "Target persona makes Bod Rating Damage Resistance Test; damaged IC uses host Security Value instead. Armor utility reduces incoming attack Power. Every 2 successes on resistance stages damage down one Damage Level.",
-      "condition_monitor": "Icons track one Damage track, not separate Stun/Physical. Filling 10 boxes crashes icon. A crashed persona disconnects its decker and triggers dump shock."
+      "condition_monitor": "Icons have one icon-damage track, not separate Stun/Physical tracks; filling ten boxes crashes the icon. Normally a crashed persona disconnects its decker from the fictional Matrix, exposing the decker to dump shock. Exception: original printed p226 says a black-IC-caused persona crash does not itself disconnect the decker; the dedicated black IC rule on printed p230 specifies that the connection remains intact if the icon is killed before the physical decker dies or manages to jack out.",
+      "black_ic_persona_crash_exception": {
+        "source_statement": "Original printed p226 states that black IC killing the icon does not by itself disconnect the decker; this is an express exception to the ordinary icon-crash/dump-shock sequence.",
+        "continued_connection": "If the persona icon is killed before the physical decker dies or manages to jack out, the Matrix connection remains active while black IC dominates the icon bandwidth, as original printed p230 explains.",
+        "effective_black_ic_rating_increase_while_icon_down": 2,
+        "scope_limit": "This exception does not cancel ordinary dump shock following an actual involuntary disconnection, nor the specific nonlethal black IC rule that unconsciousness breaks the connection."
+      }
     },
     "overload_damage": {
       "in_world_trigger": "White/gray IC damage to an icon can cause simsense overload to the fictional decker physical body.",
@@ -105,7 +111,7 @@
       "black_ic_exception": "This overload test does not apply when black IC damages the icon; those effects are resolved under black IC rules."
     },
     "dump_shock": {
-      "trigger": "Decker crashes off Matrix or jacks out without Graceful Logoff.",
+      "trigger": "Ordinary decker crash/disconnection from the fictional Matrix or jacking out without successful Graceful Logoff risks dump shock. Killing only the persona icon with black IC, while the decker remains physically connected, is explicitly not itself a disconnection (original printed pp226 and 230).",
       "damage_power": "Host Security Value",
       "damage_type": "Stun",
       "damage_level_by_host_security_code": {
@@ -257,9 +263,27 @@
         "framing"
       ],
       "preservation_limit": "Source review and independent transaction gates do not prove a whole chapter or whole source complete, nor provide executable code implementation."
+    },
+    "source_review_correction_2026_11_17_p226": {
+      "original_publication": "FASA Corporation, Shadowrun, Third Edition, FASA7001; original published fictional tabletop RPG, printed p226/PDF235, with black IC cross-reference at printed p230/PDF239.",
+      "original_source_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "old_accepted_blob": "54fbb5569c0bad111fc3c1d43f125eac88a57853",
+      "reviewed_images": "Direct original images of p226/PDF235 and p230/PDF239; reviewed action/dump shock continuation p227/PDF236.",
+      "corrected_assertion": "The previous blanket statement that a crashed persona always disconnects the decker conflicts with the original explicitly stated black IC exception. Normalize ordinary dump shock separately from black IC's continued connection after icon crash; preserve preexisting combat stats, maneuvers, worked examples and optionality.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.scope",
+        "data.attack_resolution.*",
+        "data.dump_shock.*",
+        "data.source_review_correction_2026_11_17_p226.*"
+      ],
+      "scope": "Historical game mechanics only; no real-world computer actions."
     }
   },
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional Matrix action classifications and cybercombat examples, original printed pp224–227/PDF233–236",
-  "summary": "Original FASA Corporation Shadowrun, Third Edition (FASA7001) printed pp224–227/PDF233–236: exact Matrix action-class lists, buffered-message limit, IC unsuppression, opposed maneuvers, full worked evasion/position/Killer examples, damage staging and dump shock; fictional tabletop rules, not real-world procedures."
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional Matrix cybercombat printed pp224–227/PDF233–236, including black IC persona-crash exception",
+  "summary": "Original FASA7001 fictional tabletop cybercombat: tables, attacks, tests and damage, with printed p226's exception that black IC destroying the persona icon does not by itself disconnect the decker or trigger ordinary dump shock; printed p230 supplies continued-connection consequences."
 }
