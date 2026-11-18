@@ -1,0 +1,109 @@
+id: rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 134-135
+pdf_pages: 135-136
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional
+  tabletop RPG; printed pp134-135 and physical PDF pp135-136, not later sourcebook
+  revisions.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    publication_medium: Original published fictional tabletop role-playing game
+  original_page_map:
+  - printed: 134
+    physical_pdf: 135
+    subsection: Driving Test and Modifiers
+  - printed: 135
+    physical_pdf: 136
+    subsection: Driving Test worked example and vehicle Sensor memory example
+  worked_examples:
+  - name: Whiz Kid's Ares Dragon helicopter Driving Test
+    location: Printed p134 setup continues at top of printed p135
+    skill: Rotorcraft Skill 4 with Ares Dragons specialization 6
+    vehicle_handling_rating: 5
+    vehicle_autonav_rating: 3
+    control_rig_rating: 1
+    driving_test_target_number_components:
+    - condition: Vehicle Handling
+      value: 5
+    - condition: Large vehicle of type
+      value: 2
+    - condition: Bad weather / sudden squall
+      value: 2
+    - condition: Rigger in control, VCR1
+      value: -1
+    driving_test_final_target_number: 8
+    dice_from_specialized_skill: 6
+    dice_from_active_autonav: 3
+    dice_total: 9
+    initial_dice_as_published:
+    - 1
+    - 1
+    - 2
+    - 3
+    - 3
+    - 5
+    - 6
+    - 6
+    - 6
+    exploding_sixes_final_totals_as_published:
+    - 7
+    - 8
+    - 11
+    resulting_successes: 2
+    narrative_result: Whiz Kid lands the helicopter safely.
+    qualifier: This is the book's noncombat landing example, not a universal rule
+      allowing autonav dice for vehicle combat maneuvers. Three sixes reroll into
+      published totals, not separately specified additional roll faces.
+  - name: Ace's recorded surveillance clip and magnification
+    location: Printed p135, original in-world reporter and rigger vignette
+    sensor_rating: 2
+    available_microcomputer_memory_megapulses: 150
+    audio_video_memory_megapulses_per_minute: 2
+    maximum_full_audio_video_minutes: 75
+    recorded_replay_magnification: 40
+    real_time_sensor_magnification: 100
+    distinction: Archived two-dimensional audiovisual footage consumes 2 Mp per minute
+      and replay enlargement is limited to Sensor Rating x20; live enlargement is
+      Sensor Rating x50. The scene is a fictional worked example and is not real-world
+      surveillance advice.
+  canonical_record_reuse:
+  - rules/vehicles/sr3-core-driving-test-modifiers-p134.yml
+  - rules/vehicles/sr3-core-sensor-ratings-recording-p135.yml
+  - rules/vehicles/sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.yml
+  source_review:
+    original_images: Fresh SHA-256-verified 345-image FASA7001 scan; inspected printed
+      p134/PDF135 lower right and printed p135/PDF136 upper left and upper right.
+    independent_baseline_review: Driving test dice, modifier signs and target number,
+      three published exploding-six totals, success count and audiovisual memory arithmetic
+      separately checked against the original page images.
+    new_distinct_substance: Already accepted p134 rule mentions TN 8 but does not
+      normalize the exact nine source dice and two successes; p135 equipment procedure
+      states rate but not the published 150 Mp / 75-minute and separate 40x/100x scene
+      outcomes.
+    reviewed_text_fields:
+    - edition_scope
+    - data.publication.*
+    - data.original_page_map[*].*
+    - data.worked_examples[*].*
+    - data.canonical_record_reuse[*]
+    - data.source_review.*
+    - headline
+    - summary
+    tests_limit: These are original worked examples suitable for future executable
+      vectors; no game-engine regression suite was run.
+framing: reference_exact
+headline: Published fictional tabletop RPG — FASA Corporation, Shadowrun, Third Edition,
+  FASA7001, source.sr3-core, driving and sensor worked examples, printed pp134–135/PDF135–136
+summary: 'Original FASA7001 Whiz Kid helicopter Driving Test: Handling 5 +2 size +2
+  bad weather -1 VCR = TN8, 9 dice and 2 successes; Ace sensor Rating2 and 150 Mp
+  recording yields 75 minutes, 40x playback versus 100x live.'
