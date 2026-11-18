@@ -1856,10 +1856,21 @@ postscan_verified_mechanics_recovery:
       range_printed: [220, 222]
       range_pdf: [229, 231]
       content_class: rule_exact
-      commit: 77ab59349b28986e2e8c93f1060dbefb9400e5d4
-      blob: 5e6cad82652b589019314363539f935575a389a8
+      commit: 39ecbc95ca65641f8edf7b2b2a79450e9eef34af
+      blob: bc82c8a104b0ffa29c54ba41b365b959e988655d
       gate: verified
       contiguous_advance: false
+      source_review_correction_2026_11_18:
+        prior_commit: 77ab59349b28986e2e8c93f1060dbefb9400e5d4
+        prior_blob: 5e6cad82652b589019314363539f935575a389a8
+        verified_semantic_commit: 39ecbc95ca65641f8edf7b2b2a79450e9eef34af
+        verified_semantic_blob: bc82c8a104b0ffa29c54ba41b365b959e988655d
+        original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        source_pages: 'FASA Corporation Shadowrun, Third Edition FASA7001 printed pp220-222/PDF229-231'
+        source_fidelity_delta: 'Original p220 requires utility source code for modification or upgrade; p221 Black Hammer lacks blaster capabilities and can leave the cyberdeck online and jackpoint traceable after lethal damage.'
+        gates: 'Independent original-page review, source-reviewed baseline and candidate, stage/prepare, ordinary contents update, exact readback, actual confirm and recovery inspection.'
+        scope: 'Source-specific verified-forward revision only, no new distinct registration or Denver contiguous advancement.'
+
     - id: rule.matrix.sr3-core-cybercombat-initiative-program-size-p222-223
       path: rules/matrix/sr3-core-cybercombat-initiative-program-size-p222-223.yml
       range_printed: [222, 223]
