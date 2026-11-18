@@ -1,0 +1,91 @@
+id: rule.magic.sr3-core-spell-defense-worked-example-p183-184
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 183-184
+pdf_pages: 192-193
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), printed pp183-184/physical PDF192-193,
+  a fictional tabletop RPG; no later-edition mechanics used.
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: FASA Corporation Shadowrun, Third Edition (FASA7001), fictional tabletop Magic Spell Defense worked example,
+  original pp183-184/PDF192-193
+summary: 'Source-verified worked test: six allocated dice, four committed against Force 4 Manaball, three successes cancel
+  three attacker successes and leave two attacker successes; two defense dice stay in reserve. General Spell Defense
+  rules remain in previously indexed canon.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    medium: published fictional tabletop role-playing game
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_source:
+    printed_pages:
+    - 183
+    - 184
+    physical_pdf_pages:
+    - 192
+    - 193
+    section: Magic / Spell Defense / worked example crossing the printed p183-p184 page break
+  worked_example:
+    example_role: Published fictional example, not a new universal combat or spell-defense rule
+    protecting_magician: Cullen Trey
+    protected_subjects: Four protected subjects are stated for the allocation example, including the defending magician
+      and his associates; the incoming Manaball is directed at his chummers.
+    incoming_spell: Manaball
+    incoming_force: 4
+    spell_defense_allocated_dice: 6
+    defense_dice_chosen_for_this_incoming_spell: 4
+    defense_dice_reserved_after_choice: 2
+    defense_test_target_number: 4
+    defense_test_successes: 3
+    attackers_sorcery_successes_removed: 3
+    attackers_sorcery_successes_after_defense: 2
+    attackers_sorcery_successes_before_defense_arithmetic: 5
+    arithmetic_provenance: Five initial successes are deduced from the printed subtraction of three and remaining two;
+      they are not independently asserted as a separately printed starting tally.
+    post_defense_result: The spell was not fully blocked; Jack and Duran make their own Spell Resistance Tests and the
+      example describes their success against the remaining two spellcasting successes.
+    other_target_outcomes: The passage does not establish an independent final Resistance Test tally for every protected
+      subject; do not infer one.
+    example_narrative: The fictional published example describes the magician protecting associates during a meet and
+      using only part of his allocated Spell Defense dice to preserve a reserve.
+  dependencies_reused:
+  - rules/magic/sr3-core-spell-defense-exact-p183.yml
+  - rules/magic/sr3-core-spell-resistance-effect-exact-p183.yml
+  - rule.magic.spell-defense
+  specification_vectors_not_executed:
+  - id: p183-spell-defense-trey-force4
+    allocated_dice: 6
+    used_dice: 4
+    reserved_dice: 2
+    incoming_spell_force: 4
+    spell_defense_successes: 3
+    pre_defense_sorcery_successes_inferred: 5
+    expected_post_defense_sorcery_successes: 2
+  source_review:
+    reviewed_text_field_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.original_source.*
+    - data.worked_example.*
+    - data.dependencies_reused[*]
+    - data.specification_vectors_not_executed[*].*
+    - data.source_review.*
+    provenance: Freshly retrieved original 345-page FASA7001 PDF with verified SHA-256; directly inspected printed p183/PDF192
+      bottom-right example and its continuation printed p184/PDF193 top-left.
+    distinct_substance: Existing accepted original p183 Spell Defense canonical entry normalizes general allocation/range/Force
+      TN and success subtraction but does not encode the published worked-example dice distribution or numerical result.
+      This record is a source-verified example for prospective executable regression testing, not a replacement general
+      rule.
+    editorial_context: All prose reports the published fictional tabletop example as source evidence, with spell-defense
+      dice procedures distinguished from implied arithmetic and from unreported characters’ outcomes.
+    gate_scope: Direct page-image review establishes only the specified example values; local preflight or a verified
+      write does not certify full Magic chapter completeness or executable implementation.
+  implementation_state: source_normalized_worked_example_not_engine_tested
