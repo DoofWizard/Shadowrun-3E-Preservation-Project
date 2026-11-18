@@ -1,0 +1,104 @@
+id: rule.matrix.sr3-core-locate-slave-utility-discrepancy-p217-220
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 217-220
+pdf_pages: 226-229
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001/source.sr3-core), original
+  fictional tabletop role-playing game; printed pp217-220/physical PDF226-229, with a full-page
+  illustration on original printed p213/PDF222. No rule from later editions or supplements is
+  substituted.
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    fictional_context: original published cyberpunk tabletop role-playing-game rules
+  section: The Matrix / System Operations / Locate Slave, and Operational Utilities
+  source_assertions:
+  - printed_page: 217
+    physical_pdf_page: 226
+    printed_heading: Locate Slave under Operations Descriptions
+    operation_name: Locate Slave
+    test: Index
+    listed_utility: Analyze
+    action: Complex
+    successes_for_desired_slave: 3
+    qualification: This explicit operation box is part of the original source, not a derived
+      erratum.
+  - printed_page: 220
+    physical_pdf_page: 229
+    printed_heading: Browse under Operational Utilities
+    program_name: Browse
+    program_size_multiplier: 1
+    listed_system_operation: Locate Slave
+    qualification: The original operational-utility list names Locate Slave among Browse operations.
+  - printed_page: 220
+    physical_pdf_page: 229
+    printed_heading: Analyze under Operational Utilities
+    program_name: Analyze
+    program_size_multiplier: 3
+    listed_system_operations:
+    - Analyze Host
+    - Analyze IC
+    - Analyze Icon
+    - Analyze Security
+    - Analyze Subsystem
+    - Locate IC
+    qualification: The list here does not mention Locate Slave; this omission does not independently
+      establish the correct utility.
+  cross_reference_discrepancy:
+    type: published_internal_utility_assignment_conflict
+    source_claim_p217: 'Locate Slave explicitly lists Utility: Analyze.'
+    source_claim_p220: Browse explicitly includes Locate Slave in its System Operations list.
+    not_a_later_edition_supersession: true
+    implementation_status: unresolved original-source conflict; preserve both and require a
+      separately documented interpretive choice before automating the Locate Slave utility modifier
+    not_asserted: The source pages do not decide whether both utilities may be used together,
+      whether one takes precedence or whether one line is a printing error. No such permission
+      or correction is invented.
+    affected_mechanic: Which utility Rating reduces the fictional Index System Test target number
+      for Locate Slave under the relevant core System Test rule.
+  reused_existing_records:
+  - path: rules/matrix/sr3-core-data-decrypt-edit-locate-p216-217.yml
+    original_page_assertion: Locate Slave test Index / utility Analyze / Complex Action / three
+      successes
+  - path: rules/matrix/sr3-core-matrix-utility-multipliers-effects-p220-222.yml
+    original_page_assertion: Browse program size multiplier one and list includes Locate Slave;
+      Analyze program size multiplier three and list omits it
+  - path: rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml
+    original_page_assertion: General interrogation threshold five unless a specific operation
+      supplies another threshold
+  source_review:
+    original_image_review: Original FASA7001 scan PDF page 226 (printed 217) and PDF page 229
+      (printed 220), visually inspected during this source-reconciliation; adjacent original
+      printed pp214-219/physical PDF223-228 also compared for procedural context.
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    reviewed_text_field_paths:
+    - edition_scope
+    - data.publication.*
+    - data.section
+    - data.source_assertions[*].*
+    - data.cross_reference_discrepancy.*
+    - data.reused_existing_records[*].*
+    - data.source_review.*
+    - headline
+    - summary
+    - framing
+    editorial_classification: Neutral third-person reporting about a published fictional tabletop
+      rulebook; original assertions and their discrepancy preserved separately from any optional
+      game-master adjudication.
+    not_engine_tested: true
+    not_source_complete: true
+framing: reference_exact
+headline: 'Fictional Shadowrun, Third Edition tabletop rules — FASA Corporation FASA7001/source.sr3-core:
+  Locate Slave utility conflict, printed pp217–220/PDF226–229'
+summary: 'FASA Corporation, Shadowrun, Third Edition (FASA7001/source.sr3-core), original printed
+  pp217–220/PDF226–229: Locate Slave specifies Analyze on p217, while Browse lists Locate Slave
+  on p220; preserve both original fictional game-rule claims and do not choose an unprinted
+  precedence.'
