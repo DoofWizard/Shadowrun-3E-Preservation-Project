@@ -1,0 +1,110 @@
+id: rule.contacts.sr3-core-starting-contact-purchase-window-p45
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '45'
+pdf_pages: '46'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original published
+  fictional tabletop RPG, printed p45/physical PDF46 (creation cross-reference pp61–62/PDF62–63);
+  no other edition inferred.
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop original
+  core contact purchase window, printed p45/PDF46
+summary: 'Original SR3 p45 Game Concepts Contacts rule: two free Level 1 starting
+  contacts; additional contacts purchased only during character creation, while contacts
+  gained after play begins must be earned in roleplaying rather than bought at starting-character
+  prices.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    kind: published fictional cyberpunk tabletop role-playing game
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_source:
+    section: Game Concepts / Contacts
+    primary_printed_page: 45
+    primary_physical_pdf_page: 46
+    cross_references:
+    - printed_page: 61
+      physical_pdf_page: 62
+      section: Creating a Shadowrunner / Contacts
+    - printed_page: 62
+      physical_pdf_page: 63
+      section: Starting Character Extras Table / Extra Contacts
+  starting_contacts:
+    free_level_1_contacts_per_new_character: 2
+    additional_contact_purchase_window: Character creation only, subject to starting
+      Resources and the separately accepted source numeric table.
+    levels_permitted_during_creation:
+    - 1
+    - 2
+    - 3
+    quantity_limit: The core printed p61 states characters may purchase as many extra
+      contacts as they can afford; no numerical contact count cap is added.
+    contact_level_3_qualifier: The original p61 prose describes Level 3 contacts as
+      rare and likely to develop through roleplaying even though they are purchasable
+      in character creation.
+  after_play_begins:
+    may_buy_new_contacts_using_character_creation_table: false
+    acquisition: New contacts acquired during the game must be earned through roleplaying
+      and relationship-building, not bought via the creation-time price table.
+    restriction_scope: The prohibition is on directly buying a contact as a starting-character
+      mechanical purchase after play begins; it does not mean that contacts cannot
+      accept ordinary payments for information or receive gifts and favors under separately
+      accepted rules.
+    not_a_prohibition_on_gaining_new_contacts: true
+  accepted_records_reused_not_duplicated:
+  - rules/contacts/contact-levels.yml (level categories and two free contacts)
+  - equipment/sr3-core-starting-extras-price-table-p62.yml (numeric prices of Level
+    1, 2, and 3 additional contacts)
+  - rules/character-creation/resources.yml (starting Resource expenditures and Lifestyle
+    requirements)
+  - procedures/character-creation/standard.yml (priority-based character generation)
+  - rules/contacts/new-contacts.yml (later optional Companion contact development;
+    no automatic new purchase entitlement)
+  engine_test_specifications_not_executed:
+  - scenario: creation_two_free
+    phase: character_creation
+    free_level_1_contacts: 2
+    purchase_cost_nuyen: 0
+  - scenario: creation_additional_level_2
+    phase: character_creation
+    contact_level: 2
+    expected_table_price_nuyen: 10000
+    reference_only: equipment/sr3-core-starting-extras-price-table-p62.yml
+  - scenario: play_new_contact_not_for_sale
+    phase: during_play
+    mechanical_purchase_at_creation_table_price_allowed: false
+    roleplay_contact_acquisition_possible: true
+  source_review:
+    original_images: 'Cataloged SHA-256-matched FASA7001 345-page original scan: directly
+      inspected printed p45/PDF46 Contacts paragraph, p61/PDF62 Contacts continuation
+      and p62/PDF63 Starting Character Extras table on 2026-11-18. Source page p46/PDF47
+      adjoining rules reviewed for section context.'
+    uniquely_missing_assertion: Existing accepted character-creation table and general
+      Contacts canon specify free and paid starting contacts, but do not explicitly
+      encode the printed p45 rule prohibiting purchase of new contacts once play begins
+      while still allowing acquisition by roleplaying.
+    reviewed_human_text_field_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.original_source.*
+    - data.starting_contacts.*
+    - data.after_play_begins.*
+    - data.accepted_records_reused_not_duplicated[*]
+    - data.engine_test_specifications_not_executed[*].*
+    - data.source_review.*
+    editorial_distinctions: The book describes fictional NPC relationship mechanics.
+      Creation-time contact purchases, social acquisitions during play, and payments
+      to existing contacts are distinct; no inability to develop relationships is
+      inferred.
+    scope: Exact Contacts acquisition/prohibition portion of the original Game Concepts
+      p45 with p61–62 cross references; not a full chapter or executable game engine
+      certification.
