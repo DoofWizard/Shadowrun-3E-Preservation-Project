@@ -98,6 +98,31 @@
         "preservation": "All prior accepted p289-291 cost, rating, ECM/ECCM, scanner, jammer, rental and encryption conditions retained unchanged; no new numeric frequency assignment or real-world radio operation is inferred.",
         "caution": "This directly reviewed source condition is an in-game communication distinction. A structural gate or local review is not a complete section or engine-readiness certificate.",
         "old_accepted_blob_sha": "d8077ff9451ee9f574e4a68850b2f0b6f276527c"
+      },
+      "original_scanner_known_frequency_review_20261118": {
+        "original_publication": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core, published fictional tabletop role-playing game.",
+        "original_source": "Printed p289 / physical PDF298, Scanner paragraph on original SHA256-verified 345-image-page PDF.",
+        "old_accepted_blob_sha": "4825bc2cac3f49095d427012ae67c7a55a35c4d1",
+        "source_observation": "A signal on a known frequency is intercepted without a test. Searching for the frequency of a specific signal invokes a Scanner Rating Success Test against transmitting device Rating+3, separately already preserved.",
+        "added_paths": [
+          "data.frequency_scanner_p289.known_frequency_tuning_requires_test",
+          "data.frequency_scanner_p289.known_frequency_tuning_rule"
+        ],
+        "reviewed_human_text_paths": [
+          "edition_scope",
+          "headline",
+          "summary",
+          "data.publication.*",
+          "data.signal_repeater_p289.*",
+          "data.frequency_scanner_p289.*",
+          "data.communication_unit_eccm.*",
+          "data.broadcast_encryption.*",
+          "data.jammer_p291.*",
+          "data.bug_scanner_p291.*",
+          "data.editorial_review.*"
+        ],
+        "fidelity": "Previous canon, including newly indexed repeater frequency directionality, original rental identity, costs, ratings, encryption/jamming, and other tests, retained unchanged.",
+        "limits": "Original fictional tabletop device mechanic only. No real-world radio-frequency operations or new test values inferred. Does not certify entire core or executable engine."
       }
     },
     "frequency_scanner_p289": {
@@ -105,7 +130,9 @@
       "complementary_skill": "Electronic Warfare",
       "encryption_caveat": "Detected encrypted broadcasts require decryption before their message can be understood.",
       "success_effect": "Each success locates one frequency being searched for and allows monitoring.",
-      "success_test": "Scanner Rating Success Test against transmitting device Rating + 3"
+      "success_test": "Scanner Rating Success Test against transmitting device Rating + 3",
+      "known_frequency_tuning_requires_test": false,
+      "known_frequency_tuning_rule": "Original printed p289/PDF298 states that intercepting a signal on a frequency already known to the scanner operator requires no test; the Scanner Rating Success Test is for locating a signal's unknown frequency."
     },
     "jammer_p291": {
       "eccm_defense": "If targeted device has ECCM, an opposed ECM versus ECCM test is made and target net successes reduce jammer successes in the previous contest.",
@@ -138,12 +165,12 @@
   },
   "edition_scope": "Original FASA Corporation Shadowrun, Third Edition FASA7001 published fictional tabletop rules, printed pp289-291/physical PDF298-300; distinct from gear market statistics and later editions.",
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun, Third Edition (FASA7001) fictional tabletop communications: separate repeater transmit/receive frequencies and accepted p289-291 mechanics, printed p289-291/PDF298-300",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop Communications: no scanner test for known frequencies and two-channel repeater relays, printed pp289–291/PDF298–300",
   "id": "rule.communications.sr3-core-broadcast-ecm-scanner-mechanics-p289-291",
   "pdf_pages": "298-300",
   "printed_pages": "289-291",
   "record_type": "rule",
   "source": "source.sr3-core",
   "status": "source_reviewed",
-  "summary": "Original p289 repeater networks use distinct transmit and receive frequencies; existing SR3 repeater rental, signal Flux, ECM/ECCM, scanner, jammer, and broadcast-encryption rules preserved from printed pp289-291/PDF298-300."
+  "summary": "Original FASA7001 p289 Scanner text distinguishes intercepting on a known frequency without a test from unknown-frequency Scanner Rating tests; repeater directional frequencies, rental prerequisites, ECCM, broadcast encryption and jamming retained unchanged."
 }
