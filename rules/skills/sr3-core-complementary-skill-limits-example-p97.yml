@@ -9,8 +9,8 @@
   "content_class": [
     "rule_procedure"
   ],
-  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional complementary-skill limitations and Cheshire example, printed p97/PDF98",
-  "summary": "Original published fictional Shadowrun Third Edition (FASA7001), printed p97/PDF98: Active-Skill Complementary Tests cannot default to an Attribute, a failed primary Build/Repair Test cannot gain complementary successes, and Cheshire gains 3 + floor(2/2) = 4 successes versus Johnson’s 3. Reuses established two-for-one complementary mechanics.",
+  "headline": "FASA Corporation Shadowrun Third Edition (FASA7001) original p97/PDF98: corrected complementary-skill no-Attribute-defaulting and Cheshire ratings",
+  "summary": "Original fictional tabletop source: Cheshire Negotiate 5 and Psychology 2 versus Mr. Johnson Negotiations 7, shared TN5, complementary 2 successes add 1 to her 3 primary successes for a 4-to-3 result; Build/Repair complementary limits remain source-exact.",
   "framing": "reference_exact",
   "data": {
     "publication": {
@@ -50,15 +50,16 @@
       "primary_skill": "Negotiations",
       "complementary_skill": "Psychology",
       "cheshire_primary_skill_rating": 5,
-      "cheshire_complementary_skill_rating": 5,
-      "mr_johnson_primary_skill_rating": 5,
+      "cheshire_complementary_skill_rating": 2,
+      "mr_johnson_primary_skill_rating": 7,
       "shared_target_number": 5,
       "cheshire_psychology_successes": 2,
       "cheshire_negotiations_successes": 3,
       "cheshire_bonus_successes_from_psychology": 1,
       "cheshire_total_successes": 4,
       "mr_johnson_negotiations_successes": 3,
-      "fictional_game_result": "Cheshire wins the opposed negotiation example by 4 total successes to Mr. Johnson’s 3; the source does not assign a new rule for the commercial outcome."
+      "fictional_game_result": "Cheshire wins the opposed negotiation example by 4 total successes to Mr. Johnson’s 3; the source does not assign a new rule for the commercial outcome.",
+      "source_skill_value_distinction": "On original printed p97/PDF98, Cheshire has Negotiations Rating 5, Psychology Rating 2, and the opposing Mr. Johnson has Negotiations Rating 7. Both test TNs remain 5 because both fictional characters have Intelligence 5; the tests yield Cheshire Psychology 2 successes and Negotiations 3 successes, and Johnson Negotiations 3 successes. Ratings and realized successes must not be conflated."
     },
     "reused_canonical_rules": [
       "rules/skills/complementary-skills.yml",
@@ -83,7 +84,14 @@
         "data.distinct_missing_content",
         "data.source_review_receipt.*"
       ],
-      "constraint": "The same-substance candidate changes only root presentation fields; a local source-review statement or passing structural test does not independently certify whole-source completeness or executable game-engine behavior."
+      "constraint": "The same-substance candidate changes only root presentation fields; a local source-review statement or passing structural test does not independently certify whole-source completeness or executable game-engine behavior.",
+      "source_grounded_revision": "Independent reinspection of original scanned printed p97/PDF98 corrected the prior accepted record’s accidental assignment of rating 5 to Cheshire’s Psychology and Mr. Johnson’s Negotiations; correct original ratings are Psychology 2 and Johnson Negotiations 7. Prior exact bytes retained in prior Git commit aefc582c314cbdf0940fa52c95cfee2817ff55ad and trusted original journal. This source-reviewed replacement preserves every other mechanic and does not manufacture successes or new defaults.",
+      "correction_field_paths": [
+        "data.published_negotiation_example.cheshire_complementary_skill_rating",
+        "data.published_negotiation_example.mr_johnson_primary_skill_rating",
+        "data.published_negotiation_example.source_skill_value_distinction",
+        "data.source_review_receipt.source_grounded_revision"
+      ]
     }
   }
 }
