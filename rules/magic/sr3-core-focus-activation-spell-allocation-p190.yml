@@ -1,0 +1,154 @@
+id: rule.magic.sr3-core-focus-spell-allocation-activation-exact-p190
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '190'
+pdf_pages: '199'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional
+  tabletop role-playing game, printed p190/physical PDF199, historical Third Edition
+  magic rules; no later editions presumed.
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Original FASA7001 fictional tabletop magic focus activation and spell-focus
+  conditions; printed p190/PDF199
+summary: Original Third Edition focus activation, compatible-focus dice allocation,
+  expendable spell focus, specific-spell and spell-category restrictions and eligible
+  spirit/power focus allocation.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    type: published fictional tabletop role-playing game
+    pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    printed_page: 190
+    physical_pdf_page: 199
+  section: Magic / Foci / Activation and Spell, Spirit, Power and Sustaining Foci
+  general_activation:
+    requires_prior_bonding: Except expendable spell foci, a focus must first be bonded
+      to its owner before use, under the separate accepted p190 Karma table.
+    ordinary_activation_action: Simple Action
+    weapon_focus_exception: An already activated weapon focus requires no separate
+      action simply to use it as another melee weapon.
+    sustaining_focus_spellcasting_exception: Casting a spell into a sustaining focus
+      is an Exclusive Complex Action; see the separate p191 contact and termination
+      requirements.
+    deactivation_action: Free Action, available at any time
+    simultaneous_active_foci_limit_attribute: Intelligence Rating
+    continuing_activation: Generally remains active while on the owner’s person, worn,
+      carried, held or in a pouch or pocket.
+    ordinary_separation: If snatched, dropped or otherwise separated from the owner,
+      the focus immediately deactivates and its benefits cease until recovered and
+      reactivated.
+    distinct_p191_sustaining_exception: A bonded sustaining focus already sustaining
+      a spell stays active while contacting the target even if separated from the
+      owner, as specified in the accepted p191 record.
+  spell_foci_shared:
+    subtypes:
+    - Expendable Spell Focus
+    - Specific Spell Focus
+    - Spell Category Focus
+    bonus_dice_formula: Focus Force
+    dice_refresh: Source states bonus dice expended during eligible tests refresh
+      at the start of the next Combat Turn like dice pools. This does not undo expendable-focus
+      consumption.
+    limited_test_allocation: Only tests explicitly eligible for the respective subtype
+      gain dice; they are not unrestricted additional Spell Pool.
+  expendable_spell_focus:
+    single_use_consumed: true
+    requires_karma_bonding: false
+    spell_category_chosen_when_enchanted: true
+    eligible: A single spell in the purchased category; additional dice apply to either
+      its Sorcery Test or its Drain Resistance Test, not both.
+    casting_action: Single Exclusive Complex Action, regardless of Force
+    source_distinction: Its one-use expenditure is separate from the shared beginning-of-next-Combat-Turn
+      refresh statement.
+  specific_spell_focus:
+    spell_fixed_at_purchase: true
+    eligible_tests: Sorcery Test and/or associated Drain Resistance Test for the one
+      named spell
+    allocation: Its Focus-Force dice may be divided between the two tests at owner
+      choice.
+    eligible_for_spell_defense: false
+    eligible_for_dispelling: false
+    source_statement: Printed p190 expressly rules out using specific-spell-focus
+      dice for Spell Defense or Dispelling.
+  spell_category_focus:
+    category_fixed_at_purchase: true
+    eligible_tests: Sorcery or Drain Resistance Tests for any spell in the purchased
+      category, and Spell Defense or Dispelling against a spell in that same category.
+    allocation: The Force-derived additional dice may be divided among eligible tests
+      at owner choice, not counted in full on every test.
+  spirit_focus:
+    spirit_type_fixed_at_purchase: true
+    eligible_tests: Conjuring Test or Drain Resistance Test when summoning, controlling,
+      or banishing a spirit of the specified nature or elemental type.
+    bonus_dice_formula: Focus Force
+    allocation: The additional dice may be divided among applicable tests as desired.
+  power_focus:
+    effective_magic_addition: Increase the owner’s Magic Attribute by focus Force
+      for deciding Stun versus Physical Drain and maximum summonable spirit Force.
+    dice_tests: Focus Force additional dice in eligible Sorcery, Conjuring, or Drain
+      Resistance Tests.
+    also_eligible_for_spell_defense: true
+    allocation: Bonus dice may be divided among eligible tests each Combat Turn at
+      owner choice.
+  sustaining_focus:
+    spell_force_limit: Only sustains spells with Force at or below its own Focus Force.
+    spell_choice: Spell chosen when the focus is bonded; changing that spell requires
+      re-bonding.
+    other_conditions_reference: rules/magic/sr3-core-sustaining-and-weapon-foci-conditions-p191.yml
+  source_review:
+    image: Fresh original cataloged SHA-matched PDF physical image 199, printed page
+      190, visually inspected 2026-11-18, both columns and numeric focus bonding table.
+      Source page 191/PDF200 also examined to avoid applying general owner-separation
+      rule to the sustaining-focus exception.
+    reviewed_text_field_paths:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.section
+    - data.general_activation.*
+    - data.spell_foci_shared.*
+    - data.expendable_spell_focus.*
+    - data.specific_spell_focus.*
+    - data.spell_category_focus.*
+    - data.spirit_focus.*
+    - data.power_focus.*
+    - data.sustaining_focus.*
+    - data.source_review.*
+    reused_existing_accepted_records:
+    - rules/magic/sr3-core-focus-bonding-karma-table-numeric-p190.yml
+    - rules/magic/sr3-core-sustaining-and-weapon-foci-conditions-p191.yml
+    - rules/magic/focus-activation.yml
+    - rules/magic/spell-foci.yml
+    - rules/magic/spirit-foci.yml
+    - rules/magic/power-foci.yml
+    - rules/magic/sustaining-foci.yml
+    uniquely_normalized: Previously generic records do not state exact subtype-specific
+      defense/dispelling exclusions, dice division rules, expendable spell-focus casting
+      action, or activation exceptions as separate typed source conditions.
+    review_scope: Specific p190 focus operations and p191 contextual exception; not
+      a whole-book review or runnable engine acceptance.
+  examples_for_engine_not_executed:
+  - focus_type: Specific Spell Focus
+    force: 3
+    eligible_sorcery_dice: 1
+    eligible_drain_dice: 2
+    spell_defense_dice: 0
+    dispelling_dice: 0
+  - focus_type: Spell Category Focus
+    force: 4
+    same_category_spell_defense_dice: 2
+    same_category_drain_dice: 2
+  - focus_type: Power Focus
+    force: 2
+    base_magic: 4
+    effective_magic_for_summoning_cap: 6
+  - owner_intelligence: 3
+    active_foci_count: 3
+    can_activate_fourth: false
