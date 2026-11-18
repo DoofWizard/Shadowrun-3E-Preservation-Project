@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop dragon stats, printed pp268-269/PDF277-278",
-  "summary": "Original numerical Body, Quickness, Strength, mental attributes, Essence, Reaction, Initiative and attacks for four types of fictional dragon; explicitly additive great dragon modifiers and common powers.",
+  "headline": "Corrected original FASA7001 Shadowrun Third Edition dragon statblocks: three source-labeled profiles, printed p268/PDF277",
+  "summary": "FASA Corporation Shadowrun, Third Edition FASA7001, printed pp268–269/PDF277–278: exactly three separately labeled dragon numeric statblocks (Sirrush, Feathered Serpent, Western Dragon); Eastern Dragons have descriptive text, not a published numeric row. Great Dragon modifiers and all other sourced fields preserved.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -42,21 +42,8 @@
       "R",
       "INTV"
     ],
-    "source_values_as_printed": "Retain original slash-separated Body, parentheses in Quickness and Essence, Z suffix, dice notation and damage/Reach. Do not infer the slash semantics or a further minimum without governing source.",
+    "source_values_as_printed": "Retain the three source-labeled original statblocks with slash-separated Body values, parenthesized Quickness and Essence, Z suffix, Initiative dice, damage and Reach. A separate Eastern Dragon numeric profile is not printed; no Sirrush-to-Eastern substitution is authorized.",
     "dragon_types": [
-      {
-        "type": "Eastern Dragon",
-        "B": "14/8",
-        "Q": "8 (x3)",
-        "S": "35",
-        "C": "9",
-        "I": "8",
-        "W": "8",
-        "E": "(2D6)Z",
-        "R": "8",
-        "INTV": "8+2D6",
-        "attacks": "14D, +2 Reach"
-      },
       {
         "type": "Sirrush",
         "B": "14/8",
@@ -129,7 +116,7 @@
     },
     "book_narrator_context": {
       "speech": "The publication says dragons communicate telepathically in line of sight; ordinary microphones do not intercept that form of communication.",
-      "stat_scope": "Base rows distinguish four dragon types; named Great Dragon biography entries follow on original p269 and are already indexed in catalog.dragons.sr3-baseline."
+      "stat_scope": "Three separately labeled numerical dragon statblocks appear in original printed p268: Sirrush, Feathered Serpent and Western Dragon. Eastern Dragon has descriptive text without a separate numerical row; named Great Dragon biographies appear on p269."
     },
     "related_canon_reuse": [
       "catalog.dragons.sr3-baseline",
@@ -155,9 +142,27 @@
         "data.great_dragons.*",
         "data.book_narrator_context.*",
         "data.related_canon_reuse[*]",
-        "data.editorial_review.*"
+        "data.editorial_review.*",
+        "data.eastern_dragon_numeric_scope",
+        "data.editorial_review.source_correction_20261118"
       ],
-      "fidelity_limit": "Historical tabletop game source review only; these specific rows do not by themselves establish exhaustive source completeness or executable tests."
-    }
+      "fidelity_limit": "Historical tabletop game source review only; these specific rows do not by themselves establish exhaustive source completeness or executable tests.",
+      "source_correction_20261118": {
+        "source_provenance": "FASA Corporation, Shadowrun, Third Edition FASA7001 original 345-physical-page PDF, SHA256 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914, independently viewed printed p268/PDF277 full left and right columns and p269/PDF278 original top stat continuation.",
+        "reviewed_text_field_paths": [
+          "summary",
+          "headline",
+          "data.dragon_types[*]",
+          "data.eastern_dragon_numeric_scope",
+          "data.book_narrator_context.stat_scope",
+          "data.source_values_as_printed",
+          "data.editorial_review.source_correction_20261118"
+        ],
+        "old_accepted_discrepancy": "Prior accepted source-specific dragon statblock incorrectly duplicated the Sirrush numerical row under a made-up Eastern Dragon numerical heading, despite the source having an Eastern Dragon description but no corresponding numerical table. The separate accepted source-reviewed rules/spirits/sr3-core-dragon-statblocks-and-great-modifiers-p268-269.yml already explicitly records the absence.",
+        "correction_scope": "Remove only the unsupported Eastern Dragon numeric row; preserve all three actual printed statblocks, common/observed powers, Great Dragon adjustments, historical descriptions and all other mechanics unchanged.",
+        "claims_not_added": "No numerical Eastern Dragon statblock is inferred and no later-edition or Sirrush proxy is substituted."
+      }
+    },
+    "eastern_dragon_numeric_scope": "Original FASA7001 printed p268/PDF277 describes Eastern Dragons but gives no separately labeled Eastern Dragon numeric statblock. The nearby 14/8, 8 (x3), Strength 35, Charisma 9 and other statistics belong to the Sirrush heading only. Do not infer or copy Sirrush statistics onto Eastern Dragons."
   }
 }
