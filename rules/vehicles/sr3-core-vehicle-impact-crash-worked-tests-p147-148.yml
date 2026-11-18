@@ -1,0 +1,142 @@
+{
+  "id": "rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "147-148",
+  "pdf_pages": "148-149",
+  "edition_scope": "FASA Corporation, Shadowrun, Third Edition (FASA7001), source.sr3-core; original published fictional tabletop-roleplaying game vehicle-impact worked tests from printed pp147–148 / physical PDF148–149, no other edition substituted.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog_number": "FASA7001",
+      "source_id": "source.sr3-core",
+      "kind": "original published fictional cyberpunk tabletop role-playing game",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        147,
+        148
+      ],
+      "physical_pdf_pages": [
+        148,
+        149
+      ]
+    },
+    "section": "Vehicles and Drones / Impact Damage and Crashing / Original Rigger X and Lone Star Cruiser #2 numerical worked examples",
+    "scope": "Published narrative examples of fictional game tests and dice outcomes, complementary to already canonical impact tables, crash procedures and passenger rules; not practical driving or collision guidance.",
+    "ramming_and_impact_example_p147": {
+      "vehicle_a": "Rigger X's Mach 6",
+      "vehicle_b": "Lone Star Cruiser #2",
+      "mach6_speed_m_per_turn": 152,
+      "cruiser_speed_m_per_turn": 300,
+      "relative_speed_m_per_turn": 148,
+      "relative_speed_divided_by_ten": 14.8,
+      "collision_power_rounded_up": 15,
+      "collision_damage_level_from_impact_table": "Serious",
+      "initial_damage_code": "15S",
+      "mach6": {
+        "body_rating": 3,
+        "ramming_test_successes": 5,
+        "power_reduction_per_ramming_success": "Vehicle Body Rating (3)",
+        "total_ramming_power_reduction": 15,
+        "minimum_resistance_target_number": 2,
+        "final_damage_code_before_resistance": "2S",
+        "control_pool_dice_added": 5,
+        "total_damage_resistance_dice": 8,
+        "damage_resistance_target_number": 2,
+        "damage_resistance_successes": 6,
+        "final_vehicle_damage": "No damage, following three staging reductions from Serious"
+      },
+      "cruiser": {
+        "body_rating": 3,
+        "karma_pool_dice_added": 2,
+        "total_damage_resistance_dice": 5,
+        "damage_resistance_target_number": 15,
+        "damage_resistance_successes": 0,
+        "final_vehicle_damage": "Serious"
+      },
+      "passengers": {
+        "characters": "Two Lone Star officers riding in Cruiser #2",
+        "vehicle_damage_level_after_resistance": "Serious",
+        "safety_restraint": "Seat belts, each stages damage down one level",
+        "damage_code_after_belts": "15M",
+        "armor": "Impact/ballistic armor vest with 4/3 Rating",
+        "impact_armor_rating": 3,
+        "power_after_impact_armor": 12,
+        "passenger_damage_code_after_armor": "12M",
+        "passenger_body_rating": 4,
+        "passenger_resistance_dice_each": 4,
+        "passenger_resistance_target_number": 12,
+        "passenger_resistance_successes": 0,
+        "final_passenger_damage": "Moderate for each officer",
+        "combat_pool_available_for_passenger_test": false
+      }
+    },
+    "crash_and_wall_example_p148": {
+      "narrative": "Cruiser #2 spins out following the collision, fails to recover, and hits the side of a building.",
+      "handling_rating": 4,
+      "modifiers": {
+        "vehicle_serious_damage": 3,
+        "speed_300_m_per_turn_exceeds_driver_reaction_x40": 4,
+        "driver_moderate_wound": 2,
+        "combined": 9
+      },
+      "final_crash_test_target_number": 13,
+      "driver_car_skill_dice": 5,
+      "crash_test_successes": 0,
+      "outcome": "Crash into building; vehicle stops.",
+      "impact_power": {
+        "crash_speed_m_per_turn": 300,
+        "divisor": 10,
+        "calculated_power": 30,
+        "impact_damage_level": "Destroyed",
+        "damage_code": "30D"
+      },
+      "resistance": {
+        "vehicle_body_rating": 3,
+        "resistance_dice": 3,
+        "vehicle_armor_rating": 6,
+        "armor_ignored_for_collision": true,
+        "damage_resistance_successes": 0,
+        "outcome": "Vehicle destroyed."
+      },
+      "wall_example": {
+        "wall_material": "Heavy Structural Material",
+        "barrier_rating": 16,
+        "barrier_rating_times_20_speed_threshold": 320,
+        "vehicle_speed_m_per_turn": 300,
+        "barrier_breached": false,
+        "outcome": "Vehicle crumples and stops against the intact wall."
+      }
+    },
+    "dependencies_reused_not_resubmitted": [
+      "rules/vehicles/sr3-core-impact-crash-numeric-p147-148.yml",
+      "rules/vehicles/sr3-core-vehicle-condition-rigger-numeric-p145.yml"
+    ],
+    "source_evidence": {
+      "original_images": "Independently visually reviewed the freshly SHA256-verified FASA7001 original printed p147/PDF148 and printed p148/PDF149, including left-column 152-versus-300 ramming and vehicle tests, p147 right-column passenger tests, and p148 crash and wall examples.",
+      "reviewed_human_readable_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.section",
+        "data.scope",
+        "data.ramming_and_impact_example_p147.*",
+        "data.crash_and_wall_example_p148.*",
+        "data.dependencies_reused_not_resubmitted[*]",
+        "data.source_evidence.*",
+        "framing"
+      ],
+      "source_limits": "This is a numeric transcription of source-worked examples, not a runnable engine regression test or formal authorization of any contiguous source boundary. Do not infer universal character statistics or any rules absent from the cited book pages."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional vehicle impact/crash worked tests, original pp147–148/PDF148–149",
+  "summary": "Source-grounded Rigger X/Cruiser #2 examples: 152 vs 300 m/turn yields 15S; Mach 6 resists 2S and takes no damage, Cruiser takes Serious, belted and armored officers take 12M; failed TN13 crash makes 30D vehicle impact against a Barrier 16 wall."
+}
