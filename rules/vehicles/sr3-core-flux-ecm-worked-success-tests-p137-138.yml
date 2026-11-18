@@ -1,0 +1,107 @@
+id: rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 137-138
+pdf_pages: 138-139
+edition_scope: Original FASA Corporation Shadowrun, Third Edition (FASA7001), fictional
+  tabletop RPG, printed pp137-138/physical PDF138-139; original edition only.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    publication_medium: Original published fictional tabletop role-playing game
+  original_page_map:
+  - printed: 137
+    physical_pdf: 138
+    subsection: Sensor and Remote Deck Ranges, Flux Range Table and situational modifiers
+  - printed: 138
+    physical_pdf: 139
+    subsection: Flux and Electronic Countermeasures worked examples
+  worked_examples:
+  - name: Josie Cruise's remote-control deck augmented Flux
+    original_worked_example_continuation: Printed p137 bottom right to p138 top left
+    base_deck_flux: 6
+    situational_modifiers:
+    - condition: High elevation
+      value: 4
+    - condition: Encryption
+      value: -0.5
+    - condition: ECCM Level 3, half-level subtraction
+      value: -1.5
+    resulting_effective_flux_rating: 8
+    resulting_signal_range_km: 20
+    important_ambiguity: The p137 table labels the ECCM subtraction using transmitter
+      Rating divided by two, while its explanatory prose and this p138 example use
+      ECCM Level divided by two. Keep both original forms, and do not silently resolve
+      the conflict.
+  - name: M.C. Jammer ECM versus Federated Boeing Eagle sensors
+    jammer_ecm_rating: 3
+    jammer_flux_rating: 10
+    target_vehicle_sensor_rating: 8
+    defending_sensor_flux_rating: 8
+    jammer_dice: 10
+    jammer_target_number: 8
+    jammer_successes: 4
+    defender_dice: 8
+    defender_target_number: 3
+    defender_successes: 2
+    net_jammer_successes: 2
+    target_initial_signature_rating: 4
+    signature_after_ecm: 6
+    classification: In the original fictional opposed test, jamming success changes
+      Signature for specified sensor/gunnery interactions; it is not a blanket prohibition
+      on ordinary aimed weapon fire.
+  - name: Eagle ECCM contest offsets one ECM success
+    eccm_rating: 4
+    ecm_rating: 3
+    eccm_dice: 4
+    eccm_target_number: 3
+    eccm_successes: 3
+    jammer_dice: 3
+    jammer_target_number: 4
+    jammer_successes: 2
+    eccm_net_successes: 1
+    prior_jammer_net_successes: 2
+    remaining_jammer_net_successes: 1
+    target_initial_signature_rating: 4
+    target_final_signature_rating: 5
+    interpretation: One ECCM net success cancels one prior ECM net success; the published
+      source's remaining +1 Signature is not an extra new modifier from ECCM.
+  canonical_record_reuse:
+  - rules/vehicles/sr3-core-flux-range-modifiers-p136-137.yml
+  - rules/vehicles/sr3-core-ecm-eccm-resolution-p138.yml
+  source_review:
+    original_images: Original hash-verified FASA7001 printed p137/PDF138 and p138/PDF139
+      visually inspected; numerical examples in original printed text, not reconstructed
+      from a supplement.
+    independent_baseline_review: All numerical source inputs, flux modifiers, contested
+      dice pools, target numbers, success counts and Signature transitions checked
+      against displayed original p138 example.
+    new_distinct_substance: Earlier p138 accepted record summarizes 4/2 successes
+      as +2 and +1 net mitigation, but does not encode all dice-count and target-number
+      operands for individual published opposed rolls. These are non-duplicative original
+      worked-test vectors.
+    reviewed_text_fields:
+    - edition_scope
+    - data.publication.*
+    - data.original_page_map[*].*
+    - data.worked_examples[*].*
+    - data.canonical_record_reuse[*]
+    - data.source_review.*
+    - headline
+    - summary
+    tests_limit: Original source numeric worked examples only; executable engine tests
+      not performed.
+framing: reference_exact
+headline: Published fictional tabletop RPG — FASA Corporation, Shadowrun, Third Edition,
+  FASA7001, source.sr3-core, Flux/ECM/ECCM worked examples, printed pp137–138/PDF138–139
+summary: 'Original FASA7001 example: Flux6 +4 elevation -0.5 encryption -1.5 ECCM
+  = Flux8 and 20 km; jammer Flux10 vs Sensor8 yields 4 versus 2 successes, then ECCM4
+  versus ECM3 cancels one, Signature4→5.'
