@@ -63,7 +63,9 @@
     "software_code_boundary": {
       "source_code": "The original fictional source distinguishes editable original source code from executable object code.",
       "copying_and_modification": "Object-code copies cannot themselves be used to alter a program; the source says modifying/upgrading requires source code. The original also describes copy-protected chip formats and post-copy degradation.",
-      "scope": "An in-world software representation, not real-world software copying guidance."
+      "scope": "An in-world software representation, not real-world software copying guidance.",
+      "copy_requires_source_code": "Original printed p295 expressly requires possession of the source code to copy a program, not only to upgrade or modify it. An executable object-code copy alone does not grant copying rights in this fictional rules system.",
+      "distribution_requires_new_source_based_object_copies": "The original p295 permits giving new program copies to others only when original source code is used to create the object-code copies; simply duplicating runnable object-code copies is not authorized by this passage."
     },
     "related_original_market": "equipment.market.sr3-core-skillsoft-chips-btl-numeric-p296",
     "limits": "Source review of p295–296 does not assert that every rule from those pages, or every source-specific chip effect in the book, has been fully normalized.",
@@ -85,10 +87,38 @@
         "headline",
         "summary"
       ],
-      "evidence_quality": "Source page visual review performed separately from candidate composition; this note and structural preflight do not prove whole-book fidelity."
+      "evidence_quality": "Source page visual review performed separately from candidate composition; this note and structural preflight do not prove whole-book fidelity.",
+      "correction_2026_11_18": {
+        "original_publication": "FASA Corporation Shadowrun, Third Edition FASA7001, original published fictional tabletop RPG, printed p295/PDF304, with p296/PDF305 continuation",
+        "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+        "original_image_review": "Directly inspected source image printed p295/PDF304, the SOURCE AND OBJECT CODE section at the right-column continuation; independently checked p296/PDF305 skillsoft class and memory rules and their already accepted canonical record.",
+        "prior_accepted_blob": "89e3fd872db9111cc214b8a7c7ef0ab007f9fc2b",
+        "added_field_paths": [
+          "data.software_code_boundary.copy_requires_source_code",
+          "data.software_code_boundary.distribution_requires_new_source_based_object_copies"
+        ],
+        "reviewed_text_field_paths": [
+          "edition_scope",
+          "headline",
+          "summary",
+          "data.publication.*",
+          "data.scope",
+          "data.types_and_access.*",
+          "data.skill_rating_override.*",
+          "data.memory_size.*",
+          "data.chip_and_memory.*",
+          "data.map_chip.*",
+          "data.software_code_boundary.*",
+          "data.related_original_market",
+          "data.limits",
+          "data.source_review.*"
+        ],
+        "assertion_equivalence": "All previously accepted p295–296 skillsoft access, rating override, magical exclusion, MP calculation, chip download and source/object code statements are unchanged. The two new conditions normalize the previously omitted copying eligibility and copying-for-others restriction exactly as the source states.",
+        "no_inference": "No real-world software-copying guidance, actual DRM behavior, new target number or skillsoft price is inferred."
+      }
     }
   },
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop skillsoft and chip rules printed pp295–296/PDF304–305",
-  "summary": "Original tabletop rules for knowsoft/datasoft/activesoft access, natural-skill rating override, lack of associated dice pool, skillsoft memory-size multipliers 3 and 2, chip download, jukebox access and Autonav Map Chip threshold."
+  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional p295–296 skillsoft/chip mechanics: original source code required to copy, modify or upgrade programs",
+  "summary": "Original p295/PDF304 requires source code for copying or modifying programs and for authoring copies distributed to others; object-code duplicates alone do not suffice. Previously accepted p295–296 skillsoft access, Force-independent skill ratings, memory formulas and restrictions remain unchanged."
 }
