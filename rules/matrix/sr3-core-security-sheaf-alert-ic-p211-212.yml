@@ -10,7 +10,7 @@ content_class:
 - rule_exact
 framing: reference_exact
 headline: FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop Matrix
-  Security Sheaves, multiple triggers, alerts, IC ratings and reset timing; printed pp211-212/PDF220-221
+  Security Sheaves, IC suppression declaration and rating rules; printed pp211-212/PDF220-221
 summary: Corrected original FASA7001 printed pp211-212/PDF220-221 division-by-two (not subtraction) trigger-step roll, thresholds,
   alert modifiers, reset decay, IC suppression and the source-verified Selena/Cybersushi
   early-relogon example distinguishing the current reset tally from the pre-logout
@@ -159,9 +159,25 @@ data:
         Security Tally by appropriate IC Rating; suppression may be dropped one program
         at a time.
       exit_scope: A decker cannot continue suppressing IC in a system they have left.
+      suppression_declaration_timing: "The decker must declare the intention to suppress IC as soon as it crashes; the suppression option is chosen at that event, not retroactively."
+      release_timing: "The decker can unsuppress or release IC at any time while still in the same host/grid; the accepted Detection Factor restoration and IC Rating security-tally effect still apply."
     ic_rating_use: IC Rating is used as a target for certain tests and to resist attacks
       by programs; in cybercombat the IC uses the host Security Value as its Attack
       Skill dice and as dice for damage resistance, not IC Rating for those dice pools.
+    ic_rating_damage_role: "Original printed p212 also states that an IC program Rating measures the damage that IC does, while the separately preserved Security Value supplies cybercombat skill and resistance dice."
+    ic_rating_named_tests:
+    - "Scramble Test by Scramble IC to delete protected data"
+    - "Probe Test by Probe IC to increase a decker Security Tally"
+  source_review_2026_11_18:
+    original_publication: "FASA Corporation, Shadowrun, Third Edition, FASA7001; published fictional tabletop role-playing game"
+    source_id: source.sr3-core
+    verified_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    original_page_images: "printed p211/PDF220 and p212/PDF221, both independently visually inspected in original 345-physical-page scan"
+    prior_accepted_blob: 46245f3f9c75bfcc1b44fda8f5c4df598eed0b82
+    reviewed_human_text_paths: [edition_scope, headline, summary, "data.publication.*", "data.original_pages.*", "data.security_sheaf.*", "data.alerts.*", "data.grid_security_tally.*", "data.host_grid_reset.*", "data.ic_activation.*", "data.source_review_2026_11_18.*", data.source_limits, data.code_status, framing]
+    source_evidence: "Original p212 Suppressing IC explicitly requires declaration when crashing; its release sentence allows unsuppressing at any time; subsequent IC Ratings paragraph identifies damage role and Scramble/Probe uses."
+    preexisting_assertions_preserved: "All original-source sheaf, alert, tally, reset, initiative, suppression cost and IC combat dice statements retained, with the original accepted record unchanged in archival history."
+    limitation: "Exact original published fictional Matrix game rules only, not real-world cyber intrusion guidance or engine execution, and not a full chapter/source closure gate."
   source_limits: This record covers printed pp211-212 only. Specific IC behavior and
     cybercombat are cross-referenced at printed pp222-227 and are not claimed normalized
     here.
