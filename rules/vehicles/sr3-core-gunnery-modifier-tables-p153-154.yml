@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Fictional Shadowrun, Third Edition tabletop rules (FASA Corporation FASA7001) vehicle gunnery/drone data, printed 153-154/PDF154-155",
-  "summary": "Exact printed manual and sensor-enhanced Gunnery Modifier Tables with relative movement, target size, recoil, terrain and sensor conditions. Original edition game-only conditions and exceptions retained.",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001: manual and sensor gunnery tables plus original Steeler test TN2, pp153–154/PDF154–155",
+  "summary": "Source-proven numerical completion: Steeler's sensor gunnery targets Signature 5, applies direct LOS -3 to reach TN2, and uses Gunnery 4 plus floor(Sensor 3/2) = 5 dice. Existing original tables and all other mechanics retained.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -264,6 +264,40 @@
         "data.first_pass_editorial_source_review.*"
       ],
       "review_limit": "First-pass review and structural gates do not themselves prove exhaustive source fidelity or complete code implementation."
+    },
+    "worked_example_test_vector_p153": {
+      "source_context": "Original FASA Corporation Shadowrun, Third Edition FASA7001, printed p153/physical PDF154; Steeler and Airstorm example continues the p152 sensor-enhanced gunnery procedure.",
+      "gunner": "Steeler",
+      "gunnery_skill_rating": 4,
+      "vehicle": "Airstorm T-bird",
+      "sensor_rating": 3,
+      "weapon": "Turret-mounted heavy machine gun",
+      "target": "Ferrari Appaloosa scout",
+      "target_signature_rating": 5,
+      "prerequisite_sensor_test": "Source states the Sensor Test succeeded and target was locked; it does not specify its dice rolled or success count.",
+      "source_base_attack_target_number": 5,
+      "direct_line_of_sight_target_modifier": -3,
+      "final_gunnery_test_target_number": 2,
+      "half_sensor_bonus_dice_rounded_down": 1,
+      "total_gunnery_test_dice": 5,
+      "source_limits": "The passage does not narrate Steeler's gunnery roll outcome, net successes, damage or ammunition expenditure. None is inferred."
+    },
+    "source_review_addition_2026_11_18": {
+      "provenance": "Direct visual comparison of original FASA Corporation Shadowrun, Third Edition FASA7001 printed p153/PDF154 image against previous accepted canonical gunnery-table blob b30ce31804e505d2a6c8224ec677cdbb0dbfc509 and the adjoining printed pp151–154/PDF152–155.",
+      "distinct_missing_substance": "Previous accepted record stated five attack dice but did not normalize the example's original target Signature 5 with direct LOS modifier -3 giving final target number 2. The source states a prior Sensor Test succeeded without supplying its numerical results.",
+      "preserved_prior_substance": "All old manual/sensor table rows, numeric signs, recoils, environmental conditions, original action requirements and prior example dice remain unchanged.",
+      "reviewed_text_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.context",
+        "data.* all nested tables and conditions",
+        "data.worked_example_test_vector_p153.*",
+        "data.source_review_addition_2026_11_18.*",
+        "framing"
+      ],
+      "limits": "Page-specific source fidelity review and offline staging do not establish end-to-end game engine execution or whole-book coverage."
     }
   }
 }
