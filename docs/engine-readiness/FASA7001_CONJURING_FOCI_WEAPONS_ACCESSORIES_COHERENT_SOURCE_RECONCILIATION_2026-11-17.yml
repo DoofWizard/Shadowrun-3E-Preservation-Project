@@ -1,0 +1,110 @@
+# Independent bounded coherent-section reconciliation. This is NOT source-completion authorization.
+schema_version: sr3_core_section_reconciliation/v1
+date: "2026-11-17"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_number: "FASA7001"
+  source_id: "source.sr3-core"
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+source_evidence:
+  original_cataloged_drive_id: "1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri"
+  fresh_345_page_scan_reacquired: true
+  independently_computed_sha256_matched: true
+  preservation_method_verify_source_executed: true
+  connector_preflight_self_tests: "29 passed"
+  review_method: "Direct original source page images, original stat cells and prose compared to current GitHub contents and the authoritative manifest; not OCR-only or a replacement for transaction confirmation"
+reviewed_sections:
+  - section: "Magic / Conjuring and Foci"
+    original_printed_range: [184, 191]
+    original_pdf_range: [193, 200]
+    source_page_mapping:
+      - {printed: 184, pdf: 193, content: "Dispelling continuation; Nature Spirit domains"}
+      - {printed: null, pdf: 194, content: "Full-page original illustration between p184 and p186; not missing rules"}
+      - {printed: 186, pdf: 195, content: "Nature and elemental summoning"}
+      - {printed: 187, pdf: 196, content: "Elemental services and Conjuring Drain table"}
+      - {printed: 188, pdf: 197, content: "Conjuring Drain; spirit forms and combat"}
+      - {printed: 189, pdf: 198, content: "Spirit control, banishing and foci forms"}
+      - {printed: 190, pdf: 199, content: "Focus bonding Karma, activation and focus-specific use"}
+      - {printed: 191, pdf: 200, content: "Sustaining and weapon foci; Street Grimoire begins"}
+    reviewed_mechanical_classes: [rule_procedure, rule_exact, optional_conditions, exceptions, actions, numerical_tables, stat_modifiers]
+    reused_canonical_paths:
+      - "rules/magic/sr3-core-dispelling-exact-p184.yml"
+      - "rules/magic/sr3-core-nature-spirit-domains-exact-p184.yml"
+      - "rules/magic/sr3-core-conjuring-summon-nature-elemental-exact-p186.yml"
+      - "rules/magic/sr3-core-elemental-services-exact-p187.yml"
+      - "rules/magic/sr3-core-conjuring-drain-ratings-p187-188.yml"
+      - "rules/magic/sr3-core-spirit-forms-combat-exact-p188.yml"
+      - "rules/magic/sr3-core-spirit-power-conflicts-p188-189.yml"
+      - "rules/magic/sr3-core-spirit-control-banishing-exact-p189.yml"
+      - "rules/magic/sr3-core-focus-bonding-karma-table-numeric-p190.yml"
+      - "rules/magic/sr3-core-focus-use-allocation-actions-p190.yml"
+      - "rules/magic/sr3-core-sustaining-focus-spell-selection-p190.yml"
+      - "rules/magic/sr3-core-sustaining-and-weapon-foci-conditions-p191.yml"
+      - "rules/magic/sr3-core-street-grimoire-drain-level-overflow-p191.yml"
+    definite_new_semantic_gap_from_this_comparison: null
+    disposition: "Bounded rules/mechanics source reconciliation of these natural sections; previously accepted numeric, conditions and exception records reused, no duplicate submission"
+  - section: "Street Gear / Personal weapons, firearms, ammunition and firearm accessories"
+    original_printed_range: [275, 282]
+    original_pdf_range: [284, 291]
+    section_end: "Through firearm and weapon accessories; Explosives starts on p282 and continues on p283 as a separate section"
+    reviewed_mechanical_classes: [equipment_stat, rule_exact, rule_procedure, availability, prices, legality, weapon_modes, damage, ammunition, accessory_mounts, reloading, recoil, conditional_features]
+    reused_canonical_paths:
+      - "equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml"
+      - "rules/combat/sr3-core-monofilament-and-bullwhip-specific-p275-276.yml"
+      - "rules/combat/sr3-core-shock-glove-strike-charge-p275-276.yml"
+      - "rules/projectile/sr3-core-crossbow-recocking-p276.yml"
+      - "rules/firearms/sr3-core-loading-system-and-recoil-notation-p276.yml"
+      - "rules/firearms/accessory-mounts.yml"
+      - "equipment/sr3-core-firearms-integrated-features-p277.yml"
+      - "equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml"
+      - "equipment/sr3-core-heavy-weapons-mount-feed-options-p279.yml"
+      - "rules/firearms/sr3-core-ammunition-class-compatibility-p279.yml"
+      - "rules/firearms/sr3-core-ammunition-heat-gel-rocket-miss-p279-280.yml"
+      - "procedures/firearms/sr3-core-ammunition-reloading-p280.yml"
+      - "rules/firearms/sr3-core-accessory-recoil-optics-p280.yml"
+      - "rules/firearms/sr3-core-accessory-functions-p280-281.yml"
+      - "equipment/sr3-core-ammunition-rockets-missiles-pricing-p281.yml"
+      - "rules/firearms/sr3-core-sighting-suppression-accessories-p281.yml"
+      - "equipment/sr3-core-firearm-weapon-accessory-market-p282.yml"
+      - "rules/firearms/sr3-core-tripod-ultrasound-use-p282.yml"
+    explicit_source_verification:
+      - "Personal and projectile weapon table values, Strength, Damage, Cost and legality; light vs medium/heavy crossbow recocking"
+      - "Firearms and heavy-weapons tables, integrated model equipment, ammunition variants and mounting restrictions"
+      - "Reloading action table, Quickness formula and belt-feed rounding unsupplied in source"
+      - "Rockets/missiles and ammunition market cells including the 100-round belt entry, plus stated footnotes"
+      - "Accessory pricing, mounting, recoil, ultrasound rounding, action and Concealability qualifiers"
+    definite_new_semantic_gap_from_this_comparison: null
+    disposition: "Previously indexed canonical equipment and procedure material reused; no duplicate row or invented modifier"
+reviewed_next_section:
+  section: "Street Gear / Explosives and Armor transition"
+  original_printed_pages: [282, 285]
+  original_pdf_pages: [291, 294]
+  reused_canonical_examples:
+    - "rules/gear/sr3-core-special-grenade-effects-p282-283.yml"
+    - "rules/armor/sr3-core-dermal-armor-attack-body-vs-healing-p283.yml"
+    - "rules/armor/sr3-core-camouflage-shield-security-effects-p284.yml"
+    - "rules/armor/sr3-core-layering-encumbrance-numeric-p285.yml"
+  review_status: "Additional bounded comparison made; no complete whole-chapter source-fidelity gate claimed"
+new_semantic_records_this_run: 0
+new_contiguous_pages_authorized: 0
+transaction_stage_or_prepare_invoked: false
+transaction_reason: "No distinct source-proven missing semantic field established in the coherent reviewed subsections; no baseline/candidate manufactured"
+source_manifest_advanced: false
+worker_checkpoint_changed: false
+source_complete_gate_passed: false
+core_normalization_complete: false
+engine_regression_executed: false
+unresolved_global_core_obligations:
+  - "Full FASA7001 chapter-by-chapter content-class certification, including unreviewed sections"
+  - "Original printed p308 scan absence still unverified; no content invented"
+  - "Printed p307 versus p312 Water Cannon firing-mode conflict remains source ambiguity"
+  - "Executable consumer engine validation is separate from source-reviewed normalization"
+denver_archival_disposition:
+  source_id: "source.fasa-7212"
+  printed_missing_pages: [46, 47]
+  priority: archived_source_loss_not_active_recovery
+  authoritative_completed_through: {printed: 45, pdf: 46}
+  checkpoint_unchanged: true
+limitations: "This narrowly evidenced source comparison and reuse receipt does not assert full source completion, whole-chapter authorization, or engine readiness; only existing transaction gates can authorize advancement."
