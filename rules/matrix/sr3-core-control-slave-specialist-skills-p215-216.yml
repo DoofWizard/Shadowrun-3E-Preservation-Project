@@ -1,0 +1,73 @@
+id: rule.matrix.sr3-core-control-slave-specialist-skills-p215-216
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: 215-216
+pdf_pages: 224-225
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001/source.sr3-core); original fictional
+  tabletop Matrix Control Slave procedure, printed pp215–216/PDF224–225; no imported edition conversion.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    catalog: FASA7001
+    edition: Third Edition
+    source_id: source.sr3-core
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    kind: original fictional tabletop role-playing game
+  operation: Control Slave
+  normal_test:
+    subsystem: Slave
+    utility: Spoof
+    action: Complex
+    effect: Control remote in-world system equipment connected to the fictional host Slave subsystem,
+      from automatic doors or elevators to automated factory assemblies.
+  conditional_skill_substitution:
+    when: A fictional decker attempts to control a manufacturing or scientific process using a Slave
+      subsystem.
+    roll: Use the average of the decker Computer Skill rating and a relevant Build/Repair or Knowledge
+      Skill rating as the applicable System Test skill rating.
+    examples_from_continuation_p216:
+    - Computer Skill and Biotech Skill for an automated medical laboratory
+    - Computer Skill and Medicine Skill for the automated medical laboratory
+    - Computer Skill and another similar skill if appropriate to the process
+    gm_restriction: The original asks the gamemaster to be strict about selecting skills appropriate
+      to the device/process, especially where an obscure skill specialization would be necessary.
+    no_inferred_rounding: The source states to use the average; these pages do not print a separate
+      rounding instruction for the resulting skill rating.
+    no_universal_specialist_requirement: The conditional average is for manufacturing/scientific
+      processes; the source does not say an appropriate special skill is mandatory for every simple
+      remote-door control.
+  canonical_overlap:
+    existing_rule_path: rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml
+    reused: Already normalizes Control Slave as Slave/Spoof/Complex and the average of Computer plus
+      applicable B/R or Knowledge Skill; this complementary continuation record preserves the original
+      p216 examples and stricter appropriate-skill instruction.
+  source_review:
+    original_pages_checked: Original PDF physical p224 (printed 215) and p225 (printed 216) images
+      inspected directly; p215 right-bottom Control Slave paragraph continues at p216 left-top, ending
+      with monitored-operation classification.
+    reviewed_text_field_paths:
+    - edition_scope
+    - data.publication.*
+    - data.operation
+    - data.normal_test.*
+    - data.conditional_skill_substitution.*
+    - data.canonical_overlap.*
+    - data.source_review.*
+    - headline
+    - summary
+    - framing
+    editorial: Neutral third-person historical reporting of imaginary tabletop processes only; preserves
+      GM discretion and source condition, not actual computer/device instructions.
+    not_code_tested: true
+    source_not_fully_complete: true
+framing: reference_exact
+headline: Shadowrun Third Edition FASA7001 (FASA Corporation/source.sr3-core), original fictional
+  Matrix Control Slave specialized skill conditions; printed pp215–216/PDF224–225
+summary: 'Original FASA Corporation Shadowrun, Third Edition (FASA7001/source.sr3-core), printed
+  pp215–216/PDF224–225: supplementary, source-checked Control Slave examples Computer+Biotech/Medicine,
+  skill appropriateness and no specified rounding, extending previously accepted operation fields
+  without duplication.'
