@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun Third Edition FASA7001 fictional tabletop communication accessories, printed pp288–289/PDF297–298",
-  "summary": "Exact original in-game micro-transceiver frequency capacity, subvocal Perception target-number modifier and signal-amplifier Flux Rating increase; core radio baseline and scanner rules are reused. These are historical fictional-tabletop mechanics, not a current real-world technical procedure.",
+  "headline": "FASA Corporation Shadowrun Third Edition (FASA7001): original standard and micro-transceiver programmed-frequency limits, printed pp288–289/PDF297–298",
+  "summary": "Original fictional tabletop rule printed p289: ordinary two-way hand-held transceivers, as well as micro-transceivers, store at most Rating × 2 programmed frequencies at a time; existing subvocal Perception and signal-amplifier game rules preserved without added range or dice effects.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -73,6 +73,40 @@
         "data.source_review_receipt.*"
       ],
       "review_note": "Editorial review performed against original page images before freezing independently reviewed baseline; numerical accuracy still requires separate acceptance and readback gates."
+    },
+    "standard_transceiver": {
+      "original_printed_page": 289,
+      "original_physical_pdf_page": 298,
+      "maximum_preprogrammed_frequencies_formula": "Rating × 2",
+      "at_one_time": true,
+      "applies_to": "Standard hand-held two-way transceiver; the source independently gives this same Rating × 2 capacity to the standard transceiver, not just to the separately described micro-transceiver.",
+      "optional_interfaces": "The original says many standard transceivers are fitted with headsets, handsets or earphones, but does not require those attachments for all models.",
+      "scope_limit": "This is a maximum count of stored programmed radio frequencies at one time; not additional channels simultaneously transmitting, a Flux Rating modifier, new range bonus, or an added dice test."
+    },
+    "source_review_correction_2026_11_18": {
+      "source": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core, published fictional tabletop role-playing game.",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_page": "Printed p289 / physical PDF298; standard Transceiver paragraph in left column directly examined alongside separate Micro-transceiver description.",
+      "prior_accepted_blob": "604cf3d1b29c604f3578a29e25e72b216a29fe5b",
+      "source_grounded_gap": "Accepted micro-transceiver record included Rating × 2 capacity for micro units but omitted the independent same-capacity rule for ordinary hand-held transceivers described on the original p289.",
+      "reviewed_text_field_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "framing",
+        "data.publication.*",
+        "data.scope",
+        "data.standard_radio_baseline_reused",
+        "data.micro_transceiver.*",
+        "data.standard_transceiver.*",
+        "data.subvocal_microphone.*",
+        "data.signal_amplifier.*",
+        "data.reused_original_mechanics[*]",
+        "data.source_review_receipt.*",
+        "data.source_review_correction_2026_11_18.*"
+      ],
+      "invariants": "Retains original micro-transceiver rating capacity, subvocal +4 Perception, signal amplifier Flux increase, and all existing publication context; no new action timing, cost, signal interception or modern wireless operations inferred.",
+      "limitations": "Local original-image source review and transaction tests do not imply full communications-chapter closure or implemented game-engine verification."
     }
   }
 }
