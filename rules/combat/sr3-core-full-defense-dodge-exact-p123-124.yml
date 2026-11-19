@@ -9,8 +9,8 @@
   "content_class": [
     "rule_procedure"
   ],
-  "headline": "FASA Corporation's fictional Shadowrun, Third Edition (FASA7001), source.sr3-core, printed pp123-124/physical PDF124-125: Full Defense exact opposed-melee and Dodge procedure",
-  "summary": "Source-exact Full Defense resolution for fictional Shadowrun Third Edition combat, FASA7001 printed pp123-124/physical PDF124-125. This is archival game mechanics, not real-world guidance.",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001, fictional tabletop Full Defense: no Combat Pool on initial defensive Combat Skill Test, printed pp123-124/PDF124-125",
+  "summary": "Original Shadowrun Third Edition Full Defense prohibits Combat Pool dice on the defender's initial opposed Combat Skill Test, while a separate defensive Dodge Test may use remaining Combat Pool. Original TN4, clean-miss comparison, damage staging and resistance remain unchanged.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -36,7 +36,7 @@
       {
         "order": 1,
         "phase": "Opposed melee test",
-        "test": "Attacker and defending character each roll Combat Skill Tests using normal SR3 melee modifiers and available allocated Combat Pool dice; compare each side's successes.",
+        "test": "Attacker rolls the usual Combat Skill Test and may allocate eligible Combat Pool dice under ordinary melee rules; the character declaring Full Defense still makes a Combat Skill Test but may NOT add any Combat Pool dice to that initial test. Apply applicable melee modifiers, then compare successes.",
         "if_defender_has_more_successes": "Attack blocked; defender has not made a damaging counterattack because Full Defense was declared.",
         "otherwise": "Record the attacker's net successes and permit the Full Defense Dodge Test."
       },
@@ -67,14 +67,38 @@
       "Full Defense is distinct from the ordinary melee defender's opportunity to counterstrike.",
       "A defender with more opposed melee successes blocks rather than counters.",
       "The additional Full Defense Dodge Test requires Combat Pool dice and differs from the initial opposed Combat Skill Test.",
-      "Retain original wording 'exceed' for Dodge success comparison; equality is not independently declared a clean miss."
+      "Retain original wording 'exceed' for Dodge success comparison; equality is not independently declared a clean miss.",
+      "The original printed p123/PDF124 expressly forbids adding Combat Pool dice to the defender's initial Full Defense Combat Skill Test; only the subsequent separate Dodge Test on p124/PDF125 uses the defender's eligible Combat Pool dice."
     ],
     "cross_references": [
       "rules/combat/full-defense.yml",
       "procedures/combat/sr3-core-melee-resolution-numeric-p122.yml",
       "rules/combat/sr3-core-melee-modifiers-table-exact-p123.yml",
       "rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml"
-    ]
+    ],
+    "original_page_review_correction_2026_11_19": {
+      "source": "FASA Corporation, Shadowrun, Third Edition, catalog FASA7001, original published fictional tabletop RPG",
+      "pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_pages": [
+        123,
+        124
+      ],
+      "physical_pdf_pages": [
+        124,
+        125
+      ],
+      "observed_source": "Printed p123 Full Defense explicitly excludes Combat Pool dice from initial Combat Skill Test; p124 separately permits a Dodge Test using only Combat Pool dice.",
+      "prior_source_error": "Prior canonical step 1 incorrectly allowed Combat Pool dice in the full-defense defender's initial Combat Skill Test.",
+      "preservation": "Keep separate defender's Dodge Test, TN4, strict-exceeds miss rule, staging and damage resistance unchanged.",
+      "reviewed_paths": [
+        "data.steps[0].test",
+        "data.distinctions[*]",
+        "data.original_page_review_correction_2026_11_19.*",
+        "edition_scope",
+        "headline",
+        "summary"
+      ]
+    }
   },
   "framing": "reference_exact"
 }
