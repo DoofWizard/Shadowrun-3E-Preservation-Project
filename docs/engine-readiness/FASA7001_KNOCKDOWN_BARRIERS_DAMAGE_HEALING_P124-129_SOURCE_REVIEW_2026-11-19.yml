@@ -1,0 +1,103 @@
+# Bounded original-source to accepted-canon mechanical section review; not a semantic commit or full-core completion gate.
+schema_version: sr3-original-core-bounded-section-review/v1
+review_date: '2026-11-19'
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  edition: Third Edition
+  catalog: FASA7001
+  id: source.sr3-core
+  published_fictional_tabletop_rules: true
+original_source:
+  sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pdf_page_count: 345
+  fresh_cataloged_drive_acquisition_and_local_hash: verified
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  original_images_visually_inspected: [125, 126, 127, 128, 129, 130]
+  printed_pages: [124, 125, 126, 127, 128, 129]
+  pagination: printed_page_plus_one_equals_physical_pdf_for_this_scope
+scope:
+  first: 'Printed p124 Knockdown / Shock Weapons / Barriers'
+  last: 'Printed p129 Using Biotech / Magical Characters and Damage'
+  checked_content_classes: [rule_exact, rule_procedure]
+  equipment_class_note: 'The numeric Body Part Types, healing and medical cost tables are in the accepted exact-rule records; not new standalone inventory products.'
+  source_internal_optional_rules: 'Deadlier Over-Damage is expressly GM-optional, not a default replacement.'
+source_to_canon:
+  - printed: [124, 124]
+    pdf: [125, 125]
+    class: rule_exact
+    headings: [Knockdown, Shock_Weapons]
+    source_table_row_counts: {knockdown: 4}
+    path: rules/combat/sr3-core-knockdown-numeric-p124.yml
+    accepted_blob: d375bbda398c48a7b2a7f59d0cb6134688de2f27
+    companion_path: rules/combat/sr3-core-shock-weapons-exact-p124.yml
+    companion_blob: 3b202072b877b887adfb9adac322caedbe7b4957
+    checks: 'Knockdown Body TN half attack Power for ranged, opponent STR for melee; Light/Moderate/Serious 2/3/4 successes, Deadly always down; gel exception; shock armor half rounded down, TN4 Body/Willpower and +2 disorientation.'
+  - printed: [124, 125]
+    pdf: [125, 126]
+    class: rule_exact
+    headings: [Barrier_Rating_Table, Barrier_Effect_Table, Firing_Through, Breaking_Through]
+    source_table_row_counts: {barrier_rating: 9, barrier_effect: 3}
+    path: rules/combat/sr3-core-barrier-rating-effect-exact-p124-125.yml
+    accepted_blob: 652aa4880e8604c5a7077ecb71f79c8da789dfa4
+    checks: 'Material ratings 2/3/4/6/8/12/16/24/32, opaque blind-fire +8, transparent exception, source armor and barrier Power reductions, doors glass/security distinctions, breaking-through multipliers and rating thresholds.'
+  - printed: [125, 126]
+    pdf: [126, 127]
+    class: rule_exact
+    headings: [Damage_Level_Table, Condition_Monitor, Damage_Modifiers_Table, Wound_Table]
+    source_table_row_counts: {damage_level: 4, damage_modifiers: 4, wound: 3}
+    path: rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+    accepted_blob: 5ba510e3e51b53eebbac30865f2cddc230bf1219
+    checks: 'Damage boxes 1/3/6/10, Physical and Stun overflow, Body death threshold, Stun to Physical conversion, healing wound TN 2/4/6, injury +1/+2/+3, Initiative -1/-2/-3 and source additivity.'
+  - printed: [126, 126]
+    pdf: [127, 127]
+    class: rule_exact
+    headings: [Deadlier_Over_Damage]
+    path: rules/combat/sr3-core-optional-deadlier-overdamage-p126.yml
+    accepted_blob: c14f073f4d76397ea3f0440a3226c21f81cb6de0
+    checks: 'Explicit GM optional Body*1.5 or stricter Body threshold, extra successes after staged Deadly convert at 2 to 1, no mandatory default.'
+  - printed: [126, 128]
+    pdf: [127, 129]
+    class: rule_exact
+    headings: [Healing_Stun, Healing_Physical, Healing_Table, Doctoring_Table, Medical_Costs_Table]
+    source_table_row_counts: {healing: 4, medical_cost_service_groups: 4}
+    path: rules/healing/sr3-core-natural-recovery-numeric-p126-128.yml
+    accepted_blob: 1bd7fa9cc12a143929b0dfdc3dd512f8275ff579
+    checks: 'Body/Willpower stun TN2 and 60min/success recovery, interruption rule, natural-Body physical recovery, level stages, base/min times, lifestyle, doctoring situational/natural modifiers, medical costs, Treat one-hour exclusivity.'
+  - printed: [127, 128]
+    pdf: [128, 129]
+    class: rule_exact
+    headings: [Deadly_Wounds_and_Permanent_Damage, Body_Part_Types_Table]
+    source_table_row_counts: {attribute_d6: 6, injured_part_d6: 6, body_part_types: 4}
+    path: rules/condition/sr3-core-deadly-permanent-injury-p127-128.yml
+    accepted_blob: 5e4ca950327ee681dab1c7794c6e862733010a3b
+    checks: 'TN4 and trauma patch +2, outcomes for zero/one/two successes, attr loss and Racial Modified Limit, injured part side die, replacement growth weeks and historical nuyen price rows.'
+  - printed: [129, 129]
+    pdf: [130, 130]
+    class: rule_procedure
+    headings: [Using_Biotech, First_Aid_Table, Trauma_Patches]
+    source_table_row_counts: {first_aid: 4}
+    path: procedures/healing/sr3-core-first-aid-biotech-stabilization-p129.yml
+    accepted_blob: 031acf9fe3351da2c463a427cbbcb6ab9d5dfc5a
+    checks: 'Physical-only first aid within hour, one Damage Level cap, TN4/6/8/10 and turns5/10/15/Special, situational TN modifiers, ongoing Deadly overflow stabilization, patch TN and medically better professional testing.'
+  - printed: [129, 129]
+    pdf: [130, 130]
+    class: rule_exact
+    headings: [Magical_Characters_and_Damage]
+    path: rules/magic/sr3-core-awakened-medical-magic-loss-p129.yml
+    accepted_blob: 8af3b3b7773e3769856973cc82c1f0344365e030
+    checks: 'Awakened Biotech +2, Deadly or untreated modifier 2D6 risk, twice when both triggers, non-original DNA Magic loss and exact original-tissue restoration distinction.'
+bounded_disposition:
+  original_core_numeric_rules_and_procedures_reconciled_in_scope: true
+  distinct_source_proven_missing_fields_after_comparison: []
+  existing_canon_reused_without_duplicate: true
+  newly_verified_semantic_commits_in_this_review: 0
+  newly_authorized_contiguous_printed_pages: 0
+  record_registration_added_in_this_review: false
+  full_combat_chapter_completion_certified: false
+  full_fasa7001_source_completion_gate_passed: false
+  executable_engine_validation: not_performed
+  original_p308_scan_anomaly: remains_unverified
+  next_distinct_section: 'Vehicles and Rigging original core printed pp130-157, starting with vehicle characteristics and Handling pp130-133; reconcile accepted vehicle source sections without duplicating.'
+  separate_archived_denver_boundary: 'FASA7212 printed p45/PDF46, pp46-47 archived losses untouched'
+  source_fidelity_limit: 'Original-source image comparison plus accepted-record blobs is bounded mechanical coverage, not global source completion or a substitute for stage/prepare/confirm on new semantic revisions.'
