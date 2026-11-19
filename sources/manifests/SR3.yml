@@ -2728,10 +2728,21 @@ postscan_verified_mechanics_recovery:
       range_printed: [157, 157]
       range_pdf: [158, 158]
       content_class: rule_procedure
-      commit: 6571ff91972aa6b05e8acc2c5f0d6d4749a93a4f
-      blob: 43f75830a30c89641f62dc877e347d63c15b71d1
+      commit: c848f4426af15df49da237d0b276c326d3d0cd86
+      blob: ced95d126b7f765220fac091eb48bf6efaa35457
       gate: verified
       contiguous_advance: false
+      source_review_correction_2026_11_19:
+        original_source: 'FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop p157/PDF158'
+        original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        prior_semantic_commit: 6571ff91972aa6b05e8acc2c5f0d6d4749a93a4f
+        prior_semantic_blob: 43f75830a30c89641f62dc877e347d63c15b71d1
+        verified_semantic_commit: c848f4426af15df49da237d0b276c326d3d0cd86
+        verified_semantic_blob: ced95d126b7f765220fac091eb48bf6efaa35457
+        reviewed_fields: ['data.weapon_fire_source_conditions_p157.*', 'data.source_review.*', 'headline', 'summary']
+        source_fidelity_delta: 'When jumped into primary drone, rigger cannot directly fire secondary drone weapon; cybernetic Combat Pool allowed only for primary drone. Existing command rules retained.'
+        gates: 'Independent original page image; separate source-reviewed baseline/candidate; transaction stage/prepare; normal Contents update; exact-byte blob readback; ingestion_gate confirm verified.'
+        scope: 'Existing source-specific verified-forward revision only; no duplicate registration, page advancement, checkpoint change or whole-source completion.'
     - id: rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154
       path: rules/drones/sr3-core-primary-secondary-captains-chair-modes-p154.yml
       range_printed: [154, 154]
