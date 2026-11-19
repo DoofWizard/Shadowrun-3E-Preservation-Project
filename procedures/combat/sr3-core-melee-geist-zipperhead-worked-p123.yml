@@ -1,0 +1,146 @@
+{
+  "id": "procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123",
+  "record_type": "procedure",
+  "status": "source_reviewed",
+  "source": "source.sr3-core",
+  "printed_pages": "123",
+  "pdf_pages": "124",
+  "edition_scope": "FASA Corporation Shadowrun, Third Edition FASA7001 published fictional tabletop role-playing game, original printed p123/physical PDF124; source-reported character examples and numerical melee tests only, no later-edition mechanics or real-world violence instruction.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "publication": {
+      "title": "Shadowrun, Third Edition",
+      "publisher": "FASA Corporation",
+      "edition": "Third Edition",
+      "catalog": "FASA7001",
+      "source_id": "source.sr3-core",
+      "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "printed_page": 123,
+      "physical_pdf_page": 124,
+      "fictional_game": true
+    },
+    "source_heading": "Compare Successes / Determine Damage / Damage Resistance Test: Zipperhead and Geist worked melee example",
+    "fictional_roles": {
+      "attacker": "Geist",
+      "defender": "Zipperhead",
+      "attacker_reason": "Geist's Combat Phase",
+      "scene": "Fictional melee encounter; setting narration is illustrative rather than an additional test modifier."
+    },
+    "source_character_setup": {
+      "zipperhead": {
+        "unarmed_combat": 5,
+        "body_initially_stated": 4,
+        "combat_pool_dice": 4
+      },
+      "geist": {
+        "unarmed_combat": 4,
+        "body": 5,
+        "combat_pool_dice": 5,
+        "strength": 4
+      },
+      "test_base_target_number": 4,
+      "extra_situation_modifiers": 0,
+      "both_allocate_all_available_combat_pool_to_initial_opposed_melee_tests": true,
+      "scope": "This ordinary melee example does not declare Full Defense; Full Defense has a distinct no-Combat-Pool initial test exception on the same page."
+    },
+    "original_opposed_test": {
+      "zipperhead": {
+        "dice_count": 9,
+        "die_results": [
+          1,
+          2,
+          2,
+          2,
+          3,
+          3,
+          4,
+          5,
+          6
+        ],
+        "successes": 3
+      },
+      "geist": {
+        "dice_count": 9,
+        "die_results": [
+          1,
+          3,
+          4,
+          4,
+          5,
+          5,
+          5,
+          6,
+          6
+        ],
+        "successes": 7
+      },
+      "success_condition": "Die result at or above target number 4 counts as success.",
+      "winner": "Geist",
+      "net_successes": 4,
+      "tie_rule": "Equal opposed successes favor the acting attacker, here Geist."
+    },
+    "damage_staging": {
+      "original_unarmed_damage_code": "4M Stun",
+      "damage_level_steps_from_four_net_successes": 2,
+      "staged_damage_code": "4D Stun",
+      "source_counterfactual": "Source says six successes instead would leave two beyond the four needed to stage to Deadly, increasing Power by one to 5D Stun; its wording does not separately define a different six-success roll sequence.",
+      "counterfactual_damage_code": "5D Stun"
+    },
+    "source_resistance_test": {
+      "source_later_body_dice_claim": 5,
+      "source_later_body_dice_results": [
+        1,
+        1,
+        2,
+        4,
+        6
+      ],
+      "attack_power": 4,
+      "impact_armor": 2,
+      "final_target_number": 2,
+      "listed_successes": 3,
+      "staging_down_successes_per_level": 2,
+      "stages_reduced": 1,
+      "final_damage_code": "4S Stun",
+      "source_final_description": "Serious Stun wound"
+    },
+    "source_internal_inconsistency": {
+      "initial_character_body": 4,
+      "later_die_count_for_body_resistance": 5,
+      "later_die_results_count": 5,
+      "classification": "Original printed source is internally inconsistent. Preserve both statements without silently replacing Body 4 with Body 5, choosing an outside bonus, or inventing an extra die justification.",
+      "engine_adjudication": "Unresolved for faithful execution of this worked example; ordinary generic melee resistance formula remains separately canonical."
+    },
+    "existing_canon_reused": [
+      "procedures/combat/sr3-core-melee-resolution-numeric-p122.yml",
+      "rules/combat/sr3-core-melee-modifiers-table-exact-p123.yml",
+      "rules/combat/sr3-core-full-defense-dodge-exact-p123-124.yml",
+      "rules/condition/sr3-damage-monitor-numeric-p125-126.yml"
+    ],
+    "original_review": {
+      "source_image": "Independently viewed original physical PDF124 with visible printed p123, both left and right worked-example paragraphs and Full Defense transition.",
+      "evidence": "Original FASA7001 SHA verified this invocation with actual preservation_method.py verify-source; distinct original source worked numbers cross-checked with existing five-step melee procedure.",
+      "reviewed_text_fields": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.source_heading",
+        "data.fictional_roles.*",
+        "data.source_character_setup.*",
+        "data.original_opposed_test.*",
+        "data.damage_staging.*",
+        "data.source_resistance_test.*",
+        "data.source_internal_inconsistency.*",
+        "data.existing_canon_reused[*]",
+        "data.original_review.*"
+      ],
+      "limits": "Record is one original-page worked numerical example, not a complete Melee chapter or engine implementation certificate; source contradiction retained."
+    }
+  },
+  "framing": "reference_exact",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional melee worked example: Geist vs Zipperhead, printed p123/PDF124",
+  "summary": "Original tabletop source gives a 9-die versus 9-die opposed melee example, seven versus three successes, 4D Stun stage-up and 4S Stun after damage resistance. The source also inconsistently says Body 4 and later five Body dice; both statements are archived without inventing reconciliation."
+}
