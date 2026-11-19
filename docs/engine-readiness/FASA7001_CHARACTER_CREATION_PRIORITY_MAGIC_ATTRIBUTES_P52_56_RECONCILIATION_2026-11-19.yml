@@ -1,0 +1,91 @@
+# Bounded source-to-canon mechanical-section review, not whole-book source completion.
+schema_version: fasa7001-bounded-core-section-review/v1
+review_date: '2026-11-19'
+publication:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  edition: 'Third Edition'
+  catalog: 'FASA7001'
+  source_id: 'source.sr3-core'
+  nature: 'published fictional tabletop role-playing game'
+source:
+  original_pdf_sha256: '7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914'
+  physical_pdf_pages: 345
+  fresh_drive_original_acquired: true
+  observed_sha256_matches_live_manifest: true
+  preservation_method_verify_source_executed: true
+  preservation_method_status: source_pdf_hash_verified
+  connector_preflight_self_tests_passed: 29
+  original_page_images_directly_inspected: [53, 54, 55, 56, 57]
+section:
+  title: 'Creating a Shadowrunner: Priority, Race, Magic and Attributes'
+  printed_pages: [52, 56]
+  physical_pdf_pages: [53, 57]
+  printed_p53_pdf54: 'Original full-page illustration, not a missing textual rule'
+  content_classes_checked: [rule_exact, character_option]
+  excluded_nonmechanical_context: 'The p52 introduction and p54 example character backstory are explanatory fiction, not omitted numerical game mechanics; separate narrative-context archival obligations are not certified here.'
+original_rule_to_canon_checks:
+  - heading: 'MASTER CHARACTER CREATION TABLE / THE PRIORITY SYSTEM'
+    printed: 54
+    pdf: 55
+    class: rule_exact
+    accepted_path: 'rules/character-creation/sr3-master-priority-numeric-p54.yml'
+    accepted_commit: 'c6f4dfc6c5125d61a087ec4fe488773d2566c939'
+    accepted_blob: 'abd65c856673513042f0563ace7b4bfc5bc2a2e3'
+    checked: 'All priority A-E Attribute, Skill and Resources cells; Race and Magic assignments; one use of each priority; racial and mundane Magic restrictions'
+  - heading: 'FULL MAGICIANS, ASPECTED MAGICIANS, ADEPTS, MAGE OR SHAMAN'
+    printed: [54, 55]
+    pdf: [55, 56]
+    class: character_option
+    accepted_path: 'rules/character-creation/sr3-core-starting-full-aspected-adept-magic-p54-55.yml'
+    accepted_commit: '1fdc2c5b142835cc06b3475985f6a90c5419fbc8'
+    accepted_blob: 'a568a046eb22ac50b6d3608d0c6d64b5d1f233b3'
+    checked: 'Full-magician 25 versus aspected 35 starting Spell Points, 25000 nuyen/extra point cap 50, spirits Force plus services charges, starting Force/services ceilings, adept starting Power Points and no extra-point purchases, restricted astral projection, and tradition choice'
+  - heading: 'CHOOSING ATTRIBUTES / RACIAL MODIFICATIONS TABLE'
+    printed: [55, 56]
+    pdf: [56, 57]
+    classes: [rule_exact, character_option]
+    accepted_paths:
+      - 'rules/character-creation/attribute-assignment.yml'
+      - 'rules/character-creation/sr3-core-racial-modifiers-numeric-p56.yml'
+      - 'rules/attributes/sr3-core-human-rating-maximum-reaction-essence-magic-p41.yml'
+      - 'rules/attributes/reaction.yml'
+    indexed_racial_blob: '21aac0fa01677a552d3931fcfc4e8b5a17c79aea'
+    indexed_attribute_cross_reference_blob: 'd9ac8d626ee07a03de2b044208ce107f94352bd5'
+    checked: 'Six base Physical/Mental Attribute point allocation, base rating 1-6, all four racial table modifier rows and features, Essence and Magic baselines, Reaction floor-average formula and printed worked examples'
+  - heading: 'ESSENCE / MAGIC ZERO BOUNDARY'
+    printed: 56
+    pdf: 57
+    class: rule_exact
+    accepted_path: 'rules/attributes/sr3-core-essence-zero-death-threshold-p56.yml'
+    accepted_commit: '02d94280084f427099033fd2115b5ddc39a65ae3'
+    accepted_blob: 'f919ee2f1a43237121cb4e59b92111e12c322088'
+    source_grounded_delta: 'Essence may be positive but below 1; at zero the character is dead and not playable, separate from permitted nonmagical Magic Rating zero and Physical overflow death'
+    transaction:
+      baseline_sha256: 'd420f41f76d7b392ac95cf415bf0339219a2f0fc26d370c26855bf8670a70629'
+      candidate_sha256: '4d2fb79156d4e4b370822bf99c86585c3ffbb15c84273bde6f8602ca7a5bfea2'
+      expected_and_readback_git_blob: 'f919ee2f1a43237121cb4e59b92111e12c322088'
+      preflight_immutable_sha256: 'b7597fd3664ad50fc327a32356438c7e79891fcf15e33d741f9c0f09ed513365'
+      actual_stage_prepare: passed
+      ordinary_contents_write: passed
+      exact_byte_readback: passed
+      actual_ingestion_gate_confirm: verified
+      actual_transaction_recovery_inspect: verified
+      source_specific_index_commit: '182ed504fb0d114dd49a4732f57a84ab314ca56b'
+      source_specific_manifest_blob: 'b3ec6cc2430a3349269bbef80e4f3399c3f20bb1'
+      contiguous_advance: false
+disposition:
+  mechanical_scope_source_reviewed_and_reconciled: true
+  independently_identified_missing_fields_after_new_transaction: []
+  new_semantic_records: 1
+  old_accepted_semantic_records_reused_not_resubmitted: true
+  explicit_scope_limit: 'Complete bounded priority, magical options, and initial attribute mechanics only; later Character Creation subsections and whole-book content-class certification retain independent gates.'
+  source_completion_gate_passed: false
+  full_core_normalization_complete: false
+  no_engine_implementation_claim: true
+  new_global_contiguous_printed_pages: 0
+  original_p308_unverified: true
+  denver_archived_pp46_47_untouched: true
+next_review_cursor:
+  priority: 'Reconcile accepted p57-63 Character Creation review and pp65-80 sample options to determine whether complete Character Creation mechanical chapter can receive source-complete scope evidence; focus on exact remaining class/field gaps, not duplicate rechecks'
+  no_rescan_of_settled_sections_without_changed_evidence: true
