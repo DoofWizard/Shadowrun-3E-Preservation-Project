@@ -1,0 +1,89 @@
+# Subordinate, bounded source-to-canon closure evidence; not a FASA7001 source-completion authorization.
+schema_version: fasa7001-bounded-section-source-crosscheck/v1
+date: "2026-11-19"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog: FASA7001
+  source_id: source.sr3-core
+  nature: "Original published fictional tabletop role-playing game"
+original_source:
+  drive_id: "1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri"
+  sha256_freshly_measured: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+  physical_pdf_pages: 345
+  printed_pages: [206, 212]
+  physical_pdf_pages_reviewed: [215, 221]
+  original_images_independently_reviewed: [215, 216, 217, 218, 219, 220, 221]
+  printed_to_pdf_mapping: "Printed p206→PDF215 through p212→PDF221, physical 1-based page counting"
+  verify_source: "Actual preservation_method.py verify-source performed using locally reconstructed GitHub-exported script and live manifest text; exact GitHub blob equality for the temporary Google Docs script transfer was not established, so source hash and visual review are independently recorded."
+live_authority_at_review:
+  manifest_path: "sources/manifests/SR3.yml"
+  manifest_blob: "33fee3e0d85064aa2203eccebf5f6272bd152e94"
+  status: "scan_complete_normalization_pending"
+  source_specific_indexed_records: 402
+  record_readback_and_index_comparison: "Eight targeted accepted paths fetched live from ordinary GitHub Contents and eight live blobs matched the manifest registrations."
+section: "The Matrix — cyberdecks, ratings, system tests, security sheaves and IC operation"
+required_content_classes_checked:
+  - rule_exact
+  - rule_procedure
+  - equipment_stat
+  - table_numeric_rows_columns
+  - worked_example
+  - optional_gamemaster_guidance_embedded_in_rule_exact
+  - narrative_qualification
+obligations:
+  - source_heading: "Printed p206/PDF215: Access, Control, Index, Files, Slave ratings; cyberdeck MPCP and hardening"
+    required_fields: "Authorized-user exception; Passive Alert +2 to all five subsystem ratings; five distinct opposed subsystem tests; exact Security Code-Security Value/Access/Control/Index/Files/Slave notation and Red-6/10/12/10/9/9 example; single cyberdeck operator; persona sum max 3×MPCP, each program and utility max MPCP; MPCP-8/6/6/6/6 and reallocation example; Hardening Black IC Power -1 per rating and Gray-IC icon-crash attack TN +1 per rating"
+    accepted_paths:
+      - {path: "rules/matrix/sr3-core-matrix-subsystem-rating-procedures-p206.yml", commit: "3d459e74c925f097fc29274047d10c030b06307c", blob: "e531ad877fd7dc5177b322040997bcc4b6f90c7e"}
+      - {path: "rules/matrix/sr3-core-mpcp-persona-hardening-p206.yml", commit: "644ea746dfe393f22226575ac7adb0f2ba3ffd30", blob: "77c36001d5a1a2cad360dd4fbd360590a9a7495a"}
+    missing_field_after_comparison: null
+  - source_heading: "Printed p207/PDF216: Stock Cyberdeck Types table; memory, I/O, response, Detection Factor and Hacking Pool"
+    required_fields: "All 8 original models × 8 columns (model, MPCP, Hardening, Active Mp, Storage Mp, I/O Mp/Turn, Response Increase, nuyen); Active utility size ceiling; storage including active programs and data; downloads at I/O rating; Reaction +2 and Initiative +1D6 per Response point with cap 3 and floor(MPCP/4); ceil((Masking+Sleaze)/2), and half Masking without Sleaze with no invented rounding; Hacking Pool floor((Intelligence+MPCP)/3), cumulative Intelligence boosts; allowed tests; prohibited damaging Gray/Black IC Body/Willpower use; Hardening Black Hammer/Killjoy qualification"
+    table_models_checked: [Allegiance Sigma, Sony CTY-360-D, Novatech Hyperdeck-6, CMT Avatar, Renraku Kraftwerk-8, Transys Highlander, Novatech Slimcase-10, Fairlight Excalibur]
+    accepted_paths:
+      - {path: "equipment/sr3-core-stock-cyberdeck-hardware-p207.yml", commit: "4cca70f5794d7ac7fba158ba0025bfbfa2ee0993", blob: "d224df585e018e9060008327857330c9a18c100e"}
+      - {path: "rules/matrix/sr3-core-cyberdeck-performance-formulas-p207.yml", commit: "0891ded4eca5f8268d2d6d2bd833865914cdf61c", blob: "8554cebefda599eb54e79726e05b589d4e856920"}
+    missing_field_after_comparison: null
+  - source_heading: "Printed pp207–209/PDF216–218: Cyberterminals, hitchers, movement, subjective time, Matrix perception"
+    required_fields: "Cyberterminal MPCP max 4, no Response Increase, program rating -1, immunity from Black IC injury/dump shock, approximate 10% equivalent deck cost; hitchers cannot control persona; no physical-distance travel formula, delay activities named; subjective time not action time; icon perception and sense-test mechanics cross-reference p209"
+    accepted_paths:
+      - {path: "rules/matrix/sr3-core-cyberterminals-hitchers-p207-208.yml", commit: "2fbf392652d2248905b404fb6d2222d9a0502ff3", blob: "fe1673a16390fb177b97c6b6f4c6476202237bfb"}
+      - {path: "rules/matrix/sr3-core-movement-subjective-time-perception-p208-209.yml", commit: "6ff487c266a09deed864eae4efa0369be76871ad", blob: "1d720ba6c3922a0e482984ffc4440697fdf8d5e3"}
+    missing_field_after_comparison: null
+  - source_heading: "Printed pp209–210/PDF218–219: Notice icons/IC, noncombat Matrix actions, System Tests, Security Tally and grid-route conditions"
+    required_fields: "Free new-icon Sensor TN Masking+Sleaze or program Rating and 1/2/3 success revelations; secret reactive IC Sensor TN IC Rating and 1/2/3 successes once at activation; noncombat actions ceil(augmented Reaction/10)+extra Initiative Dice per 3-second turn; matrix System Test Computer/Decking versus subsystem modified by utility and Security Test Security Value dice versus Detection Factor; gross host successes added to tally even when decker wins; HeadCrash worked six Computer dice TN7 versus eight Security dice TN6; jackpoint/LTG/RTG/PLTG/host route limitations and Graceful Logoff exception"
+    accepted_paths:
+      - {path: "rules/matrix/sr3-core-system-tests-action-security-tally-p209-210.yml", commit: "607fa4b5565e3fe99038ee2d15d43cda8fd213f4", blob: "f64d01b115580a74bd77faafab06973d939223cd"}
+    missing_field_after_comparison: null
+  - source_heading: "Printed pp211–212/PDF220–221: Security Sheaves, Alerts, Host/Grid Reset, proactive/reactive IC, suppression, IC Ratings"
+    required_fields: "Four sample threshold/event rows 3 Probe-5/7 Probe-7/10 Killer-8 Passive/13 Killer-10 Active; trigger roll 1D6÷2 plus Blue +4 range5–7, Green +3 range4–6, Orange +2 range3–5, Red +1 range2–4; all crossed triggers fire; same-RTG tally and PLTG retention; passive alert +2 to all subsystem ratings; Blue reset 2D6 min; normal other-color reset 3D6 min unless alert; alerted Green/Orange/Red tally falls 1D6 every 5/10/15 minutes; Selena/Cybersushi 18→6 Orange alert example; crashing IC adds its Rating to tally; suppression declaration at crash, Detection Factor -1 per IC and release +1 with IC Rating tally; IC Rating for named tests and damage, Security Value dice for attack/resistance"
+    accepted_paths:
+      - {path: "rules/matrix/sr3-core-security-sheaf-alert-ic-p211-212.yml", commit: "1cdc19a1c050a8d55be383cbc1e004f1df019325", blob: "1a8c105a4f7b06b45172c13dbe1a16ed85863c01"}
+    missing_field_after_comparison: null
+coverage_result:
+  bounded_section_source_to_current_canon_obligations_closed_for_reuse: true
+  new_semantic_records_this_review: 0
+  newly_registered_records_this_review: 0
+  fully_reviewed_bounded_printed_pages: [206, 212]
+  actual_contiguous_page_authorization: false
+  newly_authorized_contiguous_pages: 0
+  entire_matrix_chapter_certified: false
+  entire_FASA7001_normalization_complete: false
+  source_completion_gate_passed: false
+  executable_engine_implementation_validated: false
+  existing_conflicts_preserved: "Any genuinely conflicting original printed assertions must remain archived without manufactured precedence; this bounded review did not adjudicate other Matrix sections."
+  historical_reviews_preserved: true
+next_exact_cursor:
+  natural_section: "The Matrix — System Operations / Interrogations / Ongoing and Monitored Operations"
+  printed_page: 214
+  physical_pdf_page: 223
+  required_content_classes: [rule_procedure, rule_exact, optional_gamemaster_guidance, worked_example]
+  specific_review_entry: "Printed p213/PDF222 is full-page illustration, not a missing rule; p214/PDF223 opens IC category descriptions and System Operations, including five subsystem test/action bindings, GM-modified interrogation criteria (+1/+2 or -1/-2), success accumulation and the fictional Grid Reaper example. Existing rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml is accepted; compare its precise fields and original p215+ operation-table continuations before any new transaction."
+  reopen_current_bounded_section_only_if: "Changed source/record blob, newly discovered missing class or assertion, contradiction, or failed validation."
+limitations:
+  - "This is subordinate durable source evidence, not a transaction receipt, duplicate semantic ingestion, authorization or full-book certification."
+  - "Original printed p308 remains unverified; no inference of blankness or content."
+  - "Full-book class completeness and a lawful source-specific finalization procedure remain outstanding."
+  - "Denver archived pp46–47 and its active printed p45/PDF46 checkpoint were not touched."
