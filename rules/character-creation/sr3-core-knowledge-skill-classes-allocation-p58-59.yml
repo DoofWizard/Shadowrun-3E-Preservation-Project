@@ -47,7 +47,7 @@ data:
     linked_attribute: Intelligence
     knowledge_skill_costs: Use the core Active Skill cost rule relative to the relevant
       linked Attribute; see existing source-reviewed p57 skill-cost table.
-    max_base_rating_at_creation: 7
+    max_base_rating_at_creation: 6
     max_specialization_rating_at_creation: 7
     min_base_rating: 1
     may_purchase_new_knowledge_skills_after_creation: true
@@ -98,9 +98,37 @@ data:
       sample characters and player choice are distinct.
     source_proof_limit: Visual review and structured gate are not full-book completion
       or executable testing evidence.
-headline: FASA Corporation Shadowrun, Third Edition FASA7001 fictional starting Knowledge
-  Skills class and allocation, printed pp58-59/PDF59-60
-summary: Five narrator-defined original-core Knowledge Skill classes, Intelligence×5
-  starting Knowledge points, rating limitations, language allocation cross-reference,
-  and two original character build budget examples.
+  source_review_correction_2026_11_19:
+    old_accepted_blob: 0fa4df688d302ff187411fe1f8c1a66c6fce8bd5
+    original_source: FASA Corporation Shadowrun Third Edition FASA7001 published fictional
+      tabletop RPG, printed p59/PDF60
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_image_inspection: Original printed p59/PDF60 left column explicitly states
+      no starting base Knowledge Skill Rating higher than 6, or specializations higher
+      than 7.
+    corrected_field_path: data.knowledge_creation.max_base_rating_at_creation
+    prior_incorrect_value: 7
+    source_verified_correct_value: 6
+    preserved_other_substance: Five knowledge categories, Intelligence x5 and x1.5
+      language formulas, point expenditures, example budgets, future skill learning
+      and allowed specialization rating 7 left unchanged.
+    reviewed_text_fields:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.original_chapter
+    - data.source_knowledge_categories[*].*
+    - data.knowledge_creation.*
+    - data.language_creation.*
+    - data.published_build_arithmetic.*
+    - data.canonical_reuse[*]
+    - data.editorial_source_review.*
+    - data.source_review_correction_2026_11_19.*
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional Knowledge
+  Skills creation cap correction, printed pp58-59/PDF59-60
+summary: Original Third Edition tabletop Knowledge Skill classes and creation formula;
+  source-confirmed starting base Knowledge Skill maximum 6 (not 7), specialization
+  maximum 7, and Intelligence-based Knowledge and Language budgets; all other accepted
+  source facts preserved.
 framing: reference_exact
