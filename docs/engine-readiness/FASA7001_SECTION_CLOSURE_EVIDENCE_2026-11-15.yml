@@ -491,3 +491,57 @@ combat_initiative_action_movement_surprise_2026_11_19:
     exact_next_checks: 'Original seven-stage ranged attack procedure and base TN by range; Image Modification shift, launcher minimum ranges, weapon range table, recoil, visibility and attacker modifier rows, Dodge/Body resistance staging; compare existing canon and correct only missing exact conditional fields.'
   source_status: 'scan_complete_normalization_pending, not complete'
   active_denver_checkpoint_preserved: 'printed p45/PDF46, archived missing pp46-47, no search or advancement'
+
+vehicle_combat_maneuvers_2026_11_19:
+  publication: 'FASA Corporation Shadowrun, Third Edition (FASA7001), original published fictional tabletop RPG'
+  source_id: source.sr3-core
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_validation: 'Fresh original 345-page Google Drive PDF SHA256 matched live SR3 source manifest; actual preservation_method.py verify-source returned source_pdf_hash_verified; 29 connector-preflight self-tests passed.'
+  bounded_original_images:
+    printed_mechanics: [138, 140, 141, 142, 143, 144, 145]
+    physical_pdf_mechanics: [139, 141, 142, 143, 144, 145, 146]
+    printed_139_pdf_140: 'Full-page illustration, not missing rules'
+  natural_scope: 'Vehicle Combat: ECM/ECCM and Maneuver Score through Driving Actions, Hiding/Relocating, optional cooperating NPC vehicle grouping, passengers, initial vehicle condition and rigger feedback; original printed pp138-145/PDF139-146.'
+  checked_content_classes: [rule_exact, rule_procedure]
+  page_to_canon_reused:
+    - {printed: '138', path: 'rules/vehicles/sr3-core-ecm-eccm-resolution-p138.yml', blob: '2f3f90425c9d6e28def33f6ac831c4576104b9e9'}
+    - {printed: '138-140', path: 'rules/vehicles/sr3-core-vehicle-maneuver-points-turn-p138-140.yml', blob: '917a15b7afb49101949feb7582a2469f86f88c6d'}
+    - {printed: '141', path: 'rules/vehicles/sr3-core-maneuver-score-worked-example-p141.yml', blob: 'e95db3b2ce60c7bc28dbc2a9fdb8c8fa8311160d'}
+    - {printed: '141-142', path: 'rules/vehicles/sr3-core-acceleration-braking-tests-p141-142.yml', blob: '7c87ef394b8eccc6b443eb74f2001bf324f032b4'}
+    - {printed: '142-143', path: 'rules/vehicles/sr3-core-positioning-modifiers-p142-143.yml', blob: '18e72d561eaec73291beca3c123ac7bd552b76fe'}
+    - {printed: '143-144', path: 'rules/vehicles/sr3-core-ramming-test-modifiers-p143-144.yml', blob: 'f2a685742bb910a98a898c5d8130959305978243'}
+    - {printed: '142-144', path: 'rules/vehicles/sr3-core-vehicle-actions-worked-tests-p142-144.yml', blob: '313ce84249484764664518a0f44ecd5e096e7d85'}
+    - {printed: '144-145', path: 'rules/vehicles/sr3-core-hiding-relocating-p144-145.yml', blob: 'ae33c426f91c5944873d83612ed9dcfc2d31d35d'}
+    - {printed: '144-145', path: 'rules/vehicles/sr3-core-hiding-relocating-worked-tests-p144-145.yml', blob: 'ea7a4e77f8d4a52901d2fcf8d51fc04b8936e62c'}
+    - {printed: '145', path: 'rules/vehicles/sr3-core-vehicle-condition-rigger-numeric-p145.yml', blob: '3697aaa4a022bfcfbfcac67e44b7d87a0a977812'}
+  substantive_source_correction:
+    id: rule.vehicles.sr3-core-vehicle-condition-rigger-p145
+    previous_verified_commit: a7139a85d940a848be6c089c9c84a763ee85a479
+    previous_blob: a0a369bf8844d7acac6e0dafbcdbc5e75f3ac222
+    corrected_commit: 9bc2f21a6acaefedae82fbe5822253f62d6be06f
+    corrected_blob: 3697aaa4a022bfcfbfcac67e44b7d87a0a977812
+    verified_gate: 'Independently source-reviewed corrected baseline and candidate; stage and prepare; ordinary GitHub Contents update; exact readback; ingestion_gate.confirm verified.'
+    newly_corrected_condition: 'Original p145 optionally groups two or more cooperating NPC vehicles, permits a single group roll, selects fastest vehicle for Maneuver Score and applies sign-dependent one-TN-per-additional-vehicle to all Vehicle Tests; original Positioning example is not an exclusivity limit.'
+    preserved_other_rules: 'Exact p145 vehicle Condition Monitor, 6M Physical rigger feedback, passenger first-Initiative-Pass timing and -2/+2 three-versus-one example unchanged.'
+  duplicate_found_and_retracted:
+    transient_duplicate_create_commit: 9e39773c050c2275d48d3a0e47862be3f7ae0309
+    transient_duplicate_path: rules/vehicles/sr3-core-optional-grouped-npc-vehicle-combat-p145.yml
+    deletion_commit: 2513d3e44596642b50f068c9a0b26fda85af7586
+    deletion_readback: 'Verified 404'
+    administrative_reindex_commit: 96e452074a0f8bdda4930b863c465b220dedaad3
+    administrative_readback_blob: 79fffc0ded365780aa7643e29234db041584a1f4
+    final_distinct_source_registrations: 398
+    note: 'The group rule was already partly in the p145 accepted record; prior source scope falsely limited all Vehicle Tests to Positioning. Source-corrected existing file in place and removed temporary duplicate, retaining Git history.'
+  bounded_section_result: 'All rules-bearing statements, existing numeric tables, procedures and mandatory exceptions identified for this p138-145 mechanical scope reconciled with accepted original-edition canon after p145 source correction. This evidence does not authorize contiguous advancement or entire Vehicles and Drones chapter closure.'
+  next_precise_cursor:
+    first_unclosed_section: 'Vehicle Damage, Crashing, Vehicle Weapons and Repair; printed pp147-150/PDF148-151'
+    intervening_printed_146_pdf_147: 'Original full-page illustration; no invented missing text'
+    required_content_classes: [rule_exact, rule_procedure]
+    accepted_records_to_reuse: ['rules/vehicles/sr3-core-impact-crash-numeric-p147-148.yml', 'rules/vehicles/sr3-core-vehicle-weapon-repair-p149-150.yml', 'rules/vehicles/sr3-core-magic-vs-vehicles-numeric-p150.yml']
+    remaining_check: 'Cross-check original impact tables and Crash Test worked details, pedestrian/vehicle/armor exceptions, repair continuation and p150 spell/vehicle conditions against latest accepted bytes; close only actual gaps, then proceed into gunnery p151-154.'
+  administrative_limits:
+    new_net_semantic_registrations: 0
+    newly_authorized_contiguous_pages: 0
+    source_status: scan_complete_normalization_pending
+    completion_gate_passed: false
+    denver_archival_loss_pp46_47: 'Unchanged; Denver boundary printed p45/PDF46'
