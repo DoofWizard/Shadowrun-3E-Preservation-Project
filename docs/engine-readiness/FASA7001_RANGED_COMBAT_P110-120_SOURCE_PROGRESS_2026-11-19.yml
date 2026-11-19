@@ -85,3 +85,53 @@ denver_unchanged:
   authoritative_completed_through_printed: 45
   authoritative_completed_through_pdf: 46
   checkpoint_untouched: true
+
+p111_recovery_reconciliation_2026_11_19:
+  disposition: newly_confirmed_existing_github_blob_and_lawfully_indexed
+  content_class: rule_exact
+  original_source: 'FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop game, printed p111/PDF112'
+  independently_inspected_original_page: true
+  source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  semantic_path: rules/combat/sr3-core-blind-fire-and-partial-cover-exact-p111.yml
+  preexisting_semantic_commit: eb5f4b2aae2ecb4717a3d59e1bae84d56fcc6528
+  exact_semantic_blob: f32efb70abdd1089e7dac7debf6912d0ea03bb31
+  newly_source_reviewed_baseline_sha256: cbbd7a7e00b9509b801ce41ab9d4fc447bfb6e8aacd192ceb0bf0867c16c061e
+  unchanged_candidate_sha256: 7fde3083139a86d20925db2f8bed14c5c03f63b9a77d490205dbfd4ef766649b
+  source_gated_steps: 'Original PDF hash and page image; separately manually authored source-reviewed baseline; actual connector_preflight and transaction_recovery.stage invoking real ingestion_gate.prepare; original ordinary Contents commit re-read with matching exact bytes; actual ingestion_gate.confirm and recovery inspect verified'
+  prior_run_journal: not_claimed_retrieved
+  semantic_rewrite_or_duplicate: false
+  new_source_specific_index_commit: f549249b12e203baddb77d150a2006c4444739c7
+  new_source_specific_index_blob: e00f28bb94e88bb06cdc363b8ad1948cc62d3863
+  indexed_registration_total_at_that_readback: 398
+  contiguous_advance: false
+ranged_tables_followup_2026_11_19:
+  source: 'Original FASA7001 pp110-120/PDF111-121; direct inspection p111/PDF112 and p112/PDF113 and p119/PDF120, with prior coherent source-image evidence retained'
+  source_reviewed_classes: [rule_exact, rule_procedure]
+  weapon_range_table:
+    original_printed_page: 111
+    physical_pdf_page: 112
+    source_rows: 21
+    accepted_original_firearm_and_projectile_rows: rules/combat/range-target-number.yml
+    accepted_original_launcher_specific_row: rules/combat/sr3-core-launcher-range-minimum-original-p110-111.yml
+    accepted_original_grenade_launcher_row: rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml
+    range_base_tns: [4, 5, 6, 9]
+    double_asterisk_long_grenade_launcher_tn_8: true
+    minimum_range_footnote: checked
+    later_supplement_rows_not_misattributed: true
+  ranged_combat_modifiers_table:
+    original_printed_page: 112
+    physical_pdf_page: 113
+    source_rows: 25
+    reuse: 'Accepted core recoil, blind fire, partial cover, visibility, multiple-target, target-state, movement, smartgun, called-shot, aimed-shot and imaging records; separate environmental visibility versus physical cover; no duplicate'
+  grenade_range_and_damage_tables:
+    original_printed_page: 119
+    physical_pdf_page: 120
+    original_range_rows: 3
+    range_tns: [4, 5, 8, 9]
+    original_damage_rows: 3
+    accepted_canonical_path: rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml
+  previously_verified_new_procedures: ['rules/combat/sr3-core-ranged-worked-attack-dodge-staging-p113.yml', 'rules/combat/sr3-core-demolitions-barrier-test-p119.yml']
+  retained_source_internal_discrepancies: ['p113 worked injury TN versus p126 table']
+  bounded_reconciliation_disposition: 'All identified numeric and procedural missing source fields in this p110-120 scope now represented by already accepted and newly confirmed/source-indexed records; no current residual unindexed p111 claim'
+  not_certified: ['Entire Combat chapter across unrelated subsections', 'Full source FASA7001 completeness', 'Executable engine implementation', 'Global Denver contiguous page advancement']
+  next_distinct_review: 'Knockdown and Shock Weapons p124, barriers pp124-125, then Damage and Healing pp125-129; melee p120-124 has its separate completed bounded reconciliation'
