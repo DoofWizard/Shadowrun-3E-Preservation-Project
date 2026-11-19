@@ -1,0 +1,87 @@
+# Non-authoritative original source-to-canon progress receipt. Not a semantic gate or completion certificate.
+schema_version: sr3-core-coherent-section-progress/v1
+reviewed_on: '2026-11-19'
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  edition: Third Edition
+  catalog: FASA7001
+  source_id: source.sr3-core
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_validation:
+  fresh_original_from_cataloged_google_drive: true
+  source_file_size_bytes: 112507704
+  physical_pdf_page_count: 345
+  actual_preservation_method_verify_source_passed: true
+  source_images_directly_inspected_pdf_pages: [111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121]
+  original_printed_pages: [110, 120]
+  mapping_note: Printed pages 110-120 correspond to physical PDF111-121 for this section
+  review_limit: Visual source review and source-specific records; not complete exhaustive chapter closure or game-code testing
+reviewed_mechanical_lanes:
+  - ranged range bands and target numbers
+  - recoil and environmental or attacker modifiers
+  - attacker/dodge/resistance worked dice
+  - called shots, firearm modes and special ammunition
+  - shotgun choke/spread and projectile minimum
+  - grenades, scatter, barriers, source optional explosive damage
+  - launcher minimum range and source rocket/missile numerical table
+existing_accepted_canon_reused:
+  - rules/combat/sr3-core-launcher-range-minimum-original-p110-111.yml
+  - rules/combat/sr3-core-visibility-numeric-p111-112.yml
+  - rules/combat/sr3-core-recoil-accounting-numeric-p110-113.yml
+  - rules/combat/sr3-core-attacker-situational-numeric-p112.yml
+  - rules/combat/sr3-core-laser-sight-weather-distance-p112.yml
+  - rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml
+  - rules/combat/sr3-core-imaging-range-shift-p110-113.yml
+  - rules/combat/sr3-core-firearm-mode-resolution-numeric-p115.yml
+  - rules/combat/sr3-core-full-auto-target-sweep-numeric-p116.yml
+  - rules/firearms/sr3-core-special-ammunition-effects-p116-117.yml
+  - rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml
+  - rules/combat/sr3-core-optional-explosives-worked-example-p120.yml
+  - rules/combat/sr3-core-rocket-missile-numeric-p120.yml
+new_verified_source_specific_semantic_records:
+  - id: rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113
+    path: rules/combat/sr3-core-ranged-worked-attack-dodge-staging-p113.yml
+    printed_page: 113
+    pdf_page: 114
+    source_review_scope: Source-authored attack/dodge/body dice and outcome; p113/p126 injury modifier tension preserved
+    semantic_commit: dd67186dce39649af32b347b658b5e280b226ead
+    verified_blob: da4a3ead869f62a214a4277ae0e063a2266f4c09
+    confirmed_gate: verified
+    manifest_commit: 5f3688c3999ba6493f2f13ba713f9638c6dc6c60
+    manifest_blob: ee8ab132be6afcc947bd7899ff70555cf5d72249
+  - id: rule.combat.sr3-core-demolitions-barrier-test-p119
+    path: rules/combat/sr3-core-demolitions-barrier-test-p119.yml
+    printed_page: 119
+    pdf_page: 120
+    source_review_scope: Fictional Demolitions Skill target number and barrier success modifier only, no real-world implementation
+    semantic_commit: cbeaed143757f55b5f57f231dad2eed53fe87ecd
+    verified_blob: fc1e446f0268bb9c384c8a71993012d8af94adb4
+    confirmed_gate: verified
+    manifest_commit: 2b0ecdf0ba7d95182c95fb86ad5fca0fed0ba72b
+    manifest_blob: 8e48149bd84066fdfd198d03bec98afe26dd3586
+unresolved_distinct_items:
+  - id: pending.ranged-combat-blind-fire-p111-index-check
+    path: rules/combat/sr3-core-blind-fire-and-partial-cover-exact-p111.yml
+    original_source: FASA7001 printed p111/PDF112
+    observed_semantic_commit: eb5f4b2aae2ecb4717a3d59e1bae84d56fcc6528
+    observed_blob: f32efb70abdd1089e7dac7debf6912d0ea03bb31
+    status: existing_semantic_file_read_back_but_not_registered_in_current_sr3_manifest
+    required_next_action: Find its authentic prior prepared journal/confirmation receipt; do not invent a gate receipt or replay the same accepted bytes. Perform lawful source-specific index only if all actual gates are proven.
+  - id: ranged-combat-exhaustive-source-class-certificate
+    status: incomplete
+    exact_remaining: Verify row-by-row every source Weapon Range and Grenade Range Table against current accepted canonical fields; reconcile complete p110-120 original source heading, exceptions and classes, including p111 unindexed file, before claiming full section closure
+source_specific_registrations_after_this_run: 395
+new_source_specific_registrations_this_run: 2
+new_global_contiguous_authorized_printed_pages: 0
+full_fasa7001_completion_gate_passed: false
+source_status_remains: scan_complete_normalization_pending
+next_canonical_cursor:
+  preserve_in_progress: Ranged Combat printed pp110-120 / physical PDF111-121 until unindexed p111 and missing class checks resolved
+  after_closure: Melee Combat starting printed p120-121 / physical PDF121-122
+  no_duplicate_work: Reuse the accepted Melee and barrier records before transacting a genuine gap
+denver_unchanged:
+  archived_missing_printed_pages: [46, 47]
+  authoritative_completed_through_printed: 45
+  authoritative_completed_through_pdf: 46
+  checkpoint_untouched: true
