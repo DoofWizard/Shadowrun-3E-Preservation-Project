@@ -1,0 +1,40 @@
+# Nonsemantic source-to-canon mechanical closure evidence; not an ingestion authorization.
+schema_version: sr3-core-mechanical-section-evidence/v1
+date: '2026-11-19'
+publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: FASA7001, id: source.sr3-core}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+live_manifest_review_blob: 'd64c127a03b90959d56272e29080033cea098a86'
+live_source_status: scan_complete_normalization_pending
+scope: {chapter: 'Combat', coherent_section: 'Initiative, Combat Turn, Actions, Movement and Surprise', printed: [100,109], physical_pdf: [101,110]}
+review:
+  original_345_page_source_freshly_downloaded: true
+  source_sha_matches_live_manifest: true
+  actual_verify_source: source_pdf_hash_verified
+  original_page_images_checked: 'Physical PDF101-110; printed p101/PDF102 is illustration, not missing numeric text'
+  original_tests_checked: 'Initiative adjusted Reaction and 1D6 base; descending Initiative order and 10-point pass decrement; wound immediacy; tie and delay restrictions; task/timed-item action timing'
+  original_action_economy_checked: 'Declaration order, refresh, Free/Simple/Complex allocations, action lists with specific prerequisites; quickdraw, take aim, smartlink, focus, conjuring, reload and melee categories'
+  original_movement_checked: 'Walking/running multipliers, Quickness, phase-count division, interception, and penalties; separate original numeric movement and interception records reused'
+  original_surprise_checked: 'Reaction TN4, -2 waiting-ambush adjustment, opponent-by-opponent success comparison, Combat Pool defense prohibition and total-surprise conditions'
+  mechanics_classes: [rule_exact, rule_procedure]
+  prior_independent_original_page_source_reviews_reused: true
+  new_semantic_defect_found_in_bounded_source_review: false
+  independent_full_book_completion: false
+accepted_source_specific_records:
+  - {path: 'rules/initiative/sr3-core-john-longbone-worked-score-p100-102.yml', printed: [100,102], pdf: [101,103], commit: '3d17e31565956b77ae408cbb554140664cf20c40', blob: '0e89234eda9e5be94d933c6822ac63c67b50f1c1'}
+  - {path: 'rules/initiative/sr3-core-initiative-worked-pass-order-p102.yml', printed: [102,102], pdf: [103,103], commit: '7e5303cde39dffb1077093844c3350dcb22b960e', blob: 'eff548a812535c1981b48b0d746cec9b50d0f057'}
+  - {path: 'rules/initiative/sr3-core-delayed-actions-exact-p103.yml', printed: [103,103], pdf: [104,104], commit: 'fad64e1f8a49249e5bef8db70572322b4bf00f99', blob: '17fe1ef281997b3bf59683c46aee10e0da38ff33'}
+  - {path: 'rules/initiative/sr3-core-timed-items-initiative-p103.yml', printed: [103,103], pdf: [104,104], commit: '00312cd98d7b35e7ec77d2cbb0908131ff3c4f79', blob: '9df8d0f60ce1cdf8331b1ad3c73fd1a34a76e8a3'}
+  - {path: 'rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml', printed: [104,108], pdf: [105,109], commit: '5a5cdb69809565fd76f4029933f02be0af75a4c7', blob: '87371b67cf6ac9e57ffd276d44713eaa3cdafcfd'}
+  - {path: 'rules/combat/sr3-core-movement-interception-p108.yml', printed: [108,108], pdf: [109,109], commit: '9ea762eed3ac33748c767f9580bdd2d171655be1', blob: 'd9a14d83a66f683b9a15d6b1f50920da3ebc1ea0'}
+  - {path: 'rules/movement/sr3-core-interception-numeric-p108.yml', printed: [108,108], pdf: [109,109], commit: '87f8660747c42ef09eb90e6f5f26d9e8dcc9966e', blob: '2314dc943588b42cf2607e0c6d0e05d53793eb9d'}
+  - {path: 'rules/movement/sr3-core-running-walking-rate-numeric-p108.yml', printed: [108,108], pdf: [109,109], commit: 'c561f76f930e47fbf2d20ceaca4907fb47001cc7', blob: 'e5dd752ee03b1fbc226bd9f451835866bd8062df'}
+  - {path: 'rules/combat/sr3-core-surprise-ambush-resolution-p109.yml', printed: [109,109], pdf: [110,110], commit: '7fb3b2c03f2f706938ba54722ccd092412389f68', blob: '0b46ea683e59522b4df8946b8effd2eb7536a7ac'}
+source_limits:
+  - 'Original printed p101/PDF102 is full-page illustration and is not a missing rule.'
+  - 'Original Combat action listing on p104-108 is a section crossing pages; existing accepted action record covers free/simple/complex categories and their exceptions.'
+  - 'Numeric details on prior pp38,42-44, and following pp110-129 remain in their already accepted records; no new Source B second-edition rules introduced.'
+  - 'Record citations, field inspection and passing structural tests cannot prove runnable engine behavior or whole-core source fidelity.'
+result: {bounded_original_mechanical_section_reconciled: true, new_semantic_commits: 0, new_indexed_registrations: 0, net_new_authorized_contiguous_printed_pages: 0, full_source_complete: false}
+next_cursor: 'Check any actual missing Character Creation/Skills/Combat boundaries not covered by this cited source-page evidence; prioritize next genuinely incomplete core heading, retaining original p308 scan gap separately and no repeat of complete reviews.'
+known_unresolved_outside_scope: ['Printed p308 image unverified', 'ECCM/Water Cannon/Locate Slave original internal contradictions', 'Final source-completion gate and other unreviewed content classes']
+denver_archival: {status: archived_losses, printed_losses: [46,47], checkpoint_through_printed: 45, checkpoint_pdf: 46, mutation: none}
