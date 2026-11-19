@@ -186,3 +186,44 @@ game_concepts_final_mechanics_2026_11_19:
     required_content_classes_to_check: [rule_exact, rule_procedure, character_option, equipment_stat]
     source_specific_evidence_cursor_only: true
   full_source_completion_gate_passed: false
+
+character_creation_knowledge_cap_correction_2026_11_19:
+  publication: 'FASA Corporation Shadowrun, Third Edition FASA7001 published fictional tabletop source'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  independent_original_image_review:
+    printed: [54, 55, 56, 57, 58, 59]
+    physical_pdf: [55, 56, 57, 58, 59, 60]
+  covered_natural_subsections:
+    - {name: 'Master priority table', printed: 54, class: rule_exact, path: 'rules/character-creation/sr3-master-priority-numeric-p54.yml', blob: abd65c856673513042f0563ace7b4bfc5bc2a2e3}
+    - {name: 'Full/aspected magician and adept starts', printed: [54, 55], class: character_option, path: 'rules/character-creation/sr3-core-starting-full-aspected-adept-magic-p54-55.yml', blob: a568a046eb22ac50b6d3608d0c6d64b5d1f233b3}
+    - {name: 'Racial modifications', printed: 56, class: character_option, path: 'rules/character-creation/sr3-core-racial-modifiers-numeric-p56.yml', blob: 21aac0fa01677a552d3931fcfc4e8b5a17c79aea}
+    - {name: 'Active Skill purchasing and worked examples', printed: [57, 58], class: rule_procedure, path: 'rules/character-creation/sr3-core-active-skill-worked-p57-58.yml', blob: 72cf1a1dd85431ee258b2303a63290229719d1cf}
+    - {name: 'Knowledge/Language skill starting examples', printed: 59, class: character_option, path: 'rules/character-creation/sr3-core-knowledge-language-examples-p59.yml', blob: 40279124b7edfc2c04d88d59fdf49aa46db39ec7}
+    - {name: 'Knowledge Skill classes, free points, rating limits', printed: [58, 59], class: character_option, path: 'rules/character-creation/sr3-core-knowledge-skill-classes-allocation-p58-59.yml', blob: e8467b1b06b5fcdf9f1e265dd7561f8acf409440}
+  independently_source_proven_error:
+    source: 'Printed p59/PDF60 left column states Knowledge base Skill Rating 6 maximum and specialization Rating 7 maximum at character creation.'
+    exact_field: 'data.knowledge_creation.max_base_rating_at_creation'
+    prior_incorrect_value: 7
+    source_correct_value: 6
+    old_accepted_blob: 0fa4df688d302ff187411fe1f8c1a66c6fce8bd5
+    verified_corrected_semantic_commit: 28a549f73f9ebdd3c91a3f10b00d4235edf27150
+    verified_corrected_semantic_blob: e8467b1b06b5fcdf9f1e265dd7561f8acf409440
+    source_specific_manifest_commit: fa698044a48ef7866178bed40574cad8d2812218
+    manifest_readback_blob: 943e103953566b8f123ec5562e3fca53e4308425
+    transaction: 'Independent revised source baseline and same-substance candidate; actual connector preflight, transaction_recovery stage/prepare, ordinary GitHub Contents update, fresh exact matching readback, ingestion_gate confirm verified.'
+    related_legacy_record_correct: 'rules/character-creation/knowledge-skill-points.yml already says max base 6; left unchanged.'
+    specializations_preserved: 'Original specialization max 7 unchanged; the false base max 7 was corrected without modifying other category and arithmetic assertions.'
+  provisional_review_result:
+    bounded_subsection: 'Original character creation numeric priority, magician/adept, racial modifiers, skill purchase, Knowledge and Language allocation pp54-59.'
+    source_to_accepted_canon_review: 'Source-exact numeric gap corrected and indexed; other inspected original table and source example mechanics reused rather than duplicated.'
+    distinct_unresolved_fields_identified_in_these_checked_pages: []
+    chapter_closure_certified: false
+    source_completion_gate_passed: false
+    contiguous_authorized_printed_pages: 0
+  next_unfinished_rules_section_cursor:
+    section: 'Character creation Resources/Finishing Touches, printed pp60-63/PDF61-64'
+    verified_source_page_images_seen: [61, 62, 63, 64]
+    next_exact_review: 'Check p60 Spell Point and starting gear caps; p61 cyberware Essence grade, starting contacts; p62 extras price table and lifestyle/initiative; p63 startup nuyen conversion, five dice-pool formulas and examples against indexed canonical fields; retain any internal math discrepancies verbatim.'
+    required_content_classes: [rule_exact, rule_procedure, equipment_stat, character_option]
+    source_evidence_cursor_only: true
+  denim: 'Denver archived printed pp46-47 remain outside active core and global checkpoint stays p45/PDF46.'
