@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Fictional Shadowrun, Third Edition tabletop rules (FASA Corporation FASA7001) vehicle gunnery/drone data, printed 151-152/PDF152-153",
-  "summary": "Original FASA7001 fictional SR3 manual and sensor-enhanced vehicle-gunnery procedures, printed pp151-152/PDF152-153. Corrects dual-hardware smartlink qualification and retains permitted Combat Pool on sensor-enhanced Gunnery Tests, with Signature/ECM distinctions and exact action conditions.",
+  "headline": "Source-verified fictional tabletop vehicle gunnery rule — FASA Corporation Shadowrun, Third Edition FASA7001, printed pp151–152/PDF152–153",
+  "summary": "The original Manual Gunnery source requires cumulative vehicle Damage Modifiers and character Physical or Stun Damage Modifiers. Existing rules and exact values are unchanged.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -32,7 +32,13 @@
       "manual_recoil": "Fixed vehicle mounts and turrets halve recoil, rounding down, before ordinary weapon accessory recoil compensation; heavy weapons' uncompensated recoil doubling is canceled by this vehicle mount halving",
       "unmounted_weapon": "A passenger firing an unmounted weapon from vehicle uses corresponding skill and receives source +2 Firing Unmounted Weapons modifier in the original table",
       "manual_aim_signature": "Manual weapon aiming does not reduce the firing vehicle's Signature Rating, unlike sensor aiming.",
-      "manual_aim_ecm": "Manual weapon aiming is not susceptible to electronic countermeasures (ECM), unlike sensor aiming."
+      "manual_aim_ecm": "Manual weapon aiming is not susceptible to electronic countermeasures (ECM), unlike sensor aiming.",
+      "cumulative_damage_modifiers": {
+        "source_printed_page": 152,
+        "physical_pdf_page": 153,
+        "exact_game_condition": "When the attacking vehicle has Damage Modifiers and its gunner has Physical or Stun Damage Modifiers, both applicable modifier categories are cumulative for the manual Gunnery Test rather than one replacing the other.",
+        "scope": "Original p152 Attacking vehicle damaged explanation in the Manual Gunnery Modifiers Table Key; apply the corresponding vehicle and character damage modifiers under their own respective conditions."
+      }
     },
     "moving_relative_conditions": {
       "relative_motion": "Moving toward each other reduces modifier; moving apart raises it; moving at right angles has different sign",
@@ -92,7 +98,25 @@
         "data.source_lineage",
         "data.first_pass_editorial_source_review.*"
       ],
-      "review_limit": "Source-page re-review verifies identified assertions; it does not independently prove full-section completeness, engine correctness or connector acceptance."
+      "review_limit": "Source-page re-review verifies identified assertions; it does not independently prove full-section completeness, engine correctness or connector acceptance.",
+      "source_delta_2026_11_19": {
+        "source": "FASA Corporation, Shadowrun, Third Edition, FASA7001, source.sr3-core, original printed p152/physical PDF153",
+        "verified_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+        "prior_indexed_blob": "2267fc588dac52baacfc6a11f5ba7dc3554679a7",
+        "source_review": "Original p151/PDF152 Manual Gunnery and p152/PDF153 Manual Gunnery Modifiers Table Key directly inspected. Original p152 expressly states Vehicle Damage Modifiers are cumulative with character damage modifiers for Physical or Stun Damage; prior accepted record separately listed both but did not explicitly preserve their stacking condition.",
+        "reviewed_text_paths": [
+          "data.manual_gunnery.*",
+          "data.moving_relative_conditions.*",
+          "data.sensor_enhanced.*",
+          "data.sensor_vs_manual",
+          "data.original_example.*",
+          "data.first_pass_editorial_source_review.*",
+          "edition_scope",
+          "headline",
+          "summary"
+        ],
+        "preservation": "Prior numbered table rows, action costs, smartlink, Signature and ECM distinction, recoil and sensor procedures unchanged; this is one source-specific corrected exception, no chapter completion or engine test."
+      }
     }
   }
 }
