@@ -1,0 +1,137 @@
+# Non-authoritative bounded source-to-canon review; not an advance or source-completion receipt.
+schema_version: fasa7001-bounded-rule-review/v1
+date: "2026-11-19"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  catalog_number: FASA7001
+  source_id: source.sr3-core
+  original_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+review:
+  section: "The Matrix / special, offensive and defensive utilities; cybercombat; intrusion countermeasures"
+  printed_pages: [221, 230]
+  physical_pdf_pages: [230, 239]
+  original_images_reviewed: [230,231,232,233,234,235,236,237,238,239]
+  original_scan_acquired_from: "Cataloged source.fasa-7001 Drive original, SHA independently recomputed in this run"
+  actual_verify_source_command: "python tools/ingestion/preservation_method.py verify-source FRESH.pdf LIVE_SR3.yml"
+  actual_verify_source_result: source_pdf_hash_verified
+  source_pdf_pages: 345
+  preflight_self_test: "29 passed"
+  per_record_confirm_and_index_gates: "Reused already accepted manifest gate=verified receipts only; no new candidate, stage, write, confirm, index or page advance in this bounded review"
+authoritative_state_observed_before_evidence_write:
+  manifest_path: sources/manifests/SR3.yml
+  manifest_blob: 33fee3e0d85064aa2203eccebf5f6272bd152e94
+  status: scan_complete_normalization_pending
+  global_checkpoint_source: source.fasa-7212
+  global_checkpoint_completed_printed: 45
+  global_checkpoint_completed_pdf: 46
+required_content_classes:
+  - rule_exact
+  - rule_procedure
+obligations:
+  - heading: "Special and offensive utilities; Sleaze, Track, Attack, Black Hammer, Killjoy"
+    printed: [221,221]
+    physical_pdf: [230,230]
+    exact_fields: [data.special_offensive_defensive_utilities, data.general.original_source_code_prerequisite]
+    source_assertions_reviewed: "Sleaze masking and rounding; Track attack/evasion/net-success turn cycle and escape; attack L/M/S/D multipliers 2/3/4/5; Black Hammer multiplier 20, deck/jackpoint exception and lethal Black IC cross-reference; Killjoy multiplier 10, nonlethal Stun"
+    accepted_path: rules/matrix/sr3-core-matrix-utility-multipliers-effects-p220-222.yml
+    accepted_commit: 39ecbc95ca65641f8edf7b2b2a79450e9eef34af
+    accepted_blob: bc82c8a104b0ffa29c54ba41b365b959e988655d
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Slow, Armor, Cloak, Lock-On, Medic and Medic Target Numbers Table"
+    printed: [222,222]
+    physical_pdf: [231,231]
+    exact_fields: [data.special_offensive_defensive_utilities]
+    source_assertions_reviewed: "Slow multiplier 4 and 2-net-success action effect; suppression cost, immunity of reactive IC; Armor rating loss on hits and Black IC body exception; Cloak and Lock-On multipliers 3; Medic multiplier 4, Complex Action, test TN Light 4 Moderate 5 Serious 6, heal 1 box/success, loses 1 rating per use"
+    accepted_path: rules/matrix/sr3-core-matrix-utility-multipliers-effects-p220-222.yml
+    accepted_commit: 39ecbc95ca65641f8edf7b2b2a79450e9eef34af
+    accepted_blob: bc82c8a104b0ffa29c54ba41b365b959e988655d
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Cybercombat timing, initiative, IC table and Program Size Table"
+    printed: [222,223]
+    physical_pdf: [231,232]
+    exact_fields: [data.cybercombat, data.initiative, data.program_size_table]
+    source_assertions_reviewed: "Three-second turns; astral/Matrix/physical resolution order and delayed-physical-world exception; direct communication -1D6; persona Reaction+1D6 and Response Increase +2/+1D6; IC Blue/Green/Orange/Red 1D6/2D6/3D6/4D6 plus rating; complete 14 by 10 program-size matrix rating-squared times multiplier"
+    accepted_path: rules/matrix/sr3-core-cybercombat-initiative-program-size-p222-223.yml
+    accepted_commit: 6428eeb8506ab9299a77fdf36c620dece3db6e2e
+    accepted_blob: 55ee0ccb95d13465dbad1c60dd689182dbf1d941
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Cybercombat actions, target numbers and combat maneuvers"
+    printed: [223,225]
+    physical_pdf: [232,234]
+    exact_fields: [data.action_classes_original_p223_224, data.cybercombat_target_numbers, data.maneuvers, data.original_page_test_vectors_p225_226]
+    source_assertions_reviewed: "Free/Simple/Complex operations and one Free+two Simple or one Complex per phase; intruding vs legitimate Blue 6/3 Green 5/4 Orange 4/5 Red 3/6; no Evasion/Sensor program exceptions and no-success failure; Cloak/Lock-On, evade duration/Security Tally, parry and position effects; original Cybersushi example"
+    accepted_path: rules/matrix/sr3-core-cybercombat-hit-damage-maneuvers-p224-227.yml
+    accepted_commit: 1667b9da218eaa93ab229279669d1dbb73ed9fe2
+    accepted_blob: a3bf9e6e2e1c849983ede4177ad4c525db080101
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Attack, resist, icon Condition Monitor, simsense and dump shock"
+    printed: [226,227]
+    physical_pdf: [235,236]
+    exact_fields: [data.attack_resolution, data.overload_damage, data.dump_shock]
+    source_assertions_reviewed: "Utility damage Power=rating and 2 successes per Damage stage; icon Bod and IC Security Value resistance; ten-box icon crash, Black IC disconnection exception; overload Light TN2 Moderate TN3 Serious TN5 and one Light Stun on failed Willpower; dump-shock Power=host security, Blue L/Green M/Orange S/Red D"
+    accepted_path: rules/matrix/sr3-core-cybercombat-hit-damage-maneuvers-p224-227.yml
+    accepted_commit: 1667b9da218eaa93ab229279669d1dbb73ed9fe2
+    accepted_blob: a3bf9e6e2e1c849983ede4177ad4c525db080101
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "White IC: cripplers, killer, probe, scramble, tar baby"
+    printed: [227,228]
+    physical_pdf: [236,237]
+    exact_fields: [data.white_ic]
+    source_assertions_reviewed: "Affected Bod/Evasion/Sensor/Masking; minimum rating 1 and 2 net successes per loss; Killer damage code by host; probe Rating-versus-Detection Factor Security Tally; Scramble failed-decrypt destruct test against Computer; Tar Baby utility-class contest, no passive Armor/Sleaze attack, no Security Tally increase on joint crash"
+    accepted_path: rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml
+    accepted_commit: 682da0c8b58ad4d5b9d12cc8315e50d0c664343a
+    accepted_blob: 9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Gray IC: blaster, rippers, sparky, tar pit"
+    printed: [228,230]
+    physical_pdf: [237,239]
+    exact_fields: [data.gray_ic]
+    source_assertions_reviewed: "Blaster MPCP permanent loss and 3x adjusted persona limit; four ripper variants, rating-zero trigger; Sparky MPCP+2 resistance, Stun effect and worked example; Tar Pit wins then separate MPCP test and damages on-deck copies while offline backup is inaccessible during current run"
+    accepted_path: rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml
+    accepted_commit: 682da0c8b58ad4d5b9d12cc8315e50d0c664343a
+    accepted_blob: 9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+  - heading: "Black IC: escape, lethal/nonlethal, overflow, permanent effects, original example"
+    printed: [230,230]
+    physical_pdf: [239,239]
+    exact_fields: [data.black_ic, data.attack_resolution.black_ic_persona_crash_exception]
+    source_assertions_reviewed: "After first hit Complex Action Willpower versus IC rating to jack out, IC final attack; lethal dual Body/icon resistance and Hardening, Hacking Pool ineligible for physical resistance; Matrix connection persists when icon crashes, +2 effective rating; doubled rating final MPCP attack on physical death, data loss only if MPCP destroyed; nonlethal Willpower, disconnection unconsciousness, overflow; GM optional long-term effects, Cybersushi original dice example"
+    accepted_path: rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml
+    accepted_commit: 682da0c8b58ad4d5b9d12cc8315e50d0c664343a
+    accepted_blob: 9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3
+    reviewed_class: rule_exact
+    disposition: existing_source_accepted_and_reused
+closure:
+  bounded_section_mechanical_obligations_accounted_for: true
+  missing_canonical_fields_identified_in_this_review: []
+  new_semantic_records: 0
+  newly_indexed_registrations: 0
+  new_authorized_contiguous_pages: 0
+  source_specific_reindex_performed: false
+  whole_matrix_chapter_cleared: false
+  full_fasa7001_source_completion: false
+  runnable_engine_validation: false
+  next_distinct_original_section:
+    heading: "Running the Shadows / Perception and Physical Security"
+    printed: [231,233]
+    physical_pdf: [240,242]
+    exact_cursor: "Printed p232/PDF241 Physical Security / Natural Perimeter Barriers continuation into p233; existing Perception numeric tables pp231-232 are indexed and must be reused"
+hard_blockers:
+  - "Unverified printed p308 source scan anomaly; no reconstructed assertions or blank-page presumption"
+  - "Whole-book rule/content-class audit incomplete beyond reviewed bounded sections"
+  - "FASA7001 status scan_complete_normalization_pending and Denver active checkpoint; generic authorize-advance not a lawful source-specific completion operation"
+  - "Source-internal ECCM, Water Cannon and Locate Slave assertions preserved without invented precedence"
+worker_controls:
+  single_existing_worker: true
+  schedule_and_enabled_state_unchanged: true
+  denver_archived_loss_printed_pages: [46,47]
+  denver_checkpoint_not_modified: true
