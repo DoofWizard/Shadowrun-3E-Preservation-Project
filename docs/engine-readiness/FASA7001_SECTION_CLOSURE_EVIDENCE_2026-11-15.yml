@@ -76,3 +76,46 @@ separate_denver_source:
   completed_through_pdf: 46
   lost_printed_pages_archived: [46, 47]
   no_recovery_search_or_boundary_mutation: true
+
+game_concepts_2026_11_19:
+  source: 'FASA Corporation Shadowrun Third Edition original fictional tabletop rules FASA7001 source.sr3-core'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  actual_preservation_method_verify_source_passed: true
+  source_original_images_directly_inspected:
+    printed: [38, 39, 40, 41, 42, 43, 44]
+    physical_pdf: [39, 40, 41, 42, 43, 44, 45]
+  bounded_scope: 'Game Concepts: making dice rolls and all four tests; race/attribute, Initiative and magical tradition introductions; Skills, dice-pool formulas, allocation and restrictions. Gear beginning at p44 continues beyond this bounded review.'
+  source_to_current_canon:
+    - {printed: [38, 39], pdf: [39, 40], class: rule_exact, path: 'rules/tests/sr3-core-dice-target-numbers-rule-one-six-p38.yml', blob: d6e782d2a5822d07b03c9b56b23eff0ce1bd0ec1}
+    - {printed: [39, 39], pdf: [40, 40], class: rule_exact, path: 'rules/tests/sr3-core-test-types-opposed-open-examples-p39.yml', blob: 9423e8549d0f83e5e9d7de32855df1b67d4a9fde}
+    - {printed: [40, 40], pdf: [41, 41], class: rule_procedure, path: 'rules/initiative/delayed-actions.yml', blob: f915a9652cc624449fc42b5f124896f94f1fdaf5, note: 'Detailed rule located on original printed p103; p40 introductory delay rule reused'}
+    - {printed: [40, 41], pdf: [41, 42], class: character_option, path: 'rules/character-creation/racial-modifiers.yml', blob: fe3fb0da8079793b5e450b3c1e87261910c008d3, note: 'Detailed metatype numeric modifiers on original p56; p40 overview only'}
+    - {printed: [41, 41], pdf: [42, 42], class: rule_exact, path: 'rules/attributes/sr3-core-human-rating-maximum-reaction-essence-magic-p41.yml', blob: d9ac8d626ee07a03de2b044208ce107f94352bd5}
+    - {printed: [42, 42], pdf: [43, 43], class: rule_exact, path: 'rules/initiative/sr3-core-base-matrix-rigging-astral-initiative-p42.yml', blob: c2a61085e01837d345ab9b2f29fdf16bd3f660dc}
+    - {printed: [42, 42], pdf: [43, 43], class: character_option, path: 'options/magic/sr3-core-tradition-lifetime-choice-p42.yml', blob: 4f1b4c022a6954982ae400eb306bfec60e6c02f4, commit: 1da612743b21f98be452e9b4840d493624899200}
+    - {printed: [43, 43], pdf: [44, 44], class: rule_exact, path: 'rules/magic/sr3-core-force-rating-basics-p43.yml', blob: 1ff434bc86c7ce427cd4dc10b9a42ad71900dbaa, commit: 3f83d8c2f46fe5e284fccfba80e072258f448c42}
+    - {printed: [43, 43], pdf: [44, 44], class: rule_exact, path: 'rules/character-creation/active-skill-purchase.yml', blob: db5da8854c85282c4892fb60ad424f430b0c4791, note: 'Starting base Skill 6 and specialization 7 caps are already accepted in detailed creation canon'}
+    - {printed: [43, 43], pdf: [44, 44], class: rule_exact, path: 'rules/skills/specialization.yml', blob: edab6b7fda828e02d509b26665460b2829a7a5cf, note: 'p43 specialization description is backed by later explicit original rules'}
+    - {printed: [43, 44], pdf: [44, 45], class: rule_exact, path: 'rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml', blob: 6131b5096e7acf4c55fc58a0115474865827bf50}
+  source_grounded_newly_filled_fields:
+    - 'Original p42 magic-tradition choice is lifelong and not freely interchangeable'
+    - 'Original p43 general Force minimum is 1 for spells/spirits; uses rating in tests, with specific resource and character limits retained separately'
+  actual_new_semantic_transactions:
+    - {path: 'options/magic/sr3-core-tradition-lifetime-choice-p42.yml', commit: 1da612743b21f98be452e9b4840d493624899200, blob: 4f1b4c022a6954982ae400eb306bfec60e6c02f4, gate: verified}
+    - {path: 'rules/magic/sr3-core-force-rating-basics-p43.yml', commit: 3f83d8c2f46fe5e284fccfba80e072258f448c42, blob: 1ff434bc86c7ce427cd4dc10b9a42ad71900dbaa, gate: verified}
+  source_specific_authoritative_index: {manifest: 'sources/manifests/SR3.yml', latest_commit: 9fa3b0f2bd74d466aab8a459956d200f277d1d00, latest_blob: 2c7e62b06e5643b0b923c158dc6b88a3bd724fb3, registrations_after: 388}
+  reviewed_bounded_content_classes: [rule_exact, rule_procedure, character_option]
+  bounded_test_dice_pool_intro_mechanics: 'Reconciled against original pages and accepted source/canonical rules; two newly identified source-grounded Magic fields fixed. This does not certify all classes of the entire Game Concepts chapter.'
+  expressly_unfinished_neighbor:
+    printed: 'Original p44 Gear heading and continuation from p45 onward'
+    physical_pdf: 'p45 onward'
+    missing_class_check: 'Original full Gear definitions and its following continuation require their own source-to-canon checks; no page or content invented.'
+    next_cursor: 'Start printed p44 Gear paragraph, independently inspect printed p45 continuation and match source headings to gear rating and acquisition canon; then continue to the next real unclosed core section.'
+  deferred_unresolved_elsewhere: ['Unverified original printed p308', 'Water Cannon p307/p312 wording', 'Locate Slave p217/p220 discrepancy', 'Whole FASA7001 mechanical and content-class certification']
+  administrative_limits:
+    new_contiguous_authorized_printed_pages: 0
+    formal_source_completion_gate_passed: false
+    full_game_concepts_chapter_certified: false
+    original_crew_person_lore_not_certified_by_this_review: true
+    executable_engine_test_performed: false
+    denver_archived_pp46_47_unchanged: true
