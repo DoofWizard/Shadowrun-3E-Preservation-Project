@@ -1,0 +1,67 @@
+# Bounded original FASA7001 image-to-canon mechanical comparison; never an ingestion transaction or global source-completion gate.
+schema_version: sr3-original-core-section-reuse/v1
+review_date: '2026-11-19'
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  edition: Third Edition
+  catalog: FASA7001
+  id: source.sr3-core
+  fictional_tabletop_rulebook: true
+original_source:
+  sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  cataloged_drive_original_reacquired_and_sha_computed: true
+  actual_preservation_method_verify_source_executed: true
+  original_page_images_directly_reviewed: [131, 132, 133, 134]
+  printed_page_range: [130, 133]
+  mapping:
+    printed130: 131
+    printed131: 132
+    printed132: 133
+    printed133: 134
+    printed131_page: original_full_page_illustration_no_rules_text
+scope:
+  natural_section: 'Vehicles and Drones / About Riggers / Vehicle Attributes'
+  beginning: 'Printed p130/PDF131: About Riggers and Handling'
+  ending: 'Printed p133/PDF134: Special Vehicle Ratings / Maneuver Score'
+  required_classes_reviewed: [rule_exact, rule_procedure]
+  related_table_data: 'Vehicle attribute numeric market rows are in later Street Gear and their own accepted equipment_stat records; no new market table on these pages.'
+source_to_accepted_canon:
+  - heading: 'Handling, terrain classifications and off-road conditions'
+    original_printed_pages: [130, 132]
+    physical_pdf_pages: [131, 133]
+    accepted_path: rules/vehicles/sr3-core-handling-road-offroad-p130-132.yml
+    accepted_blob: 6a4c199383b1b0fe0974c885a41ecf1b5b89e4bf
+    checked: 'Handling is base Driving Test TN; road/off-road pair and order, paved road boundary and Open/Normal/Restricted/Tight categories; off-road Speed rating halved except off-road suspension.'
+  - heading: 'Speed, Acceleration, Decelerating and examples'
+    original_printed_pages: [132, 132]
+    physical_pdf_pages: [133, 133]
+    accepted_path: rules/vehicles/sr3-core-vehicle-speed-acceleration-deceleration-p132.yml
+    accepted_blob: f0a612341356af519b7f079cfcd7e3437e4ddcc8
+    checked: 'Meters per Combat Turn, conversion to km/h ×1.2 and mph ×0.75; fixed wing higher/lower speeds; exceptional 1.5×; acceleration added per Driving Test success; source Chazz 50→70; deceleration safe limit Acceleration×4 and +1 Crash TN for each excess 20 meters/turn or portion; Chazz TN5.'
+  - heading: 'Body, mounts, weapon damage and vehicle hardened Armor'
+    original_printed_pages: [132, 132]
+    physical_pdf_pages: [133, 133]
+    accepted_path: rules/vehicles/sr3-core-vehicle-body-armor-weapon-damage-p132.yml
+    accepted_blob: e58f94c2c21b4140aa86ff4a99b5d89796e6e7ee
+    checked: 'Hardpoint uses 2 Body, firmpoint uses 1; Body3 example; normal weapon Power half rounded down and Damage Level one lower except AV; vehicle hardened Armor threshold based on vehicle-modified Power not burst, no armor for collisions; p307 mount rules remain separate.'
+  - heading: 'Signature, Autonav, Pilot, Sensor, Cargo Factor, Load, Seating, Entry Points, ECM/ECCM, Flux, Maneuver Score'
+    original_printed_pages: [133, 133]
+    physical_pdf_pages: [134, 134]
+    accepted_path: rules/vehicles/sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.yml
+    accepted_blob: f54a34978a00405708f5635bc8950d37525c6b69
+    checked: 'Signature biological 6, laser/microwave designator exception, Autonav noncombat dice rating and 1–4 qualified features, Pilot skill substitution for unrigged drones, Sensor Rating perception dice and gunnery cross-ref, CF 0.125 cubic meters, empty seat bucket 100kg/bench 150kg, ECM/ECCM/Flux/Maneuver relationships without inventing later chapter formulas.'
+source_review_conclusion:
+  distinct_missing_game_rules_in_this_natural_source_section: []
+  reuse_existing_canon_without_resubmission: true
+  bounded_original_vehicle_attribute_rules_crosschecked: true
+  new_semantic_commits_this_review: 0
+  new_source_specific_index_registrations_this_review: 0
+  authorized_global_contiguous_pages: 0
+  full_vehicle_and_drones_chapter_certified: false
+  full_fasa7001_core_complete: false
+  engine_runnable_test: not_performed
+  next_exact_cursor: 'Vehicle Tests / Sensors, printed p134/PDF135 through p137/PDF138; reuse original Driving Modifiers, Sensor, Flux and vehicle Open Tests before evaluating missing exact fields.'
+  original_missing_p308: unverified_unaltered
+  denver: 'Archived FASA7212 pp46–47 unaffected; checkpoint still printed p45/PDF46.'
+  evidence_limit: 'The original-image review and exact accepted blobs are a bounded reuse audit, not a semantic source receipt or completion-gate proof.'
