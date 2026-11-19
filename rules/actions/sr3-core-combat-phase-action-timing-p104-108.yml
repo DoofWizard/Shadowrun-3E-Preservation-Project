@@ -105,6 +105,7 @@ data:
     rule: Ready SS, SA or BF firearm may fire in one Simple Action; each separately
       held weapon requires its own Simple Action. SS firearm may fire at most once
       in the Combat Phase.
+    previously_readied_bow_or_crossbow: A regular bow or crossbow already made ready using Ready Weapon can also be fired with one Simple Action; the Ready Weapon cost is separate.
   - action: Change Gun Mode
     rule: Simple Action normally; properly smartlinked ready gun permits Free Action.
   - action: Change Position
@@ -138,6 +139,21 @@ data:
   - action: Command Spirit
     rule: One Simple Action to issue a common command to controlled nature/elemental
       spirit(s).
+    simultaneous_spirits: More than one controlled nature or elemental spirit may receive this one Simple Action command only if all receive the same command.
+  - action: Call Nature Spirit on Standby
+    rule: One Simple Action allows a shaman to call forth a nature spirit already placed on standby; this is distinct from Summon Nature Spirit, which requires a Complex Action.
+  p106_original_simple_actions_source_review:
+    publication: FASA Corporation Shadowrun Third Edition FASA7001 original published fictional tabletop game
+    source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_page: Printed p106/physical PDF107, right column Command a Spirit and Fire Weapon and left column Call Nature Spirit
+    reviewed_paths:
+      - data.selected_simple_actions[*].action
+      - data.selected_simple_actions[*].rule
+      - data.selected_simple_actions[*].previously_readied_bow_or_crossbow
+      - data.selected_simple_actions[*].simultaneous_spirits
+      - data.p106_original_simple_actions_source_review.*
+    source_grounded_missing_fields: Nature spirit already on standby may be called with Simple Action; multiple controlled spirits share one command only if the command is identical; previously readied bows/crossbows may fire by Simple Action.
+    limits: No invented multi-spirit independent commands, bow rate of fire, new summoning privileges, or later-edition action costs; separate Conjuring and Firearms rules remain authoritative.
   use_simple_object_original_p107:
     action_cost: One Simple Action
     qualifying_mechanisms:
