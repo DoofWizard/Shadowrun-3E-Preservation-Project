@@ -1,0 +1,124 @@
+id: rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '113'
+pdf_pages: '114'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original published
+  fictional tabletop RPG Combat example, printed p113/physical PDF114; no later-edition
+  conversion or general rule invented from an example.
+content_class:
+- rule_procedure
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    source_type: published fictional tabletop role-playing game
+    printed_page: 113
+    physical_pdf_page: 114
+  source_heading: 'Combat / Attacker Success Test / Dodge Test / Damage Resistance
+    Test / Determine Outcome: Liam and Snot worked example'
+  source_example:
+    participants: Liam and Snot are fictional worked-example characters in the original
+      rulebook, not real participants.
+    attacker:
+      name: Liam
+      pistols_skill_dice: 6
+      combat_pool_dice_used: 4
+      total_attack_dice: 10
+      modified_attack_target_number: 4
+      source_roll_sequence:
+      - 3
+      - 4
+      - 3
+      - 2
+      - 5
+      - 5
+      - 1
+      - 2
+      - 6
+      - 5
+      attack_successes: 5
+      comparison_at_target_number_5: 4
+      illustrative_rule_of_six_at_target_number_8: The die showing 6 can yield one
+        success if its continuation reroll is 2 or more; no actual extra die result
+        is supplied by this example.
+    defender:
+      name: Snot
+      body_attribute: 5
+      ballistic_armor_rating: 4
+      initial_light_wound: true
+      combat_pool_dodge_dice: 5
+      dodge_roll_sequence:
+      - 2
+      - 3
+      - 3
+      - 5
+      - 6
+      example_dodge_target_number: 5
+      example_dodge_successes: 2
+      complete_dodge: false
+      damage_resistance_target_number: 5
+      body_test_dice: 5
+      body_roll_sequence:
+      - 1
+      - 1
+      - 2
+      - 3
+      - 6
+      body_test_successes: 1
+      combat_pool_dice_remaining_for_resistance: 0
+    weapon:
+      source_name: Ares Predator heavy pistol
+      power: 9
+      base_damage_level: Moderate
+      original_damage_code: 9M
+    resolution:
+      combined_defender_successes: 3
+      attacker_successes: 5
+      net_attacker_successes: 2
+      staging_threshold_successes_per_level: 2
+      damage_level_after_staging: Serious
+      body_damage_code_final: 9S
+  source_internal_tension_not_resolved:
+    original_example: The p113 Dodge illustration applies a +1 modifier for the defender’s
+      existing Light wound, making its example Dodge TN5.
+    cross_reference: The p126 general Damage Modifiers passage excludes resisting
+      or avoiding damage from injury penalties.
+    editorial_disposition: Keep the source worked roll and both published statements;
+      do not silently infer universal Dodge TN5 or engine priority from this example.
+  canonical_reuse:
+  - rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml
+  - rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+  - rules/tests/sr3-core-dice-target-numbers-rule-one-six-p38.yml
+  scope_limit: The record adds the source-authored dice sequence, Rule of Six illustration
+    and result as a test vector, not a new combat system or a change to already accepted
+    armor, dodge and damage rules.
+  source_review_receipt:
+    original_source_image: Fresh authenticated FASA7001 physical PDF114, printed p113;
+      independently viewed two full columns and arithmetic.
+    human_readable_paths_reviewed:
+    - edition_scope
+    - data.publication.*
+    - data.source_heading
+    - data.source_example.*
+    - data.source_internal_tension_not_resolved.*
+    - data.canonical_reuse[*]
+    - data.scope_limit
+    - data.source_review_receipt.*
+    - headline
+    - summary
+    provenance_scope: Game examples and original narrator assertions are separated
+      from generally binding mechanics. Source review is not an executable engine
+      test.
+framing: reference_exact
+headline: Original FASA Corporation Shadowrun, Third Edition (FASA7001) fictional
+  ranged-combat worked test, printed p113/PDF114
+summary: The original FASA7001 fictional Liam/Snot example supplies ten attacker dice
+  and five Dodge plus five Body dice, five versus three total successes, and one-stage
+  Moderate-to-Serious outcome; p113/p126 injury wording tension remains separately
+  recorded.
