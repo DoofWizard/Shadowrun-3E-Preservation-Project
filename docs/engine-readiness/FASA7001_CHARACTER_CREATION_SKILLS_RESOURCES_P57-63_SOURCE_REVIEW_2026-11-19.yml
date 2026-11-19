@@ -1,0 +1,103 @@
+schema_version: sr3-core-bounded-section-closure/v1
+review_date: '2026-11-19'
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  edition: Third Edition
+  catalog: FASA7001
+  source_id: source.sr3-core
+  nature: published fictional tabletop role-playing game
+source_pdf:
+  sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pages: 345
+  freshly_reacquired_from_cataloged_drive: true
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  images_directly_reviewed:
+    - {printed: 57, pdf: 58}
+    - {printed: 58, pdf: 59}
+    - {printed: 59, pdf: 60}
+    - {printed: 60, pdf: 61}
+    - {printed: 61, pdf: 62}
+    - {printed: 62, pdf: 63}
+    - {printed: 63, pdf: 64}
+  additional_cross_reference: {printed: 91, pdf: 92}
+  source_sha_verification_only_does_not_prove_completeness: true
+sections:
+  - id: character_creation.active_knowledge_language_skills
+    original_printed: [57, 59]
+    physical_pdf: [58, 60]
+    bounded_mechanical_and_character_option_scope_reviewed: true
+    required_classes_reviewed: [rule_procedure, character_option, rule_exact]
+    checked:
+      - Active Skill point cost above/below linked Attribute and starting rating caps
+      - Original specialization cost, free starting specialization and source worked arithmetic
+      - Five Knowledge Skill classes and Intelligence times five free Knowledge point formula
+      - Knowledge and Language separate-point allocation, Intelligence times 1.5 rounded down
+      - Starting language, lingo and Reading/Writing ratings, GM background discretion, no Reading/Writing specialization
+      - Covert Ops Specialist and Troll Combat Mage illustrated skill and language assignments
+    accepted_reused:
+      - rules/character-creation/active-skill-purchase.yml
+      - rules/character-creation/knowledge-skill-points.yml
+      - rules/character-creation/language-skill-points.yml
+      - rules/character-creation/sr3-core-active-skill-worked-p57-58.yml
+      - rules/character-creation/sr3-core-knowledge-language-examples-p59.yml
+      - rules/skills/specialization.yml
+      - rules/skills/sr3-core-reading-writing-free-ratings-p91.yml
+    corrected_existing:
+      path: rules/character-creation/sr3-core-knowledge-skill-classes-allocation-p58-59.yml
+      prior_indexed_blob: e8467b1b06b5fcdf9f1e265dd7561f8acf409440
+      semantic_commit: 576856a9f0dd1a147dfb934aaa8772775a1750b0
+      semantic_blob: 2b93f5155e74ea99e7d0197db9064571306a2bcd
+      indexed_commit: 3b1a8f87453f1dd11776d5d89155901d4215166b
+      observed_source_delta: Original p59 makes the initial Reading/Writing rating adjustable by GM based on character background and disallows specializing R/W; old Knowledge maximum 6 and all prior original ratings retained
+      gate: independently reviewed baseline/candidate, actual stage/prepare, normal GitHub update, exact-byte readback, ingestion_gate confirm and recovery inspect verified
+    distinct_missing_source_verifiable_fields_after_this_bounded_review: []
+    does_not_certify_entire_character_creation_chapter: true
+  - id: character_creation.resources_magical_gear_contacts_lifestyle_final_stats
+    original_printed: [60, 63]
+    physical_pdf: [61, 64]
+    bounded_mechanical_equipment_and_options_scope_reviewed: true
+    required_classes_reviewed: [rule_exact, rule_procedure, equipment_stat, character_option]
+    checked:
+      - Starting Resource priority acquisition, no Street Index at creation, ratings maximum 6 and Availability maximum 8
+      - Source stipulates gear paid at full listed cost without credit, any purchase order, GM approval notwithstanding budget
+      - Mandatory starting lifestyle, free and purchased Contacts, six lifestyle prices and three Contact levels
+      - Spell Point cost, Force limits, focus bonding and creation-only magic choices
+      - Basic/alpha cyberware grades, actual source purchase worked example and its Essence arithmetic
+      - Starting nuyen leftover divided by ten plus 3D6 times 100, no new character-creation gear purchase with starting cash
+      - Starting Karma Pool 1 point, printed five dice-pool formulas with VCR times two Control Pool coefficient
+    accepted_reused:
+      - rules/character-creation/resources.yml
+      - rules/character-creation/sr3-core-spell-points-foci-restrictions-p60.yml
+      - rules/character-creation/sr3-core-alpha-cyberware-worked-p61.yml
+      - equipment/sr3-core-starting-extras-price-table-p62.yml
+      - rules/character-creation/sr3-core-starting-nuyen-karma-p63.yml
+      - rules/dice-pools/sr3-core-control-pool-vcr-multiplier-p63.yml
+      - rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml
+    newly_verified:
+      path: rules/character-creation/sr3-core-creation-gear-purchase-restrictions-p60.yml
+      semantic_commit: f608f23e8e2cdfb9d4d250c66e4d925c7e563370
+      semantic_blob: abea32405083e6f49e03ac84d51188109a644fed
+      indexed_commit: bf6aef59b4eae12d72d284025c9bbc08272e1c0d
+      gate: independently reviewed original page baseline, compose-first candidate, stage/prepare, ordinary GitHub create, exact-byte readback, ingestion_gate confirm, recovery inspect verified
+      newly_normalized_substance: Original p60 beginning gear may be purchased in any order, cannot be financed on credit, and is subject to GM approval despite sufficient nuyen
+    distinct_missing_source_verifiable_fields_after_this_bounded_review: []
+    does_not_certify_entire_character_creation_chapter: true
+administrative_limitations:
+  source_specific_index_commit: bf6aef59b4eae12d72d284025c9bbc08272e1c0d
+  source_specific_index_blob: d64c127a03b90959d56272e29080033cea098a86
+  source_specific_indexed_registrations_after: 399
+  new_distinct_registrations_in_this_review: 1
+  previously_indexed_semantic_corrections: 1
+  net_new_contiguous_pages: 0
+  source_completion_gate_passed: false
+  engine_implementation_validated: false
+  record_counts_are_not_completeness_percentages: true
+next_section:
+  main_original_heading: Sample Characters and Skills
+  priority: Continue original p64-80 existing archetype option coverage and p82-99 Skills exact rules, never redo these completed p57-63 bounded source checks without changed evidence
+  exact_open_scope: Whole Creating a Shadowrunner chapter (including early priority/metatype and sample archetype content-class audit), Skills chapter p82-99; gear/vehicle p308 scan anomaly remains separately unverified
+denver:
+  archived_losses_printed: [46, 47]
+  authorized_through: {printed: 45, physical_pdf: 46}
+  state_unchanged: true
