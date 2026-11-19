@@ -63,6 +63,24 @@ data:
     cost_and_specialization_limits: Language Skills follow original core Active Skill
       costs and limitation rules; additional language details and the paired Reading/Writing
       starting skill procedure are separately normalized from printed p91.
+    reading_writing_at_creation_p59:
+      starting_rating_formula: Half the related spoken Language Skill Rating, rounded
+        down; original p59 refers to this as a starting skill rating rather than a
+        universal later recalculation.
+      gamemaster_adjustment:
+        optional: true
+        decision: Gamemaster may raise or lower that starting Reading/Writing Skill
+          rating, depending on character background. No fixed numerical modifier is
+          prescribed.
+      specialization_allowed: false
+      original_qualification: Because a Reading/Writing Skill is based on a language
+        the character knows, the printed p59 narrator rule prohibits specialization
+        in Reading/Writing Skills.
+      source_page:
+        printed: 59
+        pdf: 60
+      cross_reference: Separate skill improvements and special language rules on printed
+        p91/PDF92 remain preserved without replacement.
   published_build_arithmetic:
     covert_ops_intelligence: 4
     covert_ops_knowledge_points: 20
@@ -125,10 +143,29 @@ data:
     - data.canonical_reuse[*]
     - data.editorial_source_review.*
     - data.source_review_correction_2026_11_19.*
-headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional Knowledge
-  Skills creation cap correction, printed pp58-59/PDF59-60
-summary: Original Third Edition tabletop Knowledge Skill classes and creation formula;
-  source-confirmed starting base Knowledge Skill maximum 6 (not 7), specialization
-  maximum 7, and Intelligence-based Knowledge and Language budgets; all other accepted
-  source facts preserved.
+  editorial_source_review_p59_literacy:
+    original_publication: FASA Corporation, Shadowrun, Third Edition, FASA7001, original
+      published fictional tabletop role-playing game
+    verified_original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    independently_inspected_original_pages:
+    - printed p59/PDF60
+    - crosscheck printed p91/PDF92
+    reviewed_field_paths:
+    - data.language_creation.reading_writing_at_creation_p59.*
+    - data.editorial_source_review_p59_literacy.*
+    - data.language_creation.*
+    - headline
+    - summary
+    - edition_scope
+    method: Compared the original p59 two explicit literacy clauses with current accepted
+      character-creation and p91 literacy canon; preserve GM optionality and categorical
+      no-specialization rule; no inferred new costs or latter-edition changes.
+    prior_accepted_blob: e8467b1b06b5fcdf9f1e265dd7561f8acf409440
+    canonical_scope: Existing source-specific character_option record, revised on
+      original source; no duplicate registration or contiguous page credit.
+headline: FASA Corporation Shadowrun Third Edition FASA7001 source-corrected character
+  option, printed pp58-59/PDF59-60
+summary: 'Source-reviewed archival character-creation rule: Knowledge/Language allocations
+  preserved; original p59 permits GM background-specific adjustment of starting Reading/Writing
+  skill and prohibits its specialization.'
 framing: reference_exact
