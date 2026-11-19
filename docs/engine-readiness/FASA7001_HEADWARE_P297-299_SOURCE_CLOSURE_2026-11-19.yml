@@ -1,0 +1,109 @@
+schema_version: fasa7001-natural-section-verified-coverage/v1
+review_date: '2026-11-19'
+source:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  edition: 'Third Edition'
+  catalog: 'FASA7001'
+  source_id: source.sr3-core
+  type: 'historical published fictional tabletop role-playing game'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pdf_pages: 345
+  original_source_reacquired_from_cataloged_drive: true
+  actual_repository_preservation_method_verify_source: source_pdf_hash_verified
+  exact_script_blobs_checked: true
+  preflight_selftests_passed: 29
+scope:
+  natural_section: 'STREET GEAR / Headware with Communications, p298 subheadings and p299 transition'
+  original_printed_pages: [297, 299]
+  physical_pdf_pages: [306, 308]
+  original_images_visually_inspected: [306, 307, 308]
+  required_content_classes: [rule_exact, rule_procedure, equipment_stat]
+  boundary: 'Begins printed p297 Headware after alphaware continuation; includes Communications, Chipjack, Cranial Bombs, Datajack, Data Lock, Knowsoft Link and Memory, and Tooth Compartment continuation p299. Cyberears and Cybereyes begin p299 and continue in separately reviewed p299-301 source evidence.'
+source_heading_to_accepted_canon:
+  - heading: 'Headware introductory condition'
+    printed: [297,297]
+    class: rule_exact
+    field: data.game_effect.headware_skull_strength_loss
+    accepted_path: rules/cyberware/sr3-core-headware-no-skull-strength-loss-p297.yml
+    commit: 2ebe22e6cfb45a93c3cba9ad6398a6cee96e25ab
+    blob: 78fc7b8d93ddbc2f24f5af1dbd823354d5a3a91e
+    disposition: newly_source_reviewed_and_gate_indexed
+  - heading: 'Headware Communications and bundled commlink exceptions'
+    printed: [297,298]
+    classes: [rule_exact,equipment_stat]
+    paths:
+      - {path: rules/cyberware/sr3-core-headware-communications-functions-p297-298.yml, blob: 40d5a054236502e0d0daa497667ba229f40551c1}
+      - {path: equipment/sr3-core-headware-communications-market-numeric-p298.yml, blob: 0bd036bfba7923b1180baa18e4e8040a51cd581d}
+    checked: 'Separate commlink monitoring Rating times two, radio frequency memory Rating times two, implanted telephone Device Rating 2 and 5 Mp, bundled commlink Essence halving, subvocal and display/image conditions; original p298 market headware and communication rows.'
+    disposition: accepted_canon_reused
+  - heading: 'Cranial Bombs fictional categories and source mechanical game ratings'
+    printed: [298,298]
+    class: rule_exact
+    field: data.area_variant_game_mechanics
+    accepted_path: rules/cyberware/sr3-core-cranial-bomb-fictional-game-effects-p298.yml
+    commit: 0b6ba488b22f1290e867cc8066fed3e4ac79af9c
+    blob: 558e0d0f3a0fcc6976e5db97293136262a82b4c7
+    disposition: newly_source_reviewed_and_gate_indexed
+    limit: 'Only fictional source-reported Power/Damage and -1/m game distance rule; no real-world construction details or unprinted mechanics.'
+  - heading: 'Datajack input/output, mental headware memory, conditional soft access'
+    printed: [298,298]
+    class: rule_exact
+    field: data.original_fictional_game_rules
+    accepted_path: rules/cyberware/sr3-core-datajack-headware-memory-access-p298.yml
+    commit: 20fe3296e25085650d9a8e1394e0c6e0ff03da19
+    blob: 4e2d17a4c9a96faad7f1a8dd87c35cb5d0b08a59
+    disposition: newly_source_reviewed_and_gate_indexed
+    reuse: 'Existing p295-296 skillsoft access conditions retained rather than duplicated as a new skillsoft table.'
+  - heading: 'Chipjack, Data Lock, Knowsoft Link, Memory and Tooth Compartment'
+    printed: [298,299]
+    classes: [rule_exact,rule_procedure,equipment_stat]
+    paths:
+      - {path: rules/cyberware/sr3-core-chipjack-data-lock-tooth-compartment-p298-299.yml, blob: 1b12e8fcb141e25ac36fc5d6ced9918a7b9fb357}
+      - {path: rules/skills/sr3-core-skillsoft-chip-access-memory-p295-296.yml, blob: 97030e265d25821b0edf10371cf612eccf367aea}
+      - {path: equipment/sr3-core-headware-communications-market-numeric-p298.yml, blob: 0bd036bfba7923b1180baa18e4e8040a51cd581d}
+    checked: 'Single chip per chipjack, multiple chipjacks allowed, Data Lock code restriction, required knowsoft/data/display/skillwires interfaces, Tooth Compartment Willpower 2/4 and storage Quickness 4 with two Complex Actions, exact market rows.'
+    disposition: accepted_canon_reused
+  - heading: 'Cyberears and Cybereyes transition on p299'
+    printed: [299,299]
+    classes: [rule_exact,equipment_stat]
+    paths:
+      - {path: rules/cyberware/sr3-core-cyberear-sound-filter-essence-p299.yml, blob: 85b1d98d1d6c16be619ed803f9bb15d684d6624f}
+      - {path: equipment/sr3-core-cyberears-numeric-market-p299.yml, blob: 4e2bab29da9854c5f6ede00930c0a37f38405a69}
+      - {path: equipment/sr3-core-cybereyes-numeric-market-p300.yml, blob: 6428521c2fe9d000fbede3f41b3fda93c1db7d65}
+    checked: 'Ear replacement 0.5 Essence enhancement allowance, filter levels 1-5 with +1 Perception die per level and double level against white-noise tests, original EARS table and cybereye replacement/vision prerequisites continuing p300.'
+    disposition: reused_prior_original_image_and_index_review
+prior_evidence_preserved:
+  - docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml
+  - docs/engine-readiness/FASA7001_STREET_GEAR_WEAPONS_EXPLOSIVES_SOURCE_RECONCILIATION_2026-11-17.yml
+transactions_new_this_review:
+  - {path: rules/cyberware/sr3-core-datajack-headware-memory-access-p298.yml, semantic_commit: 20fe3296e25085650d9a8e1394e0c6e0ff03da19, manifest_commit: f568376d575aca84754e667cda110c59fe09b7ca, gate: verified}
+  - {path: rules/cyberware/sr3-core-cranial-bomb-fictional-game-effects-p298.yml, semantic_commit: 0b6ba488b22f1290e867cc8066fed3e4ac79af9c, manifest_commit: 300eabc2f8d7d42468df60c3e4833ec821e2ac77, gate: verified}
+  - {path: rules/cyberware/sr3-core-headware-no-skull-strength-loss-p297.yml, semantic_commit: 2ebe22e6cfb45a93c3cba9ad6398a6cee96e25ab, manifest_commit: a1c803d57a422795e94f4a121cedc30673249318, gate: verified}
+bounded_result:
+  mechanical_table_procedure_condition_classes_in_source_scope_reconciled: true
+  source_proven_remaining_missing_field_in_this_bounded_scope: []
+  source_specific_registrations_after_index: 409
+  new_semantic_commits: 3
+  new_source_specific_registrations: 3
+  newly_authorized_global_contiguous_pages: 0
+  FASA7001_source_complete: false
+  engine_executable: not_tested
+  full_book_content_class_certification: incomplete
+  formal_completion_gate_passed: false
+next_cursor:
+  section: 'Street Gear Cyberlimbs, BODYWARE and Biotech transition, printed pp300-304/PDF309-313'
+  required_classes: [rule_exact,rule_procedure,equipment_stat]
+  reuse_first: 'Already reviewed original p299-301 eye/bodyware mechanical section plus p302 BODYWARE market, p303 LIMBS market and cyberlimb conditions, p303-304 biomonitor/DocWagon/medkit records; inspect only exact missing field/class not covered by those receipts.'
+  then: 'Printed pp305-312 medical/vehicle market and unverified p308 hard source gap, without fabricating the absent page.'
+outstanding_source_blockers:
+  - 'Original printed p308 is unverified in the 345-page scan; no assumed blank, waiver, replacement search or content inference.'
+  - 'Full FASA7001 source-heading, field and content-class crosscheck remains incomplete.'
+  - 'Existing authorize-advance requires matching actively ingesting source; FASA7001 is scan_complete_normalization_pending while Denver is active, so no lawful full-core completion gate has been shown.'
+  - 'Source-internal ECCM, Water Cannon and Locate Slave disagreements retained as competing printed assertions, not engine rulings.'
+denver:
+  source: source.fasa-7212
+  archival_loss_printed: [46,47]
+  authoritative_completed_through_printed: 45
+  authoritative_completed_through_pdf: 46
+  checkpoint_changed: false
