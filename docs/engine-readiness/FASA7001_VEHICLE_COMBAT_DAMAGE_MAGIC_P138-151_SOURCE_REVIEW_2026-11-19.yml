@@ -1,0 +1,69 @@
+# Bounded original-image-to-accepted-canon reconciliation; NOT source completion/authorization.
+schema_version: fasa7001-bounded-source-to-canon/v1
+date: '2026-11-19'
+publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: FASA7001, source_id: source.sr3-core, type: 'published fictional tabletop RPG'}
+source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_validation:
+  fresh_original_google_drive_reacquired: true
+  actual_preservation_method_verify_source_passed: true
+  original_page_images_independently_inspected: 'printed 138–151, physical PDF139–152, including illustration-only printed 139/PDF140 and printed 146/PDF147'
+  content_classes_checked: [rule_exact, rule_procedure]
+  test_status: 'Preflight self-tests 29 passed; no executable game-engine tests run'
+coherent_subsections:
+  - title: 'ECM/ECCM and Vehicle Combat Turn'
+    printed_pages: [138, 145]
+    physical_pdf_pages: [139, 146]
+    standalone_illustration_printed: [139]
+    checked_mechanics: 'ECM/ECCM opposed tests and nonaction/toggling, original signed Vehicle/Terrain/Speed Points, Driver Open Test, eight-step Vehicle Combat Turn, rigger/datalink initiative, acceleration/braking and maximum speed, Positioning and Ramming modifiers and worked examples, Hiding and Relocating tests and source numeric examples, group combat and Passenger initiative handling'
+    accepted_source_specific:
+      - {path: rules/vehicles/sr3-core-ecm-eccm-resolution-p138.yml, blob: 2f3f90425c9d6e28def33f6ac831c4576104b9e9}
+      - {path: rules/vehicles/sr3-core-vehicle-maneuver-points-turn-p138-140.yml, blob: 917a15b7afb49101949feb7582a2469f86f88c6d}
+      - {path: rules/vehicles/sr3-core-maneuver-score-worked-example-p141.yml, blob: e95db3b2ce60c7bc28dbc2a9fdb8c8fa8311160d}
+      - {path: rules/vehicles/sr3-core-acceleration-braking-tests-p141-142.yml, blob: 7c87ef394b8eccc6b443eb74f2001bf324f032b4}
+      - {path: rules/vehicles/sr3-core-vehicle-actions-worked-tests-p142-144.yml, blob: 313ce84249484764664518a0f44ecd5e096e7d85}
+      - {path: rules/vehicles/sr3-core-positioning-modifiers-p142-143.yml, blob: 18e72d561eaec73291beca3c123ac7bd552b76fe}
+      - {path: rules/vehicles/sr3-core-ramming-test-modifiers-p143-144.yml, blob: f2a685742bb910a98a898c5d8130959305978243}
+      - {path: rules/vehicles/sr3-core-hiding-relocating-p144-145.yml, blob: ae33c426f91c5944873d83612ed9dcfc2d31d35d}
+      - {path: rules/vehicles/sr3-core-hiding-relocating-worked-tests-p144-145.yml, blob: ea7a4e77f8d4a52901d2fcf8d51fc04b8936e62c}
+      - {path: rules/vehicles/sr3-core-vehicle-condition-rigger-numeric-p145.yml, blob: a0a369bf8844d7acac6e0dafbcdbc5e75f3ac222}
+    recorded_original_source_internal_discrepancy: 'Printed p137 table and explanatory ECCM Flux formula differ; p138 example uses ECCM rating/2. Both already preserved, no fabricated precedence.'
+    bounded_rules_mechanics_status: source_reviewed_reused
+  - title: 'Vehicle Damage, Impact, Crashing, Repairs and Vehicle-targeting Magic'
+    printed_pages: [145, 151]
+    physical_pdf_pages: [146, 152]
+    standalone_illustration_printed: [146]
+    checked_mechanics: 'Vehicle Condition Monitor and rigger 6M feedback, impact and crash damage modifiers and speed bands, 2-success staging, Impact Armor/restraint, Crash Test and modifiers, barriers and pedestrian collisions, ordinary versus AV damage Power/Armor order, passenger separate targeting and collateral, component damage thresholds, 16-hour-per-box repair and 5% parts, physical/mana spells and elemental exceptions against vehicles, separate nature-spirit domains and moving-body astral Intelligence(8) return'
+    accepted_source_specific:
+      - {path: rules/vehicles/sr3-core-vehicle-condition-rigger-numeric-p145.yml, blob: a0a369bf8844d7acac6e0dafbcdbc5e75f3ac222}
+      - {path: rules/vehicles/sr3-core-impact-crash-numeric-p147-148.yml, blob: 319a103aeadb5df673ebc1166a4eda322fcb276e}
+      - {path: rules/vehicles/sr3-core-vehicle-weapon-repair-p149-150.yml, blob: 23155e47c78268de67ff8289b1737abb2b7735bb}
+      - {path: rules/vehicles/sr3-core-magic-vs-vehicles-numeric-p150.yml, blob: ddf8d9e56273b371fbd4ad7bdb77bbb5c87660fb}
+      - {path: rules/vehicles/sr3-core-spirits-natural-domains-astral-moving-p151.yml, blob: 7c80b837c8b6118934700d6cbfd417367e084d3d}
+    source_fidelity_exceptions_reused:
+      - 'p148/PDF149 Destroyed-band pedestrian collision adds half original Power rounded DOWN'
+      - 'p149/PDF150 AV attacks do not halve weapon Power; halve vehicle Armor before subtraction'
+      - 'p150/PDF151 Power Bolt original caster two successes, defense one, net one, not invented extra success'
+      - 'p151/PDF152 spirit domain exit, telepresence and casting movement restrictions'
+    bounded_rules_mechanics_status: source_reviewed_reused
+assessment:
+  no_distinct_newly_identified_missing_numeric_or_procedural_claim_in_these_bounded_reviews: true
+  new_semantic_commit_this_bounded_review: 0
+  matched_existing_canon_reused_without_resubmission: true
+  complete_vehicle_chapter_certified: false
+  complete_core_fasa7001_gate_passed: false
+  authorized_new_contiguous_printed_pages: 0
+  source_scan_gap_p308_resolved: false
+  source_review_only_not_executable_test: true
+  boundary: 'Sections are source-reviewed for exact rules and procedures with matching accepted paths; p151 Vehicle Gunnery, p154 Using Drones and unrelated chapters have their own separate bounded evidence. Does not imply narrative/world_fact coverage or full rulebook source completion.'
+next_cursor:
+  ready_bounded_vehicle_review_receipts:
+    - docs/engine-readiness/FASA7001_VEHICLE_GUNNERY_BOUNDED_SOURCE_REVIEW_2026-11-19.yml
+    - docs/engine-readiness/FASA7001_USING_DRONES_BOUNDED_SOURCE_REVIEW_2026-11-19.yml
+  prior_accepted_vehicle_attributes_and_sensor_reviews: 'Original p130–137 existing independently source-reviewed evidence, do not duplicate.'
+  next_priority: 'Reconcile only actual unresolved missing rule/row/exception across remaining original FASA7001 rules; Street Gear printed pp275-282 and p305-311, conversion p323-325, and p308 source scan anomaly carry explicit audit debt.'
+denver_archive:
+  source: source.fasa-7212
+  lost_printed: [46, 47]
+  last_authorized_printed: 45
+  last_authorized_pdf: 46
+  checkpoint_not_changed: true
