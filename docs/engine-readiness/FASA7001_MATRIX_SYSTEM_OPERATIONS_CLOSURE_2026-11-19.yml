@@ -1,0 +1,77 @@
+# Subordinate bounded Matrix source-to-canon evidence. No semantic write, source transition, or global advance.
+schema_version: fasa7001-bounded-section-source-crosscheck/v1
+date: "2026-11-19"
+source:
+  publication: "FASA Corporation, Shadowrun, Third Edition"
+  catalog: "FASA7001"
+  source_id: "source.sr3-core"
+  fictional_tabletop_context: true
+  original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+  scanned_pages_total: 345
+  printed_pages_source_bearing: [214, 220]
+  physical_pdf_pages_source_bearing: [223, 229]
+  intervening_printed_p213: "Original PDF physical page 222 is a full-page illustration, not missing text or a skipped rule."
+  freshly_inspected_source_images: [222, 223, 224, 225, 226, 227, 228, 229]
+  source_hash_measured_against_drive_pdf: true
+  live_manifest_blob_at_review: "33fee3e0d85064aa2203eccebf5f6272bd152e94"
+required_content_classes: [rule_exact, rule_procedure, worked_examples, optional_gm_guidance, source_internal_conflict]
+section_obligations:
+  - heading: "Printed p214: IC classifications, System Operations overview and Interrogations"
+    original_assertions: "White IC targets icon only; Gray IC targets deck/utilities with persistent consequences; Black IC targets decker. Each System Operation binds a System Test/subsystem, utility, and Free/Simple/Complex Action; GM may create additional operations. Repeated interrogation accumulates successes, default five to locate (GM may set alternative); question specificity gives signed +1, +2, -1 or -2 TN; unavailable requested data revealed after at least three successes; a located item may only be pointer to another host."
+    canonical:
+      - {path: "rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml", blob: "8b2ef0b38fc5e9f2dd4a2f989af38fb45ce0dfff", commit: "8134b280e17ed6803db4a250171ca0e556b4673f"}
+      - {path: "rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml", blob: "9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3", commit: "682da0c8b58ad4d5b9d12cc8315e50d0c664343a", reuse_note: "Later detailed core IC categories, not a new p214 record or later-edition supplement"}
+    exact_missing_field: null
+  - heading: "Printed p215: ongoing/monitored actions and Analyze/Control Slave operations"
+    original_assertions: "Ongoing elapsed seconds convert by 3 seconds/Combat Turn with source six-/seven-second John upload timing alternatives retained; three named ongoing operations. Monitored operations require Free Action each Initiative Pass, interrupted monitoring aborts and needs System Test restart; five named monitored operations. Analyze Host Complex Control/Analyze gives one fact per net success or all at seven; Analyze IC Free, Analyze Icon Free Control TN minimum 2, Analyze Security Simple includes newly accrued tally, Analyze Subsystem Simple detects special defenses, Control Slave Complex Slave/Spoof may require average Computer and B/R or Knowledge skill for specialist process."
+    canonical:
+      - {path: "rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml", blob: "8b2ef0b38fc5e9f2dd4a2f989af38fb45ce0dfff", commit: "8134b280e17ed6803db4a250171ca0e556b4673f"}
+    exact_missing_field: null
+  - heading: "Printed pp216–217: Decrypt, Download, Edit and Locate operations"
+    original_assertions: "Decrypt Access/File/Slave Simple with correct subsystem and prerequisites; Download Data Read/Write Simple ongoing, optional GM damaged-file reconstruction (full Mp/downloaded Mp)×2 days and pertinent data ratio, original 100/10=20-day/10-percent example; Edit File direct small edits versus upload+insert, same-host copy two System Tests, header authentication Control versus Masking(Files) alert hours, tamper detection and GM backup discretion; Edit Slave Complex monitored. Graceful Logoff Access/Deception Complex with Track Rating TN condition, Locate Access Node specificity +1/0/-1, Locate Decker open-ended Sensor with Sleaze, Locate File index and specific lead, Locate IC no extra Sensor, Locate Slave Index/Analyze Complex with three successes, Logon to Host Access/Deception Complex and tally."
+    canonical:
+      - {path: "rules/matrix/sr3-core-data-decrypt-edit-locate-p216-217.yml", blob: "7503036d8b8d6a70a456d752d3fb8cbd214d0c1e", commit: "1f3abcf4e97daa4a7bd4520a4bbe6ee5f362a84e"}
+      - {path: "rules/matrix/sr3-core-locate-slave-utility-discrepancy-p217-220.yml", blob: "cc0b934108f982ea18d6cd210941adf4e09ff9e4", commit: "525bbdf28d7b47e133a7fb99067028ef3370fbe6"}
+    exact_missing_field: null
+  - heading: "Printed pp218–219: grid logons, comcalls, monitoring, inactivity and Swap Memory"
+    original_assertions: "Logon LTG Access/Deception Complex with typical 1D3×5-minute failed-attempt memory and alternative jackpoint restart; Logon RTG independent Access test and RTG/LTG shared tally. Make Comcall Files/Commlink Complex monitored, tests for linked participants, license exception, +100 nuyen per caller/minute; taps/scanners/commcode tests and opposed Device Rating as separately indexed. Monitor Slave Simple monitored. Null Operation Control/Deception Complex and escalating host Security Value +0/+1/+2/+4 by strict elapsed intervals, extra +1 per additional 12 hours with optional GM cap; Selena 12-second +1 and seven-minute +2 GM examples with discretionary three-minute IC appearance. Swap Memory Simple no skill test, Free Action unload prerequisite; Tap Comcall Special/Commlink Complex monitored, Index/Control/Files tests, 1 Mp/minute storage, repeated Decrypt +2 TN, dataline scanners one success each with no RTG tally."
+    canonical:
+      - {path: "rules/matrix/sr3-core-grid-comcall-monitoring-operations-p218-219.yml", blob: "c6b84e61f1b69416c848440e370b81306788cd8f", commit: "b52f5b255551cbf22cb588787e1fa698cb2186cd"}
+      - {path: "rules/matrix/sr3-core-null-operation-waiting-examples-p219.yml", blob: "7f08f14d0b0c31e75732fc3e170a190222cc49ce", commit: "a55ca8f3920b0053778d37ed8bcdd0afffc4a9c5"}
+    exact_missing_field: null
+  - heading: "Printed pp219–220: Upload Data and operational utility definitions"
+    original_assertions: "Upload Data Files/Read-Write Simple ongoing; source deck storage, automatically creates new file, must use Edit File to alter existing, cannot upload utilities (Swap Memory instead). Operational utilities require active memory and original source code to modify a program; nine named utility multipliers: Analyze 3, Browse 1, Commlink 1, Deception 2, Decrypt 1, Read/Write 2, Relocate 2, Scanner 3, Spoof 3; named System Operations and target-number effects retained."
+    canonical:
+      - {path: "rules/matrix/sr3-core-upload-data-system-operation-p219-220.yml", blob: "f331e0401d74dc6cf335cbb6442f03633f057691", commit: "8c3db84e2172d7893d15cde16ea3d0bdfb0730f6"}
+      - {path: "rules/matrix/sr3-core-matrix-utility-multipliers-effects-p220-222.yml", blob: "bc82c8a104b0ffa29c54ba41b365b959e988655d", commit: "39ecbc95ca65641f8edf7b2b2a79450e9eef34af"}
+    exact_missing_field: null
+preserved_original_source_conflict:
+  locate_slave:
+    printed_p217_pdf226: "Locate Slave operation box names Analyze utility, Index Test, Complex Action and three successes"
+    printed_p220_pdf229: "Browse operational utility explicitly lists Locate Slave; Analyze operational list omits it"
+    accepted_canonical_path: "rules/matrix/sr3-core-locate-slave-utility-discrepancy-p217-220.yml"
+    adjudication: "Both original source assertions archived; no invented order of precedence, GM interpretation or corrected utility."
+verified_live_index:
+  checked_paths: 8
+  blob_matches: 8
+  duplicates_created: 0
+  full_original_scope_fields_accounted_for_in_this_review: true
+  historical_record_revisions_preserved: true
+closure_status:
+  bounded_rules_section_source_to_existing_canon_reconciled: true
+  source_specific_indexing_authorization_from_this_document: false
+  new_semantic_transactions: 0
+  whole_FASA7001_completion: false
+  whole_matrix_chapter_completion: false
+  actual_authorized_contiguous_pages: 0
+  executable_engine_tests: not_performed
+next_cursor:
+  printed_page: 221
+  physical_pdf_page: 230
+  heading: "The Matrix — Special/Offensive/Defensive utilities and subsequent Program Size Table"
+  exact_unreviewed_content_classes: [rule_exact, utility_stat, table_numeric_rows_columns, worked_examples, conditional_effects]
+  reuse_first: "rules/matrix/sr3-core-matrix-utility-multipliers-effects-p220-222.yml and existing p223 program-size record; review original pp221-223 content before declaring any missing field."
+hard_completion_blocks_not_changed:
+  - "Original FASA7001 printed p308 remains unverifiable and cannot be inferred blank or supplied speculatively."
+  - "Whole-book heading/table/condition/content-class proof and lawful independent FASA7001 finalization still required."
+  - "Denver archived pp46–47 remain untouched at p45/PDF46; zero global checkpoint advance."
