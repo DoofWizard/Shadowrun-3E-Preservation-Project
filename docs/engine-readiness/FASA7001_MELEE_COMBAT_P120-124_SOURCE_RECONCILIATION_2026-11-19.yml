@@ -1,0 +1,94 @@
+# Original-page section review; subordinate evidence, not source-completion or engine implementation authority.
+schema_version: sr3-melee-section-evidence/v1
+review_date: '2026-11-19'
+source: {id: source.sr3-core, title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: FASA7001, fictional_tabletop_game: true}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_verification:
+  cataloged_google_drive_pdf_freshly_reacquired: true
+  actual_preservation_method_verify_source_passed: true
+  inspected_original_page_images: [121, 122, 123, 124, 125]
+  scanned_physical_pdf_pages: 345
+  connector_preflight_self_tests: 29
+scope:
+  natural_section: 'Melee Combat introductory rules through Full Defense continuation'
+  printed_pages: [120, 124]
+  physical_pdf_pages: [121, 125]
+  exact_start: 'Printed p120/PDF121, Melee Combat heading after missile/rocket subsection'
+  exact_end: 'Printed p124/PDF125, end Full Defense before Knockdown heading'
+  excluded_neighboring_sections: ['p120 rocket and missile statistics', 'p124 Knockdown', 'p124 Shock Weapons', 'p124-125 Barriers', 'p125 Damage and Healing']
+  required_content_classes: [rule_exact, rule_procedure, equipment_stat]
+source_heading_to_canon:
+  - {printed: 120, heading: 'Melee Combat/Weapons; thrown versus swung weapon; Strength damage exception', evidence_id: 'rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120'}
+  - {printed: 121, heading: 'Reach; dual cyber-implant melee weapons; monofilament whip', evidence_id: 'rule.combat.sr3-core-melee-reach-cyberweapon-friends-p121-122'}
+  - {printed: 122, heading: 'Melee Weapons Table and five-step opposed combat procedure', evidence_id: 'procedure.combat.sr3-core-melee-resolution-numeric-p122'}
+  - {printed: 123, heading: 'Multiple opponents, visibility, called shots, position, prone, modifiers and worked example', evidence_id: 'rule.combat.sr3-core-melee-modifiers-table-exact-p123'}
+  - {printed: 123, heading: 'Geist/Zipperhead original numerical attack/resistance sequence', evidence_id: 'procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123'}
+  - {printed: 123, heading: 'Full Defense no Combat Pool in initial Combat Skill Test', evidence_id: 'rule.combat.sr3-core-full-defense-dodge-exact-p123-124'}
+  - {printed: 124, heading: 'Full Defense separate Combat Pool-only Dodge, TN4, staging and resistance', evidence_id: 'rule.combat.sr3-core-full-defense-dodge-exact-p123-124'}
+source_reuse:
+  context: 'Original melee weapon codes in p122 correspond to accepted later-in-book original FASA7001 p275, p300 and p301 equipment/cyberware stats; no duplicate rows or new damage formula invented.'
+accepted_canonical_readbacks:
+  - id: rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120
+    path: rules/combat/sr3-core-melee-thrown-weapon-attack-routing-p120.yml
+    commit: e156732b388ab987f58b4d881ed1642ae46792a0
+    blob: f3625170f2c85cea1ad5eed136ac289d475bfad3
+  - id: rule.combat.sr3-core-melee-reach-cyberweapon-friends-p121-122
+    path: rules/combat/sr3-core-melee-reach-cyberweapon-friends-p121-122.yml
+    commit: 2903de4ef443980f0220fa17ad60375e2ff309d5
+    blob: b6888badda2fe8666a791c62396ce9b27af50ff9
+  - id: procedure.combat.sr3-core-melee-resolution-numeric-p122
+    path: procedures/combat/sr3-core-melee-resolution-numeric-p122.yml
+    commit: 3fdba580308557e7dd6777ab2105449ed8f3a1a2
+    blob: 5a223961f209abeab07c3d4fee01dff3bed0bbba
+  - id: rule.combat.sr3-core-melee-modifiers-table-exact-p123
+    path: rules/combat/sr3-core-melee-modifiers-table-exact-p123.yml
+    commit: 2332602818bcf9519e95b41528bc6a556ac849dc
+    blob: 0ad58e3afdd9963446738690a4884e91f35cd07c
+  - id: procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123
+    path: procedures/combat/sr3-core-melee-geist-zipperhead-worked-p123.yml
+    commit: f6b6616f340423be4fb159707396cc3e9f3d6897
+    blob: 6f310f9042dc4ff8287f7bc882e39f0594970165
+  - id: rule.combat.sr3-core-full-defense-dodge-exact-p123-124
+    path: rules/combat/sr3-core-full-defense-dodge-exact-p123-124.yml
+    commit: 236a7f9f4acf041a966ae64d052b206db627e0dc
+    blob: 2162caff6c95163f01f3d4bec4b3dba550f83760
+  - id: rule.combat.sr3-core-monofilament-and-bullwhip-specific-p275-276
+    path: rules/combat/sr3-core-monofilament-and-bullwhip-specific-p275-276.yml
+    commit: 2607a49cf3cb301d74ba7d5b7d8266b6bb4f055f
+    blob: 62268acb26719043fca7c9a8733c22ea75bc9e05
+  - id: rule.combat.sr3-core-shock-glove-strike-charge-p275-276
+    path: rules/combat/sr3-core-shock-glove-strike-charge-p275-276.yml
+    commit: 4f27909db60787fed267814a1ea73d6fd66bbb01
+    blob: 3b65ddcf725b1657c12a071094ff7b2c55ac5292
+  - id: rule.cyberware.sr3-core-hand-weapons-damage-p301
+    path: rules/cyberware/sr3-core-hand-weapons-damage-p301.yml
+    commit: 29f1d3737f63248afe17a2b6ca95f2bd3d562df5
+    blob: e47fee956e1c59d7fdc2efe3f1fe5595896e6ca3
+  - id: rule.cyberware.sr3-core-bone-lacing-combat-numeric-p300
+    path: rules/cyberware/sr3-core-bone-lacing-combat-numeric-p300.yml
+    commit: 7407dfba687096bcb63a97a989237e056aa0b421
+    blob: 0f053b9c36f518fffe9b56f1a029646045dd49d0
+  - id: equipment.melee-projectile.sr3-core-market-p275-276
+    path: equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml
+    commit: aed9dcb3c37029543829ac2ccac10fac609e61b5
+    blob: 0a2e325194fff3346da2416a720ded0c8d92d949
+this_run_semantic_commits:
+  - {kind: corrected_existing, path: 'rules/combat/sr3-core-full-defense-dodge-exact-p123-124.yml', commit: 236a7f9f4acf041a966ae64d052b206db627e0dc, blob: 2162caff6c95163f01f3d4bec4b3dba550f83760}
+  - {kind: newly_normalized, path: 'procedures/combat/sr3-core-melee-geist-zipperhead-worked-p123.yml', commit: f6b6616f340423be4fb159707396cc3e9f3d6897, blob: 6f310f9042dc4ff8287f7bc882e39f0594970165}
+  - {kind: newly_normalized, path: 'rules/combat/sr3-core-melee-thrown-weapon-attack-routing-p120.yml', commit: e156732b388ab987f58b4d881ed1642ae46792a0, blob: f3625170f2c85cea1ad5eed136ac289d475bfad3}
+preserved_source_discrepancy:
+  source: 'Original p123/PDF124 describes Zipperhead as Body 4 initially but later rolls five Body dice [1,1,2,4,6].'
+  disposition: 'Both assertions are canonically archived; no invented bonus or silent numerical reconciliation.'
+  canonical_record: 'procedures/combat/sr3-core-melee-geist-zipperhead-worked-p123.yml'
+closure_disposition:
+  checked_content_classes: [rule_exact, rule_procedure, equipment_stat]
+  missing_original_source_mechanics_identified_in_this_bounded_section_after_corrections: []
+  bounded_melee_mechanical_reconciliation: 'source_to_accepted_canon_checked'
+  full_combat_chapter_certified: false
+  full_fasa7001_source_completion_gate_passed: false
+  exact_page_advance_authorized: false
+  newly_authorized_contiguous_printed_pages: 0
+  prior_original_source_scan_anomaly_p308: 'unverified; unrelated to this bounded Melee scope'
+  next_distinct_mechanical_section: 'Knockdown and Shock Weapons printed p124/PDF125; Barriers pp124-125 separately; then Damage and Healing pp125-129'
+  separate_ranged_section_blocker: 'Earlier p111/PDF112 Blind Fire and Partial Cover semantic file exists but is unindexed pending recovery of authentic prior prepare/confirm receipts; do not backdate or replay.'
+  denver_preserved: 'FASA7212 pp46-47 archived losses; completed-through printed p45/PDF46 unchanged.'
