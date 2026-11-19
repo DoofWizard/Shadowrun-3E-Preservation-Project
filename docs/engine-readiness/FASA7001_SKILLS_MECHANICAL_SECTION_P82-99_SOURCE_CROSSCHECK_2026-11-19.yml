@@ -1,0 +1,62 @@
+# Nonsemantic mechanical source-to-canon review. Does not change SR3 manifest or checkpoint.
+schema_version: sr3-core-mechanical-section-evidence/v1
+date: '2026-11-19'
+publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: 'FASA7001', source_id: 'source.sr3-core'}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+manifest_pre_review_blob: d64c127a03b90959d56272e29080033cea098a86
+manifest_status: scan_complete_normalization_pending
+scope:
+  natural_section: 'Skills, original printed pp82-99 / physical PDF83-100'
+  required_content_classes_reviewed: [rule_exact, rule_procedure, character_option]
+  original_images_inspected_this_run: 'Physical PDF83-100, original scanned Skills chapter, including p83/PDF84 original illustration'
+  source_file_sha256_computed: true
+  verify_source_command_result: source_pdf_hash_verified
+  preflight_self_tests: 29
+  mechanics_scope_closure: source_reviewed_prior_records_reused_with_no_distinct_missing_mechanic_found
+  formal_page_authorization: false
+  engine_runtime_tests: not_performed
+  overall_core_complete: false
+subsections:
+  - {printed: '82-84', headings: 'Skills and Linked Attributes, Skill Ratings, Specialization', covered: 'Linked-Attribute roster; no hard upper limit; initial and later specialization, worked Car 6 -> 5/7 example, ratio and Attribute limits', classes: [rule_exact, rule_procedure]}
+  - {printed: '84-86', headings: 'Defaulting, Default Table, Limits on Defaulting, Combat Skills', covered: 'Skill/specialization/Attribute routes +2/+3/+4, Combat Pool restrictions, Open Test subtraction, modified TN8 pre-default bar, named weapon-skill compatibility', classes: [rule_exact, rule_procedure]}
+  - {printed: '86-89', headings: 'Magical, Physical, Social, Technical and Vehicle Skills', covered: 'Original named skills, linked Attributes, permitted default routes and specializations; in-game actions and no-default exceptions', classes: [rule_exact]}
+  - {printed: '89-91', headings: 'Knowledge and Background Skills, Language Skills, Lingos, Reading and Writing', covered: 'Optional related Knowledge Skill +2 or Intelligence +4; Background Active minus 3 and improvement; language creation Intelligence x1.5; literacy half rounded down; linguistic variants', classes: [rule_exact, character_option]}
+  - {printed: '91-95', headings: 'Using Skills, Difficulty and Taking Time, Charisma-linked skills, Social Modifier Table, Instruction, Build/Repair, Stealth', covered: 'Original TN table 2 through 10+, minimum TN2, base time per successes, signed social target/Open-Test modifiers, Instruction and virtual-instructor size multiplier 3, Build/Repair TN and hours/pricing, Stealth Open Test', classes: [rule_exact, rule_procedure]}
+  - {printed: '96-97', headings: 'Using Knowledge/Language/Complementary Skills, Creating Your Own Skills', covered: 'Knowledge TN3/5/8/12, Language TN2/4/6/9/11 and lingo +2, complementary two-successes-for-one and 1 primary-success requirement, Build/Repair no-Attribute-default exception, custom Active Skill linked Attribute and GM discretion', classes: [rule_exact, rule_procedure, character_option]}
+  - {printed: '98-99', headings: 'Skill Ratings Table, Continued', covered: 'Eight exact numeric rating tiers 1-7 and 8+, Active and Knowledge descriptive levels, not a hard skill cap', classes: [rule_exact]}
+accepted_source_specific_records:
+  - {path: 'rules/skills/sr3-core-skill-rating-lower-no-upper-bound-p82.yml', printed: [82,82], pdf: [83,83], commit: '3605ee71dab51c73d7e61e88b1d617ae6fe34b0e', blob: '61d045accb14e69b78ed70777d7b6ad299513397'}
+  - {path: 'rules/skills/sr3-core-skills-linked-attributes-table-p82.yml', printed: [82,82], pdf: [83,83], commit: 'a2868aeeb05288e7befbc7888652509555c0c2ba', blob: 'd6aed6a999da233435cce16dc8a6c5dd493eb086'}
+  - {path: 'rules/skills/sr3-core-specialization-worked-example-p84.yml', printed: [84,84], pdf: [85,85], commit: 'f018bc88bb18abf45b4593c39cff0269d5e30577', blob: '54d11df3332705cd2784f28d2363d5da198f178a'}
+  - {path: 'rules/skills/sr3-core-defaulting-worked-resolution-p84-85.yml', printed: [84,85], pdf: [85,86], commit: 'b2a147bf52c9dd4f40e21a3c423e93fc0596a781', blob: '32d9ba4fe0a8ba2ffd92e879933eb129ae3ca957'}
+  - {path: 'rules/skills/defaulting-limits.yml', printed: [85,85], pdf: [86,86], commit: 'e629134c7e6894889123fdc35f085c0dcdcf7fa8', blob: '9490750ca07be521cc54efec715cea65bcbe4926'}
+  - {path: 'rules/skills/sr3-core-combat-skill-default-compatibility-p85-86.yml', printed: [85,86], pdf: [86,87], commit: 'a5fd2e066b4e11dab52a2974d490704b1bf105d6', blob: 'baae6791608a6952ca6dee069d8e0b87feac8b85'}
+  - {path: 'rules/skills/sr3-core-magic-physical-social-skill-definitions-p86-88.yml', printed: [86,88], pdf: [87,89], commit: '004e8d9b81d7ff55936739814266a6dfdb42167c', blob: '84177c261122dfdaf6234250135bb4befe9dbc1d'}
+  - {path: 'rules/skills/sr3-core-technical-vehicle-default-routes-p88-89.yml', printed: [88,89], pdf: [89,90], commit: 'bd6030bc66d561e0ff15c07388ed135183627f14', blob: 'f5681fc4003d896b0190fd8d2a4e36a34206f8e8'}
+  - {path: 'rules/skills/sr3-core-knowledge-background-skill-progression-p89-90.yml', printed: [89,90], pdf: [90,91], commit: '4ee45178f175fe9658e0ab5153830ea68febd403', blob: '9c9f4f1034718fd35a57b31b3a69daac7d8985c9'}
+  - {path: 'rules/skills/sr3-core-language-allocation-and-defaulting-p91.yml', printed: [91,91], pdf: [92,92], commit: 'acea98189ef34117fdf8343e6e48a92e86c03584', blob: 'df241fc23a65b4a1bc0bfb6ff441ea2bae583a4d'}
+  - {path: 'rules/skills/sr3-core-reading-writing-free-ratings-p91.yml', printed: [91,91], pdf: [92,92], commit: '28d28a221c3ead7ab2e969b454ee9625485ba00b', blob: '60d7148b089d82ccc9f307e2ad28a8f01d64de65'}
+  - {path: 'rules/tests/sr3-core-difficulty-and-task-time-exact-p92.yml', printed: [92,92], pdf: [93,93], commit: 'ce0719e6ad497ea1659aa6fc5851674a3c37b1ff', blob: 'b9424165a14a1356336242390653c5acff78867f'}
+  - {path: 'rules/social/sr3-core-social-bias-cyberware-armor-p92-93.yml', printed: [92,93], pdf: [93,94], commit: 'f3f27b75c73f80ad9655312febc979b669e75348', blob: '06dbf88fe0bce2a62b70632115afc9a14182f364'}
+  - {path: 'rules/social/sr3-core-fast-talk-worked-target-number-p94.yml', printed: [94,94], pdf: [95,95], commit: 'eedcd91c22781251f710a9c55292efb5a6c0bf1d', blob: 'c33a776bab684aac4f2688c192ecc797a1ab569c'}
+  - {path: 'rules/social/sr3-core-social-modifier-tables-p94.yml', printed: [94,94], pdf: [95,95], commit: 'f335992fae837ed3cebc4e4068297ee85e8deb53', blob: 'd28cf5cbd8bc2ccbcb4c4d16da070cad1b755501'}
+  - {path: 'procedures/skills/sr3-core-crazy-mary-intimidation-worked-p95.yml', printed: [95,95], pdf: [96,96], commit: '0cd040dc5928078d5dfe1cbea2292c485548e151', blob: 'ae99be68a37f03555796804c06f77d84b691cf28'}
+  - {path: 'rules/skills/sr3-core-build-repair-tn-time-p95.yml', printed: [95,95], pdf: [96,96], commit: 'c1a9230ab2469b9fd74006f5db9fef86fd4fd60c', blob: '562119e3bd86574a35f14f9819296823514a6ea7'}
+  - {path: 'rules/skills/sr3-core-virtual-instructor-program-p95.yml', printed: [95,95], pdf: [96,96], commit: '01e1192bdde3d0a0e44fb20cf11db05a5a309afc', blob: '2695bbfd13e94bbf6881696a0b536c3d6469fb37'}
+  - {path: 'procedures/skills/sr3-core-screaming-eagle-knowledge-worked-p96.yml', printed: [96,96], pdf: [97,97], commit: '4def2b5e4d7b480694db937dbdf92acd74432128', blob: 'ba3acfb71bc3ce23dfbee88748cd3c0a09971615'}
+  - {path: 'rules/skills/sr3-core-knowledge-skill-numeric-table-p96.yml', printed: [96,96], pdf: [97,97], commit: 'b69ef8c03c803375f42b07f400bada39de1ba64b', blob: '3f17d772bd42bbbc61fe937e2b6caffdc7dbfd30'}
+  - {path: 'rules/skills/sr3-core-complementary-skill-limits-example-p97.yml', printed: [97,97], pdf: [98,98], commit: '94e3de5ccee9ebef98213aaaefeb7820ae648e6d', blob: 'fc3f8e6e4e5b1c9b785a5c6a5b132e345261b16f'}
+  - {path: 'rules/skills/sr3-core-language-skill-numeric-table-p97.yml', printed: [97,97], pdf: [98,98], commit: '3f7b409dc9c1688ab78a8d7edaad8eda71605a22', blob: '7f9238c5e8380b948bf5d0512c14b54820ad84ea'}
+  - {path: 'rules/skills/sr3-core-skill-ratings-reference-p98-99.yml', printed: [98,99], pdf: [99,100], commit: '6436536cf88fee7ad372ec5381e4e46731b5fd5b', blob: 'fce63892528b09aa24ee54299b2e1730993264c6'}
+accepted_legacy_canon_reused:
+  - {path: 'rules/skills/specialization.yml', observed_blob: 'edab6b7fda828e02d509b26665460b2829a7a5cf'}
+  - {path: 'rules/skills/create-new-skills.yml', observed_blob: '96a6b8729d3ef98254e0a72a9a27c45041d385df'}
+  - {path: 'rules/skills/knowledge-skills.yml', observed_blob: 'a231e2e19c4b7858385e0d5f2c0668deaca8c441'}
+review_findings:
+  distinct_missing_numeric_procedure_or_exception: []
+  independently_observed_examples: ['Sioux City Car specialization worked result', 'Ratchet defaulting TN and Open Test', 'Original social-modifier signed table', 'Build/Repair worked TN', 'Cheshire complementary-skill successes']
+  not_counted_as_mechanical_gaps: ['Original illustrative character anecdotes and nonbinding skill-type examples', 'Full-page artwork printed p83/PDF84']
+  reconciliation_limit: 'Source-scope review of mechanical headings and cited accepted canon. Historical source-review receipts and exact current blobs are separate from game engine tests, a fresh semantic transaction, whole-book certification and formal page authorization.'
+next_cursor: 'Check Character Creation sample archetype section printed pp64-80 against each of the sixteen accepted original character_option sheets for any field-specific inconsistency; then advance to next genuinely unfinished core section, without repeating this Skills review absent new evidence.'
+unresolved_outside_scope: ['Printed p308 absent/unverified scan image', 'Source-internal ECCM, Water Cannon and Locate Slave disagreements', 'All remaining uncrosschecked FASA7001 chapter classes and full source completion gate']
+denver: {archival_losses_printed: [46,47], checkpoint_printed: 45, checkpoint_pdf: 46, changed: false}
