@@ -1,0 +1,95 @@
+# Original-source rules-bearing section reconciliation; not a semantic record, engine test or source-completion gate.
+schema_version: fasa7001-bounded-mechanics-equipment-closure/v1
+date: '2026-11-19'
+publication:
+  title: Shadowrun, Third Edition
+  publisher: FASA Corporation
+  catalog: FASA7001
+  edition: Third Edition
+  source_id: source.sr3-core
+  fictional_tabletop_game: true
+source:
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  physical_pages: 345
+  original_drive_id: 1DZTYRDYOWe1LycpCJONME1EfsACI_1Ri
+  original_images_directly_inspected: [294, 295, 296, 297]
+  printed_folios: [285, 286, 287, 288]
+  actual_preservation_method_verify_source_passed: true
+  transferred_repository_script_blobs_verified:
+    connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+    transaction_recovery: 88e21cdd3071bb94b1f39ed93a0a440c76daba68
+    preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  preflight_regression_tests_passed: 29
+reviewed_sections:
+  - name: Entertainment: music, trideo, simsense, Networks and Pirates
+    printed: [285, 286]
+    physical_pdf: [294, 295]
+    required_rules_bearing_classes: [equipment_stat, rule_procedure, rule_exact]
+    obligations:
+      - 'p286 Entertainment market: original eleven numeric item rows; full monoPOV Baseline, Full-X threefold and polyPOV count multipliers, MP/recording-price qualifiers.'
+      - 'pp285-286 Simsense: Baseline sensory versus Full-X sensory/emotive, Dir-X versus ACT, mono/poly POV, player unit and simdeck playback using datajack or trode option, no invented action test.'
+      - 'p286 Networks and Pirates: SIN required for ordinary fictional phone-to-satellite subscriptions, EXCEPT broadcast trid and radio. Neither free service nor additional dice test is implied.'
+    reused:
+      - {path: 'equipment/sr3-core-entertainment-simsense-market-p286.yml', commit: ad1536a5852771656a4e32c7632f2d8dbdce48e799, blob: fd1c79d868175ef4b9dba2b8050f9d549a5cfe67}
+      - {path: 'rules/media/sr3-core-simsense-output-playback-p285-286.yml', commit: 13589b6fe72eb8975784e32c7632f2d8db5d5df7, blob: 36a25b9f8afe28330fa0248379969f7f8e1bf8e8}
+    newly_accepted:
+      path: rules/communications/sr3-core-broadcast-subscription-sin-condition-p286.yml
+      source_heading: Networks and Pirates
+      printed: 286
+      physical_pdf: 295
+      class: rule_exact
+      semantic_commit: 28ffddc7a3bbe56ae8375fb9f1ceb3cbfbf5f091
+      exact_blob: b1174657cc883a30fdc45abd33f545ad46d8ba44
+      source_index_commit: eae3e47492b52ca94f887c016d61f57733a13740
+      index_readback_blob: 3682a13e17c13b1f6c29f5547359e0f5395ff4fb
+      gate: verified
+      source_reviewed_fields: [data.in_world_service_requirement.ordinary_subscription_sin_condition, data.in_world_service_requirement.exception_categories, data.in_world_service_requirement.exception_effect]
+      baseline_sha256: bb132364094c966c85551952e2fee86c7543887b0192d8ddbf20cff62b8c5753
+      candidate_sha256: 104cf5f3d1dc981c371483b5413c74c0b2515c3430b58b09770ace697c090e6b
+      actual_gates: 'Independent original page and baseline review; compose-first without changing substantive data; connector preflight and real stage/prepare; ordinary GitHub Contents create; exact byte readback; ingestion_gate confirm and recovery inspect; lawful source-specific verified-forward registration.'
+    bounded_rules_bearing_assertions_still_unrepresented: []
+    exclusions: 'Music/video performances and pirate station narratives lack an original mandatory numeric mechanic; descriptive source claims are not converted into invented tests or mandatory broadcast procedures. No whole-entertainment setting-lore completeness is claimed.'
+  - name: Personal Electronics and Credstick Reader devices
+    printed: [286, 288]
+    physical_pdf: [295, 297]
+    required_rules_bearing_classes: [equipment_stat, rule_exact, rule_procedure]
+    obligations:
+      - 'p287 Electronics table: fifteen market item rows, memory-price multipliers and portable reader exceptions; five rated credstick-reader rows including transaction ceilings.'
+      - 'p287 Cellular: Device Rating 2 for jamming, Matrix-decking restriction, powered-on five-meter in-world location condition; pager 5 Mp.'
+      - 'p287-288 Telecom: jackpoint conditional subscription eligibility versus cellular limitation; pager receives but does not transmit, so only the pager-origin tracking avenue is excluded.'
+      - 'p288 Pocket Secretary: 100 Mp, cannot jack into Matrix; personal computers and display/headset cartridge functional limitations.'
+    reused:
+      - {path: 'equipment/sr3-core-electronics-creds-readers-p287.yml', commit: cd5e36f184c1eff1728a7b9907d2a5f9ba0a76c2, blob: 814a1375ea3b74f6b064cd1decf618e5bb6106d5}
+      - {path: 'rules/communications/sr3-core-cellphone-network-location-and-pager-p287.yml', commit: d4006e1a4dfc5c43476a21a0c57c749b36471369, blob: 8c34d9cc5b21dbc88008acacd7d29d725fc238c5}
+      - {path: 'rules/communications/sr3-core-telecom-jackpoint-pager-receive-only-p287-288.yml', commit: fee17470d7709dde766baaae8ff502d7bfda0eee, blob: 4fe515b1896e235dfdefe461f79d80ca85cbf876}
+      - {path: 'equipment/sr3-core-personal-electronics-functional-stats-p288.yml', commit: 7f8c2883e641792cf9bc3e52fd0e9cb1e9aff61e, blob: a2c743bdeb7687749fed98e7f3c84f8380ed38e2}
+    bounded_rules_bearing_assertions_still_unrepresented: []
+    note: 'Broadcast subscription SIN requirement is covered only by new p286 source-specific rule above; not falsely assigned to p287 telecom record.'
+  - name: Build/Repair Tools p288 and start of Communications
+    printed: [288, 288]
+    physical_pdf: [297, 297]
+    required_rules_bearing_classes: [equipment_stat, rule_exact, rule_procedure]
+    obligations:
+      - 'Original Tools table three rows, Kit/Shop/Facility weight, availability, cost, Street Index; electronic/computer/cyberware three-times and vehicle two-times prices.'
+      - 'Original Communications baseline: transmitter, receiver, transceiver, one-frequency simplex and Device Rating/Flux relationships.'
+      - 'Frequency programming normally Complex Action; cybernetic/jacked device Simple Action; p289 accessory-specific continuation remains separate.'
+    reused:
+      - {path: 'equipment/sr3-core-build-repair-tools-market-p288.yml', commit: c78166c6c68e520dffd0bed4125e64fcc4ec4ba1, blob: f84763d16ff28ad518a86df8d12b36f0a5fc6f2a}
+      - {path: 'rules/communications/radio-baseline.yml', blob: 47272674204bb72476dfc14b4055968a1b4fdb47, legacy_canon: true}
+    bounded_rules_bearing_assertions_still_unrepresented: []
+disposition:
+  newly_verified_semantic_commits_this_review: 1
+  newly_source_registered_paths_this_review: 1
+  newly_reconciled_natural_scopes: 3
+  no_duplicate_semantic_records: true
+  source_specific_status: scan_complete_normalization_pending
+  full_fasa7001_original_rulebook_content_class_certified: false
+  source_completion_gate_passed: false
+  newly_authorized_global_contiguous_printed_pages: 0
+  executable_game_engine_tested: false
+  contradictions_elsewhere: [ECCM, Water_Cannon, Locate_Slave]
+  source_gap: 'Printed p308 remains unverified, not presumed blank, and not reconstructed.'
+  finalization_blocker: 'No demonstrated source-specific FASA7001 completion gate while Denver remains active; do not change checkpoint.'
+  next_unfinished_heading: 'Street Gear Communications and Surveillance/Security: p289/PDF298 onward; reuse prior p289-294 reconciliations, reopen only concrete uncovered assertions or changed accepted hashes. Continue other distinct genuine core gaps after bounded reuse.'
+  denver_archival_boundary: 'FASA7212 original printed pp46-47 archived; checkpoint remains p45/PDF46.'
