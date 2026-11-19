@@ -1,0 +1,73 @@
+# Source-to-canon review evidence only. Not a semantic transaction or whole-source completion gate.
+schema_version: fasa7001-bounded-section-source-review/v1
+review_date: '2026-11-19'
+publication:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  catalog: FASA7001
+  edition: 'Third Edition'
+  source_id: source.sr3-core
+  nature: 'original published fictional tabletop role-playing game'
+source:
+  physical_pdf_pages: 345
+  sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  freshly_reacquired_original_from_cataloged_google_drive: true
+  actual_preservation_method_verify_source_passed: true
+  original_images_independently_inspected:
+    - {printed: 151, pdf: 152}
+    - {printed: 152, pdf: 153}
+    - {printed: 153, pdf: 154}
+    - {printed: 154, pdf: 155}
+  preflight_self_tests_passed: 29
+  executable_game_engine_test_run: false
+section:
+  name: 'Vehicle Gunnery, including Manual Gunnery, Sensor-Enhanced Gunnery and printed modifier tables'
+  original_printed_pages: [151, 154]
+  original_pdf_pages: [152, 155]
+  scope_boundary: 'Begins VEHICLE GUNNERY halfway through printed p151, ends with top-of-page SENSOR-ENHANCED GUNNERY MODIFIERS TABLE on p154; following USING DRONES is a distinct section. Earlier vehicle magic and spirits on p151 are separately indexed, not covered by this closure.'
+  checked_content_classes: [rule_exact, rule_procedure]
+  source_obligations:
+    - {source: 'p151 Manual Gunnery', canonical: 'rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml', fields: 'manual_gunnery.* including skill, mounts, recoil, smartlink dual hardware, Signature and ECM'}
+    - {source: 'p152 manual modifiers key', canonical: 'rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml', fields: 'moving_relative_conditions.*, manual_gunnery.cumulative_damage_modifiers'}
+    - {source: 'p152 sensor-enhanced procedures', canonical: 'rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml', fields: 'sensor_enhanced.* including Complex Actions, lock, Pilot substitution, Pool, target Signature'}
+    - {source: 'p153 Manual Gunnery Modifiers Table', canonical: 'rules/vehicles/sr3-core-gunnery-modifier-tables-p153-154.yml', fields: 'manual_gunnery_table.* exact rows, signed modifiers, target sizes and conditions'}
+    - {source: 'p153 sensor gunnery key and Steeler example', canonical: 'rules/vehicles/sr3-core-gunnery-modifier-tables-p153-154.yml', fields: 'source_key.*, worked_example_test_vector_p153.*'}
+    - {source: 'p154 Sensor-Enhanced Gunnery Modifiers Table', canonical: 'rules/vehicles/sr3-core-gunnery-modifier-tables-p153-154.yml', fields: 'sensor_enhanced_gunnery_table.* exact signed entries, recoil and wounds'}
+  final_accepted_source_specific_records:
+    - path: rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml
+      commit: 7c0012a8b653eae18be5516b2972513e9e4b1182
+      blob: b263f5a6a25260dc3f458fa8f4957decbf9f9870
+      corrected_original_field: data.manual_gunnery.cumulative_damage_modifiers
+      old_blob_preserved: 2267fc588dac52baacfc6a11f5ba7dc3554679a7
+      gate: original_source_review_stage_prepare_contents_update_exact_readback_confirm_verified
+    - path: rules/vehicles/sr3-core-gunnery-modifier-tables-p153-154.yml
+      commit: 40b42f5488b1fe1eefe4b81b1843f70706cb736d
+      blob: baf33ad0c72dcd5ed59ac2c0f7606e69950fb6c4
+      corrected_original_field: data.source_key.direct_los_ground_to_ground_condition
+      old_blob_preserved: 1b3e6138ce2888fe30003868f775ab01167aa8d1
+      gate: original_source_review_stage_prepare_contents_update_exact_readback_confirm_verified
+  original_specific_corrections:
+    - 'Printed p152/PDF153 explicitly cumulates damaged-vehicle and gunner Physical/Stun damage modifiers on manual attack tests; prior archive listed the modifiers separately but did not preserve stacking.'
+    - 'Printed p153/PDF154 restricts the Direct LOS -3 sensor-enhanced target modifier for ground-to-ground attacks to a target in clear open terrain, in addition to an uninterrupted sightline; generally applied in ground-air/air-ground contexts.'
+  checks: 'Original p151-154 headings, signed row values, weapon/drone action and sensor lock costs, prerequisites, dice formula, exception conditions, source example and modifiers reconciled against two accepted rule files. Both distinct omissions were source-reviewed, transacted and indexed; no duplicate record necessary.'
+  remaining_distinct_fields_in_bounded_gunnery_scope: []
+  bounded_mechanics_source_to_canon_review_closed: true
+  not_proven:
+    - 'No full Vehicles and Drones chapter certification'
+    - 'No original whole-book completion or source-transition gate'
+    - 'No executable gameplay-engine validation'
+    - 'No global contiguous printed-page advancement'
+administration:
+  manifest: sources/manifests/SR3.yml
+  latest_manifest_readback_blob_before_documentation: 419b7cb0868c536afa21d12d18f8f2d460519261
+  manifest_scope: source_specific_verified_forward_reindex
+  new_distinct_registration_this_run: 0
+  changed_existing_accepted_records_this_run: 2
+  global_checkpoint_unchanged: true
+  denver_archived_missing_printed_pages: [46, 47]
+  denver_authoritative_boundary: {printed: 45, pdf: 46}
+  fasa7001_printed_p308: unverified_original_scan_anomaly
+next_cursor:
+  section: 'Using Drones / Remote-Control Networks, printed pp154-157, PDF155-158'
+  source_review_action: 'Reuse previously indexed primary/secondary/captains-chair, subscriber-list, Dump Shock, and command action records. Compare only independently unreviewed source assertions and source changed hashes before extending closure.'
+  next_after_that: 'Remaining Vehicles and Drones pp158 onward must follow actual source TOC; no inferred printed pagination.'
