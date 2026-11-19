@@ -1,0 +1,51 @@
+id: rule.gear.sr3-core-rating-scale-start-p44-45
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '44-45'
+pdf_pages: '45-46'
+edition_scope: 'FASA Corporation, Shadowrun, Third Edition (FASA7001), original fictional tabletop rules in Game Concepts / Gear, printed pp44-45/PDF45-46; not a later-edition equipment rule.'
+content_class:
+  - rule_exact
+framing: reference_exact
+headline: 'FASA Corporation Shadowrun Third Edition FASA7001 original fictional core Gear ratings begin at 1, printed pp44-45/PDF45-46'
+summary: 'Original Game Concepts Gear subsection describes rated equipment as beginning at Rating 1, increasing with an item’s capability and sophistication. This does not assign a Rating to all equipment or override separately accepted character-creation and item-specific limits.'
+data:
+  publication:
+    title: 'Shadowrun, Third Edition'
+    publisher: 'FASA Corporation'
+    edition: 'Third Edition'
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    kind: 'Published fictional cyberpunk tabletop role-playing game'
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_location:
+    section: 'Game Concepts / Gear'
+    printed_pages: [44, 45]
+    physical_pdf_pages: [45, 46]
+  rated_equipment:
+    only_equipment_with_a_source_rating: true
+    first_rating_described: 1
+    higher_ratings: 'Represent greater capability and sophistication of an item that is rated.'
+    universal_rating_maximum_specified_here: false
+    unrated_gear_is_not_given_a_synthetic_rating: true
+    interpretation: 'Individual item rules govern rating-specific effects; the passage does not establish a universal dice modifier or automatic upper limit.'
+  accepted_canon_reused:
+    - 'rules/gear/ratings-statistics.yml: names equipment statistics without this explicit starting number'
+    - 'rules/gear/sr3-core-gear-ratings-modification-upgrade-p270-272.yml: original device, concealability, and starting-character restrictions'
+    - 'rules/gear/availability.yml: acquisition target and timing'
+    - 'rules/gear/street-index.yml: secondary-market price multiplier'
+    - 'rules/combat/damage-codes.yml: weapon Power and Damage Level'
+  independent_review:
+    observed_original_images: 'Original 345-page scan with SHA-256 matched to source manifest, printed p44/PDF45 Gear beginning and p45/PDF46 Gear continuation.'
+    uniquely_missing_field: 'Original p44 numeric beginning Rating 1 for items that have ratings; legacy accepted gear-stat summaries did not state this numeric baseline.'
+    reviewed_human_text_paths:
+      - edition_scope
+      - headline
+      - summary
+      - data.publication.*
+      - data.source_location.*
+      - data.rated_equipment.*
+      - data.accepted_canon_reused[*]
+      - data.independent_review.*
+    limits: 'Source-specific exact-rule normalization; not a whole-section or full-core completion receipt or an executable engine test.'
