@@ -1236,10 +1236,20 @@ postscan_verified_mechanics_recovery:
       range_printed: [104, 108]
       range_pdf: [105, 109]
       content_class: rule_procedure
-      commit: 6f7ca750a9fdf5240b2ed0cce269e77ec45feecd
-      blob: b9612a61e963c4a3a146568462992310899dfe85
+      commit: 749056d08d5af710e09fd3feba613ecffa3f0b57
+      blob: 136f717fc92586b198faeccb36f6d90b7c169864
       gate: verified
       contiguous_advance: false
+      source_review_correction_2026_11_19:
+        prior_verified_commit: 6f7ca750a9fdf5240b2ed0cce269e77ec45feecd
+        prior_verified_blob: b9612a61e963c4a3a146568462992310899dfe85
+        verified_semantic_commit: 749056d08d5af710e09fd3feba613ecffa3f0b57
+        verified_semantic_blob: 136f717fc92586b198faeccb36f6d90b7c169864
+        original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        source_pages: 'FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop printed pp107-108/PDF108-109; cross-reference p123/PDF124'
+        source_grounded_delta: 'Use Simple Object is a Simple Action for buttons, levers, already unlocked doors, potions, pills, skillsofts and patches; GM decides simple/complex classification case by case. One Complex melee action can strike multiple opponents in melee range, with p123 numeric rule reused.'
+        gates: 'Fresh original PDF SHA and page images; separate source-reviewed baseline/candidate; actual stage/prepare; normal Contents update; exact matching readback; ingestion_gate confirm verified; transaction recovery inspect verified.'
+        scope: 'Source-specific existing registration revised, no new registration, no Denver checkpoint/contiguous advance; not engine or whole-core completion certificate.'
     - id: rule.combat.sr3-core-movement-interception-numeric-p108
       path: rules/combat/sr3-core-movement-interception-p108.yml
       range_printed: [108, 108]
