@@ -1,0 +1,120 @@
+# Non-authoritative distinct bounded original-source fidelity review; no global checkpoint advance.
+schema_version: fasa7001-bounded-rule-review/v1
+date: "2026-11-19"
+publication:
+  title: "Shadowrun, Third Edition"
+  publisher: "FASA Corporation"
+  edition: "Third Edition"
+  source_id: source.sr3-core
+  catalog: FASA7001
+  verified_original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source:
+  printed_pages: [231,237]
+  physical_pdf_pages: [240,246]
+  original_images_inspected: [240,241,242,243,244,245,246]
+  printed_p233_pdf242: full_page_illustration_not_missing_rules
+  freshly_downloaded_original_345_page_sha256_matched: true
+  verify_source_script: tools/ingestion/preservation_method.py
+  actual_verify_source_executed: true
+  result: source_pdf_hash_verified
+  preflight_self_test: 29_passed
+scope:
+  included: "Perception, Physical/Security Systems narrator, natural/manmade perimeter, technical/alarm/maglock/print security, physical searches, active security and detection; source p237's later Fencing the Loot section begins next bounded review"
+  required_content_classes: [rule_exact, rule_procedure, campaign_guidance]
+  original_p237_magic_matrix_security_cross_refs:
+    - rules/magic/sr3-core-astral-barriers-wards-numeric-p174.yml
+    - rules/matrix/sr3-core-security-sheaf-alert-ic-p211-212.yml
+  boundary: "No full Running in the Shadows chapter, Identity or Fencing closure claimed"
+accepted_obligations:
+  - heading: "sr3-core-perception-numeric-tables-p231-232"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/perception/sr3-core-perception-numeric-tables-p231-232.yml
+    commit: 9a7ed4de99b13299a0090eabdb52e8c50bbc2f8d
+    blob: 52be32e80969344bc14462eb27ae6aa431b73cdc
+    gate: verified
+    source_verified_assertions: "Perception TN4, all signed sight/sound/smell/taste/touch modifiers, team test, success thresholds and eight-row visibility cross-reference"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-security-systems-narrator-gm-p232"
+    required_content_class: campaign_guidance
+    accepted_canonical_path: procedures/shadowrunning/sr3-core-security-systems-narrator-gm-p232.yml
+    commit: cd15e7c7a75cd55844298e361b94a89e48a13577
+    blob: 3db055b5f9866665d6c0e320534fc036d6c29d9f
+    gate: verified
+    source_verified_assertions: "Fictional original narrator: qualified security-setting claims, separate voluntary persuasion and coercion, optional GM task-complexity/challenge advice; no invented numeric outcome"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-natural-perimeter-stealth-p232-234"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/security/sr3-core-natural-perimeter-stealth-p232-234.yml
+    commit: 31964d6b75c891232f91a77bbaed823f6e13c38a
+    blob: 2125d453d5f3d349925561ff6a96ac9968abef14
+    gate: verified
+    source_verified_assertions: "Natural obstruction dense brush -2 Stealth Open Test, impassable detour and optional linked alarms; p233 illustration correctly skipped"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-perimeter-wire-electric-numeric-p234"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/security/sr3-core-perimeter-wire-electric-numeric-p234.yml
+    commit: 21a990a177aedd5cb05ef2e73b9f4187cf4e7d20
+    blob: 5f14e55329cfddb58c08c0e54a612b7455c04a0a
+    gate: verified
+    source_verified_assertions: "Original 3-row wire TN/damage/barrier matrix, signs and optionality, 4D electrical game shock, Willpower/Body TN6, tripwire options"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-door-window-alarm-motion-sensor-p234-235"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/security/sr3-core-door-window-alarm-motion-sensor-p234-235.yml
+    commit: 879fcad1ff06416d62f39cf94713435819d799e2
+    blob: dcf39b633f8b5e1281e4d6bb9d875182afb26a07
+    gate: verified
+    source_verified_assertions: "Door contact Perception TN8, Electronics B/R, sensor 5-meter coverage, Stealth Rating opposed test, quarter-meter speed adjustments"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-maglock-keypad-cardreader-print-numeric-p235"
+    required_content_class: rule_procedure
+    accepted_canonical_path: rules/security/sr3-core-maglock-keypad-cardreader-print-numeric-p235.yml
+    commit: 00fb20e02c4d252b5e71e11b63d856a12fe1cf70
+    blob: 3fc08786e9661a2076eb1f4626f9825f45f5a2c9
+    gate: verified
+    source_verified_assertions: "Maglock/print scanners abstract game tests: Rating intervals, time, modifiers, conditional passives; +4 scanner continuation first lines p236"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-search-voice-sentry-numeric-p236"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/security/sr3-core-search-voice-sentry-numeric-p236.yml
+    commit: bc412681049e16e52da05357942b6efbbc6e4744
+    blob: 66a1bda0a9602a9fcf9b419ec8643df52212c6c8
+    gate: verified
+    source_verified_assertions: "Full physical-search modifiers incl -2 In complete control, voice rating 1-10 and opposed rolls, original dumb/smart sentry rules, numeric skill/recoil/initiative"
+    disposition: source_verified_existing_canon_reused
+  - heading: "sr3-core-weapon-cyberware-detection-p237"
+    required_content_class: rule_exact
+    accepted_canonical_path: rules/security/sr3-core-weapon-cyberware-detection-p237.yml
+    commit: c0b69fce92ba76b8c2b8aecc4876ba05a7c94110
+    blob: bd11c190e65cf27430f6b1e1756e61aec22bcc75
+    gate: verified
+    source_verified_assertions: "Game-world weapon concealment tests and original cyberware device rating ranges, alphalware exception and test results"
+    disposition: source_verified_existing_canon_reused
+closure:
+  section_rules_and_guidance_checked_with_original_images: true
+  newly_discovered_substantive_gap:
+    - "Fictional GM Security Systems source-narrator content class printed p232/PDF241 had no accepted canonical rule/guidance counterpart and was separately normalized before this bounded review was closed"
+  new_semantic_record: procedures/shadowrunning/sr3-core-security-systems-narrator-gm-p232.yml
+  new_semantic_commit: cd15e7c7a75cd55844298e361b94a89e48a13577
+  new_semantic_blob: 3db055b5f9866665d6c0e320534fc036d6c29d9f
+  transaction: actual_source_review_baseline_candidate_stage_prepare_contents_create_exact_readback_confirm_verified
+  legitimate_source_specific_index:
+    manifest: sources/manifests/SR3.yml
+    commit: 58a56e1b7117a22e10975723c241d0887aecd0b3
+    blob: e7146f3529f1babd4e60bbbf5d5c4306f3d1cd01
+    source_specific_registrations_after_write: 403
+    contiguous_advance: false
+  no_new_missing_mechanics_in_other_reviewed_subsections: true
+  newly_authorized_contiguous_printed_pages: 0
+  full_core_fidelity_gate_passed: false
+  executable_engine_testing_performed: false
+  next_distinct_section: "Fencing the Loot, printed pp237-238/PDF246-247, followed by SIN/Credsticks printed pp238-239/PDF247-248. Reuse indexed exact fenced-search table and existing procedure before writing any new substance"
+completion_blockers:
+  - "Original FASA7001 printed p308 unverified; no inference or blank-page classification"
+  - "Remaining other source sections require complete content-class source-to-index certification"
+  - "Global Denver source.fasa-7212 checkpoint printed p45/PDF46 cannot authorize independent FASA7001 finish under generic authorize-advance while FASA7001 is scan_complete_normalization_pending"
+  - "Preserve source's ECCM, Water Cannon and Locate Slave disagreements without invented precedence"
+controls:
+  worker_or_schedule_changed: false
+  Denver_archival_loss_printed_pages: [46,47]
+  global_checkpoint_unchanged: true
