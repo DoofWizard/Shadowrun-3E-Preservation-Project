@@ -119,3 +119,70 @@ game_concepts_2026_11_19:
     original_crew_person_lore_not_certified_by_this_review: true
     executable_engine_test_performed: false
     denver_archived_pp46_47_unchanged: true
+
+game_concepts_final_mechanics_2026_11_19:
+  source: 'FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop rulebook'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_acquisition: 'Fresh original 345-physical-page Google Drive file reacquired; actual preservation_method.py verify-source command returned source_pdf_hash_verified.'
+  original_images_directly_reviewed: {printed_pages: [44, 45, 46], physical_pdf_pages: [45, 46, 47]}
+  subsection_closure:
+    gear_introduction:
+      printed: [44, 45]
+      pdf: [45, 46]
+      required_classes: [rule_exact]
+      checked_assertions:
+        - 'Some, but not all, equipment is rated; source states lowest Rating 1 and increasing sophistication.'
+        - 'Availability describes acquisition difficulty and time; Street Index is black-market price multiplier; Weight serves encumbrance.'
+        - 'Concealability is a perception target for spotting carried gear; weapon Damage Code has Power and Light/Moderate/Serious/Deadly level.'
+        - 'Starting equipment must be plausibly available to the fictional character in context, an advisory creation narrative rather than a new numeric entitlement.'
+      newly_confirmed:
+        path: rules/gear/sr3-core-rating-scale-start-p44-45.yml
+        data_field: data.rated_equipment.first_rating_described
+        value: 1
+        semantic_commit: 9ecf670f9cd258a960855748ccde69b9d3fa49be
+        readback_blob: 154d38f62e3c79284542f79c3682b4f33ce6bab2
+        actual_ingestion_gate_confirm: verified
+        source_specific_index_commit: 3ea29992dd24bbeabb51fba6df8c9741b85a58f3
+        manifest_readback_blob: abcc5d611e70ccaa8b325ad2a5b6400eb9120ad3
+      accepted_reuse:
+        - {path: rules/gear/ratings-statistics.yml, blob: 5d7ddc09ed35e72f1cff19373336bfa9cb4162f1}
+        - {path: rules/gear/availability.yml, blob: 1fd37a97cdfe3ed84a4d5b4c77daa07be5651ab5}
+        - {path: rules/gear/street-index.yml, blob: 3e648fb4641b12967ded5e07d00d76f4aeb3ca84}
+        - {path: rules/gear/sr3-core-gear-ratings-modification-upgrade-p270-272.yml, blob: 0161aa0d4ea621a420dd0649e773598f2ef16a58}
+        - {path: rules/combat/damage-codes.yml, blob: 81dbe807963c04e8afc0aea436ffb0e7f2b77d18}
+      unresolved_numeric_or_procedure_fields_in_this_bounded_subsection: []
+      original_source_review_closed_for_mechanical_scope: true
+    cyberware_introduction:
+      printed: [45, 45]
+      pdf: [46, 46]
+      checked_mechanics: 'Essence Cost, magic loss interaction, alphaware grade and separate availability/legality references; original nonnumeric campaign-background passages are not made into mandatory tests.'
+      reused:
+        - {path: rules/cyberware/essence.yml, blob: c1a3aa8bbcbe91bc31c4a5d035d9fa0eb7205954}
+        - {path: rules/cyberware/sr3-core-alphaware-grade-numeric-p296-297.yml, blob: ac18ca9a0cd97a11f127f7094c2b54779825d149}
+        - {path: rules/magic/magic-attribute.yml, blob: 08534026db4e6ed7bf1278a9ba8cea1faaf59842}
+        - {path: rules/gear/legality-codes.yml, blob: 90531dc01be3a7135ffbd8974d44772c5cc0f0d0}
+      exact_mechanical_gaps_identified: []
+      introduction_mechanical_scope_reconciled: true
+    contacts_lifestyle_condition_karma:
+      printed: [45, 46]
+      pdf: [46, 47]
+      checked_mechanics: 'Creation-time versus in-play contact acquisitions, two free contacts, 1-3 levels, monthly lifestyle maintenance/multiple lifestyles, Physical and Stun tracks for characters and applicable equipment, and Karma split into Good and Pool.'
+      reused:
+        - {path: rules/contacts/sr3-core-starting-contact-purchase-window-p45.yml, blob: 0f8b0ec4d6b4b131d435ec2164688be7edeb19a3}
+        - {path: rules/contacts/contact-levels.yml, blob: f112aee6dd7adb0592e116826fe2f898dbf0e4a3}
+        - {path: rules/lifestyle/maintenance.yml, blob: 4ca8701f43625edadedbc3c6660c99006bcec19e}
+        - {path: rules/lifestyle/multiple-and-team.yml, blob: 0fe7237ff46adceb7f91bf37d91ae3c88ba3db11}
+        - {path: rules/condition/condition-monitor.yml, blob: 7dd4af7109e5cc89acdc0efbdab2b8e0a0b7a270}
+        - {path: rules/karma/core-karma.yml, blob: 5e0e4bd9748bc4c20c854ac64a3c47e8106b5938}
+      exact_mechanical_gaps_identified: []
+      introduction_mechanical_scope_reconciled: true
+  exclusions_and_limits:
+    - 'Finishing Touches and Metahumanity narrative are nonbinding character background/setting context and not the inspected Gear or introductory mechanics; no comprehensive setting normalization claimed.'
+    - 'These bounded source-to-canon reviews do not establish completeness of detailed Street Gear pp270-312, full original core book, or executable engine tests.'
+    - 'No section authorization command or global contiguous page advancement passed or was attempted; Denver checkpoint remains printed p45/PDF46 with archived pp46-47 losses.'
+  next_unfinished_rules_section_cursor:
+    section: 'Creating a Shadowrunner, beginning printed p52/PDF53; active numeric creation procedures start by p54/PDF55.'
+    exact_next_work: 'Reconcile the original introductory character-creation steps and complete priority/magic/attributes/skills/resources/contact/lifestyle constraints against accepted canon; reuse already indexed original p54 numerical table and original p61-63 starting resource records, normalize only demonstrably absent assertions.'
+    required_content_classes_to_check: [rule_exact, rule_procedure, character_option, equipment_stat]
+    source_specific_evidence_cursor_only: true
+  full_source_completion_gate_passed: false
