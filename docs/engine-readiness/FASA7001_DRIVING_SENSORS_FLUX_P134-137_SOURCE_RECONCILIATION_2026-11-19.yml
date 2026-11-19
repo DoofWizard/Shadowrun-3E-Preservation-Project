@@ -1,0 +1,56 @@
+# Bounded source-image-to-canon reuse evidence; no new semantic rules, no page authorization.
+schema_version: sr3-original-core-section-reuse/v1
+date: '2026-11-19'
+publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: FASA7001, source_id: source.sr3-core, fictional_tabletop_game: true}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+source_evidence:
+  original_pdf_freshly_reacquired_from_cataloged_drive: true
+  original_pdf_sha256_computed: true
+  actual_preservation_method_verify_source_result: source_pdf_hash_verified
+  original_page_images_independently_viewed: [135, 136, 137, 138]
+  printed_page_range: [134, 137]
+  physical_pdf_range: [135, 138]
+  original_edition_only: true
+section:
+  natural_boundaries: 'Driving Test and Modifiers, Sensors and Sensor Tests, Flux Rating/Range and Situational Range Modifier Table'
+  required_content_classes_reviewed: [rule_exact, rule_procedure]
+  source_fields_to_accepted:
+    - subsection: 'Driving Test p134'
+      canonical_path: rules/vehicles/sr3-core-driving-test-modifiers-p134.yml
+      blob: c02113af8bc5fa38ac03ea2a506b2c26adde1b5a
+      source_driving_modifier_rows: 14
+      verified: 'Handling base TN, 1 Complex Action for difficult maneuver, noncombat Autonav dice, Control Pool capped Vehicle Skill, fourteen signed modifiers and GM discretion; distinct +2 combat action and VCR combat double reduction exceptions.'
+    - subsection: 'Whiz Kid driving and Ace sensor source examples pp134-135'
+      canonical_path: rules/vehicles/sr3-core-driving-and-sensor-worked-examples-p134-135.yml
+      blob: 0d748c7f64421524a2230e3c0ae13802fcd609c1
+      verified: 'Whiz Kid TN8/9 dice/2 successes; source 6 specialized dice plus 3 autonav, no false combat use; sensor Rating2 150 Mp divided by audiovisual 2 Mp/min = 75 minutes, 40x stored versus 100x live magnification.'
+    - subsection: 'Sensor components, imagery, passive/active classification p135'
+      canonical_path: rules/vehicles/sr3-core-sensor-ratings-recording-p135.yml
+      blob: d72307ad0b7f3a8e17dd2a8494ba6daa4427d3a8
+      verified: 'Rated component tiers 0/1/2-4/5+, 50x Sensor Rating real-time magnification and 20x recorded replay, 2 Mp/min audiovisual and 1 Mp/min audio-only/video-only, 2D not trideo, passive 120–180 degree versus active 360 degree range.'
+    - subsection: 'Sensor Tests and two numeric tables p136'
+      canonical_path: rules/vehicles/sr3-core-sensor-tests-numeric-p136.yml
+      blob: 771672621a09dabd870e35a0ecfac0f5493423ae
+      source_sensor_test_modifier_rows: 10
+      source_sensor_result_rows: 5
+      verified: 'Passive Intelligence/Perception, drone Pilot substitution, active Sensor Rating versus Signature, direct LOS -2, urban/fog/restricted +1, tight +2, concealed spirit +Force, damage +current Damage Modifier, ECM/ECCM and spell variable; results success 0,1,2,3,4+.'
+    - subsection: 'Flux Rating and Range p136-137'
+      canonical_path: rules/vehicles/sr3-core-flux-range-modifiers-p136-137.yml
+      blob: cb52833b0fd9b92bf90468902324c749d20f84fa
+      original_flux_device_rows: 4
+      original_flux_range_rows: 11
+      original_situational_range_modifier_rows: 6
+      verified: 'Deck Flux2; sensors/ECM rating x1.5 rounded up; transmitters rating; cyberware 0; original ranges 0 through 10+, 360-degree sensor/remote geometry, Body-limited vehicle engine boost and per-device cap, signed situational modifiers and nearest half-point downward rounding.'
+      unresolved_original_source_conflict: 'ECCM table states - transmitter Rating/2; explanatory key instead states subtract half of ECCM Level. Both are retained, not silently harmonized or used as a reason to invent a new semantic rule.'
+reconciliation:
+  original_table_rows_crosschecked_against_named_accepted_canon: true
+  distinct_missing_fields_after_direct_page_and_accepted_record_review: []
+  new_semantic_writes_this_section: 0
+  new_registrations_this_section: 0
+  full_vehicle_chapter_certified: false
+  whole_fasa7001_completion_gate_passed: false
+  authorized_contiguous_printed_pages: 0
+  next_section_cursor: 'Vehicle Combat, beginning original printed p138/PDF139: Maneuver Score, ECM/ECCM, positioning and vehicle actions; compare against accepted rules/vehicles/sr3-core-ecm-eccm-resolution-p138.yml and maneuver numeric records.'
+  p308_scan_anomaly: unverified
+  denver_global_boundary: 'source.fasa-7212 completed p45/PDF46, archived losses pp46-47; unchanged'
+  limitation: 'This source-to-canon mechanical audit is bounded, not an independent transaction receipt or runnable game code test.'
