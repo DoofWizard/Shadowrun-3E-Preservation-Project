@@ -1,0 +1,74 @@
+id: rule.attributes.sr3-core-essence-zero-death-threshold-p56
+record_type: rule
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '56'
+pdf_pages: '57'
+edition_scope: FASA Corporation, Shadowrun, Third Edition (FASA7001), original published
+  fictional tabletop role-playing game, printed p56 / physical PDF57; not a later-edition
+  rule or optional supplement.
+content_class:
+- rule_exact
+headline: FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop
+  Essence-death condition, printed p56/PDF57
+summary: The original FASA7001 fictional game distinguishes a surviving character
+  with positive Essence below 1 from the death condition when Essence reaches 0; separately
+  preserves the nonmagical Magic Rating 0 boundary.
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog_number: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    type: published fictional tabletop role-playing game
+  source_location:
+    heading: Essence, under CHOOSING ATTRIBUTES
+    printed_page: 56
+    physical_pdf_page: 57
+  essence_at_character_creation:
+    initial_rating: 6
+    source_named_starting_reduction: Installed cyberware reduces Essence; other later-game
+      Essence losses are mentioned but not asserted to apply to a starting character.
+    values_between_zero_and_one_allowed: true
+    minimum_surviving_essence_exclusive: 0
+    at_zero: Original core explicitly classifies the character as dead when Essence
+      reaches 0.
+    may_play_dead_character: false
+    zero_or_less_may_not_be_selected_as_living_character: true
+  distinct_from_magic_zero:
+    source_location: Printed p56 Magic paragraph / PDF57
+    magic_rating_zero: A character assigned no Magic has Magic Rating 0 and is nonmagical;
+      the original source does not equate Magic Rating 0 with death.
+  distinct_from_wound_death:
+    existing_canon: rules/condition/sr3-damage-monitor-numeric-p125-126.yml
+    separation: Essence death at 0 is a distinct game-character condition from the
+      Physical Damage overflow death threshold on printed pp125-126.
+  accepted_record_reuse:
+  - 'rules/attributes/sr3-core-human-rating-maximum-reaction-essence-magic-p41.yml:
+    earlier general Essence range/starting rating, without the explicit p56 playable-character
+    death implication'
+  - 'rules/character-creation/attribute-assignment.yml: original starting attribute
+    allocation and derived Essence/Magic'
+  - 'rules/character-creation/sr3-core-racial-modifiers-numeric-p56.yml: same-page
+    metatype modifiers, not an Essence death record'
+  first_pass_editorial_source_review:
+    original_page_image: FASA7001 original printed p56 at physical PDF57 directly
+      inspected from freshly SHA-verified 345-page source
+    reviewed_human_fields:
+    - edition_scope
+    - headline
+    - summary
+    - data.publication.*
+    - data.source_location.*
+    - data.essence_at_character_creation.*
+    - data.distinct_from_magic_zero.*
+    - data.distinct_from_wound_death.*
+    - data.accepted_record_reuse[*]
+    - data.first_pass_editorial_source_review.*
+    attribution: All death, metatype and magic properties are narrator-authored mechanics
+      of fictional game characters, not real-world medical or racial claims.
+    fidelity_limit: The original page-image review and structural gates do not by
+      themselves certify an entire chapter or executable game engine.
+framing: reference_exact
