@@ -227,3 +227,79 @@ character_creation_knowledge_cap_correction_2026_11_19:
     required_content_classes: [rule_exact, rule_procedure, equipment_stat, character_option]
     source_evidence_cursor_only: true
   denim: 'Denver archived printed pp46-47 remain outside active core and global checkpoint stays p45/PDF46.'
+
+character_creation_resources_finish_and_sample_2026_11_19:
+  publication: 'FASA Corporation Shadowrun, Third Edition (FASA7001/source.sr3-core), original fictional tabletop rules'
+  source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_acquisition: 'Fresh original 345-page Google Drive PDF obtained; locally recomputed SHA-256 matched exact live SR3 manifest. Actual preservation_method.py verify-source returned source_pdf_hash_verified.'
+  original_image_pages_checked:
+    printed: [60, 61, 62, 63, 64]
+    physical_pdf: [61, 62, 63, 64, 65]
+  bounded_sections:
+    resources_magical_gear_and_spells:
+      original_printed: [60, 60]
+      physical_pdf: [61, 61]
+      content_classes: [rule_exact, rule_procedure]
+      required_source_fields: 'Character-creation Resources A-E costs, ordinary starting purchase without Street Index and caps; additional Spell Points 25000 nuyen each/max 50, Force and number of spirit restrictions, focus-bonding exceptions; original Combat Mage source-authored seven-spell purchase arithmetic.'
+      accepted_reuse:
+        - {path: rules/character-creation/resources.yml, blob: 3cf25a766f577976d9a5603cea86e599f674bc5f}
+        - {path: rules/character-creation/sr3-core-spell-points-foci-restrictions-p60.yml, blob: 5bf11d210caff9bffb6365b16587a3821bf9a498}
+        - {path: rules/character-creation/priority-system.yml, blob: 3faa49ac78783997ed583f9d48a74d016500fd34}
+      new_source_worked_procedure:
+        path: procedures/character-creation/sr3-core-combat-mage-spell-point-worked-p60.yml
+        id: procedure.character-creation.sr3-core-combat-mage-spell-points-worked-p60
+        commit: 97ebd5a744e98ad52bf41486c6408ae0c9eaf389
+        blob: 6ad076f88d8fb2201d911de5bb334d00dbe2a175
+        actual_gate: 'independently_source_reviewed_baseline_candidate_stage_prepare_contents_create_exact_readback_confirm_verified'
+        source_mechanical_example: '25 starting Spell Points, initial six named spells costing 25; two Force-5 exclusive-limited spells fall from 5 to 3 points each, freeing 4 to buy Mana Bolt Force 4; seven total spells use exactly 25 points.'
+      remaining_proven_mechanical_subfields_in_this_scope: []
+    cyberware_and_contacts:
+      original_printed: [61, 61]
+      physical_pdf: [62, 62]
+      content_classes: [rule_exact, rule_procedure, character_option]
+      checked: 'Cyberware Essence nonzero condition, Basic/Alpha starting grades and 2x-nuyen/0.8x-Essence algebra; source-authored 288000-nuyen and 2.78-Essence worked example; two free Level 1 contacts and optional purchasable Level 1-3 contacts in creation, no forced roleplay contact-price rule.'
+      accepted_reuse:
+        - {path: rules/character-creation/sr3-core-alpha-cyberware-worked-p61.yml, blob: 198d0e5a31cd4cbe552e05bdbc93b9d02664faef}
+        - {path: rules/contacts/sr3-core-starting-contact-purchase-window-p45.yml, blob: 0f8b0ec4d6b4b131d435ec2164688be7edeb19a3}
+        - {path: rules/contacts/sr3-core-contact-levels-bonuses-p254-256.yml, blob: d0e02486e7b68bea5f6dcaa2af585c07d73b9ab2}
+      remaining_proven_mechanical_subfields_in_this_scope: []
+    extras_lifestyles_and_finishing:
+      original_printed: [62, 63]
+      physical_pdf: [63, 64]
+      content_classes: [equipment_stat, rule_exact, rule_procedure]
+      checked: 'Complete Starting Character Extras prices for contact levels 1-3, six lifestyles and one Spell Point; multiple lifestyles, nonnumeric optional GM approval, Initiative and natural/augmented stats, five Dice Pool table formulas, Karma Pool starting 1, original starting nuyen as 1/10 unspent plus 3D6 times 100.'
+      accepted_reuse:
+        - {path: equipment/sr3-core-starting-extras-price-table-p62.yml, blob: 4e39ae88146a690f0ac06fd6c9e379fa9380e018}
+        - {path: rules/character-creation/sr3-core-starting-nuyen-karma-p63.yml, blob: 0f10e030940b50bb228589293e2c0b5c437a4014}
+        - {path: rules/dice-pools/sr3-core-control-pool-vcr-multiplier-p63.yml, blob: 6662def696de609dcba92f0cfe4acacacb96920e}
+        - {path: rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml, blob: 6131b5096e7acf4c55fc58a0115474865827bf50}
+      remaining_proven_mechanical_subfields_in_this_scope: []
+    sample_character_usage:
+      original_printed: [64, 64]
+      physical_pdf: [65, 65]
+      content_classes: [character_option]
+      checked: 'Sixteen archetypes and original Sample Character Table legend; default omitted Magic priorities, race/role adaptation with creation-priority conditions, source no numeric sex modifier; sample personas and GM roleplay examples are nonbinding.'
+      indexed_new_option:
+        path: options/character-creation/sr3-core-sample-archetype-adaptation-p64.yml
+        commit: 917b5759b330a1256795c08e907507f254a3cbb5
+        blob: 5934e1e7719387750bd8a88892215374e44a143b
+        actual_gate: 'independently_source_reviewed_baseline_candidate_stage_prepare_contents_create_exact_readback_confirm_verified'
+      accepted_reuse: ['rules/character-creation/priority-system.yml', 'rules/character-creation/sr3-master-priority-numeric-p54.yml', 'options/character-creation/sr3-core-sample-adept-archetype-p65.yml']
+      remaining_proven_mechanical_subfields_in_this_scope: []
+  source_specific_manifest_index:
+    source: sources/manifests/SR3.yml
+    first_new_index_commit: ca47b1685ca27ef2522b48ade8caf5b11f2c95d4
+    second_new_index_commit: f3a550f7f4856f611610c85f2d3dc626344f31bb
+    verified_readback_blob: 12f0b455dac2eea539ca287df01fc7249fdee683
+    distinct_verified_semantic_registration_count: 391
+    contiguous_advance: false
+  assessment: 'These precisely bounded original-source mechanical/option scopes have all identified exact fields represented in accepted canonical records; newly missing worked-example and sample-adaptation fields were source-reviewed and transaction-confirmed. Bounded source-to-canon mechanics review, NOT a full Creating a Shadowrunner chapter or core-source completion certificate.'
+  exclusions: ['Nonbinding prose, character biography and gamemaster campaign guidance are not declared fully normalized from this bounded mechanics review.', 'The following 16 individual sample statblocks printed pp65-80 are a separate completeness lane with accepted records; must be exact-source checked before any formal sample section closure.', 'Core full-book rule and content-class certification, suspected original printed p308, original source-internal rule disputes and executable engine tests remain outside this review.']
+  next_unfinished_rules_section_cursor:
+    natural_section: 'Sample Characters numeric character-sheet records, printed pp65-80/PDF66-81 (then Skills rules beginning printed p82/PDF83).'
+    next_exact_review: 'Reuse the sixteen indexed source-specific archetype records; compare original race, priority, Attributes, initiative/dice pool, skill, equipment, magic and price fields, and named option/exception clauses. Stage only genuine missing values or conditions. Do not duplicate existing archetypes or fill alleged art-page gaps.'
+    required_classes: [character_option, equipment_stat, rule_exact]
+    audit_cursor_only: true
+  full_core_source_completion_gate_passed: false
+  new_global_authorized_contiguous_pages: 0
+  denver_archived_missing_pp46_47_and_checkpoint_unchanged: true
