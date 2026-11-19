@@ -1,0 +1,61 @@
+# Original-image-to-accepted-canon bounded review; not a source completion or gate authorization.
+schema_version: fasa7001-bounded-section-source-review/v1
+review_date: '2026-11-19'
+publication:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  edition: 'Third Edition'
+  catalog: FASA7001
+  source_id: source.sr3-core
+  context: 'original published fictional tabletop role-playing game'
+source:
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  pages_physical: 345
+  fresh_google_drive_source_reacquired_and_hashed: true
+  preservation_method_verify_source_actual_result: source_pdf_hash_verified
+  original_image_pages_inspected:
+    - {printed: 154, physical_pdf: 155}
+    - {printed: 155, physical_pdf: 156, role: full_page_illustration_not_missing_text}
+    - {printed: 156, physical_pdf: 157}
+    - {printed: 157, physical_pdf: 158}
+  structural_connector_self_tests_passed: 29
+section:
+  name: 'Vehicles and Drones / Using Drones, Remote-Control Networks, Subscriber Lists, Actions and Issuing Commands'
+  printed_pages: [154, 157]
+  physical_pdf_pages: [155, 158]
+  exact_illustration_only_pages: [155]
+  scope: 'From Using Drones on p154 through Issuing Commands on p157; p154 top-of-page Sensor-Enhanced Gunnery Modifiers is separate reviewed gunnery scope, p155 image is artwork, and following Magic chapter begins p158.'
+  required_content_classes_checked: [rule_exact, rule_procedure]
+  source_facts_and_fields_reconciled:
+    - {source: 'p154 About Drones / Operative Modes', record_path: 'rules/drones/sr3-core-primary-secondary-captains-chair-modes-p154.yml', accepted_blob: 7d574be2ba72c75c69ef54559f9c66497678af12, fields: 'drone_baseline.*, primary_mode.*, secondary_mode.*, captains_chair.*'}
+    - {source: 'p156 Remote-Control Networks / Subscriber Lists', record_path: 'rules/drones/sr3-core-remote-deck-subscriber-limits-p156.yml', accepted_blob: 28f652ca7d287b484c5117ec3de87cac8ae00248, fields: 'network_description.channels, subscriber_list.*, affiliated_state.*'}
+    - {source: 'p156 subscriber Josie Cruise sample and p157 Fire a Weapon System', record_path: 'rules/drones/sr3-core-drone-firing-and-affiliation-example-p156-157.yml', accepted_blob: 7b6b3b61ad5729cbc49ccb9a793f45ff731d147c, fields: 'drone_weapon_firing.*, affiliated_drone_worked_example.*'}
+    - {source: 'p156 remote network Dump Shock', record_path: 'rules/drones/sr3-core-remote-network-dump-shock-p156.yml', accepted_blob: 431845fd961efdb1e56fb6bf40e1658e6dd1ba7a, fields: 'disorientation.*, involuntary_vehicle_disconnection.*, shorter_disorientation_option.*'}
+    - {source: 'pp156-157 Actions Free/Simple/Complex', record_path: 'rules/drones/sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.yml', accepted_blob: 25e8c9508381a504874433d48f85357bff677bd2, fields: 'free_action_sensors.*, free_action_ecm_eccm.*, free_action_weapon_system.*'}
+    - {source: 'p157 action descriptions and Issuing Commands', record_path: 'rules/drones/sr3-core-remote-command-action-comprehension-p157.yml', accepted_blob: 43f75830a30c89641f62dc877e347d63c15b71d1, fields: 'remote_action_summary.*, command_comprehension.*, declared_action_examples.*'}
+  checked_details:
+    - 'Primary drone one-at-a-time control and dice pool versus Pilot-rated secondary drones, observe-secondary Complex Action, +2 secondary comprehension when rigger jumped into primary'
+    - 'Captain chair no Control/Combat Pools on drone tests, VCR absence eligibility, Rigger X narrative Initiative bonus not a mode-granted universal bonus'
+    - 'Three RC network data channels; subscriber capacity twice deck Rating and active drone Rating limit, affiliation/non-affiliation, one Simple Action each and no actions in affiliation Combat Turn'
+    - 'Josie Cruise sample Rating 4, eight subscribers, four active, two Simple Action substitution, source-internal next-Initiative-Pass versus no-act-same-Combat-Turn tension preserved'
+    - 'Remote network disorientation ten turns, +2 success-test modifier, (deck Rating+4)S Stun; involuntary vehicle jackout 5S Stun, Willpower(4) optional shortening'
+    - 'Free Action activation next Combat Turn sensors and ECM/ECCM, only one armed weapon system, observe/status/delay/speak; Simple Action affiliation and mode changes; Complex Action issue commands/fire/observe secondary/operate primary'
+    - 'Pilot Comprehension Test, GM-assigned difficulty, one command to one drone or same order to group, programming specialization assistance capped by Pilot, GM optional command downgrade and contradiction adjudication, drones act after rigger'
+  known_source_internal_tension:
+    sample: 'Printed p156 Josie example says newly affiliated GPV can be used next Initiative Pass.'
+    general_rule: 'Same page subscriber-list rule states a drone cannot act in the Combat Turn in which it is being affiliated.'
+    disposition: 'Both competing source assertions are already in accepted canonical record; no invented precedence or automatic exception.'
+  distinct_new_source_grounded_missing_fields_in_this_bounded_review: []
+  bounded_mechanical_review_closed_for_record_reuse: true
+  new_semantic_records_for_this_section: 0
+  new_semantic_corrections_for_this_section: 0
+  exact_new_authorized_contiguous_pages: 0
+  limitation: 'Original-page review and accepted-blob comparison, not ingestion_gate.authorize-advance, source-completion gate or engine implementation validation.'
+administration:
+  authoritative_sr3_manifest_readback: 419b7cb0868c536afa21d12d18f8f2d460519261
+  active_global_checkpoint_not_changed: true
+  denver_archived_loss: {printed_pages: [46, 47], last_authorized_printed: 45, last_authorized_pdf: 46}
+  sr3_printed_p308: unverified_original_scan_anomaly_not_inferred
+next_cursor:
+  section: 'Next distinct genuinely unfinished core content class after already-reviewed Magic foundations/adepts/astral, Sorcery, Conjuring, Street Grimoire and Matrix; determine via existing accepted source-to-canon evidence and full TOC without reopening these by default.'
+  priority_remaining: 'Source-specific exact row/field obligations still unresolved in full-core closure queue, especially Street Gear 275-282 and 305-311, plus original p308 scan anomaly.'
