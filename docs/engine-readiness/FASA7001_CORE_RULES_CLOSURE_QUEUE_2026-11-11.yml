@@ -45,14 +45,21 @@ closure_queue:
     physical_pdf_pages: [284,291]
     evidence: "Live manifest records several market tables and accessory/reloading rules; its remaining_explicit_debt still identifies other dense numeric equipment/weapon/ammunition material."
     next: "Construct an original-image row-level table inventory; match each source entry to accepted canonical records; stage only genuinely absent source assertions."
-    state: unresolved_exact_coverage
+    state: bounded_source_verified_existing_canon_reused_no_bookwide_gate
+    later_evidence:
+      - "docs/engine-readiness/FASA7001_STREET_GEAR_WEAPONS_EXPLOSIVES_SOURCE_RECONCILIATION_2026-11-17.yml"
+      - "docs/engine-readiness/FASA7001_CONJURING_FOCI_WEAPONS_ACCESSORIES_COHERENT_SOURCE_RECONCILIATION_2026-11-17.yml"
+    disposition_2026_11_19: "Original printed pp275-282/PDF284-291 were directly re-inspected against current accepted table/rule records and prior source-reconciliation evidence. No new missing source assertion was established. Retire the repeat full-slice-review obligation, but do not count source completion, engine validation or a new semantic gate."
   - id: core.street-gear-final-numeric-reconciliation
     priority: P0
     printed_pages: [305,311]
     physical_pdf_pages: "314-319 observed; p308 unobserved"
     evidence: "Live manifest explicitly defers detailed printed pp305-311 normalization despite several accepted medical/rigging/vehicle market records."
     next: "Validate each present printed page's full rows, options and modifiers against accepted canonical records. Do not infer unavailable p308."
-    state: unresolved_exact_coverage
+    state: reviewed_present_pages_source_gap_p308_unresolved
+    later_evidence:
+      - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml"
+    disposition_2026_11_19: "Printed pp305-307/PDF314-316 and pp309-311/PDF317-319 were directly re-inspected; prior bounded accepted medical/magic/rigging/vehicle records are reusable. This does not authenticate missing printed p308 or establish complete final range/source closure."
   - id: core.scan-omission-p308
     priority: P0_source_gap
     printed_pages: [308,308]
@@ -68,7 +75,11 @@ closure_queue:
     physical_pdf_pages: [331,333]
     evidence: "Live manifest contains multiple accepted conversion mechanics, including historical magic/gear/cyberware/rigger/Matrix; source's remaining_explicit_debt has not been formally cleared."
     next: "Validate exact conversion assertions/conditions against original images and accepted files; formally clear only source-verified obligations."
-    state: closure_audit_required
+    state: bounded_source_verified_existing_canon_reused_no_bookwide_gate
+    later_evidence:
+      - "docs/engine-readiness/FASA7001_SOURCEBOOK_UPDATES_P323-325_RECONCILIATION_2026-11-17.yml"
+      - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
+    disposition_2026_11_19: "Original printed pp323-325/PDF331-333 visually re-inspected, including historical character/skill, magic, Rigger 2 and VR2 conversion. Accepted source-specific canonical procedures were previously reconciled. No new distinct rule established; this only retires repeat bounded conversion audit, not FASA7001 completion or authorization."
   - id: core.full-mechanics-section-inventory
     priority: P0
     printed_pages: null
@@ -89,3 +100,7 @@ worker_invariants:
   - "Every semantic addition requires actual independent page review, baseline/candidate stage+prepare, ordinary GitHub contents write, exact SHA readback+confirm, authorized source-specific indexing."
   - "Do not count locally tested consumer adapters as canonical ingestion receipts."
   - "Do not declare complete until exact source fidelity, all required classes, accepted records and legitimate completion gates are verified."
+
+# 2026-11-19 bounded reconciliation update: FASA Corporation Shadowrun Third Edition
+# FASA7001 original fictional tabletop source SHA-256 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914.
+# No semantic transaction, global checkpoint advancement, source completion gate or engine test is implied.
