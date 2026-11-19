@@ -138,6 +138,38 @@ data:
   - action: Command Spirit
     rule: One Simple Action to issue a common command to controlled nature/elemental
       spirit(s).
+  use_simple_object_original_p107:
+    action_cost: One Simple Action
+    qualifying_mechanisms:
+      - Pushing a button
+      - Turning a knob to open a door that is already unlocked
+      - Pulling a lever
+    unlocked_door_prerequisite: The printed rule expressly requires a door to be unlocked before opening it with this Simple Action.
+    gm_classification: Gamemaster decides case by case whether an object or mechanism qualifies as simple or complex; no universal classification test is specified.
+    other_example_items:
+      - Potions
+      - Pills
+      - Skillsofts
+      - Patches
+    example_item_action_cost: One Simple Action to use such an item; item-specific effects are governed by their separate rules.
+    source_limit: These are action-economy examples, not permission to override separate item prerequisites, preparation, or drug-effect rules.
+  melee_multiple_targets_original_p108:
+    one_complex_action_can_attack_multiple_melee_targets: true
+    condition: All chosen opponents must be within melee range.
+    numeric_cross_reference: Original p123/PDF124 gives +2 per additional target and separate Combat Pool dice allocations for each attack; preserve that existing numeric canon rather than duplicating a separate formula.
+    already_accepted_numeric_rule: rules/combat/sr3-core-melee-modifiers-table-exact-p123.yml
+  p107_108_source_review_addendum:
+    source: FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop rules
+    original_source_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    original_image_pages: Printed p107/PDF108 and printed p108/PDF109; p123/PDF124 cross-reference
+    independently_checked_text_fields:
+      - data.selected_simple_actions[*].action
+      - data.selected_simple_actions[*].rule
+      - data.use_simple_object_original_p107.*
+      - data.melee_multiple_targets_original_p108.*
+      - data.p107_108_source_review_addendum.*
+    source_grounded_delta: Exact unlocked-door precondition, case-by-case simple/complex decision and potion/pill/skillsoft/patch action examples; cross-reference to already indexed multiple-melee-target rule.
+    limits: Bounded original-book action-economy fidelity correction; not a new target-number rule, engine execution or whole-core certification.
   quick_draw:
     weapon_requirement: Pistol or pistol-sized firearm with Concealability Rating
       4 or greater.
