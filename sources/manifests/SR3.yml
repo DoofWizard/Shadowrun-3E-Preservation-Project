@@ -2576,10 +2576,18 @@ postscan_verified_mechanics_recovery:
       range_printed: [151, 152]
       range_pdf: [152, 153]
       content_class: rule_exact
-      commit: 8891153b153cd53a44492b0918f19c25822f9060
-      blob: 2267fc588dac52baacfc6a11f5ba7dc3554679a7
+      commit: 7c0012a8b653eae18be5516b2972513e9e4b1182
+      blob: b263f5a6a25260dc3f458fa8f4957decbf9f9870
       gate: verified
       contiguous_advance: false
+      source_review_correction_2026_11_19:
+        previous_commit: 8891153b153cd53a44492b0918f19c25822f9060
+        previous_blob: 2267fc588dac52baacfc6a11f5ba7dc3554679a7
+        original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        source_pages: 'FASA Corporation Shadowrun Third Edition FASA7001 original fictional tabletop printed p152/PDF153'
+        distinct_mechanic: 'Vehicle Damage Modifiers and gunner Physical or Stun Damage Modifiers cumulate on Manual Gunnery Tests; neither replaces the other'
+        gates: 'Fresh original PDF hash verified; original p151-152 images independently source-reviewed; separate baseline and candidate; actual preflight stage prepare, ordinary Contents update, exact blob readback, ingestion_gate confirm and recovery inspect'
+        scope: 'Existing source-specific verified-forward revision only; no new registration, no contiguous advance, no Denver checkpoint alteration and not full Vehicles chapter completion'
     - id: rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154
       path: rules/vehicles/sr3-core-gunnery-modifier-tables-p153-154.yml
       range_printed: [153, 154]
