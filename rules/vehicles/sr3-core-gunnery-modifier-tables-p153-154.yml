@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001: manual and sensor gunnery tables plus original Steeler test TN2, pp153–154/PDF154–155",
-  "summary": "Source-proven numerical completion: Steeler's sensor gunnery targets Signature 5, applies direct LOS -3 to reach TN2, and uses Gunnery 4 plus floor(Sensor 3/2) = 5 dice. Existing original tables and all other mechanics retained.",
+  "headline": "Source-verified FASA Corporation Shadowrun Third Edition FASA7001 fictional vehicle gunnery p153/PDF154 — Direct LOS limits",
+  "summary": "The -3 Direct LOS gunnery modifier applies to ground-to-ground only when the target is in clear open terrain with unobstructed sight. All prior tables are preserved.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -248,7 +248,9 @@
       "ecm_eccm": "ECM/ECCM target modifiers require separate Opposed Test for net successes; this table does not invent fixed modifier",
       "recoil_compensation": "Vehicle mounts add recoil compensation; fixed mounts and turrets halve recoil rounding down before ordinary weapon accessory compensation",
       "wounded": "Use applicable character damage track modifier, not an invented flat +1",
-      "damaged": "Use Vehicle Condition Monitor Damage Modifier rather than character wound modifier"
+      "damaged": "Use Vehicle Condition Monitor Damage Modifier rather than character wound modifier",
+      "direct_los_ground_to_ground_condition": "For ground-to-ground sensor-enhanced vehicle gunnery, the Direct LOS target modifier of -3 is applicable only when the target is in clear, open terrain, in addition to an unobstructed straight sight line.",
+      "direct_los_common_context": "The original p153 table key describes this Direct LOS modifier as generally occurring in ground-to-air or air-to-ground attacks; uninterrupted visibility alone does not automatically qualify a ground-to-ground attack in other terrain."
     },
     "worked_example_source": "An Airstorm with Sensor Rating 3 and Gunnery 4 uses 5 dice for sensor-enhanced shot after + floor(3/2) bonus; separate target Signature and LOS adjustments apply.",
     "test_status": "Exact original numeric and symbolic table rows; no engine runs executed; no inferred rule for the table's absent speed boundary.",
@@ -298,6 +300,24 @@
         "framing"
       ],
       "limits": "Page-specific source fidelity review and offline staging do not establish end-to-end game engine execution or whole-book coverage."
+    },
+    "source_review_addition_2026_11_19": {
+      "publication": "FASA Corporation Shadowrun, Third Edition FASA7001 published fictional tabletop RPG, source.sr3-core",
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "source_page": "Original printed p153/physical PDF154, SENSOR-ENHANCED GUNNERY MODIFIERS TABLE KEY / Direct LOS paragraph",
+      "original_image_check": "Original p153/PDF154 full left column reviewed against existing p153-154 numerical table and p151-152 procedures. Direct LOS modifier requires clear continuous line and in ground-to-ground case target must sit in clear open terrain. The previous record represented generic line-of-sight condition but lacked this explicit ground-target terrain qualifier.",
+      "prior_indexed_blob": "1b3e6138ce2888fe30003868f775ab01167aa8d1",
+      "reviewed_text_fields": [
+        "data.source_key.*",
+        "data.sensor_enhanced_gunnery_table.*",
+        "data.manual_gunnery_table.*",
+        "data.worked_example_test_vector_p153.*",
+        "data.source_review_addition_2026_11_19.*",
+        "headline",
+        "summary",
+        "edition_scope"
+      ],
+      "preserved": "All original numeric rows, original Steeler test vector, recoil and ECM procedures, signed modifiers, timing and eligibility conditions unchanged; one missing LOS applicability condition added. Not an engine test or whole chapter certification."
     }
   }
 }
