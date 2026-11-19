@@ -1,0 +1,49 @@
+# Source-specific bounded archival review, not new mechanical ingestion, manifest authorization, or engine implementation.
+schema_version: sr3-core-mechanical-section-evidence/v1
+date: '2026-11-19'
+publication: {title: 'Shadowrun, Third Edition', publisher: 'FASA Corporation', edition: 'Third Edition', catalog: FASA7001, source_id: source.sr3-core}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+live_manifest_before_review_blob: 'd64c127a03b90959d56272e29080033cea098a86'
+source_status: scan_complete_normalization_pending
+original_images_inspected: 'Original scanned printed pp121-124 / physical PDF122-125, whole left/right columns and exact Melee Weapons, Melee Modifiers, Knockdown, Barrier Rating, Barrier Effect tables'
+source_review:
+  chapter: 'Combat'
+  natural_section: 'Melee Combat, Knockdown and initial Barriers'
+  printed_pages: [121,124]
+  physical_pdf_pages: [122,125]
+  content_classes_reconciled: [rule_exact, rule_procedure]
+  exact_mechanics:
+    - 'Melee Reach choice, troll natural Reach, dual cyber-implants and floor(Strength/2) Power addition'
+    - 'Monofilament whip Full Defense mishap and resistance exception, with the later printed p275 accepted rule as cross-reference'
+    - 'Five-step opposed melee sequence, attack TN4, tie, Damage Level and Power staging, Body resistance and Impact Armor'
+    - 'Melee Weapons table, modifiers with signed TN, superior/prone position, attacker-versus-defender Combat Pool split and multiple target allocation'
+    - 'Full Defense forbids initial defender Combat Pool dice, separately allows Dodge Pool, uses strict exceeds threshold for no-hit'
+    - 'Knockdown ranged/melee tests, gel-round exception, minimum successes 2/3/4, Deadly fall, stagger and +2 modifier'
+    - 'Shock-weapon armor half rounding, Body/Willpower target 4, power-minus-resistance duration'
+    - 'Nine-row Barrier Rating table, Barrier Effect, firing-through opaque +8 and construction variants'
+  separately_reused_legacy:
+    - 'rules/combat/monofilament-whip.yml'
+    - 'rules/combat/whip-entanglement.yml'
+    - 'rules/combat/full-defense.yml'
+    - 'rules/combat/barriers.yml'
+    - 'equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml'
+  semantic_gap_found: false
+  purpose: 'Combine separately source-reviewed existing exact rule records into one traceable coherent original-page mechanical section, without duplicating record or claiming source completion.'
+accepted_source_specific_records:
+  - {path: 'rules/combat/sr3-core-melee-reach-cyberweapon-friends-p121-122.yml', printed: [121,122], physical_pdf: [122,123], verified_commit: '2903de4ef443980f0220fa17ad60375e2ff309d5', verified_blob: 'b6888badda2fe8666a791c62396ce9b27af50ff9'}
+  - {path: 'procedures/combat/sr3-core-melee-resolution-numeric-p122.yml', printed: [122,122], physical_pdf: [123,123], verified_commit: '3fdba580308557e7dd6777ab2105449ed8f3a1a2', verified_blob: '5a223961f209abeab07c3d4fee01dff3bed0bbba'}
+  - {path: 'rules/combat/sr3-core-knockdown-numeric-p124.yml', printed: [124,124], physical_pdf: [125,125], verified_commit: 'b1cd8dd693a832535d2d7feb06396e24d65ae50d', verified_blob: 'd375bbda398c48a7b2a7f59d0cb6134688de2f27'}
+  - {path: 'rules/combat/sr3-core-barrier-rating-effect-exact-p124-125.yml', printed: [124,125], physical_pdf: [125,126], verified_commit: 'db6529072e7a9050168ce612fb71aba24ac7e9f7', verified_blob: '652aa4880e8604c5a7077ecb71f79c8da789dfa4'}
+  - {path: 'rules/combat/sr3-core-shock-weapons-exact-p124.yml', printed: [124,124], physical_pdf: [125,125], verified_commit: '853d01ed2bff61935b41c9cfeb76dc402f0fd2de', verified_blob: '3b202072b877b887adfb9adac322caedbe7b4957'}
+  - {path: 'rules/combat/sr3-core-melee-modifiers-table-exact-p123.yml', printed: [123,123], physical_pdf: [124,124], verified_commit: '2332602818bcf9519e95b41528bc6a556ac849dc', verified_blob: '0ad58e3afdd9963446738690a4884e91f35cd07c'}
+  - {path: 'rules/combat/sr3-core-full-defense-dodge-exact-p123-124.yml', printed: [123,124], physical_pdf: [124,125], verified_commit: '236a7f9f4acf041a966ae64d052b206db627e0dc', verified_blob: '2162caff6c95163f01f3d4bec4b3dba550f83760'}
+result:
+  source_bounded_mechanics_review: reconciled
+  source_specific_new_semantic_commits: 0
+  new_distinct_registrations: 0
+  authorized_contiguous_pages: 0
+  source_complete: false
+  executable_tests_this_review: not_performed
+next_cursor: 'Proceed to exact still-unfinished original core content-class obligations not covered by these chapter evidence files; do not repeat these melee p121-124 comparisons absent changed source, a discovered missing fact, or diverging canonical bytes.'
+outstanding_source_issues: ['Original printed p308 unverified scan omission', 'Water Cannon / Locate Slave / ECCM internal textual contradictions', 'Other uncrosschecked source content classes and lawful completion gate']
+denver_archival: {pages_missing: [46,47], completed_through_printed: 45, pdf: 46, modified: false}
