@@ -10,8 +10,8 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Fictional tabletop RPG Shadowrun, Third Edition (FASA Corporation FASA7001), original vehicle rules pp145/PDF146",
-  "summary": "Exact core vehicle Condition Monitor states, vehicle speed penalty meaning, rigger feedback Damage Resistance Test, first-pass passenger initiative and group positioning modifiers. Historical in-game numbers and original source conditions retained; not a vehicle-operating manual.",
+  "headline": "FASA Corporation Shadowrun, Third Edition FASA7001 fictional vehicle combat p145/PDF146: optional cooperating NPC group rule, all Vehicle Tests",
+  "summary": "Corrected original p145 optional grouped-NPC vehicle combat: one group roll, fastest vehicle for Maneuver Score, all Vehicle Test TNs modified +/-1 per additional vehicle, preserving 3-vs-1 -2/+2 and existing passenger/rigger damage rules.",
   "data": {
     "publication": {
       "title": "Shadowrun, Third Edition",
@@ -52,16 +52,18 @@
       "game_context": "The feedback applies to the controlling rigger, not automatically to every passenger."
     },
     "multi_vehicle_combat": {
-      "grouping_condition": "Multiple vehicles cooperating on a common goal can be treated as a group in one opposed vehicle-combat maneuver",
+      "grouping_condition": "At the gamemaster’s option, two or more NPC vehicles cooperating toward the same goal may be grouped; this is not required for every vehicle encounter.",
       "maneuver_score_basis": "Use the fastest vehicle in the group to determine a combined Maneuver Score",
       "relative_group_size_effect": "Modify Vehicle Test target numbers by one per additional vehicle on one side compared with the other",
       "original_example": {
         "group_vehicle_count": 3,
         "opponent_vehicle_count": 1,
         "group_target_number_modifier": -2,
-        "single_opponent_target_number_modifier": 2
+        "single_opponent_target_number_modifier": 2,
+        "grouping_option": "The three-vehicle side in the published example consists of cooperating NPC vehicles; the single vehicle is outnumbered."
       },
-      "scope": "Only cooperative vehicle group positioning contests, not a bonus to unrelated tests."
+      "scope": "When optional cooperating-NPC grouping is used, modify ALL Vehicle Test target numbers by 1 per additional group vehicle, with the modifier sign determined by which side is testing. The original three-versus-one Positioning example illustrates the general Vehicle Test rule, not a Positioning-only restriction.",
+      "one_group_die_roll": "The gamemaster may make a single die roll for the entire cooperating NPC vehicle group."
     },
     "passengers": {
       "eligible_actions": "Use vehicle electronics, fire vehicle weapons, hang on, cast spells or fire at other vehicles while riding",
@@ -83,6 +85,31 @@
         "data.editorial_receipt.*"
       ],
       "independent_review_limit": "Editorial review and structural checks do not establish exhaustive book coverage, successful GitHub commits or executable engine testing."
+    },
+    "source_fidelity_revision_2026_11_19": {
+      "original_publication": "FASA Corporation Shadowrun, Third Edition (FASA7001), source.sr3-core, fictional tabletop RPG",
+      "printed_page": 145,
+      "physical_pdf_page": 146,
+      "source_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+      "prior_accepted_blob": "a0a369bf8844d7acac6e0dafbcdbc5e75f3ac222",
+      "reviewed_source_image": "Fresh independently inspected original printed p145/PDF146 full-page scan, including MULTIPLE VEHICLE COMBAT, three-versus-one example and adjacent RIGGER DAMAGE and PASSENGER ACTIONS text.",
+      "false_previous_assertion": "Old multi_vehicle_combat.scope incorrectly restricted the modifier to cooperative Positioning contests only.",
+      "corrected_original_condition": "The published option permits one die roll for cooperating NPC groups, uses fastest vehicle statistics for group Maneuver Score, and modifies ALL Vehicle Test TNs by one per additional group vehicle, +/- by side; Positioning is the worked example, not the exclusive scope.",
+      "preserved_other_fields": "Original Vehicle Condition Monitor, rigger 6M Physical feedback test, first-pass passenger delay, 3-versus-1 -2/+2 numerics and all prior source facts preserved.",
+      "independently_reviewed_text_paths": [
+        "edition_scope",
+        "headline",
+        "summary",
+        "data.publication.*",
+        "data.vehicle_condition_monitor.*",
+        "data.rigger_feedback.*",
+        "data.multi_vehicle_combat.*",
+        "data.passengers.*",
+        "data.reuse_existing",
+        "data.editorial_receipt.*",
+        "data.source_fidelity_revision_2026_11_19.*"
+      ],
+      "limitation": "Original page-to-record review independent of staging. Preflight and confirmation prove immutable-field consistency and exact remote bytes, not complete sourcebook or executable engine readiness."
     }
   }
 }
