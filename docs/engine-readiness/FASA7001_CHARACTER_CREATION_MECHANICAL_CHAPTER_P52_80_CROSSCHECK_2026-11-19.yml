@@ -1,0 +1,75 @@
+# Coherent chapter-level mechanical source-to-canon crosscheck; not the source-completion gate.
+schema_version: fasa7001-core-mechanical-chapter-crosscheck/v1
+date: '2026-11-19'
+publication:
+  title: 'Shadowrun, Third Edition'
+  publisher: 'FASA Corporation'
+  edition: 'Third Edition'
+  catalog_number: 'FASA7001'
+  source_id: 'source.sr3-core'
+  nature: 'published fictional tabletop role-playing game'
+original_pdf:
+  sha256: '7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914'
+  physical_pages: 345
+  fresh_drive_acquisition_and_actual_verify_source_passed: true
+  source_images: 'New independent images pp52-56/PDF53-57; exact prior reviewed source images for pp57-63/PDF58-64 and sample p64/PDF65 plus unnumbered PDF66-81 reused at their recorded scope'
+chapter:
+  title: 'CREATING A SHADOWRUNNER, original printed pp52-64 plus sixteen unnumbered character sheets PDF66-81'
+  game_mechanical_source_scope_checked: true
+  required_game_mechanical_classes: [rule_exact, rule_procedure, character_option, equipment_stat]
+  scope_limit: 'Mechanics, character options and source examples; the fictional p52 introduction/p54 backstory and independent world-fact transcriptions are not certified by this review.'
+  original_pagination:
+    printed_p53_pdf54: 'Full-page illustration; not missing rules'
+    printed_p64_pdf65: 'Sample Characters intro'
+    sixteen_sample_sheets_pdf66_81: 'Unnumbered sheets, labeled p65-80 in archival record IDs as sequence conventions, not original printed folios'
+  mechanical_subsections:
+    - id: 'priority_magic_race_attributes_printed_52_56'
+      printed: [52, 56]
+      physical_pdf: [53, 57]
+      reviewed_classes: [rule_exact, character_option]
+      evidence_path: 'docs/engine-readiness/FASA7001_CHARACTER_CREATION_PRIORITY_MAGIC_ATTRIBUTES_P52_56_RECONCILIATION_2026-11-19.yml'
+      evidence_commit: '90910e275c79af5c11f51224f77197c533891289'
+      evidence_blob: '2789437f2bdc55829e4f8e79d087b66aef41d20c'
+      newly_indexed_distinct_rule:
+        path: 'rules/attributes/sr3-core-essence-zero-death-threshold-p56.yml'
+        commit: '02d94280084f427099033fd2115b5ddc39a65ae3'
+        blob: 'f919ee2f1a43237121cb4e59b92111e12c322088'
+        manifest_index_commit: '182ed504fb0d114dd49a4732f57a84ab314ca56b'
+      remaining_newly_discovered_mechanical_fields: []
+    - id: 'skills_and_resources_printed_57_63'
+      printed: [57, 63]
+      physical_pdf: [58, 64]
+      reviewed_classes: [rule_exact, rule_procedure, character_option, equipment_stat]
+      evidence_path: 'docs/engine-readiness/FASA7001_CHARACTER_CREATION_SKILLS_RESOURCES_P57-63_SOURCE_REVIEW_2026-11-19.yml'
+      evidence_commit: '6e038ac9adff1ab3f0e476ed29b63ae2b24def9c'
+      evidence_blob: '5e6b21a007cdc0264069ebde7bb4b1fb216b82db'
+      confirmed_prior_semantic_updates:
+        - 'rules/character-creation/sr3-core-knowledge-skill-classes-allocation-p58-59.yml (source-corrected)'
+        - 'rules/character-creation/sr3-core-creation-gear-purchase-restrictions-p60.yml (new)'
+      remaining_newly_discovered_mechanical_fields: []
+    - id: 'sample_character_options_original_p64_and_sheets_16'
+      printed_intro: 64
+      physical_pdf_intro: 65
+      physical_pdf_unnumbered_sheets: [66, 81]
+      reviewed_classes: [character_option]
+      evidence_path: 'docs/engine-readiness/FASA7001_SAMPLE_ARCHETYPES_P64-80_CHARACTER_OPTIONS_CROSSCHECK_2026-11-19.yml'
+      evidence_commit: 'f04391f6a9212798bdbc7d95ccbd42f7864de106'
+      evidence_blob: '4e92880428a866dec998b5b7376a484d32085a18'
+      accepted_distinct_sample_option_records_reused: 16
+      remaining_newly_discovered_mechanical_fields: []
+result:
+  chapter_mechanical_scope_reconciled_from_verified_prior_and_new_evidence: true
+  independent_prior_evidence_preserved_not_rewritten: true
+  new_semantic_records_in_this_crosscheck_write: 0
+  new_semantic_records_in_underlying_p52_56_review: 1
+  source_specific_registrations_after_underlying_transaction: 400
+  manifest_blob_readback: 'b3ec6cc2430a3349269bbef80e4f3399c3f20bb1'
+  manifest_status: scan_complete_normalization_pending
+  newly_authorized_contiguous_printed_pages: 0
+  source_completion_gate_passed: false
+  executable_game_engine_certified: false
+  original_printed_p308_gap_unverified: true
+  denver_archival_loss_p46_47_preserved_without_checkpoint_write: true
+next_scope:
+  priority: 'Continue distinct unfinished FASA7001 whole-section/core-mechanics content classes using current closure evidence; do not revisit already reconciled Character Creation, Skills or spell stat blocks without changed evidence'
+  source_completion_hard_limit: 'Original printed p308 remains unverified; preserve uncertainty and do not claim complete source or invent absent material'
