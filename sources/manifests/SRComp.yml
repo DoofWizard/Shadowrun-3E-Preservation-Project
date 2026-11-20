@@ -63,6 +63,19 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+    - id: option.character-creation.srcomp-edges-flaws-original-point-value-tables-p31
+      path: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+      range_printed: [31, 31]
+      range_pdf: [32, 32]
+      content_class: character_option
+      commit: dee4a497bd47f7764860eff2b5ccfb14e5e45b56
+      blob: a137b83c1562c5ea9089065190a84317a924c4aa
+      baseline_sha256: 26866d28bae75b6303b2079c2bce0ce9acbd243def8d11ee0110004891a5b796
+      candidate_sha256: 2f73f4516935f8c14e606f7ccbc41f07a295ff3c0d638abf40a60130b75ef74c
+      immutable_sha256: 9487551ff87c206ac004c2721c9b8a0d7785090e9e88bc9b1367ab16e8facc9c
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      gate: verified
+      contiguous_advance: false
     - id: option.character-creation.srcomp-miscellaneous-edges-flaws-p29-32
       path: options/character-creation/srcomp-miscellaneous-edges-flaws-p29-32.yml
       range_printed: [29, 32]
@@ -248,3 +261,31 @@ edges_flaws_original_p31_p32_new_named_mechanical_gap_2026_11_20:
   active_denver_checkpoint_unchanged: "source.fasa-7212 through printed p45/PDF46, archived missing pp46-47"
   nonblocking_scan_omission_policy: "The new gap is observed on available pages and is distinct from source omissions; missing page records do not block other eligible work."
   next: "Complete the full coherent original pp29-32 Miscellaneous Edges/Flaws procedures, p31 numeric tables and p32 Vehicle Empathy option using full original-page editorial and transaction gates; do not infer unrelated point values or pretend generic balance canon covers exact row data."
+
+# 2026-11-20 later source-specific closure, controlling only the newly reviewed authentic mechanical slice.
+# Previous audit discoveries/flags and source-level status remain historical evidence, not overwritten.
+miscellaneous_edges_flaws_original_p29_32_source_specific_closeout_2026_11_20:
+  publication: "FASA Corporation Shadowrun Companion FASA7905a, Shadowrun Third Edition"
+  source_original_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  source_verify_result: source_pdf_hash_verified
+  original_printed_images_independently_reviewed: [29, 30, 31, 32]
+  original_pdf_pages: [30, 31, 32, 33]
+  accepted_records:
+    - {path: options/character-creation/srcomp-vehicle-empathy-p32.yml, id: option.character-creation.srcomp-vehicle-empathy-p32, blob: 966747789d8fc69b29fcf7e28faae1af0f4c1a37, gate: verified}
+    - {path: options/character-creation/srcomp-miscellaneous-edges-flaws-p29-32.yml, id: option.character-creation.srcomp-miscellaneous-edges-flaws-p29-32, blob: a1803759c587cc5341107c875517412f2042cc69, gate: verified}
+    - {path: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml, id: option.character-creation.srcomp-edges-flaws-original-point-value-tables-p31, blob: a137b83c1562c5ea9089065190a84317a924c4aa, gate: verified}
+  original_p31_exact_summary_rows: {edges: 46, flaws: 57}
+  source_disagreements_retained:
+    - "Bad Karma p29 body text -5 versus p31 table -6; both preserved, no invented precedence."
+    - "Combat Paralysis printed p31 Flaws Table literal 4 with no legible minus; marked uncertain, not guessed."
+  review_evidence:
+    path: references/audits/srcomp-p31-32-edges-flaws-numeric-vehicle-empathy-mechanical-gap-2026-11-20.yml
+    commit: e1ddc68bed66b7eded65f992583b2b5dd318422d
+    current_blob: e6ddd1378b43cdceb9ded29662e7a159d30d4f24
+  outcome: p29_32_miscellaneous_effects_and_p31_two_full_numeric_tables_source_specific_gate_verified
+  remaining_narrow_source_debt: "Earlier individual Edge/Flaw descriptions pp15-28 have not been independently normalized to exact source-specific semantic records; previously accepted generic subsystem and balance rule do not establish all individual effects."
+  full_companion_pp32_58_mechanical_debt_complete: false
+  original_source_status_and_formal_book_completion_unchanged: true
+  new_global_authorized_pages: 0
+  denver_active_checkpoint_unchanged: "source.fasa-7212 completed through printed p45/PDF46; pp46-47 archived nonblocking omissions"
+  owner_p308_scan_exception_remains_nonblocking: true
