@@ -304,11 +304,13 @@ closure_queue:
       - {path: 'procedures/introduction/sr3-core-captain-chaos-history-opening-p21-22.yml', blob: '839573437da0c7caea45158b943b6b7f7807d1d7', commit: 'a90acf1ac8b4b8e0bdf6f70924938bd42deed5bb', class: attributed_claim}
       - {path: 'procedures/introduction/sr3-core-history-2005-2015-p24-25.yml', blob: '4fa67e7b4f9b9183df94abae3a406a235c440cc6', commit: 'd2242d93bcc1310f57ea646b8ca55af0a2a4e9e6', class: attributed_claim}
       - {path: 'world/introduction/sr3-core-disasters-r-us-p25.yml', blob: 'a1bb05a4911136bfa9cede23cb82d4bb156b652e', commit: 'fb9ac492b92b3c7e1d0401228246e0d6f6e0d6e7', class: world_fact}
+      - {path: 'world/introduction/sr3-core-wyrm-turns-p26.yml', blob: '9fec4c313d3727306d077402e2cc184ecf7d68b0', commit: '25521b1633cf5e32076dcd98b466cbbc736e1578', class: world_fact}
+      - {path: 'world/introduction/sr3-core-magic-on-the-cutting-edge-p26.yml', blob: '577c29c01a9411dc8b02bd50442a3e9bb8f5cbb7', commit: '71814046e9dea8091e35cee94f67212baaaee39f', class: world_fact}
     original_reviewed: 'Original pp21-22/PDF22-23 and main text pp24-25/PDF25-26 independently rendered and reviewed, p23/PDF24 full-page illustration; all three semantic transactions actually staged/prepared, GitHub-committed, read back and confirmed and registered in authoritative SR3.yml; p25 separate boxed chronology is closed.'
     exact_remaining_class: [attributed_claim, world_fact]
-    exact_uncovered_fields: 'Source-period events and qualifiers in main-text pp26-35; other boxed chronologies from pp26-31, where source review establishes required distinct fields; the separate p25 Disasters-R-Us list is already accepted/indexed. Preserve individual dates and quantities and narrator-versus-sidebar provenance.'
-    next_action: 'Resume at original printed p26/PDF27 historical narration and remaining independently required boxed material; reuse accepted p25 chronology, no repeat scan. Check identical approved canonical source before writing; no fictional present-day assertion, automatic SR3 mechanics or global page advance.'
-    state: three_new_bounded_source_records_verified_and_indexed_but_section_not_complete
+    exact_uncovered_fields: 'The original p26/PDF27 Great Ghost Dance main-text narrative and remaining historical continuation p27-35 still require source-period field and attribution coverage; p26 Wyrm Turns and Magic on the Cutting Edge boxed dated entries and p25 Disasters-R-Us are now indexed. Review other sidebars only where original image identifies a distinct required class.'
+    next_action: 'Resume at original printed p26/PDF27 The Indian War and the Great Ghost Dance main prose for separately attributed chronology, then continue p27/PDF28 and later original history as coherent slices. Reuse all three verified boxed chronology records and never infer new magic mechanics or Denver page advance.'
+    state: five_bounded_source_records_verified_and_indexed_p26_main_prose_p27_35_remain
   - id: core.intro-p25-disasters-r-us-sidebar
     priority: P1_exact_nonmechanical_table
     original_heading: 'Disasters-R-Us boxed dated world-events table'
@@ -1192,3 +1194,48 @@ introduction_disasters_sidebar_closeout_2026_11_20:
   book_complete: false
   Denver_checkpoint_modified: false
   next_cursor: 'Original printed p26/PDF27 onward main in-world historical chronology and boxed sidebars, then nonmechanical intro p7-13 and p14-20 exact-class decisions.'
+
+# 2026-11-20 original p26 boxed historical source-class closeout, subordinate only.
+introduction_p26_boxed_historical_chronologies_2026_11_20:
+  publication: 'FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop game'
+  source: source.sr3-core
+  exact_original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  fresh_source_verification: '112507704 original bytes, 345 pages, exact Git-blob-matching preservation_method.py verify-source returned source_pdf_hash_verified'
+  original_printed_page: 26
+  physical_pdf_page: 27
+  independent_visual_source_review: 'Direct original high-resolution Wyrm Turns and Magic on the Cutting Edge boxed source image; six dated statements in each box and uncertainties independently reviewed'
+  verified_semantic_transactions:
+    - id: world.introduction.sr3-core-wyrm-turns-p26
+      class: world_fact
+      path: world/introduction/sr3-core-wyrm-turns-p26.yml
+      semantic_commit: 25521b1633cf5e32076dcd98b466cbbc736e1578
+      exact_blob: 9fec4c313d3727306d077402e2cc184ecf7d68b0
+      baseline_sha256: 86b398c1f981132ae8b7f62ecce9db681d512a12a431cfcd5f069504216c7c9f
+      candidate_sha256: d8fe99458b475dd906078ed14b9a958db1d8a0dbd1ce22f1be5ae6ed92112ce5
+      immutable_sha256: ce4b0101a5dce44b1b94b4ab681e6bac52d56516eec447a2e5fcd987c0ca3e62
+      class_scope: 'Six 2012-2053 in-world dragon-history dates, including tentative Sirrurg attribution and dated television program; no new dragon stat modifier'
+    - id: world.introduction.sr3-core-magic-on-the-cutting-edge-p26
+      class: world_fact
+      path: world/introduction/sr3-core-magic-on-the-cutting-edge-p26.yml
+      semantic_commit: 71814046e9dea8091e35cee94f67212baaaee39f
+      exact_blob: 577c29c01a9411dc8b02bd50442a3e9bb8f5cbb7
+      baseline_sha256: 0369b8a86f3d7bdf148582629053ff2b8c153aeeca7b4513de925330a79cf46b
+      candidate_sha256: 8ec62e9c9b33abfd00f812b39495a20fc65c0104ef210eda1565512b915f6857
+      immutable_sha256: 7858497e97c1ceaab2091d6d87562d6113beb3e8f5e6eddf6cedf6e469ffb530
+      class_scope: 'Six dated 2021-2054 occult research/academic, courtroom and disputed archaeological source claims; preserves narrator skepticism and no invented anchoring rule'
+  verified_gates: 'Independently reviewed baseline and same-substance candidate, transaction_recovery.stage with actual gate prepare, ordinary GitHub Contents create, exact original candidate blob readback, ingestion_gate.confirm verified and transaction_recovery.inspect verified for both'
+  source_specific_index:
+    path: sources/manifests/SR3.yml
+    indexing_commit: 096490f9f521fc41da3c84398e858e9119d0c12c
+    indentation_correction_commit: 166a6152bae50340a483cda29da4621fce45c6cc
+    exact_manifest_blob_after_readback: 44589c3c0b1a0bff9b26c8ac3e57e1b21b8c3ea1
+    previous_registration_count: 444
+    expected_registration_count_after_two: 446
+    contiguous_advance: false
+  retired_exact_obligations: [p26_wyrm_turns_boxed_world_fact, p26_magic_on_the_cutting_edge_boxed_world_fact]
+  distinct_unretired_next_heading: 'The Indian War and the Great Ghost Dance, p26/PDF27 main prose; p27/PDF28 continuation and remaining pp28-35 original-history headings/boxes'
+  remaining_content_classes: [attributed_claim, world_fact]
+  separate_nonmechanical_debt: 'Introduction pp7-13 setting/campaign guidance and pp14-20 fictional narrative class disposition remain independently open; do not make them prerequisites for duplicate settled mechanics work'
+  unresolved_global_conditions: 'Original printed p308 unauthenticated; source-wide heading/class proof incomplete; generic authorize-advance cannot legally finalize inactive FASA7001 while Denver remains active'
+  Denver: 'Archived losses pp46-47 unchanged; authoritative completed-through printed p45/PDF46, no transition or checkpoint change'
+  full_core_completion_gate_passed: false
