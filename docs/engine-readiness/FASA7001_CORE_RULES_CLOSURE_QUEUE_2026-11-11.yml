@@ -80,14 +80,96 @@ closure_queue:
       - "docs/engine-readiness/FASA7001_SOURCEBOOK_UPDATES_P323-325_RECONCILIATION_2026-11-17.yml"
       - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     disposition_2026_11_19: "Original printed pp323-325/PDF331-333 visually re-inspected, including historical character/skill, magic, Rigger 2 and VR2 conversion. Accepted source-specific canonical procedures were previously reconciled. No new distinct rule established; this only retires repeat bounded conversion audit, not FASA7001 completion or authorization."
-  - id: core.full-mechanics-section-inventory
-    priority: P0
+  - id: core.game-concepts-opening-p36-p37
+    priority: P1_exact_class_audit
+    original_heading: 'Game Concepts / Playing Shadowrun / The Abstract Nature of Rules'
+    printed_pages: [36, 37]
+    physical_pdf_pages: [37, 38]
+    required_class_to_determine: [campaign_guidance]
+    original_source_evidence: 'Directly inspected PDF37 original printed p36: player/GM agency, abstraction and interpretation are narrator/GM text; PDF38 is full-page illustration and supplies no additional numeric table.'
+    already_covered_after_this_slice: 'Source images printed pp38-51/PDF39-52 reviewed in Game Concepts 2026-11-19 existing closure evidence; p47 five-row metahuman characteristics table is accepted in options/character-creation/sr3-core-metahuman-average-characteristics-p47.yml at blob a06e00c1ebfee4f3c3474d316ce9cf7fd053d1a3.'
+    exact_remaining_class: 'Determine whether Playing Shadowrun p36 GM/player guidance constitutes a distinct required campaign_guidance record or is already included in indexed Game Concepts/GM narrative canon; do not fabricate a numeric rule.'
+    next_action: 'Source-to-canonical path/field lookup for p36 only; if genuinely missing and required, transact with independent source baseline/candidate and normal complete gates.'
+    status: discrete_content_class_review_pending
+  - id: core.game-concepts-metahuman-viewpoints-p48-51
+    priority: P2_nonmechanical
+    original_heading: 'Metahumanity: five attributed first-person setting viewpoints after Metahuman Characteristics Table'
+    printed_pages: [48, 51]
+    physical_pdf_pages: [49, 52]
+    required_class_to_determine: [world_fact, attributed_claim, narrative_context]
+    accepted_mechanical_path: options/character-creation/sr3-core-metahuman-average-characteristics-p47.yml
+    accepted_mechanical_blob: a06e00c1ebfee4f3c3474d316ce9cf7fd053d1a3
+    prior_source_review: docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml
+    exact_remaining_class: 'Separate authoritative narrator facts from named first-person character claims and optional setting context if those content classes are required for FASA7001 source-wide archival closure; p47 numeric character-option table is already closed.'
+    next_action: 'Apply existing source-class retention policy to p48-51; normalize only distinct required source-specific facts/claims with ordinary gates, no unnecessary lore expansion.'
+    status: mechanical_class_reconciled_nonmechanical_class_decision_pending
+  - id: core.combat-p100-129-aggregate
+    priority: P0_reuse
+    original_heading: 'Combat: Initiative/Actions, Ranged, Melee, Knockdown/Barriers, Condition/Damage/Healing'
+    printed_pages: [100, 129]
+    physical_pdf_pages: [101, 130]
+    required_classes_reconciled_in_prior_bounded_reviews: [rule_exact, rule_procedure, equipment_stat]
+    evidence_files:
+      - docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml
+      - docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml
+      - docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml
+      - docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml
+    accepted_example_fields:
+      - {path: rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml, blob: 87371b67cf6ac9e57ffd276d44713eaa3cdafcfd}
+      - {path: rules/combat/sr3-core-blind-fire-and-partial-cover-exact-p111.yml, blob: f32efb70abdd1089e7dac7debf6912d0ea03bb31}
+      - {path: procedures/combat/sr3-core-melee-resolution-numeric-p122.yml, blob: 5a223961f209abeab07c3d4fee01dff3bed0bbba}
+      - {path: rules/condition/sr3-damage-monitor-numeric-p125-126.yml, blob: 5ba510e3e51b53eebbac30865f2cddc230bf1219}
+    row_checks: '21 Weapon Range rows, 25 Ranged Modifier rows, Grenade Range/Damage rows, Melee Modifiers, Knockdown/Barrier/Damage/Healing/First Aid tables all accounted for within earlier bounded source evidence. p111 Blind Fire initially unindexed but separately gate-confirmed/indexed at f549249b12e203baddb77d150a2006c4444739c7; do not repeat old allegations.'
+    source_internal_discrepancies: 'p123 worked example initial Body 4 versus subsequent five Body dice; p113/p126 injury test wording tension. Preserve both without invented precedence.'
+    next_action: 'Retire repeated mechanical review of this chapter unless changed source/record blobs, omitted exact heading/class or failed validation are specifically established; this is not whole-source authorization or engine execution.'
+    state: bounded_mechanics_collectively_reconciled_in_prior_source_reviews
+  - id: core.spirits-dragons-nonmechanical-p260-269
+    priority: P2_nonmechanical
+    original_heading: 'Spirits and Dragons: source narrator, GM and named dragon setting claims'
+    printed_pages: [260, 269]
+    physical_pdf_pages: [269, 278]
+    required_class_to_determine: [world_fact, attributed_claim, campaign_guidance]
+    previous_mechanical_evidence: docs/engine-readiness/FASA7001_SPIRITS_DRAGONS_RULES_SECTION_RECONCILIATION_2026-11-17_1501.yml
+    accepted_example_fields:
+      - {path: rules/spirits/sr3-core-dragon-spirit-dice-pools-p266.yml, blob: deb02b20561f8df83d65afbe635a95700f467dc4}
+      - {path: rules/dragons/sr3-core-dragon-type-statblocks-p268-269.yml, blob: 77130162d5c359845314542124c4e0e0649ff0c6}
+    exact_remaining_class: 'Determine which separately attributed dragon/world claims and GM-facing optional context fall within required source-specific archival classes. Numeric spirit/dragon profiles and tests are already reviewed; do not redo them.'
+    next_action: 'Check source heading-to-accepted-class mapping; transact only genuinely required fields not currently preserved, maintaining source-internal spirit Karma Pool assertions p189/p266 without precedence.'
+    state: mechanics_reconciled_nonmechanical_class_decision_pending
+  - id: core.seattle-setting-p313-322
+    priority: P2_source_class_validation_after_mechanics
+    original_heading: 'Seattle and the Modern Northwest, city-at-a-glance, government, corporations, districts and tribal lands'
+    printed_pages: [313, 322]
+    physical_pdf_pages: [321, 330]
+    required_class_to_determine: [world_fact, attributed_claim, campaign_guidance, rule_exact]
+    direct_original_images_sampled: [321, 322, 323, 324, 325, 326, 327, 328]
+    exact_original_source_anchor: 'Printed p313/PDF321 has Seattle at a Glance population/metatype source-period statistics; printed district entries begin p319/PDF327 with headings, predominant race, territory, chief and principal commercial activity.'
+    exact_remaining_class: 'Verify whether any independent game-effect modifier/test/options are embedded in this setting chapter; classify source-period city numeric facts and named geographical claims separately. No missing mechanic presumed from prose or source-heading presence alone.'
+    next_action: 'Bounded source-class audit using existing setting canon first; if any mechanically protected rule occurs, source-review and gate-transact before optional background. Do not treat city-world-statistics as character-rule modifiers.'
+    state: targeted_content_class_coverage_pending
+  - id: core.sample-record-sheets-p326-329
+    priority: P0_reuse
+    original_heading: 'Sample Character Record Sheets, sixteen optional example loadout panels'
+    printed_pages: [326, 329]
+    physical_pdf_pages: [334, 337]
+    required_classes_accounted_for: [character_option]
+    accepted:
+      - {path: options/character-creation/sr3-core-sample-record-sheet-loadouts-p326.yml, commit: 26bdb7d50012bd1c7647595485a111e20ed23d50, blob: 06f852c414107ffb12ac775c6d93f38f396ba4e7}
+      - {path: options/character-creation/sr3-core-sample-record-sheet-loadouts-p327.yml, commit: 2499aede1fe197b6130f035663a3f6be561fc7e3, blob: 66ee1ec736982b7babb8a814797a8eed9e1d04bf}
+      - {path: options/character-creation/sr3-core-sample-record-sheet-loadouts-p328.yml, commit: c9e4c18da65baf7acc501457ca544d4829b3f8c3, blob: 4dbed873293cf5a017229c746386197d0ec9f45a}
+      - {path: options/character-creation/sr3-core-sample-record-sheet-loadouts-p329.yml, commit: 5e96668d7e5229c2e3b4c04661abf7d4a7589b94, blob: f5a1ede0d276e43828eed124c23a2fd06a3e2828}
+    source_closure_receipt: docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml
+    next_action: 'Retire p326-329 optional character-sheet source-class obligation; only reopen for hash changes, named omissions or failed validation. Reference Index pp330-334/PDF338-342 and blank record-sheet templates PDF343-344 are not newly invented rules.'
+    state: bounded_character_option_section_closed_with_four_accepted_source_records
+  - id: core.source-specific-finalization-policy
+    priority: P0_finalization_blocker
+    original_heading: 'FASA7001 completion procedure and mandatory source authorization gates'
     printed_pages: null
     physical_pdf_pages: null
-    evidence: "Live source manifest broadly labels earlier chapters represented, which does not prove every rule, table, numeric exception, optional mechanic or prerequisite was normalized."
-    next: "Enumerate every rules-bearing core section with source-specific printed/PDF mapping, required content classes and existing canonical IDs; review all missing fields before closure."
-    required_lanes: [dice_tests, character_creation, skills, combat_initiative, movement_damage_healing, magic_conjuring_astral, matrix, vehicles_rigging, cyberware_bioware, gear_price_availability, advancement_contacts, shadowrunning_environment, critters, edition_conversion]
-    state: completeness_audit_required
+    verified_current_constraints: 'Current tools/ingestion/ingestion_gate.py authorize_advance requires manifest.id == checkpoint.active_source and manifest.status == ingesting. FASA7001 currently scan_complete_normalization_pending; active checkpoint remains Denver source.fasa-7212 at p45/PDF46.'
+    missing_condition: 'No currently demonstrated legitimate source.sr3-core source-completion transaction method for non-active source with unknown p308 and remaining required source content classes; cannot use authorize-advance or silently transition Denver.'
+    next_action: 'Identify an actual existing-policy finalization path and its required receipts; only execute when original-source p308, all required class evidence and matching source identity/status constraints have lawful disposition.'
+    state: cannot_currently_authorize_full_source_completion
 separate_noncore_source:
   id: "source.fasa-7212"
   printed_pages: [46,47]
