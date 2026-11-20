@@ -1,0 +1,101 @@
+id: option.character-creation.srcomp-adrenaline-surge-allergy-p18-19
+record_type: option
+status: source_reviewed
+source: source.srcomp
+printed_pages: 18-19
+pdf_pages: 19-20
+edition_scope: FASA Corporation Shadowrun Companion FASA7905a, Shadowrun Third Edition
+  optional character Edges and Flaws
+content_class:
+- character_option
+headline: 'FASA Corporation Shadowrun Companion FASA7905a Third Edition original pp18-19/PDF19-20:
+  Adrenaline Surge and Allergy plus numeric severity table.'
+summary: Optional game-source effects for combat-phase reaction with modifiers and
+  limited applicability, and the exact two-axis Allergy point-value and severity consequence
+  table.
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 18
+    - 19
+    physical_pdf_pages:
+    - 19
+    - 20
+  source_heading: PHYSICAL EDGES AND FLAWS
+  source_general_limit: The original says physical Flaws in this section are assumed
+    not to be correctable with existing medicine or cybertechnology unless a particular
+    entry says otherwise.
+  Adrenaline_Surge:
+    kind: Edge
+    point_value: 2
+    optional_activation: Character can activate the Edge in combat at a chosen time.
+    initiative: Use the Rule of Six for Initiative while Adrenaline Surge is in effect.
+    Combat_Test_target_number_modifier: 1
+    Perception_Test_target_number_modifier_in_combat: 1
+    ends: Continue until the remainder of that combat ends or danger passes, once
+      activated.
+    physical_world_actions_only: true
+    excluded_contexts:
+    - Jacked into a rigged system or Matrix.
+    - Driving a rigged vehicle using a datajack link.
+    incompatible_with_existing_reaction_or_initiative_enhancement: A character with
+      Reaction or Initiative already enhanced by cyberware, bioware or magic (including
+      a shapeshifter or adept) may not purchase Adrenaline Surge.
+  Allergy:
+    kind: Flaw
+    permitted_total_negative_point_values:
+    - -2
+    - -3
+    - -4
+    - -5
+    choose_two_factors_in_order:
+    - rarity or commonness of allergen
+    - severity of symptoms
+    total_point_value_formula: Sum the selected source-point values from the two original
+      tables; no third universal factor.
+    rarity:
+    - name: Uncommon
+      point_value: -1
+      examples:
+      - silver
+      - gold
+      source_condition: Relatively rare substances or conditions.
+    - name: Common
+      point_value: -2
+      examples:
+      - plastic
+      - sunlight
+      - pollutants
+      source_condition: Common substances or conditions.
+    severity:
+    - name: Mild
+      point_value: -1
+      effect: Discomfort/distracting symptoms during exposure; +1 target number on
+        every test during the symptoms.
+      all_test_target_number_modifier: 1
+    - name: Moderate
+      point_value: -2
+      effect: Contact causes intense pain; weapons made of the substance gain +2 to
+        Power when used against the allergic character.
+      allergen_weapon_Power_bonus: 2
+    - name: Severe
+      point_value: -3
+      effect: One Light wound for each minute of contact or exposure; weapons made
+        of the allergen gain +2 to Power when used against the allergic character.
+      light_wound_per_minute_of_exposure: 1
+      allergen_weapon_Power_bonus: 2
+    source_worked_example:
+      rarity: Uncommon
+      severity: Moderate
+      total_flaw_value: -3
+  referenced_summary_table:
+    original_printed_page: 31
+    original_pdf_page: 32
+    canonical: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+    note: The p31 summary shows Allergy Flaw -2 to -5 but source pp18-19 supply the
+      original two-factor calculation and exact severity effects.
+framing: reference_exact
