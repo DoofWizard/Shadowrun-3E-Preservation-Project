@@ -1,0 +1,63 @@
+id: audit.srcomp.edges-flaws-p31-32-distinct-numeric-gap-2026-11-20
+record_kind: administrative_read_only_original_source_gap_receipt_not_a_semantic_record
+source: source.srcomp
+publication:
+  title: "Shadowrun Companion"
+  publisher: "FASA Corporation"
+  catalog: "FASA7905a"
+  edition: "Shadowrun Third Edition"
+original_source:
+  cataloged_drive_id: "13ZSIkWezAiK9gmVUTck_AQVE6eTWNuZa"
+  sha256: "8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5"
+  original_pdf_pages: 138
+  freshly_reacquired_in_review: true
+  local_sha256_matches_catalog: true
+  exact_repository_preservation_verify_source_executed_this_review: false
+  earlier_independent_verify_source_receipt: "references/audits/srcomp-how-to-hire-p52-58-mechanics-class-2026-11-20.yml"
+original_images_independently_reviewed:
+  - {printed: 31, physical_pdf: 32, heading: "Edges Table and Flaws Table"}
+  - {printed: 32, physical_pdf: 33, heading: "Vehicle Empathy, followed by New Character Types"}
+  - {printed: [33, 43], physical_pdf: [34, 44], role: "Reused previously source-reviewed ghoul, shapeshifter and metahuman variants; newly inspected pages to check whether distinct option material was in that adjacent scope"}
+  - {printed: [44, 51], physical_pdf: [45, 52], role: "Reused previously accepted Athletics and optional-training section; original p45/PDF46 illustration confirmed"}
+source_verified_distinct_mechanical_omissions:
+  - heading: "Edges Table / Flaws Table"
+    printed: 31
+    physical_pdf: 32
+    class: character_option
+    missing_substance: "Item-by-item Edges and Flaws names, point values including ranged and conditional point values, and table annotations are not present in the currently cited generic framework/balance records."
+    representative_original_rows:
+      - "Vehicle Empathy: Edge value 2"
+      - "Natural Hardening: Edge value 4"
+      - "Good Reputation: Edge value 1 to 2"
+      - "Police Record: Flaw value -6"
+    next: "Independently review all original p31 table rows and associated earlier description sections, avoiding inferred default values; stage complete coherent numeric catalog through all normal substantive gates."
+  - heading: "Vehicle Empathy (Miscellaneous Edge)"
+    printed: 32
+    physical_pdf: 33
+    class: character_option
+    exact_mechanical_condition: "When a character with this Edge has physical contact with a vehicle through manual controls or being jacked in, the vehicle's Handling is reduced by 1."
+    point_value: 2
+    prerequisite: "Character has this optional Edge and actual vehicle contact"
+    illustrative_nonexecuted_vector: {handling_before: 5, contact: true, handling_after: 4}
+    next: "Preserve contact and handling-condition restriction in canonical data; do not generalize to remote driving or other vehicle traits."
+canonical_reuse_reconciliation:
+  - {path: "subsystems/character/edges-flaws.yml", blob: "611707da785069367cc80f1c94b5bee9fe824351", observed: "Only optional system, categories and balance linkage; explicitly says individual Edges and Flaws will be child option records"}
+  - {path: "rules/character/edges-flaws-balance.yml", blob: "993ce60db0542f34d650968e1b8638284b1e261e", observed: "Only generic Edge and Flaw point-balancing framework, no p31 catalog or vehicle Handling modifier"}
+  - {path: "options/character-creation/srcomp-ghoul-player-characters-p32-34.yml", blob: "6cbbee7026684b073c1e2425f732873bd5e34029", observed: "Ghoul rules begin after Vehicle Empathy and do not provide coverage of the preceding Edge"}
+  - {path: "options/character-creation/srcomp-metahuman-variants-p37-43.yml", blob: "eca35d2f730040c6a860577d96809071f0dfaa79", observed: "Distinct accepted metatype options reused, not duplicated"}
+repository_path_inventory_check:
+  areas: [options, rules, subsystems, rule, references, indexes, procedures, modifiers, equipment]
+  method: "Current main Git tree recursively screened by path for Edge/Flaw/Empathy catalog; inspected the source-specific named generic framework/balance canonical content"
+  caveat: "A filename scan alone is not proof of absence in every body field; live current manifest and any matching historical accepted record must be reconciled again before a new semantic transaction."
+decision:
+  named_source_proven_missing_content: true
+  current_section_completed: false
+  committed_semantic_record_during_this_review: false
+  newly_indexed_semantic_records: 0
+  newly_authorized_contiguous_pages: 0
+  source_status_or_completion_fields_modified: false
+  next_natural_section: "Shadowrun Companion FASA7905a Edges and Flaws, final numeric tables original p31 plus Vehicle Empathy p32, with earlier individual option descriptions where required"
+  required_gates: "Original page source review and first-pass editorial, independent baseline and same-substance candidate, actual transaction_recovery stage including ingestion_gate prepare, normal GitHub Contents write of exact candidate UTF-8 bytes, exact Git blob and commit readback, actual ingestion_gate confirm, lawful source-specific indexing"
+  local_obstacle: "This administrative source-gap audit is not an authorization to add or index a rule. No substantive record is considered accepted until each mandatory gate has its real execution receipt."
+  owner_missing_scan_policy: "Documented nonblocking scan omissions remain separate from this positively observed available-page mechanical gap"
+  Denver: "FASA7212 archived missing pp46-47 unchanged at authoritative printed p45/PDF46; unrelated to this source"
