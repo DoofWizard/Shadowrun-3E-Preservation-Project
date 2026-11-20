@@ -120,3 +120,37 @@ section_disposition:
   contiguous_page_advance: 0
   limitations: 'Section-specific source/accepted-canon audit, not ingestion_gate confirm or an all-chapters completion gate; source-local spell and Magic cross-references must remain distinct from runnable implementation. Additional core chapters unclosed.'
 denver_archive: {source: source.fasa-7212, printed_pages_missing_and_archived: [46, 47], authoritative_completed_through_printed: 45, authoritative_completed_through_pdf: 46, checkpoint_unchanged: true}
+
+# 2026-11-19 source-specific consistency addendum — preserve all historical section evidence.
+magic_chapter_current_blob_reconciliation_2026_11_19:
+  publication: "FASA Corporation, Shadowrun Third Edition, FASA7001 (fictional tabletop rules)"
+  source_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_verify_command_passed: true
+  exact_repository_scripts_and_manifest_git_blobs_compared: true
+  original_images_directly_inspected_for_delta: ["printed p189/PDF198", "printed p266/PDF275", "printed p188/PDF197"]
+  original_art_only_page_mapping: ["printed p175/PDF176", "printed p179/PDF188", "printed p185/PDF194"]
+  current_manifest_blob_before_review: d48f6542c022df537a2504a8415896b0dd992933
+  current_manifest_status: scan_complete_normalization_pending
+  indexed_magic_records_crosschecked:
+    original_printed_range: [158,198]
+    record_count: 67
+    exact_current_git_blob_matches_index: 66
+    differing_paths_count: 1
+    examined_classes: [rule_exact, rule_procedure, character_option]
+    note: "Previously independent original-source section reviews reused at actual scope. This comparison is byte/index consistency, not proof of all unindexed source assertions or a finalization gate."
+  differing_entry:
+    path: rules/magic/sr3-core-spirit-power-conflicts-p188-189.yml
+    content_class: rule_exact
+    indexed_blob: 6ee4fe4c89e53e163e6140864bd36591d77b8517
+    current_file_blob: c407b8f8cddb0df8b5c0d386680e51b00fe685bc
+    observed_new_semantic_commit: 2352d40e5a496a9491fab03b524b9909e6d541b5
+    original_p189: "Summoned-spirit Karma Pool equals Conjuring successes plus 1."
+    original_p266: "General spirits/dragons Karma Pool determined by GM using relative threat; source does not expressly adjudicate the p189 special formula against p266 GM discretion."
+    source_fidelity_result: "Both source statements are faithfully preserved in the current semantic file without invented precedence; old index points to a previous accepted blob."
+    not_authorized: "Current file not counted as reindexed or gate-confirmed by this read-only addendum."
+    exact_missing_gate: "Independently authored separately source-reviewed baseline and same-substance candidate, actual transaction stage/prepare, exact ordinary Contents revision receipt/readback, ingestion_gate confirm and lawful source-specific manifest reindex. Preserve old baseline and original accepted revision. Do not automatically copy candidate into baseline or duplicate/revert existing substance."
+  source_complete: false
+  newly_authorized_contiguous_pages: 0
+  additional_source_blocker: "Printed p308 remains unverified with no inferred blankness or waiver."
+  finalization_blocker: "FASA7001 cannot run generic authorize-advance while Denver is active and core status is normalization pending; no legitimate separate core-completion operation yet demonstrated."
+  next_exact_cursor: "Resolve existing changed Magic p188-189 file/index parity only after real transaction gates; then combine accepted 158-198 mechanical section receipts for source-scoped closure. Do not restart the 191-198 spell statblock audit."
