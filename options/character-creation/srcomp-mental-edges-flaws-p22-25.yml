@@ -1,0 +1,277 @@
+id: option.character-creation.srcomp-mental-edges-flaws-p22-25
+record_type: option
+status: source_reviewed
+source: source.srcomp
+printed_pages: 22-25
+pdf_pages: 23-26
+edition_scope: FASA Corporation, Shadowrun Companion FASA7905a, Shadowrun Third Edition;
+  optional Mental Edges and Flaws
+content_class:
+- character_option
+headline: 'FASA Shadowrun Companion FASA7905a (Third Edition), original printed pp22-25/PDF23-26:
+  Mental Edges and Flaws'
+summary: Original optional mental character traits with exact point costs, target
+  modifiers, dice tests, intervals, exceptions and source-qualified GM guidance.
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 22
+    - 23
+    - 24
+    - 25
+    physical_pdf_pages:
+    - 23
+    - 24
+    - 25
+    - 26
+    sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  section: MENTAL EDGES AND FLAWS
+  scope: The source's optional Edges and Flaws; not global compulsory character rules.
+  items:
+  - name: Amnesia
+    kind: Flaw
+    allowed_values:
+    - -2
+    - -3
+    - -4
+    - -5
+    lighter_option: At -2, memory of identity/past is lost but skills and abilities
+      are still retained.
+    severe_option: At -5, player does not know skills, abilities and Attributes until
+      the character acts; GM creates the sheet.
+  - name: Bravery
+    kind: Edge
+    value: 1
+    target_modifier_for_fear_and_intimidation_resistance: -1
+    applies_to: Fear from spell and critter powers as well as other intimidation
+  - name: College Education
+    kind: Edge
+    value: 1
+    applies_to: Defaulting in Academic Knowledge Skill Tests only
+    printed_defaulting_modifiers:
+      to_a_skill: 1
+      to_a_specialization: 2
+      to_the_attribute_printed: -3
+    source_sign_note: Original printed p22/PDF23 appears to print minus 3 for the
+      Attribute; retain this literal sign rather than silently replacing it with the
+      plus 3 stated for Technical School Education on printed p25.
+    combinable_with: Technical School Education
+  - name: Combat Monster
+    kind: Flaw
+    value: -1
+    minimum_combat_turns_before_breakaway: 3
+    may_shortcut_with: Willpower (6) Test; each success reduces the required period
+      by one Combat Turn, minimum one Turn.
+    cannot_break_early_unless: All opponents killed or disabled
+    incompatible_with: Combat Paralysis
+  - name: Combat Paralysis
+    kind: Flaw
+    value: -4
+    first_initiative_roll_each_combat: Treat the result as the minimum possible result
+      obtainable from the character's Initiative dice, in physical, astral, or cybercombat.
+    surprise_test_target_modifier: 2
+    incompatible_with: Combat Monster
+  - name: Common Sense
+    kind: Edge
+    value: 2
+    effect: GM must give a warning when the character is about to attempt an obviously
+      foolish action.
+  - name: Compulsive
+    kind: Flaw
+    value: variable, set by GM according to seriousness and danger of the compulsive
+      behavior
+    printed_examples: Minor obsessive organization can be worth no more than -1 point;
+      compulsive intrusion into a high-level corporate host can be -3.
+    note: No universal numeric table or automatic single value is printed.
+  - name: Flashbacks
+    kind: Flaw
+    value: -4
+    trigger: Player and GM agree on a specific sensory stimulus before play.
+    required_check: Willpower (6) Test on encountering possible trigger
+    failure_result: Incapacitating flashback for 1D6 minutes; no useful action during
+      that time.
+  - name: Impulsive
+    kind: Flaw
+    value: -2
+    danger_response_check: Successful Willpower (6) Test required to avoid blindly
+      rushing into dangerous situations.
+  - name: Illiterate
+    kind: Flaw
+    value: -3
+    starting_free_knowledge_skills: Intelligence x 3 (not the normal starting allocation)
+    may_start_with_academic_knowledge: false
+    free_starting_read_write_skill: false
+    computer_related_test_target_modifier: 4
+    maximum_computer_skill: 1
+    incompatible_with: Any Education Edge
+    reading_training: An instructor is mandatory; cannot self-teach. First Read/Write
+      Skill point costs 5 Karma.
+  - name: Oblivious
+    kind: Flaw
+    value: -2
+    perception_test_target_modifier: 1
+    includes_astral_perception: true
+    does_not_affect_combat_vision_or_range_modifiers: true
+  - name: Pacifist
+    kind: Flaw
+    value: -2
+    fiction_rule: Will not kill except in self-defense; will not participate in premeditated
+      murders or assassinations.
+    incompatible_with: Total Pacifist
+  - name: Perceptive
+    kind: Edge
+    value: 3
+    perception_test_target_modifier: -1
+    includes_astral_perception: true
+    does_not_affect:
+    - Detection spells
+    - Sensors through a neural interface
+    - Combat vision modifiers
+  - name: Perfect Time
+    kind: Edge
+    value: 1
+    effect: Knows the time to within a minute. Prolonged isolation, unconsciousness,
+      or mind-altering drugs/chips may temporarily interfere, but the ability returns
+      after the condition clears.
+  - name: Phobia
+    kind: Flaw
+    permitted_totals:
+    - -2
+    - -3
+    - -4
+    - -5
+    choose_condition_and_severity: true
+    condition_values:
+    - condition: uncommon
+      value: -1
+    - condition: common
+      value: -2
+    severity:
+    - name: Mild
+      value: -1
+      all_relevant_test_target_modifier: 1
+      effect: Distracting fear while experiencing the trigger
+    - name: Moderate
+      value: -2
+      all_test_target_modifier_during_reaction: 2
+      confronting_trigger_requires_willpower_target_number: 4
+      effect: Normally avoids the condition
+    - name: Severe
+      value: -3
+      successful_willpower_target_number_to_act: 6
+      all_test_target_modifier_if_successful: 2
+      effect: Otherwise character collapses or flees
+    original_example: Common and Moderate gives -4 Flaw points
+  - name: Photographic Memory
+    kind: Edge
+    value: 3
+    effect: Can perfectly remember experienced sights, faces, dates, numbers or other
+      information; GM supplies forgotten details already known to the character.
+  - name: Sea Legs
+    kind: Flaw
+    value: -2
+    trigger: 24 continuous hours on land without setting foot on a boat
+    initial_test: Willpower (4), at least 2 successes required
+    on_failure: Wants to return to ship/boat; target numbers on other tests increase
+      by +1 per failed Willpower check, excluding later Sea Legs checks
+    repeat_frequency: Every Intelligence hours, regardless of prior outcome
+    repeat_modifier_if_prior_success: 1
+    repeat_modifier_if_prior_failure: 2
+    recovery: After spending as many hours back on water as the total number of failures;
+      if more than 24 failures then 25th adds two days, 26th three days, etc.
+    eligibility: GM should only allow for characters who spend time at sea
+  - name: Sea Madness
+    kind: Flaw
+    value: -4
+    trigger: At sea for at least 24 hours with no land in sight
+    initial_test: Willpower (4), at least 2 successes required
+    on_failure: Character becomes increasingly fearful of abandonment at sea and may
+      act irrationally to get to land, per the original fictional guidance
+    repeat_frequency: Every Intelligence hours, regardless of prior outcome
+    repeat_modifier_if_prior_success: 1
+    repeat_modifier_if_prior_failure: 2
+    recovery: Tests continue while no land visible; after seeing land, fear ends after
+      as many hours as accumulated failures; beyond 24 failures 25th adds two days,
+      26th three days, etc.
+    eligibility: GM should only allow characters who spend time at sea
+  - name: Sense of Direction
+    kind: Edge
+    value: 1
+    effect: Knows true north and can retrace own path; does not help when transported
+      while unconscious or without sight of surroundings.
+  - name: Sensitive Neural Structure
+    kind: Flaw
+    allowed_values:
+    - -2
+    - -4
+    effective_willpower_reduction_for_neural_damage: 1 for -2 Flaw, 2 for -4 Flaw
+    min_effective_willpower: 1
+    tested_sources:
+    - BTL
+    - Black IC
+    - rigger dump shock
+    - other damaging neurally transmitted effects
+  - name: Simsense Vertigo
+    kind: Flaw
+    value: -2
+    value_for_riggers_or_deckers: -4
+    while_operating_simsense_all_test_target_modifier: 1
+    while_operating_simsense_initiative_modifier: -1
+    devices:
+    - cyberdecks
+    - vehicle control rigs
+    - entertainment simsense
+    - smartlinks
+    - display links
+    - other simsense technology
+  - name: Spike Resistance
+    kind: Edge
+    allowed_values:
+    - 2
+    - 4
+    effective_willpower_increase_per_two_edge_points: 1
+    effect_scope: Tests against high simsense spikes and harmful ASIST, including
+      Black IC and rigger dump shock
+    restriction: Only riggers or deckers may take this Edge
+  - name: Technical School Education
+    kind: Edge
+    value: 1
+    applies_to: Defaulting in Background Knowledge Skill Tests only
+    printed_defaulting_modifiers:
+      to_a_skill: 1
+      to_a_specialization: 2
+      to_the_attribute: 3
+    combinable_with: College Education
+  - name: Total Pacifist
+    kind: Flaw
+    value: -5
+    fictional_constraint: Will not kill any living creature more intelligent than
+      an insect, under any provocation
+    if_character_kills: Suffers severe regret/depression for 2D6 weeks and will not
+      do anything except ordinary daily routine
+    incompatible_with: Pacifist
+  - name: Uneducated
+    kind: Flaw
+    value: -2
+    starting_free_knowledge_skills: Intelligence x 3
+    may_start_with_academic_or_background_knowledge: false
+    initial_languages: 1
+    incompatible_with: Any Education Edge
+    subsequent_learning: Requires an instructor; first new Academic or Background
+      Knowledge Skill costs double normal Karma
+  - name: Vindictive
+    kind: Flaw
+    value: -2
+    effect: Fictional roleplaying constraint requiring disproportionate retribution
+      for perceived slights; publication assigns no universal test modifier.
+  next_original_heading: SOCIAL EDGES AND FLAWS starts in right column of printed
+    p25/PDF26 and is separate.
+  lineage:
+    optional_framework: subsystems/character/edges-flaws.yml
+    balance_rule: rules/character/edges-flaws-balance.yml
+    point_summary: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+framing: reference_exact
