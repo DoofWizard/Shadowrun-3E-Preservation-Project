@@ -1,34 +1,47 @@
 id: world.location.seattle
 record_type: world_record
-name: "Seattle"
+name: Seattle
 domain: setting
 status: ingested
-
+source: source.sr3-core
+printed_pages: 313-314
+pdf_pages: 321-322
+edition_scope: FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop setting
+  with separately sourced later FanPro New Seattle demographic comparison
+content_class:
+- world_fact
 effective:
   status: current
   source: source.sr3-core
   page: 313
   basis: defines
-
-world_type: "metroplex/city"
-period: "SR3 core setting era"
-
+world_type: metroplex/city
+period: SR3 core setting era
 facts:
-  - "Seattle is a UCAS-controlled metroplex surrounded by foreign powers and Native American Nations."
-  - "It is a major Pacific Rim trade center and the primary default urban setting presented by SR3."
-  - "The metroplex is divided into ten districts and governed by a governor, mayor/district councils, a cabinet and a Seattle Congress."
-  - "Lone Star Security Services is the primary contracted police provider in the metroplex during the core-book period."
-
+- Seattle is a UCAS-controlled metroplex surrounded by foreign powers and Native American Nations.
+- It is a major Pacific Rim trade center and the primary default urban setting presented by SR3.
+- The metroplex is divided into ten districts and governed by a governor, mayor/district councils, a cabinet
+  and a Seattle Congress.
+- Lone Star Security Services is the primary contracted police provider in the metroplex during the core-book
+  period.
 source_period_snapshot_2060:
+  metatype_distribution_source:
+    source: source.fanpro-10657
+    printed_page: 14
+    physical_pdf_page: 15
+    original_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+    provenance_note: The six existing 66/13/2/16/2/1 percent entries are from FanPro New Seattle printed
+      p14, not FASA7001 original printed p313. The remaining period fields retain their previous source
+      list and have not been silently reassigned.
   population:
-    total: "3,000,000+"
+    total: 3,000,000+
     human_percent: 66
     elf_percent: 13
     dwarf_percent: 2
     ork_percent: 16
     troll_percent: 2
     other_percent: 1
-    density_per_square_kilometer: "500+"
+    density_per_square_kilometer: 500+
     per_capita_income_nuyen: 26000
     below_poverty_percent: 32
     corporate_affiliated_percent: 52
@@ -47,20 +60,22 @@ source_period_snapshot_2060:
     average_temperature_c: 21
     summer_high_c: 31
     winter_low_c: 4.5
-    stage_one_smog_alerts_per_year: "up to 30"
+    stage_one_smog_alerts_per_year: up to 30
   transport:
-    airport: "Sea-Tac International Airport is the metroplex's principal air-traffic hub."
+    airport: Sea-Tac International Airport is the metroplex's principal air-traffic hub.
     authorized_ground_routes:
-      - "North Road follows old Interstate Highway 5."
-      - "South Road follows old Interstate Highway 5."
-      - "East Road follows old I-90 to the Yakima Trading Center Complex at Ellensburg, then joins I-82/84."
-    passenger_rail: "A sealed-tube maglev connects San Francisco and Seattle through Tir Tairngire and Salish-Shidhe territory; the source describes it as the only passenger rail service into the metroplex and gives a trip time of about two hours."
+    - North Road follows old Interstate Highway 5.
+    - South Road follows old Interstate Highway 5.
+    - East Road follows old I-90 to the Yakima Trading Center Complex at Ellensburg, then joins I-82/84.
+    passenger_rail: A sealed-tube maglev connects San Francisco and Seattle through Tir Tairngire and
+      Salish-Shidhe territory; the source describes it as the only passenger rail service into the metroplex
+      and gives a trip time of about two hours.
     air_taxi_fares_nuyen:
       short_hop_to_airport: 100
       cross_town: 150
     ferry:
       fleet_boats: 20
-      hub: "Pier 66, downtown"
+      hub: Pier 66, downtown
       car_fare_nuyen: 12
       passenger_fare_nuyen: 2
       hydrofoil_passenger_fare_nuyen: 5
@@ -71,37 +86,105 @@ source_period_snapshot_2060:
       downtown_bus_fare_nuyen: 0
       outside_downtown_bus_fare_nuyen: 1
       monorail_fare_nuyen: 1
-
+fasa7001_original_core_snapshot:
+  source: source.sr3-core
+  printed_pages: 313-314
+  physical_pdf_pages: 321-322
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  population:
+    total: 3,000,000+
+    human_percent: 63
+    elf_percent: 12
+    dwarf_percent: 3
+    ork_percent: 19
+    troll_percent: 2
+    other_percent: 1
+    density_per_square_kilometer: 500+
+    per_capita_income_nuyen: 26000
+    below_poverty_percent: 32
+    corporate_affiliated_percent: 52
+  infrastructure:
+    hospitals: 51
+  annual_felonious_crime_rate_per_1000: 18
 links:
   contains: []
   references: []
   interacts_with:
-    - world.region.modern-northwest
-
+  - world.region.modern-northwest
 sources:
-  - source: source.sr3-core
-    page: 313
-    relation: defines
-    note: "Seattle and the Modern Northwest — Seattle / Seattle at a Glance"
-  - source: source.sr3-core
-    page: 314
-    relation: extends
-    note: "Getting In and Around / Government / Law Enforcement"
-  - source: source.sr3-core
-    pages: "315-322"
-    relation: extends
-    note: "Seattle institutions, districts, corporations and surrounding regional context"
-  - source: source.fanpro-10657
-    page: 14
-    pdf_page: 15
-    relation: extends
-    note: "Welcome to Seattle — Fast Facts / Seattle at a Glance / Weather"
-  - source: source.fanpro-10657
-    pages: "16-17"
-    pdf_pages: "17-18"
-    relation: extends
-    note: "Welcome to Seattle — Getting In / Getting Around"
-
+- source: source.sr3-core
+  page: 313
+  relation: defines
+  note: Seattle and the Modern Northwest — Seattle / Seattle at a Glance
+- source: source.sr3-core
+  page: 314
+  relation: extends
+  note: Getting In and Around / Government / Law Enforcement
+- source: source.sr3-core
+  pages: 315-322
+  relation: extends
+  note: Seattle institutions, districts, corporations and surrounding regional context
+- source: source.fanpro-10657
+  page: 14
+  pdf_page: 15
+  relation: extends
+  note: Welcome to Seattle — Fast Facts / Seattle at a Glance / Weather
+- source: source.fanpro-10657
+  pages: 16-17
+  pdf_pages: 17-18
+  relation: extends
+  note: Welcome to Seattle — Getting In / Getting Around
 notes:
-  - "Later Seattle sourcebooks should extend this world record rather than create a competing Seattle identity."
-  - "The 2060 snapshot preserves printed source-period figures and fares without asserting that they remain unchanged in later periods."
+- Later Seattle sourcebooks should extend this world record rather than create a competing Seattle identity.
+- The 2060 snapshot preserves printed source-period figures and fares without asserting that they remain
+  unchanged in later periods.
+data:
+  independently_reviewed_source_lineage:
+    publication: FASA Corporation Shadowrun, Third Edition FASA7001, published fictional tabletop role-playing
+      game
+    original_core_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    original_core_printed_pages: 313-314
+    original_core_physical_pdf_pages: 321-322
+    original_core_field_path: fasa7001_original_core_snapshot.population
+    original_core_metatype_percent:
+      human: 63
+      elf: 12
+      dwarf: 3
+      ork: 19
+      troll: 2
+      other: 1
+    later_publication: FanPro New Seattle FanPro10657, fictional tabletop setting source
+    later_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+    later_printed_page: 14
+    later_physical_pdf_page: 15
+    legacy_field_path: source_period_snapshot_2060.population
+    legacy_fanpro_metatype_percent:
+      human: 66
+      elf: 13
+      dwarf: 2
+      ork: 16
+      troll: 2
+      other: 1
+    archival_disposition: Preserve both exact printed source claims separately; original core figures
+      no longer silently conflated with the later FanPro profile. No unexplained probability, demographic
+      interpolation, supersession or change to other Seattle assertions.
+  first_pass_editorial_source_review:
+    review_type: Independent first-pass archival source comparison, before candidate freeze and submission
+    images_checked:
+    - Original FASA7001 p313/PDF321
+    - Original FASA7001 p314/PDF322
+    - Later FanPro10657 p14/PDF15
+    human_readable_paths_checked: All original world/locations/seattle.yml facts, population, infrastructure,
+      transport, links, sources, notes, and new data metadata; fictional narrator facts distinguished
+      from later book period figures and source-attributed comments.
+    unchanged_existing_claims: Existing metroplex governance, transport, weather, crime and setting facts,
+      old 2060 values and source-list entries kept; revised provenance and distinct core snapshot added
+      without altering their numeric substance.
+    unrelated_edition_mechanics: No source-specific game TN, dice roll, modifier or runnable engine rule
+      is implied by these demographic facts.
+framing: newsroom_neutral
+headline: FASA Corporation Shadowrun, Third Edition FASA7001 (fictional tabletop), Seattle printed pp313-314/PDF321-322
+  source-lineage correction
+summary: Original FASA7001 Seattle metatype percentages (63/12/3/19/2/1) are separately preserved from
+  FanPro New Seattle printed p14/PDF15 percentages (66/13/2/16/2/1). The older world record retains its
+  prior period facts, with the distinct later demographic attribution now explicit.
