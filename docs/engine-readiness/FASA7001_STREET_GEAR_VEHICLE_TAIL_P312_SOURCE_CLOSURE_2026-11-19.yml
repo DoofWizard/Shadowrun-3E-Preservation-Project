@@ -1,0 +1,75 @@
+# Bounded original page image-to-accepted canon audit, not a semantic record or full-source authorization.
+schema_version: sr3-core-section-field-closure/v1
+date: "2026-11-19"
+publication: {title: "Shadowrun, Third Edition", publisher: "FASA Corporation", edition: "Third Edition", catalog: FASA7001, source_id: source.sr3-core, fictional_tabletop_source: true}
+original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+original_pdf_pages: 345
+source_verification:
+  freshly_acquired_drive_original: true
+  original_bytes_sha256_recomputed: true
+  exact_reconstructed_git_blob_checks_for_four_repo_validation_scripts_and_manifest: passed
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  connector_preflight_self_tests: 29
+  inspected_original_page: {printed: 312, physical_pdf: 320}
+  evidence_scope: "Direct high-resolution original page image and individually read-back accepted canonical files, not engine execution."
+natural_section: "Street Gear concluding four drone profiles, Vehicle Mounts and Vehicle Weapons tables"
+source_pages: {printed: [312,312], physical_pdf: [320,320]}
+required_content_classes: [equipment_stat, gm_option]
+source_table_obligations:
+  drone_profiles:
+    required_rows: ["Gaz-Niki GNRD-71 Bis Snooper", "Generic Surveillance Drone", "MCT-Nissan Roto-Drone", "Cyberspace Designs Dalmatian"]
+    required_columns_and_prose: [name, handling, speed, acceleration, body, armor, signature, autonav_dash, pilot, sensor, cargo, load, setup_breakdown, landing_takeoff, cost_nuyen, availability, street_index, other_features, short_description]
+    accepted_path: equipment/sr3-core-surveillance-drone-profiles-p312.yml
+    accepted_blob: 3e3f33c1d27534cf6203dc77982e2b7b59aa1ceb
+    accepted_record_id: equipment.vehicles.sr3-core-surveillance-drone-profiles-p312
+    source_specific_index_status: verified
+    observations: "Four original stat rows match; blank autonav shown as dash, not zero; original handling slash and load units retained."
+  vehicle_mounts:
+    required_rows: ["External Firmpoint Fixed Mount", "External Hardpoint Fixed Mount", "Internal Firmpoint Fixed Mount", "Internal Hardpoint Fixed Mount", "Pintle Mount", "Turret", "Mini-turret"]
+    required_columns: [name, cf_cost, load, availability, cost_nuyen, street_index, legality_code, recoil_compensation_code]
+    accepted_path: equipment/sr3-core-vehicle-mount-market-p312.yml
+    accepted_blob: 8058839c228c08a36fa8f5668cd6417df0ea1398
+    accepted_record_id: equipment.vehicles.sr3-core-vehicle-mount-market-p312
+    source_specific_index_status: verified
+    observations: "Seven source rows, exact signed RC notation -1/2 versus pintle 2, legality/availability/cost cells retained."
+  vehicle_weapons:
+    required_rows: ["Ares Vermicide Autocannon", "Water Cannon"]
+    required_columns: [name, type, ammo, mode, damage_code, weight, cost_nuyen]
+    gm_discretion_fields: [availability, legality_code, street_index]
+    accepted_path: equipment/sr3-core-vehicle-weapons-market-p312.yml
+    accepted_blob: 05bc2d35f1c6075788f6b7f2219528a83e7740e3
+    accepted_record_id: equipment.vehicles.sr3-core-vehicle-weapons-market-p312
+    source_specific_index_status: verified
+    observations: "Two source rows match, with literal Water Cannon quotation marks; market availability/legal/index left to GM, not imputed."
+  redundant_combined_source_record:
+    accepted_path: equipment/sr3-core-vehicle-drones-mounts-weapons-market-p312.yml
+    accepted_blob: e5d91ad70ab46ec28f9c151db4547a0b48274d83
+    source_specific_index_status: verified
+    relationship: "Already accepted combined archival record; corroborates, not new or resubmitted substance."
+source_internal_discrepancies_preserved:
+  - "p312 Water Cannon table shows quoted SA Mode, while original p307 prose says always autofire; no engine precedence established."
+bounded_result:
+  exact_covered_rows: {drones: 4, mounts: 7, vehicle_weapons: 2}
+  original_row_column_and_gm_note_obligations_reconciled: true
+  proven_missing_field_after_comparison: null
+  new_semantic_records: 0
+  new_source_specific_registrations: 0
+  newly_authorized_contiguous_pages: 0
+  formal_fasa7001_source_complete: false
+  executable_engine_tested: false
+next_unfinished_source_specific_cursor:
+  first_blocker: "Printed p308 lies between verified printed p307/PDF316 and p309/PDF317; original image is unverified, cannot be waived or inferred. Do not repeat unchanged search."
+  next_genuinely_changed_record_evidence:
+    natural_section: "Magic / Spirit Combat — opposing nature-spirit powers and summoned-spirit Karma Pool, printed pp188-189/PDF197-198; related p266/PDF275"
+    canonical_path: rules/magic/sr3-core-spirit-power-conflicts-p188-189.yml
+    manifest_registered_blob: 6ee4fe4c89e53e163e6140864bd36591d77b8517
+    live_accepted_file_blob: c407b8f8cddb0df8b5c0d386680e51b00fe685bc
+    published_commit_containing_later_revision: 2352d40e5a496a9491fab03b524b9909e6d541b5
+    source_verified_delta: "Current file preserves original p189 specific summoned-spirit Karma Pool successes plus 1 alongside original p266 general GM-discretion Karma Pool instructions; source images of both pages independently inspected."
+    unfulfilled_gate: "Live semantic file differs from authoritative registered blob. A separately independently source-reviewed baseline and same-substance candidate with trusted stage/prepare, actual ordinary file readback/confirm and lawful source-specific reindex are required; documentation alone cannot authorize replacing the blob."
+    do_not_duplicate_or_revert: true
+denver_archival_boundary:
+  archived_missing_printed: [46,47]
+  last_authorized_printed: 45
+  last_authorized_pdf: 46
+  no_checkpoint_write: true
