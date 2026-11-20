@@ -118,8 +118,14 @@ closure_queue:
     accepted_mechanical_blob: a06e00c1ebfee4f3c3474d316ce9cf7fd053d1a3
     prior_source_review: docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml
     exact_remaining_class: 'Separate authoritative narrator facts from named first-person character claims and optional setting context if those content classes are required for FASA7001 source-wide archival closure; p47 numeric character-option table is already closed.'
-    next_action: 'Apply existing source-class retention policy to p48-51; normalize only distinct required source-specific facts/claims with ordinary gates, no unnecessary lore expansion.'
-    status: mechanical_class_reconciled_nonmechanical_class_decision_pending
+    next_action: 'Retire source-reviewed first-person viewpoints and p47 inherited-metatype narrator fact in their exact reviewed scopes. Reopen only for a named omitted original assertion or changed Git blob; preserve prior mechanical table and no invented probability.'
+    status: source_reviewed_attributed_claim_and_p47_narrator_world_fact_indexed
+    accepted_source_specific_2026_11_20:
+      - {path: 'world/game-concepts/sr3-core-metahuman-viewpoints-p47-51.yml', class: attributed_claim, commit: 1be1c634b01576684014239b1adf3e1ebbe9f2f3, blob: 0d7b94d4f0f1cf7c3694136acea71757e17cd4c6, gate: verified}
+      - {path: 'world/game-concepts/sr3-core-metatype-inheritance-p47.yml', class: world_fact, commit: c6368b8629a8e6d019757c89afa3e762e63e8ede, blob: 7ea8359115a2c14668a288411395576d7512f313, gate: verified}
+    gate_index_receipts_2026_11_20: [f4ac8c5af63e43c58d9a5d596067638e1763c68f, 34d802f39c46affc290d2c11f67efdcd5b028d04]
+    source_class_boundary: 'Five distinct bylined claims and adjacent narrator inheritance statement, printed p47-51/PDF48-52. Original p47 numeric table reused; does not certify all setting content in the whole book.'
+
   - id: core.combat-p100-129-aggregate
     priority: P0_reuse
     original_heading: 'Combat: Initiative/Actions, Ranged, Melee, Knockdown/Barriers, Condition/Damage/Healing'
@@ -162,8 +168,20 @@ closure_queue:
     direct_original_images_sampled: [321, 322, 323, 324, 325, 326, 327, 328]
     exact_original_source_anchor: 'Printed p313/PDF321 has Seattle at a Glance population/metatype source-period statistics; printed district entries begin p319/PDF327 with headings, predominant race, territory, chief and principal commercial activity.'
     exact_remaining_class: 'Verify whether any independent game-effect modifier/test/options are embedded in this setting chapter; classify source-period city numeric facts and named geographical claims separately. No missing mechanic presumed from prose or source-heading presence alone.'
-    next_action: 'Bounded source-class audit using existing setting canon first; if any mechanically protected rule occurs, source-review and gate-transact before optional background. Do not treat city-world-statistics as character-rule modifiers.'
-    state: targeted_content_class_coverage_pending
+    next_action: 'Repair separately documented world/locations/seattle.yml legacy source-period attribution only through independent source review and ordinary gates. Preserve original FASA7001 and later FanPro10657 demographic values as competing edition/source assertions. Check any remaining distinct world/guidance/claim fields before broad world-section certification.'
+    state: reviewed_setting_no_new_rule_modifier_legacy_canonical_lineage_reconciliation_pending
+    new_source_specific_2026_11_20:
+      {path: 'world/seattle/sr3-core-original-demographics-p313-314.yml', class: world_fact, printed: [313,314], pdf: [321,322], commit: b72fc842c782ff3d3b76b4fa66dd92b31bc143b1, blob: 96e4340a36d336844787aeacba18d882aa799f6b, index_commit: 0ce91a66754539be17564331559a171ec8ef4fc5, gate: verified}
+    exact_legacy_provenance_discrepancy:
+      path: world/locations/seattle.yml
+      current_blob: 74a7e30f154d77552329c2a2b65e5aef3517affb
+      original_core_metatype_percent: {human: 63, elf: 12, dwarf: 3, ork: 19, troll: 2, other: 1}
+      later_fanpro10657_percent: {human: 66, elf: 13, dwarf: 2, ork: 16, troll: 2, other: 1}
+      field: source_period_snapshot_2060.population
+      discrepancy: 'Legacy world record incorrectly attributes later FanPro New Seattle p14 values to core FASA7001 p313. Review source lineage, no silent replacement, no inferred supersession.'
+    new_mechanical_rule_observed_in_2026_11_20_review: false
+    mechanics_scope_limit: 'Original pages pp313-322/PDF321-330 visually reviewed for independent game TN/dice/modifier; no source-proven new executable mechanic found. That negative bounded inspection is not entire world-fact and GM class closure.'
+
   - id: core.sample-record-sheets-p326-329
     priority: P0_reuse
     original_heading: 'Sample Character Record Sheets, sixteen optional example loadout panels'
