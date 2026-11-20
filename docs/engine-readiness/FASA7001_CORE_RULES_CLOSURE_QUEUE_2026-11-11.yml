@@ -303,22 +303,23 @@ closure_queue:
     accepted_canonical_records:
       - {path: 'procedures/introduction/sr3-core-captain-chaos-history-opening-p21-22.yml', blob: '839573437da0c7caea45158b943b6b7f7807d1d7', commit: 'a90acf1ac8b4b8e0bdf6f70924938bd42deed5bb', class: attributed_claim}
       - {path: 'procedures/introduction/sr3-core-history-2005-2015-p24-25.yml', blob: '4fa67e7b4f9b9183df94abae3a406a235c440cc6', commit: 'd2242d93bcc1310f57ea646b8ca55af0a2a4e9e6', class: attributed_claim}
-    original_reviewed: 'Original pp21-22/PDF22-23 and main text pp24-25/PDF25-26 independently rendered and reviewed, p23/PDF24 full-page illustration; both semantic transactions actually staged/prepared, GitHub-committed, read back and confirmed and registered in authoritative SR3.yml.'
+      - {path: 'world/introduction/sr3-core-disasters-r-us-p25.yml', blob: 'a1bb05a4911136bfa9cede23cb82d4bb156b652e', commit: 'fb9ac492b92b3c7e1d0401228246e0d6f6e0d6e7', class: world_fact}
+    original_reviewed: 'Original pp21-22/PDF22-23 and main text pp24-25/PDF25-26 independently rendered and reviewed, p23/PDF24 full-page illustration; all three semantic transactions actually staged/prepared, GitHub-committed, read back and confirmed and registered in authoritative SR3.yml; p25 separate boxed chronology is closed.'
     exact_remaining_class: [attributed_claim, world_fact]
-    exact_uncovered_fields: 'Source-period events and qualifiers in main-text pp26-35; boxed date/event/damage sidebars on pp25-31 not included in current indexed introductory chronology. Preserve individual dates and quantities and narrator-versus-sidebar provenance.'
-    next_action: 'Resume at original printed p25/PDF26 Disasters-R-Us boxed chronology, then p26 onward in coherent sections. Check identical approved canonical source before writing; no fictional present-day assertion, automatic SR3 mechanics or global page advance.'
-    state: two_new_bounded_source_records_verified_and_indexed_but_section_not_complete
+    exact_uncovered_fields: 'Source-period events and qualifiers in main-text pp26-35; other boxed chronologies from pp26-31, where source review establishes required distinct fields; the separate p25 Disasters-R-Us list is already accepted/indexed. Preserve individual dates and quantities and narrator-versus-sidebar provenance.'
+    next_action: 'Resume at original printed p26/PDF27 historical narration and remaining independently required boxed material; reuse accepted p25 chronology, no repeat scan. Check identical approved canonical source before writing; no fictional present-day assertion, automatic SR3 mechanics or global page advance.'
+    state: three_new_bounded_source_records_verified_and_indexed_but_section_not_complete
   - id: core.intro-p25-disasters-r-us-sidebar
     priority: P1_exact_nonmechanical_table
     original_heading: 'Disasters-R-Us boxed dated world-events table'
     printed_pages: [25, 25]
     physical_pdf_pages: [26, 26]
-    exact_remaining_class: [world_fact]
-    exact_uncovered_fields: 'Original sidebar distinct from Captain Chaos main narrative: year, event location, cause and stated consequences/damage for individual fictional incidents dated 2003 through 2053; numerical fatality amounts and any stated certainty require literal source verification.'
-    accepted_canon_within_scope: 'None of the newly registered original p21-22 and p24-25 attributed_claim records includes this separate boxed list; other source records must be checked for preexisting exact coverage.'
-    source_review_evidence: 'Original printed p25/PDF26 page image visually inspected; sidebar shown in full alongside 2011 main chronology but deliberately not counted in the accepted p24-25 claim record.'
-    next_action: 'Inspect original p25 high-resolution table line by line, compare accepted canon, and write only source-proven distinct world_fact entries with one content class and all normal transaction/index gates.'
-    state: source_proven_specific_missing_class
+    exact_remaining_class: []
+    exact_uncovered_fields: []
+    accepted_canon_within_scope: 'world/introduction/sr3-core-disasters-r-us-p25.yml, commit fb9ac492b92b3c7e1d0401228246e0d6f6e0d6e7, blob a1bb05a4911136bfa9cede23cb82d4bb156b652e; all twelve original p25 boxed rows in a single world_fact record; exact numeric claims and conditional attribution preserved.'
+    source_review_evidence: 'Original p25/PDF26 boxed table enlarged and independently visually reviewed; local baseline/candidate SHA and gate prepare, ordinary Contents create, readback matching expected Git blob, real confirm and recovery inspection; index commit 22ec6997d721afe031a344561ccd327e1074d5d5.'
+    next_action: 'Retire the p25 boxed-table obligation. Continue at p26 original main narration and other independently named source classes. Reopen this p25 record only for changed source/record hashes, named omissions or failed validation.'
+    state: source_bounded_world_fact_accepted_indexed_no_page_advance
 
 separate_noncore_source:
   id: "source.fasa-7212"
@@ -1172,3 +1173,22 @@ introduction_new_source_review_receipts_2026_11_20:
   source_completion_gate_passed: false
   engine_executable: not_tested
   next_cursor: 'Introductory boxed p25/PDF26 Disasters-R-Us year/location/consequence data, followed by p26-35 main history and named nonmechanical gaps; retain separate full-book original-source coverage and source-specific completion blockers.'
+
+introduction_disasters_sidebar_closeout_2026_11_20:
+  source: 'FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop game'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_page: {printed: 25, pdf: 26, box: 'Disasters-R-Us'}
+  verified_semantic_record: {path: 'world/introduction/sr3-core-disasters-r-us-p25.yml', commit: 'fb9ac492b92b3c7e1d0401228246e0d6f6e0d6e7', blob: 'a1bb05a4911136bfa9cede23cb82d4bb156b652e', class: world_fact}
+  manifest_index: {commit: '22ec6997d721afe031a344561ccd327e1074d5d5', blob: '962cdbf81b8bec836eb0b0db93f4b98f7fe4b935', unique_ids: 444, unique_paths: 444}
+  stage_baseline_sha256: 89664c3b0f35f4988be6a11b8c5e216bd1bc19a7709b69449c9c793e72ae9ea9
+  candidate_sha256: 4efbd37ef1ed03240aceca6ab82c04f4e894429e9dbbaa39d9f8c816aa93290c
+  immutable_sha256: e53c6bd66d2d7537c89799b1aa7dc24f8bdeb16facb7d236ca0401d65e1382ac
+  gate_results: 'Actual original image and source hash verification; transaction stage/prepare, normal Contents create, matching SHA readback, ingestion_gate confirm, recovery inspect verified'
+  bounded_scope_closed: true
+  net_new_registrations_this_followup: 1
+  total_new_semantic_records_this_execution: 3
+  contiguous_pages_advanced: 0
+  p308_source_gap_resolved: false
+  book_complete: false
+  Denver_checkpoint_modified: false
+  next_cursor: 'Original printed p26/PDF27 onward main in-world historical chronology and boxed sidebars, then nonmechanical intro p7-13 and p14-20 exact-class decisions.'
