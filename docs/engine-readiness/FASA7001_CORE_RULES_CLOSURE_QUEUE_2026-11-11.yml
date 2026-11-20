@@ -292,3 +292,79 @@ worker_invariants:
 # 2026-11-19 bounded reconciliation update: FASA Corporation Shadowrun Third Edition
 # FASA7001 original fictional tabletop source SHA-256 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914.
 # No semantic transaction, global checkpoint advancement, source completion gate or engine test is implied.
+
+seattle_medical_newsnets_and_northwest_bounded_2026_11_20:
+  publication: "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop"
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  actual_verify_source_result: source_pdf_hash_verified
+  original_images_inspected_physical_pdf: [324, 325, 326, 327, 328, 329, 330]
+  reviewed_printed_pages: [316, 317, 318, 319, 320, 321, 322]
+  test_receipt: "Exact repository script/test Git blobs; 29 connector-preflight selftests and 56 ingestion/preservation/transaction tests passed (85 in all)."
+  newly_verified_semantic_transactions:
+    - path: world/seattle/sr3-core-neighbors-tsimshian-tir-p321.yml
+      scope: "original p320-321/PDF328-329 world_fact: Tsimshian began on p320, not solely p321; Tir Tairngire and Portland p321"
+      historical_prior_semantic_commit: 668bd0226ec1fc0ec74230741278d71e1149bc8a
+      prior_unindexed_blob: 23cc609b98f00e1afd206211b41e7cc58cb3554f
+      new_semantic_commit: 49450d1674915738339b2f8bc1da56a23c9ba1e5
+      exact_blob: 30951c3970246de48fd79a56ce9c790bca88c7e3
+      baseline_sha256: 3bd77c7249b5a4f598361cc471a2e5b2da7049420291b708dd1c80cef46fce0b
+      candidate_sha256: 648fc263efe47dc75db714af28a6148f7a98acbe5828cca72d9a076617420970
+      gate: verified
+      source_specific_index_commits: [cfd79f656972d6e4237863782393de1b0514a39d, 06ec119ee0e07de9b6b814909b261a459ae58c30]
+      note: "First index write had a malformed list indent, corrected with an exact readback second ordinary Contents commit; history preserved, no duplicate registration. Verify live YAML schema before any source-finalization claim."
+    - path: world/seattle/sr3-core-medical-newsnet-p318-319.yml
+      scope: "Medical Facilities, DocWagon, IIN, NewsNet, KSAF and Trid Pirates world_fact p318-319/PDF326-327"
+      semantic_commit: 9b1e1c5995d51e1f9444ab264587a0081901f9c8
+      exact_blob: f8a3ba7cf23ae53325b84d836225b5ca82b9f20f
+      baseline_sha256: 3ccc74e42ae59b97b388bfc3cf7fad5c64edeeb37aa43735d0f18c194704c442
+      candidate_sha256: b25b2cdeef9786a26b2aac4c3de3ffe70a8ac50a5ac72b8643fc50765d65add7
+      index_commit: 8d83ed7513b15bf4f2295025aacc044e19dd9e67
+      gate: verified
+    - path: procedures/seattle/sr3-core-medical-news-media-claims-p318-319.yml
+      scope: "Original narrator and distinct rumored medical and news-organization assertions, class attributed_claim"
+      semantic_commit: e9150f630bf9016314e8dcd1a135ee06de3aee95
+      exact_blob: e654d5e79f86937dfbcd31a6fa14f0999248212b
+      baseline_sha256: 22d84da0ce6d4236145fb1233b42109f219c58098385b1c16317ed0d991c9b29
+      candidate_sha256: f6485bba182561b66383a1afad3f05261929595711c7b27a06ef89340adf7450
+      index_commit: 1bf76b2cad4068596bfaf1faec37c37e9608328c
+      gate: verified
+    - path: procedures/seattle/sr3-core-medical-news-contacts-guidance-p318-319.yml
+      scope: "Optional source-described medical access and news/information-contact scenarios, campaign_guidance"
+      semantic_commit: 9123a3662f431d15e81d0636423dfff8900465c6
+      exact_blob: a94262eadfeb9a7330b232b901cd3a70b8a12e52
+      baseline_sha256: f69532a8109e766ae237ad9f3debfda3d87db1bb8db681bdfcc937191940b3e6
+      candidate_sha256: e626e9cd310a427aae59151301c5ff6b4aa3a9b6af6f8fee040fee23521a9cd0
+      index_commit: 2b74c2e6747e09a93d471f95a7e7e9ab19052105
+      gate: verified
+  bounded_content_class_closure:
+    medical_and_newsnet_original_p318_319:
+      required_classes_accounted_for: [world_fact, attributed_claim, campaign_guidance]
+      original_headings_complete_within_this_scope: ["Medical Facilities", "NewsNets", "IIN", "NewsNet", "KSAF", "Trid Pirates"]
+      source_proven_unindexed_required_field_within_this_scope: []
+      distinct_new_numeric_game_rule: none_observed
+      prior_syndicates_and_tribal_mechanics_reused: true
+      closure_type: "bounded original-source content classes; not whole Seattle or source completion"
+    northwest_original_p320_321:
+      newly_accounted_for_class: world_fact
+      source_provenance_correction: "Original Tsimshian heading first appears p320/PDF328, continuation p321/PDF329; preserved historical p321-only unindexed version."
+      source_qualified_claims_preserved_inside_world_record: true
+      separate_attributed_claim_class_finalization: not_yet_certified
+    developer_essay_original_p322_pdf330:
+      original_image_directly_inspected: true
+      content_type: "Mike Mulvihill attributed authorial/edition-design retrospective, not source-world game mechanic"
+      new_numeric_rule: false
+      narrative_context_class_disposition: "Not required for verified rule_exact/rule_procedure/equipment_stat/character_option closure; determine separately if full-source archival content classes require distinct narrative_context record."
+  still_open_exact_source_specific_cursors:
+    - {printed: [316,317], pdf: [324,325], class: attributed_claim, heading: "Corporations and Megacorporate Holdings", next: "Compare source-qualified forecasts/rumors (e.g. projected rivalries and hiring) with indexed world_fact; normalize genuinely absent assertions only"}
+    - {printed: [317,318], pdf: [325,326], class: attributed_claim, heading: "Seattle in the Shadows / syndicates, gangs", next: "Compare source narrator allegations and uncertainty against existing p317-318 syndicates/gang record; retire if exact speaker/certainty fields are already present"}
+    - {printed: [319,321], pdf: [327,329], class: attributed_claim, heading: "Tribal Lands and Other Neighbors", next: "Check remaining rumor/conditional source assertions against accepted p319-320 tribal and corrected p320-321 Northwest records, without rewriting accepted world facts"}
+    - {printed: [322,322], pdf: [330,330], class: narrative_context, heading: "The Developer's Say", next: "Source-class-only authorial paratext disposition; no invented rule or forced transcript"}
+    - {printed: [260,269], pdf: [269,278], class: [world_fact, attributed_claim, campaign_guidance], heading: "Spirits and Dragons", next: "Reuse mechanical review and determine only exact remaining source-class claims"}
+    - {printed: [308,308], pdf: null, class: original_source_integrity, heading: "Unobserved printed page", next: "Authentic new evidence or lawful established policy disposition only; no repeated unchanged search and no invented blank"}
+  next_highest_priority: "Distinguish original corporate/syndicate narrator forecasts p316-318 that are absent from current class-specific canon; retire matched accepted fields, then continue original other required classes."
+  most_recent_manifest_readback_before_queue_write: eb14c41d0a65ad427b5d0c7dd6968777e866a8de
+  registrations_after_three_new_content_class_entries: 427
+  net_new_global_contiguous_pages: 0
+  full_source_gate_passed: false
+  engine_implementation_tested: false
+  denver: "Archived FASA7212 printed pp46-47 untouched; authoritative p45/PDF46 remains, no checkpoint/source-transition action."
