@@ -22,6 +22,8 @@ source_read_method:
   note: "The original PDF is an image scan; this audit is NOT a complete original-page fidelity or rule inventory pass."
 completion:
   complete_core_rule_normalization: false
+  available_source_mechanics_scoped_consolidated: true
+  available_source_mechanics_scope_date: '2026-11-20'
   completeness_gate_passed: false
   numeric_table_inventory_fully_verified: false
   full_core_original_image_review_this_audit: false
@@ -56,19 +58,22 @@ closure_queue:
     physical_pdf_pages: "314-319 observed; p308 unobserved"
     evidence: "Live manifest explicitly defers detailed printed pp305-311 normalization despite several accepted medical/rigging/vehicle market records."
     next: "Reuse accepted reviewed available pages; retain p308 as an independently unverified omission. Seek a legitimate new source/disposition only when genuinely new evidence exists; do not repeat the same review."
-    state: reviewed_present_pages_source_gap_p308_unresolved
+    state: reviewed_present_pages_owner_accepted_p308_nonblocking_archival_exception
     later_evidence:
       - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml"
     disposition_2026_11_19: "Printed pp305-307/PDF314-316 and pp309-311/PDF317-319 were directly re-inspected; prior bounded accepted medical/magic/rigging/vehicle records are reusable. This does not authenticate missing printed p308 or establish complete final range/source closure."
   - id: core.scan-omission-p308
-    priority: P0_source_gap
+    priority: P3_deferred_source_audit_nonblocking
     printed_pages: [308,308]
     physical_pdf_pages: null
     preceding: {printed: 307, physical_pdf: 316, original_image_inspected: true}
     following: {printed: 309, physical_pdf: 317, original_image_inspected: true}
     evidence: "The inspected scan jumps directly from printed 307 to printed 309; content, if any, is not authenticated."
-    next: "Request/compare an independent legitimate edition-identical scan or documented print-continuity evidence; leave uncertain if unavailable."
-    state: original_page_unobserved
+    next: "Owner accepted p308 as a documented, nonblocking scan omission on 2026-11-20; defer review unless genuinely new evidence appears or owner requests it. Do not infer contents."
+    state: owner_accepted_nonblocking_deferred_later_audit
+    currently_blocks_available_source_core_mechanics: false
+    authentic_page_observed: false
+    new_printed_page_authorized: false
   - id: core.edition-conversion-reconciliation
     priority: P0
     printed_pages: [323,325]
@@ -273,7 +278,7 @@ closure_queue:
     printed_pages: null
     physical_pdf_pages: null
     verified_current_constraints: 'Current tools/ingestion/ingestion_gate.py authorize_advance checks an actively ingesting source matching the global checkpoint for contiguous page advancement; it is NOT a prerequisite for a read-only FASA7001 mechanical coverage determination. SR3 itself remains scan_complete_normalization_pending.'
-    missing_condition: 'Unconditional entire-original-source completion still lacks authentic printed p308 evidence or lawful existing-policy source disposition and full required archival source-class certification. Neither of these is the Denver archival gap. No new FASA7001-specific formal source-completion authorization operation is demonstrated.'
+    missing_condition: 'Full original-book archival certification and a formal all-source completion procedure remain separate, not conditions for the reviewed available-source gameplay-mechanics closeout. The owner has explicitly accepted p308 as a nonblocking deferred scan omission. Neither p308 nor Denver is a current gameplay-mechanics blocker. Do not infer unseen page contents or alter global checkpoint.'
     next_action: 'Publish independent available-source core-mechanics audit from source-specific receipts with named actual gameplay omissions if any; correct those through normal transactions. Treat formal all-book archival completion separately. Keep Denver unchanged without requiring its checkpoint/source transition to assess or finish FASA7001 gameplay mechanics.'
     state: denver_not_core_dependency_mechanics_verdict_distinct_from_global_page_advance
   - id: core.intro-p7-13-welcome-and-roleplaying-framing
@@ -1397,14 +1402,14 @@ available_original_core_mechanics_coverage_2026_11_20:
       accepted_examples: ['options/character-creation/sr3-core-sample-record-sheet-loadouts-p326.yml @ 06f852c414107ffb12ac775c6d93f38f396ba4e7']
       nonprotected_page_exceptions: 'Optional loadouts indexed; following index and blank sheets not new game mechanics'
       review: 'FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml'
-  still_open_core_source_exception:
+  owner_accepted_nonblocking_scan_limitation:
     printed: [308, 308]
     physical_pdf: null
     heading: 'Street Gear / vehicle market continuation between cars and trucks'
     required_content_class: original_source_integrity_unknown_may_include_game_stats
     exact_missing: 'Authentic original printed p308 page content; no supported claim as to whether a rule, numeric vehicle row or illustration exists'
     next: 'New independent edition-identical source evidence or an established lawful source-gap disposition; do not repeat unchanged replacement search'
-  still_needed_for_unconditional_all_original_rules_claim:
+  separate_limits_on_unconditional_entire_original_book_claim:
     - 'Authenticate or lawfully classify core original p308 without assuming content.'
     - 'Final end-to-end assertion-level completeness certification across all original TOC rule headings is not established by the 409 protected-class registrations and these bounded reused section receipts alone.'
   separate_nonmechanical_archival_remainder:
@@ -1541,3 +1546,67 @@ mechanical_unindexed_page_class_crosscheck_2026_11_20_1406:
     exact_next_original_heading_if_new_evidence: 'Street Gear / Vehicle Markets, unknown printed p308 between authenticated p307/PDF316 and p309/PDF317; inspect only new authentic evidence or legitimate source-gap policy disposition'
     formal_archival_and_engine_readiness: separate_not_claimed
     Denver: 'FASA7212 pp46-47 archived at printed p45/PDF46, unchanged; not a FASA7001 mechanics dependency'
+
+# Latest binding owner decision: scanned-source omission is a disclosed limitation, not an active mechanic blocker.
+owner_accepted_available_source_mechanical_closeout_2026_11_20:
+  source: source.sr3-core
+  original_publication: 'FASA Corporation, Shadowrun, Third Edition, FASA7001; original printed tabletop-game mechanics'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pdf_bytes: 112507704
+  original_pdf_physical_pages: 345
+  scope: 'Authenticated available original-source mechanics, numeric tables, procedures, conditions, options, exceptions, and mechanically relevant GM directions across original 15-section core ledger; full narrative archiving and engine execution separately excluded'
+  verdict: available_source_mechanics_consolidated_no_new_genuine_field_gap_identified_in_reviewed_scopes
+  evidence_basis:
+    previous_15_section_original_page_and_field_receipts: 'Use available_original_core_mechanics_coverage_2026_11_20.chapter_mechanical_reuse and named independent chapter reviews already in this queue; do not substitute mere index counts for original-page comparisons'
+    original_core_table_of_contents_evidence: 'Source physical PDF3-6 and prior independent section source-image reviews'
+    latest_full_tree_index_check:
+      git_branch_tree_reference: main
+      source_manifest_blob_after_owner_policy_update: c5f0b833cec300cc385a8ded353301e723f3b2f0
+      manifest_unique_records: 447
+      verified_index_entries: 447
+      missing_indexed_files: 0
+      mismatched_indexed_git_blobs: 0
+      duplicate_ids_or_paths: 0
+      protected_content_classes: {rule_exact: 232, rule_procedure: 99, equipment_stat: 45, character_option: 33}
+      total_protected_classes: 409
+      note: 'Exact file and manifest consistency is not in itself original-source assertion fidelity.'
+    source_verification:
+      newly_acquired_2026_11_20_original_drive_file_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+      verified_original_bytes: 112507704
+      actual_repo_preservation_verify_source_previous_2026_11_20_1406: source_pdf_hash_verified
+      actual_repo_verify_source_not_rerun_during_this_owner_policy_update: true
+    workflow_tests_previous_2026_11_20_1406: {connector_preflight: 29, ingestion_preservation: 40, transaction_recovery: 16, passed: 85}
+    current_original_source_visual_continuity_review:
+      preceding: {printed: 307, physical_pdf: 316, section: 'Cars and vehicle mounts'}
+      following: {printed: 309, physical_pdf: 317, section: 'Trucks, hovercraft and boats'}
+      missing_printed: 308
+      note: 'Original neighboring page images newly rendered; p308 image does not exist in cataloged scan and was not inspected. Owner accepts omission without asserting it is an authenticated blank or that no vehicle entries existed.'
+    source_proven_magic_and_street_gear_corrections_reused:
+      - {field: 'Magic Resistance protects against critter Innate Spell and Sorcery', path: 'options/magic/sr3-core-adept-powers-combat-survival-p170-171.yml', current_blob: 'cca921ca755ee9020a13b1f1fac2a16138be8199', original_printed: [170,171]}
+      - {field: 'Micro-Camcorder cartridge video capacity 3 hours, distinct from Micro-Recorder 6 audio', path: 'rules/security/sr3-core-microcam-and-camera-link-functions-p290-291.yml', current_blob: 'a208173737912ed700a6b0a3ab3fb3d87d8caae7', original_printed: [290,291]}
+      - {field: 'Data Encryption System Encryption Rating equals Device Rating', path: 'rules/communications/sr3-core-data-encryption-system-rating-p291.yml', current_blob: '97bdf559688e40459170efbf727a0b1fa7828198', original_printed: [291,291]}
+      - {field: 'Maglock Passkey possible residual sluggish or scrambled response, not compulsory roll', path: 'rules/security/sr3-core-maglock-passkey-residual-condition-p293.yml', current_blob: 'a66fe25cdcf7641aa65747e244f8243253363243', original_printed: [293,293]}
+  owner_omission_disposition:
+    source_omission: 'FASA7001 printed p308 absent between physical PDF316 (printed p307) and PDF317 (printed p309)'
+    status: owner_accepted_nonblocking_deferred_later_audit
+    affects_core_mechanics_blocker_list: false
+    original_page_authenticated_or_proved_blank: false
+    already_scanned_or_authorized_printed_page_credit: false
+    further_search: only_with_new_evidence_or_owner_request
+    standing_policy_document: docs/ingestion/scan-gap-continuity-protocol.md
+    policy_commit: 633cd28b48a2609c4e2dac302765d06f16b092c0
+  remaining_demonstrated_source_available_mechanical_field_gaps: []
+  other_scoped_risks:
+    - 'No claim to exhaustive assertions from unseen original folio p308; any genuinely newly discovered required input is tracked locally without stalling unrelated work.'
+    - 'Some prior source reviews are bounded; this scoped result reuses their actual field/page coverage and does not represent a new line-by-line reread of the entire book.'
+    - 'Source-internal printed discrepancies retain competing assertions without fabricated precedence.'
+  outputs_and_exclusions:
+    new_semantic_records_this_policy_closeout: 0
+    new_indexed_registrations_this_policy_closeout: 0
+    new_global_contiguous_pages: 0
+    whole_original_book_archival_completion: not_claimed
+    whole_source_complete_field_unmodified: true
+    executable_game_engine_readiness: not_claimed
+    denver_archived_active_boundary: 'FASA7212 through p45/PDF46, pp46-47 omitted and not credited'
+    generic_authorize_advance_invoked: false
+    next: 'Treat available-source FASA7001 game-mechanics closeout as scoped and retire repeated source-lore and scan-gap blockers. Any newly proven original mechanic follows ordinary semantic gates; after core mechanical milestone resume authorized other Pass B source/audit priorities without changing active checkpoint by fiat.'
