@@ -1,0 +1,125 @@
+id: option.character-creation.sr3-core-sample-record-sheet-loadouts-p329
+record_type: option
+status: source_reviewed
+source: source.sr3-core
+printed_pages: '329'
+pdf_pages: '337'
+edition_scope: 'FASA Corporation Shadowrun, Third Edition FASA7001, original fictional tabletop Sample Character Record Sheets p329/PDF337; this is an optional example, not a mandatory rule or later edition conversion.'
+content_class: [character_option]
+headline: 'FASA Corporation Shadowrun, Third Edition FASA7001 fictional sample character record sheets printed p329/PDF337'
+summary: 'Source-specific Tech-Wiz, Tribal Shaman, Vehicle Rigger and Weapons Specialist sample-sheet loadouts, game damage, pools, gear, contact levels, optional totem notes and starting money; previously accepted full-color archetypes retained.'
+data:
+  publication:
+    title: Shadowrun, Third Edition
+    publisher: FASA Corporation
+    edition: Third Edition
+    catalog: FASA7001
+    source_id: source.sr3-core
+    original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+    nature: 'Historical published fictional tabletop roleplaying game'
+  source_page:
+    heading: Sample Character Record Sheets
+    printed: 329
+    physical_pdf: 337
+    original_panels: 4
+    name_fields: blank
+    condition_monitor: {stun_boxes: 10, physical_boxes: 10, printed_damage_modifier_reference: 126}
+    convention: 'Illustrative optional character sheets; do not universalize their equipment, contacts, bonuses or game money.'
+  profiles:
+    tech_wiz:
+      color_archetype: options/character-creation/sr3-core-tech-wiz-archetype-p77.yml
+      race: Dwarf
+      initiative: '5 + 1D6'
+      matrix_initiative: '7 + 2D6'
+      pools: {combat: 8, hacking: 4, karma: 1}
+      weapons:
+        - {item: Remington Roomsweeper, firing_mode: SA, damage_as_printed: '9S(f)', rounds: 50, range_bands: ['0-5', '6-15', '16-30', '31-50']}
+      armor:
+        - {item: Armor Jacket, ratings: '5/3', dwarf_modified: true}
+      gear:
+        cyberdeck:
+          model: Novatech Hyperdeck-6
+          mpcp: 6
+          response_increase: 1
+          hitcher_jacks: true
+          programs: {Analyze: 4, Browse: 4, Commlink: 6, Deception: 4, Decrypt: 5, Read/Write: 4, Sleaze: 5}
+        other: ['Computer Tools Shop and Kit', 'Dataline Tap (Rating 6)', 'Electronics Tools Shop and Kit', 'Maglock Passkey (Rating 4)', 'Micro-Transceiver (Rating 5)', 'Pocket Computer (500 MP) and Printer', 'Scanner (Rating 6)', 'Sequencer (Rating 4)', 'Vehicle Tools Kit (dwarf-modified)', 'Wristphone']
+      lifestyle: ['Low Lifestyle (3 months)', 'Middle Lifestyles (2 months)']
+      contacts: ['Deckmeister (Level 1)', 'Fixer (Level 1)']
+      starting_nuyen: '526¥ + (3D6 x 100¥)'
+      notes: ['Natural Thermographic Vision', 'Resistance (+2 Body) to any Disease or Toxin']
+    tribal_shaman:
+      color_archetype: options/character-creation/sr3-core-tribal-shaman-archetype-p78.yml
+      race: Dwarf
+      initiative: '4 + 1D6'
+      astral_initiative: '24 + 1D6'
+      pools: {astral_combat: 8, combat: 7, karma: 1, spell: 5}
+      weapons:
+        - {item: Bow, damage: '6M', minimum_strength_as_printed: 4, arrows: 10, source_range_sequence: ['0-STR', 'to STR x 10', 'to STR x 30', 'to STR x 60']}
+        - {item: Survival Knife, damage: '6L'}
+      armor:
+        - {item: Real Leathers, ratings: '0/2'}
+      gear: ['Fetish (Heal)', 'Medkit', 'Shamanic Lodge (Rating 5)', 'Survival Kit']
+      lifestyle: ['Street Lifestyle']
+      contacts: ['Cascade Ork Tribal Elder (Level 1)', 'Talismonger (Level 1)']
+      starting_nuyen: '(3D6 x 100¥)'
+      notes: ['Raven Totem', '+2 dice Manipulation spells', '+2 dice Sky Spirits', '+1 to all magical target numbers when not under the open sky', 'Natural Thermographic Vision', 'Resistance (+2 Body) to any Disease or Toxin', 'Spells marked (F) require a fetish', 'Magic taken as Priority A']
+    vehicle_rigger:
+      color_archetype: options/character-creation/sr3-core-vehicle-rigger-archetype-p79.yml
+      race: Dwarf
+      initiative: '5 + 1D6'
+      rigging_initiative: '11 + 4D6'
+      pools: {combat: 8, control: 11, karma: 1}
+      weapons:
+        - item: Enfield AS-7 Shotgun
+          modes: SA/BF
+          game_damage: '8S'
+          smartlinked: true
+          dwarf_modified: true
+          gas_vent_rating: 3
+          underbarrel_grenade_launcher: true
+          shotgun_rounds: 50
+          mini_grenades: {count: 10, type: Offensive HE, game_damage: '10S'}
+          range_bands: ['0-10', '11-40', '41-80', '81-150']
+      armor: [{item: Secure Ultra-Vest, ratings: '3/2', dwarf_modified: true}]
+      gear:
+        - 'Ford Americar (rigged, remote controllable)'
+        - 'Ford-Canada Bison off-road vehicle (rigged)'
+        - 'Gaz-Niki Snooper Drone'
+        - 'Hughes WK-2 Stallion Rotorcraft (rigged) with External Hardpoint (Ares Vermicide Autocannon, smartlinked, 100 rounds), 3 AV missiles, 4 micro flares with launcher and Nav-Dat GPS'
+        - 'Northup Wasp Rotorcraft (rigged, remote controllable) with Ingram Valiant LMG (smartlinked, 100 rounds)'
+        - 'Remote Control Deck (Rating 4)'
+        - 'Scanner (Rating 5)'
+        - 'Vehicle Tool Kit and Shop (dwarf-modified)'
+      lifestyle: ['2 Middle Lifestyles (2 months each)']
+      contacts: ['Seattle DMV Worker (Level 1)', 'Fixer (Level 1)', 'Technician (Level 2)']
+      starting_nuyen: '(3D6 x 100¥)'
+      notes: ['Natural Thermographic Vision', '+2 Body Dice for resisting Diseases and Toxins']
+    weapons_specialist:
+      color_archetype: options/character-creation/sr3-core-weapons-specialist-archetype-p80.yml
+      race: Human
+      initiative: '6 (7) + 1D6 (2D6)'
+      pools: {combat: 7, karma: 1}
+      weapons:
+        - {item: AK-97 SMG, modes: SA/BF/FA, damage: '6M', smartlinked: true, sound_suppressor: true, rounds: 50, gel_rounds: 50}
+        - {item: Ingram Smartgun, modes: BF/FA, damage: '7M', rounds: 50, ranges: ['0-10', '11-40', '41-80', '81-150']}
+        - {item: Ares Predator, mode: SA, damage: '9M', smartlinked: true, rounds: 50, explosive_rounds: 20, explosive_game_damage: '10M'}
+        - {item: Ruger Super Warhawk, mode: SS, damage: '10M', smartlinked: true, rounds: 50, gel_rounds: 50, ranges: ['0-5', '6-20', '21-40', '41-60']}
+        - {item: Fichetti Security 500a, mode: SA, damage: '6L', smartlinked: true, rounds: 50, concealable_holster: true, ranges: ['0-5', '6-15', '16-30', '31-50']}
+        - {item: Ingram Valiant LMG, modes: BF/FA, damage: '7S', smartlinked: true, rounds: 100, ranges: ['0-75', '76-200', '201-400', '401-800']}
+        - {item: Heavy Crossbow, bolts: 50, damage: '8S', ranges: ['0-25', '26-75', '76-200', '201-300']}
+        - {item: Katana, damage: '8M'}
+        - {item: Shuriken, count: 10, damage: '5L'}
+        - {item: Survival Knife, damage: '7L'}
+      armor: [{item: Armor Jacket, ratings: '5/3'}, {item: Camouflage Suit, ratings: '3/1'}, {item: Riot Shield, ballistic: '3/1'}]
+      gear: ['5 Concussion Grenades (12M Stun)', 'Pistol Tools Kit', 'Medkit', 'Micro-Transceiver (Rating 1)', '5 Offensive HE Grenades (10S)', '5 Smoke IR Grenades', 'Thermographic Goggles', 'Wristphone']
+      lifestyle: ['2 Low Lifestyles (1 month each)']
+      contacts: ['Knight Errant Security Guard (Level 1)', 'Gun Dealer (Level 1)']
+      starting_nuyen: '35¥ + (3D6 x 100¥)'
+  source_review:
+    original: 'Fresh SHA256-verified FASA7001 345-image original printed p329/PDF337; original four panels independently examined including small print of program ratings, numeric game weapon statistics, source range bands, equipment, magical notes, and contact/lifestyle text.'
+    existing_color_character_stats_reused: 'The previously indexed source-specific original color archetype p77-p80 records retain the full race/attribute/skill details; this supplemental record is not a re-ingestion of them.'
+    reviewed_text_paths: ['headline', 'summary', 'edition_scope', 'data.publication.*', 'data.source_page.*', 'data.profiles.*', 'data.source_review.*']
+    editorial: 'Historical reference to optional fictional character loadouts and game dice/damage; no real-world technical or unlawful procedure, no universal tests inferred.'
+    scope_limit: 'One final sample-character record-sheet appendix page, not whole-source completion; source disagreements elsewhere unchanged.'
+framing: reference_exact
