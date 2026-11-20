@@ -1,0 +1,207 @@
+id: option.character-creation.srcomp-social-edges-flaws-p25-27
+record_type: option
+status: source_reviewed
+source: source.srcomp
+printed_pages: 25-27
+pdf_pages: 26-28
+edition_scope: FASA Corporation, Shadowrun Companion FASA7905a, Shadowrun Third Edition;
+  optional Social Edges and Flaws
+content_class:
+- character_option
+headline: FASA Shadowrun Companion FASA7905a Third Edition original Social Edges and
+  Flaws pp25-27/PDF26-28
+summary: Source-specific optional social traits, point costs, exact Social Skill modifiers,
+  Day Job table and conditional Contact/Enemy consequences.
+data:
+  original_publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 25
+    - 26
+    - 27
+    physical_pdf_pages:
+    - 26
+    - 27
+    - 28
+    original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  source_heading: SOCIAL EDGES AND FLAWS
+  options:
+  - name: Animal Empathy
+    kind: Edge
+    value: 2
+    test_target_modifier_for_influencing_or_controlling_animals: -1
+    riding_included: true
+    does_not_affect: Interactions with sentient creatures, such as dragons
+  - name: Bad Reputation
+    kind: Flaw
+    allowed_values:
+    - -1
+    - -2
+    - -3
+    - -4
+    social_skill_test_target_modifier_per_negative_flaw_point: 1
+    maximum_target_modifier: 4
+    reputation_may_be_unfair: true
+  - name: Blandness
+    kind: Edge
+    value: 2
+    physical_tracking_or_locating_test_target_modifier_for_pursuers: -1
+    does_not_affect:
+    - magical searches
+    - Matrix searches
+  - name: Braggart
+    kind: Flaw
+    value: -1
+    suppression_test: At least two successes on an Intelligence (6) Test to back down
+      from an exaggeration or boast
+  - name: Connected
+    kind: Edge
+    allowed_values:
+    - 3
+    - 5
+    chosen_starting_resource: One merchandise category and one Contact selected at
+      creation
+    three_point_benefit: One-way purchase OR sale at best possible price through that
+      Contact
+    five_point_benefit: Two-way purchase AND sale at best possible price through that
+      Contact
+    price_rule: GM assesses buying at Street Value and selling without Street Index
+      markup, subject to source guidance
+    allowed_character_groups:
+    - individual shadowrunners
+    - teams
+    - gangs
+    - smugglers
+    - pirates
+  - name: Dark Secret
+    kind: Flaw
+    value: -2
+    scenario_frequency: Every two or three sessions, GM orchestrates possible exposure,
+      forcing the character to conceal the secret
+    later_gm_outcome: If revealed, GM may replace the Flaw with matching Bad Reputation
+      or permit character redemption
+  - name: Day Job
+    kind: Flaw
+    allowed_values:
+    - -1
+    - -2
+    - -3
+    income_table:
+    - flaw_points: -1
+      monthly_salary_yen: 1000
+      minimum_hours_per_week: 10
+    - flaw_points: -2
+      monthly_salary_yen: 2500
+      minimum_hours_per_week: 20
+    - flaw_points: -3
+      monthly_salary_yen: 5000
+      minimum_hours_per_week: 40
+    source_qualifier: The source prints 2500+ and 5000+ as suggested monthly salary
+      rather than hard universal ceilings; GM may adjust earnings and obligations
+    possible_optional_effects:
+    - non-shadowrunner contacts
+    - cover identity
+    - regular pay
+    - time demands
+  - name: Dependent
+    kind: Flaw
+    value: variable at gamemaster discretion
+    effect: Dependent person consumes character time/resources; GM assigns cost according
+      to support needs and demands
+  - name: Distinctive Style
+    kind: Flaw
+    value: -1
+    physical_tracking_or_locating_test_target_modifier_for_pursuers: -1
+    magical_or_matrix_search_exception: true
+    character_must_choose_a_distinctive_public_flair: true
+  - name: Elf Poser
+    kind: Flaw
+    value: -1
+    allowed_character_type: humans only
+    social_effect: Person pretends to be an elf; actual elves who discover the secret
+      may respond with contempt and Hostility modifiers
+    possible_disguise: Cosmetic procedures can let the character pass initially; not
+      a universal mandatory disguise modifier
+  - name: Extra Contact
+    kind: Edge
+    value: 1
+    grants_at_creation: One additional Level 1 Contact
+  - name: Extra Enemy
+    kind: Flaw
+    value: -1
+    grants_at_creation: One additional Enemy; consult Companion original printed p68
+  - name: Friendly Face
+    kind: Edge
+    value: 1
+    new_environment_social_skill_target_modifier: -1
+    source_scope: Meeting groups and contacts in a new city, job, team or similar
+      unfamiliar environment
+  - name: Friends Abroad
+    kind: Edge
+    value: 3
+    starting_extra_contact: One contact who resides outside the character's home country/normal
+      setting, unless campaign is abroad
+    ongoing_maintenance: Player explains GM-approved regular contact; failure to maintain
+      contact causes permanent loss
+    further_foreign_contacts: May cultivate additional contacts when traveling abroad,
+      subject to contact upkeep rules in same Companion printed p60
+  - name: Friends in High Places
+    kind: Edge
+    value: 2
+    contact_profile: Influential, usually Level 2 Contacts or GM-approved exceptionally
+      high-level figures
+    source_limit: Risky and not infinitely accommodating; abusing high-ranking Contact
+      ends the Edge relationship
+  - name: Human-Looking
+    kind: Edge
+    value: 1
+    allowed_metatypes:
+    - elf
+    - dwarf
+    - ork
+    excludes: metahuman variants and other species
+    effect: Ordinary human NPCs tend to respond neutrally and do not roll on SR3 core
+      Racism Table unless they are close enough to perceive nonhuman characteristics
+  - name: Hung Out to Dry
+    kind: Flaw
+    value: -4
+    scenario: Contacts stop speaking to the character without explanation; no universal
+      numeric modifier
+    possible_gm_story_resolutions:
+    - redeeming reputation
+    - former Contacts becoming Enemies
+    - permanent Bad Reputation
+  - name: Good Reputation
+    kind: Edge
+    allowed_values:
+    - 1
+    - 2
+    social_skill_test_target_modifier_per_edge_point: -1
+  - name: Liar
+    kind: Flaw
+    value: -2
+    first_encounter_check: On a lie or sincere statement, GM rolls 1D6; result 1 means
+      target catches character lying
+    escalating_check: For subsequent meetings with the same person, caught on 1 or
+      2, then on 1 through 3, and so forth
+    full_threshold: On the point at which any D6 result catches the character, the
+      person refuses dealings; if a Contact, it is permanently lost and possibly becomes
+      an Enemy
+    exception: Contact upkeep cannot remove this established stigma
+  - name: Uncouth
+    kind: Flaw
+    value: -2
+    social_skill_test_target_modifier: 2
+    includes:
+    - Negotiation
+    - Etiquette
+  next_source_heading: MAGICAL EDGES AND FLAWS starts near bottom of printed p27/PDF28
+    and is not included as a social option
+  lineage:
+    optional_edges_flaws_framework: subsystems/character/edges-flaws.yml
+    balance: rules/character/edges-flaws-balance.yml
+    point_summary: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+framing: reference_exact
