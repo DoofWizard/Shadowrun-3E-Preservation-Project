@@ -84,3 +84,44 @@ miscellaneous_edges_flaws_source_extension_2026_11_20:
     - {name: "Vehicle Empathy", printed: 32, type: Edge, point_value: 2, condition: "Character physically contacts/jacks into vehicle; Handling -1"}
   limitation: "These are reviewed original-source mechanical examples for the exact missing-section checklist; no unchanged canonical record was silently overwritten or inferred from a generic enum."
   indexing_caveat: "Before submitting any source-grounded new record, reconcile current canonical IDs and inspect entire original natural section for exact exceptions and meaning, stage independent baseline/candidate and pass all normal transaction gates."
+
+# Subsequent source-reviewed natural-section closeout, preserving earlier discovery and missing status history.
+confirmed_natural_section_resolution_same_invocation:
+  original: "FASA Corporation Shadowrun Companion FASA7905a, Third Edition, printed pp29-32/PDF30-33"
+  original_pdf_sha256: "8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5"
+  actual_repository_verify_source: source_pdf_hash_verified
+  original_page_images_inspected: [30, 31, 32, 33]
+  source_reviewed_semantic_records:
+    - id: option.character-creation.srcomp-vehicle-empathy-p32
+      path: options/character-creation/srcomp-vehicle-empathy-p32.yml
+      original_printed: [32, 32]
+      exact_blob: 966747789d8fc69b29fcf7e28faae1af0f4c1a37
+      ordinary_create_commit: e1e8353b11efaaae9985137e34006c8471f09b77
+      manifest_source_specific_index_commit: b9b0b0b45f1d0def14fd9438e6a685b0a52874f7
+      stage_prepare_confirm: verified
+    - id: option.character-creation.srcomp-miscellaneous-edges-flaws-p29-32
+      path: options/character-creation/srcomp-miscellaneous-edges-flaws-p29-32.yml
+      original_printed: [29, 32]
+      exact_blob: a1803759c587cc5341107c875517412f2042cc69
+      ordinary_create_commit: 1fb5da7f34f47a958c31a3bf7ef0839e375baa70
+      manifest_source_specific_index_commit: 70276bb5c2db6f6ffb1decc849109a397e3c499d
+      stage_prepare_confirm: verified
+      scope: Nine exact miscellaneous optional game effects with original GM conditions; distinct from separately accepted Vehicle Empathy
+    - id: option.character-creation.srcomp-edges-flaws-original-point-value-tables-p31
+      path: options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+      original_printed: [31, 31]
+      exact_blob: a137b83c1562c5ea9089065190a84317a924c4aa
+      ordinary_create_commit: dee4a497bd47f7764860eff2b5ccfb14e5e45b56
+      manifest_source_specific_index_commit: pending_this_audit_write_to_be_reconciled
+      stage_prepare_confirm: verified
+      source_rows: {edges: 46, flaws: 57}
+      source_discrepancies_preserved:
+        - "Bad Karma printed p29 describes -5 while original p31 Flaws Table lists -6, no invented precedence"
+        - "Combat Paralysis Flaws Table original p31 glyph appears 4 without visible negative sign, preserved literal"
+  semantic_records_new_in_this_natural_section: 3
+  unrelated_existing_source_records_reused: true
+  updated_scope_status: "Original p31 complete double numeric table and original p29-32 Miscellaneous option rules reconciled; other printed pp15-28 individual Edge/Flaw descriptions remain a distinct source-mechanics normalization check"
+  broad_companion_full_source_completion: not_claimed
+  new_global_contiguous_pages: 0
+  denver_checkpoint_unchanged: true
+  missing_scans: "Owner-authorized nonblocking omission policy unchanged"
