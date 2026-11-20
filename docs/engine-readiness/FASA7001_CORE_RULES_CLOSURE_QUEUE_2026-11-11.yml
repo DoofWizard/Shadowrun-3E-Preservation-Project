@@ -865,3 +865,70 @@ matrix_opening_p199_world_history_2026_11_20_0630:
   new_global_contiguous_pages: 0
   source_completion_gate_passed: false
   denver_checkpoint_unchanged: true
+
+# 2026-11-20 source-specific Game Concepts reconciliation; subordinate evidence, not source completion.
+game_concepts_p40_p46_bounded_source_class_followthrough_2026_11_20_0707:
+  original: 'FASA Corporation, Shadowrun, Third Edition FASA7001; published fictional tabletop role-playing game'
+  source_id: source.sr3-core
+  fresh_original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  original_pdf_bytes: 112507704
+  source_integrity: 'Fresh cataloged connected Drive PDF; actual exact-Git-blob tools/ingestion/preservation_method.py verify-source returned source_pdf_hash_verified'
+  images_directly_inspected:
+    - {printed: 40, physical_pdf: 41, status: source_text_actions_race_attributes}
+    - {printed: 46, physical_pdf: 47, status: source_text_karma_condition_finishing_touches_metahumanity}
+    - {printed: 81, physical_pdf: 82, status: skills_introduction_no_new_numeric_rule}
+    - {printed: 83, physical_pdf: 84, status: original_full_page_illustration}
+    - {printed: 146, physical_pdf: 147, status: original_full_page_illustration}
+    - {printed: 155, physical_pdf: 156, status: original_full_page_illustration}
+    - {printed: 201, physical_pdf: 210, status: original_full_page_illustration}
+    - {printed: 213, physical_pdf: 222, status: original_full_page_illustration}
+    - {printed: 261, physical_pdf: 270, status: original_full_page_illustration}
+  reviewed_p40_mechanics_reused_not_resubmitted:
+    - {heading: 'Actions/Delayed Actions', existing_path: 'rules/initiative/sr3-core-delayed-actions-exact-p103.yml', blob: 17fe1ef281997b3bf59683c46aee10e0da38ff33, source_extent: 'p103 timing and next-pass restrictions govern p40 summary'}
+    - {heading: 'Action economy', existing_path: 'rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml', blob: 87371b67cf6ac9e57ffd276d44713eaa3cdafcfd, source_extent: 'p104-108 details Simple/Complex/Free actions in p40 summary'}
+    - {heading: 'Race and attribute descriptions', existing_path: 'options/character-creation/sr3-core-metahuman-average-characteristics-p47.yml', blob: a06e00c1ebfee4f3c3474d316ce9cf7fd053d1a3, source_extent: 'p47 accepted table and p54 priority rules, no new p40 universal numeric modifier inferred'}
+  reviewed_p46_mechanics_reused_not_resubmitted:
+    - {heading: 'Karma and Karma Pool introductory summary', accepted_path: 'rules/karma/sr3-core-total-good-pool-worked-p242-244.yml', blob: c63acdae09deab680bd781ec50ed82f65a8b1bce}
+    - {heading: 'Condition Monitor summary', accepted_path: 'rules/condition/sr3-damage-monitor-numeric-p125-126.yml', blob: 5ba510e3e51b53eebbac30865f2cddc230bf1219}
+    - {heading: 'Lifestyles monthly continuation', accepted_path: 'rules/lifestyle/sr3-core-numeric-cost-payment-permanent-p240-241.yml', blob: 6367dc0ea6f4d5ac62e01e3cdf441378219485bd}
+  new_distinct_classes_gate_closed:
+    - heading: 'Finishing Touches / Race and Magic'
+      printed: [46,46]
+      physical_pdf: [47,47]
+      class: campaign_guidance
+      missing_field_retired: 'Optional biographical sketch, player/GM communication and how character ancestry/magic affected a fictional life; no invented mandatory bonus'
+      canonical_id: guidance.game-concepts.sr3-core-finishing-touches-race-magic-p46
+      accepted_path: procedures/game-concepts/sr3-core-finishing-touches-race-magic-p46.yml
+      semantic_commit: bca402a29eb61b74ca160288a0cd7e82beeb8005
+      accepted_blob: 2b1e0c24d499028a1f0ea865276541e508865a1c
+      baseline_sha256: 0d6e267b88d91b04f786afd00a25bd1520be577c1e93ae852f5a6cd5ba1df4bb
+      candidate_sha256: bf3d38a36d53490a4f2d8c2e7fb8819735d5aa95576fbdbe6ed150dbace56efb
+      immutable_sha256: 084bf64ef00ea8bc52e75e2c3c36e975e58bcb899dca5c544331e0f328b7d3cd
+      index_commit: 249edd5f3235814a6b5b3b8b02a705cedf061c5c
+      gate: original_image_review_first_pass_editorial_stage_prepare_ordinary_contents_readback_confirm_recovery_verified
+    - heading: 'Metahumanity / Captain Chaos preface'
+      printed: [46,46]
+      physical_pdf: [47,47]
+      class: attributed_claim
+      missing_field_retired: 'Captain Chaos speaker, source-era transmission and gathered perspectives explicitly distinguished from narrator and already accepted p47-51 bylined views'
+      canonical_id: claim.game-concepts.sr3-core-captain-chaos-metahumanity-p46
+      accepted_path: procedures/game-concepts/sr3-core-captain-chaos-metahumanity-p46.yml
+      semantic_commit: 80f069ec60ca8ffce35702470ff7b184e14c7846
+      accepted_blob: 514b81036770893c77ae769faed06768afd17fd8
+      baseline_sha256: 131836fabc87ceed05c1c22c29c5d5b0f66c5ea92f969bdb506ce87133f9aa65
+      candidate_sha256: 6314e20eb133b3c19303ed4cdf90545beb3a201e36915582c5bfc5a2a66a27df
+      immutable_sha256: 4233b2b8dc1f281d79be164e919a693d3a64e29f2a5eeb2845f659ed86ad8547
+      index_commit: c07d50eacf62d0012c096e343ab78731d9331416
+      gate: original_image_review_first_pass_editorial_stage_prepare_ordinary_contents_readback_confirm_recovery_verified
+  tests: {connector_preflight: 29, ingestion_preservation_transaction: 56, result: pass}
+  manifest_after_second_index: {path: sources/manifests/SR3.yml, blob: 4bc2d6dbe597aaddd6205638e869c67b3af8ceea, unique_ids: 441, unique_paths: 441}
+  new_semantic_commits_this_invocation: 2
+  new_registrations_this_invocation: 2
+  new_contiguous_pages: 0
+  bounded_game_concepts_p46_source_classes_accounted_for: [campaign_guidance, attributed_claim]
+  next_exact_checks:
+    - 'Source-wide aggregate heading and required-class coverage still needs a fully evidenced result; reconcile against existing accepted sections rather than recanvass every page'
+    - 'FASA7001 printed p308 remains unverified, with no authorized waiver, assumption of blankness, or repeated unchanged search'
+    - 'Existing generic authorize-advance requires an actively ingesting matching source and checkpoint. FASA7001 source.sr3-core is normalization-pending while Denver source.fasa-7212 remains active at p45/PDF46, no source-specific finalization gate demonstrated'
+  conclusion: 'Bounded original p46 source-class obligations retired; the accepted image-only interleaves are not new absent rules; neither fact implies full source completion or engine readiness.'
+  denver: {archived_losses_printed: [46, 47], authoritative_completed_through_printed: 45, authoritative_completed_through_pdf: 46, checkpoint_changed: false}
