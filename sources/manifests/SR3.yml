@@ -51,9 +51,37 @@ source_scan_pagination_anomalies:
     unobserved_printed_page: 308
     provisional_disposition: suspected_scan_page_omission_unclassified
     content_review_status: unverified
+    current_owner_disposition: owner_accepted_nonblocking_deferred_later_audit
+    current_core_mechanics_blocker: false
+    owner_disposition_date: '2026-11-20'
+    owner_continuity_assessment: 'Owner inspected p307 article end and p309 new opening; considers omitted p308 nonessential to available-source mechanics. Original p308 has not been authenticated as blank.'
+    later_audit_only_when_new_evidence: true
     source_completion_effect: no_new_completion_claim
-    targeted_next_evidence: review printed index and independent original scan for p308; no inferred page content
+    targeted_next_evidence: if independently new source evidence later appears, compare original printed p308; do not repeat unchanged searches or invent its contents
     note: 'Original p307/PDF316 and p309/PDF317 inspected; earlier broad note claiming every p305-311 scanned is not page-by-page evidence. Do not invent printed p308 or mark it blank.'
+
+owner_scan_omission_policy_2026_11_20:
+  authority: project_owner
+  scope: available_source_core_mechanics_and_future_eligible_ingestion
+  policy_document: docs/ingestion/scan-gap-continuity-protocol.md
+  absent_pages_block_eligible_work: false
+  omitted_pages_count_as_scanned_or_authorized: false
+  continue_without_fabricating_unseen_content: true
+  later_audit_trigger: new_authentic_evidence_or_explicit_owner_request
+  source_specific_omissions:
+    - id: sr3-core.printed-p308-no-image-observed
+      original_source_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+      omitted_printed_page: 308
+      preceding_printed_pdf: [307, 316]
+      following_printed_pdf: [309, 317]
+      current_disposition: owner_accepted_nonblocking_deferred_later_audit
+      observed_source_page_authentication: unverified
+      accepted_as_verified_blank: false
+      core_mechanics_blocker: false
+      source_completion_or_page_credit_implied: false
+      disposition_date: '2026-11-20'
+  denver: 'FASA7212 printed pp46-47 separately archived; global active checkpoint p45/PDF46 remains unchanged'
+  no_new_semantic_or_page_credit: true
 
 postscan_verified_mechanics_recovery:
   full_core_normalization_complete: false
@@ -61,11 +89,11 @@ postscan_verified_mechanics_recovery:
   work_scope: "Original FASA7001 Street Gear source reviewed; noncontiguous exact-rule supplement only, not full deferred-range closure or a Denver authorization."
   remaining_explicit_debt:
     - "Historical printed pp275-282 numeric-equipment debt: bounded original-source-to-current-canon reconcilations on 2026-11-17 and 2026-11-19 reused existing original-edition weapon, ammunition, accessory and table records; no distinct missing field was established in the reviewed scope. Preserve prior evidence and reopen only for a named new omission, contradiction or changed hash. This is not whole-FASA7001 certification."
-    - "Historical printed pp305-311 Street Gear debt: bounded original-image reviews covered printed pp305-307/PDF314-316 and pp309-311/PDF317-319 with accepted medical, rigging, vehicle and market records reused. Original printed p308 is still unverified, not presumed blank and not reconstructed; complete original-source coverage of this range is blocked."
+    - "Historical pp305-311 Street Gear review: original pp305-307/PDF314-316 and pp309-311/PDF317-319 were reviewed with accepted medical/rigging/vehicle market records reused. Printed p308 remains unobserved and is NOT credited; owner accepted it as a nonblocking deferred scan omission for available-source mechanics on 2026-11-20. Full original-image certification remains a separate archival limitation."
     - "Historical printed pp323-325 edition-conversion debt: original-image-to-canon reconciliations documented in docs/engine-readiness/FASA7001_SOURCEBOOK_UPDATES_P323-325_RECONCILIATION_2026-11-17.yml and the 2026-11-19 closure queue update; existing original SR2, Rigger 2 and Virtual Realities 2 conversion procedures were reused. No distinct new discrepancy was established; this bounded audit is not final source authorization."
-    - "ACTIVE SOURCE EVIDENCE BLOCKER: original FASA7001 printed p308 is unverified. Obtain authentic additional original-edition evidence or a separately legitimate existing-policy disposition before any source-complete claim; do not repeat unchanged replacement searches."
-    - "ACTIVE COMPLETENESS BLOCKER: full-original-source rules-bearing heading, row/column, formula, exception, content-class and source-to-current-index consistency certification is not yet established. Existing section receipts are reused only within their reviewed scopes; preserve source-internal contradictions without inventing precedence."
-    - "SEPARATE SCOPE CLARIFICATION: ingestion_gate.py authorize-advance requires an active ingesting manifest matching the global checkpoint for contiguous page advancement, not for a read-only or source-specific FASA7001 game-mechanics coverage determination. FASA7001 source-complete status remains unapproved because original p308 and all-source archival class certification are unresolved; no independently authorized full-source completion procedure has been demonstrated. Preserve the separate Denver archival checkpoint without treating it as a dependency of core mechanics."
+    - "CURRENT SCAN LIMITATION, NOT CORE-MECHANICS BLOCKER: FASA7001 printed p308 was not scanned. Owner disposition 2026-11-20 is nonblocking/deferred-later-audit for authentic available-source mechanics; unseen text/blankness not certified and no new printed-page credit. Do not repeat unchanged replacement searches."
+    - "SEPARATE COMPLETENESS SCOPE: full-original-book archival assertion/class certification is not established; this is distinct from the available-source gameplay-mechanics closeout. Existing original-image and field receipts govern within their actual reviewed scopes; preserve source-internal contradictions without invented precedence."
+    - "SEPARATE GATES: ingestion_gate.py authorize-advance requires the active matching checkpoint for global contiguous page advancement, NOT for an independent FASA7001 available-source mechanics verdict. The formal whole-original-book status remains normalization-pending for separate archival obligations; no independently authorized full-source completion operation has been demonstrated. Neither Denver nor owner-accepted p308 omission blocks core-mechanics evaluation. Do not modify Denver checkpoint."
   verified_semantic_records:
     - id: claim.game-concepts.sr3-core-captain-chaos-metahumanity-p46
       path: procedures/game-concepts/sr3-core-captain-chaos-metahumanity-p46.yml
