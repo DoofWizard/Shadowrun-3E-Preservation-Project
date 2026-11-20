@@ -4428,3 +4428,30 @@ postscan_verified_mechanics_recovery:
         immutable_sha256: cc0393f8a5681add94b6a17299c5753125306dfd34cb33660ff5fc970e941b39
         gates: 'Fresh source SHA and actual preservation_method verify-source, independently reviewed source image, separate baseline/candidate preflight, actual stage/prepare, ordinary Contents create, exact matching blob readback and gate confirm plus recovery inspect verified.'
         scope: 'Source-specific original Game Concepts world_fact addition; no invented genetic roll, global Denver page advance, checkpoint modification or FASA7001 source completion.'
+
+    - id: world.location.seattle
+      path: world/locations/seattle.yml
+      range_printed: [313, 314]
+      range_pdf: [321, 322]
+      content_class: world_fact
+      commit: af97ccf2865aca681cf17454fbe1fc3dee66fbb1
+      blob: b812c95e0fdccf52b6d9a022acb1a1ec1c7562bb
+      gate: verified
+      contiguous_advance: false
+      source_review_reconciliation_2026_11_20:
+        publication: "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop RPG"
+        original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        original_image_pages: "printed pp313-314 / physical PDF321-322"
+        original_metatype_percentages: {human: 63, elf: 12, dwarf: 3, ork: 19, troll: 2, other: 1}
+        later_source: "FanPro New Seattle FanPro10657 printed p14 / PDF15"
+        later_source_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+        later_metatype_percentages: {human: 66, elf: 13, dwarf: 2, ork: 16, troll: 2, other: 1}
+        canonical_fields: ["fasa7001_original_core_snapshot.population", "source_period_snapshot_2060.metatype_distribution_source", "data.independently_reviewed_source_lineage"]
+        prior_accepted_legacy_blob: 74a7e30f154d77552329c2a2b65e5aef3517affb
+        verified_updated_semantic_commit: af97ccf2865aca681cf17454fbe1fc3dee66fbb1
+        verified_updated_semantic_blob: b812c95e0fdccf52b6d9a022acb1a1ec1c7562bb
+        baseline_sha256: 466d22bc7e67aece5b9d8ea87d6c0897478d6e2d38c54309d0578c167550ff77
+        candidate_sha256: 58566d36223a6d734e745558e9521e90e702b8bd9ae9715b35a3f58d3fcbfe31
+        immutable_sha256: fb09f2ebb87c3b05873441685a8de4b4b393515401d1148dadad9d779bbf69d3
+        gates: "Fresh original FASA7001 SHA and actual preservation_method verify-source; independent FASA7001 and FanPro original image checks; first-pass editorial review; independent source baseline and same-substance candidate; actual transaction_recovery stage and ingestion_gate prepare; ordinary Contents update; exact-byte GitHub readback; actual ingestion_gate confirm and recovery inspect verified."
+        limits: "Existing canonical Seattle identity revised with source-specific lineage, not duplicate city entity; no new game mechanics, original p308 resolution, global Denver contiguous advancement or full-source completion."
