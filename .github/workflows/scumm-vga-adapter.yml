@@ -1,0 +1,36 @@
+name: VGA SCUMM SR3 adapter tests
+on:
+  pull_request:
+    paths:
+      - 'game-adapters/scumm-vga256/**'
+      - '.github/workflows/scumm-vga-adapter.yml'
+  workflow_dispatch:
+jobs:
+  reference-kernel:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Deterministic SR3 test vectors
+        run: python -m unittest discover -s game-adapters/scumm-vga256/tests -v
+      - name: Machine-readable adapter fixtures
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root = Path('game-adapters/scumm-vga256')
+          rules = json.loads((root/'engine_ruleset_v0.json').read_text())
+          scene = json.loads((root/'scenes/clinic_hallway_v0.json').read_text())
+          assert rules['adapter'] == 'scumm-vga256'
+          assert rules['authority']['primary_edition'] == 'Shadowrun Third Edition'
+          assert any(x['name'] == 'Shadow Beat' and x['authority'] == 'new_game_standard'
+                     for x in rules['supplemental_standards'])
+          assert scene['id'] == 'scene.clinic.hallway'
+          assert all(verb['resolver_state'] != 'sr3_implemented'
+                     for hotspot in scene['hotspots'] for verb in hotspot['verbs'])
+          print('Adapter JSON, edition gate, and supplemental-standard checks pass')
+          PY
