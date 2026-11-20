@@ -276,6 +276,50 @@ closure_queue:
     missing_condition: 'No currently demonstrated legitimate source.sr3-core source-completion transaction method for non-active source with unknown p308 and remaining required source content classes; cannot use authorize-advance or silently transition Denver.'
     next_action: 'Identify an actual existing-policy finalization path and its required receipts; only execute when original-source p308, all required class evidence and matching source identity/status constraints have lawful disposition.'
     state: cannot_currently_authorize_full_source_completion
+  - id: core.intro-p7-13-welcome-and-roleplaying-framing
+    priority: P1_source_class
+    original_heading: 'WELCOME TO THE SHADOWS / What Is Shadowrun? / What Runners Do / Roleplaying Shadowrun'
+    printed_pages: [7, 13]
+    physical_pdf_pages: [8, 14]
+    exact_remaining_class: [world_fact, campaign_guidance]
+    accepted_canon_within_scope: 'No source.sr3-core registrations currently have original printed ranges p7-13; subsequent Game Concepts dice and mechanical records do not establish this earlier source-period setting and roleplaying introduction.'
+    source_review_evidence: 'Original p10-13 images directly viewed during 2026-11-20 review; earlier p7-9 contain introductory prose, not certified for complete classification.'
+    next_action: 'Independently classify each distinct nonmechanical source assertion and any embedded mandatory rule, reuse another accepted same-source canonical field if found; stage/confirm/index only truly missing required content classes. Do not reproduce ordinary flavor prose solely for volume.'
+    state: source_heading_classification_not_yet_complete
+  - id: core.intro-p14-20-fiction-vignette
+    priority: P2_source_class
+    original_heading: 'SEE HOW THEY RUN fictional vignette'
+    printed_pages: [14, 20]
+    physical_pdf_pages: [15, 21]
+    exact_remaining_class: [narrative_context]
+    source_review_evidence: 'Original printed pp14-20 contact-sheet images inspected 2026-11-20; this portion is a fictional example story rather than an independently source-verified numbered rules table.'
+    next_action: 'Classify narrative_context within archival policy, check whether a distinct mechanically meaningful rule exists before extracting; avoid transcribing extensive fictional prose without an established canonical obligation.'
+    state: bounded_genre_identified_final_required_class_disposition_pending
+  - id: core.intro-p21-35-in-world-chronicle
+    priority: P1_source_class
+    original_heading: 'AND SO IT CAME TO PASS... Captain Chaos in-world history'
+    printed_pages: [21, 35]
+    physical_pdf_pages: [22, 36]
+    accepted_canonical_records:
+      - {path: 'procedures/introduction/sr3-core-captain-chaos-history-opening-p21-22.yml', blob: '839573437da0c7caea45158b943b6b7f7807d1d7', commit: 'a90acf1ac8b4b8e0bdf6f70924938bd42deed5bb', class: attributed_claim}
+      - {path: 'procedures/introduction/sr3-core-history-2005-2015-p24-25.yml', blob: '4fa67e7b4f9b9183df94abae3a406a235c440cc6', commit: 'd2242d93bcc1310f57ea646b8ca55af0a2a4e9e6', class: attributed_claim}
+    original_reviewed: 'Original pp21-22/PDF22-23 and main text pp24-25/PDF25-26 independently rendered and reviewed, p23/PDF24 full-page illustration; both semantic transactions actually staged/prepared, GitHub-committed, read back and confirmed and registered in authoritative SR3.yml.'
+    exact_remaining_class: [attributed_claim, world_fact]
+    exact_uncovered_fields: 'Source-period events and qualifiers in main-text pp26-35; boxed date/event/damage sidebars on pp25-31 not included in current indexed introductory chronology. Preserve individual dates and quantities and narrator-versus-sidebar provenance.'
+    next_action: 'Resume at original printed p25/PDF26 Disasters-R-Us boxed chronology, then p26 onward in coherent sections. Check identical approved canonical source before writing; no fictional present-day assertion, automatic SR3 mechanics or global page advance.'
+    state: two_new_bounded_source_records_verified_and_indexed_but_section_not_complete
+  - id: core.intro-p25-disasters-r-us-sidebar
+    priority: P1_exact_nonmechanical_table
+    original_heading: 'Disasters-R-Us boxed dated world-events table'
+    printed_pages: [25, 25]
+    physical_pdf_pages: [26, 26]
+    exact_remaining_class: [world_fact]
+    exact_uncovered_fields: 'Original sidebar distinct from Captain Chaos main narrative: year, event location, cause and stated consequences/damage for individual fictional incidents dated 2003 through 2053; numerical fatality amounts and any stated certainty require literal source verification.'
+    accepted_canon_within_scope: 'None of the newly registered original p21-22 and p24-25 attributed_claim records includes this separate boxed list; other source records must be checked for preexisting exact coverage.'
+    source_review_evidence: 'Original printed p25/PDF26 page image visually inspected; sidebar shown in full alongside 2011 main chronology but deliberately not counted in the accepted p24-25 claim record.'
+    next_action: 'Inspect original p25 high-resolution table line by line, compare accepted canon, and write only source-proven distinct world_fact entries with one content class and all normal transaction/index gates.'
+    state: source_proven_specific_missing_class
+
 separate_noncore_source:
   id: "source.fasa-7212"
   printed_pages: [46,47]
@@ -1111,3 +1155,20 @@ seattle_all_source_classes_bounded_receipt_2026_11_20_0904:
     - "Existing ingestion_gate authorize-advance requires actively ingesting manifest matching active Denver checkpoint, so cannot presently authorize inactive FASA7001"
   next_precise_action: "Reuse other already accepted chapter receipts to close still-unresolved exact source headings/classes. Perform no more untriggered Seattle or Spirits/Dragons rescans; identify a concrete missing original assertion first."
   Denver: "Archived pp46-47 remain at authoritative printed p45/PDF46, unchanged"
+
+
+introduction_new_source_review_receipts_2026_11_20:
+  original_publication: 'FASA Corporation Shadowrun, Third Edition FASA7001 fictional tabletop role-playing game'
+  original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  source_verification: 'Fresh 112507704-byte 345-page original PDF from cataloged Drive ID; actual exact-blob repository preservation_method.py verify-source returned source_pdf_hash_verified'
+  verified_transactions:
+    - {path: 'procedures/introduction/sr3-core-captain-chaos-history-opening-p21-22.yml', commit: 'a90acf1ac8b4b8e0bdf6f70924938bd42deed5bb', blob: '839573437da0c7caea45158b943b6b7f7807d1d7', index_commit: 'f3b5b909d84e3cb02c5b986e87a224439e395c62'}
+    - {path: 'procedures/introduction/sr3-core-history-2005-2015-p24-25.yml', commit: 'd2242d93bcc1310f57ea646b8ca55af0a2a4e9e6', blob: '4fa67e7b4f9b9183df94abae3a406a235c440cc6', index_commit: 'aee7c60e33f193cf9b525451d468355fdf290137'}
+  index_after: {registrations: 443, manifest_blob: '838418d49b8ef12e7a090e0c8fe36c594943ad05', unique_ids: 443, unique_paths: 443}
+  new_semantic_records: 2
+  new_source_registrations: 2
+  contiguous_pages_advanced: 0
+  excluded: ['Original p23/PDF24 full-page illustration', 'The boxed p25 disaster chronology', 'Original p308 unverified', 'Denver archived pp46-47']
+  source_completion_gate_passed: false
+  engine_executable: not_tested
+  next_cursor: 'Introductory boxed p25/PDF26 Disasters-R-Us year/location/consequence data, followed by p26-35 main history and named nonmechanical gaps; retain separate full-book original-source coverage and source-specific completion blockers.'
