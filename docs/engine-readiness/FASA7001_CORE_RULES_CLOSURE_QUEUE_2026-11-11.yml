@@ -268,14 +268,14 @@ closure_queue:
     next_action: 'Retire p326-329 optional character-sheet source-class obligation; only reopen for hash changes, named omissions or failed validation. Reference Index pp330-334/PDF338-342 and blank record-sheet templates PDF343-344 are not newly invented rules.'
     state: bounded_character_option_section_closed_with_four_accepted_source_records
   - id: core.source-specific-finalization-policy
-    priority: P0_finalization_blocker
-    original_heading: 'FASA7001 completion procedure and mandatory source authorization gates'
+    priority: P0_separate_scope_controls
+    original_heading: 'FASA7001 gameplay-mechanics coverage verdict versus whole-source archival completion'
     printed_pages: null
     physical_pdf_pages: null
-    verified_current_constraints: 'Current tools/ingestion/ingestion_gate.py authorize_advance requires manifest.id == checkpoint.active_source and manifest.status == ingesting. FASA7001 currently scan_complete_normalization_pending; active checkpoint remains Denver source.fasa-7212 at p45/PDF46.'
-    missing_condition: 'No currently demonstrated legitimate source.sr3-core source-completion transaction method for non-active source with unknown p308 and remaining required source content classes; cannot use authorize-advance or silently transition Denver.'
-    next_action: 'Identify an actual existing-policy finalization path and its required receipts; only execute when original-source p308, all required class evidence and matching source identity/status constraints have lawful disposition.'
-    state: cannot_currently_authorize_full_source_completion
+    verified_current_constraints: 'Current tools/ingestion/ingestion_gate.py authorize_advance checks an actively ingesting source matching the global checkpoint for contiguous page advancement; it is NOT a prerequisite for a read-only FASA7001 mechanical coverage determination. SR3 itself remains scan_complete_normalization_pending.'
+    missing_condition: 'Unconditional entire-original-source completion still lacks authentic printed p308 evidence or lawful existing-policy source disposition and full required archival source-class certification. Neither of these is the Denver archival gap. No new FASA7001-specific formal source-completion authorization operation is demonstrated.'
+    next_action: 'Publish independent available-source core-mechanics audit from source-specific receipts with named actual gameplay omissions if any; correct those through normal transactions. Treat formal all-book archival completion separately. Keep Denver unchanged without requiring its checkpoint/source transition to assess or finish FASA7001 gameplay mechanics.'
+    state: denver_not_core_dependency_mechanics_verdict_distinct_from_global_page_advance
   - id: core.intro-p7-13-welcome-and-roleplaying-framing
     priority: P1_source_class
     original_heading: 'WELCOME TO THE SHADOWS / What Is Shadowrun? / What Runners Do / Roleplaying Shadowrun'
@@ -1269,3 +1269,151 @@ introduction_p26_27_ghost_dance_treaty_2026_11_20:
   terminal_blockers: 'Printed p308 is unauthenticated; whole-book required heading/class proof pending; no lawful generic authorize-advance for inactive FASA7001 while Denver is active'
   Denver_checkpoint: 'Unchanged source.fasa-7212 p45/PDF46, pp46-47 archived as missing'
   core_source_complete: false
+
+# 2026-11-20 owner correction; same existing source queue, subordinate audit only.
+# These reconciled mechanical page-class observations do NOT authorize source complete or engine ready.
+available_original_core_mechanics_coverage_2026_11_20:
+  owner_priority: core_game_rules_only_before_lore
+  source: source.sr3-core
+  publication: 'FASA Corporation, Shadowrun, Third Edition, FASA7001, published tabletop role-playing game'
+  source_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+  independently_fresh_pdf_sha256_verified: true
+  original_pages: 345
+  actual_repository_verify_source: source_pdf_hash_verified
+  original_table_of_contents_images_checked_pdf: [3, 4, 5, 6]
+  representative_nonprotected_page_images_inspected_printed: [7, 8, 9, 36, 37, 40, 46, 52, 53, 81, 83, 101, 131, 146, 155, 159, 165, 175, 179, 185, 199, 201, 213, 243, 252, 261]
+  prior_section_reviews: 'Reuse original-image and accepted-field evidence in this queue, FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml, FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml, and the named source-reviewed Combat, Magic, Matrix, gear, vehicle, Skills and conversion receipts. Reopen only changed hashes or specifically identified omissions.'
+  manifest_at_review:
+    blob: 764fe5587e7da6f5dc1f9bec64255c1826e8fc6f
+    source_status: scan_complete_normalization_pending
+    unique_registered_paths_and_ids: 447
+    protected_class_registrations: 409
+    protected_class_counts: {rule_exact: 232, rule_procedure: 99, equipment_stat: 45, character_option: 33}
+    old_410_entry_manifest_comparison: 'No changed or deleted registered IDs/paths/blobs; 37 additions were non-rule archival and character-option classes, not 37 new exact rule closures.'
+  outcome: 'No currently demonstrated remaining exact numeric rule, required gameplay procedure, equipment stat or character option omission in the authenticated source pages covered by prior bounded mechanical source-to-canon receipts. This is a CONDITIONAL evidence-backed available-source determination; full line-by-line source fidelity is not newly proven by registration counts or this receipt.'
+  chapter_mechanical_reuse:
+    - heading: 'Game Concepts'
+      printed: [36, 51]
+      pdf: [37, 52]
+      source_class_scope: [rule_exact, rule_procedure, character_option, campaign_guidance]
+      accepted_examples: ['rules/tests/sr3-core-test-types-opposed-open-examples-p39.yml @ 9423e8549d0f83e5e9d7de32855df1b67d4a9fde', 'rules/dice-pools/sr3-core-pool-formulas-allocation-p43-44.yml @ 6131b5096e7acf4c55fc58a0115474865827bf50', 'procedures/game-concepts/sr3-core-finishing-touches-race-magic-p46.yml @ 2b1e0c24d499028a1f0ea865276541e508865a1c']
+      nonprotected_page_exceptions: 'p36 discretionary guidance indexed; p37 illustration; p40 summary references accepted later action rules; p46 guidance and byline indexed; p48-51 attributed viewpoints indexed and not numeric mechanics'
+      review: '2026-11-20 Game Concepts section reuse receipts and original sampled images'
+    - heading: 'Creating a Shadowrunner, sample archetypes'
+      printed: [52, 80]
+      pdf: [53, 81]
+      source_class_scope: [rule_exact, rule_procedure, character_option]
+      accepted_examples: ['rules/character-creation/sr3-master-priority-numeric-p54.yml @ abd65c856673513042f0563ace7b4bfc5bc2a2e3', 'rules/character-creation/sr3-core-knowledge-skill-classes-allocation-p58-59.yml @ 2b93f5155e74ea99e7d0197db9064571306a2bcd']
+      nonprotected_page_exceptions: 'p52 optional creation guidance indexed; p53 illustration'
+      review: 'Existing character creation and sixteen sample archetype source receipts'
+    - heading: 'Skills'
+      printed: [81, 99]
+      pdf: [82, 100]
+      source_class_scope: [rule_exact, rule_procedure]
+      accepted_examples: ['rules/skills/sr3-core-skills-linked-attributes-table-p82.yml @ d6aed6a999da233435cce16dc8a6c5dd493eb086', 'rules/skills/defaulting-limits.yml @ 9490750ca07be521cc54efec715cea65bcbe4926']
+      nonprotected_page_exceptions: 'p81 narrative chapter introduction and Base Skills overview independently reviewed; p83 illustration'
+      review: 'Skills tables, defaulting, language, skill categories and examples in prior receipts'
+    - heading: 'Combat'
+      printed: [100, 129]
+      pdf: [101, 130]
+      source_class_scope: [rule_exact, rule_procedure, equipment_stat]
+      accepted_examples: ['rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml @ 87371b67cf6ac9e57ffd276d44713eaa3cdafcfd', 'rules/combat/sr3-core-ranged-dodge-armor-resistance-p113.yml @ c228c30fd4c9f5972f3b23087b7328946ff696b1', 'rules/condition/sr3-damage-monitor-numeric-p125-126.yml @ 5ba510e3e51b53eebbac30865f2cddc230bf1219']
+      nonprotected_page_exceptions: 'p101 illustration; four existing coherent pp100-109, 110-120, 120-124 and 124-129 source reviews collectively account for headings and tables'
+      review: 'Existing four 2026-11-19 Combat original-source reviews, without duplicated chapter audit'
+    - heading: 'Vehicles and Drones'
+      printed: [130, 157]
+      pdf: [131, 158]
+      source_class_scope: [rule_exact, rule_procedure]
+      accepted_examples: ['rules/vehicles/sr3-core-handling-road-offroad-p130-132.yml @ 6a4c199383b1b0fe0974c885a41ecf1b5b89e4bf', 'rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml @ b263f5a6a25260dc3f458fa8f4957decbf9f9870', 'rules/drones/sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.yml @ 25e8c9508381a504874433d48f85357bff677bd2']
+      nonprotected_page_exceptions: 'p131, p146, p155 full-page illustrations'
+      review: 'Existing vehicle movement, sensor, gunnery, remote-deck, drone and worked-example source receipts'
+    - heading: 'Magic'
+      printed: [158, 198]
+      pdf: '159-207 with original unnumbered plate interleaf PDF178-185'
+      source_class_scope: [rule_exact, rule_procedure, character_option]
+      accepted_examples: ['rules/magic/sr3-core-drain-power-force-resistance-p162.yml @ 12bec9d0b884d01118ad61b88b38da041f810d42', 'rules/magic/sr3-core-focus-bonding-karma-table-numeric-p190.yml @ 5ae726c102c76d871b956970cb0b8e7fbfc83e61', 'rules/magic/sr3-core-transformation-manipulations-exact-p198.yml @ 052fc7933e47c27ba3b92c337178bb6564bda2ec']
+      nonprotected_page_exceptions: 'p159, p165, p175, p179, p185 illustration pages; p175 offset note retained; color plates not numbered missing mechanics'
+      review: 'Existing bounded Magic p158-198, Conjuring Foci, spell and original-source recovery receipts'
+    - heading: 'The Matrix'
+      printed: [199, 230]
+      pdf: [208, 239]
+      source_class_scope: [rule_exact, rule_procedure, equipment_stat]
+      accepted_examples: ['rules/matrix/sr3-core-host-rating-table-exact-p205.yml @ eaf4451ad996fae1b213a322beccc5449264116c', 'rules/matrix/sr3-core-system-tests-action-security-tally-p209-210.yml @ f64d01b115580a74bd77faafab06973d939223cd', 'rules/matrix/sr3-core-matrix-ic-white-gray-black-exact-p227-230.yml @ 9a71a0b9e89f0b370ee174ab76a9ce72f70fc1c3']
+      nonprotected_page_exceptions: 'p199 source-period lore indexed separately, not fixed game TN; p201 and p213 original illustrations'
+      review: 'Existing p200-230 Matrix original-source mechanical receipts'
+    - heading: 'Running the Shadows'
+      printed: [231, 241]
+      pdf: [240, 250]
+      source_class_scope: [rule_exact, rule_procedure, campaign_guidance]
+      accepted_examples: ['rules/perception/sr3-core-perception-numeric-tables-p231-232.yml @ 52be32e80969344bc14462eb27ae6aa431b73cdc', 'rules/lifestyle/sr3-core-numeric-cost-payment-permanent-p240-241.yml @ 6367dc0ea6f4d5ac62e01e3cdf441378219485bd']
+      nonprotected_page_exceptions: 'No source-specific protected-class coverage holes'
+      review: 'Perception, security, fencing, identity and lifestyle canonical source receipts'
+    - heading: 'Beyond the Shadows'
+      printed: [242, 252]
+      pdf: [251, 261]
+      source_class_scope: [rule_exact, rule_procedure, character_option, campaign_guidance]
+      accepted_examples: ['rules/karma/sr3-core-total-good-pool-worked-p242-244.yml @ c63acdae09deab680bd781ec50ed82f65a8b1bce', 'rules/hazards/sr3-core-disease-toxin-repeated-body-test-p249-250.yml @ 2e54383311b3ba6a0db194f581222ef22bee6b4d']
+      nonprotected_page_exceptions: 'p243 illustration; p252 optional GM tips indexed under campaign guidance, no hidden fixed table'
+      review: 'Karma, advancement, NPC professionalism and hazards original-source receipts'
+    - heading: 'Contacts'
+      printed: [253, 259]
+      pdf: [262, 268]
+      source_class_scope: [rule_exact, rule_procedure, character_option, campaign_guidance]
+      accepted_examples: ['rules/contacts/sr3-core-contact-levels-bonuses-p254-256.yml @ d0e02486e7b68bea5f6dcaa2af585c07d73b9ab2']
+      nonprotected_page_exceptions: 'No protected-class coverage holes'
+      review: 'FASA7001_CONTACTS_P253-259_RULES_AND_GM_GUIDANCE_CLOSURE_2026-11-19.yml'
+    - heading: 'Spirits and Dragons'
+      printed: [260, 269]
+      pdf: [269, 278]
+      source_class_scope: [rule_exact, rule_procedure, world_fact, campaign_guidance]
+      accepted_examples: ['rules/spirits/sr3-core-spirit-powers-first-p262-264.yml @ dd5f81b0b9c415c8e52fc10f6bdbf5c688797461', 'rules/dragons/sr3-core-dragon-type-statblocks-p268-269.yml @ 77130162d5c359845314542124c4e0e0649ff0c6']
+      nonprotected_page_exceptions: 'p261 illustration; all other game tests, powers and profiles have accepted bounded receipts'
+      review: 'Existing Spirits and Dragons required-class closure 2026-11-20'
+    - heading: 'Street Gear'
+      printed: [270, 312]
+      pdf: '279-320; p308 physical page unmapped and unauthenticated'
+      source_class_scope: [rule_exact, rule_procedure, equipment_stat]
+      accepted_examples: ['equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml @ 0a2e325194fff3346da2416a720ded0c8d92d949', 'equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml @ 2d6ad408ffa7a07e887998bbe6fac3de6266c69f', 'rules/vehicles/sr3-core-original-mounts-p307.yml @ 94675b941fe68b164cc3b5c2a0d6f72d2ca5e517']
+      nonprotected_page_exceptions: 'p308 unobserved original; no assumption of blankness or nonmechanical material'
+      review: 'Existing bounded printed pp270-307 and 309-312 tables and procedural receipts; source exception p308 separately open'
+    - heading: 'Seattle and the Modern Northwest'
+      printed: [313, 322]
+      pdf: [321, 330]
+      source_class_scope: [world_fact, attributed_claim, campaign_guidance]
+      accepted_examples: ['world/seattle/sr3-core-transport-conditions-p314.yml @ 37b4da0b2ae122e301004189e506ed6a458c4dfe']
+      nonprotected_page_exceptions: 'Original pages reviewed for independent game-effect TN/formula/action; none established. p315 illustration, p322 author essay; world archival claims have separate bounded receipts.'
+      review: 'Existing Seattle source-class review 2026-11-20; no need for more lore to assess core mechanics'
+    - heading: 'Sourcebook Updates'
+      printed: [323, 325]
+      pdf: [331, 333]
+      source_class_scope: [rule_exact, rule_procedure]
+      accepted_examples: ['rules/compatibility/sr2-to-sr3-numeric-character-conversion-p323.yml @ b54198aa355ea736e5f781fe42b45ae0b9c0419c', 'rules/compatibility/sr3-core-vr2-matrix-update-p325.yml @ 7da7a7c47eb11eab3d90ae12cb251f8ba19b022d']
+      nonprotected_page_exceptions: 'None in reviewed conversion headings'
+      review: 'FASA7001_SOURCEBOOK_UPDATES_P323-325_RECONCILIATION_2026-11-17.yml'
+    - heading: 'Sample Character Record Sheets'
+      printed: [326, 329]
+      pdf: [334, 337]
+      source_class_scope: [character_option]
+      accepted_examples: ['options/character-creation/sr3-core-sample-record-sheet-loadouts-p326.yml @ 06f852c414107ffb12ac775c6d93f38f396ba4e7']
+      nonprotected_page_exceptions: 'Optional loadouts indexed; following index and blank sheets not new game mechanics'
+      review: 'FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml'
+  still_open_core_source_exception:
+    printed: [308, 308]
+    physical_pdf: null
+    heading: 'Street Gear / vehicle market continuation between cars and trucks'
+    required_content_class: original_source_integrity_unknown_may_include_game_stats
+    exact_missing: 'Authentic original printed p308 page content; no supported claim as to whether a rule, numeric vehicle row or illustration exists'
+    next: 'New independent edition-identical source evidence or an established lawful source-gap disposition; do not repeat unchanged replacement search'
+  still_needed_for_unconditional_all_original_rules_claim:
+    - 'Authenticate or lawfully classify core original p308 without assuming content.'
+    - 'Final end-to-end assertion-level completeness certification across all original TOC rule headings is not established by the 409 protected-class registrations and these bounded reused section receipts alone.'
+  separate_nonmechanical_archival_remainder:
+    - 'Introductory fiction/world chronology pp7-35 remains partially archived; this is NOT a prerequisite for the available-source gameplay-rule milestone unless an independently verified embedded mechanical assertion is found.'
+    - 'Optional authorial narrative and any other distinct source-world assertions are separate full-book archival obligations.'
+  formal_whole_book_completion_separate_from_mechanics:
+    existing_global_authorize_advance: 'Requires matching active ingesting manifest/checkpoint for global contiguous page advancement only; do not use for this independent FASA7001 postscan review.'
+    Denver: 'FASA7212 archived missing pp46-47 at p45/PDF46, unchanged and irrelevant to FASA7001 mechanics.'
+    full_source_completion_declared: false
+    engine_executable_ready_declared: false
+    new_semantic_records_this_review: 0
+    newly_authorized_global_pages_this_review: 0
