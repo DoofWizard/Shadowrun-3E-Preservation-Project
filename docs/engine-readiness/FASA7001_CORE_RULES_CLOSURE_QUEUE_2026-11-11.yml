@@ -223,13 +223,35 @@ closure_queue:
         source: source.fanpro-10657
         note: "Later FanPro tribe record has matching named tribe profiles but is not itself proof that all original FASA7001 pp319-321 field content is indexed."
       remaining_exact_source_class_cursors:
-        - {printed: [316,318], pdf: [324,326], classes: [world_fact, attributed_claim], next: "Compare original corporate/news/organizations headings with accepted source-specific canon; transact only distinct uncovered source-period statements"}
+        - {printed: [316,317], pdf: [324,325], classes: [attributed_claim], next: "Reconcile only source-qualified corporate forecasts and rumors not already preserved; corporate narrator world_fact is separately indexed at aba8633"}
+        - {printed: [317,318], pdf: [325,326], classes: [world_fact, attributed_claim], next: "Finish Seattle in the Shadows Mafia/Yakuza/Triads/Seoulpa Rings and media claims, preserving original identities and attribution"}
         - {printed: [319,321], pdf: [327,329], classes: [world_fact, attributed_claim], next: "Reconcile original tribal-land heading/fields and narrator attribution against existing later FanPro tribal record, preserving edition provenance"}
         - {printed: [322,322], pdf: [330,330], classes: [narrative_context], next: "Source-class disposition only; do not invent game mechanics from author essay"}
       reviewed_mechanical_deltas_this_run: none
       FASA7001_completion_gate_passed: false
       core_original_printed_p308_verified: false
       denver_archived_checkpoint_unchanged: "source.fasa-7212 printed p45/PDF46; pp46-47 remain archived"
+
+    corporate_holdings_world_fact_2026_11_20:
+      original_source: "FASA Corporation Shadowrun, Third Edition FASA7001 original fictional tabletop"
+      original_pdf_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+      source_headings: "Corporations / Megacorporate Holdings / Local Corporations"
+      printed_pages: [316, 317]
+      physical_pdf_pages: [324, 325]
+      required_class_retired_in_scope: world_fact
+      path: world/seattle/sr3-core-corporate-holdings-p316-317.yml
+      semantic_commit: aba8633066acd6ac96f9d05c3dfb95e845821410
+      exact_semantic_blob: db7abc38d6b50ec720dc0e9bc163806c6be1888a
+      manifest_index_commit: c0edb11d5873df32d644de904c079c0b1409d9e8
+      exact_manifest_readback_blob: c209c341c375f9a665e72374d2cdb3dd2437db0a
+      baseline_sha256: 1d9d391a991a5bc3cd86fbf3f94e5892079d6b12005eb6084ea900e82937ea83
+      candidate_sha256: e7a97ad8270b42503a8fc34fbabec7a54d14e68fbf8ce840cb10a7aa1c4291c7
+      immutable_sha256: 624643c88154da8b5bf25b285575d9d38c4aaae0db7bed1b4a249cea2f05659c
+      gates: "Fresh Drive original source SHA-256 and repository verify-source; original p316-317 images; independent baseline and compose-first same-substance candidate; transaction_recovery stage and ingestion_gate prepare; ordinary GitHub Contents create; exact blob readback; actual ingestion_gate confirm and recovery inspect verified"
+      nonduplicate_scope: "Source-period corporate world facts, separate from later FanPro10657 corporate profiles and p317-318 Seattle in the Shadows organizations"
+      remaining_within_same_printed_range: "Only independently source-qualified forecasts, contingent statements or separately required attributed-claim classes; no invented numeric rules"
+      source_completion_gate_passed: false
+      denver_checkpoint_changed: false
 
   - id: core.sample-record-sheets-p326-329
     priority: P0_reuse
