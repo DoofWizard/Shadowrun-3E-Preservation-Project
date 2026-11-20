@@ -171,10 +171,25 @@ postscan_verified_mechanics_recovery:
       range_printed: [325, 325]
       range_pdf: [333, 333]
       content_class: rule_exact
-      commit: c7843b04d9eb34e101bae06f8c24303b60990fde
-      blob: 9a0cba27b904dddcab4b72c94d364ee23b62964f
+      commit: a88a47858797bb5300fe8e032eb09ff8f88c96ff
+      blob: 2c176f9d0dd11d5d76d721f73887113be9995329
       gate: verified
       contiguous_advance: false
+      source_review_recovery_2026_11_19:
+        publication: 'FASA Corporation, Shadowrun, Third Edition FASA7001 original fictional tabletop game'
+        source_sha256: 7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914
+        source_printed: 325
+        source_physical_pdf: 333
+        corrected_source_assertion: 'Original p325 states Matrix icons cannot suffer Stun damage; the prior indexed Boolean incorrectly said they could.'
+        prior_indexed_semantic_commit: c7843b04d9eb34e101bae06f8c24303b60990fde
+        prior_indexed_semantic_blob: 9a0cba27b904dddcab4b72c94d364ee23b62964f
+        existing_source_corrected_commit: a88a47858797bb5300fe8e032eb09ff8f88c96ff
+        existing_source_corrected_blob: 2c176f9d0dd11d5d76d721f73887113be9995329
+        baseline_sha256: f9e2ba184dd3cce95b606c3d86f474f19f494c7f2d032782e295c6af53e11cf6
+        candidate_sha256: f2c855f04ac498964299e4806c801e3f1a55dcb3e9523e76f8c39a878141ea9e
+        immutable_sha256: d7cffc92d81e7098402546f22e3ed0a93c5b1339c86470036ad653f03782b884
+        gates: 'Fresh original PDF SHA verify-source and p325 image; independently authored source baseline and same-substance exact prior Contents candidate; actual transaction_recovery stage/ingestion_gate prepare; existing ordinary Contents semantic commit freshly read back; actual ingestion_gate confirm and recovery inspect verified.'
+        scope: 'One existing FASA7001 verified-forward record reindexed; no semantic rewrite, new registration, source completion claim, or Denver checkpoint move.'
     - id: rule.movement.sr3-core-running-walking-rate-numeric-p108
       path: rules/movement/sr3-core-running-walking-rate-numeric-p108.yml
       range_printed: [108, 108]
