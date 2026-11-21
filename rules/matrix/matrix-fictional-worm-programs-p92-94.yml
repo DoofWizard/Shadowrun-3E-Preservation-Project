@@ -105,7 +105,7 @@
             "on_success": "User notices attempted report and may conduct game cybercombat."
           },
           "game_icon": {
-            "initiative": "+3D6",
+            "initiative": "Worm rating +3D6",
             "evasion_rating": "Worm rating",
             "offensive_capability": false,
             "escape": "If it evades until end of a Combat Turn, it escapes.",
@@ -128,7 +128,10 @@
         "effect": {
           "initial_test": "Worm Rating versus MPCP rating",
           "on_success": "Reduce rating of highest-rated running program by one per net success.",
-          "subsequent_turns": "At end of each subsequent Combat Turn continue draining same number of rating points until that program crashes; then target next highest-rated utility, repeating until all running programs crash."
+          "subsequent_turns": "At end of each subsequent Combat Turn continue draining same number of rating points until that program crashes; then target next highest-rated utility, repeating until all running programs crash.",
+          "crashguard_target_selection_exception": "When choosing the highest-rated utility to drain, treat a utility with the Crashguard option as having its rating reduced by its Crashguard rating for this selection.",
+          "reduced_rating_applies_during_infection": true,
+          "persona_programs_immune_to_spawnworm": true
         }
       },
       {
