@@ -1,0 +1,130 @@
+id: rule.contacts.srcomp-contact-success-contest-p67-68
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 67-68
+pdf_pages: 68-69
+edition_scope: FASA Corporation Shadowrun Companion FASA7905a, Shadowrun Third Edition,
+  optional contacts and information tests
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+    printed_pages:
+    - 67
+    - 68
+    physical_pdf_pages:
+    - 68
+    - 69
+  original_headings:
+  - Spilling the Beans
+  - Contact Success Contest Table
+  scope: Optional original sourcebook rules for information a contact is willing to
+    reveal; knowledge of information and willingness to disclose it are distinct tests.
+  standard_disclosure_test:
+    skill: Etiquette
+    base_target_number: 4
+    modifier_guidance: The gamemaster may adjust the target number according to the
+      subject and circumstances, rather than assuming every subject uses the same
+      difficulty.
+    successes: The number of successes determines how much of the known information
+      the contact volunteers.
+  optional_success_contest:
+    player_test: Negotiation
+    contact_test: Intelligence
+    opposed_results: Compare successes on the two tests; the contact's successes offset
+      the player character's successes.
+    when_contact_wins: The gamemaster may have the contact refuse information or provide
+      misleading information, not an automatic truthful disclosure.
+    modifier_applied_to: Contact's Intelligence Success Contest Target Number
+    table_rows:
+    - circumstance: Character Essence below 1
+      target_modifier: -2
+    - circumstance: Character Essence below 0 (cybermancy)
+      printed_target_modifier_literal: negative Essence - 2 (rounded down)
+      footnote_reference: negative_essence_optional_interrogation_note
+    - circumstance: Contact suspicious
+      target_modifier: -2
+    - circumstance: Planned action beneficial to contact
+      target_modifier: 2
+    - circumstance: Planned action pleasurable to contact
+      target_modifier: 1
+    - circumstance: Planned action annoying to contact
+      target_modifier: -1
+    - circumstance: Planned action harmful to contact
+      target_modifier: -2
+    - circumstance: Planned action disastrous to contact
+      target_modifier: -3
+    - circumstance: Character displays racist attitudes
+      target_modifier: gamemaster_discretion
+    - circumstance: Level 1 contact
+      target_modifier: 0
+    - circumstance: Level 2 contact
+      target_modifier: 1
+    - circumstance: Level 3 contact
+      target_modifier: 2
+    - circumstance: Friend of a Friend
+      target_modifier_formula: -1 per level between FOF and primary contact
+    - circumstance: Contact owes debt to character
+      target_modifier: 1
+    - circumstance: Character owes debt to contact
+      target_modifier: -1
+    - circumstance: Contact hostile
+      target_modifier: -3
+    - circumstance: Contact is an enemy (secret or known)
+      target_modifier: -4
+    - circumstance: Mild cultural difference
+      target_modifier: -1
+    - circumstance: Moderate cultural difference
+      target_modifier: -2
+    - circumstance: Dramatic cultural difference
+      target_modifier: -3
+    - circumstance: Extreme cultural difference
+      target_modifier: -4
+    - circumstance: Language barrier
+      target_modifier_formula: -1 per Language Rating point below 5
+    - circumstance: Nuyen over normal fee
+      target_modifier_formula: +1 per 10 percent increased fee
+    general_notes:
+      modifiers_cumulative: true
+      minimum_target_number: 2
+      negative_essence_optional_interrogation_note:
+        source_literal_fidelity: The table prints negative Essence minus 2 and a rounded-down
+          instruction, while its footnote separately states that negative Essence
+          may benefit a character during interrogations.
+        optional_gm_interrogation_formula: absolute value of the character negative
+          Essence (remove the negative sign) plus 2
+        source_condition: This optional positive modifier is described for interrogation
+          cases; do not silently replace the table cell with an unconditional positive
+          value.
+  example:
+    fictional_scenario: Billy Boy asks the contact Timmons about a fictional Renraku
+      prototype; the contact's disclosure may adversely affect his work.
+    preliminary_knowledge: Etiquette Test target number 8 and 2 successes establish
+      that the contact knows the requested location and related details.
+    negotiated_disclosure: Timmons has the Level 2 contact modifier +1, while expected
+      harm adds -2 to his contact-side test.
+    outcome: The contact obtains 4 successes against the character's 2 and refuses
+      most of the requested information, providing only a narrower fictional lead
+      about Lone Star involvement.
+  related_accepted_legacy_record:
+    path: rules/contacts/spilling-the-beans.yml
+    legacy_field_tension: The earlier generic record abbreviates negative-Essence
+      minus-two rounded-down table text and does not preserve the distinct optional
+      absolute-value-plus-two interrogation footnote. This source-specific record
+      retains both.
+  lineage:
+    sourcebook: Shadowrun Companion (FASA7905a) optional elaboration of original SR3
+      Contacts rules.
+    do_not_infer_precedence: Preserve original table and optional footnote separately,
+      without inventing an erratum.
+framing: reference_exact
+headline: rule.contacts.srcomp-contact-success-contest-p67-68 — archival rule_exact
+  record
+summary: Source-indexed rule_exact from source.srcomp, printed pages 67-68; substantive
+  assertions and provenance are in the structured data.
