@@ -1,0 +1,52 @@
+{
+  "id": "audit.sota63-sculpt-average-qualifier-p124-2026-11-21",
+  "record_kind": "administrative_source_fidelity_review_not_semantic_ingestion",
+  "date": "2026-11-21",
+  "original_source": {
+    "title": "State of the Art: 2063",
+    "publisher": "FanPro",
+    "catalog": "FanPro10664",
+    "edition": "Shadowrun Third Edition",
+    "source_id": "source.fanpro-10664",
+    "printed_page": 124,
+    "physical_pdf_page": 125,
+    "sha256": "a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a",
+    "physical_pages": 130
+  },
+  "direct_review": {
+    "original_pdf_freshly_downloaded": true,
+    "actual_local_sha256_matched_manifest": true,
+    "original_page_image_inspected": true,
+    "actual_repository_verify_source_executed_this_review": false,
+    "scope": "Original Sculpts and Cracking heading on printed p124/PDF125"
+  },
+  "concrete_source_to_canon_difference": {
+    "accepted_path": "rules/matrix/sota63-cracking-sculpts-signature-p124-125.yml",
+    "accepted_blob": "fd49f6519d8451efb68cff671ea2ef561ad3966f",
+    "fields": [
+      "data.sculpts.payload",
+      "data.sculpts.hacking_pool",
+      "data.sculpts.initiative"
+    ],
+    "source_condition": "The printed statement applies the absence of payload, Hacking Pool and initiative to AN AVERAGE sculpt using IC construct creation rules.",
+    "canonical_condition": "All three existing fields currently read None without an average/default qualifier.",
+    "gameplay_impact": "An engine consuming the unqualified fields could incorrectly prohibit non-average sculpts from having those properties.",
+    "bounded_source_correction": "Preserve average-sculpt scope in each relevant field or a shared explicit qualifier without implying that every sculpt can or cannot have these properties. Preserve the existing core-rating cap and other Cracking/Signature entries unchanged.",
+    "semantic_source_fidelity_review_required": true
+  },
+  "gate_status": {
+    "baseline_candidate_prepared": false,
+    "transaction_stage_and_prepare_executed": false,
+    "github_semantic_update_executed": false,
+    "confirm_executed": false,
+    "source_index_updated": false,
+    "source_completion_gate_passed": false
+  },
+  "project_invariants": {
+    "no_inferred_unseen_source_page_content": true,
+    "global_authorized_contiguous_pages_added": 0,
+    "Denver_checkpoint": "source.fasa-7212 completed through printed p45/PDF46, unchanged",
+    "FASA7001_p308": "owner-accepted nonblocking archival limitation"
+  },
+  "next": "At next eligible single-worker invocation reconcile live blob and source; run actual repository verify-source, independent reviewed baseline/candidate, stage/prepare, ordinary exact-byte Contents update, fresh SHA readback, confirm and legitimate source-specific reindex if the source-to-canon difference remains genuine. Do not treat this administrative observation as an accepted semantic correction."
+}
