@@ -149,8 +149,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [124, 125]
       range_pdf: [125, 126]
       content_class: rule_exact
-      commit: b6c89090c86dc4fa8f32be50e8e13135b1827a24
-      blob: fd49f6519d8451efb68cff671ea2ef561ad3966f
+      commit: ae01269237e902d51906445fef7486f619d627d8
+      blob: 7cadfbad502e3a2f790d87a5f672557e02f39d1f
       gate: verified
       contiguous_advance: false
     - id: reference.sota63-culture-shock-editorial-opening-p105
@@ -1040,3 +1040,27 @@ sota63_soldiers_equipment_exact_fields_2026_11_21_0202:
   global_authorized_printed_pages_added: 0
   Denver_checkpoint_unchanged: true
   source_complete_declared: false
+
+# 2026-11-21 source-specific p124 qualified-sculpt correction; not global pagination.
+sota63_average_sculpt_source_scope_2026_11_21:
+  original_publication: 'FanPro State of the Art: 2063, FanPro10664; Shadowrun Third Edition fictional tabletop game'
+  source_id: source.fanpro-10664
+  original_source_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  original_printed: 124
+  physical_pdf: 125
+  direct_original_page_review: true
+  actual_repository_verify_source: source_pdf_hash_verified
+  corrected_qualified_fields: [data.sculpts.payload, data.sculpts.hacking_pool, data.sculpts.initiative, data.sculpts.source_qualification]
+  correction: 'The original assigns no payload, Hacking Pool or initiative to an average sculpt, rather than categorically to every sculpt; existing IC construct cross-reference and core rating cap unchanged.'
+  record_path: rules/matrix/sota63-cracking-sculpts-signature-p124-125.yml
+  previously_accepted_commit: b6c89090c86dc4fa8f32be50e8e13135b1827a24
+  previously_accepted_blob: fd49f6519d8451efb68cff671ea2ef561ad3966f
+  new_semantic_commit: ae01269237e902d51906445fef7486f619d627d8
+  new_semantic_blob: 7cadfbad502e3a2f790d87a5f672557e02f39d1f
+  candidate_sha256: 849185d0ed50797d91fd5284f437e1c6ff421da07e28cd77843ea44e3a352482
+  immutable_sha256: 6569435bedee04e91594061a0c8b0986249e7a121fdb43bb6c69b4b03a71ad10
+  gate: original_image_source_review_stage_prepare_ordinary_contents_exact_readback_confirm_recovery_verified
+  distinct_new_source_specific_ids: 0
+  new_global_contiguous_pages: 0
+  source_completion_gate_passed: false
+  denver_checkpoint_changed: false
