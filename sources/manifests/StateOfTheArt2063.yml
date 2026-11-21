@@ -1002,6 +1002,16 @@ postscan_verified_mechanics_recovery:
       gate: verified
       contiguous_advance: false
 
+    - id: rule.genetech.dna-masking-and-scanners
+      path: rules/genetech/dna-masking-and-scanners.yml
+      range_printed: [28, 28]
+      range_pdf: [29, 29]
+      content_class: rule_exact
+      commit: 8afafb852136740ece1f34269ea67331f89ca423
+      blob: bef08df075a8d1b98e7db5f9267335fcf6f58407
+      gate: verified
+      contiguous_advance: false
+
 # 2026-11-21 narrowly source-reviewed SOTA2063 Security game-rule correction; no new IDs or page credit.
 security_light_switch_source_field_correction_2026_11_21:
   source: source.fanpro-10664
@@ -1192,3 +1202,26 @@ genetech_pathogens_game_damage_2026_11_21:
   source_completion_gate_passed: false
   engine_implementation_verified: false
   denver_checkpoint_changed: false
+
+# Original source page p28/PDF29 indexed correction; administrative metadata, not new transcription credit.
+dna_masking_bio_index_dash_correction_2026_11_21:
+  publication: 'FanPro State of the Art: 2063 (FanPro10664, 2003), Shadowrun Third Edition tabletop game'
+  source_id: source.fanpro-10664
+  original_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  printed_page: 28
+  physical_pdf_page: 29
+  exact_source_observation: 'DNA Masking Level 1-3 Bio Index cell is printed as a dash, not the previously asserted numerical zero.'
+  corrected_field: data.masking.levels[0].bio_index
+  prior_legacy_blob: b664c7dac738b4432ff114f212288fb23e92a1c4
+  semantic_commit: 8afafb852136740ece1f34269ea67331f89ca423
+  confirmed_semantic_blob: bef08df075a8d1b98e7db5f9267335fcf6f58407
+  source_reviewed_baseline_sha256: a1c9cead0aab25eb6e3558bafa53ca6b093e23dadabbff7c1ffee764d7a1f0fe
+  candidate_sha256: 0582ed9b675c4d08844ac9cb874a94ed8865a122ac050622e7f411648abd5f78
+  immutable_sha256: ffd1d2ffdd46869b5c708ea845c631e5a77273d2e3140678910fcbb55cf987e3
+  gates: 'Fresh source PDF SHA and actual repository verify-source; independent original printed p28 image and source review; corrected original-source baseline and immutable candidate; actual transaction stage/prepare; ordinary GitHub Contents update, exact byte and commit/blob readback; ingestion_gate confirm and transaction_recovery inspect verified.'
+  source_interpretation_limit: 'The printed dash is preserved without inventing a numeric meaning or external erratum; engine interpretation remains local uncertainty.'
+  newly_created_semantic_ids: 0
+  new_source_specific_index_registrations: 1
+  new_globally_authorized_pages: 0
+  full_source_completion_gate_passed: false
+  Denver_checkpoint_changed: false
