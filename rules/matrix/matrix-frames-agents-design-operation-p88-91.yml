@@ -115,6 +115,18 @@ data:
       result in the first frame action in that pass and the second in the next pass, using controller initiative.
     logoff: Dumb frame left on host when controller logs off crashes immediately unless controller performs Logon
       operation to another system on its behalf.
+  dumb_frame_special_uses:
+    decoy_frame:
+      source_cross_reference: Matrix printed p98, Decoy System Operation
+      modified_target: A character may direct a system's security measures against a dumb frame rather than the controlling decker.
+      behavior: Apply the normal game Decoy operation, with the dumb frame serving as the decoy.
+      after_frame_crashes: The host and active IC resume responding to the decker's later actions under the ordinary rules.
+    dinab_event_triggers:
+      prerequisite: A dumb frame carries utilities equipped with the DINAB option (Matrix printed p83).
+      trigger: A character may designate an event condition to cause a DINAB-equipped utility to execute another game utility action when that event occurs.
+      source_example: On a host's active alert, a frame may activate DINAB Analyze Security and then DINAB Crash Host utility behavior; the named game operations remain subject to their normal rules.
+    weapon_carrier:
+      scope: A dumb frame can carry memory-intensive Attack utilities as auxiliary in-game cybercombat weapons; no automatic bonus or extra independent action is implied.
   smart_frame_agent_actions:
     issuing_command: Simple Action, controlling persona and program must be on same system.
     command_recipients: Can command one independent program at a time unless all commanded programs receive identical
@@ -125,6 +137,7 @@ data:
     controller_help: Controller may add Computer (Programming) dice, equal to or less than program Pilot, to Comprehension
       Test.
     agent_hacking_pool: Agents may add their own Hacking Pool to Comprehension Tests.
+    decoy_use: Smart frames and agents may also serve as decoys using the same game-system method as dumb frames on original printed p91.
   specification_only_examples:
   - id: design_limits_skill8
     programming_skill: 8
