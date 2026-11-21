@@ -752,8 +752,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [97, 98]
       range_pdf: [98, 99]
       content_class: rule_exact
-      commit: 8dfe527cdd5a4b5123bb444f2cf949ea97cf7baf
-      blob: 2f93aa4ee9692ddc59e310df30bd756c296d1a8b
+      commit: 6e12689d22ee01983cf5dc9076060402992d88cf
+      blob: 856454036c45296ef728ec35acd8ba9c289d5e6e
       gate: verified
       contiguous_advance: false
     - id: rule.security.sota63-tumbler-maglock-access-tests-p100-101
@@ -981,3 +981,25 @@ postscan_verified_mechanics_recovery:
       blob: 6c621c7d5d8faea3b397a00a4c027aede4390d3d
       gate: verified
       contiguous_advance: false
+
+# 2026-11-21 narrowly source-reviewed SOTA2063 Security game-rule correction; no new IDs or page credit.
+security_light_switch_source_field_correction_2026_11_21:
+  source: source.fanpro-10664
+  publication: 'FanPro State of the Art: 2063, FanPro10664, Shadowrun Third Edition fictional tabletop RPG'
+  original_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  printed_page: 97
+  physical_pdf_page: 98
+  field: data.game_alarm_rules.light_switch_control_tests
+  original_source_qualifier: 'Two distinct Electronics Build/Repair (4) in-game tests, each base 30 seconds adjusted by successes; not a general security rule.'
+  accepted_path: rules/security/sota63-switch-tripbeam-pressure-game-tests-p97-98.yml
+  previous_registered_commit: 8dfe527cdd5a4b5123bb444f2cf949ea97cf7baf
+  previous_registered_blob: 2f93aa4ee9692ddc59e310df30bd756c296d1a8b
+  semantic_commit: 6e12689d22ee01983cf5dc9076060402992d88cf
+  semantic_blob: 856454036c45296ef728ec35acd8ba9c289d5e6e
+  source_reviewed_baseline_sha256: 7036bef25d181d501f86e357eb037e2fb2db07fda5df37b92ef22ae6e5d15af2
+  candidate_sha256: 7036bef25d181d501f86e357eb037e2fb2db07fda5df37b92ef22ae6e5d15af2
+  immutable_sha256: c250d25282c4b8cbfa105cd17c9078fdc1f623de9e565c1f830b0bc92502f718
+  gates: 'Original page image and fresh authentic SHA+actual verify-source; independent editorial source review; compose-first stage/prepare; ordinary Contents update and matching exact blob readback; actual ingestion_gate confirm and recovery inspect both verified.'
+  new_distinct_record_ids: 0
+  global_contiguous_pages: 0
+  Denver_checkpoint_unchanged: true
