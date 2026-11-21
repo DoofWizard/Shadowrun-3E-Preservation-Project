@@ -108,8 +108,8 @@ postcompletion_mechanics_recovery:
       range_printed: [85, 87]
       range_pdf: [86, 88]
       content_class: rule_exact
-      commit: 06df53d899e00e28d4eac6cd2d3be6eb52ad13bc
-      blob: 64ac482f4f947aeaefde0236692e26bcfa1d828c
+      commit: 4e162238985e4ed8146d671df96800c5e7fd81dc
+      blob: fb4b821a738087b71a4c2fd5821ea151a7ea4e97
       gate: verified
       contiguous_advance: false
     - id: rule.matrix.ic-constructs-construction-and-play-p91-92
@@ -220,3 +220,23 @@ programming_source_fidelity_corrections_2026_11_20:
   source_completion_state_unchanged: true
   denver_checkpoint_modified: false
   notes: 'Existing historical page-class audit remains scoped to its original snapshot; corrections validated against source images and reindexed without new source pages or pretending full programmatic engine readiness.'
+
+# Source-reviewed compatibility correction on 2026-11-20, independent of source completion.
+ic_shield_shift_compatibility_correction_2026_11_20:
+  publication: "FASA Corporation Matrix, FASA7909, Shadowrun Third Edition fictional tabletop game"
+  original_source_pdf_sha256: "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+  original_printed_page: 85
+  physical_pdf_page: 86
+  original_condition: "IC Shield and Shift options expressly described as incompatible; earlier indexed record only said some IC options were incompatible without naming this pair."
+  protected_class: rule_exact
+  path: rules/matrix/matrix-ic-option-effects-p85-87.yml
+  previous_blob: 64ac482f4f947aeaefde0236692e26bcfa1d828c
+  previous_commit: 06df53d899e00e28d4eac6cd2d3be6eb52ad13bc
+  corrected_blob: fb4b821a738087b71a4c2fd5821ea151a7ea4e97
+  corrected_commit: 4e162238985e4ed8146d671df96800c5e7fd81dc
+  independently_reviewed_baseline_sha256: fafb015c6da65d9b736f0092568d1088a293929170a390092ab0563608030165
+  candidate_sha256: bc62d98c303fead9a410649c09ff05f0babd2231366562ee6a13244c9107de27
+  immutable_sha256: 4d642f2eb0ab533dbed664b6d39f42a386c0b1a41455887392459a9048e80f22
+  gate: "fresh PDF hash, actual verify-source, original p85/PDF86 image, independent source-reviewed baseline/candidate, stage/prepare, ordinary Contents update, matching exact Git blob readback, actual confirm and recovery inspect verified"
+  full_programming_p76_94_deferred_resolved: false
+  denver_checkpoint_changed: false
