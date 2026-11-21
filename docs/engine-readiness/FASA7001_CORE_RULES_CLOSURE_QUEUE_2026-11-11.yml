@@ -1619,8 +1619,8 @@ core_acceptance_inventory:
   scope: available_original_mechanics
   mapping_status: source_review_fragment_matching_in_progress
   historical_initial_json_review_matches: 4
-  current_draft_source_to_canon_field_bindings: 512
-  current_source_review_references_including_section_refs: 403
+  current_draft_source_to_canon_field_bindings: 464
+  current_source_review_references_including_section_refs: 355
   pending_review_references_including_section_refs: 114
   source_derived_inventory_certification: not_yet_established
   next_distinct_original_source_section: magic_printed_158_198
@@ -1872,85 +1872,70 @@ core_acceptance_inventory:
         - {id: "obligation.procedure.skills.sr3-core-screaming-eagle-knowledge-worked-p96.worked_example", source_heading: "Skills / Stealth theft opposed test and Alertness complementary application, Knowledge/Language numeric tables, Screaming Eagle test vector, complementary Skill limitations and Cheshire test vector / worked example", content_class: rule_procedure, printed_pages: [96], pdf_pages: [97]}
     - id: combat
       printed_range: [100, 129]
-      heading_field_content_class_inventory_complete: false
+      heading_field_content_class_inventory_complete: true
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
+      source_derived_mechanical_inventory_certification_2026_11_21:
+        original: "FASA Corporation, Shadowrun Third Edition FASA7001 original published tabletop source"
+        original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+        original_printed_scope: [100, 129]
+        source_reviews:
+          - "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml"
+        source_derived_natural_lanes: "Initiative/action economy/movement/surprise pp100-109; ranged range/recoil/attacker/dodge/ammunition/projectiles/grenades pp110-120; melee opposed tests/reach/defense pp120-124; knockdown/shock/barriers/condition/healing pp124-129"
+        original_source_visual_review: "Fresh cataloged original PDF SHA matched historical source; pp100-129 original source-page layout images screened in this scope, plus complete independently reviewed original images and field/table receipts dated 2026-11-19"
+        original_illustration: "Printed p101/PDF102 is original full-page illustration, not missing mechanics"
+        explicitly_accounted_original_tables: "21 Weapon Range rows; 25 Ranged Modifier rows; grenade range/damage; melee weapon/modifier tables; Knockdown, Barrier Rating and Effect, Damage Level, Damage Modifiers, Wound, medical/healing and first aid tables"
+        retained_original_internal_tensions: "p123 worked example Body 4 versus five rolled Body dice; p113 versus p126 injury modifier wording; do not invent precedence"
+        field_review_links_in_source_ranges: true
+        removed_provenance_only_draft_fields: 48
+        remaining_distinct_mechanical_field_bindings: 128
+        source_derived_original_heading_field_class_scope_complete: true
+        semantic_records_created_or_corrected_this_certification: 0
+        net_new_authorized_printed_pages: 0
+        source_wide_acceptance: false
       required_fields:
-        - {id: "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.source_heading", source_heading: "Combat / source heading", content_class: rule_exact, printed_pages: [119], pdf_pages: [120]}
         - {id: "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.abstract_game_rule", source_heading: "Combat / abstract game rule", content_class: rule_exact, printed_pages: [119], pdf_pages: [120]}
-        - {id: "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.scope_boundary", source_heading: "Combat / scope boundary", content_class: rule_exact, printed_pages: [119], pdf_pages: [120]}
-        - {id: "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.source_review_receipt", source_heading: "Combat / source review receipt", content_class: rule_exact, printed_pages: [119], pdf_pages: [120]}
-        - {id: "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.source_heading", source_heading: "Combat / source heading", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
         - {id: "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.source_example", source_heading: "Combat / source example", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
         - {id: "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.source_internal_tension_not_resolved", source_heading: "Combat / source internal tension not resolved", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
-        - {id: "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.scope_limit", source_heading: "Combat / scope limit", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
-        - {id: "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.section", source_heading: "Combat / section", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.race_running_modifier_table", source_heading: "Combat / race running modifier table", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.movement_rates", source_heading: "Combat / movement rates", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.walking_modifiers", source_heading: "Combat / walking modifiers", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
-        - {id: "obligation.rule.movement.sr3-core-interception-numeric-p108.section", source_heading: "Combat / section", content_class: rule_procedure, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-interception-numeric-p108.trigger", source_heading: "Combat / trigger", content_class: rule_procedure, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-interception-numeric-p108.attacker", source_heading: "Combat / attacker", content_class: rule_procedure, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.movement.sr3-core-interception-numeric-p108.defender", source_heading: "Combat / defender", content_class: rule_procedure, printed_pages: [108], pdf_pages: [109]}
-        - {id: "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.publisher", source_heading: "Combat / publisher", content_class: rule_exact, printed_pages: [127], pdf_pages: [128]}
-        - {id: "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.catalog_number", source_heading: "Combat / catalog number", content_class: rule_exact, printed_pages: [127], pdf_pages: [128]}
-        - {id: "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.edition", source_heading: "Combat / edition", content_class: rule_exact, printed_pages: [127], pdf_pages: [128]}
-        - {id: "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.printed_pages", source_heading: "Combat / printed pages", content_class: rule_exact, printed_pages: [127], pdf_pages: [128]}
-        - {id: "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.source_heading", source_heading: "Combat / source heading", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.example_cast_and_attribution", source_heading: "Combat / example cast and attribution", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.exact_example_numerics", source_heading: "Combat / exact example numerics", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.optional_rule_context", source_heading: "Combat / optional rule context", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
-        - {id: "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.source_headings", source_heading: "Combat / source headings", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.missing_original_core_table_row", source_heading: "Combat / missing original core table row", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.minimum_range_rule", source_heading: "Combat / minimum range rule", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.range_target_numbers", source_heading: "Combat / range target numbers", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
-        - {id: "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.source_heading", source_heading: "Combat / source heading", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.source_original_range_limit", source_heading: "Combat / source original range limit", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.source_environment_exclusions", source_heading: "Combat / source environment exclusions", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.environment_rule", source_heading: "Combat / environment rule", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.initiative.sr3-core-john-longbone-worked-score-p100-102.original_worked_example", source_heading: "Combat / original worked example", content_class: rule_procedure, printed_pages: [100], pdf_pages: [101]}
-        - {id: "obligation.rule.initiative.sr3-core-john-longbone-worked-score-p100-102.independent_canonical_reuse", source_heading: "Combat / independent canonical reuse", content_class: rule_procedure, printed_pages: [100], pdf_pages: [101]}
-        - {id: "obligation.rule.initiative.sr3-core-john-longbone-worked-score-p100-102.semantic_delta", source_heading: "Combat / semantic delta", content_class: rule_procedure, printed_pages: [100], pdf_pages: [101]}
-        - {id: "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.source_section", source_heading: "Combat / source section", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.recoil_target_number_rules", source_heading: "Combat / recoil target number rules", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.heavy_weapon_exception", source_heading: "Combat / heavy weapon exception", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.burst_fire_shotgun_exception", source_heading: "Combat / burst fire shotgun exception", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
-        - {id: "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.source_section", source_heading: "Combat / source section", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.range_category_sequence", source_heading: "Combat / range category sequence", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.base_target_number_by_category", source_heading: "Combat / base target number by category", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
         - {id: "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.imaging_effect", source_heading: "Combat / imaging effect", content_class: rule_exact, printed_pages: [110], pdf_pages: [111]}
-        - {id: "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.source_section", source_heading: "Combat / source section", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.attacker_movement_target_number", source_heading: "Combat / attacker movement target number", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.attacker_engaged_in_melee", source_heading: "Combat / attacker engaged in melee", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
         - {id: "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.using_second_firearm", source_heading: "Combat / using second firearm", content_class: rule_exact, printed_pages: [112], pdf_pages: [113]}
-        - {id: "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.source_section", source_heading: "Combat / source section", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
         - {id: "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.meaning", source_heading: "Combat / meaning", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
         - {id: "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.columns", source_heading: "Combat / columns", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
         - {id: "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.literal_rows", source_heading: "Combat / literal rows", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
-        - {id: "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.section", source_heading: "Combat / section", content_class: rule_exact, printed_pages: [109], pdf_pages: [110]}
         - {id: "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.test", source_heading: "Combat / test", content_class: rule_exact, printed_pages: [109], pdf_pages: [110]}
         - {id: "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.opponent_specific_success_comparison", source_heading: "Combat / opponent specific success comparison", content_class: rule_exact, printed_pages: [109], pdf_pages: [110]}
         - {id: "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.total_surprise", source_heading: "Combat / total surprise", content_class: rule_exact, printed_pages: [109], pdf_pages: [110]}
-        - {id: "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.publisher", source_heading: "Combat / publisher", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.catalog", source_heading: "Combat / catalog", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.edition", source_heading: "Combat / edition", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.printed_pages", source_heading: "Combat / printed pages", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.publisher", source_heading: "Combat / publisher", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.catalog", source_heading: "Combat / catalog", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.edition", source_heading: "Combat / edition", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.printed_page", source_heading: "Combat / printed page", content_class: rule_exact, printed_pages: [126], pdf_pages: [127]}
-        - {id: "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.publisher", source_heading: "Combat / publisher", content_class: rule_exact, printed_pages: [125], pdf_pages: [126]}
-        - {id: "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.catalog", source_heading: "Combat / catalog", content_class: rule_exact, printed_pages: [125], pdf_pages: [126]}
-        - {id: "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.printed_pages", source_heading: "Combat / printed pages", content_class: rule_exact, printed_pages: [125], pdf_pages: [126]}
-        - {id: "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.physical_pdf_pages", source_heading: "Combat / physical pdf pages", content_class: rule_exact, printed_pages: [125], pdf_pages: [126]}
-        - {id: "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.source_section", source_heading: "Combat / source section", content_class: rule_procedure, printed_pages: [104], pdf_pages: [105]}
         - {id: "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.turn_sequence", source_heading: "Combat / turn sequence", content_class: rule_procedure, printed_pages: [104], pdf_pages: [105]}
         - {id: "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.action_economy", source_heading: "Combat / action economy", content_class: rule_procedure, printed_pages: [104], pdf_pages: [105]}
         - {id: "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.selected_free_actions", source_heading: "Combat / selected free actions", content_class: rule_procedure, printed_pages: [104], pdf_pages: [105]}
-        - {id: "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.source_section", source_heading: "Combat / source section", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.movement_rates", source_heading: "Combat / movement rates", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.walking", source_heading: "Combat / walking", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
         - {id: "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.running", source_heading: "Combat / running", content_class: rule_exact, printed_pages: [108], pdf_pages: [109]}
-        - {id: "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.source_section", source_heading: "Combat / source section", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
         - {id: "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.attack_success_test", source_heading: "Combat / attack success test", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
         - {id: "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.dodge_test", source_heading: "Combat / dodge test", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
         - {id: "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.damage_resistance_test", source_heading: "Combat / damage resistance test", content_class: rule_procedure, printed_pages: [113], pdf_pages: [114]}
@@ -1979,8 +1964,6 @@ core_acceptance_inventory:
         - {id: "obligation.rule.firearms.sr3-core-special-ammunition-numeric-p116-117.explosive", source_heading: "Combat / explosive", content_class: rule_exact, printed_pages: [116], pdf_pages: [117]}
         - {id: "obligation.rule.firearms.sr3-core-special-ammunition-numeric-p116-117.flechette", source_heading: "Combat / flechette", content_class: rule_exact, printed_pages: [116], pdf_pages: [117]}
         - {id: "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.multiple_targets", source_heading: "Combat / multiple targets", content_class: rule_exact, printed_pages: [116], pdf_pages: [117]}
-        - {id: "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.source_cross_references", source_heading: "Combat / source cross references", content_class: rule_exact, printed_pages: [116], pdf_pages: [117]}
-        - {id: "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.example_vectors_specification_only_not_executed", source_heading: "Combat / example vectors specification only not executed", content_class: rule_exact, printed_pages: [116], pdf_pages: [117]}
         - {id: "obligation.rule.combat.sr3-core-rocket-missile-numeric-p120.projectiles", source_heading: "Combat / projectiles", content_class: rule_exact, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-rocket-missile-numeric-p120.types", source_heading: "Combat / types", content_class: rule_exact, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-rocket-missile-numeric-p120.test", source_heading: "Combat / test", content_class: rule_exact, printed_pages: [120], pdf_pages: [121]}
@@ -2016,11 +1999,9 @@ core_acceptance_inventory:
         - {id: "obligation.rule.initiative.sr3-core-delayed-actions-exact-p103.same_pass_delay", source_heading: "Combat / same pass delay", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
         - {id: "obligation.rule.initiative.sr3-core-delayed-actions-exact-p103.next_pass_delay", source_heading: "Combat / next pass delay", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
         - {id: "obligation.rule.initiative.sr3-core-delayed-actions-exact-p103.end_of_turn_delay", source_heading: "Combat / end of turn delay", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
-        - {id: "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.source_heading", source_heading: "Combat / source heading", content_class: rule_exact, printed_pages: [115], pdf_pages: [116]}
         - {id: "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.semi_automatic", source_heading: "Combat / semi automatic", content_class: rule_exact, printed_pages: [115], pdf_pages: [116]}
         - {id: "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.burst_fire", source_heading: "Combat / burst fire", content_class: rule_exact, printed_pages: [115], pdf_pages: [116]}
         - {id: "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.insufficient_ammunition", source_heading: "Combat / insufficient ammunition", content_class: rule_exact, printed_pages: [115], pdf_pages: [116]}
-        - {id: "obligation.rule.combat.sr3-core-called-shots-numeric-p114.source_heading", source_heading: "Combat / source heading", content_class: rule_exact, printed_pages: [114], pdf_pages: [115]}
         - {id: "obligation.rule.combat.sr3-core-called-shots-numeric-p114.declaration", source_heading: "Combat / declaration", content_class: rule_exact, printed_pages: [114], pdf_pages: [115]}
         - {id: "obligation.rule.combat.sr3-core-called-shots-numeric-p114.original_core_mode_restriction", source_heading: "Combat / original core mode restriction", content_class: rule_exact, printed_pages: [114], pdf_pages: [115]}
         - {id: "obligation.rule.combat.sr3-core-called-shots-numeric-p114.option_select_one", source_heading: "Combat / option select one", content_class: rule_exact, printed_pages: [114], pdf_pages: [115]}
@@ -2028,29 +2009,21 @@ core_acceptance_inventory:
         - {id: "obligation.procedure.healing.sr3-core-first-aid-biotech-stabilization-p129.first_aid_test", source_heading: "Combat / first aid test", content_class: rule_procedure, printed_pages: [129], pdf_pages: [130]}
         - {id: "obligation.procedure.healing.sr3-core-first-aid-biotech-stabilization-p129.deadly_wound_first_aid", source_heading: "Combat / deadly wound first aid", content_class: rule_procedure, printed_pages: [129], pdf_pages: [130]}
         - {id: "obligation.procedure.healing.sr3-core-first-aid-biotech-stabilization-p129.trauma_patch_exception", source_heading: "Combat / trauma patch exception", content_class: rule_procedure, printed_pages: [129], pdf_pages: [130]}
-        - {id: "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.section", source_heading: "Combat / section", content_class: rule_exact, printed_pages: [129], pdf_pages: [130]}
         - {id: "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.treatment_modifier", source_heading: "Combat / treatment modifier", content_class: rule_exact, printed_pages: [129], pdf_pages: [130]}
         - {id: "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.magic_loss_eligibility", source_heading: "Combat / magic loss eligibility", content_class: rule_exact, printed_pages: [129], pdf_pages: [130]}
         - {id: "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.body_replacement_lineage", source_heading: "Combat / body replacement lineage", content_class: rule_exact, printed_pages: [129], pdf_pages: [130]}
-        - {id: "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.source_section", source_heading: "Combat / source section", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
         - {id: "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.timed_items_resolution", source_heading: "Combat / timed items resolution", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
-        - {id: "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.editorial_source_review", source_heading: "Combat / editorial source review", content_class: rule_procedure, printed_pages: [103], pdf_pages: [104]}
-        - {id: "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.original_page", source_heading: "Combat / original page", content_class: rule_procedure, printed_pages: [102], pdf_pages: [103]}
         - {id: "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.purpose", source_heading: "Combat / purpose", content_class: rule_procedure, printed_pages: [102], pdf_pages: [103]}
         - {id: "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.initiative_pass_procedure", source_heading: "Combat / initiative pass procedure", content_class: rule_procedure, printed_pages: [102], pdf_pages: [103]}
         - {id: "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.worked_initial_scores", source_heading: "Combat / worked initial scores", content_class: rule_procedure, printed_pages: [102], pdf_pages: [103]}
-        - {id: "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.source_heading", source_heading: "combat / source heading", content_class: rule_procedure, printed_pages: [123], pdf_pages: [124]}
         - {id: "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.fictional_roles", source_heading: "combat / fictional roles", content_class: rule_procedure, printed_pages: [123], pdf_pages: [124]}
         - {id: "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.source_character_setup", source_heading: "combat / source character setup", content_class: rule_procedure, printed_pages: [123], pdf_pages: [124]}
         - {id: "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.original_opposed_test", source_heading: "combat / original opposed test", content_class: rule_procedure, printed_pages: [123], pdf_pages: [124]}
-        - {id: "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.source_section", source_heading: "combat / source section", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.attack_type_routing", source_heading: "combat / attack type routing", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.opposed_exchange_principle", source_heading: "combat / opposed exchange principle", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
         - {id: "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.base_damage_code", source_heading: "combat / base damage code", content_class: rule_procedure, printed_pages: [120], pdf_pages: [121]}
-        - {id: "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.source_location", source_heading: "combat / source location", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
         - {id: "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.blind_fire", source_heading: "combat / blind fire", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
         - {id: "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.partial_cover", source_heading: "combat / partial cover", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
-        - {id: "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.existing_canon_reuse", source_heading: "combat / existing canon reuse", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
     - id: vehicles_drones
       printed_range: [130, 157]
       heading_field_content_class_inventory_complete: false
@@ -3245,30 +3218,10 @@ core_acceptance_inventory:
       record_pointer: "/data/worked_example"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml", pointer: "/skills_whole_rules_chapter_2026_11_19/complete_reviewed_mechanical_headings/7/scope", value_sha256: "ea4320770e4b6a148f79bac76026d70f5c21f1c3a20b963da7cdb492554d2647"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.source_heading":
-      record_id: "rule.combat.sr3-core-demolitions-barrier-test-p119"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/5", value_sha256: "c4ce88f3f6e41d2d32bce32025ea077e8d3f5e0f4e4c66306abc7f99ae31bd2a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.abstract_game_rule":
       record_id: "rule.combat.sr3-core-demolitions-barrier-test-p119"
       record_pointer: "/data/abstract_game_rule"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/5", value_sha256: "c4ce88f3f6e41d2d32bce32025ea077e8d3f5e0f4e4c66306abc7f99ae31bd2a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.scope_boundary":
-      record_id: "rule.combat.sr3-core-demolitions-barrier-test-p119"
-      record_pointer: "/data/scope_boundary"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/5", value_sha256: "c4ce88f3f6e41d2d32bce32025ea077e8d3f5e0f4e4c66306abc7f99ae31bd2a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-demolitions-barrier-test-p119.source_review_receipt":
-      record_id: "rule.combat.sr3-core-demolitions-barrier-test-p119"
-      record_pointer: "/data/source_review_receipt"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/5", value_sha256: "c4ce88f3f6e41d2d32bce32025ea077e8d3f5e0f4e4c66306abc7f99ae31bd2a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.source_heading":
-      record_id: "rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.source_example":
       record_id: "rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113"
@@ -3279,16 +3232,6 @@ core_acceptance_inventory:
       record_id: "rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113"
       record_pointer: "/data/source_internal_tension_not_resolved"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113.scope_limit":
-      record_id: "rule.combat.sr3-core-ranged-worked-attack-dodge-staging-p113"
-      record_pointer: "/data/scope_limit"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.section":
-      record_id: "rule.movement.sr3-core-running-walking-rate-numeric-p108"
-      record_pointer: "/data/section"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.race_running_modifier_table":
       record_id: "rule.movement.sr3-core-running-walking-rate-numeric-p108"
@@ -3303,11 +3246,6 @@ core_acceptance_inventory:
     "obligation.rule.movement.sr3-core-running-walking-rate-numeric-p108.walking_modifiers":
       record_id: "rule.movement.sr3-core-running-walking-rate-numeric-p108"
       record_pointer: "/data/walking_modifiers"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.movement.sr3-core-interception-numeric-p108.section":
-      record_id: "rule.movement.sr3-core-interception-numeric-p108"
-      record_pointer: "/data/section"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.movement.sr3-core-interception-numeric-p108.trigger":
@@ -3325,31 +3263,6 @@ core_acceptance_inventory:
       record_pointer: "/data/defender"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.publisher":
-      record_id: "rule.condition.sr3-core-deadly-permanent-injury-p127-128"
-      record_pointer: "/data/publisher"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/5/checks", value_sha256: "bc745f34dd51576f13035bc0ea99b60e53600defbafe803b26d1002822cd3caf"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.catalog_number":
-      record_id: "rule.condition.sr3-core-deadly-permanent-injury-p127-128"
-      record_pointer: "/data/catalog_number"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/5/checks", value_sha256: "bc745f34dd51576f13035bc0ea99b60e53600defbafe803b26d1002822cd3caf"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.edition":
-      record_id: "rule.condition.sr3-core-deadly-permanent-injury-p127-128"
-      record_pointer: "/data/edition"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/5/checks", value_sha256: "bc745f34dd51576f13035bc0ea99b60e53600defbafe803b26d1002822cd3caf"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-core-deadly-permanent-injury-p127-128.printed_pages":
-      record_id: "rule.condition.sr3-core-deadly-permanent-injury-p127-128"
-      record_pointer: "/data/printed_pages"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/5/checks", value_sha256: "bc745f34dd51576f13035bc0ea99b60e53600defbafe803b26d1002822cd3caf"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.source_heading":
-      record_id: "rule.combat.sr3-core-optional-explosives-worked-example-p120"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-optional-explosives-worked-example-p120.example_cast_and_attribution":
       record_id: "rule.combat.sr3-core-optional-explosives-worked-example-p120"
       record_pointer: "/data/example_cast_and_attribution"
@@ -3365,11 +3278,6 @@ core_acceptance_inventory:
       record_pointer: "/data/optional_rule_context"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.source_headings":
-      record_id: "rule.combat.sr3-core-launcher-range-minimum-original-p110-111"
-      record_pointer: "/data/source_headings"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/6", value_sha256: "a93726b39a6646a95207fb579b999fc8f779b6f246f7e0bf9d53505ee40db390"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-launcher-range-minimum-original-p110-111.missing_original_core_table_row":
       record_id: "rule.combat.sr3-core-launcher-range-minimum-original-p110-111"
       record_pointer: "/data/missing_original_core_table_row"
@@ -3384,11 +3292,6 @@ core_acceptance_inventory:
       record_id: "rule.combat.sr3-core-launcher-range-minimum-original-p110-111"
       record_pointer: "/data/range_target_numbers"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/6", value_sha256: "a93726b39a6646a95207fb579b999fc8f779b6f246f7e0bf9d53505ee40db390"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.source_heading":
-      record_id: "rule.combat.sr3-core-laser-sight-weather-distance-p112"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/1", value_sha256: "e4ef670fb7444bb414e8507b70de87c4dfad79dfcd1fa833e596b5bbc5faba77"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-laser-sight-weather-distance-p112.source_original_range_limit":
       record_id: "rule.combat.sr3-core-laser-sight-weather-distance-p112"
@@ -3410,21 +3313,6 @@ core_acceptance_inventory:
       record_pointer: "/data/original_worked_example"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.initiative.sr3-core-john-longbone-worked-score-p100-102.independent_canonical_reuse":
-      record_id: "rule.initiative.sr3-core-john-longbone-worked-score-p100-102"
-      record_pointer: "/data/independent_canonical_reuse"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.initiative.sr3-core-john-longbone-worked-score-p100-102.semantic_delta":
-      record_id: "rule.initiative.sr3-core-john-longbone-worked-score-p100-102"
-      record_pointer: "/data/semantic_delta"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.source_section":
-      record_id: "rule.combat.sr3-core-recoil-accounting-numeric-p110-113"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/1", value_sha256: "e4ef670fb7444bb414e8507b70de87c4dfad79dfcd1fa833e596b5bbc5faba77"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-recoil-accounting-numeric-p110-113.recoil_target_number_rules":
       record_id: "rule.combat.sr3-core-recoil-accounting-numeric-p110-113"
       record_pointer: "/data/recoil_target_number_rules"
@@ -3440,11 +3328,6 @@ core_acceptance_inventory:
       record_pointer: "/data/burst_fire_shotgun_exception"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/1", value_sha256: "e4ef670fb7444bb414e8507b70de87c4dfad79dfcd1fa833e596b5bbc5faba77"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.source_section":
-      record_id: "rule.combat.sr3-core-imaging-range-shift-p110-113"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.range_category_sequence":
       record_id: "rule.combat.sr3-core-imaging-range-shift-p110-113"
       record_pointer: "/data/range_category_sequence"
@@ -3458,11 +3341,6 @@ core_acceptance_inventory:
     "obligation.rule.combat.sr3-core-imaging-range-shift-p110-113.imaging_effect":
       record_id: "rule.combat.sr3-core-imaging-range-shift-p110-113"
       record_pointer: "/data/imaging_effect"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.source_section":
-      record_id: "rule.combat.sr3-core-attacker-situational-numeric-p112"
-      record_pointer: "/data/source_section"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-attacker-situational-numeric-p112.attacker_movement_target_number":
@@ -3480,11 +3358,6 @@ core_acceptance_inventory:
       record_pointer: "/data/using_second_firearm"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.source_section":
-      record_id: "rule.combat.sr3-core-visibility-numeric-p111-112"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/17", value_sha256: "3cea9605b04ea8bef7e04ac944655e8638516f6e6602117203357401ad08aca0"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-visibility-numeric-p111-112.meaning":
       record_id: "rule.combat.sr3-core-visibility-numeric-p111-112"
       record_pointer: "/data/meaning"
@@ -3499,11 +3372,6 @@ core_acceptance_inventory:
       record_id: "rule.combat.sr3-core-visibility-numeric-p111-112"
       record_pointer: "/data/literal_rows"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/17", value_sha256: "3cea9605b04ea8bef7e04ac944655e8638516f6e6602117203357401ad08aca0"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.section":
-      record_id: "rule.combat.sr3-core-surprise-numeric-action-restrictions-p109"
-      record_pointer: "/data/section"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_surprise_checked", value_sha256: "06585cda217a42308cb61f6ab09f31a72487c7da8b889a0f0102836798a0cf8c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-surprise-numeric-action-restrictions-p109.test":
       record_id: "rule.combat.sr3-core-surprise-numeric-action-restrictions-p109"
@@ -3520,71 +3388,6 @@ core_acceptance_inventory:
       record_pointer: "/data/total_surprise"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_surprise_checked", value_sha256: "06585cda217a42308cb61f6ab09f31a72487c7da8b889a0f0102836798a0cf8c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.publisher":
-      record_id: "rule.healing.sr3-core-natural-recovery-numeric-p126-128"
-      record_pointer: "/data/publisher"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/4/checks", value_sha256: "05d9a9e1c41b145d83315699fcf35d20aeafdaea785b618b0b37e0231e95e1f6"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.catalog":
-      record_id: "rule.healing.sr3-core-natural-recovery-numeric-p126-128"
-      record_pointer: "/data/catalog"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/4/checks", value_sha256: "05d9a9e1c41b145d83315699fcf35d20aeafdaea785b618b0b37e0231e95e1f6"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.edition":
-      record_id: "rule.healing.sr3-core-natural-recovery-numeric-p126-128"
-      record_pointer: "/data/edition"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/4/checks", value_sha256: "05d9a9e1c41b145d83315699fcf35d20aeafdaea785b618b0b37e0231e95e1f6"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.healing.sr3-core-natural-recovery-numeric-p126-128.printed_pages":
-      record_id: "rule.healing.sr3-core-natural-recovery-numeric-p126-128"
-      record_pointer: "/data/printed_pages"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/4/checks", value_sha256: "05d9a9e1c41b145d83315699fcf35d20aeafdaea785b618b0b37e0231e95e1f6"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.publisher":
-      record_id: "rule.combat.sr3-core-optional-deadlier-overdamage-p126"
-      record_pointer: "/data/publisher"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/3/checks", value_sha256: "bb2066da215b5f829f3030bba90aea65cc953240dcf539d183d9c42a9c8cffc4"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.catalog":
-      record_id: "rule.combat.sr3-core-optional-deadlier-overdamage-p126"
-      record_pointer: "/data/catalog"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/3/checks", value_sha256: "bb2066da215b5f829f3030bba90aea65cc953240dcf539d183d9c42a9c8cffc4"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.edition":
-      record_id: "rule.combat.sr3-core-optional-deadlier-overdamage-p126"
-      record_pointer: "/data/edition"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/3/checks", value_sha256: "bb2066da215b5f829f3030bba90aea65cc953240dcf539d183d9c42a9c8cffc4"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-optional-deadlier-overdamage-p126.printed_page":
-      record_id: "rule.combat.sr3-core-optional-deadlier-overdamage-p126"
-      record_pointer: "/data/printed_page"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/3/checks", value_sha256: "bb2066da215b5f829f3030bba90aea65cc953240dcf539d183d9c42a9c8cffc4"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.publisher":
-      record_id: "rule.condition.sr3-damage-monitor-numeric-p125-126"
-      record_pointer: "/data/publisher"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/2/checks", value_sha256: "364497b8b008582b26a05ecd586f5b2f9352847ed4dcc41f170bedc34a38b381"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.catalog":
-      record_id: "rule.condition.sr3-damage-monitor-numeric-p125-126"
-      record_pointer: "/data/catalog"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/2/checks", value_sha256: "364497b8b008582b26a05ecd586f5b2f9352847ed4dcc41f170bedc34a38b381"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.printed_pages":
-      record_id: "rule.condition.sr3-damage-monitor-numeric-p125-126"
-      record_pointer: "/data/printed_pages"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/2/checks", value_sha256: "364497b8b008582b26a05ecd586f5b2f9352847ed4dcc41f170bedc34a38b381"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.condition.sr3-damage-monitor-numeric-p125-126.physical_pdf_pages":
-      record_id: "rule.condition.sr3-damage-monitor-numeric-p125-126"
-      record_pointer: "/data/physical_pdf_pages"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/2/checks", value_sha256: "364497b8b008582b26a05ecd586f5b2f9352847ed4dcc41f170bedc34a38b381"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.source_section":
-      record_id: "rule.actions.sr3-core-combat-phase-action-timing-p104-108"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_action_economy_checked", value_sha256: "7f54cc408f291e156fd29812ba757323ae1ec0a0424c0882ea1c14b0b7f27aa5"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.actions.sr3-core-combat-phase-action-timing-p104-108.turn_sequence":
       record_id: "rule.actions.sr3-core-combat-phase-action-timing-p104-108"
       record_pointer: "/data/turn_sequence"
@@ -3600,11 +3403,6 @@ core_acceptance_inventory:
       record_pointer: "/data/selected_free_actions"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_action_economy_checked", value_sha256: "7f54cc408f291e156fd29812ba757323ae1ec0a0424c0882ea1c14b0b7f27aa5"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.source_section":
-      record_id: "rule.combat.sr3-core-movement-interception-numeric-p108"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-movement-interception-numeric-p108.movement_rates":
       record_id: "rule.combat.sr3-core-movement-interception-numeric-p108"
       record_pointer: "/data/movement_rates"
@@ -3619,11 +3417,6 @@ core_acceptance_inventory:
       record_id: "rule.combat.sr3-core-movement-interception-numeric-p108"
       record_pointer: "/data/running"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_movement_checked", value_sha256: "ff12d2121a50752f89e8998374688b896fe238e61c3ba906b60dda5a9727e603"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.source_section":
-      record_id: "rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/2", value_sha256: "edf67ac909197b1c077b7726ca4ab0b23b5b2aaf4d7a774ca9487e7adfde2835"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113.attack_success_test":
       record_id: "rule.combat.sr3-core-ranged-dodge-armor-resistance-numeric-p113"
@@ -3763,16 +3556,6 @@ core_acceptance_inventory:
     "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.multiple_targets":
       record_id: "rule.combat.sr3-core-full-auto-target-sweep-numeric-p116"
       record_pointer: "/data/multiple_targets"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.source_cross_references":
-      record_id: "rule.combat.sr3-core-full-auto-target-sweep-numeric-p116"
-      record_pointer: "/data/source_cross_references"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-full-auto-target-sweep-numeric-p116.example_vectors_specification_only_not_executed":
-      record_id: "rule.combat.sr3-core-full-auto-target-sweep-numeric-p116"
-      record_pointer: "/data/example_vectors_specification_only_not_executed"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-rocket-missile-numeric-p120.projectiles":
@@ -3950,11 +3733,6 @@ core_acceptance_inventory:
       record_pointer: "/data/end_of_turn_delay"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.source_heading":
-      record_id: "rule.combat.sr3-core-firearm-mode-resolution-numeric-p115"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-firearm-mode-resolution-numeric-p115.semi_automatic":
       record_id: "rule.combat.sr3-core-firearm-mode-resolution-numeric-p115"
       record_pointer: "/data/semi_automatic"
@@ -3969,11 +3747,6 @@ core_acceptance_inventory:
       record_id: "rule.combat.sr3-core-firearm-mode-resolution-numeric-p115"
       record_pointer: "/data/insufficient_ammunition"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/3", value_sha256: "fd5a9a26e3dcdccfee5d46b9bdd190d113b39ff669eb8294de94ef5b60461abc"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-called-shots-numeric-p114.source_heading":
-      record_id: "rule.combat.sr3-core-called-shots-numeric-p114"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-called-shots-numeric-p114.declaration":
       record_id: "rule.combat.sr3-core-called-shots-numeric-p114"
@@ -4010,11 +3783,6 @@ core_acceptance_inventory:
       record_pointer: "/data/trauma_patch_exception"
       source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/6/checks", value_sha256: "b46158f0328c8ff2e1dfe189457de11320987f0f093891c8d9efe2279e95a89e"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.section":
-      record_id: "rule.magic.sr3-core-awakened-medical-magic-loss-p129"
-      record_pointer: "/data/section"
-      source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/7/checks", value_sha256: "4e58ade6f6dfd33b700f90cf4e1579355055f01fd94f78b599477792dfb4cf6c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.magic.sr3-core-awakened-medical-magic-loss-p129.treatment_modifier":
       record_id: "rule.magic.sr3-core-awakened-medical-magic-loss-p129"
       record_pointer: "/data/treatment_modifier"
@@ -4030,24 +3798,9 @@ core_acceptance_inventory:
       record_pointer: "/data/body_replacement_lineage"
       source_review: {path: "docs/engine-readiness/FASA7001_KNOCKDOWN_BARRIERS_DAMAGE_HEALING_P124-129_SOURCE_REVIEW_2026-11-19.yml", pointer: "/source_to_canon/7/checks", value_sha256: "4e58ade6f6dfd33b700f90cf4e1579355055f01fd94f78b599477792dfb4cf6c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.source_section":
-      record_id: "rule.initiative.sr3-core-timed-items-initiative-p103"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.timed_items_resolution":
       record_id: "rule.initiative.sr3-core-timed-items-initiative-p103"
       record_pointer: "/data/timed_items_resolution"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.initiative.sr3-core-timed-items-initiative-p103.editorial_source_review":
-      record_id: "rule.initiative.sr3-core-timed-items-initiative-p103"
-      record_pointer: "/data/editorial_source_review"
-      source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.original_page":
-      record_id: "rule.initiative.sr3-core-initiative-worked-pass-order-p102"
-      record_pointer: "/data/original_page"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.initiative.sr3-core-initiative-worked-pass-order-p102.purpose":
@@ -4065,11 +3818,6 @@ core_acceptance_inventory:
       record_pointer: "/data/worked_initial_scores"
       source_review: {path: "docs/engine-readiness/FASA7001_COMBAT_INITIATIVE_ACTIONS_P100-109_CROSSCHECK_2026-11-19.yml", pointer: "/review/original_tests_checked", value_sha256: "303d213e301283713a8bd5a53316c55a6520124761299f1a27cde69ad49ba82c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.source_heading":
-      record_id: "procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123"
-      record_pointer: "/data/source_heading"
-      source_review: {path: "docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml", pointer: "/source_heading_to_canon/4/heading", value_sha256: "81f880c2a031f83726a32ad7d17eb8d7a2200009e927e1f9d24418e4449f20c9"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123.fictional_roles":
       record_id: "procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123"
       record_pointer: "/data/fictional_roles"
@@ -4084,11 +3832,6 @@ core_acceptance_inventory:
       record_id: "procedure.combat.sr3-core-melee-geist-zipperhead-worked-p123"
       record_pointer: "/data/original_opposed_test"
       source_review: {path: "docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml", pointer: "/source_heading_to_canon/4/heading", value_sha256: "81f880c2a031f83726a32ad7d17eb8d7a2200009e927e1f9d24418e4449f20c9"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.source_section":
-      record_id: "rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120"
-      record_pointer: "/data/source_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml", pointer: "/source_heading_to_canon/0/heading", value_sha256: "a71271f494978f5ac7c4cf6c234ea6b2c92c549671aaaf18b52734bc6d969b38"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120.attack_type_routing":
       record_id: "rule.combat.sr3-core-melee-thrown-weapon-attack-routing-p120"
@@ -4105,11 +3848,6 @@ core_acceptance_inventory:
       record_pointer: "/data/base_damage_code"
       source_review: {path: "docs/engine-readiness/FASA7001_MELEE_COMBAT_P120-124_SOURCE_RECONCILIATION_2026-11-19.yml", pointer: "/source_heading_to_canon/0/heading", value_sha256: "a71271f494978f5ac7c4cf6c234ea6b2c92c549671aaaf18b52734bc6d969b38"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.source_location":
-      record_id: "rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111"
-      record_pointer: "/data/source_location"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.blind_fire":
       record_id: "rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111"
       record_pointer: "/data/blind_fire"
@@ -4118,11 +3856,6 @@ core_acceptance_inventory:
     "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.partial_cover":
       record_id: "rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111"
       record_pointer: "/data/partial_cover"
-      source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.existing_canon_reuse":
-      record_id: "rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111"
-      record_pointer: "/data/existing_canon_reuse"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.source_section":
