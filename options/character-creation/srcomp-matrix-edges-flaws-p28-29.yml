@@ -1,0 +1,114 @@
+id: option.character-creation.srcomp-matrix-edges-flaws-p28-29
+record_type: option
+status: source_reviewed
+source: source.srcomp
+printed_pages: 28-29
+pdf_pages: 29-30
+edition_scope: FASA Corporation, Shadowrun Companion FASA7905a, Shadowrun Third Edition;
+  optional Matrix Edges and Flaws
+content_class:
+- character_option
+headline: 'FASA Corporation Shadowrun Companion (FASA7905a), Third Edition: original
+  printed pp28-29 Matrix Edges and Flaws'
+summary: Source-reviewed optional character features from the published fictional
+  Shadowrun tabletop game, with printed point costs, rule effects, restrictions and
+  explicit cross-references.
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    printed_pages:
+    - 28
+    - 29
+    physical_pdf_pages:
+    - 29
+    - 30
+    original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_heading: MATRIX EDGES & FLAWS
+  scope: The original section says that other character Edges and Flaws can apply
+    in the Matrix, but otherwise any character may select these optional traits unless
+    the individual description restricts eligibility.
+  optional_traits:
+  - name: Codeslinger
+    kind: Edge
+    point_value: 2
+    selection: Choose one type of system operation during character creation (source
+      cross-reference Shadowrun, Third Edition, printed p215).
+    effect: Receive one extra die for System Tests when performing that chosen system
+      operation.
+    limit: The source says Codeslinger may be taken only once.
+    paired_flaw: Codeblock
+  - name: Codeblock
+    kind: Flaw
+    point_value: -1
+    selection: The character has difficulty with a particular type of system operation.
+    effect: Lose one die when making any test required by that operation.
+    eligibility: Only characters capable of decking may take this Flaw.
+    paired_edge: Codeslinger
+  - name: Cracker
+    kind: Edge
+    point_value: 4
+    selection: Choose one particular System Test during character creation (original
+      Shadowrun Third Edition p209).
+    effect: Receive one extra die when performing a system operation that requires
+      that chosen System Test.
+    constraints:
+    - Cannot have both Cracker and Codeslinger Edges.
+    - Cracker may be taken only once.
+    - Otaku cannot take the Cracker Edge.
+    paired_flaw: Choker
+  - name: Choker
+    kind: Flaw
+    point_value: -2
+    selection: One particular System Test is affected.
+    effect: Lose one die on operations that require the selected System Test.
+    eligibility: Only characters capable of decking may take this Flaw.
+    paired_edge: Cracker
+  - name: Jack Itch
+    kind: Flaw
+    point_value: -1
+    fictional_condition: A psychosomatic 'jack itch' begins when the character uses
+      head datajacks or chipjacks or even external smartgun links.
+    onset: When jacked in, the character can remain connected without discomfort for
+      Willpower minutes.
+    progression: After that time, the character's tests receive a further +1 adverse
+      Target Number modifier for each additional interval of Willpower minutes spent
+      connected.
+    forced_disconnect: When the cumulative modifier reaches +8, the character enters
+      a frenzy and jacks out.
+    after_disconnect: Reduce the modifier by 1 for every (Willpower + 2) minutes after
+      disconnecting.
+    no_unprinted_maximum: No separately invented cap, added cure, or automatic immunity
+      is inferred from this text.
+  - name: Natural Hardening
+    kind: Edge
+    point_value: 4
+    effect: Gain one point of natural Hardening against neural feedback.
+    stacking: The source says it has exactly the same effect as, and is cumulative
+      with, a cyberdeck's Hardening.
+    scope: The original does not describe separate bonuses to unrelated Matrix System
+      Tests.
+  - name: Scorched
+    kind: Flaw
+    point_value: -1
+    fictional_backstory: The character previously encountered psychotropic Black IC
+      in the setting (source cross-reference Virtual Realities 2.0, printed p49),
+      leaving near-permanent fictional effects.
+    gm_adjudication: The gamemaster determines the precise form and duration of the
+      IC-related effects.
+    mechanical_exception: The character cannot make Willpower Tests to ignore the
+      effects of the psychotropic conditioning.
+    source_limit: This section does not assign a new universal number or duration
+      to those effects.
+  original_source_boundaries:
+    beginning: Matrix heading and Codeslinger/Codeblock, Cracker/Choker and beginning
+      of Jack Itch occur on printed p28/PDF29.
+    continuation: Jack Itch progression and remaining Natural Hardening and Scorched
+      entries occur on printed p29/PDF30, before Miscellaneous Edges and Flaws.
+    adjacent_already_indexed:
+    - options/character-creation/srcomp-magical-edges-flaws-p27-28.yml
+    - options/character-creation/srcomp-miscellaneous-edges-flaws-p29-32.yml
+    - options/character-creation/srcomp-edges-flaws-original-point-value-tables-p31.yml
+framing: reference_exact
