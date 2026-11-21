@@ -63,8 +63,8 @@ postcompletion_mechanics_recovery:
       range_printed: [78, 80]
       range_pdf: [79, 81]
       content_class: rule_procedure
-      commit: 4490736efff0e6328d088f901824e994b440d123
-      blob: 68e0a7829425d47412011bf5a8227ddfe8bff263
+      commit: 69c318adafef87b89d6293506c9e579792260d2f
+      blob: 4856800257161b8ede6eec924548fb0d5da31204
       gate: verified
       contiguous_advance: false
     - id: rule.matrix.program-upgrades-optional-bug-and-glitch-p81-82
@@ -162,8 +162,8 @@ postcompletion_mechanics_recovery:
       range_printed: [83, 85]
       range_pdf: [84, 86]
       content_class: rule_exact
-      commit: 67149ceea4702b42585a50bcae75771e19e93829
-      blob: 0161fdae23a30d342ef2508271f9e97ee0b924e5
+      commit: c3f5d42f5d1782838e9071ed025f0c626cd8df8b
+      blob: 7691cdf34df8ce13777f4da9cdcff0fb03c63253
       gate: verified
       contiguous_advance: false
 
@@ -184,3 +184,39 @@ original_programming_page_class_review_2026_11_20:
   new_semantic_records: 0
   net_new_authorized_pages: 0
   note: "Completes a bounded page/headings and current Git-blob reconciliation; historical full pp76-94 deferred flag is intentionally unchanged until independently supported field-level completion."
+
+# 2026-11-20 later source-fidelity repair, distinct from former bounded page-class scan.
+programming_source_fidelity_corrections_2026_11_20:
+  publication: 'FASA Corporation Matrix FASA7909, Shadowrun Third Edition tabletop game'
+  source_pdf_sha256: b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe
+  actual_repository_verify_source: source_pdf_hash_verified
+  original_images_directly_inspected: [{printed: 78, pdf: 79}, {printed: 84, pdf: 85}]
+  source_reviewed_corrections:
+    - id: rule.matrix.programming-numeric-plan-suite-team-p78-80
+      printed: 78
+      original_source_rule: 'Programming suite memory counts as available toward double-memory test for -2 Computer (Programming) TN modifier.'
+      previous_commit: 4490736efff0e6328d088f901824e994b440d123
+      previous_blob: 68e0a7829425d47412011bf5a8227ddfe8bff263
+      verified_commit: 69c318adafef87b89d6293506c9e579792260d2f
+      verified_blob: 4856800257161b8ede6eec924548fb0d5da31204
+      baseline_sha256: 89e6264413ce972519a4df5bcea8134b24321a85743e042a2298af6bbcdf98eb
+      candidate_sha256: 89e6264413ce972519a4df5bcea8134b24321a85743e042a2298af6bbcdf98eb
+      gate: source_review_stage_prepare_ordinary_update_exact_byte_readback_confirm_verified
+    - id: rule.matrix.optional-utility-program-options-p83-85
+      printed: 84
+      original_source_rule: 'Noise lowers user Detection Factor during System Test, not the System Test target number.'
+      previous_commit: 67149ceea4702b42585a50bcae75771e19e93829
+      previous_blob: 0161fdae23a30d342ef2508271f9e97ee0b924e5
+      verified_commit: c3f5d42f5d1782838e9071ed025f0c626cd8df8b
+      verified_blob: 7691cdf34df8ce13777f4da9cdcff0fb03c63253
+      baseline_sha256: f3f7b6b75c1dc2ce0ea656d036c43823581016081d0fca666122c7c584ac8a70
+      candidate_sha256: 62d5a9cb6c148b89f88ea02fe872c3962009ddb1cc6b241fb6795f4b9344ffc6
+      gate: source_review_stage_prepare_ordinary_update_exact_byte_readback_confirm_verified
+  number_of_new_semantic_records: 0
+  number_of_verified_corrected_semantic_records: 2
+  source_specific_reindexes: 2
+  net_new_authorized_contiguous_pages: 0
+  full_printed_pp76_94_deferred_normalization_resolved: false
+  source_completion_state_unchanged: true
+  denver_checkpoint_modified: false
+  notes: 'Existing historical page-class audit remains scoped to its original snapshot; corrections validated against source images and reindexed without new source pages or pretending full programmatic engine readiness.'
