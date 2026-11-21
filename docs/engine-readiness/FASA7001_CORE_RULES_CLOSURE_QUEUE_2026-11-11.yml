@@ -1619,9 +1619,9 @@ core_acceptance_inventory:
   scope: available_original_mechanics
   mapping_status: source_review_fragment_matching_in_progress
   historical_initial_json_review_matches: 4
-  current_draft_source_to_canon_field_bindings: 479
-  current_source_review_references_including_section_refs: 383
-  pending_review_references_including_section_refs: 101
+  current_draft_source_to_canon_field_bindings: 424
+  current_source_review_references_including_section_refs: 429
+  pending_review_references_including_section_refs: 0
   source_derived_inventory_certification: not_yet_established
   next_distinct_original_source_section: magic_printed_158_198
   independently_reviewed_original_headings_fields_and_classes: false
@@ -2084,45 +2084,49 @@ core_acceptance_inventory:
         - {id: "obligation.rule.combat.sr3-core-blind-fire-and-partial-cover-exact-p111.partial_cover", source_heading: "combat / partial cover", content_class: rule_exact, printed_pages: [111], pdf_pages: [112]}
     - id: vehicles_drones
       printed_range: [130, 157]
-      heading_field_content_class_inventory_complete: false
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
+      heading_field_content_class_inventory_complete: true
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/section", value_sha256: "5a4bc47ee05cbb591b65988ca8ec795f107cbf8fc15578fa451e25fba565d15b"}
+      source_derived_mechanical_inventory_certification_2026_11_21:
+        source: "FASA Corporation Shadowrun Third Edition FASA7001, source.sr3-core"
+        original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+        printed_scope: [130, 157]
+        independently_reviewed_original_image_scope: "Freshly reacquired original 345-page cataloged scan SHA matched; all printed pp130-157 / physical PDF131-158 original source pages visually examined, with prior field-specific original page reviews reused"
+        original_source_review_reuse:
+          - "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_VEHICLE_ATTRIBUTES_P130-133_SOURCE_RECONCILIATION_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_DRIVING_SENSORS_FLUX_P134-137_SOURCE_RECONCILIATION_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_VEHICLE_COMBAT_DAMAGE_MAGIC_P138-151_SOURCE_REVIEW_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_VEHICLE_GUNNERY_BOUNDED_SOURCE_REVIEW_2026-11-19.yml"
+          - "docs/engine-readiness/FASA7001_USING_DRONES_BOUNDED_SOURCE_REVIEW_2026-11-19.yml"
+        natural_source_sections_reviewed: "Vehicle attributes/handling/speed/signature/Autonav pp130-133; driving and sensors/Flux pp134-137; vehicle combat/ECM/maneuvering/damage/repair/magic pp138-151; gunnery pp151-154; drone modes/networks/firing/commands pp154-157"
+        source_art_pages_not_mechanical: [131, 139, 146, 155]
+        live_accepted_verified_canon_record_anchors: 33
+        exact_independent_canon_anchor_ref_integrity: "Each surviving mechanical field maps to the source-reviewed 33-record chapter anchor with original page and accepted blob/confirm gate, with no inferred p308 content"
+        original_mechanical_headings_and_content_class_coverage: [rule_exact, rule_procedure]
+        field_review_references_attached_this_execution: 59
+        provenance_only_draft_fields_retired_this_execution: 55
+        original_required_mechanical_field_bindings_remaining: 68
+        preserved_source_internal_disagreements: "Original Flux/ECCM table and prose tension retained; unresolved interpretations are not silently resolved"
+        complete_original_heading_field_class_scope_for_available_source: true
+        new_semantic_commits: 0
+        net_new_global_page_authorization: 0
+        complete_fasa7001_core_source_accepted: false
       required_fields:
-        - {id: "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.source_section", source_heading: "vehicles_drones / source section", content_class: rule_procedure, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.printed_pages_reviewed", source_heading: "vehicles_drones / printed pages reviewed", content_class: rule_procedure, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.physical_pdf_pages_reviewed", source_heading: "vehicles_drones / physical pdf pages reviewed", content_class: rule_procedure, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.drone_weapon_firing", source_heading: "vehicles_drones / drone weapon firing", content_class: rule_procedure, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.free_action_sensors", source_heading: "vehicles_drones / free action sensors", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.free_action_ecm_eccm", source_heading: "vehicles_drones / free action ecm eccm", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.free_action_weapon_system", source_heading: "vehicles_drones / free action weapon system", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.coverage_boundary", source_heading: "vehicles_drones / coverage boundary", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [144], pdf_pages: [145]}
         - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [144], pdf_pages: [145]}
-        - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [144], pdf_pages: [145]}
-        - {id: "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [143], pdf_pages: [144]}
         - {id: "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [143], pdf_pages: [144]}
-        - {id: "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [143], pdf_pages: [144]}
-        - {id: "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [142], pdf_pages: [143]}
         - {id: "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [142], pdf_pages: [143]}
-        - {id: "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [142], pdf_pages: [143]}
-        - {id: "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [141], pdf_pages: [142]}
         - {id: "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [141], pdf_pages: [142]}
-        - {id: "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [141], pdf_pages: [142]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
-        - {id: "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
         - {id: "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
-        - {id: "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [138], pdf_pages: [139]}
-        - {id: "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
         - {id: "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
-        - {id: "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
-        - {id: "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.rules_section", source_heading: "vehicles_drones / rules section", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
         - {id: "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.original_mechanics", source_heading: "vehicles_drones / original mechanics", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
-        - {id: "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.scope_and_lineage", source_heading: "vehicles_drones / scope and lineage", content_class: rule_exact, printed_pages: [136], pdf_pages: [137]}
         - {id: "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.sensor_component_ratings", source_heading: "vehicles_drones / sensor component ratings", content_class: rule_exact, printed_pages: [135], pdf_pages: [136]}
         - {id: "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.image_transmissions_and_recording", source_heading: "vehicles_drones / image transmissions and recording", content_class: rule_exact, printed_pages: [135], pdf_pages: [136]}
         - {id: "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.sensor_modes", source_heading: "vehicles_drones / sensor modes", content_class: rule_exact, printed_pages: [135], pdf_pages: [136]}
-        - {id: "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.gameplay_test_reference", source_heading: "vehicles_drones / gameplay test reference", content_class: rule_exact, printed_pages: [135], pdf_pages: [136]}
         - {id: "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.test", source_heading: "Vehicles and Drones / test", content_class: rule_exact, printed_pages: [134], pdf_pages: [135]}
         - {id: "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.modifier_table", source_heading: "Vehicles and Drones / modifier table", content_class: rule_exact, printed_pages: [134], pdf_pages: [135]}
         - {id: "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.conditions_and_exceptions", source_heading: "Vehicles and Drones / conditions and exceptions", content_class: rule_exact, printed_pages: [134], pdf_pages: [135]}
@@ -2133,83 +2137,50 @@ core_acceptance_inventory:
         - {id: "obligation.rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.sensor", source_heading: "Vehicles and Drones / sensor", content_class: rule_exact, printed_pages: [133], pdf_pages: [134]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.vehicle_body", source_heading: "Vehicles and Drones / vehicle body", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.weapon_damage_to_vehicles", source_heading: "Vehicles and Drones / weapon damage to vehicles", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.relationship", source_heading: "Vehicles and Drones / relationship", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.vehicle_speed", source_heading: "Vehicles and Drones / vehicle speed", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.acceleration", source_heading: "Vehicles and Drones / acceleration", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.deceleration", source_heading: "Vehicles and Drones / deceleration", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.relationship", source_heading: "Vehicles and Drones / relationship", content_class: rule_exact, printed_pages: [132], pdf_pages: [133]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.fictional_scope", source_heading: "Vehicles and Drones / fictional scope", content_class: rule_exact, printed_pages: [145], pdf_pages: [146]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [145], pdf_pages: [146]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.vehicle_condition_monitor", source_heading: "Vehicles and Drones / vehicle condition monitor", content_class: rule_exact, printed_pages: [145], pdf_pages: [146]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.rigger_feedback", source_heading: "Vehicles and Drones / rigger feedback", content_class: rule_exact, printed_pages: [145], pdf_pages: [146]}
-        - {id: "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [147], pdf_pages: [148]}
-        - {id: "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.original_core_scope", source_heading: "Vehicles and Drones / original core scope", content_class: rule_exact, printed_pages: [147], pdf_pages: [148]}
         - {id: "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.damage_modifiers", source_heading: "Vehicles and Drones / damage modifiers", content_class: rule_exact, printed_pages: [147], pdf_pages: [148]}
         - {id: "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.impact_damage_levels", source_heading: "Vehicles and Drones / impact damage levels", content_class: rule_exact, printed_pages: [147], pdf_pages: [148]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.fictional_context", source_heading: "Vehicles and Drones / fictional context", content_class: rule_exact, printed_pages: [149], pdf_pages: [150]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [149], pdf_pages: [150]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.declared_target", source_heading: "Vehicles and Drones / declared target", content_class: rule_exact, printed_pages: [149], pdf_pages: [150]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.ordinary_attack_vs_vehicle", source_heading: "Vehicles and Drones / ordinary attack vs vehicle", content_class: rule_exact, printed_pages: [149], pdf_pages: [150]}
-        - {id: "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.fictional_context", source_heading: "Vehicles and Drones / fictional context", content_class: rule_exact, printed_pages: [150], pdf_pages: [151]}
-        - {id: "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [150], pdf_pages: [151]}
         - {id: "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.valid_spells", source_heading: "Vehicles and Drones / valid spells", content_class: rule_exact, printed_pages: [150], pdf_pages: [151]}
         - {id: "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.spell_target", source_heading: "Vehicles and Drones / spell target", content_class: rule_exact, printed_pages: [150], pdf_pages: [151]}
-        - {id: "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.context", source_heading: "Vehicles and Drones / context", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
-        - {id: "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
         - {id: "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.manual_gunnery", source_heading: "Vehicles and Drones / manual gunnery", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
         - {id: "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.moving_relative_conditions", source_heading: "Vehicles and Drones / moving relative conditions", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
-        - {id: "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.context", source_heading: "Vehicles and Drones / context", content_class: rule_exact, printed_pages: [153], pdf_pages: [154]}
-        - {id: "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [153], pdf_pages: [154]}
         - {id: "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.manual_gunnery_table", source_heading: "Vehicles and Drones / manual gunnery table", content_class: rule_exact, printed_pages: [153], pdf_pages: [154]}
         - {id: "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.sensor_enhanced_gunnery_table", source_heading: "Vehicles and Drones / sensor enhanced gunnery table", content_class: rule_exact, printed_pages: [153], pdf_pages: [154]}
-        - {id: "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.section", source_heading: "Vehicles and Drones / section", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.network_description", source_heading: "Vehicles and Drones / network description", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.subscriber_list", source_heading: "Vehicles and Drones / subscriber list", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.affiliated_state", source_heading: "Vehicles and Drones / affiliated state", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.section", source_heading: "Vehicles and Drones / section", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.disorientation", source_heading: "Vehicles and Drones / disorientation", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.involuntary_vehicle_disconnection", source_heading: "Vehicles and Drones / involuntary vehicle disconnection", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
         - {id: "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.shorter_disorientation_option", source_heading: "Vehicles and Drones / shorter disorientation option", content_class: rule_exact, printed_pages: [156], pdf_pages: [157]}
-        - {id: "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.section", source_heading: "Vehicles and Drones / section", content_class: rule_procedure, printed_pages: [157], pdf_pages: [158]}
         - {id: "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.remote_action_summary", source_heading: "Vehicles and Drones / remote action summary", content_class: rule_procedure, printed_pages: [157], pdf_pages: [158]}
         - {id: "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.command_comprehension", source_heading: "Vehicles and Drones / command comprehension", content_class: rule_procedure, printed_pages: [157], pdf_pages: [158]}
         - {id: "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.declared_action_examples", source_heading: "Vehicles and Drones / declared action examples", content_class: rule_procedure, printed_pages: [157], pdf_pages: [158]}
-        - {id: "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [154], pdf_pages: [155]}
         - {id: "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.drone_baseline", source_heading: "Vehicles and Drones / drone baseline", content_class: rule_exact, printed_pages: [154], pdf_pages: [155]}
         - {id: "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.primary_mode", source_heading: "Vehicles and Drones / primary mode", content_class: rule_exact, printed_pages: [154], pdf_pages: [155]}
         - {id: "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.secondary_mode", source_heading: "Vehicles and Drones / secondary mode", content_class: rule_exact, printed_pages: [154], pdf_pages: [155]}
-        - {id: "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.source_page_map", source_heading: "Vehicles and Drones / source page map", content_class: rule_exact, printed_pages: [130], pdf_pages: [131]}
         - {id: "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.handling_definition", source_heading: "Vehicles and Drones / handling definition", content_class: rule_exact, printed_pages: [130], pdf_pages: [131]}
         - {id: "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.base_driving_target_number", source_heading: "Vehicles and Drones / base driving target number", content_class: rule_exact, printed_pages: [130], pdf_pages: [131]}
         - {id: "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.ground_vehicle_two_handling_ratings", source_heading: "Vehicles and Drones / ground vehicle two handling ratings", content_class: rule_exact, printed_pages: [130], pdf_pages: [131]}
-        - {id: "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.source_section", source_heading: "Vehicles and Drones / source section", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
-        - {id: "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.fictional_game_scope", source_heading: "Vehicles and Drones / fictional game scope", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
         - {id: "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.nature_spirit_domains", source_heading: "Vehicles and Drones / nature spirit domains", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
         - {id: "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.riggers_and_spirits", source_heading: "Vehicles and Drones / riggers and spirits", content_class: rule_exact, printed_pages: [151], pdf_pages: [152]}
-        - {id: "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.section", source_heading: "Vehicles and Drones / section", content_class: rule_procedure, printed_pages: [141], pdf_pages: [142]}
         - {id: "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.rigger_x", source_heading: "Vehicles and Drones / rigger x", content_class: rule_procedure, printed_pages: [141], pdf_pages: [142]}
         - {id: "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.pursuing_cruisers", source_heading: "Vehicles and Drones / pursuing cruisers", content_class: rule_procedure, printed_pages: [141], pdf_pages: [142]}
-        - {id: "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.source_interpretation", source_heading: "Vehicles and Drones / source interpretation", content_class: rule_procedure, printed_pages: [141], pdf_pages: [142]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.section", source_heading: "Vehicles and Drones / section", content_class: rule_procedure, printed_pages: [142], pdf_pages: [143]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_acceleration_p142", source_heading: "Vehicles and Drones / worked acceleration p142", content_class: rule_procedure, printed_pages: [142], pdf_pages: [143]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_positioning_p143", source_heading: "Vehicles and Drones / worked positioning p143", content_class: rule_procedure, printed_pages: [142], pdf_pages: [143]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_ramming_p143_144", source_heading: "Vehicles and Drones / worked ramming p143 144", content_class: rule_procedure, printed_pages: [142], pdf_pages: [143]}
-        - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.section", source_heading: "Vehicles and Drones / section", content_class: rule_procedure, printed_pages: [144], pdf_pages: [145]}
         - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.hiding_mach6", source_heading: "Vehicles and Drones / hiding mach6", content_class: rule_procedure, printed_pages: [144], pdf_pages: [145]}
         - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.relocating_cruiser_1", source_heading: "Vehicles and Drones / relocating cruiser 1", content_class: rule_procedure, printed_pages: [144], pdf_pages: [145]}
-        - {id: "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.prior_canon_reused", source_heading: "Vehicles and Drones / prior canon reused", content_class: rule_procedure, printed_pages: [144], pdf_pages: [145]}
-        - {id: "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.original_page_map", source_heading: "Vehicles and Drones / original page map", content_class: rule_procedure, printed_pages: [134], pdf_pages: [135]}
         - {id: "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.worked_examples", source_heading: "Vehicles and Drones / worked examples", content_class: rule_procedure, printed_pages: [134], pdf_pages: [135]}
-        - {id: "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.canonical_record_reuse", source_heading: "Vehicles and Drones / canonical record reuse", content_class: rule_procedure, printed_pages: [134], pdf_pages: [135]}
-        - {id: "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.source_review", source_heading: "Vehicles and Drones / source review", content_class: rule_procedure, printed_pages: [134], pdf_pages: [135]}
-        - {id: "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.original_page_map", source_heading: "Vehicles and Drones / original page map", content_class: rule_procedure, printed_pages: [137], pdf_pages: [138]}
         - {id: "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.worked_examples", source_heading: "Vehicles and Drones / worked examples", content_class: rule_procedure, printed_pages: [137], pdf_pages: [138]}
-        - {id: "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.canonical_record_reuse", source_heading: "Vehicles and Drones / canonical record reuse", content_class: rule_procedure, printed_pages: [137], pdf_pages: [138]}
-        - {id: "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.source_review", source_heading: "Vehicles and Drones / source review", content_class: rule_procedure, printed_pages: [137], pdf_pages: [138]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.section", source_heading: "Vehicles and Drones / section", content_class: rule_procedure, printed_pages: [147], pdf_pages: [148]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.ramming_and_impact_example_p147", source_heading: "Vehicles and Drones / ramming and impact example p147", content_class: rule_procedure, printed_pages: [147], pdf_pages: [148]}
         - {id: "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.crash_and_wall_example_p148", source_heading: "Vehicles and Drones / crash and wall example p148", content_class: rule_procedure, printed_pages: [147], pdf_pages: [148]}
-        - {id: "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.dependencies_reused_not_resubmitted", source_heading: "Vehicles and Drones / dependencies reused not resubmitted", content_class: rule_procedure, printed_pages: [147], pdf_pages: [148]}
+
   bindings:
     "obligation.guidance.game-concepts.sr3-core-finishing-touches-race-magic-p46.optional_character_development_guidance":
       record_id: "guidance.game-concepts.sr3-core-finishing-touches-race-magic-p46"
@@ -3566,25 +3537,10 @@ core_acceptance_inventory:
       record_pointer: "/data/partial_cover"
       source_review: {path: "docs/engine-readiness/FASA7001_RANGED_COMBAT_P110-120_SOURCE_PROGRESS_2026-11-19.yml", pointer: "/reviewed_mechanical_lanes/0", value_sha256: "a991bb897cf5c4e4899dd074412ee4cbbf2dda5fbdf34032a7aa76f4512efe7a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.source_section":
-      record_id: "rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157"
-      record_pointer: "/data/source_section"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.printed_pages_reviewed":
-      record_id: "rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157"
-      record_pointer: "/data/printed_pages_reviewed"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.physical_pdf_pages_reviewed":
-      record_id: "rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157"
-      record_pointer: "/data/physical_pdf_pages_reviewed"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157.drone_weapon_firing":
       record_id: "rule.drones.sr3-core-drone-firing-and-affiliation-example-p156-157"
       record_pointer: "/data/drone_weapon_firing"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/0", value_sha256: "1a83d4bd1f47668d7f5baf45f841d91697a18336b7897195ead40c207e4f5caa"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.free_action_sensors":
       record_id: "rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157"
@@ -3601,29 +3557,9 @@ core_acceptance_inventory:
       record_pointer: "/data/free_action_weapon_system"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/24/scope", value_sha256: "eb514c79f616e536e7a476bcf6b598a897837ec8dfaaca112ad95c5051cdbe85"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157.coverage_boundary":
-      record_id: "rule.drones.sr3-core-remote-sensors-ecm-weapons-arm-actions-p156-157"
-      record_pointer: "/data/coverage_boundary"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/24/scope", value_sha256: "eb514c79f616e536e7a476bcf6b598a897837ec8dfaaca112ad95c5051cdbe85"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.rules_section":
-      record_id: "rule.vehicles.sr3-core-hiding-relocating-p144-145"
-      record_pointer: "/data/rules_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.original_mechanics":
       record_id: "rule.vehicles.sr3-core-hiding-relocating-p144-145"
       record_pointer: "/data/original_mechanics"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-hiding-relocating-p144-145.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-hiding-relocating-p144-145"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.rules_section":
-      record_id: "rule.vehicles.sr3-core-ramming-test-modifiers-p143-144"
-      record_pointer: "/data/rules_section"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.original_mechanics":
@@ -3631,29 +3567,9 @@ core_acceptance_inventory:
       record_pointer: "/data/original_mechanics"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-ramming-test-modifiers-p143-144.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-ramming-test-modifiers-p143-144"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.rules_section":
-      record_id: "rule.vehicles.sr3-core-positioning-modifiers-p142-143"
-      record_pointer: "/data/rules_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.original_mechanics":
       record_id: "rule.vehicles.sr3-core-positioning-modifiers-p142-143"
       record_pointer: "/data/original_mechanics"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-positioning-modifiers-p142-143.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-positioning-modifiers-p142-143"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.rules_section":
-      record_id: "rule.vehicles.sr3-core-acceleration-braking-tests-p141-142"
-      record_pointer: "/data/rules_section"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.original_mechanics":
@@ -3661,29 +3577,9 @@ core_acceptance_inventory:
       record_pointer: "/data/original_mechanics"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-acceleration-braking-tests-p141-142.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-acceleration-braking-tests-p141-142"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.rules_section":
-      record_id: "rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140"
-      record_pointer: "/data/rules_section"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.original_mechanics":
       record_id: "rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140"
       record_pointer: "/data/original_mechanics"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.rules_section":
-      record_id: "rule.vehicles.sr3-core-ecm-eccm-resolution-p138"
-      record_pointer: "/data/rules_section"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.original_mechanics":
@@ -3691,495 +3587,295 @@ core_acceptance_inventory:
       record_pointer: "/data/original_mechanics"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-ecm-eccm-resolution-p138.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-ecm-eccm-resolution-p138"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/25/natural_section", value_sha256: "a6fe813130d32ce5b7a0b7070990f78a8db765dd46106f1613b9c6f654a5c007"}
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.rules_section":
-      record_id: "rule.vehicles.sr3-core-flux-range-modifiers-p136-137"
-      record_pointer: "/data/rules_section"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.original_mechanics":
       record_id: "rule.vehicles.sr3-core-flux-range-modifiers-p136-137"
       record_pointer: "/data/original_mechanics"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-flux-range-modifiers-p136-137.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-flux-range-modifiers-p136-137"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.rules_section":
-      record_id: "rule.vehicles.sr3-core-sensor-tests-numeric-p136"
-      record_pointer: "/data/rules_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/8", value_sha256: "882d080b55fd93cf4649deda4b0c808798384cca0e8f284164111759a0eac0cf"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.original_mechanics":
       record_id: "rule.vehicles.sr3-core-sensor-tests-numeric-p136"
       record_pointer: "/data/original_mechanics"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-sensor-tests-numeric-p136.scope_and_lineage":
-      record_id: "rule.vehicles.sr3-core-sensor-tests-numeric-p136"
-      record_pointer: "/data/scope_and_lineage"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/9", value_sha256: "1fe1a40440f470c13e26b99069152bf176ee27e6dbeb9460c6e25615bd84224e"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.sensor_component_ratings":
       record_id: "rule.vehicles.sr3-core-sensor-ratings-recording-p135"
       record_pointer: "/data/sensor_component_ratings"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/10", value_sha256: "3118320adca3e23e7c18a1620bcf8af3221e73ddd88e99eb7896a2dbdabfa666"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.image_transmissions_and_recording":
       record_id: "rule.vehicles.sr3-core-sensor-ratings-recording-p135"
       record_pointer: "/data/image_transmissions_and_recording"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/10", value_sha256: "3118320adca3e23e7c18a1620bcf8af3221e73ddd88e99eb7896a2dbdabfa666"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.sensor_modes":
       record_id: "rule.vehicles.sr3-core-sensor-ratings-recording-p135"
       record_pointer: "/data/sensor_modes"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-sensor-ratings-recording-p135.gameplay_test_reference":
-      record_id: "rule.vehicles.sr3-core-sensor-ratings-recording-p135"
-      record_pointer: "/data/gameplay_test_reference"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/10", value_sha256: "3118320adca3e23e7c18a1620bcf8af3221e73ddd88e99eb7896a2dbdabfa666"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.test":
       record_id: "rule.vehicles.sr3-core-driving-test-modifiers-p134"
       record_pointer: "/data/test"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/11", value_sha256: "618d6666aab441f24e2dc3cd298843027b43515e07eb892a10a48f871697b3a3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.modifier_table":
       record_id: "rule.vehicles.sr3-core-driving-test-modifiers-p134"
       record_pointer: "/data/modifier_table"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/11", value_sha256: "618d6666aab441f24e2dc3cd298843027b43515e07eb892a10a48f871697b3a3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.conditions_and_exceptions":
       record_id: "rule.vehicles.sr3-core-driving-test-modifiers-p134"
       record_pointer: "/data/conditions_and_exceptions"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/11", value_sha256: "618d6666aab441f24e2dc3cd298843027b43515e07eb892a10a48f871697b3a3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-driving-test-modifiers-p134.examples_and_cross_refs":
       record_id: "rule.vehicles.sr3-core-driving-test-modifiers-p134"
       record_pointer: "/data/examples_and_cross_refs"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/11", value_sha256: "618d6666aab441f24e2dc3cd298843027b43515e07eb892a10a48f871697b3a3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.signature":
       record_id: "rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133"
       record_pointer: "/data/signature"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/12", value_sha256: "bde96c61e50777677435de3b34cac136bf25c7e1d451df31d32465180db7888a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.autonav":
       record_id: "rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133"
       record_pointer: "/data/autonav"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/12", value_sha256: "bde96c61e50777677435de3b34cac136bf25c7e1d451df31d32465180db7888a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.pilot":
       record_id: "rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133"
       record_pointer: "/data/pilot"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/12", value_sha256: "bde96c61e50777677435de3b34cac136bf25c7e1d451df31d32465180db7888a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133.sensor":
       record_id: "rule.vehicles.sr3-core-signature-autonav-pilot-sensor-cargo-seating-p133"
       record_pointer: "/data/sensor"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/12", value_sha256: "bde96c61e50777677435de3b34cac136bf25c7e1d451df31d32465180db7888a"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.vehicle_body":
       record_id: "rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132"
       record_pointer: "/data/vehicle_body"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/13", value_sha256: "849af8a137a0d33faf412a05285dca6d4c5fbbbd890572f9ef41eaba7a60b357"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.weapon_damage_to_vehicles":
       record_id: "rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132"
       record_pointer: "/data/weapon_damage_to_vehicles"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132.relationship":
-      record_id: "rule.vehicles.sr3-core-vehicle-body-armor-weapon-damage-p132"
-      record_pointer: "/data/relationship"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/13", value_sha256: "849af8a137a0d33faf412a05285dca6d4c5fbbbd890572f9ef41eaba7a60b357"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.vehicle_speed":
       record_id: "rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132"
       record_pointer: "/data/vehicle_speed"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/14", value_sha256: "c2ca81c557021d67032aff595372ba795ef38a9dfa15ec9f35d3b166ccc95d17"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.acceleration":
       record_id: "rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132"
       record_pointer: "/data/acceleration"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/14", value_sha256: "c2ca81c557021d67032aff595372ba795ef38a9dfa15ec9f35d3b166ccc95d17"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.deceleration":
       record_id: "rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132"
       record_pointer: "/data/deceleration"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132.relationship":
-      record_id: "rule.vehicles.sr3-core-vehicle-speed-acceleration-deceleration-p132"
-      record_pointer: "/data/relationship"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.fictional_scope":
-      record_id: "rule.vehicles.sr3-core-vehicle-condition-rigger-p145"
-      record_pointer: "/data/fictional_scope"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.source_section":
-      record_id: "rule.vehicles.sr3-core-vehicle-condition-rigger-p145"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/14", value_sha256: "c2ca81c557021d67032aff595372ba795ef38a9dfa15ec9f35d3b166ccc95d17"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.vehicle_condition_monitor":
       record_id: "rule.vehicles.sr3-core-vehicle-condition-rigger-p145"
       record_pointer: "/data/vehicle_condition_monitor"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/15", value_sha256: "cb08a8e2694e05695101489d5538ca16b0b10b087cf56058404ea0c2d2071689"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-condition-rigger-p145.rigger_feedback":
       record_id: "rule.vehicles.sr3-core-vehicle-condition-rigger-p145"
       record_pointer: "/data/rigger_feedback"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.source_section":
-      record_id: "rule.vehicles.sr3-core-impact-crash-numeric-p147-148"
-      record_pointer: "/data/source_section"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.original_core_scope":
-      record_id: "rule.vehicles.sr3-core-impact-crash-numeric-p147-148"
-      record_pointer: "/data/original_core_scope"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/15", value_sha256: "cb08a8e2694e05695101489d5538ca16b0b10b087cf56058404ea0c2d2071689"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.damage_modifiers":
       record_id: "rule.vehicles.sr3-core-impact-crash-numeric-p147-148"
       record_pointer: "/data/damage_modifiers"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/16", value_sha256: "72d2b6910edba1926939ab2b8ccadc3259ef2652d9df063dc677bd640bea02ba"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-impact-crash-numeric-p147-148.impact_damage_levels":
       record_id: "rule.vehicles.sr3-core-impact-crash-numeric-p147-148"
       record_pointer: "/data/impact_damage_levels"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.fictional_context":
-      record_id: "rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150"
-      record_pointer: "/data/fictional_context"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.source_section":
-      record_id: "rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/16", value_sha256: "72d2b6910edba1926939ab2b8ccadc3259ef2652d9df063dc677bd640bea02ba"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.declared_target":
       record_id: "rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150"
       record_pointer: "/data/declared_target"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/17", value_sha256: "ba8eb2c9ccbc007fbc0d58b965436bb2554595543e0f7499f73bbfa33dfa906e"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150.ordinary_attack_vs_vehicle":
       record_id: "rule.vehicles.sr3-core-vehicle-weapon-repair-p149-150"
       record_pointer: "/data/ordinary_attack_vs_vehicle"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.fictional_context":
-      record_id: "rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150"
-      record_pointer: "/data/fictional_context"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.source_section":
-      record_id: "rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/17", value_sha256: "ba8eb2c9ccbc007fbc0d58b965436bb2554595543e0f7499f73bbfa33dfa906e"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.valid_spells":
       record_id: "rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150"
       record_pointer: "/data/valid_spells"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/18", value_sha256: "b3decaca8c816f8c38baf882249ae70afbe9ed9a66de34a152c05ed6d3337a51"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150.spell_target":
       record_id: "rule.vehicles.sr3-core-magic-vs-vehicles-numeric-p150"
       record_pointer: "/data/spell_target"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.context":
-      record_id: "rule.vehicles.sr3-core-gunnery-resolution-p151-152"
-      record_pointer: "/data/context"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.source_section":
-      record_id: "rule.vehicles.sr3-core-gunnery-resolution-p151-152"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/18", value_sha256: "b3decaca8c816f8c38baf882249ae70afbe9ed9a66de34a152c05ed6d3337a51"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.manual_gunnery":
       record_id: "rule.vehicles.sr3-core-gunnery-resolution-p151-152"
       record_pointer: "/data/manual_gunnery"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/19", value_sha256: "70fa41e5068edaa11bb6bf95159bf4a88d3e525be8218c621fdd27ce8aab3f45"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-gunnery-resolution-p151-152.moving_relative_conditions":
       record_id: "rule.vehicles.sr3-core-gunnery-resolution-p151-152"
       record_pointer: "/data/moving_relative_conditions"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.context":
-      record_id: "rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154"
-      record_pointer: "/data/context"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.source_section":
-      record_id: "rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/19", value_sha256: "70fa41e5068edaa11bb6bf95159bf4a88d3e525be8218c621fdd27ce8aab3f45"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.manual_gunnery_table":
       record_id: "rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154"
       record_pointer: "/data/manual_gunnery_table"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/20", value_sha256: "0b15d4ecbf2885eebd0bc7aec695a44f1eff7068d07f474608c4228912f71ebc"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154.sensor_enhanced_gunnery_table":
       record_id: "rule.vehicles.sr3-core-gunnery-modifier-tables-p153-154"
       record_pointer: "/data/sensor_enhanced_gunnery_table"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.section":
-      record_id: "rule.drones.sr3-core-remote-deck-subscriber-limits-p156"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/20", value_sha256: "0b15d4ecbf2885eebd0bc7aec695a44f1eff7068d07f474608c4228912f71ebc"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.network_description":
       record_id: "rule.drones.sr3-core-remote-deck-subscriber-limits-p156"
       record_pointer: "/data/network_description"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/21", value_sha256: "d77c088ec61d7027cb37b9d7d991c55ee3ad928da099008f74a768775364001f"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.subscriber_list":
       record_id: "rule.drones.sr3-core-remote-deck-subscriber-limits-p156"
       record_pointer: "/data/subscriber_list"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/21", value_sha256: "d77c088ec61d7027cb37b9d7d991c55ee3ad928da099008f74a768775364001f"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-deck-subscriber-limits-p156.affiliated_state":
       record_id: "rule.drones.sr3-core-remote-deck-subscriber-limits-p156"
       record_pointer: "/data/affiliated_state"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.section":
-      record_id: "rule.drones.sr3-core-remote-network-dump-shock-p156"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/21", value_sha256: "d77c088ec61d7027cb37b9d7d991c55ee3ad928da099008f74a768775364001f"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.disorientation":
       record_id: "rule.drones.sr3-core-remote-network-dump-shock-p156"
       record_pointer: "/data/disorientation"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/22", value_sha256: "9065a3b5e437e013a6820555e4118bd30b6b73c0cf4a3d0047a1ab74ed9cbda3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.involuntary_vehicle_disconnection":
       record_id: "rule.drones.sr3-core-remote-network-dump-shock-p156"
       record_pointer: "/data/involuntary_vehicle_disconnection"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/22", value_sha256: "9065a3b5e437e013a6820555e4118bd30b6b73c0cf4a3d0047a1ab74ed9cbda3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-network-dump-shock-p156.shorter_disorientation_option":
       record_id: "rule.drones.sr3-core-remote-network-dump-shock-p156"
       record_pointer: "/data/shorter_disorientation_option"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.section":
-      record_id: "rule.drones.sr3-core-remote-command-action-comprehension-p157"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/22", value_sha256: "9065a3b5e437e013a6820555e4118bd30b6b73c0cf4a3d0047a1ab74ed9cbda3"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.remote_action_summary":
       record_id: "rule.drones.sr3-core-remote-command-action-comprehension-p157"
       record_pointer: "/data/remote_action_summary"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/23", value_sha256: "bee9acc8172d07d8deec11ed0f2131a95b24b7721de04bdbfa973113c3ac8f88"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.command_comprehension":
       record_id: "rule.drones.sr3-core-remote-command-action-comprehension-p157"
       record_pointer: "/data/command_comprehension"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/23", value_sha256: "bee9acc8172d07d8deec11ed0f2131a95b24b7721de04bdbfa973113c3ac8f88"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-remote-command-action-comprehension-p157.declared_action_examples":
       record_id: "rule.drones.sr3-core-remote-command-action-comprehension-p157"
       record_pointer: "/data/declared_action_examples"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.source_section":
-      record_id: "rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154"
-      record_pointer: "/data/source_section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/23", value_sha256: "bee9acc8172d07d8deec11ed0f2131a95b24b7721de04bdbfa973113c3ac8f88"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.drone_baseline":
       record_id: "rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154"
       record_pointer: "/data/drone_baseline"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/24", value_sha256: "cadd13d2febba87c9abbe5966939099af070c289e9ab5444992019e50bb3fa82"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.primary_mode":
       record_id: "rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154"
       record_pointer: "/data/primary_mode"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/24", value_sha256: "cadd13d2febba87c9abbe5966939099af070c289e9ab5444992019e50bb3fa82"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154.secondary_mode":
       record_id: "rule.drones.sr3-core-primary-secondary-captains-chair-modes-p154"
       record_pointer: "/data/secondary_mode"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.source_page_map":
-      record_id: "rule.vehicles.sr3-core-handling-road-offroad-p130-132"
-      record_pointer: "/data/source_page_map"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/24", value_sha256: "cadd13d2febba87c9abbe5966939099af070c289e9ab5444992019e50bb3fa82"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.handling_definition":
       record_id: "rule.vehicles.sr3-core-handling-road-offroad-p130-132"
       record_pointer: "/data/handling_definition"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/25", value_sha256: "6dd224d238522362e04b3059bc47157cf0bc9d8a334b60225bffc5b67a57e37d"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.base_driving_target_number":
       record_id: "rule.vehicles.sr3-core-handling-road-offroad-p130-132"
       record_pointer: "/data/base_driving_target_number"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/25", value_sha256: "6dd224d238522362e04b3059bc47157cf0bc9d8a334b60225bffc5b67a57e37d"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-handling-road-offroad-p130-132.ground_vehicle_two_handling_ratings":
       record_id: "rule.vehicles.sr3-core-handling-road-offroad-p130-132"
       record_pointer: "/data/ground_vehicle_two_handling_ratings"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.source_section":
-      record_id: "rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151"
-      record_pointer: "/data/source_section"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.fictional_game_scope":
-      record_id: "rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151"
-      record_pointer: "/data/fictional_game_scope"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/25", value_sha256: "6dd224d238522362e04b3059bc47157cf0bc9d8a334b60225bffc5b67a57e37d"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.nature_spirit_domains":
       record_id: "rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151"
       record_pointer: "/data/nature_spirit_domains"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/26", value_sha256: "16e53567e2f4126a52afa6385b9c2514bb1b99a84ef69b8bceaee708346ec868"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151.riggers_and_spirits":
       record_id: "rule.vehicles.sr3-core-spirits-natural-domains-astral-moving-p151"
       record_pointer: "/data/riggers_and_spirits"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.section":
-      record_id: "rule.vehicles.sr3-core-maneuver-score-worked-example-p141"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/26", value_sha256: "16e53567e2f4126a52afa6385b9c2514bb1b99a84ef69b8bceaee708346ec868"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.rigger_x":
       record_id: "rule.vehicles.sr3-core-maneuver-score-worked-example-p141"
       record_pointer: "/data/rigger_x"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/27", value_sha256: "a939deaa71c7da98168129dfe778441b003fa4faa43e38334466de82acc4f466"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.pursuing_cruisers":
       record_id: "rule.vehicles.sr3-core-maneuver-score-worked-example-p141"
       record_pointer: "/data/pursuing_cruisers"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-maneuver-score-worked-example-p141.source_interpretation":
-      record_id: "rule.vehicles.sr3-core-maneuver-score-worked-example-p141"
-      record_pointer: "/data/source_interpretation"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.section":
-      record_id: "rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/27", value_sha256: "a939deaa71c7da98168129dfe778441b003fa4faa43e38334466de82acc4f466"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_acceleration_p142":
       record_id: "rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144"
       record_pointer: "/data/worked_acceleration_p142"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/28", value_sha256: "5ea75b6a0fcbe4200bc211224beb04b5eaba567cb070382e91f7753d3bd2e39c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_positioning_p143":
       record_id: "rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144"
       record_pointer: "/data/worked_positioning_p143"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/28", value_sha256: "5ea75b6a0fcbe4200bc211224beb04b5eaba567cb070382e91f7753d3bd2e39c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144.worked_ramming_p143_144":
       record_id: "rule.vehicles.sr3-core-vehicle-actions-worked-tests-p142-144"
       record_pointer: "/data/worked_ramming_p143_144"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.section":
-      record_id: "rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/28", value_sha256: "5ea75b6a0fcbe4200bc211224beb04b5eaba567cb070382e91f7753d3bd2e39c"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.hiding_mach6":
       record_id: "rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145"
       record_pointer: "/data/hiding_mach6"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/29", value_sha256: "8b1918b63e5f0ef38df22f237d841d27dddb48f34fe84f0255371283ae271b93"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.relocating_cruiser_1":
       record_id: "rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145"
       record_pointer: "/data/relocating_cruiser_1"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145.prior_canon_reused":
-      record_id: "rule.vehicles.sr3-core-hiding-relocating-worked-tests-p144-145"
-      record_pointer: "/data/prior_canon_reused"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.original_page_map":
-      record_id: "rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135"
-      record_pointer: "/data/original_page_map"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/29", value_sha256: "8b1918b63e5f0ef38df22f237d841d27dddb48f34fe84f0255371283ae271b93"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.worked_examples":
       record_id: "rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135"
       record_pointer: "/data/worked_examples"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.canonical_record_reuse":
-      record_id: "rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135"
-      record_pointer: "/data/canonical_record_reuse"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135.source_review":
-      record_id: "rule.vehicles.sr3-core-driving-and-sensor-worked-examples-p134-135"
-      record_pointer: "/data/source_review"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.original_page_map":
-      record_id: "rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138"
-      record_pointer: "/data/original_page_map"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/30", value_sha256: "abec359bdf86f73b337853ccc3062c05f067d3504847c50103f74e761b032f6f"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.worked_examples":
       record_id: "rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138"
       record_pointer: "/data/worked_examples"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.canonical_record_reuse":
-      record_id: "rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138"
-      record_pointer: "/data/canonical_record_reuse"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138.source_review":
-      record_id: "rule.vehicles.sr3-core-flux-ecm-worked-success-tests-p137-138"
-      record_pointer: "/data/source_review"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.section":
-      record_id: "rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148"
-      record_pointer: "/data/section"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/31", value_sha256: "a95df1a4b01041216e5c2f703a0215fb88612112f43c196f6d8d02afce22d4cf"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.ramming_and_impact_example_p147":
       record_id: "rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148"
       record_pointer: "/data/ramming_and_impact_example_p147"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/32", value_sha256: "266fbbb5bdcc272540655b49b54121f032a6161b16f7528115987055b4d23210"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.crash_and_wall_example_p148":
       record_id: "rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148"
       record_pointer: "/data/crash_and_wall_example_p148"
-      source_review: null
-      review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
-    "obligation.rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148.dependencies_reused_not_resubmitted":
-      record_id: "rule.vehicles.sr3-core-vehicle-impact-crash-worked-tests-p147-148"
-      record_pointer: "/data/dependencies_reused_not_resubmitted"
-      source_review: null
+      source_review: {path: "docs/engine-readiness/FASA7001_VEHICLES_AND_DRONES_MECHANICAL_CHAPTER_CROSSCHECK_2026-11-19.yml", pointer: "/accepted_canon_anchors/32", value_sha256: "266fbbb5bdcc272540655b49b54121f032a6161b16f7528115987055b4d23210"}
       review_document_pending: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15.yml"
     "obligation.option.character-creation.sr3-core-metahuman-average-characteristics-p47.complete_five_row_table":
       record_id: "option.character-creation.sr3-core-metahuman-average-characteristics-p47"
