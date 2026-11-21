@@ -1,0 +1,56 @@
+id: audit.sota63.genetech-game-info-p25-30-2026-11-21
+record_kind: source_scoped_mechanics_reconciliation_not_semantic_rule
+publication: {title: 'State of the Art: 2063', publisher: FanPro, catalog: FanPro10664, edition: 'Shadowrun Third Edition', publication_year: 2003}
+source: source.fanpro-10664
+original:
+  sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  physical_pages: 130
+  printed_reviewed: [25, 30]
+  physical_pdf_reviewed: [26, 31]
+  scanned_images_individually_inspected: [26, 27, 28, 29, 30, 31]
+  fresh_drive_source_hash_matched: true
+  actual_repository_verify_source: source_pdf_hash_verified
+  exact_repo_script_blobs_verified: true
+  test_receipts: {connector_preflight: 29, ingestion_preservation: 40, transaction_recovery: 16, passed: 85}
+current_source_manifest:
+  path: sources/manifests/StateOfTheArt2063.yml
+  semantic_index_commit: b7a0b4b54ae7886179752d19889b14fcdd38d8b2
+  readback_blob: dc99cef6bfd01dcdb73e91ee1dc8da1d018a88e0
+  unique_ids_and_paths: 108
+  status: ingesting
+  authorized_global_pages_added: 0
+source_proven_corrections:
+  - printed: 29
+    physical_pdf: 30
+    assertion: 'Genetic Immunization market table cost is 25,000¥, not the earlier 7,500¥ value.'
+    path: rules/genetech/immunization-and-protective-agents.yml
+    previous_blob: cf0bb08a64e065984ef304049bc876b1e90cb7a2
+    semantic_commit: 0358fda612d3a94faff4198504cefe74f36ae803
+    accepted_blob: a3e92e53661c72fd98ac6a4c9ce9cf3ae5743cee
+    source_specific_reindex: cdd07ba761ca08023f094dbd5fc8d87b1aab96ac
+    gates: actual_stage_prepare_normal_contents_exact_readback_confirm_recovery_verified
+  - printed: 30
+    physical_pdf: 31
+    assertion: 'Ebola Plus first post-exposure unaugmented-Body damage resistance is 8L, not the earlier 5L.'
+    path: entities/chemistry/genetech-pathogens.yml
+    previous_blob: 0f9ee7c8ad72e61b39bf20b475b5e42616ff4e9a
+    semantic_commit: e7b3a9d977be4729d79d9fab45b20715340b160a
+    accepted_blob: 40a59d86742315747cfa00fca6fd924f7b57cd52
+    source_specific_reindex: b7a0b4b54ae7886179752d19889b14fcdd38d8b2
+    gates: actual_stage_prepare_normal_contents_exact_readback_confirm_recovery_verified
+previously_canonicalized_related_paths_reused_without_resubmission:
+  - rules/genetech/general-and-compatibility.yml
+  - rules/genetech/gene-therapy-and-rejuvenation.yml
+  - rules/genetech/phenotypic-and-environmental-modification.yml
+  - rules/genetech/direct-protein-synthesis.yml
+  - rules/genetech/dna-masking-and-scanners.yml
+scope:
+  new_semantic_ids: 0
+  source_specific_index_registrations_added: 2
+  note: 'Five existing legacy Genetech records contain normalized mechanical content but are not counted as newly stage/prepare/confirm-gated or newly registered in this run.'
+  newly_identified_numerical_errors_closed: 2
+  full_source_completion: false
+  executable_engine_validated: false
+  next: 'Reconcile remaining genuinely unreviewed SOTA source-specific mechanics from the live ledger. Do not duplicate the two repaired p29-30 records; any new original-source discrepancy needs a fresh fully gated transaction. Preserve older source records and omissions.'
+  Denver: 'FASA7212 printed pp46-47 archived, authoritative boundary p45/PDF46, unchanged.'
+  core_FASA7001_p308: 'Owner-accepted deferred nonblocking scan limitation, not counted as source-verified.'
