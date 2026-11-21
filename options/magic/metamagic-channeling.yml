@@ -1,0 +1,67 @@
+id: option.magic.metamagic-channeling
+record_type: option
+name: 'Metamagic: Channeling'
+domain: magic
+status: source_reviewed
+source: source.fanpro-10651
+printed_pages: 109-110
+pdf_pages: 110-111
+edition_scope: 'FanPro Target: Awakened Lands (FanPro10651), Shadowrun Third Edition, printed pp109–110/PDF110–111, fictional
+  tabletop metamagic, not real supernatural claims'
+content_class:
+- character_option
+data:
+  prerequisites:
+  - Initiate who can use Conjuring
+  - A bound spirit that still owes services, present in astral space, with the spirit aura in contact with the initiate aura
+  activation:
+    action: Exclusive Complex Action
+    test: Conjuring Test
+    target_number: (2 x spirit Force) - initiate Grade
+    success: Each success grants 10 minutes of channelling; no successes fails
+    all_ones: Spirit immediately goes free, either to metaplanes or becoming free spirit; preserve as source-specific rule-of-one
+      consequence
+  spirit_and_body:
+    merge: Spirit astral form merges with initiate aura while its own mind remains suspended
+    physical_attributes: Increase each of initiate Physical Attributes by spirit Force for duration
+    powers: Initiate may use spirit powers at spirit Force without additional service cost during channelling
+    excluded_powers:
+    - Engulf
+    - Materialization
+    great_form: Great-form spirit also grants Immunity (Normal Weapons) at spirit Force
+    vulnerabilities: Initiate inherits channeled spirit vulnerabilities
+    other_magic: Initiate remains able to use their own normal abilities and controls their body
+    astral_limit: Spirit cannot be attacked in astral combat or have its control contested by another magician, but may be
+      banished
+    banishment: Initiate adds Charisma dice to spirit Force Tests opposing banishment
+  maintenance:
+    must_remain_embodied: true
+    astral_projection: Immediately ends channeling
+    damage_target: Injury affects initiate only, not spirit
+    unconscious: Immediately ends channeling
+  end:
+    conditions:
+    - elapsed channelling time
+    - voluntary end
+    - astral projection
+    - unconsciousness
+    services: The channeled spirit’s service to the initiate is concluded, regardless of how many services had remained owed
+      when channeling began; the source does not specify that only one service is expended.
+    drain: Immediately resist (spirit Force)D Stun Drain using Charisma
+    physical_drain_if: Spirit Force exceeds initiate Magic rating
+  worked_example: A Grade 3 initiate channels Force 4 spirit with 2 Conjuring successes for 20 minutes; increases Physical
+    Attributes by 4 and receives spirit powers permitted by the source.
+sources:
+- source: source.fanpro-10651
+  printed_pages: 109-110
+  pdf_pages: 110-111
+  relation: defines
+  note: Game Information/New Metamagic/Channeling, original FanPro book
+notes:
+- All rules are fictional tabletop resolution; no extra real-world instructions.
+- The original gives no floor for the Conjuring target number when grade is high; do not invent one.
+framing: reference_exact
+headline: Channeling metamagic — FanPro10651 pp109–110/PDF110–111
+summary: 'Original Shadowrun Third Edition Target: Awakened Lands fictional tabletop metamagic: initiate channels a bound
+  spirit through an Exclusive Complex Action and Conjuring Test, receiving specific powers, attribute bonuses, strict termination
+  and Drain effects.'
