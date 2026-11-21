@@ -135,8 +135,8 @@ postcompletion_mechanics_recovery:
       range_printed: [92, 94]
       range_pdf: [93, 95]
       content_class: rule_procedure
-      commit: 88e6387b1815dd3def5da84432dec481113b9e38
-      blob: 8e150f0b8c6434f4c09abfbe6dab5d854ddd7b2f
+      commit: 1b7d934ee3144ba1df712e6c79f203048789cb83
+      blob: 77a618948d33866ac21c58bfad296bf2354c7e0c
       gate: verified
       contiguous_advance: false
     - id: rule.matrix.program-rating-constraints-p76
@@ -321,4 +321,26 @@ matrix_worm_additional_source_fields_2026_11_20:
   new_distinct_semantic_ids: 0
   global_authorized_pages: 0
   full_range_pending_programming_field_review: true
+  denver_checkpoint_changed: false
+
+# Original Matrix p92/PDF93, independent infection-check versus cleanup source-fidelity fix; separate from full pp76-94 completion.
+matrix_mpcp_infection_check_cleanup_correction_2026_11_20_2302:
+  publication: 'FASA Corporation Matrix FASA7909, Shadowrun Third Edition tabletop RPG'
+  source: source.matrix
+  original_pdf_sha256: b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe
+  original_printed_page: 92
+  original_physical_pdf_page: 93
+  exact_correction: 'MPCP infection status check uses the same check as a program infection check, and a confirmed infected MPCP is disinfected as a program. Prior field mistakenly described the Disinfect cleanup test as the check to determine whether the MPCP was infected. No new numeric TN inferred.'
+  path: rules/matrix/matrix-fictional-worm-programs-p92-94.yml
+  prior_semantic_commit: 88e6387b1815dd3def5da84432dec481113b9e38
+  prior_semantic_blob: 8e150f0b8c6434f4c09abfbe6dab5d854ddd7b2f
+  accepted_semantic_commit: 1b7d934ee3144ba1df712e6c79f203048789cb83
+  accepted_semantic_blob: 77a618948d33866ac21c58bfad296bf2354c7e0c
+  source_reviewed_baseline_sha256: e1699b012c35243d27a160465b18edcbb04acdf0a0f2f2f54deb637d04eb3b07
+  candidate_sha256: e1699b012c35243d27a160465b18edcbb04acdf0a0f2f2f54deb637d04eb3b07
+  immutable_sha256: 7570f4f1c5cfdd14b55d5acf1d0f306da03991310108bdcab6ef4fd006bf9184
+  gates: 'Fresh original SHA, actual repository verify-source, original page independent review, baseline and candidate, stage/prepare, ordinary Contents update, matching exact Git blob readback, confirm verified and recovery inspect verified'
+  new_distinct_semantic_ids: 0
+  new_contiguous_pages: 0
+  full_programming_pp76_94_normalization_resolved: false
   denver_checkpoint_changed: false
