@@ -1,51 +1,55 @@
 id: rule.contacts.spilling-the-beans
 record_type: rule
-name: "Spilling the Beans"
+name: Spilling the Beans
 domain: contacts
 status: ingested
-
 effective:
   status: optional
   source: source.srcomp
   page: 67
   basis: extends
-
 scope:
   applies_to:
-    - "determining how much information a knowledgeable contact is willing to reveal"
-
+  - determining how much information a knowledgeable contact is willing to reveal
 resolution:
-  summary: "A contact's knowledge and willingness to reveal it are separate. The gamemaster may resolve willingness with an Etiquette test whose default target number is 4, or use a Negotiation-versus-Intelligence Success Contest for a more detailed interaction."
+  summary: A contact's knowledge and willingness to reveal it are separate. The gamemaster
+    may resolve willingness with an Etiquette test whose default target number is
+    4, or use a Negotiation-versus-Intelligence Success Contest for a more detailed
+    interaction.
   inputs:
-    - "information sensitivity"
-    - "contact relationship"
-    - "debts, hostility, culture, language, and payment"
-    - "character Negotiation and contact Intelligence for the Success Contest option"
+  - information sensitivity
+  - contact relationship
+  - debts, hostility, culture, language, and payment
+  - character Negotiation and contact Intelligence for the Success Contest option
   outputs:
-    - "amount of information disclosed"
-    - "refusal or misleading information"
+  - amount of information disclosed
+  - refusal or misleading information
   standard_method:
-    skill: "Etiquette"
+    skill: Etiquette
     base_target_number: 4
-    result: "Successes determine how much the contact reveals; the gamemaster adjusts the target number for the sensitivity and circumstances."
+    result: Successes determine how much the contact reveals; the gamemaster adjusts
+      the target number for the sensitivity and circumstances.
   success_contest:
-    character_test: "Negotiation"
-    contact_test: "Intelligence"
-    resolution: "Contact successes offset the character's successes. If the contact generates more successes than the character, the contact may refuse to reveal anything or may provide misleading information."
+    character_test: Negotiation
+    contact_test: Intelligence
+    resolution: Contact successes offset the character's successes. If the contact
+      generates more successes than the character, the contact may refuse to reveal
+      anything or may provide misleading information.
     contact_test_target_modifiers:
       character_essence_below_1: -2
-      character_essence_below_0_cybermancy: "negative Essence - 2, rounded down; see source note for interrogation use"
+      character_essence_below_0_cybermancy: negative Essence - 2, rounded down; see
+        source note for interrogation use
       contact_suspicious: -2
       planned_action_beneficial_to_contact: 2
       planned_action_pleasurable_to_contact: 1
       planned_action_annoying_to_contact: -1
       planned_action_harmful_to_contact: -2
       planned_action_disastrous_to_contact: -3
-      character_displays_racist_attitudes: "gamemaster discretion"
+      character_displays_racist_attitudes: gamemaster discretion
       level_1_contact: 0
       level_2_contact: 1
       level_3_contact: 2
-      fof: "-1 per level between the FOF and the primary contact"
+      fof: -1 per level between the FOF and the primary contact
       contact_owes_character: 1
       character_owes_contact: -1
       contact_hostile: -3
@@ -54,29 +58,76 @@ resolution:
       moderate_cultural_difference: -2
       dramatic_cultural_difference: -3
       extreme_cultural_difference: -4
-      language_barrier: "-1 per point below 5 in Language Rating"
-      extra_nuyen: "+1 per 10 percent increase above normal fee"
+      language_barrier: -1 per point below 5 in Language Rating
+      extra_nuyen: +1 per 10 percent increase above normal fee
     minimum_target_number: 2
     modifiers_cumulative: true
-
+    original_negative_essence_table_and_footnote:
+      printed_table_cell: negative Essence - 2 (rounded down)
+      printed_table_kind: contact target modifier; preserve literal table cell
+      optional_footnote_context: In interrogations, a negative Essence may benefit
+        a character. Gamemasters can apply a target modifier equal to the absolute
+        value of the negative Essence (remove the negative sign) plus 2.
+      optional_footnote_formula: absolute_value_of_negative_Essence + 2
+      applicability: optional GM judgement in interrogations, not unconditional replacement
+        of the table cell
+      source_precedence: no erratum or general precedence inferred
 links:
   uses:
-    - entity.contact.contact
+  - entity.contact.contact
   affects: []
   modified_by: []
   interacts_with:
-    - rule.contacts.contact-knowledge
-    - rule.contacts.friends-of-friends
-
+  - rule.contacts.contact-knowledge
+  - rule.contacts.friends-of-friends
 sources:
-  - source: source.srcomp
-    page: 67
-    relation: extends
-    note: "Spilling the Beans"
-  - source: source.srcomp
-    page: 68
-    relation: extends
-    note: "Contact Success Contest Table"
-
+- source: source.srcomp
+  page: 67
+  relation: extends
+  note: Spilling the Beans
+- source: source.srcomp
+  page: 68
+  relation: extends
+  note: Contact Success Contest Table
 notes:
-  - "The modifiers apply to the contact's side of the optional Success Contest as described by the source example."
+- The modifiers apply to the contact's side of the optional Success Contest as described
+  by the source example.
+source: source.srcomp
+printed_pages: 67-68
+pdf_pages: 68-69
+edition_scope: FASA Corporation, Shadowrun Companion, FASA7905a, Shadowrun Third Edition,
+  optional contacts information-disclosure rules
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    edition: Shadowrun Third Edition
+    catalog_id: FASA7905a
+    original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+    printed_pages:
+    - 67
+    - 68
+    pdf_pages:
+    - 68
+    - 69
+  information_vs_disclosure: Knowledge of information and willingness to reveal it
+    are separate optional determinations, per original Spilling the Beans text.
+  optional_contact_success_contest:
+    character_test: Negotiation
+    contact_test: Intelligence
+    modifiers_apply_to: contact side target number
+    modifiers_cumulative: true
+    minimum_target_number: 2
+  negative_essence_source_table_literal: negative Essence - 2 (rounded down)
+  negative_essence_footnote:
+    condition: optional benefit to character in interrogations
+    gm_may_apply_modifier: absolute value of character negative Essence plus 2
+    not_unconditional_table_replacement: true
+  source_fidelity: Preserve original negative-Essence table entry and optional interrogation
+    footnote separately, without invented erratum or precedence.
+framing: reference_exact
+headline: rule.contacts.spilling-the-beans — archival rule_exact record
+summary: Source-indexed rule_exact from source.srcomp, printed pages 67-68; substantive
+  assertions and provenance are in the structured data.
