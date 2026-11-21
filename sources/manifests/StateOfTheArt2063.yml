@@ -992,6 +992,16 @@ postscan_verified_mechanics_recovery:
       gate: verified
       contiguous_advance: false
 
+    - id: catalog.chemistry.genetech-pathogens
+      path: entities/chemistry/genetech-pathogens.yml
+      range_printed: [30, 30]
+      range_pdf: [31, 31]
+      content_class: rule_exact
+      commit: e7b3a9d977be4729d79d9fab45b20715340b160a
+      blob: 40a59d86742315747cfa00fca6fd924f7b57cd52
+      gate: verified
+      contiguous_advance: false
+
 # 2026-11-21 narrowly source-reviewed SOTA2063 Security game-rule correction; no new IDs or page credit.
 security_light_switch_source_field_correction_2026_11_21:
   source: source.fanpro-10664
@@ -1148,6 +1158,34 @@ genetech_immunization_price_and_agent_scope_2026_11_21:
   immutable_sha256: 13aa1574e67ec545a44a614a39f60fab5001f13acb850a6738c74a826a7ccb07
   source_review_and_gates: 'Original printed p29/PDF30 and p30/PDF31 high-resolution image review; independently authored corrected baseline and same-substance candidate; actual transaction stage including ingestion_gate.prepare; ordinary GitHub Contents update and fresh exact blob/commit readback; ingestion_gate.confirm and transaction_recovery.inspect verified.'
   preserved_history: 'The erroneous original canonical source blob remains in Git history. Previously indexed unrelated SOTA records and source status are preserved.'
+  newly_verified_semantic_paths: 1
+  source_specific_registration_delta: 1
+  new_global_contiguous_pages: 0
+  source_completion_gate_passed: false
+  engine_implementation_verified: false
+  denver_checkpoint_changed: false
+
+# Original Genetech fictional pathogens p30 source-fidelity correction; no global page credit.
+genetech_pathogens_game_damage_2026_11_21:
+  publication: 'FanPro State of the Art: 2063, FanPro10664 (2003), Shadowrun Third Edition fictional tabletop rules'
+  source_id: source.fanpro-10664
+  original_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  original_printed: [30, 30]
+  physical_pdf: [31, 31]
+  direct_original_image_reviewed: true
+  actual_repository_verify_source: source_pdf_hash_verified
+  old_game_ebola_plus_initial_damage: 5L
+  original_game_ebola_plus_initial_damage: 8L
+  corrected_source_fields: ['data.entries[id=entity.chemistry.ebola-plus].progression[0]', 'data.entries[id=entity.chemistry.ebola-plus].survival_after_course', 'data.entries[id=entity.chemistry.gamma-anthrax].source_worked_consequence']
+  corrected_canonical_path: entities/chemistry/genetech-pathogens.yml
+  prior_blob: 0f9ee7c8ad72e61b39bf20b475b5e42616ff4e9a
+  semantic_commit: e7b3a9d977be4729d79d9fab45b20715340b160a
+  confirmed_blob: 40a59d86742315747cfa00fca6fd924f7b57cd52
+  baseline_sha256: 746c80c4a90d6f36a0033145632de074d5d7720984b68249a8e7bb561f4022ad
+  candidate_sha256: 78101116117de4d411deb6dc478ff22e00d5ab417fe171f601cdb8998b83ac16
+  immutable_sha256: 35df11184394d1f79e1e6132bbb54e54b8c84c1c6d38b57c2e1e2c80cd6fc146
+  source_review_and_gates: 'Original printed p30/PDF31 high-resolution source-image and editorial review; independent corrected baseline and same-substance candidate; actual transaction stage including ingestion_gate.prepare; ordinary GitHub Contents update, exact fresh blob/commit readback, ingestion_gate.confirm and transaction_recovery.inspect verified.'
+  preserved_history: 'Prior source-game erroneous value preserved in Git history. No duplicate or new semantic ID.'
   newly_verified_semantic_paths: 1
   source_specific_registration_delta: 1
   new_global_contiguous_pages: 0
