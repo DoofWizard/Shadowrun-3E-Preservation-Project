@@ -187,6 +187,21 @@ data:
     field_rations:
       survival_test_target_number_effect: Adequate self-heating rations reduce Survival
         Test target number; no value given on source page.
+      optional_fictional_game_test:
+        scope: The original FanPro tabletop game gives characters an optional improvised
+          field-ration explosive game effect; no real-world construction or use is
+          described here.
+        test: Demolitions Test
+        target_number: 4
+        success_required: true
+        on_success_power_formula: min(3 + number_of_test_successes, 10)
+        base_damage_level: M
+        power_falloff: −1 Power per 0.5 meter in the fictional game blast
+        fictional_trigger_conditions:
+        - impact
+        - heat
+        source: 'FanPro State of the Art: 2063 original printed p75/PDF76, Field Rations
+          paragraph; optional game rule, not an equipment recipe.'
     military_rucksacks:
       small:
         approx_volume_cubic_cm: 15000
