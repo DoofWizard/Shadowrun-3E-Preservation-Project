@@ -1,6 +1,6 @@
 # Shadowrun Third Edition — Core
 
-**The available-source FASA7001 rules/data core is consolidated and delivered.**
+**The accepted FASA7001 rules/data package is delivered. Final core-completeness acceptance remains unresolved.**
 
 Publication: FASA Corporation, Shadowrun, Third Edition, FASA7001. Original per-record printed/PDF provenance is retained.
 
@@ -10,7 +10,7 @@ Publication: FASA Corporation, Shadowrun, Third Edition, FASA7001. Original per-
 
 The entrypoint contains all **447 accepted, source-registered core records**: **409 protected mechanical records** and **38 associated guidance/context records**, organized through the original **15-section core ledger**. Each record links to its existing canonical path and carries its source range, content class, accepted commit, Git blob and SHA-256.
 
-The earlier four-record November 10 digest is superseded by this complete registered-core entrypoint; its previous bytes remain in Git history. No canonical rule was rewritten for this delivery.
+The earlier four-record November 10 digest is superseded by this entrypoint for all currently registered core records; its previous bytes remain in Git history. No canonical rule was rewritten for this delivery. Packaging all registered records does not by itself establish that every required original rule field is represented.
 
 ## Scope and evidence
 
@@ -30,7 +30,20 @@ The core includes tests and dice; character creation and sample archetypes; skil
 
 Printed p308 remains an owner-accepted nonblocking scan omission. The current record mapping is p307/PDF316 then p309/PDF317; no absent content is invented. Preserve original internal rule discrepancies and edition/optional-rule distinctions as recorded.
 
-This is the completed available-source rules/data consolidation milestone. Complete game-engine execution and exhaustive narrative-book archiving are separate scopes. Further supplement transcription is separate Pass B work and does not postpone this core deliverable.
+## Final acceptance status — corrected November 21, 2026
+
+The [core closure ledger](docs/engine-readiness/FASA7001_CORE_RULES_CLOSURE_QUEUE_2026-11-11.yml) records a scoped available-source mechanical closeout, while its completion block still records:
+
+- `available_source_mechanics_scoped_consolidated: true`
+- `complete_core_rule_normalization: false`
+- `completeness_gate_passed: false`
+- `numeric_table_inventory_fully_verified: false`
+
+The source manifest also retains `scan_complete_normalization_pending`. The scoped closeout reports no demonstrated remaining available-source mechanical field gap in its reviewed ranges, but expressly limits what the reused bounded receipts establish. Those facts support the delivered package; they do not resolve the final core-completeness acceptance conditions.
+
+The earlier unqualified completion statement was too broad. Reconcile the existing original-heading, numeric-field and content-class receipts into one explicit available-source core acceptance result. Reuse unchanged accepted evidence; inspect original source again only for a specifically uncovered or conflicting field. Do not invent new missing mechanics, repeat closed chapter audits, or mark the false completion fields true without supporting evidence and the applicable authorization. Record the owner's nonblocking scan-omission policy, without crediting unseen pages.
+
+The same hourly worker must prioritize this outstanding core acceptance work before further unrelated supplement transcription. Existing supplement commits remain valid separate Pass B work. Full game-engine implementation and exhaustive narrative archiving remain separate scopes; neither is added as a prerequisite for the core rules/data deliverable.
 
 ## Export or load the core
 
