@@ -1,0 +1,111 @@
+id: rule.contacts.srcomp-fof-modifiers-costs-and-waiting-p62-63
+record_type: rule
+status: source_reviewed
+source: source.srcomp
+printed_pages: 62-63
+pdf_pages: 63-64
+edition_scope: FASA Corporation Shadowrun Companion FASA7905a, Shadowrun Third Edition
+  optional contacts rules
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    catalog: FASA7905a
+    edition: Shadowrun Third Edition
+    original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+    printed_pages:
+    - 62
+    - 63
+    physical_pdf_pages:
+    - 63
+    - 64
+  original_headings:
+  - Friends of a Friend
+  - Friend of a Friend Modifiers Table
+  - Using FOFs
+  - Waiting for the Goods
+  source_rule_scope: Optional secondary-contact rules. A character's personal contacts
+    have contacts of their own, known as Friends of a Friend (FOFs). The original
+    table's Target Number entries are positive modifiers to tests, not absolute target
+    numbers.
+  primary_contact_network_baseline:
+    normal_contact: One Level 1, one Level 2 and one Level 3 secondary contact.
+    exception: Fixers and Mr. Johnson contacts usually have two other contacts at
+      each level.
+    gamemaster_adjustment: GM may adjust network counts for the campaign; giving ordinary
+      contacts more than three FOFs is treated as a notable departure.
+  friend_of_friend_modifiers_table:
+    columns_as_printed:
+    - FOF_Level
+    - Target_Number_Modifier
+    - Cost_Time_Multiplier
+    - Wrong_Party_Target_Modifier
+    rows:
+    - fof_level: 1
+      target_number_modifier: 6
+      cost_time_multiplier: 3
+      wrong_party_target_modifier: -2
+    - fof_level: 2
+      target_number_modifier: 4
+      cost_time_multiplier: 2
+      wrong_party_target_modifier: -1
+    - fof_level: 3
+      target_number_modifier: 2
+      cost_time_multiplier_source_literal: see_text
+      wrong_party_target_modifier: 0
+    - fof_level: each_fof_after_first
+      target_number_modifier: 2
+      cost_time_multiplier_source_literal: see_text
+      wrong_party_target_modifier: -2
+    - fof_level: asking_around
+      target_number_modifier_source_literal: dash
+      cost_time_multiplier_source_literal: dash
+      wrong_party_target_modifier: -3
+    target_modifier_semantics: Add the FOF Target Number Modifier to the applicable
+      base test Target Number, using ordinary test dice and applicable dice bonuses
+      from the primary contact.
+    wrong_party_semantics: Apply the separate negative modifier to the Wrong Party
+      Test; it does not change the original information-acquisition test in place
+      of the positive modifier.
+    additional_hops: Every Friend of a Friend after the first imposes the published
+      additional +2 target number modifier; the source does not assign a universal
+      numeric multiplier for each extra hop.
+  fees:
+    base_fee: Calculate the normal contact fee under original Shadowrun Third Edition
+      contact fee rules, then multiply by the FOF Cost/Time Multiplier where numeric.
+    third_level: A Level 3 FOF may reduce or waive the fee at the gamemaster's discretion,
+      so the table prints see text rather than a fixed multiplier.
+    example: With Charisma 3 and Intelligence 5 and 2 Etiquette successes, the illustrated
+      normal contact fee calculation is (3 x 5 x 50) divided by 2 = 375 nuyen, before
+      any additional FOF fees or discounts.
+  waiting_for_goods:
+    when_standard_availability_exists: Multiply the source item's normal Availability
+      time by the applicable FOF Cost/Time Multiplier.
+    when_no_availability_exists: Roll 2D6 days for the base wait, then multiply the
+      rolled days by the applicable cost-time multiplier.
+    accelerated_wait: Each Etiquette Test success OR each additional payment equal
+      to 10 percent of the contact fee may reduce the wait by one day; standard Availability
+      procedures still apply.
+    example: A Level 3 FOF in the fictional example may offer rapid access for a favor,
+      whereas a fee-paying route may take four days.
+  adjacent_already_accepted_legacy:
+  - path: rules/contacts/friends-of-friends.yml
+    field_distinction: The legacy record uses modifiers.level_1.target_number and
+      similar keys for values 6, 4, 2. The original table explicitly labels them Target
+      Number Modifier with plus signs; this source-specific record makes additive
+      semantics explicit without silently rewriting the legacy consumer.
+  - path: rules/contacts/wrong-party.yml
+    field_distinction: The Wrong Party Test has its own base TN and dice, and is modified
+      by the separate Wrong Party Target Modifier column.
+  lineages:
+    original_sr3_contact_fees: source.sr3-core, printed p254
+    extended_source: source.srcomp, printed pp62-63
+    source_status: optional character contact mechanics, not a baseline guarantee
+      of unlimited FOF access.
+framing: reference_exact
+headline: rule.contacts.srcomp-fof-modifiers-costs-and-waiting-p62-63 — archival rule_exact
+  record
+summary: Source-indexed rule_exact from source.srcomp, printed pages 62-63; substantive
+  assertions and provenance are in the structured data.
