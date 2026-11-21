@@ -1022,6 +1022,16 @@ postscan_verified_mechanics_recovery:
       gate: verified
       contiguous_advance: false
 
+    - id: rule.genetech.direct-protein-synthesis
+      path: rules/genetech/direct-protein-synthesis.yml
+      range_printed: [27, 28]
+      range_pdf: [28, 29]
+      content_class: rule_exact
+      commit: e81b28c6dd4336bbc67b5d730aa3a9cfeb54024d
+      blob: fdb0221e6b7c773214961ef3d990f0461b66db0c
+      gate: verified
+      contiguous_advance: false
+
 # 2026-11-21 narrowly source-reviewed SOTA2063 Security game-rule correction; no new IDs or page credit.
 security_light_switch_source_field_correction_2026_11_21:
   source: source.fanpro-10664
@@ -1235,3 +1245,29 @@ dna_masking_bio_index_dash_correction_2026_11_21:
   new_globally_authorized_pages: 0
   full_source_completion_gate_passed: false
   Denver_checkpoint_changed: false
+
+# Independently source-verified corrected direct-protein effect-onset treatment distinction; no global page credit.
+direct_protein_synthesis_treatment_effect_correction_2026_11_21:
+  source_id: source.fanpro-10664
+  publication: 'FanPro, State of the Art: 2063 (FanPro10664, 2003), Shadowrun Third Edition tabletop mechanics'
+  original_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  original_printed: [27, 28]
+  physical_pdf: [28, 29]
+  actual_verify_source: source_pdf_hash_verified
+  reviewed_canonical_path: rules/genetech/direct-protein-synthesis.yml
+  corrected_fields: ['general.onset', 'general.significant_physical_effects', 'data.general.onset', 'data.general.significant_physical_effects']
+  source_distinction: 'General protein synthesis approaches full effectiveness approximately one month after treatment; enhancements with significant physical effects require a longer treatment but take effect when the character leaves the clinic.'
+  original_legacy_blob: 7e23ffeb0023171b43c39f386dc6f621692236f5
+  semantic_commit: e81b28c6dd4336bbc67b5d730aa3a9cfeb54024d
+  confirmed_blob: fdb0221e6b7c773214961ef3d990f0461b66db0c
+  baseline_sha256: 695b0d1cc419fc21e965c289e6488758581b707c117cd444c1fe6e6d8b503bfa
+  candidate_sha256: bf503e793b78995d9c3910ae50808270146faef3aaaa6a8219e15f24b163e346
+  immutable_sha256: cbed6fe2eeddc36d3a113dd33da58385a4d9dd6cc2a253173b9dbb1492032920
+  transaction: 'Fresh original-page visual review and exact source hash; independently source-reviewed baseline and immutable candidate; actual transaction stage/prepare; ordinary GitHub Contents update with exact commit/blob/bytes readback; ingestion_gate confirm and recovery inspect verified; 29 connector-preflight tests passed.'
+  preserved_history: 'All unrelated existing records and original legacy root fields retained; former assertion preserved in Git history.'
+  new_semantic_ids: 0
+  new_source_specific_registrations: 1
+  new_global_contiguous_pages: 0
+  source_completion_gate_passed: false
+  source_status_changed: false
+  denver_checkpoint_changed: false
