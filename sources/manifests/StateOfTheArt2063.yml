@@ -982,6 +982,16 @@ postscan_verified_mechanics_recovery:
       gate: verified
       contiguous_advance: false
 
+    - id: rule.genetech.immunization-and-protective-agents
+      path: rules/genetech/immunization-and-protective-agents.yml
+      range_printed: [29, 30]
+      range_pdf: [30, 31]
+      content_class: rule_exact
+      commit: 0358fda612d3a94faff4198504cefe74f36ae803
+      blob: a3e92e53661c72fd98ac6a4c9ce9cf3ae5743cee
+      gate: verified
+      contiguous_advance: false
+
 # 2026-11-21 narrowly source-reviewed SOTA2063 Security game-rule correction; no new IDs or page credit.
 security_light_switch_source_field_correction_2026_11_21:
   source: source.fanpro-10664
@@ -1116,3 +1126,31 @@ retinal_preserve_spell_p102_source_fidelity_correction_2026_11_21:
   source_status_changed: false
   denver_checkpoint_changed: false
   next_eligible_source: 'Continue source-specific Keeping the Rabble Out remaining actual mechanic field reconciliation; do not redo pp97-99 already indexed record classes without a named error.'
+
+# Original Genetech p29-30 source-fidelity correction, confirmed before indexing; no global page credit.
+genetech_immunization_price_and_agent_scope_2026_11_21:
+  publication: 'FanPro State of the Art: 2063, FanPro10664 (2003), Shadowrun Third Edition tabletop mechanics'
+  source_id: source.fanpro-10664
+  original_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  original_printed: [29, 30]
+  physical_pdf: [30, 31]
+  direct_original_images_reviewed: true
+  actual_repository_verify_source: source_pdf_hash_verified
+  original_table_price_immunization_yen: 25000
+  former_legacy_canonical_price_yen: 7500
+  corrected_source_fields: ['data.immunization.cost', 'data.immunization.exceeding_limit', 'data.protective_agents.general_nonhealing_limit', 'data.protective_agents.antibac.repeat_doses_allowed', 'data.protective_agents.zeta_interferon.repeat_doses_allowed', 'data.protective_agents.binder.repeat_doses_allowed']
+  corrected_canonical_path: rules/genetech/immunization-and-protective-agents.yml
+  prior_blob: cf0bb08a64e065984ef304049bc876b1e90cb7a2
+  semantic_commit: 0358fda612d3a94faff4198504cefe74f36ae803
+  confirmed_blob: a3e92e53661c72fd98ac6a4c9ce9cf3ae5743cee
+  baseline_sha256: 01522c7d8fb233b9ce6b4d8f17ea850825edd4680fb9bd8ecfcb003991d7c663
+  candidate_sha256: 2285b633d6816fab6f3dbf322b2110386e59d75fed166094ebd086612ca3ec96
+  immutable_sha256: 13aa1574e67ec545a44a614a39f60fab5001f13acb850a6738c74a826a7ccb07
+  source_review_and_gates: 'Original printed p29/PDF30 and p30/PDF31 high-resolution image review; independently authored corrected baseline and same-substance candidate; actual transaction stage including ingestion_gate.prepare; ordinary GitHub Contents update and fresh exact blob/commit readback; ingestion_gate.confirm and transaction_recovery.inspect verified.'
+  preserved_history: 'The erroneous original canonical source blob remains in Git history. Previously indexed unrelated SOTA records and source status are preserved.'
+  newly_verified_semantic_paths: 1
+  source_specific_registration_delta: 1
+  new_global_contiguous_pages: 0
+  source_completion_gate_passed: false
+  engine_implementation_verified: false
+  denver_checkpoint_changed: false
