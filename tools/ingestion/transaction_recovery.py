@@ -356,7 +356,15 @@ def render_manifest(original:str,authorization:dict,record_keys:dict[str,str]):
         if 'resolved_pending: []' in s:
             s=s.replace('resolved_pending: []','resolved_pending:\n  - '+pending_id,1)
         else:
-            s=s.replace('resolved_pending:\n','resolved_pending:\n  - '+pending_id+'\n',1)
+            # Some source manifests use root-aligned YAML sequence items, while
+            # others indent them under resolved_pending. Preserve the existing
+            # sequence indentation instead of inserting a mismatched item.
+            field_start, field_end = _root_field_span(s, 'resolved_pending')
+            field = s[field_start:field_end]
+            first_item = re.search(r'^([ \t]*)-\s', field, flags=re.M)
+            require(first_item is not None, 'resolved_pending_sequence_missing')
+            insert_at = field_start + first_item.start()
+            s = s[:insert_at] + first_item.group(1) + '- ' + pending_id + '\n' + s[insert_at:]
     new=''.join(f'  - ["{key}", {req[path]}]\n' for path,key in record_keys.items() if key not in index)
     if new:
         field_start,field_end=_root_field_span(s,'records')
