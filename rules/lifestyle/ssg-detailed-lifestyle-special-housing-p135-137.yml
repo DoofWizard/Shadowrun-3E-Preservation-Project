@@ -1,0 +1,81 @@
+id: rule.lifestyle.ssg-detailed-lifestyle-special-housing-p135-137
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: 135-137
+pdf_pages: 136-138
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), fictional Shadowrun Third Edition optional Detailed Lifestyles
+  supplement; extends FASA7001 without changing the core lifestyle system
+content_class:
+- rule_procedure
+framing: reference_exact
+headline: Optional hotel, recreational vehicle and workshop housing calculations — FanPro Sprawl Survival Guide, Third Edition,
+  pp135-137
+summary: Source-exact fictional game procedures for nightly hotel-room costs, mobile RV area point apportionment and tools/workshop
+  space rental.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+    source_kind: fictional tabletop role-playing game supplement
+    printed_pages:
+    - 135
+    - 136
+    - 137
+    physical_pdf_pages:
+    - 136
+    - 137
+    - 138
+  section: Game Information / Detailed Lifestyles / Special Cases / Hotel Rooms / RV / Workshops and Facilities
+  optional: true
+  hotel_rooms:
+    reuse_existing_hotel_rating_record: rule.lifestyle.ssg-detailed-lifestyle-burglary-hotel-p135
+    area_rating_is_extra: Add local district Area points to five hotel-type point totals before consulting source monthly
+      cost table; Area is not included in the Hotel Ratings Table.
+    nightly_room_formula: One-night rate equals the adjusted monthly calculated lifestyle cost divided by 30.
+    room_occupancy_rule: Prices are per person; for multiple intended occupants of same room, multiply calculated price by
+      number of persons, subject to GM hotel-specific adjustments.
+    worked_example:
+      hotel: Granada Hotel hostel
+      area: C
+      hotel_without_area_points: 9
+      area_points: 3
+      combined_points: 12
+      base_monthly_cost_nuyen: 1000
+      flaw: No Privacy, level 2
+      modifier: -0.1
+      adjusted_monthly_cost_nuyen: 900
+      one_night_per_person_nuyen: 30
+      six_persons_monthly_nuyen: 5400
+  recreational_vehicles:
+    vehicle_basis: The character owns the recreational vehicle; Space, Furnishings and Security categories are included in
+      initial ownership and do not require monthly payments. The Space category cannot be upgraded.
+    typical_levels:
+      space: Low
+      furnishings: Low
+      comforts: Middle
+      entertainment: Middle
+    security_source: Use the vehicle anti-theft system rating from the Rigger 3 vehicle rules, not an invented Security rating.
+    area_points_formula: Sum each Area category point rating multiplied by number of days in that district divided by 30;
+      round fractional total up at end.
+    worked_example:
+      days_in_A_area: 7
+      A_area_points: 4
+      days_in_B_area: 23
+      B_area_points: 3
+      raw_area_points: 3.2
+      rounded_area_points: 4
+    monthly_cost: Use the Area points so calculated together with paid nonvehicle lifestyle categories.
+  workshops_facilities:
+    shop_minimum_space: Middle
+    facility_minimum_space: Luxury
+    tools_purchased_separately: true
+    rented_tools_monthly_cost: Purchase price of shop/facility tools divided by 100; this is the monthly rental amount for
+      a fully equipped shop or facility.
+    attached_garage_vehicle_capacity: GM determines how many vehicles fit.
+  code_validation_status: Source page images reviewed; numeric worked examples are specifications only, no executable engine
+    test performed.
