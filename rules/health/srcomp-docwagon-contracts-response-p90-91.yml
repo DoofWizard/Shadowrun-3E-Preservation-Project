@@ -1,0 +1,183 @@
+{
+  "id": "rule.health.srcomp-docwagon-contracts-response-p90-91",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.srcomp",
+  "printed_pages": "90-91",
+  "pdf_pages": "91-92",
+  "edition_scope": "FASA Corporation Shadowrun Companion, FASA7905a, Shadowrun Third Edition fictional tabletop rule supplement, printed pp90-91/PDF91-92.",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "data": {
+    "provenance": {
+      "publication_title": "Shadowrun Companion",
+      "publisher": "FASA Corporation",
+      "catalog_number": "FASA7905a",
+      "edition": "Shadowrun Third Edition",
+      "source_id": "source.srcomp",
+      "source_type": "published fictional tabletop role-playing supplement",
+      "printed_pages": "90-91",
+      "physical_pdf_pages": "91-92",
+      "chapter": "Advanced Rules",
+      "section": "DocWagon — Contracts; Calls and Responses; Response Time"
+    },
+    "fictional_source_scope": "The DocWagon emergency response service is a fictional UCAS entity in Shadowrun, not an existing medical provider. Original gameplay pricing and turn-resolution rules below.",
+    "contracts": {
+      "prepayment": "At least one year prepaid",
+      "registration": "Tissue samples and voiceprints on file",
+      "wristphone_device_rating": 2,
+      "wristphone": "Sealed-band, direct-dial, rupture triggers immediate DocWagon response"
+    },
+    "yearly_service_tiers_nuyen": [
+      {
+        "tier": "Basic",
+        "yearly_cost": 5000,
+        "arrival_guarantee": "Trauma team within ten minutes; immediate medical care free",
+        "htr_surcharge_nuyen": 5000,
+        "other_medical_charges": "Additional incurred medical costs apply, including employee death benefits"
+      },
+      {
+        "tier": "Gold",
+        "yearly_cost": 25000,
+        "inherits": "Basic",
+        "included_resuscitations_per_year": 1,
+        "acute_extended_care_discount_percent": 10,
+        "htr_surcharge_nuyen": 2500
+      },
+      {
+        "tier": "Platinum",
+        "yearly_cost": 50000,
+        "inherits": "Basic",
+        "htr_surcharge_nuyen": 0,
+        "employee_death_benefits": "The source explicitly retains the client’s liability for employee death benefits and innocent victims; it is NOT waived at Platinum level.",
+        "included_resuscitations_per_year": 4,
+        "acute_extended_care_discount_percent": 50
+      },
+      {
+        "tier": "Super-platinum",
+        "yearly_cost": 100000,
+        "inherits": "Platinum",
+        "employee_death_benefits": "No liability for death benefits for DocWagon employees",
+        "included_resuscitations_per_year": 5,
+        "bio_monitor": "Sealed wristphone bio-monitor triggers audible alarm and notifies DocWagon on life-threatening deviation; immediately scrambles HTR"
+      }
+    ],
+    "original_docwagon_service_costs_nuyen": [
+      {
+        "service": "High Threat Response",
+        "base_cost_nuyen": 5000
+      },
+      {
+        "service": "Employee Death Benefits",
+        "base_cost_nuyen": 20000
+      },
+      {
+        "service": "On-site Resuscitation",
+        "base_cost_nuyen": 8000
+      },
+      {
+        "service": "Acute Care Basic",
+        "base_cost_nuyen_per_day": 500
+      },
+      {
+        "service": "Acute Care Intensive Care",
+        "base_cost_nuyen_per_day": 1000
+      },
+      {
+        "service": "Acute Care Extended Care (3+ weeks)",
+        "base_cost_nuyen_per_week": 2500
+      }
+    ],
+    "cost_qualifiers": [
+      "High Threat Response is base charge; additional possible ammunition, equipment damage, health care for injured employees and bystanders, and death benefits",
+      "Acute-care prices do not include additional specific medical procedures"
+    ],
+    "call_screening": "Personal identification number (PIN) or wristphone serial number and client voice pattern. Client may request Standard, Crisis or High Threat; if not specified, dispatch HTR.",
+    "escalation": "SRT or CRT responding to an incident withdraws and summons HTR if either unit is fired upon during service.",
+    "fictional_team_composition": {
+      "SRT": "Four lightly armed and armored paramedics, two-client capacity",
+      "CRT": "Eight SRT personnel, four-client capacity",
+      "HTR": "Three paramedics plus four heavily armed and armored threat-response personnel"
+    },
+    "fictional_response_time_resolution": {
+      "unit_transport_selection": {
+        "SRT_CRT_1d6": "Ground vehicle on 1-4; air vehicle on 5-6",
+        "HTR_1d6": "DocWagon Citymaster on 1-3; WK-2 Stallion on 4-5; Osprey II on 6"
+      },
+      "base_roll": "3D6",
+      "result_unit": "Number of Combat Turns before arrival after applying cumulative modifiers",
+      "original_response_time_modifiers": {
+        "enforcement_rating": [
+          {
+            "rating": "AAA-AA",
+            "modifier": -2
+          },
+          {
+            "rating": "A-B",
+            "modifier": -1
+          },
+          {
+            "rating": "C",
+            "modifier": 0
+          },
+          {
+            "rating": "D",
+            "modifier": 1
+          },
+          {
+            "rating": "E",
+            "modifier": 2
+          },
+          {
+            "rating": "Z",
+            "modifier": 3
+          }
+        ],
+        "response_type": [
+          {
+            "type": "SRT",
+            "modifier": 0
+          },
+          {
+            "type": "CRT",
+            "modifier": 1
+          },
+          {
+            "type": "HTR",
+            "modifier": -1
+          }
+        ],
+        "vehicle_type": [
+          {
+            "type": "Ground",
+            "modifier": 0
+          },
+          {
+            "type": "Air",
+            "modifier": -2
+          }
+        ],
+        "beyond_city_limits": [
+          {
+            "printed_distance_description": "Less than 10 miles",
+            "modifier": 3
+          },
+          {
+            "printed_distance_description": "Less than 25 miles (if at all)",
+            "modifier": 5
+          }
+        ]
+      },
+      "source_wording_note": "The last two original distance rows appear under Beyond City Limits but use literal Less than phrasing. Preserve source labels rather than infer nonprinted intervals or precedence.",
+      "geographic_exceptions": [
+        "Calls originating on extraterritorial corporate or government property require express permission from the governing authority before response",
+        "All Z-rated area responses exempt from ten-minute response guarantee"
+      ]
+    },
+    "cross_reference": "Original book refers to New Seattle printed p108 for Lone Star Security ratings and to Rigger 2 equipment/vehicles. These cross-references are source statements, not independent engine validations."
+  },
+  "framing": "reference_exact",
+  "headline": "Fictional Shadowrun Companion DocWagon contracts, fees and response timing — pp90-91",
+  "summary": "Source-review of FASA Corporation Shadowrun Companion FASA7905a (SR3) printed pp90-91/PDF91-92, preserving fictional service tier pricing, team rules, 3D6 timing and exact modifier tables."
+}
