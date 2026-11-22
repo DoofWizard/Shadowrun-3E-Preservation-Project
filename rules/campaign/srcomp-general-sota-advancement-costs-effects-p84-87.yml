@@ -1,0 +1,149 @@
+id: rule.campaign.srcomp-general-sota-advancement-costs-effects-p84-87
+record_type: rule
+status: reviewed
+source: source.srcomp
+printed_pages: 84-87
+pdf_pages: 85-88
+edition_scope: FASA7905a Shadowrun Third Edition, source-original optional Companion
+  rules
+content_class:
+- rule_exact
+headline: 'FASA Corporation, Shadowrun Companion (FASA7905a), Shadowrun Third Edition
+  fictional tabletop role-playing game, original printed pp84-87 / physical PDF pp85-88:
+  General State of the Art advancement, numeric costs and penalties'
+summary: Exact optional tabletop-game numeric and procedural mechanics for general
+  state of the art advancement, numeric costs and penalties, as printed in the original
+  FASA7905a supplement; source-specific, not an automatic replacement of SR3 core.
+data:
+  scope: Optional SOTA for technology outside the dedicated Matrix/cyberdeck rules
+    in Virtual Realities 2.0; advancement timing is set by the gamemaster (after an
+    adventure, yearly, or another interval).
+  field_selection:
+    roll: 2D6 when a SOTA advance is declared
+    table:
+    - roll: '2'
+      field: Biotechnology
+    - roll: '3'
+      field: Vehicles/Rigger Technology
+    - roll: '4'
+      field: Matrix (cross-referenced VR2; not governed by this non-Matrix table)
+    - roll: '5'
+      field: Personal Armor
+    - roll: 6-8
+      field: NERPS
+    - roll: '9'
+      field: Reaction Enhancements
+    - roll: '10'
+      field: ECM and ECCM
+    - roll: '11'
+      field: Electronics
+    - roll: '12'
+      field: Magical Theory
+    matrix_alternative: Gamemaster may replace the Matrix roll entry with a second
+      Vehicles/Rigger Technology entry when calculating Matrix advances separately.
+    game_master_discretion: The gamemaster chooses the affected subfield and may customize
+      the table, die results, and effects.
+  global_cost_modifiers:
+    lifestyle_luxury: Character with a maintained Luxury lifestyle may reduce final
+      nuyen cost of a SOTA advance by 25 percent.
+    lifestyle_high: Character with a maintained High lifestyle may reduce final nuyen
+      cost of a SOTA advance by 10 percent.
+    cyberware_grades: Alpha-grade and standard-grade cyberware are subject to relevant
+      SOTA cost; beta- and delta-grade cyberware are exempt in this publication for
+      now.
+    secondhand_cyberware: Cheap or second-hand cyberware increases SOTA cost by 20
+      percent.
+  fields:
+  - field: Biotechnology
+    factor_formula: 2 × original Biotech Skill Rating or 2 × highest Biotech Specialization,
+      whichever is higher
+    nuyen_per_factor_point: 500
+    karma_option: Each Good Karma point spent decreases SOTA Factor by 1.
+    failure: Reduce all Biotech Skill Ratings, including Biotech Specializations,
+      by 1; affected Biotech expert-system and medkit ratings also drop by 1.
+    exception: DocWagon contracts are not affected by Biotechnology SOTA.
+  - field: Vehicles/Rigger Technology (vehicle or rigger equipment)
+    factor_formula: 2 × original rating of the improved item
+    nuyen_per_factor_point: 1000
+    karma_option: Each Good Karma point spent decreases SOTA Factor by 1.
+    failure: Reduce by 1 one affected vehicle rating, chosen as Handling, Body, Armor
+      or Pilot, or the linked attribute of a subsystem per the Rigger 2 Major Systems
+      Table; do not automatically reduce all four.
+  - field: Vehicles/Rigger Technology (vehicle-control rig or remote deck)
+    factor_formula: 10 × initial Reaction bonus provided by cyberware; source example
+      uses 10 factor for a Level 1 VCR and 20 for Level 2
+    nuyen_per_factor_point: 1000
+    karma_option: Each Good Karma point spent reduces nuyen cost by 500 rather than
+      factor size.
+    failure: Reduce by 1 the Reaction bonus provided by the affected vehicle-control
+      rig or remote deck.
+  - field: Personal Armor
+    factor_formula: Ballistic Armor Rating of each individual piece of personal armor
+    nuyen_per_factor_point: 500
+    failure: Reduce the Ballistic Armor Rating of every affected and unpaid personal-armor
+      piece by 1.
+  - field: NERPS
+    factor_formula: not applicable
+    failure: No game effect; this table entry represents pop-culture novelty.
+    cost: No upkeep cost is specified; this field has no game effect.
+  - field: Reaction-Enhancing Cyberware
+    factor_formula: '10 × initial Reaction bonus (source examples: Wired Reflexes
+      1 → 20 factor points; Wired Reflexes 2 → 40)'
+    nuyen_per_factor_point: 1000
+    karma_option: Each Good Karma point spent reduces nuyen cost by 500.
+    failure: Reduce the Reaction bonus provided by the cyberware by 1.
+    boosted_reflexes_exception: Double all SOTA costs for boosted reflexes; they can
+      be tweaked but not properly upgraded.
+  - field: ECM
+    factor_formula: 10 × current rating of affected ECM/electronic countermeasure
+    cost: 'Each SOTA Factor point costs 1 percent of the device’s original price (source
+      example Rating 6: factor 60; upkeep 60 percent of initial price).'
+    failure: Reduce by 1 the ratings of affected maglock keys or surveillance devices
+      and affected equipment ECM ratings.
+  - field: ECCM
+    factor_formula: 10 × current rating of affected ECCM device
+    cost: Each SOTA Factor point costs 1 percent of the device’s original price.
+    failure: Reduce by 1 the ratings of affected maglock or electronic surveillance
+      countermeasures (bug scanners, encryption systems) and ECCM ratings.
+    relationship: Gamemaster may advance ECM and ECCM as separate events or assume
+      an ECM advance is followed automatically by ECCM.
+  - field: Electronics
+    factor_formula: 2 × Electronics Skill Rating or 2 × highest Electronics Specialization,
+      whichever is higher
+    nuyen_per_factor_point: 500
+    karma_option: Each Good Karma point decreases SOTA Factor by 1.
+    failure: Reduce Electronics Skill Rating by 1.
+  - field: Magical Theory/Practice
+    factor_formula: 2 × Magical Background Skill Rating or 2 × highest Specialization,
+      whichever is higher
+    nuyen_per_factor_point: 500
+    karma_option: Each Good Karma point decreases SOTA Factor by 1.
+    failure: Reduce Magical Background Skill Rating by 1.
+  - field: Hermetic Libraries
+    factor_formula: 2 × library rating
+    cost_per_factor_point_by_medium_nuyen:
+      disk: 100
+      chip: 120
+      hard_copy: 200
+    failure: Reduce affected hermetic library rating by 1.
+  recovery_and_obsolescence:
+    single_unpaid_advance: A character can reverse an unpaid SOTA penalty by paying
+      the appropriate SOTA Factor cost any time before the next advance in that field.
+    two_consecutive_unpaid_advances: After two consecutive unpaid SOTA advances in
+      the same field, paying alone does not reverse the penalty; the character must
+      retrain in the field to regain lost skill levels, subject to skill-upgrade rules
+      and optional training procedures.
+    dead_end_tech_variant: Gamemaster chooses at least two competing upgrade lines;
+      if one line collapses, users of the defunct product line pay double the standard
+      SOTA Factor cost to maintain ratings, requiring retraining and money.
+  cross_references:
+  - Virtual Realities 2.0 Matrix SOTA is external and not reimplemented here.
+  - Rigger 2 Major Systems Table supplies linked vehicle subsystem attributes; its
+    values are not invented here.
+  - Optional Training Rules p48 apply to retraining after two unpaid advances.
+  printed_source_ambiguities:
+  - SOTA Factor is an upkeep calculation; specific application and target selection
+    are under gamemaster discretion.
+  - The source uses both original and current ratings in different affected-field
+    formulas; preserve the published distinction.
+framing: reference_exact
