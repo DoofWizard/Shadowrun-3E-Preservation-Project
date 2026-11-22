@@ -628,8 +628,8 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [49, 50]
     range_pdf: [50, 51]
     path: references/seattle/new-seattle-everett-named-shadowtalk-p49-50.yml
-    commit: e298635003dc2eb6517ca728b10b0f14b2b94c14
-    blob: b39912de4d2e9b4ccd650b7dc599626f7ec6f8ff
+    commit: 393a2fab1cbfbbf0e9f406404c23f6cc01761d13
+    blob: 83ed9aca731f9cbf656df42bd9e4f89e9db6ebf1
     gate: verified
     content_class: attributed_claim
     record_id: reference.seattle.new_seattle_everett_named_shadowtalk_p49_50
@@ -1033,8 +1033,8 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [47, 50]
     range_pdf: [48, 51]
     path: references/seattle/new-seattle-everett-named-shadowland-commentary-p47-50.yml
-    commit: 9ed047fbca7a7bbdd49adeb6486fe19490293453
-    blob: c18cda7cc7722be169a62b88cc4cb9b566c9b0f8
+    commit: bc1b812f9ee744cddc108c479e8d48a0a6ec8f56
+    blob: b6769164bf23f309d87da92100aba15cd794f6a1
     gate: verified
     content_class: attributed_claim
     record_id: reference.seattle.new_seattle_everett_named_shadowland_commentary_p47_50
@@ -2172,3 +2172,34 @@ game_information_available_mechanics_reconciliation_2026_11_22:
   Denver_p45_pdf46_checkpoint_changed: false
   owner_accepted_core_p308_omission_unchanged: true
   next: "Select a different unfinished original-source-verifiable Pass B mechanical dependency from the live manifests; do not reopen this Game Information section or the previously accepted core without a named discrepancy."
+
+# Independently original-image-verified Everett p49 named-speaker correction; no new mechanics.
+everett_named_berzerkley_source_fidelity_2026_11_22:
+  source_id: source.fanpro-10657
+  publication: "FanPro New Seattle, corrected Third Printing (2001), Shadowrun Third Edition fictional tabletop RPG"
+  source_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+  printed_page: 49
+  physical_pdf_page: 50
+  verified_printed_name: Berzerkley
+  corrected_source_attribution_only: true
+  corrections:
+    - path: references/seattle/new-seattle-everett-named-shadowland-commentary-p47-50.yml
+      old_speaker: Berkeley
+      old_blob: c18cda7cc7722be169a62b88cc4cb9b566c9b0f8
+      verified_semantic_commit: bc1b812f9ee744cddc108c479e8d48a0a6ec8f56
+      verified_new_blob: b6769164bf23f309d87da92100aba15cd794f6a1
+      content_class: attributed_claim
+    - path: references/seattle/new-seattle-everett-named-shadowtalk-p49-50.yml
+      old_speaker: Bezerkley
+      old_blob: b39912de4d2e9b4ccd650b7dc599626f7ec6f8ff
+      verified_semantic_commit: 393a2fab1cbfbbf0e9f406404c23f6cc01761d13
+      verified_new_blob: 83ed9aca731f9cbf656df42bd9e4f89e9db6ebf1
+      content_class: attributed_claim
+  verified_gates: "fresh PDF original SHA and actual verify-source, printed page image, independent corrected-baseline/candidate stage/prepare, exact ordinary Contents writes/readbacks, gate confirm and recovery inspect verified"
+  unrelated_assertions_changed: false
+  new_semantic_records: 0
+  new_original_gameplay_mechanics: 0
+  new_global_contiguous_pages: 0
+  prior_richer_normalization_deferrals_preserved: true
+  core_FASA7001_acceptance_changed: false
+  Denver_archived_checkpoint_changed: false
