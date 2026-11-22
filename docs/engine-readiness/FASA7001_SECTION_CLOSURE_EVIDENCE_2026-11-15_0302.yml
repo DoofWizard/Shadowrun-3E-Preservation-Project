@@ -2094,7 +2094,65 @@
       "new_semantic_records": 0,
       "source_specific_contiguous_authorized_pages": 0,
       "full_section_acceptance": false,
-      "actual_preservation_method_verify_source_command_executed_this_run": false
+      "actual_preservation_method_verify_source_command_executed_this_run": false,
+      "independent_enlarged_page_table_crosschecks": [
+        {
+          "original_printed": 295,
+          "physical_pdf": 304,
+          "original_source": "SURVIVAL GEAR market table, 16 rows, columns Conceal / Weight / Availability / Cost / Street Index / Legal; authoring dashes mean unstated values, not zero",
+          "existing_accepted_record": "entities/gear/sr3-survival-gear-p295.yml",
+          "live_git_blob": "93ecd8da11ad112a6180234252b5d5276ac163cb",
+          "exact_observed": "The file retains 16 historical root entries but ALSO has current root source, printed_pages='295', pdf_pages='304', one-item content_class=[equipment_stat], and a /data/rows field with the 16 rows and original complete seven columns. Its top-level legacy shape is not itself proof of a missing acceptance envelope; no unindexed migration is warranted solely from the file's opening lines.",
+          "status": "Original enlarged image visually inspected; all visible named rows and columns have corresponding accepted data; no numerical change made."
+        },
+        {
+          "original_printed": 302,
+          "physical_pdf": 311,
+          "original_source": "BODYWARE 39-row table, including variable Essence formulas and literal printed dashes/NA, with Cost / Availability / Street Index / Legality",
+          "existing_accepted_record": "equipment/sr3-core-bodyware-numeric-market-p302.yml",
+          "live_git_blob": "6997115ab492fab51c4506717af490e798af7cb4",
+          "exact_observed": "Current JSON canonical data.rows has 39 table entries; directly viewed original page has 39 distinct entries. Source layout qualifiers are preserved rather than replacing dashes with inferred zeros.",
+          "status": "Enlarged original image inspected; no numeric discrepancy demonstrated."
+        },
+        {
+          "original_printed": 305,
+          "physical_pdf": 314,
+          "original_source": "MAGICAL EQUIPMENT table and SLAP PATCHES original-game procedures, including stabilization unit. Seven focus-related market entries, magical supplies, fetishes and L/M/S/D spell formula tiers.",
+          "existing_accepted_records": [
+            "equipment/sr3-core-magical-equipment-p305.yml",
+            "rules/medical/sr3-core-stabilization-unit-slap-patches-p305.yml",
+            "rules/health/sr3-core-slap-patches-p305.yml"
+          ],
+          "exact_observed": "Original p305 includes stabilization unit -2 healing Target Number modifier, dermal armor patch Rating reduction, toxin patch and stimulant/tranq/trauma game conditions, numerical table and explicitly optional source descriptions. The named indexed records carry separate market and procedure classes.",
+          "status": "Enlarged original image inspected; no particular new source omission established."
+        },
+        {
+          "original_printed": 312,
+          "physical_pdf": 320,
+          "original_source": "Final DRONES, VEHICLE MOUNTS and VEHICLE WEAPONS original tables, four distinct drone profiles, seven vehicle mount rows, two vehicle weapons, GM-set Availability / Legal / Street Index for vehicle weapons",
+          "existing_accepted_records": [
+            {
+              "path": "equipment/sr3-core-surveillance-drone-profiles-p312.yml",
+              "blob": "3e3f33c1d27534cf6203dc77982e2b7b59aa1ceb",
+              "rows": 4
+            },
+            {
+              "path": "equipment/sr3-core-vehicle-mount-market-p312.yml",
+              "blob": "8058839c228c08a36fa8f5668cd6417df0ea1398",
+              "rows": 7
+            },
+            {
+              "path": "equipment/sr3-core-vehicle-weapons-market-p312.yml",
+              "blob": "05bc2d35f1c6075788f6b7f2219528a83e7740e3",
+              "rows": 2
+            }
+          ],
+          "exact_observed": "Original market codes and named row counts match accepted source-specific entries. The water-cannon fire-mode source-internal discrepancy remains preserved as a local known ambiguity; no fabricated effective ruling or numeric repair.",
+          "status": "Enlarged original image inspected and indexed row counts checked, not full engine test."
+        }
+      ],
+      "review_date": "2026-11-21",
+      "review_limitations": "Four enlarged-page table cross-checks supplement previously accepted section source reviews; partial source evidence only. Complete 43-page Street Gear original heading/row/condition certification and final accepted core gate are NOT claimed. Actual repository preservation_method.py verify-source command was NOT run during this review, though a freshly acquired original PDF was independently hashed and matched."
     }
   ],
   "constraints": [
