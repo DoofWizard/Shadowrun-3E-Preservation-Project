@@ -187,8 +187,8 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [113, 114]
     range_pdf: [114, 115]
     path: rules/security/new-seattle-law-enforcement-npc-archetypes-p113-114.yml
-    commit: 747522b51904c2423109ca9aee48abb064d3e2a4
-    blob: da1c4641f57e753b876e2b0eadaf18b0e84f66f1
+    commit: 930972347b72c2b4119a5f4d5bb774f304a6cb9a
+    blob: 209f9413ad495929b6027d236cd7f4ebbb214e1e
     gate: verified
     content_class: rule_exact
     record_id: rule.npc.new_seattle_law_enforcement_officers_p113_114
@@ -1886,4 +1886,28 @@ body_politic_p78_guard_arrests_purge_correction_2026_11_22:
   historical_rich_normalization_pending_preserved: true
   registration_count_unchanged: 176
   new_contiguous_pages: 0
+  denver_checkpoint_unchanged: true
+
+
+# Source-reviewed printed p113/PDF114 distinction in fictional police NPC guidance.
+new_seattle_p113_mage_role_distinction_2026_11_22:
+  source: source.fanpro-10657
+  original_pdf_sha256: "837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97"
+  source_verification: source_pdf_hash_verified
+  original_page_inspected: {printed: 113, pdf: 114}
+  path: rules/security/new-seattle-law-enforcement-npc-archetypes-p113-114.yml
+  record_id: rule.npc.new_seattle_law_enforcement_officers_p113_114
+  old_accepted_blob: da1c4641f57e753b876e2b0eadaf18b0e84f66f1
+  corrected_semantic_commit: 930972347b72c2b4119a5f4d5bb774f304a6cb9a
+  corrected_semantic_blob: 209f9413ad495929b6027d236cd7f4ebbb214e1e
+  confirmed_candidate_sha256: e19bc39f2fac2dfaed06e537c856e22c5fd1ebbf3d3b4549c0c7f048f57e918f
+  corrected_field: data.magician_officer.description
+  source_distinction: "Combat mages oppose magical threats by any means necessary; security mages generally avoid lethal force in favor of immobilization or incapacitation; both actively dispel."
+  actual_gates: source_visual_review_corrected_baseline_stage_prepare_ordinary_contents_exact_readback_confirm_recovery_verified
+  all_numeric_stat_blocks_unchanged: true
+  original_accepted_baseline_preserved_in_transaction_review: true
+  existing_registration_count_unchanged: 176
+  historic_rich_normalization_pending_preserved: true
+  contiguous_advance: false
+  newly_authorized_printed_pages: 0
   denver_checkpoint_unchanged: true
