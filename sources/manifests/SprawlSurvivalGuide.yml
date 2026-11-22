@@ -72,6 +72,15 @@ postscan_verified_mechanics_recovery:
       blob: 95885d6030ed5668bc2c00d6e075015b2c9a2d51
       gate: verified
       contiguous_advance: false
+    - id: rule.lifestyle.ssg-detailed-lifestyle-burglary-hotel-p135
+      path: rules/lifestyle/ssg-detailed-lifestyle-burglary-hotel-p135.yml
+      range_printed: [135, 135]
+      range_pdf: [136, 136]
+      content_class: rule_exact
+      commit: ebea8f6a04d580ee7512aa3325489598748d8d02
+      blob: b00917b96cc86f6f8c7eac95b73e3c733f34f56e
+      gate: verified
+      contiguous_advance: false
     - id: rule.matrix.ssg-dataterm-host-sheaf-p120
       path: rules/matrix/ssg-dataterm-host-sheaf-p120.yml
       range_printed: [120, 120]
@@ -230,6 +239,30 @@ ssg_detailed_lifestyle_source_numeric_table_recovery_2026_11_22:
   preflight_candidate_sha256: afbe2947f2f8e76a2bbdaccd0fd45f61089e79424a2ebad51cfa9eb9a947fe08
   immutable_data_sha256: 6a3ef0366b20518f139b112cfacb994c84249125c52fe3486077cacd6664b9fe
   source_review_and_gates: 'Fresh matching original PDF and actual preservation_method verify-source; independent source-reviewed baseline and identical-protected-data candidate; transaction_recovery stage and ingestion_gate prepare; ordinary GitHub Contents create and fresh matching readback; ingestion_gate confirm and transaction_recovery inspect verified'
+  new_semantic_records: 1
+  new_source_specific_index_registrations: 1
+  new_global_contiguous_pages: 0
+  source_status_remains_scan_complete_normalization_pending: true
+  whole_source_narrative_or_engine_completion: false
+  Denver_checkpoint_changed: false
+
+# Distinct original-source optional monthly burglary and hotel rating tables in Detailed Lifestyles.
+ssg_detailed_lifestyle_burglary_and_hotel_recovery_2026_11_22:
+  publication: 'FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition fictional tabletop supplement'
+  source_id: source.fanpro-10667
+  source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  printed_pages: [135, 135]
+  physical_pdf_pages: [136, 136]
+  source_verification: source_pdf_hash_verified
+  reviewed_original_source: 'High-resolution printed p135/PDF136, all eight burglary Area target numbers, Security test outcomes, 1D6 loss categories, five-row hotel ratings and Area exclusion'
+  canonical_record_id: rule.lifestyle.ssg-detailed-lifestyle-burglary-hotel-p135
+  canonical_path: rules/lifestyle/ssg-detailed-lifestyle-burglary-hotel-p135.yml
+  verified_semantic_commit: ebea8f6a04d580ee7512aa3325489598748d8d02
+  verified_semantic_blob: b00917b96cc86f6f8c7eac95b73e3c733f34f56e
+  independently_source_reviewed_baseline_sha256: fa10337504407dc4df9671888363ee0b22419deb1fcc7fb435943cf3d445f27a
+  preflight_candidate_sha256: c97088ad1bf92fb8840d242aa72536e3e2bba085fba3b4b881cdb3071df35aa6
+  immutable_data_sha256: 311dac46b7906164a58df4cc2c78f73ec5bad25a2687a2c67b11bc868d5a41c9
+  transaction_gates: 'Source-verified original, independent baseline/candidate, transaction_recovery stage plus ingestion_gate prepare; ordinary GitHub Contents create exact readback; ingestion_gate confirm and recovery inspect verified'
   new_semantic_records: 1
   new_source_specific_index_registrations: 1
   new_global_contiguous_pages: 0
