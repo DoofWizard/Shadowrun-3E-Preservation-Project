@@ -1,0 +1,167 @@
+id: rule.lifestyle.ssg-detailed-lifestyle-category-ratings-p128-132
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: 128-132
+pdf_pages: 129-133
+edition_scope: Original FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition optional Detailed Lifestyles
+  extension; does not replace FASA7001 core lifestyle rules
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Optional detailed lifestyle category ratings and restrictions — FanPro Sprawl Survival Guide (FanPro10667), Third
+  Edition, pp128-132
+summary: Exact six-category point ranges, Area zoning, Security ratings, housing-space constraints and compatible-level limits
+  from the original fictional tabletop publication.
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    year: 2003
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+    source_kind: fictional tabletop role-playing game supplement
+    printed_pages:
+    - 128
+    - 129
+    - 130
+    - 131
+    - 132
+    physical_pdf_pages:
+    - 129
+    - 130
+    - 131
+    - 132
+    - 133
+  section: Game Information / Detailed Lifestyles / Area, Comforts, Entertainment, Furnishings, Security and Space
+  optional: true
+  rule_relationship: Original FanPro optional subsystem supplies six separately selected category levels. Canonical numeric
+    monthly cost table is rule.lifestyle.ssg-detailed-lifestyle-costs-table-p128; this record binds rating options and compatibility
+    limits, not duplicate costs.
+  construction:
+    categories:
+    - Area
+    - Comforts
+    - Entertainment
+    - Furnishings
+    - Security
+    - Space
+    category_point_contribution: Choose exactly one rated level in each category, adding chosen point values; use the original
+      source Lifestyle Costs Table for monthly nuyen amount.
+    gamemaster_exception: Printed combination limits are guidelines that the gamemaster may relax with a suitable in-game
+      explanation, not an automatic waiver.
+  area_rating_options:
+  - rating: Z
+    lifestyle_equivalent: Street
+    points: -1
+  - rating: E
+    lifestyle_equivalent: Street
+    points: 0
+  - rating: D
+    lifestyle_equivalent: Squatter
+    points: 1
+  - rating: C
+    lifestyle_equivalent: Low
+    points: 2
+  - rating: B
+    lifestyle_equivalent: Middle
+    points: 3
+  - rating: A
+    lifestyle_equivalent: High
+    points: 4
+  - rating: AA
+    lifestyle_equivalent: Luxury
+    points: 5
+  - rating: AAA
+    lifestyle_equivalent: Luxury
+    points: 6
+  standard_level_points:
+  - level: Street
+    points: 0
+  - level: Squatter
+    points: 1
+  - level: Low
+    points: 2
+  - level: Middle
+    points: 3
+  - level: High
+    points: 4
+  - level: Luxury
+    points: 5
+  category_special_rules:
+    Comforts: Represents food, shelter, utilities and upkeep appropriate to chosen level.
+    Entertainment: Entertainment point level may be no more than one step above the selected Comforts point level; e.g., Middle
+      Comforts permits at most High Entertainment.
+    Furnishings: Quality and quantity of contents do not derive from Space. Category level points range Street 0 through Luxury
+      5.
+    Security:
+      security_test_rating_by_lifestyle_level:
+      - level: Street
+        points: 0
+        security_rating: 1
+      - level: Squatter
+        points: 1
+        security_rating: 2
+      - level: Low
+        points: 2
+        security_rating: 3
+      - level: Middle
+        points: 3
+        security_rating: 4
+      - level: High
+        points: 4
+        security_rating: 6
+      - level: Luxury
+        points: 5
+        security_rating: 8
+      rating_use: These ratings resolve tests against the security actually purchased, including the optional burglary rules;
+        not the same as the category points.
+    Space:
+      level_points: Street 0, Squatter 1, Low 2, Middle 3, High 4, Luxury 5
+      shamanic_lodge_or_hermetic_circle_limit_examples:
+      - space_level: Low
+        maximum_hermetic_circle_rating: 2
+      - space_level: Middle
+        maximum_hermetic_circle_rating: 4
+      - space_level: High
+        maximum_indoor_hermetic_circle_rating: 6
+      typical_floor_area_square_metres:
+      - space_level: Low
+        approximate: 50
+      - space_level: Middle
+        approximate: 100
+      - space_level: High
+        approximate: 300
+      - space_level: Luxury
+        at_least: 750
+      examples_not_global_housing_regulation: true
+  area_combination_limits:
+  - area: Z
+    space_max: Middle
+  - area: E
+    space_max: Middle
+  - area: A
+    security_min: Low
+    space_min: Low
+  - area: AA
+    security_min: Middle
+    space_min: Middle
+    comforts_excludes:
+    - Street
+  - area: AAA
+    security_min: Middle
+    space_min: High
+    comforts_excludes:
+    - Street
+  space_security_limits:
+  - space_level: Street
+    security_max: Squatter
+  - space_level: Squatter
+    security_max: Low
+  source_warnings:
+  - All six categories provide distinct lifestyle points; the Area category uses Z through AAA rather than Street through
+    Luxury.
+  - Not every unusually poor/rich combination is forbidden absolutely; the gamemaster has explicit final discretion.
+  code_validation_status: Original printed options and restrictions source-reviewed; no executable engine tests run.
