@@ -1,0 +1,126 @@
+id: rule.lifestyle.ssg-detailed-lifestyle-burglary-hotel-p135
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: '135'
+pdf_pages: '136'
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition; optional Detailed Lifestyles
+  and hotel rules, no change to FASA7001 core
+content_class:
+- rule_exact
+framing: reference_exact
+data:
+  publication:
+    title: Sprawl Survival Guide
+    publisher: FanPro
+    catalog_number: FanPro10667
+    year: 2003
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10667
+    source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+    source_kind: fictional tabletop role-playing game supplement
+    printed_pages:
+    - 135
+    physical_pdf_pages:
+    - 136
+  section: Game Information / Detailed Lifestyles / Burglary / Special Cases / Hotel Ratings
+  optional: true
+  burglary:
+    frequency: Optional monthly check; gamemaster secretly rolls the residence Security rating as the test dice
+      pool against target number by Area.
+    area_target_number:
+    - area: Z
+      target_number: 6
+    - area: E
+      target_number: 5
+    - area: D
+      target_number: 5
+    - area: C
+      target_number: 4
+    - area: B
+      target_number: 4
+    - area: A
+      target_number: 3
+    - area: AA
+      target_number: 3
+    - area: AAA
+      target_number: 2
+    result_interpretation:
+    - net_successes: 0
+      result: Residence is broken into
+    - net_successes: 1
+      result: Attempt fails but character notices signs of attempted entry
+    - net_successes: 2+
+      result: No attempt, or an unnoticed failed attempt
+    if_successfully_broken_into:
+      damage_roll: 1D6
+      reduce_by_points: 1
+      affected_category_by_die:
+      - roll: '1'
+        category: Comforts
+      - roll: 2-4
+        category: Entertainment
+      - roll: 5-6
+        category: Furnishings
+      payment_month_of_event: Character still pays original full monthly lifestyle cost during the month of the
+        burglary
+      following_month: Pay reduced category cost if replacement is not purchased, or return to original category
+        and cost if property replaced
+    optional_day_selection: If desired, roll 1D6 × 1D6 days into the month; reroll any result greater than the number
+      of days in the month.
+  hotel_and_motel_rooms:
+    area_handling: Hotel Ratings omit Area, because hotels may be in different parts of town; add district Area
+      category points to the listed room points, then consult the Detailed Lifestyles cost table.
+    hotel_ratings:
+    - hotel: Coffin
+      space: Squatter
+      security: Middle
+      furnishings: Squatter
+      comforts: Low
+      entertainment: Low
+      points_excluding_area: 9
+    - hotel: Hostel
+      space: Low
+      security: Low
+      furnishings: Low
+      comforts: Squatter
+      entertainment: Low
+      points_excluding_area: 9
+    - hotel: Typical room
+      space: Low
+      security: Middle
+      furnishings: Middle
+      comforts: Middle
+      entertainment: Middle
+      points_excluding_area: 14
+    - hotel: Suite
+      space: Middle
+      security: Middle
+      furnishings: Middle
+      comforts: High
+      entertainment: High
+      points_excluding_area: 17
+    - hotel: Penthouse/bridal suite
+      space: High
+      security: Luxury
+      furnishings: Luxury
+      comforts: Luxury
+      entertainment: Luxury
+      points_excluding_area: 24
+  engine_test_vectors_specification_only:
+  - area: AAA
+    expected_burglary_target_number: 2
+  - area: Z
+    expected_burglary_target_number: 6
+  - security_test_successes: 1
+    expected_notice: attempt detected
+  - damage_roll: 4
+    expected_rating_reduced: Entertainment
+  - hotel: Typical room
+    base_points_excluding_area: 14
+  code_validation_status: Source-original numerical game specification reviewed; no executable game-engine tests
+    run.
+headline: 'Original optional tabletop rules: burglary TNs and hotel ratings — FanPro Sprawl Survival Guide, Third
+  Edition, p135/PDF136'
+summary: Original fictional Shadowrun optional monthly residential burglary resolution, target numbers, temporary
+  lifestyle-category losses, and five hotel category/points templates for Detailed Lifestyles.
