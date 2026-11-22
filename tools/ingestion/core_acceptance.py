@@ -90,12 +90,16 @@ def review_ref(root, ref, evidence):
     path, ptr = ref.get("path"), ref.get("pointer")
     require(isinstance(path, str) and path.startswith(("docs/engine-readiness/", "references/audits/", "docs/ingestion/")), "source_review_path_required")
     require(not (path == QUEUE and str(ptr).startswith("/" + INVENTORY_KEY)), "self_attested_inventory_reference")
-    raw = read_relative(root, path)
-    require(PDF_SHA.encode("ascii") in raw, "review_original_source_hash_missing_or_mismatch")
-    value = pointer(parse_yaml(raw), ptr)
+    # Parse each exact source review at most once per assess call. Hundreds of
+    # distinct field pointers may share one lengthy independently reviewed file.
+    # The cache is scoped to one assessment; prepare/confirm re-read current files.
+    if path not in evidence:
+        raw = read_relative(root, path)
+        require(PDF_SHA.encode("ascii") in raw, "review_original_source_hash_missing_or_mismatch")
+        evidence[path] = (blob(raw), parse_yaml(raw))
+    value = pointer(evidence[path][1], ptr)
     require(value not in (None, False, "", [], {}), "empty_or_negative_review_evidence")
     require(ref.get("value_sha256") == digest(value), "source_review_fragment_changed")
-    evidence[path] = blob(raw)
 
 
 def pages(value, maximum):
@@ -103,6 +107,31 @@ def pages(value, maximum):
     require(value == sorted(set(value)), "duplicate_or_unsorted_pages")
     return set(value)
 
+
+def indexed_record_pages(entry, record, key):
+    """Check printed/PDF record provenance without erasing archival annotations.
+
+    Two original unnumbered color-archetype sheets retain an exact explanatory
+    suffix in printed_pages.  Only these two explicitly indexed exceptions may
+    use the verified source-index range; arbitrary malformed ranges still fail.
+    """
+    value = record[key]
+    try:
+        return parsed_printed_or_pdf_page_set(value)
+    except ValueError:
+        annotated = {
+            "65 (first unnumbered full-color archetype sheet after printed p64)": 65,
+            "66 (second unnumbered color archetype sheet after p64)": 66,
+        }
+        require(key == "printed_pages" and value in annotated,
+                "unparseable_indexed_record_pages:" + str(entry.get("path")))
+        printed = annotated[value]
+        expected_pdf = printed + 1
+        require(entry.get("range_printed") == [printed, printed]
+                and entry.get("range_pdf") == [expected_pdf, expected_pdf]
+                and parsed_printed_or_pdf_page_set(record["pdf_pages"]) == {expected_pdf},
+                "annotated_archetype_index_page_mismatch:" + str(entry.get("path")))
+        return {printed}
 
 def assess(root):
     root = Path(root).resolve()
@@ -185,15 +214,15 @@ def assess(root):
         ptr = binding.get("record_pointer")
         require(isinstance(ptr, str) and ptr.startswith("/data/"), "substantive_field_pointer_required:" + fid)
         pointer(record, ptr)
-        require(set(required[fid]["printed_pages"]).issubset(parsed_printed_or_pdf_page_set(record["printed_pages"]))
-                and set(required[fid]["pdf_pages"]).issubset(parsed_printed_or_pdf_page_set(record["pdf_pages"])), "bound_page_provenance_mismatch:" + fid)
+        require(set(required[fid]["printed_pages"]).issubset(indexed_record_pages(entry, record, "printed_pages"))
+                and set(required[fid]["pdf_pages"]).issubset(indexed_record_pages(entry, record, "pdf_pages")), "bound_page_provenance_mismatch:" + fid)
         review_ref(root, binding.get("source_review"), evidence)
     return {
         "protocol": PROTOCOL, "status": "acceptance_evidence_validated",
         "source": SOURCE, "source_pdf_sha256": PDF_SHA,
         "validator_blob": blob(Path(__file__).read_bytes()),
         "manifest_blob": blob(mraw), "closure_queue_blob": blob(qraw),
-        "inventory_sha256": digest(inventory), "source_review_document_blobs": evidence,
+        "inventory_sha256": digest(inventory), "source_review_document_blobs": {path: recorded[0] for path, recorded in evidence.items()},
         "indexed_records_verified": len(records), "source_sections": len(section_ids),
         "required_fields_bound": len(required), "owner_nonblocking_omitted_pages": sorted(omissions),
         "new_semantic_records": 0, "authorized_printed_pages": 0,
