@@ -458,6 +458,30 @@ postcompletion_mechanics_recovery:
       immutable_sha256: d5d9e8119a1c31d50f00df5dddfe98da580552e2d1b71ba79275f01067de8b7f
       gate: verified
       contiguous_advance: false
+    - id: rule.campaign.srcomp-prime-runner-opponent-rating-tiers-p83-84
+      path: rules/campaign/srcomp-prime-runner-opponent-rating-tiers-p83-84.yml
+      range_printed: [83, 84]
+      range_pdf: [84, 85]
+      content_class: rule_exact
+      commit: 35ab48722d41ec18099c20dea84009fb8b989819
+      blob: b371b24d00d38f89bb429dc6e34bb00d38accfee
+      baseline_sha256: 4dc6a15b64895dd985d135c039c51cbcc2b10f24986090661adb9535ba1b0cba
+      candidate_sha256: f450aef6f06a5d68c4fc491783db8d890ceebf7a5c906be665d064726290fc05
+      immutable_sha256: 716a1691e6364b19ffe31846aeac89e44670c7d1be73079288d51dc420e4adb4
+      gate: verified
+      contiguous_advance: false
+    - id: rule.campaign.srcomp-general-sota-advancement-costs-effects-p84-87
+      path: rules/campaign/srcomp-general-sota-advancement-costs-effects-p84-87.yml
+      range_printed: [84, 87]
+      range_pdf: [85, 88]
+      content_class: rule_exact
+      commit: 245e6cd4c75d25a0f019657759a2914d54c4c764
+      blob: 1cf05fef743ec7d34e374f446a13d4e8ec56fc5f
+      baseline_sha256: a080a077cd77c8c7425fb5b8b2f7bbff8029173a9731cb67b5a8431c58e88833
+      candidate_sha256: 450aa909d4c9953b386ddd52582e68ffebc7ea6f229d4385309b91352a92363c
+      immutable_sha256: 4c7c89ef603df5b992c98d6597823029b8c5d59850cf6c326e4b8d262490bc94
+      gate: verified
+      contiguous_advance: false
 
 # 2026-11-20 original-source scoped mechanics disposition; existing status and historical receipts preserved.
 how_to_hire_p52_58_mechanical_disposition_2026_11_20:
@@ -586,3 +610,31 @@ srcomp_additional_security_docwagon_original_p89_91_2026_11_22:
   Denver_active_checkpoint_changed: false
   owner_accepted_FASA7001_p308_disposition_changed: false
   source_printed_uncertainty: "DocWagon Response Time Table labels under Beyond City Limits literally use Less than 10 miles and Less than 25 miles. Preserve exact printed labels, not an inferred different interval or precedence."
+
+# 2026-11-22 distinct source-scoped verification of available original Companion pp83-87, not global completion.
+srcomp_prime_runner_and_general_sota_original_p83_87_2026_11_22:
+  publication: "FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition fictional tabletop role-playing game"
+  original_source_id: source.srcomp
+  cataloged_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_pdf_physical_pages: 138
+  fresh_original_source_verify_source: source_pdf_hash_verified
+  direct_original_page_image_reviews:
+    - {heading: "Creating Prime Runners tier guidance and rating modifiers", printed_pages: [83, 84], pdf_pages: [84, 85]}
+    - {heading: "General State of the Art numeric field-selection table, costs and penalties", printed_pages: [84, 87], pdf_pages: [85, 88]}
+  prior_accepted_canon_reused:
+    - {path: options/campaign/sota.yml, blob: 65094600baeb4d5cc71250dd75fbf7655166e31d, status: generic_legacy_overview_preserved}
+    - {path: options/matrix/sota.yml, blob: 9accbd8cad46070f8578452166bbc957370cbaa1, status: separate_matrix_sota_not_reimplemented}
+    - {path: rules/karma/srcomp-team-karma-pool-procedures-p82-83.yml, status: existing_team_karma_scope_not_repeated}
+  new_source_verified_mechanical_records: 2
+  newly_registered_source_specific_records: 2
+  source_review_scope: "Available original pp83-87 optional Prime Runner classification and General SOTA mechanics; other book/archival/engine scopes not claimed"
+  source_review_and_transaction_gates: "Independently examined authentic page images; original publication identity, scope, numeric rows and human-readable fictional editorial fields reviewed for separate baseline/candidate; actual connector_preflight self-tests, preservation_method verify-source, transaction_recovery stage with prepare, ordinary GitHub Contents creates, exact matching blob and bytes readbacks, actual ingestion_gate confirm and recovery inspect verified for each"
+  original_source_conflicts_and_limits:
+    - "Original table rolls and differing original/current factor-rating bases preserved as printed; no inferred unified formula"
+    - "Virtual Realities 2.0 Matrix SOTA is cross-referenced, not duplicated or silently replaced"
+    - "Legacy general SOTA summary preserved unmodified; two records carry source-specific numeric coverage"
+  FASA7001_original_mechanics_acceptance_reopened: false
+  Denver_archived_p45_pdf46_checkpoint_unchanged: true
+  global_contiguous_printed_page_credit: 0
+  executable_game_engine_validation: not_claimed
+  comprehensive_book_narrative_transcription: not_claimed
