@@ -1745,3 +1745,26 @@ source_reviewed_tacoma_p44_47_2026_11_22:
   authoritative_denver_checkpoint_changed: false
   status: source_scoped_reuse_review_only
   next_distinct_review: 'New Seattle Everett pp47-50 / PDF48-51; reconcile old pending to current accepted records against original source, then other genuine pending sections. Keep incomplete flags unless full ordinary gates prove them.'
+
+# Concrete distinct source-fidelity discrepancy discovered during continued Pass B:
+# original p48 image versus accepted old canonical file; NO semantic correction yet.
+everett_p48_source_name_discrepancy_2026_11_22:
+  publication: 'FanPro LLC, New Seattle (FanPro10657), corrected Third Printing 2001, Shadowrun Third Edition fictional tabletop setting'
+  source_id: source.fanpro-10657
+  original_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+  original_page_visually_inspected: {printed: 48, physical_pdf: 49}
+  affected_accepted_path: world/seattle/new-seattle-everett-entertainment-p47-48.yml
+  old_accepted_blob: 82752c0e5d748fd6f8d15502df835c13e130f1e7
+  affected_field: 'data.places[1].narrator'
+  incorrectly_accepted_name: 'Shotzumi yakuza clan'
+  original_source_name: 'Shotozumi clan'
+  independent_existing_same_page_record: world/seattle/new-seattle-everett-casino-corner-rubber-suit-p47-48.yml
+  independently_existing_blob: b975cf9eede77df3091b6c3607c72008e318687b
+  nature: 'One confirmed source spelling discrepancy, not a new character, alternative edition, or reason to redo accepted game mechanics'
+  semantic_correction_committed: false
+  per_record_prepare_confirm_index_gate_executed: false
+  old_baseline_preserved: true
+  next_exact_action: 'Independently re-review source p48 and original legacy record, preserve old Git blob, author separately source-reviewed corrected baseline and same-substance candidate; execute standard transaction_recovery stage/prepare, ordinary Contents update, exact readback, actual confirm and legitimate source index. Do not silently edit the old record or invent a revision merely for a hash.'
+  section_closeout_claim: false
+  new_semantic_records: 0
+  new_authorized_contiguous_pages: 0
