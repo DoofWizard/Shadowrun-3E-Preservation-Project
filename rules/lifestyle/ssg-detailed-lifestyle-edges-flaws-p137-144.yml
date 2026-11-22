@@ -334,9 +334,11 @@ data:
     maximum_levels: 5
   - name: Victory Gardens
     modifier: -0.2
-    effect: Home used for substantial indoor cultivation; effective Space rating reduced by one lifestyle category. Under
-      this book’s detailed system, applies to the housing/Space category.
-    effective_space_level_change: -1
+    effect: Substantial indoor cultivation reduces effective living space by one lifestyle level. The original source names a
+      Housing category for Detailed Lifestyles, although its six listed categories include Space and not Housing.
+    original_printed_category_name: Housing
+    effective_living_space_level_change: -1
+    category_normalization_status: source_internal_category_name_unresolved
   - name: Waterlogged
     modifier: -0.05
     effect: Water enters through roof or floor during precipitation.
@@ -369,5 +371,7 @@ data:
   source_ambiguities:
   - The House of the Dead package’s printed -0.80/-0.90 modifier exceeds the general 50 percent lifestyle cost-change limit.
     Preserve both facts without inventing precedence.
+  - Victory Gardens refers to a Housing category in its source text; the listed six categories include Space but not Housing.
+    Do not silently equate the names for executable input without independent source clarification.
   code_validation_status: Direct source-page review of cost modifiers and linked effects; executable game-engine validation
     not performed.
