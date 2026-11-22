@@ -63,6 +63,15 @@ postscan_verified_mechanics_recovery:
     actual_repo_verify_source_rerun_this_run: false
     new_semantic_or_contiguous_credit: false
   verified_semantic_records:
+    - id: rule.lifestyle.ssg-detailed-lifestyle-special-housing-p135-137
+      path: rules/lifestyle/ssg-detailed-lifestyle-special-housing-p135-137.yml
+      range_printed: [135, 137]
+      range_pdf: [136, 138]
+      content_class: rule_procedure
+      commit: 3cb554574c2b365c7c113fba9a1a1c18d3ae246f
+      blob: bfd3fe776158b5d2b63241e3875e8de12b475c8d
+      gate: verified
+      contiguous_advance: false
     - id: rule.lifestyle.ssg-detailed-lifestyle-category-ratings-p128-132
       path: rules/lifestyle/ssg-detailed-lifestyle-category-ratings-p128-132.yml
       range_printed: [128, 132]
@@ -356,18 +365,45 @@ ssg_detailed_lifestyles_categories_and_edges_source_recovery_2026_11_22:
   actual_verify_source: source_pdf_hash_verified
   original_pages_visually_reviewed:
     - {printed: [128, 132], pdf: [129, 133], scope: "six categories, levels, numeric security ratings, original compatibility constraints"}
+    - {printed: [135, 137], pdf: [136, 138], scope: "original special cases for nightly hotels, RV area points, shop and facility rentals"}
     - {printed: [137, 144], pdf: [138, 145], scope: "25 optional Edges, 34 Flaws, cost modifiers, effect exceptions, four examples and acquisition/removal"}
-  new_verified_source_specific_records: 2
+  new_verified_source_specific_records: 3
   semantic_commits:
     - de3925461cf759e004d2e2a2418debb16bdd0a65
     - 2fec9a21976464a7243a210da200c3243ede6995
+    - 3cb554574c2b365c7c113fba9a1a1c18d3ae246f
   semantic_blobs:
     - 942904428c37e0eaef27c26f2c5e7de6deeb0f2e
     - 28564605edb3e4c6136c9378c596f4228d696684
+    - bfd3fe776158b5d2b63241e3875e8de12b475c8d
   verified_gates: "Original SHA and actual repository verify-source, independent original source images, separately composed baseline/candidate, transaction stage/prepare, ordinary GitHub Contents create, exact-blobs readback, gate confirm and recovery inspect verified"
   source_ambiguity_preserved: "Printed House of the Dead sample -0.80/-0.90 conflicts with general +/-50% cost cap. No inferred precedence."
-  further_distinct_rules_candidates: "Printed pp135-137 hotel room daily pricing, recreational-vehicle daily area apportionment and workshop/facility rental; source review required before new records"
+  further_distinct_rules_candidates: "Printed pp135-137 hotel daily pricing, RV daily Area apportionment and workshop/facility rental now accepted in the third verified semantic record"
   new_global_contiguous_pages: 0
   whole_source_narrative_complete: false
   executable_engine_tested: false
+  Denver_checkpoint_changed: false
+
+# Narrow postscan mechanics closeout; archival narrative and engine testing are different scopes.
+ssg_detailed_lifestyles_available_source_mechanics_closeout_2026_11_22:
+  source_id: source.fanpro-10667
+  original_printed_pages: [127, 144]
+  original_physical_pdf_pages: [128, 145]
+  source_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  original_source_actual_verify_source: source_pdf_hash_verified
+  canonical_mechanics_covered:
+    - "34 monthly points-to-nuyen cost rows and six original SR3 equivalents, printed pp127-128"
+    - "Area/Comforts/Entertainment/Furnishings/Security/Space choices, 8 Area ratings, six per-category levels, Security 1/2/3/4/6/8 and combination conditions, pp128-132"
+    - "Partial permanent category ownership, change times, roommates, missed payments, regional differences and collector contests, pp133-135"
+    - "Eight burglary Area TNs, 1D6 loss categories and five hotel-rating templates, p135"
+    - "Nightly hotel calculation, RV daily Area apportionment and workshop/facility equipment rental, pp135-137"
+    - "25 lifestyle Edges, 34 Flaws, precise modifier effects, exclusions, examples, acquiring and removing options, pp137-144"
+  existing_registered_records_reused: 3
+  newly_source_verified_and_indexed_records: 3
+  new_semantic_commits: [de3925461cf759e004d2e2a2418debb16bdd0a65, 2fec9a21976464a7243a210da200c3243ede6995, 3cb554574c2b365c7c113fba9a1a1c18d3ae246f]
+  remaining_source_print_ambiguity: "House of the Dead sample -0.80/-0.90 exceeds generic +/-50% modifier cap; no invented precedence or engine-ready resolution"
+  available_source_mechanics_scoped_closed: true
+  whole_source_narrative_certification: false
+  engine_executable_validation: false
+  new_global_contiguous_pages: 0
   Denver_checkpoint_changed: false
