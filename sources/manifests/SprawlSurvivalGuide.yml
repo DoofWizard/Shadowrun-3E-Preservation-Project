@@ -86,8 +86,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [137, 144]
       range_pdf: [138, 145]
       content_class: rule_exact
-      commit: 2fec9a21976464a7243a210da200c3243ede6995
-      blob: 28564605edb3e4c6136c9378c596f4228d696684
+      commit: a838f8a617de31446e13756ed8e6aac5c15fccae
+      blob: 865aedaca5f992bfdec61306246923168612a39d
       gate: verified
       contiguous_advance: false
     - id: rule.lifestyle.ssg-detailed-lifestyle-costs-table-p128
@@ -401,9 +401,30 @@ ssg_detailed_lifestyles_available_source_mechanics_closeout_2026_11_22:
   existing_registered_records_reused: 3
   newly_source_verified_and_indexed_records: 3
   new_semantic_commits: [de3925461cf759e004d2e2a2418debb16bdd0a65, 2fec9a21976464a7243a210da200c3243ede6995, 3cb554574c2b365c7c113fba9a1a1c18d3ae246f]
-  remaining_source_print_ambiguity: "House of the Dead sample -0.80/-0.90 exceeds generic +/-50% modifier cap; no invented precedence or engine-ready resolution"
+  remaining_source_print_ambiguity: "House of the Dead sample -0.80/-0.90 exceeds generic +/-50% modifier cap; and Victory Gardens names Housing despite source categories listing Space instead. Neither ambiguity is assigned invented engine precedence."
   available_source_mechanics_scoped_closed: true
   whole_source_narrative_certification: false
   engine_executable_validation: false
+  new_global_contiguous_pages: 0
+  Denver_checkpoint_changed: false
+
+# Original-source correction to a newly indexed optional lifestyle Flaw; earlier semantic snapshot preserved above.
+ssg_detailed_lifestyles_victory_gardens_source_wording_correction_2026_11_22:
+  publication: "FanPro Sprawl Survival Guide (FanPro10667, 2003), fictional Shadowrun Third Edition supplement"
+  source_id: source.fanpro-10667
+  printed_page: 143
+  physical_pdf_page: 144
+  original_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  original_source_verify_source: source_pdf_hash_verified
+  record_id: rule.lifestyle.ssg-detailed-lifestyle-edges-flaws-p137-144
+  path: rules/lifestyle/ssg-detailed-lifestyle-edges-flaws-p137-144.yml
+  prior_verified_semantic_commit: 2fec9a21976464a7243a210da200c3243ede6995
+  prior_verified_blob: 28564605edb3e4c6136c9378c596f4228d696684
+  corrected_verified_semantic_commit: a838f8a617de31446e13756ed8e6aac5c15fccae
+  corrected_verified_blob: 865aedaca5f992bfdec61306246923168612a39d
+  correction: "Victory Gardens source prints Housing category, while available six-category system lists Space rather than Housing; preserve original label, do not silently infer equivalence"
+  source_uncertainty_nonblocking: true
+  independently_reviewed_baseline_and_candidate: true
+  actual_stage_prepare_confirm_recovery_inspect: verified
   new_global_contiguous_pages: 0
   Denver_checkpoint_changed: false
