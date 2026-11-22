@@ -718,8 +718,8 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [54, 54]
     range_pdf: [55, 55]
     path: world/seattle/new-seattle-snohomish-overview-p54.yml
-    commit: f1aaa3b0c73e00be7973d992a3284bb83c581376
-    blob: 4a1b36785b227bff06a14339a3cb83b3716ffecd
+    commit: e6ef80c14ecbf6093525a193de133766e1de3df9
+    blob: a81eb9e03b357bb670932c579720b3e204a5b84c
     gate: verified
     content_class: world_fact
     record_id: world.seattle.new_seattle_snohomish_overview_p54
@@ -1839,3 +1839,29 @@ snohomish_p54_original_source_fidelity_review_2026_11_22:
   historical_rejected_rich_normalization_pending_retired: false
   next_action: "Close these two exact Snohomish p54 field errors through normal original-source editorial and transaction gates; then proceed to the next distinct unfinished New Seattle Pass B obligation, not earlier closed core or Everett"
   denver_checkpoint_changed: false
+
+
+# Later separate source-specific semantic confirmation and index reconciliation; historical first-pass review above remains immutable.
+snohomish_p54_verified_semantic_reconciliation_2026_11_22:
+  source: source.fanpro-10657
+  original_pdf_sha256: "837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97"
+  source_verification_command: "python tools/ingestion/preservation_method.py verify-source [fresh cataloged PDF] sources/manifests/NewSeattle.yml"
+  source_verification_result: source_pdf_hash_verified
+  inspected_original_printed_p54_pdf55: true
+  path: world/seattle/new-seattle-snohomish-overview-p54.yml
+  record_id: world.seattle.new_seattle_snohomish_overview_p54
+  prior_blob: 4a1b36785b227bff06a14339a3cb83b3716ffecd
+  verified_commit: e6ef80c14ecbf6093525a193de133766e1de3df9
+  verified_blob: a81eb9e03b357bb670932c579720b3e204a5b84c
+  candidate_sha256: 67016583da834f230d104cd535241d3c5490aafa73a5fbedd0b9e174823d4c6a
+  transaction_gate: independently_source_reviewed_corrected_baseline_and_same_substance_candidate_staged_prepared_exact_readback_confirm_verified
+  recovery_inspect_status: verified
+  corrected_fields:
+    - data.narrator_setting.municipal_history_2048
+    - data.at_a_glance.lone_star_security_rating.B[0]
+  historical_original_source_review_preserved: true
+  registration_count_unchanged: 176
+  contiguous_advance: false
+  authorized_new_printed_pages: 0
+  pending_richer_normalization_unchanged: true
+  denver_checkpoint_unchanged: true
