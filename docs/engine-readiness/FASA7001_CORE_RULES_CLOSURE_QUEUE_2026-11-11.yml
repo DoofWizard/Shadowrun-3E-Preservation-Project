@@ -1635,11 +1635,11 @@ core_acceptance_inventory:
   scope: available_original_mechanics
   mapping_status: source_review_fragment_matching_in_progress
   historical_initial_json_review_matches: 4
-  current_draft_source_to_canon_field_bindings: 986
-  current_source_review_references_including_section_refs: 1001
+  current_draft_source_to_canon_field_bindings: 1010
+  current_source_review_references_including_section_refs: 1025
   pending_review_references_including_section_refs: 0
   source_derived_inventory_certification: not_yet_established
-  next_distinct_original_source_section: matrix_printed_199_230
+  next_distinct_original_source_section: street_gear_printed_270_312
   independently_reviewed_original_headings_fields_and_classes: false
   unresolved_mechanical_fields: []
   source_inventory_review: null
@@ -2617,11 +2617,34 @@ core_acceptance_inventory:
 
     - id: running_shadows
       printed_range: [231, 241]
-      heading_field_content_class_inventory_complete: false
+      heading_field_content_class_inventory_complete: true
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
-      exact_legacy_index_equivalence_pending: ["procedures/shadowrunning/fencing-loot.yml","procedures/identity/forge-credstick.yml"]
-      source_derived_field_completeness_pending: true
+      exact_legacy_index_equivalence_pending: []
+      source_derived_field_completeness_pending: false
+      source_derived_mechanical_inventory_certification_2026_11_21:
+        publication: "FASA Corporation, Shadowrun Third Edition, FASA7001, original fictional tabletop RPG, source.sr3-core"
+        original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+        original_printed_scope: [231, 241]
+        physical_pdf_scope: [240, 250]
+        independent_source_review: "All original Running the Shadows p231-241 images directly visually reviewed with current exact 345-page cataloged source SHA; reused accepted original security, perception, lifestyle, fencing and credstick source reviews including FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml."
+        original_rules_classes: "Perception and five-senses modifier/success tables pp231-232; natural/technical/magical/Matrix security and detection pp232-237; complete Fencing the Loot procedure/table pp237-238; registered/certified credstick rules, forged identity tests and in-world SIN context pp238-239; lifestyle monthly/permanent costs and optional team safehouse guidance pp240-241."
+        source_provenances: "Original p231-241/PDF240-250 viewed; p233 full-page original illustration; optional GM guidance distinguished from mandatory tests."
+        reconciled_full_fencing_procedure: "Legacy full Fencing the Loot path normalized under source-specific gate and accepted as procedure.shadowrunning.fencing-loot, new semantic commit 174efe6e9260c42722775b005d59f0ca0d624fee blob 0a1ab6b48ed3f8edda59b1ddabaa1d3e9ac95b15, indexed commit 9a34ee128bbd62bd21802c45c285a83e3f7793be. This preserves original legacy consumer fields and includes team dice, elapsed days, discovery risk, bankroll and opposed payout bounds."
+        credstick_procedures: "Registered source-reviewed rule.identity.sr3-core-credstick-tiers-forgery-numeric-p239 and rule.identity.sr3-core-credstick-use-offline-certification-p239 cover original creation cost/Availability, tie and opposed verification, offline/certified consequences; old forge-credstick overview retained but not duplicate-transcribed."
+        original_heading_field_content_class_review_closed: true
+        source_accepted_registrations_reused: true
+        new_authorized_contiguous_pages: 0
+        core_acceptance_confirmed: false
       required_fields:
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.fence_search_test", source_heading: "Running the Shadows / Fencing the Loot p237-238 / fence search test", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.team_search", source_heading: "Running the Shadows / Fencing the Loot p237-238 / team search", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.loot_preference_order", source_heading: "Running the Shadows / Fencing the Loot p237-238 / loot preference order", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.search_time", source_heading: "Running the Shadows / Fencing the Loot p237-238 / search time", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.daily_exposure", source_heading: "Running the Shadows / Fencing the Loot p237-238 / daily exposure", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.fence_bankroll", source_heading: "Running the Shadows / Fencing the Loot p237-238 / fence bankroll", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.meet_opposed_test", source_heading: "Running the Shadows / Fencing the Loot p237-238 / meet opposed test", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.sale_base", source_heading: "Running the Shadows / Fencing the Loot p237-238 / sale base", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
+        - {id: "obligation.procedure.shadowrunning.fencing-loot.sale_adjustment", source_heading: "Running the Shadows / Fencing the Loot p237-238 / sale adjustment", content_class: rule_procedure, printed_pages: [237, 238], pdf_pages: [246, 247]}
         - {id: "obligation.guidance.shadowrunning.sr3-core-security-systems-narrator-gm-p232.source_narrator_observations", source_heading: "Running the Shadows / Perception and Perception Modifier tables p231-232 / source narrator observations", content_class: campaign_guidance, printed_pages: [232], pdf_pages: [241]}
         - {id: "obligation.rule.perception.sr3-core-perception-numeric-tables-p231-232.perception_test", source_heading: "Running the Shadows / Perception and Perception Modifier tables p231-232 / perception test", content_class: rule_exact, printed_pages: [231, 232], pdf_pages: [240, 241]}
         - {id: "obligation.rule.perception.sr3-core-perception-numeric-tables-p231-232.general_target_number_modifiers", source_heading: "Running the Shadows / Perception and Perception Modifier tables p231-232 / general target number modifiers", content_class: rule_exact, printed_pages: [231, 232], pdf_pages: [240, 241]}
@@ -2662,11 +2685,44 @@ core_acceptance_inventory:
 
     - id: beyond_shadows
       printed_range: [242, 252]
-      heading_field_content_class_inventory_complete: false
+      heading_field_content_class_inventory_complete: true
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
-      exact_legacy_index_equivalence_pending: ["rules/advancement/attribute-improvement.yml","rules/advancement/skill-improvement.yml","rules/advancement/learning-new-skills.yml"]
-      source_derived_field_completeness_pending: true
+      exact_legacy_index_equivalence_pending: []
+      source_derived_field_completeness_pending: false
+      source_derived_mechanical_inventory_certification_2026_11_21:
+        publication: "FASA Corporation, Shadowrun Third Edition FASA7001, original fictional tabletop RPG, source.sr3-core"
+        original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+        printed_scope: [242, 252]
+        physical_pdf_scope: [251, 261]
+        original_source_review: "Original p242-252 images directly inspected; reused previously source-authenticated Karma, attribute improvement, skill table, optional training, NPC professionalism, toxin/disease and GM campaign guidance receipts in FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml."
+        reviewed_source_headings: "Good/Total Karma and discretionary awards pp242-244; improving natural Attributes and Racial Modified Limits pp244-245; Skill Improvement Cost Table and new skill/specialization procedures p245; optional training p245-246; Karma Pool reroll, spending and burn, optional Hooper-Nelson/Hand of God p246-248; NPC professionalism and metahuman variation pp248-249; disease and toxin tests and profiles pp249-251; optional GM campaign guidance p251-252."
+        art_disposition: "Original p243/PDF252 and p247/PDF256 full-page illustrations; no new rule invented."
+        newly_normalized_source_verified_legacy_rules:
+          - "rule.advancement.attribute-improvement: commit ab08959f9de0b1f15bff0ba922fc653ef0b12709, blob d52e15c7c532ecad80699a299ce191390a3e6c8b"
+          - "rule.advancement.skill-improvement: commit c3fe332baabb9dc93f51307046de196ea6c9d205, blob 7086dfc1109fd95c6395ac56b6b3ecbb3116a937"
+          - "rule.advancement.learning-new-skills: commit 78525a0536fc2b88d01fb68b69b52e39ae61282d, blob 41eb6080f2bbc680a7f1d285150a587b70237aae"
+        verified_source_specific_index_commit: "089a2e050f1b9edc346e866137349a5701c3c15f"
+        source_procedure_consumer_fidelity: "Original old effective/sources, scope, resolution and cost_factors fields preserved; added verified source envelope and exact source-derived numerical/condition data, with no fabricated early edition precedence."
+        preserved_internal_source_disagreements: "Original source-internal unrelated discrepancies and optional rules retained, not overwritten by adjudication."
+        original_heading_field_content_class_review_closed: true
+        new_authorized_contiguous_pages: 0
+        core_acceptance_confirmed: false
       required_fields:
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.original_source_rule", source_heading: "Beyond the Shadows / original p244 attribute improvement / original source rule", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.cost_at_or_below_racial_modified_limit", source_heading: "Beyond the Shadows / original p244 attribute improvement / cost at or below racial modified limit", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.cost_above_modified_limit_through_racial_maximum", source_heading: "Beyond the Shadows / original p244 attribute improvement / cost above modified limit through racial maximum", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.racial_attribute_limit_table", source_heading: "Beyond the Shadows / original p244 attribute improvement / racial attribute limit table", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.cannot_directly_increase", source_heading: "Beyond the Shadows / original p244 attribute improvement / cannot directly increase", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.attribute_improvement.reaction_can_change_indirectly_via", source_heading: "Beyond the Shadows / original p244 attribute improvement / reaction can change indirectly via", content_class: rule_exact, printed_pages: [244], pdf_pages: [253]}
+        - {id: "obligation.rule-or-procedure.advancement.skill_improvement.base_skill_factors", source_heading: "Beyond the Shadows / original p245 skill improvement / base skill factors", content_class: rule_exact, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.skill_improvement.specialization_factors", source_heading: "Beyond the Shadows / original p245 skill improvement / specialization factors", content_class: rule_exact, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.skill_improvement.cost_procedure", source_heading: "Beyond the Shadows / original p245 skill improvement / cost procedure", content_class: rule_exact, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.new_skill", source_heading: "Beyond the Shadows / original p245 learning new skills / new skill", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.after_first_rating", source_heading: "Beyond the Shadows / original p245 learning new skills / after first rating", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_prerequisite", source_heading: "Beyond the Shadows / original p245 learning new skills / specialization prerequisite", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_initial_rating", source_heading: "Beyond the Shadows / original p245 learning new skills / specialization initial rating", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.maximum_specialization_rating", source_heading: "Beyond the Shadows / original p245 learning new skills / maximum specialization rating", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
+        - {id: "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_count_limit", source_heading: "Beyond the Shadows / original p245 learning new skills / specialization count limit", content_class: rule_procedure, printed_pages: [245], pdf_pages: [254]}
         - {id: "obligation.guidance.shadowrunning.sr3-core-be-kind-captive-survival-agency-p252.narrator_advice", source_heading: "Beyond the Shadows / Gamemaster campaign guidance optional/advisory pp251-252 / narrator advice", content_class: campaign_guidance, printed_pages: [252], pdf_pages: [261]}
         - {id: "obligation.guidance.shadowrunning.sr3-core-gamemaster-campaign-p251-252.narrator_guidance", source_heading: "Beyond the Shadows / Diseases and Toxins source mechanics and stat profiles pp249-251 / narrator guidance", content_class: campaign_guidance, printed_pages: [251, 252], pdf_pages: [260, 261]}
         - {id: "obligation.rule.advancement.sr3-core-iris-skill-improvement-cost-example-p245.example", source_heading: "Beyond the Shadows / Improving Skills, Specializations and Learning New Skills; factors, linked Attribute thresholds, rounding down, no retroactive rebates, base-skill prerequisites and new rating1=1 point p245 / example", content_class: rule_exact, printed_pages: [245], pdf_pages: [254]}
@@ -7484,6 +7540,102 @@ core_acceptance_inventory:
       record_pointer: "/data/fictional_in_world_conditions"
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/32/source_derived_heading_slices/3", value_sha256: "5c010be43422dbf62e4983485c901613a2bbc1da0c104db06db524e50e4baa37"}
 
+    "obligation.procedure.shadowrunning.fencing-loot.fence_search_test":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/fence_search_test"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.team_search":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/team_search"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.loot_preference_order":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/loot_preference_order"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.search_time":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/search_time"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.daily_exposure":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/daily_exposure"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.fence_bankroll":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/fence_bankroll"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.meet_opposed_test":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/meet_opposed_test"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.sale_base":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/sale_base"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.procedure.shadowrunning.fencing-loot.sale_adjustment":
+      record_id: "procedure.shadowrunning.fencing-loot"
+      record_pointer: "/data/sale_adjustment"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/30/distinct_source_headings", value_sha256: "71770ed8054e3886ae1a2b1ccd81927cd110fe2a6e565e6e8241a65458bea118"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.original_source_rule":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/original_source_rule"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.cost_at_or_below_racial_modified_limit":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/cost_at_or_below_racial_modified_limit"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.cost_above_modified_limit_through_racial_maximum":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/cost_above_modified_limit_through_racial_maximum"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.racial_attribute_limit_table":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/racial_attribute_limit_table"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.cannot_directly_increase":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/cannot_directly_increase"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.attribute_improvement.reaction_can_change_indirectly_via":
+      record_id: "rule.advancement.attribute-improvement"
+      record_pointer: "/data/reaction_can_change_indirectly_via"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.skill_improvement.base_skill_factors":
+      record_id: "rule.advancement.skill-improvement"
+      record_pointer: "/data/base_skill_factors"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.skill_improvement.specialization_factors":
+      record_id: "rule.advancement.skill-improvement"
+      record_pointer: "/data/specialization_factors"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.skill_improvement.cost_procedure":
+      record_id: "rule.advancement.skill-improvement"
+      record_pointer: "/data/cost_procedure"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.new_skill":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/new_skill"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.after_first_rating":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/after_first_rating"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_prerequisite":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/specialization_prerequisite"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_initial_rating":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/specialization_initial_rating"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.maximum_specialization_rating":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/maximum_specialization_rating"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
+    "obligation.rule-or-procedure.advancement.learning_new_skills.specialization_count_limit":
+      record_id: "rule.advancement.learning-new-skills"
+      record_pointer: "/data/specialization_count_limit"
+      source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/31/source_headings", value_sha256: "ea67fa6783419422761cd68b53ef8d8aae50b0953464c98df1df27156168534c"}
   acceptance_exact_index_equivalence_cursors_2026_11_21:
     - original_heading: "Running the Shadows / Fencing the Loot and Forging Credsticks, pp237-239/PDF246-248"
       existing_source_review: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml sections[fencing_credstick_core_mechanics_237_239_20261115_0855]"
@@ -7500,5 +7652,5 @@ core_acceptance_inventory:
   mapping_exception_notes:
     - "This list maps substantive fields from accepted canonical Game Concepts records to original printed/PDF ranges, as a draft for review against existing original-source receipts; it is not independent proof of each original heading or all rows."
     - "No semantic files, global checkpoint, source status or owner omission disposition are changed by this administrative mapping."
-  other_original_sections_remaining: [matrix, running_shadows, beyond_shadows, street_gear]
+  other_original_sections_remaining: [street_gear]
   core_fully_accepted: false
