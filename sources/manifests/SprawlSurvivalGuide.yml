@@ -63,6 +63,24 @@ postscan_verified_mechanics_recovery:
     actual_repo_verify_source_rerun_this_run: false
     new_semantic_or_contiguous_credit: false
   verified_semantic_records:
+    - id: rule.lifestyle.ssg-detailed-lifestyle-category-ratings-p128-132
+      path: rules/lifestyle/ssg-detailed-lifestyle-category-ratings-p128-132.yml
+      range_printed: [128, 132]
+      range_pdf: [129, 133]
+      content_class: rule_exact
+      commit: de3925461cf759e004d2e2a2418debb16bdd0a65
+      blob: 942904428c37e0eaef27c26f2c5e7de6deeb0f2e
+      gate: verified
+      contiguous_advance: false
+    - id: rule.lifestyle.ssg-detailed-lifestyle-edges-flaws-p137-144
+      path: rules/lifestyle/ssg-detailed-lifestyle-edges-flaws-p137-144.yml
+      range_printed: [137, 144]
+      range_pdf: [138, 145]
+      content_class: rule_exact
+      commit: 2fec9a21976464a7243a210da200c3243ede6995
+      blob: 28564605edb3e4c6136c9378c596f4228d696684
+      gate: verified
+      contiguous_advance: false
     - id: rule.lifestyle.ssg-detailed-lifestyle-costs-table-p128
       path: rules/lifestyle/ssg-detailed-lifestyle-costs-table-p128.yml
       range_printed: [127, 128]
@@ -327,4 +345,29 @@ ssg_detailed_lifestyles_burglary_success_count_source_correction_2026_11_22:
   source_specific_registration_count_change: 0
   new_global_contiguous_pages: 0
   source_status_unchanged: true
+  Denver_checkpoint_changed: false
+
+# Distinct Detailed Lifestyles source-original options and limits; separate from already closed p118-126 Game Information.
+ssg_detailed_lifestyles_categories_and_edges_source_recovery_2026_11_22:
+  original_publication: "FanPro Sprawl Survival Guide (FanPro10667, 2003), fictional Shadowrun Third Edition supplement"
+  source_id: source.fanpro-10667
+  source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  original_physical_pages: 146
+  actual_verify_source: source_pdf_hash_verified
+  original_pages_visually_reviewed:
+    - {printed: [128, 132], pdf: [129, 133], scope: "six categories, levels, numeric security ratings, original compatibility constraints"}
+    - {printed: [137, 144], pdf: [138, 145], scope: "25 optional Edges, 34 Flaws, cost modifiers, effect exceptions, four examples and acquisition/removal"}
+  new_verified_source_specific_records: 2
+  semantic_commits:
+    - de3925461cf759e004d2e2a2418debb16bdd0a65
+    - 2fec9a21976464a7243a210da200c3243ede6995
+  semantic_blobs:
+    - 942904428c37e0eaef27c26f2c5e7de6deeb0f2e
+    - 28564605edb3e4c6136c9378c596f4228d696684
+  verified_gates: "Original SHA and actual repository verify-source, independent original source images, separately composed baseline/candidate, transaction stage/prepare, ordinary GitHub Contents create, exact-blobs readback, gate confirm and recovery inspect verified"
+  source_ambiguity_preserved: "Printed House of the Dead sample -0.80/-0.90 conflicts with general +/-50% cost cap. No inferred precedence."
+  further_distinct_rules_candidates: "Printed pp135-137 hotel room daily pricing, recreational-vehicle daily area apportionment and workshop/facility rental; source review required before new records"
+  new_global_contiguous_pages: 0
+  whole_source_narrative_complete: false
+  executable_engine_tested: false
   Denver_checkpoint_changed: false
