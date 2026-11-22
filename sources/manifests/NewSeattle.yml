@@ -394,10 +394,10 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [97, 97]
     range_pdf: [98, 98]
     path: world/seattle/new-seattle-mafia-chronology-narrator-p97.yml
-    commit: 1ba5893ddc76951ebe7fdb4189b8a01a3c7829c0
-    blob: c174ca669ea05deb40e445bcfc9167ab1bfb79a6
+    commit: 6c7f45bc57763683768ea86b1a01162cfbd92e87
+    blob: c8fcc63547961355ae5c2bffdf4281fbcbf86552
     gate: verified
-    content_class: world_fact
+    content_class: attributed_claim
     record_id: world.seattle.new_seattle_mafia_chronology_p97
     contiguous_advance: false
   - range_printed: [98, 100]
@@ -2067,3 +2067,28 @@ new_seattle_p104_octagon_yellow_lotus_alliance_correction_2026_11_22:
   new_semantic_records: 0
   newly_authorized_contiguous_printed_pages: 0
   denver_archived_checkpoint_unchanged: true
+
+# FASA10657 New Seattle printed p97/PDF98 exact-source recovery of an already-written semantic correction.
+underworld_p97_captain_chaos_existing_semantic_recovery_2026_11_22:
+  publication: "FanPro LLC, New Seattle (FanPro10657), fictional Shadowrun Third Edition corrected Third Printing (2001)"
+  source: source.fanpro-10657
+  original_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+  original_pages_visually_reviewed: "printed p97 / PDF98; Captain Chaos signed and time-stamped Shadowland report"
+  actual_repository_verify_source_result: source_pdf_hash_verified
+  repaired_manifest_path: world/seattle/new-seattle-mafia-chronology-narrator-p97.yml
+  canonical_id: world.seattle.new_seattle_mafia_chronology_p97
+  previous_index_commit: 1ba5893ddc76951ebe7fdb4189b8a01a3c7829c0
+  previous_index_blob: c174ca669ea05deb40e445bcfc9167ab1bfb79a6
+  previous_index_class: world_fact
+  source_corrected_semantic_commit_reused: 6c7f45bc57763683768ea86b1a01162cfbd92e87
+  source_corrected_semantic_blob_confirmed: c8fcc63547961355ae5c2bffdf4281fbcbf86552
+  corrected_content_class: attributed_claim
+  verification: "fresh_original_sha256_and_actual_verify_source; independent_original_p97_image_review; independently_source_reconstructed_corrected_baseline; exact_existing_candidate_bytes; transaction_recovery.stage_including_ingestion_gate.prepare; fresh_GitHub_commit_and_live_byte_readbacks; actual_ingestion_gate.confirm; transaction_recovery.inspect_verified; 29_connector_preflight_tests_passed"
+  restored_distinction: "The fictional Mafia chronology belongs to Captain Chaos's signed 2060 report, not to an omniscient book narrator; the p97 source asserts Chimera involvement as that named in-world reporter's claim."
+  original_semantic_file_rewritten_this_run: false
+  new_semantic_records_this_run: 0
+  newly_authorized_contiguous_printed_pages: 0
+  prior_rejected_rich_underworld_normalization_still_pending: true
+  owner_accepted_fasa7001_core_status_untouched: true
+  denver_archived_p45_pdf46_checkpoint_untouched: true
+  next_distinct_obligation: "Select a live-ledger mechanical dependency outside already-closed SOTA Game Information and New Seattle p97, rather than resubmit this unchanged semantic correction; preserve pending.newseattle.underworld-p97-107 pending genuine richer original-source section closure."
