@@ -1,0 +1,55 @@
+id: rule.karma.srcomp-staggered-karma-pool-intervals-p82
+record_type: rule
+status: ingested
+source: source.srcomp
+printed_pages: '82'
+pdf_pages: '83'
+edition_scope: FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition
+  fictional tabletop optional rules; original printed p82/PDF83.
+content_class:
+- rule_exact
+data:
+  title: 'Optional Staggered-Rate Karma Pools: explicit accumulated-Karma intervals'
+  source_role: Exact optional numeric rate tiers from Shadowrun Companion original
+    rules, without silently changing default SR3 Karma Pool rates.
+  legacy_reference:
+    canonical_id: option.karma.staggered-rate-karma-pools
+    distinct_numeric_gap: Existing canonical option states qualitative slowdown past
+      pool 5 but omits all 30/20 and 40/30 awarded-Karma intervals.
+  tiers:
+  - condition: Until the character’s Karma Pool reaches 5 points.
+    pool_interval: Standard SR3 Karma Pool accumulation rate, which differs for humans
+      and metahumans.
+    upper_pool_reference: 5
+  - condition: From a Karma Pool of 6 through 10 points.
+    lower_pool_reference: 6
+    upper_pool_reference: 10
+    awarded_karma_per_one_pool_point:
+      human: 20
+      other_metatypes: 30
+  - condition: When the Karma Pool reaches 10 points, the character then earns additional
+      pool points at the slower rate.
+    transition_pool_reference: 10
+    awarded_karma_per_one_pool_point:
+      human: 30
+      other_metatypes: 40
+  source_interpretation_note: The original wording says both From 6 to 10 and When
+    the Karma Pool reaches 10; it does not explicitly settle the exact timing of the
+    rate switch at the 10-point boundary. Preserve both statements rather than invent
+    a tie-break.
+  game_effect: Keeps progressively larger Karma Pools increasingly costly in awarded
+    Karma; explicitly an optional alternate campaign rule.
+  provenance:
+    title: Shadowrun Companion
+    publisher: FASA Corporation
+    product_id: FASA7905a
+    edition: Shadowrun Third Edition
+    source_id: source.srcomp
+    printed_page: 82
+    physical_pdf_page: 83
+    heading: Advanced Rules — Karma Pools — Staggered-Rate Karma Pools
+framing: reference_exact
+headline: rule.karma.srcomp-staggered-karma-pool-intervals-p82 — archival rule_exact
+  record
+summary: Source-indexed rule_exact from source.srcomp, printed pages 82; substantive
+  assertions and provenance are in the structured data.
