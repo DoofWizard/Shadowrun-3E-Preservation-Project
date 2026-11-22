@@ -1150,8 +1150,8 @@ verified_source_reviewed_supplemental_records:
   - range_printed: [115, 115]
     range_pdf: [116, 116]
     path: references/seattle/new-seattle-using-players-military-corporations-gm-options-p115.yml
-    commit: 520e27bdbac37f41ca5c6e6b58ef2f70423bcbbc
-    blob: 72a3343c18ac9d839be544755add6349d5891c9b
+    commit: 1e50584f9f842c355a5b57b3c831cd272087688b
+    blob: e4969e6473be1221eefd45ead72f8fc13e576e13
     gate: verified
     content_class: campaign_guidance
     record_id: reference.seattle.new_seattle_using_players_military_corporations_p115
@@ -1934,4 +1934,30 @@ new_seattle_p112_equipment_payment_2026_11_22:
   historic_rich_normalization_pending_preserved: true
   contiguous_advance: false
   newly_authorized_printed_pages: 0
+  denver_checkpoint_unchanged: true
+
+
+# Verified source-specific semantic correction. Full historic accepted old file bytes and both
+# independently reviewed corrected baseline/candidate are preserved in the transaction review.
+new_seattle_p115_colloton_source_correction_2026_11_22:
+  publication: "FanPro LLC New Seattle (FanPro10657), Shadowrun Third Edition corrected Third Printing (2001), fictional game"
+  source: source.fanpro-10657
+  original_pdf_sha256: 837fd681bd6cbe822c902f57c9dc55ecd2d33084d21e363dfa3bc7925cfa4f97
+  original_source_page_visually_inspected: {printed: 115, pdf: 116}
+  path: references/seattle/new-seattle-using-players-military-corporations-gm-options-p115.yml
+  record_id: reference.seattle.new_seattle_using_players_military_corporations_p115
+  corrected_field: "data.optional_gamemaster_scenarios[0].hooks[2]"
+  old_accepted_value: "General Colotonn"
+  original_source_correct_value: "General Colloton"
+  prior_accepted_blob: 72a3343c18ac9d839be544755add6349d5891c9b
+  source_verified_semantic_commit: 1e50584f9f842c355a5b57b3c831cd272087688b
+  readback_semantic_blob: e4969e6473be1221eefd45ead72f8fc13e576e13
+  corrected_candidate_sha256: b5813d0e161e6917a9d04242bb3c33c40d49a66ecda3ca26b1d0a4732f8e59f9
+  transaction_gates: independently_original_source_reviewed_corrected_baseline_and_same_substance_candidate_stage_prepare_ordinary_contents_exact_readback_confirm_recovery_verified
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  accepted_other_fields_preserved: true
+  registration_count_unchanged: 176
+  historic_rich_normalization_pending_preserved: true
+  new_semantic_records: 0
+  newly_authorized_contiguous_pages: 0
   denver_checkpoint_unchanged: true
