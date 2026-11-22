@@ -1639,7 +1639,7 @@ core_acceptance_inventory:
   current_source_review_references_including_section_refs: 1025
   pending_review_references_including_section_refs: 0
   source_derived_inventory_certification: not_yet_established
-  next_distinct_original_source_section: street_gear_printed_270_312
+  next_distinct_original_source_section: final_source_inventory_review_and_core_acceptance
   independently_reviewed_original_headings_fields_and_classes: false
   unresolved_mechanical_fields: []
   source_inventory_review: null
@@ -2757,11 +2757,36 @@ core_acceptance_inventory:
 
     - id: street_gear
       printed_range: [270, 312]
-      heading_field_content_class_inventory_complete: false
+      heading_field_content_class_inventory_complete: true
       source_review: {path: "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml", pointer: "/sections/32/source_derived_heading_slices", value_sha256: "fa0db0b0f187d4ca3b29039a573d85cba7edf8acb66c4e42fb63230d627cf43a"}
-      source_reviewed_draft_subset: "Original printed pp270-282 numeric/procedure/market records; remaining pp283-312 and row-by-row source inventory certification not yet completed"
-      full_mechanical_section_remaining: true
-      owner_accepted_nonblocking_omission: "Original printed p308 scan leaf unavailable; not independently inspected and not counted as transcribed"
+      source_reviewed_draft_subset: "Available original printed pp270-312 five natural source gear slices now reconciled against the original-page/class checklist and accepted mechanical fields; p308 remains owner-accepted unobserved nonblocking exception."
+      full_mechanical_section_remaining: false
+      owner_accepted_nonblocking_omission: "Printed p308 not present in 345-page scan between printed p307/PDF316 and p309/PDF317; no content invented and no scan/page credit."
+      source_derived_mechanical_inventory_certification_2026_11_21:
+        original_publication: "FASA Corporation Shadowrun Third Edition FASA7001, published fictional tabletop RPG, source.sr3-core"
+        original_pdf_sha256: "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914"
+        original_printed_scope: [270, 312]
+        original_physical_pdf_scope: [279, 320]
+        direct_original_page_review: "The cataloged 112507704-byte 345-page original PDF was freshly retrieved from connected Google Drive and its SHA256 independently computed; actual repository preservation_method.py verify-source passed. Original available p270-312 images were inspected with direct contact-sheet and selected enlarged table checks, excluding absent p308; source-registered earlier independent original full-page reviews and accepted table/row records reused where unchanged."
+        original_natural_source_slices:
+          - "p270-274: Gear ratings and upgrade limits; shopping Availability/Street Index, legality/permits, fines and Strength/load tests; p271 illustration"
+          - "p275-282: Melee and projectile equipment, firearm and ammunition purchase tables, reload/recoil/weapon accessory procedures and conditions"
+          - "p283-295: Explosives, armor/clothing/ballistic and layering rules, communications, entertainment, electronics, tools, sensors, surveillance/security and survival gear, including complete 16-row original SURVIVAL GEAR table p295"
+          - "p296-305: Skillsoft/BTL, cyberware implants and Essence/costs, full 39-row BODYWARE table p302, cyberdecks/programs, first aid/medical equipment, biotechnology and magical equipment"
+          - "p306-312: remote control decks/ECCM and vehicle adaptation, mounts/Jackrabbit p307, road/water/aircraft/security/drone models p309-311 and original full p312 vehicle mount/weapon table; original p308 leaf omitted from scan"
+        classes_certified_for_available_source: [rule_exact, rule_procedure, equipment_stat]
+        original_source_review_refs:
+          - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml section street_gear_270_312_source_class_inventory_2026_11_21"
+          - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml section street_gear_ratings_availability_legality_haul_original_p270_274_20261115_0929"
+          - "docs/engine-readiness/FASA7001_SECTION_CLOSURE_EVIDENCE_2026-11-15_0302.yml sections cyberware_ears_eyes_bodyware_p299_301, bodyware_market_printed_302, rigging_gear_mounts_printed_306_307_20261115_0627, vehicle_market_printed_309_311_20261115_0627"
+          - "Existing source-specific FASA7001 original Street Gear canonical receipts and accepted original-page tables for p275-295, p296-305 and p312"
+        accepted_source_verified_rule_table_fields_bound: 221
+        original_missing_mechanical_fields_demonstrated_from_available_source_after_reuse: []
+        data_quality_limits: "Reused independently original-page-reviewed accepted table entries rather than claiming to re-read every dense numeric cell anew; source-printed dashes/NA preserved; unresolved p312 water-cannon mode discrepancy kept as source-internal ambiguity, not an invented ruling."
+        source_derived_heading_field_class_scope_complete: true
+        new_semantic_records_from_this_section_closure: 0
+        newly_authorized_contiguous_printed_pages: 0
+        final_fasa7001_acceptance_confirmed: false
       required_fields:
         - {id: "obligation.rule.gear.sr3-core-hauling-load-strength-body-p274.carry", source_heading: "Street Gear / Gear Ratings and Statistics, Device Rating/Availability limits and size changes / Equipment Availability, Negotiation/Street Index, legality/permits and Seattle fines / Strength Load and lifting / carry", content_class: rule_exact, printed_pages: [274], pdf_pages: [283]}
         - {id: "obligation.rule.gear.sr3-core-hauling-load-strength-body-p274.lifting", source_heading: "Street Gear / Gear Ratings and Statistics, Device Rating/Availability limits and size changes / Equipment Availability, Negotiation/Street Index, legality/permits and Seattle fines / Strength Load and lifting / lifting", content_class: rule_exact, printed_pages: [274], pdf_pages: [283]}
@@ -7652,5 +7677,5 @@ core_acceptance_inventory:
   mapping_exception_notes:
     - "This list maps substantive fields from accepted canonical Game Concepts records to original printed/PDF ranges, as a draft for review against existing original-source receipts; it is not independent proof of each original heading or all rows."
     - "No semantic files, global checkpoint, source status or owner omission disposition are changed by this administrative mapping."
-  other_original_sections_remaining: [street_gear]
+  other_original_sections_remaining: []
   core_fully_accepted: false
