@@ -81,6 +81,25 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+
+    - id: rule.campaign.srcomp-gang-character-creation-and-variants-p121-122
+      path: rules/campaign/srcomp-gang-character-creation-and-variants-p121-122.yml
+      range_printed: [121, 122]
+      range_pdf: [122, 123]
+      content_class: rule_exact
+      commit: 1e53167ff7004e380b23039d7c4c2a453f6e65fa
+      blob: c6e7b352499f541247e42327fa41a6cdd5912db4
+      gate: verified
+      contiguous_advance: false
+    - id: rule.campaign.srcomp-gang-reputation-leadership-economics-p123-124
+      path: rules/campaign/srcomp-gang-reputation-leadership-economics-p123-124.yml
+      range_printed: [123, 124]
+      range_pdf: [124, 125]
+      content_class: rule_exact
+      commit: 678d13440cf2a76c39ff117ca3eb3853e0ccc3cc
+      blob: ba2d3f30525f8578554936b051e628a08cd3c1ee
+      gate: verified
+      contiguous_advance: false
     - id: rule.karma.srcomp-staggered-karma-pool-intervals-p82
       path: rules/karma/srcomp-staggered-karma-pool-intervals-p82.yml
       range_printed: [82, 82]
@@ -669,3 +688,39 @@ srcomp_retirement_second_careers_original_p87_89_2026_11_22:
   net_new_contiguous_printed_pages: 0
   executable_game_engine_readiness: not_claimed
   full_archival_book_certification: not_claimed
+
+# Distinct postcompletion original-source optional gang campaign numeric-rules recovery.
+srcomp_gang_campaign_mechanics_recovery_2026_11_22:
+  publication: "FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition fictional tabletop RPG"
+  source_id: source.srcomp
+  cataloged_original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_pdf_physical_pages: 138
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  original_source_images_independently_reviewed:
+    - {printed: [120, 122], physical_pdf: [121, 123], domain: "Optional gang creation, character limits, contacts, enemies and variants"}
+    - {printed: [123, 124], physical_pdf: [124, 125], domain: "Optional gang fictional economy, leadership, reputation and rival-scaling tests"}
+  prior_accepted_canon_reused:
+    - {path: subsystems/campaign/gang.yml, role: qualitative_overview_preserved}
+    - {path: references/campaign/alternate-concepts.yml, role: campaign_catalog_preserved}
+    - {path: rules/campaign/srcomp-prime-runner-opponent-rating-tiers-p83-84.yml, role: separate_npc_tiers_referenced}
+  exact_verified_original_source_mechanical_records:
+    - id: rule.campaign.srcomp-gang-character-creation-and-variants-p121-122
+      path: rules/campaign/srcomp-gang-character-creation-and-variants-p121-122.yml
+      final_semantic_commit: 1e53167ff7004e380b23039d7c4c2a453f6e65fa
+      exact_readback_blob: c6e7b352499f541247e42327fa41a6cdd5912db4
+      candidate_sha256: 882057e6256cd5d442874d5e5a3ecd3def8156ef762f21cf6135a07db3418d7e
+      immutable_data_sha256: 5910ac7ef2f9d631c604b7e443bd9878b2bfafd633938e92d43263bc51c0e005
+    - id: rule.campaign.srcomp-gang-reputation-leadership-economics-p123-124
+      path: rules/campaign/srcomp-gang-reputation-leadership-economics-p123-124.yml
+      final_semantic_commit: 678d13440cf2a76c39ff117ca3eb3853e0ccc3cc
+      exact_readback_blob: ba2d3f30525f8578554936b051e628a08cd3c1ee
+      candidate_sha256: 98c5ea90eb6ff2b230a9a5ecec080afec23730c30632a447957b2fab581b3f88
+      immutable_data_sha256: 20471aac5a502ae389482b3d84233dd06595543459f701584a2c6d97783c3c17
+  source_review_and_transaction: "Fresh original PDF SHA and actual verify-source; rendered original page and first-pass editorial review; independent source-reviewed baselines and same-substance candidates; connector preflight (29 tests); transaction_recovery stage with ingestion_gate prepare; ordinary GitHub Contents semantic writes and exact readbacks; actual ingestion_gate confirm and transaction_recovery inspect verified."
+  current_source_specific_registration_delta: 2
+  new_global_contiguous_pages: 0
+  historical_source_status_complete_unchanged: true
+  FASA7001_available_original_mechanics_core_unchanged: true
+  Denver_active_printed_p45_pdf46_checkpoint_changed: false
+  full_book_archival_certification: false
+  executable_game_engine_validation: false
