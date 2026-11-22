@@ -63,6 +63,15 @@ postscan_verified_mechanics_recovery:
     actual_repo_verify_source_rerun_this_run: false
     new_semantic_or_contiguous_credit: false
   verified_semantic_records:
+    - id: rule.lifestyle.ssg-detailed-lifestyle-costs-table-p128
+      path: rules/lifestyle/ssg-detailed-lifestyle-costs-table-p128.yml
+      range_printed: [127, 128]
+      range_pdf: [128, 129]
+      content_class: rule_exact
+      commit: bf6107ab987af572fc2580bd3cecf8edb049df09
+      blob: 95885d6030ed5668bc2c00d6e075015b2c9a2d51
+      gate: verified
+      contiguous_advance: false
     - id: rule.matrix.ssg-dataterm-host-sheaf-p120
       path: rules/matrix/ssg-dataterm-host-sheaf-p120.yml
       range_printed: [120, 120]
@@ -202,3 +211,28 @@ game_info_available_source_mechanical_closeout_2026_11_21:
   formal_whole_source_completion_gate: not_invoked
   executable_engine_readiness: not_claimed
   Denver_checkpoint: "source.fasa-7212 remains through original printed p45/PDF46; archived pp46-47 unchanged"
+
+# A new original-source numeric table binding in optional Detailed Lifestyles; distinct from closed p118-126 Game Information.
+ssg_detailed_lifestyle_source_numeric_table_recovery_2026_11_22:
+  publication: 'FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition fictional tabletop supplement'
+  source_id: source.fanpro-10667
+  source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  printed_pages: [127, 128]
+  physical_pdf_pages: [128, 129]
+  original_source_review: 'Direct original p127/PDF128 optional-system introduction and p128/PDF129 high-resolution cost table, 34 numeric rows and 20-point Wally Fikouras example independently reviewed'
+  source_verification: source_pdf_hash_verified
+  existing_qualitative_subsystem_reused: subsystems/lifestyles/detailed.yml
+  new_distinct_record_id: rule.lifestyle.ssg-detailed-lifestyle-costs-table-p128
+  new_semantic_path: rules/lifestyle/ssg-detailed-lifestyle-costs-table-p128.yml
+  verified_semantic_commit: bf6107ab987af572fc2580bd3cecf8edb049df09
+  verified_semantic_blob: 95885d6030ed5668bc2c00d6e075015b2c9a2d51
+  independently_source_reviewed_baseline_sha256: f382ba76581e2bbfaffd98ec7a2fe2df0dc016f738dab53047c5f62f89508b01
+  preflight_candidate_sha256: afbe2947f2f8e76a2bbdaccd0fd45f61089e79424a2ebad51cfa9eb9a947fe08
+  immutable_data_sha256: 6a3ef0366b20518f139b112cfacb994c84249125c52fe3486077cacd6664b9fe
+  source_review_and_gates: 'Fresh matching original PDF and actual preservation_method verify-source; independent source-reviewed baseline and identical-protected-data candidate; transaction_recovery stage and ingestion_gate prepare; ordinary GitHub Contents create and fresh matching readback; ingestion_gate confirm and transaction_recovery inspect verified'
+  new_semantic_records: 1
+  new_source_specific_index_registrations: 1
+  new_global_contiguous_pages: 0
+  source_status_remains_scan_complete_normalization_pending: true
+  whole_source_narrative_or_engine_completion: false
+  Denver_checkpoint_changed: false
