@@ -181,6 +181,32 @@ class CoreAcceptanceTests(unittest.TestCase):
         with self.assertRaisesRegex(ValueError, "core_inputs_changed_after_prepare"):
             gate.confirm(self.root, plan, plan, "b" * 40, gate.blob(plan))
 
+    def test_original_unnumbered_color_archetype_page_annotations(self):
+        for printed, physical, annotation in [
+            (65, 66, "65 (first unnumbered full-color archetype sheet after printed p64)"),
+            (66, 67, "66 (second unnumbered color archetype sheet after p64)"),
+        ]:
+            entry = {"path": "options/character-creation/original-sheet.yml",
+                     "range_printed": [printed, printed], "range_pdf": [physical, physical]}
+            record = {"printed_pages": annotation, "pdf_pages": str(physical)}
+            self.assertEqual(gate.indexed_record_pages(entry, record, "printed_pages"), {printed})
+            self.assertEqual(gate.indexed_record_pages(entry, record, "pdf_pages"), {physical})
+
+    def test_annotated_archetype_pages_cannot_derive_unverified_index(self):
+        entry = {"path": "options/character-creation/sheet.yml",
+                 "range_printed": [65, 65], "range_pdf": [99, 99]}
+        record = {"printed_pages": "65 (first unnumbered full-color archetype sheet after printed p64)",
+                  "pdf_pages": "66"}
+        with self.assertRaisesRegex(ValueError, "annotated_archetype_index_page_mismatch"):
+            gate.indexed_record_pages(entry, record, "printed_pages")
+
+    def test_arbitrary_annotated_page_ranges_remain_rejected(self):
+        entry = {"path": "rules/test-unrelated.yml", "range_printed": [65, 65], "range_pdf": [66, 66]}
+        for value in ["65 (missing original)", "65 (unnumbered sheet)", "65-66 (original color)"]:
+            with self.subTest(value=value):
+                with self.assertRaisesRegex(ValueError, "unparseable_indexed_record_pages"):
+                    gate.indexed_record_pages(entry, {"printed_pages": value, "pdf_pages": "66"}, "printed_pages")
+
     def test_prepare_actually_requires_successful_verify_source_command(self):
         fake_pdf = self.root / "synthetic.pdf"
         fake_pdf.write_bytes(b"not an original PDF")
