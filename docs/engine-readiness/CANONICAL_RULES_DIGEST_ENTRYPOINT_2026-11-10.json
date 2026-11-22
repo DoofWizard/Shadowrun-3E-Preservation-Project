@@ -1,7 +1,7 @@
 {
   "schema_version": "sr3-canonical-rules-digest/1.0",
-  "status": "available_source_core_consolidated",
-  "purpose": "Complete consumer entrypoint to the currently registered, accepted FASA Corporation Shadowrun Third Edition fictional tabletop core records. Reuses their exact bytes, printed/PDF provenance and recorded ingestion receipts.",
+  "status": "available_original_source_gameplay_core_acceptance_verified",
+  "purpose": "Accepted FASA Corporation Shadowrun Third Edition fictional tabletop available-original gameplay rules/data core entrypoint; 451 registered records, original page/field reviews and source-specific verified acceptance receipt. Separate whole-book archiving and executable game engine excluded.",
   "publication": {
     "title": "Shadowrun, Third Edition",
     "publisher": "FASA Corporation",
@@ -11,30 +11,29 @@
     "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
     "original_pdf_physical_pages": 345,
     "source_manifest": "sources/manifests/SR3.yml",
-    "source_manifest_blob": "c5f0b833cec300cc385a8ded353301e723f3b2f0"
+    "source_manifest_blob": "b0ebffa4985ab544e64857b99e98b17d69ee3184"
   },
   "assembled_on": "2026-11-21",
-  "source_snapshot_commit": "5fa5713b684a277ebb13a9d259d8246c80f4c3f0",
-  "source_snapshot_tree": "b32c53bdfe5b255d732ad4a861a9b89d78193b08",
+  "source_snapshot_commit": "850364ff79436ddf21c9f20968b4cad3aad25067",
   "accepted_closeout": {
-    "commit": "94606db683acfc2574ccd5aecc478886688548e5",
+    "commit": "8b9d2522c2d27a2acf2b4e4f120e2db12a27f0de",
     "path": "docs/engine-readiness/FASA7001_CORE_RULES_CLOSURE_QUEUE_2026-11-11.yml",
-    "blob": "25f26c0e532d2554654155c55fef32e12a7c867a",
-    "section": "owner_accepted_available_source_mechanical_closeout_2026_11_20",
-    "scope": "Authenticated available original-source mechanics, numeric tables, procedures, conditions, options, exceptions, and mechanically relevant GM directions across original 15-section core ledger; full narrative archiving and engine execution separately excluded",
+    "blob": "81f290972cdb6e57d46effee514f84f134eec98c",
+    "section": "completion.verified_available_original_core_acceptance_2026_11_21",
+    "scope": "15 original available-source mechanical sections and 1010 accepted source-reviewed field bindings; whole-book archival, engine implementation, archived Denver and unobserved p308 excluded",
     "remaining_demonstrated_core_fields": []
   },
   "counts": {
-    "registered_core_records": 447,
-    "protected_mechanical_records": 409,
+    "registered_core_records": 451,
+    "protected_mechanical_records": 413,
     "associated_guidance_and_context_records": 38,
     "by_content_class": {
       "attributed_claim": 10,
       "campaign_guidance": 11,
       "character_option": 33,
       "equipment_stat": 45,
-      "rule_exact": 232,
-      "rule_procedure": 99,
+      "rule_exact": 234,
+      "rule_procedure": 101,
       "world_fact": 17
     },
     "source_section_groups": 15
@@ -9873,6 +9872,94 @@
       "raw_utf8_bytes": 6491,
       "raw_sha256": "21fa4692a95c6f3daf2633db17ac6dcef26067efe31c41fa56cca877c7917370",
       "source_receipt_manifest_entry": 446
+    },
+    {
+      "id": "rule.advancement.attribute-improvement",
+      "path": "rules/advancement/attribute-improvement.yml",
+      "range_printed": [
+        244,
+        245
+      ],
+      "range_pdf": [
+        253,
+        254
+      ],
+      "content_class": "rule_exact",
+      "commit": "ab08959f9de0b1f15bff0ba922fc653ef0b12709",
+      "blob": "d52e15c7c532ecad80699a299ce191390a3e6c8b",
+      "gate": "verified",
+      "contiguous_advance": false,
+      "source_id": "source.sr3-core",
+      "protected_mechanical_class": true,
+      "raw_utf8_bytes": 3415,
+      "raw_sha256": "633e44c898cdab3818f79ef683a014caa295b1585437b579e08dff4f0945e722",
+      "source_receipt_manifest_entry": 447
+    },
+    {
+      "id": "rule.advancement.skill-improvement",
+      "path": "rules/advancement/skill-improvement.yml",
+      "range_printed": [
+        244,
+        245
+      ],
+      "range_pdf": [
+        253,
+        254
+      ],
+      "content_class": "rule_exact",
+      "commit": "c3fe332baabb9dc93f51307046de196ea6c9d205",
+      "blob": "7086dfc1109fd95c6395ac56b6b3ecbb3116a937",
+      "gate": "verified",
+      "contiguous_advance": false,
+      "source_id": "source.sr3-core",
+      "protected_mechanical_class": true,
+      "raw_utf8_bytes": 4139,
+      "raw_sha256": "f682d3457e6ac122b9b55fd6f845b8c01a19d44c161aa306261ec77fedd2bf9b",
+      "source_receipt_manifest_entry": 448
+    },
+    {
+      "id": "rule.advancement.learning-new-skills",
+      "path": "rules/advancement/learning-new-skills.yml",
+      "range_printed": [
+        245,
+        245
+      ],
+      "range_pdf": [
+        254,
+        254
+      ],
+      "content_class": "rule_procedure",
+      "commit": "78525a0536fc2b88d01fb68b69b52e39ae61282d",
+      "blob": "41eb6080f2bbc680a7f1d285150a587b70237aae",
+      "gate": "verified",
+      "contiguous_advance": false,
+      "source_id": "source.sr3-core",
+      "protected_mechanical_class": true,
+      "raw_utf8_bytes": 2528,
+      "raw_sha256": "feb635d03cfe7b08e05d93574a6c7d248d69bca0b2a78300ca7a8e77fc47f00e",
+      "source_receipt_manifest_entry": 449
+    },
+    {
+      "id": "procedure.shadowrunning.fencing-loot",
+      "path": "procedures/shadowrunning/fencing-loot.yml",
+      "range_printed": [
+        237,
+        238
+      ],
+      "range_pdf": [
+        246,
+        247
+      ],
+      "content_class": "rule_procedure",
+      "commit": "174efe6e9260c42722775b005d59f0ca0d624fee",
+      "blob": "0a1ab6b48ed3f8edda59b1ddabaa1d3e9ac95b15",
+      "gate": "verified",
+      "contiguous_advance": false,
+      "source_id": "source.sr3-core",
+      "protected_mechanical_class": true,
+      "raw_utf8_bytes": 4715,
+      "raw_sha256": "7cca482031722ccd8c63530280ca8ad4884c109aa958b57488cd29ec22c8bd16",
+      "source_receipt_manifest_entry": 450
     }
   ],
   "chapters": [
@@ -10280,7 +10367,8 @@
         "rule.shadowrunning.sr3-core-run-pay-lifestyle-guidance-p241",
         "rule.lifestyle.sr3-core-team-safehouse-tenancy-p241",
         "rule.identity.sr3-core-credstick-use-offline-certification-p239",
-        "rule.security.sr3-core-natural-perimeter-stealth-p232-234"
+        "rule.security.sr3-core-natural-perimeter-stealth-p232-234",
+        "procedure.shadowrunning.fencing-loot"
       ],
       "source_review_basis": "Perception, security, fencing, identity and lifestyle canonical source receipts",
       "coverage_receipt": "docs/engine-readiness/FASA7001_CORE_RULES_CLOSURE_QUEUE_2026-11-11.yml#available_original_core_mechanics_coverage_2026_11_20"
@@ -10318,7 +10406,10 @@
         "rule.karma.sr3-core-total-good-pool-worked-p242-244",
         "rule.npc.sr3-core-metahuman-variation-table-p248",
         "rule.npc.sr3-core-npc-dice-pools-karma-threat-p248",
-        "rule.karma.karma-pool-uses"
+        "rule.karma.karma-pool-uses",
+        "rule.advancement.attribute-improvement",
+        "rule.advancement.skill-improvement",
+        "rule.advancement.learning-new-skills"
       ],
       "source_review_basis": "Karma, advancement, NPC professionalism and hazards original-source receipts",
       "coverage_receipt": "docs/engine-readiness/FASA7001_CORE_RULES_CLOSURE_QUEUE_2026-11-11.yml#available_original_core_mechanics_coverage_2026_11_20"
@@ -10637,22 +10728,51 @@
     "game_engine_implementation": "This is canonical rules/data, not a complete executable game engine."
   },
   "assembly_validation": {
-    "all_447_original_utf8_git_blobs_match_manifest": true,
-    "all_447_record_ids_match_manifest_and_are_unique": true,
-    "all_447_yaml_records_parse_without_duplicate_keys": true,
+    "all_451_accepted_git_blobs_and_ids_verified_in_source_specific_acceptance": true,
+    "all_451_yaml_records_verified_no_duplicate_ids": true,
+    "source_specific_acceptance_confirmation": "references/audits/fasa7001-available-source-mechanical-core-acceptance-confirmed-2026-11-21.json",
     "all_registered_gates_are_verified": true,
-    "new_original_source_read_or_new_ingestion_gate_claimed": false,
+    "new_original_source_read_or_new_ingestion_gate_claimed_by_this_export": false,
     "consumer_game_engine_tests_claimed": false
   },
   "delivery_accounting": {
-    "new_semantic_records": 0,
+    "new_semantic_records_created_by_reindex_export": 0,
     "new_authorized_printed_pages": 0,
-    "existing_records_consolidated": 447
+    "existing_records_consolidated": 451,
+    "newly_accepted_source_gated_records_since_447_delivery": 4
   },
   "history": {
     "previous_entrypoint_blob": "40903001dbf8821f07baf4a7412c489fcb138e09",
     "previous_entrypoint_date": "2026-11-10",
     "previous_primary_record_list_count": 4,
-    "previous_bytes_retained_in_git_history": true
+    "previous_bytes_retained_in_git_history": true,
+    "original_export_snapshot_commit": "5fa5713b684a277ebb13a9d259d8246c80f4c3f0",
+    "original_export_snapshot_tree": "b32c53bdfe5b255d732ad4a861a9b89d78193b08",
+    "previous_consolidated_447_entrypoint_blob": "4cbe19e3a2a2ac550996c5960921229b0ab6f20f"
+  },
+  "final_acceptance": {
+    "protocol": "sr3-core-acceptance/v1",
+    "result": "verified_core_acceptance",
+    "index_commit": "850364ff79436ddf21c9f20968b4cad3aad25067",
+    "accepted_record_count": 451,
+    "required_fields_bound": 1010,
+    "original_sections": 15,
+    "prepared_receipt": {
+      "path": "references/audits/fasa7001-available-source-mechanical-core-acceptance-prepared-2026-11-21.json",
+      "commit": "5dfcfa754c294d3bc497a277221c2a9ca07cdd16",
+      "blob": "c0819a40dfe38d31b45e3451bf1918cedf3e1cd3"
+    },
+    "confirmed_receipt": {
+      "path": "references/audits/fasa7001-available-source-mechanical-core-acceptance-confirmed-2026-11-21.json",
+      "commit": "6baeb5dffd92dbdcbe50aa451d637e8ae9702316",
+      "blob": "d11888c9f20b5603f874f4e976dff3e23c8cde98"
+    },
+    "snapshot_manifest_blob": "a79b28a3970668982ef44a5318642ed55848839a",
+    "snapshot_closure_queue_blob": "366ee748f51dbf2b699a26edbc1215352743191d",
+    "original_pdf_sha256": "7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914",
+    "omitted_p308_nonblocking": true,
+    "whole_original_book_archival_complete": false,
+    "game_engine_complete": false,
+    "denver_checkpoint_changed": false
   }
 }
