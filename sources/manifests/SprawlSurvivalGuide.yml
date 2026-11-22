@@ -77,8 +77,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [135, 135]
       range_pdf: [136, 136]
       content_class: rule_exact
-      commit: ebea8f6a04d580ee7512aa3325489598748d8d02
-      blob: b00917b96cc86f6f8c7eac95b73e3c733f34f56e
+      commit: 25630ee5178ad335b00d23c1f8339991850cd93f
+      blob: 9af0ea1c44fe71182586261dac261d2aff13bd9f
       gate: verified
       contiguous_advance: false
     - id: rule.lifestyle.ssg-detailed-lifestyle-financial-procedures-p133-135
@@ -301,4 +301,30 @@ ssg_detailed_lifestyle_optional_financial_source_recovery_2026_11_22:
   source_status_remains_scan_complete_normalization_pending: true
   full_book_narrative_completion: false
   runnable_engine_test: false
+  Denver_checkpoint_changed: false
+
+# Correction to this run's newly indexed optional burglary procedure: simple test successes are not opposed net successes.
+ssg_detailed_lifestyles_burglary_success_count_source_correction_2026_11_22:
+  source_id: source.fanpro-10667
+  publication: 'FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition fictional tabletop rules'
+  source_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  original_printed_page: 135
+  physical_pdf_page: 136
+  canonical_record_id: rule.lifestyle.ssg-detailed-lifestyle-burglary-hotel-p135
+  canonical_path: rules/lifestyle/ssg-detailed-lifestyle-burglary-hotel-p135.yml
+  corrected_field: data.burglary.result_interpretation[*].successes
+  reason: 'Original source describes counts of successes on a Security Test against Area TN, not net successes against an opponent; preserves values 0, 1, 2+ and all unrelated field values'
+  prior_confirmed_commit: ebea8f6a04d580ee7512aa3325489598748d8d02
+  prior_confirmed_blob: b00917b96cc86f6f8c7eac95b73e3c733f34f56e
+  corrected_semantic_commit: 25630ee5178ad335b00d23c1f8339991850cd93f
+  corrected_exact_readback_blob: 9af0ea1c44fe71182586261dac261d2aff13bd9f
+  independent_corrected_baseline_sha256: 24d1016f38524599bf25d4f33d8ab9290312b91ebc0fa8a4bdc792bb19eb0003
+  candidate_sha256: e8449fdeab9287082e2ea673a036850677135c40c04281132561829c61121fc8
+  immutable_sha256: 181de8f2f2ed0cbc3042d54e4bd24aeffd9d6b2cd1bf05b0535cdd980dfac8f9
+  actual_source_verify_source: source_pdf_hash_verified
+  transaction: 'Independent corrected original-page review; corrected baseline/candidate, actual stage/prepare; ordinary GitHub Contents update with fresh blob+commit exact readback; ingestion_gate confirm and transaction_recovery inspect verified'
+  new_semantic_ids: 0
+  source_specific_registration_count_change: 0
+  new_global_contiguous_pages: 0
+  source_status_unchanged: true
   Denver_checkpoint_changed: false
