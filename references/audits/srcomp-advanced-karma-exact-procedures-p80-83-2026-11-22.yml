@@ -1,0 +1,82 @@
+# Distinct available-original optional SR3 mechanics; not a new core acceptance or source completion.
+audit_id: srcomp-advanced-karma-exact-procedures-p80-83-2026-11-22
+publication:
+  title: Shadowrun Companion
+  publisher: FASA Corporation
+  product: FASA7905a
+  edition: Shadowrun Third Edition
+  source_id: source.srcomp
+  original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_pdf_size_bytes: 19314094
+source_fidelity:
+  actual_repository_preservation_method_verify_source: source_pdf_hash_verified
+  independently_reviewed_printed_pages: [79, 80, 82, 83]
+  corresponding_physical_pdf_pages: [80, 81, 83, 84]
+  printed_p81: 'Full-page illustration at physical PDF82 between Karma pages; not a fabricated missing page'
+  original_source_visual_review: true
+  editor_review: 'Fictional Shadowrun tabletop game source facts; third-person neutral rules reporting, explicit book/edition/source/page context and protected numeric assertions'
+  connector_preflight_selftests: 29
+  retained_existing_canon:
+    - options/karma/cash-for-karma.yml
+    - options/karma/favors-markers.yml
+    - subsystems/karma/team-karma.yml
+  unchanged_existing_source_records_reused: true
+new_verified_semantic_records:
+  - id: rule.karma.srcomp-cash-for-karma-moral-campaign-p80
+    path: rules/karma/srcomp-cash-for-karma-moral-campaign-p80.yml
+    printed_pages: [80, 80]
+    physical_pdf_pages: [81, 81]
+    distinctive_original_mechanics: 'Moral campaign variant: no standard awards; 3D6 x 100 nuyen purchase; human tenth/other twentieth Karma Pool allocation versus ordinary Cash-for-Karma Good Karma'
+    reviewed_fields: ['data.applicability','data.ordinary_karma_awards','data.acquisition','data.sequence','data.price_per_karma_point','data.quantity_cap','data.karma_pool_exception_to_base_option','data.provenance']
+    original_source_reviewed_baseline_sha256: 2d26af35969baf8a0020a329c5ad592b000fb063d40fae58223e8591d811dab8
+    prepared_candidate_sha256: 817b3b4ef3f46b9a34064cdb0906eef1cb2fa839076f92fe61d7003671c0aa7f
+    immutable_data_sha256: bcb23b81e24c0d4f69dd5c6388a8f4b2d14986645fbbdf1641b1e57b658532c3
+    verified_semantic_commit: 1291a93e0cfe928e721324704ad080cfa8dba7a9
+    exact_readback_blob: a02cb784b857511d55ca1ba5bb8a46fd75199954
+  - id: rule.karma.srcomp-favors-markers-mechanical-procedure-p80-82
+    path: rules/karma/srcomp-favors-markers-mechanical-procedure-p80-82.yml
+    printed_pages: [80, 82]
+    physical_pdf_pages: [81, 83]
+    distinctive_original_mechanics: 'One Good Karma for one favor, NPC temporary Level 1 Friendly Social Test handling, NPC marker completion minimum one Karma, discretionary higher award, future favor trade'
+    reviewed_fields: ['data.favor_purchase','data.optional_gm_favor_awards','data.markers','data.uncertainty_policy','data.provenance']
+    original_source_reviewed_baseline_sha256: 036ed42c8ec23c4e19e40d76a4c0125d3c8eb2e22ef0d0c4b69ababd53d834e2
+    prepared_candidate_sha256: e5c7b09b1e38b764e6ec7e1d8b5e80bd3a6985035ec305916282b21785c58942
+    immutable_data_sha256: 2f107f8efc9d07ca5d2eab4b3ac8b21ed98c82bbaab6dbfb25c590e43b680019
+    verified_semantic_commit: 431a345c8d666e761cd530cb6a86603c6a8b268b
+    exact_readback_blob: 2511e142560b75bb39832f5c20d8c54d28aef09e
+  - id: rule.karma.srcomp-team-karma-pool-procedures-p82-83
+    path: rules/karma/srcomp-team-karma-pool-procedures-p82-83.yml
+    printed_pages: [82, 83]
+    physical_pdf_pages: [83, 84]
+    distinctive_original_mechanics: 'Minimum one-point team contribution; 2+2 multi-team cost example; majority voting and GM tie; half-pool ordinary departure penalty; optional rounded-up per-member share; death and replacement'
+    reviewed_fields: ['data.formation','data.multiple_teams','data.use','data.ordinary_departure','data.optional_good_terms_departure','data.death_and_replacement','data.npc_teams','data.provenance']
+    original_source_reviewed_baseline_sha256: b7ee8053e82678b160eb51f8059f33a1c14afc2ab1571d8c0d78114390e4e917
+    prepared_candidate_sha256: a808de658b0bd27f63c542c5e7b4ead1e48ee24f5d5c3a828138aeab80e8e213
+    immutable_data_sha256: 670a1743b62169c8d398216c7b026b6f331fbd5ebb74d96c71eb20f2012fecc8
+    verified_semantic_commit: e9aaf6affa7fa47808c999db7e25a5a84ddffe46
+    exact_readback_blob: 6383e662906fd4ac1db8e20b9002d02cef2211cd
+gates:
+  independent_baseline_and_candidate_source_review: performed
+  transaction_recovery_stage_and_ingestion_gate_prepare: passed_each
+  ordinary_github_contents_create_exact_bytes: passed_each
+  fresh_matching_readback: passed_each
+  ingestion_gate_confirm: verified_each
+  transaction_recovery_inspect: verified_each
+  source_specific_index_path: sources/manifests/SRComp.yml
+  final_manifest_admin_commit: 3738ca9b0e8f1d5a7d8cf12c42370fbe78e73c61
+  final_manifest_exact_readback_blob: 3875c24c0d7b4790d7a629763438f3e94fa6f4e0
+  final_manifest_strict_duplicate_key_yaml: passed
+  postcompletion_verified_registrations: 31
+  IDs_and_paths_all_unique: true
+  original_manifest_unrelated_bytes_preserved: true
+  global_contiguous_pages_new: 0
+  active_Denver_boundary_unchanged: 'source.fasa-7212 printed p45/PDF46'
+  core_fasa7001_acceptance_unchanged: true
+closure_scope:
+  bounded_optional_karma_extraction: 'Three distinct procedures now source-verified, canonical and indexed; other optional Karma records reused'
+  Companion_source_status: complete
+  full_all_source_or_engine_certification_newly_claimed: false
+  newly_closed_global_pass_b: false
+next_work:
+  - 'Use live source manifests and original PDFs to identify distinct unfinished mechanics, not closed SR3 core, SOTA 2063 Game Information, Matrix Programming or SSG Detailed Lifestyles.'
+  - 'Do not count settled historical or legacy overview files as missing mechanics without an actual uncovered rule assertion.'
