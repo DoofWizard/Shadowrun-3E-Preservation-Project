@@ -1,44 +1,33 @@
 id: option.magic.initiation-ordeal
 record_type: option
-name: "Initiation Ordeal"
+name: Initiation Ordeal
 domain: magic
 status: ingested
-
-effective:
-  status: current
-  source: source.mits
-  page: 58
-  basis: adds_option
-
-option_for:
-  - procedure.magic.initiation
-
-selection:
-  timing: "before completing an initiation grade"
-  prerequisites: []
-  incompatible_with: []
-
+effective: {status: current, source: source.mits, page: 58, basis: adds_option}
+option_for: [procedure.magic.initiation]
+selection: {timing: before completing initiation, prerequisites: [], incompatible_with: []}
 effects:
-  - "Undertaking an ordeal reduces the initiation cost multiplier by 0.5."
-  - "The ordeal must be chosen before the initiation."
-  - "Except for a deed ordeal, a failed ordeal must be retried until successful before the new grade is gained."
-  - "If an ordeal is failed, the initiation Karma cost does not need to be repaid."
-
-links:
-  modifies:
-    - procedure.magic.initiation
-  requires: []
-  interacts_with: []
-
+- An ordeal reduces the initiation cost multiplier by 0.5.
+- Select the ordeal before initiation; only a deed may be completed in advance.
+- A failed ordeal must be attempted again until successful, without paying the initiation Karma a second time.
+links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
 sources:
-  - source: source.mits
-    page: 58
-    relation: adds_option
-    note: "Initiation Ordeals"
-  - source: source.mits
-    page: 60
-    relation: extends
-    note: "Examples/types of ordeals"
-
-notes:
-  - "Individual ordeal types are to be ingested as child options."
+- {source: source.mits, page: 58, relation: adds_option, note: Initiation Ordeals}
+- {source: source.mits, page: 60, relation: extends, note: General ordeal procedure}
+notes: [Individual types have separate option records.]
+source: source.mits
+printed_pages: '58-60'
+pdf_pages: '59-61'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  cost_multiplier_reduction: 0.5
+  without_ordeal: GM may require various smaller tasks and rituals; choosing no ordeal does not remove initiation effort.
+  repeat_type: GM permission required to use the same ordeal again; some types including oath can never be repeated.
+  avatar: Avatar interaction should occur during the ordeal.
+  selection_timing: Choose before initiation; only deed can be completed before the character initiates.
+  outcome: Success grants new grade; failure requires retry until successful.
+  retry_karma: No additional initiation Karma payment after a failed ordeal.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: General initiation ordeal procedure (FASA7907, printed 58-60/PDF 59-61)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG general ordeal rules, excluding individual type-specific requirements. PDF60 is intervening unnumbered art.
