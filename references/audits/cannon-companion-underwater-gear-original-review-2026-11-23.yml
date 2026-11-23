@@ -1,0 +1,69 @@
+source: source.cc
+catalog_number: FASA7908
+publication: Cannon Companion
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+actual_verify_source_status: source_pdf_hash_verified
+preflight_self_test: 29/29
+original_images: [{printed: 56, pdf: 57}, {printed: 57, pdf: 58}]
+related_images: [{printed: 107, pdf: 108}, {printed: 108, pdf: 109}]
+scope: Underwater Gear
+source_local_status: original_fields_reconciled
+table:
+  printed_page: 57
+  total_rows: 14
+  existing_entities: 13
+  reused_rows_without_numeric_discrepancy: 12
+  reused_entity_row_with_weight_correction: entities/gear/diving-face-mask-snorkel.yml
+  missing_row: JIM Strength Enhancement
+  original_table_delta: equipment/gear/cannon-companion-underwater-table-omissions-p57.yml
+  matching_row_blobs:
+    diving-breathing-regulator: 10628bc160a7dd115f81ad5967623a36285b28d3
+    diving-buoyancy-compensator: b06d7426882ebb49a98a6f56e7ae6c83c2341e20
+    diving-fins: 8d60b59471cd44e4117b587c5d8b338a2258ba8c
+    scuba-tank: 3ce93317ace093195436d2d63ff240da224f7576
+    wet-suit: 95671ac6c3ca8aa6e0cf26e1edabd12a3e939b98
+    drysuit: 50945e4d8a19b41450dad06fd4e16c33fbca861a
+    dual-tank-manifold: 95ac599e01545f5a9db91739d54f0bf2d312863e
+    enclosed-breathing-helmet: 215c254c88fc4b920f84594d9fceb8e3d010bb1b
+    full-face-mask: 491ba8e8bb58115cd3d199f595cee11024777334
+    jim-diving-exoskeleton: 4704122a3126eac026fad6e886cf48d64804cd01
+    liquid-breathing-apparatus: 8b0350cda2b00aaed11d45317202a4c25a3533db
+    oxsys-artificial-gill: 870f90261be347f03e45816ce6ddb07a1af93ea3
+  corrected_row_prior_blob: 86fe5022551a31626dbb518728e387b5027b1ee5
+  fields: [concealability, weight, availability, cost, street_index, legality]
+equipment_text:
+  basic: rules/gear/cannon-companion-basic-underwater-equipment-conditions-p56-57.yml
+  advanced: rules/gear/cannon-companion-advanced-underwater-equipment-conditions-p57.yml
+  source_context: "Printed p56 gives a secondary pressure-unit equivalent and p57 describes qualitative drysuit use; these are not additional tabletop modifiers."
+  related_section_open: "Printed p108 gives the shallow-dive category and general JIM pressure description; p57 device-specific OXSYS condition and JIM statistics are preserved without merging. Full Underwater Activity pp107-112 remains to review."
+transactions:
+  - record: rule.gear.cannon-companion-basic-underwater-equipment-conditions-p56-57
+    commit: c23607275d94fdf0884dfb342e7497efd346e7a5
+    blob: 31d7630567e6d8dfe79bb4b6277d48f05df52ad0
+    gate: verified
+    plan_sha256: 111648fb5f3e82805680820cf0e04c811b86c027e5b744a2beb7ef3c1d7cbbe0
+    confirm_sha256: 765123d9c483928383a73bf9f110bfda4fc0abc8bce7a45e22c77fc9db2822ee
+    recovery_inspect_sha256: 7c09ac804efd5d9da2ad8038f0e8f27b445247a469d6fdc5e65dcebf346a79c5
+    manifest_commit: dd15f78581ee316e040343712168d23414339da3
+    manifest_blob: 8afa55cd71d1304c2f4c02ad835217be6eabbeac
+  - record: rule.gear.cannon-companion-advanced-underwater-equipment-conditions-p57
+    commit: dc4535b1a764855b6cfe38c001e7898805580d33
+    blob: 1873e005c9a3e1b5bc5463f6d08dc1c376a3d38c
+    gate: verified
+    plan_sha256: a1f1b6d2a8a2e38d9ab2e00dd31268b2743432faeb07636c92a32396fa2c5b36
+    confirm_sha256: a204341f959fbbb42d523d653a88318cef2aacb26744ad89c1632bdf599661ca
+    recovery_inspect_sha256: f047ae54092048a6f64999aff09d062cabceddc6b63ad99524cdb8fa0e51a44b
+    manifest_commit: 5bfc2e4763d12b8d61dc26ceebb67ceac02dc572
+    manifest_blob: 2405b4cfe89bae21a954cf48eda89af5f7baf0b9
+  - record: equipment.gear.cannon-companion-underwater-table-omissions-p57
+    commit: 7961a766fd02e133c8ce6c9a213bb22ee1a1b78f
+    blob: ce36b54596d1043a86e332bd73ad531a7f4611fc
+    gate: verified
+    plan_sha256: 280459aa819f3381b65f5c06d555692e629348d27bfe371d1a534d87d1ed1543
+    confirm_sha256: 786a0f17bd1cb44c8d324203ca33dea8a76805a318d8f6372de1f52586b28072
+    recovery_inspect_sha256: 0afc31bc001f94fff40a9b6179e103c90055d2e9ea9379b343a6846081aa63cd
+    manifest_commit: 25a98ea237aa380004a525c68eec9e8f643597b9
+    manifest_blob: 8b594086b068bf10db40585334c4d068da55b6bf
+global_pages_authorized: 0
+whole_book_closed: false
