@@ -1,0 +1,47 @@
+id: rule.critters.power-entries-p14
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '14'
+pdf_pages: '14'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    search:
+      profile: {type: physical, action: Exclusive Complex, range: LOS, duration: Special}
+      scope: person, place or object in controlled terrain
+      test: opposed twice Essence versus target person's Intelligence; for object roll twice Essence against Object Resistance (SR3 p182)
+      concealment: add concealing creature Essence to searching creature TN
+    shadow_cloak:
+      profile: {type: physical, action: Free, range: Self, duration: Sustained}
+      perception_modifiers: {minimal_light: 2, partial_light: 4, glare: -1}
+      conditions: useless in full daylight, redundant in complete darkness
+    silence:
+      profile: {type: physical, action: Complex, range: Special, duration: Sustained}
+      sphere_radius_meters: Essence
+      effect: no sound audible in sphere; sounds originating there silenced at source; some creatures can place spheres anywhere in controlled terrain and sustain up to Essence spheres simultaneously
+    sonic_projection:
+      profile: {type: physical, action: Complex, range: LOS, duration: Instant}
+      modifier: +2 all TNs for listeners for one full Combat Turn following cry; sound-dampening implants negate, high-frequency hearing raises modifier to +3
+      resistance: opposed Willpower versus Essence; greater target net successes reduce modifier by 1
+      silence_spell: attacking into or out of spell field reduces Power by spell Force
+    spraying:
+      profile: {type: physical, action: Complex, range: Special, duration: Instant}
+      range_meters: twice Essence
+      arc_degrees: 60
+      evade: Quickness (8) Test
+      effects: defense only for rest of Combat Turn; +1 all TNs for (Essence)D6 turns; discard exposed clothing and body armor because odor cannot be removed
+      respirator: prevents effects except discarding clothing
+    venom:
+      profile: {type: physical, action: Auto, range: Touch, duration: Instant}
+      damage: (Essence)S toxin; speed one Combat Turn; individual entries may vary
+    weather_control:
+      profile: {type: physical, action: Complex, range: LOS, duration: Sustained}
+      condition: weather must be possible in local environment; summons weather without directing it
+      time: 1D6 hours to peak; Essence (8) Test reduces time by 1 hour per success, minimum 1 hour
+framing: reference_exact
+headline: 'Critters (FASA7002), p14: Search through Weather Control'
+summary: 'Fictional FASA7002 Shadowrun Third Edition source-local power conditions and original mechanics.'
