@@ -44,3 +44,80 @@ sources:
     note: "Centering tests and adept applications"
 
 notes: []
+
+source: source.mits
+printed_pages: '72-74'
+pdf_pages: '73-75'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  centering_skill:
+    printed_pages: '72-73'
+    skill_type: Active Magical Skill
+    linked_attribute: Willpower
+    required_skills: [Centering Skill, creative skill]
+    maximum_rating: creative skill rating
+    creative_skill:
+      allowed_skill_types: [Active, Knowledge]
+      maximum_selected: 1
+      may_already_be_known: true
+      chip_based_allowed: false
+      personally_learned_required: true
+      example_methods: [dance, singing, musical instrument, arcane language, meditation]
+      selection_guidance: Prefer artistic or intellectual skills without substantial nonmagical utility. Separate the meditative component of combat arts from their practical combat skill. Earning a living with the creative skill is less problematic. Traditional shamanic and hermetic preferences are not restrictions.
+  use:
+    printed_page: 73
+    eligible: Magical Skills except astral projection; see adept rules below.
+    creative_skill_must_be_freely_performable: true
+    action: Free Action
+    timing: Same phase as the augmented magical operation; resolve Centering before the other magic tests.
+    maximum_benefits_per_phase: 1
+    benefits: [increased success, Drain resistance, penalty reduction]
+    test_skill: Centering Skill
+    exclusive_magical_actions_allowed: true
+    geas: An appropriate creative skill can fulfill a matching geas concurrently, including incantation by singing, chanting or arcane speech.
+  success:
+    printed_page: 73
+    magician_astral_perception_required: true
+    astral_consequence: Exposed to astral attack while perceiving.
+    declaration: Declare the ordinary skill use, then declare the enhancing Centering Test.
+    target_number: Ordinary Magical Skill Test target number including all its modifiers.
+    centering_successes_per_bonus_success: 2
+    bonus_successes_per_conversion: 1
+    ordinary_test_minimum_successes: 1
+    on_ordinary_test_failure: No Centering successes apply.
+  drain:
+    printed_page: 73
+    timing: Center before performing the intended magic; resist full Drain normally after the magic.
+    target_number: Drain Power of intended magic
+    centering_successes_per_bonus_success: 2
+    bonus_drain_resistance_successes_per_conversion: 1
+    ordinary_drain_resistance_minimum_successes: 1
+    on_ordinary_drain_resistance_failure: No Centering successes apply.
+  penalties:
+    printed_page: 73
+    target_number: Modified Magical Skill Test target number minus initiation grade.
+    centering_successes_per_reduction: 2
+    modifier_points_removed_per_conversion: 1
+    lower_limit: Base target number of the Magical Skill Test.
+    eligible_modifier_examples: [partial cover, injury, atmospheric conditions]
+  adepts:
+    printed_pages: '73-74'
+    initial_areas: [Athletics, Stealth]
+    additional_areas_per_later_grade: 1
+    learning_cost: Learning another skill or area for Centering consumes that grade's sole metamagical technique choice.
+    additional_areas: [Build and Repair, Melee Combat, Ranged Combat, Knowledge, Language, Social, Technical, Vehicle]
+    special_skills: Each Special Skill or Special Skill area is a separate technique.
+    sorcery_exception: Adepts may learn Centering for Sorcery, but their Sorcery use remains limited to astral combat.
+    skill_benefits: [increased success, penalty reduction]
+    success_requires_astral_perception: false
+    penalty_eligibility_final_decision: gamemaster
+    adept_power_drain: Use ordinary Centering against Drain for Drain arising from adept powers.
+  examples:
+    - {printed_page: 73, mode: success, base_tn: 4, injury_modifier: 1, centering_dice: 5, centering_tn: 5, centering_successes: 3, ordinary_successes: 4, final_successes: 5}
+    - {printed_page: 73, mode: drain, drain_code: 8M Stun, centering_dice: 5, centering_tn: 8, centering_successes: 2, conditional_bonus_successes: 1}
+    - {printed_page: 73, mode: penalties, grade: 4, base_tn: 4, modifiers: [2, 2, 1], modified_tn: 9, centering_dice: 5, centering_tn: 5, centering_successes: 2, resulting_tn: 8}
+    - {printed_page: 74, mode: adept_penalties, grade: 2, base_tn: 5, modifiers: [2, 1], modified_tn: 8, centering_dice: 5, centering_tn: 6, centering_successes: 2, modifier_points_removed: 1}
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition rule: Centering (FASA7907, pp72-74/PDF73-75)"
+summary: "FASA Corporation, Magic in the Shadows; exact tabletop RPG test resolution and exceptions from the original printed pp72-74/PDF73-75."
