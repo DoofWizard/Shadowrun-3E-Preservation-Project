@@ -1,0 +1,45 @@
+id: equipment.sota64-communications-p36-37
+record_type: equipment
+status: source_reviewed
+source: source.fanpro-25004
+printed_pages: '36-37'
+pdf_pages: '37-38'
+edition_scope: 'FanPro25004 State of the Art: 2064, Shadowrun Third Edition, corrected December 2005 PDF; fictional game communications gear'
+content_class: [equipment_stat]
+headline: 'State of the Art: 2064 (FanPro25004, SR3), Communications, pp36-37/PDF37-38'
+summary: 'Original fictional tabletop communications equipment table and abstract dice-test rules.'
+data:
+  publication: {title: 'State of the Art: 2064', publisher: FanPro, catalog_number: FanPro25004, edition: Shadowrun Third Edition, corrected_version: '1.0 December 2005', chapter: Games of State, section: Game Information / New Equipment / Communications, printed_pages: [36, 37], physical_pdf_pages: [37, 38]}
+  market_columns: [item, concealability, weight, availability, cost_nuyen, street_index]
+  market_rows:
+    - [Cellular Trigger, 12, '—', '4/48 hrs', 100, 1.5]
+    - [RF Tracker, 8, 1, 'Rating+2/48 hrs', 'Rating x 200', 2]
+    - [Extra Sensitive (2x), 4, 5, 'Rating+3/72 hrs', 'Rating x 250', 2.5]
+    - [Extra Sensitive (5x), 2, 10, 'Rating+4/96 hrs', 'Rating x 500', 3]
+    - [Extra Sensitive (10x), '—', 25, 'Rating+5/8 days', 'Rating x 1000', 4]
+    - [Universal Receiver, 10, '—', 'Rating+4/96 hrs', 'Rating x 250', 2.5]
+  printed_dash_is_unspecified_not_zero: true
+  cellular_trigger_game_effect: fictional remote device activation; requires in-game cellular service coverage
+  RF_tracker_game_test:
+    scanning_reference: SR3 p289 Scanner Rating Success Test
+    dice: Tracker Rating
+    target_number: transmitting device Rating + 3
+    complementary_skill: Electronic Warfare (SR3 p97)
+    minimum_duration_combat_turns: 10
+    additional_die_each_combat_turns: 10
+    printed_maximum: twice RF scanner Rating
+    single_test_at_end_of_scanning: true
+    accuracy_columns: [successes, accuracy]
+    accuracy_rows: [[1, '2 km'], [2, '1 km'], [3, '500 m'], [4, '10 m'], ['5+', '1 m']]
+    range_basis: fictional transmitting device Flux
+    range_multipliers: [1, 2, 5, 10]
+  universal_receiver_game_test:
+    dice: Rating
+    target_number: 5
+    range_condition: in-game cell-tower range
+    simplified_GM_condition: target within line of sight
+    optional_interference_modifiers_reference: SR3 p136 Sensor Test Modifiers
+    one_success_game_result: fictional conversation interception
+    three_or_more_successes_game_result: additional in-game target phone number
+    prior_target_phone_number_required: false
+framing: reference_exact
