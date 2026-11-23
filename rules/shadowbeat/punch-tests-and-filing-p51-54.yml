@@ -1,0 +1,51 @@
+id: rule.shadowbeat-punch-tests-and-filing-p51-54
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '51-54'
+pdf_pages: '60-63'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat original On the Beat and Punch Test, pp51-54/PDF60-63
+summary: Filing, staleness, Punch outcomes, timing and all printed target modifiers; original legacy rules only.
+framing: reference_exact
+data:
+  publication: {title: ShadowBeat, publisher: FASA Corporation, year: 1992, catalog_number: FASA7109, source_id: source.fasa-7109}
+  filing:
+    material: Include all pix and proof collected since previous filing.
+    pix_staleness: {dice: elapsed days since recording, target: shot Impact, on_success: remove shot, karma_to_cancel: 1, gm_exception: exceptionally important shots}
+    pix_total: Sum surviving shot Impacts.
+    proof_staleness: Test interview-derived proof as well and remove stale entries; real proof with Impact R is exempt.
+    automatic_punch_successes_per_filed_proof: 1
+  punch:
+    skill: Leadership or Reporting concentration or Trideo Reporting specialization
+    target: Sum applicable story factors; recalculate each filing; minimum 2; GM may assign profile or target for unmatched stories.
+    karma: Rerolls or purchased successes under original rules.
+    result_rows:
+      - {successes: '0', result: spiked}
+      - {successes: '1', minimum_pix: 24, result: spiked below minimum}
+      - {successes: '2', minimum_pix: 18, result: spiked below minimum; otherwise one-off coverage}
+      - {successes: '3', minimum_pix: 12, exception: survives with at least one filed proof}
+      - {successes: '4-5', minimum_pix: 6, exception: survives with at least one filed proof}
+      - {successes: '6+', result: survives even without significant pix or new proof}
+  timing:
+    initial_filing: after first day
+    next_filing_days: 1D6-1 after surviving Punch Test, including early filings
+    extension: {skill: Negotiation, target_on_due_date: 5, increase_per_extra_day: 1, reduction_per_real_proof: 1, proof_need_not_be_filed: true, interview_proof_excluded: true, failure_if_due_and_unfiled: spiked}
+    example: {roll_1D6_minus_1: 0, next_filing: following day, first_extension_TN_with_one_real_proof: 4, next_day_TN_with_one_real_proof: 5}
+  break_network:
+    minimum_punch_successes: 5
+    minimum_punch_TN: 10
+    final_rating_bonus: 10
+    commercial_network: {required: Negotiation Test and upper-management approval, TN: 20 minus Punch TN}
+    independent_or_pirate: Approval may be at producer or reporter level.
+  target_modifiers:
+    special_interest: {awakened_or_metahumans: 1, charitable_organization: 2, corporation_minor_local: 2, corporation_major_subsidiary: 4, megacorporation: 6, crime_individual_street_gang: 2, minor_organized_crime: 3, major_organized_crime: 4, terrorist_group: 2, government_ward_district: 3, government_city_metroplex: 4, government_state_regional: 5, government_national: 6, government_covert_operations: 1, magician_or_magical_group: 1, policlub_or_political_party: 2, pro_sports: 2, religion: 2, shadowrunners: 1}
+    area: {neighborhood: -1, city_metroplex: 1, region_state: 2, national: 3, international: 4}
+    highest_rank: {low_level: -2, managers: -1, executives: 1, major_executives: 2, supreme_executive_power: 3, famous_without_authority: 2}
+    conduct: {ethical_legal: -2, unethical_legal: 0, misdemeanor: 1, felony: 2, violent_crime: 3, mass_violence: 4, misuse_of_office: 1}
+    money: {under_million: 0, under_100_million: 1, under_billion: 2, over_billion: 3}
+    combination: Different groups contribute cumulatively; within a group type use highest applicable value; use highest-ranking person across all groups; conduct and money can both apply.
+    printed_inconsistency: Area prose gives neighborhood -2, but the table and both neighborhood examples use -1; retain discrepancy. Money boundaries as printed, exact billion not resolved.
+    worked_targets: [3, 6, 4, 15]
+  edition_lineage: Original legacy rules only; compare SR3 social tests and Karma before adoption.
