@@ -1,16 +1,32 @@
 id: rule.cyberlimbs.integrity-enhancement
 record_type: rule
-name: "Cyberlimb Integrity Enhancement"
+name: Cyberlimb Integrity Enhancement
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: '39'
+pdf_pages: '39'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 39, basis: defines}
-scope: {applies_to: ["cyberlimbs with Integrity Enhancement"]}
+scope: {applies_to: [cyberlimbs with Integrity Enhancement]}
 resolution:
-  summary: "Integrity Enhancement reinforces a cyberlimb, reducing the target number of cyberlimb Stress Tests by one per point and adding protective Body Dice against damaging effects targeted at the limb. Maximum enhancement is three points per limb."
-  inputs: ["Integrity Enhancement rating", "Stress Test", "targeted damage"]
-  outputs: ["Stress Test modifier and added protective dice"]
+  summary: Integrity Enhancement reduces Stress Test target numbers and adds resistance dice for called shots to the enhanced limb or its installed equipment.
+  inputs: [Integrity rating, Stress Test, called shot]
+  outputs: [Stress Test modifier, added Body dice]
   steps: []
-links: {uses: [rule.damage.stress-test], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+data:
+  maximum_points_per_cyberlimb: 3
+  stress_test_tn_modifier_per_point: -1
+  stress_modifier_applies_to_equipment_built_into_limb: true
+  stress_cross_reference: M&M p126
+  resistance_bonus:
+    condition: called shot targets the enhanced limb or anything built into it
+    additional_body_dice: Integrity Enhancement points on targeted limb
+links: {uses: [rule.damage.stress-test], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: [entity.cyberware.integrity-enhancement]}
 sources:
-  - {source: source.mm, page: 39, relation: defines, note: "Integrity Enhancement"}
-notes: []
+  - {source: source.mm, page: 39, relation: defines, note: Integrity Enhancement}
+notes:
+  - The original p39 market row matches the existing Integrity Enhancement entity. Do not apply its effects twice.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF p39: Integrity Enhancement'
+framing: reference_exact
