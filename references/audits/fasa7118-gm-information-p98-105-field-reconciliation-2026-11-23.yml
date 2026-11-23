@@ -1,0 +1,95 @@
+source: source.fasa-7118
+publication: Corporate Security Handbook
+publisher: FASA Corporation
+catalog_number: FASA7118
+edition: Second Edition
+date: '2026-11-23'
+scope: Original GM Information printed pp98-105 / PDF107-114; field review, not whole-book acceptance
+source_pdf_sha256: a956f6f4593e49073f3dc8c23af15f53095c8a436ea0af4ab80af3d0a9a59066
+verify_source_actual_status: source_pdf_hash_verified
+source_manifest_verified_blob_at_start: 1340b1b3e9d152134163ad5efe7b18d892fda833
+preflight_self_tests: 29/29
+exact_live_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+visually_reviewed_render_sha256:
+  pdf107: d7ba788d52f2f48ccbeccf1a81af09ebec824155d3830e2a7e89deb073cbfb01
+  pdf108: cd86e34ee15bf1cb0b7e1c9ee74b3638cfc382785453e2d50e378b4457ba47a9
+  pdf109: 3cef0933f504f2edf100316ef5ea202d6850c0a522cc7390b9073743339ccc40
+  pdf110: d8d58546a4e19538685448691b0809bdafeb5585cfa7ffeeb265e0453049f08f
+  pdf111: 55377a136000bb1c885d01a159bc7e62e68ae9ad85ae92b1c4b5ccf0cf0f4dc0
+  pdf112: 73fa4a52d6f8129ebbff8233e0035968ff3cdd046421b17fb7ef461b9077cd06
+  pdf113: ff8d176d7f36f3b3276dc8daa19141b0c08fe11bbd65976811fc772315f81d7b
+  pdf114: d2160089d8cc23cff76afc3a889db657e03eb537bb1b08802b520cf9d92c5e1a
+natural_section_field_review:
+  physical_security_p98_99:
+    existing_blobs: [ca2de7eb11c237b57e1aa3c905ab9091ffd59f6b, f265f5eea0d1622d060eb775539b40aea6af2c5a]
+    matched: Four Wire Table rows, both footnotes, visibility modifier rows, existing perimeter rule fields.
+    unresolved: Cross-page discretionary environmental alarm qualification is not represented in the older record; historical gate evidence outstanding.
+  technical_security_p99_102:
+    existing_blobs: [f265f5eea0d1622d060eb775539b40aea6af2c5a, 686adf9dea080bddeb8ea522631cbaf13766fc88, b447e976eebe48afb0d6899089065d6a8bea3cb5, f50bc71a249983b8d9cd6042617c065ae60c358d, 23c7ac5a2eeb19057360478cc21b05f849f4e98f]
+    matched: Five Technical Security Ratings rows and footnote; two Pressure Sensor rows; six Voice Technology rows; six Rigger Perception rows; existing fictional equipment costs, rating and Essence brackets.
+    correction: rules/security/csh-access-game-test-corrections-p101-102.yml
+    unresolved: Historical exact transaction evidence and original conditions outside the corrected fields remain subject to reconciliation.
+  magical_security_p102_104:
+    existing_blobs: [92da0764858da08565dd6bbc255e83c81c534dce, cba55db4c700a4664b4491d9ea9396f090f377f6]
+    matched: Optical spellcasting parameters and action economy; all 17 printed Astral Patrol modifier rows including masking footnote; fictional FAB mechanics and GM complexity note.
+    unresolved: Printed area table does not specify exactly 2000 square meters; no inferred boundary. Historical exact transaction evidence remains outstanding.
+  goose_totem_p104:
+    existing_blob: c63ebc1d245b454f02c5f7cc106b9fa994ba25bf
+    correction: options/security/csh-goose-totem-environment-correction-p104.yml
+    matched: Characteristics, both favored environments, both spell modifiers, both environment-specific conjuring modifiers, Surprise Test disadvantage, behavior.
+    field_review_status: complete_after_correction
+    formal_section_acceptance: not_certified_historical_gate_evidence_outstanding
+  executive_protection_adept_abilities_p104:
+    existing_blob: c63ebc1d245b454f02c5f7cc106b9fa994ba25bf
+    matched: Required Astral Perception, five typical powers, Extended Missile Parry cost and distance, Enhanced Perception effect and all three cost brackets.
+    field_review_status: complete_existing_fields_reused
+    formal_section_acceptance: not_certified_historical_gate_evidence_outstanding
+  rigger_combat_p104_105:
+    existing_blob: 650f2da368719d58ff5ab4084cf87a7b4d505201
+    correction: rules/security/csh-rigger-combat-dice-limit-clarification-p105.yml
+    unresolved: Printed test-dice cap versus bonus-dice-only interpretation; retained without invented precedence. No automatic SR3 conversion.
+confirmed_transactions:
+  - path: options/security/csh-goose-totem-environment-correction-p104.yml
+    semantic_commit: ddf9bd33532a9ee15276d7dfcd7c61057fa4af22
+    blob: e20cca3b03b984377f83254c90561cfe5189388a
+    candidate_sha256: 43a01664d7fcf3c883c14a6b5c500cacc1e80c7e7ae18cfd600042910826ceb8
+    immutable_sha256: 3475ccf3b90c05929e47881ea126ccce41e8274c426847f82feb6ddcf1bcffd8
+    stage: staged
+    prepare: preflighted
+    exact_commit_and_live_readback: true
+    confirm: verified
+    inspect: verified
+    index_commit: 5c20c0bf0906409173fd3fb5a3250e9a85588bbe
+    index_blob: 1bcd7dbb442daf8dae6820c39bcfeed0030c8983
+  - path: rules/security/csh-rigger-combat-dice-limit-clarification-p105.yml
+    semantic_commit: 1bd69f94a3648d4b88f21771248501eed374a970
+    blob: 2c01d63cb244b8d321fe68a01ee0a1fb4315c0de
+    candidate_sha256: baa7563e4a10a82fd6deac67aef8b68e4173895a5fdc06af07256a2291b741d1
+    immutable_sha256: 3659719c876ce8cb0322c9f2156452cebf268676d810d5cdd0545b3496b6f82a
+    stage: staged
+    prepare: preflighted
+    exact_commit_and_live_readback: true
+    confirm: verified
+    inspect: verified
+    index_commit: ee4550d3cb2bb4dc3184772002a9d1a429f16d0a
+    index_blob: e38bee95282510025b1140c2cf3be17c2f7530e4
+  - path: rules/security/csh-access-game-test-corrections-p101-102.yml
+    semantic_commit: 56c368165ae511db3df50986e0bb21b709224777
+    blob: 2e7d90beecbded441618824c345c0fff15fb6fd1
+    candidate_sha256: 274413e8b2aa5f0380671865f2fef0c0fe9be930ddfda554741a9b5e720ba3b9
+    immutable_sha256: 7a60ed13c99d24ee530788e58907c7fdd909a38ec7aa94cc154ad849f55a8c02
+    stage: staged
+    prepare: preflighted
+    exact_commit_and_live_readback: true
+    confirm: verified
+    inspect: verified
+    index_commit: bc7ff0231a061f653e12b135680a2e5acb4248a7
+    index_blob: ed4fb9deb53df2a0b02446d8c720af8336dd6072
+final_supplement_registrations: 58
+new_full_formally_certified_sections: 0
+global_authorized_pages_advanced: 0
+next: Reconcile remaining p98-105 conditions and historical gates; then source-specific NPC and archetype statblocks pp106-124. Historic pp34-61 debt remains open.
