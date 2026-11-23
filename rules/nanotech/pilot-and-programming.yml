@@ -3,19 +3,50 @@ record_type: rule
 name: "Nanite Pilot Ratings and Programming"
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: "96-97"
+pdf_pages: "97-98"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 96, basis: defines}
-scope:
-  applies_to: ["nanoware and nanodrones"]
+scope: {applies_to: ["nanoware and nanodrones"]}
 resolution:
-  summary: "Nanites are semi-autonomous game-system devices rather than full robots. Pilot Rating measures the number of functions a system can perform; common systems are fixed-function, while rare reprogrammable systems can have their instructions modified as described by the source."
-  inputs: ["nanite system", "Pilot Rating"]
-  outputs: ["available functions"]
+  summary: "Determine fictional nanite capabilities from Pilot Rating and calculate industrial nanotech facility costs."
+  inputs: ["nanite type", "Pilot Rating", "facility type", "base facility cost"]
+  outputs: ["available functions", "facility cost"]
   steps: []
-links:
-  uses: []
-  affects: []
-  modified_by: []
-  interacts_with: [subsystem.nanotech.core]
+data:
+  general:
+    printed_page: 96
+    categories: [nanoware within the body, nanodrones capable of external operation]
+    semi_autonomous: true
+    self_rewriting_programming: false
+    constant_radio_signal_required: false
+    pilot_rating: "Number of functions the system can perform."
+    typical_pilot_rating: 1
+    higher_pilot_ratings: rarer and more expensive
+    learning_pool: false
+    initiative_rating: not_required
+    drone_reference: "Rigger 2 p67"
+  nanodrones:
+    printed_pages: "96-97"
+    single_process_production_line_approximate_nuyen: 10000000
+    street_index_and_availability_applicable: false
+    street_level_access: false
+    nanotech_shops_exist: false
+    facility_practicality: GM discretion
+    associated_knowledge_skill: "Engineering (Nanorobotics)"
+    facility_cost_table:
+      printed_page: 97
+      research_facility_nuyen: "(maximum nanite Pilot Rating + 10)^2 * 100000"
+      reprogrammable_nanite_facility_nuyen: "(maximum nanite Pilot Rating + 10)^2 * 250000"
+      single_use_production_line_nuyen: "research facility cost + non-nanotech facility cost"
+      multi_use_production_line_nuyen: "reprogrammable nanite facility cost + non-nanotech facility cost"
+      non_nanotech_facility_reference: "SR3 p288"
+links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 96, relation: defines, note: "Nanotech and its Uses / Programming Nanites"}
-notes: []
+  - {source: source.mm, pages: "96-97", relation: defines, note: "Nanotech and its Uses, Nanodrones, Nanotech Facility Costs"}
+notes:
+  - "The separate reprogramming rule handles eligibility, controller requirements, and task duration."
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp96-97/PDF pp97-98: Nanite Pilot Ratings and Facility Costs"
+framing: reference_exact
