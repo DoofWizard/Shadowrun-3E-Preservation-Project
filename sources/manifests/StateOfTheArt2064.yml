@@ -22,11 +22,39 @@ routing:
   - {range: "40-68", section: "The Path of the Adept", game_information: "60-68", status: pending_original_mechanics_review}
   - {range: "69-98", section: "Behind the Badge", game_information: "96-98", status: pending_original_mechanics_review}
   - {range: "99-127", section: "Old World Magic", game_information: "122-127", status: pending_original_mechanics_review}
-  - {range: "128-168", section: "Culture Shock", game_information: "167-168", status: original_pages_reviewed_pending_transactions}
+  - {range: "128-168", section: "Culture Shock", game_information: "167-168", status: scoped_game_information_mechanics_gated}
 source_scoped_status_notes:
   - "2026-11-23 original Drive PDF freshly acquired; actual SHA256 matches catalog intake. TOC printed pp2-3/PDF3-4 and original Culture Shock Game Information pp167-168/PDF168-169 visually reviewed. This independently created source-specific manifest does not change source selection, global Denver p45/PDF46 checkpoint, or SR3 core acceptance."
   - "This PDF includes December 2005 FanPro correction designation; original 2004 publication is retained. No whole-book mechanical completeness is asserted."
-verified_semantic_records: []
+verified_semantic_records:
+  - id: rule.language.sota64-orzet-learning-pronunciation-p167-168
+    path: rules/language/sota64-orzet-learning-pronunciation-p167-168.yml
+    range_printed: [167, 168]
+    range_pdf: [168, 169]
+    content_class: rule_exact
+    commit: 313cdfe3e12ab15ae79260ed647b6bbbc11623e7
+    blob: 70dac3097efd758204650062c6bc4e04f8e93289
+    gate: verified
+    contiguous_advance: false
+  - id: rule.social.sota64-corp-vogue-bratpack-p168
+    path: rules/social/sota64-corp-vogue-bratpack-p168.yml
+    range_printed: [168, 168]
+    range_pdf: [169, 169]
+    content_class: rule_exact
+    commit: b14545139691cef46554140bc32c7aa774ee9dcc
+    blob: e6a43edad92de884b19ec51698ff1625415d8196
+    gate: verified
+    contiguous_advance: false
+scoped_game_information_closeouts:
+  - chapter: Culture Shock
+    original_printed: [167, 168]
+    physical_pdf: [168, 169]
+    classification: source_reviewed_all_explicit_game_affecting_rules_and_npc_table_in_scoped_game_information
+    accepted_mechanical_records: 2
+    prose_and_adventure_hooks_archived: false
+    source_wide_completion: false
+source_scoped_status_notes_additional:
+  - "2026-11-23 Culture Shock Game Information printed pp167-168/PDF168-169 visually examined. Source PDF SHA actually verified via original preservation_method.py. Two independent source-reviewed immutable rule_exact candidate transactions passed connector_preflight, ingestion_gate prepare/stage, standard GitHub Contents create, exact file/blob readback, ingestion_gate confirm and transaction_recovery inspect. Or’zet skill and language mechanics plus Corp Vogue/average Bratpack NPC attributes and skill table closed as local mechanic scope; world lore and plot hooks outside this narrow scope. No global checkpoint updates."
 rules_completion:
   all_applicable_original_mechanical_fields_reviewed: false
   all_gated_semantic_records_indexed: false
