@@ -46,7 +46,8 @@ coverage:
   punch_tests_and_filing: {printed: "51-54", status: source_verified_section_closed}
   beat_consequences_and_ratings: {printed: "55-56", status: source_verified_section_closed}
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
-  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; combat sports pp64-73 outstanding"}
+  individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
+  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; team combat sports pp65-73 outstanding"}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: queued}
@@ -75,6 +76,7 @@ records:
   - ["friendly-interviews-p44-45", "003f70bc18aad2b5724aca6d76730b1e9412f908"]
   - ["punch-tests-and-filing-p51-54", "5d08fe47ac5d4c3d9738eeaa4132fc712f250cff"]
   - ["beat-consequences-and-ratings-p55-56", "6050d144b001d2eb2392895838f677064a599113"]
+  - ["individual-combat-sports-p64", "b1d32338c299012e4d0fb6c9072d8b9843e66989"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -262,5 +264,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p55_pdf64", "printed_p56_pdf65"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-individual-combat-sports-p64
+    path: rules/shadowbeat/individual-combat-sports-p64.yml
+    original_printed_pages: "64"
+    original_pdf_pages: "73"
+    commit_sha: "b1d32338c299012e4d0fb6c9072d8b9843e66989"
+    readback_blob_sha: "f76ba0c0f5d86a8f1165796fda1786d269e93e2e"
+    candidate_sha256: "1ad6e56e776f8e34d92150676ca3376fa293ddfc47f3923b5a8b2633c37c2cc8"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p64_pdf73"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
