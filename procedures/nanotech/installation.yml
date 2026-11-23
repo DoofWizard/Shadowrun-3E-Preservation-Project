@@ -1,27 +1,50 @@
 id: procedure.nanotech.installation
 record_type: procedure
-name: "Nanoware Installation"
+name: Nanoware Installation
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '99'
+pdf_pages: '100'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'Shadowrun Third Edition: Man & Machine (FASA7126, FASA 1999), installation, p99/PDF100'
 effective: {status: current, source: source.mm, page: 99, basis: defines}
-purpose: "Install fixed, free-floating, or transient nanoware using the source's type-specific procedures."
+purpose: 'Resolve type-specific installation of fictional nanoware in SR3.'
 prerequisites: []
-inputs: ["nanoware classification", "required medical care", "host compatibility", "supporting cyberware"]
+inputs: [nanoware type, host Body, medical care, supporting cyberware]
 stages:
   - id: fixed
-    name: "Install Fixed Nanoware"
-    test_or_action: "Use cyberware-implantation or transimplantation surgery, depending on the system."
-    outputs: ["installed fixed nanoware"]
+    name: Fixed system installation
+    test_or_action: 'Use cyberware implantation or transimplantation surgery, depending on whether the system is fixed to cyberware or an organ.'
+    outputs: [installed fixed system]
   - id: free-floating
-    name: "Introduce Free-Floating Nanoware"
-    test_or_action: "Use injection plus the required monitoring/hospitalization and compatibility checks."
-    outputs: ["active free-floating nanoware"]
+    name: Free-floating system installation
+    test_or_action: 'Injection without surgery, followed by observation and adjustment in medical care.'
+    outputs: [active or rejected free-floating system]
   - id: transient
-    name: "Introduce Transient Nanoware"
-    test_or_action: "Inject the transient treatment; no surgery is normally required."
-    outputs: ["active transient nanoware"]
-outcomes: ["successful installation", "rejection or complication"]
+    name: Transient system installation
+    test_or_action: 'Normally an injection of a liquid suspension, without surgery.'
+    outputs: [active transient treatment]
+data:
+  fixed_surgery:
+    attached_to_cyberware: cyberware implantation
+    attached_to_organ: transimplantation
+    implantation_reference_printed: 146
+  free_floating:
+    surgery_required: false
+    standard_intensive_care_days: 1
+    standard_regular_care_days: 2
+    regular_care_reduction_test: {attribute: Body, target_number: 6, success_regular_care_days: 1}
+    no_medical_care_test: {attribute: Body, target_number: 12, success: no complication, failure_damage: S Stun, failure_reason: host rejection}
+    care_reference: 'SR3 p240'
+  transient: {surgery_required: false, usual_delivery: injection}
+  supporting_rules:
+    - rule.nanotech.immune-tailoring
+  source_example: 'The example character already has a top-grade blood filtration system and pays money but no additional Essence for the facilitators; the successful Body Test yields one day each of intensive and regular care.'
+outcomes: [successful installation, rejection or complication]
 links: {uses: [rule.nanotech.classification, procedure.surgery.implant, procedure.surgery.transplant], requires: [], produces: [], modified_by: []}
 sources:
-  - {source: source.mm, page: 99, relation: defines, note: "Nanoware Installation / Modified Filtration System / Immune System Tailoring"}
+  - {source: source.mm, page: 99, relation: defines, note: 'Installation and the example of installation and recovery'}
 notes: []
