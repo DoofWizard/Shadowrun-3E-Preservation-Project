@@ -1,0 +1,124 @@
+id: rule.cyberlimbs.accessory-effects
+record_type: rule
+name: Cyberlimb Accessory Game Effects
+domain: cyberlimbs
+status: ingested
+source: source.mm
+printed_pages: '36-40'
+pdf_pages: '36-40'
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 36, basis: defines}
+scope: {applies_to: [fictional cyberlimb accessories in the tabletop game]}
+resolution:
+  summary: Apply the individual accessory game effects below. Purchase statistics remain in the linked existing item entities.
+  inputs: [installed accessory, character attributes, game situation]
+  outputs: [test modifiers, movement rates, action costs, accessory restrictions]
+data:
+  cyberarm_gyromount:
+    printed: 36
+    entity: entity.cyberware.cyberlimb-cyberarm-gyro-mount
+    recoil_reduction: 3
+    supported_weapon_size_maximum: light machine gun
+    eligible_installations: [full cyberarm, articulated arm]
+    concealability_change_inactive: -1
+    concealability_change_active: -6
+  cyberhand_safety:
+    printed: 37
+    entity: entity.cyberware.cyberhand-safety
+    matching_code: safety inactive
+    nonmatching_code: safety active
+    encryption_rating: 8
+    change_owner: new firmware chip for the fictional game item
+    blank_chip_cost_nuyen: 50
+    programming_facility: computer repair shop or facility
+  cyberholster:
+    printed: 37
+    entity: entity.cyberware.cyberholster
+    eligible_installations: cyberlimbs only
+    eligible_weapon_classes: [holdout pistol, light pistol, heavy pistol, machine pistol, taser]
+    detection_test_tn_modifier: 2
+    ready_or_quick_draw_action: Simple
+    ready_cross_reference: SR3 p107
+    ecu_includes_holstered_item: true
+  kid_stealth_legs:
+    printed: 37
+    entity: entity.cyberware.kid-stealth-legs
+    obvious_only: true
+    both_legs_must_match: true
+    running_multiplier_change: 1
+    human_example_running_rate: Quickness times 4
+    kick_power_bonus: 2
+    jumping_athletics_extra_dice: 1
+    jumping_cross_reference: SRComp p47
+    toe_razors_or_blades: use hand razor or handblade rules; add 2 to attack Power
+    equipment_capacity_each: 10
+  cyberskates:
+    printed: 38
+    entities: [entity.cyberware.cyberskates, entity.cyberware.cyberskates-retractable]
+    installation: cyberfeet only
+    walking_rate: Quickness times 2
+    running_rate: Quickness times 6
+    normal_movement_modifiers_apply: true
+    additional_difficult_ground_tn_modifier: 1
+    dodge_test_tn_modifier: 1
+    restricted_combat_or_crowded_terrain:
+      test: Athletics (Skating)
+      target_number: 5
+      timing: end of each Combat Turn in which the character moves
+      failure: fall prone
+    extend_or_retract_action: Complex
+  direct_neural_interface:
+    printed: 38
+    entities: [entity.cyberware.direct-neural-interface, entity.cyberware.direct-neural-interface-adaptation]
+    control_requires_adapted_device: true
+    external_adapted_devices: controllable via datajack
+    most_headware_installed_in_cyberlimb: already adapted; requires DNI implant to connect to brain
+    cyberdeck_example: requires external datajack connection unless connected by DNI
+    output_requires_appropriate_translation_device: true
+    examples_of_output: [display link for text, image link for images, simrig for simsense]
+  hook_hand:
+    printed: 39
+    entity: entity.cyberware.cyberlimb-obvious-hook-hand
+    attachment_weight_cap_kg: Strength divided by 10
+    example_strength_5_cap_kg: 0.5
+    base_melee_damage_code: (STR + 1)M
+    knife_or_spur_attachment: apply standard corresponding Damage Code
+    removable: true
+    grade: standard only
+  peg_leg:
+    printed: 39
+    entity: entity.cyberware.peg-leg
+    body_bonus: 0
+    strength_bonus: 0
+    movement_quickness_modifier: {knee_length: -1, hip_length: -2}
+    notice_test: {skill: Perception, target_number: 5}
+    modifications_or_other_cyberware_allowed: false
+    storage_dimension_limits: diameter no larger than character fist; length no longer than character forearm
+    removable: true
+    optional_weapon_statistics: use standard hand spur statistics and Damage Code; GM decides possible balance loss
+    grade: standard only
+  signal_booster:
+    printed: 40
+    entity: entity.cyberware.cyberlimb-signal-booster
+    linked_transmitter_flux_bonus: booster rating
+    minimum_rating: 1
+    maximum_rating: 10
+    simultaneous_powered_devices: 1
+    hours_before_recharge: 50
+  telescoping_cyberlimbs:
+    printed: 40
+    entity: entity.cyberware.telescoping-cyberlimb
+    eligible_installations: [full cyberlimb, lower arm, lower leg]
+    extend_or_retract_action: Simple
+    height_or_reach_increase_meters: 1
+    cyberarm_opponent_reach_bonus_reduction: 1
+    user_reach_bonus: 0
+    gm_tn_modifier_when_limited_flexibility_matters: 1
+links: {uses: [rule.cyberlimbs.equipment-capacity, rule.cyberlimbs.attributes], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: [rule.cyberlimbs.weapon-mounts]}
+sources:
+  - {source: source.mm, pages: '36-40', relation: defines, note: Cyberlimb Accessories game effects}
+notes:
+  - Body plating, Integrity Enhancement, partial cyberlimbs, Quickness Enhancement and weapon mounts have separate canonical rules. Do not apply those effects twice.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF pp36-40: remaining cyberlimb accessory effects'
+framing: reference_exact
