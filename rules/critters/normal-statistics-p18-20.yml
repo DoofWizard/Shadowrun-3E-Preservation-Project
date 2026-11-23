@@ -1,0 +1,79 @@
+id: rule.critters.statistic-reference-tables
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '18-20'
+pdf_pages: '18-20'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  individual_variation:
+    typical_size_and_weight: adult specimen
+    possible_larger_percent: '10-30'
+    possible_smaller_percent_source_notation: '60-75 percent for gender-size differences'
+    physical_and_mental_attributes_max_above_average_percent: 50
+    minimum_attribute_fraction_of_average: 0.5
+    minimum_exception: sick or injured specimen
+    invariant_fields: [Essence, Reach, Attack Type, Movement Multiplier, Damage Modifiers]
+    powers_may_vary: true
+    random_size_roll: 2D6
+    size_table:
+      columns: [roll, size_change_percent, physical_attribute_adjustment]
+      rows:
+        - ['2', -50, null]
+        - ['3-4', -20, null]
+        - ['5-7', 0, null]
+        - ['8-9', 10, '+1 to random Physical Attribute']
+        - ['10-11', 20, '+2 to random Physical Attribute; apply to one or two Attributes']
+        - ['12', 50, '+5 to random Physical Attribute; apply to one or more Attributes']
+    null_adjustment: none specified by table
+  statistics_key:
+    B: Body rating; second value when present is both ballistic and impact armor.
+    Q: Quickness rating; second value is running multiplier; alternate movement multiplier is listed in Notes.
+    S: Strength
+    C: Charisma applies only to intelligent creatures capable of social interaction.
+    I: First rating for Intelligence Tests and spell resistance; second rating for Perception Tests.
+    W: Willpower
+    E: Essence; A indicates a spirit primarily in astral space; Z indicates a dual being; variable Essence is a rating range.
+    R: Reaction for physical attacks.
+    INIT: Reaction plus Initiative dice; printed p19 also states Initiative limits Combat Pool dice used in one Combat Phase.
+    Attacks: Damage Code is physical unless specified otherwise; Humanoid entries can use weapons and ordinary character combat rules, with unarmed damage (STR)M Stun; listed Reach adjustments apply.
+  normal_critters_table:
+    columns: [name, B, Q, S, C, I, W, E, R, INIT, Attacks]
+    rows:
+      - [Bat, '1', '5(x4)', '0', '-', '1/5', '1', '6', '6', '6+1D6', '2L']
+      - [Bear, '9/1', '4(x3)', '9', '-', '2/4', '2', '6', '5', '5+1D6', '6S,+1 Reach']
+      - ['Cat, House', '1', '4(x3)', '1', '-', '2/4', '2', '6', '5', '5+2D6', '3L,-1 Reach']
+      - ['Cat, Wild', '2', '4(x4)', '2', '-', '2/4', '2', '6', '5', '5+2D6', '4M,-1 Reach']
+      - [Deer, '4', '4(x4)', '4', '-', '2/3', '2', '6', '3', '3+1D6', '3M,+1 Reach']
+      - ['Dog, Large', '3', '4(x5)', '3', '-', '2/4', '2', '6', '4', '4+1D6', '6M']
+      - ['Dog, Small', '1', '4(x4)', '1', '-', '2/4', '2', '6', '4', '4+1D6', '3L,-1 Reach']
+      - [Elephant, '15/3', '3(x4)', '40', '-', '3/3', '3', '6', '3', '3+1D6', '10D,+1 Reach']
+      - [Fox, '2', '4(x4)', '1', '-', '2/4', '2', '6', '5', '5+2D6', '3L,-1 Reach']
+      - [Goat, '2', '4(x6)', '2', '-', '2/3', '2', '6', '3', '3+1D6', '3L']
+      - [Horse, '10', '4(x4)', '8', '-', '2/3', '2', '6', '3', '3+1D6', '6S,+1 Reach']
+      - [Leopard, '5', '5(x4)', '5', '-', '2/4', '2', '6', '5', '5+3D6', '9S']
+      - [Rat, '1', '5(x3)', '0', '-', '1/4', '1', '6', '5', '5+1D6', '2L,-1 Reach']
+      - [Rhinoceros, '12/2', '4(x4)', '25', '-', '2/2', '2', '6', '3', '3+1D6', '11D']
+      - [Seal, '6', '5(x4)', '4', '-', '3/4', '2', '6', '4', '4+1D6', '4M']
+      - [Shark, '5/1', '5(x4)', '4', '-', '2/3', '1', '6', '5', '5+2D6', '10S']
+      - ['Shark, Large', '10/2', '5(x3)', '10', '-', '2/3', '2', '6', '5', '5+2D6', '12D']
+      - [Tiger, '8', '6(x4)', '8', '-', '3/4', '2', '6', '6', '6+3D6', '10S,+1 Reach']
+      - [Wolf, '5', '5(x4)', '4', '-', '3/4', '2', '6', '5', '5+2D6', '7M']
+    gm_use: Representative mundane animals; adjust as necessary and use as benchmarks for other ordinary creatures.
+  metahuman_averages:
+    columns: [name, B, Q, S, C, I, W, E, R, Attacks]
+    rows:
+      - [Human, '3', '3', '3', '3', '3', '3', '6', '3', Humanoid]
+      - [Dwarf, '4', '2', '5', '3', '3', '4', '6', '2', Humanoid]
+      - [Elf, '3', '4', '3', '5', '3', '3', '6', '3', Humanoid]
+      - [Ork, '6', '3', '5', '2', '2', '3', '6', '2', Humanoid]
+      - [Troll, '8/1', '2', '7', '1', '1', '2', '6', '1', 'Humanoid,+1 Reach']
+    gm_use: Reference averages for disposable non-player characters, not character creation modifiers.
+  relationships:
+    catalog_supersession: Printed p18 explicitly supersedes previously published creature statistics and powers.
+    combat_pool_cross_reference: 'rules/critters/core.yml records the p5-6 attack cap by Reaction; preserve the p19 Initiative cap statement separately without inventing precedence.'
+framing: reference_exact
+headline: 'Critters (FASA7002, FASA Corporation, Shadowrun Third Edition), printed/PDF pp18-20: creature statistics reference'
+summary: 'Fictional tabletop rules: three original numeric tables, individual variation, statistic notation and gamemaster reference use.'
