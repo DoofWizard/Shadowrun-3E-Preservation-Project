@@ -1,0 +1,40 @@
+source: source.fasa-7219
+publication: 'FASA7219 Target: Matrix, FASA, Shadowrun Third Edition'
+original_pdf_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+actual_verify_source: source_pdf_hash_verified
+original_manifest_blob: 7364cce22b32a49e79357484577ddc60c590a2c1
+original_image_review: {printed: [123, 124, 125], pdf: [124, 125, 126]}
+legacy_host_record: {path: rules/matrix/target-matrix-host-rules.yml, blob: f40140e0abbaa1f5f7f4aa4283a40cd83715779b}
+preflight_tests_passed: 29
+scope: 'Source-specific original-image reconciliation; not whole-book or entire Host Rules closure.'
+sections:
+  - heading: Virtual Seattle
+    status: original_mechanical_scope_reconciled
+    fields: 'RTG and LTG security, fifth ACIFS field, Green Grid sheaf, single gridlock effect and all six alternatives, overload login dice, delayed onset, cold/hot modifiers, reset and diagnosis, panic and recovery.'
+    gm_guidance: 'Generate campaign-tailored sheafs for individual Seattle hosts rather than prescribing universal ratings.'
+    records:
+      - {path: rules/matrix/target-matrix-seattle-gridlock-p123.yml, commit: 56a87de7176399c68f6b2fe385f1bfc79c5e3924, blob: 20c2babdcd766202f8a185b4829e15441f187c5b, journal: seattle-journal, index_commit: e5d0fb9d29796100d524deca01a599daf4c8f5e5, index_blob: ddb724c2fd1e7022ad8e844edde573c38ebb1348, gate: verified}
+      - {path: rules/matrix/target-matrix-seattle-asist-overload-p123.yml, commit: 27ffadcec4a262fb5c5952cedafb54e369d4ba38, blob: 0556d95a0b0208c93a55e00abcf65b84040dbab8, journal: overload-journal, index_commit: ebcd21ea07854adb220d9b228280e720d49cf4b3, index_blob: 9a6607ceff96442cfd4b2bd3edc8731693943f7d, gate: verified}
+  - heading: Hacker House
+    status: original_mechanical_scope_reconciled
+    fields: 'Access, guest privileges, first-purchase account, 10 percent demo, isolated catalog exclusions, 100 nuyen access, agent, Availability Test, 8 hours, Street Index modifiers and optional bug rules.'
+    existing_context: 'House programming language supplies the bug and glitch modifiers; legacy context reused.'
+    records:
+      - {path: rules/matrix/target-matrix-hacker-house-p123-124.yml, commit: 1462b054f27d57cc75cf303dcd0289986dfee7d1, blob: 983d0875680edc3f963904546c0054e9212b05e3, journal: hacker-house-journal, index_commit: 0b4852f22845acbc2a9a676fa7dff895ed0db742, index_blob: 981e58c77348610586965b99f442fadcf92354bd, gate: verified}
+  - heading: Lone Star
+    status: original_mechanical_scope_reconciled
+    fields: 'GridSec ratings, utility floors and GM discretion, deck assignments, rookie training, critical file protection, authentication, four-hour synchronization, mandatory detection and investigation, sheaf reference.'
+    records:
+      - {path: rules/matrix/target-matrix-lone-star-host-p124.yml, commit: aafcac479894b174150015ef46669d04ca7bb878, blob: 51d84b6eb6ec2b14b93bd32dd424926f261068ce, journal: lone-star-host-journal, index_commit: d5b243176d4b93de03b336751635e6199542f3d0, index_blob: b834146b262275ba6cd431dd4c8e9bc170ef394d, gate: verified}
+  - heading: Zurich-Orbital
+    status: original_mechanical_scope_reconciled
+    fields: 'Timed SAN, scramble rating, freeze modifier, priority account modifier and handoff, Fates ratings and familiarity, separate Maenad program types and exact black hammer rating/option, sheaf reference.'
+    records:
+      - {path: rules/matrix/target-matrix-zurich-orbital-host-p124-125.yml, commit: 98f6002be816c76956dd95c832d79589ee28fd5c, blob: c05152ba45c96f39abb22b6d2a90230cbd7b17f9, journal: zurich-journal, index_commit: 05ac8a9071446809b469175dcca0353b431d0c68, index_blob: d3d9a2da56db07381106d34817f960944e4a83ec, gate: verified}
+outstanding:
+  - 'Malaysian Independent Bank: passcode-only minimum balance qualifier and identification-dependent balance; exact legacy receipt reconciliation.'
+  - 'People’s University: Bay Area and Resistance eligibility, instructor library and GM-determined skill; exact legacy receipt reconciliation.'
+  - 'Remaining Host Rules headings and referenced sheaf completeness not certified here.'
+concurrency: 'Lone Star index initially returned HTTP 409; fresh manifest was unchanged and semantic blob matched. Index recovered with explicit conflict evidence and exact commit and main readback.'
+global_pages_authorized: 0
+global_checkpoint_advanced: false
