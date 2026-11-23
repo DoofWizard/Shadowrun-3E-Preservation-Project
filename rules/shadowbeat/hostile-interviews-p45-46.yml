@@ -1,0 +1,39 @@
+id: rule.shadowbeat-hostile-interviews-p45-46
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '45-46'
+pdf_pages: '54-55'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat original Hostile Interviews, pp45-46/PDF54-55
+summary: Hostile Interviews - original legacy game procedure, numerical conditions and exceptions; no verified SR3 replacement asserted.
+framing: reference_exact
+data:
+  publication: {title: ShadowBeat, publisher: FASA Corporation, year: 1992, catalog_number: FASA7109, source_id: source.fasa-7109, source_pdf_sha256: d111ebcfcab4e40645e61f2924e58b5d8ace6ab4c18610e3085e324c52bd4278, chapter: And Now the News}
+  base_target: original Shadowrun social skill rules p153; apply listed modifiers before Interview Test
+  scope: NPC interview, not interrogation; character roleplay may replace dice where GM permits
+  success_results:
+    - {successes: '1-2', outcome: Pix Test only, no useful information}
+    - {successes: '3-4', outcome: major clue and Pix Test}
+    - {successes: '5+', outcome: Proof}
+  restrictions:
+    karma_reroll_failures: allowed
+    karma_buy_successes: forbidden
+    repeat: normally one hostile interview per NPC unless substantial new information appears
+    overt_duress: invalid for legal and media use in the fictional setting
+  modifiers:
+    - {name: covert_intimidation, target_modifier: -2}
+    - {name: magic_used, target_modifier: 4, impact_modifier: -8, condition: magical compulsion compromises media usefulness and legal standing}
+    - {name: undisclosed_information, target_modifier_by_piece_count: {one: -4, two: -6, three: -7}, further_pieces: no additional modifier}
+    - {name: surprise, target_modifier: -4}
+  proof_risk: when a piece of Proof is used for undisclosed-information modifier and the Interview Test has zero successes, that Proof is lost
+  worked_example_p46: {base_target_number: 14, two_information_pieces_modifier: -6, surprise_modifier: -4, covert_intimidation_modifier: -2, final_target_number: 2, successes: 5, result: Proof}
+  source_note: numerical values are original fictional tabletop modifiers, not a procedure for real interviews.
+  edition_lineage:
+    sr3_status: unsuperseded_candidate_not_yet_compatibility_verified
+    comparison_needed: Original social test and Karma procedures versus SR3; do not apply original edition mechanics natively without reconciliation.
+  source_review:
+    original_printed_pages: '45-46'
+    original_pdf_pages: '54-55'
+    editorial_scope: Fictional game rule reference only
