@@ -1,0 +1,77 @@
+id: rule.communications.cannon-companion-tactical-communication-device-rules-p54-55
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '54-55'
+pdf_pages: '55-56'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: Cannon Companion FASA7908 fictional tabletop tactical communication rating and equipment rules
+summary: Original FASA Corporation Cannon Companion (FASA7908), Shadowrun Third Edition, printed 54-55/PDF 55-56.
+data:
+  publication: Cannon Companion
+  publisher: FASA Corporation
+  catalog_number: FASA7908
+  extends: rule.communications.radio-baseline
+  system:
+    component_count: unrestricted
+    master_required: false
+    mixed_rating_tests: lowest_rating_involved
+    transmission_types: [voice, images, data]
+    simsense_supported: false
+    decking_or_rigging_supported: false
+  master_unit:
+    stored_frequencies_per_rating: 10
+    scanner_rating: device_rating
+    jammer_rating: device_rating
+    ports: device_rating
+    vehicle_cargo_cf: 2
+    flux: device_rating
+    eccm: device_rating
+    encryption: device_rating
+    portable_variant_available: true
+  personal_unit:
+    stored_frequencies_per_rating: 2
+    flux: floor(device_rating / 2)
+    eccm: device_rating
+    encryption: device_rating
+    datajack_ports: 1
+    computer_or_telecom_ports: 1
+    dni_control: true
+    wireless_headset: included
+    voice_activation: optional
+    hands_free: true
+    form_options: [pocket, wrist]
+    receive_only_beyond_transmit_range: true
+  laser_link:
+    line_of_sight_required: true
+    clear_weather_range: horizon
+    poor_weather_range: sharply_reduced
+    heavy_rain_fog_smoke: virtually_unusable
+    flux_rating: null
+    eccm_rating: null
+    encryption_rating: null
+    data_encryption_possible: true
+    security_relative_to_radio: more_resistant_to_interception_jamming_detection
+    in_game_interception_condition: laser_link_in_beam_path
+    computer_or_telecom_compatible: true
+  microwave_link:
+    line_of_sight_required: true
+    range: horizon
+    weather_effect: marginal
+    interception_jamming_detection_rule: same_as_laser_link
+  satellite_link:
+    access: subscription_or_authorized_access_unless_satellite_hacked_in_game
+    satellite_link_requires_transponder_lock: true
+    dish_required: true
+    computer_or_telecom_compatible: true
+    satellite_decking_supported: false
+    simsense_supported: false
+  dish:
+    standard_diameter_m: 0.5
+    large_diameter_m: 1
+    fixed_base_diameter_m: 2
+    temporary_electronics_array_reusable: true
+    temporary_assembly_combat_turns: 2
+    temporary_breakdown_hours: 3
+framing: reference_exact
