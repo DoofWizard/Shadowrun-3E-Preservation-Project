@@ -43,7 +43,8 @@ coverage:
   interview_tests_and_casual_interviews: {printed: "43", status: source_verified_section_closed}
   press_conferences_and_legwork: {printed: "46", status: source_verified_section_closed}
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
-  professional_sports_and_games: {printed: "58-73", status: queued}
+  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original professional baseball, basketball, football and general pro eligibility mechanics pp58-62 verified; other sports outstanding"}
+  professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: queued}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
   equipment_and_costs: {printed: "88-99", status: queued}
@@ -65,6 +66,7 @@ records:
   - ["43-interview-casual-tests", "272165b14990b5f763e8d8400c2a1db3eb0f9745"]
   - ["press-conferences-legwork-interviews-p46", "2b0eca3fed51477e1cb69e07d8468d210b4454fc"]
   - ["hostile-interviews-p45-46", "1033efb8a222270129f40a635c8d82be05a68b04"]
+  - ["professional-ball-sports-p58-62", "c01012c988fb2e60ad788bc0f0d1143340bb5b62"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -197,5 +199,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p45_pdf54", "printed_p46_pdf55"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-professional-ball-sports-p58-62
+    path: rules/shadowbeat/professional-ball-sports-p58-62.yml
+    original_printed_pages: "58-62"
+    original_pdf_pages: "67-71"
+    commit_sha: "c01012c988fb2e60ad788bc0f0d1143340bb5b62"
+    readback_blob_sha: "b93aa016780eceba5e943c07a53c3d3a0fe5d540"
+    candidate_sha256: "f3269810a02cb05f6a8049b27658b5e3611df7d4a5de4c59000339307e6f76a0"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p58_pdf67", "printed_p59_pdf68", "printed_p60_pdf69", "printed_p61_pdf70", "printed_p62_pdf71"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
