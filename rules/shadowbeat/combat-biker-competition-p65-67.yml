@@ -1,0 +1,54 @@
+id: rule.shadowbeat-combat-biker-competition-p65-67
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '65-67'
+pdf_pages: '74-76'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat original Combat Biker match procedures, pp65-67/PDF74-76
+summary: Original fictional match roles, scoring, equipment game values and penalties.
+framing: reference_exact
+data:
+  publication: {title: ShadowBeat, publisher: FASA Corporation, year: 1992, catalog_number: FASA7109, source_id: source.fasa-7109}
+  league: {conferences: 2, playoff_teams_per_conference: 4, championship: conference winners}
+  arena: {length_m_approx: 150, width_m_approx: 50, goal_circle_m: 2, design: team-specific layout subject to WCCL approval, changes: off-season}
+  roster:
+    printed_total: 9
+    printed_mounted: 8
+    printed_on_foot: 1
+    roles:
+      linebiker: {count: 4, mount: fast unarmored cycle, extra_equipment_choice: [flail, net, whip, bola]}
+      lancebiker: {count: 4, mount: heavy cycle}
+      thunderbiker: {count: 1, mount: light cycle}
+      goalie: {count: 1, mount: none, position: goal zone}
+    discrepancy: Role counts total ten, nine mounted, contradicting stated nine total and eight mounted. No correction inferred.
+  equipment:
+    armor: {goalie: {ballistic: 6, impact: 5}, others: {ballistic: 3, impact: 2}, helmet: {ballistic_modifier: 1, impact_modifier: 1}}
+    bikes: {linebiker: Rapier or equivalent, lancebiker: Scorpion or equivalent, thunderbiker: modified Rapier class, vehicle_control_rig: permitted}
+    other: {two_way_radio: required, trauma_patch_rating: 3}
+    role_equipment_and_limits: separate equipment description reconciliation remains outstanding
+  match:
+    objective: acquire flag and place it in opposing goal zone
+    flag: begins on moving drone; dropped flag returns upright
+    initial_play: linebikers contest flag; lancers and thunderbiker remain out of play in starting positions until possession established
+    play_ends: goal or timer expiration
+    play_duration_seconds: {minimum: 30, maximum: 60, random_extra_max: 30}
+    quarter_playing_minutes: 10
+    clock_stops_between_plays: true
+  scoring:
+    goal: {points: 3, mounted_player_required: true}
+    dismounted: may carry flag but cannot score a goal
+    timer_expiry_with_possession: offense gains one point if in opponent territory; defense gains one if offense in its own territory; applies mounted or dismounted
+    timer_expiry_unclaimed_drone: opposing team to territory occupied by drone gains one point
+    timer_expiry_loose_flag: text awards point to last possessing team, but example awards opposing team if loose flag remains in last holder's territory; no precedence inferred
+  fouls:
+    removal: penalized players leave playing lanes for shelters; officials can stop noncompliant cycles
+    three_fouls_same_team_same_play: end play, opponent gains one point
+    ejection: ends play, opponent gains one point, replacement next play
+    deliberate_flag_release: ejection and one point to opponent
+    ramming_dismounted_player: foul if deliberate; goalie exempt
+    riding_over_disabled_player: foul; printed commentary is not an alternate formal rule
+    unauthorized_equipment: use restricted to role; picking up discarded role-authorized equipment allowed
+  edition_lineage: {sr3_status: unsuperseded_candidate_not_yet_compatibility_verified, dependency: compare SR3 vehicle and combat resolution; no conversion applied}
+  source_review: {printed: '65-67', pdf: '74-76', scope: match organization, roster, armor, scoring, timing and fouls; detailed role equipment descriptions remain open}
