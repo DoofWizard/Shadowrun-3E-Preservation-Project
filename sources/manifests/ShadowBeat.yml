@@ -48,8 +48,8 @@ coverage:
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
   combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained; independent equipment-stat chapter and SR3 compatibility remain open."}
-  urban_brawl: {printed: "68-73", status: partial, note: "Match timing, scoring and player status transaction verified; role eligibility verified; penalties pending."}
-  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; Combat Biker pp65-67 verified; Urban Brawl pp68-73 outstanding"}
+  urban_brawl: {printed: "68-73", status: source_verified_section_closed, note: "Match, roles and penalties individually verified; p69/PDF78 illustration; contradictory offense clocks and ball-size comparison preserved, edition compatibility unresolved."}
+  professional_sports_and_games: {printed: "58-73", status: source_verified_section_closed, note: "Original competition rules pp58-73 accounted for; source contradictions and legacy edition dependencies retained; p69 illustration excluded."}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: queued}
@@ -83,6 +83,7 @@ records:
   - ["combat-biker-role-equipment-p66-67", "212b88fce9b5dc3b04cb6964aad38c56ff62211c"]
   - ["urban-brawl-match-p68-72", "3e31081180bc820cc309cae2d92cb182fa25e3b1"]
   - ["urban-brawl-roles-p70-71", "75febde8b5e849c08dc3a353dc9f30baad2b56bb"]
+  - ["urban-brawl-penalties-p72-73", "700ab2d167533b05c13c9c74622d7943aee9db36"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -325,5 +326,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p70_pdf79", "printed_p71_pdf80"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-urban-brawl-penalties-p72-73
+    path: rules/shadowbeat/urban-brawl-penalties-p72-73.yml
+    original_printed_pages: "71-73"
+    original_pdf_pages: "80-82"
+    commit_sha: "700ab2d167533b05c13c9c74622d7943aee9db36"
+    readback_blob_sha: "f54dc29299661f9d1de915eb5253b4b04817cb1a"
+    candidate_sha256: "2151294951434667a2b773b90a532eaf87619ccbbcf60d4d0bd1c589a9c42371"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p71_pdf80", "printed_p72_pdf81", "printed_p73_pdf82"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
