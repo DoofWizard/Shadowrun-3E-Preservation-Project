@@ -1,0 +1,58 @@
+audit_type: source_specific_original_image_and_transaction_review
+date: '2026-11-23'
+source: source.cc
+title: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+original_pdf:
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  physical_pages: 130
+  verify_source_actual_status: source_pdf_hash_verified
+  verified_manifest_at_run_start: 67f161ae6fa800a60b13cf10b8a89ccf7cd47a84
+  printed_pages: [96, 97]
+  pdf_pages: [97, 98]
+  original_images_reviewed: true
+preflight_self_tests_passed: 29
+scope_reviews:
+  - scope: Armor Degradation optional and Armor Build/Repair
+    status: field_reconciled_with_confirmed_supplement
+    existing_records:
+      - path: options/combat/armor-degradation.yml
+        blob: b49504d58abaae5143b1a2653eed9c69ab92ef82
+        covers: optional trigger, rating-loss calculation, armor categories and critter exclusion
+      - path: procedures/armor/repair.yml
+        blob: d2e24d2a7572ebf018426c5790ff54e415bccdfc
+        covers: skill, original-rating target number, successes, base time, restoration ceiling and facility restriction
+    new_record:
+      path: rules/armor/cannon-companion-degradation-repair-clarifications-p96-97.yml
+      commit: cee82d34e3a3d507c29e69020a9750c15971e3dc
+      blob: 7bfc17ac9bcd15ccb0e70393d06f17e17bb611d2
+      baseline_sha256: ab02dec2f20cf44b1e93fd33a71c9988121d6304ccf631ed1ea646fef1dbab21
+      candidate_sha256: 44b4bf699769de2a763e81cf925ed4faa84f68e6dba93f9a11858c32beebed70
+      immutable_sha256: 7710e9e18c19936b73dcc23546c0a3d0d1367aefbcb6652ccc113431f2b40f51
+      gate: verified
+      covers: lasting rating loss, original worked example, armor kit prerequisite and source reference
+  - scope: Athletics and Dodging optional
+    status: field_reconciled_with_confirmed_supplement
+    existing_records:
+      - path: options/combat/athletics-dodging.yml
+        blob: 3fdc38f914c1c3fb64e374ec3b4eca20464fd9b8
+        covers: Complex Action, base test, bonus per success, dice expiry and nonrefreshing use
+    new_record:
+      path: options/combat/cannon-companion-athletics-dodging-specializations-p97.yml
+      commit: 9bdf4ca8a2deacc3cb4f21f31f9926ac6f5e6e00
+      blob: 412a73558c17b480af6dce16b98250e343ab38b1
+      baseline_sha256: 0e2b740d407b8e9a95770a0e96a12911d4f103d95d9e168c605f47dda17fd82b
+      candidate_sha256: df64d89dc673cd1a2f48e9836abf3c0c2ba4b7dca8917fd98a23398dd23ff569
+      immutable_sha256: a9e91e97880a63da74898c270d1857ab162c5345b047e2a63bbaeaa04aa156c8
+      gate: verified
+      covers: relevant specialization allowance and original worked numerical example
+transaction_review:
+  prepare: preflighted
+  ordinary_contents_write: successful
+  commit_and_main_readback: exact
+  confirm: verified
+  recovery_inspect: verified
+whole_source_rules_acceptance: not_certified
+global_pages_authorized: 0
