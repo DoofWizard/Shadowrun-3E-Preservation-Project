@@ -1,0 +1,142 @@
+{
+  "audit_id": "r3-revised-vehicle-list-p160-p162-original-diff-2026-11-23",
+  "scope": "Shadowrun Third Edition fictional tabletop RPG, FanPro Rigger 3 Revised FanPro10662 vs FASA Corporation Rigger 3 FASA7910",
+  "method": "Direct independent visual comparison of original printed tables, with separately verified revised source PDF hash and source-specific transaction confirmation. This is an exact changed-fields review, not full source-book or entire Vehicle List certification.",
+  "original_sources": {
+    "revised": {
+      "source_id": "source.fanpro-10662",
+      "publication": "Rigger 3 Revised",
+      "publisher": "FanPro",
+      "edition": "Shadowrun Third Edition",
+      "pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+      "physical_pages": 210,
+      "verify_source_result": "source_pdf_hash_verified"
+    },
+    "historical": {
+      "source_id": "source.r3",
+      "publication": "Rigger 3",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7910",
+      "pdf_sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860",
+      "hash_directly_recomputed": true,
+      "repo_verify_source_result": "blocked: manifest_source_pdf_hash_missing; do not claim repository verify-source execution succeeded for FASA7910"
+    }
+  },
+  "source_image_comparisons": [
+    {
+      "section": "Vehicle List / Scooters and Skiffs",
+      "revised_printed_page": 160,
+      "revised_pdf_page": 162,
+      "historical_printed_page": 160,
+      "historical_pdf_page": 160,
+      "models": [
+        "Dodge Scoot",
+        "Entertainment Systems Papoose",
+        "Aztechnology Nightrunner (E)"
+      ],
+      "reviewed_subfields": [
+        "seating",
+        "load",
+        "fuel",
+        "economy",
+        "signature",
+        "availability",
+        "cost_nuyen"
+      ]
+    },
+    {
+      "section": "Vehicle List / Cruisers and Water Scooters",
+      "revised_printed_page": 162,
+      "revised_pdf_page": 164,
+      "historical_printed_page": 162,
+      "historical_pdf_page": 162,
+      "models": [
+        "GMC Riverine",
+        "GMC Riverine (Security)",
+        "GMC Riverine (Police)",
+        "Zemlya-Poltava Swordsman (AME)",
+        "Suzuki Watersport (E)"
+      ],
+      "reviewed_subfields": [
+        "street_index",
+        "availability",
+        "signature",
+        "fuel_code",
+        "fuel",
+        "load",
+        "cost_nuyen"
+      ]
+    }
+  ],
+  "editorial_review": {
+    "fields": [
+      "id",
+      "record_type",
+      "status",
+      "source",
+      "printed_pages",
+      "pdf_pages",
+      "edition_scope",
+      "content_class",
+      "data.source_context",
+      "data.revised_stat_differences[*].model",
+      "data.revised_stat_differences[*].changes[*]",
+      "data.unchanged_field_disposition",
+      "data.provenance",
+      "headline",
+      "summary",
+      "framing"
+    ],
+    "disposition": "Third-person fictional tabletop publication facts; source-printed numeric fields and edition distinctions preserved, unchanged or unchecked fields not inferred."
+  },
+  "actual_transaction_receipts": [
+    {
+      "path": "equipment/vehicles/r3-revised-scooter-skiff-stats-p160.yml",
+      "id": "equipment.vehicles.r3-revised-scooter-skiff-stats-p160",
+      "source_range": "printed p160/PDF162",
+      "commit": "f3a3253456eef448963f1802d25ffd5b3122cd51",
+      "blob": "9980fa79d3950de681f63ab198fb2cdf52a02ca3",
+      "baseline_sha256": "499baae5222b927077d9f6bb78837cc394fa9c897ed5a545eab9e8999dd5eb6e",
+      "candidate_sha256": "b3daeb0aa562a5b999d4407d34b6c155abf53a2e3942009b65fbb48a86795d5f",
+      "immutable_sha256": "a28993b9678efb47987f42bd059e271b775544a074479e2f228cd52308367f12",
+      "stage": "preflighted",
+      "actual_confirm": "verified",
+      "recovery_inspection": "verified"
+    },
+    {
+      "path": "equipment/vehicles/r3-revised-cruiser-water-scooter-stats-p162.yml",
+      "id": "equipment.vehicles.r3-revised-cruiser-water-scooter-stats-p162",
+      "source_range": "printed p162/PDF164",
+      "commit": "a4be10242bde14a2a51ab4c244cbded8606f2468",
+      "blob": "f521d0cddcc98ec1e9e289f72f73dfd38b3f0ab6",
+      "baseline_sha256": "5d10ce2c9eb8f535aca2086ecf7e80621f1bd8ac7ad3af6e194764af8d13e6ee",
+      "candidate_sha256": "69bdf8f4b932465d2e08c7ba4edc7945dd917b027577b653bf28e5a8b321179e",
+      "immutable_sha256": "10671ef0f6adafbb092d0ee6f780802ed61f0bd4ab36a152ec8b685c19cfa3c7",
+      "stage": "preflighted",
+      "actual_confirm": "verified",
+      "recovery_inspection": "verified"
+    }
+  ],
+  "manifest": {
+    "path": "sources/manifests/Rigger3Revised.yml",
+    "p160_index_commit": "4f2035540e5f683facc06042d050f26df8d5b029",
+    "p162_index_commit": "86b105507be5f0d67e5222ce23e7100221dd6bc1",
+    "p162_index_readback_blob": "cac192d9ddd87ab2912d8b97f23382734266d28b",
+    "registrations_before": 17,
+    "registrations_after": 19
+  },
+  "workflow_tests": {
+    "connector_preflight_passed": 29
+  },
+  "boundaries": {
+    "active_source": "source.fasa-7212",
+    "denver_authorized_through": "printed p45/PDF46",
+    "globally_contiguous_new_pages": 0,
+    "core_fasa7001_acceptance_unchanged": true,
+    "unknown_core_p308_nonblocking": true
+  },
+  "exclusions": [
+    "Neither the historical FASA7910 record corpus nor the global checkpoint was modified",
+    "No wholesale vehicle-list certification, no unreviewed table claims, no runnable-engine certification"
+  ]
+}
