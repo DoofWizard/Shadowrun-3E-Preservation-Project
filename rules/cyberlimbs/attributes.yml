@@ -3,14 +3,91 @@ record_type: rule
 name: "Cyberlimb Attributes and Bonuses"
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: "32-35"
+pdf_pages: "32-35"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 32, basis: extends}
 scope: {applies_to: ["characters with one or more cyberlimbs"]}
 resolution:
-  summary: "Cyberlimbs have independent Strength and Quickness ratings, can add Body and Power/armor benefits when enough replacement parts are present, and can be enhanced subject to racial and structural limits. Partial limbs and unbalanced limb ratings use the source's special application rules."
-  inputs: ["number/type of cyberlimbs", "limb Strength/Quickness", "character Body", "enhancements"]
-  outputs: ["effective limb attributes", "Body/Power bonuses", "situation-specific Strength use"]
+  summary: "Apply the independent Strength and Quickness of replacement limbs, the exact Body and unarmed Power bonuses, task-specific Strength and Quickness averaging, paired-limb penalties, structural rating limits and multiple-enhancement price rules."
+  inputs: ["number/type of cyberlimbs", "limb Strength/Quickness", "character Body", "natural Quickness", "enhancements"]
+  outputs: ["effective limb attributes", "Body and Power bonuses", "test modifiers", "enhancement cost adjustments"]
   steps: []
+data:
+  general:
+    printed: 32
+    designate_at_purchase: [obvious, synthetic]
+    strength_and_quickness_independent_of_owner: true
+  bonuses:
+    printed: 33
+    body:
+      pair_of_cyberarms: 1
+      pair_of_cyberlegs: 2
+      cumulative: true
+      partial_limbs_hands_feet_bonus: 0
+    unarmed_attack_power:
+      one_full_cyberlimb_or_two_partial_cyberlimbs: 1
+      two_full_cyberlimbs: 2
+      additional_limbs_beyond_two_bonus: 0
+      maximum_bonus: 2
+      hands_feet_bonus: 0
+  strength:
+    printed_pages: "33-34"
+    racial_base: {human: 4, elf: 4, ork: 6, dwarf: 6, troll: 8}
+    metavariant: "Use the parent metatype's base Strength."
+    cyberskull_and_torso_have_unique_strength: false
+    maximum_limb_strength: "min(2 * Body, Body + 4)"
+    enhancement_above_three_points: "Additional Essence and nuyen are required for reinforced mountings."
+    partial:
+      hands_and_feet_nuyen_per_point: 20000
+      lower_arms_and_legs_nuyen_per_point: 35000
+      maximum_increase: 3
+      additional_essence: 0
+      enhanced_hands_and_feet_add_unarmed_power: false
+      enhanced_hand_strength_applies_only_to_gripping: true
+    task_resolution:
+      single_limb: "Use that limb's full Strength if it can properly perform the task."
+      multiple_fully_applied_limbs: "Use the floor of the average Strength of the participating limbs."
+      melee_option_average: "Use the floor of the average Strength of all four limbs; natural-limb Strength includes applicable muscle replacement or muscle augmentation bonuses."
+      melee_option_lead: "Select one reasonably applicable leading limb and use its Strength alone; maximum attack Power bonus is +1."
+    source_example:
+      natural_strength: 5
+      muscle_replacement: 2
+      cyberarm_strength: 8
+      cyberleg_strength: 9
+      all_limb_average_rounded_down: 7
+      all_limb_power_bonus: 2
+      single_leading_cyberlimb_power_bonus: 1
+  quickness:
+    printed_pages: "34-35"
+    base: 4
+    matching_pair_types: [cyberarms, cyberlegs]
+    paired_mismatch_target_modifier: "Absolute difference between the two cyberlimbs' Quickness ratings, for all movement or coordination tests."
+    arm_and_leg_pair_modifiers_cumulative: true
+    average: "Average limb Quickness as for Strength enhancements; use for Combat Pool, Reaction and Initiative."
+    cyberskull_and_torso_have_unique_quickness: false
+    enhancement_above_three_points: "Additional Essence and nuyen are required for structural modification."
+    maximum_limb_quickness: "min(2 * natural Quickness, natural Quickness + 4)"
+    source_example:
+      limb_quickness: [4, 4, 6, 6]
+      averaged_quickness: 5
+      combat_pool: 5
+      reaction: "5 (10)"
+      initiative: "5 (10) + 3D6"
+      cost_to_add_balancing_quickness_per_arm_nuyen: 60000
+      additional_essence_for_example: 0
+      price_excludes_multiple_enhancement_surcharge: true
+  multiple_enhancements:
+    printed: 35
+    types: [Strength, Quickness, Integrity]
+    additional_enhancement_price_multiplier: 1.10
+    application: "Each enhancement beyond the first on the same limb costs 110 percent of its ordinary price, including when two additional types are purchased together."
 links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "32-33", relation: extends, note: "Cyberlimb General Rules, Bonuses, Strength and Limitations"}
-notes: []
+  - {source: source.mm, pages: "32-35", relation: extends, note: "Cyberlimb General Rules; Bonuses; Strength; Quickness; Multiple Cyberlimb Enhancements"}
+notes:
+  - "Protective implant compatibility and body plating remain separate canonical rules."
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp32-35/PDF pp32-35: Cyberlimb Attributes and Bonuses"
+framing: reference_exact
