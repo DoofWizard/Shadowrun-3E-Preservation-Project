@@ -1,0 +1,32 @@
+id: rule.gear.cannon-companion-parachute-equipment-conditions-p55-56
+record_type: rule
+status: ingested
+source: source.cc
+printed_pages: '55-56'
+pdf_pages: '56-57'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: Parachute equipment conditions
+framing: reference_exact
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908}
+  tabletop_rules:
+    standard:
+      deployment_held_items: {gm_discretion: true, attribute: Strength, target_number: 8, failure: drop held items}
+      directional_control: limited
+      release_action: Complex Action
+      release_conditions: [landing, improper deployment]
+      reserve_included: true
+      altimeter_readouts: [altitude, speed, estimated ground distance]
+      military_jump: automatic deployment via aircraft static line
+    low_altitude:
+      inherits_standard_features: true
+      differences: [wider canopy, heavier, faster deceleration]
+    halo:
+      inherits_standard_features: true
+      differences: [improved gliding, landing accuracy and safety, high-altitude breathing and vision equipment]
+    acquisition_table:
+      existing_rows: [entity.gear.standard-parachute, entity.gear.low-altitude-parachute, entity.gear.halo-parachute]
+      concealability_printed_for_each: dash
+      table_printed_page: 56
+    related_procedure: procedure.movement.parachuting
