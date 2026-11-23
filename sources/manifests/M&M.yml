@@ -104,13 +104,36 @@ source_field_review:
       - "Bioware and the Awakened"
       - "Excessive Bioware Drawbacks"
       - "Bioware Compatibility"
+      - "Ordinary Bioware Drawbacks (separate confirmed record; overlapping Bio Index record is not an additional modifier)"
+    independently_rechecked_existing_2026_11_23:
+      - path: rules/bioware/essence-index.yml
+        blob: "274b47f2da6f15ffa6fd90c020964d8793179bf4"
+        printed: "77"
+        pdf: "78"
+        result: "Existing source-specific formula current Essence + 3 matches original; no semantic edit necessary."
+      - path: rules/bioware/critters.yml
+        blob: "a1ec23b7a1c2a32300f923ea9544e8cef8ea17d9"
+        printed: "79"
+        pdf: "80"
+        result: "Existing source-specific record correctly applies normal bioware restrictions and drawbacks to critters and Awakened restrictions to Awakened critters; no semantic edit necessary."
+    concurrent_changed_records_deferred:
+      - path: rules/bioware/bio-index.yml
+        blob: "02b3da3738f75dd8b3bcd57fd0fdd9e52c67aa6b"
+        printed: "77-78"
+        pdf: "78-79"
+        source_review: "Original-image review matches no Essence cost, cumulative Bio Index, fatal above 9, natural base Attribute changes and ordinary drawback fields. Current independent transaction receipt not observed in manifest; do not overwrite or count as confirmed here."
+      - path: rules/bioware/magic-interactions.yml
+        blob: "f39e4bcf5c900ed918e74c89e88efe92ed028ed1"
+        printed: "79"
+        pdf: "80"
+        source_review: "Original-image review matches strongest-only metabolic suspension, pain-spell and adept limitations, highest-only reflex bonus, vision-targeting illusions and Concealment exception. Current independent transaction receipt not observed in manifest; do not overwrite or count as confirmed here."
     prior_audit_corrections:
       - "Original p78 says round the modified Magic Rating down after subtraction, not subtract floor(Bio Index)."
       - "Original p78 separately defines System Overstress at Bio Index strictly greater than Essence Index; equality alone does not apply permanent effective Light Stress."
     still_open:
-      - "Effects of Installing Bioware and Natural or Augmented: source-specific canonical reconciliation of no Essence cost and base/natural Attribute effects."
-      - "Ordinary Bioware Drawbacks: implant Stress effects, resistance Power and healing target-number modifier."
-      - "Bioware and Magic Effects and Bioware and Critters, printed p79: full canonical inventory and exact interaction reconciliation."
+      - "Effects of Installing Bioware and Natural or Augmented: fields observed in concurrent Bio Index update; independently confirmed transaction registration remains to be reconciled."
+      - "Bioware and Magic Effects: fields observed in concurrent magic-interactions update; independently confirmed transaction registration remains to be reconciled."
+      - "Ensure overlapping ordinary-drawback fields are not applied twice. Existing Critters and Essence Index records matched original mechanical scope without change."
       - "Resolve literal Essence Index terminology in grade table only with independent source evidence; no inferred correction."
       - "Full-book field certification remains open."
 
