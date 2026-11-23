@@ -1,0 +1,208 @@
+{
+  "id": "rule.shadowbeat-rocker-status-income-message-p13-16",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.fasa-7109",
+  "printed_pages": "13-16",
+  "pdf_pages": "14-17",
+  "edition_scope": "FASA ShadowBeat 1992 2E-era original mechanics; no automatic SR3 conversion",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "Original 1992 FASA ShadowBeat rocker status, booking, recording distribution, message and money point mechanics, printed 13-16/PDF 14-17",
+  "summary": "Source-verified fictional Shadowrun tabletop rules with original numerical fields and 2E lineage; 3E applicability not yet established.",
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "ShadowBeat",
+      "publisher": "FASA Corporation",
+      "copyright_year": 1992,
+      "catalog_number": "FASA7109",
+      "source_pdf_sha256": "d111ebcfcab4e40645e61f2924e58b5d8ace6ab4c18610e3085e324c52bd4278",
+      "printed_pages": "13-16",
+      "pdf_pages": "14-17"
+    },
+    "status_levels": {
+      "source_printed_pages": "13-14",
+      "purchase_rule": "Newbie status is free; spend Tech ¥ at character creation to acquire higher statuses.",
+      "rows": [
+        {
+          "status": "Newbie",
+          "tech_nuyen": 0,
+          "lifestyle": "Street",
+          "booking_test_target": 6,
+          "booking_fee_formula": "100¥ × Performance Rating ÷ 2",
+          "distribution_formula": "50¥ × 1D6",
+          "recognition_target": null
+        },
+        {
+          "status": "Opener",
+          "tech_nuyen": 500,
+          "lifestyle": "Street",
+          "booking_test_target": 5,
+          "booking_fee_formula": "100¥ × Performance Rating",
+          "distribution_formula": "100¥ × 1D6",
+          "recognition_target": 14
+        },
+        {
+          "status": "Seller",
+          "tech_nuyen": 1000,
+          "lifestyle": "Low",
+          "booking_test_target": 5,
+          "booking_fee_formula": "200¥ × Performance Rating",
+          "distribution_formula": "150¥ × 1D6",
+          "recognition_target": 10
+        },
+        {
+          "status": "Solid",
+          "tech_nuyen": 10000,
+          "lifestyle": "Middle",
+          "booking_test_target": 4,
+          "booking_fee_formula": "300¥ × Performance Rating",
+          "distribution_formula": "100¥ × 2D6",
+          "recognition_target": 8
+        },
+        {
+          "status": "Star",
+          "tech_nuyen": 100000,
+          "lifestyle": "High",
+          "booking_test_target": 3,
+          "booking_fee_formula": "500¥ × Performance Rating",
+          "distribution_formula": "200¥ × 2D6",
+          "recognition_target": 6
+        },
+        {
+          "status": "Novastar",
+          "tech_nuyen": 500000,
+          "lifestyle": "Luxury",
+          "booking_test_target": 2,
+          "booking_fee_formula": "1000¥ × Performance Rating",
+          "distribution_formula": "300¥ × 2D6",
+          "recognition_target": 5
+        }
+      ]
+    },
+    "lifestyle": {
+      "source_printed_pages": "13-14",
+      "status_provides_baseline_lifestyle": true,
+      "cash_difference_for_higher_lifestyle_allowed": true,
+      "claim_cash_surplus_from_lower_lifestyle": false,
+      "additional_lifestyle_payments": "Only difference when paying for higher than status; payments from career cover status-linked baseline."
+    },
+    "booking": {
+      "source_printed_page": 14,
+      "test_type": "Success Test",
+      "skills": [
+        "Negotiation",
+        "Musical Production Special Skill",
+        "Any Performance Skill"
+      ],
+      "performance_skill_target_modifier": 2,
+      "base_time_days": {
+        "club_date": 30,
+        "recording_contract_or_tour": 90
+      },
+      "time_rule": "Divide base days by number of successes; failed booking test requires full base time.",
+      "tour_prerequisite": "Rocker must have acquired recording contract in game.",
+      "repeat_booking": "No searching for additional booking with club where currently engaged unless gamemaster approves; return bookings handled in fiction.",
+      "booking_fee": "Use status formula × Performance Rating; Negotiation successes may increase or decrease fees."
+    },
+    "distribution": {
+      "source_printed_pages": "14-15",
+      "formula": "Roll status distribution dice and base yen, multiply that amount by recording Performance Rating, then multiply by performance-quality Distribution Factor from original p13 ratings table.",
+      "payout_window_months": "3-6",
+      "single_length_adjustment": "For material substantially less than one-hour full album, distribute proportional to duration.",
+      "band_split": "Divide payment among members.",
+      "example": {
+        "status": "Newbie",
+        "distribution_roll": 3,
+        "base_50_yen": 50,
+        "performance_rating": 32,
+        "total_nuyen": 4800
+      }
+    },
+    "recognition": {
+      "source_printed_page": 15,
+      "check": "Recognition Test against status's Recognition TN; success means recognized and may cause star-persona attention.",
+      "initiation": "Player may ask or GM may require (e.g. hiding identity).",
+      "target_modifiers": "Distinctive appearance lowers TN; disguises and low-profile presentation raise TN.",
+      "crowd_context": "Crowds outside the genre may waive recognition check."
+    },
+    "status_changes_and_bands": {
+      "source_printed_page": 15,
+      "poor_performance": "Rating 9 or less decreases status by one level; every member of a band decreases status.",
+      "novastar_performance": "Rating 97 or more increases one level; every member of band advances, except max Novastar stays at max.",
+      "band_collective_status": "Highest-status member determines group booking fees and collective status.",
+      "individual_status": "Use each member's own status for solo bookings and recognition."
+    },
+    "money_message_optional": {
+      "source_printed_pages": "15-16",
+      "allocation_rule": "For each Performance Rating allocate points between commercial Money Points and expressive Message Points; only Money Points determine booking fees and distribution.",
+      "message_effect_thresholds": [
+        {
+          "min_points": 30,
+          "effect": "Audience willing to listen"
+        },
+        {
+          "min_points": 60,
+          "effect": "Desired response barely achieved"
+        },
+        {
+          "min_points": 90,
+          "effect": "Desired response fully achieved"
+        },
+        {
+          "min_points": 120,
+          "effect": "Desired response exceeded with extra benefits"
+        }
+      ],
+      "limitations": "Cannot automatically overturn informed deliberate opinions or force individuals to specific drastic acts; GM adjudicates social effect.",
+      "scope_by_status": [
+        {
+          "status": "Newbie/Opener",
+          "reach": "Live performance and immediate neighborhood"
+        },
+        {
+          "status": "Solid",
+          "reach": "City through concerts, recordings and broadcasts"
+        },
+        {
+          "status": "Star/Novastar",
+          "reach": "National-scale events"
+        }
+      ],
+      "source_example": {
+        "status": "Star",
+        "performance_rating": 74,
+        "message_points": 60,
+        "money_points": 14,
+        "booking_formula": "500¥ × 14",
+        "booking_nuyen": 7000
+      },
+      "gm_final_say": true
+    },
+    "annual_money_points_to_maintain_lifestyle": {
+      "source_printed_page": 16,
+      "street": 0,
+      "low": 100,
+      "middle": 200,
+      "high": 300,
+      "luxury": 400,
+      "if_insufficient": "Rocker must personally fund baseline lifestyle or status is lowered one rank.",
+      "exclusive_message_material": "No recording/distribution income earned when using all output solely for message."
+    },
+    "source_review": {
+      "page_images": [
+        "printed_p13_pdf14",
+        "printed_p14_pdf15",
+        "printed_p15_pdf16",
+        "printed_p16_pdf17"
+      ],
+      "scope_exclusion": "p13 left-column Performance Ratings table separately preserved in performance-rating record"
+    },
+    "edition_lineage": {
+      "sr3_relation": "legacy_2e_unsuperseded_candidate_not_adapted",
+      "edition_conversion_performed": false
+    }
+  }
+}
