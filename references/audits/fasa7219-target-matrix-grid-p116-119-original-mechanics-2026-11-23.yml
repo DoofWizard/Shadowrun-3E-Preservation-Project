@@ -1,0 +1,50 @@
+id: audit.fasa7219-grid-p116-119-2026-11-23
+record_type: source_review_audit
+status: open_distinct_mechanic_not_yet_transaction_confirmed
+source: source.fasa-7219
+publication: 'FASA Corporation, Target: Matrix, FASA7219, Shadowrun Third Edition tabletop roleplaying game'
+original_pdf:
+  catalog_drive_id: 161dS8OxDC9DHg4UwT5PwNLJVCBSy5oYz
+  original_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+  original_size_bytes: 50299910
+  original_pdf_pages: 138
+  source_manifest: sources/manifests/TargetMatrix.yml
+  manifest_sha_pinned_commit: 5aef228ec3d266e000d52fb19c5806ee6949a3bc
+  manifest_sha_pinned_blob: 1038435f07dfe328885434f94a5534598d588803
+review:
+  date: '2026-11-23'
+  original_printed_pages: [116,117,118,119]
+  physical_pdf_pages: [117,118,119,120]
+  method: 'Direct original PDF page image review; separately reconciled currently committed source-specific canonical record and original FASA7001 core tally rule'
+  current_target_matrix_record: rules/matrix/target-matrix-grids.yml
+  current_target_matrix_blob: 50a9af8935eb1ef1af906dba4947caf07283fa5b
+  existing_core_rule: rules/matrix/sr3-core-security-sheaf-alert-ic-p211-212.yml
+  existing_core_rule_blob: 1a8c105a4f7b06b45172c13dbe1a16ed85863c01
+  previously_preserved_examples:
+    - 'Satellite Host Rating Table five categories (printed 116), correctly found in source-specific grid record'
+    - 'Chicago Noose Net 2D6 logon roll, 10+ anomaly, 3D6 Wild Matrix result, +4 trace modifier and -2 resonance well modifier, found in source-specific grid record'
+    - 'Wild Matrix Table results 3-18 and DOJ Search Table, found in source-specific grid record'
+    - 'Pueblo party IC penalty, navigation table and Shiawase MIFD program profiles, found in source-specific grid record'
+  not_new_due_to_core_supersession:
+    - printed_page: 118
+      observation: 'Pueblo grid security tally crosses from an LTG to the parent RTG and other subordinated LTGs'
+      resolution: 'The same general RTG/LTG tally carry-over rule already exists in original FASA7001 printed p211 canonical security-sheaf record; do not add a duplicate Target: Matrix mechanic'
+  distinct_unaccepted_source_exception:
+    - original_printed_page: 116
+      physical_pdf_page: 117
+      heading: 'Chicago Noose Net'
+      original_condition: 'Each decker logon/session has separately GM-generated security rating, trigger steps and sheaf using Orange base; two simultaneous users may have different sheafs, so there is no typical shared Noose Net sheaf'
+      prior_record_field: chicago_noose_net.grid_security
+      reason_distinct: 'Existing record describes random Easy grid security/Orange baseline, but omits the independent session-specific security sheaf and random trigger steps; generic core tally propagation does not cover this exception'
+      required_next_action: 'Independently check exact source wording, freeze full source-reviewed baseline/candidate with one content_class, run actual verify-source, stage/prepare, ordinary GitHub Contents write, exact readback and confirm before source-specific index change'
+  other_sections_not_reviewed: true
+verification:
+  downloaded_original_pdf_sha256_computed: true
+  exact_sha256_matches_newly_pinned_manifest: true
+  preservation_method_py_verify_source_executed: false
+  reason_verify_source_not_claimed: 'Required repository scripts were inspectable through connected GitHub but not available as executable local scripts in this runtime; independent SHA256 command is not the same as repository verify-source'
+  source_specific_semantic_write: none
+  gate_stage_prepare_confirm: not_run
+  source_specific_index_change: none
+  net_global_authorized_pages: 0
+  denver_checkpoint_modified: false
