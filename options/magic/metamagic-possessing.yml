@@ -1,46 +1,81 @@
 id: option.magic.metamagic-possessing
 record_type: option
-name: "Metamagic: Possessing"
+name: 'Metamagic: Possessing'
 domain: magic
 status: ingested
-
 effective:
   status: current
   source: source.mits
   page: 76
   basis: defines
-
 option_for:
-  - option.magic.metamagic
-
+- option.magic.metamagic
 selection:
-  timing: "while astrally projecting and targeting an astrally active physical being"
+  timing: While astrally projecting; eligible physical and astral forms must be co-located, with the projecting-magician exception below.
   prerequisites:
-    - "initiate"
-    - "astral projection"
+  - initiate
+  - astral projection
   incompatible_with: []
-
 effects:
-  - "Allows the initiate's astral form to seize control of another living body for a limited time after defeating the target in astral combat."
-  - "Only astrally active beings can be targeted."
-  - "The possessor uses the host's physical capabilities while retaining the possessor's mental Attributes, and can later be expelled or banished."
-
+- In the fictional tabletop rules, an astrally projecting initiate may control an eligible host after astral victory or with a willing eligible host.
+- The initiate uses host Physical Attributes and innate abilities while retaining own Mental Attributes; removal and duration are specified below.
 links:
   modifies:
-    - subsystem.magic.astral
+  - subsystem.magic.astral
   requires:
-    - option.magic.metamagic
+  - option.magic.metamagic
   interacts_with:
-    - rule.magic.astral-combat
-
+  - rule.magic.astral-combat
 sources:
-  - source: source.mits
-    page: 76
-    relation: defines
-    note: "Possessing"
-  - source: source.mits
-    page: 77
-    relation: extends
-    note: "Control, dismounting and possession effects"
-
+- source: source.mits
+  page: 76
+  relation: defines
+  note: Possessing
+- source: source.mits
+  page: 77
+  relation: extends
+  note: Control, dismounting and possession effects
 notes: []
+source: source.mits
+printed_pages: 76-77
+pdf_pages: 77-78
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  entry:
+    eligible: Astrally projecting initiate; target must be astrally active, including dual critters, and have a physical body not created by Materialization.
+    location: Initiate must be at the physical body's location with its astral form.
+    contest: Astral combat with Stun damage only; victory permits control, but host takes that Stun damage only on departure.
+    willing_host: Astrally active willing hosts need not be defeated; nonsentient beings cannot volunteer and unconscious dual beings cannot resist.
+    projecting_magician: Body is not dual-natured during projection; exception permits immediate possession after astral victory when the body is in line of sight.
+    riggers_deckers: Astrally active riggers or deckers defeated in astral combat can be possessed and are immediately disconnected from their vehicle or icon; initiate may attempt either activity.
+    maximum_hours: initiation grade
+  control:
+    dual_natured: true
+    attributes: Host normal Physical Attributes; initiate Mental Attributes.
+    abilities: Host physical and innate magical abilities, including adept and physical critter powers; applicable host geasa must be fulfilled.
+    inaccessible:
+    - host skills
+    - host spells
+    - host memories
+    magic: Initiate may use magic; all Drain is Physical damage to initiate astral form, not host.
+    unwilling_or_unconscious_host_tn_modifier: 2
+    damage: Damage during possession goes to host body; mana-based magic including mana critter powers affects initiate instead.
+    host_astral_form: Enveloped rather than displaced; initiate with Masking can deliberately mask it like a focus with Force equal to host Essence.
+    barriers: Initiate may traverse own astral barriers, not barriers created by host; barrier recognizes dominant initiate astral form.
+  departure:
+    host_killed_or_unconscious: initiate disrupted
+    banishing: Opposed Magic Test; successful banishing disrupts initiate.
+    astral_combat: May kill or disrupt initiate under standard rules.
+    overstay: Initiate disrupted if exceeding grade hours.
+    host_on_departure: Immediately apply Stun damage from initial astral contest, cumulative with Stun or Physical damage suffered during possession.
+    willing_host_drain:
+      power: initiate Magic plus grade
+      level: Deadly
+      damage_type: Stun
+      resistance: Willpower
+    host_memory: No recollection of events during possession.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition metamagic: Possessing (FASA7907, printed 76-77/PDF 77-78)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG mechanical fields and exceptions from printed 76-77/PDF 77-78.
