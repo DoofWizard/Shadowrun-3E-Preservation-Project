@@ -1,0 +1,43 @@
+id: rule.critters.power-entries-p10
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '10'
+pdf_pages: '10'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    essence_drain:
+      profile: {type: mana, action: Exclusive Complex, range: Touch, duration: Permanent}
+      transfer: Add drained Essence to user, capped at twice maximum for its type (humanoid maximum 12); each drain minimum 1 and maximum current user Essence.
+      conditions: Several undisturbed minutes; strong emotion directed at user; often physical material transfer, in which case astral targets are ineligible; target must cooperate or be physically or magically subdued.
+      addiction: Each drain requires victim Willpower (4) Test; failure causes fictional addiction and subsequent cooperation.
+      mutual_drain: Two Essence Drain users require undisturbed time but no emotional condition; each rolls Essence (4), winner drains difference in successes; reaching zero Essence in this manner is fatal and permanent.
+    temporary_essence_drain:
+      profile: {type: mana, action: Complex, range: Touch, duration: Special}
+      test: opposed Essence versus Willpower; any net creature successes transfer 1 Essence point
+      duration: one Combat Turn per point of normal creature Essence
+      maximum: twice normal creature Essence
+      zero_essence: unconscious as from Deadly Stun; lost Essence recovers at 1 point per minute
+    fading:
+      profile: {type: mana, action: Free, range: Self, duration: Special}
+      effect: Creature vanishes from physical and astral planes at will; physical and magical barriers cannot prevent it; destination unspecified.
+    fear:
+      profile: {type: mana, action: Complex, range: LOS, duration: Special}
+      test: opposed victim Willpower versus creature Essence; net creature successes determine severity and normally duration in Combat Turns
+      effect: Victim flees toward apparent safety.
+    flame_aura:
+      profile: {type: physical, action: Free, range: Self, duration: Sustained}
+      modifier: +2 Power to creature melee attacks
+      resistance: Successful melee attacker resists (creature Essence)M damage; Impact armor may apply if GM agrees the contact was with armored body part.
+      effect: Contact burns; intense versions may ignite or melt weapons.
+    glamour:
+      profile: {type: mana, action: Complex, range: Special, duration: Sustained}
+      scope: All beings in controlled terrain; sensory input including astral perception fits illusion or is ignored.
+      test: Success Contest; target rolls Willpower against twice creature Essence; creature rolls Essence against target Willpower; target must exceed creature successes to overcome illusion.
+framing: reference_exact
+headline: 'Critters (FASA7002), p10: Essence Drain through Glamour'
+summary: 'Fictional FASA7002 Shadowrun Third Edition power mechanics, printed and PDF page 10; source-local profile corrections and additional conditions.'
