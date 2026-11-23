@@ -1,0 +1,55 @@
+audit_id: critters-p18-20-statistics-verified-2026-11-23
+record_type: source_review_audit
+source: source.critters
+publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+original:
+  drive_id: 1WNRS1kMVi7eWIboZkukbRzKio3CasWwQ
+  bytes: 25740271
+  physical_pages: 48
+  sha256: 40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7
+  manifest_before_blob: 053cfc7cffec5eaf94355b80c89d2db19126da01
+  verify_source_actual_output: {status: source_pdf_hash_verified, source: source.critters, sha256: 40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7, page_images_review: still_required_independently}
+  directly_inspected_printed_and_pdf_pages: [18, 19, 20]
+  previous_gap_audit: references/audits/critters-p18-20-source-image-mechanical-gap-2026-11-23.yml
+  previous_gap_audit_blob: 9e9854a5de8f0c73ac40e1e6bb32602bb47cb502
+source_review:
+  baseline_review: Fresh original images checked against source statistics headings, all 30 table rows and rules text; neutral fictional tabletop framing before freezing.
+  candidate_review: All columns, rows, conditions and provenance checked against original images and immutable baseline; only root presentation differs.
+  reviewed_field_paths: [data.publication, data.individual_variation, data.statistics_key, data.normal_critters_table, data.metahuman_averages, data.relationships, headline, summary]
+  scope: Creature-statistic reference and normal-critter/metahuman tables; does not include individual Awakened creature entries that begin on p20.
+  field_evidence:
+    p18: [adult size and weight, size ranges, physical and mental attribute bounds, sickness or injury exception, invariant statistic fields, variable powers, Body and Quickness notation, Strength notation, supersession]
+    p19: [six size-roll rows, all 19 ordinary creature rows with all printed columns, all five metahuman rows with all printed columns, Charisma and Intelligence notation, Willpower, Essence, Reaction, Initiative, attack damage and Reach]
+    p20: [ordinary creature GM adjustment and benchmark use, metahuman NPC reference purpose]
+  reused_read_only_paths:
+    - {path: rules/critters/core.yml, blob: ab51595bf59ac179ada6526c5e281440b7ad4424}
+    - {path: entities/critters/catalog-a-k.yml, blob: 16c5489a0cb4c38b5f913dc6523b7e687f1c9ce0}
+    - {path: entities/critters/catalog-l-z.yml, blob: 858751a4476862a674a1f1e6c5a48f2a0dc6312d}
+  open_interpretation: Printed p19 Initiative Combat Pool cap and pp5-6 Reaction attack cap are preserved distinctly; their implementation relationship is unresolved.
+  other_context: p18 HMHVV strain/infection setting statement is outside this statistic table scope; check against existing infection power during later field-level audit.
+transaction:
+  tool_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  preflight_self_tests: {passed: 29, failed: 0}
+  baseline_sha256: f4fae3b54965701209bc73e19988ac9d435889fbeec6c2857695c64634ef821e
+  candidate_sha256: f80713a60ec593870896085823917f9daff9e2d0ddc1cf0dafb97347b7c4df42
+  immutable_sha256: 74a80e9e5d3240861a9d1ff8a6b3e662e4c55b2454e9367e78c722a8ac09573a
+  stage_status: staged
+  prepare_status: preflighted
+  ordinary_contents_create_commit: c86cebeb461f57fbb9db576936172aca1bd60ac1
+  exact_readback_bytes_match: true
+  expected_and_readback_blob: 34a4d72c0bda0928c8071e61cf16129382cf1488
+  confirm_status: verified
+  inspect_status: verified
+  path: rules/critters/normal-statistics-p18-20.yml
+  record_id: rule.critters.statistic-reference-tables
+outcome:
+  verified_semantic_records: 1
+  table_rows: {size: 6, normal_critters: 19, metahuman_averages: 5}
+  scope_closed: creature_statistic_reference_tables_and_variation
+  whole_book_rules_complete: false
+  remaining: [field-level original-image audit of pp5-17 mechanics, individual awakened critter catalog pp20-48, unresolved Combat Pool interpretation]
+  global_contiguous_pages_advanced: 0
