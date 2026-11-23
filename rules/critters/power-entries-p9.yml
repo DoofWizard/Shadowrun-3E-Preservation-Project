@@ -1,0 +1,48 @@
+id: rule.critters.power-entries-p9
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '9-10'
+pdf_pages: '9-10'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    desire_reflection:
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      test: opposed Essence versus Willpower; only greater creature successes create desire illusion for one target
+      conditions: Creature may appear as part of illusion; target acts as if desire fulfilled. An attack, injury, or companions shouting or slapping permits another Willpower Test; exceeding creature successes ends illusion, otherwise target cannot act.
+    dispelling:
+      profile: {type: mana, action: Complex, range: LOS, duration: Instant}
+      resolution: use SR3 p184 dispelling rules, replacing Sorcery with creature Essence
+    empathy:
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      test: opposed Essence versus Willpower; greater creature successes permit sensing and projecting emotions as control emotion spell (SR3 p196)
+    engulf:
+      profile: {type: physical, action: Exclusive Complex, range: Touch, duration: Sustained}
+      test: opposed victim Willpower versus critter Essence; greater critter successes engulf target
+      conditions: Target cannot escape while critter sustains power; attacking another target physically or with a power releases first victim.
+      resistance: Body Test against (Essence)M Stun on each critter action including initial engulf; armor and dermal plating do not count
+      spirit_resolution: melee attack using spirit Quickness; successful counterattack avoids engulf; each victim action permits opposed Strength versus spirit Force escape test, victory frees victim; resist damage on each spirit action including initial engulf
+      variants:
+        fire: (Force)M damage; flame aura adds 2 Power; Impact armor applies, Ballistic does not
+        water: (Force)M Stun; Power increases by 1 per spirit action since engulf; unconscious victims continue to take Physical damage
+        air: (Force)S Stun resisted by greater of Willpower or Body; breathing equipment and protective systems ineffective; Physical damage after unconsciousness
+        earth: (Force)S damage; only Impact armor applies
+        sludge: toxic primary power (p17); (Essence)M Physical damage; no armor applies
+    enhanced_physical_attributes:
+      profile: {type: physical, action: Auto, range: Self, duration: Special}
+      modifier: add current Essence to one or more Physical Attributes
+      conditions: May be limited by attribute, duration or uses; printed creature stats do not include bonus.
+    enhanced_reactions:
+      profile: {type: physical, action: Auto, range: Self, duration: Special}
+      modifier: floor(Essence / 2) additional dice for Initiative, Reaction and Surprise Tests
+      conditions: May be limited by duration or uses; printed stats omit bonus.
+    enhanced_senses:
+      profile: {type: physical, action: Auto, range: Self, duration: Always}
+      examples: [low-light vision, thermographic vision, improved hearing and smell, heat sensing, sonar, electrical field motion detection]
+framing: reference_exact
+headline: 'Critters (FASA7002), pp9-10: source power profiles and exceptions'
+summary: 'Fictional FASA7002 Shadowrun Third Edition power mechanics, printed and PDF page 9-10; source-local profile corrections and additional conditions.'
