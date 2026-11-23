@@ -1,0 +1,84 @@
+{
+  "audit_type": "original_source_mechanics_and_transaction_receipts",
+  "publication": "FanPro, Rigger 3 Revised (FanPro10662), Shadowrun Third Edition, fictional tabletop rules supplement",
+  "source_id": "source.fanpro-10662",
+  "source_pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+  "source_pdf_bytes": 40997045,
+  "source_pdf_pages": 210,
+  "source_verification_command": "python tools/ingestion/preservation_method.py verify-source [fresh original PDF] [current original-source manifest]",
+  "source_verification_actual_status": "source_pdf_hash_verified",
+  "historical_source": {
+    "publication": "FASA Corporation, Rigger 3 (FASA7910), Shadowrun Third Edition",
+    "source": "source.r3",
+    "sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860"
+  },
+  "reviewed_original_images": [
+    {
+      "revised_printed": 140,
+      "revised_pdf": 142,
+      "historical_printed": 140,
+      "historical_pdf": 140,
+      "section": "Weapon Values Table, turret size/mount requirements, Weapon Values, Internal Space distinction"
+    },
+    {
+      "revised_printed": 141,
+      "revised_pdf": 143,
+      "historical_printed": 141,
+      "historical_pdf": 141,
+      "section": "Standard turret and remote turret design/customization, Availability formulas"
+    },
+    {
+      "revised_printed": 142,
+      "revised_pdf": 144,
+      "historical_printed": 142,
+      "historical_pdf": 142,
+      "section": "Remote turret continued CF/Load entries"
+    }
+  ],
+  "independent_editorial_review": "Original published fictional rules only; nested numeric, conditions, comparative statements, annotations and edition lineage reviewed before baseline freeze. Added or omitted table rows are not inferred equipment deletions. Changed standard turret parts Availability formulas are not applied to remote turrets. Source-printed fractional/rounding ambiguity not invented.",
+  "receipts": [
+    {
+      "id": "rule.vehicles.r3-revised-turret-weapon-values-p140",
+      "path": "rules/vehicles/r3-revised-turret-weapon-values-p140.yml",
+      "commit": "4458823b32ca008f13dfea40640c90f9bb28c373",
+      "blob": "6ae3a6cd4695ba16e54542e5f91ff8ebf1ba2703",
+      "baseline_sha256": "1d344cf94cb4ac17c2070a003f6437f3e088be28fdb26b88f858464485a6af80",
+      "candidate_sha256": "03aab4f4343ddafe457e0ad80a8ea9b3648167aa1c8cf7aa95c95b4ffc02fb05",
+      "immutable_sha256": "c1561697d4150f725352ce9793373375e91b297c6bd4c28ba29d213f419b8802",
+      "actual_confirm": "verified",
+      "actual_recovery_inspect": "verified"
+    },
+    {
+      "id": "rule.vehicles.r3-revised-turret-cf-availability-p141-142",
+      "path": "rules/vehicles/r3-revised-turret-cf-availability-p141-142.yml",
+      "commit": "13c630a4a538041b4adb0ba039be0bc33559237e",
+      "blob": "37e5e93a1bff25f78952bdbe34449a2f75ca21dd",
+      "baseline_sha256": "5b63f85847553f5529ea5586c809831024b7366e78f057e074da625169d75624",
+      "candidate_sha256": "99b2317ada2a7eb3e1d865da77dc01f968f22f2c5460ea2eec253375614d44c6",
+      "immutable_sha256": "f6608537d07bf90ab1d14471f17e6c1a25da09462d8d7ae2edd5f9c5c95e74cf",
+      "actual_confirm": "verified",
+      "actual_recovery_inspect": "verified"
+    }
+  ],
+  "source_manifest": {
+    "path": "sources/manifests/Rigger3Revised.yml",
+    "previous_sha": "e7b74da32366ca9d8675007dc82571d9302dd7d2",
+    "commit": "c45eb3594b8158daf4401ac2dbb72fe3dfeaa32d",
+    "exact_readback_sha": "5f733730b9aa0283c6aa830f348aaebbfec9c9e6",
+    "verified_source_specific_registrations_after": 41
+  },
+  "tests": {
+    "connector_preflight": 29,
+    "connector_preflight_pass": 29
+  },
+  "bounds": {
+    "global_contiguous_pages_new": 0,
+    "active_denver_completed_through": "printed p45/PDF46",
+    "denver_missing": "printed pp46-47 archived",
+    "fasa7001_core_available_original_accepted_records": 451,
+    "core_reopened": false,
+    "whole_book_certified": false,
+    "engine_implemented": false
+  },
+  "next": "Reconcile a genuinely unfinished distinct original source natural mechanics section; do not replay already source-indexed p140-142 or 41 revised source-specific records. FASA7118 pp34-61 original source/editorial audit debt remains a candidate pending current receipt check."
+}
