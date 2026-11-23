@@ -33,12 +33,13 @@ coverage:
   performance_skill_options: {printed: "7", status: source_verified_section_closed}
   impact_tests_group_rehearsals: {printed: "10-11", status: source_verified_section_closed}
   composition_performance_rating: {printed: "12-13", status: source_verified_section_closed}
-  record_sales_status_money_message: {printed: "13-16", status: queued}
+  record_sales_status_money_message: {printed: "13-16", status: source_verified_section_closed}
   broadcast_and_media: {printed: "18-56", status: queued}
   professional_sports_and_games: {printed: "58-73", status: queued}
   simsense: {printed: "74-83", status: queued}
   character_skills_and_options: {printed: "84-87", status: queued}
   equipment_and_costs: {printed: "88-99", status: queued}
+  sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
 edition_lineage:
   sr3_replacement_audit: pending_by_specific_mechanic
   default_rule_status: original_2e_mechanics_not_automatically_native_sr3
@@ -47,6 +48,8 @@ records:
   - ["10-11-impact-open-test-and-rehearsals", "6d91bea5cfb2573a0daca237492fc9a29b6bec6a"]
   - ["7-performance-special-skills", "81f6ce2e60856f53bf4d1d83268c2c70ce7cf25c"]
   - ["12-13-composition-performance-ratings", "3c642051ac2f63a0a56cd12eb956040d7a4f6c8c"]
+  - ["13-16-rocker-status-money-and-message", "8269e3328431c1e6e2d48da64b16cc518ecf38e7"]
+  - ["16-sasquatch-band-impact", "1d95df2553692f659a6850f831a9976189df50f4"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -80,5 +83,27 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p12_pdf13", "printed_p13_pdf14"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-rocker-status-income-message-p13-16
+    path: rules/shadowbeat/rocker-status-money-message-p13-16.yml
+    original_printed_pages: "13-16"
+    original_pdf_pages: "14-17"
+    commit_sha: "8269e3328431c1e6e2d48da64b16cc518ecf38e7"
+    readback_blob_sha: "5c8f88798ebe2e9ee63eb7023c8daa15a03ee0fc"
+    candidate_sha256: "cc5450f1692124e0dd43ded4ae741aeb5a5ae7dafb7f8c2a800f633a306b840a"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p13_pdf14", "printed_p14_pdf15", "printed_p15_pdf16", "printed_p16_pdf17"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-sasquatch-band-impact-p16
+    path: rules/shadowbeat/sasquatch-band-impact-p16.yml
+    original_printed_pages: "16"
+    original_pdf_pages: "17"
+    commit_sha: "1d95df2553692f659a6850f831a9976189df50f4"
+    readback_blob_sha: "bd4affbaa2cf8a9d8ddac2e65df1d3ff84e5ecc2"
+    candidate_sha256: "ea09c33836c520893e7294d2dedb0de2d70f702b1d22de2b4712ce49c77e1287"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p16_pdf17"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
