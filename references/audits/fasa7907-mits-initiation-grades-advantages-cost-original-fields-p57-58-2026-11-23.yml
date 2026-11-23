@@ -1,0 +1,60 @@
+audit_id: audit.fasa7907-mits-initiation-grades-advantages-cost-original-fields-p57-58-2026-11-23
+audit_type: original_source_natural_section_closeout
+date: "2026-11-23"
+scope: FASA7907 Initiation, Grades, Advantages and Cost only; excludes Initiation Ordeals and magical groups
+status: verified_and_source_indexed
+source:
+  id: source.mits
+  catalog_id: source.fasa-7907
+  title: Magic in the Shadows
+  publisher: FASA Corporation
+  edition: SR3
+  drive_id: 1LqiVya4wMPCrECxvVDeoq0qrILipzNNg
+  bytes: 123917505
+  sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+  live_manifest_at_verification: df8ea248689031ecce18c84bc52a6ad9dd81b83c
+  actual_verify_source_output: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+  actual_preflight_self_test: 29 passed
+  exact_script_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  original_image_review:
+    - {pdf: 2, checked: cover and publisher}
+    - {printed: 6, pdf: 7, checked: Third Edition introduction}
+    - {printed: 57, pdf: 58, checked: eligibility, group and solo modes, avatar, GM timing}
+    - {printed: 58, pdf: 59, checked: grades, mutually exclusive benefits, astral pool, geas, signature test, all four cost table rows and examples, ordeal heading boundary}
+    - {printed_position: 59, pdf: 60, checked: unnumbered full-page art}
+    - {printed: 60, pdf: 61, checked: separate ordeal continuation starts here}
+  prior_record_blob: da50934d675535c187a28aea5da7b294ccd99548
+  related_subsystem: {path: subsystems/magic/initiation.yml, blob: 1c88f91f6cbb544b726f07bd26f6349a8afbd4ad, action: retained without duplicating new procedure details}
+section:
+  path: procedures/magic/initiation.yml
+  field_checklist:
+    - {printed: "57-58", data: initiation_process, checked: character eligibility; solo and group choices; grade sequence; GM duration; avatar participation}
+    - {printed: 58, data: benefits, checked: first-grade full-magician metaplanar access; one of three choices; Magic +1 exceptions; adept Power Point gain; Magic above six; one geas per grade}
+    - {printed: 58, data: astral_benefits, checked: Reaction bonus and Astral Pool equal grade; test restrictions and combat exception; pool refresh}
+    - {printed: 58, data: alter_signature, checked: Magic test TN six plus new grade; Karma only extra dice; two successes; old signature recognition; later retry and cumulative penalty}
+    - {printed: 58, data: karma_cost, checked: base five plus desired grade; four multipliers 3, 2.5, 2, 1.5; round down; eight example amounts for grades one and two}
+  provenance_correction: Previous procedure cited printed 59 for ordeals; PDF60 is full-page art, with actual continuation on printed 60/PDF61. Ordeal mechanics belong to separate options and remain open.
+editorial:
+  content_class: rule_exact
+  framing: reference_exact
+  reviewed_text_fields: [name, purpose, prerequisites, inputs, stages, outcomes, links, sources, notes, data, headline, summary]
+  baseline_and_candidate: Original-page review against both baseline mechanics and separately reviewed candidate; only root headline framing differs after freeze.
+transaction:
+  stage: staged
+  exact_contents_update_and_live_commit_readback: true
+  confirm_receipt: {candidate_sha256: 6ab89daf09f77c8041a451e1074a1231c2e9f989d10036a4c6d5f229fdd5bd95, commit_sha: 30fd4a5ed434425430c657730a1ea48c0d899702, expected_blob_sha: 62338a15c79f6043c99855dcb14fa8db1484f475, immutable_sha256: ec2371519e11e51a0f4b11d25b5821c3e4acd31019b4534cdafe3f4927b53da5, path: procedures/magic/initiation.yml, pdf_pages: "58-59", pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, printed_pages: "57-58", protocol: sr3-gate/v1, readback_blob_sha: 62338a15c79f6043c99855dcb14fa8db1484f475, record_id: procedure.magic.initiation, source: source.mits, status: verified}
+  journal_sha256:
+    baseline.yml: 5ee2499567cedf74c89917f35debee179d4c5978a9a205b7caa7366f5e0e606b
+    candidate.yml: 6ab89daf09f77c8041a451e1074a1231c2e9f989d10036a4c6d5f229fdd5bd95
+    plan.json: 47420aff3d811095a0a357e5a2676df3cb4f252c42df85a48f960c83d39c6ef3
+    verified.json: e02aa9b3e50bfb528bceaab49ce40e80e1a897fd7b53fac6ecb8ab7dc96cedf6
+  journal_reconstruction: Candidate at immutable commit above; baseline replaces only root headline prefix 'Fictional Shadowrun Third Edition procedure:' with 'Fictional Shadowrun Third Edition rule:'. Plan is confirm_receipt without commit_sha and readback_blob_sha, status preflighted, sorted-key Python JSON indent 2 and final newline. Verified receipt is sorted-key Python JSON with standard separators and final newline.
+  source_index_commit: 5fadd625a5e468922122a43e65527345c1a74f01
+  source_index_blob: cf8f5e8ca1eab337c6352e922b26472714840fdf
+  source_index_exact_readback: true
+global_page_credit: 0
+whole_book_completion_asserted: false
