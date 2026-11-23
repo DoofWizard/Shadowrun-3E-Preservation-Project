@@ -38,7 +38,9 @@ coverage:
   impact_tests_group_rehearsals: {printed: "10-11", status: source_verified_section_closed}
   composition_performance_rating: {printed: "12-13", status: source_verified_section_closed}
   record_sales_status_money_message: {printed: "13-16", status: source_verified_section_closed}
-  broadcast_and_media: {printed: "18-56", status: queued}
+  broadcast_and_media: {printed: "18-56", status: partial, note: "Pix Tests and casual interview mechanics pp40-43 source verified; other media mechanics outstanding"}
+  pix_tests_and_modifiers: {printed: "40-42", status: source_verified_section_closed}
+  interview_tests_and_casual_interviews: {printed: "43", status: source_verified_section_closed}
   professional_sports_and_games: {printed: "58-73", status: queued}
   simsense: {printed: "74-83", status: queued}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
@@ -57,6 +59,8 @@ records:
   - ["84-85-archetype-new-skills", "3fd08c78081fdf18384972abf0390388c08bccf6"]
   - ["85-network-affiliation-employment", "5b7d818685565f609a066f81f2740e0112a75a6a"]
   - ["86-sin-and-income", "2c971831164f5b09e8ce8072fbd3f326d6340319"]
+  - ["40-42-pix-tests", "c585e61eda3a982a5c1c5383f7123a05d8f77155"]
+  - ["43-interview-casual-tests", "272165b14990b5f763e8d8400c2a1db3eb0f9745"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -156,5 +160,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p40_pdf49", "printed_p41_pdf50", "printed_p42_pdf51"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-interview-casual-tests-p43
+    path: rules/shadowbeat/interview-casual-tests-p43.yml
+    original_printed_pages: "43"
+    original_pdf_pages: "52"
+    commit_sha: "272165b14990b5f763e8d8400c2a1db3eb0f9745"
+    readback_blob_sha: "7d72d98e2f97ec1c1df15bd65820f13a58eddfa4"
+    candidate_sha256: "b6adf70d95c6ac59223768303e68326898d2bd3ac504d06d92a2dc65bc702128"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p43_pdf52"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
