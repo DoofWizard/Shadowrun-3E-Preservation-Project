@@ -20,6 +20,77 @@ source_field_review:
   audited_original_pdf: "77-80"
   note: "Legacy sequential ingestion completion is separate from exact-field mechanical source certification. Original image-reviewed bioware range has specific unresolved field gaps; no new contiguous page or semantic credit claimed."
 
+  confirmed_field_backfill_2026_11_23:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual:
+      status: source_pdf_hash_verified
+      source: source.mm
+      page_images_review: still_required_independently
+      exit_code: 0
+    independently_reviewed_original_printed: "76-79"
+    independently_reviewed_original_pdf: "77-80"
+    original_publisher_confirmed: "FASA Corporation, copyright 1999"
+    registration_scope: "Source-specific field backfill only; no new contiguous page credit, no global checkpoint advancement."
+    records:
+      - id: rule.bioware.awakened
+        path: rules/bioware/awakened.yml
+        printed: "78"
+        pdf: "79"
+        commit: "9df3952dcb79c553e1d40f75a6c08f77909a15a5"
+        blob: "c1c0ff95a7b8d0bf0ef6d0257fb28981fbdf7803"
+        candidate_sha256: "a10289276b0f62948e6c8b810d006a362c3fd80817a51898a7c76d8a6c805b10"
+        baseline_sha256: "ff8892462bea323e1b3a36924a50524da29ab40a810df03bbd791b45b19cb37b"
+        immutable_sha256: "c6e14465ed615dba39166f14c883e47135475bcf2edadb5ed5c4d7dc957a3412"
+        gate: verified
+        fields: "Effective Magic is floor(base Magic minus total Bio Index), affected calculations, virtual rather than actual Magic loss, zero or negative effective Magic, geasa and initiation."
+      - id: rule.bioware.excessive-bioware
+        path: rules/bioware/excessive-bioware.yml
+        printed: "78"
+        pdf: "79"
+        commit: "b2009645520af472ca9f6b5dfd93e60dc55f3f49"
+        blob: "d771ea20d0a69a1877d0d78d6a3ae71815eb9172"
+        candidate_sha256: "a75ac6a30153960d8ca18c97376fdafe8334c60a57e35dce0ef8a05e02bef68e"
+        baseline_sha256: "9d7c13ed9a5c768d8f33d9bb15ded87182465abc92d5002c8d04c3ebe4d758e4"
+        immutable_sha256: "dea1248ea714badb8f641bbdef10491fdeea4c4bb6513b0adc8183f8dab936c4"
+        gate: verified
+        fields: "Excessive threshold, Physical Overflow reduction, natural Body, resistance and healing die penalties, strict greater-than condition for nonrepairable effective Light Stress without changing actual implant Stress Points."
+      - id: option.bioware.grades
+        path: options/bioware/grades.yml
+        printed: "76-77"
+        pdf: "77-78"
+        commit: "886e2a872cb7f7d276b8b3fd0cb9a73ff3e08ae6"
+        blob: "4451de28e38d412f4837ffa4719cf758b57e8536"
+        candidate_sha256: "badaaf9c23118a0562292072e04342d986486a165b4a74e917535558efc5ff3d"
+        baseline_sha256: "21b843c8b127b7ef01787e556c8f0e7f1de6db6c715221d40dcac3ee3fbcf065"
+        immutable_sha256: "fa7cd83ec400c8ade1a9f6903c3d4edef9b4b132f5bc206a1650255f4f90b792"
+        gate: verified
+        fields: "Grade restrictions, recipient matching, cost x4, literal source Essence Index x0.75, Availability +2/x5, cloning time, cultured-only exception, cosmetic and used bioware, 60 percent cost, permanent Stress and GM discretion."
+      - id: rule.bioware.compatibility
+        path: rules/bioware/compatibility.yml
+        printed: "77-79"
+        pdf: "78-80"
+        commit: "3c16e1d11cb9067e1ecd962ed3a24be849fe90bc"
+        blob: "cb51ec8707a3ec72602fcb6e34044e8360cfe0c8"
+        candidate_sha256: "aa97404bedf59a05c44dd43cf8f9b1fd1a836ca9cf24cc2308462c87aee242c7"
+        baseline_sha256: "682f456d8b99268377620f3fffc03cf55b849eb367c8f5461e82976feae6f64f"
+        immutable_sha256: "eaa624e3372727914147a7c1d9662f3af019a038d2791a7537e15a4bdd48ef4a"
+        gate: verified
+        fields: "One-installation limit, external gear rule, all named compatibility subsection entries, cyberlimb exceptions, skillsoft and skillwire limitations."
+    source_subsections_reconciled:
+      - "Bioware Grades and Used Bioware"
+      - "Bioware and the Awakened"
+      - "Excessive Bioware Drawbacks"
+      - "Bioware Compatibility"
+    prior_audit_corrections:
+      - "Original p78 says round the modified Magic Rating down after subtraction, not subtract floor(Bio Index)."
+      - "Original p78 separately defines System Overstress at Bio Index strictly greater than Essence Index; equality alone does not apply permanent effective Light Stress."
+    still_open:
+      - "Effects of Installing Bioware and Natural or Augmented: source-specific canonical reconciliation of no Essence cost and base/natural Attribute effects."
+      - "Ordinary Bioware Drawbacks: implant Stress effects, resistance Power and healing target-number modifier."
+      - "Bioware and Magic Effects and Bioware and Critters, printed p79: full canonical inventory and exact interaction reconciliation."
+      - "Resolve literal Essence Index terminology in grade table only with independent source evidence; no inferred correction."
+      - "Full-book field certification remains open."
+
 coverage:
   - cyberware
   - cyberlimbs
