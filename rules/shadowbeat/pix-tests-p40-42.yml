@@ -1,0 +1,77 @@
+id: rule.shadowbeat-pix-tests-p40-42
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '40-42'
+pdf_pages: '49-51'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat (FASA Corporation, 1992) original Pix Tests and Impact modifiers, pp40-42/PDF49-51
+summary: Optional fictional tabletop RPG footage-rating procedure, complete Pix Test modifier table and numeric examples; original legacy edition only.
+framing: reference_exact
+data:
+  publication:
+    title: ShadowBeat
+    publisher: FASA Corporation
+    year: 1992
+    catalog_number: FASA7109
+    source_id: source.fasa-7109
+    source_pdf_sha256: d111ebcfcab4e40645e61f2924e58b5d8ace6ab4c18610e3085e324c52bd4278
+    chapter: And Now the News
+    section: Sight and Sound / Pix Tests
+  test:
+    optional: true
+    dice: Portacam Skill Rating in D6
+    target_number: null
+    impact: Highest individual die total after resolving exploding sixes
+    scope: Whole scene or sequence, not a single image
+    timing: At scene start; one test per place or situation
+    scene_definition: Adventure chapter or major change of location or action
+    update: Apply newly arising modifiers during the scene; do not charge the same movement penalty twice
+    unusable_at_or_below_impact: 2
+    secret_gm_roll: permitted
+    bypass_test: GM may omit mechanics when recorded events themselves establish the story
+    eligibility: GM may refuse visually insignificant footage; unrelated footage does not count toward the beat; no test with camera off
+    action_sequence: Unexpected dramatic event gets its own test; modifiers for it do not affect the interrupted stock or dramatic footage
+  modifiers:
+    footage_type:
+      stock: '-1D6'
+      dramatic: '-floor(1D6/2)'
+      action: 0
+    visibility:
+      full_darkness_low_light_imaging: -6
+      full_darkness_floodlights: -4
+      high_glare: -4
+      mist: -4
+      low_light_low_light_imaging: -2
+      low_light_floodlights: 0
+      smoke_or_fog: -6
+    covert_footage:
+      regular_portacam: {impact: -4, condition: 'Character must be hidden using Stealth'}
+      mini_portacam: {impact: -2, condition: 'Camera must be hidden'}
+      cybercam: {impact: -1, condition: 'Avoid conspicuous actions'}
+    gyrostable_portacam: 'May offset movement or combat penalties up to equipment rating; see Gear pp88-89'
+    movement:
+      slow_concentrated: 0
+      normal_or_crowd: [-1, -2]
+      running_broken_ground_or_thick_growth: [-3, -4]
+    combat_nonparticipant: -2
+    combat_participant: -4
+    damage: Subtract physical or mental damage target-number penalty from Impact
+    smartcam: 2
+    karma: {instant_karma_points_per_extra_die: 2, maximum_extra_dice: 2}
+    additional_gm_modifiers: GM may assign analogous values; subtract ordinary TN modifiers from Impact
+    amateur_camera_limit: Without compensating filters, usable footage only in normal light
+  source_examples:
+    - {dice: [6, 6, 5, 2, 1, 1], six_rerolls: [4, 5], base_impact: 11}
+    - {base_impact: 11, low_light: -2, mist: -4, movement: -1, stock_roll: 5, final_impact: -1}
+    - {base_impact: 16, dramatic_roll: 1, dramatic_modifier: 0, final_impact: 16}
+    - {base_impact: 14, combat_participant: -4, final_impact: 10}
+  edition_lineage:
+    original: FASA 1992 legacy rules
+    sr3_status: unsuperseded_candidate_not_yet_compatibility_verified
+    unresolved_comparisons: [Portacam skill, Open Tests, Karma terminology, gear modifiers, damage penalties]
+  source_review:
+    original_page_images: ['printed 40 / PDF 49', 'printed 41 / PDF 50', 'printed 42 / PDF 51']
+    tables: [Pix Test Modifiers Table]
+    editorial_scope: All fields use fictional game reference framing; examples retain numerical effects only
