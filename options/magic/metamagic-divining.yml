@@ -44,3 +44,56 @@ sources:
     note: "Divination Test and table"
 
 notes: []
+
+source: source.mits
+printed_pages: '74-75'
+pdf_pages: '75-76'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  prerequisites:
+    printed_page: 74
+    subject_link: Assense the subject or possess a magical link suitable as a material link for ritual sorcery (p34).
+    subject_scope: A specific subject; questions concern future events only.
+    required_skills: [Divining Skill, prediction skill]
+    skill_type: Active Magical Skill
+    linked_attribute: Willpower
+    maximum_divining_rating: prediction skill rating
+    prediction_skill_types: [Active, Knowledge]
+    maximum_prediction_skills: 1
+    may_already_be_known: true
+    typical_prediction_skill: intellectual ability
+  methods:
+    - {printed_page: 74, method: Astrology, conditions: Know the subject's birth date and have the required charts and formulas.}
+    - {printed_page: 74, method: Dowsing, conditions: Use a pendulum or comparable device over a map or symbolic representation; answers are generally simple yes or no.}
+    - {printed_page: 74, method: Omens, conditions: "Interpret natural phenomena; usually usable outdoors or in wilderness, with some urban applications."}
+    - {printed_page: 74, method: Dreaming, conditions: Sleep or enter a trance; information is conveyed through dream imagery or visions and may be symbolic.}
+    - {printed_page: 75, method: Sortilage, conditions: "Interpret combinations of randomly drawn symbols; each system (runes, I Ching, Tarot or similar) is a separate skill."}
+  divination_test:
+    printed_page: 75
+    dice: Divining Skill rating
+    roller: gamemaster
+    procedure: Once linked, ask a question about a future event; GM rolls the test using the question complexity table.
+    target_number_by_question:
+      very_vague: 4
+      vague: 5
+      general: 6
+      specific: 8
+      very_specific: 10
+    outcomes:
+      all_ones: wholly misleading information
+      zero_successes: no useful answer
+      one_or_two: cryptic answer with an underlying truth
+      three_or_four: mildly helpful answer
+      five_or_more: approximately the desired detail
+    all_ones_overrides_zero_successes: true
+    answer_detail: The GM adjusts usefulness and specificity to suit the story, irrespective of the success count; players interpret the information.
+    maximum_tests_per_week: initiation grade
+    repeated_same_subject_tn_increase_per_attempt: 2
+    repeated_subject_reset: GM judges that a significant change in the subject or situation has occurred.
+  gm_guidance:
+    printed_page: 75
+    note: Provide clues through divination; occasional unexpected visions or omens and misleading or contradictory information may prevent automatic plot solutions.
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition rule: Divining (FASA7907, pp74-75/PDF75-76)"
+summary: "FASA Corporation, Magic in the Shadows; exact tabletop RPG test resolution and exceptions from the original pp74-75/PDF75-76."
