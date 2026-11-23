@@ -1,0 +1,71 @@
+audit_id: srcomp_payment_and_reward_original_p99_100_2026_11_22
+audit_type: original_source_image_review_editorial_transaction_and_exact_readback
+source:
+  title: Shadowrun Companion
+  publisher: FASA Corporation
+  catalog: FASA7905a
+  edition: Shadowrun Third Edition
+  source_id: source.srcomp
+  catalog_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_pdf_physical_pages: 138
+original_page_review:
+  printed_pages:
+  - 99
+  - 100
+  physical_pdf_pages:
+  - 100
+  - 101
+  rendered_images_reviewed: true
+  source_identity_hash_verified: source_pdf_hash_verified
+  field_checks:
+  - '13-row Baseline Shadowrun Payment Table: exact numerical amounts, percent of data value, daily, per-MP
+    and Security Value multiplicative bases'
+  - 'p99 Payment and Reward: GM discretion based on risk, employer willingness and reputation; per-month livelihood/gear
+    benchmark; low-end status and larger-team exceptions'
+  - 'p99-100: rare windfalls about six months lifestyle, alternate payment types, not compulsory mechanics'
+  specifically_excluded:
+  - No inferred fixed payouts or unavoidable minimums
+  - Adjacent Archetypal Adventure Plots story suggestions not treated as new numerical rules
+first_pass_editorial_review:
+  method: Historical fictional-tabletop-RPG reference voice before baseline freeze and before ordinary GitHub
+    contents write
+  human_readable_paths_reviewed:
+  - edition_scope
+  - data.section
+  - data.scope
+  - data.table_type
+  - data.baseline_run_pay_rows[*].run
+  - data.baseline_run_pay_rows[*].basis
+  - data.gamemaster_payment_guidance.*
+  - data.optional_windfall_guidance.*
+  - data.provenance.*
+  - data.source_interpretation_cautions[*]
+  - headline
+  - summary
+  fictional_publication_and_edition_prominent: true
+  all_run_names_present_as_source_book_game_types: true
+  no_real_world_instruction_substitution: true
+canonical:
+  path: rules/campaign/srcomp-baseline-shadowrun-payment-table-p99-100.yml
+  id: rule.campaign.srcomp-baseline-shadowrun-payment-table-p99-100
+  content_class: rule_exact
+  baseline_file_sha256: 99bdf0204d680c002c49397967c20886db18ef006ce61d665a38054cd0a18e8f
+  candidate_sha256: 5ef46a91fb1c26c836133dfe835aad13462a5b907c035caaf54805af4a66bac9
+  immutable_sha256: fc1d69f31e03f0102db99c4b4b34ed255fe8e9ba17e98d76ef4cc0ba4d9d97bb
+  semantic_commit: 22dc627c93cd76e1bde95f8801543d3d3c124b20
+  exact_git_blob: 51ec3bea88795d8a788441fe7f2252783d9524b5
+actual_transaction:
+  connector_preflight_29_selftests: passed
+  transaction_recovery_stage: staged
+  ingestion_gate_prepare: preflighted
+  ordinary_contents_create: succeeded
+  full_exact_git_readback: matched
+  ingestion_gate_confirm: verified
+  transaction_recovery_inspect: verified
+scope_limits:
+  FASA7001_available_original_rules_core: preserved_451_accepted_records
+  entire_book_archival_certification: false
+  executable_engine_test: false
+  new_global_contiguous_pages: 0
+  Denver_authoritative_checkpoint: source.fasa-7212 original p45/PDF46, archived losses pp46-47 unchanged
+  core_printed_p308: owner_accepted_nonblocking_unobserved
