@@ -1,0 +1,77 @@
+audit_id: audit.fasa7907-mits-centering-cleansing-original-fields-2026-11-23
+audit_type: original_source_mechanical_field_gap
+scope: FASA7907 Magic in the Shadows only
+audit_date: "2026-11-23"
+publication:
+  title: Magic in the Shadows
+  publisher: FASA Corporation
+  catalog_number: FASA7907
+  system: Shadowrun Third Edition
+  identity_evidence:
+    - "Original PDF cover image at PDF2 names publisher and title."
+    - "Original introduction printed p6/PDF7 explicitly names the SR3 rulebook."
+source:
+  catalog_id: source.fasa-7907
+  manifest_id: source.mits
+  catalog_drive_id: 1LqiVya4wMPCrECxvVDeoq0qrILipzNNg
+  fresh_drive_file_bytes: 123917505
+  fresh_drive_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+  physical_pdf_pages: 178
+  manifest_path: sources/manifests/MitS.yml
+  manifest_status_observed: complete
+  manifest_source_pdf_sha256_observed: null
+  source_hash_gate: blocked_manifest_source_pdf_hash_missing
+  editorial_note: "Exact original hash was measured, but cannot be checked against a manifest value that is absent. No semantic ingestion or source completion is claimed."
+page_image_receipts:
+  - {printed: 2, pdf: 3, reviewed: "original TOC"}
+  - {printed: 3, pdf: 4, reviewed: "TOC: Centering pp72-74, Cleansing p74"}
+  - {printed: 6, pdf: 7, reviewed: "SR3 source-identity introduction"}
+  - {printed: 72, pdf: 73, reviewed: "Centering Skill and creative-skill restrictions"}
+  - {printed: 73, pdf: 74, reviewed: "Centering tests, action, successes, Drain, modifiers"}
+  - {printed: 74, pdf: 75, reviewed: "Adept centering and Cleansing exact resolution"}
+  - {printed: 169, pdf: 170, reviewed: "magical gear and supplies comparison only"}
+  - {printed: 170, pdf: 171, reviewed: "material and service cost comparison only"}
+independently_compared_existing_records:
+  - options/magic/metamagic-centering.yml
+  - options/magic/metamagic-cleansing.yml
+  - rules/magic/enchanting-material-market.yml
+  - rules/magic/enchanting-service-costs.yml
+findings:
+  - natural_section: "Centering, printed pp72-74 / PDF73-75"
+    existing_record: options/magic/metamagic-centering.yml
+    status: exact_mechanical_fields_missing_from_current_summary
+    missing_fields:
+      - "Centering Skill is a Willpower-linked Active Magical Skill; its rating cannot exceed the associated creative skill."
+      - "Only one creative skill is selected for Centering; it must be personally learned, not chipped; eligible uses require the creative activity to be physically possible."
+      - "Centering uses a Free Action in the augmented magical action's phase; the Centering Test precedes the relevant magical tests; astral projection is excluded."
+      - "For added Magical Skill Test successes, Centering uses that test's target number including modifiers; success bonuses are unusable if the ordinary Magical Skill Test has zero successes."
+      - "The bonus-success mode requires astral perception."
+      - "For Drain, Centering target number equals the intended magic's Drain Power; every 2 Centering successes add 1 Drain Resistance success, provided the Drain Resistance Test itself succeeds."
+      - "For penalties, Centering uses the affected Magical Skill Test target number including modifiers minus initiation grade; every 2 Centering successes remove 1 point of target-number modifiers; never reduce below the base target number."
+      - "Centering can serve an appropriate creative-skill geas and can accompany Exclusive magical actions as described."
+      - "Adept Centering initially applies to Athletics and Stealth; subsequently one additional skill area can be learned per additional initiation grade, with its own permitted skills; astral perception is not needed for adept success-centering."
+      - "Adept Centering can improve eligible nonmagical skill successes, reduce skill penalties, or assist Drain resistance from adept powers."
+  - natural_section: "Cleansing, printed p74 / PDF75"
+    existing_record: options/magic/metamagic-cleansing.yml
+    status: exact_mechanical_fields_missing_from_current_summary
+    missing_fields:
+      - "Only temporary background count can be removed and the originating cause must first be removed; longstanding background count is not automatically eligible."
+      - "Background count level eligible for Cleansing must be less than or equal to initiation grade."
+      - "Sorcery Test target number is 2 times the background count level."
+      - "Every 2 Sorcery successes reduce background count by 1."
+      - "Drain is (background count level)D, resisted with Willpower."
+      - "Cleansing consumes Combat Turns equal to 2 times the background count level and requires astral perception or projection."
+      - "Cleansing can remove associated astral traces/signatures; assensing for information must occur before the attempt."
+reconciled_not_reopened:
+  - "Enchanting material raw/refined/radical costs and orichalcum price at p170/PDF171 are already enumerated in rules/magic/enchanting-material-market.yml notes."
+  - "Enchanting service formulas at p170/PDF171 are already enumerated in rules/magic/enchanting-service-costs.yml notes; structured-row improvement may be considered separately, not credited as a missing mechanical assertion here."
+next_required_gates:
+  - "Resolve missing authoritative live MitS manifest source_pdf_sha256 through source-specific provenance approval; re-fetch original and run preservation_method.py verify-source."
+  - "Independently source-review immutable baseline and candidate for each separately typed mechanical record; execute transaction_recovery.py stage, ingestion_gate.py prepare, ordinary Contents write and exact readback, then ingestion_gate.py confirm."
+  - "Source manifest can be updated with only verified source-specific registration; no global checkpoint or all-book completion credit."
+transaction_status:
+  canonical_records_written: 0
+  manifest_changed: false
+  global_checkpoint_changed: false
+  stage_attempted: false
+  reason: missing_manifest_source_pdf_sha256
