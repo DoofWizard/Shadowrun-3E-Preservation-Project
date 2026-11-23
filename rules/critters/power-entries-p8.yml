@@ -1,0 +1,59 @@
+id: rule.critters.power-entries-p8
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '8'
+pdf_pages: '8'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    astral_armor:
+      profile: {type: mana, action: Auto, range: Self, duration: Always}
+      mechanics_reused: rule.spirit-power.astral-armor
+    binding:
+      profile: {type: physical, action: Complex, range: 'LOS or Touch', duration: Instant}
+      mechanics_reused: rule.spirit-power.binding
+      escape: Strength Test with TN twice user Essence
+    blindness:
+      profile: {type: mana, action: Complex, range: LOS, duration: Instant}
+      test: opposed critter Essence versus target Willpower
+      success: blindness for 1D6 Combat Turns without Physical damage
+      affected_senses: [ordinary vision, cybereyes, astral sight]
+    cold_aura:
+      profile: {type: physical, action: Free, range: Touch, duration: Sustained}
+      radius_centimeters: Essence
+      environmental_effects: liquids freeze immediately; prolonged exposure embrittles metal
+      resistance: melee-range characters resist (Essence)M damage
+      power_modifiers: {per_point_of_defender_weapon_reach: -1, critter_successful_melee_hit_same_turn: 2}
+      armor: Impact armor applies; heavy clothing may supply 1-3 extra armor at GM discretion
+    compulsion:
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      test: opposed Essence versus target Willpower
+      actions_per_net_success: 1
+      restriction: immediate actions only; usually one specific type of action per creature
+      related_rule: rule.spirit-powers.compulsion
+    concealment:
+      profile: {type: physical, action: Simple, range: LOS, duration: Sustained}
+      mechanics_reused: rule.spirit-power.concealment
+      additions: multiple simultaneous targets allowed; concealed targets can see one another
+    confusion:
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      mechanics_reused: rule.spirit-power.confusion
+      additions: every decision requires Willpower against critter Essence; failure prevents deciding; an attack or verbal prompt permits a fresh test; unattended subject eventually wanders away
+    corrosive_saliva:
+      profile: {type: physical, action: Free, range: LOS, duration: Special}
+      test: Ranged Combat Test; target may dodge and/or resist with Quickness instead of Body; Combat Pool may supplement either or both
+      armor_loss: each critter net success permanently reduces both Ballistic and Impact ratings by 1; protection ceases at both ratings zero
+      unarmored_damage: (creature Body)L; add 1 Power per 2 critter Ranged Combat Test successes
+    corrosive_secretions:
+      profile: {type: physical, action: Auto, range: Self, duration: Always}
+      contact: touching creature inflicts damage each turn
+      armor_loss: successful melee attack by or against creature reduces both target armor ratings by 1 per inflicted Damage Level; Light reduces by 1, Serious by 3; no protection at both ratings zero
+      unarmored_damage: resist (Essence)L in melee; reduce Power by 1 per point of attacker weapon Reach
+  relationship: Source-local corrections to shifted catalog profiles and additional mechanical conditions; existing core records remain unchanged.
+framing: reference_exact
+headline: 'Critters (FASA7002), p8: Astral Armor through Corrosive Secretions'
+summary: 'Fictional tabletop rules: nine original power profiles and source-specific conditions.'
