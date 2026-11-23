@@ -19,7 +19,7 @@ printed_to_pdf_page_offset: 1
 page_map_scope: "TOC and original printed pp167-168 were visually checked; other pages require per-section confirmation"
 routing:
   - {range: "6-39", section: "Games of State", game_information: "29-39", status: pending_original_mechanics_review}
-  - {range: "40-68", section: "The Path of the Adept", game_information: "60-68", status: pending_original_mechanics_review}
+  - {range: "40-68", section: "The Path of the Adept", game_information: "60-68", status: scoped_game_information_mechanics_gated}
   - {range: "69-98", section: "Behind the Badge", game_information: "96-98", status: pending_original_mechanics_review}
   - {range: "99-127", section: "Old World Magic", game_information: "122-127", status: pending_original_mechanics_review}
   - {range: "128-168", section: "Culture Shock", game_information: "167-168", status: scoped_game_information_mechanics_gated}
@@ -27,6 +27,24 @@ source_scoped_status_notes:
   - "2026-11-23 original Drive PDF freshly acquired; actual SHA256 matches catalog intake. TOC printed pp2-3/PDF3-4 and original Culture Shock Game Information pp167-168/PDF168-169 visually reviewed. This independently created source-specific manifest does not change source selection, global Denver p45/PDF46 checkpoint, or SR3 core acceptance."
   - "This PDF includes December 2005 FanPro correction designation; original 2004 publication is retained. No whole-book mechanical completeness is asserted."
 verified_semantic_records:
+  - id: rule.magic.sota64-adept-metamagic-p61-64
+    path: rules/magic/sota64-adept-metamagic-p61-64.yml
+    range_printed: [61, 64]
+    range_pdf: [62, 65]
+    content_class: rule_exact
+    commit: 7375b1cf99958f405f1e8004812f56137c9f40ac
+    blob: 204d195b0d3bcfbbfcb7e27812f1127e0c13af68
+    gate: verified
+    contiguous_advance: false
+  - id: rule.magic.sota64-adept-powers-p64-68
+    path: rules/magic/sota64-adept-powers-p64-68.yml
+    range_printed: [64, 68]
+    range_pdf: [65, 69]
+    content_class: rule_exact
+    commit: 797c36d2e29d5368bc00adf76ca68f5bdc353058
+    blob: eda8dce1b7c9b3e97dad31d46cf3321e42e93af6
+    gate: verified
+    contiguous_advance: false
   - id: rule.magic.sota64-adept-running-ways-p60
     path: rules/magic/sota64-adept-running-ways-p60.yml
     range_printed: [60, 60]
@@ -146,6 +164,26 @@ verified_semantic_records:
     contiguous_advance: false
 scoped_game_information_closeouts:
   - chapter: The Path of the Adept
+    subsection: New Metamagic
+    original_printed: [61, 64]
+    physical_pdf: [62, 65]
+    classification: complete_seven_source_techniques_with_all_printed_tests_modifiers_and_exceptions
+    accepted_mechanical_records: 1
+    techniques: 7
+    object_resistance_table_rows: 5
+    unresolved_printed_threshold_interpretation: Somatic Control Racial Maximum versus Racial Modified Limit
+    source_wide_completion: false
+  - chapter: The Path of the Adept
+    subsection: New Powers
+    original_printed: [64, 68]
+    physical_pdf: [65, 69]
+    classification: complete_33_source_power_entries_and_four_numeric_tables
+    accepted_mechanical_records: 1
+    power_entries: 33
+    table_rows: 16
+    unresolved_printed_area_notation: Three-Dimensional Memory incomplete parenthesis
+    source_wide_completion: false
+  - chapter: The Path of the Adept
     subsection: Running Ways / The Lost
     original_printed: [60, 60]
     physical_pdf: [61, 61]
@@ -250,6 +288,10 @@ source_scoped_status_notes_disguises:
 source_scoped_status_notes_weapons:
   - "2026-11-23 visually verified original Special Weapons printed pp35-36/PDF36-37, including the 3-row source market table for Screech sonic rifle and two cigarette micro-rocket variants, Willpower-based Stun resistance, sound-dampener protections, temporary Stun recovery each Combat Turn, shotgun spread/choke, skill/range cross-reference, and all numeric provenance. Fresh original PDF hash verified; actual stage/prepare/Contents write/exact blob readback, ingestion confirm and recovery inspection verified. Distinct Clothing and other New Equipment subsections remain; no Denver global pages changed."
 source_scoped_audit_receipts:
+  - path: references/audits/sota64-adept-metamagic-powers-game-information-closeout-2026-11-23.yml
+    commit: f278c7938a589c78d7de2cb637daa531ca027146
+    blob: 4c6b1455ca32b5a632663cacbff0e900f1d08153
+    scope: "All five Path of the Adept Game Information mechanical subsections pp60-68"
   - path: references/audits/sota64-adept-ways-ordeals-foci-2026-11-23.yml
     commit: 4dece99376f792f4c461c4bf12c238e539b96760
     blob: bbc3dab846cea067b8caa8b1bfe839c2ce8c0043
@@ -280,9 +322,13 @@ rules_completion:
   whole_source_rules_complete: false
   owner_accepted_scan_omissions: []
 source_scoped_adept_progress_2026_11_23:
-  newly_accepted_semantic_records: 3
-  distinct_full_natural_mechanics_scopes_verified: 3
-  original_pdf_image_page_scopes: [60, 61, 68]
-  remaining_chapter_scopes: [New Metamagic pp61-64, New Powers pp64-68]
+  newly_accepted_semantic_records: 5
+  distinct_full_natural_mechanics_scopes_verified: 5
+  original_pdf_image_page_scopes: [60, 61, 62, 63, 64, 65, 66, 67, 68]
+  all_toc_game_information_subsections_source_reviewed_and_transaction_verified: true
+  game_information_printed: [60, 68]
+  game_information_pdf: [61, 69]
+  pre_game_information_pp40_59_directed_review: pending
+  unresolved_source_interpretations: [Somatic Control printed damage thresholds, Three-Dimensional Memory area notation]
   source_wide_rules_complete: false
   global_denver_checkpoint_changed: false
