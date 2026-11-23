@@ -40,6 +40,9 @@ source_review_scope:
   - 130
   - 131
   - 132
+  - 148
+  - 154
+  - 155
   original_to_pdf_page_mapping:
     '25': 27
     '49': 51
@@ -62,6 +65,9 @@ source_review_scope:
     '130': 132
     '131': 133
     '132': 134
+    '148': 150
+    '154': 156
+    '155': 157
   source_reviewer_note: Independently reviewed original revised pp25,49,57-58,61-62,68,74-75
     against original FASA7910 same printed pages; only individual examined images,
     not a contiguous scan or whole-book completeness claim.
@@ -73,6 +79,7 @@ source_review_scope:
     table rows separately prepared, exact-byte committed, transaction-confirmed and indexed.
     Availability minimum 2/24 literal retained as ambiguous without inventing engine-ready units.
   later_review_note_2026_11_23_customization: Original FanPro10662 and FASA7910 printed pp129-132 independently image-reviewed for control-system modification multipliers, ablative armor price and availability, installation-test requirements, and concealed armor Handling condition. Two distinct mechanical records completed prepare, ordinary exact-byte Contents write/readback and real confirmation. Only discrete edition differences indexed; not a whole-section or global completion claim.
+  later_review_note_2026_11_23_sonar_tires: Original FanPro10662 and FASA7910 pp148 and pp154-155 directly image-reviewed; original revised sonar table design-point values and new flat-tire damage, resistance, Crash, Handling and Speed rules each confirmed through prepare, ordinary Contents exact readback, real gate confirm and recovery inspection. Only these two distinct mechanical records are newly indexed; no global page credit or whole-source closure.
 global_worker_control:
   active_source_unchanged: source.fasa-7212
   denver_checkpoint_unchanged: printed p45 / PDF46
@@ -272,6 +279,32 @@ verified_semantic_records:
   baseline_sha256: 37be7d38b98e55abd379a8d8fb86eec07885341710235ed1be04669627e44e89
   candidate_sha256: 9eba191794bbaccb3f4a77dbff48c507552d7d51da02235495ea10316508be8d
   immutable_sha256: c55f86e2e75f8b0999050d3dc07ec5b844660b57e1fdb7478bd458f7c5cad443
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-sonar-design-points-p148
+  path: rules/vehicles/r3-revised-sonar-design-points-p148.yml
+  range_printed: [148, 148]
+  range_pdf: [150, 150]
+  content_class: rule_exact
+  commit: 868731b0840bb48da432ce2f988333a029af96b2
+  blob: 15eac2d929f165eab744f3f0dd05b101e0c4ed08
+  baseline_sha256: eabbd4b19caf76d3200077c1b7b6292d70d6b74f5bcc3e494d9daa2652b311fb
+  candidate_sha256: 8a43fe3e5bd339c42749a975eb3817cab143c6d3a6cfb349c128840fe745f1f0
+  immutable_sha256: 096b9faed0707ff37ec20cda3e2a1629ffcf88886198354d55fe7e48f16be9a3
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-flat-tire-effects-p154-155
+  path: rules/vehicles/r3-revised-flat-tire-effects-p154-155.yml
+  range_printed: [154, 155]
+  range_pdf: [156, 157]
+  content_class: rule_exact
+  commit: 70f57b2dc27ef9212589f601a423dfc195ab588f
+  blob: 1b48055f34c8c3d9df310fc42341a65d3a647190
+  baseline_sha256: b1dc35f7590fc2b2dc8f1d9193a0206185de66eb600cf3fad00ed61ec2c15d01
+  candidate_sha256: 2ed03d9b3d9482f617d08030e99aa7916315d1ad9b27b9defe7e3b139d3af040
+  immutable_sha256: 4bcfe35ba32e0039b354d5d366b60e06069c22d77eaa585fb73e4d04957c87f7
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
