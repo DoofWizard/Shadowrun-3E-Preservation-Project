@@ -47,8 +47,8 @@ coverage:
   beat_consequences_and_ratings: {printed: "55-56", status: source_verified_section_closed}
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
-  combat_biker_match_procedures: {printed: "65-67", status: partial, note: "Match procedure transaction verified; role equipment description reconciliation outstanding; original roster and scoring inconsistencies retained."}
-  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; team combat sports pp65-73 outstanding"}
+  combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained; independent equipment-stat chapter and SR3 compatibility remain open."}
+  professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; Combat Biker pp65-67 verified; Urban Brawl pp68-73 outstanding"}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: queued}
@@ -79,6 +79,7 @@ records:
   - ["beat-consequences-and-ratings-p55-56", "6050d144b001d2eb2392895838f677064a599113"]
   - ["individual-combat-sports-p64", "b1d32338c299012e4d0fb6c9072d8b9843e66989"]
   - ["combat-biker-competition-p65-67", "f0d1f0d18228225260182bd21d2d8774c8847d23"]
+  - ["combat-biker-role-equipment-p66-67", "212b88fce9b5dc3b04cb6964aad38c56ff62211c"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -288,5 +289,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p65_pdf74", "printed_p66_pdf75", "printed_p67_pdf76"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-combat-biker-role-equipment-p66-67
+    path: rules/shadowbeat/combat-biker-role-equipment-p66-67.yml
+    original_printed_pages: "66-67"
+    original_pdf_pages: "75-76"
+    commit_sha: "212b88fce9b5dc3b04cb6964aad38c56ff62211c"
+    readback_blob_sha: "95e1041ad29a74be2ec4f83c8ec5f2d9d3da1796"
+    candidate_sha256: "2f5813cf884be696417d1de550f48d4a06957d2ddf8949db5de09baaf0d5431c"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p66_pdf75", "printed_p67_pdf76"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
