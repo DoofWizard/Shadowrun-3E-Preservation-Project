@@ -1,0 +1,57 @@
+id: rule.critters.power-entries-p12
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '12-13'
+pdf_pages: '12-13'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    magical_guard:
+      profile: {type: mana, action: Free, range: LOS, duration: Sustained}
+      effect: spell defense as magician (SR3 p183), with Essence dice
+    magical_skills:
+      profile: {type: mana, action: Variable, range: Variable, duration: Variable}
+      abilities: Sorcery users learn and cast spells, provide spell defense and use Spell Pool; Conjuring users summon and banish spirits; Magic equals Essence.
+      astral: projection as magician (SR3 p172); use Mental Attributes, mana powers against astral targets, Astral Combat Pool; physical powers ineffective; normal Initiative dice and +20 Initiative
+    magic_sense:
+      profile: {type: mana, action: Simple, range: Special, duration: Instant}
+      test: Essence (2) to detect magic and Awakened beings on same plane
+      astral_patrol_tn_reduction: floor(Essence / 2)
+      modifiers:
+        range_per_Essence_meters: 1
+        open_terrain: -4
+        normal_terrain: -2
+        restricted_terrain: 0
+        tight_terrain: 2
+        complex_terrain: 4
+        background_count: add level
+        target_active_foci_or_spells: -1 per 2 Force unless masked
+        creature_and_target_astrally_active: -1 per 2 target Magic or Force unless masked
+    materialization:
+      profile: {type: physical, action: Simple, range: Self, duration: Special}
+      physical_attributes: equal Essence unless individual modifier stated
+      effects: no air or nourishment needed; Immunity to Age, Pathogens, Toxins and Normal Weapons based on Essence
+      duration: depends on spirit; nature spirits cannot remain past sunrise or sunset
+      action: exclusive Simple Action to materialize or return astral; remaining physical requires no effort
+      initiative_modifier: 10
+      attack: most materialized spirits attack using Reaction
+    mimicry:
+      profile: {type: physical, action: Simple, range: LOS, duration: Sustained}
+      perception_tn: Essence + 3
+    mist_form:
+      profile: {type: physical, action: Exclusive Complex, range: Self, duration: Sustained}
+      passage: passes non-airtight gaps and gas or pollution filtration; bacteria- or virus-proof systems block it
+      immunity: Normal Weapons including those to which creature has Vulnerability
+      allergy: exposure forces immediate return to normal; except sunlight, substances must contact mist in liquid or powder form
+      shift: Exclusive Complex Action in or out, involuntary return instantaneous
+    movement:
+      profile: {type: physical, action: Complex, range: LOS, duration: Sustained}
+      effect: multiply or divide movement rate by Essence within controlled terrain
+      vehicles: Essence Test against half vehicle Body; multiply successes by Acceleration and add or subtract from Speed next Combat Turn; repeat each sustained Combat Turn; situation may require Crash or Stress Test
+framing: reference_exact
+headline: 'Critters (FASA7002), pp12-13: Magical Guard through Movement'
+summary: 'Fictional FASA7002 Shadowrun Third Edition original power profiles, Magic Sense modifiers and movement exceptions.'
