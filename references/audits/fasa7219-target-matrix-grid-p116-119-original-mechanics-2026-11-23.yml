@@ -48,3 +48,29 @@ verification:
   source_specific_index_change: none
   net_global_authorized_pages: 0
   denver_checkpoint_modified: false
+
+# Later same-run verified gate outcomes; earlier verification fields above describe the pre-gate review snapshot.
+post_review_transaction_followthrough:
+  original_image_pages_physical_pdf: [117, 123]
+  actual_repository_verify_source_fasa7219: source_pdf_hash_verified
+  actual_connector_preflight_self_tests: 29_passed
+  noose_net_original_rule:
+    path: rules/matrix/target-matrix-noose-net-session-sheafs-p116.yml
+    source_page: {printed: 116, physical_pdf: 117}
+    prepare_stage_confirm_recovery_inspect: verified
+    commit: f652cde9b13f2273df713600d81d75f79ebd1e1f
+    blob: 2f3da61b732aca37f4f3aeb178fc1ee13bd0d2b5
+  helix_original_rule:
+    path: rules/matrix/target-matrix-helix-data-pricing-p122.yml
+    source_page: {printed: 122, physical_pdf: 123}
+    original_unit: megapulse
+    prepare_stage_confirm_recovery_inspect: verified
+    commit: 7bdfb1e5e50225382299f1de34673150614f5ba3
+    blob: 025b2cece1116622cb3448c6161e6fc21bb8dc48
+  source_specific_index:
+    path: sources/manifests/TargetMatrix.yml
+    commit: 136227d46b673be586753f7ce39ca732310003c3
+    blob: bfebc67323c649b8b9ad420313f2135356228a0d
+  new_verified_semantic_records: 2
+  global_pages_advanced: 0
+  entire_source_rules_complete: not_claimed
