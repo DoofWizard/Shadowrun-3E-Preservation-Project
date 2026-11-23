@@ -1,0 +1,112 @@
+id: rule.magic.sota64-adept-metamagic-p61-64
+record_type: rule
+status: source_reviewed
+source: source.fanpro-25004
+printed_pages: '61-64'
+pdf_pages: '62-65'
+edition_scope: Shadowrun Third Edition, FanPro25004, State of the Art 2064 (2004; corrected PDF December 2005)
+content_class: [rule_exact]
+data:
+  publication: {title: 'State of the Art: 2064', publisher: FanPro, catalog_number: FanPro25004, edition: Shadowrun Third Edition, chapter: The Path of the Adept, section: New Metamagic, printed_pages: '61-64', physical_pdf_pages: '62-65'}
+  eligibility: These seven new techniques are adept-only. Adepts may also learn Centering, Divining, Masking, Sensing (Target Awakened Lands p110) and Psychometry (SOTA2063 pp49-50).
+  attunement:
+    printed_pages: '61-62'
+    types: [Animal, Item]
+    separate_learning: Must learn twice to use both types.
+    ritual: Familiarize with target until handling is second nature, then perform culturally appropriate bonding ritual and invest Good Karma; a deed ordeal (MITS p60) may serve as bonding ritual.
+    total_target_limit: Initiate Grade
+    bonuses_per_action_max: 1
+    termination: Voluntary severance at any time loses invested Karma; death or destruction of target cancels bond.
+    material_link: Attuned animal or item can serve as material ritual link to adept (MITS p34).
+    animal:
+      normal_target: Friendly mundane non-sentient animal; coercion prevents attunement.
+      familiarization_test: {skill: Animal Handling or similar, target_number: 5, base_time_weeks: 2, extra_successes: May divide duration, failure: Restart}
+      bonding_karma: animal Essence
+      effect: Sense Link (MITS p109); adept experiences animal senses and can convey simple low-level telepathic commands.
+      commands: Not automatically successful; disposition and danger matter; GM may call Animal Handling or appropriate test.
+      range_meters: (Magic + Charisma + Willpower) * 10
+      beyond_range: Contact lost.
+      injury_while_link_in_use: Moderate or greater wound to animal immediately breaks link and inflicts Light Stun on adept; contact may resume when animal heals.
+      size_and_optional_exceptions:
+        normal_size: Cat through horse.
+        small_group: GM may allow homogeneous group of smaller animals as one target with one ritual and Karma expenditure; Sense Link to one member at a time.
+        large_animal: GM may increase handling TN and Karma cost.
+        paranormal_or_cybered: Optional at GM discretion after considering story, character development and balance; only if not abused.
+        suggested_modifier: Add 1 to both TN and Karma cost for each critter power and each Essence point lost to implants; exceptionally potent powers may increase both further at GM discretion.
+        cybered_karma_basis: Original Essence before implants.
+        forbidden: Sentient and semi-sentient creatures are never eligible.
+    item:
+      eligible: Vehicle, weapon or gear.
+      familiarization_test: {skill: relevant Build/Repair, target_number: 5, base_time_weeks: 1}
+      alternative: Build, forge or construct item from scratch.
+      bonding_karma: Object Resistance (SR3 p182).
+      effect: -1 TN for skill tests using, controlling or handling attuned item.
+      exceptions: No bonus through cybernetic interface (VCR, datajack, smartlink); no bonus to magical skills such as Sorcery, Conjuring, Centering or Enchanting.
+      object_resistance_examples:
+        - {gear: [Handcrafted quality blade], object_resistance: 5}
+        - {gear: [Production-line gun, modern katana], object_resistance: 7}
+        - {gear: [Lockpick kit, dirt bike], object_resistance: 8}
+        - {gear: [Car, dikoted katana, racing bike], object_resistance: 9}
+        - {gear: [Monofilament whip, thunderbird], object_resistance: 10}
+  cognition:
+    printed_page: 63
+    prerequisite: Centering technique (MITS p72) and Centering skill.
+    action: Free Action
+    effect: Center for success or reduce modifiers on Intelligence Tests including Perception and Learning; also reduce defaulting modifiers from Intelligence-linked skills to Intelligence.
+    knowledge_and_language_test_bonus_dice: 1
+    skill_increase_karma_cost_reduction: 1
+    minimum_skill_increase_karma_cost: 1
+  empower_animal_companion:
+    printed_page: 63
+    prerequisite: Attunement (Animal).
+    ritual: Choose an owned adept power and perform ritual similar to original animal attunement.
+    karma_cost: power point cost * 4
+    transfer: Free Action, temporarily transfers power via Sense Link; adept cannot use transferred power while animal has it; both must remain within Sense Link range.
+    animal_tests: GM uses animal Reaction as default skill rating (Intelligence or Quickness may be appropriate), or relevant attribute for Attribute Test.
+    additional_powers: Separate similar rituals can enable other powers and multiple companion critters.
+    restriction: Same power cannot be transferred to more than one animal at once; total transferred power points cannot exceed Initiate Grade.
+  infusion:
+    printed_page: 63
+    prerequisite: Centering technique and Centering skill.
+    action: exclusive Complex Action
+    test: {skill: Centering, target_number: 4, maximum_successes: Initiate Grade}
+    power_points_per_success: 0.25
+    effect: Boost existing or acquire new powers; at most one level of an unowned power.
+    duration_minutes: Magic * Initiate Grade
+    end_drain: Stun damage (Centering successes)S, resisted with Willpower.
+    burnout: Lose equal power points worth of powers for same number of minutes temporary powers lasted. GM chooses; adept discovers inaccessible powers when attempting to use them.
+    new_power_selection_limit: Initiate Grade in power points; existing powers always eligible to increase.
+    selection_methods: GM may let player select one power point of available powers each initiation, or track temporarily acquired powers until total reaches Initiate Grade; thereafter only previously chosen powers are available.
+  limited_astral_projection:
+    printed_page: 63
+    prerequisite: Magician's way adept with Astral Perception power.
+    effect: Astral projection as full magician (SR3 p172), adept powers function normally while projecting.
+    physical_body_essence_loss: 1 per minute instead of 1 per hour (SR3 p173).
+  somatic_control:
+    printed_pages: '63-64'
+    prerequisite: Centering technique and Centering skill.
+    action: exclusive Complex Action
+    test: {skill: Centering, target_number: 4, maximum_successes: Initiate Grade}
+    points_shifted_max: successes
+    operation: Shift points among Physical attributes by reducing one to increase another.
+    duration_minutes_max: Magic * Initiate Grade
+    cooldown_minutes: 10 * minutes attributes were modified
+    skill_penalty: For each point of attribute decrease, reduce by 1 each linked skill higher than the new attribute value.
+    end_damage: {resistance_attribute: Body, damage_type: Stun, power: points shifted}
+    damage_level_as_printed: {Serious: attribute boosted above Racial Maximum, Moderate: attribute boosted above Racial Modified Limit, Light: otherwise}
+    source_note: Retain source's stated thresholds without reordering or inferring precedence if they overlap.
+    derived_effects: Quickness changes may alter Reaction, Initiative and Combat Pool; temporary attributes do not affect Karma cost of skills or learning.
+  virtuoso:
+    printed_page: 64
+    scope: Original inspired physical or performance artwork by adept artist.
+    creation_test: {skill: appropriate artistic Knowledge skill, target_number: 9, base_time_months: 1, bonus_dice: Initiate Grade}
+    rating: Successes; some successes may instead reduce base time.
+    karma_rating_boost: 1 rating per 2 Good Karma spent at creation, total Karma spent cannot exceed creator artistic skill.
+    background_count: Rating, emotionally charged according to artwork and aspected to creator so it does not interfere with creator.
+    performance: Adept must first compose piece as above; each performance requires appropriate performance Skill TN6 Test to evoke emotion and Background Count.
+    gm_role: Determine roleplaying side effects of emotional Background Count, which affects astral and physical planes.
+    first_experience: Apply Enthralling Performance effects (p65) to first-time viewers/listeners, adding adept Initiate Grade to Open Test.
+    enchanting: Physical virtuoso items may qualify as exotic materials; item is not destroyed but incorporated into final product.
+    material_link: Physical virtuoso art serves as material link to creator (MITS p34).
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition: New Adept Metamagic (FanPro25004)"
