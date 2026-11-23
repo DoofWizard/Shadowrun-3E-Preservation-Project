@@ -55,6 +55,7 @@ postcompletion_mechanics_recovery_2026_11_23:
   editorial_preflight_and_29_self_tests: passed
   actual_transaction_recovery_stage_prepare_confirm_inspect: verified
   source_specific_new_verified_records: 3
+  source_specific_existing_verified_corrections: 1
   verified_semantic_records:
     - id: rule.matrix.target-matrix-noose-net-session-sheafs-p116
       path: rules/matrix/target-matrix-noose-net-session-sheafs-p116.yml
@@ -89,10 +90,24 @@ postcompletion_mechanics_recovery_2026_11_23:
       gate: verified
       contiguous_advance: false
       fields: 'Helix registered and resident privilege/access conditions, resident house host, original Morgue passcode/vouching and remote datastore/SAN navigation'
+    - id: rule.matrix.target-matrix-security-sheafs
+      path: rules/matrix/target-matrix-security-sheafs.yml
+      range_printed: [132, 134]
+      range_pdf: [133, 135]
+      content_class: rule_exact
+      previous_legacy_blob: 2facc770b9b2b139f6f9f94e5f26fbd99d7ba395
+      source_verified_correction: 'Saeder-Krupp Prime original step 15 Construct-14 includes Trace-12/Probe-6/Scout-8, correct steps 19/22/26/29, no step 32'
+      strict_yaml_trigger_key_normalization: 'All 169 previously numeric event mapping keys converted to digit strings for original strict editorial gate without changing numeric meaning; legacy top-level sheafs retained'
+      commit: 3a7ff8ba93fc42ba1fc925a731876e5f97b46539
+      blob: cd02d2219042f51501015c20d0d7780f2d630e1d
+      candidate_sha256: 1b03a9e5e35137ff7df52ae44b77c929fa87e27ae0ac7ecfd994914cd7535229
+      gate: verified
+      contiguous_advance: false
+      mechanical_source_class: corrected_legacy_existing_record
   separate_original_image_audit:
     path: references/audits/fasa7219-target-matrix-grid-p116-119-original-mechanics-2026-11-23.yml
     commit: b3db671dec325e9d094c8788defd37076b40d371
     blob_at_initial_write: b1ac494a244418469f709bd98ac9967a43cefc15
-  closure_scope: 'Three previously omitted original mechanics now accepted; other sections not independently recertified as field-level complete by this recovery'
+  closure_scope: 'Three previously omitted original mechanics accepted plus one source-fidelity correction to an existing canonical sheaf; other sections not independently recertified as field-level complete by this recovery'
   global_checkpoint_advanced: false
   global_pages_authorized: 0
