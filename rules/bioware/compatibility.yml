@@ -3,36 +3,104 @@ record_type: rule
 name: "Bioware Compatibility"
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: "77-79"
+pdf_pages: "78-80"
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 78
   basis: defines
-
 scope:
-  applies_to:
-    - "multiple implanted bioware systems"
-
+  applies_to: [multiple implanted bioware systems, relevant cyberware, incompatible external gear]
 resolution:
-  summary: "Some bioware implants are mutually incompatible or limited in how many copies may coexist. Implant-specific compatibility restrictions control whether systems can be installed together and generally prevent redundant copies of the same implant unless explicitly permitted."
-  inputs:
-    - "installed implants"
-    - "proposed implant"
-  outputs:
-    - "compatible or incompatible installation"
-
+  summary: "A particular bioware implant can be installed only once. Apply implant-specific incompatibilities and bonus restrictions; incompatible external gear cannot assist or increase an implant's effects and may impede them at the gamemaster's discretion."
+  inputs: [installed implants, proposed implant, relevant external gear]
+  outputs: [installation compatibility, applicable bonus restrictions]
+data:
+  one_installation_per_specific_implant:
+    printed_page: 77
+    maximum: 1
+  general_incompatibility:
+    printed_page: 78
+    other_implant: "Incompatible implants should not be installed in the same body."
+    external_gear: "Incompatible gear cannot assist or increase implant effects and can hinder operation at gamemaster discretion."
+  named_constraints:
+    - printed_page: 78
+      implant: Adrenal pump
+      incompatible: [move-by-wire systems]
+    - printed_page: 79
+      implant: "Cat's eyes"
+      incompatible: [cybereyes, retinal modifications]
+    - printed_page: 79
+      implant: Chloroplast skin
+      incompatible: [dermal plating, dermal sheathing]
+    - printed_page: 79
+      implant: Sensitive skin
+      incompatible: [dermal plating, dermal sheathing]
+    - printed_page: 79
+      implant: Skin pigmentation
+      incompatible: [dermal sheathing]
+    - printed_page: 79
+      implant: Digestive expansion
+      incompatible: [ingested toxin filter system]
+      cross_reference: "SR3 p300"
+    - printed_page: 79
+      implant: Enhanced articulation
+      cyberlimb_installation: prohibited
+      reaction_bonus_lost_if: "Character gains Reaction bonus from Quickness-enhanced cyberlimbs."
+      all_bonuses_lost_if: "More than two limbs are partially or wholly replaced by cyberlimbs."
+    - printed_page: 79
+      implant: Extended volume
+      incompatible: [internal air tank]
+    - printed_page: 79
+      implant: Mnemonic enhancer
+      skill_test_bonus_excludes: [skills obtained from skillsofts]
+    - printed_page: 79
+      implant: Muscle augmentation and muscle toner
+      incompatible: [muscle replacement cyberware]
+      compatible_with_each_other: true
+      cyberlimb_installation: prohibited
+      cyberlimb_effect: "Effects reduced when both are present, per Cyberware Compatibility p32."
+    - printed_page: 79
+      implant: Nictitating membranes
+      incompatible: [cybereyes, flare compensation retinal modification]
+    - printed_page: 79
+      implant: Orthoskin
+      incompatible: [dermal plating, dermal sheathing]
+      cyberlimb_installation: prohibited
+      cyberlimb_effect: "Cyberlimbs may reduce effectiveness elsewhere, per Cyberware Compatibility p33."
+    - printed_page: 79
+      implant: Reflex recorder
+      incompatible: [skillwires]
+      skill_bonus_excludes: [skills obtained from skillsofts]
+    - printed_page: 79
+      implant: Suprathyroid gland
+      incompatible: [move-by-wire systems]
+    - printed_page: 79
+      implant: Synaptic accelerator
+      incompatible: [wired reflexes, move-by-wire systems]
+    - printed_page: 79
+      implant: Tracheal filter
+      incompatible: [air filtration system cyberware, OXSYS cybergill]
+      cross_references: ["SR3 p300", "M&M p31"]
 links:
   uses: []
-  affects:
-    - subsystem.bioware.core
+  affects: [subsystem.bioware.core]
   modified_by: []
   interacts_with: []
-
 sources:
   - source: source.mm
-    page: 78
+    page: 77
+    relation: defines
+    note: "Effects of Installing Bioware: one installation per implant"
+  - source: source.mm
+    pages: "78-79"
     relation: defines
     note: "Bioware Compatibility"
-
-notes: []
+notes:
+  - "These named restrictions preserve the complete compatibility subsection; implant-specific cross-references retain their original scope."
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp77-79/PDF pp78-80: Bioware Compatibility"
+framing: reference_exact
