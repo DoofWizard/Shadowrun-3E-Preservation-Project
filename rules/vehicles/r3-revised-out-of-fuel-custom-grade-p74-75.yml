@@ -1,0 +1,77 @@
+id: rule.vehicles.r3-revised-out-of-fuel-custom-grade-p74-75
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: 74-75
+pdf_pages: 76-77
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class:
+- rule_exact
+headline: Rigger 3 Revised FanPro10662 pp74–75/PDF76–77 — Gray Ghost example and signed
+  custom fuel effects
+summary: Published revised-edition fictional vehicle-fuel numeric example and corrected
+  Custom Fuel Grades economy modifiers, preserving a separate worked-example ambiguity.
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_id: source.fanpro-10662
+    original_file_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  original_source_pages:
+    printed: 74-75
+    physical_pdf: 76-77
+    section: Advanced Rules / Running Out of Gas; Fuel Grade Effects Table
+  revised_rules:
+    revised_gray_ghost_out_of_fuel_example:
+      initial_speed_meters_per_turn: 1000
+      acceleration_rating: 50
+      speed_loss_per_turn_meters: 100
+      coasting_distance_without_vehicle_test_meters: 15000
+      vehicle_test_successes: 5
+      illustrated_test_bonus_distance_meters: 250
+      published_total_coasting_distance_meters: 15250
+      stall_speed_meters_per_turn: 600
+      published_time_to_required_crash_test_turns: 4
+      source_formula: 0.75 × initial Speed² ÷ Acceleration
+      source_printed_general_qualification: Source says extend coasting distance by
+        Acceleration per 2 Vehicle Test successes; the worked example multiplies by
+        all 5 successes instead. Preserve this unresolved discrepancy, do not silently
+        choose a game-engine implementation.
+      engine_ready_example_bonus_resolution: false
+    fuel_grade_effects:
+      cheap:
+        maintenance_multiplier: 0.95
+        acceleration_delta: -2
+        economy_multiplier: 0.9
+      premium:
+        maintenance_multiplier: 1.05
+        acceleration_delta: 2
+        economy_multiplier: 1.1
+      custom_fuel_per_point_acceleration_increase:
+        maintenance_cost_percentage_change: 2
+        economy_rating_percentage_change: -1
+      custom_fuel_per_point_acceleration_decrease:
+        maintenance_cost_percentage_change: -2
+        economy_rating_percentage_change: 1
+      suggested_maximum_absolute_acceleration_change: 5
+  historic_original_comparison:
+    historical_gray_ghost_acceleration_rating: 100
+    historical_gray_ghost_base_coasting_meters: 7500
+    historical_gray_ghost_final_example_meters: 8000
+    historical_gray_ghost_crash_test_turns: 2
+    historical_custom_fuel_acceleration_increase_economy_percentage_change: 1
+    historical_custom_fuel_acceleration_decrease_economy_percentage_change: -1
+    general_successes_vs_example_discrepancy_also_in_historical_text: true
+  source_relationship:
+    historical_source_id: source.r3
+    publisher: FASA Corporation
+    catalog_number: FASA7910
+    original_pdf_sha256: 0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860
+    lineage: edition-specific revised assertions; FASA original retained unchanged
+  canonical_lineage:
+    historical_rule_id: rule.vehicles.fuel-consumption
+    application: Revised corrects example inputs and custom fuel sign, but retains
+      a general-rule/worked-example success arithmetic mismatch.
+framing: reference_exact
