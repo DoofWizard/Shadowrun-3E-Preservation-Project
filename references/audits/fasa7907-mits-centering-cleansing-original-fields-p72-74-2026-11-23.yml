@@ -60,7 +60,7 @@ findings:
       - "Sorcery Test target number is 2 times the background count level."
       - "Every 2 Sorcery successes reduce background count by 1."
       - "Drain is (background count level)D, resisted with Willpower."
-      - "Cleansing consumes Combat Turns equal to 2 times the background count level and requires astral perception or projection."
+      - "Cleansing consumes Complex Actions equal to 2 times the background count level and requires astral perception or projection."
       - "Cleansing can remove associated astral traces/signatures; assensing for information must occur before the attempt."
 reconciled_not_reopened:
   - "Enchanting material raw/refined/radical costs and orichalcum price at p170/PDF171 are already enumerated in rules/magic/enchanting-material-market.yml notes."
@@ -86,3 +86,92 @@ subsequent_manifest_hash_registration:
   semantic_ingestion_gates_executed: false
   new_source_records_confirmed: 0
   note: "The first-time source hash was registered without claiming a previously available hash comparison. Semantic normalization remains pending the actual mandatory command sequence."
+
+verified_natural_section_closeout:
+  date: "2026-11-23"
+  scope: Centering and Cleansing only
+  status: verified_and_source_indexed
+  historical_audit_correction: "The initial Cleansing audit incorrectly said Combat Turns; original p74/PDF75 specifies Complex Actions. Corrected above and in canonical data. Historical pre-gate blocker and initial transaction_status are retained as history."
+  source_verification:
+    fresh_original_bytes: 123917505
+    original_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+    live_manifest_at_verification: a1bcf37cc74e941bcbf5e4ff8b17c6db689c0c68
+    actual_verify_source_output: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+    actual_connector_preflight_self_test: 29 passed
+    exact_script_blobs:
+      connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+      preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+      transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+      ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+    original_image_review: "Rendered and visually inspected original cover PDF2, introduction p6/PDF7 and complete Centering/Cleansing spans p72/PDF73, p73/PDF74, p74/PDF75. Neighboring Anchoring and Divining text not claimed as part of this closeout."
+  field_review:
+    Centering:
+      canonical_record: option.magic.metamagic-centering
+      p72_pdf73: [skill linkage and rating ceiling, two-skill requirement, Active or Knowledge creative skill, single selection, permitted creative practices, nonmagical utility guidance]
+      p73_pdf74: [non-chip skill and personal learning, physical feasibility, Free Action, phase timing and one-benefit limit, Exclusive action and geas, success TN and two-for-one conversion, zero-success failure, astral perception, Drain Power TN and conditional Drain successes, penalty TN minus grade and two-for-one reduction, base TN floor]
+      p74_pdf75: [initial Athletics and Stealth, one further area per grade, sole technique choice, eight listed additional skill areas, Special Skill separation, Sorcery astral-combat exception, adept success and penalty modes, no astral perception requirement for adept success, GM discretion, adept power Drain]
+      numeric_examples: "Three p73 tests and p74 adept penalty example captured in data.examples; examples are illustrative, not new general rules."
+      remaining_game_rule_fields: []
+    Cleansing:
+      canonical_record: option.magic.metamagic-cleansing
+      p74_pdf75: [temporary count only, prior cause removal, lasting count exclusion, GM discretion, initiation grade ceiling, Sorcery TN twice count, two successes per point, D Drain code and Willpower, Complex Actions twice count, astral perception or projection, associated signature erasure, assensing before cleansing, grade-2 worked example]
+      remaining_game_rule_fields: []
+  transactions:
+    - path: options/magic/metamagic-centering.yml
+      old_blob: 605cbc79e4aebaee6fd750f46d665a6c2fb0159f
+      baseline_review: "Independent source extraction into existing option fields plus structured original mechanics; all existing canonical fields preserved. Original images and all root/nested prose separately checked against p72-74 before baseline freeze and candidate submission. Candidate changes only root headline and summary from frozen baseline."
+      content_class: rule_exact
+      baseline_sha256: a70cb9362cc4a32559eb75315b1b4ba5861eddcd11117eccd23ce7823fd3c1ae
+      journal: {baseline: baseline.yml, candidate: candidate.yml, plan: plan.json, confirmation: verified.json}
+      stage_status: staged
+      prepare_status: preflighted
+      confirm_receipt:
+        protocol: sr3-gate/v1
+        status: verified
+        record_id: option.magic.metamagic-centering
+        path: options/magic/metamagic-centering.yml
+        source: source.mits
+        printed_pages: "72-74"
+        pdf_pages: "73-75"
+        pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+        candidate_sha256: 92595ca53ed4c336c8615c5c23ce60b2d49d3e320a2981956dae1fb78391a059
+        immutable_sha256: f8617ebbf065e5ff3ae0b697340531d17f9aa634a2b53a5a1fa899d46052a50e
+        expected_blob_sha: 423b3946234a9e206e234ec772afff5206ca924d
+        readback_blob_sha: 423b3946234a9e206e234ec772afff5206ca924d
+        commit_sha: 5e0aa49d23433a2b57cbb16d56ceb42cd215aae7
+      commit_and_live_exact_bytes: true
+      connector_note: "First action had an invalid extra argument; no semantic write occurred. Removed the unsupported argument, re-fetched original blob, verified staged blob equality, and used the same ordinary Contents update. No payload rejection or alternate endpoint."
+      source_index_commit: 26359983ae79d4f40ab69cf0f9356f160124dbc6
+      source_index_blob: 1a64ec1be24d6ddfdde11907179bdc9861f0bd03
+      source_index_readback_exact: true
+    - path: options/magic/metamagic-cleansing.yml
+      old_blob: 4d94445d91c659227c7c42d821e95ad65499c019
+      baseline_review: "Independent source extraction into existing option fields plus structured original mechanics; preserved historical cross-source references without modifying later publications. All outgoing root/nested prose separately checked against original p74 before baseline freeze and candidate submission. Candidate changes only root headline and summary."
+      content_class: rule_exact
+      baseline_sha256: 1a528834b4479f547bd95d045513fa436a2e23a6c7fe0827764452f4ee08940b
+      journal: {baseline: baseline.yml, candidate: candidate.yml, plan: plan.json, confirmation: verified.json}
+      stage_status: staged
+      prepare_status: preflighted
+      confirm_receipt:
+        protocol: sr3-gate/v1
+        status: verified
+        record_id: option.magic.metamagic-cleansing
+        path: options/magic/metamagic-cleansing.yml
+        source: source.mits
+        printed_pages: "74"
+        pdf_pages: "75"
+        pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+        candidate_sha256: c6988ebb4cf102de515b321bda8efd3968d7f1a99b7632c9524cef7904f3b975
+        immutable_sha256: d5c0ca520ba3f9b9dc46173d8eeb4b1133a2a03a3b7793cc55e6e62cf44e39ed
+        expected_blob_sha: 0096021864e0d0f8eaffa3469cd7d47419c604f6
+        readback_blob_sha: 0096021864e0d0f8eaffa3469cd7d47419c604f6
+        commit_sha: e05696620799ccf800e3f9c9341c0a17cca68fe1
+      commit_and_live_exact_bytes: true
+      source_index_commit: 6e881a5c0fc3c7f285b077e4890dfc8d729ef5d3
+      source_index_blob: 031168ccdc1b2c2cfd5ed47d68d8ca2fb7a87f81
+      source_index_readback_exact: true
+  genuine_updated_canonical_records: 2
+  full_natural_sections_closed: 2
+  globally_authorized_printed_pages: 0
+  global_checkpoint_changes: 0
+  remaining_scope: "Other MitS natural sections remain subject to independent exact mechanical review. This closeout does not validate historical whole-book completion."
