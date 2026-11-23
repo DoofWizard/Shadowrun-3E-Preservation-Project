@@ -24,6 +24,10 @@ verified_printed_pdf_examples:
   - {printed: 11, pdf: 12, content: "impact_group_and_rehearsal_rules"}
   - {printed: 12, pdf: 13, content: "composition_and_performance_rating"}
   - {printed: 16, pdf: 17, content: "message_points_and_lifestyle"}
+  - {printed: 84, pdf: 93, content: "archetype_new_skills"}
+  - {printed: 85, pdf: 94, content: "archetype_network_affiliation_employment"}
+  - {printed: 86, pdf: 95, content: "sin_and_tax_rules"}
+  - {printed: 87, pdf: 96, content: "full_page_illustration_no_rule_mechanics"}
 source_integrity:
   pdf_hash_checked: true
   source_image_review: partial
@@ -37,7 +41,7 @@ coverage:
   broadcast_and_media: {printed: "18-56", status: queued}
   professional_sports_and_games: {printed: "58-73", status: queued}
   simsense: {printed: "74-83", status: queued}
-  character_skills_and_options: {printed: "84-87", status: queued}
+  character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
   equipment_and_costs: {printed: "88-99", status: queued}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
 edition_lineage:
@@ -50,6 +54,9 @@ records:
   - ["12-13-composition-performance-ratings", "3c642051ac2f63a0a56cd12eb956040d7a4f6c8c"]
   - ["13-16-rocker-status-money-and-message", "8269e3328431c1e6e2d48da64b16cc518ecf38e7"]
   - ["16-sasquatch-band-impact", "1d95df2553692f659a6850f831a9976189df50f4"]
+  - ["84-85-archetype-new-skills", "3fd08c78081fdf18384972abf0390388c08bccf6"]
+  - ["85-network-affiliation-employment", "5b7d818685565f609a066f81f2740e0112a75a6a"]
+  - ["86-sin-and-income", "2c971831164f5b09e8ce8072fbd3f326d6340319"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -105,5 +112,38 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p16_pdf17"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: option.shadowbeat-archetype-new-skills-p84-85
+    path: options/shadowbeat/archetype-new-skills-p84-85.yml
+    original_printed_pages: "84-85"
+    original_pdf_pages: "93-94"
+    commit_sha: "3fd08c78081fdf18384972abf0390388c08bccf6"
+    readback_blob_sha: "b4aabc521f2ad687e61f66ce4414592613e13283"
+    candidate_sha256: "3007b2e83069d096c32456ceee00f444f36f079f8a24c92fb146d3d22d66ed65"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p84_pdf93", "printed_p85_pdf94"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-network-affiliation-employment-p85
+    path: rules/shadowbeat/network-affiliation-employment-p85.yml
+    original_printed_pages: "85"
+    original_pdf_pages: "94"
+    commit_sha: "5b7d818685565f609a066f81f2740e0112a75a6a"
+    readback_blob_sha: "b70e78bae65c1a049a07fa3fb3ea4dc1eefa488b"
+    candidate_sha256: "91d287800897a72a09ee297a26b67e7f48ee6a58753bad201ac7855a8ff9602e"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p85_pdf94"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-sins-income-tax-discovery-p86
+    path: rules/shadowbeat/sin-income-tax-discovery-p86.yml
+    original_printed_pages: "86"
+    original_pdf_pages: "95"
+    commit_sha: "2c971831164f5b09e8ce8072fbd3f326d6340319"
+    readback_blob_sha: "17e2adc2d00651d67d113b7468c219791c06c171"
+    candidate_sha256: "b5161e49ee74b4ca638847f228e2ccde9c6d7a4b13fcefc1969503498bb2e1ba"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p86_pdf95"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
