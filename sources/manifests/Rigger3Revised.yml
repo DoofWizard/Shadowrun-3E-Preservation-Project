@@ -51,6 +51,8 @@ source_review_scope:
   - 166
   - 167
   - 168
+  - 169
+  - 170
   original_to_pdf_page_mapping:
     '25': 27
     '49': 51
@@ -84,6 +86,8 @@ source_review_scope:
     '166': 168
     '167': 169
     '168': 170
+    '169': 171
+    '170': 172
   source_reviewer_note: Independently reviewed original revised pp25,49,57-58,61-62,68,74-75
     against original FASA7910 same printed pages; only individual examined images,
     not a contiguous scan or whole-book completeness claim.
@@ -391,6 +395,19 @@ verified_semantic_records:
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
+- id: equipment.vehicles.r3-revised-subcompact-medical-transport-stats-p169-170
+  path: equipment/vehicles/r3-revised-subcompact-medical-transport-stats-p169-170.yml
+  range_printed: [169, 170]
+  range_pdf: [171, 172]
+  content_class: equipment_stat
+  commit: 3df03d74406be8628dbd112b2f648032c45e994a
+  blob: c792b3675bda60d92b42e6c5815d6a310e38db2b
+  baseline_sha256: ca26e11891afc53efd9ef0a88ef8f1c3270bde9cb0deb89125d16a44fafb3c81
+  candidate_sha256: 20319b0bc10bad9b1a6f2772f63580a3b8db93227ff1ddd085b94e9f6537b3c8
+  immutable_sha256: 29f26460c177d357cbb54e0297332d941ef9e60c267c867e1508246c6d604c1f
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
 pending_normalization: []
 notes:
 - FanPro10662 is a distinct revised-edition rules source, not an in-place replacement
@@ -406,3 +423,4 @@ notes:
   Vehicle Test successes and coasting distance; source fields are preserved
   separately and engine interpretation is unresolved.
 - Revised vehicle list original printed pp163-168/PDF165-170 compared directly to historical FASA7910 same printed pp163-168. Three separate equipment-stat records were prepared, committed with exact Git byte readback, confirmed and source-indexed; only differing fields recorded, no global contiguous advancement.
+- Revised subcompact and medical transport Vehicle List printed pp169-170/PDF171-172 independently image-compared to historical FASA7910 original pages. Only source-demonstrated different fields were added with actual transaction confirmation and noncontiguous indexing; printed Availability dash preserved as unresolved rather than zero.
