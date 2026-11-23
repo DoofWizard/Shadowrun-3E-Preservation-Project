@@ -1,0 +1,68 @@
+audit_id: critters-p7-14-power-catalog-closure-2026-11-23
+record_type: source_review_audit
+source: source.critters
+publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+original:
+  drive_id: 1WNRS1kMVi7eWIboZkukbRzKio3CasWwQ
+  bytes: 25740271
+  physical_pages: 48
+  start_manifest_blob: 7825de5a5d012635d5bc0d90ecc2e93f68d5ae9f
+  verify_source_actual_output: {page_images_review: still_required_independently, sha256: 40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7, source: source.critters, status: source_pdf_hash_verified}
+  visual_review: Original physical PDF pages 8-14 rendered and directly inspected; printed page numbers match PDF pages. Reuse verified original p7 review.
+  previous_p7_audit: {path: references/audits/critters-p5-7-general-and-power-framework-2026-11-23.yml, blob: a894d6bd98e86666741e7b0fe13ce9d5378bd2a4}
+  historical_catalog: {path: rules/critters/power-catalog.yml, blob: d9cb738321bfbb7c2696ff55ba245ceef90f5bad}
+source_review:
+  scope: Individual power catalog from Accident through Weather Control, printed 7-14; not weaknesses or creature catalog.
+  comparison: Historical catalog has 53 named powers; printed headers were systematically displaced and some historical evidence excerpts truncated or unrelated. Source-local corrections preserve original profiles and missing mechanics without overwriting shared core.
+  baseline: Original images compared with existing catalog and accepted source-specific entries; fictional tabletop editorial review applied to new baseline data.
+  candidate: Same original page fields, headers, conditions and exceptions checked against candidate records. Presentation-only changes between baseline and candidate; individual actual prepare and confirm receipts below.
+  field_evidence:
+    p7: {record: rules/critters/power-entries-p7.yml, names: [Accident, Adaptive Coloration, Animal Control], fields: [profiles, test and failed action, vehicle exception, perception modifiers, sensory exceptions, animal type and limits]}
+    p8: {record: rules/critters/power-entries-p8.yml, supplement: rules/critters/power-entries-p8-conditions.yml, names: [Astral Armor, Binding, Blindness, Cold Aura, Compulsion, Concealment, Confusion, Corrosive Saliva, Corrosive Secretions], fields: [profiles, armor and escape rules, blindness test and duration, aura radius and damage modifiers, action limitations, concealment targets, confusion all-tests and decision scopes, combat-engagement trigger, armor degradation and damage]}
+    p9_and_p10_continuation: {record: rules/critters/power-entries-p9.yml, names: [Desire Reflection, Dispelling, Empathy, Engulf, Enhanced Physical Attributes, Enhanced Reactions, Enhanced Senses], fields: [profiles, opposed tests and re-test conditions, skill substitution, emotion spell dependency, engulf release and damage, spirit escape and five elemental variants, attribute and dice modifiers, duration and use limits, sensory modes]}
+    p10: {record: rules/critters/power-entries-p10.yml, names: [Essence Drain, Essence Drain Temporary, Fading, Fear, Flame Aura, Glamour], fields: [profiles, drain cap and minimum, emotional and astral conditions, mutual drain and addiction tests, temporary transfer and recovery, barrier exception, fear duration, aura modifiers and resistance, terrain illusion contest]}
+    p11: {record: rules/critters/power-entries-p11.yml, names: [Guard, Hardened Armor, Hypnotic Song, Immunity, Infection, Influence, Innate Spell], fields: [profiles, accident coverage, armor threshold and ammo exception, hearing protection and paralysis, immunity variants and control reduction, infection PC consequence, influence test, spell emulation and defense, drain and sustained area]}
+    p12_and_p13_continuation: {record: rules/critters/power-entries-p12.yml, names: [Magical Guard, Magical Skills, Magic Sense, Materialization, Mimicry, Mist Form, Movement], fields: [profiles, spell defense dice, magical skills and astral initiative, Magic Sense nine modifier rows and masking footnote, physical attributes and immunities, materialization and return actions, mimicry TN, mist barriers and allergies, movement rate and vehicle acceleration procedure]}
+    p13_and_p14_continuation: {record: rules/critters/power-entries-p13.yml, names: [Noxious Breath, Paralyzing Touch Howl, Pestilence, Petrifying Gaze, Possession, Psychokinesis, Regeneration], fields: [profiles, resistance and protection, touch and howl paralysis tests, disease check, petrification and damage and dispelling, possession eligibility and attributes and departure, psychokinesis attributes, regeneration thresholds and weapon focus exception]}
+    p14: {record: rules/critters/power-entries-p14.yml, names: [Search, Shadow Cloak, Silence, Sonic Projection, Spraying, Venom, Weather Control], fields: [profiles, search tests and concealment opposition, lighting modifiers, silence sphere radius and number, hearing modifiers and Silence spell interaction, spray range and arc and test and duration and respirator, toxin speed, weather test and minimum time]}
+  shared_reused_read_only:
+    - {path: rules/spirit-powers/astral-armor.yml, blob: 0d6f94ca0e64250730d68121a4373b219ad1fbbc}
+    - {path: rules/spirit-powers/binding.yml, blob: f91404d55c89eb45901a063750590ab9c31ea00c}
+    - {path: rules/spirit-powers/concealment.yml, blob: 04d1841935fff59895c187f815289631eeb1308b}
+    - {path: rules/spirit-powers/confusion.yml, blob: a15933c6397d6a68c48644854046dd1bad263122}
+    - {path: rules/spirit-powers/compulsion.yml, blob: 739ef402c80870a8b17ee861a9b890fb0f352a9f}
+  preserved_exceptions:
+    - Corrosive Saliva combat-engagement wording has no invented per-turn frequency.
+    - Search specifies person and object tests but no separate place test formula; do not infer.
+    - Original specific exceptions and individual creature variants retain their precedence; implementation of generalized cross-source differences is not certified here.
+    - Existing p5 Reaction versus p19 Initiative Combat Pool cap relationship remains unresolved outside this scope.
+transaction:
+  tool_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  preflight_self_tests: {passed: 29, failed: 0}
+  prior_verified_reused:
+    - {path: rules/critters/power-entries-p7.yml, commit: 345bd61e64d3b0e969f2fde67221542c95070f5c, blob: ebc3a6abdb5db80498fd7fe7d8606f1e0e6d58c5}
+    - {path: rules/critters/power-entries-p8.yml, commit: e1e870966618bf3a1d809a90e3b92cfc8e618f73, blob: 6810e9c702e330d98dd8afbcf4e1435e681450e8}
+  new_journals:
+    - {journal: batch/p9-journal, path: rules/critters/power-entries-p9.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: c95ec23f0103deb3911f6dd65314e7fc15a82b18, blob: 313c1bdf3c415c20be39d55552d4ba3121bb0b5e, index_commit: 58aef7217793cc227ee87d3fef82cb2832916c0a, index_blob: 9b7c1faa032dd145a03dfde65a71d817db49848b}
+    - {journal: batch/p10-journal, path: rules/critters/power-entries-p10.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 2ac9a621188223d050acbd28ff9830f709e12e9b, blob: b68e11787ce203776339f7c9667870ca868e75cd, index_commit: e970f882139f8235fd05b5b7909aa00ec49dd780, index_blob: 5cd100adfe0f9e54e4bec30482527fdba77223df}
+    - {journal: batch/p11-journal, path: rules/critters/power-entries-p11.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 5e4162619079da3df691027c0979639ad7ca9269, blob: 4b75a78ecee5ce1e184384172bb7cd71d96ea733, index_commit: 544bfad2b53b486e34795f974952d88bbd23bd65, index_blob: 3c03bd418e8d50d4e6535174cb73e5047d6b6f2b}
+    - {journal: batch/p12-journal, path: rules/critters/power-entries-p12.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 07e7831718164c94fcdb999f748899fc3ffd1d8a, blob: 288493056c1408132f33ab11aa4a568853e35ca0, index_commit: e804375db41e67695e0f7a8e063d3620095f150a, index_blob: e2978fd9b5e80367310ac55c630a720e3be57313}
+    - {journal: batch/p13-journal, path: rules/critters/power-entries-p13.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 82edbacb65388255f6e65f384b6977f8cda87e7b, blob: a3aa4f9c49bb859905ee24c6a6d6a9fb263c8b7a, index_commit: 086ed091a540f56788177c788bdb06e993be3790, index_blob: f2b8c95396cc25f7d0178901bccf8a3ccc05789f}
+    - {journal: batch/p14-journal, path: rules/critters/power-entries-p14.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 3238add3ff99f08eba9e5c3540c2a13590ce3cdc, blob: e0f351a2fc548361a12e770a2a0581d877c4fd25, index_commit: b6cf0c1f2b12937e4c7ea34b2666b11d16de75d0, index_blob: a2ead1c70e3608c6d330f258bde71b1c9200eda8}
+    - {journal: batch/p8-extra-journal, path: rules/critters/power-entries-p8-conditions.yml, stage: staged, prepare: preflighted, confirm: verified, inspect: verified, commit: 97b4fde7edd0d78e4531cdd4d0b4169496cea9d0, blob: 84e4a86fecbdee9d530ef7c248765bfed2b4170a, index_commit: bcedb434549e226d755bc1a1b22cf3adcf07a9ce, index_blob: 93f276ef26ec89c0c088f86bc8e27f3ca41ad434}
+  exact_candidate_and_index_readbacks: true
+  conflicts: Two ordinary branch-head 409 conflicts resolved after fresh path reads showed unchanged manifest or absent candidate path; no provider content denials.
+outcome:
+  new_verified_semantic_records: 7
+  new_individual_power_profiles_and_mechanical_entries: 41
+  reused_previous_power_entries: 12
+  total_power_entries_accounted_for: 53
+  source_local_power_catalog_closed: true
+  new_natural_sections_closed: 1
+  whole_book_rules_complete: false
+  next_mechanical_scope: Weaknesses of the Awakened pp14-15, then mutant and toxic rules pp15-17 and individual creature blocks pp20-48.
+  globally_authorized_pages_added: 0
