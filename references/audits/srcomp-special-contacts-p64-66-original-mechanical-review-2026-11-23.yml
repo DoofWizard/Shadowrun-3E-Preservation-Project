@@ -1,0 +1,71 @@
+source: source.srcomp
+publication: {title: Shadowrun Companion, publisher: FASA Corporation, catalog: FASA7905a, edition: Shadowrun Third Edition}
+section: Special Contacts
+boundary: From Special Contacts on printed 64 to before Contact Knowledge on printed 66.
+status: original_field_review_complete_new_supplements_verified_historical_receipts_outstanding
+original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+original_pdf_bytes: 19314094
+original_pdf_pages: 138
+actual_verify_source: {status: source_pdf_hash_verified, source: source.srcomp, page_images_review: still_required_independently}
+original_images_independently_reviewed:
+  - {printed: 64, pdf: 65, sha256: a5539a4b6185d050e659d751499ea56ce29b1fd41ee2ff2ecde4f0f99b7a5b2e}
+  - {printed: 65, pdf: 66, sha256: 0cd08bcfb7ce0a6d0349730c17018c4fa51285cd5b31faa1db0a614fa8188d81}
+  - {printed: 66, pdf: 67, sha256: c71796b6c6539b5f4dc502f1fe73f5c9a3766d21af5201f5aff394e720909339}
+preflight: {passed: 29, failed: 0}
+exact_script_blobs:
+  connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+field_bindings:
+  - path: rules/contacts/special-contact-networking.yml
+    blob: 965c24903f6f88e731ea5f8c8b0cca7c8f4e89e9
+    disposition: existing_canon_source_matched
+    fields: [organization and international network count formulas, organization FOF chaining, minimum six fixer secondary contacts, other fixer and occasional Johnson, specialization, payment convention, seven contact modifiers, six travel preparation modifiers, three equipment category modifiers, enemy penalty waiver tradeoff, additional fee modifier and minimum TN, Friends Abroad option]
+    numeric_table_rows: 16
+  - path: rules/contacts/srcomp-special-contact-conditions-p64-65.yml
+    blob: d62e757a330649c5b880607bf7df504f6b872b21
+    disposition: verified_new
+    fields: [organization eligibility and breadth tradeoff, international FOF chaining and ordinary modifiers, international FOF Etiquette Test scope, direct assistance]
+  - path: rules/contacts/shadowland-information-search.yml
+    blob: ce33d478d0c5d57c9bc54039883f4355b4c005fe
+    disposition: existing_canon_source_matched
+    fields: [Computer prerequisite, fixed level two, no improvement, code and Matrix fee upkeep, periodic contributions, three access-method search durations, knowbot search duration and continuing updates, Etiquette modifier, optional search difficulty and days extension, public information and FOF meeting]
+  - path: rules/contacts/srcomp-shadowland-access-search-conditions-p65-66.yml
+    blob: 362fabba00eef947a590dce7a17e34986a1194b4
+    disposition: verified_new
+    fields: [creation timing, access prerequisites, identity display, GM search-duration discretion, search output, knowbot approval and registration, registration time, optional difficulty applicability]
+remaining_exact_obligations:
+  - Historical gate receipts for the two reused canonical paths were not located in this run; do not claim a fresh transaction confirmation for them.
+  - The source makes public access immediate upon posting and explicitly treats any research communication form as potentially an FOF meeting. Existing canon expresses the general privacy and meeting rules; exact timing and form-independent wording should be reviewed before final certification.
+  - Travel preparation thresholds are preserved as printed; no unprinted cumulative-stacking convention is inferred.
+transactions:
+  - path: rules/contacts/srcomp-special-contact-conditions-p64-65.yml
+    commit: a79f930f9b4725dd57c2c1be3f5827874ebf76b1
+    blob: d62e757a330649c5b880607bf7df504f6b872b21
+    baseline_sha256: f4e2e5422885276fb393ba7dfb509e8609086585fe8b171870138b31a46f9cc9
+    candidate_sha256: 50e86412c5c07f86d8ec265061bcbeefc25a16b104701520d351a3ebe3b2c37d
+    immutable_sha256: da150ce2c0d7d282b91db4c024b695ecbc8f22ce617d8c8244e50ab166001271
+    plan_sha256: 18e46c701f4517bafd7ffe0c71b1406c767d5b3b190c4df7ac7403df468090e7
+    confirm_sha256: 6f43b0d8e9fdf84c1623f96f4744587e95b5c83f81ed000ff0fe9178c5493c9d
+    inspect_sha256: 09e35429bd0d53cc045568868b40ab600416d78a8eeebc0817d18cd4af4ffa18
+    index_commit: 58f6a281109c534e78eba0c92e1c3c6f14f97693
+    index_blob: 4021b0bc1c34fcb0f760a5240db0a142fd895908
+    gate: verified
+  - path: rules/contacts/srcomp-shadowland-access-search-conditions-p65-66.yml
+    commit: 98ac7ac454146dc818862aa57c28c3aa9ef817c2
+    blob: 362fabba00eef947a590dce7a17e34986a1194b4
+    baseline_sha256: 7725a3b43f62430461a494c75badab263f71aa363bb81cffa347c1aa242b1763
+    candidate_sha256: ba50d6bd64d51e66334433f7976c2998470803ee1e838f77653472058ce9468a
+    immutable_sha256: 2055bfea5fa2b7d79bcd916b227ba64cb54c0eb687c68b4e8bf95da0591b01c9
+    plan_sha256: 42182f09a23dd221a004c43178850ae741a9fb156ebd9aa8119cbb6534682e43
+    confirm_sha256: cbd5a542549a6edd2741afd605244832e194df1f238e010211352d4b31db93e1
+    inspect_sha256: e8aa1913403b9e7743c2d98b2b8aedf482ea15dfc319e4416dd5c476abe374c3
+    index_commit: 29f1e8ca4f53813e52b0daa29edbc0efc79a2c5a
+    index_blob: 3982a8a951afb4277a37261898670b04060920d8
+    gate: verified
+index_concurrency: A branch-level HTTP 409 was resolved after confirming the manifest path had not changed. No semantic payload was resubmitted.
+new_verified_records: 2
+new_fully_certified_natural_sections: 0
+global_authorized_pages: 0
+next_scope: Contact Knowledge printed 66-67, then distinct Enemy mechanics.
