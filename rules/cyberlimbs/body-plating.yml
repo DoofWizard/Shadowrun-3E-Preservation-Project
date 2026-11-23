@@ -1,16 +1,53 @@
 id: rule.cyberlimbs.body-plating
 record_type: rule
-name: "Cyberlimb Body Plating"
+name: Cyberlimb Body Plating
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: '35-37'
+pdf_pages: '35-37'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 35, basis: defines}
-scope: {applies_to: ["cyberlimbs with body plating or ablative armor"]}
+scope: {applies_to: [cyberlimbs with body plating or ablative armor]}
 resolution:
-  summary: "Cyberlimb armor is tracked by body location and contributes to overall armor by averaging coverage across the character's body. Ballistic and Impact plating are purchased separately and stack with worn armor; ablative armor adds temporary armor and degrades when struck by sufficiently powerful attacks."
-  inputs: ["armor points by location", "attack type", "external armor"]
-  outputs: ["effective armor and ablative degradation"]
+  summary: Apply location-specific plating, armor averaging and ablative degradation in the fictional SR3 rules.
+  inputs: [plating by location, attack type, attack Power, worn armor]
+  outputs: [effective armor, ablative degradation]
   steps: []
-links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+data:
+  armor:
+    printed: 35
+    eligible_replacements: [cyberlimbs, cybertorso, cyberskull]
+    locations: [arms, legs, head, front torso, back torso]
+    overall_rating: floor(sum of location ratings / 5)
+    called_shot_or_targeted_location: use only that location's Armor Rating
+    cumulative_with_worn_armor: true
+    counts_toward_layering: false
+    average_ballistic_rating_counts_toward_quickness_modifier: true
+    quickness_cross_reference: SR3 p285
+    example: {location_ballistic_ratings: [2, 2, 1, 4, 2], sum: 11, overall_ballistic: 2}
+  plating:
+    printed: 36
+    ballistic_and_impact_purchased_separately: true
+    synthetic_parts: limited amounts; source gives no separate numeric cap here
+    torso_designation: front or rear
+    maximum_per_cyberlimb_ballistic: 10
+    maximum_per_cyberlimb_impact: 10
+    maximum_includes_ablative_bonuses: true
+    torso_front_and_rear_count_separately: true
+  ablative:
+    printed: 36
+    bonus_per_point_to_each_armor_rating: 2
+    degradation_condition: attack Power greater than 3 times points of ablative armor
+    degraded_bonus: 1
+    degraded_bonus_scope: Source states the bonus to ballistic and impact armor is reduced to 1; retain wording without inferring an additional per-panel rule.
+    panel_replacement: {test: appropriate Build/Repair, target_number: 5, base_minutes_per_point: 5}
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: [entity.cyberware.cyberlimb-body-plating-ballistic, entity.cyberware.cyberlimb-body-plating-impact, entity.cyberware.cyberlimb-ablative-armor]}
 sources:
-  - {source: source.mm, pages: "35-37", relation: defines, note: "Cyberlimb armor, body plating and ablative armor rules"}
+  - {source: source.mm, page: 35, relation: defines, note: Armor}
+  - {source: source.mm, page: 36, relation: defines, note: Body Plating game effects}
+  - {source: source.mm, page: 37, relation: reference, note: Market rows match existing plating entities; no second purchase or bonus}
 notes: []
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF pp35-37: armor and body plating'
+framing: reference_exact
