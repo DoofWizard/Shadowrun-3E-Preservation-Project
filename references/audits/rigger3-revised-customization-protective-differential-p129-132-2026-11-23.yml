@@ -1,0 +1,104 @@
+{
+  "audit_id": "rigger3-revised-original-differential-p129-132-2026-11-23",
+  "type": "original_source_image_comparison_and_confirmed_transaction_receipt",
+  "publication": {
+    "title": "Rigger 3 Revised",
+    "publisher": "FanPro",
+    "catalog": "FanPro10662",
+    "edition": "Shadowrun Third Edition",
+    "source_id": "source.fanpro-10662",
+    "original_pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+    "original_pdf_pages": 210,
+    "original_pdf_bytes": 40997045
+  },
+  "historical_comparison": {
+    "title": "Rigger 3",
+    "publisher": "FASA Corporation",
+    "catalog": "FASA7910",
+    "source_id": "source.r3",
+    "pdf_sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860"
+  },
+  "independent_original_image_review": {
+    "revised_printed_pages": [
+      129,
+      130,
+      131,
+      132
+    ],
+    "revised_physical_pdf_pages": [
+      131,
+      132,
+      133,
+      134
+    ],
+    "historical_printed_pages": [
+      129,
+      130,
+      131,
+      132
+    ],
+    "method": "Direct visual examination of actual source PDF page renderings for both editions; compared each specific printed table field and condition, not an OCR/secondary-errata substitution",
+    "actual_source_pdf_hash_verified": true,
+    "findings": [
+      "Printed p129 control systems: revised Drive-by-Wire, Improved Control Surfaces, Improved Suspension and Motorbike Gyro-Stabilization design/parts multipliers differ from historical original; revised Drive-by-Wire installation base time also differs",
+      "Printed p130 Off-Road Suspension design cost uses 0.5 chassis multiplier instead of historical 1.5",
+      "Printed p131 ablative armor has explicit revised 3-level cost and Availability rows plus a 6-hour Vehicle B/R (4) installation test; FASA original lacks costs/Availability and says no Skill Test",
+      "Printed p132 concealed armor adds +1 vehicle Handling per full six armor points in revised edition; original lacks that sentence"
+    ],
+    "editorial_reviewed_paths": [
+      "headline",
+      "summary",
+      "data.source_context",
+      "data.revised_costs",
+      "data.ablative_armor",
+      "data.concealed_armor",
+      "data.edition_lineage",
+      "data.provenance"
+    ],
+    "source_limitation": "Comparison documents only verified edition-specific differences; existing uncopied restrictions/caps continue to apply and were not re-authored as duplicate rules"
+  },
+  "actual_local_gate_evidence": {
+    "preservation_method_verify_source": "source_pdf_hash_verified",
+    "connector_preflight_selftests": 29,
+    "source_images_inspected": true,
+    "transaction_recovery_stage_and_prepare": "passed both",
+    "ingestion_gate_confirm": "verified both",
+    "transaction_recovery_inspect": "verified both"
+  },
+  "new_semantic_records": [
+    {
+      "id": "rule.vehicles.r3-revised-control-customization-costs-p129-130",
+      "path": "rules/vehicles/r3-revised-control-customization-costs-p129-130.yml",
+      "commit": "505ee456df16dfdd40a1c008707b6c5100e51b8e",
+      "blob": "d601dc26f541fec68d057b9029c17c0c155dc5a9",
+      "baseline_sha256": "f14ed7c192c9b1fe6dbfd4844d8b691b442a0cd8bf663185df714d50f5febc1e",
+      "candidate_sha256": "42f909ec43b743395c32fdc3a8e6be7fa40b576f8f293b45ec3aad2b8977abd8",
+      "immutable_sha256": "1f779e768c544d8103777193ad593d987f0218d925a8a69c0d077132c8e86c9b",
+      "confirmed": "verified"
+    },
+    {
+      "id": "rule.vehicles.r3-revised-ablative-concealed-armor-p131-132",
+      "path": "rules/vehicles/r3-revised-ablative-concealed-armor-p131-132.yml",
+      "commit": "71a3753e93811fceabe9aec14d4e121db82658cd",
+      "blob": "08ab462b3876ce2722ffbdd47377acc8548171b9",
+      "baseline_sha256": "37be7d38b98e55abd379a8d8fb86eec07885341710235ed1be04669627e44e89",
+      "candidate_sha256": "9eba191794bbaccb3f4a77dbff48c507552d7d51da02235495ea10316508be8d",
+      "immutable_sha256": "c55f86e2e75f8b0999050d3dc07ec5b844660b57e1fdb7478bd458f7c5cad443",
+      "confirmed": "verified"
+    }
+  ],
+  "manifest_index": {
+    "path": "sources/manifests/Rigger3Revised.yml",
+    "commit": "41e6e6cdf3b2e15e1f7bfd5113bf7f1f6b8230c7",
+    "readback_blob": "77d038ade1ebdd85de640a1cf596579cf8e1983e",
+    "entries_before": 13,
+    "entries_after": 15
+  },
+  "global_worker": {
+    "active_source": "source.fasa-7212",
+    "denver_checkpoint": "printed p45/PDF46",
+    "contiguous_pages_added": 0,
+    "source_transition": false
+  },
+  "scope_notes": "FASA7001 451-record available-original mechanics acceptance untouched; FASA7001 p308 owner-accepted nonblocking omission; full revised book, global source completion and executable engine not certified."
+}
