@@ -21,11 +21,26 @@ source_review_scope:
   reviewed_original_printed_pages:
   - 25
   - 49
+  - 57
+  - 58
+  - 61
+  - 62
+  - 68
+  - 74
+  - 75
   original_to_pdf_page_mapping:
     '25': 27
     '49': 51
-  source_reviewer_note: Only these two original pages independently compared against
-    FASA7910 printed pp25,49; no contiguous scan, other-page or whole-book claims.
+    '57': 59
+    '58': 60
+    '61': 63
+    '62': 64
+    '68': 70
+    '74': 76
+    '75': 77
+  source_reviewer_note: Independently reviewed original revised pp25,49,57-58,61-62,68,74-75
+    against original FASA7910 same printed pages; only individual examined images,
+    not a contiguous scan or whole-book completeness claim.
 global_worker_control:
   active_source_unchanged: source.fasa-7212
   denver_checkpoint_unchanged: printed p45 / PDF46
@@ -59,6 +74,58 @@ verified_semantic_records:
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
+- id: rule.vehicles.r3-revised-naval-ship-weapon-falloff-p57
+  path: rules/vehicles/r3-revised-naval-ship-weapon-falloff-p57.yml
+  range_printed: [57, 57]
+  range_pdf: [59, 59]
+  content_class: rule_exact
+  commit: b3761878e8caebf07cc0307bf63f81a59b4802a3
+  blob: e62c1a0e731929355fdfb37cbdc50f3a314ec48d
+  baseline_sha256: 3c939c3e576c6cf95f0024254451f9ce8ae9e64e37b6a4ee4049364d08ca4806
+  candidate_sha256: 3c7aed7fb2263dfefd63777807ece3d98d58e20776bd43c37b7f4755fb549973
+  immutable_sha256: 59e9651a35baec243a1d443435d0314fbd9103bcd4fed4cf9132f8aa97430889
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-body-idle-economy-p61-62
+  path: rules/vehicles/r3-revised-body-idle-economy-p61-62.yml
+  range_printed: [61, 62]
+  range_pdf: [63, 64]
+  content_class: rule_exact
+  commit: 3bec39e3de41583485c4f6824321e438cd050e46
+  blob: 4d95bcaf02e1cb2e13761f82f20177c1f942167a
+  baseline_sha256: f99700ef05fc87e68d4ef108dd104343664721ae679892b5bfcb40ec9706acbe
+  candidate_sha256: e7fd4b737404bacc04eaa96fd690ca844acff6f074e9ee9b39f78c9ec4b002b6
+  immutable_sha256: b48f0f64c82b112a9d790f36c113dca7e60f31b7e03aaf72ef0173b07fd7d4e8
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-flight-ceiling-jet-propeller-p68
+  path: rules/vehicles/r3-revised-flight-ceiling-jet-propeller-p68.yml
+  range_printed: [68, 68]
+  range_pdf: [70, 70]
+  content_class: rule_exact
+  commit: 1bd26ae11a1f80c1913750c72a99e6d222dc0a2f
+  blob: b02b92befe283656cfce472d7473577aa587bed7
+  baseline_sha256: a3812f8ef6b0d1793cb00255c43a3c13f2a399d0e0ea974dcbbd118e54a8a9bf
+  candidate_sha256: d48b1cfd588206018231d8c3db412aafbe5d630074c29401543bee0b85aa671e
+  immutable_sha256: 8cb3b2148c594a6133f55a3b68a3063327799c6f0d53d7eeff43eff005d971d0
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-out-of-fuel-custom-grade-p74-75
+  path: rules/vehicles/r3-revised-out-of-fuel-custom-grade-p74-75.yml
+  range_printed: [74, 75]
+  range_pdf: [76, 77]
+  content_class: rule_exact
+  commit: fd372c2d5f1d52b67f354d34fb8e7a0432700b71
+  blob: e9b26da5b17d63344b0ac7326019d45c5f6db8d9
+  baseline_sha256: b73120c8694cde89cab4db0494e925be4c8afbcad4c77770b79c59de1f350c9e
+  candidate_sha256: 4548bbdf9b40110f58425143649fbfe77caef3db037dd12e722325837ee20542
+  immutable_sha256: da509a979c9d5a80fc6af06f77c5e8ece1ea6580e38bfa785565c60e457233ad
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
 pending_normalization: []
 notes:
 - FanPro10662 is a distinct revised-edition rules source, not an in-place replacement
@@ -67,3 +134,9 @@ notes:
 - Initial nonactive source-specific provenance admission only; leave existing Denver
   main manifest/checkpoint, prior books, historical source registries, and original
   edition mechanical lineage unchanged.
+- Revised p58/PDF60 still prints the same ship-damage-control repair-time formula as
+  FASA7910; a separate errata proposal is not original-page-certified. Preserve
+  the ambiguity and do not silently change the original mechanical rule.
+- Revised p74/PDF76 retains a worked-example/general-test mismatch regarding
+  Vehicle Test successes and coasting distance; source fields are preserved
+  separately and engine interpretation is unresolved.
