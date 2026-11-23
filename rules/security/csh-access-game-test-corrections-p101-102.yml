@@ -1,0 +1,39 @@
+id: rule.security.csh-access-game-test-corrections-p101-102
+record_type: rule
+status: ingested
+source: source.fasa-7118
+printed_pages: '101-102'
+pdf_pages: '110-111'
+edition_scope: Shadowrun Second Edition, FASA7118 Corporate Security Handbook, FASA Corporation, 1995; SR3 supersession unresolved.
+content_class: [rule_exact]
+data:
+  corrects_records:
+  - id: rule.security.csh-biometric-access-p101
+    blob: 686adf9dea080bddeb8ea522631cbaf13766fc88
+  - id: rule.security.csh-voice-recognition-ccss-p102
+    blob: f50bc71a249983b8d9cd6042617c065ae60c358d
+  field_corrections:
+    keypad_case_removal:
+      source_page: 101
+      default_barrier_rating: Keypad Rating
+      exception: Differently rated casing is possible but uncommon outside the highest-end game systems.
+      target_number_visibility: GM keeps the anti-tamper test target number secret from players.
+      task_time_cross_references: [Shadowrun p56, Shadowrun Second Edition p68]
+    keypad_circuit_override.situational_modifiers:
+      source_page: 101
+      applies_to: Both keypad tests
+      cross_references: [Shadowrun p154, Shadowrun Second Edition p183]
+    cardreader.circuit_test:
+      source_page: 101
+      first_game_test_target: 2 x Cardreader Rating
+      first_game_test_base_time_seconds: 60
+      second_game_test: Same as the keypad Electronics Test with a +2 target number modifier.
+      correction: The earlier record incorrectly assigns the first test target to the second test.
+    voice_recognition:
+      source_page: 102
+      recognition_test_roller: Player
+      deception_test_roller: Gamemaster
+      note: Preserve the unusual printed assignment of dice rollers without reversing their roles or changing the opposed test.
+framing: reference_exact
+headline: FASA7118 fictional Second Edition tabletop dice-test corrections, pp101-102/PDF110-111
+summary: Restores the original game-rating qualifications, edition-specific rule references, distinct abstract test targets, and explicit player/GM dice assignments.
