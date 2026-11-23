@@ -1,0 +1,81 @@
+audit_id: rigger3_revised_two_source_specific_rules_2026_11_23
+audit_type: source_verified_revised_edition_mechanics_ingestion
+status: two_new_semantic_records_confirmed_and_source_indexed
+publication:
+  title: Rigger 3 Revised
+  publisher: FanPro
+  edition: Shadowrun Third Edition
+  catalog_number: FanPro10662
+  source_id: source.fanpro-10662
+  original_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  original_pdf_bytes: 40997045
+  original_physical_pdf_pages: 210
+historical_source:
+  title: Rigger 3
+  publisher: FASA Corporation
+  catalog_number: FASA7910
+  source_id: source.r3
+  original_pdf_sha256: 0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860
+  historical_manifest_path: sources/manifests/Rigger3.yml
+  historical_canon_changed: false
+source_review:
+  method: independent_original_page_image_comparison_of_fresh_owner_connected_original_pdfs
+  original_page_pairs:
+    - {printed: 25, historical_physical_pdf: 25, revised_physical_pdf: 27}
+    - {printed: 49, historical_physical_pdf: 49, revised_physical_pdf: 51}
+  findings:
+    - {printed_page: 25, specific_delta: revised_virtual_dashboard_datajack_driving_test_minus_one_target_number, prior_edition_prints_delta: false}
+    - {printed_page: 49, specific_delta: revised_three_success_vigilance_level_orange_historical_level_amber, success_threshold_change: false}
+  first_pass_editorial: full_new_semantic_fields_reviewed_as_original_fictional_tabletop_rules_before_baseline_freeze
+  source_fidelity_limit: only_the_two_printed_pages_are_claimed_as_original_image_reviewed
+verification:
+  actual_repo_preservation_method_verify_source: source_pdf_hash_verified
+  verified_source_manifest_exact_git_blob: 1391e38e4397ff901548c5c4dbb149acd2c11153
+  connector_preflight_selftests_passed: 29
+  actual_transaction_recovery_stage_and_ingestion_gate_prepare: true
+  actual_ingestion_gate_confirm_and_transaction_recovery_inspect_verified: true
+  exact_original_semantic_github_contents_readbacks: true
+  strict_source_manifest_yaml_reviewed_before_and_after_index: true
+source_specific_manifest:
+  path: sources/manifests/Rigger3Revised.yml
+  nonactive_seed_commit: b212b4e368f9a9cacdcd60f9b7799630e7a38dbb
+  nonactive_seed_blob: 1391e38e4397ff901548c5c4dbb149acd2c11153
+  verified_index_commit: d3ebbd7e29efbd09a3e47111842b96f97029d0e8
+  exact_index_blob: b97c2b56e3225ee47fd85d9ad2760efcb3934aa7
+  distinct_new_source_registrations: 2
+semantic_records:
+  - path: rules/vehicles/r3-revised-datajack-virtual-dashboard-driving-tn-p25.yml
+    id: rule.vehicles.r3-revised-datajack-virtual-dashboard-driving-tn-p25
+    printed_page: 25
+    pdf_page: 27
+    content_class: rule_exact
+    commit: 57d2f6e20b8636c05c33cf7024ce950a8d0a50f8
+    exact_readback_blob: f17dca58f642acb006f65374e1e99d16189fb3cb
+    baseline_sha256: 06ffba69e91d8c48fef8f17d8f6cd1dead85ee0290d48ecf49d5a5d3c9db6dcf
+    candidate_sha256: 3c99622e263f11e72b0abf104a85f874103e8e1a00191c58d97af249852afb96
+    immutable_sha256: f2cb656c2a31116fac76ffd5275c906ffff4da265f4b260c04c59b1df361b6a5
+    gate: verified
+  - path: rules/security/r3-revised-vigilance-code-criteria-p49.yml
+    id: rule.security.r3-revised-vigilance-code-criteria-p49
+    printed_page: 49
+    pdf_page: 51
+    content_class: rule_exact
+    commit: 7e635dbc5f6091ab09dcc800d8f72c133b4362fa
+    exact_readback_blob: 1570c2bf6f48afe1af1eacdc5c462f2f530341ec
+    baseline_sha256: 26139d2dc811159817e2f2a4dcf206d1757d3e6cdd29c47b9063a75b0832ea50
+    candidate_sha256: 9c53329000a663f747dba30f52635ec759a3a71d345bc0d61efc5ba05323f608
+    immutable_sha256: 101434c9d16991590c6e87b94dd6cc3d14e56080853f1dea1cd9cdd0746641e4
+    gate: verified
+scope_and_boundaries:
+  original_fasa7001_core_acceptance_reopened: false
+  original_fasa7001_printed_p308_omission_unchanged: true
+  denver_active_source: source.fasa-7212
+  denver_historical_checkpoint: printed_45_pdf_46
+  denver_missing_pages_46_47_reopened: false
+  source_transition_claimed: false
+  worker_checkpoint_changed: false
+  source_wide_revised_original_transcription_certified: false
+  runnable_engine_implementation_certified: false
+  new_global_authorized_contiguous_printed_pages: 0
+  new_semantic_records: 2
+next_obligation: inspect_another_distinct_actual_original_rigger3_revised_mechanic_or_other_lawful_pending_source_without_duplicating_two_accepted_records
