@@ -3,40 +3,44 @@ record_type: rule
 name: "Bioware and the Awakened"
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: "78"
+pdf_pages: "79"
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 78
   basis: extends
-
 scope:
   applies_to:
-    - "Awakened characters with bioware"
-
+    - "Awakened characters with bioware, including cultured bioware"
 resolution:
-  summary: "Bioware does not permanently reduce Magic like cyberware Essence loss, but total Bio Index produces a virtual reduction of effective Magic for relevant magical purposes. The reduction equals Bio Index rounded down to a whole number, subject to the detailed magical interaction rules."
-  inputs:
-    - "Magic"
-    - "Bio Index"
-  outputs:
-    - "effective Magic for affected calculations"
-
+  summary: "For affected magical calculations, subtract total Bio Index from base Magic, then round the result down to a whole number. The actual Magic Attribute and Essence do not decrease because of this bioware modifier."
+  inputs: [Magic, Bio Index]
+  outputs: [effective Magic for affected calculations]
+data:
+  effective_magic:
+    formula: "floor(base Magic Rating - total Bio Index)"
+    application: [Drain calculation, whether Drain causes Physical damage, adept power maximum levels, warding, astral combat, any other calculation using Magic Rating]
+    base_magic_loss: false
+    essence_loss_from_this_rule: false
+    zero_or_negative: "The character retains magical ability; its effectiveness is impeded rather than permanently lost."
+    geasa: "Geasa cannot offset this modifier because no Magic points have been lost."
+    initiation: "Initiation remains available to increase base Magic and reduce the impact of bioware."
+  source_cross_reference: "SR3 p168, adept power limits"
 links:
-  uses:
-    - rule.bioware.bio-index
-    - rule.magic.magic-attribute
-  affects:
-    - subsystem.magic.core
+  uses: [rule.bioware.bio-index, rule.magic.magic-attribute]
+  affects: [subsystem.magic.core]
   modified_by: []
-  interacts_with:
-    - rule.cyberware.magic-interaction
-
+  interacts_with: [rule.cyberware.magic-interaction]
 sources:
   - source: source.mm
     page: 78
     relation: extends
     note: "Bioware and the Awakened"
-
 notes:
-  - "The underlying Magic Attribute is not itself permanently lost solely from Bio Index."
+  - "This source distinguishes virtual Magic reduction from actual loss. Round the final modified Magic Rating down, not the Bio Index before subtraction."
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p78/PDF p79: Bioware and the Awakened"
+framing: reference_exact
