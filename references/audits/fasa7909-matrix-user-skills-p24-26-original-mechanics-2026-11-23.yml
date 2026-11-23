@@ -1,0 +1,77 @@
+source: source.matrix
+publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Shadowrun Third Edition}
+scope: Skills, printed pp24-26, physical PDF pp25-27
+source_pdf_sha256: b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe
+source_verification:
+  status: source_pdf_hash_verified
+  page_images_review: still_required_independently
+  original_pdf_pages: 175
+  initial_live_manifest_blob: a54b2692dd35cbb625859dc06086af3e32d0ff9d
+  original_toc_pdf_page: 3
+  original_images_inspected: [25, 26, 27]
+  editorial_preflight_tests: 29
+  exact_script_blobs:
+    connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+original_fields:
+  - {printed_page: 24, pdf_page: 25, heading: Active Skills, evidence: 'Basic access versus manipulation; five Computer specializations; B/R and Etiquette applications; Matrixlink condition on both tactics user and beneficiary.', canonical: rules/matrix/matrix-user-skill-applications-p24-26.yml}
+  - {printed_page: 24, pdf_page: 25, heading: Programming, evidence: 'Utility rating ceiling and general 1.5 multiplier for MPCP and frame cores; detailed frame-type rule discrepancy retained.', canonical: rules/matrix/matrix-user-programming-ceilings-p24.yml}
+  - {printed_page: 24, pdf_page: 25, heading: System Familiarity, evidence: 'Matching system entry, Security rating TN, no action, one additional die per success.', canonical: rules/matrix/matrix-system-familiarity-knowledge-skills-p24-25.yml}
+  - {printed_page: 25, pdf_page: 26, heading: System Familiarity continuation, evidence: 'Current stay duration, one test per stay, reentry, bonus capped at original pool, +4 knowsoft modifier, specializations and discretionary additional system types; all eleven named types including orbital-host exclusion, data searches and proprietary PLTG exception.', canonical: rules/matrix/matrix-system-familiarity-knowledge-skills-p24-25.yml}
+  - {printed_page: 25, pdf_page: 26, heading: Design and other Knowledge Skills, evidence: 'Program plan and 14 named program design categories; component Design Test; otaku echo prerequisite; other examples continued p26.', canonical: rules/matrix/matrix-user-skill-applications-p24-26.yml}
+  - {printed_page: 26, pdf_page: 27, heading: Other Knowledge Skills continuation, evidence: 'Remaining knowledge-skill examples through Seattle LTG; subsequent Dice Pools heading is outside this section.', canonical: rules/matrix/matrix-user-skill-applications-p24-26.yml}
+verified_transactions:
+  - id: rule.matrix.system-familiarity-knowledge-skills-p24-25
+    path: rules/matrix/matrix-system-familiarity-knowledge-skills-p24-25.yml
+    baseline_sha256: 2fd8bb60d18c69dc352d3ff2a9ee9f0a38c85c40355196ff7d9d97f812426cfc
+    candidate_sha256: 437d7125646302378cde55a51aeee01e3bcd521456f2aecde687ad123f4338e0
+    immutable_sha256: d7dc979baeaae5e87ee7c8e1a6aba5b06d2e35205e439576b674cdc4b1efc0ec
+    expected_and_readback_blob: b30393ceb3a92c35ae05462c06e87489629256f7
+    semantic_commit: 56552a308a9cff59b0276d0ac2665e89bfd9df09
+    index_commit: 20e095e94e8b613cc81c26fadf5868a3d7a8ac23
+    index_blob: e8891c548c93cabcdd908a5540683d41c114ebb6
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    recovery_inspect: verified
+    exact_commit_and_live_readback: true
+  - id: rule.matrix.matrix-user-skill-applications-p24-26
+    path: rules/matrix/matrix-user-skill-applications-p24-26.yml
+    baseline_sha256: 74c7e087aded6f91ab7852c8086d2283df4e515766316052a43455e514b0440c
+    candidate_sha256: 8334f38ec7aa309519854695a83a94c493487e49ef631b344a03d60a329ab8b9
+    immutable_sha256: 8196a9abf3aaa6082e3709d39d08ed3bf66d6c349ecde17ebe3d3427bbb3acd2
+    expected_and_readback_blob: 096fa02ec2fe5560e435e3e68e2e2995c812a09a
+    semantic_commit: bd3ac0c6899f6452bda5c1981afa9575a153765d
+    index_commit: 1b08e179e191fa613291567ad55946c1e27ba699
+    index_blob: 5928a2d04983794bea36dd27bfd1f60841836a46
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    recovery_inspect: verified
+    exact_commit_and_live_readback: true
+  - id: rule.matrix.matrix-user-programming-ceilings-p24
+    path: rules/matrix/matrix-user-programming-ceilings-p24.yml
+    baseline_sha256: 4b22430f4083cb8174ebb247d77820c277d6a1cb770953f01bf3ee4645d99545
+    candidate_sha256: 88a6059f79dcdd09bb3c26bd7c4078a60942eb10198acae8ba7d21a38965838d
+    immutable_sha256: 675892efda9b30ee90db68d01ef86e25aec02bb98ca0060df2f0a1f2140ca678
+    expected_and_readback_blob: e1a305009942ba0c2d4bad958f80e37b5685f6a8
+    semantic_commit: 1818cf311d5ed96d38c5f13945569799ec7e29f1
+    index_commit: 509de55a3c942f450fb22497a50f21bb51e2bffe
+    index_blob: 2886584a8dfe3e97d578b4785bd2c641ecf04796
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    recovery_inspect: verified
+    exact_commit_and_live_readback: true
+source_discrepancies:
+  - 'Printed p24 general frame-core ceiling is retained alongside the previously accepted type-dependent frame and agent limits; no new precedence inferred.'
+  - 'Printed p25 Info Sortilage cross-reference to p55 retained verbatim as a page reference, without assuming a correction.'
+  - 'Program design and other Knowledge Skill lists are open-ended in the source, not an exhaustive permitted-skill catalog.'
+closure:
+  skills_mechanical_fields: source_accounted_for
+  full_matrix_user_chapter: not_certified
+  programming_pp76_94: previous_closeout_reused_not_reopened
+  next_review: Attributes and Reaction/Initiative pp22-24, then remaining Matrix User special-case conditions and subsequent source-specific sections.
+  globally_authorized_pages: 0
