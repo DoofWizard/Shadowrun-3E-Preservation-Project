@@ -344,6 +344,29 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_nanoware_field_backfill_2026_11_23:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    original_images_reviewed: "Printed pp98-100 = physical PDF pp99-101; copyright p5 identifies FASA 1999; following p101/PDF102 starts Chemistry."
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8", page_images_review: still_required_independently, exit_code: 0}
+    preflight_self_test: "29 passed; scripts hash-matched to live Git blobs."
+    records:
+      - id: rule.nanotech.nanite-loss
+        path: rules/nanotech/nanite-loss.yml
+        printed: "99-100"
+        pdf: "100-101"
+        commit: "5ea6b56d589adb9bd375342f313bfcce0231bddf"
+        blob: "9010d541ef6bcc7dacc95b644683da4d152fae47"
+        candidate_sha256: "0e7147c6f049c051bf5b60107811b94b17b0ec58eaf5fb90989b308792fe698d"
+        baseline_sha256: "2c8c925ab7e0e71e65325b7321ed44257746ca183af9c2ad880a7dcc0c0d3ebe"
+        immutable_sha256: "dde7d4b809b578dc6c8d6d196b489141b6e9e63177942d9ff257cc639daee623"
+        gate: verified
+        fields: "All six loss-table cells, three effectiveness rows, cumulative loss, healing exception, maintenance interval, immediate replenishment, and source discrepancies at 25 percent remaining and worked-example arithmetic."
+    deferred:
+      - "Detection update encountered GitHub Contents HTTP 409 during concurrent branch advancement; no confirmation. Refetch and independently reconcile."
+      - "Excessive nanoware and acquisition, classification, installation, immune-tailoring and no addiction penalties still require exact field reconciliation."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
