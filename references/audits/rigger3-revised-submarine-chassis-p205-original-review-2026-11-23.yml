@@ -1,0 +1,86 @@
+{
+  "protocol": "shadowrun-pass-b-source-comparison-and-transaction-audit/v1",
+  "source": {
+    "title": "Rigger 3 Revised",
+    "publisher": "FanPro",
+    "catalog_number": "FanPro10662",
+    "edition": "Shadowrun Third Edition",
+    "id": "source.fanpro-10662",
+    "pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+    "physical_pages": 210,
+    "actual_repository_verify_source": "source_pdf_hash_verified"
+  },
+  "historical_source": {
+    "title": "Rigger 3",
+    "publisher": "FASA Corporation",
+    "catalog_number": "FASA7910",
+    "id": "source.r3",
+    "pdf_sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860",
+    "comparison_direct_original_image": true
+  },
+  "scope": {
+    "revised_printed_pages": [
+      205,
+      205
+    ],
+    "revised_pdf_pages": [
+      207,
+      207
+    ],
+    "historical_printed_pages": [
+      205,
+      205
+    ],
+    "historical_pdf_pages": [
+      205,
+      205
+    ],
+    "section": "Vehicle Chassis Table — Submarine List",
+    "original_review_summary": "Image comparison of two edition-original printed p205 sheets. Original FASA7910 table contains Commercial Subs, Minisubs, Patrol Submarine and Sea Sleds. FanPro10662 adds Attack Submarine, Bathyscaph and Boomer complete chassis rows before existing categories. These vessels are not alleged to be newly invented: historical power-plant table already includes related types on earlier pages.",
+    "reviewed_other_images": "Revised printed pp206-207 contain blank record-sheet layouts; p208 is FIN illustration. Original pp206-207 likewise record sheets. No unique rule data claimed from these leaves.",
+    "source_value_restrictions": "Exact printed paired depths, dashes, H/B suffixes, entry-point labels, and mark-up decimals retained; no fabricated depth unit or numeric dash interpretation; unchanged rows not resubmitted."
+  },
+  "semantic_record": {
+    "id": "equipment.vehicles.r3-revised-added-submarine-chassis-p205",
+    "path": "equipment/vehicles/r3-revised-added-submarine-chassis-p205.yml",
+    "content_class": "equipment_stat",
+    "new_rows": [
+      "Attack Submarine",
+      "Bathyscaph",
+      "Boomer"
+    ],
+    "commit": "99e9a8e478bcbd0eaf0b293f8b993fc3f2dd8866",
+    "blob": "8b1907b7cd59deba66a682a245073d8f6fb32a05",
+    "baseline_sha256": "66a7635c1b1ec824814c89bf03967abd97161ba9762cca9bb3c6f96e0c622a81",
+    "candidate_sha256": "d4cd136f92798a297df91a700124c5cd9aaa6cdda6b0e8fa163d11c2f9715579",
+    "immutable_sha256": "dc9b0de172f2c122d9fd649dc24b1bf307a0b92666e5fca765063f6fd6ea34bb",
+    "actual_prepare": "transaction_recovery.py stage invoking ingestion_gate.py prepare preflighted",
+    "actual_contents_write": "create_file; exact source bytes confirmed by fresh fetch_file",
+    "actual_confirm": "ingestion_gate.py confirm status verified",
+    "actual_recovery_inspect": "transaction_recovery.py inspect status verified"
+  },
+  "index": {
+    "manifest": "sources/manifests/Rigger3Revised.yml",
+    "commit": "5efc3bc44d898cf83b1e40ff60b44b4a911bfdf1",
+    "blob": "3e061c0bd642479354139719b8c085d113cc33d1",
+    "registered_semantic_records": 37,
+    "registration_new": 1,
+    "contiguous_advance": false
+  },
+  "preflight": {
+    "self_tests_passed": 29,
+    "verify_source_actual": true
+  },
+  "preserved": {
+    "core_fasa7001_accepted_records": 451,
+    "core_acceptance_not_repeated": true,
+    "global_active_source": "source.fasa-7212",
+    "global_checkpoint": "printed p45/PDF46",
+    "denver_pp46_47": "archived unchanged",
+    "sr3_core_p308": "owner-accepted nonblocking unobserved",
+    "new_global_contiguous_pages": 0,
+    "whole_revised_book_complete": false,
+    "executable_engine_certified": false
+  },
+  "next_valid_review": "Reconcile genuinely unreviewed revised-source mechanics against existing 37 accepted records and original edition, without inventing differences from page reflow; historical FASA7118 pp34-61 audit debt remains separate."
+}
