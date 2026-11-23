@@ -74,6 +74,8 @@ source_review_scope:
   - 187
   - 191
   - 193
+  - 194
+  - 195
   - 197
   - 199
   - 202
@@ -136,6 +138,8 @@ source_review_scope:
     '187': 189
     '191': 193
     '193': 195
+    '194': 196
+    '195': 197
     '197': 199
     '199': 201
     '202': 204
@@ -722,6 +726,19 @@ verified_semantic_records:
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
+- id: equipment.vehicles.r3-revised-chemical-rocket-diesel-table-p194-195
+  path: equipment/vehicles/r3-revised-chemical-rocket-diesel-table-p194-195.yml
+  range_printed: [194, 195]
+  range_pdf: [196, 197]
+  content_class: equipment_stat
+  commit: d57bc765ed7eb443236bfed0183bde1aeb41ddfc
+  blob: 61f770509327972f708b4c0193b7f1d51139adf2
+  baseline_sha256: 19aa61ca0056a83629c2c083b103cf6bf35bf33cd33f2cd224cc2adbd4960316
+  candidate_sha256: ebf29fbdaa4fdee8d38d4c241a657f2ffc9ce5586a815d4d23705162ad0ba040
+  immutable_sha256: 05eb05f806e69d8bd17834d38d2b40bcada2a0e4e2344113486ffa0a7787c6a4
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
 pending_normalization: []
 notes:
 - FanPro10662 is a distinct revised-edition rules source, not an in-place replacement
@@ -738,3 +755,23 @@ notes:
   separately and engine interpretation is unresolved.
 - Revised vehicle list original printed pp163-168/PDF165-170 compared directly to historical FASA7910 same printed pp163-168. Three separate equipment-stat records were prepared, committed with exact Git byte readback, confirmed and source-indexed; only differing fields recorded, no global contiguous advancement.
 - Revised subcompact and medical transport Vehicle List printed pp169-170/PDF171-172 independently image-compared to historical FASA7910 original pages. Only source-demonstrated different fields were added with actual transaction confirmation and noncontiguous indexing; printed Availability dash preserved as unresolved rather than zero.
+
+# Original image review of adjacent Power Plant Table categories, not a bookwide closure.
+power_plant_chemical_rocket_diesel_comparison_2026_11_23:
+  revised_original_printed_pages: [194, 195]
+  revised_physical_pdf_pages: [196, 197]
+  historical_original_printed_pages: [195, 196]
+  historical_physical_pdf_pages: [195, 196]
+  revised_verify_source_actual_status: source_pdf_hash_verified
+  historical_pdf_computed_sha256: 0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860
+  original_page_images_inspected: true
+  actual_stage_prepare_confirm: verified
+  source_record: equipment/vehicles/r3-revised-chemical-rocket-diesel-table-p194-195.yml
+  semantic_commit: d57bc765ed7eb443236bfed0183bde1aeb41ddfc
+  semantic_blob: 61f770509327972f708b4c0193b7f1d51139adf2
+  reused_historical_reference_blobs:
+    chemical_rockets: 581f05ca71c2062711aac759bd9a31a85b0700ba
+    diesel: 537ccb3ff6c751fa8d412413b2fc9b008ba3ea92
+  unresolved: Full numeric field-to-canonical audit of the remaining power-plant categories and unchanged historical Diesel rows; no blanket eligibility prohibition inferred from the missing historical Sports Car row.
+  new_global_contiguous_pages: 0
+  whole_book_rules_complete: false
