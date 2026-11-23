@@ -1,0 +1,48 @@
+id: rule.shadowbeat-urban-brawl-penalties-p72-73
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '71-73'
+pdf_pages: '80-82'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat original Urban Brawl penalties, pp71-73/PDF80-82
+summary: Fictional match penalty states, rule violations, and inconsistent original offense clocks.
+framing: reference_exact
+data:
+  publication: {title: ShadowBeat, publisher: FASA Corporation, year: 1992, catalog_number: FASA7109, source_id: source.fasa-7109}
+  penalty_types:
+    wound: individual player immobilized for rest of play
+    kill: individual player ejected, replacement at start of next quarter; if all functional players on side earn kill penalties in a quarter, team forfeits
+    freeze: subteam or team immobilized until officials release penalty
+    countdown_seconds: 10
+    indicator: surrender lights blink during penalty; movement under penalty triggers fictional uniform disabling effect
+    disabling_penalty_circuit: kill penalty
+    kill_circuit_duration: until escort arrives
+    medico_exception: no penalty circuit, not subject to ordinary wound, kill or freeze; rule violation ejects medico with immediate replacement
+    team_freeze: cancels opposing team's active wound and kill penalties
+    simultaneous_penalties_all_active_players: not a wipeout; ball dead, opponent chooses normal reset option
+  insufficient_offense:
+    p71_match_text: {leave_own_goal_block_seconds: 30, leave_adjacent_goal_street_blocks_additional_seconds: 30}
+    p72_p73_penalty_text: {leave_own_goal_block_seconds: 60, leave_adjacent_goal_street_blocks_total_seconds: 120}
+    discrepancy: Original sections disagree on first and second clocks; neither takes precedence without a separate adjudication.
+    stationary_block_limit_seconds: 60
+    result: freeze every teammate except ball carrier until carrier moves into legal block
+    discretionary_call: official may penalize failure to make progress toward opposing goal
+    clock_pause: insufficient-offense timer pauses during carrier combat and resumes with unused time afterward
+  violations:
+    deliberate_fire: kill; team automatically loses if game must be cancelled
+    deliberate_attack_on_disabled_or_surrendered: kill
+    deliberate_attack_on_penalized: {miss: wound, hit: kill}
+    outside_information: team forfeits, including magical or technological assistance
+    leaving_zone: wound
+    deliberate_attack_on_medico: kill; immediate medico replacement if injured or disabled
+    attack_on_official: kill
+    unauthorized_ball_carrier: medico, outrider, or passenger on outrider cycle; immediate dead ball and opponent reset choice
+    ball_carrier_mounts_outrider_cycle: immediate dead ball and opponent reset choice
+    unnecessary_property_damage: wound; game-related justified damage exempt
+    unsportsmanlike_conduct: wound or kill at referee discretion, includes arguing with official decision or media-device interference
+    unauthorized_firearm_pickup: wound
+  officials: {count_per_block: [2, 4], armor: Partial Heavy Armor with white glow paint and role markings, roles: [referee, technician, biotech]}
+  edition_lineage: {sr3_status: unsuperseded_candidate_not_yet_compatibility_verified, dependency: preserve original in-world competition penalties, not new SR3 injury or damage rules}
+  source_review: {printed: '71-73', pdf: '80-82', scope: every printed penalty type and violation, timing contradiction and officials; contextual anecdotes excluded}
