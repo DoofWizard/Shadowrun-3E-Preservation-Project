@@ -1,21 +1,75 @@
 id: rule.bioware.used-bioware
 record_type: rule
-name: "Used Bioware"
+name: Used Bioware
 domain: bioware
 status: ingested
-effective: {status: current, source: source.mm, page: 62, basis: defines}
+effective:
+  status: current
+  source: source.mm
+  page: 62
+  basis: defines
 scope:
-  applies_to: ["secondhand bioware"]
+  applies_to:
+  - secondhand bioware
 resolution:
-  summary: "Only basic bioware can normally be obtained secondhand. Cultured bioware is individually matched and cannot simply be transplanted into another recipient. Used basic bioware is less predictable because its biological origin and history may be uncertain."
-  inputs: ["bioware grade/type"]
-  outputs: ["whether secondhand implantation is possible"]
-  steps: []
+  summary: Only basic bioware can be obtained used, at 60 percent of normal cost,
+    with one permanent Stress point that cannot be removed. Cultured bioware cannot
+    be reused. The gamemaster may rule that treatment-like implants are not available
+    used.
+  inputs:
+  - bioware grade/type
+  outputs:
+  - whether secondhand implantation is possible
+  steps:
+  - Confirm the implant is basic grade and physically reusable at the gamemaster’s
+    discretion.
+  - Multiply normal cost by 0.60.
+  - Assign one permanent, unremovable Stress point.
 links:
   uses: []
   affects: []
-  modified_by: [option.bioware.grades]
+  modified_by:
+  - option.bioware.grades
   interacts_with: []
 sources:
-  - {source: source.mm, page: 62, relation: defines, note: "Used Bioware"}
+- source: source.mm
+  page: 62
+  relation: defines
+  note: Used Bioware
+- source: source.mm
+  page: 77
+  relation: defines
+  note: 'Used Bioware: price, Stress, and reuse constraints'
 notes: []
+source: source.mm
+printed_pages: 62, 77
+pdf_pages: 63, 78
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  secondhand_grade:
+    printed: 62
+    pdf: 63
+    basic_available: true
+    cultured_available: false
+    cultured_reason: Individually protein-matched to the recipient.
+  purchase:
+    printed: 77
+    pdf: 78
+    normal_cost_multiplier: 0.6
+    permanent_stress_points: 1
+    stress_removable: false
+  reuse_constraints:
+    printed: 77
+    pdf: 78
+    basic_only: true
+    cultured_reuse: false
+    gamemaster_discretion: Treatment or process-based bioware that cannot realistically
+      be transplanted may be unavailable used.
+    example: Enhanced articulation.
+headline: Used bioware — secondhand price, permanent Stress and reuse restrictions
+summary: 'FASA Corporation, Man & Machine: Cyberware (1999, FASA7126), fictional Shadowrun
+  Third Edition tabletop RPG, printed pages 62, 77, physical PDF pages 63, 78. Original
+  game mechanics; source-specific exact-field reconciliation.'
+framing: reference_exact
