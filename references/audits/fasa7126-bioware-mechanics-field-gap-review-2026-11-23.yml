@@ -1,0 +1,99 @@
+audit_id: fasa7126.bioware-rules-field-gap-review.2026-11-23
+audit_type: original_source_field_comparison
+status: open_field_fidelity_debt
+source:
+  id: source.mm
+  title: "Man & Machine: Cyberware"
+  publisher: "FASA Corporation"
+  original_edition: "Shadowrun Third Edition"
+  catalog_number: FASA7126
+  catalog_drive_id: "1WSdpdxUYtQNbbHHO2OGHD4bEJoi2lq_t"
+  original_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+  original_pdf_size_bytes: 92811837
+  original_pdf_pages: 161
+  hash_provenance: "First observed cataloged Drive PDF hash registered 2026-11-23; previous live source manifest had no hash, so prior historical canonical transcriptions are not retrospectively hash-certified."
+  verify_source_command: "python preservation_method.py verify-source FRESH_FASA7126.pdf LIVE_M_AND_M_MANIFEST.yml"
+  verify_source_actual:
+    status: source_pdf_hash_verified
+    source: source.mm
+    sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    page_images_review: still_required_independently
+    exit_code: 0
+  manifest_registration_commit: "c60988d4b9f2c52f00e02cc62759fc66f6baf6d3"
+  manifest_registration_blob: "99413dc10959bb45c028445d2831c773b188a480"
+original_page_review:
+  natural_section: "Bioware Rules"
+  printed_pages: "76-79"
+  physical_pdf_pages_1_based: "77-80"
+  method: "Fresh PDF page images independently visually read; not text-only extraction or OCR-derived assumptions."
+  scope: "Field comparison against seven specifically listed prior canonical records, not full-book or full-corpus certification."
+live_preexisting_canon_compared:
+  - {path: "options/bioware/grades.yml", blob_sha: "98f722dea68319b6086c5c74ba645f6d567195f5"}
+  - {path: "rules/bioware/compatibility.yml", blob_sha: "fd4e733f948c037fbc9458cb475876a4b2610034"}
+  - {path: "rules/bioware/excessive-bioware.yml", blob_sha: "0021d4a61fb9a6c0353f1918a809e5564587273d"}
+  - {path: "rules/bioware/awakened.yml", blob_sha: "8a8822a865ae923019cbd0454445dd4723dd21cb"}
+  - {path: "subsystems/bioware/core.yml", blob_sha: "784bd6b220b025c43b78537fa52ae4d4498731d7"}
+  - {path: "rules/bioware/bio-index.yml", blob_sha: "cf6fb91416c4c6f9ed001c88192d0e4ab38ae1c9"}
+  - {path: "rules/bioware/essence-index.yml", blob_sha: "274b47f2da6f15ffa6fd90c020964d8793179bf4"}
+field_checklist:
+  - key: bioware_grade_basic_as_cultured
+    printed: 77
+    pdf: 78
+    original_fields: ["cost multiplier x4", "table label Essence Index multiplier x0.75", "Availability +2/x5", "25 percent reduction wording in following paragraph", "already-cultured implants excluded from modifiers"]
+    result: partial_in_reviewed_canon
+    gap: "Existing grades canonical record contains a narrative summary but no exact numeric values or exceptions."
+    source_ambiguity: "The original table labels the x0.75 field Essence Index although the surrounding narrative describes its bioware burden; preserve literal original label until independently reconciled rather than silently replacing it with Bio Index."
+  - key: used_basic_bioware
+    printed: 77
+    pdf: 78
+    original_fields: ["60 percent normal cost", "one permanent unrepairable Stress point", "only basic bioware reusable", "gamemaster discretion for impractical reuse"]
+    result: partial_in_reviewed_canon
+    gap: "Existing grades summary has qualitative text without exact price, Stress and reuse conditions."
+  - key: bio_index_essence_index_boundaries
+    printed: 77
+    pdf: 78
+    original_fields: ["cumulative implanted Bio Index", "current Essence plus 3 defines Essence Index", "excessive threshold when Bio Index equals or exceeds Essence Index", "above Bio Index 9 fatal", "one installation of a given implant per character"]
+    result: partial_in_reviewed_canon
+    covered_existing: ["Bio Index accumulation/max 9", "Essence Index formula", "threshold comparison", "one-implant limit qualitatively"]
+    gap: "Existing compatibility record lacks detailed implant and exception table."
+  - key: ordinary_bioware_drawbacks
+    printed: "77-78"
+    pdf: "78-79"
+    original_fields: ["disease/drug/toxin resistance Power increases by 1 for each 2 Bio Index or part", "healing-test Target Number increases by half total Bio Index rounded up, including magical healing", "bioware implant Stress threshold/effect reference"]
+    result: not_exact_in_seven_reviewed_records
+    gap: "Numerical Power, healing modifier and Stress-level rules not present in inspected records."
+  - key: awakened_mana_interaction
+    printed: 78
+    pdf: 79
+    original_fields: ["effective Magic reduced by Bio Index rounded down", "base Magic not actually lost from bioware", "Drain, Physical damage from Drain, adept power-level caps and other Magic uses affected", "effective Magic zero does not destroy magical ability", "geasa cannot counteract bioware reduction", "Magic initiation remains available"]
+    result: partial_in_reviewed_canon
+    covered_existing: ["rounded-down effective Magic reduction", "no permanent Magic loss"]
+    gap: "Context-specific roll/application list, zero-Magic distinction and geasa/initiation exceptions not represented in inspected record."
+  - key: excessive_bioware_drawbacks
+    printed: 78
+    pdf: 79
+    original_fields: ["Physical Overflow reduced by rounded-up Bio Index minus Essence Index excess; natural bioware-enhanced Body used", "resistance tests lose 1 die for each 2 excess points or part", "healing tests lose 1 die for each 2 excess points or part", "each bioware implant treated as permanent unrepairable Light Stress"]
+    result: partial_in_reviewed_canon
+    gap: "Existing rule has descriptive effects but none of the exact numeric procedures, rounding or permanent per-implant Stress."
+  - key: compatibility_table
+    printed: "78-79"
+    pdf: "79-80"
+    original_fields: ["adrenal pump vs move-by-wire", "cat's eyes vs cybereyes/retinal mods", "cosmetic bioware vs dermal plating/sheathing", "digestive expansion vs ingested toxin filter", "enhanced articulation vs cyberlimbs with two-cyberlimb threshold", "extended volume vs internal air tank", "mnemonic enhancer vs skillsofts", "muscle augment/toner vs muscle replacement and compatible with each other", "nictitating membranes vs cybereyes/flare compensation", "orthoskin vs dermal plating/sheathing/cyberlimbs", "reflex recorder vs skillwires", "suprathyroid gland vs move-by-wire", "synaptic accelerator vs wired reflexes/move-by-wire", "tracheal filter vs air filtration/OXSYS"]
+    result: not_exact_in_seven_reviewed_records
+    gap: "Current inspected compatibility canonical is a generic description, not a row-complete named pairwise constraint table."
+  - key: bioware_magic_and_critter_effects
+    printed: 79
+    pdf: 80
+    original_fields: ["metabolic suspension strongest noncumulative effect", "pain-editor/damage-compensator vs adept Pain Resistance and Nerve Strike", "Reaction/Initiative highest-only with adept powers", "thermosense vs visual illusion spells, concealment exception", "critters subject to comparable restrictions and awakened Magic limitations"]
+    result: not_exact_in_seven_reviewed_records
+    gap: "Named interaction exceptions absent from seven inspected canonical records; other source-specific records not yet exhaustively searched."
+certification:
+  full_natural_section_closed: false
+  original_image_fields_reviewed_for_range: true
+  seven_existing_record_content_matches_reviewed_source_at_summary_level: partial
+  all_original_fields_accepted_in_canon: false
+  original_source_complete: false
+  missing_confirmation: "Full repository-wide FASA7126 record inventory, independent accepted-record recheck, and gated exact-field canonical backfill."
+  new_semantic_records_this_run: 0
+  global_checkpoint_writes: 0
+  unverified_or_missing_pages_credited: 0
