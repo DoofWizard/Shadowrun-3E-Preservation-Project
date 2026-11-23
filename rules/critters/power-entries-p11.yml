@@ -1,0 +1,54 @@
+id: rule.critters.power-entries-p11
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '11'
+pdf_pages: '11'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    guard:
+      profile: {type: physical, action: Complex, range: LOS, duration: Sustained}
+      effect: Prevents natural and Accident-power mishaps in terrain controlled by creature.
+    hardened_armor:
+      profile: {type: physical, action: Auto, range: Self, duration: Always}
+      threshold: Attack inflicts no damage if unmodified Power is at most Hardened Armor rating.
+      exception: APDS or AVM ammunition treats Hardened Armor as half rating.
+    hypnotic_song:
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      test: Song targets listeners as (Essence)M attack resisted with Willpower; Damage Code measures effect, not physical injury.
+      reduction: Dampening cyberears reduce to (Essence)L; earplugs may do so at GM discretion.
+      paralysis: Deadly effect prevents action while song continues; an attack against paralyzed victim permits opposed Willpower versus creature Essence; greater victim successes break effect; stopping song ends effect.
+      aftermath: +2 to all target numbers on turn following end of effect
+    immunity:
+      profile: {type: physical, action: Auto, range: Self, duration: Always}
+      armor: twice creature Essence against specified damage type; Power at most twice Essence has no effect; applies to magical and nonmagical effects
+      variants:
+        age: no aging or its effects
+        fire: fire and fire-based attacks
+        cold: cold temperatures and cold-based attacks
+        normal_weapons: excludes combat spells and weapon foci; elemental damage halves immunity effect to armor equal to Essence; APDS, AVM and other armor-piercing ammunition count as normal ammunition
+        control: subtract twice creature Essence from Force of control spell or Essence of control power
+    infection:
+      profile: {type: physical, action: Auto, range: Touch, duration: Permanent}
+      trigger: Essence Drain user may infect suitable creature drained to zero Essence; victim appears to die then returns as creature type of drainer.
+      player_character: After apparent death, becomes GM-controlled non-player character.
+    influence:
+      profile: {type: mana, action: Complex, range: LOS, duration: Instant}
+      test: opposed creature Charisma (Essence if no Charisma) versus target Willpower; net successes determine strength of suggestion
+      effect: Predisposes target to action, reaction or emotion.
+    innate_spell:
+      profile: {type: physical, action: Complex, range: LOS, duration: Instant}
+      resolution: mimics specified spell, usually one effect; use Essence for Sorcery and Force (SR3 p191 onward)
+      dodge: Combat Pool alone cannot completely dodge elemental manipulation effects.
+      damage: Usually (Essence)M, individual critter descriptions may vary Damage Level.
+      defense: Spell defense works here, not against other critter powers except Magical Skill users casting with Sorcery.
+      drain: Normally none; sustaining attack causes (Essence)S Drain under standard rules.
+      sustained_area_square_meters: Essence
+      sustained_dispelling: allowed
+framing: reference_exact
+headline: 'Critters (FASA7002), p11: Guard through Innate Spell'
+summary: 'Fictional FASA7002 Shadowrun Third Edition power mechanics, printed and PDF page 11; source-local profile corrections and additional conditions.'
