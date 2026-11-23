@@ -1,0 +1,58 @@
+id: rule.shadowbeat-urban-brawl-match-p68-72
+record_type: rule
+status: source_reviewed
+source: source.fasa-7109
+printed_pages: '68,70-72'
+pdf_pages: '77,79-81'
+edition_scope: Original FASA 1992 ShadowBeat legacy mechanics; SR3 adaptation unverified
+content_class: [rule_procedure]
+headline: FASA7109 ShadowBeat original Urban Brawl match procedures, pp68,70-72/PDF77,79-81
+summary: Original competition organization, clock, possession, scoring, and player replacement rules.
+framing: reference_exact
+data:
+  publication: {title: ShadowBeat, publisher: FASA Corporation, year: 1992, catalog_number: FASA7109, source_id: source.fasa-7109}
+  league_p68:
+    franchise_limit: 24
+    world_cup_interval_years: 2
+    franchise_challenges: top nonfranchised teams may challenge after World Cup playoffs every two years
+    north_american_super_brawl: annual match between two highest-ranked regional teams
+    standings_formula: described but not supplied
+    national_continental_championships: local rules determined by franchises and commissioners
+    arena_variant: {length_m: 150, width_m: 50, structures: single-story, armor_ballistic: 1, armor_impact: 1, ammunition: stun or gel, dummy_melee_damage: Stun}
+  playing_area_p70:
+    dimensions_m: {minimum_length: 550, minimum_width: 420, maximum_length: 680, maximum_width: 510}
+    approximate_grid: {length_blocks: 4, width_blocks: 3}
+    boundary: open streets on all sides
+    activation_hours_before_match: 24
+  match_p71:
+    quarters: 4
+    playing_minutes_per_quarter: 30
+    maximum_play_minutes: 5
+    ends_early: [goal, quarter expiry, dead ball, wipeout]
+    clock_stops_between_plays: true
+    readiness_minutes_after_play: 5
+    total_elapsed_hours_approx: [4, 6]
+    rest_between_quarters_minutes: 10
+    halftime_minutes: 15
+    ball: {diameter_cm_printed: [65, 70], mass_g: [500, 600], visibility_min_m: 50, carry: hands or under one arm}
+    ball_size_note: Source compares printed diameter to a soccer ball; preserve numerical range without correction.
+    simultaneous_offense_defense: each team has its own ball
+    passing: any offensive player can receive a pass or handoff
+    dropped_ball_recovery_seconds: 10
+    dead_ball: unrecovered dropped ball after deadline or possession by opposing offensive player
+    reset_after_goal_or_play_expiry: both teams at their home goals
+    reset_after_dead_ball: other team chooses both teams restarting at goals or keeping its own current positions while opponents reset
+    insufficient_offense_cross_reference: rules/shadowbeat/urban-brawl-penalties-p72-73.yml
+  scoring_p72:
+    goal_diameter_m: 4
+    goal_relocation: allowed to another boundary-street block at start of quarter
+    valid_goal: ball carried into opposing goal; contact or attachment to carrier required; carrier condition or manner of entry does not invalidate score
+    wipeout: all offensive players on one team disabled or surrendered in one play; opponent wins regardless of score
+  player_status_p72:
+    surrender: voluntary activation of uniform surrender indicator; equivalent to being disabled for wipeout; immobilization for remainder of play, return next play allowed
+    field_treatment: permitted in place by medico; transport only once combat in that game block ceases
+    hospital_evacuation: only ISSV duty physician may order; replacement next play allowed
+    non_evacuated_absence: if player does not return at thirty-second warning, no replacement that play; replacement following play allowed but original player out for rest of game
+    curative_magic: player receiving magical healing cannot return and must be replaced
+  edition_lineage: {sr3_status: unsuperseded_candidate_not_yet_compatibility_verified, dependency: retain game-specific clocks, scoring, and player status; compare SR3 combat and healing independently}
+  source_review: {printed: '68,70-72', pdf: '77,79-81', scope: league rules, arena variant, match timing, scoring, possession and player status; p69/PDF78 illustration contains no mechanics}
