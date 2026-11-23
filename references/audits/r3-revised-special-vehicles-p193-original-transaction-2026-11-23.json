@@ -1,0 +1,111 @@
+{
+  "protocol": "sr3-source-specific-independent-review-and-transaction/v1",
+  "scope": "bounded-revised-edition-mechanical-difference",
+  "review_date": "2026-11-23",
+  "fictional_publication": {
+    "title": "Rigger 3 Revised",
+    "publisher": "FanPro",
+    "catalog_number": "FanPro10662",
+    "edition": "Shadowrun Third Edition",
+    "source_id": "source.fanpro-10662",
+    "original_pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+    "physical_pdf_pages": 210,
+    "printed_pages": [
+      193
+    ],
+    "physical_pdf_pages_reviewed": [
+      195
+    ]
+  },
+  "historical_comparator": {
+    "title": "Rigger 3",
+    "publisher": "FASA Corporation",
+    "catalog_number": "FASA7910",
+    "source_id": "source.r3",
+    "original_pdf_sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860",
+    "printed_pages": [
+      192,
+      193
+    ],
+    "physical_pdf_pages_reviewed": [
+      192,
+      193
+    ]
+  },
+  "verification": {
+    "revised_original_pdf_fresh_sha256_matches_live_manifest": true,
+    "historical_original_pdf_fresh_sha256_matches_catalog": true,
+    "actual_repository_preservation_method_verify_source": "source_pdf_hash_verified",
+    "independent_original_page_images_inspected": true,
+    "connector_preflight_selftests": 29,
+    "source_review_is_not_whole_book_certification": true
+  },
+  "scope_fields": {
+    "section": "Vehicle List / Special Vehicles / Locomotive and Semiballistics",
+    "models": [
+      "Nordkapp-Conestoga Bergen (Tractor)",
+      "Aérospatiale/Saeder-Krupp Grande Concorde Semiballistic",
+      "General Dynamics SV250 Semiballistic"
+    ],
+    "distinct_changed_fields": 16,
+    "source_differences": [
+      "Bergen revised chassis Loco., Non-Rail versus historical Switcher Loco.",
+      "Bergen revised Availability dash versus historical 38/38 days",
+      "The two semiballistic model rows exchange historical handling, speed, acceleration, cargo, load, seating, and purchase price"
+    ],
+    "unchanged_fields_reused": true,
+    "printed_dash_not_converted_to_number": true
+  },
+  "editorial_review": {
+    "first_pass_before_baseline_freeze": true,
+    "reviewed_text_paths": [
+      "headline",
+      "summary",
+      "data.source_context.*",
+      "data.revised_stat_differences[*].model",
+      "data.revised_stat_differences[*].changes[*].field",
+      "data.revised_stat_differences[*].changes[*].historical",
+      "data.revised_stat_differences[*].changes[*].revised",
+      "data.source_fidelity_notes[*]"
+    ],
+    "provenance_and_fictional_narrator_distinguished": true,
+    "protected_source_values_unchanged_between_baseline_and_candidate": true
+  },
+  "semantic": {
+    "path": "equipment/vehicles/r3-revised-special-vehicles-stat-corrections-p193.yml",
+    "id": "equipment.vehicles.r3-revised-special-vehicles-stat-corrections-p193",
+    "content_class": "equipment_stat",
+    "baseline_sha256": "20d60b8d8b389599b7a468877ccc692832480b4ae2e60b5dac1e23b777387730",
+    "candidate_sha256": "15ad908bf396cfd8285a672a2d61eaf6817b3e195ae7266e47446ac5777df0ff",
+    "immutable_sha256": "64560fcf853396afe32a316dd9e2a9bbe12f51df493e2820b378a166ab5a9c7a",
+    "stage": "staged",
+    "prepare": "preflighted",
+    "ordinary_contents_write": true,
+    "commit": "7be902dcefe6f9d3c569ed23cb1a5b376cacb37b",
+    "readback_git_blob": "46009effff6ce86580ef51f5bd8923fc662b2285",
+    "actual_ingestion_gate_confirm": "verified",
+    "actual_transaction_recovery_inspect": "verified"
+  },
+  "source_index": {
+    "path": "sources/manifests/Rigger3Revised.yml",
+    "prior_blob": "727f636d4443cb4b415a77b072798b6daceae4bb",
+    "commit": "63269ce72c80e373d739ea13ccb5e92366ce92c5",
+    "readback_blob": "2e3658f2b7e589196c556aba0acf06de9e4cc8d5",
+    "unique_verified_registrations": 32,
+    "contiguous_advance": false
+  },
+  "global_boundaries": {
+    "denver_source": "source.fasa-7212",
+    "authorized_printed_page": 45,
+    "authorized_pdf_page": 46,
+    "denver_printed_pages_46_47": "archived_not_advanced",
+    "fasa7001_451_record_available_original_core": "preserved_not_reopened",
+    "new_globally_authorized_contiguous_pages": 0
+  },
+  "limitations": [
+    "Not a complete or contiguous revised-edition source scan.",
+    "Unexamined power-plant/chassis tables and other source pages remain separate potential work.",
+    "Historical FASA7910 mechanics preserved; this revised source registration does not supersede them globally.",
+    "No runnable game-engine implementation or test verification is inferred."
+  ]
+}
