@@ -380,3 +380,145 @@ Original source: FanPro, *State of the Art: 2063* (FanPro10664), *Shadowrun Thir
 **Unresolved inputs:** This is a directed original-page review, not a complete Soldiers of Fortune scan. Remaining pp73–74 shell/other equipment details and pp75–78 new-vehicle numerical tables/features, later security material pp79–104 and Culture Shock pp105–128 require independent class-specific attention. There are no newly executed consumer regression vectors or revised effective/core rules. No SOTA63 contiguous page authorization is claimed and the active Denver source remains completed through printed p45/PDF46 with pp46–47 missing.
 
 **Readiness classification:** `scan_coverage = inspected pp72-75 for the specific above classes`; `normalized_exact = three confirmed, indexed optional records`; `cross_source_reconciled = no general override inferred`; `code_tested = no tests run for these new records`. A completed manifest or passing transaction gate alone is not evidence of fully executable mechanics.
+
+
+## 2026-11-23 — Expanded-rules coordination: live coverage reconciliation
+
+Administrative evidence ledger only. The owner-authorized ten-worker partition supersedes the historical single-worker instruction; only the coordinator maintains this ledger and Rigger 3 Revised. Prior historical entries are retained, not silently rewritten. Core FASA7001 available-original acceptance remains final (15/15 scoped sections, 451 records; manifest blob b0ebffa4985ab544e64857b99e98b17d69ee3184); no new source-wide acceptance or engine certification. Denver checkpoint blob 6c2fde9f34fef62d3c98b1f284212713dc81fa32, printed p45/PDF46, unchanged. Catalog snapshot 31315a037d5798616e2de8fc9cbaeef0c2e4d8c5: 104 catalog entries, not 104 unique or mechanically applicable books.
+
+### Source-shard evidence and next obligations
+
+Manifest blobs below were read live during this reconciliation; worker transaction receipts are recorded in those manifests, not independently rerun by the coordinator. Exact live canonical blob checks were made for all three Cannon, both Companion, eight ShadowBeat records, and the Target Matrix security-sheaf correction. The Critters and SOTA64 audit blobs were also checked. An older 'complete' scan status does not prove rules closure. All new engine tests remain unclaimed.
+
+| Owner / original source | Live source manifest blob | Evidence scope and outstanding obligation |
+|---|---|---|
+| Coordinator / FanPro10662 Rigger 3 Revised | 69cab6762c1352daf28adcedfab8333675fc62e1 | 43 verified registrations, up from 42. New original pp194–195/PDF196–197 power-plant table edition differences; semantic d57bc765ed7eb443236bfed0183bde1aeb41ddfc / blob 61f770509327972f708b4c0193b7f1d51139adf2, index 45cabf8a18886d726640d63c10e3fc62eb71b3d2. Actual verify-source, stage, prepare, exact readback and confirm passed; remaining unchanged Diesel field comparison and other power-plant category closure open. Historical FASA7910 remains a separate source. |
+| Magic / FASA7907 | a1bcf37cc74e941bcbf5e4ff8b17c6db689c0c68 | First PDF hash registered; pp72–74/PDF73–75 source-specific audit 4e68deae36816c412f4d10a8345a07374582fa59 identified missing Centering/Cleansing exact fields. No new accepted semantic records claimed; actual hash gate and field normalization to follow. |
+| Man & Machine / FASA7126 | da8ee1d63932d074999f9e7da42642dfbc4a038b | pp76–79/PDF77–80 bioware field audit 20ecae32165879fa1c427648f22c40ae5a2aa814; source verification recorded, grade/used bioware modifiers, drawbacks and Awakened effects open. No new accepted semantics. |
+| Cannon / FASA7908 | 67f161ae6fa800a60b13cf10b8a89ccf7cd47a84 | Three gated registrations (holdout FCU correction, frame eligibility, linked attributes); all exact live blobs matched. Shared legacy table discrepancy requires authorized reconciliation; remaining source mechanics open. |
+| Companion / FASA7905a | 1625104ff9a16432363d8caa93067b2ce41a74b6 | Two new verified records, pp108 and 117; exact blobs matched. Reuse prior pp32–58 optional rules scope; other sections require source-specific closure. |
+| Matrix / FASA7909 | c5014f77dd288c983e7ad2bc51626b975b431f14 | Reuse programming pp76–94 closure; other mechanics need field-level certification. |
+| Matrix / FASA7219 Target Matrix | 7364cce22b32a49e79357484577ddc60c590a2c1 | Three newly registered mechanics plus one verified existing-record correction; security-sheaf corrected blob independently matched. Other original sections remain open. |
+| SOTA / FanPro10664 | 389e7ea7625efb1b362d0073c9d9fcf3225b2dcf | Reuse five scoped Game Information closures pp25–30,47–53,72–78,95–104,124–125; no whole-source acceptance. |
+| SOTA / FanPro25004 | 1b1f7cf2b7fff9af2bcff31d851cbe6bf60da298 | Ten registered verified records across eight natural subscopes, original pp30–36,98,167–168. Audit blob 6606b6c187fc35bdee5808b81d1255095064c74c matched. Remaining Game Information sections and other applicable fields open. |
+| Legacy / FASA7109 ShadowBeat | a3a772d1cd1c59a5460996dab1487542d30825da | Eight verified 1992 original-edition records, all exact live blobs matched. Distinct music/performance/media mechanics preserved; SR3 compatibility and supersession not adjudicated. Other original sections open. Derivative Google Doc not independent original. |
+| Critters & Mixed / FASA7002 Critters | 053cfc7cffec5eaf94355b80c89d2db19126da01 | Original p19 tables recovered to administrative audit 9e9854a5de8f0c73ac40e1e6bb32602bb47cb502 (three tables, 30 rows); no accepted semantics yet. Source verification and transaction gates pending. |
+| Critters & Mixed / FanPro10667 SSG | d446f736dabe0b2e4433ffeea38dcb6bba03f60d | Reuse Game Information pp118–126 and scoped detailed lifestyle pp127–144, with stated ambiguities; whole-source closure not proven. |
+| Critters & Mixed / FanPro10650,10666,10653 | d567f4cc8aa63a31b6e6a243bc7c2683ffd58499; 418ff9be34ba12a778cc732eb7249131fdda665f; 6fbb76ebbcf33fefe9fcd579e5b1c690684f9e67 | Year of Comet, Dragons of Sixth World, Target Wastelands respectively; older scan completion only, original mechanics field closure unproven. |
+| Other sourcebooks / FASA7118 | 4dfe1067bbb4cad563a7519edde6dde02cc49648 | Historic pp34–61 audit/gate debt not assumed closed; existing contextual receipts do not certify mechanical scope. Exclusively owned by SR3 Sourcebook Mechanics, not Legacy. |
+| Other sourcebooks / FASA7115,7215,7124,FanPro10657 | fcdf013acc415b4443c8691d9b10a362d8ff8249; 687a8eeb83dc401a2f2516ad121f9cfc01541ec3; 2a38bdd667738c6643464e1a172b3a86f640f243; 96d17ec6a2fd52fd247438550400d73b29f3fde6 | Lone Star (p4 deferred), Smuggler Havens, Cyberpirates, New Seattle respectively; existing source receipts not sufficient for whole mechanics acceptance. |
+
+Coordinator original PDF: FanPro10662 SHA256 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909 (210 physical pages), historical FASA7910 SHA256 0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860 (208 physical pages). Original images compared revised pp194–195/PDF196–197 to historical pp195–196/PDF195–196. Chemical Rockets and Diesel fuel unit differences and absence of historic Diesel Sports Car row preserved without inferred blanket prohibition. Canonical path equipment/vehicles/r3-revised-chemical-rocket-diesel-table-p194-195.yml. Baseline SHA256 19aa61ca0056a83629c2c083b103cf6bf35bf33cd33f2cd224cc2adbd4960316; candidate ebf29fbdaa4fdee8d38d4c241a657f2ffc9ce5586a815d4d23705162ad0ba040. 29 preflight tests passed. No consumer engine tests. Zero globally authorized contiguous pages.
+
+### Finite catalog-entry coverage inventory
+
+The ordinal is a locator in the exact catalog snapshot above (not a new canonical source ID); the original catalog retains title, Drive ID, MIME, and ID. Each entry remains open unless separately accepted or explicitly identified as derivative/reference. Candidate sources need original TOC, edition, applicable mechanics, SHA, page/field and transaction evidence. This is an inventory, not an invented field-level audit. Nonassigned or ambiguous editions must be routed by coordinator without overlapping ownership. No entry is silently excluded because it is an adventure or mixed book.
+
+| Entry | Catalog title | Role | Coverage disposition |
+|---|---|---|---|
+| 1 | FASA7109 - Shadowrun - ShadowBeat | legacy_rules_or_source | Derivative Google Doc; compare original entry 75; not independent acceptance |
+| 2 | Shadowrun -Third Edition Shadowrun - Character Sheets.pdf | reference_aid | Reference; verify whether novel mechanics exist |
+| 3 | FASA7910 - Shadowrun - Rigger 3.pdf | rules_primary | Historical Rigger; comparison source; no new whole-source acceptance |
+| 4 | FASA7909 - Shadowrun - Matrix.pdf | rules_primary | Matrix; scoped closure only |
+| 5 | FASA7908 - Shadowrun - Cannon Companion.PDF | rules_primary | Cannon; new gated records, open |
+| 6 | FASA7907 - Shadowrun - Magic in the shadows.PDF | rules_primary | Magic; field audit open |
+| 7 | FASA7906 - Shadowrun - Rigger 2.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 8 | FASA7905a - Shadowrun - Shadowrun Companion.pdf | rules_primary | Companion; new gated records, open |
+| 9 | FASA7904 - Shadowrun - Virtual Realities 2.0.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 10 | FASA7903 - Shadowrun - Grimoire - 2nd Edition.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 11 | FASA7701 - Shadowrun - High Tech & Low Life.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 12 | FASA7331 - Shadowrun - Brainscan.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 13 | FASA7330 - Shadowrun - Corporate Punishment.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 14 | FASA7329 - Shadowrun - First Run.PDF | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 15 | FASA7328 - Shadowrun - Renraku Arcology - Shutdown.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 16 | FASA7327 - Shadowrun - Blood In The Boardroom.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 17 | FASA7326 - Shadowrun - Mob War.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 18 | FASA7325 - Shadowrun - Missions.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 19 | FASA7324 - Shadowrun - Predator and Prey.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 20 | FASA7323 - Shadowrun - Shadows of the Underworld.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 21 | FASA7322 - Shadowrun - Super Tuesday.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 22 | FASA7320 - Shadowrun - Harlequin's Back.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 23 | FASA7319 - Shadowrun - Double Exposure.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 24 | FASA7318 - Shadowrun - Divided Assets.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 25 | FASA7317 - Shadowrun - Paradise Lost.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 26 | FASA7316 - Shadowrun - Eye Witness.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 27 | FASA7315 - Shadowrun - Celtic Double Cross.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 28 | FASA7314 - Shadowrun - A Killing Glare.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 29 | FASA7313 - Shadowrun - Dark Angel.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 30 | FASA7312 - Shadowrun - One Stage Before.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 31 | FASA7311 - Shadowrun - Ivy & Chrome.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 32 | FASA7310 - Shadowrun - Elven Fire.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 33 | FASA7309 - Shadowrun - Imago.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 34 | FASA7308 - Shadowrun - Total Eclipse.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 35 | FASA7307 - Shadowrun - Dragon Hunt.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 36 | FASA7306 - Shadowrun - Harlequin.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 37 | FASA7305 - Shadowrun - Bottled Demon.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 38 | FASA7304 - Shadowrun - Queen Euphoria.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 39 | FASA7303 - Shadowrun - Dreamchipper.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 40 | FASA7302 - Shadowrun - Mercurial.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 41 | FASA7301 - Shadowrun - DNA-DOA.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 42 | FASA7219 - Shadowrun - Target Matrix.pdf | sourcebook_mixed | Matrix; partial gated recovery |
+| 43 | FASA7215 - Shadowrun - Target Smuggler Havens.pdf | sourcebook_mixed | Other sourcebooks; prior receipts, open |
+| 44 | FASA7214 - Shadowrun - Target Ucas.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 45 | FASA7213 - Shadowrun - Aztlan.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 46 | FASA7212 - Shadowrun - Denver - The City of Shadows.pdf | mixed | Denver archived omission/boundary; available-scope mechanics unresolved |
+| 47 | FASA7211 - Shadowrun - Tir na nOg.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 48 | FASA7210 - Shadowrun - Tir Tairngire.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 49 | FASA7209 - Shadowrun - California Free State.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 50 | FASA7208 - Shadowrun - The Neo-Anarchist's Guide to Real Life.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 51 | FASA7207 - Shadowrun - Native American Nations Volume Two.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 52 | FASA7206 - Shadowrun - The Neo-Anarchist's Guide to North America.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 53 | FASA7205 - Shadowrun - Universal Brotherhood - Missing Blood.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 54 | FASA7204 - Shadowrun - Germany Sourcebook.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 55 | FASA7203 - Shadowrun - London Sourcebook.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 56 | FASA7202 - Shadowrun - Native American Nations Volume One.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 57 | FASA7201 - Shadowrun - Seattle Sourcebook.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 58 | FASA7126 - Shadowrun - Man & Machine.pdf | rules_primary | M&M; field audit open |
+| 59 | FASA7125 - Shadowrun - Corporate Download.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 60 | FASA7124 - Shadowrun - Cyberpirates.pdf | sourcebook_mixed | Other sourcebooks; prior receipts, open |
+| 61 | FASA7123 - Shadowrun - Underworld Sourcebook.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 62 | FASA7122 - Shadowrun - Portfolio of a Dragon, Dunkelzahns Secrets.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 63 | FASA7121 - Shadowrun - Threats.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 64 | FASA7120 - Shadowrun - Awakenings New Magic In 2057.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 65 | FASA7119 - Shadowrun - Cybertechnology.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 66 | FASA7118 - Shadowrun -  Corporate Security Handbook.pdf | mixed | Other sourcebooks exclusive; audit debt open |
+| 67 | FASA7117 - Shadowrun -  Bug city.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 68 | FASA7116 - Shadowrun - Prime Runners.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 69 | FASA7115 - Shadowrun - Lone Star.pdf | sourcebook_mixed | Other sourcebooks; p4 deferred |
+| 70 | FASA7114 - Shadowrun - Fields of Fire.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 71 | FASA7113 - Shadowrun - Corporate Shadowfiles.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 72 | FASA7112 - Shadowrun - Paranormal Animals of Europe.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 73 | FASA7111 - Shadowrun - Downtown Militarized Zone 2Ed.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 74 | FASA7110 - Shadowrun - Shadowtech.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 75 | FASA7109 - Shadowrun - ShadowBeat.pdf | legacy_rules_or_source | Legacy; eight verified original records, SR3 lineage open |
+| 76 | FASA7108 - Shadowrun - Rigger Black Book.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 77 | FASA7105 - Shadowrun - Paranormal Animals of North America.pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 78 | FASA7104a - Shadowrun - Street Samurai Catalog (Revised).pdf | legacy_rules_or_source | Legacy candidate; original edition/supersession and mechanics unreviewed in this reconciliation |
+| 79 | FASA7103 - Shadowrun - Sprawl Sites.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 80 | FASA7102 - Shadowrun - SilverAngel.pdf | mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 81 | FASA7003 - Shadowrun  - Quick Start Rules.pdf | rules_primary | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 82 | FASA7002 - Shadowrun - Critters.pdf | rules_primary | Critters & Mixed; three tables pending gates |
+| 83 | FASA7001 - Shadowrun Core Rules  3rd Ed.pdf | rules_primary | ACCEPTED available-original core; 451 records, 15/15 scoped sections |
+| 84 | FanPro10673 - Shadowrun - Character Dossier.pdf | reference_aid | Reference; verify whether novel mechanics exist |
+| 85 | FanPro10667 - Shadowrun - Sprawl Survival Guide.pdf | sourcebook_mixed | Critters & Mixed; prior scoped closure only |
+| 86 | FanPro10666 - Shadowrun - Dragons of the Sixth World.pdf | sourcebook_mixed | Critters & Mixed; field closure unproven |
+| 87 | FanPro10665 - Shadowrun - Survival Of The Fittest.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 88 | FanPro10664 - Shadowrun - State Of The Art 2063.pdf | sourcebook_mixed | SOTA; five scoped closures |
+| 89 | FanPro10657 - Shadowrun - New Seattle.pdf | sourcebook_mixed | Other sourcebooks; prior receipts, open |
+| 90 | FanPro10655 - Shadowrun - Shadows Of North America - 2001.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 91 | FanPro10654 - Shadowrun - Wake Of The Comet.pdf | adventure_campaign | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 92 | FanPro10653 - Shadowrun - Target Wastelands (English).pdf | sourcebook_mixed | Critters & Mixed; field closure unproven |
+| 93 | FanPro10652 - Shadowrun - Threats 2.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 94 | FanPro10651 - Shadowrun - Target Awakened Lands.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 95 | FanPro10650 - Shadowrun - Year of the Comet.pdf | sourcebook_mixed | Critters & Mixed; field closure unproven |
+| 96 | FanPro25006 - Shadowrun - Loose Alliances.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 97 | FanPro25004 - Shadowrun - State of the Art 2064.pdf | sourcebook_mixed | SOTA; ten verified records, open |
+| 98 | FanPro25014 - Shadowrun - System Failure.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 99 | FanPro25003 - Shadowrun - Mr. Johnsons Little Black Book.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 100 | FanPro10662 - Shadowrun - Rigger 3 Revised.pdf | rules_primary | Coordinator; 43 verified registrations, open |
+| 101 | FanPro25007 - Shadowrun - Shadows of Asia.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 102 | FanPro25002 - Shadowrun - Shadows of Europe.pdf | sourcebook_mixed | Original mechanics/edition scope not certified in this reconciliation; route by ownership |
+| 103 | Shadowrun - 3rd Party Character Sheets.pdf | reference_aid | Reference; verify whether novel mechanics exist |
+| 104 | FASA7002 - Shadowrun - GM Screen 3rd Ed.pdf | reference_aid | GM Screen separate from Critters; inspect novel reference mechanics |
+
+**Acceptance decision:** full expanded rules NOT accepted. No new bookwide acceptance. Maintain the already accepted core, preserve source-specific new receipts, prioritize actual outstanding fields, and do not count this administrative ledger update as semantic or contiguous-page progress.
