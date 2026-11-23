@@ -1,17 +1,29 @@
 id: entity.cyberware.replacement-modification
 record_type: entity
-name: "Replacement Modification"
+name: Replacement Modification
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '39, 155'
+pdf_pages: '39, 156'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence: null
   ecu: 1
-  cost: "+10%"
-  concealability: -1
-  availability: "+2/+2 days"
+  cost: '+10%'
+  concealability: null
+  availability: '+2/+2 days'
   street_index: 2
-  legality: "Legal"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: Legal
+data:
+  market_row: {essence: null, ecu: 1, cost: '+10%', concealability: null, availability: '+2/+2 days', street_index: 2, legality: Legal}
+  original_dash_fields: [essence, concealability]
+links: {uses: [rule.cyberlimbs.partial-cyberlimbs], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 155, relation: defines, note: "Cyberlimb enhancement equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 39, relation: defines, note: Replacement Modification market row}
+  - {source: source.mm, page: 155, relation: defines, note: Cyberlimb enhancement equipment table statistics}
+notes:
+  - Both original printed rows show a dash in Concealability. The prior canonical -1 was unsupported. Null preserves the literal dash rather than inferring a numeric modifier.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed pp39/155, PDF pp39/156: Replacement Modification market row'
+framing: reference_exact
