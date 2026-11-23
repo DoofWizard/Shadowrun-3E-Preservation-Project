@@ -1,0 +1,97 @@
+audit_type: source_specific_verified_transaction_pending_registration
+date: '2026-11-23'
+source: source.mm
+catalog_number: FASA7126
+publication: 'FASA Corporation, 1999, Man & Machine: Cyberware, fictional Shadowrun Third Edition tabletop RPG'
+source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+source_pdf_drive_id: "1WSdpdxUYtQNbbHHO2OGHD4bEJoi2lq_t"
+source_pdf_size_bytes: 92811837
+verify_source_actual:
+  status: source_pdf_hash_verified
+  source: source.mm
+  sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+  page_images_review: still_required_independently
+  exit_code: 0
+independent_original_image_review: "Original pp36-41/PDF36-41 and printed p155/PDF156 visually checked; TOC p2 and publication identity p5 reviewed."
+scripts_matched_live_git_blobs:
+  connector_preflight: "331626d7c285b00e541359e315ae2bdd0fa33f2d"
+  preservation_method: "258a6d16510673cbeba66f4431f80f3fb97ce5cd"
+  transaction_recovery: "ef6a9361e93996eba2b9102b5447e71fef230d4e"
+  ingestion_gate: "a123f7f374822c5f899d3e9df3c7f8709d80abf2"
+manifest_registration:
+  status: deferred_concurrent_manifest_change
+  expected_prior_blob: "c8ab09ba59479da8d6f6594f324a6b909053025a"
+  observed_current_blob: "b88f9177749caceb59240d1387cbc233dc01ef40"
+  action: "No manifest write attempted after the mismatch. Reconcile source-owned records and verified receipts without overwriting concurrent entries."
+prior_batch:
+  manifest_commit: "a05dc0f96406f1e03f1ceaa1b472f07a355353dc"
+  manifest_blob: "c8ab09ba59479da8d6f6594f324a6b909053025a"
+  records_registered: 4
+records:
+  - id: rule.cyberlimbs.accessory-effects
+    path: rules/cyberlimbs/accessory-effects.yml
+    printed_pages: "36-40"
+    pdf_pages: "36-40"
+    protocol: sr3-gate/v1
+    commit_sha: "cfc1146096133c9400bebca401941612700fdb01"
+    expected_blob_sha: "8d9bc2cabf4e78c4a0f9afea041952832ffbf1c8"
+    readback_blob_sha: "8d9bc2cabf4e78c4a0f9afea041952832ffbf1c8"
+    candidate_sha256: "0e34629aa70099e484d07a1343099bf6ed0a005add4838f0389a7dab9d428ff0"
+    baseline_sha256: "f6c88f6c9430d6cceb714bec2fdc8cd8bccae2ab0f5ca7598f436b585efa0be0"
+    immutable_sha256: "2d2346cad3d4ef05abdce4397b20e1040ef829b1ff9c5f0efbc26dc91f876f59"
+    status: verified
+    recovery_inspect: verified
+    confirmation: "Actual ingestion_gate.py confirm and transaction_recovery.py inspect returned verified; exact ordinary Contents write/readback matched the frozen candidate bytes."
+    fields: "Ten named accessory game-effect entries; existing item IDs reused."
+    manifest_registration: pending
+  - id: rule.cyberlimbs.weapon-mounts
+    path: rules/cyberlimbs/weapon-mounts.yml
+    printed_pages: "40-41"
+    pdf_pages: "40-41"
+    protocol: sr3-gate/v1
+    commit_sha: "033ada4675ed00264b3a8295e3a4a2b7a01953d5"
+    expected_blob_sha: "ae541cd6cd313a353913968f0a07a14f28c31f5d"
+    readback_blob_sha: "ae541cd6cd313a353913968f0a07a14f28c31f5d"
+    candidate_sha256: "5c21cf1aae9ea91224868f3cb55789f71790e1a19241dd5f92e9aef37a9d8c22"
+    baseline_sha256: "7bd0b417e99e52e2a279d82d131adf02d9594474c1fecf6be641bfe5483def77"
+    immutable_sha256: "b2cee91c66c82690251d80c7228088eee07b2f27d7ffe61534ea7bd3c9899d5f"
+    status: verified
+    recovery_inspect: verified
+    confirmation: "Actual ingestion_gate.py confirm and transaction_recovery.py inspect returned verified; exact ordinary Contents write/readback matched the frozen candidate bytes."
+    fields: "Source-specific mount eligibility, actions, in-game modifiers and descriptive qualification."
+    manifest_registration: pending
+  - id: entity.cyberware.replacement-modification
+    path: entities/cyberware/replacement-modification.yml
+    printed_pages: "39, 155"
+    pdf_pages: "39, 156"
+    protocol: sr3-gate/v1
+    commit_sha: "d3dcdb3d7ca860f08e9f2e4c6fbb9b9b401cfcbe"
+    expected_blob_sha: "640dc7d87d417679df3778409f195e48188a0a90"
+    readback_blob_sha: "640dc7d87d417679df3778409f195e48188a0a90"
+    candidate_sha256: "d9d97e90e90169395211be1b9ff7b0cec6095533d91093615323a2d987bc1c5f"
+    baseline_sha256: "8b3a16a6d20006258dc0717186013e8a390c98818f585510134b74f01348eab7"
+    immutable_sha256: "cc6d519430f9042e7d15a716fb574c44e784f20a62975f337c341938083dd9ac"
+    status: verified
+    recovery_inspect: verified
+    confirmation: "Actual ingestion_gate.py confirm and transaction_recovery.py inspect returned verified; exact ordinary Contents write/readback matched the frozen candidate bytes."
+    fields: "Both original rows show Concealability dash; unsupported prior -1 corrected to null."
+    manifest_registration: pending
+  - id: entity.cyberware.weapon-mount-articulated-arm
+    path: entities/cyberware/weapon-mount-articulated-arm.yml
+    printed_pages: "41, 155"
+    pdf_pages: "41, 156"
+    protocol: sr3-gate/v1
+    commit_sha: "8de3e4dcf565df8c27028c21150c0e6332d5934e"
+    expected_blob_sha: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"
+    readback_blob_sha: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"
+    candidate_sha256: "4f16f4034fe8280209cd38b9670fe7b3e7cac917a08bcdc06b2730da8d216df1"
+    baseline_sha256: "b7d2dce7355460f8109352bb967fb3ff27ea7c2361721e055bbd68f40c7183d5"
+    immutable_sha256: "564bdae0bc97fe3def12d816d3a5bb4efb4f68f40577d69fd56211ec1b26baad"
+    status: verified
+    recovery_inspect: verified
+    confirmation: "Actual ingestion_gate.py confirm and transaction_recovery.py inspect returned verified; exact ordinary Contents write/readback matched the frozen candidate bytes."
+    fields: "Both nonretractable rows show Essence dash; unsupported 0.5 corrected to null. Separate retractable item unchanged."
+    manifest_registration: pending
+scope_note: "The four transactions cover remaining named cyberlimb accessory game effects and two original-row corrections. These receipts are not manifest acceptance, whole-source completion, whole-chapter certification, or new contiguous page credit. Previously deferred Bio Index and magical interaction receipt issues remain separate."
+global_contiguous_page_credit: 0
+global_checkpoint_changes: 0
