@@ -3,14 +3,40 @@ record_type: rule
 name: "Cyberlimb Concealment"
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: "35"
+pdf_pages: "35"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 35, basis: defines}
 scope: {applies_to: ["synthetic cyberlimbs and installed enhancements"]}
 resolution:
-  summary: "Synthetic limbs have a base Concealability that changes with limb grade and installed devices. Higher-grade limbs can be more difficult to notice, while implanted enhancements reduce effective concealability according to their listed modifiers."
+  summary: "Calculate synthetic cyberlimb Concealability from grade and installed devices; apply the observation-dependent Perception Test modifier separately."
   inputs: ["limb type and grade", "installed enhancements", "interaction context"]
   outputs: ["effective concealability and Perception modifiers"]
   steps: []
+data:
+  base_concealability: 8
+  grade_concealability:
+    basic: 8
+    alpha: 10
+    beta: 12
+    delta: 14
+  grade_increment: 2
+  grade_bonus_applies_to_built_in_devices: true
+  device_without_listed_concealability_modifier:
+    limb_concealability_change_per_equipment_capacity_unit: -1
+    gm_may_adjust_for_specific_item: true
+    listed_modifier_reference: "M&M p36, Equipment Capacity Cost Table"
+  observation:
+    prolonged_interaction_perception_target_modifier: -2
+    maximum_negative_modifier: -4
+    gm_factors: [duration, frequency, continuity of observation]
+    condition: "After a reasonable period of interaction with the owner, when testing whether a character has a cyberlimb."
+    additional_visibility: "Synthetic limb movement is less natural, particularly when its owner is under the influence of alcohol or drugs; no separate numeric modifier is given."
 links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 35, relation: defines, note: "Concealment rules for synthetic cyberlimbs"}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p35/PDF p35: Cyberlimb Concealment"
+framing: reference_exact
