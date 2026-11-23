@@ -3,14 +3,50 @@ record_type: rule
 name: "Reprogramming Nanites"
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: "96-97"
+pdf_pages: "97-98"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 97, basis: defines}
 scope: {applies_to: ["nanites with Pilot Rating 2 or higher and reprogrammable functions"]}
 resolution:
-  summary: "Reprogrammable nanites can have supported functions changed by a suitable host or knowbot that can analyze their control language and communicate through the required directed signal. Reprogramming takes substantial time based on Pilot Rating and controller type, during which the nanites suspend normal operations."
+  summary: "Check whether the fictional nanite system is reprogrammable, qualify the controller and communications requirements, then resolve reprogramming time."
   inputs: ["Pilot Rating", "controller type", "supported function", "Engineering (Nanorobotics)"]
-  outputs: ["new programmed function or failed attempt"]
+  outputs: ["new programmed function or failed attempt", "task duration"]
   steps: []
+data:
+  eligibility:
+    programs_encoded_at_production: true
+    pilot_1: single-purpose and non-reprogrammable
+    minimum_pilot_rating: 2
+    reprogramming_must_be_hardwired_function: true
+    qualifying_controllers: [semi-autonomous knowbot, Orange host with Security Value at least 10, any Red host]
+  controller_compatibility:
+    analyze_and_program_in_system_language: true
+    communication_must_match_original_design: true
+    fictional_signal_types: [directed ultrasound, microwave, UV transmission]
+    maximum_effective_range_meters: 1
+    transmitter_rating: equal to nanite Pilot Rating
+    other_radio_transmissions_supported: false
+  time_to_reprogram_table:
+    printed_page: 97
+    base_hours_per_pilot_rating: {orange_host: 36, red_host: 24, knowbot: 12}
+    operations_suspended_during_reprogramming: true
+    time_reduction_test: {skill: "Engineering (Nanorobotics)", target_number: 6}
+    knowbot_can_substitute_utility_pool: true
+  source_example:
+    controller: Red host
+    nanite_pilot_rating: 3
+    base_duration_hours: 72
+    time_reduced_by_engineering_test_successes: true
+    matrix_operation: Control Slave
+    monitored_until_reprogramming_finishes: true
+    reference: "SR3 p215"
 links: {uses: [rule.nanotech.pilot-and-programming], affects: [], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 97, relation: defines, note: "Programming Nanites and Time to Reprogram Nanites table"}
-notes: []
+  - {source: source.mm, pages: "96-97", relation: defines, note: "Programming Nanites and Time to Reprogram Nanites table"}
+notes:
+  - "The source states time can be reduced by the successful test; it does not specify a new arithmetic time-reduction formula in this subsection."
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp96-97/PDF pp97-98: Reprogramming Nanites"
+framing: reference_exact
