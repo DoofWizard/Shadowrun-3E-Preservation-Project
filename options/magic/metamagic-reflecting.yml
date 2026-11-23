@@ -1,40 +1,72 @@
 id: option.magic.metamagic-reflecting
 record_type: option
-name: "Metamagic: Reflecting"
+name: 'Metamagic: Reflecting'
 domain: magic
 status: ingested
-
 effective:
   status: current
   source: source.mits
   page: 78
   basis: defines
-
 option_for:
-  - option.magic.metamagic
-
+- option.magic.metamagic
 selection:
-  timing: "when allocating spell-defense dice"
+  timing: when allocating spell-defense dice
   prerequisites:
-    - "initiate"
+  - initiate
   incompatible_with: []
-
 effects:
-  - "Allows an initiate to allocate Sorcery and Spell Pool dice to reflect hostile magic."
-  - "Reflecting works like spell defense, but if reflecting successes exceed the incoming spell's Force and the caster's successes are overcome, the spell rebounds toward its caster."
-  - "Reflected spellcasting uses the reflecting initiate's net reflecting successes as spellcasting successes and may stage the effect upward."
-
+- Allocates Sorcery and Spell Pool dice under Spell Defense limitations.
+- Reflecting successes exceeding the caster successes return the spell at the same Force; net successes become dice for a new Spellcasting Test.
 links:
   modifies:
-    - rules.magic.spell-defense
+  - rules.magic.spell-defense
   requires:
-    - option.magic.metamagic
+  - option.magic.metamagic
   interacts_with: []
-
 sources:
-  - source: source.mits
-    page: 78
-    relation: defines
-    note: "Reflecting"
-
+- source: source.mits
+  page: 78
+  relation: defines
+  note: Reflecting
+- source: source.mits
+  page: 79
+  relation: extends
+  note: Reflecting example
 notes: []
+source: source.mits
+printed_pages: 78-79
+pdf_pages: 79-80
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  allocation:
+    dice: Sorcery and Spell Pool; same limits as Spell Defense.
+    trigger: Target of incoming spell has reflecting dice allocated; initiate elects to use them.
+  resolution:
+    test_tn: Incoming spell Force.
+    defense: Reflecting successes offset caster successes as Spell Defense.
+    reflection_condition: Reflecting successes exceed caster successes, not the spell Force.
+    reflected_force: Original spell Force.
+    reflected_cast: Roll net reflecting successes as spellcasting dice in a new Spellcasting Test; stage effect normally using extra successes.
+  area:
+    ordinary: Only subjects allocated reflecting dice are protected; other area targets remain affected. If reflected, only original caster is target, not surrounding subjects.
+    elemental_manipulation: If any target successfully reflects, entire spell returns as an area effect centered on original caster.
+  resistance:
+    original_caster: May use Spell Defense or Shielding dice against reflected spell.
+    repeat_reflection: Original caster who is an initiate with Reflecting can reflect again.
+    ritual: A reflected ritual spell affects every member of the casting ritual circle equally.
+  example:
+    force: 4
+    casting_dice: 6
+    caster_tn: 6
+    caster_successes: 2
+    reflecting_dice: 6
+    reflecting_tn: 4
+    reflecting_successes: 4
+    reflected_cast_dice: 2
+    reflected_cast_tn: 5
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition metamagic: Reflecting (FASA7907, printed 78-79/PDF 79-80)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG mechanical fields and exceptions from printed 78-79/PDF 79-80.
