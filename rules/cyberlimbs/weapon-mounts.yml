@@ -1,16 +1,57 @@
 id: rule.cyberlimbs.weapon-mounts
 record_type: rule
-name: "Cyberlimb Weapon Mounts"
+name: Cyberlimb Weapon Mounts
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: '40-41'
+pdf_pages: '40-41'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 40, basis: defines}
-scope: {applies_to: ["external, retractable, tracking and articulated cyberlimb weapon mounts"]}
+scope: {applies_to: [external, retractable, tracking and articulated cyberlimb mounts in the fictional tabletop game]}
 resolution:
-  summary: "Cyberlimb and cybertorso mounts support different classes of weapons and recoil behavior. Tracking mounts can follow targets automatically when linked appropriately, retractable mounts require deployment actions, and articulated mounts provide a wide firing arc. Mount type determines ECU, concealment and supported weapon classes."
-  inputs: ["mount type", "installed weapon", "interfaces"]
-  outputs: ["supported weapon use, recoil and deployment behavior"]
-  steps: []
-links: {uses: [rule.cyberlimbs.equipment-capacity], affects: [], modified_by: [], interacts_with: []}
+  summary: Resolve the source-specific mount eligibility, actions, targeting and combat modifiers in SR3.
+  inputs: [mount type, installed game item, interfaces, target designation]
+  outputs: [allowed configuration, action cost, applicable game modifiers]
+data:
+  general:
+    printed: 40
+    eligible_installations: [cyberlimb, cybertorso]
+    activation: DNI implant or manual trigger
+    smartlink_condition: game item must be smartgun-equipped and mount linked via router to smartgun link
+    maximum_items_per_mount: 1
+    retractable_extend_or_retract_action: Simple
+    external_ammunition_pod: {cost_nuyen_excluding_ammunition: 10, game_capacity_rounds: 50, maximum_simultaneous_pods: 1}
+    social_interaction_cross_reference: M&M p48
+  external:
+    printed: 40
+    entities: [entity.cyberware.weapon-mount-external, entity.cyberware.weapon-mount-retractable]
+    hands_free: true
+    attach_or_detach_action: Complex
+    eligible_game_weapon_classes: [light pistol, heavy pistol, machine pistol, submachine gun]
+    nonintuitive_aiming_tn_modifier: 2
+    recoil_reduction: 0
+  tracking:
+    printed: 40
+    entities: [entity.cyberware.weapon-mount-tracking, entity.cyberware.weapon-mount-retractable-tracking]
+    inherits_external_rules: true
+    automatic_tracking_condition: linked target designator system
+    marked_target_bonus: laser sight bonus; not smartlink bonus
+    recoil_reduction: 0
+  articulated_arm:
+    printed_pages: '40-41'
+    entities: [entity.cyberware.weapon-mount-articulated-arm, entity.cyberware.weapon-mount-articulated-arm-retractable]
+    inherits_tracking_rules: true
+    firing_area_degrees: 360
+    source_qualification: descriptive text specifies a dead spot behind the head; game effects state 360-degree coverage
+    eligible_game_weapon_classes: light weapons up to and including light machine gun
+    recoil_reduction: 3
+    additional_modifier: laser sight modifiers
+links: {uses: [rule.cyberlimbs.equipment-capacity], affects: [], modified_by: [], interacts_with: [rule.cyberlimbs.accessory-effects]}
 sources:
-  - {source: source.mm, pages: "40-41", relation: defines, note: "Weapon Mounts and mounting rules"}
-notes: []
+  - {source: source.mm, pages: '40-41', relation: defines, note: Weapon Mounts game effects}
+notes:
+  - Purchase prices and ECU values remain on existing item entities; no second market record or automatic rule stacking.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF pp40-41: weapon mount game effects'
+framing: reference_exact
