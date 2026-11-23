@@ -1,0 +1,149 @@
+{
+  "id": "rule.shadowbeat-rocker-concert-impact-open-test-p10-11",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.fasa-7109",
+  "printed_pages": "10-11",
+  "pdf_pages": "11-12",
+  "edition_scope": "Original FASA 1992 ShadowBeat 2E-era mechanics; legacy optional SR3 use unverified; original formulae retained",
+  "content_class": [
+    "rule_procedure"
+  ],
+  "headline": "FASA ShadowBeat (1992) original rocker concert and club impact, rehearsal, group, Karma and synth modifiers; pp10-11/PDF11-12",
+  "summary": "Original fictional tabletop rules for live musical Impact Open Tests and full rehearsal/ensemble modifiers, preserved as source-era mechanics without assuming Third Edition adoption.",
+  "framing": "reference_exact",
+  "data": {
+    "publication": {
+      "title": "ShadowBeat",
+      "publisher": "FASA Corporation",
+      "year": 1992,
+      "catalog_number": "FASA7109",
+      "source_id": "source.fasa-7109",
+      "source_pdf_sha256": "d111ebcfcab4e40645e61f2924e58b5d8ace6ab4c18610e3085e324c52bd4278",
+      "chapter": "It's Only Rock and Roll",
+      "section": "Concerts and Club Dates",
+      "printed_pages": "10-11",
+      "physical_pdf_pages": "11-12"
+    },
+    "impact_open_test": {
+      "source_printed_pages": "10-11",
+      "use": "One Impact Test gauges the impact of an entire live appearance or recorded piece, not one test per song.",
+      "test_type": "Open Test",
+      "target_number": null,
+      "dice_basis": "Performance skill rating (or relevant musical skill) before permitted dice additions",
+      "result": "Highest die result after rerolling and adding exploding sixes; no predefined target number.",
+      "attribute_substitution_impact_modifier": -4,
+      "measurement": "Performance intensity and audience response; does not by itself measure instrumental technique."
+    },
+    "group_impact": {
+      "source_printed_page": 11,
+      "procedure": [
+        "Choose group test based on the lowest participating musical Skill Rating, with no difference penalty; or use a higher rated participant's musical Skill Rating.",
+        "If using higher rating, subtract 2 Impact per point of difference between skill rating used and the lowest musical skill rating in group.",
+        "Any member substituting an Attribute for skill imposes a further -4 Impact modifier on the group."
+      ],
+      "difference_penalty_per_skill_point": -2,
+      "attribute_substitution_group_modifier": -4
+    },
+    "rehearsal": {
+      "source_printed_page": 11,
+      "base_days": [
+        {
+          "performance": "Club date",
+          "days": 10
+        },
+        {
+          "performance": "Recording one single",
+          "days": 10
+        },
+        {
+          "performance": "Commercial album of approximately one hour",
+          "days": 60
+        },
+        {
+          "performance": "Major concert",
+          "days": 90
+        },
+        {
+          "performance": "Concert tour",
+          "days": 180
+        }
+      ],
+      "coordinator_skills": [
+        "Musical Production Special Skill",
+        "Any Performance Skill"
+      ],
+      "test": {
+        "kind": "Success Test",
+        "target_number_performance_skill": 8,
+        "target_number_musical_production": 4,
+        "base_time_rule": "Successful test divides base days by number of successes; zero successes requires full base days."
+      },
+      "insufficient_rehearsal_impact_modifier": -4
+    },
+    "instant_karma": {
+      "source_printed_page": 11,
+      "extra_impact_dice_per_karma_points": {
+        "extra_dice": 1,
+        "karma_points": 2
+      },
+      "maximum_extra_dice": "Skill Rating used for the Impact Test",
+      "restriction": "No additional Karma may be spent on Impact after this dice addition."
+    },
+    "impact_modifiers": [
+      {
+        "condition": "Band includes a sasquatch performer",
+        "impact_delta": 3
+      },
+      {
+        "condition": "Band or solo rocker un/under-rehearsed",
+        "impact_delta": -4
+      },
+      {
+        "condition": "Attribute substituted for Performance/Musical Skill",
+        "impact_delta": -4
+      },
+      {
+        "condition": "Group higher Skill used",
+        "impact_delta": "-2 × (selected Skill Rating minus group's lowest Skill Rating)"
+      },
+      {
+        "condition": "Monovocal synth",
+        "impact_delta": -4
+      },
+      {
+        "condition": "4-voice synth",
+        "impact_delta": -2
+      },
+      {
+        "condition": "12-voice synth",
+        "impact_delta": 1
+      },
+      {
+        "condition": "16-voice synth",
+        "impact_delta": 2
+      },
+      {
+        "condition": "24+ voice synth",
+        "impact_delta": 3
+      }
+    ],
+    "edition_lineage": {
+      "source_edition": "FASA 1992 ShadowBeat 2E-era",
+      "sr3_status": "unsuperseded_candidate_not_yet_compatibility_verified",
+      "requires_sr3_comparison": [
+        "Performing and social tests",
+        "musical instrument skill categories",
+        "Karma/Open Test differences"
+      ]
+    },
+    "source_review": {
+      "direct_original_page_images": [
+        "printed p10 / PDF p11",
+        "printed p11 / PDF p12"
+      ],
+      "original_printed_table": "Rehearsal Time Table and Impact Modifiers Table",
+      "text_layer_crosschecked": true
+    }
+  }
+}
