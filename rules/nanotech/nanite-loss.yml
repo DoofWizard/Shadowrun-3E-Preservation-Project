@@ -1,40 +1,44 @@
 id: rule.nanotech.nanite-loss
 record_type: rule
-name: "Nanite Loss and Maintenance"
+name: Nanite Loss and Maintenance
 domain: nanotech
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 100
-  basis: defines
-
-scope:
-  applies_to:
-    - "nanoware/nanite populations in a host"
-
+source: source.mm
+printed_pages: '99-100'
+pdf_pages: '100-101'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Shadowrun Third Edition: Man & Machine (FASA7126, FASA 1999), nanite loss, pp99-100/PDF100-101'
+effective: {status: current, source: source.mm, page: 100, basis: defines}
+scope: {applies_to: [nanoware populations in a fictional SR3 character]}
 resolution:
-  summary: "Nanite populations degrade over time and may also be lost through bleeding or other physical events. Nanoware requires maintenance/replenishment according to its type; insufficient population can reduce or end the system's effect."
-  inputs:
-    - "nanoware type"
-    - "elapsed time"
-    - "injury/bleeding"
-    - "maintenance"
-  outputs:
-    - "remaining effective nanite population/effect"
-
+  summary: 'Track cumulative losses and remaining effectiveness by system; healing does not replenish nanites.'
+  inputs: [nanoware type, elapsed days, physical damage boxes, current nanite population, facilitator, maintenance]
+  outputs: [remaining percentage, effectiveness tier]
+data:
+  loss_table:
+    unit: percent
+    transient: {per_physical_damage_box: 5, per_day: 10}
+    free_floating_without_facilitator: {per_physical_damage_box: 5, per_day: 3}
+    free_floating_with_facilitator: {per_physical_damage_box: 5, per_day: 0}
+  effectiveness_by_remaining_percent:
+    - {minimum: 50, maximum: 100, effect: normal}
+    - {minimum: 25, maximum: 49, effect: reduced, application: see individual system description}
+    - {minimum: 0, maximum: 24, effect: nonfunctional}
+  cumulative_losses: true
+  prose_ineffectiveness_threshold_loss_percent: 75
+  source_boundary_note: 'The prose states loss of 75 percent or greater is ineffective; the table includes 25 percent remaining in the reduced tier. Preserve the boundary disagreement without selecting a ruling.'
+  source_header_note: 'The table labels its ranges Percent Loss but presents effectiveness as descending remaining population; preserve the prose and table interpretation separately.'
+  injury_loss: 'All Physical damage boxes count, including injuries without external bleeding. Healing restores neither nanites nor their effectiveness.'
+  source_example_note: 'The example gives 9 percent loss over three days, then 15 percent for Moderate Physical damage, reporting 26 percent total loss. It then applies 30 percent loss of remaining nanites for six more boxes. The reported arithmetic is not reconciled here.'
+  maintenance: 'Periodic replenishment ranges from weekly to twice yearly depending on system; a nanite hive is an alternative. Replenishment is permitted immediately, without waiting for healing.'
 links:
   uses: []
-  affects:
-    - subsystem.nanotech.core
+  affects: [subsystem.nanotech.core]
   modified_by: []
-  interacts_with: []
-
+  interacts_with: [rule.nanotech.maintenance, rule.nanotech.excessive-nanoware]
 sources:
-  - source: source.mm
-    page: 100
-    relation: defines
-    note: "Nanite Loss / Bleeding / Maintenance"
-
+  - {source: source.mm, page: 99, relation: defines, note: 'Nanite Effectiveness table and Nanite Loss'}
+  - {source: source.mm, page: 100, relation: defines, note: 'Nanite Loss table, Time, Bleeding and Maintenance'}
 notes: []
