@@ -1,0 +1,140 @@
+audit_id: audit.cc.battletac-tactical-communications.2026-11-23
+source: source.cc
+catalog_number: FASA7908
+edition: SR3
+publication: Cannon Companion
+publisher: FASA Corporation
+scope: BattleTac System and Tactical Communication System, source-local mechanical reconciliation
+source_verification:
+  drive_id: 1DmR4OWd_tHjn1AMGFeyd6NC3V3cL-vp2
+  physical_pages: 130
+  starting_manifest_blob: eb95abf44ea7243025409eeb6cf21c277857eef7
+  actual_verify_source_output:
+    page_images_review: still_required_independently
+    sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+    source: source.cc
+    status: source_pdf_hash_verified
+  separately_inspected_original_images:
+    - {printed: 53, pdf: 54, rendered_image_sha256: 18689703786ca0359ddc8375875445634a85ad580b875eb4e8ab27b5476577ef}
+    - {printed: 54, pdf: 55, rendered_image_sha256: 1e378f1f8914efde85a0197e47ec1bea1cfdd2daed76762d0b783a2d9a2ee66a}
+    - {printed: 55, pdf: 56, rendered_image_sha256: 3e7336ab10c2a83206062a0c89128cba780378715f569cc08e6878b812f2d2c3}
+  mapping: printed page plus one equals physical PDF page in this slice
+  common_script_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  preflight_self_tests: 29/29 passed
+section_evidence:
+  - section: BattleTac System
+    printed: [53, 54]
+    status: source_local_fields_reconciled_external_dependency_open
+    game_fields_reviewed: [component types and forms, communication rating and alternatives, sensor linkage and frequency use, game actions and DNI, network analysis and receiver function, drone IVIS and FDDM conditions, accessory game restrictions, Small Unit Tactics reference]
+    numeric_table_rows: 3
+    reused_matching_table_rows:
+      entities/gear/battletac-master-component.yml: a623a2a65f5f52bc8db4ccdffa88a1880ba68002
+      entities/gear/battletac-receiver-component.yml: db16bfddd25dc2e872961b0eb65db278877b6a82
+      entities/gear/battletac-remote-trigger-system.yml: 02e14196e58be9aad0afbb84aca6fd8046bae492
+    reused_rules_read_only:
+      rules/cyberware/battletac-network.yml: 7f8908cc6e95f25129f04d0d377a697abbe4e63b
+      rules/combat/small-unit-tactics.yml: 5358d11993fcf69618e7916cecda1488b6cdcff3
+      rules/combat/cannon-companion-small-unit-tactics-resolution-gaps-p105-106.yml: 80ad34ff1c8510330eac274a799d611762310795
+      rules/cyberware/tactical-computer.yml: 4a219be040c2493379acba5216489774ad68c695
+    exception: The exact magnitude of the Small Unit Tactics increase is not stated on original pp53-54; do not invent it. The external Man and Machine tactical-computer dependency remains open and outside this worker's write ownership.
+  - section: Tactical Communication System
+    printed: [54, 55]
+    status: source_local_fields_reconciled
+    game_fields_reviewed: [system composition and mixed ratings, transmission restrictions, master and personal frequency and rating formulas, ports and eligible equipment, GM discretion, line of sight and weather conditions, game link restrictions, dish sizes and time conditions, equipment acquisition table]
+    clarification: Temporary dish breaks down after three hours; this is its lifetime, not time required to disassemble it.
+    numeric_table_rows: 16
+    new_table_rows: 1
+    reused_matching_table_rows:
+      entities/gear/tactical-master-1-4.yml: 1e56254d80d370be15c077ab7475a63a33e00ca7
+      entities/gear/tactical-master-5-7.yml: 103ea206f15914af936511e72a8e302c7da52f8a
+      entities/gear/tactical-master-8-9.yml: 67cd0034580ab53baf87ee387fa12058edff21f7
+      entities/gear/tactical-master-10plus.yml: 5013a4f461c35458fb88455e26b449a61064c4fb
+      entities/gear/tactical-personal-1-4.yml: 0fef0f1729d30b6eca1b0cfab28f1870bd055cd7
+      entities/gear/tactical-personal-5-7.yml: 9e7fe6934f47d4cf6fe3f0f7675b5333f63b873d
+      entities/gear/tactical-personal-8-9.yml: ae00b8114ba80d165cd876fc1275bc151cf57b9d
+      entities/gear/tactical-personal-10plus.yml: f959677285e9e8dbacf95c70f1b67eb9c3f2d885
+      entities/gear/laser-link.yml: 6d0edbd0963e4449ac0a954acaf861604f6d73b1
+      entities/gear/microwave-link.yml: af004b9b90052adf7f8c9e9113f9b1cbdff0cfe7
+      entities/gear/satellite-link.yml: 127c5d7cfd2dd5d9b80e044978477d501c9816a4
+      entities/gear/satellite-dish-standard-portable.yml: d365c59f31cb28269d6ec7ba0e24f40bee6407a9
+      entities/gear/satellite-dish-large-portable.yml: c50d04c7dec1927a4dc213e54da0d00fe7e9ed09
+      entities/gear/satellite-dish-fixed-base.yml: 80bb958db56cb9c540a82c7aee7734bd214c5762
+      entities/gear/satellite-dish-temporary.yml: 76ed0b99a7327eacc4c6606bd7ba3efd2a4db593
+    reused_rules_read_only:
+      rules/communications/radio-baseline.yml: 47272674204bb72476dfc14b4055968a1b4fdb47
+    added_numeric_row: equipment.gear.cannon-companion-portable-tactical-master-original-p55
+    blank_fields: Dashes retained as not applicable, not zero.
+transactions:
+  protocol: sr3-gate/v1
+  editorial_review: Independent source review of baseline and candidate; neutral fictional tabletop attribution and unchanged substantive data; single allowed content class per record.
+  ordinary_contents_create: true
+  exact_commit_and_main_readback: true
+  stage: preflighted
+  confirm: verified
+  recovery_inspect: verified
+  records:
+    - journal: journal-battle-reviewed
+      path: rules/combat/cannon-companion-battletac-network-game-actions-p53-54.yml
+      content_class: rule_exact
+      baseline_sha256: 4e81fc91c2504ae4af4fbd0d526fb34c5faa137302bce48e4eb54bcc74987f2b
+      candidate_sha256: d7a27c06b6c96a31a8265b3c0b7a748a9abc034d328cada528f1c8b207ebf7e9
+      immutable_sha256: 7dd80f51f2be34d993bca051faf7fc5dee40fcbbe161a8e55c6be9cfffd2558d
+      plan_sha256: e1ce01e379f91202ae0bf8f430d191221f42e7cd4596b77a28a1b8b040a0276d
+      verified_receipt_sha256: 144eb83a229bc2cd550cd68e005fbfca2db2a6e2257511626c23dc22738c834c
+      commit: 8796cb9fbcdae9dcb8a2b5bab1236d69d8750d16
+      expected_and_readback_blob: cac0a9747444c9f54071794c39d53255edac30cd
+      index_commit: fa69254676d8c84a10646484b269e83c4deca6f0
+      index_blob: aef0d84b72b23819fd9077b8d4839aec812f8c9a
+    - journal: journal-tcs-reviewed
+      path: rules/communications/cannon-companion-tactical-communication-device-rules-p54-55.yml
+      content_class: rule_exact
+      baseline_sha256: 955ef1846f4cd3c80d2818e03ab679dde9e095729d6bd825bb22ccf95a951fc5
+      candidate_sha256: cd041e00b5bf609ed87a01be9797ad9201299f5546b39c481e2dfc34f540375f
+      immutable_sha256: 4f1fcea6dfb7d4d34c7750ced860d85264218d1fdaf35ceaf14736e684647146
+      plan_sha256: 183e91d2fc4aaba9a2d08398b8e460089f2381ece77677ab99f075fa44f88149
+      verified_receipt_sha256: debd5aa2d6b5b02af691a25ded3792b3dbf064dfab5556b03fe73a1eae5a6f62
+      commit: e03f613d1ca3f3971a06b4afb7763a60569c8cb0
+      expected_and_readback_blob: 9d511b4a45f5192ec9f9016161543454dadb09e3
+      index_commit: 70728f34c02c4475a8eabaf61ff9cf8b3b7eaff4
+      index_blob: de195e9bea59c53017e6a375200eab45509405bf
+    - journal: journal-portable
+      path: equipment/gear/cannon-companion-portable-tactical-master-original-p55.yml
+      content_class: equipment_stat
+      baseline_sha256: 0e20c2a0d3e7385992f40f52c5929aad2a35bd9cf009c64d7c7bdbd479b46edc
+      candidate_sha256: 762cda9ea2ac7ce1902b672814bce4e0a0d9d803bc3f14cf313e02a18ada1cea
+      immutable_sha256: dde2fb110be6ddf0e2f88fac379c15e2b361be41d7e54d6112cd42dce4deb1e1
+      plan_sha256: 333cd1dfde0669b04525ff94070f51620484d0ac463c2443d6b4783b2ca29fbd
+      verified_receipt_sha256: b4cadf0f0db2dac40ecf53664285ae80c118655efafec141f5aff1a86368ad08
+      commit: 7ff00303003511cedc5d024670565eb4aa74a379
+      expected_and_readback_blob: 796caf40754b8487800060ba98be9fa31b5e7e01
+      index_commit: 1b7d8ee0ce2206dbec60276ecca65bc7d51676e1
+      index_blob: acebf0a2bc7174ddd92306f934f5c4906fb0fbc8
+    - journal: journal-interface
+      path: rules/communications/cannon-companion-tactical-master-interface-eligibility-p54-55.yml
+      content_class: rule_exact
+      baseline_sha256: 7f9fae5c8e056058110fcad192c4cf31b89199adc6b52917910f2640164a2e84
+      candidate_sha256: ff5363edc1ab9493ba90c0f6176a9f641febaab159bf7672f1dfbdca4ad80acb
+      immutable_sha256: 2df5266fe68e8aa0af826855ceab69354f20cb2aa92bd0f5e43097790c5290dd
+      plan_sha256: 73dade2c5763d529602b26c3fc06a9bdda3902bcccdefcf47510e60ed06b5d1e
+      verified_receipt_sha256: 01df4ce2503360bd18453fb1c5d673fe348409f13e5bf01c9d51da4cb24681df
+      commit: 65eebbf3b01b061c71f91b69824371908038d91a
+      expected_and_readback_blob: ba9612f3cd883f4e476eed842a07a4e7502c5d78
+      index_commit: 2e57edfb928a5563c2dbe807d9caf82860c868b6
+      index_blob: a2eccc3257e48648705c6535a85f5c7a21905c81
+  superseded_unsubmitted_stages: [journal-battle, journal-tcs]
+  denied_writes: 0
+  manifest_readback: exact after each record
+result:
+  accepted_new_records: 4
+  original_table_rows_reviewed: 19
+  matching_rows_reused: 18
+  source_local_sections_reconciled: 2
+  external_dependency_open: 1
+  whole_gear_chapter_closed: false
+  whole_book_closed: false
+  globally_authorized_pages: 0
+  next_unreviewed_natural_section: Parachutes, beginning printed page 55
