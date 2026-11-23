@@ -1,16 +1,116 @@
 id: rule.cyberlimbs.equipment-capacity
 record_type: rule
-name: "Cyberlimb Equipment Capacity"
+name: Cyberlimb Equipment Capacity
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: '35-37'
+pdf_pages: '35-37'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 35, basis: defines}
-scope: {applies_to: ["cyberlimbs and structurally integrated cyberware"]}
+scope: {applies_to: [cyberlimbs and structurally integrated cyberware]}
 resolution:
-  summary: "Cyberlimbs provide equipment-capacity units that can hold compatible cyberware and gear. Obvious and synthetic limbs provide different capacity, and devices have listed capacity costs. Items installed in a cyberlimb normally do not have a direct neural connection unless the item itself includes one or one is added."
-  inputs: ["limb type", "available ECU", "device ECU cost"]
-  outputs: ["whether equipment fits and whether additional interfaces are required"]
+  summary: Calculate remaining equipment capacity using the original replacement and installation tables, grade reductions, and interface exceptions.
+  inputs: [replacement type, grade, equipment, available ECU]
+  outputs: [equipment fit, Essence cost, Concealability modifier, interface requirement]
   steps: []
-links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+data:
+  general:
+    printed: 35
+    approximate_cubic_centimeters_per_ecu: 50
+    normally_no_additional_essence: true
+    noncyber_body_interface_may_cost_essence: true
+    unlisted_equipment: GM assigns ECU by approximate size using the units table
+    most_devices_require_direct_neural_interface_for_cybernetic_control_unless_included: true
+    direct_neural_interface_cross_reference: M&M p39
+    skull_and_torso: capacity applies only to structural frame installations, not ordinary headware inside the head
+  grade:
+    printed: 36
+    capacity_multiplier: {basic: 1, alpha: 0.9, beta: 0.8, delta: 0.75}
+    rounding: nearest 0.25 ECU
+  maximum_capacity:
+    printed: 37
+    columns: [replacement, obvious_ecu, synthetic_ecu]
+    rows:
+      - [hand/foot, 2, 1]
+      - [full arm, 10, 5]
+      - [full leg, 20, 10]
+      - [upper arm, 6, 3]
+      - [lower arm, 4, 2]
+      - [upper leg, 12, 6]
+      - [lower leg, 8, 4]
+      - [skull, 2, 1]
+      - [torso, 7, 3]
+  equipment_capacity_cost_table:
+    printed: 36
+    columns: [item, ecu, essence, concealability_modifier, printed_dni_asterisk]
+    null_means: printed dash, not an inferred independent numeric rating
+    dni_asterisk: item requires direct neural interface to be cybernetically controlled
+    rows:
+      - [chemical analyzer, 0.5, null, -0.5, false]
+      - [custom cyberdeck, 5, null, -4, true]
+      - [stock cyberdeck, 4, null, -3, true]
+      - [cyberfins per hand/foot, 0.25, null, -0.5, false]
+      - [cybergun holdout pistol, 1, null, -1, true]
+      - [cybergun light pistol, 1.5, null, -1, true]
+      - [cybergun machine pistol, 2, null, -2, true]
+      - [cybergun heavy pistol, 2.5, null, -2, true]
+      - [cybergun submachine gun, 3, null, -3, true]
+      - [cybergun shotgun, 3.5, null, -2, true]
+      - [external clip port, 0.25, null, -1, true]
+      - [laser sight, 0.25, null, -0.5, false]
+      - [silencer, 0.5, null, -1, false]
+      - [sound suppresser, 1, null, -2, false]
+      - [cybersquirt, 2, null, -2, true]
+      - [cyber taser, 1, null, -0.5, true]
+      - [datajack, 0.5, 0.2, -1, false]
+      - [finger tip compartment, 0.25, null, null, true]
+      - [foot anchor, 4, null, -1, false]
+      - [gas spectrometer, 0.5, null, -0.5, false]
+      - [handblade, 0.5, null, -5, false]
+      - [retractable handblade, 1, null, -0.5, false]
+      - [hand razors, 0.25, null, -3, false]
+      - [retractable hand razors, 0.5, null, -0.5, false]
+      - [horns (cyberskull only), 0.5, null, -3, false]
+      - [retractable horns, 1, 0.1, -2, false]
+      - [hydraulic jacks, '4 + .5/rating', 0.25, -3, false]
+      - [independent cybereyes pair, 2, 0.2, -2, false]
+      - [independent cybereye single, 1, 0.1, -1, false]
+      - [magnetic system, 3, null, -1, false]
+      - [orientation system, 1, null, -0.5, true]
+      - [remote control deck, 5, null, -4, true]
+      - [BattleTac FDDM, 0.25, null, null, false]
+      - [BattleTac IVIS, 0.5, null, -0.5, false]
+      - [remote control ECCM, 0.5, null, -1, false]
+      - [RC encryption module, 0.25, null, null, false]
+      - [rigger decryption module, 0.25, null, null, false]
+      - [rigger protocol emulation, 0.25, null, null, false]
+      - [retractable climbing claws, 1, null, -0.5, false]
+      - [shock hand, 1, null, -0.5, false]
+      - [smartlink system, 0.5, 0.25, null, false]
+      - [induction pad, 0.25, null, null, false]
+      - [spur, 0.5, null, -4, false]
+      - [retractable spur, 1, null, -0.5, false]
+      - [Strength Enhancement each point up to 3, null, null, -1, false]
+      - [Strength Enhancement each point over 3, 1, 0.4, -2, false]
+      - [subdermal display (biomonitor), 0.5, null, -0.5, false]
+      - [tactical computer, 4, 0.5, -4, false]
+      - [each additional sense port, 0.5, 0.1, null, false]
+      - [venom sack per 2 doses, 0.25, null, null, false]
+  units_table:
+    printed: 37
+    columns: [ecu, approximate_size, examples]
+    rows:
+      - [0.5, Micro, [pen, microflare, skillsoft chip, razor blade, lockpicks]]
+      - [1, Small, [knife, holdout pistol, cellphone, GPS, lockpick gun]]
+      - [3, Medium, [heavy pistol, computer, signal locator, grapple gun]]
+      - [5, Large, [jammer, cyberdeck, simdeck, medkit]]
+links: {uses: [], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: [rule.cyberlimbs.concealment, entity.cyberware.direct-neural-interface]}
 sources:
-  - {source: source.mm, pages: "35-37", relation: defines, note: "Equipment capacity, capacity cost and equipment-capacity-unit tables"}
-notes: []
+  - {source: source.mm, pages: '35-36', relation: defines, note: Equipment Capacity and Equipment Capacity Cost Table}
+  - {source: source.mm, page: 37, relation: defines, note: Equipment Capacity Table and Equipment Capacity Units Table}
+notes:
+  - Installation-context table values are not additional purchases or modifiers on top of the corresponding canonical item values. Preserve literal source dashes and rating notation.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF pp35-37: Equipment Capacity'
+framing: reference_exact
