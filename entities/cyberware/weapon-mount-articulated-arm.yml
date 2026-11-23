@@ -1,10 +1,23 @@
 id: entity.cyberware.weapon-mount-articulated-arm
 record_type: entity
-name: "Weapon Mount Articulated Arm"
+name: Weapon Mount Articulated Arm
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.5, equipment_capacity_units: 7, cost_nuyen: 110000, concealability: null, availability: "12/24 days", street_index: 2, legality: "2P-R"}
+source: source.mm
+printed_pages: '41, 155'
+pdf_pages: '41, 156'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {essence: null, equipment_capacity_units: 7, cost_nuyen: 110000, concealability: null, availability: '12/24 days', street_index: 2, legality: '2P-R'}
+data:
+  market_row: {essence: null, ecu: 7, cost_nuyen: 110000, concealability: null, availability: '12/24 days', street_index: 2, legality: '2P-R'}
+  original_dash_fields: [essence, concealability]
+  separate_retractable_variant: entity.cyberware.weapon-mount-articulated-arm-retractable
 links: {uses: [rule.cyberlimbs.weapon-mounts], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 155, relation: defines, note: "Cyberlimb weapon-mount table"}
-notes: []
+  - {source: source.mm, page: 41, relation: defines, note: Original nonretractable articulated mount market row}
+  - {source: source.mm, page: 155, relation: defines, note: Cyberlimb weapon-mount table}
+notes:
+  - Both original rows show a dash for the nonretractable variant's Essence. The previous canonical 0.5 was unsupported; the separate retractable variant has Essence 1. Do not infer a replacement rule or alter the retractable item.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed pp41/155, PDF pp41/156: Articulated Arm market row'
+framing: reference_exact
