@@ -1,16 +1,32 @@
 id: rule.nanotech.excessive-nanoware
 record_type: rule
-name: "Excessive Free-Floating Nanoware"
+name: Excessive Free-Floating Nanoware
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '98, 100'
+pdf_pages: '99, 101'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Shadowrun Third Edition: Man & Machine (FASA7126, FASA 1999), excess nanoware, pp98 and 100/PDF99 and 101'
 effective: {status: current, source: source.mm, page: 100, basis: defines}
-scope: {applies_to: ["hosts with more than two free-floating nanoware systems"]}
+scope: {applies_to: [fictional SR3 characters with concurrent free-floating nanoware]}
 resolution:
-  summary: "More than two free-floating systems overload the host. Each system introduced after the second can fail outright and all active free-floating systems lose effectiveness as additional systems are added."
-  inputs: ["number of free-floating systems", "existing system effectiveness"]
-  outputs: ["failure risk and reduced effectiveness"]
-  steps: []
-links: {uses: [rule.nanotech.classification], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
+  summary: 'The third and subsequent free-floating systems do not function; each additional introduced system reduces the population of systems already installed.'
+  inputs: [number of simultaneous free-floating nanoware systems, additional systems introduced]
+  outputs: [system failure, percentage loss for existing systems]
+data:
+  simultaneous_free_floating_system_limit: 2
+  systems_after_second: nonfunctional
+  existing_system_loss_percent_per_additional_system: 25
+  loss_applies_to: each system already in place
+links:
+  uses: [rule.nanotech.classification]
+  affects: [subsystem.nanotech.core]
+  modified_by: []
+  interacts_with: [rule.nanotech.nanite-loss]
 sources:
-  - {source: source.mm, page: 100, relation: defines, note: "Excessive Nanoware"}
+  - {source: source.mm, page: 98, relation: defines, note: 'Free-floating nanoware limit and failure'}
+  - {source: source.mm, page: 100, relation: defines, note: 'Excessive Nanoware'}
 notes: []
