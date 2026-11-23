@@ -70,6 +70,9 @@ source_review_scope:
   - 191
   - 193
   - 199
+  - 202
+  - 203
+  - 204
   original_to_pdf_page_mapping:
     '25': 27
     '49': 51
@@ -122,6 +125,9 @@ source_review_scope:
     '191': 193
     '193': 195
     '199': 201
+    '202': 204
+    '203': 205
+    '204': 206
   source_reviewer_note: Independently reviewed original revised pp25,49,57-58,61-62,68,74-75
     against original FASA7910 same printed pages; only individual examined images,
     not a contiguous scan or whole-book completeness claim.
@@ -145,6 +151,7 @@ source_review_scope:
   later_review_note_2026_11_23_aohana_frigate_ammo: Original revised FanPro10662 printed p187/PDF189 and historical FASA7910 printed p186/PDF186 ship-description images directly compared for Shiawase Aohana-Class Frigate. Light Naval Gun ammunition revised from 500 to 400 rounds, retaining 16 CF. Independent first-pass source/editorial review, stage, prepare, ordinary Contents exact-byte write/readback, actual confirm and recovery inspection verified. Audit references/audits/r3-revised-aohana-frigate-ammo-p187-original-transaction-2026-11-23.json; historical original and Denver boundary unchanged.
   later_review_note_2026_11_23_special_vehicles: FanPro10662 revised printed p193/PDF195 original image and FASA7910 historical printed pp192-193/PDF192-193 independently compared by matching model rows; Bergen tractor chassis and Availability plus fourteen paired Grande Concorde/SV250 semiballistic statistics preserved as original printed differences after baseline/candidate stage, preparation, ordinary exact GitHub Contents write/readback, actual gate confirm and recovery inspection. The historical source remains unchanged and no global page credit is claimed.
   later_review_note_2026_11_23_jet_sports_car: FanPro10662 revised original printed p199/PDF201 Jet Turbine Cars table image compared to FASA7910 historical original p199/PDF199. The revised Sports Car row is genuinely absent from the historical original Jet Turbine table. Its exact Load, Speed, Acceleration, Signature, Fuel, Economy, Design Points and blank People Space cells were reviewed, independently baseline/candidate staged, prepared, ordinary committed, exactly read back, actually confirmed and recovery-inspected before source indexing. No unreviewed rows or contiguous page credit claimed.
+  later_review_note_2026_11_23_chassis_reference: Original revised FanPro10662 Vehicle Chassis Table pp202-204/PDF204-206 independently image-compared to historical FASA7910 pp202-204/PDF202-204. Three distinct equipment-stat records capture chassis capacity, literal rail/trailer signature and drone CF/sensor fields. Each passed independent source/editorial baseline-candidate review, actual stage/prepare, ordinary Contents write with exact-byte readback, gate confirm, and recovery inspection before indexing. Source reflow and unchanged fields do not count as new mechanics; no global contiguous advancement or whole-book certification.
 global_worker_control:
   active_source_unchanged: source.fasa-7212
   denver_checkpoint_unchanged: printed p45 / PDF46
@@ -578,6 +585,45 @@ verified_semantic_records:
   baseline_sha256: 023905599c6ba823d789bcc9d1879460a75d45d210da728ce27582f7634bc5a4
   candidate_sha256: 137e2155dfdfa4ed5b697e16ee518361be1d32ddb55ed7597fb48f204ca774ca
   immutable_sha256: af3560f744f2378870b90ec7672a894c28a0357628814be1817fdc06b439e084
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: equipment.vehicles.r3-revised-chassis-vehicle-capacity-p202
+  path: equipment/vehicles/r3-revised-chassis-vehicle-capacity-p202.yml
+  range_printed: [202, 202]
+  range_pdf: [204, 204]
+  content_class: equipment_stat
+  commit: 4c32e6d0be8f567a2ae010ca917d64e903791432
+  blob: 1653b631070a07d4f89c3bf40339b6e1febaa3f5
+  baseline_sha256: 2004e57ff09fe306764690b3e8f92298a33b23f36f436f25b223992ad8c6e081
+  candidate_sha256: 084fe4a5a7f8d7c373d56c872a8b3f8cc79f2628f00c1705116701bb37fbaf29
+  immutable_sha256: 0756b15bfa7983730f8ef66dad0d8b49fe6e8df99865e7c3aa4335d8db68336f
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: equipment.vehicles.r3-revised-chassis-rail-trailer-signature-p203-204
+  path: equipment/vehicles/r3-revised-chassis-rail-trailer-signature-p203-204.yml
+  range_printed: [203, 204]
+  range_pdf: [205, 206]
+  content_class: equipment_stat
+  commit: c3de42a6b9977f99e8e0ce6ab8e6aef77bf5c8b1
+  blob: 59d3f6cc0aeb46453a72728d5f42d084986c1d90
+  baseline_sha256: 54ce34647d0f33cfcddee64296702a0818255b05ebc8922b4336dfe2f8c7856d
+  candidate_sha256: e762003b589325b507fa2d6a26b7c2cf573e41fbdd9327ccae468a7053e359c5
+  immutable_sha256: f4ef0e73039023baa48c2e58e0d141822f87f40e799cce466bf612033e56b7bd
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: equipment.vehicles.r3-revised-drone-chassis-corrections-p204
+  path: equipment/vehicles/r3-revised-drone-chassis-corrections-p204.yml
+  range_printed: [204, 204]
+  range_pdf: [206, 206]
+  content_class: equipment_stat
+  commit: ae8738ebac8d5a5ff3f3f9fca29e8f81ec7059ed
+  blob: dfe889b95110c7f68cb5cfe00e53567ee6d828ec
+  baseline_sha256: 8627706838196cd3325f07bd32cfad71da67a66f505eb94f50253f5a65a9e460
+  candidate_sha256: 43dc981456f351885e18c26642ebbed6b06c013fff600c46419b7355a9317667
+  immutable_sha256: cfc31605a0fe2db88034cf7626555d2284c1fcb7f9daddfe89ba6623289000c2
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
