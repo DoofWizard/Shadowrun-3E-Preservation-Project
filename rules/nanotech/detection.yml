@@ -1,39 +1,38 @@
 id: rule.nanotech.detection
 record_type: rule
-name: "Nanotech Detection"
+name: Nanotech Detection
 domain: nanotech
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 100
-  basis: defines
-
-scope:
-  applies_to:
-    - "attempts to detect nanoware or nanite activity"
-
+source: source.mm
+printed_pages: '100'
+pdf_pages: '101'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), p100/PDF101: Nanoscanner and Thermographic Detection'
+effective: {status: current, source: source.mm, page: 100, basis: defines}
+scope: {applies_to: [fictional SR3 nanoware detection tests]}
 resolution:
-  summary: "Nanoware can be detected through specialized scanning and, for some systems, thermal signatures. Detection difficulty depends on the nanotech involved and the scanner/equipment used."
-  inputs:
-    - "nanotech/nanoware type"
-    - "scanner rating or detection method"
-  outputs:
-    - "detected or undetected nanotechnology"
-
-links:
-  uses:
-    - rule.tests.success-test
-  affects: []
-  modified_by: []
-  interacts_with:
-    - subsystem.nanotech.core
-
+  summary: 'Resolve nanoscanner tests separately for each system. Active nanites also modify thermographic detection and Sensor Tests.'
+  inputs: [nanoware type, activation state, effectiveness, detection method]
+  outputs: [detection target number, applicable test modifier]
+  steps: []
+data:
+  nanoscanner_required_for_nanoware_detection: true
+  nanoscanner_standard_at: [hospitals, clinics]
+  separate_test_per_system: true
+  nanoware_detection_table:
+    base_target_numbers: {fixed_inactive: 10, free_floating: 6, transient: 8}
+    effectiveness_modifiers:
+      - {condition: working below 50 percent, target_number_modifier: 1}
+      - {condition: not working below 25 percent, target_number_modifier: 3}
+    source_note: 'The table lists the two conditions separately; it does not explicitly address stacking.'
+  thermographic_detection:
+    target_number_modifier: -1
+    applies_to: [thermographic detection, Sensor Tests]
+    condition: active nanites in the target character
+    active_types: [transient, free-floating, activated fixed]
+links: {uses: [rule.tests.success-test], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core, rule.nanotech.nanite-loss]}
 sources:
-  - source: source.mm
-    page: 100
-    relation: defines
-    note: "Thermographic Detection / Nanoscanners / Nanotech Detection Table"
-
+  - {source: source.mm, page: 100, relation: defines, note: 'Thermographic Detection and Nanoware Detection Table'}
 notes: []
