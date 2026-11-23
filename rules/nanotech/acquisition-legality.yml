@@ -1,16 +1,40 @@
 id: rule.nanotech.acquisition-legality
 record_type: rule
-name: "Acquiring and Legally Possessing Nanoware"
+name: Acquiring and Legally Possessing Nanoware
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '98'
+pdf_pages: '99'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), p98/PDF99: Nanoware Acquisition and Legal Restrictions'
 effective: {status: current, source: source.mm, page: 98, basis: defines}
-scope: {applies_to: ["nanoware acquisition and installation"]}
+scope: {applies_to: [fictional character acquisition and possession of nanoware]}
 resolution:
-  summary: "Nanoware is rare, expensive and generally available only through advanced clinics or specialized research/production sources. Legal systems may carry licensing and intellectual-property restrictions, while black-market access follows the source's shadowclinic rules and generally requires beta- or delta-grade facilities."
-  inputs: ["nanoware type", "clinic grade", "legal or black-market channel"]
-  outputs: ["availability and legal-access constraints"]
+  summary: 'Apply the sourcebook clinic, character creation, cost and in-world permit restrictions.'
+  inputs: [nanoware type, clinic grade, character creation status, local in-world legality, hive installation]
+  outputs: [eligibility, additional costs, fictional legal classification]
   steps: []
+data:
+  access:
+    ordinary_street_clinic: generally_unavailable_except_cyberware_implantation_nanotech
+    clinic_levels_permitted: [beta, delta]
+    clinic_search_reference_printed: 140
+    starting_character_access: GM_should_disallow
+  costs:
+    surgery_and_hospitalization: additional_to_nanoware_price
+    optional_hive_programming: additional_fee
+    hive_reference_printed: 91
+    separate_hive_required_per_maintained_nanite_system: true
+  legality:
+    personal_augmentation: generally_legal_with_appropriate_permit
+    range: [fully legal, Class B Controlled Substances]
+    class_B_legality_rating: Y
+    depends_on: [local government, system capabilities]
+    proprietary_systems: fictional licensing restrictions apply
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core, procedure.surgery.find-provider]}
 sources:
-  - {source: source.mm, page: 98, relation: defines, note: "Acquiring Nanoware, Finding a Shadowclinic, Legality"}
+  - {source: source.mm, page: 98, relation: defines, note: 'Acquiring Nanoware, Finding a Shadowclinic and Legality'}
 notes: []
