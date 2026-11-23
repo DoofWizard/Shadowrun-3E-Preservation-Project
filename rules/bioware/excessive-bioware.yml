@@ -3,40 +3,53 @@ record_type: rule
 name: "Excessive Bioware"
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: "78"
+pdf_pages: "79"
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 78
   basis: defines
-
 scope:
   applies_to:
-    - "characters whose total Bio Index is equal to or greater than Essence Index"
-
+    - "Characters whose total Bio Index equals or exceeds Essence Index"
 resolution:
-  summary: "When Bio Index reaches or exceeds Essence Index, the character suffers systemic imbalance and additional physiological penalties. Effects include reduced physical overflow capacity, diminished resistance, longer healing, and system overstress, as detailed by the excessive-bioware rules."
-  inputs:
-    - "Bio Index"
-    - "Essence Index"
-  outputs:
-    - "excessive-bioware penalties"
-
+  summary: "Excessive bioware is defined at Bio Index >= Essence Index. The magnitude-based penalties depend on the amount by which Bio Index exceeds Essence Index; the systemic Light Stress rule specifically requires Bio Index > Essence Index."
+  inputs: [Bio Index, Essence Index, natural Body including bioware bonuses]
+  outputs: [physical overflow capacity, resistance test dice, healing test dice, effective implant Stress]
+data:
+  excessive_threshold: "Bio Index >= Essence Index"
+  excess: "Bio Index - Essence Index"
+  physical_overflow:
+    reduction: "ceil(excess) boxes"
+    base: "Natural Body includes bioware Body bonuses."
+    source_cross_reference: "SR3 p125, Exceeding the Condition Monitor"
+  resistance:
+    dice_lost: "ceil(excess / 2)"
+    applies_to: "Resistance Tests against disease, compounds and toxins; additional to the ordinary increased Power."
+  healing:
+    dice_lost: "ceil(excess / 2)"
+    applies_to: "Healing Tests, in addition to ordinary bioware drawbacks."
+  system_overstress:
+    condition: "Bio Index > Essence Index"
+    effective_level_for_every_bioware_implant: Light
+    repairable: false
+    reversible: false
+    changes_actual_implant_stress_points: false
 links:
-  uses:
-    - rule.bioware.bio-index
-    - rule.bioware.essence-index
-  affects:
-    - procedures.healing.natural-and-medical
+  uses: [rule.bioware.bio-index, rule.bioware.essence-index]
+  affects: [procedures.healing.natural-and-medical]
   modified_by: []
-  interacts_with:
-    - rule.bioware.awakened
-
+  interacts_with: [rule.bioware.awakened]
 sources:
   - source: source.mm
     page: 78
     relation: defines
-    note: "Excessive Bioware"
-
+    note: "Excessive Bioware Drawbacks"
 notes:
-  - "This is distinct from the absolute Bio Index limit of 9."
+  - "This is distinct from the absolute Bio Index limit of 9. The equality case meets the excessive threshold but contributes zero excess and does not meet the separately stated system-overstress condition."
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p78/PDF p79: Excessive Bioware Drawbacks"
+framing: reference_exact
