@@ -1,0 +1,70 @@
+audit_type: source_specific_original_image_and_transaction_review
+date: '2026-11-23'
+source: source.cc
+title: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+original_pdf:
+  drive_id: 1DmR4OWd_tHjn1AMGFeyd6NC3V3cL-vp2
+  physical_pages: 130
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  live_manifest_before_blob: 67f161ae6fa800a60b13cf10b8a89ccf7cd47a84
+  verify_source_actual_status: source_pdf_hash_verified
+  page_images_review: independently_completed_for_listed_pages
+  mapping: printed p105 = PDF106; p106 = PDF107; p113 = PDF114; p114 = PDF115
+unmodified_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+preflight_self_tests_passed: 29
+scope_reviews:
+  - scope: Small Unit Tactics and optional Combat Pool
+    printed_pages: [105, 106]
+    pdf_pages: [106, 107]
+    status: original_field_reconciliation_with_new_confirmed_supplement
+    reused_records:
+      - path: rules/combat/small-unit-tactics.yml
+        blob: 5358d11993fcf69618e7916cecda1488b6cdcff3
+        covers: communication timing and action economy; base TN and all table modifiers; team size limit; success conversion, Reaction cap, conflicting orders and optional pool conversion
+      - path: entities/skills/small-unit-tactics.yml
+        blob: fa300f64c389f161c6f105cbc6a98b2edcbe6b98
+        covers: linked attribute, skill category, default and three specializations
+    newly_confirmed:
+      path: rules/combat/cannon-companion-small-unit-tactics-resolution-gaps-p105-106.yml
+      commit: b76d71b6b060203b1d0d32f79b7c533b18d51322
+      blob: 80ad34ff1c8510330eac274a799d611762310795
+      baseline_sha256: 5431a7484fbf643ba0213540003a26e81bebe4b7fdafcfb7c4774e1178e5a4bd
+      candidate_sha256: 84d6533040116a0a524080b76b9e175df88341873f78d89abe5cd85d8460dd3e
+      immutable_sha256: 957fef2b6101ef85828729182144819a104079e00908496abed44cc78e7b26f8
+      prepare_status: preflighted
+      confirm_status: verified
+      recovery_inspect_status: verified
+      covers: single shared test and recipient-specific TNs; cybernetic master action and possible skill bonus; both sides of ambush; explicit next-turn optional pool timing and two worked numeric examples
+    remaining_dependency: BattleTac master skill-bonus details are external to pp105-106 and require separate p53 reconciliation.
+  - scope: Original range tables only
+    printed_pages: [113, 114]
+    pdf_pages: [114, 115]
+    status: read_only_source_field_comparison
+    reviewed_rows: 41
+    records:
+      - path: rules/combat/range-target-number.yml
+        blob: 7e0f09ebf98f40704f050390f098612fae1e593c
+        rows: 30
+        result: all listed bands, base TNs and netgun minimum-range note match original p113
+      - path: rules/combat/grenade-launched-weapon-ranges.yml
+        blob: 3dddbb9c226a3d62207da42863aeeb9f2d7d2e84
+        rows: 8
+        result: bands, base TNs, scatter and minimum-range footnote match original p114
+      - path: rules/combat/target-designator-ranges.yml
+        blob: 425738808e511106a1c7c367383de50590411165
+        rows: 3
+        result: bands, base TNs and minimum-range footnote match original p114
+    note: Existing shared records reused without semantic writes. This read-only comparison is not a new transaction receipt.
+  - scope: Prior p114 linked skill table
+    record: rules/skills/cannon-companion-linked-attributes-defaults-original-p114.yml
+    blob: 1787d38c073a288df1efb1b9363b5ceb5639e1fd
+    status: prior_verified_registration_reused
+global_pages_authorized: 0
+whole_source_rules_acceptance: not_certified
