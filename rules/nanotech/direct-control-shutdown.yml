@@ -3,14 +3,35 @@ record_type: rule
 name: "Nanite Direct Control and Shutdown"
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: "97"
+pdf_pages: "98"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 97, basis: defines}
 scope: {applies_to: ["nanite systems"]}
 resolution:
-  summary: "Nanites are not riggable drones. Direct control is limited to supported programming methods. Nanite systems can be shut down by built-in conditions, commands, removal of external power, programmed task completion or system-specific triggers, after which some breeds decay or can later be restarted."
+  summary: "Resolve fictional nanite control restrictions and shutdown or restart conditions."
   inputs: ["system design", "shutdown condition", "power source", "programmed task"]
   outputs: ["active, shut down, decaying, or restartable state"]
   steps: []
-links: {uses: [rule.nanotech.pilot-and-programming], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
+data:
+  direct_control:
+    riggable: false
+    hardwired_function: true
+    rigger_or_decker_reprogramming: "Only via the methods in the preceding reprogramming rule."
+  shutdown:
+    definition: unable to perform assigned function
+    possible_conditions: [preprogrammed chemical trigger, preprogrammed physical trigger, designated transmission, loss of external power, completion of programmed task]
+    ordinary_behavior: repeat assigned task until stopped
+    chemical_trigger: "Breed-specific game compound can inhibit some or all capabilities; possible forms include gas, liquid, molecular form, or delivery by another nanite breed."
+  after_shutdown:
+    can_restart_with_appropriate_cue: true
+    most_begin_decay_when_inactive: true
+    certain_breeds_can_scavenge_inactive_nanites: true
+links: {uses: [rule.nanotech.pilot-and-programming, rule.nanotech.reprogramming], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 97, relation: defines, note: "Direct Control and Shutting Down Nanites"}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p97/PDF p98: Nanite Direct Control and Shutdown"
+framing: reference_exact
