@@ -1,42 +1,88 @@
 id: option.magic.metamagic-quickening
 record_type: option
-name: "Metamagic: Quickening"
+name: 'Metamagic: Quickening'
 domain: magic
 status: ingested
-
 effective:
   status: current
   source: source.mits
   page: 77
   basis: defines
-
 option_for:
-  - option.magic.metamagic
-
+- option.magic.metamagic
 selection:
-  timing: "after casting and sustaining an eligible spell"
+  timing: after casting and sustaining an eligible spell
   prerequisites:
-    - "initiate"
-    - "eligible sustained spell"
+  - initiate
+  - eligible sustained spell
   incompatible_with: []
-
 effects:
-  - "Allows an initiate to make a sustained spell self-sustaining without a sustaining focus."
-  - "The initiate sustains the spell for the required time, performs a Sorcery Test, and spends Karma equal to the spell's Force."
-  - "Additional Karma may make the resulting quickened spell harder to dispel."
-
+- Makes an eligible sustained spell self-sustaining until dispelled without a sustaining focus.
+- The initiate uses Sorcery plus grade to determine sustaining time and pays Karma after sustaining; additional Karma increases effective Force against dispelling.
 links:
   modifies:
-    - subsystem.magic.sorcery
+  - subsystem.magic.sorcery
   requires:
-    - option.magic.metamagic
+  - option.magic.metamagic
   interacts_with: []
-
 sources:
-  - source: source.mits
-    page: 77
-    relation: defines
-    note: "Quickening"
-
+- source: source.mits
+  page: 77
+  relation: defines
+  note: Quickening
+- source: source.mits
+  page: 78
+  relation: extends
+  note: Quickening example and Tattoo Magic variant
 notes:
-  - "Exclusive-limited spells may not be quickened."
+- Exclusive-limited spells may not be quickened.
+source: source.mits
+printed_pages: 77-78
+pdf_pages: 78-79
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  standard:
+    eligible: Sustained spells; Exclusive-limited spells excluded.
+    result: Self-sustaining until dispelled, without sustaining focus or caster attention.
+    prerequisites: Cast normally, resist initial Drain, sustain while astrally perceiving the spell; Centering may assist initial Drain.
+    base_time: Permanent Spell Base Time Table (SR3 p178).
+    time_test: Sorcery plus dice equal to initiation grade.
+    target_number: Total dice actually used to cast, including Spell Pool, totem, elemental aid, foci and any other bonuses.
+    successful_duration: Divide base time by successes and round down; minimum 1 Combat Turn.
+    zero_successes: Twice base time.
+    all_ones: Spell ends.
+    exclusivity: Exclusive activity; no other magical actions during quickening.
+    karma: At end of final turn, pay Karma equal to Force; can increase total payment up to twice actual Force.
+    dispelling_force: Total Karma spent to quicken.
+    second_drain: Resist original Drain Code again after paying Karma; successes from initial Centering against Drain may instead be applied here; no new Centering Test.
+    abort: May end attempt if time is too long, but second Drain Resistance Test still required.
+    example:
+      grade: 3
+      sorcery: 7
+      force: 1
+      casting_dice: 7
+      drain: 2S
+      time_test_dice: 10
+      time_test_tn: 7
+      base_turns: 15
+      successes: 2
+      sustain_turns: 7
+      karma: 1
+  tattoo_magic:
+    printed_page: 78
+    separate_metamagical_technique: true
+    required_skills:
+    - Enchanting
+    - Tattooing
+    fictional_ink_reagents: One unit of herbal or mineral radicals for each 2 Force points.
+    ink_test: Enchanting (Alchemy); TN equals reagent units, minimum 2; base time 10 days.
+    minimum_area_square_cm: 100 times Force squared
+    tattoo_base_days: Force squared
+    tattoo_test: Tattooing (4); divide base time by successes; zero successes doubles time; all ones ruins tattoo and may leave a scar.
+    completion: Cast and quicken the spell as normal after preparing tattoo.
+    effective_dispelling_force: Twice Karma spent.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition metamagic: Quickening (FASA7907, printed 77-78/PDF 78-79)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG mechanical fields and exceptions from printed 77-78/PDF 78-79.
