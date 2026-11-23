@@ -3,14 +3,50 @@ record_type: rule
 name: "Cyberware Compatibility with Cyberlimbs"
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: "32-33"
+pdf_pages: "32-33"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 32, basis: defines}
 scope: {applies_to: ["cyberware installed in or alongside cyberlimbs"]}
 resolution:
-  summary: "Bone lacing, dermal armor/sheathing, muscle augmentation and similar natural-body augmentations are not fully compatible with replaced limb sections. Essence or other costs are reduced proportionally where the source specifies because the corresponding natural tissue is absent."
+  summary: "The listed natural-tissue augmentations cannot function in cyberlimbs, but can benefit remaining natural body parts at reduced cost and Essence. Protective implant bonuses decline as the number of cyber replacements increases."
   inputs: ["cyberlimb replacement coverage", "other augmentation type"]
   outputs: ["compatibility and adjusted cost/benefit"]
   steps: []
+data:
+  natural_body_only:
+    printed: 32
+    affected_items: [bone lacing, dermal armor, dermal sheaths, muscle augmentation, muscle replacement, orthoskin]
+    incompatible_with_cyberlimb_tissue: true
+    usable_on_remaining_natural_body: true
+    cost_reduction_per_complete_limb_percent: 10
+    essence_cost_reduction_per_complete_limb_percent: 10
+    cost_reduction_per_partial_limb_percent: 5
+    essence_cost_reduction_per_partial_limb_percent: 5
+  protective_bonuses:
+    printed: 33
+    applicable_bonuses: [armor, Body]
+    applies_per_listed_augmentation: true
+    replacement_count_thresholds:
+      - {replacements: "0-2", reduction_per_item: 0}
+      - {replacements: 3, reduction_per_item: 1}
+      - {replacements: 4, reduction_per_item: 2}
+      - {replacements: ">4", grants_armor_or_body_bonuses: false}
+    source_counting_convention: "A limb and the torso are counted as single replacements; the source also describes the skull and a partial limb as single replacements. The example unambiguously counts a cybertorso as one additional replacement."
+    source_example:
+      base_implant_body_bonuses: {plastic_bone_lacing: 1, dermal_plating: 3}
+      three_replacements: [cyberarm, cyberarm, cyberleg]
+      remaining_protective_implant_body_bonus: 2
+      separate_pair_of_cyberarms_body_bonus: 1
+      fourth_replacement: cybertorso
+      remaining_protective_implant_body_bonus_after_fourth: 1
+      separate_cybertorso_body_bonus: 1
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberlimbs.core]}
 sources:
-  - {source: source.mm, page: 32, relation: defines, note: "Cyberware Compatibility"}
-notes: []
+  - {source: source.mm, pages: "32-33", relation: defines, note: "Cyberware Compatibility"}
+notes:
+  - "The protective-bonus reduction is distinct from the separate Body bonus granted by cyberlimbs."
+headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp32-33/PDF pp32-33: Cyberware Compatibility with Cyberlimbs"
+framing: reference_exact
