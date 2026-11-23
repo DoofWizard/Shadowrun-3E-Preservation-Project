@@ -1,16 +1,33 @@
 id: rule.cyberlimbs.partial-cyberlimbs
 record_type: rule
-name: "Partial Cyberlimbs"
+name: Partial Cyberlimbs
 domain: cyberlimbs
 status: ingested
+source: source.mm
+printed_pages: '39'
+pdf_pages: '39'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 39, basis: defines}
-scope: {applies_to: ["cyberhands, cyberfeet, lower arms, lower legs and other partial replacements"]}
+scope: {applies_to: [cyberhands, cyberfeet, cyber forearms, cyber lower legs]}
 resolution:
-  summary: "Partial cyberlimbs use standard cyberlimb rules with specific exceptions. Structural requirements can add reinforcement costs; partial replacements can be designed for removal, and attribute/strength benefits are limited to situations where the partial limb can meaningfully contribute."
-  inputs: ["partial limb type", "enhancements", "task"]
-  outputs: ["applicable bonuses, costs and removable-replacement behavior"]
+  summary: Partial replacements use the ordinary cyberlimb rules and require reinforcement of the remaining limb. Removable parts use a quick-release attachment and a Complex Action.
+  inputs: [partial limb type, enhancements, replacement modification]
+  outputs: [applicable bonuses, replacement action]
   steps: []
-links: {uses: [rule.cyberlimbs.attributes], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: []}
+data:
+  partial_replacement_types: [forearm, hand, foot, lower leg]
+  rest_of_limb_reinforced_for_added_weight_and_strength: true
+  apply_general_cyberlimb_rules_with_partial_limb_exceptions: true
+  removable_replacement:
+    eligible: [cyberhand, cyberfoot]
+    requires_quick_release_attachment: true
+    increased_cost: true
+    attach_or_remove: {free_hand_required: true, action: Complex}
+links: {uses: [rule.cyberlimbs.attributes], affects: [subsystem.cyberlimbs.core], modified_by: [], interacts_with: [entity.cyberware.replacement-modification]}
 sources:
-  - {source: source.mm, page: 39, relation: defines, note: "Partial Cyberlimbs and replacement modifications"}
-notes: []
+  - {source: source.mm, page: 39, relation: defines, note: Partial Cyberlimbs and Replacement Limbs}
+notes:
+  - The p39 replacement-modification market row prints a dash for Concealability; the existing p155-derived entity reports -1. Retain both provenance observations until p155 is independently compared; no supersession inferred.
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG rules), printed/PDF p39: Partial Cyberlimbs'
+framing: reference_exact
