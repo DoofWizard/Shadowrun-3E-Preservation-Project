@@ -1,16 +1,34 @@
 id: rule.nanotech.immune-tailoring
 record_type: rule
-name: "Nanoware Immune-System Tailoring"
+name: Nanoware Immune-System Tailoring
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '99'
+pdf_pages: '100'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), p99/PDF100: Nanoware Compatibility and Immune-System Tailoring'
 effective: {status: current, source: source.mm, page: 99, basis: defines}
-scope: {applies_to: ["free-floating nanoware"]}
+scope: {applies_to: [fictional SR3 nanoware installations]}
 resolution:
-  summary: "Free-floating nanoware must be tailored to the host's immune markers so the body does not rapidly destroy it. Existing filtration systems may require modification, and the source treats correct immune matching as part of the installation and long-term support process."
-  inputs: ["host immune markers", "free-floating system", "filtration-system configuration"]
-  outputs: ["compatible or rejected nanoware"]
+  summary: 'Apply host-specific compatibility and facilitator requirements to nanoware as appropriate to its category.'
+  inputs: [nanoware category, host compatibility, nanite facilitators, pathogenic defense bioware]
+  outputs: [compatibility, maintenance limitations, monitoring requirement]
   steps: []
-links: {uses: [procedure.nanotech.installation], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: []}
+data:
+  modified_filtration:
+    free_floating_without_facilitator: limited_long_term_effectiveness
+    facilitator_reference_printed: 90
+    loss_rule: rule.nanotech.nanite-loss
+  immune_matching:
+    direct_body_interaction: host_specific_matching
+    free_floating: individually_customized
+    mismatch_detection: postimplantation_hospitalization
+    pathogenic_defense_bioware: compatible_if_match_made_and_adjusted_during_postinjection_stage
+    transient_systems: immune_camouflage_not_required
+links: {uses: [procedure.nanotech.installation], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: [rule.nanotech.nanite-loss]}
 sources:
-  - {source: source.mm, page: 99, relation: defines, note: "Modified Filtration System / Immune System Tailoring"}
+  - {source: source.mm, page: 99, relation: defines, note: 'Modified Filtration System and Immune System Tailoring'}
 notes: []
