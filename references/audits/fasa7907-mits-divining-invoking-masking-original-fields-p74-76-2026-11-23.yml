@@ -1,0 +1,134 @@
+audit_id: audit.fasa7907-mits-divining-invoking-masking-original-fields-2026-11-23
+audit_type: original_source_natural_section_closeout
+scope: FASA7907 Magic in the Shadows only; Divining, Invoking and Masking
+audit_date: "2026-11-23"
+status: verified_and_source_indexed
+source:
+  id: source.mits
+  catalog_id: source.fasa-7907
+  title: Magic in the Shadows
+  publisher: FASA Corporation
+  edition: SR3
+  original_drive_id: 1LqiVya4wMPCrECxvVDeoq0qrILipzNNg
+  original_bytes: 123917505
+  original_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+  actual_verify_source_output: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+  actual_preflight_self_test: 29 passed
+  exact_script_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  original_images: "Same freshly verified original PDF; visually inspected cover PDF2, edition introduction p6/PDF7, and p74/PDF75, p75/PDF76, p76/PDF77 in full. Neighboring Possessing begins on p76, but is not included in the completed section scope."
+  baseline_manifest_blob: a1bcf37cc74e941bcbf5e4ff8b17c6db689c0c68
+  registered_source_manifest_final_blob: c7780a792910ac9c473afabf4c9e6959acd92b57
+  global_contiguous_page_credit: 0
+editorial:
+  content_class_per_record: rule_exact
+  protected_framing: reference_exact
+  independent_original_baseline_and_candidate_review: "Each exact original field was extracted and reviewed in a frozen baseline; separately compared outgoing candidate with original image, including root and nested human-readable prose, numeric rules, conditions, and exceptions. New headline and summary were the only differences between accepted baseline and candidate."
+  journal_reconstruction: "Locally confirmed byte-for-byte for each accepted record: the exact committed candidate with its two final root headline and summary lines removed reproduces immutable baseline.yml; SHA-256 of baseline is listed below. plan.json is the confirm_receipt minus commit_sha/readback_blob_sha with status preflighted, serialized sorted with two-space indent and newline; verified.json is the actual confirm output. Candidate is recoverable at its exact commit."
+sections:
+  - section: Divining
+    path: options/magic/metamagic-divining.yml
+    original_printed_pages: "74-75"
+    original_pdf_pages: "75-76"
+    old_blob: 258b71632e88b14a0fe21a66d32d96caacc2d473
+    exact_field_checklist:
+      - "p74/PDF75: subject assensing or suitable material link, event-only scope, two skills, Willpower linkage, rating ceiling, Active or Knowledge prediction skill, one selected skill, methods and their conditions."
+      - "p75/PDF76: sortilage distinct skills, secret GM dice test, five question complexity TN rows 4/5/6/8/10, zero versus all-ones outcomes, 1–2/3–4/5+ successes, GM adjustment and interpretation, grade tests per week, repeat +2 until substantial change."
+    notes: "Initial local draft failed before submission because two unquoted flow-mapping commas were parsed as stray keys; corrected against original and successfully staged new exact baseline and candidate. No rejected GitHub payload."
+    unresolved_game_rule_fields: []
+    journal: divining-journal
+    baseline_sha256: 720d39927fd0d8ba42b1f2839bb0dda5a6f5d6b7b7b8416c9848f517fde1a8bd
+    stage_status: staged
+    prepare_status: preflighted
+    confirm_receipt:
+      protocol: sr3-gate/v1
+      status: verified
+      record_id: option.magic.metamagic-divining
+      path: options/magic/metamagic-divining.yml
+      source: source.mits
+      printed_pages: "74-75"
+      pdf_pages: "75-76"
+      pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+      candidate_sha256: 646281af13d75f896046a2fc5b19587e787c685da8cca49a568304fe30aff3da
+      immutable_sha256: 3ab61821c2e793280c85df65def1bc8543be1fee3fe57922df75932b2302ba29
+      expected_blob_sha: c5d1430b30fc50f52ea89e6e5cc6922429eaa828
+      readback_blob_sha: c5d1430b30fc50f52ea89e6e5cc6922429eaa828
+      commit_sha: bbd1f3c6bb12ffaabc6a928158099ce166e4030e
+    commit_and_live_exact_bytes: true
+    source_index_commit: 196ef65bdf56a04df6d1d4e98a75b3c67cc975ab
+    source_index_blob: 046d75a34523083ea1125cfd4fbf74981f31f68a
+    source_index_readback_exact: true
+  - section: Invoking
+    path: options/magic/metamagic-invoking.yml
+    original_printed_pages: "75-76"
+    original_pdf_pages: "76-77"
+    old_blob: 96c9d3f3c5de67dee161bf6e34b8bac45c775d1a
+    exact_field_checklist:
+      - "p75/PDF76: summoning eligibility and excluded types, declaration and bonus choice before normal summoning, additional Conjuring and Drain tests with zero extra actions, doubled Force minus grade target number, normal-form uncontrolled on failure."
+      - "p75–76/PDF76–77: second Drain effective Force, normal Force for physical Drain, reuse original Centering successes, no new Centering Test, great-form uncontrolled if summoner incapacitated or killed."
+    notes: "Existing rules/spirits/great-form.yml and entities/spirits/great-form.yml cover separate p106–107 spirit enhancements; those were not overwritten or credited as reviewed original sections."
+    unresolved_game_rule_fields: []
+    journal: invoking-journal
+    baseline_sha256: b1725dcbf3b8642045b85fde7c59811ba0bc975483455490e6ac4c01f1af4046
+    stage_status: staged
+    prepare_status: preflighted
+    confirm_receipt:
+      protocol: sr3-gate/v1
+      status: verified
+      record_id: option.magic.metamagic-invoking
+      path: options/magic/metamagic-invoking.yml
+      source: source.mits
+      printed_pages: "75-76"
+      pdf_pages: "76-77"
+      pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+      candidate_sha256: c2cd835b0db8c13b590b8bffa751c75f67e7022971dcbcd2b2776f27f93450a0
+      immutable_sha256: a70cab80e93c1168701408021fbf33c7e2a5cb301e5e076fa9c76d5ff1e22585
+      expected_blob_sha: 7291daf8b7fb7605762f2567a386635b238691aa
+      readback_blob_sha: 7291daf8b7fb7605762f2567a386635b238691aa
+      commit_sha: cffa4b0224cb059b62ede02bc881f60ff8cbc712
+    commit_and_live_exact_bytes: true
+    source_index_commit: 1a4ecfe43fd6d18622de541bd8eb0a39c677f95c
+    source_index_blob: 1e5abfe6d6414990734bd405a7264aec7bf24757
+    source_index_readback_exact: true
+  - section: Masking
+    path: options/magic/metamagic-masking.yml
+    original_printed_pages: "76"
+    original_pdf_pages: "77"
+    old_blob: 9b38c3f9b9d145e67e42ca03502270ae959a4041
+    exact_field_checklist:
+      - "p76/PDF77: aura appearance/emotions/dual nature, optional GM defaults, secret Magic Test and Magic/Force/Essence TN, grade difference minimum one, one retry +2, success/failure, worked example, dual-natured/projecting form distinctions and normal astral interaction."
+      - "p76/PDF77: deliberate masking dice twice grade vs own Magic, two successes counter one, Exclusive Simple Action and Free Action release, no other magic; grade Force capacity for ordinary mask, total Force TN for extra foci/sustained/quickened spells and penetration opposition."
+    notes: "Corrected misleading original root effect: ordinary masking covers grade Force points, deliberate masking can extend beyond that limit. An earlier local stage was superseded before submission by clearer source-grounded fields for viewer dice and creature/initiates eligibility. No denied semantic submission."
+    unresolved_game_rule_fields: []
+    journal: masking-revised-journal
+    baseline_sha256: 9bb2c24d8440f35f0956277e1688a43461f27a97d7267eb9898e43eed09b8bb2
+    stage_status: staged
+    prepare_status: preflighted
+    confirm_receipt:
+      protocol: sr3-gate/v1
+      status: verified
+      record_id: option.magic.metamagic-masking
+      path: options/magic/metamagic-masking.yml
+      source: source.mits
+      printed_pages: "76"
+      pdf_pages: "77"
+      pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+      candidate_sha256: 6abda7e2f3b689ac789e2623b12dbe1f57e73bab1de119d9675c155f164a0a68
+      immutable_sha256: e5f4ae7406318f3a738a062999285e9bcb795a95db030e680d81db6b51ec4511
+      expected_blob_sha: 10f994bf9086a1f36879ef72647df6712d2fbca8
+      readback_blob_sha: 10f994bf9086a1f36879ef72647df6712d2fbca8
+      commit_sha: d931ae250a8bb33ff0ab888a76ebd60e99003baa
+    commit_and_live_exact_bytes: true
+    source_index_commit: cc1b8af1fd66a3e8d300995ea7e7889e81dc58b2
+    source_index_blob: c7780a792910ac9c473afabf4c9e6959acd92b57
+    source_index_readback_exact: true
+genuine_updated_canonical_records: 3
+full_natural_sections_closed: 3
+global_checkpoint_changes: 0
+remaining_scope:
+  - Possessing begins printed p76/PDF77; original continuation, conditions and numeric fields not yet audited.
+  - Remaining MitS metamagic, sorcery, conjuring, spirit, adept, initiation, spell-design, Drain, focus and optional systems require independent field/row review.
+  - No whole-book completion or global acceptance is asserted.
