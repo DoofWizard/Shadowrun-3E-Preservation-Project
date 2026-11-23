@@ -3,42 +3,68 @@ record_type: rule
 name: "Bio Index"
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: "77-78"
+pdf_pages: "78-79"
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 77
   basis: defines
-
 scope:
-  applies_to:
-    - "characters with implanted bioware"
-
+  applies_to: [characters with implanted bioware]
 resolution:
-  summary: "Each bioware implant contributes its Bio Index rating to the character's total Bio Index. Total Bio Index measures the physiological load imposed by bioware and may not exceed 9; exceeding that absolute limit is fatal."
-  inputs:
-    - "Bio Index values of all implanted bioware"
-  outputs:
-    - "total Bio Index"
+  summary: "Each bioware implant contributes its Bio Index cost to the total physiological load. Implantation does not cost Essence. Total Bio Index above 9 is fatal. Bioware Attribute bonuses count as natural base Attribute changes; Bio Index also increases resistance Power and healing target numbers."
+  inputs: [Bio Index values of all implanted bioware, current Essence Index, relevant test, implant Stress level]
+  outputs: [total Bio Index, excessive bioware comparison, natural Attribute values, resistance Power modifier, healing target number modifier, implant Stress effects]
   steps:
-    - "Add the Bio Index values of all implanted bioware."
-    - "Compare the total to Essence Index for excessive-bioware effects."
+    - "Sum all installed bioware Bio Index costs."
+    - "Compare the total with Essence Index for excessive-bioware effects."
     - "A total above 9 is fatal."
-
+data:
+  total_bio_index:
+    printed_page: 77
+    formula: "sum of all installed bioware Bio Index costs"
+    absolute_maximum: 9
+    exceeds_maximum: "The character dies."
+    essence_cost_for_bioware_implantation: 0
+    excessive_threshold: "Bio Index >= Essence Index"
+  natural_or_augmented:
+    printed_page: 77
+    bioware_attribute_bonuses_count_as: natural_unaugmented
+    modify_base_attributes: true
+  ordinary_drawbacks:
+    stress:
+      printed_page: 77
+      stress_damage_reduces_implant_performance: true
+      measured_in_levels: true
+      effect: "Apply each bioware item's listed adverse effect when its Stress level is reached."
+      cross_reference: "M&M p128"
+    lesser_immunity:
+      printed_pages: "77-78"
+      power_increase: "ceil(total Bio Index / 2)"
+      applies_to: [disease, drug, toxin, other compound the character is resisting]
+    longer_healing_periods:
+      printed_page: 78
+      target_number_increase: "ceil(total Bio Index / 2)"
+      applies_to: "All Healing Tests, including magical healing."
 links:
   uses: []
-  affects:
-    - rule.bioware.excessive-bioware
-    - rule.bioware.awakened
-  modified_by:
-    - option.bioware.grades
-  interacts_with:
-    - rule.bioware.essence-index
-
+  affects: [rule.bioware.excessive-bioware, rule.bioware.awakened]
+  modified_by: [option.bioware.grades]
+  interacts_with: [rule.bioware.essence-index]
 sources:
   - source: source.mm
     page: 77
     relation: defines
-    note: "Bio Index / Essence Index"
-
-notes: []
+    note: "Effects of Installing Bioware, Bio Index, Essence Index, Maximum Bioware, Natural or Augmented, Bioware Stress Levels, Lesser Immunity"
+  - source: source.mm
+    page: 78
+    relation: defines
+    note: "Lesser Immunity continuation and Longer Healing Periods"
+notes:
+  - "The ordinary drawbacks apply independently of additional excessive-bioware penalties."
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp77-78/PDF pp78-79: Bio Index and Ordinary Bioware Drawbacks"
+framing: reference_exact
