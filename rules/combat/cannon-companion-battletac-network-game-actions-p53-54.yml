@@ -1,0 +1,44 @@
+id: rule.combat.cannon-companion-battletac-network-game-actions-p53-54
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '53-54'
+pdf_pages: '54-55'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: Cannon Companion FASA7908 fictional tabletop BattleTac game actions and network conditions
+summary: Original FASA Corporation Cannon Companion (FASA7908), Shadowrun Third Edition, printed 53-54/PDF 54-55.
+data:
+  publication: Cannon Companion
+  publisher: FASA Corporation
+  catalog_number: FASA7908
+  extends: rule.cyberware.battletac-network
+  network:
+    minimum_component_types: [master, receiver]
+    component_forms: [laptop, pocket, wrist, integrated_security_or_military_hardened_armor, cybernetic]
+    ordinary_transceiver_minimum_device_rating: 4
+    compatible_alternative_links: [laser_link, microwave_relay]
+    frequencies_per_component_or_sensor: 1
+    dni_datajack_control: true
+    linked_sensor_data_input: automatic
+    manual_information_input_action: Simple Action
+    cyberlink_or_tactical_computer_information_access: automatic
+    receiver_information_access_action: Simple Action
+    master_analysis_and_distribution: continuously_updated
+    receiver_role: send_information_and_display_master_analysis
+  drone_integration:
+    rigger_network_requires: BattleTac IVIS
+    indirect_fire_game_option_additionally_requires: BattleTac FDDM
+    compatible_units_may_share_spotter_role: true
+  remote_trigger_accessory_game_limit:
+    direct_targeting: false
+    indirect_only: true
+    facing: fixed_game_orientation
+    indirect_fire_rule: procedure.combat.indirect-fire
+    fixed_position_required_in_game: true
+    network_membership_and_communications_required_in_game: true
+  small_unit_tactics:
+    referenced_rule: rule.combat.small-unit-tactics
+    source_pages_53_54_quantified_skill_bonus: null
+    bonus_not_inferred: true
+framing: reference_exact
