@@ -1,0 +1,53 @@
+source: source.srcomp
+publication: {title: Shadowrun Companion, publisher: FASA Corporation, catalog: FASA7905a, edition: Shadowrun Third Edition}
+scope: Friends of a Friend, Using FOFs, Waiting for the Goods, The Walls Have Ears; excludes Special Contacts.
+original_printed_pages: [62, 63, 64]
+physical_pdf_pages: [63, 64, 65]
+original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+original_image_sha256:
+  pdf63: f1d656b8cef517b501f7e025c836d7a4720b13f0b3cce74dfb50ec6707a170b3
+  pdf64: cd65940d68d794b518f96fd19154d60344c2bf135cf1e3c900519c6a28831f07
+  pdf65: 5624fe38f174e5d74ae8b7e9249d828ca59b0e8ed18de9b019402d9372a0ebb5
+source_verification: {status: source_pdf_hash_verified, source: source.srcomp, page_images_review: independently_completed}
+editorial_preflight: {passed: 29, failed: 0, script_blob: 331626d7c285b00e541359e315ae2bdd0fa33f2d}
+field_bindings:
+  - {path: rules/contacts/friends-of-friends.yml, blob: c33a678f60c1c8b007fa4a4398db08d82d959eab, fields: [five modifier rows, additive modifiers, normal fee, Level 3 fee waiver, waiting reduction], disposition: reused}
+  - {path: rules/contacts/srcomp-fof-modifiers-costs-and-waiting-p62-63.yml, blob: c1e5e23999d254eac5474c1c7d469583d809f280, fields: [ordinary and exceptional network counts, GM network adjustment, all modifier cells, primary dice bonus, additional hops, fee calculation, availability and 2D6 day alternative, wait reductions], disposition: reused}
+  - {path: rules/contacts/srcomp-fof-fee-exceptions-p62-63.yml, blob: cf2688c2adde3b7669a4746f142acdaf6963a366, fields: [GM extra-hop cost discretion, Negotiation Test, separate item cost, numeric wait-reduction example], disposition: verified_new}
+  - {path: rules/contacts/wrong-party.yml, blob: 5f6b6a4ea5e358e5489b5a8b9c02237656d02081, fields: [dice per person, base TN 6, GM TN adjustment, cumulative successes, FOF negative modifiers, four consequence bands], disposition: reused}
+  - {path: rules/contacts/srcomp-wrong-party-test-exceptions-p63-64.yml, blob: c6c82c5b70aa7fae3a47e0579ce4650cdb45e3ff, fields: [test frequency, participant counting, GM consequences, illustrated thresholds, early misleading leads, asking around, original conflicting example], disposition: verified_new}
+exceptions:
+  - The original Tony example conflicts with its own prior description and modifier table. No erratum inferred.
+  - The printed 38-nuyen example is not a general rounding formula.
+  - No universal additional-hop cost multiplier is provided.
+transactions:
+  - path: rules/contacts/srcomp-fof-fee-exceptions-p62-63.yml
+    commit: e200635d2b92d712df9c9edd7cbf28dc09275b5f
+    blob: cf2688c2adde3b7669a4746f142acdaf6963a366
+    baseline_sha256: 55d55f4c9bfb380cf6a01cabd09d08b370379738ffa2f26c12b91825920f050c
+    candidate_sha256: c6c53379d4419695f50539a1bb9b3a14051f6bb043ecec3cc342f589e1d40913
+    immutable_sha256: 3556a05a35fb18f7374b8c0963a2ed44ae494c4a2ef2211cad6fbd87c0a6970d
+    plan_sha256: 411bfa9fb7d6e7fb28d43384ac89b83d1a3781d4640394e5532881079592d9f0
+    confirm_sha256: 0c79c363f042b863259b76e4e4a7147ce8a89d8a68eb6c64d3f169011b720ba5
+    inspect_sha256: 0cc6fe957cc2cc82bfac450fff733d61c59c289cab10a9df2bee938d411c0d63
+    index_commit: 1c7e889f167923dca585f6f415837582e1653063
+    index_blob: ed97d2a4b017b13ea76ddf82cfb896f0b834bcdc
+    gate: verified
+  - path: rules/contacts/srcomp-wrong-party-test-exceptions-p63-64.yml
+    commit: 5acd43df2fc9351525a65ec5fc9623d8ae8c42ad
+    blob: c6c82c5b70aa7fae3a47e0579ce4650cdb45e3ff
+    baseline_sha256: 4fa48e98fd78e440836de6c744b652a6a0782892c3b9f5386661472161c592c6
+    candidate_sha256: 4b4a6c8f9e33a918fd592b65d612575c1da88f73eaf677e10f1c20ead6c4c132
+    immutable_sha256: fa92cda5b39afcb8b217d4be6b2803178b1603e144becad3dfbac5e63d8eb603
+    plan_sha256: 8265a686a971dd999249b8865bec71de42d78562b0ee0c405ef405ea57a192d8
+    confirm_sha256: 5002ff865fff6135dd2b0537ce5a540a5d0cc434045a00ca11f2d4ba31e0b9b1
+    inspect_sha256: 1c9c6e1949778fa820b155f4850a3fd04a0bff132ccee25bc2040fdeb0f1d2b4
+    index_commit: 900879db60497aa2726185ff977ea0cc03271eaf
+    index_blob: 07db511b86709fa9df63ac7c05bb2f0d5d4d5cb8
+    gate: verified
+status: source_local_mechanical_closure
+new_verified_semantic_records: 2
+new_full_natural_scopes: 2
+global_authorized_pages: 0
+whole_chapter_or_book_complete: false
+next_scope: Special Contacts printed pp64-67, compare international contact table, specialist networks and Shadowland procedures before extraction.
