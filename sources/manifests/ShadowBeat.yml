@@ -47,6 +47,7 @@ coverage:
   beat_consequences_and_ratings: {printed: "55-56", status: source_verified_section_closed}
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
+  combat_biker_match_procedures: {printed: "65-67", status: partial, note: "Match procedure transaction verified; role equipment description reconciliation outstanding; original roster and scoring inconsistencies retained."}
   professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; team combat sports pp65-73 outstanding"}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
@@ -77,6 +78,7 @@ records:
   - ["punch-tests-and-filing-p51-54", "5d08fe47ac5d4c3d9738eeaa4132fc712f250cff"]
   - ["beat-consequences-and-ratings-p55-56", "6050d144b001d2eb2392895838f677064a599113"]
   - ["individual-combat-sports-p64", "b1d32338c299012e4d0fb6c9072d8b9843e66989"]
+  - ["combat-biker-competition-p65-67", "f0d1f0d18228225260182bd21d2d8774c8847d23"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -275,5 +277,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p64_pdf73"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-combat-biker-competition-p65-67
+    path: rules/shadowbeat/combat-biker-competition-p65-67.yml
+    original_printed_pages: "65-67"
+    original_pdf_pages: "74-76"
+    commit_sha: "f0d1f0d18228225260182bd21d2d8774c8847d23"
+    readback_blob_sha: "429361778220ae12d4f826e2b5da733f2a5f9729"
+    candidate_sha256: "18ac7be91b72888dba64b72d22e3b7ad74ef4ce5875d4878c443992c738e0eb0"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p65_pdf74", "printed_p66_pdf75", "printed_p67_pdf76"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
