@@ -48,6 +48,7 @@ coverage:
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
   combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained; independent equipment-stat chapter and SR3 compatibility remain open."}
+  urban_brawl: {printed: "68-73", status: partial, note: "Match timing, scoring and player status transaction verified; roles and penalties pending."}
   professional_sports_and_games: {printed: "58-73", status: partial, note: "Original pro and amateur athletic competition rules pp58-63 verified; individual combat sports p64 verified; Combat Biker pp65-67 verified; Urban Brawl pp68-73 outstanding"}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
@@ -80,6 +81,7 @@ records:
   - ["individual-combat-sports-p64", "b1d32338c299012e4d0fb6c9072d8b9843e66989"]
   - ["combat-biker-competition-p65-67", "f0d1f0d18228225260182bd21d2d8774c8847d23"]
   - ["combat-biker-role-equipment-p66-67", "212b88fce9b5dc3b04cb6964aad38c56ff62211c"]
+  - ["urban-brawl-match-p68-72", "3e31081180bc820cc309cae2d92cb182fa25e3b1"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -300,5 +302,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p66_pdf75", "printed_p67_pdf76"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-urban-brawl-match-p68-72
+    path: rules/shadowbeat/urban-brawl-match-p68-72.yml
+    original_printed_pages: "68,70-72"
+    original_pdf_pages: "77,79-81"
+    commit_sha: "3e31081180bc820cc309cae2d92cb182fa25e3b1"
+    readback_blob_sha: "9cd0115c7dcb7c2e69f6bb39ba9c61892a140b6d"
+    candidate_sha256: "4ace5a6706241eb19571be5b67fd6ba2e940d81e1325755a4cc6329423805b9c"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p68_pdf77", "printed_p70_pdf79", "printed_p71_pdf80", "printed_p72_pdf81"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
