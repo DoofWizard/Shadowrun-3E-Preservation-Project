@@ -1,0 +1,103 @@
+id: rigger3-revised-selected-original-mechanics-differential-2026-11-23
+record_type: original_source_review_audit
+source_id: source.fanpro-10662
+title: Rigger 3 Revised
+publisher: FanPro
+edition: Shadowrun Third Edition
+catalog_number: FanPro10662
+source_original_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+source_original_pdf_bytes: 40997045
+source_physical_pages: 210
+historical_source_id: source.r3
+historical_title: Rigger 3
+historical_publisher: FASA Corporation
+historical_catalog_number: FASA7910
+historical_original_pdf_sha256: 0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860
+review_method:
+  original_sources: Both original cataloged PDFs freshly acquired via connected Drive,
+    with byte SHA-256 independently matched to the cataloged originals.
+  repository_source_verify: Actual preservation_method.py verify-source returned
+    source_pdf_hash_verified for FanPro10662 against the exact live source manifest.
+  original_page_images: Independently rendered and visually inspected corresponding
+    original and revised printed pages; not a metadata-only errata audit.
+  connector_preflight: 29 tests passed.
+  editorial: Fictional tabletop RPG mechanics and worked examples, source/edition
+    boundaries and uncertainty preserved before baseline/candidate freeze.
+reviewed_printed_to_physical_pdf:
+  revised: {25: 27, 49: 51, 57: 59, 58: 60, 61: 63, 62: 64, 68: 70, 74: 76, 75: 77}
+  historical: {25: 25, 49: 49, 57: 57, 58: 58, 61: 61, 62: 62, 68: 68, 74: 74, 75: 75}
+genuinely_new_differences:
+- range_printed: [57, 57]
+  range_pdf: [59, 59]
+  topic: Ship-scale naval damage converted to ordinary targets
+  difference: Revised beam weapons and railguns lose 3 Power per meter of blast
+    distance, rather than general 1 Power per meter. The printed ship worked
+    example calls its 16D attacking missile HEM, whereas the original calls it AVM.
+  canonical: rules/vehicles/r3-revised-naval-ship-weapon-falloff-p57.yml
+  canonical_commit: b3761878e8caebf07cc0307bf63f81a59b4802a3
+  canonical_blob: e62c1a0e731929355fdfb37cbdc50f3a314ec48d
+- range_printed: [61, 62]
+  range_pdf: [63, 64]
+  topic: Body rating and Body-0 drone idle fuel use
+  difference: Body ratings table last row is 10+; very large military-grade
+    vehicles may exceed Body 10. Body-0 drones multiply Idle Economy by 10,
+    yielding 20 for aerial and 75 for other drone cases, in minutes per fuel unit.
+  canonical: rules/vehicles/r3-revised-body-idle-economy-p61-62.yml
+  canonical_commit: 3bec39e3de41583485c4f6824321e438cd050e46
+  canonical_blob: 4d95bcaf02e1cb2e13761f82f20177c1f942167a
+- range_printed: [68, 68]
+  range_pdf: [70, 70]
+  topic: Single-engine jet-propeller flight ceiling
+  difference: Revised source prints 9000m instead of original 12000m;
+    remaining six printed numerical rows unchanged.
+  canonical: rules/vehicles/r3-revised-flight-ceiling-jet-propeller-p68.yml
+  canonical_commit: 1bd26ae11a1f80c1913750c72a99e6d222dc0a2f
+  canonical_blob: b02b92befe283656cfce472d7473577aa587bed7
+- range_printed: [74, 75]
+  range_pdf: [76, 77]
+  topic: Running Out of Gas example and custom fuel grades
+  difference: Revised Gray Ghost acceleration 50, base coasting 15000m,
+    5-success example plus 250m to 15250m, crash test after 4 turns.
+    Custom fuel +1 Acceleration changes Economy by -1 percent, rather than +1
+    percent as in historical original; decrease reverses the Economy sign.
+  canonical: rules/vehicles/r3-revised-out-of-fuel-custom-grade-p74-75.yml
+  canonical_commit: fd372c2d5f1d52b67f354d34fb8e7a0432700b71
+  canonical_blob: e9b26da5b17d63344b0ac7326019d45c5f6db8d9
+local_unresolved_source_ambiguities:
+- page_printed: 58
+  page_pdf: 60
+  field: ship damage-control repair-time formula
+  original_review: Both editions still print the same questionable successes/time
+    relationship. Do not replace original mechanics using a third-party errata
+    proposal or fabricate an authoritative original-image correction.
+- page_printed: 74
+  page_pdf: 76
+  field: out-of-fuel Vehicle Test success distance bonus
+  original_review: Printed general text divides Vehicle Test successes by 2;
+    printed worked example multiplies the 5 successes directly by Acceleration.
+    Both assertions are retained, unresolved for engine interpretation.
+transaction_acceptance:
+  verified_new_semantic_records: 4
+  baseline_and_candidate_independent_source_review: true
+  compose_first: actually_executed
+  transaction_recovery_stage_and_ingestion_gate_prepare: actually_executed_for_each
+  ordinary_github_contents_create: actually_executed_for_each
+  fresh_exact_blob_commit_readback: actually_executed_for_each
+  ingestion_gate_confirm: verified_for_each
+  transaction_recovery_inspect: verified_for_each
+  registration_manifest: sources/manifests/Rigger3Revised.yml
+  index_commit: 5fba44eb13772ebf4ebde738a8952a81a42c633a
+  index_blob: 27f763c562513fae83809a2203d6f880e4477706
+  cumulative_revised_source_registrations: 6
+scope_limitations:
+  original_printed_pages_authorized_globally: 0
+  whole_revised_book_mechanics_complete: false
+  whole_revised_book_narrative_complete: false
+  engine_tested: false
+  source_transition_executed: false
+  active_source_remains: source.fasa-7212
+  archived_denver_boundary: printed p45/PDF46
+  fasa7001_available_original_core_acceptance_unchanged: true
+  owner_accepted_fasa7001_printed_p308_unobserved: true
+  next_work: Reconcile a distinct remaining source-mechanical obligation from the
+    live ledger; do not re-submit the six accepted FanPro10662 entries.
