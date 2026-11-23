@@ -3,32 +3,58 @@ record_type: option
 name: "Bioware Grades"
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: "76-77"
+pdf_pages: "77-78"
+edition_scope: SR3
+content_class: [character_option]
 effective:
   status: current
   source: source.mm
   page: 76
   basis: extends
-
-option_for:
-  - subsystem.bioware.core
-
+option_for: [subsystem.bioware.core]
 selection:
   timing: "purchase/implantation"
   prerequisites: []
   incompatible_with: []
-
 effects:
-  - "Bioware is categorized as basic or cultured; basic bioware may also be specially cultured for the recipient."
-  - "Culturing basic bioware increases cost and availability while reducing its Bio Index burden."
-  - "Used bioware is available only for basic bioware, costs less, and begins with permanent Stress."
-
+  - "Basic and cultured are the two grades. Basic bioware can also be ordered as cultured."
+  - "Culturing basic bioware raises cost and Availability; the source labels its reduced index cost Essence Index."
+  - "Used bioware is available only at basic grade, costs less, and begins with permanent Stress."
+data:
+  grades:
+    printed_page: 76
+    continuation_printed_page: 77
+    basic: "Generic implant from an organ donor, not tailored to a particular recipient."
+    cultured: "Custom-grown from the recipient's own cells; some implants require this grade to function."
+    recipient_matching: "Matching blood type is required; metatype or gender may also need to match."
+    growth_time_reference: "Body Parts Table, SR3 p123."
+  basic_as_cultured:
+    printed_page: 77
+    cost_multiplier: 4
+    source_table_index_label: "Essence Index"
+    source_table_index_multiplier: 0.75
+    source_prose_index_reduction_percent: 25
+    availability_target_modifier: 2
+    availability_time_multiplier: 5
+    street_index: "Source states that it is increased, but the table gives no separate numerical Street Index modifier."
+    availability_excludes_cloning_time: true
+    cloning_time_reference: "SR3 p128"
+    already_cultured_only_implants: "Modifiers do not apply; they are already included in item descriptions."
+    cosmetic_bioware_can_be_cultured: true
+    terminology_note: "Retain the printed Essence Index label and prose; the source does not explicitly reconcile it with the surrounding Bio Index rules."
+  used_bioware:
+    printed_page: 77
+    cost_multiplier: 0.60
+    permanent_unremovable_stress_points: 1
+    eligible_grade: basic
+    cultured_reusable: false
+    gm_discretion: "The gamemaster can rule that procedures which cannot practically be transferred are unavailable used; enhanced articulation is the source's example."
 links:
-  modifies:
-    - rule.bioware.bio-index
+  modifies: [rule.bioware.bio-index]
   requires: []
   interacts_with: []
-
 sources:
   - source: source.mm
     page: 76
@@ -37,7 +63,8 @@ sources:
   - source: source.mm
     page: 77
     relation: defines
-    note: "Bioware Grades Table / Used Bioware"
-
+    note: "Acquiring Basic Bioware as Cultured Bioware table and Used Bioware"
 notes:
-  - "The source's exact cost/availability multipliers should remain on purchase metadata for individual bioware entities."
+  - "Do not silently reinterpret the printed index label or invent a separate Street Index multiplier."
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp76-77/PDF pp77-78: Bioware Grades"
+framing: reference_exact
