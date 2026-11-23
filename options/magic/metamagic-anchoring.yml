@@ -1,41 +1,91 @@
 id: option.magic.metamagic-anchoring
 record_type: option
-name: "Metamagic: Anchoring"
+name: 'Metamagic: Anchoring'
 domain: magic
 status: ingested
-
 effective:
   status: current
   source: source.mits
   page: 70
   basis: defines
-
 option_for:
-  - option.magic.metamagic
-
+- option.magic.metamagic
 selection:
-  timing: "after learning the Anchoring metamagic technique"
+  timing: after learning Anchoring
   prerequisites:
-    - "initiate"
-    - "Anchoring technique"
+  - initiate
+  - Anchoring technique
   incompatible_with: []
-
 effects:
-  - "Allows an initiate to place a live spell in an anchoring focus and define trigger conditions that activate or deactivate it."
-  - "The anchor must be bonded and the spell/trigger linked to it before use."
-  - "Only an initiate who knows Anchoring can create or link an anchoring focus, though others may use a prepared anchor if they know how to trigger it."
-
+- Allows the initiate to link a spell to a bonded anchoring focus with activation and deactivation conditions.
+- Only an initiate with Anchoring may create the focus or link a spell; any character who knows its trigger may use a prepared focus.
 links:
   modifies: []
   requires:
-    - option.magic.metamagic
+  - option.magic.metamagic
   interacts_with:
-    - subsystem.magic.foci
-
+  - subsystem.magic.foci
 sources:
-  - source: source.mits
-    page: 70
-    relation: defines
-    note: "Anchoring"
-
+- source: source.mits
+  page: 70
+  relation: defines
+  note: Anchoring
 notes: []
+source: source.mits
+printed_pages: '70-72'
+pdf_pages: '71-73'
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  selection_and_bonding:
+    primary_spell_limit: 1
+    primary_spell_force_maximum: anchor Force
+    eligible_spell: Spell the owner can cast.
+    owner_control: Simple Action while touching the focus; owner can override trigger conditions.
+    other_users: Must know and use the specified action or keyword while touching the focus.
+    detection_trigger: Optional detection spell; anchor Force must cover the combined Force of both spells; detection solely controls activation or deactivation, without informing the holder or owner.
+    detection_range: detection spell Force times Magic, measured from the anchor.
+    bonding: Specify spell and triggers when bonding; change either by rebonding; bonded focus retains owner's astral signature and link.
+  linking:
+    activity: Single Exclusive magical activity; Exclusive-limited spells prohibited; Sorcery and Spell Pool do not refresh during the process.
+    permitted_modifiers: Spell Pool, totem modifiers, foci, elemental Aid Sorcery.
+    spellcasting: Allocate casting dice normally but record their number instead of rolling; defer the casting and Drain tests until activation.
+    detection_casting: Allocate detection dice immediately after primary spell within the same casting action; no dice refresh; roll on subsequent detection; Drain as specified below.
+    test_action: Complex Action
+    test_dice: Unused Sorcery and Spell Pool dice only.
+    test_target_number: primary spell Force
+    failure: Immediately retry with remaining eligible dice at +2 target number; second failure leaves spell unlinked and requires immediate spell and linking Drain; all ones destroys the focus.
+  linking_drain:
+    resistance: Willpower plus allocated Sorcery or Spell Pool dice.
+    with_detection: Detection spell Drain Code, plus floor(anchor Force / 2) to Drain Power and +2 Drain Levels.
+    without_detection: floor(anchor Force / 2)M
+    primary_spell_drain: Deferred until the anchor triggers; not taken when linking succeeds.
+  activation:
+    active_state: Linked anchor is active before its spell is triggered.
+    casting_dice: Use the recorded casting dice; focus is the caster for targeting.
+    targeting_without_detection: Only the focus or its holder.
+    targeting_with_detection: Any valid target detected within range.
+    astral_targeting: Active focus exists astrally and can target physical and astral beings subject to spell targeting rules.
+    drain: Owner resists spell Drain whenever triggered regardless of location or activity; Drain also applies if deactivated or destroyed before triggering.
+    owner_death: Bond breaks and focus becomes useless.
+  spell_duration_and_focus_types:
+    sustained: Focus sustains the spell until deactivated.
+    instant: Cast once per linking on trigger.
+    permanent: Sustained until permanent; focus then deactivates.
+    expendable: Single activation; consumed on deactivation; only owner's astral signature remains, not an astral link.
+    reusable: Remains until destroyed; every linked spell including sustained spells must be linked again after use.
+  astral_interaction:
+    linked_focus: Dual-natured; astral perception reveals aura and linked spells; focus may be attacked astrally but untriggered spell may not.
+    astral_defeat: Linked instant spells trigger; other spells are lost.
+    astral_destruction: Permanent loss of enchantment.
+    dispelling: Sustained anchored spells can be dispelled; reusable focus needs relinking; destroying focus permanently disables it.
+    ritual_link: Anchoring focus may be a material link for ritual sorcery.
+  illustrative_game_examples:
+    protective_focus: {anchor_force: 10, primary_force: 5, detection_force: 5, reusable: true, karma: 30}
+    healing_elixir: {anchor_force: 4, primary_force: 4, reusable: false, karma: 4}
+    reusable_healing_focus: {anchor_force: 4, reusable: true, karma: 12}
+    area_spell_focus: {anchor_force: 8, primary_force: 5, detection_force: 3, reusable: false, karma: 8, area_origin: anchor}
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition metamagic: Anchoring (FASA7907, printed 70-72/PDF 71-73)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG anchoring metamagic mechanics and exceptions from printed 70-72/PDF 71-73.
