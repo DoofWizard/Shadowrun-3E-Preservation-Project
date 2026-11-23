@@ -36,6 +36,10 @@ source_review_scope:
   - 112
   - 113
   - 120
+  - 129
+  - 130
+  - 131
+  - 132
   original_to_pdf_page_mapping:
     '25': 27
     '49': 51
@@ -54,6 +58,10 @@ source_review_scope:
     '112': 114
     '113': 115
     '120': 122
+    '129': 131
+    '130': 132
+    '131': 133
+    '132': 134
   source_reviewer_note: Independently reviewed original revised pp25,49,57-58,61-62,68,74-75
     against original FASA7910 same printed pages; only individual examined images,
     not a contiguous scan or whole-book completeness claim.
@@ -64,6 +72,7 @@ source_review_scope:
     image-reviewed; design-point example, class Availability modifiers, and medical workspace
     table rows separately prepared, exact-byte committed, transaction-confirmed and indexed.
     Availability minimum 2/24 literal retained as ambiguous without inventing engine-ready units.
+  later_review_note_2026_11_23_customization: Original FanPro10662 and FASA7910 printed pp129-132 independently image-reviewed for control-system modification multipliers, ablative armor price and availability, installation-test requirements, and concealed armor Handling condition. Two distinct mechanical records completed prepare, ordinary exact-byte Contents write/readback and real confirmation. Only discrete edition differences indexed; not a whole-section or global completion claim.
 global_worker_control:
   active_source_unchanged: source.fasa-7212
   denver_checkpoint_unchanged: printed p45 / PDF46
@@ -237,6 +246,32 @@ verified_semantic_records:
   baseline_sha256: 27367b7ffff05abbbb9527c4f4f17633d3f5702c2fba871f6243f97e948b74dd
   candidate_sha256: 3db5eff2f85a3586f377d9fd7f7c41c8e38b01ebcb612d7417d9fde9900427c1
   immutable_sha256: 51d012c78d266f9828d7cb5b8a5909c3be67f92089e438206bb71919dffa0aa3
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-control-customization-costs-p129-130
+  path: rules/vehicles/r3-revised-control-customization-costs-p129-130.yml
+  range_printed: [129, 130]
+  range_pdf: [131, 132]
+  content_class: rule_exact
+  commit: 505ee456df16dfdd40a1c008707b6c5100e51b8e
+  blob: d601dc26f541fec68d057b9029c17c0c155dc5a9
+  baseline_sha256: f14ed7c192c9b1fe6dbfd4844d8b691b442a0cd8bf663185df714d50f5febc1e
+  candidate_sha256: 42f909ec43b743395c32fdc3a8e6be7fa40b576f8f293b45ec3aad2b8977abd8
+  immutable_sha256: 1f779e768c544d8103777193ad593d987f0218d925a8a69c0d077132c8e86c9b
+  original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  gate: verified
+  contiguous_advance: false
+- id: rule.vehicles.r3-revised-ablative-concealed-armor-p131-132
+  path: rules/vehicles/r3-revised-ablative-concealed-armor-p131-132.yml
+  range_printed: [131, 132]
+  range_pdf: [133, 134]
+  content_class: rule_exact
+  commit: 71a3753e93811fceabe9aec14d4e121db82658cd
+  blob: 08ab462b3876ce2722ffbdd47377acc8548171b9
+  baseline_sha256: 37be7d38b98e55abd379a8d8fb86eec07885341710235ed1be04669627e44e89
+  candidate_sha256: 9eba191794bbaccb3f4a77dbff48c507552d7d51da02235495ea10316508be8d
+  immutable_sha256: c55f86e2e75f8b0999050d3dc07ec5b844660b57e1fdb7478bd458f7c5cad443
   original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
   gate: verified
   contiguous_advance: false
