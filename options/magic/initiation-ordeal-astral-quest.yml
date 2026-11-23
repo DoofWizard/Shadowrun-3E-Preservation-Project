@@ -1,15 +1,38 @@
 id: option.magic.initiation-ordeal-astral-quest
 record_type: option
-name: "Initiation Ordeal — Astral Quest"
+name: Initiation Ordeal - Astral Quest
 domain: magic
 status: ingested
 effective: {status: current, source: source.mits, page: 60, basis: defines}
 option_for: [procedure.magic.initiation]
-selection: {timing: "before completing an initiation grade", prerequisites: [], incompatible_with: []}
+selection: {timing: before completing an initiation grade, prerequisites: [astral projection or access to Astral Gateway], incompatible_with: []}
 effects:
-  - "Requires an eligible initiate to complete an astral quest on the metaplane appropriate to the character's tradition."
-  - "Failure requires additional preparation before another attempt; astral quest rating scales with desired initiation grade."
+- Complete the required metaplanar quest or quests at twice the desired initiation grade.
+- Failed quests require preparation before retrying.
 links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
 sources:
-  - {source: source.mits, page: 60, relation: defines, note: "Initiation Ordeal — Astral Quest"}
+- {source: source.mits, page: 60, relation: defines, note: Astral Quest ordeal}
 notes: []
+source: source.mits
+printed_pages: '60'
+pdf_pages: '61'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  eligibility: Characters who cannot project may participate only via a free spirit's Astral Gateway power; ordinary astral quest rules then apply.
+  required_metaplanes:
+    shaman: totem metaplane
+    mage: all four elemental metaplanes
+    wujen: all five stem metaplanes
+    other_traditions: appropriate tradition metaplanes
+  quest_rating: 2 times desired initiation grade
+  retry_preparation:
+    test: Willpower
+    target_number: desired initiation grade
+    base_days: 10
+    time_days: 10 divided by successes
+    interruptions: No penalty for interruption; only ordinary tasks can be undertaken while preparing.
+    mage_exception: Repeat only the elemental plane on which the quest failed.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: Astral Quest ordeal (FASA7907, printed 60/PDF 61)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG astral quest ordeal eligibility, rating and retry mechanics.
