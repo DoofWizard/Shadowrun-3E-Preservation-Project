@@ -1,0 +1,89 @@
+audit_id: critters-p5-7-general-and-power-framework-2026-11-23
+record_type: source_review_audit
+source: source.critters
+publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+original:
+  drive_id: 1WNRS1kMVi7eWIboZkukbRzKio3CasWwQ
+  bytes: 25740271
+  physical_pages: 48
+  manifest_start_blob: f8a42a9487529e72dc788803c9fc93270d2b765b
+  verify_source_actual_output: {page_images_review: still_required_independently, sha256: 40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7, source: source.critters, status: source_pdf_hash_verified}
+  visual_review: rendered and directly inspected physical PDF pages 5, 6 and 7, each with matching printed page number.
+  printed_pages: [5, 6, 7]
+  pdf_pages: [5, 6, 7]
+source_review:
+  baseline: Independently compared the original page images to the existing canonical general rules, power framework and three printed p7 power entries; captured missing conditions and corrected shifted power headers in neutral tabletop framing.
+  candidate: Compared the same original headings, numeric values, conditions and exceptions against each staged candidate; only root headline and summary differ from the respective baseline.
+  reused_read_only:
+    - {path: rules/critters/core.yml, blob: ab51595bf59ac179ada6526c5e281440b7ad4424}
+    - {path: rules/critters/power-catalog.yml, blob: d9cb738321bfbb7c2696ff55ba245ceef90f5bad}
+    - {path: rules/spirit-powers/accident.yml, blob: eb8fc93c04335c6abf0e7d3f0c23a59ed02d5e10}
+    - {path: rules/spirit-powers/animal-control.yml, blob: 7bc5b6afb1a7ddcd504643443f9921e53f8a83d9}
+    - {path: rules/cyberware/cybered-critters.yml, blob: 8134d6c5ee42b4ec65ad0739211b2cf96e232469}
+    - {path: rules/critters/normal-statistics-p18-20.yml, blob: 34a4d72c0bda0928c8071e61cf16129382cf1488}
+  field_evidence:
+    p5: [dual-state permanence and vulnerability, projection trance and mental attributes, mana-only astral targeting, spirit materialization treatment, normal dual Initiative, projecting Initiative, actions and damage resistance, right-hand Intelligence, Reaction attack cap, dual Combat Pool]
+    p6: [Astral Combat Pool and Spell Pool formulas, ordinary Karma use and GM allocation, cyberware D6 behavior test and implant penalties, beginning of general power framework]
+    p7: [state combinations, power type, action including Exclusive, targeting and range, duration classes, sustaining exceptions and Essence limit, Accident vehicle Crash Test, Adaptive Coloration TN10 and TN8 plus2 and sensory exceptions, Animal Control behavior and Charisma limits, all three printed power headers]
+  interpretation_exception: Reaction attack cap on p5 and Initiative Combat Pool limit on p19 remain separately preserved; no invented precedence.
+  canonical_profile_defect: The legacy power-catalog profiles on p7 were misaligned; the original p7 headers govern the three supplemental source-specific corrections. The remaining p8-14 headers require original-image review.
+transaction:
+  tool_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  preflight_self_tests: {passed: 29, failed: 0}
+  journals:
+    - path: rules/critters/general-combat-exceptions-p5-6.yml
+      journal: general.journal
+      baseline_sha256: 574ce94c6372016101b4a9a6c22669b697ae1c88596b5d47e9ccd93c7a93f353
+      candidate_sha256: 4d14b64c777848be16322973ed281012426c78da704f5ff4a2f2918fe1c88882
+      immutable_sha256: cc89208450dda3dc6f4855516bbe935e8faf6c4178b15ece7e2a66ff21d06d6f
+      stage: staged
+      prepare: preflighted
+      contents_commit: 51fac72bc566381850b4babd08533b801242e355
+      expected_and_readback_blob: 5da7e1c65fe2e06ef71ba9cc429a6dd2928a3fc4
+      exact_readback_bytes_match: true
+      confirm: verified
+      inspect: verified
+      index_commit: b4a473bab74d7759e68fb574097954ec53ada10b
+      index_readback_blob: f2232a41a4c7bedece93be526f6eff25eb407e20
+    - path: rules/critters/power-framework-p6-7.yml
+      journal: framework.journal
+      baseline_sha256: 342f626ec9fe0a5af1812b6e95801a4dbce0ffc0b859c4f44abe04f777a7fa04
+      candidate_sha256: c78d7010be1f847b4ef164a0e8e02a1bb77ca4907e537ca21d9b7b86fac40894
+      immutable_sha256: 4dd698196ead90101a0c5d70e5a45ceef3bc1f979f5cac7f0bd6a1017a7af518
+      stage: staged
+      prepare: preflighted
+      contents_commit: fdcf2501af1935b90bc90e052aae65b35699cd84
+      expected_and_readback_blob: 0eecf9be23fb165c22f7c81f2e23158083b99cde
+      exact_readback_bytes_match: true
+      confirm: verified
+      inspect: verified
+      index_commit: f0b0a7b9382d273ea83b85dff469f2de0e88dd81
+      index_readback_blob: 347a8b3bbe2732dfc223fe4355a77a30a126df99
+    - path: rules/critters/power-entries-p7.yml
+      journal: entries.journal
+      baseline_sha256: 15fad44d21770e2935e878280ef21499eff599ee71b1b5d547b370b30acab5d1
+      candidate_sha256: da1d4fa3d6735b977c7563fe2e799234ad202da24873c364a2170a0803e838de
+      immutable_sha256: 8bceac2f15101bb6071835e57abe5c91488d5005f85983c95f71e6c6a9ed1acf
+      stage: staged
+      prepare: preflighted
+      contents_commit: 345bd61e64d3b0e969f2fde67221542c95070f5c
+      expected_and_readback_blob: ebc3a6abdb5db80498fd7fe7d8606f1e0e6d58c5
+      exact_readback_bytes_match: true
+      confirm: verified
+      inspect: verified
+      index_commit: fdd0fb358c01e03c61ef6cb84262a625f83d603c
+      index_readback_blob: 13022a04a804c09a996323fa8ddbfe6b27c85c7a
+outcome:
+  new_verified_semantic_records: 3
+  closed_source_review_scopes:
+    - general dual-being, spirit, combat, dice-pool and cyberware rules pp5-6 (cross-page cap interpretation remains open)
+    - general power framework pp6-7
+  individual_power_entries_reviewed: [Accident, Adaptive Coloration, Animal Control]
+  complete_power_catalog_closed: false
+  whole_book_rules_complete: false
+  remaining_mechanical_review: [individual power entries pp8-14, weaknesses and mutant and toxic critters pp14-17, Awakened critter entries pp20-48, p5 versus p19 cap interpretation]
+  globally_authorized_pages_added: 0
