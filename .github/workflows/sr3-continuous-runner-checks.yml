@@ -1,0 +1,29 @@
+name: SR3 continuous draft runner checks
+on:
+  pull_request:
+    paths:
+      - 'tools/continuous_sprint/**'
+      - 'docs/ingestion/continuous-worker-bootstrap.md'
+      - '.github/workflows/sr3-continuous-runner-checks.yml'
+  push:
+    branches:
+      - 'feature/sr3-continuous-source-proposal-runner'
+    paths:
+      - 'tools/continuous_sprint/**'
+      - '.github/workflows/sr3-continuous-runner-checks.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-proposal-queue-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Compile supervisor
+        run: python -m compileall -q tools/continuous_sprint/runner.py
+      - name: Test fail-closed queue
+        run: python -m unittest discover -s tools/continuous_sprint -p 'test_*.py' -v
