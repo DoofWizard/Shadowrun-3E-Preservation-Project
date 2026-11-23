@@ -27,6 +27,33 @@ source_scoped_status_notes:
   - "2026-11-23 original Drive PDF freshly acquired; actual SHA256 matches catalog intake. TOC printed pp2-3/PDF3-4 and original Culture Shock Game Information pp167-168/PDF168-169 visually reviewed. This independently created source-specific manifest does not change source selection, global Denver p45/PDF46 checkpoint, or SR3 core acceptance."
   - "This PDF includes December 2005 FanPro correction designation; original 2004 publication is retained. No whole-book mechanical completeness is asserted."
 verified_semantic_records:
+  - id: rule.magic.sota64-adept-running-ways-p60
+    path: rules/magic/sota64-adept-running-ways-p60.yml
+    range_printed: [60, 60]
+    range_pdf: [61, 61]
+    content_class: rule_exact
+    commit: a0ab5f5b403d1ba05d06c54feab5af7fa632dcb6
+    blob: 81d029169c97d286523006a28c2de98bf3391853
+    gate: verified
+    contiguous_advance: false
+  - id: option.character-creation.sota64-adept-ordeals-p60-61
+    path: options/character-creation/sota64-adept-ordeals-p60-61.yml
+    range_printed: [60, 61]
+    range_pdf: [61, 62]
+    content_class: character_option
+    commit: a8cca937bab897d96a46c00133e66ab3eace3839
+    blob: 33508237e5d06f6e42a67fd98d43a5bdf2f5e112
+    gate: verified
+    contiguous_advance: false
+  - id: rule.magic.sota64-adept-foci-p68
+    path: rules/magic/sota64-adept-foci-p68.yml
+    range_printed: [68, 68]
+    range_pdf: [69, 69]
+    content_class: rule_exact
+    commit: 8870f383a8379558d4a964061d9335be83eff19b
+    blob: 378650d096b0ea68df6fc921ce6b25130eaa416f
+    gate: verified
+    contiguous_advance: false
   - id: equipment.sota64-screech-and-cigarette-microrockets-p35-36
     path: equipment/sota64-screech-and-cigarette-microrockets-p35-36.yml
     range_printed: [35, 36]
@@ -118,6 +145,27 @@ verified_semantic_records:
     gate: verified
     contiguous_advance: false
 scoped_game_information_closeouts:
+  - chapter: The Path of the Adept
+    subsection: Running Ways / The Lost
+    original_printed: [60, 60]
+    physical_pdf: [61, 61]
+    classification: complete_optional_lost_adept_cost_and_power_loss_mechanics
+    accepted_mechanical_records: 1
+    source_wide_completion: false
+  - chapter: The Path of the Adept
+    subsection: New Ordeals
+    original_printed: [60, 61]
+    physical_pdf: [61, 62]
+    classification: complete_masterpiece_and_way_ordeal_procedures
+    accepted_mechanical_records: 1
+    source_wide_completion: false
+  - chapter: The Path of the Adept
+    subsection: New Foci
+    original_printed: [68, 68]
+    physical_pdf: [69, 69]
+    classification: complete_two_new_foci_effects_cost_dependencies_and_exceptions
+    accepted_mechanical_records: 1
+    source_wide_completion: false
   - chapter: Games of State
     subsection: Special Weapons
     original_printed: [35, 36]
@@ -202,6 +250,10 @@ source_scoped_status_notes_disguises:
 source_scoped_status_notes_weapons:
   - "2026-11-23 visually verified original Special Weapons printed pp35-36/PDF36-37, including the 3-row source market table for Screech sonic rifle and two cigarette micro-rocket variants, Willpower-based Stun resistance, sound-dampener protections, temporary Stun recovery each Combat Turn, shotgun spread/choke, skill/range cross-reference, and all numeric provenance. Fresh original PDF hash verified; actual stage/prepare/Contents write/exact blob readback, ingestion confirm and recovery inspection verified. Distinct Clothing and other New Equipment subsections remain; no Denver global pages changed."
 source_scoped_audit_receipts:
+  - path: references/audits/sota64-adept-ways-ordeals-foci-2026-11-23.yml
+    commit: 4dece99376f792f4c461c4bf12c238e539b96760
+    blob: bbc3dab846cea067b8caa8b1bfe839c2ce8c0043
+    scope: "Running Ways, New Ordeals, New Foci pp60-61 and 68"
   - path: references/audits/sota64-culture-shock-game-info-p167-168-mechanics-closeout-2026-11-23.yml
     commit: 7b56a67e9fe5614354c00bc0a2242232fdeb5815
     blob: 03ca09da12d2eb209b1d9a48527bb758cdb26910
@@ -227,3 +279,10 @@ rules_completion:
   all_gated_semantic_records_indexed: false
   whole_source_rules_complete: false
   owner_accepted_scan_omissions: []
+source_scoped_adept_progress_2026_11_23:
+  newly_accepted_semantic_records: 3
+  distinct_full_natural_mechanics_scopes_verified: 3
+  original_pdf_image_page_scopes: [60, 61, 68]
+  remaining_chapter_scopes: [New Metamagic pp61-64, New Powers pp64-68]
+  source_wide_rules_complete: false
+  global_denver_checkpoint_changed: false
