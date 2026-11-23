@@ -1,0 +1,79 @@
+audit_id: rigger3_revised_original_mechanical_differences_2026_11_22
+audit_type: bounded_original_source_image_differential
+status: verified_original_image_comparison_not_semantic_ingestion
+publications:
+  historical:
+    title: "Rigger 3"
+    publisher: "FASA Corporation"
+    catalog_number: "FASA7910"
+    source_id: source.r3
+    original_file_bytes: 109444880
+    original_physical_pdf_pages: 208
+    original_pdf_sha256: "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860"
+    original_catalog_drive_id: "1O6DCtpMOdW7rwpxTV4rup2op_HvSbvIG"
+    current_manifest_path: sources/manifests/Rigger3.yml
+    current_manifest_status_observed: complete
+  revised:
+    title: "Rigger 3 Revised"
+    publisher: "FanPro"
+    catalog_number: "FanPro10662"
+    source_id: source.fanpro-10662
+    original_file_bytes: 40997045
+    original_physical_pdf_pages: 210
+    original_pdf_sha256: "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909"
+    original_catalog_drive_id: "1XE-UMcv9xBeG3hmA182U5SjhGra56Oco"
+    catalog_status: queued
+    live_source_manifest_present_during_review: false
+independent_source_review:
+  method: fresh_original_file_download_from_owner_connected_drive_and_direct_rendered_original_page_image_comparison
+  actual_sha256_calculation: sha256sum_of_acquired_original_file_bytes
+  observed_page_mapping:
+    historical: "printed pages 10, 25 and 49 correspond to physical PDF pages 10, 25 and 49"
+    revised: "printed pages 10, 25 and 49 correspond to physical PDF pages 12, 27 and 51"
+  original_pages_checked:
+    - {printed_page: 10, historical_physical_pdf: 10, revised_physical_pdf: 12}
+    - {printed_page: 25, historical_physical_pdf: 25, revised_physical_pdf: 27}
+    - {printed_page: 49, historical_physical_pdf: 49, revised_physical_pdf: 51}
+  mechanical_changes:
+    - id: rigger3_revised_datajack_vehicle_driving_modifier_p25
+      printed_page: 25
+      revised_physical_pdf_page: 27
+      historical_physical_pdf_page: 25
+      section: "Rigging and Implants / Datajacks"
+      historical_original: "Datajack paragraph includes virtual dashboard mode and its +1 Reaction bonus but no Driving Test target number reduction in that paragraph."
+      revised_original: "Revised printed paragraph adds -1 target number modifier for Driving Tests when the datajack-equipped operator is jacked into a vehicle in virtual dashboard mode."
+      exact_numeric_delta: {test: Driving_Test, target_number_modifier: -1}
+      affected_current_canon_reviewed:
+        - {path: rules/vehicles/control-systems.yml, source: source.r3, role: legacy_mode_overview}
+        - {path: rules/vehicles/rigging-implant-interactions.yml, source: source.r3, role: legacy_implant_interactions}
+        - {path: rules/vehicles/driving-test.yml, source: source.sr3-core, role: general_test}
+      disposition: newly_demonstrated_revised_edition_gameplay_delta_requiring_separately_gated_source_specific_ingestion
+      old_source_not_mutated: true
+    - id: rigger3_revised_vigilance_level_label_p49
+      printed_page: 49
+      revised_physical_pdf_page: 51
+      historical_physical_pdf_page: 49
+      section: "Vigilance Code Criteria Table"
+      historical_original: "Vigilance row with three required successes is labeled Amber."
+      revised_original: "Same row with three required successes is labeled Orange."
+      same_success_threshold: 3
+      disposition: source_specific_label_correction_and_lineage_not_new_security_threshold
+  contextual_change_not_counted_as_mechanic:
+    printed_page: 10
+    section: "Railways, Waterways and Airlanes"
+    historical_original: "Historical source suborbital examples say 48 kilometers and Mach 25."
+    revised_original: "Revised source suborbital examples say 23 kilometers and Mach 8."
+    treatment: fictional_setting_transport_description_not_a_player_rule
+existing_authoritative_source_controls:
+  accepted_FASA7001_available_original_core: unchanged_451_records_1010_fields_15_sections
+  Denver_archival_checkpoint: "source.fasa-7212 completed through printed p45 / PDF46; pp46-47 archived"
+  original_FASA7001_printed_p308: owner_accepted_nonblocking_unobserved_omission
+  original_Rigger3_source_manifest: unchanged
+  original_revised_source_manifest: absent_not_created_without_source_transition_authorization
+  ordinary_github_semantic_gates_completed_this_audit: false
+  preservation_method_verify_source_executed_for_revised_pdf_this_audit: false
+  baseline_candidate_stage_prepare_confirm_executed_this_audit: false
+  semantic_records_committed_this_audit: 0
+  source_registrations_created_this_audit: 0
+  new_global_contiguous_printed_pages: 0
+next_lawful_action: "When FanPro10662 is lawfully activated with a manifest under the existing source-transition and editorial workflow, freshly verify its exact original PDF against that live manifest, recheck p25 and p49, independently prepare source-reviewed baseline and same-substance candidate, run stage/prepare, ordinary Contents create or update, exact readback, confirm and source-specific indexing. Do not silently apply revised rules to FASA7910 original canon or count this audit as semantic progress."
