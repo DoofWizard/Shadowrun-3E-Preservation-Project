@@ -30,9 +30,9 @@ source_integrity:
   scope: "Original 114-page FASA PDF, scanned with text layer; image is authoritative"
   missing_pages: unassessed
 coverage:
-  performance_skill_options: {printed: "7", status: reviewing}
+  performance_skill_options: {printed: "7", status: source_verified_section_closed}
   impact_tests_group_rehearsals: {printed: "10-11", status: source_verified_section_closed}
-  composition_performance_rating: {printed: "12", status: queued}
+  composition_performance_rating: {printed: "12-13", status: source_verified_section_closed}
   record_sales_status_money_message: {printed: "13-16", status: queued}
   broadcast_and_media: {printed: "18-56", status: queued}
   professional_sports_and_games: {printed: "58-73", status: queued}
@@ -45,6 +45,8 @@ edition_lineage:
   preserve_original_formulae_and_units: true
 records:
   - ["10-11-impact-open-test-and-rehearsals", "6d91bea5cfb2573a0daca237492fc9a29b6bec6a"]
+  - ["7-performance-special-skills", "81f6ce2e60856f53bf4d1d83268c2c70ce7cf25c"]
+  - ["12-13-composition-performance-ratings", "3c642051ac2f63a0a56cd12eb956040d7a4f6c8c"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -56,5 +58,27 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p10_pdf11", "printed_p11_pdf12"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: option.shadowbeat-performance-skills-p7
+    path: options/shadowbeat/performance-special-skills-p7.yml
+    original_printed_pages: "7"
+    original_pdf_pages: "8"
+    commit_sha: "81f6ce2e60856f53bf4d1d83268c2c70ce7cf25c"
+    readback_blob_sha: "d50814e38951d22ad5b8e793a8a4fa01456fade3"
+    candidate_sha256: "81c229031f18a07bd850e98df8ebf12358e0642c37c29bc0565e910af98c79d6"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p7_pdf8"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-composition-rating-commercial-performance-p12-13
+    path: rules/shadowbeat/composition-performance-rating-p12-13.yml
+    original_printed_pages: "12-13"
+    original_pdf_pages: "13-14"
+    commit_sha: "3c642051ac2f63a0a56cd12eb956040d7a4f6c8c"
+    readback_blob_sha: "96b974f73f37cc56a4db83807158b2c50969693f"
+    candidate_sha256: "9ed662f7c54d337fbc8164f7068fa0fdf39dfefc58617084d8fb14247a4be836"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p12_pdf13", "printed_p13_pdf14"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
