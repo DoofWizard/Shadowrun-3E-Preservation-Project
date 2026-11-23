@@ -1,15 +1,37 @@
 id: option.magic.initiation-ordeal-meditation
 record_type: option
-name: "Initiation Ordeal — Meditation"
+name: Initiation Ordeal - Meditation
 domain: magic
 status: ingested
 effective: {status: current, source: source.mits, page: 61, basis: defines}
 option_for: [procedure.magic.initiation]
-selection: {timing: "before completing an initiation grade", prerequisites: [], incompatible_with: []}
+selection: {timing: before completing an initiation grade, prerequisites: [], incompatible_with: []}
 effects:
-  - "Requires extended daily meditation and three Attribute Tests linking Charisma to Strength, Intelligence to Quickness, and Willpower to Body."
-  - "All three tests must succeed before the meditative cycle is complete; failure requires beginning the cycle again."
+- Complete daily meditation and three successful Attribute Tests.
+- Failure of any test requires restarting the meditative cycle.
 links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
 sources:
-  - {source: source.mits, page: 61, relation: defines, note: "Initiation Ordeal — Meditation"}
+- {source: source.mits, page: 61, relation: defines, note: Meditation ordeal}
 notes: []
+source: source.mits
+printed_pages: '61'
+pdf_pages: '62'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  tests:
+  - {attribute: Charisma, target_number: Strength}
+  - {attribute: Intelligence, target_number: Quickness}
+  - {attribute: Willpower, target_number: Body}
+  base_days_per_test: desired initiation grade times 4
+  duration_each_test: base days divided by successes
+  success_condition: All three tests succeed.
+  failure: Restart the entire meditative cycle.
+  activity_limit: Only ordinary tasks are permitted; minimize environmental distractions.
+  lifestyle_modifier:
+    lifestyles: [Squatter, Street]
+    all_test_target_numbers: +2
+    exception: No penalty if living in wilderness during the ordeal with Wilderness Survival Skill rating at least 4.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: Meditation ordeal (FASA7907, printed 61/PDF 62)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG meditation ordeal tests, duration and lifestyle exception.
