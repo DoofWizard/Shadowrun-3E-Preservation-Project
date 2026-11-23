@@ -1,0 +1,41 @@
+id: rule.critters.power-entries-p7
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '7'
+pdf_pages: '7'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  corrects_source_profiles_in: catalog.critters.powers
+  entries:
+    accident:
+      id: rule.spirit-power.accident
+      profile: {type: physical, action: Complex, range: LOS, duration: Instant}
+      source_specific_missing_fields:
+        failure: target loses next Initiative Pass
+        vehicle: successful power use requires driver to immediately make a Crash Test
+        environment: effect not dangerous in itself; environmental circumstances can make it dangerous
+      existing_core_test_reused: greater of Quickness or Intelligence against user Essence
+    adaptive_coloration:
+      id: rule.critter-power.adaptive-coloration
+      profile: {type: physical, action: Auto, range: Self, duration: Always}
+      perception_target_number: {stationary: 10, moving: 8}
+      ranged_attack_target_number_modifier: 2
+      affects: natural and cybernetic thermographic vision
+      unaffected: [sonar, radar, scent tracking]
+      variant: some creatures affect a wider electromagnetic band
+    animal_control:
+      id: rule.spirit-power.animal-control
+      profile: {type: mana, action: Complex, range: LOS, duration: Sustained}
+      specific_animal_type: true
+      control_modes: prevent action or direct behavior while experiencing through animal senses
+      behavior_constraint: actions must be normal for the animal
+      maximum_small_animals: Charisma times 5
+      maximum_large_animals: Charisma
+      existing_core_relationship: SR3 core record supplies resistance test; Critters p7 does not restate it or explicitly supersede it.
+  relationship: Printed power headers correct misaligned legacy Critters catalog profiles; existing SR3 core profiles remain unchanged.
+framing: reference_exact
+headline: 'Critters (FASA7002), p7: Accident, Adaptive Coloration and Animal Control'
+summary: 'Fictional tabletop rules: original power profiles and missing test, sensory and control conditions.'
