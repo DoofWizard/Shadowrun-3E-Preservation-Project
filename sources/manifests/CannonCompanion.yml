@@ -43,12 +43,12 @@ notes:
   - "Character/combat record sheets following printed p.126 are reference aids and add no new mechanics."
 
 postcompletion_source_table_reconciliation:
-  review_scope: "Original FASA7908 printed p.75 / physical PDF p.76, base firearm frame FCU value for Hold-Out Pistol only"
-  source_review: "Original page image independently inspected; source prints FCU 1 while shared historical frame record incorrectly records 0.1."
+  review_scope: "Original FASA7908 printed pp.75-77 / physical PDF pp.76-78: one FCU correction and complete 14-frame Available Design Options by Frame matrix"
+  source_review: "Original PDF images printed pp.75-77 inspected independently; page 75 prints Hold-Out Pistol FCU 1 versus existing 0.1; pp.76-77 contain 152 explicit frame-option allowances across 14 frames, including mode, loading and level constraints."
   source_pdf_sha256: "7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4"
   original_pdf_pages: 130
   page_mapping: "printed p.75 = PDF page 76"
-  scope_limit: "One correction only; this is NOT a full sourcebook mechanical coverage acceptance or executable-engine correction."
+  scope_limit: "Two source-specific records; no whole sourcebook mechanical acceptance or verified executable-engine integration is claimed."
   verified_semantic_records:
     - id: rule.firearms.cannon-companion-holdout-frame-fcu-original-p75
       path: rules/firearms/cannon-companion-holdout-frame-fcu-original-p75.yml
@@ -64,3 +64,17 @@ postcompletion_source_table_reconciliation:
       gate: verified
       contiguous_advance: false
       shared_canonical_table_repair_pending: rules/firearms/design-frames.yml
+    - id: rule.firearms.cannon-companion-frame-design-eligibility-original-p76-77
+      path: rules/firearms/cannon-companion-frame-design-eligibility-original-p76-77.yml
+      range_printed: [76, 77]
+      range_pdf: [77, 78]
+      content_class: rule_exact
+      commit: 3e5336363e84fbb015c6cf302be3bd7f5fcad063
+      blob: 9b1f63d987aa305fa33a9bf598874dbd1c375d79
+      baseline_sha256: 3a39ff043601f5ede0f464e53a3a796d562c405317ef92dd3403c6b8f39e200b
+      candidate_sha256: 2cd0d8386f75d42cdd50210b95c614af2f3f6ce73febdfa9ce0e0b9fbf26acf0
+      immutable_sha256: 77f9acf8345ec9b4f2abaf5e7da770d08a4fc268499ef785aba4fde712f89b76
+      original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+      gate: verified
+      contiguous_advance: false
+      scope: "Fourteen original base frames, 152 listed option-allowances and their page-specific restrictions"
