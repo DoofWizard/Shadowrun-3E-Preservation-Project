@@ -81,6 +81,32 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+    - id: reference.contacts.srcomp-sample-contact-original-game-stat-blocks-p74-76
+      path: references/contacts/srcomp-sample-contact-original-game-stat-blocks-p74-76.yml
+      range_printed: [74, 76]
+      range_pdf: [75, 77]
+      content_class: rule_exact
+      commit: d0a9cb92dc35e3e7f61f6523b171767f526b8e09
+      blob: 78b3eb167aa0074a4252d42e3cbb0c0c4db9ff65
+      baseline_sha256: e50fd704bff3d18c8885512613c1b70feac0b9b82971c8c3ac149bfcc9be79bb
+      candidate_sha256: ff7498bb3068ee426dcb7b888ffb4ae085f3882dd0d7e140abf6ad617f6ac0e0
+      immutable_sha256: 1ebbdde1fbf01c3f1e30a820b456c526f60ebc620928d44ba2c75309ef1c12c1
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      gate: verified
+      contiguous_advance: false
+    - id: reference.contacts.srcomp-sample-contact-original-game-stat-blocks-p77-78
+      path: references/contacts/srcomp-sample-contact-original-game-stat-blocks-p77-78.yml
+      range_printed: [77, 78]
+      range_pdf: [78, 79]
+      content_class: rule_exact
+      commit: ecd52b1fc1af34e9a34a5cfc6ae2b57dc5401191
+      blob: d1de503a05887f9e37de444e1be242a856468578
+      baseline_sha256: 701283f2eb6a7f9996ab43455bef2b81fa2af58e0f823bd68d4d503d12b07ed0
+      candidate_sha256: 0019cdb3047b39864f94304456bb7583954fb07eee6e397102966f7bb7f0790b
+      immutable_sha256: 96cfad24be0a059c3398a88c42ea113c8572764a44cdee68859b7872ddf5ea6e
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      gate: verified
+      contiguous_advance: false
     - id: rule.campaign.srcomp-five-seattle-gang-npc-ratings-p124-129
       path: rules/campaign/srcomp-five-seattle-gang-npc-ratings-p124-129.yml
       range_printed: [124, 129]
@@ -818,3 +844,29 @@ srcomp_original_campaign_payment_benchmarks_p99_100_2026_11_22:
   executable_game_engine_validation: false
   FASA7001_available_original_core_acceptance_reopened: false
   Denver_authoritative_checkpoint_changed: false
+
+# Original-image source review and postcompletion mechanical-data gap, 2026-11-22.
+# These are sample NPC stat blocks, not a new Companion source-completion claim.
+srcomp_sample_contact_stat_blocks_original_p74_78_2026_11_22:
+  publication: "FASA Corporation, Shadowrun Companion (FASA7905a), Shadowrun Third Edition fictional tabletop roleplaying source"
+  source_id: source.srcomp
+  cataloged_original_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  actual_preservation_method_verify_source: source_pdf_hash_verified
+  source_pdf_pages: 138
+  original_images_reviewed: {printed: [74, 78], physical_pdf: [75, 79]}
+  scoped_mechanics: "13 sample Contacts game-stat profiles with B/Q/S/I/W/C/E/R, Initiative, Combat/Karma Pools, Professional Ratings and listed skills/equipment/cyberware; official qualitative contact-archetype catalogs reused"
+  previously_accepted_catalogs_reused:
+    - entities/contacts/srcomp-samples.yml
+    - entities/contacts/srcomp-sample-archetypes.yml
+  independent_baselines_reviewed_against_original_images: true
+  same_substance_candidates_source_frozen: true
+  transactions: "2 independent transaction_recovery.stage including ingestion_gate.prepare, ordinary GitHub Contents create and exact readback, actual ingestion_gate.confirm and transaction_recovery.inspect verified"
+  new_semantic_records: 2
+  indexed_source_specific_registrations: 2
+  original_source_status_remains_historically_complete: true
+  full_original_book_narrative_archival_certification: false
+  runnable_game_engine_implementation: false
+  global_newly_authorized_contiguous_pages: 0
+  owner_core_451_record_acceptance_unchanged: true
+  owner_accepted_p308_omission_unchanged: true
+  Denver_archived_p45_PDF46_checkpoint_unchanged: true
