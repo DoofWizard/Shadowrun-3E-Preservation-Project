@@ -22,7 +22,7 @@ selection:
 effects:
   - "Allows an initiate to disguise the true nature of the initiate's aura from astral observers."
   - "Can disguise dual nature/emotional state and can penetrate another initiate's masking."
-  - "Deliberate masking can also conceal foci and sustained/quickened spells up to grade-based limits."
+  - "Ordinary masking conceals foci and sustained/quickened spells within a grade-based Force limit; deliberate masking can conceal additional Force."
 
 links:
   modifies:
@@ -38,3 +38,53 @@ sources:
     note: "Masking / Deliberate Masking / Masking Foci and Spells"
 
 notes: []
+
+source: source.mits
+printed_pages: '76'
+pdf_pages: '77'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  aura_masking:
+    effects: [appear mundane or non-initiate, conceal dual nature, conceal emotional state]
+    perceived_dual_nature: A masked dual-natured magician may appear magical without seeming astrally present.
+    other_initiates_may_penetrate_mask: true
+    initiate_may_attempt_creature_aura_masking_penetration: true
+    gm_optional_guidelines:
+      default_aura_masked: true
+      unmask_by_deliberate_choice: true
+      crowd: Initiate must specifically try to assense a masked aura.
+      only_two_initiates_present: GM may roll secretly to determine mutual detection.
+  penetration:
+    roller: gamemaster
+    test: Magic Test (secret)
+    dice: viewer Magic rating
+    target_number: target's Magic, Force or Essence as appropriate
+    required_successes: target initiation grade minus viewer initiation grade, minimum 1
+    success: True aura becomes visible and can be assensed normally; creature powers may have different results (p117).
+    failed_first_test_retry_limit: 1
+    retry_tn_modifier: 2
+    failed_retry: Viewer cannot penetrate the mask.
+    indistinguishable_without_success: true
+    example: {viewer_grade: 2, viewer_magic: 7, target_grade: 4, target_magic: 6, dice: 7, target_number: 6, required_successes: 2}
+  astral_form:
+    dual_natured: May make astral form look like an aura; still interacts normally with astral forms, including barriers and projecting magicians.
+    projecting: May appear as an aura at a glance; an astrally perceiving or projecting observer who examines it more closely sees through the disguise because no physical body is visible.
+  deliberate_masking:
+    dice: initiation grade times 2
+    target_number: own Magic
+    successes_per_countered_viewer_success: 2
+    viewer_successes_countered_per_conversion: 1
+    action: Exclusive Simple Action
+    other_magical_activities_while_maintaining_allowed: false
+    drop_action: Free Action
+    example: {masker_successes: 4, viewer_successes_required_if_base_requirement_is_1: 3}
+  foci_and_spells:
+    eligible: Foci and sustained or quickened spells on the initiate's person.
+    standard_mask_capacity_force_points: initiation grade
+    beyond_capacity: Presence visible on astral plane unless deliberately masked.
+    deliberate_test_target_number: total Force in foci and spells
+    successful_deliberate_test: Conceals foci and spells with the aura; successes oppose the viewer's mask penetration.
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition rule: Masking (FASA7907, p76/PDF77)"
+summary: "FASA Corporation, Magic in the Shadows; exact tabletop RPG test resolution and exceptions from the original p76/PDF77."
