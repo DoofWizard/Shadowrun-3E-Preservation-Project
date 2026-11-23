@@ -81,6 +81,18 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+    - id: rule.campaign.srcomp-five-seattle-gang-npc-ratings-p124-129
+      path: rules/campaign/srcomp-five-seattle-gang-npc-ratings-p124-129.yml
+      range_printed: [124, 129]
+      range_pdf: [125, 130]
+      content_class: rule_exact
+      commit: 7144ba757963b8a71e2c2cd4411bb4fe6cceca55
+      blob: 71f7bc206f2c131829cb108545253093a84e91ee
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      candidate_sha256: 959ecab854f66b2577dfa19f00029aad910531b660d62ccecf541fc8f446f849
+      immutable_sha256: 190a19d7a82c4d5054e49e74079de6e63218fa387cdbd289f3022b4e30fc6206
+      gate: verified
+      contiguous_advance: false
     - id: option.campaign.srcomp-alternate-campaign-creation-p110-116
       path: rules/campaign/srcomp-alternate-campaign-creation-p110-116.yml
       range_printed: [110, 116]
@@ -735,3 +747,34 @@ srcomp_gang_campaign_mechanics_recovery_2026_11_22:
   Denver_active_printed_p45_pdf46_checkpoint_changed: false
   full_book_archival_certification: false
   executable_game_engine_validation: false
+
+# 2026-11-22 original-source reviewed numeric NPC gang sample records; distinct from earlier gang procedural rules.
+srcomp_five_named_gang_npc_ratings_source_recovery_2026_11_22:
+  source_id: source.srcomp
+  publication: 'FASA Corporation, Shadowrun Companion (FASA7905a), Shadowrun Third Edition tabletop role-playing game'
+  original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  original_pdf_pages: [125, 130]
+  original_printed_pages: [124, 129]
+  preservation_method_verify_source_result: source_pdf_hash_verified
+  original_images_independently_reviewed: 'Physical PDF pages 125-130, five original named gang profiles, source-printed count/rating fields'
+  accepted_record:
+    id: rule.campaign.srcomp-five-seattle-gang-npc-ratings-p124-129
+    path: rules/campaign/srcomp-five-seattle-gang-npc-ratings-p124-129.yml
+    semantic_commit: 7144ba757963b8a71e2c2cd4411bb4fe6cceca55
+    exact_readback_blob: 71f7bc206f2c131829cb108545253093a84e91ee
+    candidate_sha256: 959ecab854f66b2577dfa19f00029aad910531b660d62ccecf541fc8f446f849
+    immutable_sha256: 190a19d7a82c4d5054e49e74079de6e63218fa387cdbd289f3022b4e30fc6206
+  original_exact_numeric_examples:
+    - {gang: Halloweeners, rating: Superior, headcount_approx: '25-40', lieutenants: 5}
+    - {gang: Spiders, rating: Superior, headcount_approx: '50-100', lieutenants: 5}
+    - {gang: Spikes, rating: Superior, headcount_approx: '15-25', lieutenants: 2}
+    - {gang: Red_Hot_Nukes, rating: Equal, headcount_approx: '15-25', lieutenants: 0}
+    - {gang: Night_Hunters, rating: Equal, headcount_approx: '20-30', lieutenants: 2, qualifier: 'Main gang; splinters vary'}
+  existing_canon_reused: ['entities/organizations/srcomp-seattle-gangs.yml', 'subsystems/campaign/gang.yml', 'rules/campaign/srcomp-gang-reputation-leadership-economics-p123-124.yml']
+  source_period_supersession_scope: 'Original printed p124 states its five descriptions supersede previously published descriptions; no inferred later source precedence'
+  gates: 'Fresh cataloged PDF SHA and actual verify-source; independent original images and first-pass fictional-source editorial review; baseline/candidate with immutable data; transaction_recovery stage and gate prepare; ordinary GitHub Contents create; exact-byte readback; actual ingestion_gate confirm and transaction_recovery inspect verified.'
+  original_source_narrative_certification: false
+  executable_engine_validation: false
+  new_global_contiguous_pages: 0
+  Denver_checkpoint_changed: false
+  FASA7001_core_available_original_mechanics_acceptance_reopened: false
