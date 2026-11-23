@@ -289,6 +289,61 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_nanodrone_field_backfill_2026_11_23:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    original_images_reviewed: "Printed pp96-97 = physical PDF pp97-98; FASA 1999 publication identity checked on p5 from matching hash."
+    verify_source_actual:
+      source: source.mm
+      status: source_pdf_hash_verified
+      sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+      page_images_review: still_required_independently
+      exit_code: 0
+    preflight_self_test: "29 passed; local transaction scripts matched live Git blobs."
+    records:
+      - id: rule.nanotech.pilot-and-programming
+        path: rules/nanotech/pilot-and-programming.yml
+        printed: "96-97"
+        pdf: "97-98"
+        commit: "9d9544d80a8c6336801bf74a4080b78a062c9366"
+        blob: "63b3845051f06d2d608c4020b21de289cbf25492"
+        candidate_sha256: "e785cd464776103ae04a0fae6f374be9170f7b040af2c5bf02d70297e76c0bd5"
+        baseline_sha256: "050416b73ae09443abf7507cd97559e778e30a754b195f91c382b947d91e89d8"
+        immutable_sha256: "aed6eb7130407dad9bfd8af512feeaa77fbe33100c69224f9bdb6a8b6eda8efc"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Two categories, Pilot functions, no Learning Pool or Initiative, no continuous radio, industrial availability constraints, Engineering specialization, approximate baseline cost and all four Nanotech Facility Costs rows."
+      - id: rule.nanotech.reprogramming
+        path: rules/nanotech/reprogramming.yml
+        printed: "96-97"
+        pdf: "97-98"
+        commit: "de43812f89b33e8fd1df00273c35ac92077da00f"
+        blob: "71949245de5745002c568d8a2f7478386649c5c1"
+        candidate_sha256: "6346875921fcdce550fee7c8114ff84b6bc49702af894f3114eec2fb2da526f9"
+        baseline_sha256: "5af6a2e47a6cdecf26d3abea617beab941b7e2dba6b3788c2b9e63bf700ad68a"
+        immutable_sha256: "787d76f12a8cd57b5983522f5db39abbb303ce41cb9b8e8cea993b3d2730d3dd"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Pilot threshold, hardwired eligibility, controller and signal constraints, three Time to Reprogram Nanites rows, interruption, Engineering test and knowbot Utility Pool substitution, monitored Matrix operation example."
+      - id: rule.nanotech.direct-control-shutdown
+        path: rules/nanotech/direct-control-shutdown.yml
+        printed: "97"
+        pdf: "98"
+        commit: "6dc36d20b3a96b4131bd20652657100d27b5a544"
+        blob: "b26e02699fc46d7ab43313dfe18a5f4a890fa214"
+        candidate_sha256: "92451e836835524120fb38a6b4fb7a6303727429b0c012ff7e46497f19531e38"
+        baseline_sha256: "82b4247ed80be9222f3693d246e34df4cfe4168de4023e295cd99f9ff23fe225"
+        immutable_sha256: "5fd345e4b2a0a3a7fa3d479797cebd38b46007f71275146fc9fc7a822cf030b4"
+        gate: verified
+        recovery_inspect: verified
+        fields: "No rigging, reprogramming-only control, shutdown conditions, repeated tasks, breed-specific triggers, restart and decay/scavenging exceptions."
+    scoped_natural_sections_reconciled:
+      - "Nanotech and its Uses, p96"
+      - "Nanodrones including Programming Nanites, both tables, Direct Control and Shutting Down Nanites, pp96-97"
+    next_distinct_scope: "Nanoware and its subrules pp98-100; nanogear and other chapter mechanics remain subject to full field review."
+    caveats: "No whole-book certification or contiguous page advancement. Prior bioware Bio Index and Magic Effects commits located, but original immutable baseline journals unavailable in this run; preserve deferred receipt status. Concurrent cyberlimb proposals were left to the active separate pass, without duplicate writes."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
