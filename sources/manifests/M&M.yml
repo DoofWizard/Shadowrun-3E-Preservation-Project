@@ -200,6 +200,95 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_cyberlimb_armor_capacity_backfill_2026_11_23:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    source_pdf_drive_id: "1WSdpdxUYtQNbbHHO2OGHD4bEJoi2lq_t"
+    source_pdf_size_bytes: 92811837
+    verification_input: "Fresh original Drive PDF; source ID/hash projected from live manifest blob a784274eadee98abf00d2a7bc79317010d645ccf."
+    verify_source_actual:
+      status: source_pdf_hash_verified
+      source: source.mm
+      sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+      page_images_review: still_required_independently
+      exit_code: 0
+    independent_original_images: "Printed and physical PDF pp35-39 match, reviewed relevant sections and TOC/publisher identity; p38 accessory rules not certified by this transaction."
+    publication_identity: "FASA Corporation, 1999, FASA7126 Man & Machine: Cyberware, Shadowrun Third Edition."
+    scripts_matched_live_git_blobs:
+      connector_preflight: "331626d7c285b00e541359e315ae2bdd0fa33f2d"
+      preservation_method: "258a6d16510673cbeba66f4431f80f3fb97ce5cd"
+      transaction_recovery: "ef6a9361e93996eba2b9102b5447e71fef230d4e"
+      ingestion_gate: "a123f7f374822c5f899d3e9df3c7f8709d80abf2"
+    records:
+      - id: rule.cyberlimbs.body-plating
+        path: rules/cyberlimbs/body-plating.yml
+        printed: "35-37"
+        pdf: "35-37"
+        commit: "d27ea5841baa6d5d0218dbb927738df8e047ffab"
+        blob: "ccc182e30768b659f06eb2acab62f3161d3776b9"
+        candidate_sha256: "d1f487b26ac01d107715613f3ba168429c6ce59ef36abffa3008b63a9d9df8d7"
+        baseline_sha256: "3b0a34d20b8799150a291dd5294099a6e972907daa9af9552b68d4365ff634b1"
+        immutable_sha256: "f7414545e81386c0c3ec5a36cb21d99db05d189a569897a6e0b7aabf0d539a2b"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Five-location floor-average, local called-shot armor, worn armor and Quickness interactions, separate torso locations, 10-point limits, ablative Power threshold, replacement test and time."
+      - id: rule.cyberlimbs.equipment-capacity
+        path: rules/cyberlimbs/equipment-capacity.yml
+        printed: "35-37"
+        pdf: "35-37"
+        commit: "48dab049fb27e555f53d89381bdb16255f2edc6e"
+        blob: "3eb3be43628a950e235a40723c9d823f661fc601"
+        candidate_sha256: "928e6d964a57de5f837d9858e40598a91a061a8086395fdfb88320ac80daa150"
+        baseline_sha256: "e147b7b616d708f990b8cecf806e3c7b7a812270f626248cd3d619b9953bf5ea"
+        immutable_sha256: "59c3493f8d83a3d897a33b3d1df0c5feb15e150fd0a97892d7768fcf010b1c5d"
+        gate: verified
+        recovery_inspect: verified
+        fields: "50 installation rows with original DNI footnotes and dashes, 9 replacement capacity rows, 4 size categories, grade multipliers and quarter-unit rounding, Essence and structural-frame exceptions."
+      - id: rule.cyberlimbs.integrity-enhancement
+        path: rules/cyberlimbs/integrity-enhancement.yml
+        printed: "39"
+        pdf: "39"
+        commit: "6c30c8f052a8fa4ae48cf02cd0e521b13d52d2ba"
+        blob: "b66165bf5b84d6ff6e45e9139a8eef115b4b3683"
+        candidate_sha256: "c92d559288c69c4d89fdc9e96bc37e7a8b18fd1ee4375c37fbf3187ae5d229cb"
+        baseline_sha256: "f064c1033722deec4ec14fbe75c79982c013321513b57b7559f0331702f1c0ae"
+        immutable_sha256: "3119b378d127e556bc61c01874178a4ba2e1937630ce2be8f78bba048cdce823"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Maximum three points; Stress TN reduction applies to built-in equipment; Body dice for called shots to limb or installed equipment."
+      - id: rule.cyberlimbs.partial-cyberlimbs
+        path: rules/cyberlimbs/partial-cyberlimbs.yml
+        printed: "39"
+        pdf: "39"
+        commit: "716e995794a3d9bdbdc2977f655c45fdfc34be77"
+        blob: "71eb1cb461690d6b208237a53c121526d6697085"
+        candidate_sha256: "5279f6fc592671322c915321eaaf1795f2c44022dcd33604d07357504316b3fc"
+        baseline_sha256: "1e01c6006a5678fcc3ef159475b538a38827bc4dc3b5ae5a45f76fde3a9f8d0d"
+        immutable_sha256: "467139e31179b682bd5e51aab99c39d548f7775ec905e2286b69d43c1a1d947e"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Partial reinforcement, quick-release cyberhands and cyberfeet, attachment/removal requires free hand and Complex Action; preserve p39 vs p155 concealability observation."
+    original_scope_checklist:
+      - {scope: Armor, printed: "35", status: verified, record: rule.cyberlimbs.body-plating}
+      - {scope: Equipment Capacity and Cyberware Grade, printed: "35-36", status: verified, record: rule.cyberlimbs.equipment-capacity}
+      - {scope: Equipment Capacity Cost Table, printed: "36", rows: 50, status: verified, record: rule.cyberlimbs.equipment-capacity}
+      - {scope: Equipment Capacity Table, printed: "37", rows: 9, status: verified, record: rule.cyberlimbs.equipment-capacity}
+      - {scope: Equipment Capacity Units Table, printed: "37", rows: 4, status: verified, record: rule.cyberlimbs.equipment-capacity}
+      - {scope: Body Plating game effects, printed: "36", status: verified, record: rule.cyberlimbs.body-plating}
+      - {scope: Integrity Enhancement, printed: "39", status: verified, record: rule.cyberlimbs.integrity-enhancement}
+      - {scope: Partial Cyberlimbs and Replacement Limbs, printed: "39", status: verified, record: rule.cyberlimbs.partial-cyberlimbs}
+    existing_market_rows_rechecked:
+      - {id: entity.cyberware.cyberlimb-body-plating-ballistic, blob: "fb0ab0f7ff3054537a3d1f45976b779747b1b209", printed: "37", result: matches}
+      - {id: entity.cyberware.cyberlimb-body-plating-impact, blob: "bdfcd85896c941555e466daff8084427705cade2", printed: "37", result: matches}
+      - {id: entity.cyberware.cyberlimb-ablative-armor, blob: "14521fd70cb5939de37844c4e6ba5c1d9e4fb820", printed: "37", result: matches}
+      - {id: entity.cyberware.integrity-enhancement, blob: "07bd4ebc4f469e8e812f6bfebe17548bcc10ec1c", printed: "39", result: matches}
+    recovery_note: "Initial local capacity confirmation detected a changed loose candidate file; immutable journal candidate and stage plan remained exact and matched GitHub readback. Actual confirm rerun on journal bytes returned verified; no second write performed."
+    deferred:
+      - "Original p39 replacement modification has Concealability dash versus existing p155-derived entity -1 (blob 52174c5b5d0c3fdb05cb6e7b569838877643ed28); independently compare p155 before resolving."
+      - "Other cyberlimb accessory rules and market rows pp36-41, DNI, cyberlimb accessory exceptions and later original equipment tables remain open; no whole-chapter closure."
+      - "Previously deferred bioware receipt reconciliation remains open."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
