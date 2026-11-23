@@ -1,0 +1,72 @@
+id: rule.bioware.drawbacks
+record_type: rule
+name: Ordinary Bioware Drawbacks
+domain: bioware
+status: ingested
+effective:
+  status: current
+  source: source.mm
+  page: 77
+  basis: defines
+scope:
+  applies_to:
+  - characters with bioware
+resolution:
+  summary: Implant Stress reduces function at item-defined levels; ordinary resistance
+    Power and Healing Test target numbers increase with total Bio Index.
+  inputs:
+  - total Bio Index
+  - implant Stress level
+  - type of test
+  outputs:
+  - modified compound or disease Power
+  - modified healing target number
+  - item-specific Stress effect
+links:
+  uses:
+  - rule.bioware.bio-index
+  - rule.damage.bioware-wound-effects
+  affects:
+  - procedure.healing.natural-and-medical
+  modified_by: []
+  interacts_with:
+  - rule.bioware.excessive-bioware
+sources:
+- source: source.mm
+  pages: 77-78
+  relation: defines
+  note: Bioware Drawbacks / Bioware Stress Levels / Lesser Immunity / Longer Healing
+    Periods
+notes: []
+source: source.mm
+printed_pages: 77-78
+pdf_pages: 78-79
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  stress_levels:
+    printed: 77
+    pdf: 78
+    rule: Stress damage diminishes performance. Each item specifies an adverse effect
+      at the corresponding Stress level.
+    detailed_rule_reference: M&M p128
+  lesser_immunity:
+    printed: 77-78
+    pdf: 78-79
+    power_addition: ceil(total_bio_index / 2)
+    unit: Power
+    applies_to:
+    - diseases
+    - drugs
+    - toxins
+    - other compounds the character is resisting
+  longer_healing:
+    printed: 78
+    pdf: 79
+    target_number_modifier: +ceil(total_bio_index / 2)
+    applies_to: All Healing Tests, including magical healing.
+headline: Ordinary bioware drawbacks — Stress, immunity and healing modifiers
+summary: 'FASA Corporation, Man & Machine: Cyberware (1999, FASA7126), fictional Shadowrun
+  Third Edition tabletop RPG, printed 77-78 / PDF 78-79; original game rules.'
+framing: reference_exact
