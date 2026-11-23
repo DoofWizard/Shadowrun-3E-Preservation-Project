@@ -3,14 +3,45 @@ record_type: rule
 name: "Bioware and Magic Effects"
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: "79"
+pdf_pages: "80"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 79, basis: extends}
 scope: {applies_to: ["bioware effects interacting with spells, adept powers, and magical concealment"]}
 resolution:
-  summary: "Most magical effects combine normally with bioware, but the source defines bounded exceptions: metabolic-suspension effects do not stack, pain-resistance bioware has limits against magical pain effects and Nerve Strike, reflex-enhancement bonuses use only the highest applicable Reaction/Initiative bonus, and thermosense is not defeated by vision-based illusions."
-  inputs: ["bioware effect", "spell or adept power", "situation"]
-  outputs: ["stacking, suppression, or unaffected interaction"]
+  summary: "Magic effects are generally complementary to bioware. Apply the named exceptions for metabolic suspension, pain resistance, Reaction and Initiative bonuses, and thermosense."
+  inputs: [bioware effect, spell or adept power, situation]
+  outputs: [stacking, suppression, or unaffected interaction]
   steps: []
+data:
+  metabolic_suspension:
+    bioware: metabolic arrester
+    concurrent_magical_effects: [Hibernate spell, Suspended State adept power]
+    combined_effect: strongest_only
+    cumulative_metabolic_rate_decrease: false
+  pain_resistance:
+    simulated_pain_spells:
+      affected_by_bioware: [damage compensators, pain editors, trauma dampers]
+      examples: [Agony, Mass Agony]
+    adept_pain_resistance:
+      incompatible_bioware: [pain editors, damage compensators]
+      trauma_damper: "Only affects damage the Pain Resistance power does not nullify."
+      cross_reference: "SR3 p170"
+    nerve_strike_adept_power:
+      pain_resisting_bioware_effective: false
+  reflex_boosters:
+    condition: "Reaction or Initiative boosting bioware used with adept powers boosting Reaction and Initiative."
+    combined_bonus: highest_only
+  thermosense_and_illusion_spells:
+    sense_is_vision_based: false
+    affected_by_vision_targeting_illusion_spells: false
+    invisibility: "A character under Invisibility remains as detectable by thermosense as a character not under it."
+    critter_concealment_power_hinders_thermosense: true
 links: {uses: [rule.bioware.awakened], affects: [], modified_by: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 79, relation: extends, note: "Bioware and Magic Effects"}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p79/PDF p80: Bioware and Magic Effects"
+framing: reference_exact
