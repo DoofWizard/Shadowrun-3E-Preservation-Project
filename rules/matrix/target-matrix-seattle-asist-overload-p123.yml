@@ -1,0 +1,32 @@
+id: rule.matrix.target-matrix-seattle-asist-overload-p123
+record_type: rule
+status: source_reviewed
+source: source.fasa-7219
+printed_pages: '123'
+pdf_pages: '124'
+edition_scope: 'FASA7219 Target: Matrix, FASA, Shadowrun Third Edition fictional tabletop game'
+content_class: [rule_procedure]
+data:
+  publication: {title: 'Target: Matrix', publisher: FASA, catalog: FASA7219, edition: Shadowrun Third Edition}
+  legacy_record: rules/matrix/target-matrix-host-rules.yml
+  occurrence:
+    seattle_rtg_login_dice: 2
+    seattle_ltg_login_dice: 3
+    die_sides: 6
+    trigger: all dice show 1
+    onset: 'During that grid visit, at a time the GM finds dramatically appropriate.'
+  effects:
+    cold_asist_tn_modifier: 4
+    hot_asist_tn_modifier: 6
+    scope: all target numbers
+    duration: until ASIST reset
+    reset_action: Simple Action
+    identify_reset_test: {skill: 'Computer (Hardware)', target_number: 4}
+  panics:
+    onset: more than one full Combat Turn of overload
+    test: {attribute: Willpower, target_number: 5}
+    failure: 'Panic and hyperventilation persist until the character is jacked out. Matrix or other simsense access brings the panic back until recovery.'
+    recovery: {reference: 'Matrix p109, Recovering From Psychotropic Effects', simulated_psychotropic_ic_rating: 5}
+framing: reference_exact
+headline: 'FASA7219 Target: Matrix SR3 p123/PDF124: Seattle ASIST filter overload'
+summary: 'Fictional tabletop timing, test modifiers, reset procedure, panic and recovery conditions.'
