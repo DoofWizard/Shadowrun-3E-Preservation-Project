@@ -1,0 +1,99 @@
+{
+  "audit_id": "rigger3-revised-sonar-tires-original-review-2026-11-23",
+  "record_type": "source_review_and_transaction_receipt",
+  "source": {
+    "title": "Rigger 3 Revised",
+    "publisher": "FanPro",
+    "catalog_number": "FanPro10662",
+    "edition": "Shadowrun Third Edition",
+    "source_id": "source.fanpro-10662",
+    "pdf_sha256": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+    "physical_pdf_pages": 210
+  },
+  "historical": {
+    "title": "Rigger 3",
+    "publisher": "FASA Corporation",
+    "catalog_number": "FASA7910",
+    "source_id": "source.r3",
+    "pdf_sha256": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860"
+  },
+  "original_image_review": {
+    "revised_printed_pages": [
+      148,
+      154,
+      155
+    ],
+    "revised_pdf_pages": [
+      150,
+      156,
+      157
+    ],
+    "historical_printed_pages": [
+      148,
+      154,
+      155
+    ],
+    "method": "Direct visual comparison of both exact original PDF scans at matching printed pages; not inference from an errata text",
+    "source_observations": [
+      "The revised Sonar Systems Table p148 has Design Points for Sensor Levels 1-10 of 50,500,2500,5000,10000,25000,50000,75000,125000,250000; FASA original differs at Levels 5-10, unchanged elsewhere.",
+      "The revised Tires continuation p155 adds a called-shot threshold of Moderate damage, Body 4 or Body 5 tire resistance depending on type, immediate Crash Test when destroyed while driving, +2 or +1 per-flat-tire Handling modifiers, and a runflat Speed exception; historical FASA pages do not contain these provisions."
+    ],
+    "editorial_fields_reviewed": [
+      "headline",
+      "summary",
+      "data.source_context",
+      "data.revised_design_points_by_sensor_level",
+      "data.historical_fasa7910_design_points_by_level",
+      "data.new_revised_tire_damage_rule",
+      "data.historical_fasa7910_comparison",
+      "data.provenance"
+    ],
+    "limits": "Only original-image demonstrated mechanical differences are registered; this is not full pp121-155 normalization, a global contiguous-page receipt, or runnable engine certification."
+  },
+  "verification": {
+    "actual_preservation_method_verify_source": "source_pdf_hash_verified",
+    "source_pdf_sha256_observed": "88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909",
+    "historical_pdf_sha256_observed": "0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860",
+    "connector_preflight_tests_passed": 29,
+    "transaction_recovery_stage_and_prepare": "passed 2",
+    "ingestion_gate_confirm": "verified 2",
+    "transaction_recovery_inspect": "verified 2"
+  },
+  "semantic_receipts": [
+    {
+      "path": "rules/vehicles/r3-revised-sonar-design-points-p148.yml",
+      "id": "rule.vehicles.r3-revised-sonar-design-points-p148",
+      "commit": "868731b0840bb48da432ce2f988333a029af96b2",
+      "blob": "15eac2d929f165eab744f3f0dd05b101e0c4ed08",
+      "baseline_sha256": "eabbd4b19caf76d3200077c1b7b6292d70d6b74f5bcc3e494d9daa2652b311fb",
+      "candidate_sha256": "8a43fe3e5bd339c42749a975eb3817cab143c6d3a6cfb349c128840fe745f1f0",
+      "immutable_sha256": "096b9faed0707ff37ec20cda3e2a1629ffcf88886198354d55fe7e48f16be9a3",
+      "gate": "verified"
+    },
+    {
+      "path": "rules/vehicles/r3-revised-flat-tire-effects-p154-155.yml",
+      "id": "rule.vehicles.r3-revised-flat-tire-effects-p154-155",
+      "commit": "70f57b2dc27ef9212589f601a423dfc195ab588f",
+      "blob": "1b48055f34c8c3d9df310fc42341a65d3a647190",
+      "baseline_sha256": "b1dc35f7590fc2b2dc8f1d9193a0206185de66eb600cf3fad00ed61ec2c15d01",
+      "candidate_sha256": "2ed03d9b3d9482f617d08030e99aa7916315d1ad9b27b9defe7e3b139d3af040",
+      "immutable_sha256": "4bcfe35ba32e0039b354d5d366b60e06069c22d77eaa585fb73e4d04957c87f7",
+      "gate": "verified"
+    }
+  ],
+  "source_index": {
+    "path": "sources/manifests/Rigger3Revised.yml",
+    "commit": "5a8926f3a438540bb85b6250fcdadd1e4479f5ba",
+    "readback_blob": "119e86223adcfbd1c06663c93569878b17b6ea1a",
+    "registration_count_before": 15,
+    "registration_count_after": 17
+  },
+  "scope": {
+    "global_contiguous_pages_added": 0,
+    "global_active_source": "source.fasa-7212",
+    "denver_boundary": "printed p45/PDF46",
+    "fasa7001_core_acceptance": "451 previously accepted records unchanged",
+    "revised_book_full_source_completed": false,
+    "engine_tested": false
+  }
+}
