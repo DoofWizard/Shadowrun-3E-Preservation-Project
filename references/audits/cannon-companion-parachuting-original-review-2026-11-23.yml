@@ -1,0 +1,51 @@
+source: source.cc
+catalog_number: FASA7908
+publication: Cannon Companion
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+actual_verify_source_status: source_pdf_hash_verified
+physical_pdf_pages: 130
+preflight_self_test: 29/29
+original_images:
+  - {printed: 55, pdf: 56}
+  - {printed: 56, pdf: 57}
+  - {printed: 102, pdf: 103}
+  - {printed: 103, pdf: 104}
+scope:
+  parachute_gear:
+    status: original_fields_reconciled
+    existing_entities:
+      - {path: entities/gear/standard-parachute.yml, blob: 8a2d97e90cb73a1d74548ccadcaa4596526d0abc}
+      - {path: entities/gear/low-altitude-parachute.yml, blob: 2a05483d22d04d0a3d6e2a7ce27bde8c95996c33}
+      - {path: entities/gear/halo-parachute.yml, blob: d136772a3be1da28c27e4e69196ca7b39013c767}
+    matching_table_rows: 3
+    matching_fields_per_row: [weight, availability, cost_nuyen, street_index, legality]
+    original_dash_concealability_and_gear_conditions: rules/gear/cannon-companion-parachute-equipment-conditions-p55-56.yml
+    qualitative_halo_low_opening_feature: linked procedure minimum altitude; no independent equipment modifier printed
+  parachuting_procedure:
+    status: original_fields_reviewed_with_remaining_dependency
+    existing_procedure: {path: procedures/movement/parachuting.yml, blob: d05fbc5a5993d15b952b37f50c2df483f50e7aab}
+    matching_fields: [three minimum altitudes, target number formula, deployment success, success allocation, scatter calculation, landing damage, Body only, no armor, reserve attempt, descent rate, ten modifier rows]
+    new_conditions: rules/movement/cannon-companion-parachuting-resolution-clarifications-p102-103.yml
+    printed_example_discrepancy: "Table and worked reserve example retained separately; no new rounding rule inferred."
+    remaining_dependency: "Explicit reduced Signature before HALO deployment and p104 Signature of Biological Forms cross-reference still need canonical field reconciliation."
+    index_status_at_audit_preparation: "Confirmed semantic bytes; second manifest write returned HTTP 409 due to concurrent HEAD change. Fresh path readback unchanged."
+transactions:
+  - record: rule.gear.cannon-companion-parachute-equipment-conditions-p55-56
+    commit: 372b9cfea498ef741e7d16fa934a8874d3694802
+    blob: a2af501c46e557e104b2aace1d634a6602f2c896
+    gate: verified
+    plan_sha256: 42e65070709cfb2c231cac933ab93f8b206fd831d4a37bbc496dee8ae5a3a026
+    confirm_sha256: bf71af5ea47e7b302d00fecc57212767c138dbacc1940a08a3e033027ea4d0f6
+    recovery_inspect_sha256: 52ceffee7f185fe60a40ac7c23c5876a8f277f9b4a00ef59b89b4af6cd6ce954
+    manifest_commit: 719c8f161e16e696e8111befdc69f03e435735af
+    manifest_blob: df06ba890adf651dd2c6a7e240ea86c45f8d3aa4
+  - record: rule.movement.cannon-companion-parachuting-resolution-clarifications-p102-103
+    commit: 567ebc1789acf04aa795cc7cb421f77cb540b490
+    blob: 1d72dca32d0d2522e4a527ebfe4b2535d42368dd
+    gate: verified
+    plan_sha256: 1b93c5261a755b16ee7d3c558365919a2c005821ccc3ca5d918697230a6cb081
+    confirm_sha256: 8bf1a99cbc2a3de230a5370a80eaa14c5a7ec9926a90dffcbb812f64e5a38a27
+    recovery_inspect_sha256: 21bf03ebc9522081501c73be04bad683c844d3b2d1087f6afa27c6e880209e6a
+global_pages_authorized: 0
+whole_book_closed: false
