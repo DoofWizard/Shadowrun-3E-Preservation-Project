@@ -41,3 +41,26 @@ notes:
   - "Sequential deep scan completed through printed page 112, covering two-weapon combat, armor degradation/repair, camouflage and cover, fire/incendiaries, weapon holding, indirect fire, rate-of-fire clarification, missile combat, parachuting, strength-based recoil, searching/suppressive fire, grenade return, Small Unit Tactics, skill additions, and underwater activity/combat/magic."
   - "Reference appendix audited through printed page 126. Printed pp.113-114 range/linked-attribute tables were captured as canonical reference records; pp.115-126 equipment tables were treated as consolidated validation/reference for the entities and acquisition statistics already ingested from the body text rather than duplicated as new entities."
   - "Character/combat record sheets following printed p.126 are reference aids and add no new mechanics."
+
+postcompletion_source_table_reconciliation:
+  review_scope: "Original FASA7908 printed p.75 / physical PDF p.76, base firearm frame FCU value for Hold-Out Pistol only"
+  source_review: "Original page image independently inspected; source prints FCU 1 while shared historical frame record incorrectly records 0.1."
+  source_pdf_sha256: "7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4"
+  original_pdf_pages: 130
+  page_mapping: "printed p.75 = PDF page 76"
+  scope_limit: "One correction only; this is NOT a full sourcebook mechanical coverage acceptance or executable-engine correction."
+  verified_semantic_records:
+    - id: rule.firearms.cannon-companion-holdout-frame-fcu-original-p75
+      path: rules/firearms/cannon-companion-holdout-frame-fcu-original-p75.yml
+      range_printed: [75, 75]
+      range_pdf: [76, 76]
+      content_class: equipment_stat
+      commit: 2a42925f481de5c2139e5ea8f5417f90fab3979b
+      blob: 5c93a2b1ce024a9fe2e6a168a6ad2f10b428005a
+      baseline_sha256: 2f4c65088d4f9b774832bf23e60114a0461f40eb3f9e57b58024f76ae41840d5
+      candidate_sha256: 19b1ee5e843b79d48b21296ab064c6d815d9744b174d59c0a7681d3b548d87b9
+      immutable_sha256: 3b20aa60c901697efbd1f7c92454afd4773f636a21bc7ccd91c5c90ec7218920
+      original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+      gate: verified
+      contiguous_advance: false
+      shared_canonical_table_repair_pending: rules/firearms/design-frames.yml
