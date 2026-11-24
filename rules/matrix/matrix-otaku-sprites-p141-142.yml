@@ -1,0 +1,35 @@
+id: rule.matrix.matrix-otaku-sprites-p141-142
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '141-142'
+pdf_pages: '142-143'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp141-142/PDF142-143.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Sprite construction and operation
+summary: Numerical expansion of the existing Otaku sprite framework.
+data:
+  legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 provides generic sprite capability only.'
+  equivalence: Smart frames only; no dumb frame equivalent; channels and complex forms replace utilities.
+  core:
+    construction: Complex form construction rules
+    multiplier: 5
+    cap: Computer (Programming)
+    ordinary_core_karma_cost: 0
+    completion_good_karma: core rating
+    options: prohibited
+  persona_points: 'core rating * 3, shared among four persona attributes and five channels'
+  persona_cap: core rating
+  channel_cap: creator corresponding channel rating
+  frame_points: 'core rating * 4'
+  pilot: {minimum: 1, maximum: 'min(core rating, controller Computer (Programming))', frame_points_per_rating: 2, acts_as: Computer skill}
+  initiative: {reaction: core rating, base_dice: 1, extra_die_frame_points: 3, maximum_dice: 4}
+  payload: {capacity_per_frame_point: 1, constraint: total form ratings cannot exceed capacity}
+  loading: {eligible: forms known by creator, test: Computer (Programming), target: 'ceil(mean loaded form rating)', base_days: '2 * rounded mean rating squared'}
+  launch: {requires: logged on, action: Complex Action, begins_running: immediately}
+  persistence: Ordered continuation survives jackout; otherwise disappears on dismissal, jackout or dump.
+  uniqueness: No simultaneous copies; each sprite created and paid for separately.
+  commands: Creator only; no delegated obedience or spoofing; smart frame and agent procedure p91.
+  security_tally: independent
+  datatrail: same as creator and traceable to originating jackpoint
