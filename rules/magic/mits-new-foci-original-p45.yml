@@ -1,0 +1,40 @@
+id: rule.magic.mits-new-foci-original
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '45'
+pdf_pages: '46'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  eligibility:
+    creation: All four new focus types except Spell Defense require initiate abilities to create.
+    campaign_option: GM should consider whether to permit these advanced foci.
+  centering:
+    entity: entity.magic.centering-focus
+    bonus_dice: Force, capped by dice in the user's Centering Skill.
+    active_required: true
+    form: Often an object associated with the relevant Centering Skill, such as a musical instrument.
+    ordinary_bond_karma_per_force: 3
+  anchoring:
+    entity: entity.magic.anchoring-focus
+    creation_and_use: Only initiates using Anchoring metamagic may enchant or use an anchor.
+    sustained_spell: Maintains a spell like a sustaining focus; may switch off and on without breaking the spell.
+    stored_spell: Holds spells inactive until activation.
+    total_spell_force_capacity: Focus Force.
+    bond_before_use: true
+    types: [expendable, permanent]
+    ordinary_bond_karma_per_force: {expendable: 1, permanent: 3}
+  spell_defense:
+    entity: entity.magic.spell-defense-focus
+    bonus_dice: Force, capped by the magician's normal Spell Pool dice.
+    allocation: Normal spell-defense allocation rules, SR3 p183.
+    ordinary_bond_karma_per_force: 3
+  shielding:
+    entity: entity.magic.shielding-focus
+    operation: Same as spell-defense focus except bonus dice are allocated to Shielding under MitS p79.
+    ordinary_bond_karma_per_force: 4
+  cost_scope: These are ordinary bonding costs, distinct from the First Bonding Cost Table on the same page.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: New Foci, FASA7907, printed 45/PDF 46'
+summary: 'FASA Corporation, Magic in the Shadows; focus eligibility, dice limits, activation and ordinary bonding mechanics.'
