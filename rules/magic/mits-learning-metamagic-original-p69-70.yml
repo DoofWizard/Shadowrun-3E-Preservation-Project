@@ -1,0 +1,50 @@
+id: rule.magic.mits-learning-metamagic
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '69-70'
+pdf_pages: '70-71'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  eligibility:
+    initiate_required: true
+    new_technique_attempts_per_grade: 1
+    must_meet_technique_requirements: true
+    adept_techniques: [Centering, Divining, Masking]
+    conjurer_and_adept_exclusions: [Quickening, Shielding]
+    exclusion_basis: Techniques require active Sorcery, unavailable to those characters.
+  failed_learning:
+    retry: At next initiation grade, in addition to the new grade's technique.
+    maximum_attempts_per_technique: 3
+    all_ones: Permanently bars learning that technique on any attempt.
+  instructor:
+    requirements: Must know technique and have grade at least equal to student.
+    test: Magic Test
+    target_number: 8 minus teacher grade
+    duration_days: 14 divided by successes
+    group_order: Some groups prescribe sequence or priority; self-initiates choose order subject to instructor availability.
+    usual_member_fee: 0
+    usual_outside_fee_nuyen_per_day: teacher grade multiplied by 1000
+  astral_quest:
+    shaman_destination: Totem home metaplane
+    mage_destination: Random hermetic metaplane
+    quest_rating: Number of techniques already known
+    minimum_target_number: 2
+    duration_days: Quest Rating
+    requirement: Successful quest
+    reference_printed_page: 92
+  free_spirit:
+    instruction_as_initiate: Spirit Energy substitutes for instructor grade.
+    teaching_by_power:
+      Aura Masking: [Masking]
+      Possession: [Possessing]
+      Sorcery: [Quickening, Reflecting, Shielding]
+      Divination: [Divining]
+    any_free_spirit_can_teach: Invoking
+    invoking_usual_karma_multiplier: 2
+    usual_payment: Karma
+    minimum_karma: Spirit Energy
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Learning Metamagic (FASA7907, printed 69-70/PDF 70-71)'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG learning tests, eligibility, retries and instructional costs.'
