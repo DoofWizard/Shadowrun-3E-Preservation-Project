@@ -1,21 +1,44 @@
 id: entity.bioware.trauma-damper
 record_type: entity
-name: "Trauma Damper"
+name: Trauma Damper
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '75-76'
+pdf_pages: '76-77'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   grade: cultured
   bio_index: 0.4
-  availability: "6/8 days"
+  availability: '6/8 days'
   cost_nuyen: 40000
   street_index: 2
-  legality: "6P-N"
+  legality: '6P-N'
+data:
+  game_effects:
+    physical_damage_per_wound: {physical_boxes_shifted_to_stun: 1}
+    stun_damage_per_wound: {stun_boxes_subtracted: 1}
+    painful_interrogation_open_test_modifier: -2
+    pain_resistance_test_tn_modifier: -2
+    pain_resistance_examples: [Body Test against painful disease symptoms, Willpower Test against painful disease symptoms]
+    incompatible_when_pain_editor_active: true
+    damage_compensator_condition: damper functions properly only after the compensators' capacity for Physical and/or Stun damage has been exceeded
+    examples:
+      serious_physical_wound: {physical_boxes: 5, stun_boxes: 1}
+      serious_stun_wound: {stun_boxes: 5}
+  stress_effects:
+    Light: mood swings alternating well-being and fatigue, and weight loss
+    Moderate: damage applies normally at first; damper effects apply at the end of the Combat Turn in which damage occurs
+    Serious: damper effects apply at the end of the Combat Turn following the turn in which damage occurs
+    Deadly: damper stops functioning and grants no bonuses
 links:
   uses: []
   requires: []
   component_of: []
   interacts_with: [entity.bioware.damage-compensators, entity.bioware.pain-editor, rule.damage.stress-points]
 sources:
-  - {source: source.mm, pages: "75-76", relation: defines, note: "Trauma Damper description, game effects, stress effects and statistics"}
-notes:
-  - "In the fictional game rules, converts or reduces incoming wound boxes as specified and alters pain-related tests; interactions with pain editor and damage compensators are explicit."
+  - {source: source.mm, pages: '75-76', relation: defines, note: Trauma Damper game effects, Stress and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp75-76/PDF76-77: Trauma Damper game statistics'
+framing: reference_exact
