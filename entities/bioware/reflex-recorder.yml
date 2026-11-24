@@ -1,19 +1,37 @@
 id: entity.bioware.reflex-recorder
 record_type: entity
-name: "Reflex Recorder"
+name: Reflex Recorder
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '74'
+pdf_pages: '75'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   grade: cultured
   forms:
-    base_skill: {bio_index: 0.25, availability: "8/6 days", cost_nuyen: 25000, street_index: 1.5, legality: "Legal"}
-    specialization: {bio_index: 0.1, availability: "5/6 days", cost_nuyen: 10000, street_index: 1.5, legality: "Legal"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    base_skill: {bio_index: 0.25, availability: '8/6 days', cost_nuyen: 25000, street_index: 1.5, legality: Legal}
+    specialization: {bio_index: 0.1, availability: '5/6 days', cost_nuyen: 10000, street_index: 1.5, legality: Legal}
+data:
+  game_effects:
+    eligible_skill_types: [Combat, Physical]
+    bonus_dice: 1
+    applies_to_all_uses_of_recorded_skill: true
+    single_preselected_skill_per_recorder: true
+    change_skill_exception: extreme circumstances such as surgical reprogramming
+    permanent_modifier: true
+    forms: {large: base skill, small: specialization}
+    stacking_on_same_skill: false
+    multiple_recorders_for_different_skills: allowed
+  stress_effects:
+    Light: involuntary reflexes related to recorded skill
+    Moderate: {additional_defaulting_tn_modifier: 1, applies_when: defaulting to recorded skill}
+    Serious: {combat_pool_dice_spent_per_bonus_die: 2, applies_when: supplementing recorded skill}
+    Deadly: {effect: repeats action when recorded skill is used, break_action: Complex, test: Willpower, target_number: 6, success: ends repetition}
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 74, relation: defines, note: "Reflex Recorder description, game effects, stress effects and statistics"}
-notes:
-  - "Stores one learned Combat or Physical Skill pattern and adds 1 die when that skill is used; recorders do not stack on the same skill."
+  - {source: source.mm, page: 74, relation: defines, note: Reflex Recorder effects, Stress and market table}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p74/PDF75: Reflex Recorder game statistics'
+framing: reference_exact
