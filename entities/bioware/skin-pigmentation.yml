@@ -1,21 +1,35 @@
 id: entity.bioware.skin-pigmentation
 record_type: entity
-name: "Skin Pigmentation and Bio-Tattoos"
+name: Skin Pigmentation and Bio-Tattoos
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '76'
+pdf_pages: '77'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   category: cosmetic
   bio_index: 0.1
-  availability: "6/6 days"
+  availability: '6/6 days'
   cost_nuyen: 5000
   street_index: 1
-  legality: "Legal"
+  legality: Legal
+data:
+  game_effects:
+    coverage: [entire body, selected areas]
+    pigmentation_fades: false
+    bio_tattoos_may_be_designed_to_change_slightly_over_long_periods: true
+    incompatible_with: [chloroplast skin]
+    iris_pigmentation_option: true
+    iris_option_incompatible_with: [cybereyes]
 links:
   uses: []
   requires: []
   component_of: []
   interacts_with: [entity.bioware.chloroplast-skin]
 sources:
-  - {source: source.mm, page: 76, relation: defines, note: "Skin Pigmentation and Bio-Tattoos description and statistics"}
-notes:
-  - "Cosmetic pigmentation treatment; incompatible with chloroplast skin."
+  - {source: source.mm, page: 76, relation: defines, note: Skin Pigmentation and Bio-Tattoos effects and market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p76/PDF77: Skin Pigmentation and Bio-Tattoos effects'
+framing: reference_exact
