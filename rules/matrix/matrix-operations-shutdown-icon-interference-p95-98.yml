@@ -1,0 +1,126 @@
+{
+  "id": "rule.matrix.matrix-operations-shutdown-icon-interference-p95-98",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "95-96, 98",
+  "pdf_pages": "96-97, 99",
+  "edition_scope": "FASA Corporation Matrix FASA7909, Shadowrun Third Edition, published fictional tabletop RPG; printed 95-96, 98/physical PDF 96-97, 99.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Matrix game operations: host shutdown, icon alteration, and interference",
+  "summary": "Source-specific fictional game operation resolution, conditions, exceptions and numeric effects. Existing operation profiles and core tests are reused.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "source_pdf_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+    },
+    "legacy_catalog": {
+      "path": "references/matrix/system-operations.yml",
+      "blob": "4fb08f82abefa56bb5cc7afc8657b09b8bb0c8c1",
+      "reuse": "Existing operation test, utility, and action profiles remain authoritative except corrected page citations; this record adds operation-specific tabletop resolution."
+    },
+    "core_procedure": {
+      "path": "procedures/matrix/system-operation.yml",
+      "blob": "d736201291ebc17ddd3df33434d886f0d27f76a2"
+    },
+    "account_privileges": "Use already accepted rule.matrix.matrix-account-privilege-operations-p37-38 for automatic success and privilege limitations.",
+    "operations": {
+      "abort_host_shutdown": {
+        "printed": 95,
+        "delay": "Each 2 net Control Test successes adds one full Combat Turn to shutdown.",
+        "cancel": "A shutdown caused by Crash Host is canceled if abort successes double its net successes.",
+        "security_tally_exception": "A security-tally-triggered shutdown may be delayed but never canceled by this operation."
+      },
+      "alter_icon": {
+        "printed": "95-96",
+        "persona": "See Redecorate utility p71, already represented by rule.matrix.operational-utility-multipliers-p68-71.",
+        "ic_or_sculpture": "Successful Control System Test; one visual attribute per success.",
+        "source_ambiguity": "Original p96 says changes are 'required' when the icon is restored or rebooted. Retain literal wording as unresolved; do not infer permanent or reversed changes."
+      },
+      "analyze_operation": {
+        "printed": 96,
+        "prerequisite": "Locate target icon first.",
+        "timing": "Ongoing or monitored operation may be analyzed at any time; otherwise hold an action and intervene when the target starts.",
+        "per_net_success": [
+          "operation identity with test and action",
+          "utilities used",
+          "target icon's success level"
+        ]
+      },
+      "block_system_operation": {
+        "printed": 96,
+        "targets": [
+          "user",
+          "frame",
+          "agent",
+          "sprite",
+          "daemon",
+          "SK",
+          "AI"
+        ],
+        "prerequisite": "Locate icon; same timing conditions as Analyze Operation.",
+        "effect": "Each success cancels one success on target operation. At zero, target operation fails or immediately ends if ongoing or monitored.",
+        "reaction": "Target gets an immediate free open-ended Sensors Test under Locate Decker to find blocker.",
+        "exceptions": [
+          "Cannot block another Block System Operation",
+          "Cannot block Null Operation"
+        ]
+      },
+      "crash_application": {
+        "printed": 96,
+        "target": "Nondirected application on fictional host.",
+        "immune": [
+          "IC",
+          "frame",
+          "agent",
+          "sprite",
+          "daemon",
+          "construct",
+          "persona",
+          "other users' utilities"
+        ],
+        "test": "Subsystem responsible for application; Slave for automated factory or security installation example; GM may use Control if uncertain.",
+        "additional_targets": {
+          "tortoise_session": "Access Test",
+          "command_set": "Control Test"
+        },
+        "suspend_option": "May suspend application or tortoise indefinitely instead of ending it. Suspended tortoise can only close session; successful Control Test unfreezes either."
+      },
+      "crash_host": {
+        "printed": "96, 98",
+        "countdown": {
+          "base": "Roll ceil(Security Value / 2) D6 and sum.",
+          "combat_turns": "Base total divided by Crash Host net successes; no rounding instruction for this division."
+        },
+        "non_superuser": "At end of each Combat Turn host rolls Security Test against user's MPCP; success stops process.",
+        "ic_rating_during_countdown": -2,
+        "ic_rating_restoration": "Immediately normal if shutdown prevented.",
+        "on_start": "Notify all online users.",
+        "on_completion": [
+          "All running applications, frames, command sets and left-behind programs cleared",
+          "Ongoing and monitored operations end",
+          "All remaining users dumped, potential dump shock per SR3 p227",
+          "Reboot resets security tallies, alerts, and host base ratings per SR3 p212"
+        ],
+        "escape": "Graceful Logoff can avoid dump.",
+        "abort_relationship": "Source p98 says only Abort Host Shutdown can avert an initiated shutdown; p96 explicitly also gives non-superuser automatic Security Test abort. Retain both clauses without inventing precedence.",
+        "gm_context": "Administrators typically increase security on restart if decker-caused."
+      }
+    },
+    "source_review": {
+      "images": [
+        96,
+        97,
+        99
+      ],
+      "art_only_pdf98": true,
+      "correction": "Analyze Operation and Block System Operation are p96, not p95; Crash Application is p96, Crash Host continues on p98 after full-page illustration."
+    }
+  }
+}
