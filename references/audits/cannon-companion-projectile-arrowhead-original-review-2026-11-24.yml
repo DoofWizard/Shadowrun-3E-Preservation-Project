@@ -1,0 +1,62 @@
+source: source.cc
+title: "FASA7908 Cannon Companion: Projectile Weapons and Arrowheads original-image review"
+edition: SR3
+publisher: FASA Corporation
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+source_verification: source_pdf_hash_verified
+original_page_mapping:
+  - {printed: 12, pdf: 13}
+  - {printed: 13, pdf: 14}
+review:
+  arrowheads:
+    status: source_local_field_reconciled
+    existing_rule: {path: rules/projectile/expanded-arrowheads.yml, blob: 19199387dc75f0ee5cee0ea48bb61d1e4fa51b59}
+    matched_rows:
+      - {path: entities/ammunition/arrowhead-barbed.yml, blob: 1764ed29a059cb65dafb702b7fce30b0eb97da3f}
+      - {path: entities/ammunition/arrowhead-explosive.yml, blob: a2a08367bd2be8903a32531e6b9218d0d72ce7ee}
+      - {path: entities/ammunition/arrowhead-ex-explosive.yml, blob: 13398dfcbc2a4f1b7edcceffe8040206f07fc4cc}
+      - {path: entities/ammunition/arrowhead-hammerhead.yml, blob: 520bb7a26f3bd265802316fc04b0fb7116382dbd}
+      - {path: entities/ammunition/arrowhead-incendiary.yml, blob: 9dc07301ec7c7119daaa9a0cccc7a85d501f1392}
+      - {path: entities/ammunition/arrowhead-screamer.yml, blob: ade6e6dd33d354d7aff9ce5872b5f5e080523ddc}
+    source_fields_added: [medic_test, damage_boxes, game_ammunition_inheritance, range_qualification, status_duration, end_turn_damage_timing, damage_track, power_rounding]
+    transaction:
+      path: rules/projectile/cannon-companion-arrowhead-game-qualifiers-p12-13.yml
+      commit: ae32d9781c20f75a0e48066feee3e413f52d6ba2
+      blob: 2a0cf05fde5aad909ef508986f8f073457921023
+      baseline_sha256: 3fdf4b7478e5f6b86467b8337756b538061978e86fa10e11f637ca76cc5fcf73
+      candidate_sha256: 3fdf4b7478e5f6b86467b8337756b538061978e86fa10e11f637ca76cc5fcf73
+      immutable_sha256: 69c7f59bd56010d2eb0815a375d42a62be22ea7a607bae8f3d9e9859aeca8040
+      gate: verified
+      index_commit: 9127626e4123675df5aa31191335ba41a698c5bc
+      index_blob: 08256b8e1e96e7ed58fd7203ea92105da5503843
+  projectile_weapons:
+    status: source_local_field_reconciled_with_precedence_exception
+    matched_rows:
+      - {path: entities/weapon/pistol-crossbow.yml, blob: 3f9bb5019fadef9f65bc3ecf51f1669c716ee11f}
+      - {path: entities/ammunition/pistol-bolts.yml, blob: b961cb3601fcd695a9cf883aba437637cc7d95bd}
+      - {path: entities/weapon/ranger-x-bow.yml, blob: 9d2a72991e897531563055fe147e8017c422b640}
+      - {path: entities/ammunition/ranger-x-arrows.yml, blob: 447b7cba56be4d72011a697a848dfe47ecb0eda6}
+      - {path: entities/weapon/repeater-crossbow.yml, blob: 010f19ef9f9a84ee9ffc6ccfd38c0bdc27f8a7fe}
+      - {path: entities/weapon/sling-launcher.yml, blob: 3be868393c0d7daee375da60b8f47dac8cf105d5}
+      - {path: entities/weapon/slingshot.yml, blob: 5af2eb40e4835f6ba74d861669080dfadaba9caf}
+    row_correction: {path: entities/gear/bow-accessory-mount.yml, blob: 0db103d1db882d6469d9eac7061e542b1d265f8c, original_concealability_modifier: -1, shared_value: null, shared_write: false}
+    checked_fields: [concealability, strength_minimum, damage, weight, availability, cost, street_index, legality]
+    reused_rule: {path: rules/projectile/repeater-crossbow.yml, blob: ec4d914cb1e13aab0da79c56059a6743bf5b4e72}
+    source_fields_added: [minimum_strength_purchase_and_eligibility, default_action_costs, accessory_eligibility, missing_concealability_modifier, item_range_reference, fictional_character_configuration_and_dice_modifiers]
+    precedence_exception: "Original CC p12 prohibits use below minimum Strength, while original core p117 specifies penalties. Both preserved; no precedence imposed."
+    core_reference: {path: rules/combat/sr3-core-projectile-strength-minimum-numeric-p117.yml, blob: a24babe78130abbf55e230ec7fecc36a0c8a40d8}
+    transaction:
+      path: rules/projectile/cannon-companion-projectile-game-qualifiers-p12-13.yml
+      commit: 8eeed860219519dd52d4784a69625c8d2d1b6394
+      blob: 2682fac67b8713ec0a62c85afe8c6ea12e02c500
+      baseline_sha256: bfbbd9e3777fa45b5a996b1d46371348c9da75837844489d14fbecbd07db84f9
+      candidate_sha256: bfbbd9e3777fa45b5a996b1d46371348c9da75837844489d14fbecbd07db84f9
+      immutable_sha256: fab9cb677b9e4561cee2aae0feb290abf17076a9de345464b706114e7e23565c
+      gate: verified
+    concurrency: "One GitHub 409 branch-head race; competing commit modified an unrelated source path; target absence and unchanged owned manifest were freshly checked before successful ordinary Contents creation."
+remaining:
+  - "Throwing Weapons and Improvised Throwing Weapons p14: source image inspected, but remaining canonical field comparison is not certified here."
+  - "Earlier customization, catalogue, source precedence and historical provenance exceptions remain."
+globally_authorized_pages: 0
+whole_book_closed: false
