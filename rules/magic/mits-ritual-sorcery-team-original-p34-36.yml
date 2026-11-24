@@ -1,0 +1,49 @@
+id: rule.magic.mits-ritual-sorcery-team
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '34, 36'
+pdf_pages: '35, 37'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  eligibility:
+    skill: Ritual Sorcery is a Sorcery specialization.
+    excluded_spells: [elemental manipulation]
+    action: Exclusive
+    spell_knowledge: Every participant knows the selected spell at its selected Force.
+    tradition: All participants share one tradition; shamans may have different totems.
+    maximum_team_size: Lowest participant Sorcery rating.
+    facility: Shamanic lodge or hermetic circle rating must be at least spell Force.
+    materials: Use the cost on printed p169; materials are consumed even on failure, and players choose their form.
+  pool:
+    initial: Combine participant Sorcery dice; a lone caster uses Sorcery or Ritual Sorcery specialization dice.
+    refresh: No refresh during the ritual.
+    astral_state: All members use astral perception and count as dual-natured for the ritual.
+    withdrawal: Remove the withdrawing member's Sorcery rating from remaining Ritual Pool dice. If exhausted, abort and all members including the departing member resist Drain. A withdrawing member immediately resists Drain even if the ritual continues.
+    foci: Each focus contributes its dice only once during the entire ritual.
+    elemental_aid: At most one elemental provides Aid Sorcery for the entire ritual; any participant may own it. Add its Aid Sorcery dice to the Ritual Pool.
+  leader:
+    test_modifiers: Only the leader's modifiers apply to the team except where explicitly stated.
+    personal_pools: Use only the leader's Spell Pool and Karma Pool for ritual tests; neither refreshes until completion.
+    totem: Use only the leader's totem modifiers, not the lodge or other members' totems.
+  spotter:
+    count: At most one additional participant.
+    duties: Observe the target astrally for targeting or to direct a line-of-sight spell after casting.
+    pool: Contributes no Ritual Pool dice, but must know the spell and resist Drain.
+    projection: May project after casting begins without leaving the team; must observe the target astrally until sending ends. If projection duration is insufficient, the ritual fails.
+    spirit_exception: Only free spirits or allies possessing the Sorcery power may act as spirit spotters.
+  astral_signature:
+    locations: [target, casting site]
+    attribution: The signature belongs to the team collectively.
+    individual_identification_successes: 5 + ceil(team_size / 2)
+    test: Assensing
+  metamagic:
+    shielding_reflecting: May protect the target; a reflected spell affects the entire team.
+    centering: Each member can center for Drain resistance; only the leader can center for additional successes.
+    quickening: Permitted; leader pays Karma.
+  preparation: Select spell, Force, members, leader and optional spotter; prepare materials and facility; combine dice; drop sustained spells, spell defense and shielding; spotter projects.
+  casting_order: [begin, targeting, sending, sorcery, spell resistance, effect, drain resistance]
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Ritual team and casting preparation, FASA7907, printed 34, 36/PDF 35, 37'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
