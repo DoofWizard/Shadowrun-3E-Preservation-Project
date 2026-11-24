@@ -63,6 +63,7 @@ coverage:
   sound_equipment: {printed: "92-96", status: source_verified_section_closed, note: "Complete original instrument/synth and sound equipment tables and capability rules; p95 example ambiguity retained, SR3 adaptation unverified."}
   trideo_service_prices: {printed: "99", status: source_verified_section_closed, note: "All original service market rows, lifestyle allowances and billing/negotiation qualifications; pp18-23 procedures separate."}
   sight_equipment: {printed: "88-91", status: source_verified_section_closed, note: "Original media equipment table, camera/gear capability and Pix modifiers; original Essence typography retained and native SR3 camera overlaps identified."}
+  evidence_verification: {printed: "49-51", status: source_verified_section_closed, note: "Original digital evidence and Pix dice rules, signed modifiers, outcome tiers, verification and original exceptions; SR3 supersession unresolved."}
   pab_event_tests: {printed: "47-49", status: source_verified_section_closed, note: "Original fictional PAB tests, detection, restoration and contradictory detection examples; SR3 supersession unresolved."}
   pab_equipment: {printed: "97", status: source_verified_section_closed, note: "Five original equipment market rows and facility rating cap; p47 reprogramming procedure and SR3 supersession distinct."}
   media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
@@ -111,6 +112,7 @@ records:
   - ["trideo-boost-tests-p21-23", "7e267b2989f896f48bdf7fc67d9b8f820485f048"]
   - ["broadcast-transmission-p18-20", "9d96d72edd4b7a05f6c3879f1b35f9cc69a882b8"]
   - ["pab-event-tests-p47-49", "96b314bc7bfa6047ae0fc8e187a04c9e2cd84fea"]
+  - ["evidence-verification-p49-51", "8ca26a0de98f4c12264d8b6948c492832a4a6e65"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -529,5 +531,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p47_pdf56", "printed_p48_pdf57", "printed_p49_pdf58"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-evidence-verification-p49-51
+    path: rules/shadowbeat/evidence-verification-p49-51.yml
+    original_printed_pages: "49-51"
+    original_pdf_pages: "58-60"
+    commit_sha: "8ca26a0de98f4c12264d8b6948c492832a4a6e65"
+    readback_blob_sha: "19c2aafe238fe2ff540c05e3f53de87c5a2350a8"
+    candidate_sha256: "a930837f862438514bb650fcdadad6907838684db368e4ffe91780fcffe32c25"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p49_pdf58", "printed_p50_pdf59", "printed_p51_pdf60"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
