@@ -76,7 +76,38 @@ coverage:
   color_insert_archetypes: {printed: "unnumbered color insert", pdf: "36-38, 41", status: source_verified_section_closed, note: "Four original sample character stat blocks independently reviewed and indexed; Teddy X Seller/Middle versus p14 Low retained; not native SR3."}
   source_test_convention: {printed: "5", pdf: "6", status: source_verified_section_closed, note: "Unresisted standard Success Test convention indexed; native SR3 Open Test resolution reused, not duplicated."}
 edition_lineage:
-  sr3_replacement_audit: pending_by_specific_mechanic
+  sr3_replacement_audit: partial_by_specific_mechanic
+  reviewed_relationships:
+    standard_and_open_tests:
+      legacy: rule.shadowbeat-source-test-convention-p5
+      native_sr3: rule.tests.sr3-core-test-types-opposed-open-examples-p39
+      native_blob: "9423e8549d0f83e5e9d7de32855df1b67d4a9fde"
+      decision: "Reuse native SR3 test resolution; retain original ShadowBeat unresisted-standard-test convention only for interpreting this legacy source."
+    implanted_simrig_storage:
+      legacy: rule.shadowbeat-simsense-production-legacy-p74-78
+      native_sr3: rule.cyberware.sr3-core-simrig-simlink-skillwires-p301
+      native_blob: "ddaa303a06f4587e6432de95e065a96123c9e934"
+      decision: "Use native SR3 1 and 3 Mp/second Baseline and Full-X implanted simrig rates. Portable SR3 p289 device excludes Full-X. Legacy PC/EC scale and stacking remain optional source-specific parameters."
+    simsense_playback:
+      legacy: rule.shadowbeat-simsense-output-storage-legacy-p79-80
+      native_sr3: rule.media.sr3-core-simsense-output-playback-p285-286
+      native_blob: "36a25b9f8afe28330fa0248379969f7f8e1bf8e8"
+      decision: "Native general playback formats, sensory/emotive distinction and POV selection reused. Legacy approximate ACT ratio and named fidelity examples not certified native; p79 contradictory storage example retained."
+    pab_event_detection_and_restoration:
+      legacy: rule.shadowbeat-pab-event-tests-p47-49
+      native_sr3:
+        - {id: procedure.skillsofts.event-reprogramming, blob: "349ea92c7156c6b35cbb754a9f82520c5eb51cef"}
+        - {id: procedure.skillsofts.detect-reprogramming, blob: "67e7477e9f12284bef89792c0a1a4cbb54ec9452"}
+        - {id: procedure.skillsofts.reverse-reprogramming, blob: "c0b6debb6d897d2de17676e37c511273036bc4aa"}
+        - {id: rule.skillsofts.cannon-companion-pab-event-qualifiers-p68-71, blob: "93602c8c0e75f547805d1df42678c0325fe3194c"}
+        - {id: rule.skillsofts.cannon-companion-pab-detection-reversal-qualifiers-p71, blob: "fdd46c80f01c4cf7c9a90293fe7dce1c56bad3eb"}
+      decision: "SR3 Cannon Companion pp68-71 supplies replacement mechanics for event, detection and reversal tests. Use native SR3 procedures and source-specific qualifiers rather than importing legacy target, modifier, timing or eligibility rules. Retain older original contradictions for archival fidelity."
+    pab_market:
+      legacy: equipment.shadowbeat-pab-legacy-p97
+      native_sr3_audit: references/audits/cannon-companion-pab-and-applied-simsense-appendix-review-2026-11-24.yml
+      native_audit_blob: "70fac5c057dfd9030d2c76b8a38db54d045d8465"
+      decision: "Five PAB rating and list-price pairs match the source-reviewed SR3 entities; native acquisition fields supersede historical market/legal code for SR3 play. Do not infer a native facility cap from older p97; compare separately. Shared spelling discrepancies remain with owning specialist."
+  review_limit: "Read-only crosswalk to accepted native SR3 records and original legacy records, not a new source verification or a global conversion policy. Remaining lineage checks include Matrix/ECM, media equipment, social/Karma skills, sports, lifestyle and character options."
   default_rule_status: original_2e_mechanics_not_automatically_native_sr3
   preserve_original_formulae_and_units: true
 records:
