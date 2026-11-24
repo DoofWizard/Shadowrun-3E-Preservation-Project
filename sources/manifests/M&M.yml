@@ -119,11 +119,17 @@ source_field_review:
     concurrent_changed_records_deferred:
       - path: rules/bioware/bio-index.yml
         blob: "02b3da3738f75dd8b3bcd57fd0fdd9e52c67aa6b"
+        history_commit: "4a447f0b7704e0b2e003693eda45cb472a7c07f2"
+        present_day_recheck: "2026-11-24 exact commit-specific and live bytes match; original journal not in nine available transaction archives. No retrospective confirmation."
+        missing_original_artifacts: [immutable baseline, staged plan, candidate, actual confirmation, source index receipt]
         printed: "77-78"
         pdf: "78-79"
         source_review: "Original-image review matches no Essence cost, cumulative Bio Index, fatal above 9, natural base Attribute changes and ordinary drawback fields. Current independent transaction receipt not observed in manifest; do not overwrite or count as confirmed here."
       - path: rules/bioware/magic-interactions.yml
         blob: "f39e4bcf5c900ed918e74c89e88efe92ed028ed1"
+        history_commit: "3f7e55a1502f904fe1372c5cd62fd1c6d12c6b5b"
+        present_day_recheck: "2026-11-24 exact commit-specific and live bytes match; original journal not in nine available transaction archives. No retrospective confirmation."
+        missing_original_artifacts: [immutable baseline, staged plan, candidate, actual confirmation, source index receipt]
         printed: "79"
         pdf: "80"
         source_review: "Original-image review matches strongest-only metabolic suspension, pain-spell and adept limitations, highest-only reflex bonus, vision-targeting illusions and Concealment exception. Current independent transaction receipt not observed in manifest; do not overwrite or count as confirmed here."
@@ -441,6 +447,7 @@ source_field_review:
         gate: verified
         fields: "Printed p99/PDF100 explicitly exempts nanites from chemical and compound addiction penalties. Supersedes prior accepted nanite-loss blob 9010d541ef6bcc7dacc95b644683da4d152fae47, retaining all prior table values, arithmetic and threshold caveats."
     deferred: "Classification conflict and addiction exemption resolved by verified transactions. Installation commit f03a25792837cb796fd23cd62f60129a7b1390d9 and blob 191b7f16e85289412568dba70dfe7590a03a3b9c remain unregistered pending original journal recovery. Full pp98-100 natural section closure not claimed."
+    installation_receipt_recheck: "2026-11-24 exact commit-specific and live bytes match; immutable baseline, staged plan, candidate, actual confirmation and source index receipt not in nine available transaction archives. No retrospective confirmation; cache negative search until evidence changes."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
@@ -1611,7 +1618,7 @@ source_field_review:
     source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
     verify_source_actual: source_pdf_hash_verified
     verification_manifest_blob: "1f7feda7e6343ea53cd6b657ee0b5627833c6302"
-    original_images_reviewed: "Printed p74/PDF75; original copyright p5/PDF5, FASA 1999."
+    original_images_reviewed: "Printed pp74-75/PDF75-76; original copyright p5/PDF5, FASA 1999; Heat-Sensing Table independently enlarged."
     records:
       - id: entity.bioware.reflex-recorder
         path: entities/bioware/reflex-recorder.yml
@@ -1637,7 +1644,21 @@ source_field_review:
         gate: verified
         recovery_inspect: verified
         fields: "Market row, 48-hour limit, ordinary healing/rest requirement, four Stress effects and numerical penalties."
-    scoped_natural_sections_reconciled: [Reflex Recorder, Sleep Regulator]
+      - id: entity.bioware.thermosense-organs
+        path: entities/bioware/thermosense-organs.yml
+        printed: "75"
+        pdf: "76"
+        commit: "e70865f9c6643d33a09575fa5c1b450ac085b3bc"
+        blob: "f2b836f5da56d7c764c9362017b068b9c31f8f4f"
+        baseline_sha256: "1c177a35b7a6bc53c153eede879ce9e26a2d60ae618a197ccec90829feebb568"
+        candidate_sha256: "d50ca39a674a175be78dc17168bd8035ebb5c7fef3b8382ac39eedef7cba1c87"
+        immutable_sha256: "db752e688bed8cc11128080d70dd59409154341bfd3bbc85747e6ac5c07743b3"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Market row, range, Signature TN and base values, all eight heat-sensing modifiers, invisibility interaction, four Stress levels."
+    scoped_natural_sections_reconciled: [Reflex Recorder, Sleep Regulator, Thermosense Organs]
+    next_scope: "Synaptic Accelerator pp74-75: original numeric level keys in existing entity require schema reconciliation; actual prepare returned mapping_key_must_be_string. No semantic write. Trauma Damper pp75-76 next."
+    index_reconciliation: "First Thermosense registration returned HTTP 409 on branch advancement; fresh owned manifest blob remained 21ec5c7babbb2f3bf0581e1b953c5d8038e35f4a. The semantic transaction was not replayed."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
