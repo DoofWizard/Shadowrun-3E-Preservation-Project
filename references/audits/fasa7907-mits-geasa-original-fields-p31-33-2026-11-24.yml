@@ -1,0 +1,77 @@
+id: audit.fasa7907.mits.geasa.2026-11-24
+source: source.mits
+publication: 'FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG'
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+verify_source: {status: source_pdf_hash_verified, page_images_review: still_required_independently}
+source_review:
+  mapping: {31: 32, 32: 33, 33: 34}
+  boundary: Geasa heading on printed p31 through final sentence of Adepts and Geasa on printed p33; preceding Magic Loss and following Sorcery are outside this closure.
+  render_sha256:
+    PDF32: 990f8df5ac557c904b8fc1f28ab07f4fc56d0b90dfa278635c3d961bf979bd39
+    PDF33: e7f72b1d6fded826cf0a6257791bdba24ab1f5a73e6d229eb4303f83e6120489
+    PDF34: 1013ce59fb9de131ce0ac764ad437be6361ba25b7ab2786a230a59a171d20ba9
+  editorial: Original-image review of immutable baselines and same-substance candidates including all nested fields; fictional source, paraphrased mechanics, protected reference_exact framing.
+canonical_comparison:
+  subsystems/magic/geasa.yml: eb4fcc674b6b870d58849e4ac1edf9c00e8ff80e
+  procedures/magic/geas-management.yml: d406d1f380d5939ef15d91f5a5966ddd3e0c28b1
+  options/magic/geas-condition.yml: 07db7b2a0d88a0aaedc345d9fcea976cfc7f8a7e
+  options/magic/geas-domain.yml: 2db6c5cbc880404f77b2e8df6337981375398cd3
+  options/magic/geas-exclusive-adept.yml: 115306b993fe3752db7343d3d9cb4944e37c3bbc
+  options/magic/geas-fasting.yml: a3d56ee7909123fcae52cf3417f0497a1dff7c38
+  options/magic/geas-gesture.yml: d8f31c249d13835c2211ac723a7a693e79da8df8
+  options/magic/geas-standard.yml: 7972ea6f4faee865eaa97d6f2e5f1269215ea4ba
+  options/magic/geas-talisman.yml: 9f1d8214638e3d9a9af7a310f5caf37796862d6a
+transactions:
+  - section: Creating, accepting, fulfilling and removing geasa
+    path: rules/magic/mits-geasa-management-original-p31-33.yml
+    fields: [actual vs effective Magic, lost-point-only restriction, nonduplicative all-skill condition, 24-hour durations, condition suitability, immediate acceptance, unaugmented Willpower cap, zero-Magic exception, all-or-none offsets, cumulative TN penalty, astral and similar exceptions, action timing, group stricture, worked example, initiation exchange, abandonment]
+    commit: bdb447c05e066cf45b82bb209a4a55390d9ecd78
+    blob: 295a1ab015484630b2b67b8d9c83e6f34bdf5506
+    gate: verified
+    index_commit: d6c5769445942090529c07d4cb5cfdc70ea38057
+    index_blob: 3f3e42b33f3b4cbe09143a29405f73020316760a
+    immutable_sha256: bef3db7328fef5ce99a90ae95faaa854796ddbe96921d0de88e6252e48f244dd
+    journal_sha256:
+      baseline.yml: 0cb68cc4aadf4dc372581acdaa477d7f13889828f7d52326a5690371bf3d35ea
+      candidate.yml: a3efd57ccc5494f08adc7940fffd446915bd4255375b5bc0dd34c0317277c771
+      plan.json: e48c46303119c96ffacdedc1e4dec4776e1ee39a09ef2b013328212cbfcdcf5f
+      confirmation.json: 3d92a18e4f1cf56b828ae50a620da7f8e4fcd3fe52f820ae8b769c5be800bd8d
+  - section: Standard geasa
+    path: rules/magic/mits-standard-geasa-original-p32.yml
+    fields: [condition, domain, exclusive adept-only concurrent-power restriction, fasting 24-hour rule, gesture and dancing, incantation, full-shaman eligibility and totem exceptions, talisman three characteristics and replacement bonding, time and time-related totem exception]
+    commit: 1ad436de22eb6979b11e7b77d001f31777f97d74
+    blob: b66fba3becf846141c80547e156b260c7fbf8468
+    gate: verified
+    index_commit: 32107e9f85c21b52c35789bdcd3e3c29904f6658
+    index_blob: 8c943cea8dbb6d85fa39639233ce6ce7135dc0f4
+    immutable_sha256: 568122c3bad5a60253c69e34cb2d002e4350585e4fc9717ffe652582274ccd51
+    journal_sha256:
+      baseline.yml: abec046476b29951d07c0612af5700ffefa06138bd11a0af9555ec4fc0959062
+      candidate.yml: 19661ccb2b5d3fa357cd8c45b4fc6c38e4be1a673cc5d49e0eb55c047d300438
+      plan.json: f0385f568a99308b3e88a7e534925dccf2306cb688c2e5b1ca9befe1be681474
+      confirmation.json: 12960d8685141dab4c12d6406c0ac0367eaa05f690dc56dfbf4067307474b4a3
+  - section: Adepts and geasa
+    path: rules/magic/mits-adepts-geasa-original-p33.yml
+    fields: [one Power Point involuntary restriction, purchase-only voluntary option, one geas per power, shared restriction, 75 percent cost, upward quarter-point rounding, quarter-point minimum, total-level cost, both worked examples, GM discretion, complete temporary power loss, shared power scope, Magic Rating limit, involuntary removal and permanent voluntary restriction]
+    commit: 89462d6eaca37ddadf6eec5d7cdb52d9fcec171e
+    blob: 1ad1a6229ba6fff8d3fdc186abe7fc2360a2af60
+    gate: verified
+    index_commit: 4e3a5a73951ffa79c25f5d518b97684b43aa45cf
+    index_blob: cd9a5735d4dc1d67d850fa154205a45e1092382b
+    immutable_sha256: d47a224eac4d3a25d0502663d6d2dba832cc210bd8ee5680ae0ed95a65464e42
+    journal_sha256:
+      baseline.yml: 665f1a201ee2198cb0e73ba3ba63498c5b51e204a8a6355660d6a667bf6b174f
+      candidate.yml: 4c2b854aa4239752e8e130f49e6e10eb13d8e22d31a342181a4437e12b9fc0b3
+      plan.json: c721e0776583fd2a4086d94589ce6c0bdf9dd1c072b62f68f79a882952f2cbde
+      confirmation.json: f02cecb52523c0c03fcf4b084e92d24e3b1b667fa39ac8089e74d59851545ccf
+readback: Each canonical and individual source index read back at its commit and main; exact bytes and candidate blob matched; actual confirmation status verified.
+journal_reconstruction: Fetch exact candidate from recorded commit, remove final three presentation lines to recover baseline, run normal stage and confirm with recorded receipt values.
+exceptions:
+  - Magician all-or-none offset behavior differs from individual adept power restrictions.
+  - Astral combat and assensing tests are exempt from geasa.
+  - Initiation can remove involuntary geasa but not voluntary adept purchase restrictions.
+closure:
+  geasa: closed_mechanical_scope
+  remaining_in_section: []
+  whole_book_completion: not_asserted
+global_page_credit: 0
