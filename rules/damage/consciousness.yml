@@ -1,21 +1,68 @@
 id: rule.damage.consciousness
 record_type: rule
-name: "Consciousness After Deadly Damage"
+name: Consciousness After Deadly Damage
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '131-132'
+pdf_pages: '132-133'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Consciousness — game tests, revival and disablement
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop game rules, printed pp131-132/PDF132-133.
 effective: {status: current, source: source.mm, page: 131, basis: extends}
 scope:
-  applies_to: ["characters who reach 10 boxes of Stun or Physical damage"]
+  applies_to: [characters reaching Deadly Stun or Physical damage]
 resolution:
-  summary: "A character at 10 boxes makes a Willpower Test against a target number based on injury and bioware load to remain conscious. Pain resistance can modify this. Conscious characters continue to suffer severe action/Initiative effects and can become disabled; further damage can force additional tests."
-  inputs: ["damage track", "Willpower", "injury modifiers", "Bio Index", "pain resistance"]
-  outputs: ["conscious, unconscious, or disabled state"]
+  summary: Resolve consciousness, revival, continuing action modifiers and disablement using the following fictional game tests.
+  inputs: [damage track, Willpower, injury modifiers, Bio Index, pain resistance, Body, Biotech skill]
+  outputs: [conscious, unconscious, incapacitated state, action modifiers]
   steps: []
+data:
+  consciousness_test:
+    trigger_boxes: 10
+    tracks: [Stun, Physical]
+    test: Willpower
+    target_number: '6 + injury modifiers + floor(Bio Index)'
+    successes_required: 1
+    success: remains conscious and can act subject to the modifiers below
+    failure: unconscious
+    pain_resistance_adept_or_damage_compensator: 'Consciousness can persist to 10 + level/rating boxes of damage.'
+    pain_editor: normal Willpower test without the injury target number modifier
+  revival:
+    eligibility: character with Deadly or greater damage who is unconscious
+    action: Complex Action
+    test: Biotech (First Aid)
+    base_target_number: 8
+    modifiers: appropriate Expanded First Aid Table modifiers
+    duration_minutes: number of successes
+    ends_early: additional damage followed by loss of consciousness
+  retaining_consciousness:
+    all_target_numbers: 4
+    initiative: -4
+    movement_quickness: 'Reduce Quickness by half (round up) for Movement Rate only.'
+    running_allowed: false
+    additional_damage_tracks: [Stun, Physical]
+    additional_damage_test: repeat Willpower test after damage beyond Deadly
+    cumulative_target_number_per_additional_test: 1
+  disablement:
+    condition: 'Deadly Physical damage and Physical Overflow > floor(Body / 2)'
+    result: incapacitated even if conscious
+    allowed: speech, looking around and non-strenuous gestures
+    ordinarily_disallowed: movement and actions
+    perception_and_communication: require tests even for easy tasks, with injury modifiers
+    physical_damage_interval_combat_turns: Body
+    damage_boxes_each_interval: 1
+    interval_ends: medical care or death
+    each_additional_box: repeat consciousness Willpower test
+    discretionary_willpower_tests: GM may test to restrain disoriented speech or actions
+    pain_resistance_exception: none; pain-resisting magic, bioware and pain editors do not prevent disablement
 links:
   uses: [rule.tests.success-test, rule.condition.condition-monitor]
   affects: []
   modified_by: []
-  interacts_with: []
+  interacts_with: [option.healing.expanded-first-aid]
 sources:
-  - {source: source.mm, pages: "131-132", relation: extends, note: "Consciousness, retaining consciousness, reviving and disablement"}
+  - {source: source.mm, pages: '131-132', relation: extends, note: Consciousness, revival, retaining consciousness and disablement}
 notes: []
