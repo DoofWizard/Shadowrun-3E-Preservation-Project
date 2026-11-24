@@ -1,0 +1,82 @@
+id: audit.cannon-companion.general-accessories.2026-11-24
+source: source.cc
+catalog_number: FASA7908
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: Shadowrun Third Edition
+scope: "General firearm accessories, fictional tabletop mechanics only; original source field reconciliation."
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+source_pdf_pages: 130
+source_manifest_at_verification: 804a4ab25d14b08088130b2f504bda3901c5b463
+actual_verify_source:
+  status: source_pdf_hash_verified
+  source: source.cc
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  page_images_review: still_required_independently
+script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+preflight: "29 tests, OK"
+original_images_reviewed:
+  - {printed: 32, pdf: 33, fields: "General accessory introduction, Bayonet, Biometric Safety, Grenade Link"}
+  - {printed: 33, pdf: 34, fields: "Quick Draw Holster, Range Finder, Safe Target System, Sling, Standard Holster, all eleven market rows and empty Weapon table heading"}
+  - {printed: 34, pdf: 35, fields: "Underbarrel Grapple Gun; next section starts Recoil Compensators and Gyros"}
+  - {printed: 115, pdf: 116, fields: "Bayonet (on rifle) appendix profile independently checked at full resolution"}
+field_closure:
+  - {section: "Quick Draw Holster; Sling; Standard Holster", record: rule.firearms.cannon-companion-holster-sling-game-qualifiers-p33, coverage: "Eligibility, target-number exception, versions, concealment cross-reference, narrative game effect and wearing styles."}
+  - {section: "Biometric Safety; Safe Target System", record: rule.gear.cannon-companion-safety-system-game-qualifiers-p32-33, coverage: "Eligibility, rating and test conditions, protective exception, game action and fictional currency fields."}
+  - {section: "Bayonet; Grenade Link; Range Finder; Underbarrel Grapple Gun", record: rule.firearms.cannon-companion-general-accessory-game-qualifiers-p32-34, coverage: "Skill and item-profile fields, abstract game scatter and timing, range modifier non-stacking, item eligibility and core rule cross-reference."}
+  - section: "General accessory table, printed p33"
+    coverage: "All eleven source rows matched existing gear entities; mount, concealability, rating, weight, availability, cost, street index and legality compared, with printed dashes treated as inapplicable rather than zero. No duplicate market rows created."
+    paths:
+      entities/gear/bayonet.yml: ce5d96802b41e3b0310caa4827bd481eb0d4b7a8
+      entities/gear/biometric-safety.yml: 82db1c930a424816e7fe954547bb9e0880d6575d
+      entities/gear/grenade-link.yml: d1ec5b640313103ba0429bf2db784f05a38c03c0
+      entities/gear/quick-draw-holster-standard.yml: f93137ff1f84abaf4acdb676868e4dc21e1a283d
+      entities/gear/quick-draw-holster-concealable.yml: 5726de93df6d2682c9547629062d990bbbb5bdd1
+      entities/gear/rangefinder.yml: 292a4ee5f0ced8bf2c3fbb268060a16b0807e08b
+      entities/gear/safe-target-gun-mod.yml: 9e7ff688b58b2b1fcbfccbca4e6cde9ac46bec1b
+      entities/gear/safe-target-beacon.yml: 6249ca35679186ee70b5ac62d3786b03f48d121b
+      entities/gear/sling.yml: 8aeb37a1333406d0f7eea4a9f5d79e401acb9265
+      entities/gear/standard-holster.yml: 5da1ddae1882014cd00b75b45ba2bd37d3920bf1
+      entities/gear/underbarrel-grapple-gun.yml: a16182c3951b999b943f108370228f28af726b68
+exceptions:
+  - "Printed p33 ends with a Weapon table heading and no data row; mounted bayonet profile recovered from the explicit original p115 appendix row. Absolute concealability and attachment modifier are separate fields, not competing values."
+  - "Shared entity historical transaction provenance and cross-source precedence remain separate obligations; no shared records modified."
+transactions:
+  - path: rules/firearms/cannon-companion-holster-sling-game-qualifiers-p33.yml
+    commit: 8ec807861a4100a4cf5239c860a69635b20bbcd5
+    blob: 5dff8ee382f66cd2efad57fd25fae6bc90834565
+    candidate_sha256: faaff76516bb4aa54ccbe962eac0979a93fbf29500de21e7d7bbea785d5d222b
+    immutable_sha256: e4992e4495268616c77596c8c9ab8cae2fee327d007566ff37b14a56d4f37317
+    gate: verified
+    journal: holster-journal
+    index_commit: ee0cecdbd3260cd092e991ef5e191e3e70914214
+    index_blob: 375cd25ea7ce21dadf942a478d482a33afd871ff
+  - path: rules/gear/cannon-companion-safety-system-game-qualifiers-p32-33.yml
+    commit: 7736be6d46ac70b930783023185fa516d361ebe2
+    blob: 48338729136812df46f53b0dc38332f7eeb9c1b4
+    candidate_sha256: fb0abf558771c22cd81202ab7a3d4d48c4fbf9e0222fb764a6fe4d6e3a31e8fc
+    immutable_sha256: 694c9886e743ca7af4591ac7183eedec4e025b79a2c09ff52368b6a14f954b84
+    gate: verified
+    journal: safety-journal
+    index_commit: 47b55e434c4370b905fb5ab755b3a00e36832cbd
+    index_blob: 3dcecc010d125dbef54ccacd9b28d7fc3c97aa7a
+  - path: rules/firearms/cannon-companion-general-accessory-game-qualifiers-p32-34.yml
+    commit: 696b0c03ea241371944fcd859c1ecc6b89a9e097
+    blob: 8022668645be77f1f8c03958fc2ebccae334a1a6
+    candidate_sha256: 316aafb546e356359ee91c594c2c252faffe54a27f65e39ef59ed18dd4e0db94
+    immutable_sha256: a6ddf0d0fefe998fae3f621a9ce0792a3df92c160bff64a2845855890ce51b06
+    gate: verified
+    journal: general-journal
+    index_commit: 44577edaf189ee2cb11450f188db9d36755e9c93
+    index_blob: 5fc3d43101acc408cd868cd955d64a12aeb29c7d
+section_status: source_local_mechanics_reconciled
+new_records: 3
+new_complete_natural_sections: 1
+globally_authorized_pages: 0
+whole_book_closed: false
+remaining: "Recoil Compensators and Gyros, Imaging Systems, Target Designators and remaining catalogue sections; original-source discrepancies and historical shared-record provenance."
