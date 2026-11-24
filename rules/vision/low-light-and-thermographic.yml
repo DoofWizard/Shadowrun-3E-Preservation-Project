@@ -1,22 +1,47 @@
 id: rule.vision.low-light-and-thermographic
 record_type: rule
-name: "Low-Light and Thermographic Vision"
+name: Low-Light and Thermographic Vision
 domain: vision
 status: ingested
+source: source.mm
+printed_pages: '48-49'
+pdf_pages: '48-49'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Low-Light and Thermographic Vision — ambient conditions and overlays
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF pp48-49.
 effective: {status: current, source: source.mm, page: 48, basis: extends}
 scope:
-  applies_to: ["natural or cybernetic low-light and thermographic vision"]
+  applies_to: [natural or cybernetic low-light and thermographic vision]
 resolution:
-  summary: "Low-light vision amplifies available light and does not function in total darkness. Thermographic vision reads heat differences against ambient temperature. Natural and cybernetic implementations differ in how the image is layered with normal vision, and environmental conditions modify visibility according to the expanded visibility table."
-  inputs: ["vision mode", "ambient light", "temperature contrast", "environment"]
-  outputs: ["visibility modifiers and usable visual information"]
+  summary: Low-light vision amplifies available light; thermographic vision detects heat relative to ambient temperature.
+  inputs: [vision mode, ambient light, temperature contrast, environment]
+  outputs: [usable visual information, visibility modifiers]
   steps: []
+data:
+  low_light:
+    requires_some_light: true
+    gamemaster_determines_sufficient_light: true
+    carried_light_source_can_supply_light: true
+    natural_mode_always_active: true
+  thermographic:
+    detects_infrared_heat: true
+    heat_image_detail_limited: true
+    cybernetic_and_external_overlay: amplified low-light image
+    natural_overlay: normal vision
+    natural_mode_always_active: true
+    hot_display: white
+    cool_display: black
+    intermediate_display: red or green shades
+    temperature_reference: local ambient temperature
+    gamemaster_adjusts_modifiers_for_target_to_ambient_temperature_contrast: true
 links:
   uses: []
   affects: []
   modified_by: []
-  interacts_with: []
+  interacts_with: [rule.vision.multiple-systems]
 sources:
-  - {source: source.mm, page: 48, relation: extends, note: "Vision System Use / Low-light Vision"}
-  - {source: source.mm, page: 49, relation: extends, note: "Thermographic Vision / Visibility Modifiers"}
+  - {source: source.mm, page: 48, relation: extends, note: Vision System Use and Low-light Vision}
+  - {source: source.mm, page: 49, relation: extends, note: Low-light and Thermographic Vision}
 notes: []
