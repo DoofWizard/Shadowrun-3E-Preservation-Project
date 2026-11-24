@@ -1,0 +1,61 @@
+id: rule.magic.mits-watcher-tracking-tasks-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '101-102'
+pdf_pages: '102-103'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Watcher tracking and assigned tasks
+summary: FASA Corporation, Magic in the Shadows (FASA7907), fictional SR3 tabletop rules, printed pp101-102/PDF102-103.
+data:
+  tracking:
+    eligible_targets: Person or place known to the summoner; enchanted item only if the summoner has assensed its aura. Ordinary nonliving objects cannot be tracked.
+    test: GM secretly rolls watcher Force.
+    target_number: 9 minus summoner Intelligence
+    initiate_modifier: Add target initiate grade except when target is watcher summoner.
+    search_base_hours:
+      living_being: 2
+      magical_item: 4
+      place: 6
+    search_duration: Divide applicable base hours by successes.
+    no_success: Watcher searches confusedly until expiry.
+    trail_breaks: Magical barrier or target projection to metaplane during search.
+    broken_trail_test: Force (4)
+    broken_trail_success: Watcher attempts to return to summoner to report failure.
+    broken_trail_failure: Wanders astral space until dissolution.
+    find_summoner:
+      target_number: 6 minus summoner Magic
+      minimum_target_number: 2
+      base_hours: 2
+      duration: Divide base hours by successes.
+    source_example:
+      watcher_force: 3
+      life_hours: 3
+      summoner_intelligence: 5
+      target_number: 4
+      successes: 1
+      search_minutes: 120
+      delivery_and_travel_minutes: 20
+      summoner_magic: 7
+      return_target_number: 2
+      return_successes: 3
+      return_minutes: 40
+      elapsed_minutes: 180
+      outcome: Watcher expires before finishing its report.
+  tasks:
+    complexity: Simple instructions only; complex tasks confuse watcher.
+    air_cover: Follows a specified subject and attacks if subject uses astral perception or projection; barrier crossing or metaplanar projection breaks pursuit and watcher wanders away.
+    alarm:
+      scope: Guards astral area and reacts only to astral intruders.
+      approximate_area_square_meters: 10000
+      permitted_individuals_maximum: Force
+      patrol_meters_per_combat_turn: 5 * Force
+      response: On observing an unauthorized astral person, reports to specified person, tracking them if outside area; alternatively informs anyone found at a designated location.
+    attack_dog: Same guard assignment as alarm, but attacks astral intruders instead of raising alarm.
+    bug: Observes known person or place for specified time or until specified event, then reports. Magical events and conversations are reported clearly; technology, comm calls, print and arithmetic are poorly understood. Event-conditioned tasks may confuse watcher or exceed life span.
+    courier: Delivers spoken message or simple image no more complex than a still two-dimensional photograph to known person or place. Can obtain reply and return it. Uses tracking without exact directions and to locate a summoner who has moved.
+    irritant: In the fictional scenario, follows a specified person or remains at a designated location and manifests visibly and audibly to repeat assigned remarks or arguments.
+  existing_canon_reused: [rule.spirits.watcher-tracking, rule.spirits.watcher-tasks, entity.spirit.watcher]
+  editorial_review: All root and nested text reviewed in the published fictional tabletop context, retaining limits, target categories, failed tests and assigned task agency.
