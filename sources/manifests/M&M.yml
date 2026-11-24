@@ -752,6 +752,28 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_clinic_capacity_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp136,138/PDF137,139 and copyright p5; table independently enlarged."
+    records:
+      - id: entity.medical.medical-shop
+        path: entities/medical/medical-shop.yml
+        printed: "136, 138"
+        pdf: "137, 139"
+        commit: "31de55e470dee68ee33477614a37985a94c32755"
+        blob: "22b2cef4f188e6d6f2b74beb0c1aa7da63b7ad6d"
+        candidate_sha256: "ea7a19ed366c58d5c412e42c3e5a8b35cf50ce2a08c2c183266a1d5e5251c08d"
+        baseline_sha256: "c827bdbc66ef8ecd236515711c0e749c5481c7bc7787ed0fdcd440babf7bae4b"
+        immutable_sha256: "098e63c1bf5b4e455d5f60fd34673345971239376d19f4ebd54b81842b2cc36d"
+        gate: verified
+        fields: "Clinic staffing and patient capacity, permits and 15 percent fee, computer memory, components, stabilization, rental and graded equipment restrictions."
+    scoped_natural_sections_reconciled:
+      - "Medical Shops (Clinics) and Clinic Components p138."
+    exceptions: "Rating 6 is the player-accessible gear cap p136; no global maximum inferred. Mobile shops and other gear remain separate."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
