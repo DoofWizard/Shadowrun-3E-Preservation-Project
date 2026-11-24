@@ -69,7 +69,7 @@ coverage:
   evidence_verification: {printed: "49-51", status: source_verified_section_closed, note: "Original digital evidence and Pix dice rules, signed modifiers, outcome tiers, verification and original exceptions; SR3 supersession unresolved."}
   pab_event_tests: {printed: "47-49", status: source_verified_section_closed, note: "Original fictional PAB tests, detection, restoration and contradictory detection examples; SR3 supersession unresolved."}
   pab_equipment: {printed: "97", status: source_verified_section_closed, note: "Five original equipment market rows and facility rating cap; p47 reprogramming procedure and SR3 supersession distinct."}
-  media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
+  media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate; apply storage-interface-qualifiers-p99 for original interface and transfer conditions."}
   simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
   sasquatch_band_recruitment: {printed: "17", status: source_verified_section_closed, note: "Original roleplay recruitment and Buddy character-creation qualification preserved separately from SR3 contact levels."}
@@ -343,6 +343,7 @@ records:
   - ["network-employment-tax-qualifiers-p85-86", "7b2f02d67f8841321bc85bb2d36775648ce246b8"]
   - ["sound-configuration-qualifiers-p93-95", "44a90f0527f49635e0f3b3fa9b14a910ea90d29e"]
   - ["tridsynth-processor-qualifier-p91", "d28e381f992e99cd580e164082cc90a6ef568c93"]
+  - ["storage-interface-qualifiers-p99", "7d9e349e8f02d37ef4a5c298cd7789e74bbcbe49"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -992,5 +993,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p91_pdf100"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-storage-interface-qualifiers-p99
+    path: equipment/shadowbeat/storage-interface-qualifiers-p99.yml
+    original_printed_pages: "99"
+    original_pdf_pages: "108"
+    commit_sha: "7d9e349e8f02d37ef4a5c298cd7789e74bbcbe49"
+    readback_blob_sha: "e27e43394adbfe30921b7b199ecb5ee73085f89a"
+    candidate_sha256: "437721610b5baf6b8e108a3af1e194a3856fe219efbe0decfb3d8c4a83fa8e6a"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p99_pdf108"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
