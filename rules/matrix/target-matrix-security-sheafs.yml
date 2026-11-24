@@ -7,15 +7,15 @@ edition_scope: "FASA Corporation Target: Matrix FASA7219, original Shadowrun Thi
 content_class:
   - rule_exact
 framing: reference_exact
-headline: "FASA Target: Matrix (SR3) original thirteen security sheafs, corrected Saeder-Krupp Prime event thresholds, printed pp132-134/PDF133-135"
-summary: "Corrected the original FASA7219 Saeder-Krupp Prime security sheaf: trigger 15 Construct-14 includes Trace-12, Probe-6 and Scout-8; later steps are 19, 22, 26, 29, with no step 32. Original other twelve sheafs retain prior source-authentic values."
+headline: "FASA Corporation Target: Matrix (SR3) fourteen original security sheafs, Angel Satcom rating restored, pp132-134/PDF133-135"
+summary: "FASA7219 fictional tabletop RPG security sheafs: original Angel Satcom code has the complete security rating and five subsystem ratings. All 169 trigger events and the earlier Saeder-Krupp Prime correction are preserved across fourteen sheafs."
 source: source.fasa-7219
 printed_pages: "132-134"
 pdf_pages: "133-135"
 
 sheafs:
   angel_satcom:
-    security_code: "Orange-4/10/8/8/7"
+    security_code: "Orange-4/10/8/8/8/7"
     events:
       "5": "Probe-4"
       "9": "Probe-6"
@@ -239,7 +239,7 @@ data:
   source_heading: "Game Information / Security Sheafs"
   original_printed_pages: [132, 133, 134]
   original_physical_pdf_pages: [133, 134, 135]
-  original_image_reviewed_sheaf_count: 13
+  original_image_reviewed_sheaf_count: 14
   original_source_corrective_review:
     sheaf: sk_prime
     original_printed_page: 132
@@ -254,7 +254,19 @@ data:
     prior_legacy_blob: 2facc770b9b2b139f6f9f94e5f26fbd99d7ba395
     prior_error: "Legacy record split three Construct-14 components into an invented step 19, displaced four subsequent events, and invented step 32; original image reveals the actual trigger association"
     editorial_fidelity: "No inferred extra event or hypothetical sheaf is inserted"
-  compatibility: "Preserves legacy root sheafs dictionary with 13 named sheafs, all previous non-SK data and source references; source reviewed SK event sequence corrected from original printed table"
+  full_section_review_2026_11_23:
+    prior_blob: cd02d2219042f51501015c20d0d7780f2d630e1d
+    angel_satcom_security_code_original: "Orange-4/10/8/8/8/7"
+    angel_satcom_security_code_previous: "Orange-4/10/8/8/7"
+    source_table_heading_transys_caerleon: "Transys Caerleon System Security Sheaf"
+    trigger_rows_reviewed: 169
+    security_code_rows_reviewed: 14
+    per_printed_page:
+      "132": {pdf_page: 133, sheafs: 6, trigger_rows: 74}
+      "133": {pdf_page: 134, sheafs: 5, trigger_rows: 57}
+      "134": {pdf_page: 135, sheafs: 3, trigger_rows: 38}
+    field_review: "Original images checked against every security code and trigger event, including nested IC components, repeated events, options, and recurring events. Angel Satcom is the missing rating; no trigger-event changes needed."
+  compatibility: "Retains all fourteen existing sheaf keys and their 169 trigger events, including the legacy transys_caerlion key. The original heading is Transys Caerleon System. Corrects the Angel Satcom security code while retaining the prior SK Prime corrections."
 
 sources:
   - {source: source.fasa-7219, printed_pages: "132-134", pdf_pages: "133-135", relation: defines_security_sheafs}
