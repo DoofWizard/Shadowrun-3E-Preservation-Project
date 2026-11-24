@@ -1,0 +1,70 @@
+id: rule.matrix.matrix-otaku-character-creation-p136-137
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '136-137'
+pdf_pages: '137-138'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp136-137/PDF137-138.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Otaku creation mechanics
+summary: Exact starting constraints, channel allocations, resources, path modifiers and living persona ratings; the existing Otaku subsystem remains unchanged.
+data:
+  legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 preserves the general framework but lacks the exact numeric creation limits and persona formulas.'
+  character_creation:
+    race: Any
+    priority_system: {otaku: A, magic: unavailable, remaining_categories: [Race, Attributes, Skills, Resources]}
+    point_system: {otaku_building_points: 30, magic: unavailable, resources: tribal_resources}
+    attributes:
+      standard_racial_modified_limit_modifiers: {mental: 1, physical: -1}
+      optional_minimum_physical_allocation:
+        points_each: 1
+        troll_quickness_points: 2
+        racial_modified_limit_modifiers: {physical: -2, mental: 2}
+        extra_mental_attribute_points: 2
+      attribute_maximum: 'Racial Modified Limit x 1.5, standard rules'
+    skills:
+      computer: {minimum: 6, maximum: 8, specialization: unrestricted}
+      etiquette: {maximum: 4, creation_specializations: [Matrix, Street]}
+      other_skills: GM may restrict implausible starting skills; creation restrictions do not apply to later advancement.
+    channels:
+      names: [Access, Control, Index, Files, Slave]
+      bonus_points: 'ceil((Intelligence + Willpower + Charisma) / 3)'
+      ordinary_active_skill_points_allowed: true
+      descending_starting_rating_caps: [6, 5, 4, 3, 3]
+      linked_attribute: Willpower
+      defaulting_from_channel: prohibited
+      advancement: Ordinary active skill Karma rules.
+      specialization: Can emulate a single operational utility.
+    resources:
+      personal_nuyen: 5000
+      base_tribal_lifestyle: Squatter
+      priority_increase: One lifestyle level per Resources priority above E.
+      point_increase: One lifestyle level per 5 Building Points allocated to Resources.
+      individual_lifestyle: May maintain separate lifestyle or use tribe resources.
+      required_interface: [datajack, ASIST converter]
+      creation_interface_cost: Tribe supplies standard interface without cost; player pays extra cost for alphaware.
+    complex_forms:
+      functions: [offensive utilities, defensive utilities, special utilities]
+      free_Mp: 'Computer (Programming) skill x 50 + 50 per tribal lifestyle level above Squatter'
+    living_persona:
+      total_persona_ratings_limited_by_MPCP: false
+      MPCP: 'ceil((Intelligence + Willpower + Charisma) / 3)'
+      Bod: Willpower
+      Evasion: Intelligence
+      Masking: 'ceil((Willpower + Charisma) / 2)'
+      Sensor: Intelligence
+      matrix_reaction: Intelligence
+      matrix_initiative: 'Reaction + 4D6'
+      hardening: 'ceil(Willpower / 2)'
+      IO_speed_Mp: 'Intelligence x 100'
+    pools:
+      hacking: 'floor((MPCP + Intelligence) / 3)'
+      combat: Standard character Combat Pool.
+    path:
+      choose_one: [cyberadept, technoshaman]
+      cyberadept: {complex_form_effective_rating_bonus: 1, size_changed: false, form_must_already_exist: true}
+      technoshaman: {channel_TN_modifier: -1}
+  AI_created_otaku:
+    ordinary_abilities: Same as other otaku but generally with at least one serious flaw; may lose powers outside the creating AI's influence.
+    GM_guidance: Restrict to NPCs; player use is not recommended.
