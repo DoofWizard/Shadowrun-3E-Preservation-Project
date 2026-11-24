@@ -1,0 +1,101 @@
+{
+  "id": "rule.matrix.matrix-operations-decoy-log-encryption-p98-99",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "98-99",
+  "pdf_pages": "99-100",
+  "edition_scope": "FASA Corporation Matrix FASA7909, Shadowrun Third Edition, published fictional tabletop RPG; printed 98-99/physical PDF 99-100.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Matrix game operations: decoys, disarming, logs and encryption",
+  "summary": "Source-specific fictional game operation resolution, conditions, exceptions and numeric effects. Existing operation profiles and core tests are reused.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "source_pdf_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+    },
+    "legacy_catalog": {
+      "path": "references/matrix/system-operations.yml",
+      "blob": "4fb08f82abefa56bb5cc7afc8657b09b8bb0c8c1",
+      "reuse": "Existing operation test, utility, and action profiles remain authoritative except corrected page citations; this record adds operation-specific tabletop resolution."
+    },
+    "core_procedure": {
+      "path": "procedures/matrix/system-operation.yml",
+      "blob": "d736201291ebc17ddd3df33434d886f0d27f76a2"
+    },
+    "operations": {
+      "decoy": {
+        "printed": 98,
+        "eligible": "Proactive IC, including IC constructs; not other personas or Trace IC.",
+        "roll": "Record Control Test successes; each attempted proactive IC attack targets decoy if 1D6 <= recorded successes.",
+        "defenses": "No special defense or damage resistance; full damage; disappears at Deadly.",
+        "frame": "May hold IC attention on frames."
+      },
+      "disarm_data_bomb": {
+        "printed": 98,
+        "prerequisite": "Locate fictional IC by Analyze Icon or Locate IC.",
+        "test_by_target": {
+          "file": "Files",
+          "remote_device": "Slave"
+        },
+        "success": "Deactivate data bomb IC; does not count as crashing IC, no IC rating added to security tally."
+      },
+      "disinfect": {
+        "printed": 98,
+        "effect": "Successful System Test against affected fictional subsystem removes its worm programs. Files subsystem uses Files Test.",
+        "reuse": "File and MPCP effects are covered in rule.matrix.worm-infection-and-variants-p92-94."
+      },
+      "dump_log": {
+        "printed": 98,
+        "operation_type": "interrogation",
+        "log_scope": "Reuse accepted rule.matrix.matrix-passcode-security-game-conditions-p40; records may also show suspicious events as apparent system faults.",
+        "gm": "Prepare log if plot-critical; otherwise improvise.",
+        "download_allowed": true,
+        "log_size_mp_per_24h": {
+          "easy": "2D6 * 100",
+          "average": "2D6 * 200",
+          "hard": "2D6 * 500"
+        }
+      },
+      "encryption": {
+        "printed": "98-99",
+        "variants": {
+          "access": {
+            "effect": "No logon without successful Decrypt Access."
+          },
+          "file": {
+            "effect": "No file access, download or operation without successful Decrypt File."
+          },
+          "slave": {
+            "effect": "No Slave Tests without successful Decrypt Slave."
+          }
+        },
+        "requirement": "Encrypt utility, or locate fictional host's scramble IC with Locate IC as substitute.",
+        "substitute_rating_reduces_tn": false
+      },
+      "freeze_vanishing_san": {
+        "printed": 99,
+        "result": "Successful Access operation leaves fictional vanishing SAN available after nominal closure; SAN treats itself as closed.",
+        "cross_reference": "Matrix p120."
+      },
+      "infect": {
+        "printed": 99,
+        "result": "Successful appropriate subsystem System Test seeds fictional game worm; subsequent System Tests on subsystem risk infection.",
+        "reuse": "Use previously accepted worm mechanics rule.matrix.worm-infection-and-variants-p92-94."
+      }
+    },
+    "source_review": {
+      "images": [
+        99,
+        100
+      ],
+      "correction": "Decoy through Dump Log are p98, Encrypt Access spans pp98-99, Encrypt File/Slave, Freeze and Infect are p99."
+    }
+  }
+}
