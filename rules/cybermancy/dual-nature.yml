@@ -1,21 +1,42 @@
 id: rule.cybermancy.dual-nature
 record_type: rule
-name: "Cybermantic Dual Nature"
+name: Cybermantic Dual Nature
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '57'
+pdf_pages: '57'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermantic Dual Nature and Astral Perception
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed and PDF p57.
 effective: {status: current, source: source.mm, page: 57, basis: defines}
 scope:
-  applies_to: ["cybermantic characters"]
+  applies_to: [cybermantic characters]
 resolution:
-  summary: "Cybermantic characters are permanently dual-natured and exist on the physical and astral planes simultaneously. They are vulnerable to astral attack. To astrally perceive they use Aura Reading as a standard skill, defaulting to Intelligence if they lack it; standard astral-combat rules apply when they are attacked."
-  inputs: ["Aura Reading or Intelligence"]
-  outputs: ["astral perception and vulnerability"]
-  steps: []
+  summary: Cybermantic characters are permanently present on the physical and astral planes but lack the innate astral perception of Awakened characters.
+  inputs: [Aura Reading or Intelligence]
+  outputs: [astral perception and vulnerability]
+  steps:
+    - A cybermantic character may acquire the Aura Reading Active Skill despite the normal Awakened-only restriction.
+    - Use Aura Reading instead of Intelligence for astral perception; the skill functions as a standard skill rather than a complementary skill. Without the skill, default to Intelligence for Astral Perception Tests.
+    - Apply standard astral combat rules when the cybermantic character defends against an astral attack.
+data:
+  permanent_dual_nature: true
+  simultaneous_planes: [physical, astral]
+  vulnerable_to_astral_attack: true
+  innate_awakened_astral_perception: false
+  aura_reading_purchase_exception: true
+  aura_reading_skill_type: Active Skill
+  aura_reading_use: standard, not complementary
+  astral_perception_default: Intelligence
+  astral_combat_reference: SR3 p174
 links:
   uses: [entity.skill.aura-reading]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 57, relation: defines, note: "Dual Nature"}
+  - {source: source.mm, page: 57, relation: defines, note: Dual Nature}
 notes: []
