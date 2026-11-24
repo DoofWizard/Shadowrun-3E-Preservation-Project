@@ -1,15 +1,48 @@
 id: option.magic.initiation-ordeal-geas
 record_type: option
-name: "Initiation Ordeal — Geas"
+name: Initiation Ordeal - Geas
 domain: magic
 status: ingested
-effective: {status: current, source: source.mits, page: 60, basis: defines}
-option_for: [procedure.magic.initiation]
-selection: {timing: "before completing an initiation grade", prerequisites: [], incompatible_with: []}
+effective:
+  status: current
+  source: source.mits
+  page: 60
+  basis: defines
+option_for:
+- procedure.magic.initiation
+selection:
+  timing: before completing an initiation grade
+  prerequisites: []
+  incompatible_with: []
 effects:
-  - "Requires accepting a geas on the Magic Point gained from the initiation."
-  - "A geas taken as an ordeal cannot later be removed through the ordinary geas-removal option."
-links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
+- Apply a chosen geas to the Magic Point obtained from the new grade.
+- The ordeal geas is permanent.
+links:
+  modifies:
+  - procedure.magic.initiation
+  requires: []
+  interacts_with: []
 sources:
-  - {source: source.mits, page: 60, relation: defines, note: "Initiation Ordeal — Geas"}
+- source: source.mits
+  page: 60
+  relation: defines
+  note: Geas ordeal
 notes: []
+source: source.mits
+printed_pages: '60'
+pdf_pages: '61'
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  choice: Use a standard geas (MitS printed p31) or a new one approved by the gamemaster.
+  adept_application: An adept can apply the geas to the Power Point obtained from
+    initiation.
+  adept_power_cost_discount: false
+  other_geas_rules: Otherwise the ordinary geas rules apply.
+  removable: false
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: Geas ordeal (FASA7907, printed
+  60/PDF 61)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG Geas initiation ordeal
+  mechanics.
