@@ -31,15 +31,19 @@
         "with_design_schematics": 8,
         "only_picture": 12,
         "neither_picture_nor_design_schematics": 16,
-        "base_design_time": "one week, plus necessary fictional equipment; precise GM target is otherwise at discretion"
+        "base_design_time": "one week, plus necessary fictional equipment; precise GM target is otherwise at discretion",
+        "minimum_target_number_scope": "Separate direct-navigation Quickness Test, GM sets target by coverage; minimum TN 4.",
+        "design_method_test_scope": "The TN 8/12/16 values belong to a different optional fictional Quickness Test, not to the direct-navigation test.",
+        "with_design_schematics_condition": "The TN 8 case additionally assumes ample study time."
       },
       "proxy_emitter": {
         "cost_nuyen_each": 200,
         "required_count": "one for each detector",
         "placement_test": "Reaction Test (6)",
-        "failed_placement": "Alarm triggered"
+        "failed_placement": "Failed Reaction Test causes the alarm when the original trip-beam event is subsequently triggered, not automatically at the time of the test."
       },
-      "qualifier": "Some cinematic arrangements are expressly impossible to bypass; GM discretion remains relevant"
+      "qualifier": "Some cinematic arrangements are expressly impossible to bypass; GM discretion remains relevant",
+      "visibility_exception": "For this fictional Perception Test, the source reverses the usual smoke visibility effect; the GM may also adjudicate an additional alarm risk."
     },
     "fictional_pressure_mesh_pads": {
       "original_sensitivity_table": [
@@ -58,8 +62,8 @@
           "drone_sensitivity": 4
         }
       ],
-      "notice_test": "Perception against applicable target number, from original table",
-      "after_stepping_on_device": "Second Perception Test against same target number, with -2 modifier; failed result triggers alarm",
+      "notice_test": "Perception against applicable original table target number, including applicable modifiers.",
+      "after_stepping_on_device": "Only after the first Perception Test fails does the character step on the device and make a second Perception Test against the same target number with -2; failure triggers alarm, success allows the subsequent Reaction Test.",
       "escape_test": "Successful Reaction Test against device sensitivity level PLUS character natural Body Rating before pressure crosses threshold",
       "running_modifier": "+2 to the escape Reaction Test target number"
     },
@@ -74,9 +78,11 @@
       "benchmark": "30 cubic meters filled in one Combat Turn (3 seconds)",
       "approximate_spread": "10 cubic meters per second; illustration approximates 2m tall, 2m wide, 2.5m deep",
       "maximum_initiative_passes": "3 per Combat Turn",
-      "spread_timing": "Begins at end of triggering Initiative Pass; continues to end of each Initiative Pass",
-      "recognition_test": "Characters holding Delayed Actions may make Perception Test using Intelligence dice against Target Number 10, with appropriate Perception modifiers",
-      "exception": "Game master may adjust dispersal for scenario; gas detection equipment may automatically alert its wearer"
+      "spread_timing": "Starts at the end of the triggering Initiative Pass and resolves last in each Initiative Pass, up to three passes in a Combat Turn.",
+      "recognition_test": "At the time of exposure, characters holding Delayed Actions may make a Perception Test using Intelligence dice against Target Number 10, with appropriate Perception modifiers.",
+      "exception": "Game master may adjust dispersal for scenario; gas detection equipment may automatically alert its wearer",
+      "spread_per_initiative_pass_cubic_meters": 10,
+      "source_effects_reference": "SR3 core p250 supplies the effects on characters; this optional subsystem supplies timing and recognition only."
     },
     "fictional_chemical_detection": {
       "source_description": "Hand-held rating up to 3, while detector systems are rated 1 to 8; architecturally based systems have base Concealability Rating 4",
@@ -124,6 +130,6 @@
     "provenance_note": "Rules are transcribed strictly as tabletop source text. No actual equipment handling, technical construction or installation instructions are supplied."
   },
   "framing": "reference_exact",
-  "headline": "Published fictional Shadowrun Third Edition source: additional security systems, pp89-90",
-  "summary": "Archival indexed source-backed numeric tables and test procedures for the 2003 FASA Shadowrun Companion, printed pp89-90/PDF90-91."
+  "headline": "FASA7905a Shadowrun Companion: optional tabletop security test conditions and exposure timing",
+  "summary": "Original SR3 game-resolution conditions and numeric tables, including conditional test ordering, per-pass timing and the delayed-action recognition window."
 }
