@@ -1,26 +1,46 @@
 id: rule.damage.stress-test
 record_type: rule
-name: "Stress Test"
+name: Stress Test
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '126'
+pdf_pages: '127'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Stress Test — dice, thresholds and modifiers
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed p126/PDF127.
 effective: {status: current, source: source.mm, page: 126, basis: defines}
 scope:
-  applies_to: ["implant or Attribute when it takes Stress"]
+  applies_to: [implant or Attribute Stress]
 resolution:
-  summary: "Whenever an implant or Attribute takes Stress, make a Stress Test. The base target number is the current Stress Point total and one success avoids system failure. Dice depend on implant grade or the unaugmented Attribute value, with the source's cyberlimb-integrity and bioware-boost modifiers."
-  inputs: ["current Stress Points", "implant grade or unaugmented Attribute", "applicable integrity/bioware modifiers"]
-  outputs: ["system remains functional or fails"]
+  summary: An implant or Attribute receiving Stress requires a Stress Test; one success prevents failure, except that Deadly Stress automatically causes failure.
+  inputs: [current Stress Points, implant grade or unaugmented Attribute, applicable modifiers]
+  outputs: [continued function or failure]
   steps:
-    - "Determine the Stress Test dice from implant grade or Attribute."
-    - "Apply listed target-number modifiers."
-    - "Roll against the current Stress Point total."
-    - "One or more successes avoids failure."
+    - Select dice from the Stress Dice Table.
+    - Start with the current Stress Point total as target number and apply the applicable modifiers.
+    - Roll the test; zero successes causes failure.
+data:
+  stress_levels: {Light: '1-2', Moderate: '3-5', Serious: '6-9', Deadly: '10+'}
+  automatic_failure: 10
+  dice:
+    cyberware: {basic: 1, alpha: 2, beta: 3, delta: 5}
+    bioware: {cosmetic: 1, basic: 2, cultured: 4}
+    attribute: unaugmented Attribute / 2
+  target_number_modifiers:
+    cyberlimb_integrity: subtract Integrity Rating
+    attribute_boosted_by_bioware: add boost value
+  used_implants: Use the equivalent grade's dice.
+  surgery_options: Fragile and Rugged affect test dice as specified on p148.
+  extreme_conditions: The gamemaster may require a test even without new Stress when the implant or Attribute is subjected to extreme conditions.
 links:
   uses: [rule.damage.stress-points]
   affects: [subsystem.damage.stress]
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 126, relation: defines, note: "Stress Level, Stress Test and Stress Dice tables"}
+  - {source: source.mm, page: 126, relation: defines, note: Stress Level, Stress Test and Stress Dice tables}
 notes:
-  - "The Rule of Six is not applied to the roll that generates wound-effect Stress Points, per the preceding Stress rule."
+  - Rule of Six does not apply to the preceding wound-effect Stress Point generation roll.
