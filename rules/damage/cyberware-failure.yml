@@ -1,21 +1,40 @@
 id: rule.damage.cyberware-failure
 record_type: rule
-name: "Cyberware Failure"
+name: Cyberware Failure
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '128'
+pdf_pages: '129'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Cyberware Failure — six optional malfunction outcomes
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed p128/PDF129.
 effective: {status: current, source: source.mm, page: 128, basis: defines}
 scope:
-  applies_to: ["cyberware that fails a Stress Test"]
+  applies_to: [cyberware that fails a Stress Test]
 resolution:
-  summary: "A failed cyberware system may cease functioning or malfunction. The gamemaster may choose the fiction and effect or use the Cyberware Failure Table, which progressively reduces bonuses/ratings and adds target-number penalties as severity increases."
-  inputs: ["failed cyberware", "failure-table result if used"]
-  outputs: ["malfunction or loss of function"]
+  summary: The gamemaster determines the malfunction or optionally rolls 1D6 on the Cyberware Failure Table and applies relevant modifiers.
+  inputs: [failed cyberware, optional failure-table roll]
+  outputs: [malfunction or loss of function]
   steps: []
+data:
+  failure_table:
+    - {roll: 1, bonus_or_rating_percent: 50, use_tn_modifier: 1, all_tn_modifier: 0}
+    - {roll: 2, bonus_or_rating_percent: 50, use_tn_modifier: 1, all_tn_modifier: 1}
+    - {roll: 3, bonus_or_rating_percent: 50, use_tn_modifier: 2, all_tn_modifier: 1}
+    - {roll: 4, bonus_or_rating_percent: 0, use_tn_modifier: 2, all_tn_modifier: 1}
+    - {roll: 5, bonus_or_rating_percent: 0, use_tn_modifier: 2, all_tn_modifier: 2}
+    - {roll: 6, bonus_or_rating_percent: 0, use_tn_modifier: 3, all_tn_modifier: 3}
+  structural_exception: Primarily structural or physiological modifications do not lose performance from damage in the ordinary manner; their failure instead requires medical repair and maintenance.
+  all_tn_modifier_cause: feedback or discomfort
+  repair: Stress repair is covered on p130; failed cyberware repair requires Implant Surgery under p146.
 links:
   uses: [rule.damage.stress-test]
   affects: [subsystem.cyberware.core]
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 128, relation: defines, note: "Cyberware Failure and Cyberware Failure Table"}
+  - {source: source.mm, page: 128, relation: defines, note: Cyberware Failure and Cyberware Failure Table}
 notes: []
