@@ -948,6 +948,33 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+
+  confirmed_expanded_first_aid_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp132-133/PDF133-134 and copyright printed p5/PDF5."
+    image_sha256:
+      PDF133: "ff3549412eca19e62ce7c96ca7da207c24b3fe94c1a3f4b1f0386d3d796367c5"
+      PDF134: "063518ac4da8bcf518135b5cd10512e2225c9a44d6eb3b5a3691df92c8524439"
+    records:
+      - id: option.healing.expanded-first-aid
+        path: options/healing/expanded-first-aid.yml
+        printed: "132-133"
+        pdf: "133-134"
+        commit: "ac43b857325ace03df5eb46804785a03a1fc29e6"
+        blob: "54eca4b0b8a871d97ff6f2a0608d3f7a80cb85af"
+        candidate_sha256: "ca74056ba15a111418a41a8df352cc4f2cb795ec444d010350e5e921f2518f01"
+        baseline_sha256: "2317a6d72cc9d4c64a94c2224623a2bf73e8aa48bdb09138ca2ba6278688c662"
+        immutable_sha256: "8cb9159838104839774bef49c2f3b84021e00624b34e9fec14a3fb281c780c8d"
+        gate: verified
+        recovery_inspect: verified
+        fields: "All 14 modifier rows (six patient, four Body, four conditions), additive application to Biotech First Aid and SR3 p129, uncertain diagnosis and incorrect treatment consequence, optional adoption and source cross-references."
+    scoped_natural_sections_reconciled:
+      - "Expanded First Aid Modifiers and table notes, printed pp132-133/PDF133-134."
+    prior_conflict: "Previous staged payload received HTTP 409. Fresh live blob 69d98f368c196c7d6a9c69f65dd8fa7453f76447 differed from prior expected candidate; current qualitative canon independently compared. Newly source-reviewed candidate adds explicit test scope and incorrect treatment consequence; no identical rejected bytes replayed."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
