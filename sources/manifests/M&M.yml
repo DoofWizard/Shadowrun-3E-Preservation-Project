@@ -1069,6 +1069,35 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+
+  confirmed_attribute_damage_repair_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp129-131/PDF130-132 and copyright printed p5/PDF5."
+    image_sha256:
+      PDF130: "a06d1179fba011141067c52fc40203282d02a329b235669423836fd712db665b"
+      PDF131: "7e26ecfc9a6e68ca59707a86183e2b6de056fd1e210e41fafbcfc0ea002b405c"
+      PDF132: "59ad633bb219373ed6f03709d246b0f0529d258ea8cbcd2feaf0074572d57727"
+    records:
+      - id: rule.damage.attribute-damage
+        path: rules/damage/attribute-damage.yml
+        printed: "129-131"
+        pdf: "130-132"
+        commit: "16eee3b0bfecb7f4836550f43fd13bf5618b8666"
+        blob: "a7eb15267847ce80031db23c93cc32cfa94e00d2"
+        candidate_sha256: "21f1f64e95779f788580a9bf60dcb964dc6072f5fc72bd4c7173d54e0aab7c9b"
+        baseline_sha256: "0572be2fb2c5b1342c3285b01eaff1dc43aebd3d148450e3ebd242220921bf23"
+        immutable_sha256: "a498526117984327b409bf02efaa499a678b7e9014cfe34aefd637593f0a56c2"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Six Organic Damage Table results, six Attribute Failure Table results, Stress and mandatory doctor care for organic wounds, linked skills, zero-Attribute condition, permanent-damage target number modifier, general Attribute Stress healing, zero floor, failed Attribute repair and therapeutic surgery."
+    scoped_natural_sections_reconciled:
+      - "Attribute Damage, Attribute Failure, Deadly Wounds and Permanent Damage, printed pp129-130/PDF130-131."
+      - "Attribute Stress Repair, printed p131/PDF132."
+    exceptions: "The source distinguishes organic-wound Attribute damage requiring medical care from general Attribute Stress that may heal naturally. The adjacent Using Stress section, including upkeep and extra Attribute dice, remains open."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
