@@ -1,21 +1,37 @@
 id: entity.bioware.muscle-toner
 record_type: entity
-name: "Muscle Toner"
+name: Muscle Toner
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '67'
+pdf_pages: '68'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index_per_level: 0.4
-  availability: "6/6 days"
+  availability: '6/6 days'
   cost_nuyen_per_level: 25000
   street_index: 0.9
-  legality: "4P-BC/D"
+  legality: 4P-BC/D
   maximum_levels: 4
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+data:
+  quickness_bonus_per_level: 1
+  maximum_quickness_bonus: 4
+  reaction: Quickness increase may increase Reaction except while rigging or decking
+  combat_pool: Quickness increase may increase Combat Pool
+  control_pool: unaffected
+  escape_artist_tn_modifier: -floor(level / 2)
+  compatible: [muscle augmentation bioware]
+  incompatible: [muscle replacement cyberware]
+  stress:
+    light: muscle pain and cramps; limbering up necessary
+    moderate: tendonitis in GM-selected limb; +1 modifier to actions involving that limb
+    serious: +1 modifier to all physical activity tests
+    deadly: Quickness halved from unaugmented value; +2 modifier to physical activity tests
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 67, relation: defines, note: "Muscle Toner description, game effects, stress effects and statistics"}
-notes:
-  - "Each level adds 1 Quickness to a maximum +4 and can affect Reaction and Combat Pool as specified; incompatible with muscle-replacement cyberware."
+  - {source: source.mm, page: 67, relation: defines, note: Game effects, Stress and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp67/PDF68: Muscle Toner'
+framing: reference_exact
