@@ -1,0 +1,38 @@
+id: rule.matrix.matrix-otaku-tribes-p142-143
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '142-143'
+pdf_pages: '143-144'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp142-143/PDF143-144.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Tribal resources, membership and generation
+summary: Numerical expansion of the existing Otaku tribe framework.
+data:
+  legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 provides generic tribal framework.'
+  resonance_well: Required for first Deep Resonance and submersion; normally restricted to members; join tribe or found tribe and obtain well.
+  resources:
+    access: pooled resources subject to tribe approval
+    member_lifestyle_if_resident: one level below tribe resource level
+    street_level: not allowed
+    squatter: outdated training gear; other equipment individual purchases
+    low: small pool of used or jury-rigged equipment
+    middle: current equipment; 10 percent discount on most computer equipment
+    high: state-of-the-art equipment; 20 percent computer equipment discount
+    luxury: advanced equipment including possible prototypes; 30 percent computer equipment discount
+  joining: {at_creation_karma: 0, later_karma: 3, requires: tribe approval through roleplay, simultaneous_memberships: 1, switch_effect: former membership and well connection lost}
+  founding:
+    minimum_founders: 2
+    frequency: once per month
+    karma_per_founder_for_one_die: 3
+    karma_per_extra_die: 3
+    extra_dice_purchaser: any founder
+    target_number: 12
+    modifiers: {both_paths_admitted: 2, any_founder_previously_contributed_to_well: -2, per_month_all_founders_dedicated_work: -1}
+    minimum_successes: 1
+  generation:
+    rolls: separate 2D6 rolls for size and resources
+    membership: {'2': 2, '3-4': '1D3+1', '5-6': '1D6+1', '7': '2D6', '8-9': '2D6+1', '10-11': '3D6+1', '12': '4D6'}
+    resources: {'2-5': Squatter, '4-7': Low, '8-9': Middle, '10-11': High, '12': Luxury}
+    original_table_exception: Rolls 4 and 5 appear in both Squatter and Low ranges in original printed p143; no priority or correction specified.
