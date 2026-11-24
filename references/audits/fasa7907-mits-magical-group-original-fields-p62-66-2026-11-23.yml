@@ -1,0 +1,122 @@
+source: source.mits
+catalog_number: FASA7907
+edition_scope: SR3
+publication: FASA Corporation, Magic in the Shadows, fictional tabletop RPG supplement
+date: '2026-11-23'
+initial_head: b0589af96ce6adf3819d2ac6e71fdc6ab8da4419
+source_pdf_bytes: 123917505
+source_manifest_at_verification: daa136b154906cb29e7724bc96cfeefeea45fb5e
+actual_verify_source_output: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+actual_preflight_self_test: 29 passed
+exact_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+editorial_playbook_blob: 35c07f00263ce26a249ffb0c8d00872fe607b7f0
+original_image_review:
+  - {pdf: 2, checked: cover and publisher}
+  - {printed: 6, pdf: 7, checked: Third Edition introduction}
+  - {printed: 61, pdf: 62, checked: Oath ordeal and introduction to magical groups}
+  - {printed: 62, pdf: 63, checked: link, Magic loss, group purposes and stricture violation resolution}
+  - {printed: 63, pdf: 64, checked: all individual and group strictures and customs}
+  - {printed: 64, pdf: 65, checked: all six resource levels, patron and dues conditions, group search}
+  - {printed: 65, pdf: 66, checked: search exceptions, joining and founding tests, costs, all four target modifiers, creation guidance}
+  - {printed: 66, pdf: 67, checked: complete membership size, restrictions, stricture and resource tables and generation procedure}
+  - {printed: 67, pdf: 68, checked: pre-generated group statblock obligations identified}
+  - {printed: 68, pdf: 69, checked: pre-generated group statblock obligations identified}
+  - {printed: 69, pdf: 70, checked: avatar rules and learning metamagic obligations identified}
+existing_canon_reconciliation:
+  subsystem_path: subsystems/magic/magical-groups.yml
+  subsystem_blob: 5cc20a29eee278c4f1d6132bd760a0a9155d2ef9
+  finding: Existing subsystem tracks components and discount concept but does not specify the following numeric tests, exceptions or random generation rows. Kept intact; separate rules reference its ID.
+editorial:
+  baseline_and_candidate: Independently compared to original page images; baseline frozen before appending root headline and summary.
+  reviewed_text_fields: [name, scope, resolution, links, sources, notes, data, headline, summary]
+  framing: reference_exact
+  journal_reconstruction: Fetch candidate at immutable commit; remove final two root lines (headline and summary) to reproduce baseline, retaining newline. Plan is confirmation receipt without commit_sha and readback_blob_sha and with status preflighted; JSON sorted keys, indent 2 and newline. Verified receipt is sorted keys JSON on one line and newline. Local exact reconstruction checked 12 of 12 files.
+records:
+  - section: Magical group link and strictures
+    content_class: rule_exact
+    field_checklist: [Link prerequisite, oath-linked membership loss Magic check, violation visibility and tracking, Magic Test target twice desired grade, successes at least violation count, tally reset, expel or lose link, restoration, ten individual strictures, three group strictures, customs exception]
+    receipt: {candidate_sha256: 8d2f9ea2666c92715717940a638e64f693e4959e43c4179e83b00e8fc7beda24, commit_sha: 3b61996ffea00b82fe559fc69d4899195232f80d, expected_blob_sha: 30b3cfe57b875daa20ef109bb5caefe6a3b3c462, immutable_sha256: db36dd31c01034656b9ec7f626a2256aabd49c9c8ae5479a2b338120a6296502, path: rules/magic/mits-magical-group-strictures-original-p62-63.yml, pdf_pages: '63-64', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, printed_pages: '62-63', protocol: sr3-gate/v1, readback_blob_sha: 30b3cfe57b875daa20ef109bb5caefe6a3b3c462, record_id: rule.magic.mits-magical-group-strictures-original-p62-63, source: source.mits, status: verified}
+    journal_sha256: {baseline.yml: 585d2f5290b023e32e15269d5d261c8f23f8fd4d5acc04dfb7528902d8110f3b, candidate.yml: 8d2f9ea2666c92715717940a638e64f693e4959e43c4179e83b00e8fc7beda24, plan.json: 010a24712cfb4f002577eb0036abb7123c525cc46ad1efd67e00cf8833fab912, verified.json: 561b8224dbda05f91a43322882bb7802a45ae5577a904e4999f04bd41353ad09}
+    source_index_commit: bb5388ce42561225afb86a657f7f8ec8f02f9e85
+    source_index_blob: 5a04d62fa74c33f3f9e867eca97a7cdc42fc90fb
+    exact_commit_and_live_readbacks: true
+    status: verified_and_source_indexed
+  - section: Finding, joining and founding magical groups
+    content_class: rule_procedure
+    field_checklist: [Search test and 60/30 day times, Magic and contact TN modifiers, failed and interrupted searches, eligibility and invitations, 3 Karma plus dues, third party payment, admission dice and TN, grade and geas modifiers, 1D6 month retry and half TN, second failure, subgroup exception, two founders, monthly link test, 3 Karma per extra die, all four founding modifiers, dedicated work restriction, success and failure]
+    receipt: {candidate_sha256: aecb258ecb0c6fc8af9002c9da0b716def73e0224d9b601bb6c527af11cf6273, commit_sha: 9dc6449a3417917780f837a0d98f983ec05dd5d2, expected_blob_sha: e7a7a16ddd9c02003f975a9c4691e5967b328757, immutable_sha256: 6a419776ad21347e06576f6d2a954c2ceb59887e918110118367c581ae2379ac, path: rules/magic/mits-magical-group-access-original-p64-65.yml, pdf_pages: '65-66', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, printed_pages: '64-65', protocol: sr3-gate/v1, readback_blob_sha: e7a7a16ddd9c02003f975a9c4691e5967b328757, record_id: rule.magic.mits-magical-group-access-original-p64-65, source: source.mits, status: verified}
+    journal_sha256: {baseline.yml: f9db97ba617ad320601419c1630471964f4f12595ab3c1286f66d85a418ca799, candidate.yml: aecb258ecb0c6fc8af9002c9da0b716def73e0224d9b601bb6c527af11cf6273, plan.json: d5e4fb89276804ce4f605b8e903455f7023495ff57886572da89e140e9f0cb2f, verified.json: 761bad5d8c42e36a142a70ce7eae9eb66e82a882ce99a83c4e04e0550374460b}
+    source_index_commit: bb2cd35e29b15b0ab7df57bd83a63c0e80204c99
+    source_index_blob: 4d0dee288b9fbdae632d994312da88256f3b44f3
+    exact_commit_and_live_readbacks: true
+    status: verified_and_source_indexed
+  - section: Magical group resources and random generation
+    content_class: rule_exact
+    field_checklist: [Six resource levels, dues division, patron condition, four library/lodge formulas, three material discounts, five membership size rows, six restriction rows, thirteen strictures with all three type columns, six resource rows with patron thresholds, complete dice procedure]
+    receipt: {candidate_sha256: e088a88757a0946c9f8491fb4ce1e5132224e0e33e995a01f5c9438fa82691bf, commit_sha: 0c132e4d881fe2417186a7999071d804708bea91, expected_blob_sha: 34ed2e2833e5902ddffb94e65553f74827da5b6d, immutable_sha256: 858bf99ca72680803898ad00f6dab8a7d68c88695cb3ad9b3075f47adaddc25a, path: rules/magic/mits-magical-group-resources-generation-original-p64-66.yml, pdf_pages: '65-67', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, printed_pages: '64-66', protocol: sr3-gate/v1, readback_blob_sha: 34ed2e2833e5902ddffb94e65553f74827da5b6d, record_id: rule.magic.mits-magical-group-resources-generation-original-p64-66, source: source.mits, status: verified}
+    journal_sha256: {baseline.yml: 2773d4fe4e840fbdfb1c0277a6f356973eebb5a2fa5fce0e55ed06143671f79b, candidate.yml: e088a88757a0946c9f8491fb4ce1e5132224e0e33e995a01f5c9438fa82691bf, plan.json: b1252bf3ad9d301035cfea2d54f7e30cb2595a983f653473f9e8d52e77ded815, verified.json: 00de1846642faa7a25623bf46982cea57eed934b6258311f5af2f75542289f4a}
+    source_index_commit: d3116cacb313f1ab5234cac569f6f6835111abd6
+    source_index_blob: 1151a0a5ecfb35a154e2df51fd3ae7c6ef81e7f2
+    exact_commit_and_live_readbacks: true
+    status: verified_and_source_indexed
+related_oath_conflict:
+  previous_audit: references/audits/fasa7907-mits-initiation-ordeals-original-fields-p58-61-partial-2026-11-23.yml
+  substantive_source_correction: First career oath, not first qualifying ordeal oath; later oath cannot qualify even if earlier oath did not count. Membership is explicit.
+  path: options/magic/initiation-ordeal-oath.yml
+  printed: 61
+  pdf: 62
+  prior_and_fresh_remote_blob: e8efd675c2e4cb08b2c4506f39df6225574a5370
+  observed_http_status: 409
+  observed_error: 'CONFLICT: Error code: CONFLICT; Error: GitHub API error 409: {"message":"is at a78bf461ff890243144924862112b998dbf3edf4 but expected 61f62eef39aead09789c74fd34b5275ccc0e14bc","documentation_url":"https://docs.github.com/rest/repos/contents#create-or-update-file-contents","status":"409"}'
+  observed_error_sha256: 90493d2c568df0c9b247d1b0385c0dc48da5da8affd293abda20097a31aa9942
+  actual_decision: divergent_remote_blob_investigate_no_overwrite
+  stage: staged
+  confirmation: not_run_no_commit
+  registration: deferred
+  journal_sha256: {baseline.yml: 22be36fb69d8dd3e9bb3e8ee5bd94f30470a679aaa70abe49ae27bbc814cb63f, candidate.yml: 0b2372b49aff552d1cff96ace75536baa2d01d6d9b4653d963b997a4dee49f27, plan.json: 91f61f335dc4490c45cea9327d38a4012e9173c5aac79738518729b41107379f, write_attempts.json: dc96791cde119aeae7b55c786c8816c52dd0741349e00fad126badc2ed363c72}
+  plan: {candidate_sha256: 0b2372b49aff552d1cff96ace75536baa2d01d6d9b4653d963b997a4dee49f27, expected_blob_sha: ec6cc5f8976e7ea272d876adf59dd7300fdbec54, immutable_sha256: 0e3e473e76583c023dcaf40a862d7cdc4249c40b06b02e412e5e8017a46d81d3, path: options/magic/initiation-ordeal-oath.yml, pdf_pages: '62', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, printed_pages: '61', protocol: sr3-gate/v1, record_id: option.magic.initiation-ordeal-oath, source: source.mits, status: preflighted}
+  candidate_bytes: |
+    id: option.magic.initiation-ordeal-oath
+    record_type: option
+    name: Initiation Ordeal - Oath
+    domain: magic
+    status: ingested
+    effective: {status: current, source: source.mits, page: 61, basis: defines}
+    option_for: [procedure.magic.initiation]
+    selection:
+      timing: before completing an initiation grade
+      prerequisites: [Membership in a magical group]
+      incompatible_with: []
+    effects:
+      - The character swears to observe the rules and strictures of the magical group.
+      - Only the first oath sworn in the character's career qualifies as an ordeal; a later oath cannot qualify even if the first oath was not taken for an ordeal.
+    links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: [subsystem.magic.magical-groups]}
+    sources:
+      - {source: source.mits, page: 61, relation: defines, note: Oath ordeal}
+    notes: []
+    source: source.mits
+    printed_pages: '61'
+    pdf_pages: '62'
+    edition_scope: SR3
+    content_class: [rule_exact]
+    data:
+      magical_group_membership_required: true
+      eligible_oath_career_ordinal: 1
+      subsequent_oath_qualifies: false
+    framing: reference_exact
+    headline: 'Fictional Shadowrun Third Edition rule: Oath initiation ordeal (FASA7907, printed 61/PDF 62)'
+    summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG eligibility for the first career oath as an initiation ordeal.'
+  write_attempts_reconstruction: Single-element array with candidate_sha256, category, explicit_restriction=false, github_http_status=409, observed_error, observed_error_sha256, operation=update; sorted keys, indent 2 and newline.
+remaining:
+  - Oath p61/PDF62 canonical conflict; no identical resubmission.
+  - Pre-generated group statblocks pp67-68/PDF68-69; reconcile all group types, membership counts, strictures, dues, ratings, patron and group-specific costs against existing canon.
+  - Avatars p69/PDF70; reconcile classification as powerful free spirit, each group and self-initiate avatar, withdrawal and GM interaction limits.
+  - Learning Metamagic starting p69/PDF70; reconcile grade attempt eligibility, technique restrictions, learning methods, failure and retry rules and subsequent test procedures.
+whole_magical_groups_chapter_closed: false
+whole_ordeal_section_closed: false
+whole_book_completion_asserted: false
+global_page_credit: 0
