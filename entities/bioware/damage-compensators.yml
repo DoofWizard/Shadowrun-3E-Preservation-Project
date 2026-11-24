@@ -1,22 +1,36 @@
 id: entity.bioware.damage-compensators
 record_type: entity
-name: "Damage Compensators"
+name: Damage Compensators
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '72'
+pdf_pages: '73'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   grade: cultured
   bio_index_per_level: 0.2
   maximum_levels: 9
   level_bands:
-    "1-2": {availability: "6/6 days", cost_nuyen_per_level: 25000, street_index: 2.5, legality: "6P-N"}
-    "3-5": {availability: "10/6 days", cost_nuyen_per_level: 50000, street_index: 2.5, legality: "6P-N"}
-    "6-9": {availability: "12/6 days", cost_nuyen_per_level: 100000, street_index: 2.5, legality: "6P-N"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1-2': {availability: '6/6 days', cost_nuyen_per_level: 25000, street_index: 2.5, legality: 6P-N}
+    '3-5': {availability: '10/6 days', cost_nuyen_per_level: 50000, street_index: 2.5, legality: 6P-N}
+    '6-9': {availability: '12/6 days', cost_nuyen_per_level: 100000, street_index: 2.5, legality: 6P-N}
+data:
+  injury_modifier_calculation: subtract implant level in boxes separately from current Physical and Stun damage before calculating wound modifiers
+  actual_damage: unchanged
+  optional_hidden_damage: GM may disclose hit but withhold severity; Perception (6) or Biotech (4) Test can reveal Damage Level
+  examples:
+    - {implant_level: 3, physical_boxes: 3, stun_boxes: 3, effective_physical_boxes: 0, effective_stun_boxes: 0}
+    - {implant_level: 3, physical_boxes: 4, stun_boxes: 3, effective_physical_boxes: 1, effective_stun_boxes: 0}
+  stress:
+    light: phantom pain including prior wounds at GM discretion
+    moderate: add 1 to all Healing Test target numbers
+    serious: use half implant level rounded down
+    deadly: no function or bonus until healed
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 72, relation: defines, note: "Damage Compensators description, game effects, stress effects and statistics"}
-notes:
-  - "Subtracts implant level from current damage boxes when determining wound modifiers; applies to Physical and Stun Condition Monitors."
+  - {source: source.mm, page: 72, relation: defines, note: Damage Compensators effects, examples, Stress and market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p72/PDF73: Damage Compensators'
+framing: reference_exact
