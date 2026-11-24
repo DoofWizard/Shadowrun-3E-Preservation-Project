@@ -1,0 +1,36 @@
+id: rule.magic.mits-spell-design-drain-modifiers
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '55-56'
+pdf_pages: '56-57'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  category_key: {C: Combat, D: Detection, H: Health, I: Illusion, M: Manipulation}
+  power_modifiers:
+    detection_spell: {categories: [D], delta: -1, condition: All detection spells; willing subjects only.}
+    illusion_spell: {categories: [I], delta: -1, condition: All illusion spells.}
+    physical_spell: {categories: [C, D, H, I, M], delta: 1, condition: All physical spells; use physical modifier if type is uncertain.}
+    restricted_target: {categories: [C, D, H, I, M], delta: -1, condition: Limited target category such as a species or nonliving objects only; cannot stack with Very Restricted Target.}
+    stun_damage: {categories: [C, M], delta: -1, condition: Damaging spells with Stun damage.}
+    sustained_spell: {categories: [D, H, I, M], delta: 1, condition: Sustained duration.}
+    symptoms_only: {categories: [H], delta: -2, condition: Treats or causes symptoms only; cannot modify Attributes or heal damage.}
+  level_modifiers:
+    affects_initiative: {categories: [H, M], delta: 1, condition: Affects Reaction or Initiative dice; cumulative per increase.}
+    area_sense: {categories: [D], delta: 1, condition: Detection sense in all directions with range Force times Magic meters.}
+    area_spell: {categories: [C, I, M], delta: 1, condition: Area radius equals Magic meters.}
+    caster_only: {categories: [D, H, M], delta: -3, condition: Caster is sole recipient; already includes Touch Range, Very Restricted Target and Voluntary Target modifiers.}
+    elemental_effects: {categories: [M], delta: 1, condition: Required per elemental effect; cumulative for multiple effects.}
+    extended_area: {categories: [I, M], delta: 1, condition: Radius Magic times 10 meters; once only and requires Area Spell modifier; cumulative with that modifier.}
+    extended_sense: {categories: [D], delta: 1, condition: Requires area-sense detection spell; range Force times Magic times 10 meters.}
+    harmful: {categories: [H], delta: 1, condition: Required for harmful health spell; permits unwilling target and normal resistance.}
+    los_range: {categories: [H], delta: 1, condition: Health spell with LOS rather than normal Touch range.}
+    permanent_spell: {categories: [H, M], delta: 1, condition: Permanent duration except restoration of normal health.}
+    touch_range: {categories: [C, D, I, M], delta: -1, condition: Touch range; accompanying notes say not to apply to health or detection because Touch is their default.}
+    very_restricted_target: {categories: [C, D, H, I, M], delta: -1, condition: Very specific target type; for living targets requires designation of one individual.}
+    voluntary_target: {categories: [D, I, M], delta: -1, condition: Target resistance makes spell fail; unconscious health targets count as voluntary; other voluntary targets must know casting is occurring. Caster still tests standard TN and all successes count without target resistance.}
+  source_discrepancy: Touch Range table includes D and p53 detection examples apply the reduction; p56 explanatory note explicitly excludes detection. Preserve both statements without inventing precedence.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition Drain modifiers, FASA7907, printed 55-56/PDF 56-57'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG Drain Power and Level modifier tables, category eligibility, conditions, stacking and printed exception notes.'
