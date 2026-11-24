@@ -1,0 +1,28 @@
+id: rule.matrix.salvage-mismatched-components-p64-65
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '64-65'
+pdf_pages: '65-66'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG.
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Matrix component salvage and MPCP compatibility
+summary: Original fictional cyberterminal removal, reuse, parts recovery and mismatch tests.
+data:
+  salvage:
+    eligible: [modular, hardwired]
+    market_price: GM determines according to demand and campaign economics; construction cost plus campaign hourly wage is a possible estimate.
+    modular_removal: Usually snaps out; GM may require time or an Installation Test with TN modifier -4 and half base time.
+    modular_reinstallation: standard component Installation Test; check MPCP compatibility
+    parts_recovered_fraction_of_total_component_cost: 0.5
+    OCC_resale: use Buying Programs p94
+    hardwired_removal: Installation Test with TN modifier -2 and half time; no Design Test reduction; shop or facility modifier applies.
+    hardwired_reuse: Cannot directly hardwire salvaged unit into another terminal; reclaim its OCCs to construct a similar unit or sell them and salvage parts.
+  mismatched_components:
+    MPCP_bound_types: [ASIST interface, ICCM, reality filter, Response Increase, RAS override]
+    applies_to: component or component OCC designed for a different MPCP rating
+    installation_TN_modifier: 4
+    failure_check: Each time the fictional terminal or persona takes damage, GM rolls 2D6; both dice showing 1 means the mismatched component ceases functioning.
+    disconnection: GM decides whether malfunction dumps the user; apply SR3 p227 Dump Shock if relevant.
+  relationship: Adds numeric and conditional details to procedure.matrix.cyberterminal-construction without replacing its stage outline.
