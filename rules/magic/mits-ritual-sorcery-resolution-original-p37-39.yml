@@ -1,0 +1,67 @@
+id: rule.magic.mits-ritual-sorcery-resolution
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '37-39'
+pdf_pages: '38-40'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  sorcery:
+    timing: At completion of sending, resolve Sorcery Test.
+    dice: Leader allocates dice from Ritual Pool.
+    modifiers: Only leader injury, totem, patron loa and Path of the Wheel modifiers apply.
+    area_effect:
+      base_radius: Leader Magic.
+      adjustment: Subtract Ritual Pool dice using SR3 p181 area spell rules to enlarge or reduce radius.
+      additional_targets: Must be visible to leader or spotter.
+  resistance:
+    test: Standard Spell Resistance Test when required.
+    defense: Target allies may supply Spell Defense if they notice the sending before completion.
+    effect: Net successes after resistance determine effect under the individual spell description.
+  detection_spells:
+    targeting: Range extends to the ritual target.
+    beneficiary: If the target receives the spell benefit, use the ordinary spell range centered on that target with leader Magic for radius.
+    ordinary_detect_enemies_radius: Force * leader Magic
+  drain:
+    timing: Immediately after Sorcery Test.
+    each_member: Resist as if the member personally cast the spell.
+    ritual_pool: Leader may allocate remaining Ritual Pool dice to members for Drain.
+    personal_spell_pool: Members may add their personal Spell Pool, except leader if already used during ritual.
+    foci: Unused focus dice may be used for Drain.
+    tradition: Each member may apply their own applicable totem, patron loa or Path modifiers.
+  sustaining:
+    ritual_pool: Allocate remaining dice; duration in hours is leader Magic times allocated dice.
+    ongoing_effort: No further team effort; leader can direct the spell if necessary.
+    elemental: Mages may use elemental services for sustaining.
+    team: Alternatively members remain linked and concentrate; they need not stay together but cannot use other magic. If any member ceases sustaining, the spell ends.
+    trace: Elemental or team sustaining leaves an astral trail to the elemental or team respectively.
+  worked_example:
+    pool: 20
+    leader_spell_pool: 5
+    force: 5
+    linking_ritual_dice: 4
+    linking_spell_pool_dice: 1
+    linking_tn: 5
+    linking_successes: 2
+    linking_hours: 2.5
+    sending_dice: 6
+    sending_tn: 6
+    sending_successes: 1
+    sending_hours: 5
+    sorcery_ritual_dice: 5
+    sorcery_spell_pool_dice: 4
+    sorcery_tn: 4
+    sorcery_successes: 5
+    resistance_tn: 5
+    resistance_successes: 1
+    threshold: 2
+    net_successes: 4
+    drain: 3M Stun for each member; one member receives +2 totem dice.
+    sustaining_dice: 5
+    leader_magic: 6
+    sustained_hours: 30
+    source_discrepancy: The example uses target Perception TN equal to Force 5, whereas the general noticing rule on p37 states TN 10 or 8 if Awakened. Preserve the general rule and example without silently resolving them.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Ritual spell resolution, Drain and sustaining, FASA7907, printed 37-39/PDF 38-40'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
