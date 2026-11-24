@@ -1,0 +1,33 @@
+id: rule.magic.mits-focus-addiction-original
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '45-46'
+pdf_pages: '46-47'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  canonical_context: rule.magic.focus-addiction
+  applicability: Optional GM rule for campaigns with excessive focus use.
+  trigger: Each Combat Turn in which a magician uses foci with combined Force greater than twice the Magic Attribute.
+  test: Magic Test against half the combined Force of active foci, rounded down.
+  success: No effect.
+  failure: Immediately check for Magic loss under SR3 p160.
+  geas:
+    condition: If a magician who loses Magic from excessive focus use elects a geas, it must be a talisman geas associated with one of the foci used.
+    effect: That Magic point is tied to the chosen focus; the magician can cast as though retaining it only while the focus is active.
+    removal: May shed the geas on initiation under MitS p57.
+  example:
+    magic: 6
+    sustaining_foci_force: [4, 4]
+    spirit_focus_force: 2
+    power_focus_force: 4
+    spell_focus_force: 3
+    threshold: 12
+    initial_active_force: 10
+    after_activation_force: 17
+    test_target: 8
+    outcome: Failed test requires a Magic loss check; losing Magic without a compensating talisman geas lowers the threshold for further checks.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Focus Addiction, FASA7907, printed 45-46/PDF 46-47'
+summary: 'FASA Corporation, Magic in the Shadows; optional tabletop game mechanics.'
