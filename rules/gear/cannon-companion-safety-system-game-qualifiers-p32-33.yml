@@ -1,0 +1,38 @@
+id: rule.gear.cannon-companion-safety-system-game-qualifiers-p32-33
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '32-33'
+pdf_pages: '33-34'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Fictional safety-system game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp32-33/PDF33-34. Original safety-system character eligibility, dice checks, action costs and fictional currency accounting; market rows reused.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  biometric_safety:
+    game_eligibility: 'Registered character palmprint must match; otherwise the fictional item remains disabled.'
+    firmware_encryption_rating: 8
+    ownership_change_game_requirement: 'New firmware chip and computer shop or facility.'
+    blank_chip_cost_nuyen: 50
+  safe_target_system:
+    components: [gun modification, compatible beacon]
+    game_test: Rating Test
+    base_TN: 5
+    game_trigger: 'Fictional aim within 2 meters of a character carrying a compatible beacon.'
+    ECM_modifiers: 'Apply applicable SR3 p138 modifiers.'
+    beacon_flux_rating: 'Rating - 1'
+    success: 'Safety engages until fictional aim leaves the 2-meter-radius zone; intervening and beyond-zone targets on that line are also prevented.'
+    beacon_within_2_meters_of_equipped_item: 'Safety engages.'
+    wearer_own_beacon: ignored
+    multiple_equipped_items_and_beacons_supported: true
+    beacon_encryption_rating: 'floor(Rating / 2)'
+    modification_removable: false
+    mismatched_ratings: 'Use lowest rating.'
+    toggle_action: Simple Action
+  existing_market_rows:
+    entities/gear/biometric-safety.yml: 82db1c930a424816e7fe954547bb9e0880d6575d
+    entities/gear/safe-target-beacon.yml: 6249ca35679186ee70b5ac62d3786b03f48d121b
+    entities/gear/safe-target-gun-mod.yml: 9e7ff688b58b2b1fcbfccbca4e6cde9ac46bec1b
+  source_boundary: 'Fictional protective game mechanics only; no real-world device design, alteration or bypass instructions.'
