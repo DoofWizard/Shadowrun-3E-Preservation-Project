@@ -1,0 +1,71 @@
+id: audit.sota64-behind-badge-adjudication-p96-97-2026-11-23
+record_type: reference
+source: source.fanpro-25004
+publication: {title: 'State of the Art: 2064', publisher: FanPro, edition: Shadowrun Third Edition, catalog_number: FanPro25004}
+scope: Behind the Badge, Game Information, Playing with the Police, Cop Contacts, Resolving Arrests, Running in the Joint
+printed_pages: '96-97'
+pdf_pages: '97-98'
+source_verification:
+  drive_id: 111MBh7c6BKqoEuQNyB7Rk4C8384R8scN
+  pdf_sha256: b74cb698dd52ae232883b7fab8b66f4986b6bb996f5982b370aee3a445d86758
+  result: source_pdf_hash_verified
+  original_page_images_inspected: [86, 97, 98, 99]
+  preflight_self_tests: 29
+  preflight_passed: 29
+  script_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+transactions:
+  - path: rules/social/sota64-resolving-arrests-p97.yml
+    fields: [procedure_kind, trigger, detail, bail_branch, trial_branch, abbreviated_branch, fixed_test_or_sentence_table]
+    class: rule_procedure
+    commit: cca08f39d01f529fea82677c4ee1214eca2a601d
+    blob: 6853f4f9881d084ed7fbcd24b17083ad2ca82ce5
+    candidate_sha256: 5d6ae5778c4e50b752f6fabf988adc098892e5c7f2c0df79c491a6dadcbe0d51
+    immutable_sha256: d2491991e2919cfe42f377ac463232fceb59f52908e0c2b88a0f3491adb15e53
+    index_commit: 00a79079e6a94c6aebc75666cc5756906171f147
+    index_blob: 459d24b21f49f908bb4813bb3433a02768d121cc
+    journal: journals/arrest
+    stage: preflighted
+    confirm: verified
+    inspect: verified
+    exact_index_readback: true
+  - path: references/sota64/playing-with-police-p96-97.yml
+    fields: [police_campaign_reference, encounter_guidance, sinless_status, cop_contacts, numeric_modifiers]
+    class: campaign_guidance
+    commit: 5dd61653e4221a3f38d5d7256aa7d7aa3e28836d
+    blob: 0bd09b4573681e660ffa7cb59501f1e450f86861
+    candidate_sha256: b627deaccc55e7d0150d5231620515d6de85b4983bc3c43b6c2334bed87c7acb
+    immutable_sha256: 7b69019568b80dbf09079459207ba12ad333a4944aa1653916c76266a35fef07
+    index_commit: 50764c8893c92542a057b50d34b9aac59f16ecdb
+    index_blob: 0936c096ea3d046f04559fda82283bf2fb8ca52c
+    journal: journals/police
+    stage: preflighted
+    confirm: verified
+    inspect: verified
+    exact_index_readback: true
+  - path: references/sota64/running-in-the-joint-p97.yml
+    fields: [temporary_setbacks, cyberware, magic, starting_campaign, ongoing_campaign]
+    class: campaign_guidance
+    commit: 2920c0efb8af2b50c837a62e87be919c057de113
+    blob: e7bdbfe918ea19b85a7c6f71117da52c65871e6c
+    candidate_sha256: 63e164743ed9c3df82e281e76edf4290a671dd424e340dd9359070460790af95
+    immutable_sha256: 0290390ee5dab8b4212b9af10c8e7e07e99f296392e30eb0bd9f9484e89f9c00
+    index_commit: 3d98c097b20aff7bc240665ea5b51a7736c2adbd
+    index_blob: 5e712d4b033d5f67d88eb03baf418c4459799056
+    journal: journals/joint
+    stage: preflighted
+    confirm: verified
+    inspect: verified
+    exact_index_readback: true
+closure:
+  scope: Qualitative campaign adjudication, not entire book or narrative transcription.
+  new_numeric_rows: 0
+  new_rule_procedures: 1
+  new_campaign_guidance_records: 2
+  exceptions: No fixed legal test, bail price, sentencing table, restraint stats, or reactivation cost/duration is supplied in this scope. Adventure Seeds are narrative hooks, not additional fixed mechanical procedures.
+  previously_verified_p98: [equipment/sota64-police-gear-drones-p98.yml, rules/matrix/sota64-snitch-psychotropic-black-ic-p98.yml]
+  outstanding: Directed review of non-Game-Information sections, any distinct omitted p98 vehicle capability fields and original-source ambiguities; no full publication certification.
+  globally_authorized_pages: 0
