@@ -1,0 +1,79 @@
+id: rule.magic.mits-magical-group-resources-generation-original-p64-66
+record_type: rule
+name: Magical Group Resources and Random Generation
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 64, basis: defines}
+scope: {applies_to: [Magical group resources and GM group creation]}
+resolution:
+  summary: Group resources use lifestyle levels; the GM can select group features or generate them using the source tables.
+  inputs: [Group type, membership count, resource level, dice rolls]
+  outputs: [Resource rating, member dues, membership restrictions, strictures, patron]
+  steps: []
+links:
+  uses: []
+  affects: [subsystem.magic.magical-groups]
+  modified_by: []
+  interacts_with: [rule.magic.mits-magical-group-strictures-original-p62-63]
+sources:
+  - {source: source.mits, page: 64, relation: defines, note: Group Resources and Patrons}
+  - {source: source.mits, pages: '65-66', relation: defines, note: Creating a Group and Magical Group Generation Tables}
+notes: []
+source: source.mits
+printed_pages: '64-66'
+pdf_pages: '65-67'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  resources:
+    dues: Lifestyle cost of the group's resource level divided by total members; occasional donations may fund particular resources.
+    patron: An individual or organization may provide material backing, generally reducing or eliminating dues in exchange for magical services.
+    levels:
+      luxury: {library_lodge_rating: '2D6 + 6', ritual_material_discount_percent: 50, amenities: Major headquarters and additional magical sites or Middle living accommodations with extra benefits.}
+      high: {library_lodge_rating: '1D6 + 6', ritual_material_discount_percent: 25, amenities: Major headquarters and lesser sites or Middle living accommodations without extra benefits.}
+      middle: {library_lodge_rating: '1D6 + 3', ritual_material_discount_percent: 10, amenities: Owned or rented premises and working tools.}
+      low: {library_lodge_rating: '1D3 + 3', amenities: Rented premises and simple tools.}
+      squatter: {amenities: Cheap headquarters with private ritual space; members supply gear.}
+      street: {amenities: No maintained material resources; members share expenses as required.}
+  random_generation:
+    approach: GM may choose any features, generate all randomly, or combine approaches; group type is chosen before generating strictures.
+    membership_size_2d6:
+      '2-3': '1D3 + 1 (2-4)'
+      '4-5': '1D6 + 1 (2-7)'
+      '6-8': '1D6 + 7 (8-13)'
+      '9-11': '2D6 + 10 (12-22)'
+      '12': '2D6 * 5 (10-60)'
+    membership_restrictions_2d6:
+      '2': No restrictions
+      '3-4': Specific race or gender
+      '5-6': Specific religion or moral code, including political activists
+      '7-8': Specific magical tradition, broad or narrow
+      '9-10': Specific lifestyle, culture or corporate affiliation
+      '11-12': Two restrictions chosen by GM
+    strictures_method: Roll 1D6 for maximum number of strictures; choose that many, then roll 1D6 for each selected stricture. A result within its range for the group type establishes the stricture.
+    stricture_columns: [initiatory, dedicated, conspiratorial]
+    stricture_roll_1d6:
+      attendance: ['1-2', '1-4', '1-3']
+      belief: ['1', always, '1-5']
+      deed: ['1-3', '1-4', '1-4']
+      exclusive_membership: ['1-2', '1-5', '1-4']
+      exclusive_ritual: ['1-3', '1-5', '1-5']
+      fraternity: ['1-4', '1-4', '1-5']
+      geasa: ['1-5', '1-3', '1-3']
+      limited_membership: ['1', '1-5', '1-2']
+      material_link: ['1-2', '1-5', '1-5']
+      oath: ['1-2', '1-5', always]
+      obedience: ['1', '1-4', '1-5']
+      sacrifice: ['1-5', '1-4', '1-4']
+      secrecy: ['1-2', '1-3', '1-5']
+    resource_method: Roll 2D6 for resource level, then roll 1D6 for patron if Low through Luxury.
+    resource_table:
+      '2': {level: street, patron: none}
+      '3-4': {level: squatter, patron: none}
+      '5-6': {level: low, patron_roll: '1'}
+      '7-8': {level: middle, patron_roll: '1'}
+      '9-11': {level: high, patron_roll: '1-2'}
+      '12': {level: luxury, patron_roll: '1-4'}
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition rules: magical group resources and generation tables (FASA7907, printed 64-66/PDF 65-67)'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG resource levels, dues, membership generation, stricture probabilities and patron table.'
