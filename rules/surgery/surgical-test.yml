@@ -1,21 +1,55 @@
 id: rule.surgery.surgical-test
 record_type: rule
-name: "Surgery Test"
+name: Surgery Test
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "146"
+pdf_pages: "147"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 146, basis: defines}
-scope:
-  applies_to: ["cosmetic, implant, therapeutic, transimplant and trauma surgery"]
+scope: {applies_to: [cosmetic, implant, therapeutic, transimplant, trauma surgery]}
 resolution:
-  summary: "Surgery uses Biotech or the appropriate specialization against a procedure-specific target number modified by surgical conditions and patient factors. Medicine may provide complementary dice. Surgery duration is based on the modified target number, and extra successes not spent on options can shorten the procedure."
-  inputs: ["procedure target number", "surgical modifiers", "Biotech/specialization", "Medicine", "planned options"]
-  outputs: ["success/failure, achieved options, procedure time"]
-  steps: []
+  summary: In the fictional game, use Biotech or an appropriate specialization at the procedure TN with applicable modifiers. Medical gear rating supplies optional complementary dice.
+  inputs: [procedure TN, surgery conditions, patient condition, Biotech, medical gear rating, options]
+  outputs: [test result, achieved options, procedure time]
+  steps:
+    - Apply the applicable modifiers to the procedure base TN.
+    - Make the Biotech or specialization test; medical gear rating may supply complementary dice.
+    - Base duration in hours equals the modified test TN; extra successes not used for options may reduce time.
+data:
+  implant_grade_gear: For implants above basic grade, tools must match that grade or better.
+  anesthesia: Most procedures bring the patient to Deadly Stun; recovery cannot start until surgery finishes.
+  modifiers:
+    location: {medical_facility_or_hospital: -2, medical_shop_or_clinic: -1, mobile_shop_or_clinic: 0, elsewhere: 3, elsewhere_without_medkit: 5}
+    conditions:
+      bad: 3
+      terrible: 4
+      gear_better_grade: -2
+      lacking_medical_profile: "+1 or more"
+      lacking_surgical_data: 1
+      telepresence: 1
+      additional_doctors_biotech_and_medicine_4_or_more: -1
+      magical_care_during_surgery: -1
+      each_prior_procedure_this_session: 1
+      prior_procedure_attempt_failed: 2
+    patient:
+      essence_2_or_less: 1
+      cyberzombie: Absolute Essence value
+      bioware: ceil(Bio Index / 2)
+      awakened: 1
+    implant: {alphaware: 1, betaware: 3, deltaware: 6}
+    therapeutic: {cultured_bioware: 1, attribute_enhanced_by_cyberware_or_bioware: 1}
+    transimplant: {cultured_bioware: 1, generic_nonmatched_transplant: 1, type_O_transplant: 0, cloned_transplant: -1}
+    trauma: {trauma_patch_used: 1}
 links:
   uses: [procedure.surgery.planning]
   affects: []
-  modified_by: []
+  modified_by: [option.surgery.surgical-options]
   interacts_with: [procedure.surgery.operation]
 sources:
-  - {source: source.mm, page: 146, relation: defines, note: "Surgical Tests and Surgery Table"}
-notes: []
+  - {source: source.mm, page: 146, relation: defines, note: Surgical Tests and Surgery Table}
+notes: [The complementary dice are medical gear rating in this subsection, not Medicine skill.]
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p146/PDF147: Surgical Tests"
+framing: reference_exact
