@@ -1,0 +1,59 @@
+id: audit.cc.p80-space-cosmetic-original-review-2026-11-24
+source: source.cc
+publication: "FASA7908 Cannon Companion, FASA Corporation, Shadowrun Third Edition fictional tabletop RPG"
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+verify_source_output: source_pdf_hash_verified
+original_printed_pages_reviewed: [80]
+physical_pdf_pages_reviewed: [81]
+preflight_self_tests_passed: 29
+verified_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+existing_shared_records_read_only:
+  procedures/firearms/customize.yml: 525276bb886afbaaea9911baa3adbd73e2cb12cf
+  rules/firearms/customization-modifications.yml: beb034e6e1d925c79da57ba26620c570909ec6e3
+prior_source_audit: references/audits/cannon-companion-customization-generic-original-review-2026-11-24.yml
+field_reconciliation:
+  space_restrictions:
+    reused: [one option per slot, internal and external slot eligibility, frame capacity sum and exhaustion, integral option immutability, restored capacity and slot, replacement-time scope]
+    supplemented: [same game tool category required for removal and installation]
+    status: original_fields_reconciled_with_shared_timing_discrepancy
+    record: rule.firearms.cannon-companion-customization-capacity-accounting-p80
+    unresolved: "Shared procedure still assigns the doubled base time to a different event; source precedence not adjudicated."
+  cosmetic_modifications:
+    reused: [both existing option rows, skill, target number and base time, mount, weight, capacity, design points, incompatible option]
+    supplemented: [explicit appearance-only category, no performance effect, game kit and shop eligibility qualifications]
+    status: source_fields_reconciled
+    record: rule.firearms.cannon-companion-cosmetic-modification-qualifiers-p80
+transactions:
+  - path: rules/firearms/cannon-companion-customization-capacity-accounting-p80.yml
+    commit: 9bd4e4c21537841f602e8c652e0fabd921feabf6
+    blob: 492bd2e3a1e3a898e7d454c542798ed9b6b2a9a0
+    baseline_sha256: 09742fcf2f898528b87b40ecc9af75381e5fafc9e8c13589b2346aa201abddf8
+    candidate_sha256: 09742fcf2f898528b87b40ecc9af75381e5fafc9e8c13589b2346aa201abddf8
+    immutable_sha256: c2b337e1833a0ee2e03c4e52ac030d833f8327bd76d6c82cf79c0ad257e7087c
+    journal: capacity-journal
+    gate: verified
+    exact_readback: true
+    index_commit: 795f4d99ace6e8aa70006c46e96696a560e341bb
+    index_blob: 31b5d34cdc819d13f127a532d583e308d43c736e
+  - path: rules/firearms/cannon-companion-cosmetic-modification-qualifiers-p80.yml
+    commit: 917226f2550ffee41624ce8b2dc6faf592a08d32
+    blob: 20b8c5823834cd270053414111c3930702a77c4a
+    baseline_sha256: 800e347abb42884c167f8bc6f069a7add8573720c7d3ca501d64cfe381552f6e
+    candidate_sha256: 800e347abb42884c167f8bc6f069a7add8573720c7d3ca501d64cfe381552f6e
+    immutable_sha256: 80a3501c27b2ab00de914862f036735cbe0f847199cb7d417e9aca26c9a15d4e
+    journal: cosmetic-journal
+    gate: verified
+    exact_readback: true
+    index_commit: 1081c08f975d3d82e61c63f373640eb075bcd873
+    index_blob: 0851d7f4d2fa9c368453fe7d87e08d746020d2c8
+new_distinct_records: 1
+substantive_revisions: 1
+confirmed_transactions: 2
+whole_customization_section_closed: false
+whole_publication_closed: false
+globally_authorized_pages: 0
