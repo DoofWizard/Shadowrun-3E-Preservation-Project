@@ -1,0 +1,46 @@
+id: rule.firearms.cannon-companion-general-accessory-game-qualifiers-p32-34
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '32-34,115'
+pdf_pages: '33-35,116'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Remaining general accessory tabletop qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp32-34 and 115/PDF33-35 and 116. Original skill, dice, range-category and action bookkeeping plus the missing mounted bayonet game profile.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  bayonet:
+    mounted_game_category: rifle-sized weapon
+    mounted_skill: Pole Arms
+    detached_skill: Edged Weapons
+    detached_game_profile: standard knife
+    mounted_profile_source: 'Printed p115/PDF116, Pole Arms/Staffs equipment table.'
+    mounted_game_profile: {concealability: 5, reach: 2, damage_code: '(STR + 2)M', weight: 0.75, availability: '4/24 hrs', cost_nuyen: 50, street_index: 1, legality: 6-A}
+    accessory_concealability_modifier: -1
+    source_note: 'Printed p33 has a Weapon table heading without a visible data row; the printed p115 appendix explicitly supplies the mounted profile. Absolute Concealability and accessory modifier are distinct fields.'
+  grenade_link:
+    game_scatter_dice_override: 1D6
+    core_scatter_dice_reference: 3D6
+    eligible_game_category: all mini-grenades
+    detonation_game_timing: same Combat Phase as launch
+  range_finder:
+    compatible_game_system: Smartlink-2
+    game_range_TN_modifier: {long: -1, extreme: -2}
+    compatible_smartlink_types: [cybernetic, external]
+    cumulative_with_image_magnification_range_modifiers: false
+  underbarrel_grapple_gun:
+    minimum_game_weapon_size: submachine gun-sized
+    rule_reference: 'SR3 p293 grapple gun'
+    game_line_options: [regular, stealth]
+  existing_market_rows:
+    entities/gear/bayonet.yml: ce5d96802b41e3b0310caa4827bd481eb0d4b7a8
+    entities/gear/grenade-link.yml: d1ec5b640313103ba0429bf2db784f05a38c03c0
+    entities/gear/rangefinder.yml: 292a4ee5f0ced8bf2c3fbb268060a16b0807e08b
+    entities/gear/underbarrel-grapple-gun.yml: a16182c3951b999b943f108370228f28af726b68
+  related_existing_rules:
+    rules/firearms/accessory-mounts.yml: 18b1f057d92cd9b1e80e9bb15c85c98e4ad03914
+    rules/cyberware/smartlink-2.yml: 62388eadb6d478a625c18dc2b9800928013bf809
+    rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml: e87e9fbaac5c823807f8d79f5b6a13f2e39868da
+  source_boundary: 'Fictional character skill, item profile, dice and initiative bookkeeping only; no physical device design, operation or manufacture.'
