@@ -1,0 +1,86 @@
+id: audit.cc.martial-arts-original-review-2026-11-23
+record_type: source_review
+source: source.cc
+publication: FASA7908 Cannon Companion, FASA Corporation, Shadowrun Third Edition
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification: source_pdf_hash_verified
+original_pdf_pages: 130
+printed_range: [86, 93]
+physical_pdf_range: [87, 94]
+image_review: All eight original physical pages rendered and inspected; printed p87 is illustration only, martial arts introduction starts at bottom of printed p86.
+preflight: 29 tests passed
+source_local_field_reconciliation:
+  - section: Martial Arts Skills and Styles
+    printed: [86, 88, 89, 90]
+    reused:
+      - path: options/combat/martial-arts.yml
+        blob: 683cacc29b32256ea7711e6c419c068ee1be749a
+      - path: rules/combat/martial-arts-styles.yml
+        blob: 291cfb3052a5e292a13ba1be4d131dde8682771f
+    reviewed: Twelve named styles, aliases, all nine maneuver entries per style (108 entries), Carromeleg substitution, rating threshold, style modifiers, weapon-skill transfer and exceptions.
+    new: option.combat.cannon-companion-martial-style-conditions-p88-90
+  - section: Maneuvers
+    printed: [90, 91, 92]
+    reused:
+      - path: rules/combat/martial-arts-maneuvers.yml
+        blob: b5356af098e405d328a0873944224f34bdce3c9c
+    reviewed: All seventeen named maneuver entries; eligibility, learning costs, instructor, timing, test modifiers, action compatibility, and source rounding.
+    new: [rule.combat.cannon-companion-martial-maneuver-learning-p90-91, rule.combat.cannon-companion-martial-maneuver-resolution-qualifiers-p91-92]
+  - section: Creating Your Own Martial Art
+    printed: [92]
+    reviewed: GM approval, balanced advantages and disadvantages, recommended nine available maneuvers (guideline rather than an unconditional global cap), variant differences and restricted style conditions.
+    new: option.combat.cannon-companion-custom-martial-style-p92
+  - section: Converting Characters and Other Adjustments
+    printed: [92, 93]
+    reused:
+      - path: procedures/combat/convert-advanced-melee.yml
+        blob: b4cbff089ad6aece701cbf953a48d043f5c50eb4
+      - path: rules/skillsofts/use.yml
+        blob: 61796fab14279831fa0ac27f1151356e62b242f6
+    reviewed: Basic and specialized conversion arithmetic, optional two-skill split, free permitted maneuver count, Improved Ability per-skill cost, activesoft rating and purchase-specific maneuver selection, sample character conversions.
+    new: [option.combat.cannon-companion-martial-conversion-adept-qualifiers-p93, rule.skills.cannon-companion-martial-skillsoft-maneuvers-p93]
+confirmed_transactions:
+  - record: option.combat.cannon-companion-martial-style-conditions-p88-90
+    commit: f1611a74ed092887bded6fd2b9875e2bbf05bcee
+    blob: 23bbcff4e1b091c15d438e5b00e9e2b5e1052583
+    index_commit: d33759fc1470656e0c9e87637d029c6236fd1ac1
+    index_blob: c321f8ff2ca484fcfd9fbe258ca317e036b95358
+    gate: verified
+  - record: rule.combat.cannon-companion-martial-maneuver-learning-p90-91
+    commit: fbe056f56f0de0214d239f31a0cec22b2f40b021
+    blob: fca214f259c61eacc987a1b05804a9b75faea62f
+    index_commit: d91c9543521b957c4e0e306ceeeba1b0435a2264
+    index_blob: 64b7a1284789da95c54dee789c479b73470e72d9
+    gate: verified
+  - record: option.combat.cannon-companion-custom-martial-style-p92
+    commit: e5f3060d00080ff07aa94555e028fe0cecd905b9
+    blob: 510a991a2bca424cc51931017b811ab76d288d25
+    index_commit: 4fdfa3a7aa7c270e80d87079f81f2f27589e3aef
+    index_blob: d018e40da61fa01f82eed8cedb4ab1d4e5456a5e
+    gate: verified
+  - record: rule.skills.cannon-companion-martial-skillsoft-maneuvers-p93
+    commit: a78eb9243064af0073288e4c58a8a8eddc9192c8
+    blob: 1d0ca8698d65120eb0016e80052b4388d6d4e26d
+    index_commit: d6ea368b50f2c734818ff5a134acf4f031a67ca4
+    index_blob: 52f6de982eb41412d0ee858d89041ebb4048a5ee
+    gate: verified
+  - record: rule.combat.cannon-companion-martial-maneuver-resolution-qualifiers-p91-92
+    commit: da1fe0a5e23d4049948f6606ca41c688b3481eb8
+    blob: 25dd75ec6f79bbfbe767330272675be528a0ce46
+    index_commit: 5ca3cc8e4081e4012d95b01785ca39e27e779f11
+    index_blob: f82979ecc028f64e41b9214d4f29a4b81fc2c67f
+    gate: verified
+  - record: option.combat.cannon-companion-martial-conversion-adept-qualifiers-p93
+    commit: ca7de12d1019ca686260766c7b0d490db223b674
+    blob: 26c573504c13a6b712a553f0317bbeb41ffc6c8c
+    index_commit: 9c75e3860b57791602e1d9d6d5d45029c5092e22
+    index_blob: c365d30245d287817d6439988ebf884a318b8fe4
+    gate: verified
+exceptions:
+  - Printed p92 Throw formula says number of successes rather than explicitly net successes; shared record uses net. Source distinction registered; no engine precedence assigned.
+  - Two ordinary GitHub concurrent-HEAD 409 conflicts reconciled with fresh path checks; first style candidate was independently refined to preserve source-specific qualifications, then restaged. No denial or bypass.
+  - One manifest readback briefly returned previous blob; commit-specific and later main readback agreed on the new registration.
+  - Existing shared records are read-only and their historical original transaction receipts are not independently certified by this audit.
+  - Independent historical source verification and whole-book certification remain open.
+globally_authorized_pages: 0
+whole_book_closed: false
