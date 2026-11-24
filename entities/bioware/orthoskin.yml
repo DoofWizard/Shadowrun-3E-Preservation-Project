@@ -1,19 +1,31 @@
 id: entity.bioware.orthoskin
 record_type: entity
-name: "Orthoskin"
+name: Orthoskin
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '68-69'
+pdf_pages: '69-70'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 0.5, availability: "8/8 days", cost_nuyen: 25000, street_index: 0.8, legality: "5P-N", armor: "+1 Impact", concealability: 10}
-    2: {bio_index: 1.0, availability: "8/8 days", cost_nuyen: 60000, street_index: 0.8, legality: "5P-N", armor: "+1 Impact, +1 Ballistic", concealability: 9}
-    3: {bio_index: 1.5, availability: "8/8 days", cost_nuyen: 100000, street_index: 0.8, legality: "5P-N", armor: "+2 Impact, +1 Ballistic", concealability: 8}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.5, availability: '8/8 days', cost_nuyen: 25000, street_index: 0.8, legality: 5P-N, armor: '+1 Impact', concealability: 10}
+    '2': {level: 2, bio_index: 1.0, availability: '8/8 days', cost_nuyen: 60000, street_index: 0.8, legality: 5P-N, armor: '+1 Impact, +1 Ballistic', concealability: 9}
+    '3': {level: 3, bio_index: 1.5, availability: '8/8 days', cost_nuyen: 100000, street_index: 0.8, legality: 5P-N, armor: '+2 Impact, +1 Ballistic', concealability: 8}
+data:
+  external_armor_stacking: true
+  tactile_perception_tn_increase: implant level
+  example: {level: 2, tactile_perception_tn_modifier: 2}
+  incompatible: [dermal plating, dermal sheathing]
+  stress:
+    light: dry flaky skin
+    moderate: damage may leave scars; +2 to Body Test for scarring (p132)
+    serious: stiffness imposes -1 Quickness
+    deadly: skin and cartilage deterioration; Light wound and armor bonus reduced by 1 until Stress heals
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "68-69", relation: defines, note: "Orthoskin description, armor table, stress effects and statistics"}
-notes:
-  - "Armor stacks with external armor as specified; tactile Perception Tests suffer a modifier equal to Orthoskin level."
+  - {source: source.mm, pages: '68-69', relation: defines, note: Game effects, armor table, Stress and market rows}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp68-69/PDF69-70: Orthoskin'
+framing: reference_exact
