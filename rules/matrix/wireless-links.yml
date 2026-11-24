@@ -23,7 +23,57 @@ resolution:
   daisy_chain:
     - "Use the lowest I/O Speed and Base Bandwidth among all devices in the chain."
     - "Trace modifiers from chained links are cumulative."
+    - "Only the access modifier of the jackpoint connecting to the Matrix applies; do not sum the intermediate link access modifiers."
 
 sources:
   - {source: source.matrix, pages: "33-35", relation: extends, note: "Wireless Links and Daisy-Chained Wireless Links"}
 notes: []
+source: source.matrix
+printed_pages: '33-35'
+pdf_pages: '34-36'
+edition_scope: 'FASA7909 Matrix, FASA Corporation, Shadowrun Third Edition fictional tabletop RPG'
+content_class: [rule_exact]
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Shadowrun Third Edition}
+  scope: 'Fictional Matrix connection rules, game ratings and dice tests only.'
+  interface_requirements: 'Full-sim wireless links require the corresponding fictional cyberterminal interface hardware and link utility. Tortoise mode may instead use an ordinary cellphone or radio transceiver for those respective link types.'
+  flux:
+    cellular_radio_satellite: 'Equal to interface hardware rating; fictional SR3 radio interference rules apply.'
+    laser_microwave: 'No Flux or ECCM ratings.'
+  cellular:
+    destination: 'Cellular provider host, then LTG or RTG and usually its PLTG.'
+    typical_security: [Orange-Average, Orange-Hard]
+    trace: 'The location cycle identifies serial number and commcode and all other trace effects apply, but physical location requires the separate Triangulate system operation.'
+  laser_and_microwave:
+    receiver: 'Line-of-sight receiver on the destination host or grid.'
+    game_test: {skill: Electronics, specialization: Linking Between Devices, target_number: 4}
+    laser_weather: 'Heavy rain, fog or smoke may modify this fictional test.'
+    trace: 'The receiver location, not the transmitting link location, is found; all other trace effects apply.'
+  radio:
+    destination: 'Radio provider host, then LTG or RTG and often its PLTG or other hosts.'
+    typical_security: [Orange-Average, Orange-Hard]
+    triangulation: 'The book notes that many radio networks lack the fictional software needed to locate users physically.'
+  satellite:
+    fictional_connection_test: {skill: Computer, specialization: Hardware, base_time_minutes: 1, base_time_combat_turns: 20}
+    target_numbers:
+      open_country_clear_horizon: 2
+      open_country_some_obstructions: 3
+      open_country_mountains_or_heavy_forest: 6
+      suburban: 3
+      light_urban: 6
+      downtown_urban: 8
+    modifiers:
+      bad_weather_heavy_or_electrical_storm: 2
+      ecm_in_use: '+ECM rating'
+      large_portable_dish: -1
+      large_fixed_base_dish: -2
+      specific_constellation_density: 'Variable; see printed p47.'
+    failure: 'No successes means no satellite lock; the character may retry immediately.'
+    success: 'A lock permits a Logon to RTG operation for the corresponding constellation; other RTGs and aligned systems are reachable under normal game rules.'
+    typical_security: [Orange-Average, Orange-Hard]
+    military_or_private_corporate_comsat: Red-Hard
+    trace: 'The satellite is located, not the character physical location; other trace effects still apply.'
+  daisy_chain_example: {access_modifier: -2, trace_modifier: -4, io_speed: 200, radio_interface_rating: 4, base_bandwidth: 8}
+framing: reference_exact
+headline: 'FASA7909 Matrix, SR3 printed pp33-35/PDF34-36: wireless link and Satlink game mechanics'
+summary: 'Completes the fictional wireless-link game conditions, six Satlink target numbers, five modifiers and daisy-chain access rule while retaining all legacy media ratings.'
