@@ -1,0 +1,62 @@
+id: rule.magic.mits-magical-group-strictures-original-p62-63
+record_type: rule
+name: Magical Group Link and Strictures
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 62, basis: defines}
+scope: {applies_to: [Magical groups and their members]}
+resolution:
+  summary: A magical group needs a magical link to confer its group initiation discount. Strictures are rules bound to that link.
+  inputs: [Magic Attribute, desired initiation grade, outstanding individual violations, group strictures]
+  outputs: [Cleared violations, expulsion, loss or restoration of magical link]
+  steps: []
+links:
+  uses: [procedure.magic.initiation, rule.magic.magic-loss]
+  affects: [subsystem.magic.magical-groups]
+  modified_by: []
+  interacts_with: [option.magic.initiation-ordeal-oath]
+sources:
+  - {source: source.mits, pages: '62-63', relation: defines, note: Magical Link, Magic Loss, Strictures, Individual Strictures, Group Strictures and Customs}
+notes: []
+source: source.mits
+printed_pages: '62-63'
+pdf_pages: '63-64'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  link:
+    required_for_group_initiation: true
+    connects_to: Spirit avatar
+    loss_of_membership_in_group_to_which_oath_sworn: Check for Magic loss under SR3 p160.
+    lost_link: No group initiation Karma reduction until link is restored.
+  individual_violation:
+    track: GM records each occurrence; aura evidence is visible to fellow group members and cannot be concealed when petitioning for initiation.
+    test: Magic Test on next initiation attempt
+    target_number: 2 * desired initiation grade
+    required_successes: Number of recorded violations
+    on_success: Clear the violation tally.
+    on_failure: Group must expel the member or lose its magical link; group may retain the member and demand a quest or deed, but must restore its link before granting the discount.
+  individual_strictures:
+    typical_count: [3, 4]
+    attendance: Mandatory group meetings, typically every one to three months; member must arrange to receive scheduling information; being out of contact is not an excuse.
+    belief: Required moral or philosophical belief; GM decides whether action or inaction violates it.
+    deed: Periodic action benefiting the group or demonstrating loyalty; type selected by group.
+    exclusive_membership: Joining another group through initiation violates this rule; joining another exclusive group violates both groups' strictures.
+    exclusive_ritual: Ritual sorcery only with fellow group members.
+    fraternity: Refusing requested aid within the member's ability violates the rule.
+    geasa: Member must take a geas when losing a Magic Point.
+    obedience: Must obey group superiors; rank commonly follows grade or number of grades taken with that group.
+    sacrifice:
+      karma_award_modifier: -1
+      exception: Member may decline the reduction for an award, but this is a violation.
+    secrecy: Individual disclosure of membership or group existence to outsiders violates the rule; group itself may make limited disclosures to selected individuals.
+  group_strictures:
+    violation: Only the group as a whole can violate these; making an exception or changing strictures automatically loses the link, requiring a new link.
+    minimum_count: 0
+    limited_membership: One stricture regardless of the number of admission restrictions.
+    material_link: Every member supplies a material link, which may be a cell sample or thesis; group may return or retain it when the member leaves.
+    oath: All members must swear an oath at their first initiation with the group; it gives the ordeal cost reduction only if they have never sworn an oath before; later oaths still bind them without qualifying as an ordeal.
+  customs: Repeated breaches can lead to expulsion, but customs breaches do not leave magically visible aura traces as stricture breaches do.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition rules: magical group links and strictures (FASA7907, printed 62-63/PDF 63-64)'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG initiation-linked violation test, group link consequences and individual/group stricture mechanics.'
