@@ -1,0 +1,33 @@
+id: rule.magic.mits-alchemy
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '42'
+pdf_pages: '43'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  canonical_context: procedure.magic.alchemy
+  purpose: Alchemy specialization of Enchanting produces radicals from refined materials, easing focus enchantment and potentially reducing bonding Karma.
+  circulation:
+    required_tool: enchanting shop
+    days: 28
+    reducible: false
+    attention: Enchanter tends the process throughout; no study, other magical work or more than ordinary tasks.
+    radical_unit_grams: {herbal: 50, mineral: 100, metal: 100}
+    mass_fraction_of_raw: one hundredth
+    test: Enchanting at end of circulation; target number equals number of refined units processed.
+    yield: Input units multiplied by successes.
+    failure: Zero successes requires another 28-day circulation and test; all ones destroy materials.
+    interruption: Extended absence requires an Enchanting Test with target number equal to hours unattended; failure aborts the process and requires a restart. A temporary substitute alchemist needs Enchanting at least equal to the original alchemist.
+    example: Three refined iron units with four successes produce twelve radical units.
+  orichalcum:
+    unit_grams: 10
+    inputs: {copper_radical_units: 1, gold_radical_units: 1, silver_radical_units: 1, mercury_radical_units: 1}
+    circulation: normal 28-day process
+    test_target_number: 10 minus alchemist Magic Attribute
+    yield_units_per_success: 1
+    failure: Zero successes requires another 28 days and another Enchanting Test; all ones destroy the materials.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Alchemy and orichalcum, FASA7907, printed 42/PDF 43'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
