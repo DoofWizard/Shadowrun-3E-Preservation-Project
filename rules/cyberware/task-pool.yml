@@ -1,21 +1,36 @@
 id: rule.cyberware.task-pool
 record_type: rule
-name: "Task Pool"
+name: Task Pool
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '48'
+pdf_pages: '48'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware Task Pool — skill applicability and standard pool rules
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p48.
 effective: {status: current, source: source.mm, page: 48, basis: defines}
 scope:
-  applies_to: ["cyberware that grants a Task Pool"]
+  applies_to: [cyberware that grants a Task Pool]
 resolution:
-  summary: "A Task Pool provides extra dice for skill use while the device is active. Some devices apply the pool broadly, while others restrict it to Intelligence-linked Technical, Build/Repair, Knowledge and Language skills. Task Pool dice do not modify Perception Tests, Reaction, or other dice-pool calculations unless a specific device says otherwise."
-  inputs: ["device", "skill being used"]
-  outputs: ["additional skill dice"]
+  summary: A device grants extra skill dice while active; the applicable skills depend on the device.
+  inputs: [active device, skill being used]
+  outputs: [additional skill dice]
   steps: []
+data:
+  activation_required: true
+  unrestricted_example: expert driver
+  intelligence_linked_example: encephalon
+  intelligence_linked_skills: [Technical, Build/Repair, Knowledge, Language]
+  intelligence_bonus_exclusions: [Perception Tests, Reaction calculation, calculation of dice pools]
+  pool_rules: standard dice pool rules (SR3 p43)
 links:
   uses: [rule.dice-pools.general]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 48, relation: defines, note: "Task Pool"}
+  - {source: source.mm, page: 48, relation: defines, note: Task Pool}
 notes: []
