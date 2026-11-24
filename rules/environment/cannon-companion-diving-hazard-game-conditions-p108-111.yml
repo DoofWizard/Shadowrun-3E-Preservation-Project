@@ -1,0 +1,42 @@
+id: rule.environment.cannon-companion-diving-hazard-game-conditions-p108-111
+record_type: rule
+status: ingested
+source: source.cc
+printed_pages: '108-111'
+pdf_pages: '109-112'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908}
+  extends: subsystem.environment.underwater
+  tabletop_rules:
+    oxsys_specialized_training_required: false
+    scuba_specialized_training_required: true
+    deep_water_specialized_training: extensive
+    lba_acclimation: required before each fictional dive
+    safe_time_test:
+      declaration: player declares planned duration and maximum depth below sea level before entry; only emergencies permit declaration after entry
+      test: appropriate Knowledge skill against Safe Diving Time Table target number
+      result: successes determine game-safe duration; five existing table rows remain unchanged
+    hazard_trigger: exceeding game-safe time or intended depth, regardless of player-character awareness
+    maximum_hazards_per_character_at_given_depth: 1
+    different_characters_may_receive_different_hazards: true
+    original_hazard_table:
+      - {depth_band: '0-10', eligible: [oxygen toxicity]}
+      - {depth_band: '11-50', eligible: [oxygen toxicity, decompression sickness, nitrogen narcosis]}
+      - {depth_band: '51-150', eligible: [oxygen toxicity, decompression sickness, nitrogen narcosis, helium chills]}
+      - {depth_band: '151-300', eligible: [oxygen toxicity, decompression sickness, nitrogen narcosis, helium chills, HPNS]}
+    ear_squeeze_game_duration: the initial one-minute disorientation penalty is also explicitly 20 Combat Turns
+    air_embolism_timing: source ties the immediate 8D Physical resistance wording to hourly damage upon surfacing; a separate extra initial instance is not unambiguously prescribed
+    oxygen_toxicity_game_eligibility: the fictional rules distinguish pure oxygen and excessively oxygen-rich gas at depth
+    oxygen_toxicity_pure_oxygen_game_threshold: original game text identifies a descent deeper than 7 meters as a hazard condition; not real-world diving guidance
+    oxygen_toxicity_game_penalty: the +4 target-number symptom modifier lasts until treatment; the per-minute Physical damage has a distinct depth-based ending condition
+    decompression_sickness_penalty: +4 target-number modifier is in addition to wound modifiers
+    nitrogen_narcosis_failure_state: intoxication with impaired judgment and reckless or irrational character behavior
+    nitrogen_narcosis_self_ascent: apply the existing +2 intoxication modifier to the Willpower (6) Test
+    helium_chills: failure grants an additional +1 to all tests; unlike HPNS, the paragraph does not expressly label this cumulative
+    hpns: textual onset condition is excessive time at depth greater than 200; this differs from the table eligibility band starting at 151; preserve both without inferred precedence
+    hpns_failure: cumulative +1 to subsequent tests including tests for other diving hazards
+framing: reference_exact
+headline: "FASA7908 Cannon Companion (SR3) - Diving game test and hazard conditions"
+summary: "FASA Corporation, fictional Shadowrun Third Edition tabletop rules; source.cc, printed pp108-111, PDF pp109-112. Source-specific additions and clarifications to the existing subsystem."
