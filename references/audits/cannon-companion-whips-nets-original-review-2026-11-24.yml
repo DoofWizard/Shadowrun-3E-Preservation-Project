@@ -1,0 +1,59 @@
+source: source.cc
+title: "FASA7908 Cannon Companion: Whips and Nets original-image review"
+edition: SR3
+publisher: FASA Corporation
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+source_verification: source_pdf_hash_verified
+original_page_mapping:
+  - {printed: 11, pdf: 12}
+  - {printed: 14, pdf: 15}
+review:
+  whips:
+    status: source_local_field_reconciled
+    shared_rule:
+      path: rules/combat/whip-entanglement.yml
+      blob: 1a5752a18a12ae0c0fb790e780c0bd47bbfd03
+    equipment_rows:
+      checked_fields: [concealability, reach, damage, weight, availability, cost_nuyen, street_index, legality]
+      matched:
+        - {id: entity.weapon.kusarigama, blob: 66b410c21becff71b4f796702b55b4fdd19b5b42}
+        - {id: entity.weapon.manriki-gusari, blob: 0d9badadd2c09e67746a5b6c9729342bbca04e36}
+        - {id: entity.weapon.morning-star, blob: ef7647cb65e524d460f219d7be22eeff8e5a2a40}
+        - {id: entity.weapon.nunchaku, blob: ceff3b639960bec371e163f71446d2a72a7391c5}
+        - {id: entity.weapon.three-section-staff, blob: 83b0112725c36514ae235498d81a9adfcbff6293}
+      governing_skill_matched: true
+    source_fields_added: [default_rule_inheritance, item_hands_required, game_option_eligibility, damage_track, concurrent_game_effect]
+    transaction:
+      path: rules/combat/cannon-companion-whips-game-eligibility-p11.yml
+      commit: 0cea1913c6c5b3e03ec9c33b77316a94f49534eb
+      blob: d5436948fa7aad0f41741d4aee488c9867507c68
+      baseline_sha256: cccb29460d427d7aeeff5950dc2d6aeb6b44a9c9ac50a610bea5ce9c183c951e
+      candidate_sha256: cccb29460d427d7aeeff5950dc2d6aeb6b44a9c9ac50a610bea5ce9c183c951e
+      immutable_sha256: 9a6df51877fabe91f526d4ffe29478e7a0d3c50325cb03b10e77ee651713c7a0
+      gate: verified
+      index_commit: 88db6fb2794a62684a7931480ef61566e3e70592
+      index_blob: 6b2b3ac84ae48aedd40fd7e650b84d1ec31cf8cd
+  nets:
+    status: source_local_fields_reconciled_with_wording_exception
+    existing_entity: {path: entities/gear/net.yml, blob: fe8081861ec3eac5c1bfa590a7419c02506a7b92}
+    matched_fields: [concealability, damage, weight, availability, cost_nuyen, street_index, legality, two_handed, skill]
+    strength_minimum_table: no_value_printed
+    source_fields_added: [attacker_test, defender_test, success_threshold, rounding, open_test_dice, target_number, alternate_escape_attributes, action_type, turn_modifier, friend_modifier, barrier_rating]
+    unresolved: "Original threshold sentence does not explicitly state how Dodge successes alter the attacker-success count. Preserved without interpretation."
+    transaction:
+      path: rules/combat/cannon-companion-net-game-resolution-p14.yml
+      commit: 357f9d34db5e1c80025784b84237b9e93717618b
+      blob: b28ab726a14f881fd6801b9b176f7710ecf69962
+      baseline_sha256: 4156ff2f93f8848bc6deec889da35f79c3bdec320f454ac9ac70be031b7a9893
+      candidate_sha256: 4156ff2f93f8848bc6deec889da35f79c3bdec320f454ac9ac70be031b7a9893
+      immutable_sha256: 7a9fe40f3d7b754f8bb9052fc79892bb29b18e1d10bce4daa71b0ef8181db5e7
+      gate: verified
+      index_commit: 18353861f0ebbd6246ec14f77fc44359beb551ec
+      index_blob: 1b5c97fbd115da8c440a8429ad1b59cb4add352c
+remaining:
+  - Other catalogue subsections, including other original p11 and p14 mechanics, not certified by this audit.
+  - Previous customization and manufacture scopes not certified.
+  - Previously recorded source precedence, external dependency and historical transaction provenance exceptions.
+globally_authorized_pages: 0
+whole_book_closed: false
