@@ -1,18 +1,34 @@
 id: entity.bioware.tailored-pheromones
 record_type: entity
-name: "Tailored Pheromones"
+name: Tailored Pheromones
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '70-71'
+pdf_pages: '71-72'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 0.4, availability: "12/14 days", cost_nuyen: 20000, street_index: 2, legality: "Legal"}
-    2: {bio_index: 0.6, availability: "12/14 days", cost_nuyen: 45000, street_index: 2, legality: "Legal"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.4, availability: '12/14 days', cost_nuyen: 20000, street_index: 2, legality: Legal}
+    '2': {level: 2, bio_index: 0.6, availability: '12/14 days', cost_nuyen: 45000, street_index: 2, legality: Legal}
+data:
+  effect: adds 1 die per level to Charisma and Social Skill Tests
+  excluded_tests: [conjuring, astral abilities and skills]
+  average_diameter_m: [15, 20]
+  atmosphere: mild air currents can increase coverage; strong winds disperse the effect before it applies
+  targets: all metatypes equally; no effect on nonhumanoid creatures or targets with impaired or unavailable smell, including astral travelers
+  detection: not detectable by standard metahuman senses
+  other_users: presence of another augmented character does not stop the effect
+  cultured: {benefit_multiplier: 2, range_multiplier: 1.5}
+  stress:
+    light: unusually lasting impression on others
+    moderate: half area of effect
+    serious: 50 percent chance per encountered person of the opposite intended effect
+    deadly: no bonuses
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "70-71", relation: defines, note: "Tailored Pheromones description, game effects, stress effects and statistics"}
-notes:
-  - "Each level adds dice to Charisma and Social Skill Tests where scent can affect the target; cultured versions improve benefits and range."
+  - {source: source.mm, pages: '70-71', relation: defines, note: Tailored Pheromones game effects and market rows}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp70-71/PDF71-72: Tailored Pheromones'
+framing: reference_exact
