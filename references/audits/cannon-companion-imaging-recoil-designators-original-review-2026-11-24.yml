@@ -1,0 +1,79 @@
+source: source.cc
+catalog_number: FASA7908
+publication: Cannon Companion
+edition: Shadowrun Third Edition
+publisher: FASA Corporation
+review_date: '2026-11-24'
+original_pdf:
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  bytes: 80954335
+  pages: 130
+  manifest_blob_at_verification: 804a4ab25d14b08088130b2f504bda3901c5b463
+  actual_verify_source_status: source_pdf_hash_verified
+  actual_verify_source_page_images_review: still_required_independently
+  independent_images_examined:
+    - {printed: 34, pdf: 35}
+    - {printed: 35, pdf: 36}
+    - {printed: 114, pdf: 115}
+preflight_tests: {passed: 29, failed: 0}
+scope: 'Three adjacent fictional tabletop equipment subsections; reference-table comparison restricted to applicable rows.'
+sections:
+  - name: Recoil Compensators and Gyros
+    source_pages: [34, 35]
+    state: source_local_mechanics_reconciled
+    record: rules/firearms/cannon-companion-recoil-accessory-game-qualifiers-p34-35.yml
+    fields_reviewed: 'All six item entries, eligibility, game modifier accounting, permanence, character qualification, movement and standard-gyro references; all six market rows compared.'
+    exception: 'Stock printed Rating dash distinguished from prose compensation value and existing entity game rating; no shared-record rewrite or new stacking inference.'
+  - name: Imaging Systems
+    source_pages: [34, 35]
+    state: reconciled_with_source_ambiguity
+    record: rules/gear/cannon-companion-imaging-accessory-game-qualifiers-p34-35.yml
+    fields_reviewed: 'All listed system entries, combination and pricing, visibility conditions, game modifier qualifications, recording and transmission ratings; all six market rows compared.'
+    unresolved: 'Transmitter price references an unspecified Rating, separate from Flux. Standard sight source comparison differs from core p112; precedence not inferred.'
+  - name: Target Designators
+    source_pages: [35, 114]
+    state: source_local_mechanics_reconciled
+    record: rules/combat/cannon-companion-designator-game-test-qualifiers-p35.yml
+    fields_reviewed: 'All three prose entries, game visibility qualifications, abstract test modifiers, action and cargo bookkeeping; four market rows, twelve range-table cells, four base target numbers and minimum-range footnote.'
+    reused_range_table: {path: rules/combat/target-designator-ranges.yml, blob: 425738808e511106a1c7c367383de50590411165}
+market_rows_compared: 16
+market_rows_matching: 15
+market_rows_with_preserved_notation_distinction: 1
+market_row_evidence: 'Exact existing entity paths and blobs are in the three individually confirmed records; no duplicate market rows created.'
+transactions:
+  - journal: imaging-journal
+    path: rules/gear/cannon-companion-imaging-accessory-game-qualifiers-p34-35.yml
+    commit: 0c6a32eaf2bf392c5615d418de7010c6a7f1de29
+    blob: df72b3af4a3e4c0294eb29d099d4e0bf28926132
+    baseline_sha256: 11bbe4499014295ae5dfdfa03ef8df01447231e1cae1c7c25012a8c3cb3e4efb
+    candidate_sha256: 11bbe4499014295ae5dfdfa03ef8df01447231e1cae1c7c25012a8c3cb3e4efb
+    immutable_sha256: 9e5d5c8bd036dcf59e2062ca7b4c4245a94b67c9b2a6649d69908ad00c0276e8
+    gate: verified
+    index_commit: a2473bd345faf0832f29f333134c83f06606705b
+    index_blob: a07c0d712eca4c8d43bd7708c5597058e98c615c
+  - journal: recoil-journal
+    path: rules/firearms/cannon-companion-recoil-accessory-game-qualifiers-p34-35.yml
+    commit: 858a3bfa3ab18441e64acba638f65f6f7e555863
+    blob: 01e13434cf9ba0bf63443a706bbb4940638723ab
+    baseline_sha256: f7c72746857411effed51b77c9e262901a6c0d2f4fc6b9b55b51f4724716ecf5
+    candidate_sha256: f7c72746857411effed51b77c9e262901a6c0d2f4fc6b9b55b51f4724716ecf5
+    immutable_sha256: 4bfa4198316c599968f1a457a082d6976d3317bf841dc62174c3b46399b182ee
+    gate: verified
+    index_commit: 3b514662647d2970061154c216172c111ab14b31
+    index_blob: 0823270406f614117515ce21b057b4f64e62c27b
+  - journal: designators-journal
+    path: rules/combat/cannon-companion-designator-game-test-qualifiers-p35.yml
+    commit: c6be552b2fb7a57f437e8e7e7f7f2bde6095de11
+    blob: b94dbdd3bb0bc0c17397715cd1b783459ff8b903
+    baseline_sha256: 65f5b13f8fb6484bca55a365dfd1f1fcd269055ef0776e3ce1f867c8532c45b8
+    candidate_sha256: 65f5b13f8fb6484bca55a365dfd1f1fcd269055ef0776e3ce1f867c8532c45b8
+    immutable_sha256: 6ff5bc4ef350052a2d5819e8aec2278c7ac844d08d85b1a0e6682f7193da27a7
+    gate: verified
+    index_commit: ba7ac8fabc270e1329867f782c83c1dda76cdf52
+    index_blob: 24612ccec3c6cce1eba01060d51bbda9ca9db240
+new_semantic_records: 3
+new_complete_source_local_natural_sections: 2
+qualified_sections: 1
+globally_authorized_pages: 0
+whole_publication_closed: false
+remaining: 'Other equipment catalogue and customization mechanics; unresolved source precedence and historical shared-record transaction provenance.'
