@@ -871,6 +871,32 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_surgical_skills_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp135-136/PDF136-137, publisher copyright printed p5/PDF5."
+    image_sha256:
+      PDF136: "76a443a24186af505acbd73a820a2ac486b3b00e53a7ee0018e0c94ad2a6bf28"
+      PDF137: "85136cc08b438389e21a590f4c5743ed7a7f3f00c3372fcf1730b85f3895ae56"
+    records:
+      - id: rule.surgery.fasa7126-surgical-skills
+        path: rules/surgery/fasa7126-surgical-skills.yml
+        printed: "135-136"
+        pdf: "136-137"
+        commit: "faf0bb5da34e26735e6e246deb64b83b3f8098aa"
+        blob: "59a236e6171f8ab01a7e075477be219f9ea19665"
+        candidate_sha256: "504b7a02b93717646cd6d33c5c25c0f29225e5fb52f3345e15e3515ce8061922"
+        baseline_sha256: "15b30a1ed04ffa05aaeae5f3365ea3b7c74cc80cb7b0520c8155c8093f967e60"
+        immutable_sha256: "41ee65b999a85a6d88455b9f0204f40b2a99c653fcdc746136aeba7a5c931897"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Eight Biotech specialization application domains, four Computer/Electronics active skill and B/R applications, Medicine knowledge skill requirements, applications and specializations."
+    scoped_natural_sections_reconciled:
+      - "Surgical Skills, Active Skills and Knowledge Skills pp135-136."
+    exceptions: "Shared SR3 core skill record stays unchanged; original M&M extension and cross-references retained separately."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
