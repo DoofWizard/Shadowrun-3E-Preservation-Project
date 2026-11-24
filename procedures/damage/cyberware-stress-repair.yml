@@ -1,35 +1,60 @@
 id: procedure.damage.cyberware-stress-repair
 record_type: procedure
-name: "Cyberware Stress Repair"
+name: Cyberware Stress Repair
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '130'
+pdf_pages: '131'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Cyberware Stress Repair — tests, costs and grade modifiers
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop game rules, printed p130/PDF131.
 effective: {status: current, source: source.mm, page: 130, basis: defines}
-purpose: "Remove repairable Stress Points from cyberware through maintenance or surgery."
+purpose: Remove repairable Stress Points from fictional cyberware through maintenance or surgery.
 prerequisites:
-  - "appropriate cyberware tool shop"
-  - "appropriate repair skill"
-inputs:
-  - "implant Stress Points"
-  - "implant grade"
-  - "facility and doctoring modifiers"
+  - cyberware tool shop and appropriate repair skill
+  - medical facility for unpenalized work
+inputs: [implant Stress Points, grade, Essence Cost, facility, repair skill, applicable modifiers]
 stages:
   - id: assess
-    name: "Assess Repair"
-    test_or_action: "Choose the appropriate Biotechnology (Cybertechnology Implantation), Computer (Cybernetics) B/R, or Electronics (Cybertechnology) B/R skill for the system."
-    outputs: ["repair approach"]
+    name: Assess Repair
+    test_or_action: GM selects an appropriate skill according to the implant and extent and type of damage.
+    outputs: [repair approach]
   - id: test
-    name: "Repair Test"
-    test_or_action: "Test against a target number equal to implant Stress, modified by Expanded Doctoring and implant grade."
-    outputs: ["Stress removed or repair complication"]
+    name: Repair Test
+    test_or_action: Roll the selected skill against current implant Stress Points with the listed modifiers.
+    outputs: [Stress reduction or complication]
 outcomes:
-  - "Every two successes remove one Stress Point."
-  - "Failed repair can make remaining Stress permanent."
-  - "Stress cannot be reduced below one after the implant has been pushed beyond its limits, as specified by the source."
+  - Every two successes remove one Stress Point; a later overhaul may remove remaining repairable Stress.
+  - Failure makes one Stress Point permanent unless removed by a technician with better tools and higher skill.
+  - Maintenance alone does not restore failed cyberware function; implant surgery is required.
+data:
+  facility: medical facility; apply Expanded Doctoring penalties outside one
+  required_surgery:
+    stress_levels: [Serious, Deadly]
+    failed_implant: true
+    other_implants: GM may require surgery for access or implant type
+    procedure: Repair Cyberware implant surgery, M&M p146
+  repair_skills: [Biotech (Cybertechnology Implantation), Computer (Cybernetics) B/R, Electronics (Cybertechnology) B/R]
+  skill_applicability_example: Computer (Cybernetics) B/R cannot repair bone lacing without computer components.
+  base_target_number: current implant Stress Points
+  expanded_doctoring_modifiers: apply M&M Expanded Doctoring Table
+  target_number_per_grade_above_basic: 2
+  successes_per_stress_point_removed: 2
+  failure_permanent_stress_points: 1
+  minimum_stress_after_damage: 1
+  replacement_parts_nuyen_per_point_removed: 100
+  labor_cost: additional; see M&M p151
+  base_time_hours: 'Essence Cost * 5'
+  time_reduction: successes after the first may reduce time according to SR3 p95
+  replacement: GM may determine eventual overhaul difficulty makes replacement preferable.
 links:
-  uses: [rule.damage.stress-points]
+  uses: [rule.damage.stress-points, option.healing.expanded-doctoring]
   requires: []
   produces: []
   modified_by: []
 sources:
-  - {source: source.mm, page: 130, relation: defines, note: "Cyberware Stress Repair / Repair Test"}
+  - {source: source.mm, page: 130, relation: defines, note: Stress Maintenance, Cyberware Stress Repair and Repair Test}
 notes: []
