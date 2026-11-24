@@ -774,6 +774,32 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_hospital_capacity_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp136,138/PDF137,139 and copyright p5; table independently enlarged."
+    image_sha256:
+      PDF137: "a698af2751c1ef3efe23810d26f55ad4119788ebd60f1355a7464ffc598a15ff"
+      PDF139: "2283bbb3c872c418c78d5859ab009255172b5bd07156aebfaa5733452537ad18"
+    records:
+      - id: entity.medical.medical-facility
+        path: entities/medical/medical-facility.yml
+        printed: "136, 138"
+        pdf: "137, 139"
+        commit: "643915a34181d23c2de5452ecf002846fa023a2e"
+        blob: "d1e541504eae896f89c1b4bad1718b05ca9f746b"
+        candidate_sha256: "28c8a8103324934bd270c4abed12af5da334238fbb7c10df7adb1a9f49afac8a"
+        baseline_sha256: "e16c90a9ad6a30f9a5231a896dc69407ff26dac32fefca54be20046337805c3e"
+        immutable_sha256: "f0e98181e716a0a61a5006e68ce539195f1ee575ed82bd3d44e3d05ed1c9e267"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Hospital staffing and patient capacity, 25 percent permit fee, identity and head-staff restrictions, host security and medical-use exception, remote operations, rental and graded gear modifiers. Corrected prior maximum rating 10 to player-accessible limit 6."
+    scoped_natural_sections_reconciled:
+      - "Medical Facilities (Hospitals) and Hospital Components p138."
+    exceptions: "The p136 cap applies only to player-accessible equipment. Remaining Mobile Medical Shops, Vehicle Medical Clinic Table, and medkit specifics are separate."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
