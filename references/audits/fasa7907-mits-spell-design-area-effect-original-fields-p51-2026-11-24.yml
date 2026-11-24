@@ -1,0 +1,74 @@
+id: audit.fasa7907.mits.spell-design-area-effect.2026-11-24
+source: source.mits
+publication: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop rules
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+source_size_bytes: 123917505
+source_pdf_pages: 178
+starting_head: 816e5b388eeb01baa1612a4a19e79ae69ba63571
+starting_manifest_blob: a071cf0faf8662200c01fbf246a426e346cb392a
+validation_scripts:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+editorial_playbook_blob: 35c07f00263ce26a249ffb0c8d00872fe607b7f0
+preflight_self_test: 29 passed
+verify_source_actual: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+visual_review:
+  identity_pdf_pages: [1, 7]
+  printed_pages: [49, 50, 51]
+  pdf_pages: [50, 51, 52]
+  section: Area Effect, printed p51/PDF52
+  reviewed_fields: [all data fields, headline, summary, framing, source metadata]
+  baseline_and_candidate: independently compared to original page image; same substance
+  comparison_existing: spell-design overview and core spell-characteristics, targeting and resistance records remain intact; original MitS-specific numeric and conditional rules added.
+  field_checklist:
+    - Single-target default; all valid visible targets including caster; no selective exclusions.
+    - Center within LOS; Magic radius; Magic times 10 extended radius; reduction by withholding dice.
+    - No Health area spells.
+    - Sustained Illusion and Manipulation movement costs Complex Action within LOS; entrants resist and departures lose effects.
+    - Detection new-sense radius Magic times Force; extended times 10.
+    - Elemental manipulation exception to individual LOS.
+  omitted_mechanical_fields_in_area_effect_section: []
+transaction:
+  path: rules/magic/mits-spell-design-area-effect-original-p51.yml
+  record_id: rule.magic.mits-spell-design-area-effect
+  stage: staged
+  prepare: preflighted
+  commit: 78562b2ca09de4008eab49fdfaba248972cd83d5
+  blob: d455cd04b6396db9b6bc6cb1a1749df3af1c0092
+  readback: exact UTF-8 content and matching blob at commit and main
+  confirmation: verified
+  candidate_sha256: 5bdf425b4a04349d7956deb780a32936a92268f98e6fcdcc878620314dc61d22
+  immutable_sha256: 0157c6812ec874e6583f2b4eb53c30066e994cded55964e8d4ac6e77e5a2c634
+  journal:
+    baseline.yml: 9de8092fcb21cad9bdb151eb1d6711dd6db54534825e71e7824f673e7efab015
+    candidate.yml: 5bdf425b4a04349d7956deb780a32936a92268f98e6fcdcc878620314dc61d22
+    plan.json: 8530b651709c33ed4950257a3f87529620db981f072d2d34cb557ec9de6f86bd
+    confirmation.json: 70df5f0d626416ba348fbc3cc52c1a6478bcb31978062e5577901dea3ae74f57
+    reconstruction: Retrieve exact candidate bytes at commit; baseline is candidate before the framing line. Run the verified stage command with source.mits and source hash and then confirm with the recorded commit and blob; retain stdout newline.
+  manifest_commit: 21f2ec444bd2771f7a8d4e921e376c94788894b9
+  manifest_blob: 49a8c9814d7f1185f71a33f254402c43906993f6
+  manifest_readback: matched at commit and main
+deferred_adjacent_parameters:
+  path: rules/magic/mits-spell-design-parameters-original-p49-50.yml
+  printed_pages: [49, 50]
+  pdf_pages: [50, 51]
+  stage: staged
+  expected_blob: 08f9ad83f7c71a2ea2715a62f00ddec20ad93362
+  candidate_sha256: d5e2e699689d6aec5ca29d0dd4f1b4f97a23d7485e55e5a489a81f28930f3fc2
+  immutable_sha256: f9a85d8462273a6114db0bc2b5a597886307b9173c40716186bf0438aebe1d51
+  journal:
+    baseline.yml: 7bce59c6ec507269eaba027c4ddab3bb7950376621d284f2822ba5a5531cc14a
+    candidate.yml: d5e2e699689d6aec5ca29d0dd4f1b4f97a23d7485e55e5a489a81f28930f3fc2
+    plan.json: 613525ba89016102e7906acd825e74d1ef34d837931279078dafc81130a4597b
+    write_attempts.json: 8062843e7284ace7d094a48dab05b8fb5ad84e3c7c56726ce9981ba50c797860
+  failure: 'GitHub HTTP 409: is at d79cc27eb21e6c37915aa598177371a8454c37c2 but expected 0f2514668168b255c221a7ac2c21ed53391b5d26'
+  remote_readback: 404 absent
+  recovery_decision: refresh_current_sha_then_normal_update
+  resolution: Deferred; no identical retry, no confirmation or registration.
+  open_fields: [ten-step design order, type and range, category-specific target numbers, permanent duration table, Force limits, resistance thresholds]
+remaining: [Elemental Effects, Drain Code and modifier tables, Oath conflict]
+section_closed: Area Effect only
+designing_new_spells_full_section_closed: false
+global_page_credit: 0
