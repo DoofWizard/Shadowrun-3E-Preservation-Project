@@ -1,0 +1,23 @@
+id: rule.hazards.target-wastelands-biohazard-qualifications
+record_type: rule
+status: ingested
+source: source.fanpro-10653
+printed_pages: "109-110"
+pdf_pages: "110-111"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Fictional disease and toxin resolution qualifications
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  extends: rule.hazards.target-wastelands-disease-toxin-extensions
+  filtration:
+    power_below_zero: Prevention of infection at negative filtered pathogen Power is a gamemaster option, not mandatory.
+    qualifies_legacy: rule.hazards.target-wastelands-disease-toxin-extensions
+  infection_contagiousness: An infected character remains contagious at least until onset and possibly longer, depending on the pathogen.
+  toxin_exposure: Equipment may restrict the routes by which a toxin can enter the character.
+  mana_active_aura_deficiency:
+    extends: entity.medical.mana-active-aura-deficiency-syndrome
+    victim_net_successes_below_three: No cure or other effect from that level of victim success.
+    permanent_loss: At the existing threshold of 20 accumulated infection net successes a metahuman becomes mundane.
