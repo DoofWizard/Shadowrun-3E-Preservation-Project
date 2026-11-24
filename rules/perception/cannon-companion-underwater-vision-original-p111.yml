@@ -1,0 +1,28 @@
+id: rule.perception.cannon-companion-underwater-vision-original-p111
+record_type: rule
+status: ingested
+source: source.cc
+printed_pages: '111'
+pdf_pages: '112'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908}
+  extends: subsystem.environment.underwater
+  tabletop_rules:
+    applies_to: vision-based Perception Tests
+    columns: [normal vision, normal with eyelights, low-light, low-light with eyelights, thermo, ultrasound]
+    modifiers:
+      - {condition: subsurface, printed_depth: 'less than 4', values: [1, '-', '-', '-', 2, '-']}
+      - {condition: shallow, printed_depth: '4-15', values: [2, 1, 1, 1, 4, '-']}
+      - {condition: deep, printed_depth: '15+', values: [4, 2, 2, 2, 5, 1]}
+      - {condition: murky waters, printed_depth: null, values: [4, 4, 4, 4, 2, 2]}
+    printed_dash: preserve as a dash, not an inferred numeric zero
+    boundary_note: printed shallow and deep labels both include 15; no precedence inferred
+    apparent_size_increase_percent: 25
+    apparent_distance_decrease_percent: 25
+    color_visibility_game_context: {red_disappears_at_depth: 4, orange_yellow_at_depth: 10, green_blue_at_depth: 20, depth_unit: meters}
+    illusion_cross_reference: physical illusion distortion on printed p112; mana illusions unaffected
+framing: reference_exact
+headline: "FASA7908 Cannon Companion (SR3) - Underwater vision modifier matrix"
+summary: "FASA Corporation, fictional Shadowrun Third Edition tabletop rules; source.cc, printed pp111, PDF pp112. Source-specific additions and clarifications to the existing subsystem."
