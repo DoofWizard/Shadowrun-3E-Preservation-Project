@@ -1,0 +1,62 @@
+id: audit.cannon-companion-active-skills-original-review-2026-11-24
+record_type: source_reconciliation_audit
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification:
+  bytes: 80954335
+  physical_pages: 130
+  verify_source_output_status: source_pdf_hash_verified
+  source_manifest_blob: 845063d5e424d2416f0d992c209df92324649862
+  preflight_self_tests_passed: 29
+  original_images_reviewed: [[104, 105], [105, 106]]
+  review_scope: Skills heading through Spray Weapons, before Small Unit Tactics Skill heading on p105.
+field_reconciliation:
+  existing_skill_entity_root: entities/skills/
+  columns: [skill_filename, verified_blob, linked_attribute, default, specialization]
+  matching_existing_rows:
+    - [armor-build-repair.yml, ac38346f01e7fe13a1352572392c2c8b70762e00, Intelligence, Intelligence Attribute, by armor type]
+    - [blowgun.yml, 76cf3cdf4025a6fd9d0dea9438c78082db189dc4, Quickness, Quickness Attribute, none]
+    - [bracer.yml, cf559361c4be40b4c1b54f394e17964e793746ae, Quickness, [Pistols, Quickness Attribute], none]
+    - [gun-cane.yml, 21c2fcbdeb276d77d4239df70df04dcbc06e95f2, Quickness, [Pistols, Quickness Attribute], none]
+    - [gyrojet-pistol.yml, 386413c49792b7a3ab979311275525349ff68dc5, Quickness, [Pistols, Quickness Attribute], none]
+    - [eye-gun.yml, e24213581d2f51d8b7d328c4c5f12ad9ef1008d3, Quickness, Quickness Attribute, none]
+    - [off-hand-clubs.yml, f515e06872e231e56f02f6544976a9058d2612d9, Strength, Strength Attribute, by weapon type]
+    - [off-hand-cyber-implant-combat.yml, 5893705a68bae433be11060298622a7c04c02a7b, Strength, Strength Attribute, by weapon type]
+    - [off-hand-edged-weapons.yml, 66d7e20ae37e5c2f3625a86bf8f8a20af4d4cbea, Strength, Strength Attribute, by weapon type]
+    - [off-hand-whips.yml, ada342a4b91d88c79b28da3e662f86b5f3c6a198, Quickness, Quickness Attribute, by weapon type]
+    - [oral-gun.yml, 9ea3ad9839e0ae4b1b82a6ad0f3a1b153e57a02b, Quickness, Quickness Attribute, none]
+    - [oral-strike.yml, 1b2812df7086afa4f06f3fdded9ba96b42a75bf8, Quickness, Quickness Attribute, none]
+    - [parachuting.yml, b0a707ea8f1a53ac4704bb024eb99c0be161392c, Body, Body Attribute, [Standard Jump, HALO Jump, Low-Altitude Jump]]
+    - [small-unit-tactics.yml, fa300f64c389f161c6f105cbc6a98b2edcbe6b98, Intelligence, Intelligence, [BattleTac Systems, Vehicle Tactics, Matrix Tactics]]
+    - [spray-weapons.yml, 59e5f5278627f5eea687edbc14876a099d9d3094, Strength, Heavy Weapons, [Firehose, Flame-thrower, Spray Tank]]
+  purpose_and_conditions:
+    - All fifteen existing purpose fields compared against the original skill descriptions.
+    - Existing two-weapon option supplies secondary Off-Hand skill applicability for all four categories; p96 original eligibility record retained.
+    - Armor and spray skill explicit equipment applicability now supplied by the new source-specific record.
+  reused_rules:
+    - {path: options/combat/two-weapon-fighting.yml, blob: d997e9c31de0bd78e833abc2c61853c26edce534}
+    - {path: rules/combat/cannon-companion-two-weapon-melee-eligibility-p96.yml, blob: d2b9b480dcdef246741b80184495a10089ad723e}
+    - {path: rules/skills/cannon-companion-offhand-general-test-modifiers-p94-96.yml, blob: 80e23237ad5cc8c31955bc09b6a0a834265a4d9b}
+    - {path: rules/skills/cannon-companion-linked-attributes-defaults-original-p114.yml, blob: 1787d38c073a288df1efb1b9363b5ceb5639e1fd}
+  external_references:
+    - Man and Machine pp16-17 implant item definitions and p116 foam dispenser; other source ownership remains read-only.
+    - Cannon Companion p102 Parachuting and p96 two-weapon game rules already source-reconciled separately.
+transaction:
+  path: rules/skills/cannon-companion-active-skill-item-scope-p104-105.yml
+  commit: 05b9b20f0209d8cd8782042ba0c16aeed439ae23
+  blob: 6da4b50b2fafc887a5f05b3594d55044ab051fb4
+  baseline_sha256: cc372ee52274f1404afae069708fc41fd8eb1542b798f679295c472308a90015
+  candidate_sha256: d612403760a97c8b9360be43d2db17a1399fce8d62fe06308767a1bb09151274
+  immutable_sha256: a8eb65bbecddb6d768c1785e980281146d2697f102f7159197a64b579c8a1bfe
+  prepare: preflighted
+  confirm: verified
+  index_commit: 3d0bbbd9f7f76a825439ff76490cd39081b749ab
+  index_blob: b1ab6df3ce900ca64487de75f7d98044503a4570
+  index_readback: exact
+section_result: source_local_fields_reconciled
+unresolved: Historical shared entity gate provenance and independent verification of external source references remain separate obligations.
+globally_authorized_pages: 0
