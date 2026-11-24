@@ -1,0 +1,61 @@
+id: rule.skillsofts.cannon-companion-overdrive-static-virus-game-effects-p62-63
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '62-63'
+pdf_pages: '63-64'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional skillsoft adverse game effects'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp62-63/PDF63-64; dice, target numbers, duration and fictional cyberware Stress conditions omitted from the existing option summaries.'
+data:
+  overdrive:
+    existing: option.skillsofts.overdrive
+    chipped_skill_dice_bonus: Overdrive rating
+    counts_toward_asist: false
+    other_skill_target_number_modifier: Overdrive rating while active
+    voluntary_deactivation_or_removal: {action: Complex, test: Willpower opposed by twice Overdrive rating}
+    deactivation_stun: '(Overdrive Rating)S, resisted with Willpower'
+    activesoft_stress: each Combat Turn test Skillwire Rating against twice Overdrive rating; failure adds one Stress Point and requires Stress Test (M&M p124)
+    cluster:
+      directory_requires_overdrive_rating: true
+      program_maximum_overdrive: directory Overdrive rating
+      simultaneous_non_overdrive_programs_without_modifiers: directory Overdrive rating
+      other_skill_target_number_modifier: directory Overdrive rating plus 1 per additional active overdrive program
+      deactivation: same Opposed Test
+      headware: directory may also be loaded to retain effects and penalties
+  static:
+    existing: option.skillsofts.static
+    skill_rating: base rating
+    additional_size: Program Size Table using Static rating and multiplier 3
+    perception_target_number_modifier: half Static rating rounded up while active
+    other_active_activesoft_rating_reduction: Static rating
+  virus:
+    existing: option.skillsofts.virus
+    multiple_options_allowed: true
+    design_rating_unchanged: true
+    additional_size: separate fictional program sized using Virus rating and multiplier 3
+    trigger: generally activated and skill used; some trigger on activation or a specified action sequence
+    other_btl_option_references: [black death, black night, psychotropic]
+    snow:
+      persistence: Static effect persists after deactivation or removal
+      game_repair_test: Computer (Cybernetics) against Snow rating
+      base_time_hours: 12
+      game_equipment: cybernetics toolkit and computer memory equal to Snow rating cubed
+    twitch:
+      active_skill_target_number_modifier: Twitch rating while active
+    buzz:
+      game_effect: BTL sensation tied to skill use; BTL addiction rules apply (p65)
+    looper:
+      chance_percent: 50
+      game_effect: unable to cease using skill
+      duration: 1D6 hours or successful Willpower test against twice Looper rating
+      game_repair: same as Snow
+    surge:
+      trigger: deactivation
+      test: Surge Rating against skillwire system rating, or TN 2 for chipjack or knowsoft link
+      grade_modifier: +2 TN per cyberware grade above basic
+      stress_points_per_success: 1D6 divided by 2
+      stress_test: one for total Stress Points, M&M p124
+  scope: All values describe fictional tabletop game resolution only; acquisition modifiers remain in the existing option records.
