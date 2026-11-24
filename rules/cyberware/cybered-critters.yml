@@ -1,16 +1,29 @@
 id: rule.cyberware.cybered-critters
 record_type: rule
-name: "Cyberware and Critters"
+name: Cyberware and Critters
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '44'
+pdf_pages: '44'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware and Critters
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p44.
 effective: {status: current, source: source.mm, page: 44, basis: clarifies}
-scope: {applies_to: ["critters with cyberware"]}
+scope: {applies_to: [critters with cyberware]}
 resolution:
-  summary: "Critters generally follow normal cyberware rules except where their innate abilities alter implantation or recovery. Awakened critters are particularly affected because Essence loss can diminish power, while some regenerating creatures may violently reject foreign implants."
-  inputs: ["critter type", "cyberware", "innate powers"]
-  outputs: ["compatibility and special implantation consequences"]
+  summary: Implants impair critters' mental faculties and can interfere with their innate powers. The source identifies specific transformation and regeneration exceptions.
+  inputs: [critter type, cyberware, innate powers]
+  outputs: [compatibility and special implantation consequences]
   steps: []
+data:
+  general_rules_reference: Critters p6
+  awakened: Essence reduction diminishes innate power.
+  HMHVV_transformation: Existing cyberware breaks during transformation; see Infection, SRComp p33.
+  regeneration: Creatures with Regeneration tolerate implants only briefly and quickly purge them; no fixed duration is specified.
 links: {uses: [subsystem.cyberware.core], affects: [], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 44, relation: clarifies, note: "Cyberware and Critters"}
+  - {source: source.mm, page: 44, relation: clarifies, note: Cyberware and Critters}
 notes: []
