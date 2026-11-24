@@ -1,27 +1,52 @@
 id: procedure.damage.bioware-stress-repair
 record_type: procedure
-name: "Bioware Stress Repair"
+name: Bioware Stress Repair
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '130-131'
+pdf_pages: '131-132'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Bioware Stress Repair — natural, surgical and magical healing
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop game rules, printed pp130-131/PDF131-132.
 effective: {status: current, source: source.mm, page: 130, basis: defines}
-purpose: "Heal or surgically repair Stress damage to bioware."
+purpose: Heal or surgically repair Stress damage to fictional bioware.
 prerequisites: []
-inputs: ["bioware Stress", "whether the implant has failed", "Body/healing conditions"]
+inputs: [bioware Stress level and points, implant failure, unaugmented Body, healing conditions, magical healing successes and Force]
 stages:
   - id: natural
-    name: "Natural Repair"
-    test_or_action: "Nonfailed bioware can heal Stress over time using a procedure analogous to Physical-damage healing."
-    outputs: ["reduced Stress"]
+    name: Natural Repair
+    test_or_action: Determine whether the implant can heal independently using the initial Body Test and listed healing rules.
+    outputs: [reduced Stress or need for medical care]
   - id: surgery
-    name: "Therapeutic Surgery"
-    test_or_action: "Failed bioware requires therapeutic surgery before function can be restored."
-    outputs: ["repaired implant"]
-outcomes: ["Stress reduced", "implant function restored when required surgery succeeds"]
+    name: Therapeutic Surgery
+    test_or_action: Failed bioware requires therapeutic surgery to remove Stress; a failed initial healing test requires care and therapeutic surgery.
+    outputs: [repaired implant or medical healing]
+outcomes: [Stress reduced, implant function restored when required surgery succeeds]
+data:
+  failed_bioware: therapeutic surgery required, M&M p147
+  initial_test:
+    attribute: unaugmented Body
+    target_number: SR3 p127 Healing Table, substitute implant Stress Level for Damage Level
+    success: Stress can heal without medical care
+    failure: doctor care at a clinic or medical shop and therapeutic surgery
+  minimum_stress_after_damage: 1
+  self_healing: apply SR3 p127 Stages of Healing using Stress Level in place of Damage Level; optional M&M p134 physical healing rules may also be used.
+  magic_healing:
+    spells: [Heal, Treat]
+    spell_damage_level: highest Physical Damage or implant Stress Level present in the body
+    drain: uses that highest level
+    each_success: remove either one box of Physical damage or one Stress Point
+    maximum: spell Force
+    once_per_existing_stress: true
+    remaining_stress: heal normally; newly incurred Stress may be healed magically
 links:
   uses: [rule.damage.stress-points, procedure.healing.natural-and-medical]
   requires: []
   produces: []
   modified_by: []
 sources:
-  - {source: source.mm, page: 130, relation: defines, note: "Bioware Stress Repair"}
+  - {source: source.mm, pages: '130-131', relation: defines, note: Bioware Stress Repair, Self-Healing, Medical Care and Magical Healing}
 notes: []
