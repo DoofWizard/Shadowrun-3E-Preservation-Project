@@ -12,11 +12,13 @@ source_drive_id: 1DIG57xv_KhsvY4De8NU-VoXklxeULgHj
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Printed p4 and pp207-210 correspond to physical PDF pages of the same number; other folios require independent review."
+page_map_scope: "Printed p4, pp207-210 and pp227-231 correspond to physical PDF pages of the same number; other folios require independent review."
 routing:
   - {range: "6-206", section: "Regional setting chapters", status: pending_original_mechanics_review}
   - {range: "207-226", section: "Game Information", status: pending_original_mechanics_review}
-  - {range: "227-end", section: "Border Crossing and final tables", status: pending_original_mechanics_review}
+  - {range: "227-229", section: "Border Crossing", status: scoped_original_mechanics_verified}
+  - {range: "229-231", section: "Asian Matrix RTGs", status: scoped_original_mechanics_verified}
+  - {range: "232", section: "Back cover", status: pending_original_review}
 verified_semantic_records:
   - id: rule.soa.ashura-conjuring-p208
     path: rules/magic/soa-ashura-conjuring-p208.yml
@@ -72,3 +74,22 @@ verified_semantic_records:
     blob: d12c24dbde1038508601ccda185753569c7fc7ab
     gate: verified
     contiguous_advance: false
+natural_section_reviews:
+  - section: Border Crossing
+    range_printed: [227, 229]
+    range_pdf: [227, 229]
+    status: scoped_original_mechanics_verified
+    records: [rule.soa.checkpoint-verification-p227, rule.soa.border-encounter-ratings-p228-229]
+    evidence: "Original images visually reviewed, 67 checkpoint rows and 70 encounter rows; all 417 rating-column positions matched embedded source text. Ten checkpoint dashes; 72 encounter dash cells and four merged referral cells; paired Philippines alternatives retained. Existing Shadows of North America pp203-206 procedure referenced."
+  - section: Asian Matrix RTGs
+    range_printed: [229, 231]
+    range_pdf: [229, 231]
+    status: scoped_original_mechanics_verified
+    records: [rule.soa.asian-rtg-ratings-p229-231]
+    evidence: "Original images visually reviewed, all 87 rated/status rows with six rating-column positions each independently matched embedded text; five parent-only headers and nine No Matrix entries retained."
+  - section: Traditions within Traditions
+    range_printed: [207, 210]
+    range_pdf: [207, 210]
+    status: partial_original_mechanics_verified
+    records: [rule.soa.ashura-conjuring-p208, option.soa.hindu-magical-paths-p208, option.soa.eastern-tradition-guidelines-p207-210]
+    remaining: "Tibetan and Hindu mandala candidate staged but ordinary Contents create returned HTTP 409 concurrent branch-head change; fresh target read returned 404. No accepted transaction or index entry for that candidate."
