@@ -1,19 +1,30 @@
 id: entity.bioware.cerebral-booster
 record_type: entity
-name: "Cerebral Booster"
+name: Cerebral Booster
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '72'
+pdf_pages: '73'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   grade: cultured
   levels:
-    1: {bio_index: 0.4, availability: "6/14 days", cost_nuyen: 50000, street_index: 2, legality: "Legal"}
-    2: {bio_index: 0.8, availability: "6/14 days", cost_nuyen: 110000, street_index: 2, legality: "Legal"}
-links:
-  uses: [rule.cyberware.task-pool]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.4, availability: '6/14 days', cost_nuyen: 50000, street_index: 2, legality: Legal}
+    '2': {level: 2, bio_index: 0.8, availability: '6/14 days', cost_nuyen: 110000, street_index: 2, legality: Legal}
+data:
+  intelligence_bonus: implant level
+  derived_values_affected: [Reaction, Dice Pools]
+  task_pool_at_level_2: 1
+  stress:
+    light: acute headaches at GM-determined frequency
+    moderate: subtract 1 die on all concentration tasks including magical activity
+    serious: add 2 to all Perception Test target numbers; reduced awareness
+    deadly: {frequency: once daily, seizure_chance_in_six: 2, stun_damage_code: 8D, convulsion_duration_minutes: 2D6, awareness: lost during convulsions}
+links: {uses: [rule.cyberware.task-pool], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 72, relation: defines, note: "Cerebral Booster description, game effects, stress effects and statistics"}
-notes:
-  - "Each level adds 1 Intelligence; level 2 also adds a Task Pool of 1."
+  - {source: source.mm, page: 72, relation: defines, note: Cerebral Booster effects, Stress and market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p72/PDF73: Cerebral Booster'
+framing: reference_exact
