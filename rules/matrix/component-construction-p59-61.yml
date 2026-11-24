@@ -1,0 +1,40 @@
+id: rule.matrix.component-construction-p59-61
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '59-61'
+pdf_pages: '60-62'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, second group of component construction recipes.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix component construction recipes from persona chips through satellite interfaces
+summary: Original game construction costs, ratings, limits and installation tests for core and wireless components.
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Third Edition}
+  notation: {M: MPCP rating, P: persona program rating, R: Response Increase rating, D: device rating, A: memory size in Mp}
+  recipes:
+    persona_chip: {design_modifiers: {Bod: 0, Sensor: 0, Masking: 1, Evasion: 1, SASS_with_Masking_additional: 1}, software_rating: P, multipliers: {Bod: 3, Evasion: 3, Masking: 2, Sensor: 2, SASS_with_Masking_additional: 1}, cook: true, installation_time_hours: 1, installation_TN: P, parts_nuyen: '35*P^2', tools: kit}
+    port: {design: none, software: none, cook: false, installation_time_hours: 1, installation_tests: ['Computer B/R (4)', 'Electronics B/R (4) for wired or (D) for wireless'], parts_nuyen: 235, tools: kit}
+    RAS_override: {design_modifier: 0, software: none, cook: false, installation_time_hours: M, installation_TN: 4, parts_nuyen: '1000 for unit + 35*M for connections', tools: kit}
+    reality_filter: {design_modifier: 2, software_rating: M, multiplier: 10, cook: true, installation_time_days: M, installation_tests: ['Computer B/R (M)', 'Computer (Cybernetics) (M)'], parts_nuyen: '70*M', tools: [shop, Biotech kit]}
+    response_increase: {design_modifier: 1, software_rating: M, multiplier: '2*R', cook: true, installation_time_hours: 'M+R', installation_TN: '2*R', parts_nuyen: '135*R', tools: shop}
+    signal_amplifier: {design: none, software: none, cook: false, installation_time_hours: 1, installation_tests: ['Computer B/R (4)', 'Electronics B/R (D)'], parts: '35 nuyen plus amplifier cost per SR3 p290', tools: kit}
+    storage_memory: {design: none, software: none, cook: false, installation_time_hours: 'ceil(A/200)', installation_TN: 4, parts: 'OMC at desired Mp plus 0.5 nuyen per Mp, rounded up', tools: kit}
+    cellular: {design_modifier: 1, software: none, cook: false, installation_time_hours: 'M+D', installation_tests: ['Computer B/R (M)', 'Electronics B/R (D)'], parts_nuyen: '35*D^2 + device cost', tools: kit}
+    laser: {design_modifier: 0, software: none, cook: false, installation_time_hours: 'M+4', installation_tests: ['Computer B/R (M)', 'Electronics B/R (4)'], parts_nuyen: '560 + device cost', tools: kit}
+    microwave: {design_modifier: 1, software: none, cook: false, installation_time_hours: 'M+4', installation_tests: ['Computer B/R (M)', 'Electronics B/R (4)'], parts_nuyen: '560 + device cost + dish cost', tools: shop}
+    radio: {design_modifier: 0, software: none, cook: false, installation_time_hours: 'M+D', installation_tests: ['Computer B/R (M)', 'Electronics B/R (D)'], parts_nuyen: '35*D^2 + device cost', tools: kit}
+    satellite: {design_modifier: 2, software: none, cook: false, installation_time_hours: 'M+D', installation_tests: ['Computer B/R (M)', 'Electronics B/R (D)'], parts_nuyen: '35*D^2 + device cost + dish cost', tools: shop}
+  conditions:
+    persona: Each program is programmed separately; individual and combined rating caps reuse the preceding MPCP record; SASS affects only Masking construction.
+    ports: MPCP initially supplies ports equal to rating; original says it can accept additional ports up to twice its rating, without reinterpreting the wording as a total cap.
+    reality_filter: Personalized to the specific user; other users cannot easily use it.
+    response_increase: {maximum: 'min(3, floor(M/4))', cumulative_with: [reality filter, pure DNI]}
+    signal_amplifier: Recipe applies to a built-in amplifier only.
+    storage_memory: Load programs into active memory using the core Swap Memory operation.
+    wireless: {device_rating_cap: M, device_cost_added_to_parts: true, flux_depends_on_device_rating: true, amplifier_optional: internal or external, ECCM_eligible: [satellite, radio, cellular], ECCM_reference: SR3 p289}
+    link_utilities: {cellular: cellular link, laser: laser link, microwave: microwave link, radio: radio link, satellite: satellite link}
+    laser: Requires line of sight to a Matrix-connected transceiver.
+    dishes: Satellite requires a dish; microwave and satellite may use additional fiberoptic cable to position the dish away from terminal.
+  relationship: Adds component-specific game formulas to procedure.matrix.cyberterminal-construction and rule.matrix.component-construction-p56-58; does not replace the accepted wireless connection profiles.
+  source_review: Printed p59/PDF60 both columns, p60/PDF61 both columns, p61/PDF62 upper left; twelve recipes and conditions independently matched to original images.
