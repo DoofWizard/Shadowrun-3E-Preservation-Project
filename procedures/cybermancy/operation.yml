@@ -1,41 +1,66 @@
 id: procedure.cybermancy.operation
 record_type: procedure
-name: "Cybermancy Operation"
+name: Cybermancy Operation
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '54-55'
+pdf_pages: '54-55'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermancy Survival Table and Procedure
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed and PDF pp54-55.
 effective: {status: current, source: source.mm, page: 55, basis: defines}
-purpose: "Attempt cybersurgery and the linked magical procedure needed to keep a subject alive after Essence falls below zero."
+purpose: Resolve the fictional cybermancy procedure for a character whose Essence would reach zero or less.
 prerequisites:
-  - "delta clinic"
-  - "Biotech (Cybermancy) 8+ cybersurgeon"
-  - "magical group that knows the cybermantic ritual"
-inputs:
-  - "desired post-operation Essence"
-  - "cyberware Essence Cost"
-  - "surgical modifiers"
+  - delta clinic
+  - Biotech (Cybermancy) 8+ cybersurgeon
+  - magical group that knows the cybermantic ritual
+inputs: [desired post-operation Essence, cyberware Essence Cost, surgical modifiers]
 stages:
   - id: planning
-    name: "Plan Procedure"
-    test_or_action: "Use the standard implant-surgery planning process; base planning time is ten weeks before modifiers."
-    outputs: ["surgical plan"]
+    name: Plan Procedure
+    test_or_action: Use implant surgery planning (p146); base planning time is 10 weeks with deltaware and other modifiers included.
+    outputs: [surgical plan]
   - id: survival
-    name: "Cybermancy Survival Test"
-    test_or_action: "Make the required Biotech (Cybermancy) Test against the target number determined by desired Essence, with applicable doctoring modifiers."
-    outputs: ["subject survives or dies"]
+    name: Cybermancy Survival Test
+    test_or_action: Resolve the Biotech (Cybermancy) Test before installing the implants, using the desired Essence and the survival table.
+    outputs: [subject survives or dies]
   - id: implants
-    name: "Perform Implant Procedures"
-    test_or_action: "If the survival test succeeds, proceed with the planned implant procedures."
-    outputs: ["installed implants"]
-outcomes:
-  - "subject survives and continues under cybermantic support"
-  - "subject dies on failed survival test"
+    name: Perform Implant Procedures
+    test_or_action: On success proceed with the planned implants; on failure the fictional character dies.
+    outputs: [installed implants]
+outcomes: [subject survives under cybermantic support, subject dies on failed survival test]
+data:
+  desired_essence: Calculate from all planned implant Essence costs, including the invoked memory stimulator and auto-injector.
+  survival_table:
+    - {essence_high: 0, essence_low: -0.5, target_number: 4}
+    - {essence_high: -0.51, essence_low: -1, target_number: 6}
+    - {essence_high: -1.01, essence_low: -1.5, target_number: 8}
+    - {essence_high: -1.51, essence_low: -2, target_number: 10}
+    - {essence_high: -2.01, essence_low: -2.5, target_number: 12}
+    - {essence_high: -2.51, essence_low: -3, target_number: 14}
+    - {essence_high: -3.01, essence_low: unbounded, target_number: 16, additional_target_number: 2, additional_essence_interval: 0.25}
+  modifiers:
+    expanded_doctoring: Apply applicable p134 modifiers.
+    intensive_care: Delta clinic intensive-care modifier of -2 is already included in the table; do not apply twice.
+    cybermantic_willpower_bonus_applies: false
+    player_karma_on_doctor_test_allowed: false
+  mandatory_implants: [invoked memory stimulator, auto-injector]
+  auto_injector_support:
+    supply_days: 10
+    cost_nuyen: '3000 * abs(Essence)'
+    empty_supply: Character dies immediately.
+    optional_sponsor_discount_percent: '1D6 * 5'
+    optional_free_sponsor_refills: true
+    sponsor_terms: GM discretion based on the fictional corporate arrangement.
 links:
   uses: [procedure.surgery.operation, rule.cybermancy.ground-rules]
   requires: []
   produces: []
   modified_by: []
 sources:
-  - {source: source.mm, page: 55, relation: defines, note: "Less Than Zero / Cybermancy Procedure"}
+  - {source: source.mm, pages: '54-55', relation: defines, note: Ground Rules and Cybermancy Procedure including survival table and auto-injector support}
 notes:
-  - "Karma may not be spent on the cybersurgeon's survival test."
-  - "Successful subjects receive an invoked memory stimulator and an auto-injector as part of the procedure."
+  - The source gives no fixed lower Essence limit beyond the reduced chance of survival.
