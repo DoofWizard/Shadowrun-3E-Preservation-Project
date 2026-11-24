@@ -25,6 +25,15 @@ data:
     head_count_min_approx: 25
     head_count_max_approx: 40
     lieutenants: 5
+    membership_metatype: unrestricted_by_stated_metatype
+    membership_note: Originally human; the fictional leader subsequently admits anyone willing to oppose megacorporations.
+    leader_metatype: human
+    explicitly_identified_npc_roles:
+    - {name: Zazz, metatype: human, role: mage, limitation: mental block against using fire spells}
+    - {name: Zany Janey, metatype: human, role: razorgirl}
+    - {name: Honest Jack, metatype: dwarf}
+    - {name: Sister Love, metatype: elf, role: rigger}
+    - {name: Bobby Blue, metatype: troll}
   - name: The Spiders
     canonical_organization_id: entity.organization.spiders
     printed_pages: 125-127
@@ -34,6 +43,15 @@ data:
     head_count_min_approx: 50
     head_count_max_approx: 100
     lieutenants: 5
+    membership_metatype: mixed
+    leader_metatype: human
+    leader_magical_role: Spider shaman
+    explicitly_identified_npc_roles:
+    - {name: Tarantula, metatype: ork}
+    - {name: Fiddler, metatype: elf}
+    - {name: Trapdoor, metatype: dwarf}
+    - {name: Wolf, metatype: human, magic_qualification: 'Gang regarded him as a potentially powerful magician; no definite magical character type or rating stated.'}
+    - {name: Recluse, metatype: troll}
   - name: The Spikes
     canonical_organization_id: entity.organization.spikes
     printed_pages: 127-128
@@ -43,6 +61,10 @@ data:
     head_count_min_approx: 15
     head_count_max_approx: 25
     lieutenants: 2
+    membership_metatype: troll_only
+    leader_metatype: troll
+    explicitly_identified_npc_roles:
+    - {name: Goddess Ursula, metatype: troll}
   - name: The Red Hot Nukes
     canonical_organization_id: entity.organization.red-hot-nukes
     printed_pages: 128-129
@@ -53,6 +75,10 @@ data:
     head_count_max_approx: 25
     lieutenants: 0
     lieutenants_original_wording: None
+    membership_metatype: dwarf_only
+    membership_magical_role: adept
+    leader_metatype: dwarf
+    leader_magical_role: adept
   - name: The Night Hunters
     canonical_organization_id: entity.organization.night-hunters
     printed_pages: '129'
@@ -63,6 +89,8 @@ data:
     head_count_max_approx: 30
     lieutenants: 2
     lieutenants_original_qualification: Main group; splinter gangs vary
+    membership_metatype: human_only
+    splinter_leadership: Each splinter gang has its own leader.
   membership_range_interpretation: The printed numbers are approximate headcounts, not exact minimum/maximum
     roster limits or mechanically guaranteed combatant totals.
   original_supersession_language: The source explicitly says these five descriptions supersede other information
@@ -74,9 +102,7 @@ data:
   - rules/campaign/srcomp-gang-reputation-leadership-economics-p123-124.yml supplies the existing generic four-tier
     group comparison and size-adjustment procedure; do not duplicate or replace it.
   - subsystems/campaign/gang.yml remains the existing qualitative optional campaign overview.
-  source_reconciliation_scope: Only printed example gang numeric group ratings, approximate membership headcounts
-    and lieutenant numbers are added as structured reusable NPC opponent stats. Source narrative and detailed
-    member biographies are not certified here.
+  source_reconciliation_scope: Structured original example group ratings, approximate membership, lieutenant counts, explicit group metatype and magical-role composition, and specified NPC character types or limitations. These are optional named NPC templates, not universal character-creation restrictions; narrative and biographies are not certified.
   publication_provenance:
     publisher: FASA Corporation
     title: Shadowrun Companion
@@ -85,7 +111,6 @@ data:
     source_id: source.srcomp
     original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
     physical_pdf_pages: 125-130
-headline: 'FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition: source-printed fictional
-  Seattle gang NPC group statistics, pages 124–129'
-summary: Preserves five named optional gang example ratings, approximate headcounts, lieutenant counts and
-  explicit source-period description supersession; no inferred later continuity or engine implementation.
+  example_use: The GM may use these five examples as archetypes or as the named groups, as stated on printed p124.
+headline: 'FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition: fictional NPC gang example mechanics, printed pp124–129/PDF125–130'
+summary: Preserves five optional NPC template ratings, approximate headcounts, lieutenant counts, composition and explicit character roles, with source-period supersession. No inferred later continuity or engine implementation.
