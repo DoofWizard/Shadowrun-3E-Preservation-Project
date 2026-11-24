@@ -1,40 +1,61 @@
 id: subsystem.critters.weaknesses-mutation-toxicity
 record_type: subsystem
-name: "Critter Weaknesses, Mutation, and Toxicity"
-domain: critters
-status: ingested
-
-effective: {status: current, source: source.critters, pages: "14-17", basis: defines}
-
-weaknesses:
-  allergy:
-    nuisance: "No significant game effect beyond annoyance."
-    mild: "+1 to all target numbers while exposed."
-    moderate: "Painful exposure; +2 Power for weapons made from the allergen."
-    severe: "Contact causes Physical damage; +2 Power for allergen weapons and an additional Light wound."
-  dietary_requirement: "Without the required substance, the creature sickens and eventually dies."
-  essence_loss: "HMHVV-derived beings with this weakness lose Essence over time and must replenish it by consuming Essence; reaching 0 is rapidly fatal."
-  reduced_senses: "Affected senses typically function at half normal rating."
-  vulnerability: "Weapons made of the specified substance increase Damage Level by one; non-damaging contact counts as a Nuisance allergy."
-
-mutant_critters:
-  description: "Radiation-mutated mundane or paranormal animals are typically aggressive, unstable, and may gain physical or paranormal anomalies."
-  construction:
-    - "Reduce Intelligence by 2, minimum 1."
-    - "Reduce Essence by 1 for each chosen mutant characteristic."
-    - "Enhanced Attributes cost 1 Essence per point of enhancement."
-    - "A mutant should have no more than one paranormal ability; adding one costs 3 Essence, minimum Essence 1."
-    - "Essence-based paranormal abilities function at new Essence plus the difference between old and new Essence, preserving the source's stated potency adjustment."
-
-toxic_critters:
-  description: "Pollution/radiation-warped paranormal critters gain toxic powers and a severe allergy to purified air or water."
-  construction:
-    - "Choose one primary and one secondary toxic power."
-    - "Primary toxic power uses equal Essence; secondary uses equal Essence/2, round down."
-    - "Toxic hibernation in toxic waste/highly toxic terrain restores one use per hour."
-    - "A standard paranormal power may be removed to grant unlimited use of a toxic power."
-    - "Spend 1 Essence to add one die to Combat Pool."
-  behavior: "The text describes toxic critters as paranoid, vengeful loners that often pursue perceived polluters and commonly fight to the death."
-
-sources:
-  - {source: source.critters, pages: "14-17", relation: defines, note: "Weaknesses, mutant critters, toxic critters"}
+status: reviewed
+source: source.critters
+printed_pages: '14-17'
+pdf_pages: '14-17'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: Shadowrun Third Edition}
+  name: Critter Weaknesses, Mutation, and Toxicity
+  domain: critters
+  effective: {status: current, source: source.critters, pages: '14-17', basis: defines}
+  weaknesses:
+    allergy:
+      nuisance: No significant game effect beyond annoyance.
+      mild: Add 1 to all target numbers while exposed.
+      moderate: Contact is painful and often prompts retreat; prolonged contact triggers the reaction. Add 2 to Power of weapons made from the allergen.
+      severe: Even slight contact triggers the reaction and Physical damage; add 2 to Power of allergen weapons, and apply an additional Light wound beyond weapon damage.
+      general_qualifications: rule.critters.weakness-conditions-p15
+    dietary_requirement: Without the required dietary substance, the creature sickens and eventually dies.
+    essence_loss:
+      eligible: Humans and metahumans affected by HMHVV may have this weakness.
+      acquisition: The being has its pre-transformation Essence at transformation, no innate Essence, and gains Essence only by regularly consuming the Essence of others.
+      normal_loss_per_month: 1
+      rate_exception: Some lose Essence faster and few more slowly.
+      zero_essence: Fatal within days or potentially hours; the being seeks fresh Essence as a starving predator during that interval.
+    reduced_senses: Affected senses typically function at half normal rating.
+    vulnerability: Weapons made of the specified substance increase Damage Level by one; non-damaging contact counts as a Nuisance allergy. Apply the recovery and Regeneration qualifications in rule.critters.weakness-conditions-p15.
+  mutant_critters:
+    description: Radiation-mutated mundane or paranormal animals are typically aggressive and may gain physical or paranormal anomalies; mutant paranormal animals are unstable.
+    construction:
+      - Reduce Intelligence by 2, minimum 1.
+      - Reduce Essence by 1 for each chosen mutant characteristic.
+      - Enhanced Attributes cost 1 Essence per point of enhancement.
+      - A mutant creature should have no more than one paranormal ability. If the creature has a paranormal ability, reduce its Essence by 3, to a minimum of 1.
+      - An Essence-based ability functions at the new Essence plus the difference between the new and old ratings (as illustrated by the printed bear example).
+    selection_and_example: rule.critters.mutant-creation-conditions-p15-17
+    paranormal_creation: Apply the same creation guidelines to existing paranormal animals; the text does not provide a separate Essence-cost exception for an existing ability.
+  toxic_critters:
+    description: Fictional pollution- or radiation-warped paranormal critters have toxic powers and a Severe Allergy to purified air or water.
+    construction:
+      - Choose one primary and one secondary toxic power; these powers cost no initial Essence.
+      - Primary toxic power uses equal Essence; secondary uses equal Essence divided by 2, rounded down.
+      - Toxic hibernation in toxic waste or a highly toxic area restores one use per hour. The passage does not specify an allocation method between powers.
+      - A standard paranormal power may be removed to grant unlimited use of a toxic power; this power no longer requires toxic hibernation to recharge.
+      - Spend 1 Essence to add one die to Combat Pool.
+    unlimited_use_example: A fictional toxic hell hound may exchange Innate Spell (Flamethrower) for unlimited-use Noxious Breath.
+    table_and_nova_scorpion_example: rule.critters.toxic-power-conditions-p17
+    behavior: The source describes toxic critters as paranoid, vengeful loners that often pursue perceived polluters and commonly fight to the death. They are not necessarily more intelligent than non-toxic specimens.
+    shaman_relationship: No discernible correlation with toxic shamans beyond their similar nature is established; cooperation has been observed, but the shamans describe the critters as acting independently.
+  source_contributions:
+    - {source: source.critters, printed_pages: '14-15', pdf_pages: '14-15', scope: weaknesses}
+    - {source: source.critters, printed_pages: '15-17', pdf_pages: '15-17', scope: mutant_critters}
+    - {source: source.critters, printed_pages: '17', pdf_pages: '17', scope: toxic_critters}
+  precedence:
+    note: This revision corrects and clarifies the existing subsystem fields; the three existing original-source supplements remain linked for their additional conditions, tables and worked examples, not cumulative alternate rule sets.
+    no_inferred_supersession: true
+framing: reference_exact
+headline: FASA7002 Critters original weakness and mutant and toxic critter mechanics
+summary: Original fictional Shadowrun Third Edition tabletop rules from Critters (FASA Corporation, FASA7002), printed/PDF pages 14-17; reconciles the subsystem with verified supplemental conditions and preserves the explicit Essence and power-tradeoff qualifications.
