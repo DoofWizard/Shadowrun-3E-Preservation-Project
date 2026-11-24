@@ -1,0 +1,71 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+actual_verify_source_status: source_pdf_hash_verified
+physical_pdf_pages: 130
+original_image_review:
+  printed_range: [107, 112]
+  physical_pdf_range: [108, 113]
+  scope: "All original Underwater Activity rules, from the heading on p107 through Underwater Conjuring on p112; unrelated material on those pages excluded."
+  baseline_and_candidate: "Each new record independently checked against the original page images; source and publisher identified, game terms retained, no inferred boundary or edition conversion."
+actual_preflight: 29/29
+validation_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+reused_canon:
+  subsystem: {path: subsystems/environment/underwater.yml, blob: 2963252755523285582a56614dfce0255df36721}
+  prior_gear_audit: {path: references/audits/cannon-companion-underwater-gear-original-review-2026-11-23.yml, blob: cc3bdba7350f80c84ee0eaab1fd12c61f0197f3b}
+  shared_path_policy: read_only
+  evidence_limit: "Historical shared subsystem fields independently compared with original images and current blob; no new historical transaction receipt claimed."
+field_reconciliation:
+  diving_types_and_time:
+    pages: [107, 108, 109]
+    reused: [three depth-based categories, OXSYS indefinite duration, five complete safe-time table rows, movement and buoyancy modifiers, four safe-time exemptions]
+    new: [training and acclimation eligibility, declaration timing and emergency exception, Knowledge skill resolution, success-count linkage]
+    source_specific_record: rule.environment.cannon-companion-diving-hazard-game-conditions-p108-111
+  pressure_and_hazards:
+    pages: [109, 110, 111]
+    reused: [ear squeeze Body test and penalty duration, air embolism game damage and Intelligence loss test, five hazard damage and test summaries, DCS game time formula, nitrogen narcosis recovery formula]
+    new: [four eligibility rows, hazard trigger and exclusivity, oxygen toxicity conditions and symptom duration, wound modifier condition, intoxication state and self-ascent modifier, HPNS cumulative cross-test modifier]
+    source_specific_record: rule.environment.cannon-companion-diving-hazard-game-conditions-p108-111
+  perception:
+    pages: [111]
+    reused: [hearing modifier, inability to localize by sound alone without sonar]
+    new: [complete four-by-six vision matrix, 19 numeric cells, five printed dash markers, refraction percentages, color visibility context, overlap at 15]
+    source_specific_record: rule.perception.cannon-companion-underwater-vision-original-p111
+  water_combat:
+    pages: [111, 112]
+    reused: [surface waves modifier, existing projectile and refraction game rules, melee skill defaulting and existing penalties and exemptions, underwater explosion game treatment, existing scuba tank game statistics]
+    new: [visibility mode exceptions, underwater equipment eligibility, depth and murkiness modifier linkage, single-attack tank condition, Body resistance and original distance qualifier]
+    source_specific_record: rule.combat.cannon-companion-water-combat-game-exceptions-p111-112
+  underwater_spellcasting_and_conjuring:
+    pages: [112]
+    reused: [combat spell line-of-sight condition, lightning area formulas, materialized spirit spotting target number formulas, sylph and salamander restriction]
+    new: [geasa and Centering restrictions, astral visibility reference, detection-spell exception, Oxygenate and HPNS distinction, illusion plausibility and detection, blast and fire failure and Drain, earth ice acid resistance modifier, water effects, astral versus materialized presence, habitat conjuring and penalties, water and habitation domains, Guard protection]
+    source_specific_record: rule.magic.cannon-companion-underwater-magic-original-p112
+printed_ambiguities_preserved:
+  - "HPNS table begins eligibility at depth 151; narrative onset uses excessive time below 200."
+  - "Air embolism immediate/hourly resistance wording is not interpreted as an extra damage instance."
+  - "Helium chills paragraph says additional +1 but does not expressly say cumulative."
+  - "Shallow and deep depth labels overlap at 15; no precedence inferred."
+  - "Printed vision dashes are not silently converted to zero."
+  - "Scuba tank Power distance text refers to projectile traversal; no invented separate radius rule."
+transactions:
+  - {record: rule.perception.cannon-companion-underwater-vision-original-p111, commit: eb956c8568bd38cdf490550cacbf40631511bcba, blob: 98f9eb08b24d4b2e1282d3d80b1df93969f5118d, gate: verified, index_commit: f62e045d4c59d4deb0c18cfc66811f852c42205b, index_blob: b503bd2eb49155e1bd5fa8a1fa593c109c41ab9e}
+  - {record: rule.combat.cannon-companion-water-combat-game-exceptions-p111-112, revision: historical, commit: 75dd673c32cfdcd784fd412b40e6678869642832, blob: b8590c76ee93dc2877f7fc78d2ab391c151337ec, gate: verified, index_commit: eaa6f7b96f62a6356940e49cd10c59c66770cd12, index_blob: 490aa1bc01ccbec26883064ee378210cf83945e1}
+  - {record: rule.environment.cannon-companion-diving-hazard-game-conditions-p108-111, commit: 78218c24595f331fae5f142cdb701f56b82eab54, blob: 032e38b3e43fdbb8e90455e18e104c20cf50c011, gate: verified, index_commit: 9366a71a1c2c992cd1c72afaa83e4fc4ecb5da27, index_blob: 9cf66d6e34ca4fc92dd05cca65c3aacdf43d4c9b}
+  - {record: rule.magic.cannon-companion-underwater-magic-original-p112, commit: 48cde9971711e3b6aea4ebe15a288a8ca79057d4, blob: 4021b21b8437df94b9a801c68e11e055e8a9f073, gate: verified, index_commit: ea5b452fafdec828207c586c3d322db777e12900, index_blob: 12cf284e656c31c0cf599731460a268ad8170d55}
+  - {record: rule.combat.cannon-companion-water-combat-game-exceptions-p111-112, revision: current, commit: 0e5a9ec74170a03755e751a3572519072422dc45, blob: 7f4b9abda5ff463fb5c11d4b8caf82d1df96c2a0, gate: verified, index_commit: 798a49b4c79b78912281343186298035995d9f76, index_blob: 187a8567342cb53d7cb39856874f53cd8495bcec}
+concurrency:
+  - "Semantic magic create and manifest index encountered independent HTTP 409 branch-head races; source path remained absent or manifest blob unchanged on fresh read. Ordinary Contents operations then succeeded; no changed-path overwrite or content-denial bypass."
+source_local_status: original_fields_reconciled
+new_distinct_records: 4
+actual_confirmations: 5
+whole_book_acceptance: false
+global_pages_authorized: 0
+next_scope: "Biological Signature and Parachuting dependency pp102-104; original p104 reviewed and Eyekiller label, discretionary carried-gear modifier and HALO wording identified for source-specific correction."
