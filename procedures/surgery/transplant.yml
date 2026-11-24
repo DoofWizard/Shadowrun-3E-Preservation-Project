@@ -1,15 +1,42 @@
 id: procedure.surgery.transplant
 record_type: procedure
-name: "Transimplant Surgery"
+name: Transimplant Surgery
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "147-148"
+pdf_pages: "148-149"
+edition_scope: SR3
+content_class: [rule_procedure]
 effective: {status: current, source: source.mm, page: 147, basis: defines}
-purpose: "Install or remove bioware and transplant replacement organs or limbs."
+purpose: Resolve bioware installation and removal and replacement body parts in the fictional tabletop rules.
 prerequisites: []
-inputs: ["bioware or body part", "recipient", "planned options"]
+inputs: [bioware or body part, recipient, planned options]
 stages: []
-outcomes: ["bioware installed/removed", "organ or limb transplanted", "rejection/Stress consequences on failure"]
-links: {uses: [rule.surgery.surgical-test, rule.surgery.body-parts], requires: [], produces: [], modified_by: []}
+outcomes: [bioware installed or removed, organ or limb transplanted, rejection or Stress on failure]
+data:
+  separate_surgery_test_per_bioware_item_and_replacement_part: true
+  may_follow_trauma_surgery: true
+  options:
+    negative: [Bio Index Gain, Fragility (bioware only), Sensitive (bioware only), Surgical Stress]
+    positive: [Bio Index Reduction, Bio Index Slot, Nanosurgery, Rugged]
+  install_bioware:
+    target_number: 5
+    prerequisite: implant available
+    failure: implanted item rejected; character cannot heal and takes 1 additional Physical damage box per day until it is removed
+  remove_bioware:
+    target_number: 4
+    recovers_bio_index: false
+    permanent_implant_stress_points: 1
+    replacement_part: usually required
+    failure: implant remains, gains 1 Stress Point and must make a Stress Test
+  transplant_organ_or_limb:
+    target_number: 5
+    replacement_sources: [another person, cloned spare]
+    failure: transplanted part rejected; character cannot heal and takes 1 additional Physical damage box per day until it is removed
+links: {uses: [rule.surgery.surgical-test, rule.surgery.body-parts], requires: [], produces: [], modified_by: [option.surgery.surgical-options]}
 sources:
-  - {source: source.mm, pages: "147-148", relation: defines, note: "Transimplant Surgery procedures and target numbers"}
+  - {source: source.mm, pages: "147-148", relation: defines, note: Transimplant Surgery and three procedures and target numbers}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp147-148/PDF148-149: Transimplant Surgery"
+framing: reference_exact
