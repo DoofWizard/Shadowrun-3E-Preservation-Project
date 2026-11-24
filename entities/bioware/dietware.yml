@@ -1,21 +1,32 @@
 id: entity.bioware.dietware
 record_type: entity
-name: "Dietware"
+name: Dietware
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '76'
+pdf_pages: '77'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   category: cosmetic
   bio_index: 0.2
-  availability: "4/4 days"
+  availability: '4/4 days'
   cost_nuyen: 10000
   street_index: 1
-  legality: "Legal"
+  legality: Legal
+data:
+  game_effects:
+    digestion_limit: proportional to recipient metabolic rate
+    fictional_effect: prevents excess food intake from producing weight gain
+    incompatible_with: entity.bioware.digestive-expansion
 links:
   uses: []
   requires: []
   component_of: []
   interacts_with: [entity.bioware.digestive-expansion]
 sources:
-  - {source: source.mm, page: 76, relation: defines, note: "Dietware description and statistics"}
-notes:
-  - "Cosmetic bioware; incompatible with digestive expansion."
+  - {source: source.mm, page: 76, relation: defines, note: Dietware effects and market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p76/PDF77: Dietware'
+framing: reference_exact
