@@ -1,0 +1,58 @@
+id: rule.firearms.cannon-companion-light-pistol-game-qualifiers-p16-18
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '16, 18'
+pdf_pages: '17, 19'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion SR3: Light Pistols tabletop qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp16 and 18. Fictional equipment options, dice tests, game action and class qualifications supplement existing item statistics.'
+data:
+  ares_light_fire_70:
+    exclusive_game_accessory:
+      name: special silencer
+      concealability_modifier: -1
+      weight: 0.1
+      cost_nuyen: 650
+  beretta_200st:
+    burst_action: Complex Action
+    conditional_recoil_compensation: 1
+    game_condition: detachable stock equipped
+  ceska_vz_120:
+    additional_game_rules: none stated in model description
+  colt_asp:
+    game_silencer_eligible: false
+    shared_revolver_rule: rule.firearms.accessory-mounts
+  fichetti_executive_action:
+    ordinary_recoil_rules_apply: true
+    integral_recoil_compensation: none
+  hammerli_model_610s:
+    range_table_class: heavy pistol
+    top_game_mount_eligible: true
+    barrel_game_mount_eligible: false
+    existing_recoil_compensation_reused: 1
+  sa_puzzler:
+    fictional_game_mad_detection: not detected
+    component_recognition_game_test:
+      alternatives:
+        - {skill: Pistols B/R, target_number: 6}
+        - {test: Perception, target_number: 10}
+    abstract_assembly_or_disassembly_game_test:
+      skill: Pistols B/R
+      target_number: 4
+      base_time_combat_turns: 10
+    inherited_by: entity.weapon.ww-infiltrator
+    ammunition_reference_printed_page: 38
+  seco_ld_120:
+    integral_game_accessory: {name: laser sight, game_mount: top}
+  taurus_multi_6:
+    game_profiles:
+      - {ammunition_class: light pistol, mode: SA, damage_code: 6L, range_table_class: light pistol}
+      - {ammunition_class: heavy pistol, mode: SS, damage_code: 7M, range_table_class: heavy pistol}
+    game_silencer_eligible: false
+  walther_pb_120:
+    optional_extended_game_magazine:
+      concealability_modifier: -2
+      existing_table_values_reused: true
