@@ -1,0 +1,74 @@
+id: rule.magic.mits-awakened-skills-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '30'
+pdf_pages: '31'
+edition_scope: SR3
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) — Awakened Skills
+summary: Original fictional tabletop skill classifications and constraints, FASA Corporation,
+  printed p30/PDF31. Structured mechanics and source references are preserved in data.
+data:
+  centering:
+    type: Active Magical Skill
+    linked_attribute: Willpower
+    use: Initiates use it to perform Centering (MitS p72).
+    minimum_magic: 1
+    rating_cap: Rating of associated creative skill.
+    default: None
+    specializations: []
+    creative_skill_role: Represents the character’s art form; Centering measures the
+      ability to focus through it.
+  divining:
+    type: Active Magical Skill
+    linked_attribute: Willpower
+    use: Initiates use it to perform Divining (MitS p74).
+    minimum_magic: 1
+    rating_cap: Rating of associated prediction skill.
+    default: None
+    specializations: []
+    prediction_skill_role: Represents the character’s divination method; Divining
+      measures ability to interpret future events through it.
+  enchanting:
+    type: Active Magical Skill
+    linked_attribute: Willpower
+    use: Production of magical goods.
+    minimum_magic: 1
+    background_knowledge: Talismongering
+    power_focus_dice: Prohibited
+    default: None
+    specializations:
+    - Alchemy
+    - Artificing
+    specialization_scope:
+      Alchemy: Refining magical materials
+      Artificing: Manufacturing foci
+  ritual_sorcery:
+    type: Specialization
+    parent_active_magical_skill: Sorcery
+    use: Team ritual use of Sorcery (MitS p36).
+  spell_design:
+    type: Academic Knowledge Skill
+    linked_attribute: Intelligence
+    use: Spell formula theory, application and design.
+    default:
+    - Intelligence
+    - other Magical Knowledge Skills
+    specializations:
+    - Spell Category
+  talismongering:
+    type: Knowledge Skill
+    linked_attribute: Intelligence
+    use: Enchanting background skill; analyzes, gathers and manufactures magical materials
+      and contributes to focus design.
+    default:
+    - Intelligence
+    - other Magical Knowledge Skills
+    specializations:
+    - Analysis
+    - Gathering
+    - Refining
+  related_core_reference: SR3 p81
