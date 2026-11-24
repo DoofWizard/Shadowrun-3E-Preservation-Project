@@ -1,21 +1,62 @@
 id: rule.surgery.surgery-damage
 record_type: rule
-name: "Surgery Damage"
+name: Surgery Damage
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "150-151"
+pdf_pages: "151-152"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 151, basis: defines}
 scope:
-  applies_to: ["surgical procedures"]
+  applies_to: [fictional surgical procedures]
 resolution:
-  summary: "Most surgery inflicts Physical damage on the patient according to the procedure. Trauma surgery inflicts no additional surgery damage. Implant surgery damage is based on the implant's Essence Cost or Bio Index before reductions, using the Implant Surgery Damage table; this damage is checked for wound effects and permanent damage where applicable."
-  inputs: ["surgery type", "implant Essence Cost or Bio Index"]
-  outputs: ["Physical damage boxes"]
+  summary: Surgical procedures inflict Physical damage according to the game tables; trauma surgery adds none.
+  inputs: [surgery type, base implant Essence Cost or Bio Index, neural connection classification]
+  outputs: [Physical wound level or damage boxes]
   steps: []
+data:
+  procedure_wounds:
+    cosmetic_minor: L
+    cosmetic_moderate: M
+    cosmetic_serious: S
+    implant_remove_upgrade_cyberware: implant_damage_table
+    repair_cyberware_stress_or_failure: L
+    therapeutic_repair_stress: M
+    therapeutic_repair_failure: S
+    transplant_implant_or_remove_bioware: implant_damage_table
+    transplant_limb_or_organ: S
+    trauma: no_additional_damage
+  implant_damage:
+    basis: Base Essence Cost or Bio Index before grade or surgical-option modifiers.
+    mostly_neural_or_many_neural_connections_multiplier: 2
+    table:
+      - {cost_index: "<0.2", physical_boxes: 1}
+      - {cost_index: "0.2-0.29", physical_boxes: 2}
+      - {cost_index: "0.3-0.49", physical_boxes: 3}
+      - {cost_index: "0.5-0.79", physical_boxes: 4}
+      - {cost_index: "0.8-1.29", physical_boxes: 5}
+      - {cost_index: "1.3-2.09", physical_boxes: 6}
+      - {cost_index: "2.1-3.39", physical_boxes: 7}
+      - {cost_index: "3.4-5.49", physical_boxes: 8}
+      - {cost_index: "5.5-8.89", physical_boxes: 9}
+      - {cost_index: "8.9+", physical_boxes: 10}
+  exceptions:
+    deadly_surgical_damage_stabilization_check: false
+    deadly_surgical_damage_permanent_damage_check: false
+    awakened_magic_loss_check: required
+    magic_loss_reference: SR3 p160
+    operation_specific_side_effects: possible
+    eye_operation_example: Character cannot see with the operated eyes until surgical damage fully heals.
 links:
   uses: [rule.damage.wound-effects, rule.surgery.surgical-test]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 151, relation: defines, note: "Surgery Damage and Implant Surgery Damage table"}
-notes: []
+  - {source: source.mm, page: 150, relation: defines, note: Surgery Damage Table}
+  - {source: source.mm, page: 151, relation: defines, note: Surgery Damage and Implant Surgery Damage table}
+notes: [Cost ranges are preserved as printed without inferring rounding for unlisted intermediate precision.]
+headline: "FASA7126 Man & Machine, FASA 1999, Shadowrun Third Edition tabletop RPG, printed pp150-151/PDF151-152: Surgery Damage"
+framing: reference_exact
