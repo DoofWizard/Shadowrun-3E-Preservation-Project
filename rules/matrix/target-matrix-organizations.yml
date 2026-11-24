@@ -2,7 +2,12 @@ id: rule.matrix.target-matrix-organizations
 record_type: rule
 name: "Target: Matrix - Organization and Gang Procedures"
 domain: matrix
-status: ingested
+status: source_reviewed
+edition_scope: "FASA Corporation Target: Matrix FASA7219, original Shadowrun Third Edition fictional tabletop RPG"
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FASA7219 Target: Matrix SR3 organization and gang campaign procedures, original pp129-131/PDF130-132"
+summary: "Reconciles legacy DDS and Terminal Cases roster and role contradictions; preserves source-specific organization encounter, recruitment, and conditional assistance rules alongside previously accepted numeric records."
 source: source.fasa-7219
 printed_pages: "129-131"
 pdf_pages: "130-132"
@@ -13,20 +18,27 @@ ccma_god:
     - "CCMA may investigate corporate Matrix activity through audits, hired runners, or corporate-law actions."
     - "Grid Overwatch Division acts as its policing arm and may pursue Matrix offenders across international/corporate boundaries."
     - "Internal loyalties of G-men may vary with prior megacorporate affiliations."
+    - "In campaigns, the CCMA may be the source of a hiring contact investigating corporate Matrix misconduct, or itself the target of a commissioned run to remove evidence of such misconduct."
+    - "G-men may be encountered on patrol or during an investigation; former Big Ten assignments can produce competing loyalties, allies and adversaries."
 
 dead_deckers_society:
   model:
-    - "Approximately a dozen elite deckers with high-grade gear and a network of safehouses/contacts."
-    - "Can be rivals, employers, or high-cost specialist allies."
+    - "Approximately fifteen elite deckers with high-grade gear and a network of safehouses/contacts."
+    - "Can be rivals or potential employees of the player characters; fees are steep and challenging jobs are more attractive."
     - "Services are intentionally not a universal solution for runner problems."
+    - "An existing drinking-buddy contact may secretly belong to the Society and invite a player character to meet the group."
 
 exchange:
   model:
     - "Anonymous barter/task network coordinated through the Matrix."
     - "Assignments arrive through distinctive pocket-secretary intermediaries."
-    - "Rewards may take the form of reciprocal assistance rather than direct cash."
+    - "Rewards may take the form of reciprocal assistance rather than direct cash; the apparent benefit is not guaranteed and the source leaves motives uncertain."
+    - "In the fictional campaign, membership commonly begins with possession of the red-X pocket secretary. The device observes the new holder briefly before proposing unexplained tasks and promising a karmic reward. Other members may later appear to act on the holder’s behalf."
   pocket_secretary:
     scanner: "Rating 6"
+    integrated_equipment: ["low-light video camera", "audio recorder"]
+    additional_equipment: "Other surveillance items often present; unspecified."
+    manufacture: "Unique design; no manufacturer trace."
     communications: "forged MSP account and protected relay chain"
     note: "Exact identity/agenda of Exchange remains deliberately undefined for gamemaster use."
 
@@ -35,16 +47,19 @@ schockwellenreiter:
   model:
     - "Extended hacker collective that can act as allies, support contacts, or principled opposition."
     - "Members may work alone or in groups and provide technical support, investigation, encryption and anti-worm software."
+    - "The group may aid deckers in need, investigate independently, take suitable causes for free, and distribute encryption and anti-worm software without charge."
+    - "The gamemaster may use the Riders as rescuers, but their decisions must remain consistent with their stated philosophy; assistance may be refused when a request conflicts with it."
 
 matrix_gangs:
   troglobytes:
     gang_focus: "metahuman-oriented third-tier gang, primarily orks and trolls"
     leader: "Lord Bunny"
+    initiation_rituals: "The fictional gang compels new recruits to complete a hostile in-game Matrix task against a Humanis Policlub host."
     lieutenants: "None"
     gang_rating: "Inferior"
     head_count: "approximately 12-15"
     territory: "none; roams Matrix"
-    operations: ["pirated software","low-end cyberdeck repair/construction","occasional vandalism"]
+    operations: ["pirated software","low-end cyberdeck repair/construction","occasional vandalism", "occasional paid low-difficulty Matrix jobs for pro-metahuman groups"]
   architects:
     gang_focus: "third-tier otaku gang focused on reshaping Matrix and metahuman bodies"
     leader_lieutenants: "none known"
@@ -56,7 +71,8 @@ matrix_gangs:
   terminal_cases:
     gang_focus: "third-tier extremist gang focused on pain/death themes"
     leader: "Terminus"
-    lieutenants: ["Negative Gain","Terminus' slave"]
+    lieutenants: ["Negative Gain"]
+    lieutenant_relationship: "The source identifies Negative Gain as a person enslaved by Terminus, not a second lieutenant."
     gang_rating: "Inferior"
     head_count: "approximately 15-20"
     territory: "none; roams Matrix"
@@ -65,6 +81,17 @@ matrix_gangs:
       - "psychotropic programming"
       - "distribution of illicit BTL material"
     initiation: "new recruits are subjected to gang-specific abuse/conditioning; details retained only as source-period characterization, not as a recommended procedure"
+
+data:
+  publication: "FASA Corporation, Target: Matrix (FASA7219), Shadowrun Third Edition fictional tabletop RPG"
+  original_pdf_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+  prior_blob: fa7f949285ddbfc6ce9eb6386f74b11915bd4c22
+  source_heading: "Game Information / Organizations / Matrix Gangs"
+  accepted_numeric_details:
+    - {path: rules/matrix/target-matrix-organization-stat-conditions-p129-131.yml, blob: 551da5ef2ac7b1e83a28fa97179912afadb77307}
+    - {path: rules/matrix/target-matrix-gang-roster-conditions-p131.yml, blob: e4011f3672a6da46f669de53734413693e5811f1}
+  reuse: "Existing accepted numeric ratings, head counts, and equipment values are reused, not counted as new mechanics. Original organization campaign-use conditions and legacy contradictions are reconciled here."
+  review: "Printed 129-131 / physical PDF 130-132: original organization and gang headings, ratings, variable conditions, role distinctions, recruitment and service limitations checked. No invented target numbers, fees or guaranteed assistance."
 
 sources:
   - {source: source.fasa-7219, printed_pages: "129-131", pdf_pages: "130-132", relation: defines_campaign_procedures}
