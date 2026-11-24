@@ -1,21 +1,50 @@
 id: option.healing.expanded-first-aid
 record_type: option
-name: "Expanded First Aid Modifiers"
+name: Expanded First Aid Modifiers
 domain: healing
 status: ingested
+source: source.mm
+printed_pages: '132-133'
+pdf_pages: '133-134'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Expanded First Aid — optional Biotech modifiers and diagnosis
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop rules, printed pp132-133/PDF133-134.
 effective: {status: optional, source: source.mm, page: 133, basis: adds_option}
 option_for: [procedure.healing.natural-and-medical]
 selection:
-  timing: "campaign rules"
+  timing: campaign rules
   prerequisites: []
   incompatible_with: []
 effects:
-  - "Adds optional First Aid modifiers for Awakened patients, bioware, cybermancy, Attribute failure, special nano-medical support, Body, environmental conditions and uncertain diagnosis."
+  - Additional target number modifiers apply to Biotech (First Aid) attempts alongside the SR3 p129 First Aid Table when this optional rule is adopted.
+data:
+  patient_modifiers:
+    awakened: 2
+    bioware: 'ceil(Bio Index / 2)'
+    cyberzombie: 'abs(Essence)'
+    attribute_failure: '+1 per affected Attribute'
+    guardian_angel_nano_implant: -2
+    savior_advanced_medkit: -1
+  body_attribute_modifiers:
+    '1-3': 0
+    '4-6': -1
+    '7-9': -2
+    '10+': -3
+  condition_modifiers:
+    bad: 1
+    terrible: 3
+    no_medkit: 4
+    paramedic_does_not_know_cause: 2
+  notes:
+    uncertain_cause: When the injury cause is not apparent, treatment is more difficult and may be incorrect because of misdiagnosis. The gamemaster may call for a Medicine Test to establish whether the medic identifies the cause correctly.
+    cross_references: [M&M p77 Bioware Drawbacks, M&M p50 Cybermancy, M&M p126 Wound Effects, M&M p91 Guardian Angel, M&M p95 Savior]
 links:
   modifies: [procedure.healing.natural-and-medical]
   requires: []
   interacts_with: [subsystem.bioware.core, subsystem.cybermancy.core]
 sources:
-  - {source: source.mm, pages: "132-133", relation: adds_option, note: "Expanded First Aid Table and notes"}
+  - {source: source.mm, pages: '132-133', relation: adds_option, note: Expanded First Aid Table and notes}
 notes:
-  - "Explicitly presented in the Optional Rules section."
+  - The source recommends review by all group members before adoption of optional rules.
