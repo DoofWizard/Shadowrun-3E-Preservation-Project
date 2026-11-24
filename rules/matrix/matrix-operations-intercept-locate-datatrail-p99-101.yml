@@ -1,0 +1,130 @@
+{
+  "id": "rule.matrix.matrix-operations-intercept-locate-datatrail-p99-101",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "99-101",
+  "pdf_pages": "100-102",
+  "edition_scope": "FASA Corporation Matrix FASA7909, Shadowrun Third Edition, published fictional tabletop RPG; printed 99-101/physical PDF 100-102.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Matrix game operations: data monitoring, locating and trace modifiers",
+  "summary": "Source-specific fictional game operation resolution, conditions, exceptions and numeric effects. Existing operation profiles and core tests are reused.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "source_pdf_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+    },
+    "legacy_catalog": {
+      "path": "references/matrix/system-operations.yml",
+      "blob": "4fb08f82abefa56bb5cc7afc8657b09b8bb0c8c1",
+      "reuse": "Existing operation test, utility, and action profiles remain authoritative except corrected page citations; this record adds operation-specific tabletop resolution."
+    },
+    "core_procedure": {
+      "path": "procedures/matrix/system-operation.yml",
+      "blob": "d736201291ebc17ddd3df33434d886f0d27f76a2"
+    },
+    "operations": {
+      "intercept_data": {
+        "printed": "99-100",
+        "duration": "ongoing",
+        "game_resolution": {
+          "initial": "Upload Data game action for Sniffer; success on appropriate subsystem System Test then Control Test with Sniffer rating reducing TN.",
+          "failure": "If Control Test fails, roll Masking (Control); successes equal hours before host reports game icon.",
+          "output_choices": [
+            "Hidden host file requires successful Edit File",
+            "Send elsewhere requires successful Send Data"
+          ],
+          "gm": "Specific criteria needed to limit accumulated game data; GM adjudicates utility success.",
+          "scope": "Only selected subsystem; can intercept Send Data, not comcalls (Tap Comcall is separate).",
+          "subsystem_examples": {
+            "access": "fictional login data",
+            "files": "fictional messages",
+            "slave": "fictional slave-device data"
+          }
+        }
+      },
+      "invalidate_account": {
+        "printed": 100,
+        "game_effect": "Erase selected account and passcode; target loses legal access and is treated as intruding icon for combat under SR3 p226.",
+        "whole_list_tn_modifier": 4
+      },
+      "locate_frame": {
+        "printed": 100,
+        "uses": "Core Locate Decker procedure",
+        "targets": [
+          "frame",
+          "agent",
+          "sprite",
+          "daemon",
+          "SK"
+        ],
+        "excluded": [
+          "IC constructs (Locate IC instead)",
+          "AI"
+        ]
+      },
+      "locate_paydata": {
+        "printed": 100,
+        "operation_type": "interrogation",
+        "points_per_net_success": 1,
+        "stop": "User stops or all available paydata found.",
+        "partial_download_value": "Proportion downloaded; GM may discount further.",
+        "source_example": {
+          "total_mp": 20,
+          "downloaded_mp": 10,
+          "value_fraction": 0.5
+        }
+      },
+      "locate_tortoise_users": {
+        "printed": 100,
+        "success": "Lists all logged-on tortoise users by account name.",
+        "per_additional_net_success": [
+          "Last operation per user; additional successes can extend history up to 20 operations",
+          "Session duration",
+          "MXP address",
+          "Access privileges"
+        ]
+      },
+      "redirect_datatrail": {
+        "printed": 100,
+        "maximum_per_grid": 1,
+        "multiple_grids": "Allowed, separate logon and operation per grid.",
+        "security_test_tn": "Reduce opposing Security Test TN by user's Trace modifier.",
+        "trace_attack_tn_per_redirected_grid": 1
+      },
+      "relocate_trace": {
+        "printed": "100-101",
+        "eligible": "Trace IC in location cycle only.",
+        "success": "May suppress as crashed, but does not actually crash IC or add destruction penalty to tally.",
+        "unsuppressed": "Resumes at start of next Combat Turn. One further operation per turn may neutralize for that turn; failure advances location cycle by one turn.",
+        "source_example": {
+          "remaining_turns": 1,
+          "computer_skill": 10,
+          "relocate_rating": 4,
+          "trace_rating": 8,
+          "control_rating": 9,
+          "target_number": 5,
+          "user_successes": 4,
+          "host_successes": 3,
+          "tally_increase": 3,
+          "suppress_cost_detection_factor": 1,
+          "alternative": "Repeat Relocate next turn; if neither, trace completes at end of Combat Turn."
+        }
+      }
+    },
+    "source_review": {
+      "images": [
+        100,
+        101,
+        102
+      ],
+      "correction": "Intercept starts p99 and ends p100; Relocate example continues p101."
+    }
+  }
+}
