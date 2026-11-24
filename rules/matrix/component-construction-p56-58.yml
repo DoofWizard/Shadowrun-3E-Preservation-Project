@@ -1,0 +1,39 @@
+id: rule.matrix.component-construction-p56-58
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '56-58'
+pdf_pages: '57-59'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, first group of component construction recipes.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix component construction recipes from active memory through MPCP
+summary: Original component-specific game test modifiers, program multipliers, installation times, parts formulas and tool requirements.
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Third Edition}
+  notation: {M: MPCP rating, H: hardening rating, I: icon rating, S: I/O Speed, A: active memory size in Mp}
+  requirements:
+    cyberterminal: {required: [MPCP, persona programs, ASIST circuitry, I/O Speed, active memory], persona_programs: [Bod, Sensor], legally_sold_MPCP_cap: 4}
+    cyberdeck: {persona_programs: [Bod, Evasion, Masking, Sensor], legal_status: illegal due to Evasion and Masking}
+    construction_forms: [external, cranial implant, cyberimplant]
+    partial_builds: See original p62 for non-scratch construction; fully assembled purchased parts follow p66.
+  recipes:
+    active_memory: {design: none, software: none, cook: false, installation_time_hours: 'ceil(A/200)', installation_TN: 4, parts: 'OMC at twice memory size plus 1.5 nuyen times A', tools: kit}
+    hot_ASIST: {design_modifier: 2, software_rating: M, multiplier: 4, cook: true, installation_time_days: M, installation_TN: M, parts_nuyen: '25*M^2 + 1250 for ASIST Processor Unit', tools: kit}
+    cold_ASIST: {design_modifier: 2, software_rating: M, multiplier: 2, cook: true, installation_time_days: M, installation_TN: M, parts_nuyen: '25*M + 1250 for ASIST Processor Unit', tools: kit}
+    hardening: {design_modifier: 3, software_rating: H, multiplier: 8, cook: true, installation_time_days: 'M*H', installation_TN: M, parts_nuyen: '35*H^2', tools: shop}
+    ICCM: {design_modifier: 1, software_rating: M, multiplier: 4, cook: true, installation_time_days: '2*M', installation_tests: ['Computer B/R (4)', 'Computer (Cybernetics) (M)'], parts_nuyen: '35*M + 1000 for bio-monitor', tools: shop}
+    icon_chip: {design_modifier: 0, software_rating: I, multiplier: 2, cook: true, installation_time_hours: 1, installation_TN: I, parts_nuyen: '35*I^2', tools: kit}
+    IO_speed: {design_modifier: 0, software: none, cook: false, installation_time_days: 'ceil(S/100)', installation_TN: 'ceil(S/100)', parts_nuyen: '35*ceil(S/10)', tools: kit}
+    maser_interface: {design_modifier: 0, software: none, cook: false, installation_time_hours: 'M+4', installation_tests: ['Computer B/R (M)', 'Electronics B/R (4)'], parts_nuyen: 3000, tools: kit}
+    matrix_interface: {design: none, software: none, cook: false, installation_time_hours: 1, installation_TN: 4, parts: '35 nuyen plus fiberoptic cable cost per p63', tools: kit}
+    MPCP: {design_TN_override: M, software_rating: M, multiplier: 8, cook: true, installation_time_hours: M, installation_TN: M, parts_nuyen: '35*M^2', tools: shop}
+  conditions:
+    active_memory: Maximum ready and running utility program total equals active memory capacity.
+    ASIST: Hot interface can operate cold; RAS override is a separate component.
+    icon: {simultaneously_running: 1, rating_cap: M, fallback_rating: 1, purchased_MPCP_default_UMS_rating: 1, off_shelf_typical_max: 4, separately_constructed_for_custom_MPCP: true}
+    IO_speed: {increment: 10, maximum: '100*M'}
+    maser: Requires the maser link utility (p72).
+    MPCP: {individual_persona_rating_cap: M, combined_persona_rating_cap: '3*M', default_icon_rating: 1, incompatible_after_rating_change: [ASIST interface, ICCM, reality filter, Response Increase, RAS override]}
+  relationship: The existing procedure.matrix.cyberterminal-construction gives stage names only; this record adds component-specific costs and tests, with general stage rules in rule.matrix.construction-tests-p55-56.
+  source_review: Printed p56/PDF57 and p57/PDF58 both columns, p58/PDF59 left column; ten recipes and their explicit conditions reviewed. OMC parts notation retained without selecting between conflicting p54 prices.
