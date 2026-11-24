@@ -1,0 +1,21 @@
+id: rule.firearms.cannon-companion-smg-table-correction-p21-117
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '21, 117'
+pdf_pages: '22, 118'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion SR3: original SCK Model 100 tabletop mode correction'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp21 and 117 / PDF22 and 118. Source-local correction of the fictional game mode field, with the shared entity retained read-only.'
+data:
+  corrections:
+    - entity: entity.weapon.sck-model-100
+      shared_path: entities/weapons/sck-model-100.yml
+      field: intrinsic.mode
+      original_game_value: SA/BF
+      existing_game_value: SA/BF/FA
+      source_printed_pages: [21, 117]
+      source_pdf_pages: [22, 118]
+      shared_record_changed: false
