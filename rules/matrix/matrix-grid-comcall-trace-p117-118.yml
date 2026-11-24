@@ -1,0 +1,42 @@
+{
+  "id": "rule.matrix.matrix-grid-comcall-trace-p117-118",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "117-118",
+  "pdf_pages": "118-119",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, printed 117-118/PDF 118-119.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Grid-provider comcall trace: tabletop resolution",
+  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "data": {
+    "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
+    "grid_only": true,
+    "standard_comcall": {
+      "prerequisites": "A comcall is currently active and originates, terminates, or traverses the acting provider grid.",
+      "test": {
+        "dice": "grid Security Value",
+        "base_target_number": 2,
+        "per_additional_grid": 1,
+        "per_fictional_account_forward": 1
+      },
+      "base_duration_combat_turns": 10,
+      "origin_modifier": "Add the originating jackpoint trace modifier to base duration (Matrix p30).",
+      "duration": "Divide modified base duration by Security Value Test successes, rounding up. Source does not define a zero-success duration.",
+      "success": "In the fictional Matrix, the grid provider learns caller commcode and physical call origin.",
+      "example": {
+        "legally_registered_MSP_trace_modifier": -2,
+        "modified_base_turns": 8
+      }
+    },
+    "make_comcall_operation": {
+      "model": "Use the grid Security Value as effective trace IC rating. No actual IC appears, so do not resolve cybercombat.",
+      "hunt_cycle": "Security Value dice against Evasion.",
+      "other_rules": "Ordinary fictional trace rules and game operations that modify trace IC apply."
+    },
+    "core_comparison": "Core comcall operation record c6b84e61f1b69416c848440e370b81306788cd8f describes character-side comcall tests, not this grid-provider resolution."
+  }
+}
