@@ -1,0 +1,73 @@
+id: audit.cannon-companion-heavy-pistols-original-review-2026-11-24
+record_type: source_reconciliation_audit
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification:
+  bytes: 80954335
+  physical_pages: 130
+  verify_source_output_status: source_pdf_hash_verified
+  source_manifest_blob: 845063d5e424d2416f0d992c209df92324649862
+  preflight_self_tests_passed: 29
+  original_images_reviewed: [[16, 17], [18, 19], [19, 20], [116, 117]]
+  review_scope: Original Heavy Pistols text and all twelve body table rows; corresponding appendix rows and SA Puzzler reference.
+market_table_reconciliation:
+  existing_entity_root: entities/weapons/
+  checked_fields: [concealability, ammunition, mode, damage, weight, availability, cost_nuyen, street_index, legality, recoil_compensation]
+  columns: [entity_filename, read_only_blob, comparison]
+  rows:
+    - [ares-predator-ii.yml, 115d73ef98a74eef4261092bec32600453b9f588, all ten fields match]
+    - [ares-predator-iii.yml, 86941f9f392232fa866e2c972edcf8b1f8a7c0df, all ten fields match]
+    - [browning-ultra-power.yml, d5e82aaf3f3a1e74252cd089bfd9973b41afe3eb, all ten fields match]
+    - [cavalier-deputy.yml, 6d2fc28601cb597125a636973471c612547fcce9, nine fields match; ammunition notation differs]
+    - [colt-manhunter.yml, f8e8db28b5e8a4070e1f310849db88076320e4e1, all ten fields match]
+    - [elichino-hatamoto-ii.yml, 181665322d693c584137efd13cc47272014f8236, all ten fields match; printed model label differs]
+    - [fn-5-7c.yml, 80ccf5c9f60b8b40c3e399976751604f226373c9, all ten fields match]
+    - [morrissey-alta.yml, 33ade024d595a88a5512f789b94090bb680c2370, all ten fields match]
+    - [morrissey-elite.yml, e8259ccf3b93b57b7388d705f6c6a17b7034cee9, all ten fields match]
+    - [ruger-thunderbolt.yml, deef17707e435b5968c68e0e532e09200da45d3b, nine fields match; recoil notation differs; price footnote separate]
+    - [savalette-guardian.yml, 26e1c08abe57b00640018df054f37cae2d257b7f, all ten fields match; action footnote separate]
+    - [ww-infiltrator.yml, c3ee2fba2801209dfc3ec2dc794f608f78bb312f, all ten fields match]
+  matched_numeric_or_notation_fields: 118
+  differing_table_fields: 2
+  body_and_appendix_agree_on_corrections: true
+  scope_limit: Core-only appendix rows not counted as Cannon Companion body items.
+game_qualification_reconciliation:
+  all_twelve_model_descriptions_reviewed: true
+  existing_game_skill: entity.skill.pistols
+  existing_mount_rules: {path: rules/firearms/accessory-mounts.yml, blob: 18b1f057d92cd9b1e80e9bb15c85c98e4ad03914}
+  newly_registered: Model-specific integrated game attributes, class and range exceptions, in-game action and pricing qualifications, printed table footnotes and inherited game-rule relationship.
+  dependency: WW Infiltrator references SA Puzzler game procedure on p16; that separate Light Pistols procedure is not certified by this audit.
+transactions:
+  - path: equipment/gear/cannon-companion-heavy-pistol-table-corrections-p19-116.yml
+    commit: 3c53b95f5f64fb3da7162541a1e3dcb4cfafa8f8
+    blob: 6f69c1f94b46f7c28127022f37f95f2cbfe741ea
+    baseline_sha256: dfca797f8306b7f45501b1c90a5853f1406248cd45d618d129f81439b45919fd
+    candidate_sha256: ee23b84e159f78d1aca73d7caee4406d60bbb6d7ed20b4cb8e5b74773feba2ac
+    immutable_sha256: 97490b0965b1a51eec186c85b8ce74a7a7abb87f13eac2f752928ffb9c22c38b
+    prepare: preflighted
+    confirm: verified
+    index_commit: 1c62c5bc6c87d9d647667b2f7d21886ae32571f6
+    index_blob: 4bb875c0e3a03de54c0c59f58abd1a0e1a5a003b
+    index_readback: exact
+  - path: rules/firearms/cannon-companion-heavy-pistol-game-qualifiers-p18-19.yml
+    commit: e9b0c742672dff86ed9bf1794db2db78f4d46435
+    blob: f94eb6331b399431fdec433d22c286e4c1e07d69
+    baseline_sha256: c64a8ec6eb9f01a15c1098bf437c5382ac2ed9aef7cfeec0f3b911fc3c9df9ff
+    candidate_sha256: 5e7368886d0f06812535742317e01e63b1d0e3636a9e65064423e2d257fe2496
+    immutable_sha256: 98671e467cbad454cdf69be268b88a8ee236cd5d64b54beec79f47f6ce3cd812
+    prepare: preflighted
+    confirm: verified
+    index_commit: 5a68c0b43932d47b31cf241546faa11169fedba0
+    index_blob: 1cb0d396e45db92b68318424fd467fb7ee9eee4f
+    index_readback: exact
+section_result: source_local_fields_reconciled_with_dependency_and_shared_corrections
+unresolved:
+  - Shared Cavalier Deputy and Thunderbolt table correction adjudication.
+  - Printed Hatamoto II name normalization in shared entity.
+  - SA Puzzler inherited game procedure certification in the separate Light Pistols section.
+  - Historical shared entity transaction provenance.
+globally_authorized_pages: 0
