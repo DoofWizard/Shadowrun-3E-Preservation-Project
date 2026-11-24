@@ -1,23 +1,52 @@
 id: procedure.surgery.trauma
 record_type: procedure
-name: "Trauma Surgery"
+name: Trauma Surgery
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "148"
+pdf_pages: "149"
+edition_scope: SR3
+content_class: [rule_procedure]
 effective: {status: current, source: source.mm, page: 148, basis: defines}
-purpose: "Stabilize and surgically treat life-threatening trauma, Deadly wounds and permanent damage."
+purpose: Resolve emergency trauma and permanent damage in the fictional tabletop rules.
 prerequisites: []
-inputs: ["Physical and Stun damage", "overflow", "permanent damage", "planned options"]
+inputs: [Physical and Stun damage, overflow, permanent damage, planned options]
 stages:
-  - id: deadly
-    name: "Treat Deadly Wounds"
-    test_or_action: "Use the trauma-surgery target number derived from damage modifiers and overflow."
-    outputs: ["stabilized/reduced wound state"]
-  - id: permanent
-    name: "Treat Permanent Damage"
-    test_or_action: "Attempt repair/replacement for permanent organ or limb damage."
-    outputs: ["repaired, replaced, or failed treatment"]
-outcomes: ["stabilized patient", "repair/replacement", "death on repeated failed critical treatment where specified"]
-links: {uses: [rule.surgery.surgical-test], requires: [], produces: [], modified_by: []}
+  - {id: deadly, name: Treat Deadly Wounds, test_or_action: Apply trauma surgery target number after stabilization, outputs: [reduced wound state or failure]}
+  - {id: permanent, name: Treat Permanent Damage, test_or_action: Resolve treatment of permanent organ or limb damage, outputs: [replacement eligibility or failure]}
+outcomes: [reduced wound state, replacement eligibility, failed critical treatment]
+data:
+  requirement:
+    deadly_physical_boxes_at_least: 10
+    combined_physical_and_stun_boxes: 16
+    stabilization_alone_waives_requirement: false
+    magical_healing_below_deadly_waives_requirement: true
+    followup_surgery: implant or transimplant may follow for irreparable damage
+  target_number:
+    formula: "Physical damage modifier + floor(Stun damage modifier / 2) + floor(Physical Overflow boxes / 2)"
+    source_example: {physical_modifier: 4, stun_level: Serious, overflow_boxes: 3, result: 6}
+  options:
+    negative: [Essence Loss, Mangled Part, Marred Appearance, Wound Effect]
+    positive: [Improved Healing, Nanosurgery, Trauma Control]
+  treat_deadly_wounds:
+    required_for_every_trauma_surgery_patient: true
+    prerequisite: stabilized before procedure
+    medical_shop_or_facility_has_stabilization_unit: true
+    unstabilized: patient dies before completion
+    success: reduce to Serious Physical damage and heal normally
+    exception: if at least half the character's Overflow damage has been taken, reduce only to Deadly damage
+    first_failure: second attempt allowed at target number +2
+    second_failure: patient dies
+  treat_permanent_damage:
+    required_for_permanent_damage: true
+    effect: remove damaged organ or limb to permit replacement with cyberware, bioware or transplant
+    first_failure: second attempt allowed at target number +2
+    second_failure: replacement of that organ or limb by cyberware, bioware or transplant is not possible; death is possible in some cases
+links: {uses: [rule.surgery.surgical-test], requires: [], produces: [], modified_by: [option.surgery.surgical-options]}
 sources:
-  - {source: source.mm, page: 148, relation: defines, note: "Trauma Surgery, Treat Deadly Wounds and Treat Permanent Damage"}
-notes: []
+  - {source: source.mm, page: 148, relation: defines, note: Trauma Surgery and both treatment procedures}
+notes:
+  - Source cross-references SR3 pp127, 129 and 305 for permanent damage, stabilization and medical facilities.
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p148/PDF149: Trauma Surgery"
+framing: reference_exact
