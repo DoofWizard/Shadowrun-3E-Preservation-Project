@@ -1288,6 +1288,60 @@ source_field_review:
     global_checkpoint_changes: 0
 
 
+  confirmed_cyberware_magic_protocols_critters_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp44,46-47/PDF44,46-47; copyright p5/PDF5."
+    image_sha256:
+      PDF44: "3fd9584250219a7ff8672f9f142cd2bca1f7d3f6bac7437ccdbf2120bf0e0a9d"
+      PDF46: "38851a63b73ef300f6adb81d90d4d6bfaab6ba4488e6d7173c4909a64deac7ed"
+      PDF47: "19ed7e24db608d66f5fb9a4a3f960dbab078f5e1bf2a9d8fbf39bad80d04fea7"
+    records:
+      - id: rule.cyberware.magic-interaction
+        path: rules/cyberware/magic-interaction.yml
+        printed: "46-47"
+        pdf: "46-47"
+        commit: "da091253ce593ab7cae7363ad42aea54864f4741"
+        blob: "a99172df3c0a8f48e91f93b47df7fd7214cb09df"
+        candidate_sha256: "588fc45c9359fcd85e612ceb62ca07a8536d1597da7460ca535f5f15846e56ca"
+        baseline_sha256: "2d3fb1c29789014a7559248fd7905f0e3fe71bb58853e98fabdffdbe95970349"
+        immutable_sha256: "fdca428a31146f1cc958bf826c24839e278a9f074ec226a9a3b193c601250e3b"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Spell and adept targeting examples, transformation disables implanted devices, removed implant eligibility, preimplant enchanting and astral visibility and vulnerability."
+      - id: rule.cyberware.protocols
+        path: rules/cyberware/protocols.yml
+        printed: "47"
+        pdf: "47"
+        commit: "acbdba3fe3c0c98d081499aedae8f2bca2c9cdbd"
+        blob: "858a45a40cf5ac5b0776b68114bf4ebe305bea1e"
+        candidate_sha256: "01536049d8bb6fc2f438f729a273a68ff9e079dec1fd4e9b853460773e53bad6"
+        baseline_sha256: "305e24b909c4d4491f2f467c460a2f522f6bc50507b801a80d9d0e778b42d7d8"
+        immutable_sha256: "1e2bdde75ada1d8fe013352515ff77fb05bb74c8c0dad82143dae4d4e7dd1032"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Format compatibility, named simsense transmitters, remote control protocol distinction, GM authority, source-specific encryption and jamming rule references."
+      - id: rule.cyberware.cybered-critters
+        path: rules/cyberware/cybered-critters.yml
+        printed: "44"
+        pdf: "44"
+        commit: "2acb5586596caac7906e66ac0b6a6c543697715b"
+        blob: "78e7869d383a7d75d9f785097f5c1fcc803a608b"
+        candidate_sha256: "3c20672b87b803fddb30eb386c761e8cd4651f462807237e71594d885c241e36"
+        baseline_sha256: "7fe55ba71ff07247fb3903977f71651b092a839e6134ac9522ac3aed47bc1bdf"
+        immutable_sha256: "cb0d8936a6f3353beb7f74b4564f9e0a98c5705a28e0feb28cb933b6951178d2"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Critter implantation reference, Awakened Essence effects, HMHVV transformation breaks implants, Regeneration expels implants with no stated fixed timing."
+    scoped_natural_sections_reconciled:
+      - "Cyberware and Magic pp46-47."
+      - "Protocols including Broadcast Encryption/Decryption and Jamming p47."
+      - "Cyberware and Critters p44."
+    exceptions: "Interconnectivity and Mental Access p46 remain open: stage returned invalid_semantic_path for existing subsystem path; no write attempted. Optional I/O numerical values already match the original. Bio Index and Bioware and Magic Effects remain separately deferred."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
+
 coverage:
   - cyberware
   - cyberlimbs
