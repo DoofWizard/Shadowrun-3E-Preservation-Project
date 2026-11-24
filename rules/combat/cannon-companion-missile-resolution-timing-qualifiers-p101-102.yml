@@ -1,0 +1,35 @@
+id: rule.combat.cannon-companion-missile-resolution-timing-qualifiers-p101-102
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '101-102'
+pdf_pages: '102-103'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: missile game resolution qualifiers and timing lineage'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop rules, printed pp101-102/PDF102-103. Adds missing test qualifications and records differing timing statements without overriding the core.'
+data:
+  existing_record: procedure.combat.missile-combat
+  core_record: rule.combat.sr3-core-rocket-missile-numeric-p120
+  fictional_game_scope: Abstract dice, modifiers and combat-turn timing.
+  manual:
+    standard_ranged_modifiers_apply: true
+    vehicle_or_drone_launch_skill: Gunnery replaces Launch Weapons.
+  sensor_enhanced:
+    applies_to: [vehicle, sensor-equipped portable launcher]
+    failed_detection: cannot hit
+    continuous_lock_sensor_half_rounding: down
+    attack_modifier_reference: SR3 p154 Sensor-Enhanced Targeting Modifiers Table
+    ecm_condition: any part of fictional projectile flight through an ECM field
+  timing:
+    movement_per_combat_turn_m: 1000
+    timing_applies_to: [missiles, rockets]
+    missile_arrival_phase: 0
+    missile_arrival_condition: End of arrival Combat Turn after all players have completed their actions, regardless of launch phase or turn.
+  source_discrepancy:
+    cc_p101_example: Phase 1 of last Initiative Pass of that Combat Turn.
+    cc_p102_rule: Phase 0 of arrival Combat Turn.
+    sr3_core_p120: Phase 1 of last Initiative Pass of launch Combat Turn.
+    precedence: unresolved; no shared record changed
+  scope_note: Existing manual and sensor dice formulas, scatter reductions, lock options and other-action modifier retained read-only.
