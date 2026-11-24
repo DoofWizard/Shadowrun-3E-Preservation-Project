@@ -1,0 +1,32 @@
+id: rule.soe.the-vault-ic-p234
+record_type: rule
+status: ingested
+source: source.fanpro-25002
+edition_scope: FanPro Shadows of Europe (FanPro25002), Shadowrun Third Edition fictional tabletop RPG; printed p234 / PDF235.
+printed_pages: '234'
+pdf_pages: '235'
+content_class: [rule_exact]
+framing: reference_exact
+headline: FanPro Shadows of Europe (FanPro25002), Shadowrun Third Edition fictional rules — The Vault fictional IC variants and options
+summary: Original tabletop cybercombat program multipliers, target effects and utility-rating modifiers.
+data:
+  scope: Fictional Matrix game mechanics only; The Vault security upgrades.
+  reactive_black_ic:
+    frag: {size_multiplier: 8, variant_of: Data Bomb}
+    nuke: {size_multiplier: 7, variant_of: Pavlov}
+    base_reference: Matrix pp103-104
+    trigger_effect: Inflicts the program damage on both persona icon and decker.
+    disarm_data_bomb_operation_modifier: 2
+  synchronize:
+    design_rating_modifier: 2
+    condition: Shield utility used to parry an attack by IC equipped with Synchronize.
+    shield_rating_change_per_parry: -2
+    applies_even_if_parry_ineffective: true
+    at_rating_zero: Shield ceases to be effective against the IC.
+    swap_utility_fresh_shield: No effect.
+  rust:
+    design_rating_modifier: 2
+    condition: Equipped IC successfully hits an icon.
+    armor_utility_rating_change: -1
+    affected: Any Armor utilities in active memory.
+    recovery: Fresh utility copies may be loaded by Swap Memory operations.
