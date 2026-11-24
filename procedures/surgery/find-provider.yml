@@ -1,61 +1,56 @@
 id: procedure.surgery.find-provider
 record_type: procedure
-name: "Find Medical Provider"
+name: Find Medical Provider
 domain: surgery
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 143
-  basis: defines
-
-purpose: "Locate a medical provider with the capabilities needed for a particular treatment or surgery."
-
-prerequisites:
-  - "need for medical care"
-
-inputs:
-  - "contacts"
-  - "desired surgery/treatment type"
-  - "implant grade"
-  - "legality"
-  - "Etiquette"
-  - "provider rating"
-
-stages:
-  - id: search
-    name: "Medical Search"
-    test_or_action: "Make an Etiquette Test using Medical Search modifiers."
-    outputs: ["provider located", "search time"]
-  - id: capabilities
-    name: "Determine Provider Capabilities"
-    test_or_action: "Use provider base rating and modifiers to determine attending medical skill ratings and equipment."
-    outputs: ["provider skill/equipment profile"]
-  - id: negotiate
-    name: "Get in the Door"
-    test_or_action: "Resolve access, legality, payment, bribery or other provider conditions."
-    outputs: ["care accepted or refused"]
-
-outcomes:
-  - "provider secured"
-  - "search/access fails"
-
+source: source.mm
+printed_pages: "143-144"
+pdf_pages: "144-145"
+edition_scope: SR3
+content_class: [rule_procedure]
+effective: {status: current, source: source.mm, page: 143, basis: defines}
+purpose: Locate a medical provider with capabilities appropriate to a fictional character's desired treatment or surgery.
+prerequisites: [need for medical care]
+inputs: [contacts, desired surgery or treatment, implant grade, legality, Etiquette, provider rating]
+data:
+  search:
+    test: Etiquette
+    base_target_number: 4
+    minimum_successes: 1
+    modifiers:
+      appropriate_contact: {fixer_government_official_or_organlegger: -1, medical_professional: -2}
+      provider_sought: {corporate: 2, private: 1, illegal: -1, public: -2, clinic: 0, hospital: 2}
+      surgery_type: {cosmetic: -1, implant: 1, therapeutic: 0, transimplant: 1, trauma: 0, nanosurgery: 2}
+      implant_grade: {basic_cyberware: 0, alpha_or_basic_and_cosmetic_bioware: 2, beta_or_cultured_bioware: 4, delta: 8, nanoware: 4}
+      legality: {legal: -1, paralegal_or_class_A: 0, security_or_class_B: 1, military_or_class_C: 2}
+      per_extra_required_skill: 1
+    contact_applicability: Nonmedical contacts must be relevant to the requested provider. Medical professionals always provide the medical-contact modifier.
+    standard_skills: [Biotech, Medicine]
+    nanosurgery_definition: A surgery that uses the nanosurgery option (M&M p150).
+    rating_and_time: Use the provider ratings table in rule.surgery.provider-ratings.
+    extra_successes: Extra successes may reduce search time by dividing time by successes or increase medical gear rating by one per success, maximum 6.
+    cap_note: The source gives a cap of 6 on this increase despite listing a base rating of 8 for delta-equipped providers; no reduction of a higher base rating is inferred.
+    staff_skills: Resolve each attending skill independently according to rule.surgery.provider-ratings.
+  access:
+    trigger: A fictional character requests an exception to provider regulations or special consideration.
+    test: Etiquette
+    base_target_number: medical_center_rating
+    modifiers: Applicable Medical Search and SR3 Social Modifiers Table (p94) plus GM situational modifiers.
+    fictional_payment_modifier:
+      threshold_fraction_of_service_cost: 0.10
+      target_number_modifier: -2
+      condition: In the game, offering at least the printed compensation threshold generally grants this modifier.
+    failed_test: The provider refuses. The GM may allow an Intimidation or other coercion attempt, with the possibility of referral to the authorities.
+    conditions: Provider may require identification, payment, lawful service, corporate credentials or scrip, patient records, reporting, or samples.
+outcomes: [provider secured, search or access fails]
 links:
-  uses:
-    - entity.skill.etiquette
+  uses: [entity.skill.etiquette, rule.surgery.provider-ratings]
   requires: []
   produces: []
   modified_by: []
-
 sources:
-  - source: source.mm
-    page: 143
-    relation: defines
-    note: "Non-Emergency Medical Care / Medical Search Table"
-  - source: source.mm
-    page: 144
-    relation: clarifies
-    note: "Medical Ratings Table / Getting in the Door"
-
+  - {source: source.mm, page: 143, relation: defines, note: Non-Emergency Medical Care / Medical Search Table}
+  - {source: source.mm, page: 144, relation: clarifies, note: Medical Ratings Table / Getting in the Door}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp143-144/PDF144-145: Finding Medical Providers"
+framing: reference_exact
