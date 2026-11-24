@@ -81,6 +81,19 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+    - id: rule.karma.srcomp-karma-for-cash-windfall-p79-80
+      path: rules/karma/srcomp-karma-for-cash-windfall-p79-80.yml
+      range_printed: [79, 80]
+      range_pdf: [80, 81]
+      content_class: rule_exact
+      commit: 0eff44f4f52df8d20eff2bc956ea7e04da342b2d
+      blob: d39a48e56850e896798217d135d5cf98bcd857b1
+      baseline_sha256: 3e13bd81b441ce0387a98b09c0100c79b49d674f5cd90cac69bab66cccd5f383
+      candidate_sha256: cd72380f7c5726364c0805cacef551b632faa5279c1e965ab0a1fbd6547ba2cf
+      immutable_sha256: 90b8d8952f45302864c0e67c96e7d3bc0763e29b0f28ddebf0437064b8aa7b7c
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      gate: verified
+      contiguous_advance: false
     - id: rule.contacts.srcomp-contact-knowledge-procedure-p66-67
       path: rules/contacts/srcomp-contact-knowledge-procedure-p66-67.yml
       range_printed: [66, 67]
@@ -1161,3 +1174,27 @@ srcomp_contact_success_contest_correction_2026_11_23_1831:
   remaining_shared_legacy_conflict: rules/contacts/spilling-the-beans.yml
   registration_delta: 0
   global_contiguous_pages: 0
+
+srcomp_balancing_karma_nuyen_p79_80_original_review_2026_11_23:
+  source_id: source.srcomp
+  original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  actual_verify_source: source_pdf_hash_verified
+  source_manifest_verified_blob: d3983cfd6406fa80f1ca00384c3b969703e242f7
+  original_printed_pages: [79, 80]
+  physical_pdf_pages: [80, 81]
+  scope: 'Balancing Karma and Nuyen section including ordinary Karma for Cash, ordinary Cash for Karma, and separate amoral-campaign variant; ends before Favors and Markers.'
+  field_coverage:
+    karma_for_cash: 'GM opportunity and campaign-dependent rate; Good Karma permanent expenditure; 100 and 1000 nuyen example rates; random infrequent windfall example 2D6 x 10; GM frequency and quantity limits may change per exchange or campaign.'
+    ordinary_cash_for_karma: 'GM-defined cost; purchased Good Karma does not advance Karma Pool.'
+    amoral_campaign: 'No ordinary awards; announce purchase before 3D6 x 100 unit price; GM quantity limits; purchased points treated as awarded Karma; humans every tenth and others every twentieth point goes to Karma Pool.'
+  reused_existing:
+    - {path: options/karma/karma-for-cash.yml, blob: 7606c076f63f339762ca63ad70e7462834a8916a}
+    - {path: options/karma/cash-for-karma.yml, blob: b63859cccaba9fb03df1c337fbafa8ad14b79970}
+    - {path: rules/karma/srcomp-cash-for-karma-moral-campaign-p80.yml, blob: a02cb784b857511d55ca1ba5bb8a46fd75199954}
+  new_semantic_record: rules/karma/srcomp-karma-for-cash-windfall-p79-80.yml
+  semantic_commit: 0eff44f4f52df8d20eff2bc956ea7e04da342b2d
+  semantic_blob: d39a48e56850e896798217d135d5cf98bcd857b1
+  gate: verified
+  scoped_natural_section_mechanical_closure: true
+  new_global_authorized_pages: 0
+  whole_book_or_executable_engine_certification: false
