@@ -1,0 +1,44 @@
+source: source.cc
+title: "FASA7908 Cannon Companion: Edged Weapons original-image field review"
+edition: SR3
+publisher: FASA Corporation
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+source_verification: source_pdf_hash_verified
+original_page_mapping:
+  - {printed: 7, pdf: 8}
+  - {printed: 8, pdf: 9}
+review:
+  edged_weapons:
+    status: source_local_field_reconciled
+    equipment_rows:
+      checked_fields: [concealability, reach, damage, weight, availability, cost_nuyen, street_index, legality, governing_skill]
+      matched:
+        - {id: entity.weapon.cougar-fineblade-knife-short, blob: 364a59fd7d9a36ccc01cd6af5eb8d1b983667673}
+        - {id: entity.weapon.cougar-fineblade-knife-long, blob: 9bc0bce6802233c1f93d00e541c0f4bb16bb2935}
+        - {id: entity.weapon.katar, blob: 539ea7143b6dbef241b9ec2e2884e2f18cd637c3}
+        - {id: entity.weapon.kris, blob: 0da3d4e4b7feb5d9d8f139c3f2d9045bc3ee4544}
+        - {id: entity.weapon.laser-crescent-axe, blob: de61ec60b1d3a1e4fba6bc97e8b40e566e91e5c8}
+        - {id: entity.weapon.macauitl, blob: 2f842d913446d34510400ac9faf30abc09ddc82b}
+        - {id: entity.weapon.ares-monosword, blob: 9453c1abb991e55a2c0e3609e2b59733bbc49660}
+        - {id: entity.weapon.tomahawk, blob: b28d14ce4d32a01cc9269e22215839aacd3d2b7d}
+        - {id: entity.weapon.vibro-knife, blob: 60f2ed467df7ef994f44564f1d181590bf7e31f4}
+        - {id: entity.weapon.vibro-sword, blob: 6009618a3f348faf05573b7f11965b54abd08322}
+    source_fields_added: [absolute_minimum_strength_eligibility, metatype_cross_reference, governing_skill, damage_track_selection, conditional_game_item_state_tests, item_damage_state_codes, restoration_test, game_duration_and_cost, activation_modes, stealth_eligibility, maintenance_qualification]
+    nonnumeric_qualifications: "Cougar surprise benefit is descriptive without a printed modifier. Katar, Kris and Tomahawk descriptions introduce no further quantified game conditions. No invented modifiers."
+    core_reuse:
+      - {path: rules/combat/sr3-core-melee-thrown-weapon-attack-routing-p120.yml, blob: f3625170f2c85cea1ad5eed136ac289d475bfad3}
+      - {path: equipment/sr3-core-personal-impact-throwing-weapon-tables-p275-276.yml, blob: 0a2e325194fff3346da2416a720ded0c8d92d949}
+    transaction:
+      path: rules/combat/cannon-companion-edged-item-game-qualifiers-p7-8.yml
+      commit: 52f42da23f378eaf4f5d44a1a08466d11e719998
+      blob: 6e03cd98d7ed5e21dc8e980ac4e65d71c62a0cd0
+      baseline_sha256: 88082e05a8f3796a7c1bf3b71f77df5cd47030feaf36dcda5a5619978c083193
+      candidate_sha256: 88082e05a8f3796a7c1bf3b71f77df5cd47030feaf36dcda5a5619978c083193
+      immutable_sha256: 737ec150fcb6a40ee686a0067cd5c8804e265215eee9a13cc869c300a9b1de5c
+      gate: verified
+remaining:
+  - Remaining projectile and other equipment catalogue subsections, customization and manufacture scopes are not certified here.
+  - Earlier source-precedence and shared-record transaction provenance exceptions remain open.
+globally_authorized_pages: 0
+whole_book_closed: false
