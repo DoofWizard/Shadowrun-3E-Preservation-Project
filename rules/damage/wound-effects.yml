@@ -1,25 +1,40 @@
 id: rule.damage.wound-effects
 record_type: rule
-name: "Wound Effects"
+name: Wound Effects
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '126-127'
+pdf_pages: '127-128'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Wound Effects — determination and classification
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed pp126-127/PDF127-128.
 effective: {status: current, source: source.mm, page: 127, basis: extends}
 scope:
-  applies_to: ["Physical or Stun damage that may create additional implant/bioware/Attribute complications"]
+  applies_to: [Physical or Stun damage]
 resolution:
-  summary: "After a Damage Resistance Test, compare the highest die result to the number of damage boxes inflicted. Failure or a shortfall produces wound effects. Each wound effect is then classified as cybersystem damage, bioware damage, or organic physical injury using the source's wound-effect table."
-  inputs: ["Damage Resistance Test dice", "damage boxes inflicted"]
-  outputs: ["number and type of wound effects"]
+  summary: Damage Resistance Test results also determine possible implant or Attribute complications.
+  inputs: [Damage Resistance Test dice, damage boxes inflicted]
+  outputs: [number and type of wound effects]
   steps:
-    - "Treat the Damage Resistance Test as a Success Test with target number equal to boxes inflicted."
-    - "If no die reaches the target number, determine wound effects from the shortfall."
-    - "Roll for each wound effect to determine whether cyberware, bioware, or an Attribute is affected."
+    - Compare the highest existing resistance die result with the number of boxes of damage inflicted.
+    - If the highest result is below the number of boxes, the difference is the number of wound effects; otherwise there are none.
+    - Roll 1D6 separately for each wound effect and consult the classification table.
+data:
+  wound_effect_table:
+    '1-2': cybersystem damage
+    '3-4': bioware damage
+    '5-6': organic physical injury
+  absent_implant_exception: Ignore a cybersystem result if the character has no cyberware; ignore a bioware result if the character has no bioware.
+  treatment: Injuries involving damaged implants or altered Attributes require medical care to heal under the wound-effect rules.
 links:
   uses: [rule.damage.stress-points, rule.damage.stress-test]
   affects: [subsystem.damage.stress]
   modified_by: []
   interacts_with: [rule.damage.attribute-damage]
 sources:
-  - {source: source.mm, pages: "126-127", relation: defines, note: "Determining Wound Effects and Wound Effect Table"}
+  - {source: source.mm, pages: '126-127', relation: defines, note: Determining Wound Effects and Wound Effect Table}
 notes:
-  - "This adds complications to normal damage resolution rather than replacing the core SR3 damage system."
+  - Wound effects supplement rather than replace ordinary SR3 damage resolution.
