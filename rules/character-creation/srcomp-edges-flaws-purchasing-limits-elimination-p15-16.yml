@@ -47,8 +47,12 @@ data:
     maximum_edges_count: 5
     maximum_flaws_count: 5
     maximum_total_count: 10
+    worked_priority_example: {Home Ground: 2, Color Blind: -1, Combat Monster: -1, total: 0}
     point_based_system:
+      ordinary_zero_balance_option: The same signed zero-balance method may be used as in the priority system.
+      building_point_exchange_requires_GM_permission: true
       cost_of_edges: Spend Building Points equal to the chosen Edge point value.
+      worked_flaw_rebate_example: {Blind: -6, Building_Points_added: 6}
       rebate_from_flaws: Gain Building Points equal to the absolute value of the chosen
         Flaw point value.
       source_recommendation_maximum_Building_Points_gained_or_spent_this_way: 6
@@ -58,19 +62,23 @@ data:
     gamemaster_may_allow: true
     narrative_rule: Edges or Flaws arising in play should be integrated into existing
       character history and roleplaying rather than automatically added to skills/attributes.
+    no_skill_or_attribute_increase_as_compensation_for_new_flaw: true
     one_to_one_balancing_not_required: A new Flaw need not have a corresponding Edge
       or new Attribute/Skill effect.
   mechanical_limits:
     Edge_attribute_or_skill_bonus_may_exceed_standard_maximum: false
+    scope_of_maximum: The printed limitation explicitly refers to standard rating limits and maximums for new characters.
     exception: Only if specific original-source Edge text explicitly permits exceeding
       the otherwise applicable limit.
     target_number_floor_for_Edge_Flaw_modifications: 2
-    incompatible_traits: The GM may not combine contradictory benefit/Flaw pairs such
-      as Pacifist and Total Pacifist.
+    incompatible_traits: The example forbids selecting both Pacifist and Total Pacifist Flaws
+      to obtain both character-creation benefits.
+    printed_combination_limit: The source generally prohibits combining Edges and Flaws unless noted otherwise; its example prohibits taking Pacifist and Total Pacifist together. Read alongside the explicit allowance for selecting multiple distinct traits; further stacking interpretations are not specified here.
     education_options: 'The original p16 text names four educational Edges/Flaws:
       University Education, Technical School Education, Illiterate and Uneducated;
       these represent character-background extremes and do not themselves imply universal
-      extra tests.'
+      extra tests. Ordinary education is determined by background and Knowledge Skills
+      and normally has no separate game mechanic.'
     adjacent_original_source_disagreement: The printed p31 Edges Table names College
       Education while the p16 prose says University Education; preserve both labels
       without assuming an unprinted equivalence.
