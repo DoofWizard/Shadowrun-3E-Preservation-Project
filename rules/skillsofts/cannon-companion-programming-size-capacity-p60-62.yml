@@ -1,0 +1,79 @@
+id: rule.skillsofts.cannon-companion-programming-size-capacity-p60-62
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '60-62'
+pdf_pages: '61-63'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional skillsoft design and capacity qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp60-62/PDF61-63; original numeric qualifications supplement the existing skillsoft option records without replacing their purchase table.'
+data:
+  design:
+    design_rating: base rating plus cumulative option rating adjustments
+    option_rating_maximum: base rating, except the cluster directory level
+    program_size_table: SR3 p223 (p64 worked example instead cites p222)
+    size_multiplier: {general: 3, specialization: 2}
+    order: apply all rating adjustments first, then percentage size adjustments separately in the same order
+    cost_basis: design size, not actual storage size
+    normal_asist_basis: base rating, subject to explicit option exceptions
+  adaptive:
+    existing: option.skillsofts.adaptive
+    other_option_ratings: selectable up to their ratings, automatically reduced to match operating skillsoft rating
+    pulse: calculate operating size at reduced rating; stored actual size unchanged
+  cluster:
+    existing: option.skillsofts.cluster
+    access_action_per_program: Free
+    directory_rating: number of simultaneously usable programs
+    directory_multiplier: 2
+    pulse: add directory size to each accessed program run through skillwires
+    headware_exception: directory overhead does not apply to an individual program loaded and used from headware
+    directory_level_may_exceed_individual_rating: true
+    chip_size: sum of individual program sizes including directory
+  customized:
+    existing: option.skillsofts.customized
+    intended_user_skill_bonus: 1
+    bonus_counts_for_pulse_or_design: false
+    other_user: {all_target_numbers: 2, effective_skill: half base rating rounded up, per_use_stun: '(Rating)L', resistance: Willpower}
+    purchase: special order with in-game examination and skillwire diagnostics
+    actual_size_multiplier: 0.5
+    design_size_increase_percent: 150
+    activesoft_only: true
+    incompatible: [optimization]
+  defective:
+    existing: option.skillsofts.defective
+    effective_skill: 75 percent of base rating rounded down
+    pulse: full rating
+    other_effects: same general adverse effects as mismatched customized soft; each use requires Willpower resistance to (Rating)L Stun
+    actual_size_multiplier: 0.5
+    design_size_increase_percent: 150
+    activesoft_only: true
+    incompatible: [optimization]
+  dimap:
+    existing: option.skillsofts.dimap
+    pool_cap: DIMAP rating per Combat Turn, standard pool rules
+    asist_base_rating_includes_dimap: false
+    shutdown_stun: '(DIMAP Rating)M, resisted with Willpower'
+  implant:
+    existing: option.skillsofts.implant
+    effective_skill: full base rating
+    asist_consumption: half base rating rounded up
+    actual_size_multiplier: 0.5
+    design_size_increase_percent: 150
+    capacity_conflict: implant overrides ordinary softs; between implants higher rating prevails
+    incompatible: [pluscode, optimization]
+  limitation:
+    existing: option.skillsofts.limitation
+    multiple_conditions: each limitation is a separate option
+  one_shot:
+    existing: option.skillsofts.one-shot
+    expiry: one hour after activation or upon deactivation, whichever occurs first
+    actual_size_multiplier: 0.25
+    design_size_multiplier: 1.5
+  pluscode:
+    existing: option.skillsofts.pluscode
+    maximum_base_rating: skillwire ASIST rating
+    minimum_asist_consumption: 1
+    maximum_pluscode_rating: base rating minus 1
+  scope: Existing option records retain design modifiers and purchasing rows; this record adds original qualifications only. The p64 example's 75 divided by 2 rounded up is printed as 37 Mp, which is arithmetically inconsistent and is not silently corrected.
