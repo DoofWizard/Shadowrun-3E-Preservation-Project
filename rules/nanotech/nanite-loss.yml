@@ -9,11 +9,11 @@ pdf_pages: '100-101'
 edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
-headline: 'Shadowrun Third Edition: Man & Machine (FASA7126, FASA 1999), nanite loss, pp99-100/PDF100-101'
+headline: 'Shadowrun Third Edition: Man & Machine (FASA7126, FASA 1999), nanite loss and addiction exemption, pp99-100/PDF100-101'
 effective: {status: current, source: source.mm, page: 100, basis: defines}
 scope: {applies_to: [nanoware populations in a fictional SR3 character]}
 resolution:
-  summary: 'Track cumulative losses and remaining effectiveness by system; healing does not replenish nanites.'
+  summary: 'Track cumulative loss, effectiveness and replenishment by system; healing does not replenish nanites. Chemical and compound addiction penalties do not apply to nanites.'
   inputs: [nanoware type, elapsed days, physical damage boxes, current nanite population, facilitator, maintenance]
   outputs: [remaining percentage, effectiveness tier]
 data:
@@ -33,6 +33,7 @@ data:
   injury_loss: 'All Physical damage boxes count, including injuries without external bleeding. Healing restores neither nanites nor their effectiveness.'
   source_example_note: 'The example gives 9 percent loss over three days, then 15 percent for Moderate Physical damage, reporting 26 percent total loss. It then applies 30 percent loss of remaining nanites for six more boxes. The reported arithmetic is not reconciled here.'
   maintenance: 'Periodic replenishment ranges from weekly to twice yearly depending on system; a nanite hive is an alternative. Replenishment is permitted immediately, without waiting for healing.'
+  addiction_penalties_of_chemicals_and_compounds_apply_to_nanites: false
 links:
   uses: []
   affects: [subsystem.nanotech.core]
