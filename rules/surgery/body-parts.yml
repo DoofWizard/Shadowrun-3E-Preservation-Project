@@ -1,21 +1,54 @@
 id: rule.surgery.body-parts
 record_type: rule
-name: "Body Parts and Transplants"
+name: Body Parts and Transplants
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "139-140"
+pdf_pages: "140-141"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 139, basis: defines}
 scope:
-  applies_to: ["replacement organs and limbs"]
+  applies_to: [replacement organs and limbs in the tabletop game]
 resolution:
-  summary: "Replacement parts may be donated, cloned, forced-grown, or sourced from generic stock. Compatibility, availability, cost and rejection risk vary by source; transplanted body parts can take Stress and require separate transplant procedures."
-  inputs: ["part source", "recipient compatibility", "availability"]
-  outputs: ["replacement-part type and compatibility consequences"]
+  summary: Organic replacement parts may come from donors or clones; availability, compatibility, rejection, Stress, cost and Magic restrictions depend on source.
+  inputs: [part source, recipient compatibility, availability]
+  outputs: [replacement-part type and compatibility consequences]
   steps: []
+data:
+  transplanted_parts:
+    stress_reference: M&M p124
+    stress_from_damage: false
+    stress_accumulation_and_test_timing: GM discretion
+    failure: Rejection requires replacement and may seriously affect character health.
+    awakened_noncloned_transplant: Magic loss under SR3 p129.
+  donated_parts:
+    compatible_type: Type O
+    generic_stock: Less compatible than matched parts; may be immediately available for emergencies.
+    matching: Medical profiles of donor and recipient are required to minimize rejection; donor profiles are usually unavailable for illicitly sourced parts.
+    availability: GM sets database search duration according to rarity of recipient physiology; well-stocked hospitals may rarely have matching parts immediately.
+    storage: Medical shops and facilities may store parts; viability decreases over time.
+    type_o_cost_reference: SR3 p128
+    generic_cost_multiplier: 0.4
+  cloned_parts:
+    compatibility: Near-exact patient match; rejection is rare.
+    growth_requirement: Patient cells and entire clone body; individual parts cannot be grown separately.
+    forced_growth: Full adult clone matures in less than two months; parts still require at least weeks.
+    awakened_recipient: Standard cloned parts only; forced-growth parts are normally rejected.
+    awakened_donor_clone: Not itself Awakened.
+    emergency_contract: Super-platinum or higher contracts provide a clone usable as a source of parts three months after signing.
+    facility: Specialized single-purpose medical facility, especially for forced growth.
+    base_growth_time_reference: SR3 p128
+    basic_cloned_cost_multiplier: 2
+    forced_growth_cost_multiplier: 4
 links:
   uses: [rule.damage.stress-points]
   affects: []
   modified_by: []
   interacts_with: [procedure.surgery.transplant]
 sources:
-  - {source: source.mm, pages: "139-140", relation: defines, note: "Body Parts, Donated Parts and Cloned Parts"}
+  - {source: source.mm, pages: "139-140", relation: defines, note: Body Parts, Donated Parts and Cloned Parts}
 notes: []
+headline: "FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), printed pp139-140/PDF140-141: Body Parts and Transplants"
+framing: reference_exact
