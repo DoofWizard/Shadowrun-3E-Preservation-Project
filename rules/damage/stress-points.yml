@@ -1,41 +1,55 @@
 id: rule.damage.stress-points
 record_type: rule
-name: "Stress Points"
+name: Stress Points
 domain: damage
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 124
-  basis: defines
-
+source: source.mm
+printed_pages: '124,126,131'
+pdf_pages: '125,127,132'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Stress Points — initial values, upkeep and Attribute dice
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed pp124,126,131/PDF125,127,132.
+effective: {status: current, source: source.mm, page: 124, basis: defines}
 scope:
-  applies_to:
-    - "implants and Attributes affected by wound effects or other Stress sources"
-
+  applies_to: [implants and Attributes receiving Stress]
 resolution:
-  summary: "Stress Points represent accumulated wear, injury or dysfunction. When an implant or Attribute takes Stress, add the specified Stress Points and make a Stress Test where required; increasing Stress raises the risk or severity of failure."
-  inputs:
-    - "existing Stress Points"
-    - "new Stress source"
-  outputs:
-    - "updated Stress"
-    - "possible implant/Attribute failure"
-
+  summary: Accumulate Stress Points on each affected implant or Attribute and test for failure each time it takes Stress; bioware additionally has item-specific degradation at Stress thresholds.
+  inputs: [existing Stress Points, new Stress source]
+  outputs: [updated Stress, possible implant or Attribute failure]
+  steps: []
+data:
+  initial_stress:
+    new_implant_or_attribute: 0
+    used_cyberware_permanent: 1D6 / 2
+    used_bioware_permanent: 1
+  wound_effect:
+    points: 1D6 / 2
+    rule_of_six: false
+    cumulative: true
+    stress_test_required: true
+  other_sources: The gamemaster may assign Stress or require Stress Tests for extreme exertion, exceeding implant capabilities, harsh conditions, poor maintenance or other source-described circumstances.
+  upkeep:
+    typical_interval: yearly
+    variation: Some implants require more or less frequent maintenance; higher grades tend to require it more often.
+    neglected_maintenance: At gamemaster discretion, add Stress gradually and infrequently; one point per three months is an example, not a fixed mandatory rate.
+    warning: Wear effects should be apparent to the player.
+  voluntary_attribute_stress:
+    permission: Gamemaster discretion only when pushing an Attribute to its limits.
+    cost: Attribute wound effect (1D6 / 2 Stress Points)
+    extra_dice: 1
+    maximum_extra_dice_per_test: 1
+    same_attribute: true
+    eligible: [Attribute Test, defaulting to an Attribute]
+    ineligible: [Skill Test]
 links:
   uses: []
-  affects:
-    - subsystem.damage.stress
+  affects: [subsystem.damage.stress]
   modified_by: []
-  interacts_with:
-    - rule.damage.attribute-damage
-
+  interacts_with: [rule.damage.attribute-damage, rule.damage.stress-test]
 sources:
-  - source: source.mm
-    page: 124
-    relation: defines
-    note: "Stress Points / Stress from Wound Effects / Other Sources of Stress"
-
+  - {source: source.mm, pages: '124,126', relation: defines, note: Stress Points and Other Sources of Stress}
+  - {source: source.mm, page: 131, relation: defines, note: Using Stress, Cyberware Upkeep and Stress for Attribute Dice}
 notes:
-  - "A wound effect that damages an implant or Attribute adds 1D6 ÷ 2 Stress Points; the Rule of Six does not apply to that roll."
+  - Stress repair is covered under Stress Maintenance on p130.
