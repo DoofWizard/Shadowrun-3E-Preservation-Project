@@ -1098,6 +1098,61 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+
+  confirmed_stress_test_wound_failure_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp126-128/PDF127-129 and copyright printed p5/PDF5."
+    image_sha256:
+      PDF127: "3f1b984b4ff5ebe063bb130ff6fab065f589b742a48190a2b9553c3c1521d8b9"
+      PDF128: "aeb58c1c57a03a3030066f3ed45c7cd97b503ddea608bd1d07a376b50baea7e4"
+      PDF129: "52d376f9bc9af24f6d53bc45e2afd7eee036e99355d7dfd844ca8f164f0ad189"
+    records:
+      - id: rule.damage.stress-test
+        path: rules/damage/stress-test.yml
+        printed: "126"
+        pdf: "127"
+        commit: "5db111981ea1907ff3cb9e7d189536cd551b3374"
+        blob: "d30012e1641cc271d48afb70e6c7d17a953057a2"
+        candidate_sha256: "726b1b7d1a562a20b5665da9e43771f03198f6c27ee508e80c0d296c9f94121b"
+        baseline_sha256: "e98faa5911f70a922187124bcbcc85764656ed8fcad1946fc08b1e73ce20798a"
+        immutable_sha256: "085bc45bffe1a7683098418d55eb6c23d99d086d9e526e65974f2809277b1ddc"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Four Stress levels, eight dice rows, two target number modifiers, automatic failure, used grade, surgery options and extreme-condition exceptions."
+      - id: rule.damage.wound-effects
+        path: rules/damage/wound-effects.yml
+        printed: "126-127"
+        pdf: "127-128"
+        commit: "f248e836e05349edb83f12d86a6373f86efefd58"
+        blob: "b379d721a7ddc40efdb59ef06cd3f9f7670f21a2"
+        candidate_sha256: "4d34f0293256aa47786847a6b37cda9939630187d0b0b79341c5e85509c6f746"
+        baseline_sha256: "edff5e34088bffada92ed178d8ed6649af34b8afdbd93f2088292885068dc8f6"
+        immutable_sha256: "9135f77cc071a6f0ea057eae3c30458e5ce30943fc5bed9946de587ca6a15283"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Damage resistance margin, independent D6 classification, all three classification rows, absent implant exception, care requirement."
+      - id: rule.damage.cyberware-failure
+        path: rules/damage/cyberware-failure.yml
+        printed: "128"
+        pdf: "129"
+        commit: "2ee08eb8d5cf089e8702300d51da50078533182c"
+        blob: "858940ccd70794803ff1bf03375f6e81f7d78517"
+        candidate_sha256: "f137ae8505fc68e3cf9298fa3938adf2d5fe6f9b57bb2d152eb431368bef233a"
+        baseline_sha256: "5c0f6821970239c200284e60073fe53383a6b246b56f06d50f2cb9840c58ce32"
+        immutable_sha256: "5a631616bd6b892ba5c0f0aaa4c4e24f2b788c3a0512a25d4b36bc50463da379"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Six optional failure outcome rows, structural exception, discretionary effects and repair references."
+    scoped_natural_sections_reconciled:
+      - "Stress Level and Stress Test p126/PDF127."
+      - "Determining Wound Effects pp126-127/PDF127-128."
+      - "Cyberware Failure p128/PDF129."
+    exceptions: "Cybersystem Damage, Bioware Damage and Failure, and Using Stress remain separately open; no chapter closure."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
+
 coverage:
   - cyberware
   - cyberlimbs
