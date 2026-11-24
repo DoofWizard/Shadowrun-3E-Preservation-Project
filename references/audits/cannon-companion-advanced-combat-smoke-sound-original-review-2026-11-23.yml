@@ -1,0 +1,62 @@
+id: audit.cc.advanced-combat-smoke-sound-2026-11-23
+source: source.cc
+publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: SR3}
+original_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+verify_source_status: source_pdf_hash_verified
+preflight_self_tests: 29
+review_kind: original_image_field_reconciliation
+printed_pages_inspected: [103, 104, 105, 106, 107]
+pdf_pages_inspected: [104, 105, 106, 107, 108]
+scope: Fictional tabletop game mechanics only.
+reconciled_natural_sections:
+  - section: Recoil and Strength
+    printed: [103]
+    existing: {path: rules/combat/recoil-strength.yml, blob: 6624d4f0150cc0b97a57e92926d2b2221391a92c}
+    review: Four original rating bands and cyberarm exception match; reuse read-only.
+  - section: Searching Fire
+    printed: [103]
+    existing: {path: options/combat/searching-fire.yml, blob: f30d8c8417841f053a3f1c8c2cdb0f83fefd9e89}
+    review: Declaration, eligibility, dice substitution and modifier conditions match.
+  - section: Shotgun Sound Suppression
+    printed: [103]
+    existing: {path: rules/combat/shotgun-suppression.yml, blob: 923e9da804bfd7bd4f993385a54a5f2a5327d7b5}
+    review: Source eligibility and exclusions present; sound-category relationship newly indexed. Prefer the specific source exclusions over the existing shorthand summary.
+  - section: Smoke Rules
+    printed: [106, 107]
+    existing: {path: rules/combat/smoke.yml, blob: f15e48ee4b274d75ec695fa238a350b066e9cba7}
+    review: Four table rows, base durations, area, wind and visibility compared. New record preserves missing literal dashes, direction cross-reference, example and source inconsistencies. Core/supplement duration conflict remains explicit, not an engine precedence decision.
+  - section: Suppressive Fire
+    printed: [106, 107]
+    existing: {path: procedures/combat/suppressive-fire.yml, blob: d0e668dc8f49ba1cf1cecdc2c0304def217e5ed1}
+    review: All original procedural game conditions reviewed against existing four stages, including end conditions and worked example; no additional semantic record needed.
+  - section: Throwing Back Grenades
+    printed: [107]
+    existing: {path: options/combat/throwing-back-grenades.yml, blob: 6fbbbe0bb1a4fae2682bfa64c409e3d144f87c35}
+    core: {path: rules/combat/sr3-core-grenade-scatter-blast-p118-119.yml, blob: e87e9fbaac5c823807f8d79f5b6a13f2e39868da}
+    review: Source-specific eligibility, tests, failure, exception and inherited timing are covered by existing records.
+verified_new_transactions:
+  - path: rules/combat/cannon-companion-smoke-source-distinctions-p106-107.yml
+    commit: 1b8cbc28de396d33e691ff5af6e3593828f38150
+    blob: 1adda8ec75a7dbac4e371fa85cf9aa421bfcead8
+    baseline_sha256: 1586a8872c707ac86017f7325160e6bdb49c7805138bbcf7f9b8ba11ca428de3
+    candidate_sha256: 1586a8872c707ac86017f7325160e6bdb49c7805138bbcf7f9b8ba11ca428de3
+    immutable_sha256: ea84f9401a61f515ea7d481a333e17ec5d11c625f1aa708e8a40a602c1c9c6c6
+    gate: verified
+    index_commit: cd4515d28fec417b44436bb7624e2c5b7315796d
+    index_blob: c4ffaf47754a8df1bcc7d57f1bbb06172cb1510c
+  - path: rules/perception/cannon-companion-shotgun-sound-category-p103.yml
+    commit: 63922417600cc50dc811da989a180b2c0b411988
+    blob: f1cc4e34d428e2d711e9bae50d41ebe5b2aa9afe
+    baseline_sha256: 456f85ce703e11ae346f167393f4aa88580ff4524187050b69d5d6c7be815db0
+    candidate_sha256: 456f85ce703e11ae346f167393f4aa88580ff4524187050b69d5d6c7be815db0
+    immutable_sha256: c8591a32f9cc2185ee3b1b8191a887a311814a133e6a522bd251135ee02a647c
+    gate: verified
+    index_commit: a920c997f44a822b18cc2ef640e5f9571399a46c
+    index_blob: fd40908bcb6cdc0aa937b4d35471650a6da1d457
+remaining:
+  - Historical shared-record transaction provenance not newly established.
+  - Skills p104-105 individual entries compared; exact off-hand cross-reference and scope differences require separate reconciliation before closure.
+  - Smoke source precedence and printed wind ambiguity remain explicit.
+  - External BattleTac bonus remains a read-only dependency.
+whole_book_closed: false
+globally_authorized_pages: 0
