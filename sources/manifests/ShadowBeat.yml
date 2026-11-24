@@ -54,7 +54,8 @@ coverage:
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: source_verified_section_closed, note: "Original rules-bearing production, output, and playback eligibility fields pp74-83 verified; p79 storage contradiction retained, p82 advertisement and p83 narrative effects distinguished from dice rules. Equipment prices and capability tables pp88-99 separate; SR3 adaptation unresolved."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
-  equipment_and_costs: {printed: "88-99", status: queued}
+  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 verified; other gear pp88-96, PAB price table p97, and storage media/data rates/trideo p99 remain."}
+  simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
 edition_lineage:
   sr3_replacement_audit: pending_by_specific_mechanic
@@ -87,6 +88,7 @@ records:
   - ["simsense-production-legacy-p74-78", "49a89c8dcf6908d512368ff20da10ae219910602"]
   - ["simsense-output-storage-legacy-p79-80", "78638439e0578f978f1f266684e3e09d585dbe49"]
   - ["simsense-legacy-eligibility-p80-83", "fe5debd025a73471d49dd3d82e23e00ffe4b04b1"]
+  - ["simsense-gear-legacy-p97-98", "1705d367601d04afaa88b36b136adc30da733da0"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -373,5 +375,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p80_pdf89", "printed_p81_pdf90", "printed_p82_pdf91", "printed_p83_pdf92"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-simsense-gear-legacy-p97-98
+    path: equipment/shadowbeat/simsense-gear-legacy-p97-98.yml
+    original_printed_pages: "97-98"
+    original_pdf_pages: "106-107"
+    commit_sha: "1705d367601d04afaa88b36b136adc30da733da0"
+    readback_blob_sha: "8a4627e87f32f752684bdfce18c7b3ca2d1dc378"
+    candidate_sha256: "27183b124b6fe79bc0a6ca21949c3ff63a7308e49eb6cc1bf172809e11f6511f"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p97_pdf106", "printed_p98_pdf107"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
