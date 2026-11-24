@@ -1,0 +1,53 @@
+id: rule.magic.mits-magic-loss-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: 30-31
+pdf_pages: 31-32
+edition_scope: SR3
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) — Magic Loss
+summary: Original tabletop rule mechanics from FASA Corporation, printed pp30–31/PDF31–32.
+  Structured mechanics and source references are preserved in data.
+data:
+  general:
+    core_reference: SR3 p160
+    loss_countermeasures:
+    - Initiation can maintain or restore Magic, requiring time and Karma.
+    - Geasa can offset lost Magic by restricting its use; see the separate geasa records.
+  permanent_loss:
+    condition: Magic or Essence reaches zero or below.
+    consequence: The character permanently loses magical capabilities, becomes mundane
+      and retains magical skills and knowledge without being able to use them.
+    unoffset_loss: Points lost from Magic or Essence are permanent if the character
+      declines initiation or geasa.
+    burnout_context: The text describes characters compensating for lost magic by
+      taking cyberware, potentially accelerating further Magic loss.
+  stimpatches:
+    trigger: An Awakened character uses more than one stimpatch during a 24-hour period.
+    track: Sum the ratings of the stimpatches used during that period.
+    test_at: End of the 24-hour period.
+    test_attribute: Magic
+    target_number: Sum of tracked stimpatch ratings.
+    failure: Zero successes requires a Magic loss check, not automatic loss.
+    core_reference: SR3 p305
+  astral_projection:
+    essence_loss_per_hour: 1
+    essence_zero_consequence: Death of the character.
+    fractional_essence_threshold: Essence below 1.
+    safe_projection_minutes: Remaining Essence multiplied by 60.
+    example:
+      essence: 0.035
+      magic: 3
+      source_rounded_minutes: 2
+    core_reference: SR3 p173
+    existing_record_discrepancy: The original section specifies Essence depletion
+      and projection duration; it does not state the automatic forced return described
+      in rule.magic.astral-projection-loss.
+  implants:
+    eligibility: Awakened characters may acquire cyberware or other implants.
+    drawback: Essence reduction from damage including surgery can erode magical ability.
+    note: Datajacks and headware memory are described as common examples among mages;
+      some adepts choose combat-enhancing cyberware.
