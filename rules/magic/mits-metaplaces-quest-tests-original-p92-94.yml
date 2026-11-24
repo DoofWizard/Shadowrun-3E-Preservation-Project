@@ -1,0 +1,57 @@
+id: rule.magic.mits-metaplaces-quest-tests-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '92-94'
+pdf_pages: '93-95'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Metaplaces and quest resolution
+summary: Source-reviewed fictional tabletop rules from FASA7907, FASA Corporation, Magic in the Shadows, SR3, printed pp92-94/PDF93-95.
+data:
+  metaplaces_table:
+    - {roll: 1, place: Battle}
+    - {roll: 2, place: Charisma}
+    - {roll: 3, place: Destiny}
+    - {roll: 4, place: Fear}
+    - {roll: 5, place: Knowledge}
+    - {roll: 6, place: Magic}
+    - {roll: 7, place: Spirits}
+    - {roll: 8, place: Citadel}
+  movement:
+    place_structure: Each Place represents a type of experience; the GM can vary appearances, create additional Places and set skill, Attribute or roleplaying challenges.
+    initial_roll: 1D6
+    subsequent_roll: 2D6
+    direction: Count downward from current Place, wrapping from the table end to the top.
+    direct_citadel: A rolled destination of Citadel succeeds.
+    revisit: Move upward until reaching an unvisited Place; wrap from the top to the next unvisited Place before the Citadel, never enter the Citadel by this revisit adjustment.
+    all_places_visited: Automatically reach Citadel on next shift.
+    example: Battle, Destiny, Charisma, Destiny again leads upward past visited Charisma and Battle, skips Citadel, and reaches Spirits.
+    custom_path: GM may instead specify the sequence, encounters and number of Places needed to reach Citadel.
+  quest_tests:
+    method: Resist the listed Damage Code using the listed skill or Attribute in place of Body; Rating means Quest Rating.
+    rows:
+      Battle: {test: Melee Combat Skill, power: Rating, level: S, track: Physical}
+      Charisma: {test: Social Skill, power: Rating, level: M, track: Stun}
+      Destiny: {test: Magic or Essence, power: Rating, level: S, track: Stun}
+      Fear: {test: Willpower, power: Rating, level: D, track: Stun}
+      Knowledge: {test: Knowledge Skill, power: Rating, level: M, track: Physical}
+      Magic: {test: Magical Skill, power: Rating, level: S, track: Stun}
+      Spirits: {test: null, resolution: Place of Spirits}
+    pools: Initiates may use Astral Pool dice; otherwise only Karma Pool dice assist. Astral Pool refreshes on moving to a new Place.
+    alternative: GM may use roleplayed encounters instead of single resistance tests, using normal dice pools as applicable; fulfilling one such challenge generally permits direct arrival at Citadel.
+  damage:
+    actual_damage: Physical and Stun damage also affect the physical body.
+    body_healing: Healing the body also heals the astral form; each such healing increases the target numbers of that character's Quest Tests by 1.
+    stun_unconsciousness: Astral disruption and return to body; quest fails.
+    deadly_physical: Return to body dying of wounds; check Magic loss normally; quest fails.
+  encounter_guidance:
+    Battle: GM selects an opponent using Quest Rating as strength guide; astral or physical combat; normal spells, foci and astral projection apply in physical combat; GM controls gear but weapon foci retain normal form. Physical combat suits groups including mundane companions.
+    Charisma: Resolve a social or ethical challenge with social ability or courage; escalation into combat does not ordinarily succeed, regardless of victory; GM may allow an exception.
+    Destiny: Overcome an astral double through combat or another appropriate skill, or resolve an alternate historical challenge.
+    Fear: Face a feared situation or test of courage.
+    Knowledge: Solve a puzzle or skill-based task; any appropriate skill may apply, especially on shamanic planes.
+    Magic: Resolve a magical task, including ordinary Drain if spells are used.
+    Spirits: Defeat a spirit via astral combat or banishing; Force equals Quest Rating plus 1 per two people on a group quest; GM may use physical combat if mundane characters accompany the group, including modern weapons as if the spirit attacked in the physical world.
+    Citadel: Objective fulfilled; character obtains reward and returns to body.
