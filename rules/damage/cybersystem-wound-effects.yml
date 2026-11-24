@@ -1,22 +1,47 @@
 id: rule.damage.cybersystem-wound-effects
 record_type: rule
-name: "Cybersystem Wound Effects"
+name: Cybersystem Wound Effects
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '127-128'
+pdf_pages: '128-129'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Cybersystem Damage — slots and electrical exceptions
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed pp127-128/PDF128-129.
 effective: {status: current, source: source.mm, page: 127, basis: defines}
 scope:
-  applies_to: ["wound effects classified as cybersystem damage"]
+  applies_to: [cybersystem wound effects]
 resolution:
-  summary: "Cyberware is assigned among six Essence slots to determine which system a wound effect damages. Electrical attacks can generate additional cyberware wound effects. A damaged cybersystem receives Stress and makes a Stress Test; cybereyes, cyberears and cyberlimbs may be treated as whole systems or as individual subsystems at gamemaster discretion."
-  inputs: ["wound effect", "Essence-slot assignment", "cyberware Essence Costs", "electrical damage where applicable"]
-  outputs: ["affected cybersystem", "Stress", "possible failure"]
+  summary: Assign cyberware to Essence slots and determine the affected implant from the wound effect; damage adds Stress and requires a Stress Test.
+  inputs: [wound effect, Essence costs, slot assignment, electrical damage if applicable]
+  outputs: [affected cybersystem, Stress, possible failure]
   steps: []
+data:
+  essence_slots:
+    count: 6
+    capacity_each: 1
+    assignment: Fill slots in ascending order, finishing each before starting another; implants costing more than one Essence occupy multiple slots.
+    accessories: Treat embedded accessories as part of their parent system unless Essence was paid separately for them.
+    cyberzombies: Double up slots when necessary; a cybersystem wound effect always damages cyberware and may affect two systems.
+  affected_system:
+    slot_roll: 1D6
+    empty_slot: ignore wound effect
+    occupied_slot: GM chooses an implant, selects randomly or subdivides by Essence cost and rolls 1D10.
+    partial_slot: A partially filled slot can yield no damage; the source example gives a half-full slot a 50 percent no-damage chance.
+    composite_system: For a cyberlimb, cybereye or cyberear the GM may damage the whole system including internal accessories or one randomly selected subsystem.
+  electrical_wound_effect:
+    condition: Electrical attack wound effect against a character with cyberware.
+    resolution: Resolve cybersystem damage for each such wound effect, then roll an additional 1D6; 1-2 damages another cyberware item.
+  stress_points: 1D6 / 2
+  stress_test_required: true
 links:
   uses: [rule.damage.wound-effects, rule.damage.stress-points, rule.damage.stress-test]
   affects: [subsystem.cyberware.core]
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, pages: "127-128", relation: defines, note: "Cybersystem Damage, electrical damage, Essence slots and system affected"}
-notes:
-  - "Cybermantic subjects double up cyberware in Essence slots as specified by the source."
+  - {source: source.mm, pages: '127-128', relation: defines, note: Cybersystem Damage and Essence slot rules}
+notes: []
