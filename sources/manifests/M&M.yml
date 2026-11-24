@@ -1153,6 +1153,64 @@ source_field_review:
     global_checkpoint_changes: 0
 
 
+
+  confirmed_stress_points_cyber_bio_wounds_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp124,126-128,131/PDF125,127-129,132 and copyright printed p5/PDF5."
+    image_sha256:
+      PDF125: "ab5c4b2eec25863f046c9060255378baadbd709d665c86e90c10af1998e48167"
+      PDF127: "3f1b984b4ff5ebe063bb130ff6fab065f589b742a48190a2b9553c3c1521d8b9"
+      PDF128: "aeb58c1c57a03a3030066f3ed45c7cd97b503ddea608bd1d07a376b50baea7e4"
+      PDF129: "52d376f9bc9af24f6d53bc45e2afd7eee036e99355d7dfd844ca8f164f0ad189"
+      PDF132: "4c9f4d6df56b99ea46c300980abf2e7bf0179dae08ce6ec5ad0a264bcfbcc2b2"
+    records:
+      - id: rule.damage.stress-points
+        path: rules/damage/stress-points.yml
+        printed: "124,126,131"
+        pdf: "125,127,132"
+        commit: "1f146d7044eca398b76bafebd5d1fb5f73546078"
+        blob: "8894ee4553c8a40e0080e47009d06ac56b2579f4"
+        candidate_sha256: "899402eb0abd633d1792a385a9bf89e5e45ef3c5a0795fd52a90a6250354896f"
+        baseline_sha256: "5c5aa43fb5120e83bf6df4a93d3981a25aae57adcd8fec21e75c95c9724acf50"
+        immutable_sha256: "50a0cddbfe95cf416257ed2db13df8fdf9dd0b5d843826a9281eb8833277b494"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Initial Stress, permanent used implant values, cumulative wound Stress, discretionary sources, typical upkeep interval and example rate, voluntary extra Attribute die conditions and restrictions."
+      - id: rule.damage.cybersystem-wound-effects
+        path: rules/damage/cybersystem-wound-effects.yml
+        printed: "127-128"
+        pdf: "128-129"
+        commit: "5a82181dbd723f432012b430a9c6cd88b17f853c"
+        blob: "3f4c2b97478bbf6d7f571c74e28b21f0c13347e4"
+        candidate_sha256: "34edb19811e6848c88da746605b6633a08e5f8d747e7b5288bd5f7ade447cb21"
+        baseline_sha256: "501c5153fe472257d0f9327d0378cece4ba62032abcade9f2fa1f7595206dd8d"
+        immutable_sha256: "e7dd89cce639b6fac0a9eddcbd4c70481f43d444a41a20f9e076af2264f23409"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Six one-Essence slots, ascending assignment, paid accessories, cyberzombie exception, D6 and D10 selection, empty and partial slots, composite systems, electrical additional roll and Stress."
+      - id: rule.damage.bioware-wound-effects
+        path: rules/damage/bioware-wound-effects.yml
+        printed: "128"
+        pdf: "129"
+        commit: "b4c4df29c58974bb174bad7031f5211df6449b52"
+        blob: "ca94299b95396e658de57851e5f4352980b9ad1e"
+        candidate_sha256: "3fc156d41ebf3e77669cf0d09bca88916b43b2123c80d5206b47f9e9c37ff460"
+        baseline_sha256: "6e3497fcb1541fb24fb10c3b4baaf0d777c642103681489f346dd9d713460e94"
+        immutable_sha256: "b9e44e5059ee280cfa1397d4782fb76cda530ad4cc1bc0f862680d8d0da5641d"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Bio Index slot substitution, overflow slots, Stress and cumulative effects, failed-test Deadly Stress, repair routes."
+    scoped_natural_sections_reconciled:
+      - "Stress Points, Stress from Wound Effects and Other Sources of Stress pp124,126/PDF125,127."
+      - "Using Stress including Cyberware Upkeep and Stress for Attribute Dice p131/PDF132."
+      - "Cybersystem Damage including Electrical Damage, Assign Essence Slots and Determine System Affected pp127-128/PDF128-129."
+      - "Bioware Damage and Bioware Failure p128/PDF129."
+    exceptions: "No chapter or book closure from these bounded comparisons. Earlier Bio Index, Magic Effects and nanoware installation receipts remain deferred."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
+
 coverage:
   - cyberware
   - cyberlimbs
