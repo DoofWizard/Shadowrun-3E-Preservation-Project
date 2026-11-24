@@ -1,0 +1,43 @@
+id: rule.critters.target-wastelands-toxic-domain-qualifications
+record_type: rule
+status: ingested
+source: source.fanpro-10653
+printed_pages: "114-115"
+pdf_pages: "115-116"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Fictional toxic critter and domain power qualifications
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  extends: rule.critters.target-wastelands-toxic-critters-domains
+  potency:
+    typical_limit: Usually confined to comparatively intelligent critters and then only a few points; not a fixed numeric cap.
+  astral_identification:
+    successes: 1
+    exception: Critter has Aura Masking and attempts to conceal its toxic nature.
+  domain_spirit_power_changes:
+    desolate:
+      additional_powers: [Fear, Pestilence]
+      replaces: Toxic powers described in Magic in the Shadows p127.
+    irradiated:
+      replace: Corrosive Secretions
+      with: Flame Aura equivalent glow
+      guard: May protect against radiation.
+      additional_summoning: Toxic shamans may summon toxic versions of Spirits of the Flames in this domain.
+    poisoned:
+      baseline: Toxic spirits as described in Magic in the Shadows.
+      possible_replacement: {from: Corrosive Secretions, to: Venom}
+    sterile:
+      replace: [Corrosive Secretions, Noxious Breath]
+      with: [Desire Reflection, Influence]
+  source_example:
+    species: harpy
+    natural_power_replaced: Pestilence
+    replacement_power: Venom
+    replacement_use_limit: unlimited
+    new_secondary_power: Magic Sense
+    primary_power: Noxious Breath
+    primary_uses_before_recovery: 4
+    qualification: Example of replacement and a separate secondary power; not a mandatory harpy configuration.
