@@ -1029,6 +1029,46 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+
+  confirmed_implant_stress_repair_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp130-131/PDF131-132 and copyright printed p5/PDF5."
+    image_sha256:
+      PDF131: "7e26ecfc9a6e68ca59707a86183e2b6de056fd1e210e41fafbcfc0ea002b405c"
+      PDF132: "59ad633bb219373ed6f03709d246b0f0529d258ea8cbcd2feaf0074572d57727"
+    records:
+      - id: procedure.damage.cyberware-stress-repair
+        path: procedures/damage/cyberware-stress-repair.yml
+        printed: "130"
+        pdf: "131"
+        commit: "5f0d762a2543033feed656665b0ce1798a5ad5b5"
+        blob: "597aec66d38c66df15b194f3559181ebf5fb271f"
+        candidate_sha256: "ee2d79ea3ac27d34f92fa4883fe9c3958329287c60a052e8e807c8346790f9b4"
+        baseline_sha256: "6955354fa9f6ab7e742b52bcb3094a5b94dcde3f1836426e1b891116edd05d3e"
+        immutable_sha256: "40192be16e8610f8e3987ab842217bcdaa6e0403d50b0cff1b72ee0f94158200"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Surgery requirements and discretionary exceptions, tool and facility constraints, three skill choices, grade modifier, repair ratio, failure and improved-tool exception, minimum Stress, parts and labor costs, duration and success-based time reduction."
+      - id: procedure.damage.bioware-stress-repair
+        path: procedures/damage/bioware-stress-repair.yml
+        printed: "130-131"
+        pdf: "131-132"
+        commit: "72b1392c8a1460eb39bc16df461b9f50bfc9069f"
+        blob: "a175c522fba933b9c02694cf5c6abfc5eb7c572f"
+        candidate_sha256: "b7e892dd833464e7ea756e151b1dc7898c78cd5537fcd10a4c339cc793ea3fdc"
+        baseline_sha256: "d3aab83bbf7b8d1591035e0312f205fad579509933cf90c6d5af2d9d3e1fe3e5"
+        immutable_sha256: "c0eab1ff25acb24d8ba1d18187edeeffbc6d7d9ea46436dc3fc27e9beb77e6d1"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Unaugmented Body initial test, clinic and surgery consequences, minimum Stress, substituted healing stages, optional healing cross-reference, highest Damage or Stress for magic, allocation of spell successes, Force cap and repeat-healing restrictions."
+    scoped_natural_sections_reconciled:
+      - "Cyberware Stress Repair and Repair Test p130/PDF131."
+      - "Bioware Stress Repair and natural, clinical and magical healing subrules pp130-131/PDF131-132."
+    exceptions: "Attribute Stress Repair and Using Stress remain open; the umbrella Stress Maintenance section is not certified."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
