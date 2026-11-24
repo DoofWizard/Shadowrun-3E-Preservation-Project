@@ -1,0 +1,36 @@
+source: source.cc
+publication: FASA7908 Cannon Companion (FASA Corporation, Shadowrun Third Edition)
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+verify_source_output: source_pdf_hash_verified
+printed_pages: [72, 73, 74, 75, 76, 77, 78]
+physical_pdf_pages: [73, 74, 75, 76, 77, 78, 79]
+image_review: Original pages visually inspected; p73 is art only.
+field_reconciliation:
+  Gunsmithing Tools:
+    existing_procedure: [procedures/firearms/design.yml, 5de90056f860f5ee3fc7212efb0eb833a0b64585]
+    existing_core_market: [equipment/sr3-core-build-repair-tools-market-p288.yml, f84763d16ff28ad518a86df8d12b36f0a5fc6f2a]
+    source_qualification: Source p72 links specialized tools to accepted vehicle-tool prices; no duplicated market record.
+    result: source_fields_reconciled
+  Firearm Design:
+    reused_frame_table: [rules/firearms/design-frames.yml, a06c9ac246776f633214f0bf87484cdfa15f99de]
+    prior_confirmed_frame_correction: [rules/firearms/cannon-companion-holdout-frame-fcu-original-p75.yml, 5c93a2b1ce024a9fe2e6a168a6ad2f10b428005a]
+    prior_confirmed_frame_eligibility: [rules/firearms/cannon-companion-frame-design-eligibility-original-p76-77.yml, 9b1f63d987aa305fa33a9bf598874dbd1c375d79]
+    reused_generic_options: [rules/firearms/design-options.yml, b02c78cfdc0c717b5478c1b2865633edc347c0f2]
+    original_frame_rows: 14
+    generic_option_entries: 18
+    original_frame_option_allowances_from_prior_audit: 152
+    new_workflow_fields: [frame skill linkage, base weight exclusions, once-only default, loading point refund, retained-mode cost qualification, increased maximum rather than absolute maximum, no design-stage Installation Test]
+    example_accounting: Existing general markup retained; example base price and street price reconcile with published totals. GM assigns availability.
+    example_discrepancies: Completed specification differs from final prose and table for Concealability; intermediate converted capacity differs from generic replacement capacity.
+    result: source_fields_reconciled_with_documented_discrepancies
+transactions:
+  - [3669a1f6ac8635c5e9d2bd09797e48466a019c0b, 7f00f750c4b43bb535b3713eb0603d7fbd9b5307, 4bf7a610101ee3d8db7f2916856b528e307bb893]
+  - [afc9a51a8212b478f4966b2da183c4a899426253, bc1ae53135ceb7a1538fa7c9eddcf9ca1e293fc2, 151610ae63debe1218f0b1246af7f684be0424de]
+transaction_columns: [semantic_commit, exact_blob, manifest_index_commit]
+gate_confirmations: 2
+distinct_new_records: 2
+fully_reconciled_natural_sections: 1
+reconciled_with_discrepancies: 1
+whole_book_closed: false
+globally_authorized_pages: 0
+remaining: Firearm Customization pp79-82, Ammunition and explosive manufacture pp82-84, remaining equipment review, historic shared-record transaction provenance, source precedence and shared label corrections. No shared record was changed.
