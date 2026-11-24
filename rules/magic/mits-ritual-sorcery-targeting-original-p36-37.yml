@@ -1,0 +1,65 @@
+id: rule.magic.mits-ritual-sorcery-targeting
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '36-37'
+pdf_pages: '37-38'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  direct_targeting:
+    leader_los: Automatic targeting if leader has valid spellcasting line of sight.
+    spotter_los: Valid physical or astral target visible to astral spotter; team waits while spotter finds it. Spotter may follow another entity to the target.
+    spotter_defense: Can defend using astral melee combat rules, but cannot cast or use Magical Skills including spell defense because Sorcery dice are unavailable.
+    spotter_loss: If killed or driven from target, ritual aborts and all members resist Drain.
+  material_link:
+    use: Required if neither direct nor astral observation is available.
+    living: Tissue with the target's DNA.
+    awakened: A focus bonded to the target also qualifies.
+    nonliving: An integral component of the target, not merely an object previously located within it.
+    allocation: Leader commits Ritual Pool dice to Linking Test.
+    location_target_numbers:
+      city_or_county: 5
+      state_province_or_country: 7
+      continent: 9
+      unknown: 11
+    modifiers:
+      astrally_active: -2
+      astral_barrier: Add barrier Force.
+      concealment: Add concealing critter Essence.
+    duration_hours: Spell Force divided by Linking Test successes.
+    zero_successes: Abort; every team member resists Drain.
+  sending:
+    allocation: Leader commits Ritual Pool dice to Sending Test.
+    target_numbers:
+      place: 6
+      person: 6
+      object: 8
+      astral_form: 8
+    modifiers:
+      movement_faster_than_normal: 2
+      area_spell: -1
+    duration_hours: Spell Force divided by Sending Test successes.
+    zero_successes: Abort; every team member resists Drain.
+  detection:
+    target_perception_at_start:
+      mundane_tn: 10
+      awakened_tn: 8
+      notice_successes: 1
+      recognition: Magicians and prior ritual targets recognize the sensation as a sending.
+      assensing: Astrally perceptive targets that notice can examine the spell and Force.
+    astral_observer:
+      test: Astral Perception
+      tn: 10 - spell Force + remaining sending hours
+      notice_successes: 1
+      followup: Assensing can identify spell and Force.
+  tracking_sending:
+    visibility: Once noticed, an astrally perceptive character can see the energy link.
+    test: Use SR3 astral tracking rules (p177) to locate the team.
+    barrier: The ritual lodge or circle is an astral barrier.
+    team_defense: Members may defend in astral melee but cannot project or use Magical Skills.
+    member_loss: Death or unconsciousness removes that member's Sorcery dice. If the pool is exhausted or the leader loses consciousness, abort; remaining members resist Drain.
+    voluntary_withdrawal: Nonleaders may leave via Exclusive Complex Action; remove their Sorcery dice and abort if exhausted. Departing members resist Drain immediately without Ritual Pool or their Sorcery dice, but personal Spell Pool and applicable totem advantages remain available.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Ritual targeting, sending and detection, FASA7907, printed 36-37/PDF 37-38'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
