@@ -1,0 +1,46 @@
+id: rule.matrix.special-utility-multipliers-p71-73
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '71-73'
+pdf_pages: '72-74'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG; original pp71-73/PDF72-74.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix special utility game ratings and restrictions
+summary: Original special utility multipliers and eligibility, game initiative support, memory limits, access control effects, wireless link caps and simulated drone control.
+data:
+  category: Special utilities perform specified tasks rather than modifying System Operations.
+  eligible_options: [Adaptive, Bug-Ridden, Crashguard, Optimization, Squeeze]
+  multipliers: {BattleTac Matrixlink: 5, Cellular Link: 1, Compressor: 2, Guardian: 2, Laser Link: 1, Maser Link: 1, Microwave Link: 1, Radio Link: 1, Remote Control: 3, Satellite Link: 2}
+  battletac_matrixlink:
+    network: Two or more users exchange fictional status and acquired Matrix information automatically; users must connect through Make Comcall and the utility maintains the operation. Tap Comcall may monitor the game communication.
+    maximum_other_users: Matrixlink rating
+    initiative_support: Small Unit Tactics (Matrix Tactics) skill test; Complex Action during last action of Combat Turn, TN 2 modified by wounds and Perception modifiers; apply M&M p47 initiative bonus procedure.
+    cross_environment_bonus: Not permitted between Matrix and non-Matrix characters in either direction.
+  compressor:
+    size_reduction_percent: 50
+    maximum_uncompressed_file_Mp: utility rating times 100
+    transfer_time: Halved for compressed files.
+    upload_utility_memory_requirement: Free active memory must accommodate full decompressed size; otherwise Swap Memory cannot be performed.
+    decompression_action: Complex Action
+    reading_or_using: Decompress first.
+  guardian:
+    authorization_methods_per_rating: floor(rating / 2)
+    methods: [Passcode or passkey, Biometric scan with attached scanner]
+    unauthorized_game_access: Automatically denied.
+    optional_game_response: One chosen response from alarm over Matrix or wireless link, activation of attached fictional device, or electric shock with (Guardian rating)M Stun damage code.
+  link_utility_requirements:
+    interface_rating_at_most_utility_rating: [Cellular Link, Radio Link, Satellite Link]
+    maximum_io_speed_rating_times_100: [Laser Link, Maser Link, Microwave Link]
+    hardware: Corresponding interface required; existing wireless and component records supply other connection limits.
+  remote_control:
+    required_module: Rigger protocol emulation module
+    controlled_game_entities: Own drones or drones and components of rigged security system.
+    link_choices: [CCSS, rigger remote control deck, wireless link]
+    mode: Captain's chair only.
+    prohibited_dice_pools: [Hacking Pool, Control Pool]
+  provenance:
+    legacy_entity_catalog: entities/matrix/utilities.yml
+    legacy_catalog_blob: 258ae24166192261006fedf0c50ea7fbe52e304f
+    related_wireless_rule_blob: 7754451ee4c80c9b44767ccf685c140ca402d595
