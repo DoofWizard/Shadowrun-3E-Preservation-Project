@@ -1,0 +1,80 @@
+source: source.mits
+publication: FASA7907 Magic in the Shadows (FASA Corporation, SR3)
+scope: Astral Terrain, Passing Through Earth, Getting Lost and Astral Visibility, printed pp80 and 82 / PDF81 and 83
+status: complete_for_named_section
+global_page_credit: 0
+source_verification:
+  drive_id: 1LqiVya4wMPCrECxvVDeoq0qrILipzNNg
+  bytes: 123917505
+  physical_pages: 178
+  sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+  verify_source_input: Exact id and source_pdf_sha256 fields from live manifest, projected to a local YAML.
+  actual_verify_source_status: source_pdf_hash_verified
+  original_image_review:
+    printed_80_pdf_81: 0d054fd3bcd21e9f71aafde840300f03eb2408f3a3d89fac2058e4d73a79d730
+    illustration_pdf_82: 9c84951d24d156e9942c43c8c80a734fe0585d16bde485ece715705c6b3c293d
+    printed_82_pdf_83: 6bd654b00fa40f5049c88675761f731f1a9cacba6979bd5713042f769223e279
+  executable_live_blob_matches:
+    connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+    transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  editorial_playbook_blob: 35c07f00263ce26a249ffb0c8d00872fe607b7f0
+  preflight_self_tests_passed: 29
+canonical_comparison:
+  - path: subsystems/magic/astral-terrain.yml
+    blob: 68db463c4cfc7a5ad2f9bb3840bd5c2b36063f6d
+    finding: Broad subsystem overview.
+  - path: rules/magic/passing-through-earth.yml
+    blob: ba0782d17c7835de1e500ac47ff7e043feecd520
+    finding: Missing time, target number, assistance dice and retry limits.
+  - path: rules/magic/astral-getting-lost.yml
+    blob: 4edaa766635fcf7ce73a5a944e672b1d96d22566
+    finding: Missing exact test and incorrectly summarizes complete loss of direction as repeated failures rather than all ones.
+  - path: rules/magic/astral-visibility.yml
+    blob: 18bd312e4c45fcb88be4c14fe94a90067242b9ae
+    finding: Missing all eight modifier rows and underwater conditions.
+review:
+  editorial: Fictional tabletop game context and all outgoing fields reviewed before baseline freeze; same-substance candidates independently compared against original images.
+  field_coverage:
+    terrain: Astral solidity and illumination, immaterial physical shadows and auras, invisible mana, exceptional penetration of natural Earth.
+    passage: Natural versus worked material, 30 minutes per meter, Charisma TN 4, success divisor, assisting spirit Force dice, failure, additional attempts capped by Charisma with cumulative TN +2, abandonment, independent passage tests, projection-duration warning and worked example.
+    getting_lost: Secret Intelligence Test, blind travel for more than one Action, TN 4 plus 1 per 30 minutes, failed direction, all-ones outcome, body or metaplane return, object exclusions, guides and worked example.
+    visibility: Astral illumination independent of ordinary light, fog/smoke +1/+2, flame +2/+3, mundane object +2, background count +Level, crowded biomass +2, packed biomass +4, examples, shallow water up to 50 meters and pollution qualification.
+  exceptions:
+    - Physical PDF82 is full-page artwork; it is excluded from the disjoint mechanical record provenance.
+    - No fixed background-count rating is invented for polluted water.
+    - Adjacent Astral Barriers and Background Count sections are outside this closure.
+  unresolved_mechanical_fields_in_scope: []
+transactions:
+  - path: rules/magic/mits-astral-terrain-passage-original-p80-82.yml
+    record_id: rule.magic.mits-astral-terrain-passage-original
+    baseline_sha256: fc3a425a26e84f7a31f8b8ef9994a3e4162850fd28dfd42fba34340d82df8480
+    candidate_sha256: 83ff4581ac2de337484cac6e8501f2bbdca70c8fe454a0722c72dc3a3b5faf78
+    immutable_sha256: 661700e4a9fcfeba2744d3ff7aaa926a82ff0a3b655a7a14f0cb7355ef0eac7d
+    plan_sha256: 3fda59f5e44ba52597a2cbe4f2d38984b5cfd9c8b0b41177136f9d5b460f83e4
+    receipt_sha256: 8b423a7e301d8e37e5d2fab4d572ef98dd64569782fb6c7d53811e47d0a338e7
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    commit: 90842827fd61deb6f4a132b6169e3d5fddc5aec3
+    blob: 9204902c24bd5a7e34f3ee3ad83bfa2fe5648c28
+    readback: Exact candidate bytes at commit and main.
+    manifest_commit: b016403855407a68a6abfff32aca485164b2ca75
+    manifest_blob: d82a915411b0e1eef226565ac6c8c55e5c0839ac
+  - path: rules/magic/mits-astral-visibility-original-p82.yml
+    record_id: rule.magic.mits-astral-visibility-original
+    baseline_sha256: 763c05635f43a8b4d57bca01a9a00d6aa19c1f2884ec2f91e6c5621dbfe6d0ac
+    candidate_sha256: 0977ae77cf325371210bade73d9532835fa3ecfaf56340017705fce7f422e1f7
+    immutable_sha256: e817dc5922a8545b6a554a84b95732304909e7ffa1dc68f0eae7869e72a7ac44
+    plan_sha256: d108c7692933edd616a2de0b1e6c51e3ad336938079c7572ece5e6f1cd9f1023
+    receipt_sha256: 61b12bd7286449b8352c1127e8f803f0bca7f39fc5464d1e1bb32bc6f3b97904
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    commit: aab5f06d7965d00f2e9841661269b86be2afe842
+    blob: 2985e5dc08366c7237fcff71d6590f1b0e8b0b64
+    readback: Exact candidate bytes at commit and main.
+    manifest_commit: 0a7cfaeb048db5a6966f37936a050402f6b93622
+    manifest_blob: 744f0b48f714e661283062afc8b78e5a5b755b55
+journal_archive: FASA7907_MitS_astral_terrain_journals_2026-11-24.zip
