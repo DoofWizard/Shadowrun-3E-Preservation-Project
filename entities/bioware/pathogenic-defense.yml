@@ -1,21 +1,32 @@
 id: entity.bioware.pathogenic-defense
 record_type: entity
-name: "Pathogenic Defense"
+name: Pathogenic Defense
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '68-69'
+pdf_pages: '69-70'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index_per_level: 0.2
-  availability: "4/4 days"
+  availability: '4/4 days'
   cost_nuyen: 24000
   street_index: 1.5
-  legality: "Legal"
-  maximum_levels: "one-half unaugmented Body, rounded down"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+  maximum_levels: floor(unaugmented Body / 2)
+data:
+  power_reduction_per_level: 1
+  affected_attacks: [disease, allergens, microbiologicals, other foreign particles]
+  excluded_attacks: [chemical compounds]
+  stress:
+    light: greater susceptibility to common colds and fevers
+    moderate: leukemia and infection susceptibility; disease resistance Body dice -1
+    serious: intensified leukemia; disease resistance Body dice reduced by implant level
+    deadly: chronic leukemia; all implant bonuses lost
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "68-69", relation: defines, note: "Pathogenic Defense description, game effects, stress effects and statistics"}
-notes:
-  - "Reduces the Power of biological attacks other than chemical compounds by 1 per level."
+  - {source: source.mm, pages: '68-69', relation: defines, note: Game effects, Stress and equipment row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp68-69/PDF69-70: Pathogenic Defense'
+framing: reference_exact
