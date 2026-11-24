@@ -1,21 +1,53 @@
 id: rule.cybermancy.karma-hazing
 record_type: rule
-name: "Karma Hazing"
+name: Karma Hazing
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '57'
+pdf_pages: '57'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Karma Hazing Background Count and Astral Effects
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed and PDF p57.
 effective: {status: current, source: source.mm, page: 57, basis: defines}
 scope:
-  applies_to: ["cybermantic characters"]
+  applies_to: [cybermantic characters]
 resolution:
-  summary: "Cybermantic characters gradually pollute astral space around them. Remaining in one location can create and intensify a Background Count up to a limit based on the subject's negative Essence. They also leave astral signatures whose effective Force and duration scale with negative Essence, and the resulting astral disturbance can attract astral threats."
-  inputs: ["negative Essence", "time spent in location"]
-  outputs: ["Background Count", "astral signature", "possible astral attention"]
-  steps: []
+  summary: The fictional cybermantic character gradually creates astral pollution and leaves astral signatures; this disturbance can attract hostile astral entities.
+  inputs: [negative Essence, time spent at location]
+  outputs: [Background Count, astral signature, astral attention]
+  steps:
+    - Background Count develops gradually rather than immediately; the GM determines the rate of increase.
+    - Resolve the astral signature using the standard astral signature rules on SR3 p172.
+data:
+  background_count:
+    initial_time_hours: 1
+    initial_rating: 1
+    maximum_rating: 'floor(abs(Essence) / 2)'
+    rate_of_increase: GM discretion
+    cleansing: Cybermantic delta clinics generally employ a Cleansing initiate to manage the interference (MITS p74).
+  astral_signature:
+    effective_force: 'floor(abs(negative Essence))'
+    example_essence: -4.5
+    example_duration_hours: 4
+  astral_presence:
+    detectability: Perceptible to astrally active entities beyond normal assensing or astral awareness ranges; intensifies over the character lifetime.
+    effects: Astral entities may avoid the character or react with hostility; astral predators may be attracted.
+  fluorescing_astral_bacteria:
+    attraction: Attracted to the generated background count and can attach to the character.
+    drains_character_magic_or_essence: false
+    force_growth_rate_multiplier: 2
+    reference: MITS p91 Strain-III Draining Table
+    example_start_rating: 5
+    example_end_rating: 6
+    example_hours: 9
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [rule.cybermancy.dual-nature]
 sources:
-  - {source: source.mm, page: 57, relation: defines, note: "Karma Hazing"}
+  - {source: source.mm, page: 57, relation: defines, note: Karma Hazing and Fluorescing Astral Bacteria}
 notes: []
