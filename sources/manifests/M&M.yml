@@ -1656,8 +1656,21 @@ source_field_review:
         gate: verified
         recovery_inspect: verified
         fields: "Market row, range, Signature TN and base values, all eight heat-sensing modifiers, invisibility interaction, four Stress levels."
-    scoped_natural_sections_reconciled: [Reflex Recorder, Sleep Regulator, Thermosense Organs]
-    next_scope: "Synaptic Accelerator pp74-75: original numeric level keys in existing entity require schema reconciliation; actual prepare returned mapping_key_must_be_string. No semantic write. Trauma Damper pp75-76 next."
+      - id: entity.bioware.synaptic-accelerator
+        path: entities/bioware/synaptic-accelerator.yml
+        printed: "74-75"
+        pdf: "75-76"
+        commit: "6c12224d276bbb38759c7a7b67cabf4f62707b10"
+        blob: "de322013dce89215cd79d9305808967241cea618"
+        baseline_sha256: "509b337269246802c7a4507cd539cbf1e67039dccba60666274600d276d3c9ec"
+        candidate_sha256: "0389904f98d1c8c544cefb0d7ca9a9833d4fd333e6cf1deb9c22a7d801bb4c05"
+        immutable_sha256: "f6c36fcb843d27da19e077cbe006be1a79349e0b1158c4756a21835f5ba2fe67"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Both level rows, Initiative bonus, system exclusions, rigging/decking/astral exceptions, and all four Stress effects including fixed die value at Deadly Stress."
+    scoped_natural_sections_reconciled: [Reflex Recorder, Sleep Regulator, Thermosense Organs, Synaptic Accelerator]
+    schema_reconciliation: "Initial local prepare returned mapping_key_must_be_string for legacy numeric map keys. Source-reviewed level rows use string map keys with explicit integer level values; no common gate or source fact changed. Engine compatibility not tested."
+    next_scope: "Trauma Damper pp75-76/PDF76-77, followed by remaining cultured bioware item effects and Stress rows."
     index_reconciliation: "First Thermosense registration returned HTTP 409 on branch advancement; fresh owned manifest blob remained 21ec5c7babbb2f3bf0581e1b953c5d8038e35f4a. The semantic transaction was not replayed."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
