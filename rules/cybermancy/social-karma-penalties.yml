@@ -1,21 +1,47 @@
 id: rule.cybermancy.social-karma-penalties
 record_type: rule
-name: "Cybermantic Social and Karma Penalties"
+name: Cybermantic Social and Karma Penalties
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '58'
+pdf_pages: '59'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermantic Social Modifiers and Karma Gain
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed p58/PDF59.
 effective: {status: current, source: source.mm, page: 58, basis: defines}
 scope:
-  applies_to: ["cybermantic characters"]
+  applies_to: [cybermantic characters]
 resolution:
-  summary: "Sub-zero Essence adds further penalties to Charisma and Charisma-linked skill tests on top of normal cyberware social penalties; the penalty increases with additional negative Essence and becomes steeper below -2. The same alienating presence can improve Intimidation or Interrogation Open Tests. Cybermantic characters accumulate Karma at half the usual rate."
-  inputs: ["negative Essence", "social test type"]
-  outputs: ["social-test modifier", "Karma award rate"]
-  steps: []
+  summary: The fictional rules impose social modifiers and a reduced Karma gain rate on characters with negative Essence.
+  inputs: [negative Essence, social test type]
+  outputs: [social-test modifier, Karma award rate]
+  steps:
+    - Apply the ordinary cyberware social-interaction penalty, which gives a sub-zero Essence character a modifier of +3.
+    - Add the absolute Essence value as a Charisma and Charisma-linked skill modifier, rounding fractions up. For Essence below -2, double the penalty for the amount below -2.
+    - Apply these modifiers as a bonus instead for Intimidation or Interrogation Open Tests.
+data:
+  ordinary_modifier_at_subzero_essence: 3
+  additional_modifier_basis: absolute Essence value rounded up
+  increased_penalty_threshold_essence: -2
+  multiplier_for_amount_below_threshold: 2
+  emotional_bond_exception: Penalties still apply to prior close relationships; GM may increase them in such circumstances.
+  magical_compensation_permitted: false
+  karma_gain_multiplier: 0.5
+  example:
+    essence: -3
+    ordinary_modifier: 3
+    first_two_negative_essence_modifier: 2
+    remaining_negative_essence_modifier: 2
+    total_modifier: 7
+    intimidation_or_interrogation_open_test_bonus: 7
 links:
   uses: [modifier.social.cyberware]
   affects: [rule.karma.core-karma]
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 58, relation: defines, note: "Social and Karma Penalties"}
+  - {source: source.mm, page: 58, relation: defines, note: Social and Karma Penalties}
 notes: []
