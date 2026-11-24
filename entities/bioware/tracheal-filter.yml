@@ -1,21 +1,32 @@
 id: entity.bioware.tracheal-filter
 record_type: entity
-name: "Tracheal Filter"
+name: Tracheal Filter
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '71-72'
+pdf_pages: '72-73'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index_per_level: 0.4
-  availability: "4/4 days"
+  availability: '4/4 days'
   cost_nuyen_per_level: 60000
   street_index: 1
-  legality: "Legal"
-  maximum_levels: "one-half unaugmented Body, rounded down"
-links:
-  uses: [rule.chemistry.drug-exposure]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+  maximum_levels: floor(unaugmented Body / 2)
+data:
+  scope: airborne nonmicrobiological attacks including air-vector compounds; does not stop bacterial-sized impurities
+  power_reduction_per_level: 1
+  example: {level: 3, incoming_damage_code: 8S, resistance_damage_code: 5S}
+  stress:
+    light: accumulated throat mucus causes coughing fits
+    moderate: add 2 to Athletics Tests because breathing is impaired
+    serious: half effectiveness rounded down
+    deadly: no bonuses; speech severely limited and a short phrase requires a Complex Action
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "71-72", relation: defines, note: "Tracheal Filter description, game effects, stress effects and statistics"}
-notes:
-  - "Each level reduces the Power of air-vector compounds and other airborne nonmicrobiological attacks by 1."
+  - {source: source.mm, pages: '71-72', relation: defines, note: Tracheal Filter game effects and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp71-72/PDF72-73: Tracheal Filter'
+framing: reference_exact
