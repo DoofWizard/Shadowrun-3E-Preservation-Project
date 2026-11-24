@@ -1,0 +1,67 @@
+source: source.mits
+publication: FASA7907 Magic in the Shadows (FASA Corporation, SR3)
+scope: Mana Warps and Deep Space; Mana Surges and Sorcery/Conjuring Effects
+printed_pages: [85, 87]
+pdf_pages: [86, 88]
+status: complete_for_named_sections
+global_page_credit: 0
+source_verification:
+  drive_id: 1LqiVya4wMPCrECxvVDeoq0qrILipzNNg
+  bytes: 123917505
+  physical_pages: 178
+  sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+  actual_verify_source_status: source_pdf_hash_verified
+  original_image_sha256:
+    printed_85_pdf_86: f5aaf1f840d3106068216bc5fc51b53ba9475e880ade5e9334076af7d9876a39
+    printed_86_pdf_87: 959a6f2e3c1d0fbf2082d8875b01587f0b679f5da5b5d57d49f23c5ff36c2c1d
+    printed_87_pdf_88: c63e2012b8209285160c812fba05bbe7237866142837cf1f8a76e2fa0aa7bbeb
+  executable_live_blob_matches:
+    connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+    transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  editorial_playbook_blob: 35c07f00263ce26a249ffb0c8d00872fe607b7f0
+  preflight_self_tests_passed: 29
+canonical_comparison:
+  - {path: rules/magic/mana-warps.yml, blob: 2f6bc6d190276e2f2d51a5593a684f6a10ee47df, finding: Table already present; new record preserves missing application limits, resistance procedures, spirit escape, examples and Deep Space.}
+  - {path: rules/magic/mana-surges.yml, blob: ed6c27b256e20d3a0708674e9fc77c49574648e7, finding: Overview lacks four numerical tables, detection test, Drain exceptions and example.}
+field_coverage:
+  mana_warps: Rating 6-10 table, effective attribute reduction and zero limits, adept allocation ceiling, activation tests, end-turn damage, dual beings and spirits, Mental Flaw conditions, all three worked examples, deep-space altitude and cap, station exceptions, return test and damage example.
+  mana_surges: Area and duration discretion, detection, selection and all 16 rows across four tables, Force floor, Drain changes and exceptions, both planes and ritual links, spirit actual Force and behavior, worked example.
+exceptions:
+  - Source altitude milestones and cap preserved as printed.
+  - Halved Force rounding not stated in surge table.
+  - Wild Magic starts on printed p87 and continues on p88/PDF89; not included in this closure.
+  - PDF89 rendering truncated below approximately midpage in both MuPDF and Poppler; both reported CCITT fax errors. Do not certify the remaining Wild Magic table or Astral Patrolling from partial image.
+unresolved_mechanical_fields_in_scope: []
+review: Original images independently reviewed for baseline and same-substance candidate; revised warp baseline restores significant-exposure qualification, mandatory spirit return and source example rating before submission.
+transactions:
+  - path: rules/magic/mits-mana-warps-original-p85-86.yml
+    baseline_sha256: 28dad84812ff16d1b7736397bbc73419d2ecc0b2191cd969adabbcac37b7243d
+    candidate_sha256: 94c85af3c607760d8f79142097b543402332d896ff09f68a7f8a5929a68b1b33
+    immutable_sha256: 4a5c6c44832d7f1fea464f860341569cde0a5bad7fb44aac8d538aaf483043fc
+    plan_sha256: bbabc03fc4b89b8809a9439cd4c777cc82c307f50cdfcd84c62371b77c071fa9
+    receipt_sha256: 9b768f4ecd0c60d27f9c10fee808d238178b201d99b6c5170c34a55ddfad9641
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    commit: 0c16df0038a283193104b74280f5e9d281d9e151
+    blob: f1be88707536e62b3b9fd4fbf2bb0a6761bcd83b
+    manifest_commit: 76e5f251c24ad51db07670fa5a79b4054b02cc38
+    manifest_blob: 790fa15736aac0a32e69c0d9fb7b5d7c6c4b8576
+    superseded_local_plan: journals/warps/plan.json
+  - path: rules/magic/mits-mana-surges-original-p86-87.yml
+    baseline_sha256: db98b1dee32a22c160f434691a0ddcdcf2829f7e0524e645856b10a7f3a48230
+    candidate_sha256: 9e87662f974b3a502b6a77a67d1c5df8701c8c300e4609b9029862dbd11f7daf
+    immutable_sha256: dbe27457d2d85b270abc600e18e848de295668bd6e0e29a00fc89889ed86c9b8
+    plan_sha256: e28564c952b25e840971b7eb2f4f2353175c1696381e711311e7d8393bd7e01b
+    receipt_sha256: 3a02887c59af542fc6f36b47cf7a609ff825514300b9c0b378baab7303ab8808
+    stage: staged
+    prepare: preflighted
+    confirm: verified
+    commit: 71809ed3f3eafe1b07039f2de5f2a51d940a209f
+    blob: dd2e7fd631433786a463a67303be319cd76be101
+    manifest_commit: 7971644ec7eeaa18ba391432aceea4d98af98536
+    manifest_blob: ca65fbcd34d6b7e23d1b25a546cedb94edcca09e
+readback: Exact canonical and manifest bytes verified at each commit and main.
+journal_archive: FASA7907_MitS_astral_barriers_background_mana_journals_2026-11-24.zip
