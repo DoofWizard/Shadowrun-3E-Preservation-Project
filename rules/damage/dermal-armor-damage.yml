@@ -1,21 +1,43 @@
 id: rule.damage.dermal-armor-damage
 record_type: rule
-name: "Dermal Armor Damage"
+name: Dermal Armor Damage
 domain: damage
 status: ingested
+source: source.mm
+printed_pages: '133'
+pdf_pages: '134'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Dermal Armor Damage — die results, repair window and Stress
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop game rules, printed p133/PDF134.
 effective: {status: current, source: source.mm, page: 133, basis: extends}
 scope:
-  applies_to: ["dermal plating or dermal sheath after Serious or Deadly wounds"]
+  applies_to: [dermal plating or dermal sheath after Serious or Deadly wounds]
 resolution:
-  summary: "After sufficiently severe wounds, dermal armor can lose self-repairing function. The source provides a check for damage, a temporary repair treatment window, and Stress consequences if repair is not completed."
-  inputs: ["dermal armor type", "wound severity"]
-  outputs: ["normal function, damaged state, or Stress"]
+  summary: A die roll determines whether fictional dermal armor loses its self-repair function. The listed equipment and time limit determine whether Stress applies.
+  inputs: [dermal armor type, wound severity, die result, treatment timing]
+  outputs: [normal function, damaged state, or Stress]
   steps: []
+data:
+  trigger: Serious or Deadly wound
+  die: 1D6
+  non_self_repairing_damage_results:
+    dermal_sheath: [1]
+    dermal_plating: [1, 2]
+  spray_bonder:
+    equipment: fictional nanite spray bonder
+    cost_nuyen: 500
+    applications: 10
+    time_limit_hours_after_damage: 24
+  missed_time_limit:
+    stress_points: 1
+    stress_test_required: true
 links:
   uses: [rule.damage.stress-points, rule.damage.stress-test]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 133, relation: extends, note: "Dermal Armor Damage"}
+  - {source: source.mm, page: 133, relation: extends, note: Dermal Armor Damage}
 notes: []
