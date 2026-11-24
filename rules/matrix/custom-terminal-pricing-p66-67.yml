@@ -1,0 +1,45 @@
+id: rule.matrix.custom-terminal-pricing-p66-67
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '66-67'
+pdf_pages: '67-68'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix custom cyberterminal and shop installation pricing
+summary: Original custom terminal cost rules, component multipliers, separate prices and worked-example discrepancy.
+data:
+  order: Custom terminals include software, hardware and installation; stock manufacturers require SIN and permits. All components beginning on p56 are available; standard construction and upgrade restrictions apply, including cranial and cyberlimb options. Orders can be placed with a deckmeister or shadow organization; stock manufacturers also make custom terminals.
+  hardware_formula: MPCP squared times sum of hardware multipliers
+  hardware_multipliers: {MPCP: 8, Bod: 1, Sensor: 1, Masking: 2, Evasion: 2, Masking with SASS: 3, Cold ASIST: 1, Hot ASIST: 2, Hardening: 8, ICCM Biofeedback Filter: 4, Reality Filter: 8, Response Increase: 'Response Increase rating * 2'}
+  ICCM_note: Price excludes biomonitor.
+  components_without_software: Software cost is zero where software is not required; separately priced items are added to the hardware and software subtotal.
+  software_formula: Sum software ratings times MPCP squared times software multiplier
+  software_rating_defaults: Unrated software and Response Increase use base MPCP; cold-only ASIST uses ceil(MPCP / 2).
+  software_multiplier_by_MPCP: {'1': 10, '2': 25, '3': 60, '4': 65, '5': 70, '6': 90, '7': 100, '8': 110, '9': 120, '10+': 140}
+  separate_costs_nuyen:
+    Active Memory: Mp * 7.5
+    I/O Speed: I/O Speed * 35
+    Maser Interface: 3000
+    Matrix Interface: 35 + cable cost
+    Miscellaneous Components: listed p63 price plus 10 percent
+    Ports FUP: 235
+    RAS Override: 35 * MPCP + 1000
+    Signal Amplifier: 35 + amplifier cost
+    Storage Memory: Mp * 6
+    Cellular: 35 * device rating squared + device cost p61
+    Laser: 3060
+    Microwave: 5560
+    Radio: 35 * device rating squared + device cost p61
+    Satellite: 560 + device cost p61
+  other_options:
+    single_order_discount_max_percent: 25
+    hardwired_markup: lesser of 10 percent per hardwired component cost or 50 percent of entire terminal cost
+    included_icon: Usually free, rating floor(MPCP / 2)
+  shop_installation: Use custom design pricing for someone else installing a stock component; partial construction applies only when character makes or installs part personally.
+  source_example_discrepancy: Printed p66 uses hardware multiplier 2 for Response Increase rating 2, but p67 table gives rating times 2 (4 for rating 2). Preserve both without choosing precedence. Printed example totals hardware 2920 including biomonitor, software 422400, separate items 34668, total 459988, discounted total 436989; shop reality filter example 56832.
+  worked_example_inputs: {MPCP: 8, Bod: 6, Evasion: 6, Masking: 6, Sensor: 6, Response Increase: 2, I/O Speed: 480, Hardening: 4, active_memory_Mp: 1000, storage_memory_Mp: 1500, hot_ASIST: true, ICCM: true, RAS_override: true, cable_meters: 3, spooler: true}
+  worked_example_additions: {hardware_multiplier_sum_printed: 30, software_rating_sum: 60, biomonitor_nuyen: 1000, icon_rating: 4, FUPs: 8, discount_percent: 5, free_keyboard_and_monitor_FUPs: 2}
+  shop_reality_filter_example: {hardware_nuyen: 512, software_nuyen: 56320, total_nuyen: 56832}
+  relationship: Numeric pricing extension to procedure.matrix.cyberterminal-construction, not a replacement of construction tests.
