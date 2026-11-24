@@ -1,45 +1,72 @@
 id: rule.matrix.target-matrix-persona-ratings
 record_type: rule
-name: "Target: Matrix - Persona NPC Ratings"
+name: 'Target: Matrix - Persona NPC Ratings'
 domain: matrix
 status: ingested
 source: source.fasa-7219
-printed_pages: "126-129"
-pdf_pages: "127-130"
-
+printed_pages: '126-129'
+pdf_pages: '127-130'
+edition_scope: 'FASA7219 Target: Matrix, FASA, Shadowrun Third Edition fictional tabletop game'
+content_class: [rule_exact]
 ratings:
   anubis:
-    npc_ratings: ["Superior","Trained"]
-    exceptional_skills: ["Computer (Programming)","Computer Build/Repair"]
-    favored_utility: "black hammer variant"
+    npc_ratings: [Superior, Trained]
+    exceptional_skills: [Computer (Programming), Computer Build/Repair]
+    favored_utility: black hammer variant
   fastjack:
-    npc_ratings: ["Superhuman","Professional"]
-    notes: ["custom-made top-of-line deck and utilities"]
+    npc_ratings: [Superhuman, Professional]
+    notes: [custom-made top-of-line deck and utilities]
   grid_reaper:
-    npc_ratings: ["Superior","Trained"]
-    exceptional_skills: ["Computer (Programming)","Computer (Decking)"]
+    npc_ratings: [Superior, Trained]
+    exceptional_skills: [Computer (Programming), Computer (Decking)]
   link:
-    npc_ratings: ["Superhuman","Professional"]
-    access_rule: "Cannot normally be encountered without appointment/vouching from a current customer; may require background/reputation/credit checks."
+    npc_ratings: [Superhuman, Professional]
+    access_rule: 'Special appointment only; existing customer vouching, background check, suitable credit and good reputation required for inclusion in address book.'
   red_wraith:
-    npc_ratings: ["Equal","Professional"]
-    notes: ["otaku","submersion grade 3","Echoes: Info Sortilage, Ghosting, Improved Reaction"]
+    npc_ratings: [Equal, Professional]
+    notes: [otaku, submersion grade 3, 'Echoes: Info Sortilage, Ghosting, Improved Reaction']
   silvery_k:
-    npc_ratings: ["Superior","Trained"]
+    npc_ratings: [Superior, Trained]
     notes:
-      - "Custom-built state-of-the-art cyberdeck."
-      - "Major programs Rating 5+."
+      - Custom-built state-of-the-art cyberdeck.
+      - Major programs Rating 5+.
   slamm_0:
-    npc_ratings: ["Equal","Semi-trained"]
-    notes: ["designs and codes own icon and utility programs"]
+    npc_ratings: [Equal, Semi-trained]
+    notes: [designs and codes own icon and utility programs]
   smiling_bandit:
-    npc_ratings: ["Superhuman","Professional"]
-    exceptional_skills: ["computer science","genetech","biotechnology","chemistry","cybertechnology"]
+    npc_ratings: [Superhuman, Professional]
+    exceptional_skills: [computer science, genetech, biotechnology, chemistry, cybertechnology]
   snow_tiger:
-    npc_ratings: ["Superior","Trained"]
-    languages: ["Cantonese","Mandarin","English"]
+    npc_ratings: [Superior, Trained]
+    languages: [Cantonese, Mandarin, English]
   michael_sutherland:
-    npc_ratings: ["Superhuman","Professional"]
-
+    npc_ratings: [Superhuman, Professional]
+data:
+  publication: {title: 'Target: Matrix', publisher: FASA, catalog: FASA7219, edition: Shadowrun Third Edition}
+  npc_rating_references: [SRComp p83, SR3 p248]
+  grid_reaper:
+    purchased_pirated_code: GM may apply ordinary optional bug rules as for other externally written code
+    optional_bug_rules_reference: Matrix p81
+  link:
+    traceable: false
+    contact_initiator: Link
+    offer_medium: [email, icon-based commcall]
+    offer_selection: character reputation and history
+    customer_message_route: anonymous email drop
+    search_and_retrieve_requests: ignored
+    in_person_meetings: false
+    direct_persona_contact: regular clients only
+    haggling: false
+    favors: only when Link is certain the character will pay
+  red_wraith:
+    exceptional_otaku_condition: 'Still able to use complex forms and channels despite advanced age; no observed signs of Fading yet.'
+  snow_tiger:
+    language_fluency: fully fluent in all three listed languages
+  michael_sutherland:
+    extraction_or_bribes: ineffective against this NPC
+    potential_contact_condition: team does not run against Wuxing
 sources:
-  - {source: source.fasa-7219, printed_pages: "126-129", pdf_pages: "127-130", relation: defines_npc_use}
+  - {source: source.fasa-7219, printed_pages: '126-129', pdf_pages: '127-130', relation: defines_npc_use}
+framing: reference_exact
+headline: 'FASA7219 Target: Matrix SR3 pp126-129/PDF127-130: Persona NPC ratings and exceptions'
+summary: 'Ten fictional tabletop NPC rating profiles with original contact eligibility, optional bug, Fading and individual exceptions; legacy ratings retained.'
