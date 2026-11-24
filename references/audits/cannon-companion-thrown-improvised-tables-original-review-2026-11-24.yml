@@ -1,0 +1,78 @@
+audit_type: source_specific_original_image_and_transaction_review
+date: '2026-11-24'
+source: source.cc
+title: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_pdf:
+  drive_id: 1DmR4OWd_tHjn1AMGFeyd6NC3V3cL-vp2
+  bytes: 80954335
+  physical_pages: 130
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  verified_against_live_manifest_blob: 5beef8e4f4bad46409d125b38356145bf167b310
+  actual_verify_source_status: source_pdf_hash_verified
+  original_images_independently_reviewed: [{printed: 14, pdf: 15}, {printed: 11, pdf: 12}]
+script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+preflight_self_tests_passed: 29
+review:
+  - section: Throwing Weapons
+    printed: 14
+    reused: [{path: rules/throwing/thrown-melee-weapons.yml, blob: 3dc0d6b9765753b626d653e242fd1658b3a3ec53}, {path: rules/combat/sr3-core-melee-thrown-weapon-attack-routing-p120.yml, blob: f3625170f2c85cea1ad5eed136ac289d475bfad3}]
+    verified_new_fields: 'All seven range-category table rows, including two printed division expressions. Existing skill, standard damage and discretionary modifier matched. No explicit rounding rule printed in this table.'
+    path: rules/throwing/cannon-companion-thrown-melee-range-table-p14.yml
+    commit: c680bb2d5b119930ba834b5d5b26397df6593219
+    blob: 1c7319e1f2e450b90df4afc00482a0fccbf59658
+    baseline_sha256: 35b55674702da1dd8946893831c2598369a22ae1c6e42faecc680b74409587fd
+    candidate_sha256: 35b55674702da1dd8946893831c2598369a22ae1c6e42faecc680b74409587fd
+    immutable_sha256: 666e314724663d7426fce8e26f31d19697fe6f33225fe47b6cfd110e988efa90
+    gate: verified
+    index_commit: 140b3433af72eb8e7eb308636f7a4622c22b87ae
+    index_blob: a758bffd78c0c1b0a558318a0bb3eec021c3a797
+  - section: Improvised Throwing Weapons
+    printed: 14
+    verified_new_fields: 'Nine rows, all five table columns, GM discretion, eligibility and referenced fictional effects.'
+    path: rules/throwing/cannon-companion-improvised-game-table-p14.yml
+    commit: 6f93a086b83401811f7d5798259cc83e69d72b6c
+    blob: 59e6253f7bc21f2ad64ce522ae89eef9b61172cd
+    baseline_sha256: f752b8912b0437e859a15c492606811a250eb93edfea29b9f1cedb3db90248b4
+    candidate_sha256: f752b8912b0437e859a15c492606811a250eb93edfea29b9f1cedb3db90248b4
+    immutable_sha256: 551d3f9bdd1cd06aa8d272198c631952c5a53ed4a9c646981a0cac8377875677
+    gate: verified
+    index_commit: e7f69487e32ae35f2cffbd4a09db895cf631db13
+    index_blob: 88882270cc2ff628513ee8bf2f2897442d1c9a70
+  - section: Caltrops
+    printed: 14
+    reused: [{path: entities/gear/caltrops.yml, blob: 36bec32e6e9470c5b2e9fa37908539a0ffd5789c}]
+    verified_new_fields: 'Game test attributes and TN conditions, success conversion, damage code and armor exceptions. Seven market fields matched; minimum STR dash retained.'
+    path: rules/throwing/cannon-companion-caltrop-game-tests-p14.yml
+    commit: 404a0ebda867c86abe8a54c8181f20340dedca31
+    blob: cfbb94a0ac841269af9124eea8ecd8708af60bb7
+    baseline_sha256: eb25e646415228378e02276444576d6996e4bc5a7fec0259388f5a146aa1d2d1
+    candidate_sha256: eb25e646415228378e02276444576d6996e4bc5a7fec0259388f5a146aa1d2d1
+    immutable_sha256: 243061ed096411cc004c70f3c4376bebdad4026c01349d0d59abc5a26cc4ebea
+    gate: verified
+    index_commit: 1cc3ce4f8aa3990d895fc1002635799f920f32d7
+    index_blob: 1eab4abc25a79f3d3be7d1dcb380aec713f97bc6
+  - section: Improvised Melee Weapons
+    printed: 11
+    reused: [{path: rules/combat/improvised-melee-weapons.yml, blob: 6676d832727e07b351343780da29ceaea4d3320c}]
+    verified_new_fields: 'Thirteen rows including reach, damage, governing skill and metahuman body footnote. Dash values preserved rather than guessed.'
+    unresolved: 'Chain and Chainsaw governing skill entries appear unusual but are recorded as printed; no inferred erratum.'
+    path: rules/combat/cannon-companion-improvised-melee-game-table-p11.yml
+    commit: e18f551f556a96de778be338c380b49bb79189cc
+    blob: f5dc7f0a6627b93fb4a1a1f20b847aa601eabc37
+    baseline_sha256: bcaf9e84d1e1313d74089e9156580dff690203b7bd576b74feba4e40dc0e6f7f
+    candidate_sha256: bcaf9e84d1e1313d74089e9156580dff690203b7bd576b74feba4e40dc0e6f7f
+    immutable_sha256: cbd5b42aeb942dde6d3c5e0ee6c19e9e3b838c0c3d2cd427175f6e37a5a535d2
+    gate: verified
+    index_commit: 7f29db16d12e114a0a411d22680f8976e87bb92d
+    index_blob: 755aa0d9696611b61247b186a1d35e64a22a0326
+editorial_review: 'Original images inspected before stage; all headlines, summaries and nested data restricted to fictional game reference, including printed exceptions and missing values. Candidate bytes identical to reviewed baselines. Four separate prepare and confirm operations, exact semantic and index readbacks.'
+existing_nets_exception: 'Original Dodge success-count ambiguity remains open; no reopening or duplicate record.'
+whole_source_certified: false
+globally_authorized_pages: 0
