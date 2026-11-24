@@ -1,0 +1,71 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+original_source:
+  printed_review_pages: [58, 59, 60, 64]
+  physical_review_pages: [59, 60, 61, 65]
+  actual_verify_source: source_pdf_hash_verified
+  live_input_manifest_blob: 6df6a5eacda6c19afa0ddb9da2a78f1ce792cfe2
+  preflight_self_tests: 29
+  evidence: Same verified PDF and executable scripts as the original pp99–102 audit; all mechanics of the selected two subsections reviewed visually. Printed p59 is illustration.
+sections:
+  - name: Using Skillsoft Systems
+    printed_pages: [58, 60]
+    retained:
+      - path: rules/skills/sr3-core-skillsoft-chip-access-memory-p295-296.yml
+        blob: 97030e265d25821b0edf10371cf612eccf367aea
+        fields: chip access, headware storage, skill types, compatible hardware
+      - path: rules/cyberware/sr3-core-simrig-simlink-skillwires-p301.yml
+        blob: ddaa303a06f4587e6432de95e065a96123c9e934
+        fields: skillwire maximum total Mp and rating, separate chip access and memory
+      - path: subsystems/skillsofts/cc-options.yml
+        blob: 8b4816e6606b49e09fde1520ae35d03bb7cdaabd
+        fields: existing chapter component linkage
+    supplemented_fields: loading and activation action economy, deactivation, accessibility persistence, ASIST and Pulse constraints, inactive capacity exemption, memory and knowsoft restrictions, upgrade classification and price difference formula
+    remaining: Printed I/O Speed p46 cross-reference does not name a publication; preserve unresolved.
+  - name: Dedicated Chipjack
+    printed_pages: [64]
+    retained:
+      - path: options/skillsofts/implant.yml
+        blob: 497748f33fae9b6b0b030a73f4a7ea3ae0e04cbd
+        fields: implant option and ASIST accounting
+      - path: options/skillsofts/btl-implant.yml
+        blob: 1d9b48a907a9a3b6bd0841f2b5d4a3fa8df1f6cd
+        fields: in-game implant option relationship
+      - path: rules/cyberware/sr3-core-chipjack-data-lock-tooth-compartment-p298-299.yml
+        blob: 1b12e8fcb141e25ac36fc5d6ced9918a7b9fb357
+        fields: ordinary chipjack restrictions
+    supplemented_fields: designated-chip eligibility, remote game activation option, removal test and fictional exceptions, optional RAS movement and target-number restriction
+confirmed_records:
+  - path: rules/skills/cannon-companion-skillsoft-activation-capacity-p58-60.yml
+    commit: b63ab5d7633544dd6ff960e3a5a70b50ad781bb2
+    blob: 6662e0d017231628d45bb0f5c1522ab321dcebb3
+    candidate_sha256: 578cf9261e276682df009cf994f8a4f8646e48f388d476dceb11b9505b74fbcb
+    immutable_sha256: 2f974a57db311c3a8000ac3d68808b9fdc9409589b5e28fa1d4e696513c77c85
+    index_commit: 2e9b573187a3b9ac021960a841dabc72eda1c942
+    index_blob: 79973ff9ea57b0d7af077c63aaedae65c4209899
+    gate: verified
+    superseded_by: 824e0b0299a368dec77fed39a3a43319a109cf21
+  - path: rules/skillsofts/cannon-companion-dedicated-chipjack-game-effects-p64.yml
+    commit: 5bdfeecac10a6ec3e19935c8817a33538535bc08
+    blob: aa01f06fbb151804dd4604fa624ce64e3007dd20
+    candidate_sha256: ff6ffd540ee34d276ef380494667baa56528167fc42667ea99a5c2872a3825d2
+    immutable_sha256: 0038b8273261fb5a430333b08e844c7a54722e5fdd3c490bb1017c9ad34a6c00
+    index_commit: 2bf1e96425c2109918c21caf5f50bc4b61862596
+    index_blob: a9f6be52a29fb5ed215f368604d1076eecdfe24b
+    gate: verified
+  - path: rules/skills/cannon-companion-skillsoft-activation-capacity-p58-60.yml
+    commit: 824e0b0299a368dec77fed39a3a43319a109cf21
+    blob: d1f4e6ca8b4bef75d95c67a6ff90043f29222c70
+    candidate_sha256: 1ef6974666430983285a8c3a9faa865f99bd714afd2bc987d826cb91f05293f7
+    immutable_sha256: e1d1883be3f85383890f1a4f1e412d5eff04b156fa2ec8bab7330004b563913e
+    index_commit: 3b72fbde52a70d29e8450315306fe85129b1c6f0
+    index_blob: 5b15f309ca6ff33f5f1fd4b386ff3d4cad2ff3e8
+    gate: verified
+    revision: Preserve the ambiguous original p46 reference without assigning it to Cannon Companion.
+closure_scope: Two selected original subsections only. Programming options, buying and verification tables pp60–64 still require full field reconciliation.
+whole_book_closed: false
+globally_authorized_pages: 0
