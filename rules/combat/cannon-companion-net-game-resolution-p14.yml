@@ -1,0 +1,31 @@
+id: rule.combat.cannon-companion-net-game-resolution-p14
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '14'
+pdf_pages: '15'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: net game resolution'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p14/PDF15. This supplements the existing net entity with the missing dice and action rules.'
+data:
+  equipment_entity: entity.gear.net
+  hands_required: 2
+  attacker_test: Throwing Weapons Test
+  defender_test: Dodge Test
+  trapped_threshold:
+    compared_value: attacker successes
+    threshold: floor(defender Quickness / 2)
+    comparison: greater_than_or_equal
+    qualification: 'Source calls for a Dodge Test but does not specify a subtraction in its threshold sentence; do not silently resolve that wording.'
+  escape:
+    open_test_dice: one per attacker success
+    target_number: highest Open Test result
+    defender_test_options: [Strength, Quickness]
+    action: Complex Action
+    target_number_reduction_per_full_combat_turn: 1
+    target_number_reduction_per_helping_friend: 1
+  barrier_rating: 6
+  equipment_table: 'Existing net acquisition and item statistics match the source; no duplicated market row.'
+  source_boundary: 'Fictional RPG tests, attributes and turn resolution only.'
