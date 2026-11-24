@@ -1,0 +1,35 @@
+id: rule.combat.cannon-companion-designator-game-test-qualifiers-p35
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '35,114'
+pdf_pages: '36,115'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Target designator tabletop test qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp35 and 114/PDF36 and 115. Missing game visibility modifiers, action cost and cargo-space bookkeeping; existing range table and purchase rows reused.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  underlying_game_resolution: 'Indirect Fire, printed p99; Target Designator Table, printed p114.'
+  laser_designator:
+    game_visibility_requirement: thermographic vision for reflected indicator
+    versions: [weapon-mounted, hand-held]
+    smoke_spotting_TN_modifier_multiplier: 2
+  microwave_designator:
+    game_form: hand-held
+    chaff_spotting_TN_modifier: {minimum: 4, maximum: 12}
+  radar_designator:
+    game_setup_action: Complex Action
+    chaff_game_modifier: same as microwave designator
+    optional_vehicle_mount_cargo_CF: 1
+  existing_range_table:
+    path: rules/combat/target-designator-ranges.yml
+    blob: 425738808e511106a1c7c367383de50590411165
+    source_comparison: 'Printed p114/PDF115: all three rows, twelve range-band cells, four base target numbers and the minimum-range footnote agree with existing rule. Reuse without duplication.'
+  existing_market_rows:
+    entities/gear/laser-designator-weapon-mounted.yml: 64e99e75ad2829922742daa33391fa7728867d79
+    entities/gear/laser-designator-handheld.yml: f9404edd6792a038bfa88914fce661ec5520d044
+    entities/gear/microwave-designator.yml: ca839c3ec9538b9cd52cbf5363cca9dec7c41f13
+    entities/gear/radar-designator.yml: d2292047d549dfe261d2a9220a1a24bb716b6e65
+  source_boundary: 'Only fictional spotting-test modifiers, game action economy, and equipment resource accounting; no physical device operation, construction or tactical procedure.'
