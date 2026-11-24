@@ -1,20 +1,53 @@
 id: option.surgery.surgical-options
 record_type: option
-name: "Surgical Options"
+name: Surgical Options
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "148-150"
+pdf_pages: "149-151"
+edition_scope: SR3
+content_class: [character_option]
 effective: {status: current, source: source.mm, page: 148, basis: defines}
 option_for: [rule.surgery.surgical-test]
-selection:
-  timing: "surgical planning"
-  prerequisites: []
-  incompatible_with: []
+selection: {timing: surgical planning, prerequisites: [], incompatible_with: []}
 effects:
-  - "Each procedure includes required negative options; additional positive and negative options modify the Surgical Threshold."
-  - "Negative options include Bio Index Gain, Essence Cost/Loss, Fragility, Mangled Part, Marred Appearance, Obvious, Scarring, Scar Tissue, Sensitive, Surgical Stress and Wound Effect where applicable."
-  - "Positive options include Bio Index Reduction/Slot, Concealed, Essence Reduction/Slot, Human Looking, Improved Healing/Looks, Nanosurgery, Natural Look, Remove Stress Point, Redundancy, Rugged and Trauma Control where applicable."
+  - Each surgery requires two negative options; positive options have the listed Threshold Modifiers.
+  - Optional starting-character rule treats each negative option as a 1-point Flaw and each positive option as an Edge worth its Threshold Modifier.
+data:
+  negative_options:
+    bio_index_gain: {procedures: [therapeutic, transimplant], permanent_bio_index_gain: "1D6 * 0.1", awakened: immediate Magic Loss check}
+    essence_cost: {procedures: [implant], cyberware_essence_cost_percent_increase: 5, stacking: apply total similar adjustments as one multiplier}
+    essence_loss: {procedures: [cosmetic, trauma], permanent_essence_loss: "1D6 * 0.05", awakened: immediate Magic Loss check}
+    fragility: {procedures: [implant, transimplant], transimplant_restriction: bioware only, stress_resistance_tn_modifier: 1, additional_stress_each_time_implant_takes_stress: 1}
+    mangled_part: {procedures: [trauma], restriction: treat permanent damage only, replacement_forbidden: [bioware, transplant], replacement_allowed: cyberware}
+    marred_appearance: {procedures: [cosmetic, trauma], face_to_face_charisma_and_linked_skill_test_tn_modifier: 1, excluded: [Conjuring, astral abilities and skills]}
+    obvious: {procedures: [implant], restriction: cyberware with Concealability Rating, concealability_modifier: -1}
+    scarring: {procedures: [cosmetic], effect: conspicuous visible identifying scar, cross_reference: "M&M p132"}
+    scar_tissue: {procedures: [therapeutic], permanent_unhealable_stress_points: 1}
+    sensitive: {procedures: [implant, transimplant], transimplant_restriction: bioware only, implant_damage_slot_multiplier: 2, slot_basis: Essence Cost or Bio Index, max_per_item: 1, cross_reference: "M&M p127"}
+    surgical_stress: {procedures: [therapeutic, transimplant], wound_effect_stress: "1D6 / 2", applies_to: another bioware implant or Attribute}
+    wound_effect: {procedures: [trauma], effect: randomly determined automatic implant or Attribute Stress, cross_reference: "M&M p126"}
+  positive_options:
+    bio_index_reduction: {procedures: [transimplant], threshold_modifier: 1, restriction: installing or removing bioware, installed_index_percent_reduction: 5, removed_slot_reduction_percent_of_total_implant_index: 10}
+    bio_index_slot: {procedures: [transimplant], threshold_modifier: 2, prerequisite: previously removed bioware, effect: subtract remaining old slot Bio Index from new implant Bio Index}
+    concealed: {procedures: [implant], threshold_modifier: 1, restriction: cyberware with Concealability Rating, concealability_modifier: 1}
+    essence_reduction: {procedures: [implant], threshold_modifier: 2, restriction: install or upgrade cyberware, essence_cost_percent_reduction: 5, stacking: apply total similar adjustments as one multiplier}
+    essence_slot: {procedures: [implant], threshold_modifier: 2, prerequisite: previously removed cyberware, effect: subtract old implant Essence Cost from new implant Essence Cost}
+    human_looking: {procedures: [cosmetic], threshold_modifier: 2, restriction: dwarf or elf or ork undergoing serious cosmetic surgery, effect: Human Looking Edge, cross_reference: "SRComp p41"}
+    improved_healing: {procedures: [trauma], threshold_modifier: 1, additional_healing_dice_per_option: 1, restriction: current damage only}
+    improved_looks: {procedures: [cosmetic], threshold_modifier: 2, charisma_modifier: 1, max_per_character: 1, excluded: [Conjuring, astral abilities and skills]}
+    nanosurgery: {procedures: [cosmetic, implant, therapeutic, transimplant, trauma], threshold_modifier: 2, prerequisite: clinic or facility capable of nanosurgery, surgical_damage_level_reduction: 1, implant_and_transimplant_damage_boxes_reduction_instead: 2, healing_time_multiplier: 0.5, max_per_procedure: 1}
+    natural_look: {procedures: [cosmetic], threshold_modifier: 1, perception_tn_to_notice_surgery_modifier: 2, cross_reference: "M&M p146"}
+    remove_stress_point: {procedures: [implant, therapeutic], threshold_modifier: 1, additional_stress_points_removed_per_option: 1, targets: [cyberware, bioware, Attribute]}
+    redundancy: {procedures: [implant], threshold_modifier: 2, stress_received_reduction: 1, implant_cost_percent_increase: 50}
+    rugged: {procedures: [implant, therapeutic, transimplant], threshold_modifier: 1, future_stress_test_bonus_dice: 1, max_per_implant_or_attribute: 1, transplant: once per transplanted organ or limb for an appropriately related specified Attribute Stress Test, cross_reference: "M&M p126"}
+    trauma_control: {procedures: [trauma], threshold_modifier: 2, additional_dice_per_option: 1, applies_to: implant or transimplant Surgery Tests immediately following this procedure}
 links: {modifies: [rule.surgery.surgical-test], requires: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "148-150", relation: defines, note: "Surgical Options, negative and positive options"}
+  - {source: source.mm, pages: "148-150", relation: defines, note: Surgical Options and individual negative and positive options}
 notes:
-  - "Options are procedure-scoped; individual applicability and threshold modifiers remain as listed by the source."
+  - The text on p148 calls the positive-option value a Threshold Modifier and describes an increase to the Surgery Test target number; retain the printed terminology and consult Surgical Tests p146.
+  - Rugged is listed for implant surgery but its descriptive target sentence names bioware or Attribute; no additional target or ruling is inferred.
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp148-150/PDF149-151: Surgical Options"
+framing: reference_exact
