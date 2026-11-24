@@ -1,0 +1,56 @@
+id: rule.combat.cannon-companion-edged-item-game-qualifiers-p7-8
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '7-8'
+pdf_pages: '8-9'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Edged Weapons tabletop game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp7-8/PDF8-9. Character eligibility, dice and item-state qualifications supplement existing numerical item entities and original core combat rules.'
+data:
+  melee_category:
+    minimum_strength_requirement_is_absolute: true
+    two_handed_item_special_metatype_rules: 'Use Holding Weapons, printed p98, for dwarf and troll character eligibility.'
+    throwable_melee_items_skill: Throwing Weapons
+    throwing_reference_printed_page: 14
+    core_combat_reference_printed_page: 120
+    core_statistics_reference_printed_page: 275
+  edged_category:
+    governing_skill: Edged Weapons
+    default_damage_track: Physical
+    alternate_club_like_attack_damage_track: Stun
+    alternate_attack_qualifier: 'The fictional character selects a handle or flat-of-blade attack instead of the normal edged attack.'
+  cougar_fineblade:
+    long_variant_has_greater_damage_and_lower_concealability: true
+    short_variant_surprise: 'The source describes a potential surprise advantage but does not assign an additional numeric modifier.'
+  centurion_laser_crescent_axe:
+    hands_required: 1
+    game_state_test:
+      trigger: 'Successful attack against an armored target in the tabletop game.'
+      roll: '2D6 summed'
+      comparison: 'If result is less than target Impact Armor or Barrier Rating, change item state to misaligned.'
+      misaligned_damage_code: '(STR)M'
+      restore_test: 'Electronics B/R (4) Test'
+      restore_minutes: 30
+    battery_duration_hours: 2
+    recharge_hours: 1
+  macauitl:
+    game_state_test:
+      trigger: 'Successful attack against an armored target in the tabletop game.'
+      roll: '1D6'
+      comparison: 'If result is less than target Impact Armor or Barrier Rating, lose one intact edge state.'
+      one_edge_remaining_damage_code: '(STR + 1)M'
+      no_edges_remaining_damage_code: '(STR)M Stun'
+      no_edges_remaining_skill: Clubs
+  ares_monosword:
+    regular_sharpening_required: false
+  vibro_blades:
+    active_state_stealth_attack_eligible: false
+    battery_duration_hours: 2
+    recharge_hours: 1
+    replacement_battery_cost_nuyen: 25
+    game_activation_modes: [manual, grip_triggered]
+  reuse: 'Ten existing Edged Weapons item table rows are unchanged. Core melee and thrown attack routing remain read-only.'
+  source_boundary: 'Fictional character dice, inventory states, and game resource bookkeeping; no real-world construction or operating specifications.'
