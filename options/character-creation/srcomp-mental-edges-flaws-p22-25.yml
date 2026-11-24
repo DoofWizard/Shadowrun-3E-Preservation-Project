@@ -8,8 +8,8 @@ edition_scope: FASA Corporation, Shadowrun Companion FASA7905a, Shadowrun Third 
   optional Mental Edges and Flaws
 content_class:
 - character_option
-headline: 'FASA Shadowrun Companion FASA7905a (Third Edition), original printed pp22-25/PDF23-26:
-  Mental Edges and Flaws'
+headline: FASA Corporation Shadowrun Companion FASA7905a Third Edition fictional
+  tabletop mental trait rules, original pp22-25/PDF23-26
 summary: Original optional mental character traits with exact point costs, target
   modifiers, dice tests, intervals, exceptions and source-qualified GM guidance.
 data:
@@ -66,7 +66,8 @@ data:
     minimum_combat_turns_before_breakaway: 3
     may_shortcut_with: Willpower (6) Test; each success reduces the required period
       by one Combat Turn, minimum one Turn.
-    cannot_break_early_unless: All opponents killed or disabled
+    other_early_exit: Without shortening the period via the Willpower Test, the
+      character may leave sooner only if all opponents are killed or disabled.
     incompatible_with: Combat Paralysis
   - name: Combat Paralysis
     kind: Flaw
@@ -78,8 +79,8 @@ data:
   - name: Common Sense
     kind: Edge
     value: 2
-    effect: GM must give a warning when the character is about to attempt an obviously
-      foolish action.
+    effect: GM must warn the player when the character is about to do something
+      the GM considers foolish.
   - name: Compulsive
     kind: Flaw
     value: variable, set by GM according to seriousness and danger of the compulsive
@@ -90,7 +91,8 @@ data:
   - name: Flashbacks
     kind: Flaw
     value: -4
-    trigger: Player and GM agree on a specific sensory stimulus before play.
+    trigger: Player and GM agree before play on a specific stimulus, including a sight,
+      smell, sound, taste or idea; choose one likely to occur a few times per game.
     required_check: Willpower (6) Test on encountering possible trigger
     failure_result: Incapacitating flashback for 1D6 minutes; no useful action during
       that time.
@@ -108,8 +110,10 @@ data:
     computer_related_test_target_modifier: 4
     maximum_computer_skill: 1
     incompatible_with: Any Education Edge
-    reading_training: An instructor is mandatory; cannot self-teach. First Read/Write
-      Skill point costs 5 Karma.
+    skill_training: Normal SR3 advancement costs apply, but an instructor is always
+      required for skill improvement; self-teaching is unavailable.
+    reading_training: An instructor is mandatory. First Read/Write Skill point costs 5 Karma.
+    computer_use: Icon-based programs are usable, subject to the stated restrictions.
   - name: Oblivious
     kind: Flaw
     value: -2
@@ -119,8 +123,9 @@ data:
   - name: Pacifist
     kind: Flaw
     value: -2
-    fiction_rule: Will not kill except in self-defense; will not participate in premeditated
-      murders or assassinations.
+    fiction_rule: Cannot kill another person except in self-defense, and then as
+      humanely as possible. Cannot participate in premeditated killings; must try
+      to dissuade companions from unnecessary killing in the game.
     incompatible_with: Total Pacifist
   - name: Perceptive
     kind: Edge
@@ -153,7 +158,7 @@ data:
     severity:
     - name: Mild
       value: -1
-      all_relevant_test_target_modifier: 1
+      all_test_target_modifier_during_reaction: 1
       effect: Distracting fear while experiencing the trigger
     - name: Moderate
       value: -2
@@ -182,7 +187,8 @@ data:
     repeat_modifier_if_prior_success: 1
     repeat_modifier_if_prior_failure: 2
     recovery: After spending as many hours back on water as the total number of failures;
-      if more than 24 failures then 25th adds two days, 26th three days, etc.
+      if failures exceed 24, the 25th requires two total days on water, the 26th
+      three total days, and so forth.
     eligibility: GM should only allow for characters who spend time at sea
   - name: Sea Madness
     kind: Flaw
@@ -194,15 +200,16 @@ data:
     repeat_frequency: Every Intelligence hours, regardless of prior outcome
     repeat_modifier_if_prior_success: 1
     repeat_modifier_if_prior_failure: 2
-    recovery: Tests continue while no land visible; after seeing land, fear ends after
-      as many hours as accumulated failures; beyond 24 failures 25th adds two days,
-      26th three days, etc.
+    recovery: Tests continue until land is visible through natural or cyber-enhanced
+      vision; electronic equipment or another character's assurances do not suffice.
+      After seeing land, fear ends after as many hours as accumulated failures;
+      beyond 24 failures the 25th requires two total days, the 26th three, and so forth.
     eligibility: GM should only allow characters who spend time at sea
   - name: Sense of Direction
     kind: Edge
     value: 1
     effect: Knows true north and can retrace own path; does not help when transported
-      while unconscious or without sight of surroundings.
+      while unconscious or when unable to see or otherwise sense surroundings.
   - name: Sensitive Neural Structure
     kind: Flaw
     allowed_values:
@@ -250,7 +257,7 @@ data:
     kind: Flaw
     value: -5
     fictional_constraint: Will not kill any living creature more intelligent than
-      an insect, under any provocation
+      an insect, under any provocation; the source explicitly includes intelligent insect spirits
     if_character_kills: Suffers severe regret/depression for 2D6 weeks and will not
       do anything except ordinary daily routine
     incompatible_with: Pacifist
@@ -261,8 +268,9 @@ data:
     may_start_with_academic_or_background_knowledge: false
     initial_languages: 1
     incompatible_with: Any Education Edge
-    subsequent_learning: Requires an instructor; first new Academic or Background
-      Knowledge Skill costs double normal Karma
+    subsequent_learning: Normal SR3 advancement requires an instructor for every skill;
+      initial acquisition of each new Academic or Background Knowledge Skill costs
+      double normal Karma.
   - name: Vindictive
     kind: Flaw
     value: -2
