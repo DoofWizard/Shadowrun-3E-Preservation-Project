@@ -1,0 +1,34 @@
+id: rule.matrix.matrix-satellite-rtg-ratings-p47
+record_type: rule
+status: ingested
+source: source.matrix
+printed_pages: '47'
+pdf_pages: '48'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7909 Matrix (FASA Corporation, Shadowrun Third Edition fictional tabletop RPG), printed p47/PDF48: satellite constellation grid game ratings'
+data:
+  publication: {title: Matrix, catalog_number: FASA7909, publisher: FASA Corporation, edition: SR3}
+  columns: [security_code, access, control, index, files, slave, density_modifier]
+  rows:
+    Angel SatCom: [Orange-4, 10, 8, 8, 8, 7, 0]
+    Ares SkyFire: [Red-6, null, 11, 11, 9, 9, 2]
+    FreeSat: [Green-3, 6, 7, 7, 6, 6, '+1D6']
+    NewsNet SatNet: [Green-6, 9, 8, 9, 8, 8, -1]
+    Nova Teledyne: [Red-4, 11, 9, 8, 7, 7, 1]
+    Orbital Dynamix: [Red-5, 12, 12, null, null, null, -1]
+    Protocol: [Red-6, 10, 13, 10, 9, 9, 1]
+    Renraku GlobalLink: [Red-5, 11, 9, 8, 9, 8, null]
+    TriCom Global: [Orange-5, 10, 10, 9, 8, 8, 0]
+    Tricom Prime: [Red-6, 12, 10, 10, 9, 9, -1]
+    UCAS Skylink: [Orange-5, 9, 9, 10, 10, 8, 1]
+  unresolved_scan_cells:
+    Ares SkyFire: [access]
+    Orbital Dynamix: [index, files, slave]
+    Renraku GlobalLink: [density_modifier]
+  null_meaning: Original scan is damaged; unknown ratings or modifiers are not zero and are not playable defaults.
+  constellation_conditions:
+    topology: Satellite RTGs usually have no subordinate LTGs; each orbital habitat owned by the provider is an exception and is included as an LTG. Individual satellites may have their own directly reachable hosts.
+    access: Apply the named constellation density modifier to the fictional Computer (Hardware) satellite link test described on printed p34.
+    security_tally: A user's tally on a satellite RTG carries over to any other RTG subsequently accessed; a tally generated on an RTG also carries over when the user accesses a satellite RTG.
