@@ -29,6 +29,7 @@ data:
     motion: A thrust-based aircraft rather than conventional aerodynamic-wing lift.
       The game text describes maneuverability and armor as distinctive features.
     altitude_limit_meters: 1500
+    altitude_reference: Above local ground.
   takeoff_and_landing:
     vstol_label: Very Short Takeoff and Landing (VSTOL)
     runway_meters:
@@ -42,6 +43,7 @@ data:
       reference: Rigger 2, p36
       on_failure: LAV automatically acquires 2 points of vehicle Stress.
       scope: VTOL takeoff or landing on unusual surfaces.
+      flight_outcome_on_failure: The takeoff or landing otherwise proceeds normally.
     jetwash_personnel:
       within_radius_meters: 15
       damage_code: 8M Physical
@@ -66,6 +68,7 @@ data:
     below_75_meters: Stall-speed rule does not apply because ground effect gives lift,
       but t-bird must follow the same terrain type and movement restrictions as ground
       vehicles.
+  optional_vehicle_rules: Flight ceilings and NOE flight are explicitly optional rules on printed p107.
   flight_ceiling_table_meters:
     thunderbird: 1500
     zeppelin: 4000
@@ -101,7 +104,7 @@ data:
       Sensor Detection Test; this is distinct from a statement that the sensor hardware
       itself is invisible.
     map_locating_test:
-      requirement: Autonav System Rating 3 or greater, map/terrain display
+      requirement: A map, or a terrain display on an Autonav System Rating 3 or greater.
       test: Intelligence (5) Test
       alternative: Appropriate local-area Knowledge Skill may substitute for Intelligence
         Attribute.
@@ -110,11 +113,11 @@ data:
     submarine_note: Underwater canyons and crevasses might create smaller, less frequent
       sonar dead zones because sonar sound diffracts around corners.
   mechanical_preservation_note: All distances, target numbers, modifiers, prerequisites,
-    and historical rules citations transcribed from the printed p106–107 illustrations;
+    and historical rules citations checked against the printed p106–107 text and table;
     not rebalanced for SR3.
 headline: 'FICTIONAL Shadowrun tabletop-RPG archival reference — FASA Corporation,
   Target: Smuggler Havens (FASA7215, 1998, historical Second Edition era), printed
-  pp106–107/PDF107–108: low-altitude vehicle movement and optional flight mechanics'
+  pp106–107/PDF107–108: low-altitude vehicle movement, failure outcome and optional flight mechanics'
 summary: 'Source-indexed fictional tabletop vehicle mechanics from FASA Corporation,
   Target: Smuggler Havens (FASA7215, 1998; historical Shadowrun Second Edition
   era), printed pp106–107/PDF107–108. The Flight Ceiling Table Thunderbird
