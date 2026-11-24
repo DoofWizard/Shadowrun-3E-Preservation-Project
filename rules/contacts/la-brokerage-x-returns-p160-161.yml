@@ -1,0 +1,27 @@
+id: rule.la.brokerage-x-returns-p160-161
+record_type: rule
+status: ingested
+source: source.fanpro-25006
+printed_pages: '160-161'
+pdf_pages: '160-161'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Loose Alliances (FanPro25006, FanPro, SR3), printed/PDF pp160–161: fictional Brokerage X monthly return procedure and modifier table'
+data:
+  publication: {title: Loose Alliances, publisher: FanPro, edition: SR3, catalog: FanPro25006}
+  access: GM may treat fictional BX as a contact; membership is recommended only for characters with sufficient reputation.
+  monthly_returns:
+    general_percent_range: [-5, 25]
+    gm_option: GM determines return from fictional market events.
+    random_option: {interval: end of each month, dice: 2D6, operation: sum dice and add applicable modifiers then multiply total by 2, result_unit: percent change}
+    random_option_clamp: not specified
+    withdrawal: Any time; completion takes a couple of days.
+  tip_off_modifiers:
+    - {condition: Major national or global implications for involved corporations, modifier: 10}
+    - {condition: Major product launch or change in a major corporation, modifier: 5}
+    - {condition: Minor product launch or implications within a minor corporation, modifier: 3}
+    - {condition: Minor product launch or implications for a local corporation, modifier: 2}
+    - {condition: Information depended on a successful run but the run failed, modifier: -2}
+    - {condition: Misleading lead or information became effectively useless, modifier: -5}
+    - {condition: False information or a tailchaser run, modifier: -10}
