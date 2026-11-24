@@ -1,0 +1,73 @@
+source: source.critters
+publication: {title: Critters, publisher: FASA Corporation, catalog_number: FASA7002, edition: SR3}
+audit_date: "2026-11-23"
+scope: Weaknesses of the Awakened, Mutant Critters, Toxic Critters
+original_pdf_sha256: 40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7
+verify_source_status: source_pdf_hash_verified
+printed_to_pdf_pages: {14: 14, 15: 15, 16: 16, 17: 17}
+image_review: Full original page images independently inspected for baseline and candidate; p14 begins weakness introduction, p15-17 contain rules and worked examples.
+editorial_preflight: {passed: 29, failed: 0}
+scripts:
+  connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+existing_canon:
+  id: subsystem.critters.weaknesses-mutation-toxicity
+  path: rules/critters/weaknesses-mutants-toxic.yml
+  blob: 6351f130723df0a4de5e7d239db79c653bb944c2
+  field_review: Reused source-matching numeric allergy modifiers, dietary and reduced-senses rules, vulnerability level and contact rules, mutant construction costs and potency expression, toxic power-use formulas and recovery, and Combat Pool Essence expenditure.
+  gate_evidence: Historical ingested record; modern independent transaction receipt not established in this run.
+field_reconciliation:
+  weaknesses:
+    pages: "14-15"
+    reused_fields: [allergy severity modifiers, dietary requirement, reduced senses, vulnerability damage level and harmless contact]
+    supplemental_record: rule.critters.weakness-conditions-p15
+    new_fields: [exposure conditions, religious object qualification, severe contact threshold, Essence Loss eligibility and initial value, monthly loss and exceptions, zero-Essence interval, regeneration exception, worked damage example]
+  mutant:
+    pages: "15-17"
+    reused_fields: [Intelligence reduction, characteristic Essence cost, enhanced attribute cost, paranormal ability limit and cost, Essence-based potency adjustment]
+    supplemental_record: rule.critters.mutant-creation-conditions-p15-17
+    new_fields: [selection, size bounds, physical options, enhancement examples, paranormal options, paranormal mutant conditions, worked bear stat lines and costs, unarmored target condition, behavior qualification]
+    unresolved_source_expression: Preserve the printed size expressions and bear example 6L wording rather than infer corrected units or damage formula.
+  toxic:
+    pages: "17"
+    reused_fields: [primary and secondary power selections, Essence-based usage counts, recharge interval, replacement mechanism, extra Combat Pool die cost]
+    supplemental_record: rule.critters.toxic-power-conditions-p17
+    new_fields: [eligibility, zero initial Essence cost, eight primary powers, eight secondary powers, unlimited-use qualification, allergy condition, nova scorpion example, Animal Control association, historical mutation observation]
+    lineage: Later Target Wastelands optional mechanics cross-checked read-only; no inferred replacement or cumulative power list.
+transactions:
+  - path: rules/critters/weakness-conditions-p15.yml
+    commit: 9e85d377e9f5c5ac91d3963f2fbb7d5ccdd8d8e2
+    blob: ea229560d774e9e382c9f685c88a2a78bf96e74d
+    candidate_sha256: ad9d38abdf88ea7fb3652309367a3b835b84f22147bd536d3006a4be1aafd499
+    immutable_sha256: 98ddc253fd658c19cd1c4df59b5e731ee6e2030f4680f931e3b8c7837062de8f
+    index_commit: 40d4d7fc77b9190be842f23a1fc965aa55d794a1
+    index_blob: 2c293762b2af7382cc81f37edacff3ed270b4115
+    journal: weakness-journal
+    gate_status: verified
+  - path: rules/critters/mutant-creation-conditions-p15-17.yml
+    commit: fbc8fcee79035e5e8c754afc36339a5f50d81a80
+    blob: 1aa527aa5c3364c017e63dcbfd3fd84a3f515941
+    candidate_sha256: deca2d0514bad2f94b1b1c2c3af3815811432c0d0da5f006c1b8f5c8ad499aa1
+    immutable_sha256: 60eb0eba0e6576241a3c39af43bee6ccc2f4ca3848203acba4ddcf311d372cdc
+    index_commit: b692e498699a41120cb226151199411b4ba4ccbd
+    index_blob: 5a68d56a37f37d7332b689a168d54dbd460080fe
+    journal: mutant-journal
+    gate_status: verified
+  - path: rules/critters/toxic-power-conditions-p17.yml
+    commit: e2c1eebd53026a2d8e2f6d2c0c6f3fc559b14de7
+    blob: d59ae6936a33c620f4504fc64cfffdcfd36f7d3b
+    candidate_sha256: aed3d4b5536dd95ec2a75d54b0781067891c628220be20b725ca4aa1e3e4695b
+    immutable_sha256: 7b707d2e72f991c45a842be6cf732eae790afd02703f647425a2987decff10ad
+    index_commit: 138909efa4c136ab8149f3405a9d5162039bfb01
+    index_blob: cba37871b3cc19460ad71d1242a4b51090726731
+    journal: toxic-journal
+    gate_status: verified
+readback: Each candidate and manifest update matched exact content at main and resulting commit.
+new_accepted_semantic_records: 3
+original_field_reconciliation: Three natural subsections reviewed and supplements confirmed; old matching fields reused.
+formal_full_section_acceptance: pending_historical_subsystem_receipt
+remaining: [historical subsystem gate evidence, printed ambiguity adjudication for engine, Awakened stat blocks and notes pp20-48, Reaction versus Initiative Combat Pool cap]
+global_authorized_page_advance: 0
+whole_book_accepted: false
