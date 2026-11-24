@@ -1,0 +1,37 @@
+id: rule.magic.mits-geasa-management
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '31-33'
+pdf_pages: '32-34'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  canonical_context: [subsystem.magic.geasa, procedure.magic.geas-management]
+  offset: Each accepted geas offsets one lost Magic Point for effective magical use without restoring the actual point. It cannot raise Magic above its pre-loss value.
+  creation:
+    scope: The restriction must affect every Magical Skill of a magician and not duplicate an existing limitation.
+    special_action_duration_hours: 24
+    prohibited_action_break_duration_hours: 24
+    prohibited_action_eligibility: An ordinary activity necessary in the character's life.
+    condition: Must suit the type of magic; should generally make the geas unavailable approximately half the time.
+  acceptance:
+    timing: Decide at each Magic Point loss. A declined offset cannot be taken retroactively; a later loss permits a new decision for that point only.
+    maximum_geasa: unaugmented Willpower
+    actual_magic_zero_or_less: Character immediately becomes mundane regardless of geasa.
+    affected_tests: Magical Skills only.
+  fulfillment:
+    all_required: Every geas must be fulfilled to use any of the offset Magic Points. If one breaks, all such offsets are temporarily unavailable.
+    effective_magic_when_broken: unmodified Magic before the offsets are deducted minus number of geasa possessed
+    target_number_modifier_when_any_broken: +1 per geas possessed on Magical Skill Tests
+    exempt_tests: [astral combat, assensing, similar actions]
+    projection: Conditions that cannot be fulfilled in astral projection may restrict Magical Skills there.
+    gestures_and_incantation: Part of the Magical Skill Test action, not separate actions; GM may require extra time depending on restriction.
+    group_stricture: Breaking a geas breaks a magical group stricture only when it is the same restriction.
+  example: Magic 6 with two lost points offset by gesture and city-domain geasa operates at Magic 4 and +2 magical TN when either is broken; returning to the city alone does not restore offsets if the gesture restriction remains broken.
+  removal:
+    initiation: May choose to drop a geas and use the newly gained Magic Point to replace the lost point it offset.
+    abandonment: Deliberately cease observing all geasa at once. All offset Magic remains lost, and the character can never take another geas or initiate again.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Geasa management (pp31-33, PDF32-34)'
+summary: 'FASA Corporation, Magic in the Shadows, FASA7907; original-source tabletop rules.'
