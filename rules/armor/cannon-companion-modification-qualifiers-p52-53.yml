@@ -1,0 +1,47 @@
+id: rule.armor.cannon-companion-modification-qualifiers-p52-53
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '52-53'
+pdf_pages: '53-54'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: armor modification limits and game qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp52-53/PDF53-54. Missing rating ceilings, eligibility, numerical game effects and timing for the six existing armor modification options.'
+data:
+  eligibility:
+    allowed_unless_explicitly_excepted: [standard armor clothing, name-brand armor clothing, camouflage clothing, diving armor, form-fitting armor, security armor, hardened armor]
+    securetech_armor_clothing_allowed: false
+    single_modification_rating_maximum: max(Ballistic, Impact)
+    total_modification_rating_maximum: Ballistic + Impact
+    unarmored_clothing_single_maximum: 2
+    unarmored_clothing_total_maximum: 2
+    cumulative_protection_possible: true
+    example: An elemental fire spell can use half Impact plus applicable fire-resistance rating for Power reduction.
+  fire_resistance:
+    object_resistance_bonus_per_point_for_catching_fire: 1
+    source_reference_printed_page: 98
+  gel_packs:
+    unarmored_clothing_hardened_rating: [1, 1]
+    concealability_multiplier: 0.5
+    concealability_rounding: down
+    knockdown_body_test_target_modifier: 2
+    combat_pool_calculation_rating_multiplier: 1.5
+    combat_pool_calculation_rounding: down
+    prohibited_armor: [form-fitting, diving, hardened]
+    maximum_sets_per_item: 1
+    layering_allowed: false
+  thermal_dampening:
+    requires_entire_body_coverage: true
+    thermographic_perception_target_modifier_per_point: 1
+    vehicle_drone_signature_bonus_per_point: 1
+    maximum_modifier: 8
+    full_effect_approx_hours: 2
+    modifier_loss_per_half_hour: 1
+    cooldown_recovery_per_half_hour: 1
+  market_relationship:
+    matching_existing_options: [chemical-seal, fire-resistance, gel-packs, insulation, nonconductive, thermal-dampening]
+    additive_cost_qualifier: Chemical Seal, Fire Resistance, Insulation, Nonconductive and Thermal Dampening are additions to base item cost; Gel Packs use a multiplier.
+    additive_availability_qualifier: Chemical Seal, Fire Resistance, Insulation and Nonconductive add to base availability; Gel Packs and Thermal Dampening multiply the base values.
+    source_limit: Table dashes are not additional modifiers; existing option rows hold the numerical market fields.
