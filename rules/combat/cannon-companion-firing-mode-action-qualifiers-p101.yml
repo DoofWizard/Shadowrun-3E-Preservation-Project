@@ -1,0 +1,30 @@
+id: rule.combat.cannon-companion-firing-mode-action-qualifiers-p101
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '101'
+pdf_pages: '102'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional firing-mode action economy qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop rules, printed p101/PDF102. Adds action and insufficient-ammunition qualifications to the existing maximum-rates record.'
+data:
+  existing_record: rule.combat.maximum-rates-of-fire
+  fictional_game_scope: Abstract action and ammunition accounting for game turns.
+  ordinary_burst_fire:
+    action: Simple
+    insufficient_ammunition: Apply Short Bursts (SR3 p115).
+  ordinary_full_auto:
+    insufficient_ammunition: Apply Short Bursts (SR3 p115).
+    maximum_full_auto_attacks_per_phase: 1
+  minigun_class:
+    action: Complex
+    mandatory_full_burst_if_ammo_available: true
+    insufficient_ammunition: Apply Short Bursts (SR3 p115).
+    maximum_full_auto_attacks_per_phase: 1
+  high_velocity_class:
+    action_for_full_auto: Complex
+    allowed_to_divide_phase_round_allowance_into_bursts: true
+    eligibility: Includes high-velocity customization option, CC p76.
+  scope_note: Existing numerical per-phase maxima and no separate per-turn cap retained read-only.
