@@ -533,7 +533,7 @@ source_field_review:
   confirmed_surgery_cosmetic_therapeutic_implant_2026_11_23:
     source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
     verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
-    original_images_reviewed: "FASA 1999 copyright p5/PDF5; printed pp146-148/PDF147-149."
+    original_images_reviewed: "FASA 1999 copyright p5/PDF5; printed pp144-148/PDF145-149."
     preflight_self_test: "29 passed; all four executable script blobs matched live GitHub."
     records:
       - id: procedure.surgery.cosmetic
@@ -595,13 +595,27 @@ source_field_review:
         gate: verified
         recovery_inspect: verified
         fields: "Five planning times, six multiplier rows, Medicine TN and positive-option modifier, skills, equipment, option limits and order, changed-plan detection and surgical data memory."
+      - id: procedure.surgery.operation
+        path: procedures/surgery/operation.yml
+        printed: "144-145"
+        pdf: "145-146"
+        commit: "838cb9623154e30abc77dcc979ef89e27e597d31"
+        blob: "c92244860b9464c69278cce4d252d9d921bb0c88"
+        candidate_sha256: "a58f74711a02deaa249d1cea22a5ff4254e2f282809acc99e72e0d24c76b1251"
+        baseline_sha256: "cbf7caee8274cfcc3f7831a09060fa92e806580c892a326bc207c24b4492eb0a"
+        immutable_sha256: "2434cbcf8fbe18e94e375d0820355f3b36e4d44448d52193c9b9057d8a67a852"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Six procedural outcome rows, open-ended threshold and cumulative option stopping rule, multiple procedures, medical profile test, time and attendance, specialized and time-sensitive profiles."
     scoped_natural_sections_reconciled:
       - "Cosmetic Surgery pp146-147."
       - "Therapeutic Surgery pp147-148."
       - "Implant Surgery pp146-147."
       - "Surgical Tests p146, including entire Surgery Table."
       - "Surgical Planning and Preparation pp145-146, including all planning time rows."
-    remaining: "Surgery Overview, diagnosis and implant detection, independently indexed bioware and nanoware receipt reconciliation; no whole-book or chapter certification."
+      - "Surgery Overview p144 including Procedural List Example."
+      - "Diagnosis and Profiling pp144-145, excluding distinct Detecting Implants subsection."
+    remaining: "Implant detection p145, independently indexed bioware and nanoware receipt reconciliation; no whole-book or chapter certification."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
