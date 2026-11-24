@@ -52,7 +52,7 @@ coverage:
   professional_sports_and_games: {printed: "58-73", status: source_verified_section_closed, note: "Original competition rules pp58-73 accounted for; source contradictions and legacy edition dependencies retained; p69 illustration excluded."}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
-  simsense: {printed: "74-83", status: partial, note: "Original production and output parameters pp74-80 individually verified; p79 storage contradiction retained. pp81-83 BTL lineage and remaining p80 legal qualifiers need closure review; equipment pp88-99 separate."}
+  simsense: {printed: "74-83", status: source_verified_section_closed, note: "Original rules-bearing production, output, and playback eligibility fields pp74-83 verified; p79 storage contradiction retained, p82 advertisement and p83 narrative effects distinguished from dice rules. Equipment prices and capability tables pp88-99 separate; SR3 adaptation unresolved."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
   equipment_and_costs: {printed: "88-99", status: queued}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
@@ -86,6 +86,7 @@ records:
   - ["urban-brawl-penalties-p72-73", "700ab2d167533b05c13c9c74622d7943aee9db36"]
   - ["simsense-production-legacy-p74-78", "49a89c8dcf6908d512368ff20da10ae219910602"]
   - ["simsense-output-storage-legacy-p79-80", "78638439e0578f978f1f266684e3e09d585dbe49"]
+  - ["simsense-legacy-eligibility-p80-83", "fe5debd025a73471d49dd3d82e23e00ffe4b04b1"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -361,5 +362,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p79_pdf88", "printed_p80_pdf89"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-simsense-legacy-eligibility-p80-83
+    path: rules/shadowbeat/simsense-legacy-eligibility-p80-83.yml
+    original_printed_pages: "80-83"
+    original_pdf_pages: "89-92"
+    commit_sha: "fe5debd025a73471d49dd3d82e23e00ffe4b04b1"
+    readback_blob_sha: "8be4ae2c86c640a80fb0e1a165ef6b6d7b4b47d7"
+    candidate_sha256: "081a41b0ee4502495f2e04a789e585ddc06f0f938759204dbbb9aa928807954d"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p80_pdf89", "printed_p81_pdf90", "printed_p82_pdf91", "printed_p83_pdf92"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
