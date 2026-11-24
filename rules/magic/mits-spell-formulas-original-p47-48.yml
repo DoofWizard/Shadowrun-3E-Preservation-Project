@@ -1,0 +1,54 @@
+id: rule.magic.mits-spell-formulas
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '47-48'
+pdf_pages: '48-49'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  representation:
+    formula_theory: Same underlying formula for a spell, expressed in forms appropriate to the tradition.
+    shamanic: Objects, visual works, runes or medicine bags.
+    hermetic: Written text or diagram of equations and symbols.
+  inspiration:
+    sources: Desired effect, research, emotion, published description of an existing spell, or astral observation of casting.
+    reverse_engineering: Published game spells can be reverse-engineered from descriptions; in the fictional setting this is illegal.
+    observation:
+      prerequisites: Astral perception and concentration on the casting.
+      action: Exclusive Simple Action
+      test: Astral Perception Test
+      target_number: Spell Force
+      complementary_skill: Spell Design Knowledge Skill
+      instant_duration_target_modifier: 2
+      successes_required: 1
+  design:
+    eligible_characters: Awakened or mundane characters with Spell Design Knowledge Skill or a permitted default.
+    mundane_limitation: A designer without a Magic Attribute can produce a working formula but cannot personally test its magic.
+    default_skills: [Sorcery, Magic Background]
+    default_target_modifier: 2
+    facilities: Shamanic lodge for shamanic work; Sorcery library for hermetic work. Most mundane designers use hermetic methods.
+    effective_skill: Use the lower of applicable skill and facility rating when facility rating is lower.
+    maximum_formula_force: Minimum of applicable skill rating and facility rating.
+    test: Design Test using appropriate skill with applicable dice modifiers.
+    target_number: 2 times spell Force plus Drain target-number modifiers minus designer Magic Attribute, plus applicable default or translation modifiers.
+    base_time_days_by_drain: {L: 6, M: 18, S: 36, D: 60}
+    variable_drain: Use highest applicable Drain level.
+    success_time: Base time divided by successes.
+    failure_time: Half base time elapses before the failed design is abandoned.
+    interruptions: Design work can be interrupted without penalty.
+    extra_facility_dice: One die per two full rating points by which library or lodge exceeds applicable skill.
+    mage_aid_study: Add Force of an elemental aligned with spell category as dice when using Aid Study.
+    shaman_totem: Apply applicable positive and negative totem modifiers.
+    translation_between_traditions: Same design procedure with target number increased by 2.
+    worked_example: {skill: 5, library: 8, facility_bonus_dice: 1, elemental_force: 4, dice: 10, spell_force: 5, drain_tn_modifier: 1, magic: 6, target_number: 5, drain_level: D, base_days: 60, successes: 2, elapsed_days: 30}
+  using_formula:
+    uses: Learn spell, sell formula or publish it for general use.
+    legal_trade: Valid SIN and required paperwork/contracts in the fictional game economy.
+    media: Physical copy or electronic storage; shamans usually require the actual formula object, with GM option for digital images or holograms of visual formulas.
+    electronic_size: SR3 p223 Program Size Table, multiplier 2, program rating equals spell Force.
+    learning_force_ceiling: Formula Force
+    force_upgrade: New-design test with target number reduced by 2 and base time halved.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition rules: spell formula design (FASA7907) (printed 47-48/PDF 48-49)'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG formula inspiration, design and translation tests, time table, storage and Force upgrade rules.'
