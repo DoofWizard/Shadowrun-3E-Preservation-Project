@@ -1,0 +1,50 @@
+id: rule.soa.maya-cloud-p216
+record_type: rule
+status: ingested
+source: source.fanpro-25007
+printed_pages: '216'
+pdf_pages: '216'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: "Fictional Shadowrun tabletop RPG: Shadows of Asia (FanPro, FanPro25007, SR3), printed/PDF p216 — Maya Cloud passive effects and manifestation table"
+framing: reference_exact
+data:
+  publication: {title: Shadows of Asia, publisher: FanPro, edition: SR3, catalog: FanPro25007}
+  extent: Dome around Tibet following its borders; depth varies from 50 to 100 km.
+  physical_visibility: Cloud itself invisible; external observers may see weather or projected illusions.
+  astral_appearance: magical fog
+  background_count: 3
+  passive_effects:
+    compasses: confused by electromagnetic distortion
+    flux_range_modifier: -4
+    vehicle_signature_modifier: 3
+    line_of_sight_communications: Often restricted by manifested weather and mountain ranges.
+  manifestation_check:
+    dice: 2
+    target_number: 5
+    minimum_successes: 1
+    timing: On entry and again each day within the Cloud; multiple manifestations possible at GM discretion.
+    history: Previously always manifested at least once on entry; currently weakened and may not manifest.
+  manifestation:
+    force: 1D6+3
+    sorcery_test_dice: 2 times manifestation Force
+    targets: All characters within spell area of effect.
+    sustain: While characters remain within area of effect.
+    selection: Roll one D6 for magical aspect and one D6 for physical aspect; roll again for specific spell. GM determines exact magical effect; physical aspect depends on local climate.
+    magical_table:
+      - {first_roll: '1-2', second_roll: '1-3', spell: Mass Confusion}
+      - {first_roll: '1-2', second_roll: '4-6', spell: Chaotic World}
+      - {first_roll: '3-4', second_roll: '1-3', spell: Phantasm}
+      - {first_roll: '3-4', second_roll: '4-6', spell: Trid Phantasm}
+      - {first_roll: '5', second_roll: '1-3', spell: Influence}
+      - {first_roll: '5', second_roll: '4-6', spell: Mob Mood}
+      - {first_roll: '6', second_roll: '1-4', spell: Foreboding}
+      - {first_roll: '6', second_roll: '5-6', spell: Mass Agony}
+    physical_table:
+      - {roll: '1-3', effect: no physical aspect}
+      - {roll: '4', effect: light snowstorm/rainstorm/sandstorm}
+      - {roll: '5', effect: heavy snowstorm/rainstorm/sandstorm}
+      - {roll: '6', effect: total white-out, visibility_penalty: 8}
+    visibility_reference: Shadowrun Third Edition p112
+  encounter_context: Fictional wild paracritters and predatory groups including HMHVV Infected roam the Cloud, exploiting manifestations; the source warns that local inhabitants affected by the Cloud may not be amenable to reason.
+  references: [rule.magic.background-count, rule.soa.five-seals-p216]
