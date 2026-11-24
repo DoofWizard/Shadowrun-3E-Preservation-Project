@@ -1,21 +1,33 @@
 id: rule.cybermancy.magic-resistance
 record_type: rule
-name: "Cybermancy Magic Resistance"
+name: Cybermancy Magic Resistance
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '56-57'
+pdf_pages: '56-57'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999), Shadowrun Third Edition tabletop RPG: Magical Resistance, pp56-57/PDF56-57'
 effective: {status: current, source: source.mm, page: 56, basis: defines}
-scope:
-  applies_to: ["cybermantic characters"]
+scope: {applies_to: [cybermantic characters]}
 resolution:
-  summary: "Cybermantic treatment makes the subject more resistant to most magic. Add the absolute value of the character's negative Essence, rounded up, to target numbers for Spellcasting, spirit powers, metamagic and other magical tests made against the character. The modifier does not apply to elemental manipulation spells, but it does apply to magical healing."
-  inputs: ["negative Essence", "magical effect"]
-  outputs: ["target-number modifier"]
+  summary: 'The fictional cybermancy rules increase target numbers for most magical tests against the character and prevent the character from performing magic.'
+  inputs: [negative Essence, magical effect]
+  outputs: [target-number modifier, magic eligibility]
   steps: []
+data:
+  target_number_increase: 'ceil(abs(Essence))'
+  applies_to: [Spellcasting Tests, critter powers, metamagic, other magical tests against the character]
+  elemental_manipulation_spells_excluded: true
+  magical_healing_included: true
+  cybermantic_character_can_perform_magic: false
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [rule.cyberware.magic-interaction]
 sources:
-  - {source: source.mm, pages: "56-57", relation: defines, note: "Magic Resistance"}
+  - {source: source.mm, pages: '56-57', relation: defines, note: Magical Resistance}
 notes: []
