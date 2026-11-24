@@ -65,7 +65,7 @@ coverage:
   equipment_and_costs: {printed: "88-99", status: source_verified_section_closed, note: "Sight pp88-91, Sound pp92-96, PAB p97, Simsense Gear pp97-98, storage and trideo services p99 individually verified and indexed; legacy edition contradictions and native SR3 lineage limits retained."}
   sound_equipment: {printed: "92-96", status: source_verified_section_closed, note: "Complete original instrument/synth and sound equipment tables; apply sound-configuration-qualifiers-p93-95 for equipment conditions and the component/combined p95 example; preserve all original figures, SR3 adaptation unverified."}
   trideo_service_prices: {printed: "99", status: source_verified_section_closed, note: "All original service market rows, lifestyle allowances and billing/negotiation qualifications; pp18-23 procedures separate."}
-  sight_equipment: {printed: "88-91", status: source_verified_section_closed, note: "Original media equipment table, camera/gear capability and Pix modifiers; original Essence typography retained and native SR3 camera overlaps identified."}
+  sight_equipment: {printed: "88-91", status: source_verified_section_closed, note: "Original media equipment table, camera/gear capability and Pix modifiers; apply tridsynth-processor-qualifier-p91 to distinguish processing from storage; original Essence typography retained and native SR3 camera overlaps identified."}
   evidence_verification: {printed: "49-51", status: source_verified_section_closed, note: "Original digital evidence and Pix dice rules, signed modifiers, outcome tiers, verification and original exceptions; SR3 supersession unresolved."}
   pab_event_tests: {printed: "47-49", status: source_verified_section_closed, note: "Original fictional PAB tests, detection, restoration and contradictory detection examples; SR3 supersession unresolved."}
   pab_equipment: {printed: "97", status: source_verified_section_closed, note: "Five original equipment market rows and facility rating cap; p47 reprogramming procedure and SR3 supersession distinct."}
@@ -342,6 +342,7 @@ records:
   - ["sin-audit-trigger-qualifiers-p86", "76994a37e2086e8604b30ea649cb6e963768e53c"]
   - ["network-employment-tax-qualifiers-p85-86", "7b2f02d67f8841321bc85bb2d36775648ce246b8"]
   - ["sound-configuration-qualifiers-p93-95", "44a90f0527f49635e0f3b3fa9b14a910ea90d29e"]
+  - ["tridsynth-processor-qualifier-p91", "d28e381f992e99cd580e164082cc90a6ef568c93"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -980,5 +981,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p93_pdf102", "printed_p94_pdf103", "printed_p95_pdf104"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-tridsynth-processor-qualifier-p91
+    path: equipment/shadowbeat/tridsynth-processor-qualifier-p91.yml
+    original_printed_pages: "91"
+    original_pdf_pages: "100"
+    commit_sha: "d28e381f992e99cd580e164082cc90a6ef568c93"
+    readback_blob_sha: "d5fc8bdaae8ff148971f5996412e0b68b31c1aaa"
+    candidate_sha256: "1ff7e0ca9f5591c5229417ab534235214cefc8ef20c5d87c6208b07046bdf3d7"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p91_pdf100"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
