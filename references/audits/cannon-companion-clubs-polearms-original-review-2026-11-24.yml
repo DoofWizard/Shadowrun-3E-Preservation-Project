@@ -1,0 +1,64 @@
+source: source.cc
+title: "FASA7908 Cannon Companion: Clubs and Pole Arms/Staffs original-image review"
+edition: SR3
+publisher: FASA Corporation
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_pdf_bytes: 80954335
+source_verification: source_pdf_hash_verified
+original_page_mapping:
+  - {printed: 8, pdf: 9}
+  - {printed: 9, pdf: 10, scope: artwork_only}
+  - {printed: 10, pdf: 11}
+  - {printed: 11, pdf: 12}
+review:
+  clubs:
+    status: source_local_field_reconciled
+    equipment_rows:
+      checked_fields: [concealability, reach, damage, weight, availability, cost_nuyen, street_index, legality, governing_skill]
+      matched:
+        - {id: entity.weapon.extendable-baton, blob: be1132df0c3c4efef1b8c330f22e9082585f8c44}
+        - {id: entity.weapon.mace, blob: 6cb4f43fafa3cce7abcd60058fa1fd709a990bf8}
+        - {id: entity.weapon.spiked-mace, blob: f9335c921988efd6e229095748cf49261baafcb2}
+        - {id: entity.weapon.rattan-stick, blob: 90c97f4e5ae15c190205e347d31a7decd65b4a2a}
+        - {id: entity.weapon.sai, blob: a6e2932cd19bc4bbeb122e6015950b88ad708e87}
+        - {id: entity.weapon.az-150-stun-baton, blob: 7d221d91a212fd7cafd4674551b76a686a30a1b6}
+    source_fields_added: [category_default_damage_track, concealability_state, armor_dependent_game_damage, resistance_rating, disarm_bonus_and_eligibility, charge_uses, recharge_rate, core_rule_reference]
+    transaction:
+      path: rules/combat/cannon-companion-club-item-game-qualifiers-p8-10.yml
+      commit: c9974b06898296450b7419e6a470ff4c01ad37a8
+      blob: c74f13c6f481d7baec1aa8ecbc129b27efeb7e36
+      baseline_sha256: 60634339071facf3e765d13c5806afcff03746728a1df0bed4f5c492446413e1
+      candidate_sha256: 60634339071facf3e765d13c5806afcff03746728a1df0bed4f5c492446413e1
+      immutable_sha256: d9cf259989928b44a77ce4d922732607aec251d1c86d021250e4a8c12c9f71bb
+      gate: verified
+      index_commit: 6f1b546de7c586c0a25f546cd1d2819d38db4eaf
+      index_blob: 5cfd23a19ec787f4731f74ac9b31ccb34856031a
+  pole_arms_and_staffs:
+    status: source_local_field_reconciled
+    equipment_rows:
+      checked_fields: [concealability, reach, damage, weight, availability, cost_nuyen, street_index, legality, governing_skill]
+      matched:
+        - {id: entity.weapon.bo-staff, blob: 84ff96c22c3110afb1f45199a2e4252ed015a64a}
+        - {id: entity.weapon.claymore, blob: caf0e07ec3cffddeaf9fe71ffd8f63f3aa4cd621}
+        - {id: entity.weapon.harpoon, blob: cb89daf7c0c791a2d29ccba6b6b60b5bbb06606d}
+        - {id: entity.weapon.javelin, blob: e2d9a3afdd319fb6899e6301a495a72a2048173b}
+        - {id: entity.weapon.no-dachi, blob: 1c5bf7fbc3243427894a2feb1807e02552627c4a}
+        - {id: entity.weapon.spear, blob: 3d54a8078ef486a9f8dcb839500685c57eb0b069}
+        - {id: entity.weapon.telescoping-staff, blob: 3fd7e048e531838208b055a10305e0a787d6a527}
+    source_fields_added: [damage_track_by_game_attack_choice, hands_required, minimum_strength, conditional_game_attribute_bonus, concealability_state]
+    transaction:
+      path: rules/combat/cannon-companion-polearm-staff-game-qualifiers-p10-11.yml
+      commit: 7fd60d3340b0bcce8e632d1895bbe856167c56ce
+      blob: 952f0f5f0a760fbd1fd5d2930bdbf575edd35d73
+      baseline_sha256: 0fff1a2d5bf6d343af551909c0d6761402fd25369927831d097b1b5c2a0ca66b
+      candidate_sha256: 0fff1a2d5bf6d343af551909c0d6761402fd25369927831d097b1b5c2a0ca66b
+      immutable_sha256: c5ae9717ecf76d1c76b19f6bc627f3792c5a0f1bbc0e8a16fd458426d0b3fabc
+      gate: verified
+      index_commit: 1c5957506017d40846a98e95ebf1d0734b4a7521
+      index_blob: 61ff3bcae174ded56f5d6ea3f87cff1b9f2fbcef
+remaining:
+  - Edged Weapons printed pp7-8 not certified by this review.
+  - Other catalogue subsections, customization and manufacture scopes remain open.
+  - Prior source-precedence and transaction-provenance exceptions remain open.
+globally_authorized_pages: 0
+whole_book_closed: false
