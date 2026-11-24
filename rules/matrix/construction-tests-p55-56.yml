@@ -1,0 +1,39 @@
+id: rule.matrix.construction-tests-p55-56
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '55-56'
+pdf_pages: '56-57'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, original cyberterminal construction game tests.
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Matrix cyberterminal construction test timing and conditions
+summary: Original four-stage construction task resolution, time, wound penalties, design and encoding rules.
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Third Edition}
+  stages: [design, software, cook, installation]
+  primary_skill: Computer B/R
+  failed_success_test: {time_before_failure_discovered: 'base time divided by 2D6, rounded up', restart: true}
+  workday: {normal_hours: 8, effective_hours_per_overtime_hour_after_8: 0.5, effective_hours_per_hour_after_15: 0.25, shifts_allowed: true}
+  health:
+    Light: {work_fraction: 1}
+    Moderate: {work_fraction: 0.5}
+    Serious: {work_fraction: 0.5, maximum_continuous_work_hours: 2, rest_hours: equal to time worked}
+  design:
+    skill: Cyberterminal Design Knowledge
+    intelligence_default_TN_modifier: 4
+    base_TN: floor(MPCP / 2)
+    base_time: MPCP times 2
+    component_modifiers: per component description
+    success_allocation: Choose either divide base time by successes or use every two successes to reduce Cook or Installation TN by one; reductions may be allocated between those two tests.
+    no_success: Component construction may proceed with +2 TN on other required tests.
+  software: Required for components that need a program; use p76 programming rules or buy an existing package; component description supplies rating and size multiplier.
+  cook:
+    skill: Computer B/R
+    TN: 4
+    base_time_days: MPCP rating
+    encoder_bonus_dice: minimum of encoder rating and user's skill rating
+    resources: Encoder, computer memory at least program size, and sufficient blank optical memory chip capacity.
+  installation: Computer B/R; component-specific parts and tests; outside connections can require other skills and both tests must succeed if two are needed.
+  relationship: Supplements the existing procedure.matrix.cyberterminal-construction stage outline, rather than creating a second construction procedure.
+  source_review: Printed p55/PDF56 both columns and p56/PDF57 upper left; specific design-failure exception retained alongside generic failed-test rule; design time unit not stated in that paragraph.
