@@ -1,20 +1,39 @@
 id: entity.bioware.suprathyroid-gland
 record_type: entity
-name: "Suprathyroid Gland"
+name: Suprathyroid Gland
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '69'
+pdf_pages: '70'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 1.4
-  availability: "8/12 days"
+  availability: '8/12 days'
   cost_nuyen: 50000
   street_index: 2.5
-  legality: "6P-Q"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [entity.bioware.metabolic-arrester, rule.damage.stress-points]
+  legality: 6P-Q
+data:
+  physical_attribute_bonus: 1
+  reaction_bonus: 1
+  derived_effects: increased Quickness can additionally raise Reaction and Combat Pool; Control Pool unchanged
+  food_and_drink_multiplier: 2
+  lifestyle_cost_increase_percent: 40
+  lifestyle_interactions: cumulative with symbiotes; digestive expansion reduces lifestyle cost by 20 percent
+  lifestyle_example: suprathyroid plus level 3 symbiotes adds 100 percent lifestyle cost
+  thermographic_observer_tn_modifier: -1
+  signature_modifier: -1
+  signature_scope: sensor and sensor-enhanced Gunnery Tests
+  incompatible: [metabolic arrester]
+  stress:
+    light: heat, sweating and tendency to lose weight
+    moderate: sleep difficulty and fatigue; +1 Perception Test modifier
+    serious: severe fatigue; -1 to all Mental Attributes
+    deadly: immediate cardiac arrest causing Deadly Physical damage without resistance
+links: {uses: [], requires: [], component_of: [], interacts_with: [entity.bioware.metabolic-arrester, rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 69, relation: defines, note: "Suprathyroid Gland description, game effects, stress effects and statistics"}
-notes:
-  - "Adds +1 to Physical Attributes and Reaction and alters food/lifestyle requirements; incompatible with the metabolic arrester."
+  - {source: source.mm, page: 69, relation: defines, note: Suprathyroid Gland game effects and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p69/PDF70: Suprathyroid Gland'
+framing: reference_exact
