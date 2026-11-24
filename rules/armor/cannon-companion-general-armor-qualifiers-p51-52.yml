@@ -1,0 +1,41 @@
+id: rule.armor.cannon-companion-general-armor-qualifiers-p51-52
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '51-52'
+pdf_pages: '52-53'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: general armor game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp51-52/PDF52-53. Supplemental game effects for nine previously indexed armor entities; original market rows are reused.'
+data:
+  general_default: Standard SR3 layering and Combat Pool loss apply unless the item has an explicit exception.
+  diving_armor:
+    coverage: entire body or diving suit
+    contact_vector_power_modifier: -4
+  forearm_guards:
+    melee_impact_bonus: 1
+    applies_to: [armed melee, unarmed melee]
+    ranged_impact_bonus: 0
+    layering_treatment: helmet
+  form_fitting:
+    custom_fit: individual wearer
+    coverage:
+      shirt: [chest, back]
+      half_body: [torso, groin, thighs]
+      full_body: [entire body, extremities, gloves, slippers, hood]
+    may_layer_with_other_armor: true
+    counts_for_combat_pool_loss: false
+  hardened_military:
+    custom_fit: individual wearer
+    color_or_camouflage_pattern: selected as desired
+    deflection_if_unmodified_base_attack_power_lte_applicable_rating: true
+    if_attack_power_exceeds_rating: subtract applicable armor rating from Power
+    base_power_excludes_burst_and_full_auto_adjustment: true
+    armor_piercing_or_anti_vehicular_rating_multiplier: 0.5
+    armor_piercing_rounding: down
+    no_physical_damage_code_injection_attacks_penetrate: false
+    other_armor_layering_allowed: false
+    standard_combat_pool_loss_may_apply: true
+  source_relationship: Nine existing entity.armor records preserve the printed market table; this record adds item-specific game rules, not replacement equipment rows.
