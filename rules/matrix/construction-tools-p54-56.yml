@@ -1,0 +1,30 @@
+id: rule.matrix.construction-tools-p54-56
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '54-56'
+pdf_pages: '55-57'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, original construction tool rules.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix microtronics tools and construction resources
+summary: Source-specific tool tier eligibility, resource allotments and installation test modifiers.
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Third Edition}
+  tools_cost_multiplier_relative_to_SR3_base: 3
+  tier_order: [kit, shop, facility]
+  minimum_tier_or_higher: true
+  shop: {minimum_computers: 1, combined_memory_Mp: 300, included_parts_nuyen: 1000}
+  facility: {minimum_computers: 1, combined_memory_Mp: 750, included_parts_nuyen: 5000}
+  computer_memory_allocation: Divide the stated initial total among the chosen number of computers; specific jobs can require additional memory. Computers may also be used for programming.
+  parts: {legal: true, availability: '2/24 hrs', cost: component-specific}
+  installation_TN_modifiers:
+    - [kit, kit, 0]
+    - [kit, shop, -1]
+    - [kit, facility, -3]
+    - [shop, shop, 0]
+    - [shop, facility, -1]
+    - [facility, facility, 0]
+  modifier_scope: Installation Tests performed using the superior tools only.
+  relationship: Existing procedure.matrix.cyberterminal-construction lists appropriate tools and parts but omits these source-specific allocations and numeric modifiers.
+  source_review: Printed p54/PDF55 both columns and p56/PDF57 Tool Bonus Table; six rows and tool-tier constraints reviewed against the original.
