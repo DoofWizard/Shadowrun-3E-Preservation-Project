@@ -1,0 +1,48 @@
+id: rule.magic.mits-ally-rituals-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '111-113'
+pdf_pages: '112-114'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 SR3 Ally Spirit formula, summoning and change
+summary: FASA Corporation's Magic in the Shadows, fictional tabletop rules, printed 111-113/PDF112-114.
+data:
+  formula:
+    complexity: round to nearest integer (design Karma / 5)
+    test: Conjuring against complexity
+    base_days: 2 * complexity
+    successful_days: base days / successes
+    zero_success_days: 2 * base days
+    all_ones: formula design fails
+    interruption_penalty_days_per_day_away: 2
+    retry_after_failure: reduce design complexity or raise Conjuring Skill
+    facilities: Shamanic lodge or mage's Conjuring library rated at least ally Force.
+    specificity: Formula fixes the ally design; translation between traditions may change native plane only.
+    copy_required_for_summoning: true
+    example: A 47-Karma design has complexity 9 and base time 18 days; after 10 days of work and 4 days away, 16 days remain.
+  summoning:
+    facilities: Shamanic lodge or mage's Conjuring library and hermetic circle, each rated at least ally Force.
+    material_cost_nuyen: 1000 * Force
+    base_days: Force
+    test: Conjuring against Force
+    successful_days: base days / successes
+    zero_success: fails after full base time
+    daily_drain: Willpower against (Force + cumulative days)L Stun; damage accumulates without rest, and Centering may assist.
+    interrupted_or_failed: repeat from the beginning
+    payment: After successful ritual, spend design Karma and 1 Magic Point; no geas offsets this point.
+    control: Use ordinary summoning Drain Resistance (SR3 p187); control follows if the summoner remains capable, otherwise the spirit goes free.
+    example: Force 4, two successes, two days; daily Drain 5L then 6L Stun. With Charisma 6 and remaining Magic 5, final Drain is 4M Stun.
+  change:
+    prerequisite: Sufficient Karma and original formula; use summoning requirements and ratings.
+    target_number: current Force + total added rating points; for a Force increase use new Force instead.
+    payment: Pay Karma only on successful change.
+    failed_conjuring: ally may attempt to go free
+    final_drain: Summoner resists Drain regardless of success; unconsciousness permits another escape attempt.
+    ally_assistance: Ally may choose whether to assist with its own change ritual or associated Drain.
+    example: Force 4, Body 4 to 6 costs 9 Karma; TN 6, one success means four days with daily Drain 5L, 6L, 7L, 8L.
+  canonical_corrections:
+    - procedure.magic.ally-formula names a circle; the original specifies a Conjuring library for a mage's formula design.
+    - procedure.magic.ally-ritual-change describes payment before the ritual; original requires funds beforehand and payment after success.
