@@ -1,20 +1,32 @@
 id: entity.bioware.nephritic-screen
 record_type: entity
-name: "Nephritic Screen"
+name: Nephritic Screen
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '67'
+pdf_pages: '68'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.4
-  availability: "4/4 days"
+  availability: '4/4 days'
   cost_nuyen: 20000
   street_index: 1
-  legality: "Legal"
-links:
-  uses: [rule.chemistry.drug-exposure]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+data:
+  resistance_body_bonus: 1
+  resistance_scope: toxins and pathogenic agents
+  power_reduction: 1
+  power_reduction_scope: pathogens and blood-vectored toxins
+  stress:
+    light: nutrient depletion; supplements may be necessary
+    moderate: Power reduction bonus ceases
+    serious: Light Physical wound until the screen is cleaned by therapeutic surgery (p147); other symptoms possible
+    deadly: Serious Physical wound from infection until the screen is repaired
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 67, relation: defines, note: "Nephritic Screen description, game effects, stress effects and statistics"}
-notes:
-  - "Improves resistance to toxins and pathogens and reduces the Power of blood-vector toxins/pathogens as specified."
+  - {source: source.mm, page: 67, relation: defines, note: Game effects, Stress and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp67/PDF68: Nephritic Screen'
+framing: reference_exact
