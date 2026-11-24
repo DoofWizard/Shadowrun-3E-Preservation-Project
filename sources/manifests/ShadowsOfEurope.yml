@@ -13,10 +13,12 @@ intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
 source_format: image-only PDF
-page_map_scope: "Original TOC pp2-4/PDF3-5; printed pp221-222/PDF222-223 and pp238-239/PDF239-240 visually confirmed. Other folios remain to be checked."
+page_map_scope: "Original TOC pp2-4/PDF3-5; printed pp221-222/PDF222-223 and pp238-240/PDF239-241 visually confirmed. Other folios remain to be checked."
 routing:
   - {range: "6-217", section: "Regional setting chapters", status: pending_original_mechanics_review}
-  - {range: "218-239", section: "Game Information", status: pending_original_mechanics_review}
+  - {range: "218-237", section: "Game Information", status: pending_original_mechanics_review}
+  - {range: "238-239", section: "Border Crossing", status: scoped_tables_gated}
+  - {range: "240", section: "European Matrix RTGs", status: scoped_table_gated}
 verified_semantic_records:
   - id: rule.soe.checkpoint-verification-p238
     path: rules/travel/soe-checkpoint-verification-p238.yml
@@ -36,5 +38,15 @@ verified_semantic_records:
     blob: b989d04a4c148632c3e2e93e8991f52a3db63f4c
     gate: verified
     contiguous_advance: false
+  - id: rule.soe.european-rtg-ratings-p240
+    path: rules/matrix/soe-european-rtg-ratings-p240.yml
+    range_printed: [240, 240]
+    range_pdf: [241, 241]
+    content_class: rule_exact
+    commit: 93dc2c2c3c5f1935bdb59ed43a6189eeec8fe8e1
+    blob: f8e3ca96886f8985981eca798fe9d0d145ca84f4
+    gate: verified
+    contiguous_advance: false
 source_scoped_status_notes:
   - "Fresh cataloged original PDF independently SHA-256 matched the original intake. Initial source manifest only; no semantic acceptance, full-section closure, or global page advancement."
+  - "2026-11-24: source SHA verified with actual preservation_method.py; three independently staged, confirmed and indexed original numeric tables. Border Crossing pp238-239 contains 61 verification and 38 encounter rows, all five encounter columns and 14 combined printed dashes preserved. Underlying Shadows of North America procedure reused by reference (rules/campaign/sona-border-crossing.yml, blob b28e1dcc8ede5f91d9c3085a2acf6014a5b4c37e; exact read after table transactions). European Matrix RTGs p240 contains 59 rated rows, security and all five subsystem columns, distinct source-specific setting statistics. Scoped table coverage only, no global or whole-book closure. Remaining p218-237 and regional sections require source review; exact cross-source duplicate reconciliation and editorial audit remain open."
