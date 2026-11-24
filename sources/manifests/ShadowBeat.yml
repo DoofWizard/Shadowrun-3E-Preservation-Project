@@ -54,7 +54,8 @@ coverage:
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: source_verified_section_closed, note: "Original rules-bearing production, output, and playback eligibility fields pp74-83 verified; p79 storage contradiction retained, p82 advertisement and p83 narrative effects distinguished from dice rules. Equipment prices and capability tables pp88-99 separate; SR3 adaptation unresolved."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
-  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 and storage media/data rates p99 verified; other gear pp88-96, PAB table p97, and trideo services p99 remain."}
+  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 and storage media/data rates p99 verified; sound gear pp92-96 verified; sight gear pp88-91, PAB table p97, and trideo services p99 remain."}
+  sound_equipment: {printed: "92-96", status: source_verified_section_closed, note: "Complete original instrument/synth and sound equipment tables and capability rules; p95 example ambiguity retained, SR3 adaptation unverified."}
   media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
   simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
@@ -91,6 +92,7 @@ records:
   - ["simsense-legacy-eligibility-p80-83", "fe5debd025a73471d49dd3d82e23e00ffe4b04b1"]
   - ["simsense-gear-legacy-p97-98", "1705d367601d04afaa88b36b136adc30da733da0"]
   - ["media-storage-legacy-p99", "8a8039ed5a34cefdc0c66b0c97d30c9fd44b571b"]
+  - ["sound-legacy-p92-96", "ad6673dab10c1afe595a93bdb940d485a73767a5"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -399,5 +401,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p99_pdf108"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-sound-legacy-p92-96
+    path: equipment/shadowbeat/sound-legacy-p92-96.yml
+    original_printed_pages: "92-96"
+    original_pdf_pages: "101-105"
+    commit_sha: "ad6673dab10c1afe595a93bdb940d485a73767a5"
+    readback_blob_sha: "75a4a3869db3ba518928af75d325fcd2677df434"
+    candidate_sha256: "5c4ea0a1737588c7ceff21efbc4fd44769c192d38c6657f527267538f01e3c02"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p92_pdf101", "printed_p93_pdf102", "printed_p94_pdf103", "printed_p95_pdf104", "printed_p96_pdf105"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
