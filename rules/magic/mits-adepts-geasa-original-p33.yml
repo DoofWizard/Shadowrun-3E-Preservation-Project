@@ -1,0 +1,36 @@
+id: rule.magic.mits-adepts-geasa
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '33'
+pdf_pages: '34'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  canonical_context: [procedure.magic.geas-management, subsystem.magic.geasa]
+  involuntary:
+    trigger: Magic loss; GM may apply a geas to one Power Point worth of powers to allow continued use when fulfilled.
+    removal_at_initiation: An involuntary geas may be dropped upon initiation.
+    deliberate_abandonment: Associated powers are lost permanently along with the offset Magic; the character may never take another geas or initiate again.
+  voluntary:
+    timing: When purchasing a power.
+    max_geasa_per_power: 1
+    one_geas_multiple_powers: allowed
+    cost_multiplier: 0.75
+    rounding: Round fractions upward to nearest 0.25 Power Point.
+    minimum_power_point_cost: 0.25
+    leveled_powers: Apply reduction to aggregate cost of all levels, then round.
+    gm_discretion: May reject restrictions that inadequately limit the power.
+    removal: Cannot be removed.
+    examples:
+      - {power: astral projection, normal_cost: 2, final_cost: 1.5}
+      - {power: body control, levels: 3, cost_per_level: 0.5, normal_cost: 1.5, discounted_cost: 1.125, final_cost: 1.25}
+  fulfillment:
+    broken: Affected power ceases functioning until geas is fulfilled again.
+    example: Night-only astral perception is unavailable during daylight.
+    separate_geasa: Breaking one does not break other adept geasa, unlike magician rules.
+    shared_geas: All powers bearing that restriction become unavailable when it breaks.
+    nongeased_powers: May also be affected if reduced Magic makes their power level exceed Magic Rating.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Adepts and geasa (p33, PDF34)'
+summary: 'FASA Corporation, Magic in the Shadows, FASA7907; original-source tabletop rules.'
