@@ -1,0 +1,43 @@
+id: rule.magic.mits-spell-design-parameters
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '49-50'
+pdf_pages: '50-51'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  design_order: [effect and category, type, range, target number, duration, Force, resistance Attribute, area effect, elemental effects if applicable, Drain Code]
+  approval: GM evaluates new spells and decides their category by method of effect; player-designed spells require a formula before learning, while GM-designed spells may be made available publicly or privately for standard learning. Review the Limits of Sorcery on p47 before design.
+  categories: [Combat, Detection, Health, Illusion, Manipulation]
+  type:
+    mana: Affects mind, spirit or magical energies; works on cybermodified living beings because Essence-paid cyberware is integrated into the organism. A mana illusion can affect a character with cybereyes or a directly visible rigger, but not through separate remote sensors. Mana generally has lower Drain than physical spells.
+    physical: Affects material targets including nonliving objects, cyberware and remote sensors; no astral-plane effect.
+  range:
+    touch: Unwilling target requires Melee Combat Test with target modifier -1; contact via successful counterattack by target also suffices; cannot combine with an unarmed attack intended to inflict damage.
+    line_of_sight: Visible or assensed targets within sight range.
+  base_target_numbers:
+    general_combat: {mana: Willpower, physical: Body or Object Resistance, magic: target Force, inanimate: Object Resistance, vehicle: Object Resistance plus Body plus half Armor}
+    detection: {mind: Willpower, directional_sense: 6, area_sense: SR3 p192 Detection Spell Table, nondirectional_nonarea_sense: 4}
+    health: {counter_effect: Power or Strength or equivalent rating of effect, mana_body_process: 4, beneficial_attribute: Attribute rating, adverse_attribute: 10 minus Essence, inner_body_beneficial_or_adverse: 10 minus Essence}
+    illusion: {physical_directed: Intelligence, mana_directed: Willpower, indirect: 4}
+    manipulation: {control: Willpower, elemental: 4, telekinetic_or_transformation: 4, barrier_or_fine_manipulation: 6}
+  duration:
+    instant: Begins and ends in casting action; consequences may persist. All combat and most damaging spells use this duration.
+    sustained: Effects end when maintenance stops; use for ongoing senses, searches, analysis, defense, transformation and perceptual or world changes.
+    permanent: Maintain until required time; otherwise effect is lost. Restoration of natural state including damage, disease and drug or poison effects is suitable, as are minor transformations that purify or create natural compounds from organic sources. Physical cosmetic effects may be sustained or permanent; nonrestorative game bonuses generally cannot be permanent, subject to GM approval.
+    permanent_base_turns_by_drain: {L: 5, M: 10, S: 15, D: 20}
+    acceleration: Divide base time by Sorcery successes allocated to duration; those successes do not increase spell effect.
+  force:
+    maximum_formula_force: Minimum of applicable Spell Design or defaulted Knowledge Skill and library or lodge rating.
+    bonus_guideline: Most spell bonuses should not exceed Force.
+  resistance:
+    unwilling: Target tests targeted or appropriate designer-selected Attribute, usually Body or Willpower.
+    voluntary_only: Any resistance causes failure.
+    detection_and_illusion: Unaware unwilling targets always resist.
+    inanimate: No Spell Resistance Test, including vehicles.
+    threshold: Direct body or mind alteration or damage by manipulation requires a threshold; generally half Willpower for mana or half Body or Barrier Rating for physical, rounded down. Net caster successes after resistance must equal or exceed the threshold or the spell fails.
+    ranged_attack_exception: Elemental and some telekinetic manipulations that create a projected effect rather than directly affect the target need no threshold.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition spell design parameters, FASA7907, printed 49-50/PDF 50-51'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG design sequence, type, range, category-specific target numbers, duration, Force and resistance rules.'
