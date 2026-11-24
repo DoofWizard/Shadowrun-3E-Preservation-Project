@@ -81,6 +81,19 @@ postcompletion_mechanics_recovery:
     pdf_pages_reviewed: [45, 46, 47, 48, 49]
     note: 'Printed p45/PDF46 is illustration; remaining original pages were independently inspected for tables and exact math. Two rule-procedure contributions below, noncontiguous, no automatic engine or source completion.'
   verified_semantic_records:
+    - id: rule.karma.srcomp-team-karma-contribution-cutoff-p82
+      path: rules/karma/srcomp-team-karma-contribution-cutoff-p82.yml
+      range_printed: [82, 82]
+      range_pdf: [83, 83]
+      content_class: rule_exact
+      commit: 325b97c8ece4931bed6ef3765245f95ecef72ad1
+      blob: cdc2a7451a978581796ebe62378cdac26adc2e41
+      baseline_sha256: 949b493b106716dc6a446bd98a9edd2b9e6de1d6dfedf1824e3f28a56aadd951
+      candidate_sha256: d56871d4113f2a432b43acf0e9c06de650eb85d13b5e85998fa30bafec1af736
+      immutable_sha256: 6f799d7dde34f60805a0062df59f16e6a3b435fd78a5a826cb373e368ff574be
+      original_source_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+      gate: verified
+      contiguous_advance: false
     - id: rule.karma.srcomp-equalized-karma-pool-rate-p82
       path: rules/karma/srcomp-equalized-karma-pool-rate-p82.yml
       range_printed: [82, 82]
@@ -1211,3 +1224,26 @@ srcomp_balancing_karma_nuyen_p79_80_original_review_2026_11_23:
   scoped_natural_section_mechanical_closure: true
   new_global_authorized_pages: 0
   whole_book_or_executable_engine_certification: false
+
+srcomp_karma_pools_team_karma_p82_83_review_2026_11_23:
+  original_pdf_sha256: 8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5
+  actual_verify_source: source_pdf_hash_verified
+  source_manifest_verified_blob: 048a4e03f4362b883635fa153545502c0436328d
+  printed_pages: [82, 83]
+  physical_pdf_pages: [83, 84]
+  field_coverage:
+    equalized: 'All characters every twentieth point; original rate differs from shared legacy option.'
+    staggered: 'Existing numeric tiers retained; printed transition at ten remains explicitly ambiguous.'
+    permanent_loss: 'Existing optional permanent-loss rule retained; standard purchased successes burn pool points; other uses may be designated with group agreement.'
+    team_karma: 'Stable group; formation, refreshments and burns, membership, multiple-team surcharge, majority vote, GM tie, departure loss and good-terms alternative, death/replacement and NPC team guidelines reused; timing and suggested cutoff recovered.'
+  reused_records:
+    - {path: rules/karma/srcomp-staggered-karma-pool-intervals-p82.yml, blob: 4d172435762435fd6951f680ea375395cb7d3a3a}
+    - {path: options/karma/permanent-karma-loss.yml, blob: 6e422be21c510992f0c57aba120191e7fc13078e}
+    - {path: rules/karma/srcomp-team-karma-pool-procedures-p82-83.yml, blob: 6383e662906fd4ac1db8e20b9002d02cef2211cd}
+  new_records:
+    - {path: rules/karma/srcomp-equalized-karma-pool-rate-p82.yml, commit: 1cde52d213d8a7ef115db3624e98816fe05b3629, blob: 9f796b9077dfa70c4cb42b84a10ed0a5789d79e7, gate: verified}
+    - {path: rules/karma/srcomp-team-karma-contribution-cutoff-p82.yml, commit: 325b97c8ece4931bed6ef3765245f95ecef72ad1, blob: cdc2a7451a978581796ebe62378cdac26adc2e41, gate: verified}
+  remaining_shared_legacy_conflict: options/karma/equalized-karma-pools.yml
+  source_specific_field_coverage: complete_for_karma_pools_and_team_karma
+  global_contiguous_pages: 0
+  executable_engine_validation: false
