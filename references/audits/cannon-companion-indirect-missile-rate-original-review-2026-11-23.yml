@@ -1,0 +1,78 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+original_source:
+  physical_pdf_pages: 130
+  printed_review_pages: [99, 100, 101, 102]
+  physical_review_pages: [100, 101, 102, 103]
+  actual_verify_source: source_pdf_hash_verified
+  live_input_manifest_blob: 6df6a5eacda6c19afa0ddb9da2a78f1ce792cfe2
+  preflight_self_tests: 29
+  matched_executable_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+  evidence: Original page images visually inspected; game mechanics reviewed separately from publication artwork.
+sections:
+  - name: Indirect Fire
+    printed_pages: [99, 100, 101]
+    retained:
+      - path: procedures/combat/indirect-fire.yml
+        blob: 5a018f0515d386f18c8fc6b8887d6459d7102f8f
+        fields: guidance categories, spotting skill and target number, pool restriction, lock maintenance and lost-lock scatter, attack and damage resolution
+      - path: rules/combat/cannon-companion-battletac-network-game-actions-p53-54.yml
+        blob: cac0a9747444c9f54071794c39d53255edac30cd
+        fields: network and remote trigger conditions
+    supplemented_fields: acquisition action and notification, failed lock, refresh distinction, equipment eligibility, barrier reference, concurrent action modifier, pool and sensor dice exclusions, zero scatter
+    remaining: Printed example arrival phase differs from printed timing rule; no engine precedence chosen.
+  - name: Maximum Rates of Fire
+    printed_pages: [101]
+    retained:
+      - path: rules/combat/maximum-rates-of-fire.yml
+        blob: 0972ef7e5cb4f25522078223bf5df6d3454407c9
+        fields: four class-specific limits and no per-turn cap
+    supplemented_fields: action types, short-burst references, mandatory class-specific game burst, eligible customization and burst partition
+    remaining: Historical receipt provenance of shared record.
+  - name: Missile Combat
+    printed_pages: [101, 102]
+    retained:
+      - path: procedures/combat/missile-combat.yml
+        blob: f7a61c8682b49cf5dfe272caf23638dda1a01004
+        fields: manual and sensor tests, lock options, dice, scatter and flight duration
+      - path: rules/combat/sr3-core-rocket-missile-numeric-p120.yml
+        blob: 4797f464ce21d9fdbf165d0cea85eefc24b482f9
+        fields: immutable SR3 core timing and scatter lineage
+    supplemented_fields: standard modifiers, vehicle skill substitution, sensor-equipped portable eligibility, detection failure, rounding, modifier references, timing applicability and phase
+    remaining: CC example, CC rule and SR3 timing precedence explicitly unresolved.
+confirmed_records:
+  - path: rules/combat/cannon-companion-indirect-fire-action-qualifiers-p99-101.yml
+    commit: d9f946ef3da9206177d2c181cfe269ce2ff861b4
+    blob: 84e2b60dbc3b4c23010a3c72e83a49336e0f74eb
+    candidate_sha256: d7dc426f696c5429b4b61c9b8f6a4aaeb7b1b2fada0fdd7881c05e2fd2579470
+    immutable_sha256: 2e60ec34d68cdac504cdef1d816877d8dc10668c9cbeab1c86efdb01ccd26600
+    index_commit: 295cab047322131e1e1bbaf3593955ef781b2942
+    index_blob: 2deb6878b7bb8f3264d84ce6af1a1d360ea748d1
+    gate: verified
+  - path: rules/combat/cannon-companion-firing-mode-action-qualifiers-p101.yml
+    commit: 625faecfae537ff1ac372034072d4b023e0ab5f5
+    blob: d3db160f5faf564a3f55b9b5e7aea2fa9459b29e
+    candidate_sha256: 3482aa85ba1eee0c37d090dd87078de9e0dfba7515276c9a830554f12c507042
+    immutable_sha256: 1da19b2a393af1947b4ea0e54d1721a011c094ae6f61225624b00738e29c5a4b
+    index_commit: 8b6f781e32432181e708e8ce39eeae7d303e60ad
+    index_blob: 8790f6c7a5d5012cfee77c94f4161963db52e1c8
+    gate: verified
+  - path: rules/combat/cannon-companion-missile-resolution-timing-qualifiers-p101-102.yml
+    commit: dff94c2fa65581f2597ab63071e7ff5ceccff6f4
+    blob: 94692382cca025adbd3371dd7f0b97eca0183510
+    candidate_sha256: 53786c9454a41878e5d30670b993875b68b5b9fc54f44b86dc02d04b375ec47e
+    immutable_sha256: 138547a51504d6793a940033a0ded7a8458f9d8c4de0ceb6099aff9280edf25d
+    index_commit: c00faa3c900bbfc8068aeb8d01f783ea6b941f2e
+    index_blob: 5ac25d2fce517bfbc2d3d6e0fffae47b67ce409c
+    gate: verified
+closure_scope: Original-source field reconciliation, subject to noted timing and historical provenance exceptions.
+whole_book_closed: false
+globally_authorized_pages: 0
