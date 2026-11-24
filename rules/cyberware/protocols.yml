@@ -1,21 +1,42 @@
 id: rule.cyberware.protocols
 record_type: rule
-name: "Cyberware Data Protocols"
+name: Cyberware Data Protocols
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '47'
+pdf_pages: '47'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware Data Protocols
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p47.
 effective: {status: current, source: source.mm, page: 47, basis: extends}
 scope:
-  applies_to: ["linked cyberware devices exchanging or broadcasting data"]
+  applies_to: [linked cyberware devices exchanging or broadcasting data]
 resolution:
-  summary: "Data transferred between cyberware must be usable by the destination device; image, audio and simsense data require compatible display/playback devices. Standard radio and simsense broadcasts use the normal broadcast encryption/decryption rules, while rigger remote-control networks use their own protocol rules. Gamemasters determine which protocol a device or broadcast uses where the source does not specify."
-  inputs: ["data type", "source device", "destination device", "protocol"]
-  outputs: ["whether the data can be used or translated"]
+  summary: Successful transfer of data does not guarantee that the receiving device supports its format; distinct radio, simsense and remote-control network protocols govern communication.
+  inputs: [data type, source device, destination device, protocol]
+  outputs: [whether data can be used or translated]
   steps: []
+data:
+  formats: [text, image, sound, simsense]
+  playback_example: A simsense recording cannot be played by a display link or image link but can be played by a simrig.
+  standard_radio_includes: cellphone calls
+  simsense_broadcast_transceivers: [simlinks, remote control decks]
+  rigger_remote_control_network_protocol: distinct from ordinary simsense broadcasts
+  protocol_and_translation_decision: GM
+  broadcast_encryption:
+    standard_radio_and_simsense: SR3 p289 Broadcast Encryption rules
+    remote_control_networks: M&M p25 rigger protocol emulation and decryption modules
+  jamming:
+    standard_radio_and_simsense: SR3 p289 ECCM rules
+    remote_control_networks: SR3 and Rigger 2 rules
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [subsystem.cyberware.interconnectivity]
 sources:
-  - {source: source.mm, page: 47, relation: extends, note: "Protocols / Broadcast Encryption-Decryption / Jamming"}
+  - {source: source.mm, page: 47, relation: extends, note: Protocols, Broadcast Encryption/Decryption and Jamming}
 notes: []
