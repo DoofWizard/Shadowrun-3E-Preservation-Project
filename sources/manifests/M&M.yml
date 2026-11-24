@@ -845,6 +845,32 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_vehicle_medical_clinic_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp138-139/PDF139-140, copyright printed p5/PDF5, enlarged table."
+    image_sha256:
+      PDF139: "b43d1d15e363b3d33e18c7a8c35433d9f7c51a61cdf5d5263989e1f1aa7c3928"
+      PDF140: "1472084710e2a5cb4b183f61f365e807c447f9f496fed0c56051612f655812b4"
+    records:
+      - id: entity.medical.fasa7126-vehicle-medical-clinic
+        path: entities/medical/fasa7126-vehicle-medical-clinic.yml
+        printed: "139"
+        pdf: "140"
+        commit: "7192ce9c14ce19d2306e490dae33fc81a16c03a3"
+        blob: "5292759a87f682e9397c6e0554e6aa2cb7826f9a"
+        candidate_sha256: "f274e622e8bd8cfc192c8ed0da82208ee983aa325de7ac74aa8f1113774b13fa"
+        baseline_sha256: "8b50296e8fe24ce0ae12eaebf3439764649862a5c5012f80914c45350a16ac47"
+        immutable_sha256: "e52bddef322a9e9a30b7602041485cdecb787f90f380cb95860bd795973f8337"
+        gate: verified
+        recovery_inspect: verified
+        fields: "All four design and ten customization rows; cubed cost formulas, availability, time, skills, equipment, target number, CF and load."
+    scoped_natural_sections_reconciled:
+      - "Mobile Medical Shops and Vehicle Modification, pp138-139/PDF139-140, with the independently registered mobile medical shop record above."
+    exceptions: "Patient space is excluded from the original modification table; the coordinator-owned Rigger 3 Revised people-space rules are not duplicated or altered. Valkyrie remains separately indexed."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
