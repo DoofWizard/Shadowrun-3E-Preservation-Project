@@ -1,0 +1,28 @@
+id: rule.hazards.target-wastelands-radiation-shielding-qualifications
+record_type: rule
+status: ingested
+source: source.fanpro-10653
+printed_pages: "111-113"
+pdf_pages: "112-114"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Fictional radiation shielding and magical-domain qualifications
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  extends: rule.hazards.target-wastelands-radiation
+  mundane_shielding:
+    rad_suit:
+      page_111: Shielding discussion specifies complete protection below 1 rad per minute and little protection above that rate; prolonged exposure may still cause slight irradiation.
+      page_113: Equipment entry specifies protection up to 1 rad per minute and reduction by 1 rad per minute at higher rates.
+      relationship: Preserve the boundary wording difference; do not infer a new rule.
+    ordinary_barrier_spells: No radiation protection.
+  special_spells:
+    applies_to: [entity.spell.radiation-shield, entity.spell.radiation-barrier]
+    excess_radiation: Radiation above the absorption limit affects the subject normally.
+  spirits:
+    direct_radiation_effect: None in either physical or astral form.
+    background_count: Existing environmental background-count and toxic-domain rules still apply.
+  mutation:
+    animals: Exposure may produce mutant critters under the rules on printed p113 and in Critters.
