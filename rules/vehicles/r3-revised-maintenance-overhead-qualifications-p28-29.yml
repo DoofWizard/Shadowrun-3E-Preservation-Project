@@ -1,0 +1,40 @@
+id: rule.vehicles.r3-revised-maintenance-overhead-qualifications-p28-29
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '28-29'
+pdf_pages: '30-31'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+data:
+  canonical_reference: rule.vehicles.maintenance-overhead
+  existing_canonical_blob: 23843646d9b4f882dcf8fac881a8b4b8bcb0b626
+  relation: revised_source_qualification_of_historical_normalization
+  cost_value:
+    base: published_vehicle_base_nuyen_value
+    add: value_of_accessories_and_modifications
+    exclude_actual_purchase_price_adjustments: [Availability, Street Index]
+  overhead_formula:
+    round_up_component: cost_value_divided_by_100
+    add_after_rounding: past_month_stress_points_times_10
+  time_scope: previous_month_of_game_time
+  stress_incurrence: gamemaster_determines_when_vehicles_incur_stress
+  neglect_recovery:
+    current_month_maintenance_due_separately: true
+    failed_vehicle_build_repair_test:
+      payment_consumed: true
+      missed_month_modifier_remains: true
+  source_example:
+    cost_value_nuyen: 1250
+    stress_points: 0
+    monthly_overhead_nuyen: 13
+  distinction: Maintenance rules represent normal-use degradation, not the technological obsolescence SOTA rules in Shadowrun Companion pp85-87.
+  provenance:
+    publication: Rigger 3 Revised
+    publisher: FanPro
+    catalog: FanPro10662
+    edition: Shadowrun Third Edition
+    original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+headline: FanPro10662 Rigger 3 Revised vehicle maintenance qualifications, printed pp28-29/PDF30-31
+summary: Fictional Shadowrun Third Edition maintenance rules; restore the published-value basis, rounding order, and failed catch-up test consequences without modifying historical canonical records.
+framing: reference_exact
