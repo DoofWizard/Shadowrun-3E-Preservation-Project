@@ -1,19 +1,33 @@
 id: entity.bioware.synaptic-accelerator
 record_type: entity
-name: "Synaptic Accelerator"
+name: Synaptic Accelerator
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '74-75'
+pdf_pages: '75-76'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   grade: cultured
   levels:
-    1: {bio_index: 0.4, availability: "6/12 days", cost_nuyen: 75000, street_index: 2, legality: "5P-Q"}
-    2: {bio_index: 1.0, availability: "6/12 days", cost_nuyen: 200000, street_index: 2, legality: "5P-Q"}
-links:
-  uses: [rule.initiative.initiative]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.4, availability: '6/12 days', cost_nuyen: 75000, street_index: 2, legality: 5P-Q}
+    '2': {level: 2, bio_index: 1.0, availability: '6/12 days', cost_nuyen: 200000, street_index: 2, legality: 5P-Q}
+data:
+  game_effects:
+    available_levels: [1, 2]
+    initiative_bonus_per_level: 1D6
+    cumulative_levels: true
+    incompatible_systems: [wired reflexes, move-by-wire]
+    initiative_bonus_exclusions: [rigging, decking, astral Initiative]
+  stress_effects:
+    Light: jumpiness
+    Moderate: {effects: unsteadiness and rapid involuntary eye movement, reaction_test_tn_modifier: 1}
+    Serious: {effect: reduced coordination, physical_activity_tn_modifier: 1}
+    Deadly: {accelerator_initiative_dice_rolled: false, value_per_accelerator_die: 1}
+links: {uses: [rule.initiative.initiative], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "74-75", relation: defines, note: "Synaptic Accelerator description, game effects, stress effects and statistics"}
-notes:
-  - "Each level adds a cumulative +1D6 to Initiative; incompatible with wired-reflex or move-by-wire systems."
+  - {source: source.mm, pages: '74-75', relation: defines, note: Synaptic Accelerator effects, Stress and market table}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp74-75/PDF75-76: Synaptic Accelerator game statistics'
+framing: reference_exact
