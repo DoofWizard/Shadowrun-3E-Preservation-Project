@@ -1,21 +1,44 @@
 id: entity.bioware.thermosense-organs
 record_type: entity
-name: "Thermosense Organs"
+name: Thermosense Organs
 domain: bioware
 status: ingested
-intrinsic:
-  grade: cultured
-  bio_index: 0.5
-  availability: "10/12 days"
-  cost_nuyen: 25000
-  street_index: 2
-  legality: "Legal"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+source: source.mm
+printed_pages: '75'
+pdf_pages: '76'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {grade: cultured, bio_index: 0.5, availability: '10/12 days', cost_nuyen: 25000, street_index: 2, legality: Legal}
+data:
+  game_effects:
+    sense: nonvisual heat detection
+    test: Perception
+    maximum_distance_meters: 10
+    eligible_targets: [life forms, heat-producing objects]
+    base_target_number: target Signature Rating
+    typical_human_sized_biological_signature: 6
+    troll_signature: 5
+    success: detects nearby heat source
+    additional_successes: may reveal proximity, movement and heat output, but few other details
+    invisibility_prevents_detection: false
+    blind_fire_modifier_when_attacking_invisible_target_using_thermosense_alone: 8
+  heat_sensing_table:
+    - {condition: target within 5 meters, tn_modifier: -1}
+    - {condition: target within 2 meters, tn_modifier: -2}
+    - {condition: warm environment such as direct sunlight, tn_modifier: 1}
+    - {condition: extremely hot environment, tn_modifier: 2}
+    - {condition: cool environment, tn_modifier: -1}
+    - {condition: extremely cold environment, tn_modifier: -2}
+    - {condition: every two additional heat-radiating persons or objects within 10 meters, tn_modifier: 1}
+    - {condition: thermal smoke, tn_modifier: 6}
+  stress_effects:
+    Light: headaches and unidentified sensations
+    Moderate: {effect: false heat-source readings, timing_and_frequency: gamemaster discretion}
+    Serious: {effect: confused sensory input, all_perception_tests_tn_modifier: 2}
+    Deadly: thermosense cannot be used
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 75, relation: defines, note: "Thermosense Organs description, heat-sensing table, stress effects and statistics"}
-notes:
-  - "Provides a non-visual heat-sense Perception Test for nearby heat-radiating beings and objects; invisibility that targets vision does not defeat this sense."
+  - {source: source.mm, page: 75, relation: defines, note: Thermosense Organs effects, Heat-Sensing Table, Stress and market table}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p75/PDF76: Thermosense Organs game statistics'
+framing: reference_exact
