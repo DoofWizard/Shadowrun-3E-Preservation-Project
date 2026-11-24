@@ -1,21 +1,28 @@
 id: entity.bioware.sleep-regulator
 record_type: entity
-name: "Sleep Regulator"
+name: Sleep Regulator
 domain: bioware
 status: ingested
-intrinsic:
-  grade: cultured
-  bio_index: 0.3
-  availability: "4/4 days"
-  cost_nuyen: 20000
-  street_index: 1
-  legality: "Legal"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+source: source.mm
+printed_pages: '74'
+pdf_pages: '75'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {grade: cultured, bio_index: 0.3, availability: '4/4 days', cost_nuyen: 20000, street_index: 1, legality: Legal}
+data:
+  game_effects:
+    nightly_sleep_hours: [3, 4]
+    maximum_hours_without_sleep_penalties: 48
+    modifies_healing_periods: false
+    standard_recovery_rest_required: true
+  stress_effects:
+    Light: occasional insomnia
+    Moderate: {effects: irritability and sleep deprivation, charisma_test_tn_modifier: 1, social_skill_test_tn_modifier: 1}
+    Serious: {effects: [chronic insomnia, nightmares, waking hallucinations, daydreaming], perception_test_tn_modifier: 2, reaction_modifier: -1}
+    Deadly: {all_activities_tn_modifier: 1, damage_recovery_allowed: false, until: regulator healed}
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 74, relation: defines, note: "Sleep Regulator description, game effects, stress effects and statistics"}
-notes:
-  - "Reduces required daily sleep to three or four hours and extends the period the character can go without sleep, without shortening healing/rest requirements."
+  - {source: source.mm, page: 74, relation: defines, note: Sleep Regulator effects, Stress and market table}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p74/PDF75: Sleep Regulator game statistics'
+framing: reference_exact
