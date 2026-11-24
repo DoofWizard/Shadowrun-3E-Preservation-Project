@@ -1,0 +1,62 @@
+id: audit.cc.handedness-skills-original-review-2026-11-23
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+actual_verify_source_status: source_pdf_hash_verified
+original_pdf_pages: 130
+printed_pages_reviewed: [94, 95, 96, 104, 105]
+physical_pdf_pages_reviewed: [95, 96, 97, 105, 106]
+image_review_note: "Printed p95/PDF96 is an illustration. The skills section begins near the bottom of p104 and ends above Small Unit Tactics on p105."
+script_blobs:
+  connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+preflight_self_tests_passed: 29
+field_reconciliation:
+  - section: Ambidexterity and Two-Weapon Fighting
+    printed_pages: [94, 96]
+    reused:
+      - {path: options/combat/two-weapon-fighting.yml, blob: d997e9c31de0bd78e833abc2c61853c26edce534, fields: "Existing ranged class and modifier conditions, separate tests, GM crossbow exception, melee hand and size restrictions, dice rounding, pool limit, Reach and Damage Code routing, untrained default, Edge thresholds and weapon-specific penalty reductions."}
+      - {path: rules/combat/sr3-core-attacker-situational-numeric-p112.yml, blob: 34dfbdc5900e78e3e8524f578640ff38988ea1e8, fields: "Core second-firearm rule retained read-only."}
+    new_fields: "General off-hand test modifier and Edge reduction; Off-Hand skill classification; same action-type restriction and imaging exclusions; primary/secondary eligibility table including nested categories."
+    original_table_column_counts: {primary: 10, secondary: 17}
+    worked_examples: "Printed p96 examples agree with shared arithmetic: primary skill 6, half secondary rating 4 gives 2, primary pool limit 6; Edge 6 permits normal secondary rating 6, giving 3 dice. The separate ranged Edge example is already captured by the shared option."
+    source_local_fields_reconciled: true
+  - section: Skills
+    printed_pages: [104, 105]
+    compared_entity_blobs:
+      armor-build-repair: ac38346f01e7fe13a1352572392c2c8b70762e00
+      blowgun: 76cf3cdf4025a6fd9d0dea9438c78082db189dc4
+      bracer: cf559361c4be40b4c1b54f394e17964e793746ae
+      gun-cane: 21c2fcbdeb276d77d4239df70df04dcbc06e95f2
+      gyrojet-pistol: 386413c49792b7a3ab979311275525349ff68dc5
+      eye-gun: e24213581d2f51d8b7d328c4c5f12ad9ef1008d3
+      off-hand-clubs: f515e06872e231e56f02f6544976a9058d2612d9
+      off-hand-cyber-implant-combat: 5893705a68bae433be11060298622a7c04c02a7b
+      off-hand-edged-weapons: 66d7e20ae37e5c2f3625a86bf8f8a20af4d4cbea
+      off-hand-whips: ada342a4b91d88c79b28da3e662f86b5f3c6a198
+      oral-gun: 9ea3ad9839e0ae4b1b82a6ad0f3a1b153e57a02b
+      oral-strike: 1b2812df7086afa4f06f3fdded9ba96b42a75bf8
+      parachuting: b0a707ea8f1a53ac4704bb024eb99c0be161392c
+      small-unit-tactics: fa300f64c389f161c6f105cbc6a98b2edcbe6b98
+      spray-weapons: 59e5f5278627f5eea687edbc14876a099d9d3094
+    entity_path_pattern: entities/skills/{key}.yml
+    compared_fields: [Active Skill type, linked attribute, default routes, specialization list, scope of use]
+    result: "All 15 definitions match existing fields in substance. The shared two-weapon option supplies the explicit secondary-use context for all four Off-Hand skills. Armor Build/Repair scope is all armor; Spray Weapons scope covers semi-liquid dispersal equipment. No new duplicate entity required."
+    linked_attributes_table: {path: rules/skills/cannon-companion-linked-attributes-defaults-original-p114.yml, blob: 1787d38c073a288df1efb1b9363b5ceb5639e1fd}
+    source_local_fields_reconciled: true
+verified_transactions:
+  - {path: rules/skills/cannon-companion-offhand-general-test-modifiers-p94-96.yml, commit: b48e434940df946bc150f204a49982fb98d548d7, blob: 80e23237ad5cc8c31955bc09b6a0a834265a4d9b, candidate_sha256: 3b3f0c5bf2eb9d38a4bf6a040934977f3268230ec3cb5104e63c751cdc52b2c0, immutable_sha256: 058c158c31a2a531c1859bfafa3a3d28103ff60db8fe011bf1635c951f93abc5, gate: verified, index_commit: 9f0f83708e3e5fa18d1838df6862f8de133f7ce4, index_blob: d93eed7292f853183636ea3b1ebd4c212e6884c6}
+  - {path: rules/combat/cannon-companion-two-weapon-melee-eligibility-p96.yml, commit: 71617b4d3892a70ff6febf326dbd77832f10a9a6, blob: d2b9b480dcdef246741b80184495a10089ad723e, candidate_sha256: a653e4b84952295e0af3db66ad878be01e2f22c249810f6f55bb8d8672625d8a, immutable_sha256: 5235ba933e696e0ffe0f7d7add419a72a17269feccda7b315c2af559f6fbc170, gate: verified, index_commit: f977691e0c3d85d24cf64c7fa9568a3929187fc2, index_blob: 5b1644b5f3da29040504624de4572d0817b04574}
+  - {path: rules/combat/cannon-companion-simultaneous-action-compatibility-p94.yml, commit: cbc193fd3312014adce494c9ba76cdb962e113bd, blob: 55579f37a53094206b56f79d02ba468166d6144b, candidate_sha256: 86f8d71bfc0bb9289360b503b9754be0f0ea271baaaed927bb9df4189b914c03, immutable_sha256: b042ca92e596995feb288a0cb734d6f01504a577c6c3712fd229798a4e93502e, gate: verified, index_commit: 64eb375ac4318bde34a9612b5264e76f873a5309, index_blob: e60dec0e7596eee4ac3925b30594a3af128f9e0d}
+editorial_review: "Original page images reviewed before freezing baseline; same-substance candidate independently checked against original source. All human-readable fields identify fictional tabletop rule, source and conditions, without adding real-world instructions. Exact candidate bytes confirmed at commit and live path; all three individual indexes read back."
+remaining:
+  - Historical shared-record transaction provenance is not newly established.
+  - External BattleTac bonus dependency and smoke source precedence remain open.
+  - Further advanced melee and equipment sections need original-field reconciliation.
+whole_book_closed: false
+globally_authorized_pages: 0
