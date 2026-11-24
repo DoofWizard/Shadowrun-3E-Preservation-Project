@@ -1,0 +1,39 @@
+id: rule.surgery.implant-detection
+record_type: rule
+name: Detecting Implants
+domain: surgery
+status: ingested
+source: source.mm
+printed_pages: "145"
+pdf_pages: "146"
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 145, basis: defines}
+data:
+  applicability: Undocumented implants may interfere with surgery, first aid and medical care; use these tests when the patient has not disclosed implants or cannot do so.
+  visual_check: Doctor makes a Perception Test against the Concealability of implants that can be seen, when a rating exists.
+  equipment: Clinic and hospital implant scanners have the facility rating.
+  separate_tests: Cyberware and bioware require separate scans.
+  base_scan_minutes: 60
+  extra_successes: Extra successes may shorten the scan.
+  zero_successes: Only the patient's basic Essence or Bio Index is revealed.
+  target_numbers_clinic_hospital:
+    cyberware_basic: [4, 3]
+    cyberware_alpha: [6, 5]
+    cyberware_beta: [8, 7]
+    cyberware_delta: [10, 9]
+    bioware_basic: [6, 5]
+    bioware_cultured: [10, 9]
+    nanoware: [8, 7]
+  details_by_successes:
+    "1": Implant or nanite type
+    "2": Implant manufacturer and ratings
+    "3": Grade
+    "4": Stress or degradation amount
+    "5": Applied options and nanite manufacturer
+  scope_note: The source explicitly gives separate cyberware and bioware scans and their duration; the table also includes nanoware. No additional nanoware scan duration or test rule is inferred.
+sources:
+  - {source: source.mm, page: 145, relation: defines, note: Detecting Implants and Implant Detection Table}
+notes: []
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed p145/PDF146: Detecting Implants"
+framing: reference_exact
