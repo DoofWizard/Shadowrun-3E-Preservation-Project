@@ -1,49 +1,49 @@
 id: rule.cyberware.magic-interaction
 record_type: rule
-name: "Cyberware and Magic Interaction"
+name: Cyberware and Magic Interaction
 domain: cyberware
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 46
-  basis: extends
-
+source: source.mm
+printed_pages: '46-47'
+pdf_pages: '46-47'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware and Magic
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF pp46-47.
+effective: {status: current, source: source.mm, page: 46, basis: extends}
 scope:
-  applies_to:
-    - "implanted cyberware"
-    - "spells and adept powers interacting with an implanted character"
-  excludes:
-    - "cyberware removed from the body"
-
+  applies_to: [implanted cyberware, spells and adept powers interacting with an implanted character]
+  excludes: [cyberware removed from the body]
 resolution:
-  summary: "Implanted cyberware paid for with Essence is treated as an integral part of the body for magical targeting and transformation; it generally cannot be targeted separately by spells or adept powers."
-  inputs:
-    - "whether cyberware is implanted"
-    - "magical effect"
-  outputs:
-    - "whether the cyberware can be separately targeted/affected"
+  summary: Cyberware paid for with Essence forms part of the character for magical effects; removed devices regain independent targeting eligibility.
+  inputs: [implantation state, magical effect]
+  outputs: [targeting, transformation, enchanting eligibility]
   steps: []
-
+data:
+  implanted_paid_with_essence:
+    separate_spell_targeting: false
+    combat_examples: [Wreck, Ram]
+    detection_examples: [Catalog, Analyze Device]
+    repair_spell_example: Fix
+    transformation: A transformation such as Shapechange changes the implants with the character; they cannot be used in the transformed form.
+    separate_adept_power_targeting: false
+    adept_examples: [Distance Strike, Smashing Blow]
+    adept_target: character's body
+  removed_implant: May be targeted as an ordinary device.
+  enchantment:
+    possible: true
+    must_precede_implantation: true
+    example: implanted weapon focus
+    visible_through_astral_perception: true
+    vulnerable_to_astral_attack: true
+    reference: Magic in the Shadows p39
 links:
   uses: []
-  affects:
-    - subsystem.magic
+  affects: [subsystem.magic]
   modified_by: []
-  interacts_with:
-    - entity.cyberware.cyberware
-
+  interacts_with: [entity.cyberware.cyberware]
 sources:
-  - source: source.mm
-    page: 46
-    relation: extends
-    note: "Cyberware and Magic"
-  - source: source.mm
-    page: 47
-    relation: clarifies
-    note: "Continuation: targeting, transformation, adept powers, enchanting"
-
-notes:
-  - "Removed cyberware can be targeted as a normal device."
-  - "Pre-implant enchanting is referenced to Magic in the Shadows."
+  - {source: source.mm, page: 46, relation: extends, note: Cyberware and Magic}
+  - {source: source.mm, page: 47, relation: clarifies, note: Targeting, transformation, adept powers and enchanting}
+notes: []
