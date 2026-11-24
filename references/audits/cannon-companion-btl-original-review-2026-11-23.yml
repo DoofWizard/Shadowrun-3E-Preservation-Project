@@ -1,0 +1,82 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+original_source:
+  printed_pages: [65, 66, 67, 68, 69]
+  physical_pdf_pages: [66, 67, 68, 69, 70]
+  actual_verify_source: source_pdf_hash_verified
+  live_input_manifest_blob: 3f0d34d620aa3f6953c9bec0e78f2a24934fdbbe
+  preflight_self_tests: 29
+  evidence: Same freshly authenticated original and exact executable scripts as skillsoft programming audit; directly reviewed all BTL paragraphs and tables on printed pp65-69.
+retained_core_and_external:
+  core_playback: {path: rules/skills/sr3-core-btl-playback-formats-effects-p296.yml, blob: b16bda720daf5db7d6929b3d8509c87e55c2078c}
+  general_addiction: {path: rules/chemistry/addiction.yml, blob: 75734a4b1f24b52d2f3b744d88951c6dd56d1636}
+retained_base_cost_entities:
+  dreamchip: 13527a7f5c80a6a97b961968e70ecdb100baa942
+  moodchip: 0f43857f1c4860860cb1ef46a1ebc20c77e24051
+  personafix: ee423bc97d47bac896d69af7df78991ad072223b
+  tripchip: 3bdf81b911d44a52b6f4a7b275eecd826e290260
+  qualification: All four numeric price pairs, Availability, Street Index and legality match the existing records; the original table's displaced column headings require separate label-order adjudication before certifying exact assignment of the two prices.
+retained_btl_option_records:
+  black-death: d8af3afef7cfd7cab86e4cbd0a1b6119e201808e
+  black-night: 3edf80f9a6d1edc92bd9e190b4e539b1f46bb926
+  cluster: 34c6c398a01f54ebad582a6ab0b6061c3adfa500
+  defective: a7371a6ebb512f841774094d81f2de4c8cc8a459
+  degrading: b7b3002c80a440b9b33a799bd7ebbec9fba8a0df
+  implant: 1d9b48a907a9a3b6bd0841f2b5d4a3fa8df1f6cd
+  one-shot: 32e94647d07d5e447818a879bbab5ab94271d7e4
+  optimization: a63c24b9b8f1fc80fdce5b862475ba09325a95b2
+  partial-peak-controls: 67cebf2c361ee0714e901bfba06d87947462e13e
+  personalized: 3836e734e32ac762a0d6ed0ba1c167448eafdb65
+  polypov: 2c23490c7bed91bc5fa40e72d28d9fc12c905a59
+  psychotropic: cea89f7636a1fa283937c795be1b392061895a3e
+  ras-override: 4860ac2b53e749b0476a43214e6a05e15ee08feb
+  rough-cut: 22f9e0a158066b0d67bc19c32de419eaeca9f605
+  timer: d650e6d2c24cad425177a6b3657f8242a38cda8d
+sections:
+  - name: BTL Formats
+    fields: Original core format definitions reused, Full-X qualification and modified deck/chip compatibility and timed-use distinction supplemented.
+  - name: Modifying Chips and Decks
+    fields: Four game tests covering deck conversion, detection, longevity and RAS changes; original failure, toolkit and legality conditions.
+  - name: BTL Side Effects
+    fields: Attribute loss GM condition, withdrawal box and dice penalties, personalized habit, fourteen addiction table rows.
+  - name: Types of BTL Chips
+    fields: Four entity records, intensity/rating distinction, mood crash, personafix and tripchip qualifications. Price-column label order remains unresolved.
+  - name: BTL Programming Options
+    fields: Fifteen options compared; cumulative design rating and size, damage and shutdown game tests, compatibility and size effects, POV eligibility, option table discrepancies.
+confirmed_records:
+  - path: rules/skillsofts/cannon-companion-btl-addiction-table-p69.yml
+    commit: 9e8ec21788c17a15dbef61785816664a0141fcd2
+    blob: 8b5d51a91586f4e7be63c8fe643efc2dc9c1e024
+    candidate_sha256: 2ae42f6462a5860295305f2af4a79be61f5186d43729010afd57f3cc828805f5
+    immutable_sha256: 61480081c5dc4e7cbdbd1c7069d28b8eba49b3406866d4aed79c737b056868a4
+    index_commit: 0e0f4db1341df2c1e13d450ee94e02e4a6825a1d
+    index_blob: 5a29b6cf2027d344336af55d9d9a2660ad73ba34
+    gate: verified
+  - path: rules/skillsofts/cannon-companion-btl-format-modification-withdrawal-p65-66.yml
+    commit: 77a35658dd9a42112fd14a3b04ec5b044cc6198f
+    blob: 577624c8cb7f4aea21786d879a75bb11d218e854
+    candidate_sha256: f2ec4e41f70caedd2993e3f7aaaf003930324161014f324b2a79a612018ad459
+    immutable_sha256: 609c7b8075175faffffa921e6d5aa294d541d83bfff77916b1264751d087ca83
+    index_commit: a6591264d86cb34820bcb497e785dc16f584b327
+    index_blob: aa4bd257bf78f2f2892e64f7f44e2dca5f782466
+    gate: verified
+  - path: rules/skillsofts/cannon-companion-btl-programming-qualifiers-p66-69.yml
+    commit: 5c15ac7bbe27df648bcb99c48f68279f2a0c010b
+    blob: cfb156e71314bdba181a31636ec9fa74a1b73320
+    candidate_sha256: f99f5b875566c9fc025b286b4a78b5897d1f54f5df86d74995f6d9a61cd5f6c4
+    immutable_sha256: 7933de8c834024164e796d1bddc178d9962350c5b5e818e3819cd7a2666c3b8e
+    index_commit: 55b1b89785d18407105dfff100f566bf83502a9f
+    index_blob: ad3c95529c97848df6c5eb42ad29063e6d315769
+    gate: verified
+exceptions:
+  - Existing degrading design modifier -1 conflicts with original p69 +1.
+  - Existing RAS option reverses installed override behavior; original p68 suppression and p65 disabling are distinct; p69 prints dash rather than Special.
+  - Price-column label order and historical shared option gate provenance remain unresolved.
+  - Adjacent dedicated chipjack equipment row on p65 and PAB rules pp68-71 are separate obligations.
+closure_scope: Four BTL mechanical scopes field-reconciled; Types reviewed with price-label qualification. No global or whole-source certification.
+whole_book_closed: false
+globally_authorized_pages: 0
