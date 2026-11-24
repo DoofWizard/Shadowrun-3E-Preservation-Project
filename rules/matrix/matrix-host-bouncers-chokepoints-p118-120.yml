@@ -1,0 +1,94 @@
+{
+  "id": "rule.matrix.matrix-host-bouncers-chokepoints-p118-120",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "118,120",
+  "pdf_pages": "119,121",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, printed 118,120/PDF 119,121.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Host security topology: bouncer and chokepoint game mechanics",
+  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "data": {
+    "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
+    "bouncers": {
+      "states": "Two security configurations; normally Green or Orange, normally escalates to Red. GM selects trigger condition.",
+      "triggers": "May use tally threshold, tally generated during access to selected file/subsystem, or manual successful Control Test by security decker after discovery.",
+      "upgrade_duration_combat_turns": 1,
+      "scope": "New security level applies to every user in that host.",
+      "notice": "GM secretly tests each icon Sensor against new Security Value. Success reports that Security Value increased; Analyze Host required for details.",
+      "pretrigger_detection": "Successful Analyze Host can reveal bouncer status before activation.",
+      "example": {
+        "old_security": "Green-4",
+        "new_security": "Red-8",
+        "secret_sensor_TN": 8
+      }
+    },
+    "chokepoints": {
+      "model": "Tiered fictional host topology; mandatory connections can require traversal of stronger host. A checkpoint is not necessarily a required node on every path.",
+      "diagram_ratings": {
+        "red": {
+          "security": "Red-8",
+          "Access": 11,
+          "Control": 13,
+          "Index": 14,
+          "Files": 11,
+          "Slave": 13
+        },
+        "orange": {
+          "security": "Orange-6",
+          "Access": 9,
+          "Control": 10,
+          "Index": 7,
+          "Files": 10,
+          "Slave": 8
+        },
+        "green": {
+          "security": "Green-6",
+          "Access": 9,
+          "Control": 10,
+          "Index": 8,
+          "Files": 9,
+          "Slave": 10
+        }
+      },
+      "diagram_1_edges": [
+        [
+          "grid",
+          "red"
+        ],
+        [
+          "red",
+          "orange"
+        ]
+      ],
+      "diagram_2_edges": [
+        [
+          "grid",
+          "red"
+        ],
+        [
+          "red",
+          "orange"
+        ],
+        [
+          "grid",
+          "private_grid"
+        ],
+        [
+          "private_grid",
+          "green"
+        ],
+        [
+          "green",
+          "orange"
+        ]
+      ]
+    },
+    "mapping": "Printed p119 / physical PDF120 is a full-page illustration; not cited as mechanics.",
+    "core_comparison": "Core topology record 437f8a33191f23cf7b8db18b9c5fabc3e3f23955 and legacy System Tricks provide access types but not the bouncer procedure and illustrated ratings."
+  }
+}
