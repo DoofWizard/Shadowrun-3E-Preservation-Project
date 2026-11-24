@@ -1,21 +1,57 @@
 id: rule.surgery.surgical-costs
 record_type: rule
-name: "Surgical Costs"
+name: Surgical Costs
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "151"
+pdf_pages: "152"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 151, basis: defines}
 scope:
-  applies_to: ["medical and surgical services"]
+  applies_to: [fictional medical and surgical services]
 resolution:
-  summary: "Medical care, planning, surgery, provider use, hospitalization, recovery, replacement body parts and Stress repair have base costs defined by the Surgical Costs Table. Doctor/provider charges are multiplied by equipment grade where applicable."
-  inputs: ["service type", "skill rating where used", "equipment grade", "days of care", "body part or Stress repair"]
-  outputs: ["service cost in nuyen"]
+  summary: The listed game prices extend the SR3 p128 Medical Costs Table; equipment grade modifies doctor and provider charges.
+  inputs: [service type, skill rating, equipment grade, days of care, body part or Stress repair]
+  outputs: [service cost in nuyen]
   steps: []
+data:
+  currency: nuyen
+  paramedic_first_aid: {Deadly: 400, Serious: 200, Moderate: 100, Light: 50}
+  doctor_services:
+    medical_profile: {rate: 20, per: Medicine Skill}
+    surgical_planning: {rate: 100, per: Mp}
+    implant_surgery: {rate: 40, per: Biotech Skill}
+    therapeutic_surgery: {rate: 30, per: Biotech Skill}
+    transplant_surgery: {rate: 40, per: Biotech Skill}
+    trauma_surgery: {rate: 50, per: Biotech Skill}
+  provider_charges:
+    hospitalization_lifestyle: {rate: 500, per: day}
+    intensive_care: {rate: 1000, per: day, restriction: Deadly wounds only}
+    stabilization: 100
+    emergency_pickup: 500
+    mobile_clinic: 500
+    valkyrie_module: 1000
+    magical_care: {rate: 500, per: day}
+  doctor_provider_multipliers: {alpha: 2, beta: 4, delta: 6, cultured: 5, nanosurgery: 4}
+  nanosurgery_multiplier: Additional to other available gear-grade multipliers.
+  outpatient_per_day: {Deadly: 400, Serious: 200, Moderate: 100, Light: 50}
+  body_parts:
+    eye_or_small_organ: {weeks_to_grow: 3, cost: 7500}
+    large_organ: {weeks_to_grow: 5, cost: 15000}
+    hand_or_foot: {weeks_to_grow: 6, cost: 15000}
+    limb: {weeks_to_grow: 8, cost: 25000}
+  stress_repair:
+    cyberware_parts: {rate: 100, per: Stress Point}
+    outpatient_bioware_or_attribute_therapy: {rate: 100, per: day}
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [subsystem.surgery.core]
 sources:
-  - {source: source.mm, page: 151, relation: defines, note: "Paying the Price / Surgical Costs Table"}
+  - {source: source.mm, page: 151, relation: defines, note: Paying the Price and Surgical Costs Table}
 notes: []
+headline: "FASA7126 Man & Machine, FASA 1999, Shadowrun Third Edition tabletop RPG, printed p151/PDF152: Surgical Costs"
+framing: reference_exact
