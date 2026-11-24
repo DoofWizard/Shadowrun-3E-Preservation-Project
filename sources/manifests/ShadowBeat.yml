@@ -54,10 +54,11 @@ coverage:
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: source_verified_section_closed, note: "Original rules-bearing production, output, and playback eligibility fields pp74-83 verified; p79 storage contradiction retained, p82 advertisement and p83 narrative effects distinguished from dice rules. Equipment prices and capability tables pp88-99 separate; SR3 adaptation unresolved."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
-  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 and storage media/data rates p99 verified; sound gear pp92-96 verified; trideo services p99 verified; sight gear pp88-91 verified; PAB table p97 remains."}
+  equipment_and_costs: {printed: "88-99", status: source_verified_section_closed, note: "Sight pp88-91, Sound pp92-96, PAB p97, Simsense Gear pp97-98, storage and trideo services p99 individually verified and indexed; legacy edition contradictions and native SR3 lineage limits retained."}
   sound_equipment: {printed: "92-96", status: source_verified_section_closed, note: "Complete original instrument/synth and sound equipment tables and capability rules; p95 example ambiguity retained, SR3 adaptation unverified."}
   trideo_service_prices: {printed: "99", status: source_verified_section_closed, note: "All original service market rows, lifestyle allowances and billing/negotiation qualifications; pp18-23 procedures separate."}
   sight_equipment: {printed: "88-91", status: source_verified_section_closed, note: "Original media equipment table, camera/gear capability and Pix modifiers; original Essence typography retained and native SR3 camera overlaps identified."}
+  pab_equipment: {printed: "97", status: source_verified_section_closed, note: "Five original equipment market rows and facility rating cap; p47 reprogramming procedure and SR3 supersession distinct."}
   media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
   simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
@@ -97,6 +98,7 @@ records:
   - ["sound-legacy-p92-96", "ad6673dab10c1afe595a93bdb940d485a73767a5"]
   - ["trideo-services-legacy-p99", "edfbb54e5c0ddf7559300a49ae8ede246978f727"]
   - ["sight-legacy-p88-91", "cf234232fe94183674cb955bdf8415f51f1828dd"]
+  - ["pab-legacy-p97", "765c190a2d7d65fee143d3a1bf6bfe22077b48e7"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -438,5 +440,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p88_pdf97", "printed_p89_pdf98", "printed_p90_pdf99", "printed_p91_pdf100"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-pab-legacy-p97
+    path: equipment/shadowbeat/pab-legacy-p97.yml
+    original_printed_pages: "97"
+    original_pdf_pages: "106"
+    commit_sha: "765c190a2d7d65fee143d3a1bf6bfe22077b48e7"
+    readback_blob_sha: "fbb0a5fd5e79d01b5922768018688fb84d985ec2"
+    candidate_sha256: "560c13de0be599de8bab54b720c474b114de0bd7f3c7e60c2c891d7edf39c24f"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p97_pdf106"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
