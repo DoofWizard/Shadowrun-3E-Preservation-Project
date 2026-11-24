@@ -1,0 +1,30 @@
+id: rule.medical.fasa7126-mobile-medical-shop
+record_type: rule
+name: Mobile Medical Shops
+domain: medical
+status: source_reviewed
+source: source.mm
+printed_pages: '138-139'
+pdf_pages: '139-140'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 mobile medical shops — staffing, rating and vehicle constraints
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop rules, printed pp138-139/PDF139-140.
+data:
+  mobile_clinic:
+    installation: Medical shop fitted for vehicle use.
+    simultaneous_staff: floor(Rating / 3)
+    staff_categories: [doctor, nurse, biotechnician]
+    patients_monitored: Rating
+    patient_capacity: Depends on vehicle size.
+    typical_rating_relative_to_affiliated_provider: 'affiliated clinic or hospital Rating - 2'
+    limited_remote_medical_operations: true
+    teleoperated_surgery: false
+  vehicle_design:
+    mark_up_factor_modifier: 1
+    patient_space_included: false
+    design_rules_reference: Rigger 2 p108
+    mark_up_reference: Rigger 2 p114
+sources:
+  - {source: source.mm, pages: '138-139', relation: defines, note: Mobile Medical Shops and Vehicle Modification}
