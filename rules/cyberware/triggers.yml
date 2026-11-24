@@ -1,21 +1,34 @@
 id: rule.cyberware.triggers
 record_type: rule
-name: "Cyberware Triggers"
+name: Cyberware Triggers
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '48'
+pdf_pages: '48'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware Triggers — mental and manual action costs
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p48.
 effective: {status: current, source: source.mm, page: 48, basis: defines}
 scope:
-  applies_to: ["cyberware that can be activated or deactivated"]
+  applies_to: [cyberware that can be activated or deactivated]
 resolution:
-  summary: "Cyberware connected to the nervous system can normally be triggered by mental impulse as a Free Action. At gamemaster discretion, a manual trigger may be installed instead; manual activation or deactivation requires a Simple Action."
-  inputs: ["cyberware device", "trigger type"]
-  outputs: ["activation/deactivation action cost"]
+  summary: Unless otherwise specified, a mental impulse activates or deactivates cyberware; the gamemaster may permit manual triggering.
+  inputs: [cyberware device, trigger type]
+  outputs: [activation or deactivation action cost]
   steps: []
+data:
+  mental_trigger: {action: Free Action, default: true, exception: device-specific rule}
+  manual_trigger: {action: Simple Action, requires_gamemaster_permission: true, additional_cost: 0, example: subdermal switch}
+  adaptation: Newly installed devices require an adjustment period; accidental triggering may occur during adaptation. No fixed interval or test is specified.
+  manual_access: Manual triggers may be used by other characters who know about them, with beneficial or adverse consequences.
 links:
   uses: [rule.actions.combat-phase-actions]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 48, relation: defines, note: "Cyberware Triggers"}
+  - {source: source.mm, page: 48, relation: defines, note: Cyberware Triggers}
 notes: []
