@@ -1,0 +1,43 @@
+id: rule.matrix.matrix-sk-operation-p148-150
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '148-150'
+pdf_pages: '149-151'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp148-150/PDF149-151.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Semi-autonomous knowbot operation and recovery
+summary: Fictional Matrix utility pool timing, combat, native host recovery and trace modifiers for GM-controlled knowbots.
+data:
+  legacy_comparison: 'subsystems/matrix/autonomous-programs.yml blob 2dcef9eefd15d7c33fe67b4d7d26446ed89d3c48 gives general operation, recovery and trace framework but lacks the following timing and exceptions.'
+  movement: Ordinary persona logon to hosts and grids and grid transitions apply.
+  mission_behavior: GM-defined objectives may be simple or complex across multiple Matrix runs; program prioritizes mission and avoids combat if destruction would prevent completion.
+  utility_pool:
+    category: operational utilities only
+    points_per_utility_rating_point: 1
+    allocation_action: Free Action
+    use_deadline: immediately in the same Combat Phase
+    after_use: utility disappears; repeated use requires another allocation
+    refresh: beginning of each Combat Turn
+    example: {pool: 12, first_pass_deception: 6, second_pass_scanner: 6, remaining: 0}
+  combat:
+    capabilities: maneuvers, attack and defensive utilities
+    damage: ordinary icon damage rules
+    filled_condition_monitor: crashes and permanently destroys program
+  native_host:
+    origin: mainframe used for creation
+    default_idle_location: native host
+    shutdown: rare except major overhaul or reprogramming
+    recovery_location: native host
+    recovery_interval_minutes: MPCP rating
+    recovery_per_interval: one damage box or one reduced Persona Point
+    return_exception: normally avoids direct return if it would expose creators through an incriminating datatrail
+    native_passcodes: embedded in program; learnable only if program is trapped and dissected
+  trace:
+    physical_jackpoint: none
+    datatrail_destination: native host
+    modifier: 6
+    applies_to: [track utilities, trace IC]
+    additional_operations: [Redirect Datatrail, Relocate Trace]
+  source_mapping: Printed p149/PDF150 is illustration only.
