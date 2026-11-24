@@ -1,0 +1,55 @@
+id: audit.fasa7907.mits.new-foci-focus-addiction.2026-11-24
+source: source.mits
+publication: "FASA Corporation, Magic in the Shadows, FASA7907, fictional SR3 tabletop RPG"
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+starting_manifest_blob: 5d0eab353f8b48738c4af9fb4ece30a61a565332
+verify_source_status: source_pdf_hash_verified
+preflight_tests: 29
+source_review:
+  identity: Cover PDF1 and introduction printed p6/PDF7 visually inspected.
+  mapping: {45: 46, 46: 47}
+  render_sha256:
+    PDF46: bbbdfdca65691ed8b79a9f0e6de15c12626088b72cbf6e0c73f16e2fe8d97024
+    PDF47: ec09435b5b865a12945e594b0325711b06785eed01b51fb998a76c556e4e5050
+  editorial: Independently reviewed source-derived baseline and outgoing same-substance candidate, all nested prose and protected mechanics, fictional provenance.
+canonical_comparison:
+  entities/magic/anchoring-focus.yml: f9300475e8c1fb365a453d093a95d7dceecd8672
+  entities/magic/centering-focus.yml: b8430effdcf6dc7726a75f18746423077a64e57e
+  entities/magic/shielding-focus.yml: dbf285b10c2daa7a9b5f0376cfeeac8dfa8078ea
+  entities/magic/spell-defense-focus.yml: 18abba0aa48b236209a91c2ac82575917e7190bb
+  rules/magic/focus-addiction.yml: 2a5d187ab936c80d40f5bc800c56596ee19b5cab
+accepted:
+  - section: Focus Addiction
+    path: rules/magic/mits-focus-addiction-original-p45-46.yml
+    fields: [optional applicability, every Combat Turn threshold, rounded-down target number, success and failure, talisman geas choice and activation condition, initiation removal, numerical example]
+    commit: 77a53fe631b1bc532d0cff3fdfcfb2b4a401b9e9
+    blob: 39013a3781e8374fef514f15f56167bdc8f94df8
+    gate: verified
+    index_commit: 77422c794cec93211de22213f71f41ce9054211d
+    index_blob: 19f518141a6c00a83293324ad91923fb6110966a
+    journal_sha256:
+      baseline.yml: 4d33e777008d7180996fece39c6a20c1bf0103da1257d22ebe02a03690a405c6
+      candidate.yml: 39aee6a520ff4f9d9de85244897043f4f4765162e36fda9f7c4d8f231934246b
+      confirmation.json: 33ed442d168e0924656d3d4c7c79ebbdf14a5919bad9bcccc7d58e1054ea75fe
+      plan.json: 1d57cdfe40e24a947c895382be7f94918ca5e545f7e4ab589a7b758f8e291087
+  - section: New Foci
+    path: rules/magic/mits-new-foci-original-p45.yml
+    fields: [initiate creation exception, centering dice and active requirement, anchoring eligibility and capacity and activation, spell defense dice cap and allocation, shielding allocation, four ordinary bonding cost schedules]
+    commit: a641a5cb14fb83e9ec65ff60e36c364412cdfbed
+    blob: cbb23b9ad4d271573bbde1b5de8d8a834b6b89bf
+    gate: verified
+    index_commit: bcb97605b711aaa6562c6fb7bdc002079451fd1e
+    index_blob: a32f2c5b9a57f414952a6f7471fd0d79c70bc530
+    journal_sha256:
+      baseline.yml: cbb1de080f1cb1b584e4cd2fc0e56d665a1101168cd4525dd23ac3617a8160da
+      candidate.yml: 444a0f18f5599a6bf377fb3d254109d2b641d83f3416616ad329e9448e379e51
+      confirmation.json: b6880c82a7ec255b9bb64148e2934b91a66820048b3d67fad4d448432d3ec95f
+      plan.json: 33f454e49056fd46742be5419b67562b1d959637bf2e858655b9b8c943f12196
+journal_reconstruction: Fetch exact candidates at their commits; remove last three presentation lines for baseline; run stage and confirm, verifying listed digests.
+readback: Both canonical writes and individual index writes matched exact bytes at their respective commits and main.
+exceptions:
+  - Ordinary bonding costs are distinct from the first-bonding table on p45.
+  - Previous two Artificing candidates remain absent at live paths; no identical replay, no Artificing closure.
+  - Unique Enchantments pp46-47 remains outside this closure.
+closure: Two natural subsections complete for source-specific mechanical fields; whole Enchanting section remains open.
+global_page_credit: 0
