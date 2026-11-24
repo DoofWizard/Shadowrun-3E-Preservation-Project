@@ -8,8 +8,8 @@ edition_scope: FASA Corporation, Shadowrun Companion, FASA7905a, Shadowrun Third
   optional character creation
 content_class:
 - character_option
-headline: 'FASA Shadowrun Companion FASA7905a (Third Edition), original printed pp19-22/PDF20-23:
-  physical Edges and Flaws'
+headline: 'FASA Corporation Shadowrun Companion FASA7905a Third Edition fictional
+  tabletop physical traits, original pp19-22/PDF20-23'
 summary: Source-specific optional physical character traits, their point costs, numeric
   test and Attribute effects, qualifications and incompatible combinations in the
   published tabletop game.
@@ -57,6 +57,9 @@ data:
     cyber_replacement_eyes_cannot_cure: true
     magical_astral_perception_possible: true
     magically_active_physical_visual_test_target_modifier: 2
+    point_value_if_rigging_and_matrix_unaffected: -2
+    point_value_if_rigging_or_matrix_affected: Full value; the source does not specify
+      precedence over the separate magically active discount.
     rigging_matrix_effect: Determine per character whether the underlying blindness
       affects their rigging or Matrix actions; it can be inconsequential to simsense
       or prevent those actions depending on cause.
@@ -67,10 +70,10 @@ data:
     kind: Flaw
     point_value: -6
     secretly_rolled_remaining_game_months: 3D6
-    effect: The gamemaster secretly determines the character's finite in-game lifespan
-      and narrates the outcome when it expires.
+    effect: The gamemaster secretly determines the character's finite in-game lifespan.
+      At expiration the character dies and cannot be saved under this Flaw.
     optional_gm_exchange: If the player later requests a different fate, the gamemaster
-      may exchange this for another Flaw worth -6, at the gamemaster's discretion;
+      may exchange this for one or more other Flaws totaling -6, at the gamemaster's discretion;
       the alternative must not be offered at initial selection.
   - name: Color Blind
     kind: Flaw
@@ -124,6 +127,8 @@ data:
     maximum_purchased_reaction_bonus: 3
     reaction_bonus_applies_to_initiative: false
     surprise_bonus_cumulative_with_other_reaction_modifiers: true
+    gm_guidance: Monitor the combination of Reaction bonuses to avoid excessively
+      high Surprise Test Reaction ratings.
     incompatible_with:
     - Combat Sense adept power
   - name: Low Pain Tolerance
@@ -183,6 +188,10 @@ data:
     mental_test_note: Physical Attributes still used in calculations such as Reaction
       where applicable; the Flaw does not modify the underlying Attribute ratings.
     matrix_and_astral_pools: Full Hacking and Astral Combat Pools remain available.
+    may_also_select_infirm: true
+    required_lifestyle: Permanent Hospitalized lifestyle.
+    required_physical_assistance: Hired medical attendants or programmed robot drones
+      perform physical tasks for the character.
     cyberware_or_magic_cannot_cure: true
     incompatible_with:
     - Paraplegic
