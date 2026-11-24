@@ -1342,6 +1342,36 @@ source_field_review:
     global_checkpoint_changes: 0
 
 
+  confirmed_task_pool_triggers_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: source_pdf_hash_verified
+    original_printed: "48"
+    original_pdf: "48"
+    records:
+      - id: rule.cyberware.task-pool
+        path: rules/cyberware/task-pool.yml
+        commit: "8673d8d74498fec05e8503db3d1624fee0b64128"
+        blob: "03b0e3ec9d0010dec4dfd3a56df5989e09aa1dd6"
+        baseline_sha256: "e4ccf1daa1048540a4cd3ee96746a7673d80c0fb61396210efef982597f2456a"
+        candidate_sha256: "4fabd31808ca84952b208fc264989c871e7fd13f1f7395d2f614c84bea0698b8"
+        immutable_sha256: "a03476ed8affdb8a35e25a444a39e2cbe6de3f6756dc3fdbb0d28e80bc268c40"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Device examples, Intelligence-linked skill categories and exclusions, standard pool rules."
+      - id: rule.cyberware.triggers
+        path: rules/cyberware/triggers.yml
+        commit: "d832f4419f5deb6193e6550319bf1464db332637"
+        blob: "b76274cf9103ea0b5b2e2a6f70de57757e15508b"
+        baseline_sha256: "da1d79b08abef725433877cf829d4f412dc0399d8dda3aa5138f743bd21d5f57"
+        candidate_sha256: "061cba084c258f30bf2a158477f2315b864c7692c82bc8ab3eaa76a3f7fa43fc"
+        immutable_sha256: "87ebf23a44e188035917b6dfe0321f483de077fb1292d1fba220c3a484e5cbf8"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Device-specific exceptions, zero extra manual-trigger cost, adjustment period and external access consequences."
+    scoped_natural_sections_reconciled: [Task Pool, Cyberware Triggers]
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
