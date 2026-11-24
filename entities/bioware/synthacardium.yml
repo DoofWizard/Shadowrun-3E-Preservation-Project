@@ -1,18 +1,30 @@
 id: entity.bioware.synthacardium
 record_type: entity
-name: "Synthacardium"
+name: Synthacardium
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '70'
+pdf_pages: '71'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 0.2, availability: "4/10 days", cost_nuyen: 6000, street_index: 1.5, legality: "Legal"}
-    2: {bio_index: 0.3, availability: "4/10 days", cost_nuyen: 15000, street_index: 1.5, legality: "Legal"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.2, availability: '4/10 days', cost_nuyen: 6000, street_index: 1.5, legality: Legal}
+    '2': {level: 2, bio_index: 0.3, availability: '4/10 days', cost_nuyen: 15000, street_index: 1.5, legality: Legal}
+data:
+  athletics_dice_per_level: 1
+  athletics_scope: tests and tasks
+  resistance_dice_per_level: 1
+  resistance_scope: all tests to resist cardiac or circulatory conditions or ailments
+  stress:
+    light: frequent acute migraine headaches associated with high blood pressure
+    moderate: roll 2D6 each Athletics Test; a total of 2 causes a stroke, with effects at GM discretion, potentially paralysis or loss of sensory or mental function, such as -1 Intelligence or a Mental Flaw
+    serious: chest pain and Light Stun damage until Stress is healed
+    deadly: no bonuses
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 70, relation: defines, note: "Synthacardium description, game effects, stress effects and statistics"}
-notes:
-  - "Adds dice to Athletics Tests and tasks and improves resistance to cardiac/circulatory conditions."
+  - {source: source.mm, page: 70, relation: defines, note: Synthacardium game effects and market rows}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p70/PDF71: Synthacardium'
+framing: reference_exact
