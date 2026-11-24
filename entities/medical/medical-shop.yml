@@ -1,15 +1,53 @@
 id: entity.medical.medical-shop
 record_type: entity
-name: "Medical Shop (Clinic)"
+name: Medical Shop (Clinic)
 domain: medical
 status: ingested
+source: source.mm
+printed_pages: "136, 138"
+pdf_pages: "137, 139"
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "Rating + 2 / 1 wk"
+  availability: "Rating + 2 / 1 week"
   cost: "(Rating + 4)^3 x 200 nuyen"
+  weight: NA
   street_index: 2
   maximum_rating: 6
+data:
+  capacity:
+    doctors: Rating
+    nurses_or_biotechnicians: "up to Rating x 3"
+    patients_monitored_per_staff_member: Rating
+  permits:
+    minimum_rating_UCAS_Seattle: 3
+    other_jurisdictions_may_vary: true
+    purchase_requires_permit: true
+    contracted_doctors_minimum: Rating
+    contracted_nurses_minimum: Rating
+    contracted_staff_registered: true
+    staff_presence_at_award_required: false
+    fee_fraction_of_shop_cost: 0.15
+    permit_rules: "SR3 pp273-274"
+  components:
+    medkit_rating: Rating
+    stabilization_unit: true
+    stabilization_reference: "SR3 p305"
+    computer_free_memory_Mp: "Rating^2 x 100"
+    included: [medical scanners, ASIST diagnostics, medical reference library, surgical drones, medical compounds, prepared genetic and nanite treatments, drug synthesis]
+    remote_medical_operations: true
+    usual_long_term_care: false
+  access_and_grade:
+    rental_cost_nuyen_per_day: "Rating x 100"
+    rental_street_index: 3
+    rental_requires_appropriate_permits: true
+    illegal_clinic_rental_applies_street_index: true
+    implant_or_transplant_surgery_and_repair: apply implant grade price and availability modifiers
+    rating_below_3: GM may impose target-number or other penalties
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.surgery.core]}
 sources:
-  - {source: source.mm, pages: "136-138", relation: defines, note: "Medical shops/clinics and Medical Tools Table"}
+  - {source: source.mm, pages: "136, 138", relation: defines, note: "Medical Gear, Medical Shops and Medical Tools Table"}
 notes:
-  - "Clinic-equivalent medical shop; supports multiple staff/patients based on rating."
+  - The maximum rating applies to equipment available to player characters; higher-rated facilities may exist in the setting.
+framing: reference_exact
+headline: "FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), printed pp136,138/PDF137,139: Medical Shop and Clinic"
