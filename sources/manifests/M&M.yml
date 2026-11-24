@@ -480,6 +480,30 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_surgical_procedures_options_2026_11_23:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Copyright p5/PDF5; printed pp147-150/PDF148-151; all relevant procedure/option rows and conditions read."
+    preflight_self_test: "29 passed; four executable script blobs matched live GitHub."
+    records:
+      - id: procedure.surgery.transplant
+        path: procedures/surgery/transplant.yml
+        printed: "147-148"
+        pdf: "148-149"
+        commit: "e81f80c409772c2951e86edef54782fecd347b19"
+        blob: "4544f5164bdf86e017086629a094f6131886a66a"
+        candidate_sha256: "5ade343e3fc37c18dcfa1f6cb198cf828ecee7b88427dee0b2df51fefb7c9058"
+        baseline_sha256: "2131c948d5cf7a3d7a4c834f5485bc147e7837e9fd4b049ab5ecd1a6622cfdf1"
+        immutable_sha256: "8cc9d35fc9906cacd36fa9465cc10a0168e0a2664e4b6e902050cca02d4c25f2"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Three procedure target numbers, separate tests, applicable options and exclusions, rejection and Stress results, no Bio Index recovery, replacement part requirements."
+    scoped_natural_sections_reconciled:
+      - "Transimplant Surgery pp147-148."
+    remaining: "Trauma Surgery and Surgical Options transactions pending; earlier bioware and nanoware receipt gaps remain open."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
