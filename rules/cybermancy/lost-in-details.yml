@@ -1,21 +1,45 @@
 id: rule.cybermancy.lost-in-details
 record_type: rule
-name: "Lost in the Details"
+name: Lost in the Details
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '58'
+pdf_pages: '59'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermantic Observation Fixation and Recovery
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed p58/PDF59.
 effective: {status: current, source: source.mm, page: 58, basis: defines}
 scope:
-  applies_to: ["cybermantic characters using Observe in Detail"]
+  applies_to: [cybermantic characters using Observe in Detail]
 resolution:
-  summary: "A cybermantic character can become absorbed in minor details after an unsuccessful Observe in Detail attempt. A Willpower test is required to break the cycle, and other characters may assist by attracting the subject's attention."
-  inputs: ["Perception Test result", "Willpower"]
-  outputs: ["normal attention or fixation"]
-  steps: []
+  summary: The fictional rules model a fixation that can occur after a failed observation test and end through Willpower or assistance.
+  inputs: [Perception Test result, modified target number, Willpower]
+  outputs: [normal attention or fixation]
+  steps:
+    - When Observe in Detail is used and all Perception dice fail at a modified target number of at least 5, immediately roll Willpower against that modified target number.
+    - Failure leaves the character fixated. Repeat the Willpower Test each subsequent Combat Turn or once per minute outside combat, increasing the target number by 1 each repetition.
+    - After five consecutive failed tests, the invoked-memory stimulator activates and the target number decreases by 1 per Combat Turn or minute, as appropriate.
+    - Other characters may attempt to attract the subject's attention; each attempt reduces the Willpower target number by 1.
+data:
+  observe_in_detail_action: Simple Action
+  trigger_minimum_modified_target_number: 5
+  trigger_successes: 0
+  initial_willpower_target: modified Perception target number
+  repeat_interval_in_combat: 1 Combat Turn
+  repeat_interval_out_of_combat_minutes: 1
+  retry_target_number_increase: 1
+  stimulator_consecutive_failures: 5
+  stimulator_target_number_reduction_per_interval: 1
+  assistance_target_number_reduction_per_attempt: 1
+  assistance_action_in_combat: Simple Action
 links:
   uses: [rule.tests.success-test]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 58, relation: defines, note: "Lost in the Details"}
+  - {source: source.mm, page: 58, relation: defines, note: Lost in the Details}
 notes: []
