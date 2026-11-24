@@ -1211,6 +1211,33 @@ source_field_review:
     global_checkpoint_changes: 0
 
 
+  confirmed_cyberware_grades_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp44-45/PDF44-45; copyright p5/PDF5."
+    image_sha256:
+      PDF44: "3fd9584250219a7ff8672f9f142cd2bca1f7d3f6bac7437ccdbf2120bf0e0a9d"
+      PDF45: "c1a9224571db7029e5341ed135ae010823b3e23a4c027f648bb0db2ee2b9a472"
+    records:
+      - id: option.cyberware.grades
+        path: options/cyberware/grades.yml
+        printed: "44-45"
+        pdf: "44-45"
+        commit: "74931b73fa067f44b2af1cb708542e858df66716"
+        blob: "433559504d47e642bbbbca278eceee69c2ed998b"
+        candidate_sha256: "1d7e7a8a86ec1b05da7bf1529447eebf001ab62c7822c35b279576b5ccbdaf96"
+        baseline_sha256: "4bf8530db796857f4a92726fc3bcea3974bf172099d43279e1490b02009584fb"
+        immutable_sha256: "ad8e6a306be23839a303ce90475e2db3d1b8ca1725aa77ad946899848ba394a5"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Grade table Availability, starting character restriction, grade matching exceptions, price scope, used grade eligibility and Stress cross-reference."
+    scoped_natural_sections_reconciled:
+      - "Cyberware Grades including Essence Reduction, Cost Multiplier, Availability, Accessories and Systems, Used Cyberware Drawbacks pp44-45."
+    exceptions: "Used Stress is already represented in rule.cyberware.used-cyberware-stress; do not apply twice."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
+
 coverage:
   - cyberware
   - cyberlimbs
