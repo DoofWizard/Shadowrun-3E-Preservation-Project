@@ -1,15 +1,54 @@
 id: option.magic.initiation-ordeal-asceticism
 record_type: option
-name: "Initiation Ordeal — Asceticism"
+name: Initiation Ordeal - Asceticism
 domain: magic
 status: ingested
-effective: {status: current, source: source.mits, page: 60, basis: defines}
-option_for: [procedure.magic.initiation]
-selection: {timing: "before completing an initiation grade", prerequisites: [], incompatible_with: []}
+effective:
+  status: current
+  source: source.mits
+  page: 60
+  basis: defines
+option_for:
+- procedure.magic.initiation
+selection:
+  timing: before completing an initiation grade
+  prerequisites: []
+  incompatible_with: []
 effects:
-  - "Requires a physically challenging discipline such as fasting, strenuous exercise, ritual combat, or another severe self-imposed trial."
-  - "Completing the ordeal permanently reduces one eligible unaugmented physical Attribute by 1 and also lowers the corresponding racial maximum."
-links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
+- The ordeal entails a demanding physical discipline.
+- Permanently subtract 1 from an eligible natural Physical Attribute and its Racial
+  Modified Limit.
+links:
+  modifies:
+  - procedure.magic.initiation
+  requires: []
+  interacts_with: []
 sources:
-  - {source: source.mits, page: 60, relation: defines, note: "Initiation Ordeal — Asceticism"}
+- source: source.mits
+  page: 60
+  relation: defines
+  note: Asceticism ordeal
 notes: []
+source: source.mits
+printed_pages: '60'
+pdf_pages: '61'
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  trial: Physically demanding discipline; the source gives fasting, exercise, ritual
+    combat and severe self-imposed trials as examples.
+  attribute_loss: 1
+  racial_modified_limit_loss: 1
+  eligible_attributes: Unaugmented Physical Attributes with rating above 1.
+  excluded_augmented_ratings:
+  - cyberware
+  - spells
+  - adept powers
+  repeat: A different Physical Attribute must be reduced before a previously reduced
+    Attribute may be selected again.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: Asceticism ordeal (FASA7907,
+  printed 60/PDF 61)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG Asceticism initiation
+  ordeal mechanics.
