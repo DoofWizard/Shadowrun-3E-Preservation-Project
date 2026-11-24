@@ -1,0 +1,70 @@
+source: source.mits
+publication: 'FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG'
+run_start_head: 954e0c346d161ccca840faa6260eba31e8853abb
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+source_pdf_bytes: 123917505
+source_pdf_physical_pages: 178
+source_manifest_start_blob: 39b5c135848e3f5e1cc2f54d8203b3edc3b8de31
+source_gate: {status: source_pdf_hash_verified, page_images_review: still_required_independently}
+independent_image_review_pdf_pages: [1, 7, 62, 68, 69, 70]
+script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+preflight: {passed: 29, total: 29}
+review:
+  existing_records:
+    - {path: subsystems/magic/magical-groups.yml, blob: 5cc20a29eee278c4f1d6132bd760a0a9155d2ef9, finding: Subsystem overview lacks example stats and avatar behavior.}
+    - {path: entities/organizations/children-of-the-dragon.yml, blob: de625e8b107e9fb812a32e5554ad61eec2d91cda, finding: Different source and membership population; preserved unchanged.}
+    - {path: entities/spirits/free-spirit.yml, blob: 8a005eaa5a298660eb0156f0df7bd266c7224c14, finding: General free-spirit entry lacks avatar-specific mechanics.}
+    - {path: rules/magic/mits-magical-group-resources-generation-original-p64-66.yml, blob: 34ed2e2833e5902ddffb94e65553f74827da5b6d, finding: General random generation and resource rules do not include the six worked statblocks.}
+    - {path: rules/magic/mits-magical-group-strictures-original-p62-63.yml, blob: 30b3cfe57b875daa20ef109bb5caefe6a3b3c462, finding: Link and strictures preserved separately; no duplicate rule claim.}
+  editorial: 'All baseline human-readable fields including nested data and presentation reviewed in original fictional game context. Candidate compared with original images and baseline; only headline presentation differs. Numerical stats and strictures retain exact labels; no invented resolution tests.'
+  sections:
+    - section: Pre-generated magical group mechanical statblocks
+      printed_pages: '67-68'
+      pdf_pages: '68-69'
+      reviewed_fields:
+        - {row: Bear Doctor Society, fields: [type, members, strictures, membership, resources, dues, subsidy, patron, lodge, hospital, care customs]}
+        - {row: Children of the Dragon, fields: [type, members, strictures, membership, belief, resources, dues, subsidy, lodge, libraries, supplied ritual materials]}
+        - {row: Hermetic Order of the Auric Aurora, fields: [type, members, ranks, strictures, membership, resources, dues, libraries, enchanting shop, ritual space, discount, customs]}
+        - {row: Illuminates of the New Dawn, fields: [type, membership, circle cap, strictures, belief, resources, dues, reporting structure]}
+        - {row: Mitsuhama Research Unit 13, fields: [type, purpose, members, strictures, eligibility, obedience scope, resources, dues, patron, customary initiation gift]}
+        - {row: Sisterhood of Ariadne, fields: [type, members, mage count, strictures, attendance, belief, fraternity, membership, resources, dues, libraries, lodge, ritual access, bulk supplies]}
+      exception: 'Source labels Karma and Link retained as printed, without silently mapping to another stricture. Example setting narrative is not counted as mechanics.'
+      status: closed_mechanical_scope
+    - section: Avatar rules
+      printed_pages: '69'
+      pdf_pages: '70'
+      reviewed_fields: [free_spirit_classification, group_and_self_initiate_association, planes, form, visions, quest_role, duration, magical_skill_limits, immediate_withdrawal, reported_consequences, magical_link, true_name_uncertainty, gm_interaction_limit]
+      exception: 'Reported consequences and speculative link disruption are not universal or deterministic mechanics. No fixed Force, test or automatic penalty is specified on p69.'
+      status: closed_mechanical_scope
+transactions:
+  - section: Pre-generated magical group statistics
+    receipt: {protocol: sr3-gate/v1, status: verified, record_id: rule.magic.mits-magical-group-examples, path: rules/magic/mits-magical-group-examples-original-p67-68.yml, source: source.mits, printed_pages: '67-68', pdf_pages: '68-69', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, candidate_sha256: a675ffde5b38b654cab6ad1f2f41c7c17bebacf00ec24180995d013fafea5c3f, expected_blob_sha: 4c823a1e2f2c7ab2257a498249a6223a111e20ac, immutable_sha256: d8ab35850a8c819a9ee132f9bcab203b26f0d28266a68309f0910ca1c8bcf422, commit_sha: 5aa3cd2d09c55fba26285d40abb9c44a63f782cf, readback_blob_sha: 4c823a1e2f2c7ab2257a498249a6223a111e20ac}
+    index: {commit: a41c4f6aea209ea0b4e522a65a0fe5d0486acd4e, blob: 057ac91914f75856cc3541b39b8620b2a0789534}
+    journal_sha256:
+      baseline.yml: e34f763be91ce34d762ef2a059c40d2054772e27a9cab9b065a5f556314d113c
+      candidate.yml: a675ffde5b38b654cab6ad1f2f41c7c17bebacf00ec24180995d013fafea5c3f
+      plan.json: 011f5456551b7f2c4d39fe5beafa6e4bca52b2460041dba009f312fe659d94bf
+      receipt.json: e3c770107afa7786b2d6cecbbc3dee266799cf9c8919506fcb5ac9e76c6634f6
+    baseline_replace_from: 'Fictional Shadowrun Third Edition rules: pre-generated magical groups (FASA7907)'
+    baseline_replace_to: 'FASA7907 fictional Shadowrun Third Edition: pre-generated magical groups'
+  - section: Avatars
+    receipt: {protocol: sr3-gate/v1, status: verified, record_id: rule.magic.mits-avatars, path: rules/magic/mits-avatars-original-p69.yml, source: source.mits, printed_pages: '69', pdf_pages: '70', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, candidate_sha256: ca4f5eecfcb43d51f4461a58f3a27d0fd576d9a84f59211c0be8d77c020e153d, expected_blob_sha: 86b05154f6f807ddd94f365beacdfdc8a0b50f4d, immutable_sha256: 864340c4a6c07d5218b9f613aa839ec9c616ccf77dc439db20656888326992de, commit_sha: ebd39e3f5edeb13bc7b5327d65eeb61f2af182ec, readback_blob_sha: 86b05154f6f807ddd94f365beacdfdc8a0b50f4d}
+    index: {commit: 749325af1bddafb87bac1bc71e58729f385a95b2, blob: 3ccdeb115ff3fe1661311c1df2f1bb4bbf36db05}
+    journal_sha256:
+      baseline.yml: 9c1e0069bbcf8d10bbde4391a9b303c0e63e79784e398c88a2736c990a7957a7
+      candidate.yml: ca4f5eecfcb43d51f4461a58f3a27d0fd576d9a84f59211c0be8d77c020e153d
+      plan.json: ab0551fe6134010a063ff5b5e47e8bdef66ee6ac2e4e9e27074c08123d5aadbd
+      receipt.json: 276a9691717ce4b31f1d6ebed8237b5b8fcf16519a47ae5c4ac57fadbeadda1b
+    baseline_replace_from: 'Fictional Shadowrun Third Edition rules: avatars (FASA7907)'
+    baseline_replace_to: 'FASA7907 fictional Shadowrun Third Edition: avatars'
+journal_reconstruction: 'Fetch exact candidate at recorded commit; replace the single baseline headline phrase as above for baseline bytes. Serialize receipt mapping as Python json.dumps(sort_keys=True) plus LF; derive plan by dropping commit_sha/readback_blob_sha, replacing status with preflighted and serializing sort_keys=True, indent=2 plus LF. Both baselines, plans and receipts reconstructed and verified byte-for-byte locally; candidate Git blobs matched local staged bytes.'
+remaining:
+  - {section: Oath, printed: 61, pdf: 62, status: prior_conflict_deferred, live_blob: e8efd675c2e4cb08b2c4506f39df6225574a5370, missing: 'Group membership eligibility and first career oath rule; no replay of prior rejected bytes.'}
+  - {section: Magical group purpose and structure, printed_pages: '61-62', status: field_level_reconciliation_not_certified}
+global_page_credit: 0
+whole_chapter_completion_asserted: false
+whole_book_completion_asserted: false
