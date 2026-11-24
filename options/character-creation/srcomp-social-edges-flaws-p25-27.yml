@@ -8,8 +8,8 @@ edition_scope: FASA Corporation, Shadowrun Companion FASA7905a, Shadowrun Third 
   optional Social Edges and Flaws
 content_class:
 - character_option
-headline: FASA Shadowrun Companion FASA7905a Third Edition original Social Edges and
-  Flaws pp25-27/PDF26-28
+headline: FASA Corporation Shadowrun Companion FASA7905a Third Edition fictional
+  tabletop social trait rules, original pp25-27/PDF26-28
 summary: Source-specific optional social traits, point costs, exact Social Skill modifiers,
   Day Job table and conditional Contact/Enemy consequences.
 data:
@@ -34,6 +34,7 @@ data:
     value: 2
     test_target_modifier_for_influencing_or_controlling_animals: -1
     riding_included: true
+    character_reluctant_to_harm_animals: true
     does_not_affect: Interactions with sentient creatures, such as dragons
   - name: Bad Reputation
     kind: Flaw
@@ -48,7 +49,7 @@ data:
   - name: Blandness
     kind: Edge
     value: 2
-    physical_tracking_or_locating_test_target_modifier_for_pursuers: -1
+    physical_tracking_or_locating_test_target_modifier_for_pursuers: 1
     does_not_affect:
     - magical searches
     - Matrix searches
@@ -99,8 +100,9 @@ data:
     - flaw_points: -3
       monthly_salary_yen: 5000
       minimum_hours_per_week: 40
-    source_qualifier: The source prints 2500+ and 5000+ as suggested monthly salary
-      rather than hard universal ceilings; GM may adjust earnings and obligations
+    source_qualifier: The table prints 1000, 2500, and 5000+ nuyen respectively.
+      Salaries are suggested; the GM may adjust them and restrict spending or job choice.
+    three_point_limit_subject_to_gm_permission: true
     possible_optional_effects:
     - non-shadowrunner contacts
     - cover identity
@@ -122,7 +124,7 @@ data:
     value: -1
     allowed_character_type: humans only
     social_effect: Person pretends to be an elf; actual elves who discover the secret
-      may respond with contempt and Hostility modifiers
+      respond with contempt and Hostility modifiers
     possible_disguise: Cosmetic procedures can let the character pass initially; not
       a universal mandatory disguise modifier
   - name: Extra Contact
@@ -142,12 +144,13 @@ data:
   - name: Friends Abroad
     kind: Edge
     value: 3
-    starting_extra_contact: One contact who resides outside the character's home country/normal
-      setting, unless campaign is abroad
+    starting_extra_contact: One foreign contact outside the campaign home country.
+    alternate_gm_option: A contact in any major city other than the campaign home city.
     ongoing_maintenance: Player explains GM-approved regular contact; failure to maintain
       contact causes permanent loss
-    further_foreign_contacts: May cultivate additional contacts when traveling abroad,
-      subject to contact upkeep rules in same Companion printed p60
+    further_foreign_contacts: Select a contact in a foreign country visited and specify
+      the GM-approved cultivation plan. Communicate frequently for one year, then
+      occasionally under Companion p60 Contact Upkeep rules.
   - name: Friends in High Places
     kind: Edge
     value: 2
@@ -163,8 +166,8 @@ data:
     - dwarf
     - ork
     excludes: metahuman variants and other species
-    effect: Ordinary human NPCs tend to respond neutrally and do not roll on SR3 core
-      Racism Table unless they are close enough to perceive nonhuman characteristics
+    effect: Human NPCs use Neutral attitudes for Social Skill Tests and do not roll
+      on the SR3 core Racism Table unless in close proximity.
   - name: Hung Out to Dry
     kind: Flaw
     value: -4
@@ -183,13 +186,14 @@ data:
   - name: Liar
     kind: Flaw
     value: -2
-    first_encounter_check: On a lie or sincere statement, GM rolls 1D6; result 1 means
-      target catches character lying
-    escalating_check: For subsequent meetings with the same person, caught on 1 or
-      2, then on 1 through 3, and so forth
+    first_encounter_check: Whenever the character addresses someone, GM rolls 1D6;
+      result 1 means the addressee assumes the character is lying; otherwise believes them.
+    escalating_check: After the addressee first assumes a lie, the next meeting with
+      that person triggers disbelief on 1 or 2; increase the threshold by 1 each
+      subsequent encounter with that person.
     full_threshold: On the point at which any D6 result catches the character, the
-      person refuses dealings; if a Contact, it is permanently lost and possibly becomes
-      an Enemy
+      person refuses dealings; if a Contact, it is permanently lost. The GM decides
+      whether the former Contact becomes an Enemy or the character gains Hung Out to Dry.
     exception: Contact upkeep cannot remove this established stigma
   - name: Uncouth
     kind: Flaw
