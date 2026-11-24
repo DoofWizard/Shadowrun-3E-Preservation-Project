@@ -1,0 +1,78 @@
+id: rule.matrix.matrix-otaku-submersion-echoes-fading-p143-146
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '143-146'
+pdf_pages: '144-147'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp143-146/PDF144-147.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Otaku submersion, echoes and Fading
+summary: Complete numerical expansion of the existing Otaku advancement framework.
+data:
+  legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 provides generic advancement, echoes and Fading.'
+  submersion: {requires: resonance well, duration: days with no exact count, first_grade: 1, grade_increment: 1, echoes_per_grade: 1, cost_karma: '2 * desired grade + 10'}
+  echo_selection: {incremental: repeatable, static: once per type except Resonance Link}
+  incremental:
+    improved_io: {increase_Mp: 100, cap: 'Intelligence * 200 Mp'}
+    improved_hardening: {increase: 1, cap: Willpower}
+    improved_mpcp: {increase: 1, cap: 'Intelligence * 2', may_affect: Hacking Pool}
+    improved_persona: {increase: 1, choose: [Bod, Evasion, Masking, Sensor], cap: 'floor(MPCP * 1.5)', masking_may_affect: Detection Factor}
+    improved_reaction: {increase: 1, cap: 'MPCP * 1.5'}
+  static:
+    daemon_summoning:
+      procedure: sprite rules except listed changes; agent equivalent
+      allowed_core_options: [armor, cascading, expert defense, expert offense, shield, shift IC]
+      multiplier: 10
+      persona_points: 'core * 5'
+      frame_points: 'core * 6'
+      maximum_initiative_dice: 5
+      hacking_pool: core rating
+    ghosting: {effective_detection_factor_increase: 1}
+    info_sortilage:
+      prerequisite: Info Sortilage Knowledge skill
+      complementary_dice: Info Sortilage skill for Computer (Search Operations) tests
+      minimum_search_successes: 5
+      analysis_hours: '1D6 / 2'
+      test: GM Open Test using Info Sortilage skill
+      results: {'4': obvious, '5': unclear, '7': hidden, '8': secret, '10': top secret}
+      all_ones: misleading conclusion
+      adjudication: clues inferable by correlating evidence but beyond normal research; GM may allow leaps over missing clues
+    neurofilter: Equivalent to ICCM against gray and black IC (p21).
+    overclock: {extra_matrix_initiative_dice: 1, maximum_total_dice: 5}
+    resonance_link:
+      target: another Otaku chosen by character
+      effect: one-way awareness of dominant mood, distress, pain or danger while both online regardless of Matrix location
+      reciprocity: requires both to choose one another
+      repeatable: one additional companion per selection
+    switch:
+      action: Complex Action
+      maximum_increased_attributes: 2
+      increase_cap: 'original persona attribute rating * 1.5'
+      conservation: each increase offset by equal reduction of another persona attribute
+      duration: until jackout, dump or further reallocation Complex Action
+    traceroute:
+      game_effect: locate an online fictional character or most recent location of their Matrix interaction
+      test: MPCP
+      base_target: 8
+      hacking_pool: prohibited
+      no_successes: failure
+      all_ones: misleading information
+      base_hours: number of grids encompassed
+      final_hours: base hours divided by successes
+      modifiers:
+        transaction_frequency: {hourly: -1, few_per_day: 0, less_than_daily: 1, weekly: 3}
+        most_recent_transaction: {same_LTG: 0, different_LTG_same_RTG: 1, LTG_different_RTG: 2, PLTG: 3}
+        subject_currently_online: -2
+        known_identifier: {SIN_telecom_MxP_or_MPCP_signature: -1, street_name_or_picture_only: 1}
+  fading:
+    applies_to: all Otaku player and nonplayer characters
+    start_age: 21
+    further_submersion: prohibited from start age
+    test_frequency: annual starting on 21st birthday
+    dice: submersion grade plus 1
+    target: '5 + (age - 21)'
+    failure: lose one grade and one echo; if all already lost, lose all Otaku abilities
+    recovery: impossible
+    game_presentation: gradual loss over months or years, not sudden
+    transition: tribal assistance toward ordinary decking may include cyberdeck if resources allow
