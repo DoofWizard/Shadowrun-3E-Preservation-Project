@@ -1,21 +1,39 @@
 id: rule.cybermancy.willpower
 record_type: rule
-name: "Cybermantic Willpower Changes"
+name: Cybermantic Willpower Changes
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '58'
+pdf_pages: '59'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermantic Willpower Loss and Restoration
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed p58/PDF59.
 effective: {status: current, source: source.mm, page: 58, basis: defines}
 scope:
-  applies_to: ["cybermantic characters"]
+  applies_to: [cybermantic characters]
 resolution:
-  summary: "Negative Essence reduces Willpower, but the cybermantic process magically restores up to four points of the Willpower lost from negative Essence, up to the rating held before cybermancy. This restored Willpower cannot be increased or dispelled by magic."
-  inputs: ["negative Essence", "pre-cybermancy Willpower"]
-  outputs: ["effective Willpower"]
-  steps: []
+  summary: The fictional cybermancy rules reduce Willpower for negative Essence, then restore part of the loss through the cybermantic process.
+  inputs: [negative Essence, pre-cybermancy Willpower]
+  outputs: [effective Willpower]
+  steps:
+    - Reduce Willpower by 1 for each half point or fraction of a half point of negative Essence.
+    - Restore up to 4 points of this lost Willpower, without exceeding the pre-cybermancy rating.
+data:
+  willpower_loss: 'ceil(abs(negative Essence) / 0.5)'
+  maximum_restoration: 4
+  restoration_cap: pre-cybermancy Willpower
+  example_essence: -0.75
+  example_loss_before_restoration: 2
+  immune_to_magic_increasing_willpower: true
+  cybermantic_restoration_can_be_dispelled_or_broken: false
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 58, relation: defines, note: "Changes to Willpower"}
+  - {source: source.mm, page: 58, relation: defines, note: Changes to Willpower}
 notes: []
