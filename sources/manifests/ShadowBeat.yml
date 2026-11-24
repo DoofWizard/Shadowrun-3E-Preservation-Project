@@ -107,7 +107,38 @@ edition_lineage:
       native_sr3_audit: references/audits/cannon-companion-pab-and-applied-simsense-appendix-review-2026-11-24.yml
       native_audit_blob: "70fac5c057dfd9030d2c76b8a38db54d045d8465"
       decision: "Five PAB rating and list-price pairs match the source-reviewed SR3 entities; native acquisition fields supersede historical market/legal code for SR3 play. Do not infer a native facility cap from older p97; compare separately. Shared spelling discrepancies remain with owning specialist."
-  review_limit: "Read-only crosswalk to accepted native SR3 records and original legacy records, not a new source verification or a global conversion policy. Remaining lineage checks include Matrix/ECM, media equipment, social/Karma skills, sports, lifestyle and character options."
+    performance_skill_defaulting:
+      legacy: option.shadowbeat-performance-skills-p7
+      legacy_blob: "d50814e38951d22ad5b8e793a8a4fa01456fade3"
+      native_sr3: rule.skills.sr3-core-defaulting-worked-resolution-p84-85
+      native_blob: "32d9ba4fe0a8ba2ffd92e879933eb129ae3ca957"
+      decision: "Use native SR3 defaulting for native skills. Original performance Attribute substitution has +4 ordinary TN or -4 Impact; native SR3 also uses +4 linked-Attribute defaulting and subtracts the route modifier for Open Tests, but adds permitted-route, predefault TN and dice-pool restrictions. Do not double-count the coincident -4 or automatically register 2E Special Skills and concentrations as SR3 skills. Legacy career skill adapter remains optional and unresolved."
+    concert_impact_karma:
+      legacy: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
+      legacy_blob: "ff50b7cc385813aa21fa54de2ea1fad5aba8459c"
+      native_sr3: rule.advancement.sr3-core-karma-pool-spending-optional-p246-248
+      native_blob: "3339b457cc0c7ce616014247c3fd8067428805fa"
+      decision: "Native SR3 Karma Pool spending uses escalating costs, distinct Open Test rerolls and permanent burn for purchased successes, rather than the original concert-specific Instant Karma exchange. Do not equate Instant Karma with Karma Pool or combine both spending systems. Preserve original one extra die per two points and its skill-rating cap as a legacy optional subsystem; a native adapter needs explicit adjudication."
+    rocker_lifestyle_costs:
+      legacy: rule.shadowbeat-rocker-status-income-message-p13-16
+      legacy_blob: "5c8f88798ebe2e9ee63eb7023c8daa15a03ee0fc"
+      native_sr3: rule.lifestyle.sr3-core-numeric-cost-payment-permanent-p240-241
+      native_blob: "6367dc0ea6f4d5ac62e01e3cdf441378219485bd"
+      decision: "Native SR3 supplies monthly costs, guest fractions, nonpayment and permanent ownership. Original p14 Middle-to-High differential of 5000 nuyen matches native 10000 minus 5000. That match is not evidence that SR3 includes the legacy career-provided entitlement, no cash-out or annual Money Points rules. Keep those career provisions optional; use native costs and avoid charging the same expense twice if an adapter is approved."
+    sasquatch_buddy_contact:
+      legacy: rule.shadowbeat-sasquatch-band-recruitment-p17
+      legacy_blob: "d4a1523e9d041334ec7465636bc8830760049031"
+      native_sr3: rule.contacts.sr3-core-contact-levels-bonuses-p254-256
+      native_blob: "d0e02486e7b68bea5f6dcaa2af585c07d73b9ab2"
+      decision: "Native SR3 starting contacts and campaign contact-level rules govern native contact acquisition. Original p17 Buddy purchase refers to an older rulebook, so no automatic SR3 price or level equivalence is justified. Retain the roleplay recruitment and distinct legacy band benefits without converting the old Buddy requirement."
+    media_memory_acquisition:
+      legacy: equipment.shadowbeat-media-storage-legacy-p99
+      legacy_blob: "55317969297f9e2f1b2a13c51243e0c71901539c"
+      native_sr3:
+        - {id: equipment.market.sr3-core-skillsoft-chips-btl-numeric-p296, blob: "97c69d9f2ce48776d25575d808f69a23d86664ec"}
+        - {id: equipment.cyberware.sr3-core-headware-communications-market-p298, blob: "0bd036bfba7923b1180baa18e4e8040a51cd581d"}
+      decision: "Native SR3 optical memory is 5 nuyen/Mp versus original 0.5; native headware memory is 150 nuyen/Mp versus original 100, with native Essence Mp divided by 300. Use native acquisition data for SR3 rather than importing older rates. Legacy CD format and audiovisual storage rates remain source-specific, not blanket native SR3 rules; original p99 Gp notation and p79 worked-example contradiction retained."
+  review_limit: "Specific lineage crosswalk against indexed source-reviewed native SR3 and legacy records, not a global conversion policy or a new semantic acceptance receipt. November 24 original ShadowBeat image spot checks: printed pp7,11,14,17,99 / physical PDF8,12,15,18,108. Remaining lineage checks include Matrix/ECM, camera and other media equipment, social and journalism Karma procedures, sports, network/SIN employment options, and skill/archetype mapping. Whole-source certification and optional adapter policy remain open."
   default_rule_status: original_2e_mechanics_not_automatically_native_sr3
   preserve_original_formulae_and_units: true
 records:
