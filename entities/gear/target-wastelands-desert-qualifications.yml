@@ -1,0 +1,30 @@
+id: catalog.gear.target-wastelands-desert-qualifications
+record_type: entity_catalog
+status: ingested
+source: source.fanpro-10653
+printed_pages: "117-119"
+pdf_pages: "118-120"
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: Fictional Desert equipment functional qualifications
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  entries:
+    thermal_air_bag:
+      extends: entity.gear.thermal-air-bag
+      printed_temperature_min_c: 10
+      printed_temperature_max_c: 65
+      discrepancy: Original p118 has positive 10 degrees Celsius, not the negative 10 in the legacy record. Preserve the printed value without inferring an erratum.
+    seismic_mic:
+      extends: entity.gear.seismic-mic
+      directional_pickup_rod_length_cm: 10
+      alert_mode: May notify the user when vibrations exceed a selected threshold.
+    desert_survival_kit:
+      extends: entity.gear.desert-survival-kit
+      typical_quantities:
+        spare_flashlight_bulbs: 2
+        space_blankets: 3
+        spare_water_filters: 3
+      qualification: Source describes typical kit contents rather than a mandatory fixed inventory.
