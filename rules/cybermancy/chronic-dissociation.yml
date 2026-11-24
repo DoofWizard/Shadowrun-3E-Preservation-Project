@@ -1,21 +1,62 @@
 id: rule.cybermancy.chronic-dissociation
 record_type: rule
-name: "Chronic Dissociation Syndrome"
+name: Chronic Dissociation Syndrome
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '59'
+pdf_pages: '60'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999), Shadowrun Third Edition tabletop RPG: Chronic Dissociation Syndrome, p59/PDF60'
 effective: {status: current, source: source.mm, page: 59, basis: defines}
-scope:
-  applies_to: ["cybermantic characters"]
+scope: {applies_to: [cybermantic characters]}
 resolution:
-  summary: "Cybermantic characters periodically test Willpower for chronic dissociation syndrome at intervals and target numbers based on negative Essence. Onset causes severe penalties to perception and other tests and prevents initiating actions. Specialized magical treatment at a delta clinic may reverse the syndrome, but repeated treatment becomes progressively harder."
-  inputs: ["negative Essence", "Willpower", "treatment attempts"]
-  outputs: ["CDS state", "test modifiers", "recovery"]
+  summary: 'The fictional rule uses periodic Willpower tests, with frequency and target number determined by Essence. Failed tests trigger the syndrome; specialized magical treatment may reverse it.'
+  inputs: [Essence, Willpower, treatment history]
+  outputs: [CDS state, test modifiers, recovery]
   steps: []
+data:
+  periodic_test:
+    attribute: Willpower
+    cybermantic_magic_willpower_modifiers_apply: true
+    other_short_term_magical_modifiers_apply: false
+    table_columns: [Essence range, interval months, target number]
+    rows:
+      - ['0 to -0.50', 6, 3]
+      - ['-0.51 to -1.00', 6, 4]
+      - ['-1.01 to -1.50', 6, 5]
+      - ['-1.51 to -2.00', 4, 5]
+      - ['-2.01 to -2.50', 4, 6]
+      - ['-2.51 to -3.00', 3, 6]
+      - ['-3.01 to -3.50', 2, 6]
+      - ['-3.51 or lower', 2, '8 plus 1 per additional -0.5 Essence']
+  onset:
+    trigger: failed periodic test
+    can_initiate_actions: false
+    can_react: true
+    perception_target_modifier: 4
+    other_test_target_modifier: 3
+    cumulative_with_existing_modifiers: true
+    fatal_after_weeks: '3 + Willpower'
+  treatment:
+    provider: magician trained to perform cybermancy rituals
+    facility: delta clinic
+    spell_resistance_target: 8
+    successful_resistance: character dies
+    failed_resistance: syndrome reversed
+    repeat_target_reduction: 1
+    minimum_target: 2
+    recovery_test: {attribute: Willpower, target_number: 6}
+    base_recovery_days: 7
+    days_reduced_per_success: 1
+    recovery_effect: invoked memory stimulator resumes effective function
 links:
   uses: [rule.tests.success-test]
   affects: []
   modified_by: []
   interacts_with: [subsystem.cybermancy.core]
 sources:
-  - {source: source.mm, page: 59, relation: defines, note: "Chronic Dissociation Syndrome"}
+  - {source: source.mm, page: 59, relation: defines, note: Chronic Dissociation Syndrome and its table}
 notes: []
