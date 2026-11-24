@@ -56,7 +56,7 @@ coverage:
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
   combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained; independent equipment-stat chapter and SR3 compatibility remain open."}
-  urban_brawl: {printed: "68-73", status: source_verified_section_closed, note: "Match, roles and penalties individually verified; p69/PDF78 illustration; contradictory offense clocks and ball-size comparison preserved, edition compatibility unresolved."}
+  urban_brawl: {printed: "68-73", status: source_verified_section_closed, note: "Match, roles and penalties individually verified; p69/PDF78 illustration; contradictory offense clocks and ball-size comparison preserved. Apply urban-brawl-state-qualifiers-p70-73 for surrender, penalty-state transitions, medico restrictions and return-to-goal exception."}
   professional_sports_and_games: {printed: "58-73", status: source_verified_section_closed, note: "Original competition rules pp58-73 accounted for; source contradictions and legacy edition dependencies retained; p69 illustration excluded."}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
@@ -195,6 +195,15 @@ edition_lineage:
       native_sr3: rule.skills.sr3-core-btl-playback-formats-effects-p296
       native_blob: "b16bda720daf5db7d6929b3d8509c87e55c2078c"
       decision: "Reuse native SR3 general playback formats, ordinary single-use default with stated exception, and named variants. Legacy matching-component eligibility, format qualifiers and fictional jurisdiction distinctions remain historical rather than automatic native rules. Original narrative personalized-chip dose statement is not a guaranteed threshold or dice mechanic. Cannon Companion option-by-option reconciliation remains open."
+    individual_combat_sports_resolution:
+      legacy: rule.shadowbeat-individual-combat-sports-p64
+      legacy_blob: "f76ba0c0f5d86a8f1165796fda1786d269e93e2e"
+      native_sr3:
+        - {id: procedure.combat.sr3-core-melee-resolution-numeric-p122, blob: "5a223961f209abeab07c3d4fee01dff3bed0bbba"}
+        - {id: rule.combat.sr3-core-melee-modifiers-table-exact-p123, blob: "0ad58e3afdd9963446738690a4884e91f35cd07c"}
+        - {id: option.combat.cannon-companion-martial-style-conditions-p88-90, blob: "23bbcff4e1b091c15d438e5b00e9e2b5e1052583"}
+        - {id: rule.combat.cannon-companion-martial-maneuver-resolution-qualifiers-p91-92, blob: "25dd75ec6f79bbfbe767330272675be528a0ce46"}
+      decision: "Use accepted native SR3 melee dice and modifiers, and the optional Cannon Companion martial-arts package only if chosen. ShadowBeat p64 supplies competition eligibility, ring-out and match-end states, not a replacement melee resolution or new numerical injury modifiers. Retain the unquantified second boxing weight range and do not infer a free called-shot modifier."
   review_limit: "Specific indexed source lineage comparisons, not a global conversion policy or new semantic acceptance receipt. November 24 original image checks include ShadowBeat pp20-23,27-29,41,43-45,51-52,80-86,88-91 / PDF21-24,28-30,50,52-54,60-61,89-95,97-100. Remaining checks include Matrix supplement-specific bandwidth and trace rules, Cannon Companion BTL options, other media equipment, sports combat resolution and remaining character options. Whole-source certification and optional adapter policy remain open."
   default_rule_status: original_2e_mechanics_not_automatically_native_sr3
   preserve_original_formulae_and_units: true
@@ -250,6 +259,7 @@ records:
   - ["rocker-opener-cost-conflict-p86", "4fcdd1bea12589b7060280550255c1f2888a6d32"]
   - ["rocker-career-corrections-p13-16", "9657eb90c6fb802f446e9ea4ffef01193442ec48"]
   - ["composition-rating-qualifiers-p12", "9ea5b3e5cbd781fad2548ba9815a1f11197b9161"]
+  - ["urban-brawl-state-qualifiers-p70-73", "65a529d83de7a305b223a66ebd92bbe13965604f"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -811,5 +821,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p12_pdf13"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-urban-brawl-state-qualifiers-p70-73
+    path: rules/shadowbeat/urban-brawl-state-qualifiers-p70-73.yml
+    original_printed_pages: "70-73"
+    original_pdf_pages: "79-82"
+    commit_sha: "65a529d83de7a305b223a66ebd92bbe13965604f"
+    readback_blob_sha: "804fac86d42f1451504b0c5e4233d2824cc211b4"
+    candidate_sha256: "15b36adc8a31e9555608c0070b9e3fce30a5b740051f36cb754b2c593f7abbb6"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p70_pdf79", "printed_p71_pdf80", "printed_p72_pdf81", "printed_p73_pdf82"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
