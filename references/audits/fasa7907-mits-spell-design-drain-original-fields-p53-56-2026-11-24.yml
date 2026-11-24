@@ -1,0 +1,73 @@
+id: audit.fasa7907.mits.spell-design-drain.2026-11-24
+source: source.mits
+publication: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+source_size_bytes: 123917505
+source_pdf_pages: 178
+verify_source_actual: {page_images_review: still_required_independently, sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, source: source.mits, status: source_pdf_hash_verified}
+validation_scripts:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+editorial_playbook_blob: 35c07f00263ce26a249ffb0c8d00872fe607b7f0
+preflight_self_test: 29 passed
+visual_review:
+  identity_pdf_pages: [1, 7]
+  printed_pages: [53, 54, 55, 56]
+  pdf_pages: [54, 55, 56, 57]
+  original_images: All pages visually inspected, tables and notes compared to baseline and same-substance candidate.
+  editorial_review: All root presentation and nested data fields reviewed as fictional source-attributed tabletop mechanics.
+  existing_core: rules/magic/drain.yml remains unchanged; generic core Drain resolution is not a substitute for MitS spell-design numeric rules.
+  field_checklist:
+    - Half Force rounded down, Power and Level adjustments, minimum Light and +2 Power for each Level increase beyond Deadly.
+    - Six base tables with 29 rows, category-specific conditions for combat, detection, health, directed and indirect illusion and manipulation.
+    - All 27 named worked example results, including specific threshold and target restrictions.
+    - Seven Power modifier rows and thirteen Level modifier rows, applicability keys and explanatory notes.
+    - Stacking, Caster Only inclusions, restricted-target exclusions, initiative and elemental accumulation, extended-area and extended-sense prerequisites, permanent restoration exemption and voluntary-target resistance exceptions.
+  source_discrepancies:
+    - Detection Touch Range modifier appears in table and p53 examples but p56 explanatory note excludes detection; both preserved without editorial resolution.
+    - Control Thoughts example threshold full Willpower contrasted with usual half-Willpower threshold in p50 general rule.
+transactions:
+  - section: Drain modifiers
+    path: rules/magic/mits-spell-design-drain-modifiers-original-p55-56.yml
+    record_id: rule.magic.mits-spell-design-drain-modifiers
+    printed_pages: [55, 56]
+    pdf_pages: [56, 57]
+    stage: staged
+    prepare: preflighted
+    commit: 588332a3a9b9d459124342db85a11465d5ec3175
+    blob: 21d6ade16d7ea45918e4d7866dc1283573076350
+    immutable_sha256: 2466130b1fb5a6dd675d787c44f0a44adf68d279dbbfbc53c8f257c06c076701
+    confirmation: verified
+    journal_sha256:
+      baseline.yml: 0463d9e46a36a2ced6b71d021587fa3a7775333838ea20ddc2fe51835914032e
+      candidate.yml: efd141485e8e8c7c042098655f8e7b24861bdbf9aceb24d9641ab15fef50790e
+      plan.json: 3b5fc97caab0f350e3f803ba42daea8da6ca26053c92b055fe37c76aec44dffa
+      confirmation.json: 47eddaab3620d94b93006a5d55ec977e423e6ac302f0ddac66217ad592fe215e
+    manifest_commit: 9846994b13c53a3e955ebda393b08e75e1bd92c5
+    manifest_blob: 86b76f101bf26fe158df57bb1f0887c8aa5814df
+  - section: Base Drain Code and worked examples
+    path: rules/magic/mits-spell-design-drain-code-original-p53-55.yml
+    record_id: rule.magic.mits-spell-design-drain-code
+    printed_pages: [53, 55]
+    pdf_pages: [54, 56]
+    stage: staged
+    prepare: preflighted
+    commit: 7ca80ab534392159bbc0ea90c8b31cca595d2bc9
+    blob: d3674f6a80d65c9ccf484903fbee373d86f6520a
+    immutable_sha256: 95d03ee3ca16e0ba155127cba7d6a6fb7280a8271156792f188f7bb2e46e0dd2
+    confirmation: verified
+    journal_sha256:
+      baseline.yml: da7c78dc3f5f4280fcd1d1995bf83a782f4247633e8be572c52c5d3cc1dfa2f0
+      candidate.yml: a94550555269ebfbcdbfe42694fc7bcc30cdf4f5d9db7cf181cdbfb9f2a9b277
+      plan.json: a5762115ccc12d42060fe899f425a38a774ca6f538525f7d4056d96e29771754
+      confirmation.json: 02538c0ec26aafa57d6b8e84946e933946b2bcb53edf3dbcc2e52b07e849bb48
+    manifest_commit: 1585dee3bae79535ef732f84562b365b3418c7dc
+    manifest_blob: 1e4f8e311ade8a7f22a8b9ee2bfd4336ead97645
+readback: Both canonical records and each individual manifest registration matched exact content and blob at their commits and live main.
+journal_reconstruction: Retrieve each candidate at recorded commit; baseline is exact candidate prefix before framing line. Run transaction_recovery.py stage with baseline, candidate, path, source.mits and recorded source SHA-256. Run ingestion_gate.py confirm using reconstructed plan, candidate, recorded commit and blob; retain stdout newline. Verify all journal hashes.
+section: Drain Code and Drain Modifiers with worked examples
+scope_status: complete_for_reviewed_numeric_rules_and_exceptions
+remaining_spell_design_sections: [parameters pp49-50 deferred HTTP 409, elemental effects pp51-54]
+global_page_credit: 0
