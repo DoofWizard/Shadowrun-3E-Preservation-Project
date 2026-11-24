@@ -1,0 +1,23 @@
+id: rule.la.seers-divination-p155
+record_type: rule
+status: ingested
+source: source.fanpro-25006
+printed_pages: '155'
+pdf_pages: '155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Loose Alliances (FanPro25006, FanPro, SR3), printed/PDF p155: Seers and Divination'
+data:
+  publication: {title: Loose Alliances, publisher: FanPro, edition: SR3, catalog: FanPro25006}
+  eligibility: Seer initiated in the Seers' Guild.
+  repeatable_metamagic: Divination
+  selection_timing: Subsequent initiations may select Divination again.
+  each_selection_after_first:
+    weekly_divination_test_count_multiplier: 2
+    cumulative_benefits_selected: 1
+    choices:
+      - {test: Divination, target_number_modifier_per_selection: -1, maximum_total_modifier: -6}
+      - {test: Astral Tracking, target_number_modifier_per_selection: -1, maximum_total_modifier: -4}
+      - {test: Linking using sympathetic magic, target_number_modifier_per_selection: -1, maximum_total_modifier: -2, reference: 'State of the Art 2063 p47'}
+      - {skill: Divining, rating_increase_per_selection: 1, maximum_total_increase: 3}
