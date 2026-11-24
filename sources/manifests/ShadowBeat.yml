@@ -55,7 +55,7 @@ coverage:
   beat_consequences_and_ratings: {printed: "55-56", status: source_verified_section_closed}
   hostile_interview_tests: {printed: "45-46", status: source_verified_section_closed}
   individual_combat_sports: {printed: "64", status: source_verified_section_closed, note: "Second added boxing weight range not specified in original."}
-  combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained; independent equipment-stat chapter and SR3 compatibility remain open."}
+  combat_biker_match_procedures: {printed: "65-67", status: source_verified_section_closed, note: "Match procedure and role eligibility transactions verified; roster, scoring and mounting contradictions retained. Apply combat-biker-play-qualifiers-p67 for patch activation and per-play resource exception. Native core vehicle and injury relationship reviewed; supplement-specific overrides and equipment mapping remain open."}
   urban_brawl: {printed: "68-73", status: source_verified_section_closed, note: "Match, roles and penalties individually verified; p69/PDF78 illustration; contradictory offense clocks and ball-size comparison preserved. Apply urban-brawl-state-qualifiers-p70-73 for surrender, penalty-state transitions, medico restrictions and return-to-goal exception."}
   professional_sports_and_games: {printed: "58-73", status: source_verified_section_closed, note: "Original competition rules pp58-73 accounted for; source contradictions and legacy edition dependencies retained; p69 illustration excluded."}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
@@ -204,7 +204,27 @@ edition_lineage:
         - {id: option.combat.cannon-companion-martial-style-conditions-p88-90, blob: "23bbcff4e1b091c15d438e5b00e9e2b5e1052583"}
         - {id: rule.combat.cannon-companion-martial-maneuver-resolution-qualifiers-p91-92, blob: "25dd75ec6f79bbfbe767330272675be528a0ce46"}
       decision: "Use accepted native SR3 melee dice and modifiers, and the optional Cannon Companion martial-arts package only if chosen. ShadowBeat p64 supplies competition eligibility, ring-out and match-end states, not a replacement melee resolution or new numerical injury modifiers. Retain the unquantified second boxing weight range and do not infer a free called-shot modifier."
-  review_limit: "Specific indexed source lineage comparisons, not a global conversion policy or new semantic acceptance receipt. November 24 original image checks include ShadowBeat pp20-23,27-29,41,43-45,51-52,80-86,88-91 / PDF21-24,28-30,50,52-54,60-61,89-95,97-100. Remaining checks include Matrix supplement-specific bandwidth and trace rules, Cannon Companion BTL options, other media equipment, sports combat resolution and remaining character options. Whole-source certification and optional adapter policy remain open."
+    combat_biker_resolution:
+      legacy:
+        - {id: rule.shadowbeat-combat-biker-competition-p65-67, blob: "429361778220ae12d4f826e2b5da733f2a5f9729"}
+        - {id: rule.shadowbeat-combat-biker-role-equipment-p66-67, blob: "95e1041ad29a74be2ec4f83c8ec5f2d9d3da1796"}
+        - {id: rule.shadowbeat-combat-biker-play-qualifiers-p67, blob: "f327386630bee5d007562893ef35910456024d77"}
+      native_sr3:
+        - {id: rule.vehicles.sr3-core-vehicle-maneuver-points-turn-p138-140, blob: "917a15b7afb49101949feb7582a2469f86f88c6d"}
+        - {id: rule.vehicles.sr3-core-ramming-test-modifiers-p143-144, blob: "f2a685742bb910a98a898c5d8130959305978243"}
+        - {id: procedure.healing.sr3-core-first-aid-biotech-stabilization-p129, blob: "031acf9fe3351da2c463a427cbbcb6ab9d5dfc5a"}
+      decision: "Use native SR3 vehicle turn and collision resolution and native injury/patch effects where applicable. Legacy match clocks, role restrictions, scoring, fouls, resource allocation and patch activation are distinct competition procedures, not alternate vehicle tests or healing mechanics. Retain unresolved roster, score and mounting contradictions. Rigger 3 Revised override scope and special equipment ratings not certified here."
+    urban_brawl_resolution:
+      legacy:
+        - {id: rule.shadowbeat-urban-brawl-match-p68-72, blob: "9cd0115c7dcb7c2e69f6bb39ba9c61892a140b6d"}
+        - {id: rule.shadowbeat-urban-brawl-roles-p70-71, blob: "ef9bdacff6000d66fefb969a4e402ef0ce69404b"}
+        - {id: rule.shadowbeat-urban-brawl-penalties-p72-73, blob: "f54dc29299661f9d1de915eb5253b4b04817cb1a"}
+        - {id: rule.shadowbeat-urban-brawl-state-qualifiers-p70-73, blob: "804fac86d42f1451504b0c5e4233d2824cc211b4"}
+      native_sr3:
+        - {id: rule.condition.sr3-damage-monitor-numeric-p125-126, blob: "5ba510e3e51b53eebbac30865f2cddc230bf1219"}
+        - {id: procedure.healing.sr3-core-first-aid-biotech-stabilization-p129, blob: "031acf9fe3351da2c463a427cbbcb6ab9d5dfc5a"}
+      decision: "Retain native injury thresholds and medical test eligibility; apply historical match-specific surrender, eligibility, evacuation, medical replacement and penalty states only as optional competition overlay. Do not equate a disciplinary penalty with native Physical or Stun damage. Magical healing restriction concerns re-entry to the match, not native spell effects. No arbitrary resolution of conflicting offense clocks or equipment mapping."
+  review_limit: "Specific indexed source lineage comparisons, not a global conversion policy or new semantic acceptance receipt. November 24 original image checks include ShadowBeat pp20-23,27-29,41,43-45,51-52,80-86,88-91 / PDF21-24,28-30,50,52-54,60-61,89-95,97-100. Remaining checks include Matrix supplement-specific bandwidth and trace rules, Cannon Companion BTL options, other media equipment, supplement-specific sports vehicle and equipment overrides, and remaining character options. Whole-source certification and optional adapter policy remain open."
   default_rule_status: original_2e_mechanics_not_automatically_native_sr3
   preserve_original_formulae_and_units: true
 records:
@@ -260,6 +280,7 @@ records:
   - ["rocker-career-corrections-p13-16", "9657eb90c6fb802f446e9ea4ffef01193442ec48"]
   - ["composition-rating-qualifiers-p12", "9ea5b3e5cbd781fad2548ba9815a1f11197b9161"]
   - ["urban-brawl-state-qualifiers-p70-73", "65a529d83de7a305b223a66ebd92bbe13965604f"]
+  - ["combat-biker-play-qualifiers-p67", "6bdac83906bac6892710b9604183511d586bdc2f"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -832,5 +853,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p70_pdf79", "printed_p71_pdf80", "printed_p72_pdf81", "printed_p73_pdf82"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-combat-biker-play-qualifiers-p67
+    path: rules/shadowbeat/combat-biker-play-qualifiers-p67.yml
+    original_printed_pages: "67"
+    original_pdf_pages: "76"
+    commit_sha: "6bdac83906bac6892710b9604183511d586bdc2f"
+    readback_blob_sha: "f327386630bee5d007562893ef35910456024d77"
+    candidate_sha256: "afe2baf8513b29b7feeeb038f01677763afd2aedfc0dd68018ab2d102df17d40"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p67_pdf76"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
