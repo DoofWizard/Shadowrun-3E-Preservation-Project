@@ -98,10 +98,10 @@ sections:
       candidate.yml: 8eaffae9fa720d3b05dece14dd1bbbc8aab784dea1cc1918e0f76fc250ede5ef
       plan.json: 69966c875b925e64fcce82b2bef1c9cea62b30fa785d680daa3c98cdfdd1043e
       verified.json: 038fe152e84d997a8c4afb0dfd63567b89d7de4d9f4e40d98c6e2775cb38a1dd
-    source_index_commit: null
-    source_index_blob: null
-    source_index_exact_readback: false
-    status: verified_canonical_index_pending_branch_conflict
+    source_index_commit: b27b3ee9cb1ff17a25d576603151da8f57210332
+    source_index_blob: 84590ecfc9d8a7ff33d0a8c63a7332d004cc5883
+    source_index_exact_readback: true
+    status: verified_and_source_indexed
 source_index_conflict:
   affected_record: option.magic.initiation-ordeal-thesis
   operation: ordinary GitHub Contents update of sources/manifests/MitS.yml
@@ -109,7 +109,7 @@ source_index_conflict:
   observed_message: "is at 1218dd49dc6a530c6cb36202979d7a011f697668 but expected a6afa5d4750619f99ad27bfc0966f77e030e4cc4"
   fresh_manifest_blob: 61516d8c50ebbd63f004d7a45dad708be11f10ad
   thesis_registration_present: false
-  resolution: Deferred under exclusive-ownership concurrency rule; no alternate API or repeated write. Canonical receipt remains verified. Reconcile index before re-extraction.
+  resolution: Initial conflict deferred. Subsequent invocation independently read the live canonical path and its original commit, found matching exact bytes and blob, then registered the preserved verified receipt using a fresh unchanged manifest SHA through ordinary Contents update. Manifest readbacks at main and the new commit matched exact submitted bytes. Historical conflict evidence retained. No semantic re-submission or new gate receipt claimed.
 remaining_original_fields:
   - {section: Asceticism, printed: 60, path: options/magic/initiation-ordeal-asceticism.yml, obligation: "Unaugmented physical Attribute minimum, Racial Modified Limit reduction, repeated Attribute rotation rule."}
   - {section: Deed, printed: 60, path: options/magic/initiation-ordeal-deed.yml, obligation: "Karma award comparability, personally relevant goal, GM approval, forfeited run Karma, save only until next grade."}
