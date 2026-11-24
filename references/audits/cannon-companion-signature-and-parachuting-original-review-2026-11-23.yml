@@ -1,0 +1,42 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+actual_verify_source_status: source_pdf_hash_verified
+original_images:
+  printed_range: [102, 104]
+  physical_pdf_range: [103, 105]
+actual_preflight: 29/29
+scope:
+  biological_signature:
+    existing: {path: rules/combat/biological-signature.yml, blob: efa814822c2db296dde202b00d2da4b086c15cec}
+    original_rating_rows: 15
+    matching_rating_rows: 14
+    corrected_label: Eyekiller
+    reused: [four original special modifiers, size guidance, metahuman base Signature]
+    new: [discretionary carried-gear modifier, Signature direction, corrected critter label, printed HALO cross-reference]
+    supplemental_record: rule.combat.cannon-companion-biological-signature-original-p102-104
+  signature_weapon:
+    existing: {path: options/combat/signature-weapon.yml, blob: 430ef69a7909a6756b3733338e30835937cfe3a0}
+    reused: [three Karma cost tiers, one unique signature weapon, starting concentration, base skill advancement, ordinary specialization restriction]
+    new: [earned in play, preference and designation conditions, firearm grip qualification, standard advancement procedure, distinct loss alternatives, original Karma example]
+    supplemental_record: option.combat.cannon-companion-signature-weapon-concentration-original-p103-104
+  parachuting_procedure:
+    existing: {path: procedures/movement/parachuting.yml, blob: d05fbc5a5993d15b952b37f50c2df483f50e7aab}
+    prior_supplement: {path: rules/movement/cannon-companion-parachuting-resolution-clarifications-p102-103.yml, blob: 1d72dca32d0d2522e4a527ebfe4b2535d42368dd}
+    prior_audit: {path: references/audits/cannon-companion-parachuting-original-review-2026-11-23.yml, blob: 17a5d5f17dd134261927080a7e138a696969d008}
+    resolved_dependency: printed HALO wording linked to original Biological Signature table; no invented numerical adjustment
+    supplemental_record: rule.combat.cannon-companion-biological-signature-original-p102-104
+printed_ambiguities_preserved:
+  - HALO reduced Signature before opening versus open parachute modifier; no inferred additional modifier.
+  - Previously reviewed parachute example discrepancy remains recorded separately.
+  - Replacement Signature Weapon alternative has no independent rounding instruction.
+transactions:
+  - {record: rule.combat.cannon-companion-biological-signature-original-p102-104, commit: d912e3d9b4a8fc543020b57354f109ded3c08337, blob: 5900744096a0a7ae458cef53ffe09714f6255fad, gate: verified, index_commit: a574c3024828bdd2aa6f9723f65412810734fbbd, index_blob: 00d5dc6ef7e040b185e8bc5232b7b314ee0345cf}
+  - {record: option.combat.cannon-companion-signature-weapon-concentration-original-p103-104, commit: a6bcc3a2189de0baae045563d75925b59676d3b3, blob: 5c1728027a6bae14606dd9e728861a3cefe901a1, gate: verified, index_commit: 01b7642795eac951243d80a98a21332175edbd4e, index_blob: 0db3be97fdb2e2352427c9f70dd8d982463989e8}
+source_local_status: original_fields_reconciled
+historical_shared_record_gate_limit: Source fields compared to existing exact shared blobs; no newly established historical gate receipt for those shared records.
+whole_book_acceptance: false
+global_pages_authorized: 0
