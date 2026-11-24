@@ -1,0 +1,48 @@
+id: rule.magic.mits-mana-surges-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '86-87'
+pdf_pages: '87-88'
+edition_scope: SR3
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Mana Surges
+summary: Fictional tabletop RPG mechanics from FASA Corporation, printed pp86-87/PDF87-88.
+data:
+  scope: Unpredictable mana disturbance affecting Sorcery and Conjuring only, not fixed abilities such as astral projection, adept powers or critter powers.
+  area_and_duration: GM determines area and duration; reported extents range from a small garden to a hemisphere, and durations from minutes to weeks, with no recorded duration exceeding 28 days. No reliable prediction method is established in the fictional setting.
+  detection: Astral Perception TN 6 plus any background count present.
+  selection: GM chooses appropriate effect or rolls 1D6 and then consults the indicated table.
+  mana_surge_table:
+    - {roll: '1-2', next: Roll 1D6 on Force decrease table.}
+    - {roll: '3-4', next: Roll 1D6 on Force increase table.}
+    - {roll: '5-6', next: Roll 1D6 on Drain change table.}
+  force_decrease_table:
+    - {roll: '1 or 6', effect: No change.}
+    - {roll: '2', effect: Subtract 1 Force.}
+    - {roll: '3', effect: Subtract 2 Force.}
+    - {roll: '4', effect: Subtract 3 Force.}
+    - {roll: '5', effect: Halve Force.}
+  force_increase_table:
+    - {roll: '1 or 6', effect: No change.}
+    - {roll: '2', effect: Add 1 Force.}
+    - {roll: '3', effect: Add 2 Force.}
+    - {roll: '4', effect: Add 3 Force.}
+    - {roll: '5', effect: Double Force.}
+  drain_change_table:
+    - {roll: '1 or 6', effect: No change.}
+    - {roll: '2 or 3', effect: Increase Drain one damage level.}
+    - {roll: '4 or 5', effect: Decrease Drain one damage level.}
+  sorcery:
+    resolution: Resolve all spell tests using modified Force, minimum 1. A Force change also changes Drain. Standard penalties for casting above Magic apply.
+    deadly_drain: When already at Deadly Drain and required to stage up, add 2 to Drain Resistance target number.
+    physical_drain: If modified Force exceeds Magic, resist Physical Drain.
+    below_light: If reduced Force would yield Drain below Light, GM chooses Light or no Drain.
+    plane_and_ritual: Applies to spells cast on either plane within area, including ritual sorcery. GM may change ritual-link TN instead of spell Force or Drain.
+  conjuring:
+    actual_force: Responding spirit may have a higher or lower Force than intended; Drain uses actual Force.
+    higher_force_behavior: Spirit stays to perform requested service but is exceptionally stubborn and insubordinate.
+  worked_example: Force 4 Moderate Fireball has initial Drain 3D; surge roll 3 followed by Force-increase roll 4 yields Force 7, exceeding known Force 5, and actual Drain 4D.
+  source_limit: No rounding instruction for halved Force appears in the surge table; no rounding rule is invented here.
