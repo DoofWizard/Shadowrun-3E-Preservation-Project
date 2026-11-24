@@ -1,0 +1,125 @@
+{
+  "id": "rule.matrix.matrix-operations-restrict-scan-transfer-p101-102",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "101-102",
+  "pdf_pages": "102-103",
+  "edition_scope": "FASA Corporation Matrix FASA7909, Shadowrun Third Edition, published fictional tabletop RPG; printed 101-102/physical PDF 102-103.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Matrix game operations: icon restriction, scanning, transfer, and account validation",
+  "summary": "Source-specific fictional game operation resolution, conditions, exceptions and numeric effects. Existing operation profiles and core tests are reused.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "source_pdf_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+    },
+    "legacy_catalog": {
+      "path": "references/matrix/system-operations.yml",
+      "blob": "4fb08f82abefa56bb5cc7afc8657b09b8bb0c8c1",
+      "reuse": "Existing operation test, utility, and action profiles remain authoritative except corrected page citations; this record adds operation-specific tabletop resolution."
+    },
+    "core_procedure": {
+      "path": "procedures/matrix/system-operation.yml",
+      "blob": "d736201291ebc17ddd3df33434d886f0d27f76a2"
+    },
+    "operations": {
+      "restrict_icon": {
+        "printed": 101,
+        "duration": "ongoing",
+        "targets": [
+          "persona",
+          "frame",
+          "sprite",
+          "SK",
+          "AI"
+        ],
+        "prerequisite": "Located icon.",
+        "control_tn_modifier": "Add target Detection Factor.",
+        "per_success": "Either +1 to target System Test TN or -1 to target Detection Factor for opposing Security Tests."
+      },
+      "scan_icon": {
+        "printed": 101,
+        "prerequisite": "Locate target.",
+        "targets": [
+          "persona",
+          "frame",
+          "agent",
+          "sprite",
+          "daemon",
+          "AI",
+          "SK"
+        ],
+        "test": "Computer Test, not System Test.",
+        "tn": "Target Masking minus active Scanner rating plus target Sleaze rating, if present.",
+        "per_success": [
+          "MPCP rating",
+          "One persona program rating",
+          "Response Increase",
+          "Access privileges",
+          "MXP address",
+          "One loaded utility rating on frame or agent, starting largest",
+          "Current damage level"
+        ],
+        "identity": "Use Analyze Icon to identify icon."
+      },
+      "send_data": {
+        "printed": 101,
+        "duration": "ongoing",
+        "direct_icon": {
+          "requires": "Located willing recipient.",
+          "rate": "Minimum of both I/O Speeds.",
+          "from": "Sender storage to recipient storage.",
+          "forced_acceptance": false
+        },
+        "commcode": {
+          "requires": "Recipient commcode.",
+          "rate": "Sender I/O Speed."
+        },
+        "files_subsystems": {
+          "requires": "Send Data in origin Files subsystem, then Edit File in destination."
+        },
+        "multiple_recipients": true,
+        "interactive_comcall": "Make Comcall instead."
+      },
+      "trace_mxp_address": {
+        "printed": 101,
+        "duration": "interrogation",
+        "prerequisite": "Possess target game MXP address.",
+        "virtual_origin": "One successful operation identifies source host/grid and jackpoint serial.",
+        "physical_origin": "Separate successful operation from virtual origin identifies fictional jackpoint address.",
+        "relationship": "Locate Access Node procedure."
+      },
+      "triangulate": {
+        "printed": 101,
+        "duration": "interrogation",
+        "eligible": "Game systems managing wireless signal traffic with remote devices.",
+        "margin_of_error_m": "100 / successes"
+      },
+      "validate_account": {
+        "printed": 102,
+        "privileges": "Choose access privileges when creating fictional account.",
+        "control_tn_modifiers": {
+          "security": 2,
+          "superuser": 6
+        },
+        "duration_days": "GM rolls 1D6 times test successes, unless compromised sooner.",
+        "deactivation": "Passcode use causing active alert on host or grid.",
+        "success": "Correct passcode permits logon and automatic operations according to accepted privilege rules."
+      }
+    },
+    "source_review": {
+      "images": [
+        102,
+        103
+      ],
+      "correction": "Validate Account is on p102, not pp101-102."
+    }
+  }
+}
