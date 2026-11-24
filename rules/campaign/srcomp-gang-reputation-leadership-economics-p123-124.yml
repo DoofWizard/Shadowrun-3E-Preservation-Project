@@ -1,129 +1,72 @@
+id: rule.campaign.srcomp-gang-reputation-leadership-economics-p123-124
 record_type: rule
 status: reviewed
 source: source.srcomp
-edition_scope: FASA Corporation, Shadowrun Companion (FASA7905a), Shadowrun Third
-  Edition (fictional tabletop role-playing game), optional gang-campaign rules; preserved
-  from original printed pages and corresponding physical PDF pages.
+printed_pages: 123-124
+pdf_pages: 124-125
+edition_scope: FASA7905a Shadowrun Third Edition, original optional fictional tabletop gang-campaign mechanics
 content_class:
 - rule_exact
 framing: reference_exact
-id: rule.campaign.srcomp-gang-reputation-leadership-economics-p123-124
-printed_pages: 123-124
-pdf_pages: 124-125
+headline: FASA Corporation Shadowrun Companion (FASA7905a), fictional tabletop RPG, campaign reputation and leadership
+summary: Original campaign economy abstractions, recognition tests, leadership challenge resolution and relative NPC gang tiers; corrects the Charisma operand in the allegiance test.
 data:
-  section: 'Alternate Campaign Concepts — This Is Our Turf, Meat — Special Rules:
-    Earning Money; Reputation and Leadership; Leadership Battle; Gang Creation on
-    the Fly'
-  scope: Optional mechanics for fictional Shadowrun Third Edition gang campaigns,
-    not real-world criminal operations or general default SR3 rules.
   fictional_gang_economy:
-    usual_paid_shadowrun_jobs: The publication describes this campaign type as generally
-      not using standard paid Mr. Johnson runs.
+    usual_paid_shadowrun_jobs: Standard Mr. Johnson paid runs are generally not the basis of this optional campaign type.
     fictional_illicit_goods_purchase_percentage_of_list_price:
       minimum_percent: 10
       maximum_percent: 60
-      random_basis: 'Roll 1D6 to choose the tens-percent baseline: 10, 20, 30, 40,
-        50 or 60 percent.'
-      gm_discretion_percent_adjustment:
-      - '+5'
-      - '-5'
-      - '+10'
-      - '-10'
-      reference_example: A fictional 50¥ chip at a 50% chosen price is purchased in-world
-        for 25¥.
+      random_basis: 1D6 times 10 percent of printed game item price; resale uses the printed game price.
+      gm_discretion_percent_adjustment: ['+5', '-5', '+10', '-10']
+      reference_example: A fictional 50-nuyen item at 50 percent costs 25 nuyen in the game economy.
     fictional_vehicle_salvage_game_value:
       whole_vehicle_max_percent_of_list_price: 50
-      parts_game_value: Full printed list value of individual parts if the group chooses
-        the longer fictional parts-sale resolution
-      game_delay_days_formula: Body rating + Armor rating, in days; not Body + Armor
-        minus 8
-      worked_example: Body 5 + Armor 3 gives eight fictional campaign days for the
-        part-sale resolution; the example vehicle has a 250,000¥ list price.
-    source_scope_note: These percentages and delays are fictional game-economy abstractions,
-      not practical real-world trafficking guidance.
+      parts_game_value: Full listed price of the vehicle, not a sum of separately priced parts, under the alternative abstract parts-sale resolution.
+      game_delay_days_formula: Vehicle Body rating + Armor rating, in game days.
+      worked_example: A fictional vehicle with Body 5, Armor 3 and listed price 250000 nuyen has an eight-day payout delay.
   individual_leader_reputation:
     home_city_base_rating: floor(Total Karma / 10)
     elsewhere_base_rating: floor(Total Karma / 20)
     street_recognition_target_number: 20 - modified Base Reputation Rating
-    test_skills:
-    - Etiquette
-    - Street Knowledge
-    example: 150 Total Karma gives local Base Reputation 15 and recognition TN 5 (20
-      - 15).
-    gm_recent_activity_modifier_examples:
-      notoriety_increase: +2 to Base Reputation
-      recent_inactivity: -2 to Base Reputation
-    nature: Base Reputation quantifies how many in the fictional local community have
-      heard of the leader; it is not ordinary Charisma or Leadership Skill.
+    test_skills: [Etiquette, Street Knowledge]
+    example: 150 Total Karma gives local Base Reputation 15 and recognition TN 5.
+    gm_recent_activity_modifier_examples: {notoriety_increase: 2, recent_inactivity: -2}
+    nature: Reputation represents local recognition and serves as a measure of the group's leader standing rather than standard Leadership Skill.
   leadership_battle:
-    leader_challenge: Gang leader may be challenged in an individual leadership battle;
-      exact battle method and possible lethality are determined by player and GM.
-    bonus_karma_die_formula: For every two full points by which one contestant’s Reputation
-      exceeds the other contestant’s Reputation, that contestant receives one additional
-      Karma die usable during the leadership battle.
-    intergang_battle: GM may adjust Reputation based on current activities before
-      a battle between leaders of different gangs.
-    win_result: Winner becomes or remains leader; a winning gang in an intergang leadership
-      contest acquires the defeated gang’s assets and turf.
+    leader_challenge: Individual challenge; GM and players determine the method and consequences in the fictional game.
+    eligible_contestants: Leaders of two gangs, or a gang leader and an outsider seeking control, as well as an internal challenger.
+    bonus_karma_die_formula: One extra Karma die for every two full points of Reputation advantage, for the duration of the leadership battle.
+    gm_adjustment: GM may modify either or both leaders' Reputation before the contest based on recent activities.
+    win_result: Winner becomes or remains leader; a winning gang acquires the losing gang's assets and turf.
     defeated_member_allegiance_test:
       attribute_test: Intelligence
-      target_number_formula: new leader Reputation - testing member Charisma + testing
-        member Willpower
-      success_result: Character is persuaded by the new leader and joins the winning
-        gang
-      failure_result: Character departs or becomes an opponent according to the fiction
-      worked_example: Leader Rep 12, member Charisma 6, member Willpower 3 => Intelligence
-        TN 9; original worked case has five successes among nine members.
+      target_number_formula: new leader Reputation - new leader Charisma + testing member Willpower
+      success_result: Member becomes a supporter of the new leader.
+      failure_result: Member departs and may form a rival group or become the leader's personal enemy.
+      worked_example: Winning leader Reputation 12 and Charisma 6; losing members Willpower 3; Intelligence TN 9. Five of nine members succeed.
   rival_gang_relative_scale:
-    tiers:
-    - Inferior
-    - Equal
-    - Superior
-    - Superhuman
-    no_ultimate_tier: The source specifies no Ultimate gang tier.
-    baseline_rule: NPC gang statistics follow the standard optional Creating Prime
-      Runners classification as adjusted by comparative gang size.
-    inferior_if_double_pc_count: An Inferior gang with twice the PCs’ gang headcount
-      is treated as Equal; Inferior groups normally have fewer lieutenants than the
-      PCs’ gang.
-    equal_if_double_pc_count: An Equal gang twice the PCs’ gang size is treated as
-      Superior for Threat Ratings and Dice Pools.
-    equal_if_less_than_half_pc_count: An Equal gang with fewer than half the PC gang
-      members is treated as Inferior.
-    equal_lieutenants: An Equal gang normally has the same lieutenant count as the
-      player gang.
-    superior_if_double_pc_count: A Superior gang twice as numerous as the PC gang
-      is treated as Superhuman.
-    superior_if_less_than_half_pc_count: A Superior gang with fewer than half the
-      PC gang members is treated as Equal.
-    superior_lieutenants: A Superior gang normally has more lieutenants than the PCs’
-      gang.
-    superhuman_lieutenants: A Superhuman gang has at least twice as many lieutenants
-      as the PCs’ gang.
-    divisions: A Superior or Superhuman gang may have subgroups with a lesser power
-      classification.
-    size_guideline: PC or NPC gang turf size should reflect membership; minimum one
-      ganger per city block and no fixed maximum.
-    original_publication_provenance_note: These are optional tabletop opposition-scaling
-      conventions and not a prediction of real-world group behavior.
+    tiers: [Inferior, Equal, Superior, Superhuman]
+    no_ultimate_tier: true
+    baseline_rule: Use Creating Prime Runners for NPC statistics; aim for roughly balanced numbers.
+    inferior_if_double_pc_count: Treat as Equal; Inferior groups normally have fewer lieutenants.
+    equal_if_double_pc_count: Treat as Superior for Threat Ratings and Dice Pools.
+    equal_if_less_than_half_pc_count: Treat as Inferior.
+    equal_lieutenants: Same number as player gang.
+    superior_if_double_pc_count: Treat as Superhuman.
+    superior_if_less_than_half_pc_count: Treat as Equal for Threat Ratings and Dice Pools.
+    superior_lieutenants: More than player gang; exact count at GM discretion.
+    superhuman_lieutenants: At least twice as many as player gang.
+    superhuman_encounter_guidance: Normally wins battles even when much smaller than the player gang; narrative guidance, not automatic victory.
+    divisions: Superior or Superhuman groups may include subgroups with lesser ratings.
+    size_guideline: Membership reflects turf size; minimum one ganger per city block, no fixed maximum.
   reuses:
-  - subsystem.campaign.gang remains the original qualitative overview
-  - rule.campaign.srcomp-prime-runner-opponent-rating-tiers-p83-84 provides the referenced
-    five individual NPC tiers; four gang tiers are distinct.
+  - subsystem.campaign.gang is the historical qualitative overview.
+  - rule.campaign.srcomp-prime-runner-opponent-rating-tiers-p83-84 provides the individual NPC tiers.
   provenance:
     publisher: FASA Corporation
     title: Shadowrun Companion
     catalog: FASA7905a
     edition: Shadowrun Third Edition
     source_id: source.srcomp
-    printed_pages:
-    - 123
-    - 124
-    physical_pdf_pages:
-    - 124
-    - 125
-headline: 'FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition
-  fictional tabletop RPG: original 123-124 gang-campaign mechanics'
-summary: Archival reference of the published optional gang campaign character, economics,
-  reputation, and challenge mechanics; original printed source claims are structured
-  under data and are not real-world activity instructions.
+    printed_pages: [123, 124]
+    physical_pdf_pages: [124, 125]
