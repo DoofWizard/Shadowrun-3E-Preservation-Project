@@ -1,0 +1,57 @@
+id: rule.matrix.new-combat-utility-effects-p73-74
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '73-74'
+pdf_pages: '74-75'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG; printed pp73-74/PDF74-75.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix new offensive and defensive utility game statistics
+summary: Original fictional cybercombat game multipliers, target categories, option eligibility, rating loss, damage and defense tests for six offensive variants and two defensive utilities.
+data:
+  offensive_general: Only Attack can be programmed on the fly during a run; other offensive utilities cannot. The Frames target category includes dumb frames, smart frames and agents.
+  erosion:
+    multiplier: 3
+    targets: [Frames, Personas, SKs]
+    eligible_options: [Adaptive, Area, Bug-Ridden, Crashguard, DINAB, One-Shot, Optimization, Selective, Targeting]
+    separate_variants: {Blinder: Sensor, Poison: Bod, Restrict: Evasion, Reveal: Masking}
+    resistance: Following a successful game attack, roll affected persona rating at TN equal to Erosion rating; subtract defender successes from attacker successes.
+    reduction: Reduce affected rating by floor(net successes / 2); zero or one net success produces no rating reduction.
+    armor_protection: false
+  hog:
+    multiplier: 3
+    targets: [Personas]
+    eligible_options: [Adaptive, Bug-Ridden, Crashguard, DINAB, One-Shot, Optimization, Selective, Targeting]
+    resistance: After successful game attack, target rolls MPCP against Hog rating reduced by Hardening; subtract successes from attacker successes. No effect at zero net successes.
+    number_crashed: floor(net successes / 2)
+    selection: Running utilities in descending rating order, subtracting Crashguard rating from equipped utility ratings for this selection; random choice among tied ratings.
+    recovery: Swap Memory reloads crashed programs.
+    armor_protection: false
+    example: {attack_successes: 7, MPCP: 8, hog_rating: 6, hardening: 3, resistance_TN: 3, resistance_successes: 4, net_successes: 3, utilities_crashed: 1, sleaze_rating: 8, sleaze_crashguard: 2, deception_rating: 6}
+  steamroller:
+    multiplier: 3
+    targets: [Tar Baby IC, Tar Pit IC]
+    eligible_options: [Adaptive, Bug-Ridden, Crashguard, DINAB, One-Shot, Optimization, Stealth, Targeting]
+    damage_code: (rating)D icon damage on successful attack.
+    tally: Crashing tar IC increases security tally unless equipped with Stealth or user suppresses IC under standard rules.
+    immunity: Immune to destructive effects of tar programs.
+  restore:
+    multiplier: 3
+    eligible_options: [Adaptive, Bug-Ridden, Crashguard, DINAB, One-Shot, Optimization]
+    action: Complex Action
+    target_number: Rating of program that caused attribute damage; highest rating if multiple programs caused damage.
+    repair: One point of persona attribute damage per two test successes.
+    limitation: Cannot repair permanent physical persona-chip damage from gray or black IC.
+  shield:
+    multiplier: 4
+    eligible_options: [Adaptive, Bug-Ridden, Crashguard, Optimization]
+    trigger: When attack strikes user's icon, user may make Shield Test.
+    target_number: Attacker skill, such as Computer for decker, Security Value for IC, or DINAB value for frame.
+    effect: Subtract Shield Test successes from attacker net successes; effective against all offensive utilities and IC attacks.
+    degradation: Lose 1 Rating Point every use regardless of test success.
+    recovery: Swap Memory may load fresh copy.
+  provenance:
+    existing_entity_catalog_blob: 258ae24166192261006fedf0c50ea7fbe52e304f
+    reused_core_utility_blob: bc82c8a104b0ffa29c54ba41b365b959e988655d
+    reused_option_effects_blob: 0de9dec5d45113caa52735a91a2646ca4af72f16
