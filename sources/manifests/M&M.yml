@@ -619,6 +619,27 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_implant_detection_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {status: source_pdf_hash_verified, source: source.mm, exit_code: 0}
+    original_images_reviewed: "Printed p145/PDF146; independent visual inspection of Detecting Implants text and both table portions."
+    records:
+      - id: rule.surgery.implant-detection
+        path: rules/surgery/implant-detection.yml
+        printed: "145"
+        pdf: "146"
+        commit: "197bac06db94293ec93f72420874baccb4464a78"
+        blob: "ed6dde874f85257b978198e99ad88993b25eba10"
+        candidate_sha256: "83a121c1b3b1c034b0dcff316ccdac2f4d15e5fbc15a7b24199eeff3e971a792"
+        baseline_sha256: "2126f801b77df1f0fe4a6a0534e557927bef7a14b7cf89114d48628095736380"
+        immutable_sha256: "20dd7e2e93607f90c6c87f6cfefe53890cb55fa660205048e785e5c663339046"
+        gate: verified
+        fields: "Seven clinic/hospital target-number rows, five success-detail rows, zero-success result, visual check, scanner rating, separate tests and base duration. No extra nanoware scan rule inferred."
+    scoped_natural_sections_reconciled:
+      - "Detecting Implants p145, including complete Implant Detection Table."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
