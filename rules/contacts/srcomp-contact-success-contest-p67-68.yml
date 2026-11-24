@@ -36,12 +36,15 @@ data:
       the contact volunteers.
   optional_success_contest:
     player_test: Negotiation
-    contact_test: Intelligence
+    contact_test: Negotiation
+    player_target_number: contact Intelligence
+    contact_target_number: player character Intelligence
     opposed_results: Compare successes on the two tests; the contact's successes offset
       the player character's successes.
     when_contact_wins: The gamemaster may have the contact refuse information or provide
       misleading information, not an automatic truthful disclosure.
-    modifier_applied_to: Contact's Intelligence Success Contest Target Number
+    modifier_applied_to: Contact-side Negotiation test target number
+    additional_scope: The table modifiers may also apply to Opposed Tests or Success Contests during bargaining and other negotiations.
     table_rows:
     - circumstance: Character Essence below 1
       target_modifier: -2
@@ -107,24 +110,19 @@ data:
       prototype; the contact's disclosure may adversely affect his work.
     preliminary_knowledge: Etiquette Test target number 8 and 2 successes establish
       that the contact knows the requested location and related details.
-    negotiated_disclosure: Timmons has the Level 2 contact modifier +1, while expected
-      harm adds -2 to his contact-side test.
-    outcome: The contact obtains 4 successes against the character's 2 and refuses
-      most of the requested information, providing only a narrower fictional lead
-      about Lone Star involvement.
+    negotiated_disclosure: Each participant rolls Negotiation against the other participant’s Intelligence.
+    level_2_contact_example_extra_player_die: 1
+    contact_side_target_modifiers: {level_2_contact: 1, expected_harm: -2}
+    outcome: The contact obtains 4 successes against the character’s 2, negating them.
+      The character does not obtain the requested information but independently deduces Lone Star involvement from the contact’s reluctance.
   related_accepted_legacy_record:
     path: rules/contacts/spilling-the-beans.yml
-    legacy_field_tension: The earlier generic record abbreviates negative-Essence
-      minus-two rounded-down table text and does not preserve the distinct optional
-      absolute-value-plus-two interrogation footnote. This source-specific record
-      retains both.
+    legacy_field_tension: The shared generic record still identifies Intelligence as the contact’s rolled skill; the original example identifies it as the opposing target number. This source-specific record corrects that discrepancy and retains both negative-Essence qualifications.
   lineage:
     sourcebook: Shadowrun Companion (FASA7905a) optional elaboration of original SR3
       Contacts rules.
     do_not_infer_precedence: Preserve original table and optional footnote separately,
       without inventing an erratum.
 framing: reference_exact
-headline: rule.contacts.srcomp-contact-success-contest-p67-68 — archival rule_exact
-  record
-summary: Source-indexed rule_exact from source.srcomp, printed pages 67-68; substantive
-  assertions and provenance are in the structured data.
+headline: FASA7905a Shadowrun Companion (FASA Corporation, SR3), printed pp67-68 — optional Contact Success Contest
+summary: Original fictional tabletop rules distinguish contact knowledge from disclosure; both participants roll Negotiation against the other’s Intelligence, with the printed contact-side modifiers.
