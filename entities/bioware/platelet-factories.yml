@@ -1,20 +1,35 @@
 id: entity.bioware.platelet-factories
 record_type: entity
-name: "Platelet Factories"
+name: Platelet Factories
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '68-69'
+pdf_pages: '69-70'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.4
-  availability: "5/8 days"
+  availability: '5/8 days'
   cost_nuyen: 30000
   street_index: 1.5
-  legality: "Legal"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+data:
+  physical_wound_box_reduction: 1
+  minimum_wound: Moderate
+  example: {wound: Serious, normal_boxes: 6, modified_boxes: 5}
+  fictional_anticoagulant_maintenance:
+    frequency: daily
+    missed_maintenance_test: {attribute: Body, interval_hours: 12, base_tn: 3, tn_increase_per_day_missed: 1, zero_successes: Deadly Physical wound immediately without Damage Resistance Test}
+    cost_nuyen_per_dose: {injected: 20, oral: 25}
+  stress:
+    light: poor circulation with cold extremities and tingling
+    moderate: each day a failed Body (6) Test causes a Light wound from temporary clotting
+    serious: marrow deficiencies impose -2 Body for disease and infection
+    deadly: immediate Deadly Physical damage from stroke; GM may impose lasting brain or motor impairment
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "68-69", relation: defines, note: "Platelet Factories description, game effects, stress effects and statistics"}
-notes:
-  - "Reduces Moderate-or-higher Physical wounds by one box but creates clotting risks and requires anticoagulant maintenance."
+  - {source: source.mm, pages: '68-69', relation: defines, note: Game effects, Stress and equipment row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp68-69/PDF69-70: Platelet Factories'
+framing: reference_exact
