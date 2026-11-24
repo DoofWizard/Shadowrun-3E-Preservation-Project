@@ -1,0 +1,47 @@
+id: rule.skillsofts.cannon-companion-pab-detection-reversal-qualifiers-p71
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '71'
+pdf_pages: '72'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional PAB detection and restoration test qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p71/PDF72. Game-only diagnostic and restoration exceptions missing from existing procedures.'
+data:
+  existing_procedures:
+    - procedure.skillsofts.detect-reprogramming
+    - procedure.skillsofts.reverse-reprogramming
+  detection_qualifiers:
+    secret_gamemaster_roll: true
+    resisted: false
+    same_tester_retry_after_failure_modifier: 2
+    diagnostic_device_target_modifier: negative rating of PAB used for detection
+    single_success: altered-memory game state identified
+    magic_alternative:
+      spell: Mind Probe
+      minimum_successes: 5
+  restoration_qualifiers:
+    device_rating_comparison: Higher reversal device rating lowers target number; lower reversal device rating increases it by the difference.
+    equal_rating_difference: 0
+    successes_for_time_only: true
+    psychotherapy: Uses the existing detection test and target number with the existing rating-D6 hours base-time rule.
+  printed_detection_example:
+    subject_willpower: 4
+    original_pab_rating: 5
+    concealment_successes: 1
+    psychology_dice: 8
+    target_number: 10
+    successes: 1
+    hours: 5
+  printed_restoration_example:
+    original_pab_rating: 5
+    base_time_dice: 5D6
+    rolled_hours: 17
+    target_number: 10
+    successes: 1
+    session_hours: 2
+    sessions: 8.5
+  lineage_note: Original SR3 p71 differs from the older ShadowBeat procedures, particularly magical detection and lower-rated reversal eligibility; the historical source is retained separately.
+  scope: Tabletop dice and state resolution only; no clinical or real-world technique.
