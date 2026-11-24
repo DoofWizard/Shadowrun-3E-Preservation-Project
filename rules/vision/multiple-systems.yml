@@ -1,21 +1,50 @@
 id: rule.vision.multiple-systems
 record_type: rule
-name: "Multiple Vision Systems"
+name: Multiple Vision Systems
 domain: vision
 status: ingested
+source: source.mm
+printed_pages: '49'
+pdf_pages: '49'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Multiple Vision Systems — expanded visibility modifier table
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p49.
 effective: {status: current, source: source.mm, page: 49, basis: extends}
 scope:
-  applies_to: ["characters using multiple vision systems"]
+  applies_to: [characters using multiple vision systems]
 resolution:
-  summary: "Characters may use more than one vision system simultaneously. Cybernetic users may turn individual systems on or off. When multiple systems are active, use the lowest applicable visibility modifier, but changing systems after glare or flash exposure does not remove effects already suffered."
-  inputs: ["active vision systems", "environmental condition"]
-  outputs: ["applicable visibility modifier"]
+  summary: Simultaneous vision modes use the lowest applicable visibility modifier; switching modes does not cancel previously incurred glare or flash effects.
+  inputs: [active vision systems, environmental condition]
+  outputs: [applicable visibility modifier]
   steps: []
+data:
+  simultaneous_modes: [normal, low-light, eyelights, ultrasound, thermographic]
+  natural_thermographic: {metatypes: [dwarf, troll], overlays_normal_vision: true}
+  cybernetic_modes_individually_switchable: true
+  switching_does_not_remove_existing_flash_or_glare_modifiers: true
+  simultaneous_modifier_selection: lowest applicable
+  example_cybernetic_low_light_and_thermographic_heavy_smoke_or_fog: 1
+  visibility_table:
+    columns: [normal, normal_with_eyelights, low_light, low_light_with_eyelights, thermographic, ultrasound]
+    paired_value_order: [cybernetic, natural]
+    dash_means: no modifier
+    rows:
+      full_darkness: [8, 4, [8, 8], [2, 2], [4, 2], 4]
+      minimal_light: [6, 2, [4, 2], [0, 0], [4, 2], 3]
+      partial_light: [2, 0, [1, 0], [0, 0], [2, 1], 1]
+      glare: [2, 2, [4, 2], [4, 2], [4, 2], 1]
+      mist: [2, 2, [2, 0], [2, 0], [0, 0], 1]
+      light_smoke_fog_rain: [4, 4, [4, 2], [4, 2], [0, 0], 2]
+      heavy_smoke_fog_rain: [6, 6, [6, 4], [6, 4], [1, 0], 3]
+      thermal_smoke: [4, 4, [4, 4], [4, 4], [8, 6], 2]
+      white_noise: [0, 0, [0, 0], [0, 0], [0, 0], '+Rating']
 links:
   uses: [rule.vision.low-light-and-thermographic]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 49, relation: extends, note: "Multiple Vision Systems / Visibility Modifiers"}
+  - {source: source.mm, page: 49, relation: extends, note: Multiple Vision Systems and Visibility Modifiers Table}
 notes: []
