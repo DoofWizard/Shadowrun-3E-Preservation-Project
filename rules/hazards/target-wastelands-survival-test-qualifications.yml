@@ -1,0 +1,49 @@
+id: rule.hazards.target-wastelands-survival-test-qualifications
+record_type: rule
+status: ingested
+source: source.fanpro-10653
+printed_pages: "106-108"
+pdf_pages: "107-109"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: Survival Test qualifications
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  extends: rule.hazards.target-wastelands-survival-test
+  fatigue:
+    damage_track: Stun
+    deadly_stun: Character collapses and cannot attempt further Survival Tests.
+    unassisted: Exposure damage continues daily and overflows into Physical damage.
+  group:
+    primary_selection: Usually highest Wilderness Survival skill or least wounded participant.
+    tied_body_remainders: Randomly resolve ties when allocating extra damage boxes.
+    camping_gear: Appropriate tent and sleeping bag are minimum; at least half the group must have appropriate gear; majority with partial gear gives only -1.
+    rations_water: Supplies sufficient for at least half the group for the day qualify.
+    no_food_or_water: Applies if individual or at least half the group goes the day without eating or drinking water.
+    improper_clothing: Applies when at least half the group is improperly dressed.
+  modifier_qualifications:
+    climate_control: Appropriate source of heat or cooling includes fires, heaters, fans and vehicles with functioning climate control.
+    inappropriate_clothing_examples: {desert_without_head_cover: 1, jungle_armor_clothing: 2, antarctic_light_clothing: 4}
+    extended_travel: More than 8 hours, travel during desert daytime, or substantial exertion such as digging, lack of sleep or carrying an injured companion.
+    toxic_terrain: Heavy pollution or environmental damage.
+    weather_mild_cold: {poor: ordinary rain or snow or wind, terrible: thunderstorm or gale, extreme: major blizzard or whiteout}
+    weather_hot: {poor: unusually hot day, terrible: heat alert conditions, extreme: cyclone or sandstorm}
+    unfavorable_season: Winter in mild or cold climates and summer in hot climates.
+  optional_stress:
+    recipients: Each character in the group receives the result as Stress Points instead of Stun damage.
+    allocation: Random using Man & Machine Wound Effect Table p127.
+    followup: Each character incurring Stress makes the appropriate Stress Test.
+  worked_example:
+    jungle_base_tn: 5
+    modifiers: {no_food_water: 1, poor_weather: 1, armor: 2, exertion: 1}
+    final_tn: 10
+    primary_dice: 5
+    complementary_dice: 3
+    combined_successes: 1
+    exposure_die: 3
+    group_addition: 2
+    stun_boxes_total: 4
+    allocation: [1, 1, 2]
+    extra_box: Lowest Body.
