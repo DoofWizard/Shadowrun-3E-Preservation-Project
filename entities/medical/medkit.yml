@@ -1,15 +1,34 @@
 id: entity.medical.medkit
 record_type: entity
-name: "Medkit"
+name: Medkit
 domain: medical
 status: ingested
+source: source.mm
+printed_pages: "136, 138"
+pdf_pages: "137, 139"
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "(Rating - 1)/24 hrs"
   cost: "(Rating + 2) x 40 nuyen"
-  weight: "Rating"
+  weight: Rating
   street_index: 1.5
+  maximum_rating: 6
+data:
+  standard_medkit_rating: 3
+  patients_per_user: 1
+  legal: true
+  user_without_Biotech: provides Biotech Skill equal to Rating
+  user_with_Biotech: provides complementary dice equal to Rating for Biotech Tests
+  autonomous_operation: false
+  requires_living_user: true
+  components: [basic medical sensors, medical reference programs, general-use legal drugs]
+  rating_below_3: GM may impose target-number or other penalties
+  functions_reference: "SR3 p304"
 links: {uses: [procedure.healing.natural-and-medical], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "136-138", relation: extends, note: "Medkits, ratings and Medical Tools Table"}
+  - {source: source.mm, pages: "136, 138", relation: extends, note: "Medical Gear, Medkits and Medical Tools Table"}
 notes:
-  - "Provides medical-reference/support functions; its in-game dice interaction depends on the user's Biotech skill."
+  - Rating 6 is the player-accessible medical gear limit, not a universal setting limit.
+framing: reference_exact
+headline: "FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), printed pp136,138/PDF137,139: Medkit"
