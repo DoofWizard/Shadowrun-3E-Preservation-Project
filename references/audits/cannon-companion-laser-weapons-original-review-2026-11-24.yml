@@ -1,0 +1,55 @@
+id: audit.cannon-companion.laser-weapons-original-review-2026-11-24
+record_type: source_reconciliation_audit
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog: FASA7908
+edition_scope: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification: source_pdf_hash_verified
+original_images_inspected:
+  - {printed: 30, pdf: 31, scope: "Laser Weapons prose, three model profiles and six equipment rows"}
+  - {printed: 117, pdf: 118, scope: "Special Weapons reference table, six corresponding rows"}
+source_local_sections_reconciled: [Laser Weapons]
+qualification: "All reviewed source-local mechanics accounted for; shared incorrect prices and generic rule wording remain read-only pending coordinator reconciliation."
+existing_rule:
+  path: rules/combat/laser-weapons.yml
+  blob: 209e111a62d908ba727b23d85bc1ed1370e51dd0
+  review: "Skill and range Power progression reused. Missing armor, recoil, obscurant, accessory and classification qualifications addressed by new record."
+field_review:
+  - {entity: ares-mp-heavy-laser-plus, blob: 3af062280ae74d8238d151e5bcb72667b0afbb6c, result: "Table matches; missing model game-resource qualifications captured."}
+  - {entity: ares-redline, blob: 12b7f23406dc7b169343641f8676363112c4eb24, result: "Table matches; missing model game-resource qualifications captured."}
+  - {entity: laser-iii, blob: cd065b6645bc7a6a9279583870db41554845a28a, result: "Table matches; missing model game-resource qualifications captured."}
+  - {entity: ares-redline-battery-clip, blob: 833f2a54e6342ca56ff350ef7d33861de73f80d9, result: "Cost discrepancy captured; other table fields match."}
+  - {entity: heavy-laser-battery-pack, blob: e8b3407598be89c89db882d490befb40cf0011ab, result: "Cost discrepancy captured; other table fields match."}
+  - {entity: laser-iii-hip-battery, blob: 213c41fd8872cf14704658bb772f48fe16be8b8a, result: "Cost discrepancy captured; other table fields match."}
+verified_transactions:
+  - path: rules/combat/cannon-companion-laser-game-qualifiers-p30.yml
+    commit: e2c2b9cef96098ba392cb856acd62d6db7b1ed01
+    blob: 1b841d2373fd0283bfdc737699d68991ad43a510
+    baseline_sha256: e53aed04169f963d1d94991b9f0ee2cc5f9f927cbe3a99fd20c4e3df093aa67a
+    candidate_sha256: e53aed04169f963d1d94991b9f0ee2cc5f9f927cbe3a99fd20c4e3df093aa67a
+    immutable_sha256: 2d32b05f593694c8fe03ba9d99c0dc8f685c50d7b619fa493784be26a83565cc
+    gate: verified
+    index_commit: b6135e63f08947f18ce5d2d62adbb33a050f6bd6
+    index_blob: bae2512904db3746ec6d68908860faedb2101d0b
+  - path: rules/gear/cannon-companion-laser-model-game-profiles-p30.yml
+    commit: 7f159232587783ad1a1f8c8275d2885b24060908
+    blob: f07baa0830e80b3832c7d717ba28bdb459d0e0e5
+    baseline_sha256: 43ff66e25a0336858f56f54edaf6af5132e979dc299459295743f42f6f186e1d
+    candidate_sha256: 43ff66e25a0336858f56f54edaf6af5132e979dc299459295743f42f6f186e1d
+    immutable_sha256: 491d064c5644cd9e135ea7c029fc6761b17abce515360698ec796b3d281354ad
+    gate: verified
+    index_commit: ac4644ca2bd8ff17ba18d9eed8ff2430940d81a5
+    index_blob: a3c5842e84a2f82b5fedf158488278a4fd62b335
+  - path: equipment/gear/cannon-companion-laser-battery-price-corrections-p30-117.yml
+    commit: d677f1851a3a2e9499b8e64acf9ab7bcde97b35a
+    blob: feee7da88678b0dd4ec2cd7ef15da7e64b1295d9
+    baseline_sha256: 6ef7971668d85dfa18c05f954e9b08b54ed69ce1e75385a14df3dbbb857fc0a0
+    candidate_sha256: 6ef7971668d85dfa18c05f954e9b08b54ed69ce1e75385a14df3dbbb857fc0a0
+    immutable_sha256: 5246c45965546fa4a62ce17beeb6686f7ced8c00c2770dc3c9eda7184290f072
+    gate: verified
+    index_commit: eba01717c16e17e5207969ba1f1b877e7799ac98
+    index_blob: 2325b902f9e9a195b6feb5d6c07666d81b00eaf7
+globally_authorized_pages: 0
+whole_publication_certified: false
