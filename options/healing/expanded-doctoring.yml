@@ -1,21 +1,69 @@
 id: option.healing.expanded-doctoring
 record_type: option
-name: "Expanded Doctoring"
+name: Expanded Doctoring
 domain: healing
 status: ingested
+source: source.mm
+printed_pages: '133-134'
+pdf_pages: '134-135'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Expanded Doctoring — 28 optional modifier rows
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop rules, printed pp133-134/PDF134-135.
 effective: {status: optional, source: source.mm, page: 133, basis: adds_option}
 option_for: [procedure.healing.natural-and-medical]
 selection:
-  timing: "campaign healing rules"
+  timing: campaign healing rules
   prerequisites: []
   incompatible_with: []
 effects:
-  - "Adds optional modifiers for care conditions, long-term magical care, Awakened status, natural Body/Willpower, doctor's Biotech (Extended Care), undocumented bioware/cyberware, cybermancy and impaired communication."
+  - Adds modifiers to the healing-duration test when medical attention is required after unsuccessful independent healing (SR3 pp126-127).
+data:
+  care_conditions:
+    only_one_applies: true
+    intensive_care_hospital_only: -2
+    not_in_hospital_or_clinic: 2
+    bad_conditions: 3
+    terrible_conditions: 4
+  long_term_magical_care: -2
+  awakened_patient: 2
+  natural_body_and_willpower:
+    apply_for_both: true
+    '1-3': 0
+    '4-6': -1
+    '7-9': -2
+    '10+': -3
+  doctor_biotech_extended_care:
+    '0': 4
+    '1': 0
+    '2': -2
+    '3-4': -3
+    '5-6': -4
+    '7+': -5
+  bioware:
+    undocumented: Bio Index
+    documented: 'ceil(Bio Index / 2)'
+  undocumented_cyberware:
+    '5.01-6': 0
+    '3.01-5': 1
+    '1.01-3': 2
+    '0.01-1': 3
+    cyberzombie: '3 + abs(Essence)'
+  documented_cyberware:
+    '3.01-6': 0
+    '1.01-3': 1
+    '0.01-1': 2
+    cyberzombie: '2 + abs(Essence)'
+  patient_doctor_communication_severely_impeded: 2
+  table_notes:
+    implant_documentation: Patient disclosed all implants to doctor or doctor scanned all implants (M&M p144).
+    communication_condition: No communication possible because of language barrier, refusal to cooperate or unconsciousness.
 links:
   modifies: [procedure.healing.natural-and-medical]
   requires: []
   interacts_with: [subsystem.cybermancy.core, subsystem.bioware.core, subsystem.cyberware.core]
 sources:
-  - {source: source.mm, page: 133, relation: adds_option, note: "Expanded Doctoring Table and notes"}
+  - {source: source.mm, pages: '133-134', relation: adds_option, note: Expanded Doctoring Table and notes}
 notes:
-  - "Explicitly optional."
+  - Explicitly optional; the group should review the rules before adopting them.
