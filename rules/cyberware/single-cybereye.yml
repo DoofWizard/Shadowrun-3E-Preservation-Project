@@ -1,21 +1,44 @@
 id: rule.cyberware.single-cybereye
 record_type: rule
-name: "Single Cybereye"
+name: Single Cybereye
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '44'
+pdf_pages: '44'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Eyes and Single Cybereyes
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p44.
 effective: {status: current, source: source.mm, page: 44, basis: extends}
 scope:
-  applies_to: ["single cybereye purchases and single-eye enhancements"]
+  applies_to: [eye modifications, single cybereye purchases, single-eye enhancements, pair capacity]
 resolution:
-  summary: "Cybereyes may be purchased singly. A single eye costs 60 percent of the standard pair, uses 0.1 Essence, and has reduced accessory capacity. Paired-function enhancements are less effective in one eye; vision magnification in only one eye removes depth perception and adds a target-number penalty to distance-based tests while active."
-  inputs: ["cybereye configuration", "installed enhancements"]
-  outputs: ["cost", "Essence", "capacity/effect adjustments"]
+  summary: Eye modifications are normally available for natural eyes or cybereyes; single-eye purchases and paired-function accessories have distinct capacity and performance rules.
+  inputs: [cybereye configuration, installed enhancements]
+  outputs: [cost, Essence, capacity, effect adjustments]
   steps: []
+data:
+  eye_modification_types: Unless stated otherwise, retinal modification of natural eyes or cyber modification of cybereyes is available.
+  single_eye: {pair_price_multiplier: 0.6, essence: 0.1, included_accessory_essence: 0.25}
+  paired_function_enhancements:
+    examples: [low-light amplification, thermographic vision, eyelight systems]
+    one_eye_effectiveness: Approximately half the paired effect; GM decides exact reduction.
+    single_eye_cost_multiplier: 0.75
+    single_eye_essence_multiplier: 0.75
+  single_eye_enhancement: No performance penalty for installing a single-eye enhancement in only one eye.
+  vision_magnification: {one_eye_magnification_works: true, depth_perception: absent, distance_test_TN_modifier_while_active: 2, includes_ranged_attack_tests: true}
+  single_eye_accessories: [Camera, Display Link, Eye Datajack, Eye Laser Systems, Eye Weapon System, Image Link, Opticam, Retinal Clock]
+  pair_limits:
+    maximum_accessory_essence: 1.2
+    per_eye_maximum_from_combined_categories: 1
+    categories: [laser, opticam, weapon system]
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, page: 44, relation: extends, note: "Single Cybereyes / Eye Modification Limits"}
+  - {source: source.mm, page: 44, relation: extends, note: Eyes, Single Cybereyes and Eye Modification Limits}
 notes: []
