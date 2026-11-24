@@ -1,0 +1,80 @@
+{
+  "id": "rule.matrix.matrix-improvised-combat-persona-modes-p122-123",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "122-123",
+  "pdf_pages": "123-124",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, printed 122-123/PDF 123-124.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Improvised cybercombat and persona adjustment: tabletop actions",
+  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "data": {
+    "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
+    "improvised_combat": {
+      "eligibility": "Hot ASIST interface required for practical use.",
+      "attack": {
+        "prepare_action": "Simple",
+        "use_action": "Separate Simple",
+        "rating": "1 rating point per allocated Hacking Pool die; maximum Computer (Programming) skill.",
+        "damage_test": "Computer (Decking) versus system Security Value.",
+        "damage_by_successes": {
+          "1": "Light",
+          "2": "Moderate",
+          "3": "Serious",
+          "4+": "Deadly"
+        },
+        "usage": "Single use; resolve as ordinary attack program."
+      },
+      "defense": {
+        "dice": "Hacking Pool up to Computer skill",
+        "TN": "ceil(attacker Computer skill or Security Value / 2)",
+        "effect": "Subtract defense successes from attacker successes; net <= 0 completely blocks attack."
+      }
+    },
+    "switching_modes": {
+      "action_each_direction": "Complex",
+      "boost": "Increase one unmodified persona attribute by floor(50% of standard rating).",
+      "reduction": "Simultaneously reduce another unmodified persona attribute by 50% (round down as printed).",
+      "max_simultaneous_modes": 2,
+      "restriction": "Each mode must affect only attributes not already modified. Boosted rating may exceed MPCP.",
+      "example": {
+        "original_MPCP_Bod_Evasion_Masking_Sensor": [
+          7,
+          6,
+          4,
+          6,
+          4
+        ],
+        "after_Bod_mode": [
+          7,
+          9,
+          4,
+          6,
+          2
+        ],
+        "after_Evasion_mode": [
+          7,
+          9,
+          6,
+          3,
+          2
+        ],
+        "return_actions": 2
+      }
+    },
+    "suspension": {
+      "start_action": "Simple",
+      "MPCP_and_persona_ratings": 1,
+      "initiative_bonus_dice": "1D6 regardless of Response Increase; reality filter and pure DNI bonuses negated.",
+      "utility_ratings": "floor(standard rating / 2)",
+      "IO_increase": "MPCP rating x 25; source does not explicitly distinguish original versus temporarily reduced MPCP in this sentence.",
+      "reactivate_action": "Free",
+      "full_restore": "Beginning of next Combat Turn."
+    },
+    "core_comparison": "Core cybercombat procedure 39ee5192ab94f1493a62c9396e7c47df67f45e25 and exact combat record a3bf9e6e2e1c849983ede4177ad4c525db080101 cover standard attacks/maneuvers; this adds alternative actions and effects."
+  }
+}
