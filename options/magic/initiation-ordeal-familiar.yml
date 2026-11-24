@@ -1,15 +1,51 @@
 id: option.magic.initiation-ordeal-familiar
 record_type: option
-name: "Initiation Ordeal — Familiar"
+name: Initiation Ordeal - Familiar
 domain: magic
 status: ingested
-effective: {status: current, source: source.mits, page: 60, basis: defines}
-option_for: [procedure.magic.initiation]
-selection: {timing: "before completing an initiation grade", prerequisites: [], incompatible_with: []}
+effective:
+  status: current
+  source: source.mits
+  page: 60
+  basis: defines
+option_for:
+- procedure.magic.initiation
+selection:
+  timing: before completing an initiation grade
+  prerequisites: []
+  incompatible_with: []
 effects:
-  - "Requires a magician who can summon ally spirits to summon an ally spirit as the ordeal."
-  - "The ally must meet the source's minimum Karma investment and remains subject to the source's later-loss consequences."
-links: {modifies: [procedure.magic.initiation], requires: [], interacts_with: []}
+- Only magicians capable of summoning ally spirits may choose this ordeal.
+- Summon an ally spirit meeting the specified minimum Karma investment.
+links:
+  modifies:
+  - procedure.magic.initiation
+  requires: []
+  interacts_with: []
 sources:
-  - {source: source.mits, page: 60, relation: defines, note: "Initiation Ordeal — Familiar"}
+- source: source.mits
+  page: 60
+  relation: defines
+  note: Familiar ordeal
 notes: []
+source: source.mits
+printed_pages: '60'
+pdf_pages: '61'
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  minimum_ally_karma: Karma cost of the initiation with an ordeal.
+  summoning_magic_point_cost: 0
+  later_magic_loss_check:
+    timing: immediate
+    events:
+    - ally banished
+    - ally becomes free
+    - ally destroyed
+    procedure: Magic loss check (SR3 core printed p160).
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition option: Familiar ordeal (FASA7907, printed
+  60/PDF 61)'
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG Familiar initiation
+  ordeal mechanics.
