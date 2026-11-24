@@ -1,0 +1,42 @@
+id: rule.matrix.matrix-sk-design-p147-148
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '147-148'
+pdf_pages: '148-149'
+edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp147-148/PDF148-149.'
+content_class: [rule_exact]
+framing: reference_exact
+headline: Semi-autonomous knowbot design and allocation
+summary: GM design parameters for fictional autonomous Matrix personas, expanding the existing subsystem.
+data:
+  legacy_comparison: 'subsystems/matrix/autonomous-programs.yml blob 2dcef9eefd15d7c33fe67b4d7d26446ed89d3c48 describes allocation categories without these numeric costs and limits.'
+  design:
+    template: frame and agent design, Matrix p88
+    minimum_host: Red-10
+    programmer_resources: equivalent to six top programmers
+    player_character_programming: unavailable
+    frame_core_multiplier: not supplied by source
+    use: GM characteristic design rather than player programming procedure
+    mpcp: equals frame core rating
+    maximum_frame_core: 14
+  persona:
+    allocation: 'MPCP * 3'
+    attributes: [Bod, Evasion, Masking, Sensor]
+    maximum_each: MPCP
+    permitted_options: IC options, Matrix p85
+    excluded_options: [cascading, party cluster, trap]
+  frame_points:
+    allocation: 'MPCP * 8'
+    pilot: {function: Computer skill, cost_per_rating_point: 2}
+    reaction: MPCP
+    initial_initiative_dice: 1D6
+    cost_per_additional_1D6: 3
+    maximum_initiative_dice: 5D6
+    payload:
+      categories: [defensive, offensive, special]
+      operational_utilities: excluded
+      cost_per_utility_rating_point: 1
+      maximum_utility_rating: MPCP
+    utility_pool: {cost_per_point: 2, maximum: MPCP}
+  hacking_pool: MPCP
