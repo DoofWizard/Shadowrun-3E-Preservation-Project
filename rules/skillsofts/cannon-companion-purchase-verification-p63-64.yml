@@ -1,0 +1,46 @@
+id: rule.skillsofts.cannon-companion-purchase-verification-p63-64
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '63-64'
+pdf_pages: '64-65'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: skillsoft purchase and verification game procedure'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp63-64/PDF64-65; purchasing conditions and five-row verification table supplement existing option acquisition modifiers.'
+data:
+  purchase:
+    choose_options: player specifies options and may choose alternatives with gamemaster permission for failed Availability rolls
+    permits_required: where applicable
+    cost_basis: design size rather than actual size; apply option price adjustments
+    combined_availability_and_street_index: only highest adjustment in each category applies
+    static_and_virus_sold_as_other_soft: use advertised soft statistics, not hidden option statistics
+    gm_discretion: may restrict options without relevant Knowledge or Social skills or introduce an undisclosed game disadvantage
+    existing_option_table_rows_reused: [adaptive, cluster, customized, defective, dimap, implant, limitation, one-shot, optimization, overdrive, pluscode, static, virus]
+  verification:
+    address_table: computer or pocket secretary can read it; listed contents may be inaccurate
+    basic_size_check: {skill: Computer (Cybernetics), target_number: 4, result: actual size}
+    full_analysis:
+      equipment: computer with capacity to load entire actual skillsoft size
+      skill: Computer (Cybernetics)
+      target_number: 4
+      base_time_minutes_per_mp: 5
+      extra_successes: learn additional information or reduce time
+      retry: after successful first test, additional information may be sought at +2 TN
+      information_by_successes:
+        '1': actual size and encoded skill, or one skill in a cluster
+        '2': skill rating, or next skill in a cluster
+        '3': one programming option
+        '4': option rating
+        '5+': one further option, skill or rating per additional success
+  printed_example_discrepancies:
+    program_size_table_reference: p64 cites SR3 p222 whereas p60 cites p223
+    optimization_example: 75 Mp divided by 2 is printed as 37 Mp despite instruction to round up; arithmetic gives 38 Mp
+    design_size_mp: 150
+    base_price_nuyen: 15000
+    dimap_rating: 2
+    final_price_nuyen: 18000
+    availability: 8/8 days
+    street_index: 1.5
+  scope: Option table acquisition rows already captured in the thirteen existing records are not duplicated. Source inconsistencies remain explicit.
