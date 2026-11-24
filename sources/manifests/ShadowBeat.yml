@@ -63,6 +63,7 @@ coverage:
   sound_equipment: {printed: "92-96", status: source_verified_section_closed, note: "Complete original instrument/synth and sound equipment tables and capability rules; p95 example ambiguity retained, SR3 adaptation unverified."}
   trideo_service_prices: {printed: "99", status: source_verified_section_closed, note: "All original service market rows, lifestyle allowances and billing/negotiation qualifications; pp18-23 procedures separate."}
   sight_equipment: {printed: "88-91", status: source_verified_section_closed, note: "Original media equipment table, camera/gear capability and Pix modifiers; original Essence typography retained and native SR3 camera overlaps identified."}
+  pab_event_tests: {printed: "47-49", status: source_verified_section_closed, note: "Original fictional PAB tests, detection, restoration and contradictory detection examples; SR3 supersession unresolved."}
   pab_equipment: {printed: "97", status: source_verified_section_closed, note: "Five original equipment market rows and facility rating cap; p47 reprogramming procedure and SR3 supersession distinct."}
   media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
   simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
@@ -109,6 +110,7 @@ records:
   - ["home-trideo-eligibility-p20-23", "ef8000f11409b956324de398a79967a7897f8e07"]
   - ["trideo-boost-tests-p21-23", "7e267b2989f896f48bdf7fc67d9b8f820485f048"]
   - ["broadcast-transmission-p18-20", "9d96d72edd4b7a05f6c3879f1b35f9cc69a882b8"]
+  - ["pab-event-tests-p47-49", "96b314bc7bfa6047ae0fc8e187a04c9e2cd84fea"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -516,5 +518,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p18_pdf19", "printed_p19_pdf20", "printed_p20_pdf21"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-pab-event-tests-p47-49
+    path: rules/shadowbeat/pab-event-tests-p47-49.yml
+    original_printed_pages: "47-49"
+    original_pdf_pages: "56-58"
+    commit_sha: "96b314bc7bfa6047ae0fc8e187a04c9e2cd84fea"
+    readback_blob_sha: "9704b95ae93a0d04d33370a64ceb8345dd753ea0"
+    candidate_sha256: "d9d7b5ef53a20395e89061a1b587498892205d8f752664c849d5b8236cb0c5d5"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p47_pdf56", "printed_p48_pdf57", "printed_p49_pdf58"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
