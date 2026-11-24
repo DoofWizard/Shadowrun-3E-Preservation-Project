@@ -1,15 +1,52 @@
 id: entity.medical.medical-facility
 record_type: entity
-name: "Medical Facility (Hospital)"
+name: Medical Facility (Hospital)
 domain: medical
 status: ingested
+source: source.mm
+printed_pages: "136, 138"
+pdf_pages: "137, 139"
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "Rating x 2 / 1 mo"
-  cost: "(Rating + 6)^4 x 4,000 nuyen"
+  availability: "Rating x 2 / 1 month"
+  cost: "(Rating + 6)^4 x 4000 nuyen"
+  weight: NA
   street_index: 3
-  maximum_rating: 10
+  maximum_rating: 6
+data:
+  capacity:
+    doctors: "Rating x 5"
+    nurses_or_biotechnicians: "up to Rating x 10"
+    patients_monitored_per_staff_member: Rating
+  permits:
+    individual_purchase_requires: [DNA screening, permit]
+    contracted_doctors_minimum: "Rating x 5"
+    contracted_nurses_minimum: "Rating x 10"
+    additional_head_doctor_and_head_nurse_required: true
+    contracted_staff_registered: true
+    heads_present_at_award_for_DNA_identity_checks: true
+    fee_fraction_of_facility_cost: 0.25
+    permit_rules: "SR3 pp273-274"
+  components:
+    all_clinic_functions: true
+    mainframe_security_value: "ceil(Rating / 2)"
+    usual_host_color: Green
+    nonmedical_host_use: temporarily reduces facility effectiveness to that of a medical shop
+    host_resources: [medical reference texts, medical virtual reality environment]
+    dedicated_host_usually_disconnected_from_Matrix: true
+    expanded_hospital_Matrix_presence_usually_behind_choke_point: true
+    remote_medical_operations: includes all Valkyrie capabilities
+  access_and_grade:
+    rental_cost_nuyen_per_day: "Rating x 300"
+    rental_street_index: 3
+    rental_requires_appropriate_permits: true
+    implant_or_transplant_surgery_and_repair: apply implant grade price and availability modifiers
+    rating_below_3: GM may impose target-number or other penalties
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.surgery.core]}
 sources:
-  - {source: source.mm, page: 138, relation: defines, note: "Medical facilities/hospitals and Medical Tools Table"}
+  - {source: source.mm, pages: "136, 138", relation: defines, note: "Medical Gear, Medical Facilities and Medical Tools Table"}
 notes:
-  - "Hospital-scale medical facility with advanced surgical and biotechnology capacity."
+  - The source caps player-accessible medical gear at Rating 6, while higher-rated facilities can exist beyond player access; no universal Rating 10 cap is stated here.
+framing: reference_exact
+headline: "FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), printed pp136,138/PDF137,139: Medical Facility and Hospital"
