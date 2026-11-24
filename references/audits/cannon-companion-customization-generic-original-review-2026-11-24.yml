@@ -1,0 +1,66 @@
+id: audit.cc.customization-generic-original-review-2026-11-24
+source: source.cc
+publication: "FASA7908 Cannon Companion, FASA Corporation, Shadowrun Third Edition fictional tabletop RPG"
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+verify_source_output: source_pdf_hash_verified
+physical_pdf_pages: 130
+original_printed_pages_reviewed: [79, 80]
+physical_pdf_pages_reviewed: [80, 81]
+preflight_self_tests_passed: 29
+verified_script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+existing_shared_records_read_only:
+  procedures/firearms/customize.yml: 525276bb886afbaaea9911baa3adbd73e2cb12cf
+  rules/firearms/customization-modifications.yml: beb034e6e1d925c79da57ba26620c570909ec6e3
+  procedures/firearms/design.yml: 5de90056f860f5ee3fc7212efb0eb833a0b64585
+field_reconciliation:
+  working_time_and_cost:
+    status: field_reconciled
+    reused: [existing labor rates, ordinary six-hour character work threshold, parts search test and shop discount, listed and unlisted cost rules]
+    supplemented: [daily and weekly NPC schedule, overtime conditions, level-specific waiver conditions, twelve-hour personal-needs threshold, listed weight accounting, unlisted Street Index omission, acquisition rule reference]
+    record: rule.firearms.cannon-companion-customization-labor-economy-p79-80
+  space_restrictions:
+    status: partial_with_discrepancy
+    reused: [single slot occupancy, frame capacity, return of capacity on removal]
+    supplemented: [internal and external slots, integral option immutability, original replacement-time scope]
+    unresolved: "Explicit same-tool requirement for removal remains to be registered; shared procedure timing wording remains unchanged."
+    record: rule.firearms.cannon-companion-customization-capacity-accounting-p80
+  making_modifications:
+    status: generic_fields_reconciled
+    reused: [base-time division, per-option fields, conditional FCU marker, cost multiplier]
+    supplemented: [standard defaulting, two-skill two-test requirement, unrestricted order, design-stage test exception]
+    record: rule.firearms.cannon-companion-customization-capacity-accounting-p80
+  item_catalogue:
+    status: not_certified
+    unresolved: "Cosmetic, internal accessory and physical option descriptions and original table fields pp80-84 still require item-level comparison. Manufacture and historical shared-record provenance remain open."
+transactions:
+  - path: rules/firearms/cannon-companion-customization-labor-economy-p79-80.yml
+    commit: 2df61d9b459c4a670c799942948969c2ef2ba101
+    blob: decc9fbd4fa320c95d4f77ac9def2e440efc96d0
+    baseline_sha256: 6bf0644804255598c36fd3dee7de6a169d7aedbc36705acf4087e794187b4d44
+    candidate_sha256: 6bf0644804255598c36fd3dee7de6a169d7aedbc36705acf4087e794187b4d44
+    immutable_sha256: c970c7ebb91f341aeaaa39610839a2c97e5300f33fc5aa482f1da510a50ee3af
+    journal: labor-journal
+    gate: verified
+    index_commit: 4968df1892acd1f856db381166727584e4ec1c46
+    index_blob: 0f1db2bd8bb1f592c2cbb9ea768502dc499e32ac
+    exact_readback: true
+  - path: rules/firearms/cannon-companion-customization-capacity-accounting-p80.yml
+    commit: a85530beb3df8c3bece18981344f32758058efd5
+    blob: 016e2021e705ab4a6001bb2511a894d46e885997
+    baseline_sha256: 6c92b3277e4affbb83c62bfef0dad0ea5fc4ec02724b0f9ba90b8679e7365dd6
+    candidate_sha256: 6c92b3277e4affbb83c62bfef0dad0ea5fc4ec02724b0f9ba90b8679e7365dd6
+    immutable_sha256: 2032efb22006583389045ece94e027850767761818a7996b4a07bcbffe1ee14c
+    journal: capacity-journal
+    gate: verified
+    index_commit: 00a78d469b9998fc373c64dac984e520676ecea8
+    index_blob: e4355c37f1c0a79bdb724aa380d041b11ee5a6b3
+    exact_readback: true
+new_semantic_records: 2
+fully_reconciled_subsections: [Working Time and Cost, Making Modifications generic procedure]
+whole_customization_section_closed: false
+whole_publication_closed: false
+globally_authorized_pages: 0
