@@ -1,17 +1,34 @@
 id: rule.nanotech.classification
 record_type: rule
-name: "Nanoware Classification"
+name: Nanoware Classification
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '98'
+pdf_pages: '99'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999, Shadowrun Third Edition tabletop RPG), p98/PDF99: Character Nanoware Classification'
 effective: {status: current, source: source.mm, page: 98, basis: defines}
-scope: {applies_to: ["nanoware installed in metahuman bodies"]}
+scope: {applies_to: [fictional character nanoware]}
 resolution:
-  summary: "Nanoware is classified as fixed, free-floating, or transient. Fixed systems are localized or encapsulated; free-floating systems circulate through bodily fluids and are limited in concurrent use; transient treatments remain only temporarily before being cleared from the body."
-  inputs: ["nanoware type", "host body", "concurrent systems"]
-  outputs: ["classification, persistence, and stacking limits"]
+  summary: 'Classify character nanoware as free-floating or transient; either category may be fixed until release. Apply the separate concurrent-system rule.'
+  inputs: [nanoware type, activation state, concurrent systems]
+  outputs: [classification, persistence, magic compatibility]
   steps: []
-links: {uses: [], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: [rule.nanotech.nanite-loss]}
+data:
+  primary_categories: [free-floating, transient]
+  fixed_is_optional_for_either_category: true
+  fixed_system: 'Isolated or localized until a triggering event or release; once released, treat as transient or free-floating until its task ends.'
+  fixed_examples: [damage-repair nanites, cyberware repair kits, event-triggered or localized systems]
+  simultaneous_free_floating_system_limit: 2
+  third_system: nonfunctional
+  free_floating: 'Circulates in blood and extracellular fluids. Apply the two-system limit and excess-system consequences from rule.nanotech.excessive-nanoware.'
+  transient: 'Short-term treatment cleared by the fictional host filtration and immune systems.'
+  magic_interference: false
+  flesh_cyber_interface_monitoring_nanites: 'Part of the cyberware implant, not classified as nanoware.'
+links: {uses: [], affects: [subsystem.nanotech.core], modified_by: [], interacts_with: [rule.nanotech.nanite-loss, rule.nanotech.excessive-nanoware]}
 sources:
-  - {source: source.mm, page: 98, relation: defines, note: "Nanoware categories: fixed, free-floating, transient"}
-notes:
-  - "A host may normally have no more than two free-floating nanoware systems active at once; additional systems degrade effectiveness as specified."
+  - {source: source.mm, page: 98, relation: defines, note: 'Nanoware categories and magic compatibility'}
+notes: []
