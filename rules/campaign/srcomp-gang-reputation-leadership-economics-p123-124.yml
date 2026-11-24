@@ -9,21 +9,22 @@ content_class:
 - rule_exact
 framing: reference_exact
 headline: FASA Corporation Shadowrun Companion (FASA7905a), fictional tabletop RPG, campaign reputation and leadership
-summary: Original campaign economy abstractions, recognition tests, leadership challenge resolution and relative NPC gang tiers; corrects the Charisma operand in the allegiance test.
+summary: Original optional FASA7905a fictional campaign mechanics, printed pp123-124 / PDF pp124-125; discretionary modifiers, Reputation and challenge resolution, relative NPC ratings, and source examples.
 data:
   fictional_gang_economy:
     usual_paid_shadowrun_jobs: Standard Mr. Johnson paid runs are generally not the basis of this optional campaign type.
     fictional_illicit_goods_purchase_percentage_of_list_price:
       minimum_percent: 10
       maximum_percent: 60
-      random_basis: 1D6 times 10 percent of printed game item price; resale uses the printed game price.
+      random_basis: Optional GM randomization using 1D6 times 10 percent of printed game item price; resale uses the printed game price.
       gm_discretion_percent_adjustment: ['+5', '-5', '+10', '-10']
+      adjustment_condition: GM may adjust the fictional campaign percentage based on whether the gang won its last turf war or completed its most recent mission.
       reference_example: A fictional 50-nuyen item at 50 percent costs 25 nuyen in the game economy.
     fictional_vehicle_salvage_game_value:
       whole_vehicle_max_percent_of_list_price: 50
       parts_game_value: Full listed price of the vehicle, not a sum of separately priced parts, under the alternative abstract parts-sale resolution.
       game_delay_days_formula: Vehicle Body rating + Armor rating, in game days.
-      worked_example: A fictional vehicle with Body 5, Armor 3 and listed price 250000 nuyen has an eight-day payout delay.
+      worked_example: A fictional vehicle with Body 5, Armor 3 and listed price 250000 nuyen has an eight-day payout delay; the original example contrasts whole-vehicle game value of up to 125000 nuyen with a delayed game value of 250000 nuyen.
   individual_leader_reputation:
     home_city_base_rating: floor(Total Karma / 10)
     elsewhere_base_rating: floor(Total Karma / 20)
@@ -31,7 +32,8 @@ data:
     test_skills: [Etiquette, Street Knowledge]
     example: 150 Total Karma gives local Base Reputation 15 and recognition TN 5.
     gm_recent_activity_modifier_examples: {notoriety_increase: 2, recent_inactivity: -2}
-    nature: Reputation represents local recognition and serves as a measure of the group's leader standing rather than standard Leadership Skill.
+    nature: Reputation represents local recognition; the leader’s rating is also the gang’s Reputation Rating rather than standard Leadership Skill.
+    modified_example: The optional +2 recent-activity modifier raises the example rating from 15 to 17, lowering the recognition TN from 5 to 3.
   leadership_battle:
     leader_challenge: Individual challenge; GM and players determine the method and consequences in the fictional game.
     eligible_contestants: Leaders of two gangs, or a gang leader and an outsider seeking control, as well as an internal challenger.
@@ -47,7 +49,7 @@ data:
   rival_gang_relative_scale:
     tiers: [Inferior, Equal, Superior, Superhuman]
     no_ultimate_tier: true
-    baseline_rule: Use Creating Prime Runners for NPC statistics; aim for roughly balanced numbers.
+    baseline_rule: Use Creating Prime Runners (printed p83) to construct rival gangs and the standard ganger NPC statistics for their members; aim for roughly balanced numbers.
     inferior_if_double_pc_count: Treat as Equal; Inferior groups normally have fewer lieutenants.
     equal_if_double_pc_count: Treat as Superior for Threat Ratings and Dice Pools.
     equal_if_less_than_half_pc_count: Treat as Inferior.
