@@ -1,0 +1,65 @@
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+catalog_number: FASA7908
+edition: SR3
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+original_source:
+  physical_pages: 130
+  printed_pages_reviewed: [62, 64, 68, 69, 70, 71, 123, 124]
+  pdf_pages_reviewed: [63, 65, 69, 70, 71, 72, 124, 125]
+  actual_verify_source: source_pdf_hash_verified
+  live_input_manifest_blob: d0bfb00ea877e4b81715955d8e7eded2a3d22e82
+  preflight_self_tests: 29
+  executable_blobs:
+    connector_preflight: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+sections:
+  - name: Programmable ASIST Biofeedback
+    printed_pages: [68, 69, 70, 71, 124]
+    state: source_fields_reconciled_with_exceptions
+    retained:
+      event: {path: procedures/skillsofts/event-reprogramming.yml, blob: 349ea92c7156c6b35cbb754a9f82520c5eb51cef}
+      detection: {path: procedures/skillsofts/detect-reprogramming.yml, blob: 67e7477e9f12284bef89792c0a1a4cbb54ec9452}
+      reversal: {path: procedures/skillsofts/reverse-reprogramming.yml, blob: c0b6debb6d897d2de17676e37c511273036bc4aa}
+    field_audit: Original full event, detection and reversal prose and examples inspected. Existing base tests and durations reused; thirteen modifier entries including six duration bands, rounding, failed and successful states, diagnostic exceptions, magical detection and reversal qualifications preserved in the two new records. Older ShadowBeat rules are distinct.
+    pab_unit_rows:
+      - {path: entities/gear/caill-rauch-aleph-reprogrammer.yml, blob: bd9818e7bee9a6294ed82014e1501031c5306187, matching_acquisition_fields: 6}
+      - {path: entities/gear/mct-mentokko-2.yml, blob: 6cdc3ece359e0474a67f1af0afaa6daf0eae9165, matching_acquisition_fields: 6}
+      - {path: entities/gear/ares-cybermed-psychscanner.yml, blob: 23418b653d6a8df4475088d963e1e78e04cea9d6, matching_acquisition_fields: 6}
+      - {path: entities/gear/ebmm-therapeutic-asist.yml, blob: c2bda75ead7e94f6934a2dc03acd6f079f7eb5c6, matching_acquisition_fields: 6}
+      - {path: entities/gear/mct-mentokko-5.yml, blob: 7548b19972c668a3c1b56f31e13bc58b34e7eadf, matching_acquisition_fields: 6}
+    unit_table_note: All five rows and thirty acquisition fields match pp70 and 124; existing spelling Caill versus printed Galil and MentoKko versus MenTokko are shared naming discrepancies, not new equipment.
+    exceptions: Exact one-year memory interval not assigned explicitly; source example with approximately one week omits a duration modifier. Existing shared procedure historical gate provenance remains separate.
+  - name: Dedicated Chipjack
+    printed_pages: [64, 123]
+    state: source_fields_reconciled
+    field_audit: Existing p64 game-rule record aa01f06fbb151804dd4604fa624ce64e3007dd20 retained; the appendix supplies the missing five acquisition fields.
+  - name: Types of BTL Chips
+    printed_pages: [68, 123, 124]
+    state: original_price_headers_resolved_shared_entities_pending
+    field_audit: Four original price pairs have clearly labeled Dreamdeck and Direct Input columns in the appendix; existing entities reverse these. Availability, Street Index and Legality match. Other type mechanics previously reviewed.
+    shared_entities:
+      - {path: entities/skillsofts/dreamchip.yml, blob: 13527a7f5c80a6a97b961968e70ecdb100baa942}
+      - {path: entities/skillsofts/moodchip.yml, blob: 0f43857f1c4860860cb1ef46a1ebc20c77e24051}
+      - {path: entities/skillsofts/personafix.yml, blob: ee423bc97d47bac896d69af7df78991ad072223b}
+      - {path: entities/skillsofts/tripchip.yml, blob: 3bdf81b911d44a52b6f4a7b275eecd826e290260}
+  - name: Skillsoft Programming Options appendix exception
+    printed_pages: [62, 64, 123]
+    state: original_discrepancy_preserved_precedence_open
+    field_audit: One-Shot price multiplier is 0.5 in chapter, 0.75 in appendix. Other five option fields match. Duration and size effects already covered in source-specific design record. Existing shared option remains unmodified.
+confirmed_records:
+  - {path: equipment/skillsofts/cannon-companion-dedicated-chipjack-market-p123.yml, commit: 39d11eaa9545b0922f4519f43a3bd7a429e72e01, blob: ddf783c8669eacbfc2788f0f1f38df98003be04f, index_commit: a0caf6e1ddcfd030d2153061e9922ea6d73efc99, index_blob: 16d68915741d662c8d5ba40eb1728714550256a2, gate: verified}
+  - {path: equipment/skillsofts/cannon-companion-btl-price-column-correction-p123-124.yml, commit: 4352cb0e62873b78bee5f9c2d44a6a0cafdd20e2, blob: ba4b7729be693d537c571b4f1c6d51f5f03ff49c, index_commit: 1945cdd6919f50439dd0b5e23d66ce583f93cfa8, index_blob: fae1f52ec736036f7d57da46c5868ae3d47dacdd, gate: verified}
+  - {path: rules/skillsofts/cannon-companion-pab-event-qualifiers-p68-71.yml, commit: 951ee5a28160e9471c10c18fa500af4cda85c9ff, blob: 93602c8c0e75f547805d1df42678c0325fe3194c, index_commit: f98a18af06f124aea74961d7296e002508eeceb3, index_blob: a611cd21d77287db2d5ba25c09d7b0bf7b5e20a8, gate: verified}
+  - {path: rules/skillsofts/cannon-companion-pab-detection-reversal-qualifiers-p71.yml, commit: 50cf694307482e5d5df826d42de4434fd4f16953, blob: fdd46c80f01c4cf7c9a90293fe7dce1c56bad3eb, index_commit: 47f940bb751fcafff75d5d71da57ea1d3dbf639f, index_blob: ef0bfd66515fc201964e5602ec8dc58f198aa54a, gate: verified}
+  - {path: equipment/skillsofts/cannon-companion-one-shot-price-source-conflict-p64-123.yml, commit: 87b8854e21668bf9d4df509b9a0e6e8ed6813ec6, blob: 16d4602e1de4dee1d91f2144a1863f5d0ada1ec7, index_commit: 2d6b6443cf1208dbdf14f985ddd649313dde7bfd, index_blob: a131c4e3cfe550495af15016924bb68dd4b985b9, gate: verified}
+remaining:
+  - Shared record price corrections, spelling and historical receipt adjudication; no ownership transfer.
+  - One-Shot chapter and appendix price precedence; prior Degrading and RAS discrepancies.
+  - Remaining firearm design and equipment reference field-level reconciliation.
+  - External BattleTac, M&M stress and expert-driver dependencies, and other documented source conflicts.
+whole_book_closed: false
+globally_authorized_pages: 0
