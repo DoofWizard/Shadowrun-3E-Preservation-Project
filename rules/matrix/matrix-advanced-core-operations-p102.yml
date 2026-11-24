@@ -1,0 +1,127 @@
+{
+  "id": "rule.matrix.matrix-advanced-core-operations-p102",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "102",
+  "pdf_pages": "103",
+  "edition_scope": "FASA Corporation Matrix FASA7909, Shadowrun Third Edition, published fictional tabletop RPG; printed 102/physical PDF 103.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Matrix advanced applications of core system operations and delegated actions",
+  "summary": "Source-specific fictional game operation resolution, conditions, exceptions and numeric effects. Existing operation profiles and core tests are reused.",
+  "data": {
+    "publication": {
+      "title": "Matrix",
+      "publisher": "FASA Corporation",
+      "catalog": "FASA7909",
+      "edition": "Shadowrun Third Edition",
+      "source_pdf_sha256": "b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe"
+    },
+    "legacy_catalog": {
+      "path": "references/matrix/system-operations.yml",
+      "blob": "4fb08f82abefa56bb5cc7afc8657b09b8bb0c8c1",
+      "reuse": "Existing operation test, utility, and action profiles remain authoritative except corrected page citations; this record adds operation-specific tabletop resolution."
+    },
+    "core_procedure": {
+      "path": "procedures/matrix/system-operation.yml",
+      "blob": "d736201291ebc17ddd3df33434d886f0d27f76a2"
+    },
+    "advanced": {
+      "analyze_host": {
+        "additional_facts_per_success": [
+          "Virtual machine",
+          "Ultraviolet host",
+          "Bouncer host",
+          "Vanishing SAN"
+        ]
+      },
+      "analyze_ic": {
+        "trace": "Identify hunting versus location cycle; if location cycle, remaining turns.",
+        "other": "Detect IC program options."
+      },
+      "analyze_icon": {
+        "additional_identities": [
+          "SK",
+          "AI",
+          "frame",
+          "agent",
+          "sprite",
+          "daemon",
+          "otaku living persona"
+        ],
+        "file_or_remote_device": "Detect data bomb IC or worms."
+      },
+      "analyze_subsystem": {
+        "additional_detection": [
+          "command sets",
+          "trap doors",
+          "worms",
+          "scramble IC",
+          "other hidden defenses or system tricks"
+        ]
+      },
+      "graceful_logoff": {
+        "trace_location_cycle_tn_modifier": "Trace IC rating, like Track utility.",
+        "success": "Trace programs from that system immediately fail."
+      },
+      "locate_decker": {
+        "detects": "All personas including cyberterminal users and otaku.",
+        "excluded": [
+          "frames",
+          "agents",
+          "sprites",
+          "daemons",
+          "SKs",
+          "AIs"
+        ]
+      },
+      "logon_host_ltg_rtg": {
+        "jackpoint_access_modifier": "Applies to first system logged onto, whether host, LTG or RTG."
+      },
+      "null_operation": {
+        "effect": "May activate command sets."
+      },
+      "swap_memory": {
+        "compressed_utility_upload_allowed": true,
+        "decompression_action": "Complex",
+        "decompress_before_use": true
+      }
+    },
+    "delegated_operations": {
+      "prerequisite": "Acting user has located recipient.",
+      "system_test_tn_modifier": 2,
+      "same_group_modifier": 0,
+      "result_applies_to": "Recipient, not acting user.",
+      "prohibited": [
+        "Abort Host Shutdown",
+        "Alter Icon",
+        "Block System Operation",
+        "Crash Application",
+        "Crash Host",
+        "Decoy",
+        "Download Data",
+        "Graceful Logoff",
+        "Intercept Data",
+        "Invalidate Account",
+        "Null Operation",
+        "Redirect Datatrail",
+        "Relocate Trace",
+        "Restrict Icon",
+        "Send Data",
+        "Swap Memory",
+        "Upload Data",
+        "Validate Account"
+      ]
+    },
+    "source_review": {
+      "images": [
+        103,
+        104
+      ],
+      "boundary": "Printed p102 is final System Operations page; p103/PDF104 starts Intrusion Countermeasures, contrary to historical manifest and catalog end p103."
+    }
+  }
+}
