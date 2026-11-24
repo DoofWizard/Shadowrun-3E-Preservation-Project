@@ -1,21 +1,36 @@
 id: entity.bioware.pain-editor
 record_type: entity
-name: "Pain Editor"
+name: Pain Editor
 domain: bioware
 status: ingested
-intrinsic:
-  grade: cultured
-  bio_index: 0.6
-  availability: "6/6 days"
-  cost_nuyen: 60000
-  street_index: 1.2
-  legality: "6P-N"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+source: source.mm
+printed_pages: '73-74'
+pdf_pages: '74-75'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {grade: cultured, bio_index: 0.6, availability: '6/6 days', cost_nuyen: 60000, street_index: 1.2, legality: 6P-N}
+data:
+  activation: voluntary learned reflex for both activation and deactivation
+  active:
+    pain_perception: suppressed including feedback pain
+    damage_tracking: GM tracks severity secretly; other evidence may reveal wounds
+    assess_condition: {biotech_target_number: 4, alternative: consult biomonitor implants}
+    stun_initiative_and_target_number_penalties: ignored
+    physical_damage_penalties: applied without player knowledge
+    unconsciousness_from_stun_or_fatigue: false
+    unconsciousness_from_deadly_or_greater_physical_damage: possible under Consciousness p131
+    willpower_modifier: 1
+    intelligence_modifier: -1
+    tactile_perception_target_number_modifier: 4
+  deactivation: all accumulated damage effects apply immediately including Initiative and target number penalties or unconsciousness
+  stress:
+    light: sensitivity to pain and other stimuli fluctuates randomly
+    moderate: GM selects sight, hearing, taste or smell; apply +1 Perception modifier for selected sense
+    serious: increase effective Damage Level by one for wound target modifiers
+    deadly: fails to activate
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "73-74", relation: defines, note: "Pain Editor description, game effects, stress effects and statistics"}
-notes:
-  - "Filters pain and related sensory feedback while activated, changing wound penalties, sensory awareness and some Willpower/Intelligence effects."
+  - {source: source.mm, pages: '73-74', relation: defines, note: Pain Editor effects, Stress and market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp73-74/PDF74-75: Pain Editor'
+framing: reference_exact
