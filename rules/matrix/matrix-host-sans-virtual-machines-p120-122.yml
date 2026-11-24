@@ -1,0 +1,63 @@
+{
+  "id": "rule.matrix.matrix-host-sans-virtual-machines-p120-122",
+  "record_type": "rule",
+  "status": "source_reviewed",
+  "source": "source.matrix",
+  "printed_pages": "120-122",
+  "pdf_pages": "121-123",
+  "edition_scope": "FASA Corporation, Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, printed 120-122/PDF 121-123.",
+  "content_class": [
+    "rule_exact"
+  ],
+  "framing": "reference_exact",
+  "headline": "Special host and access-node game rules",
+  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "data": {
+    "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
+    "trap_doors": {
+      "placement": "A game-world connection concealed within a host Control, Index, Files or Slave subsystem.",
+      "locate_access_node": "Cannot discover it.",
+      "analyze_subsystem": "Success in the containing subsystem reveals it.",
+      "transition": "Resolve the normal Logon operation to connected host/PLTG."
+    },
+    "one_way_SAN": {
+      "direction": "Normally outgoing only, even legitimate incoming users are barred.",
+      "access_subsystem_modifier": "Increase host or PLTG Access rating by 1D6 for attempted Logon through the one-way connection."
+    },
+    "dead_end_hosts": {
+      "normal_exit": "Reverse access is blocked; Gracefully Logoff is available. Hidden connection may provide another exit.",
+      "forced_reverse": "Logon against previous host Access + 1D6.",
+      "decoys": "Locate Access Node, Locate File or Locate Slave can yield misleading pointers to these fictional trap hosts."
+    },
+    "vanishing_SAN": {
+      "availability": "Locate Access Node succeeds in locating it only while active; inactive returns inactive error. Logon to Host or LTG must succeed before closure.",
+      "typical_window_seconds": [
+        10,
+        20
+      ],
+      "window_combat_turns": "1D6+1",
+      "closure": "A connected Matrix user may be dumped immediately and suffer dump shock.",
+      "freeze": "Successful Freeze Vanishing SAN operation keeps current user connected; other incoming access is refused until scheduled reappearance.",
+      "timed": "Same LTG code, fixed or algorithmic/random opening times. If timing unknown, a frame/agent can make recurring Locate Access Node game tests.",
+      "teleporting": "Grid/LTG address changes each activation, either within a grid or between RTGs. A passkey may automatically provide the appropriate game-world destination; change may be deterministic or random.",
+      "triggered": "Opens only on specified game-world trigger or sequence; may be combined with teleporting behavior."
+    },
+    "virtual_machines": {
+      "isolation": "Own security code, subsystem ratings, tally and IC. Actions and crash do not alter real host; crash dumps VM occupants. Downloaded decoy data can be replaced with worthless game data.",
+      "rating_limits": "Security Code no greater than real host; each subsystem rating maximum equals corresponding real-host rating minus 2.",
+      "detect": "Analyze Host operation specifically checking for VM.",
+      "breakout": {
+        "test": "Control Test against real host; count net successes.",
+        "required_net_successes": {
+          "Blue": 1,
+          "Green": 2,
+          "Orange": 3,
+          "Red": 4
+        },
+        "failure": "Increase security tally by shortfall in successes.",
+        "carryover": "All VM security tally carries into real host."
+      },
+      "nesting": "Same rating constraints apply recursively to VMs nested within VMs."
+    }
+  }
+}
