@@ -667,6 +667,35 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_medical_provider_ratings_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    independently_reviewed_original_printed: "142-144"
+    independently_reviewed_original_pdf: "143-145"
+    original_publisher_confirmed: "FASA Corporation, copyright 1999"
+    image_sha256:
+      PDF143: "5d903f6ad8b2b643cafe2c349fb9c726e32b2457991f31c72647eb1cfdc2eae2"
+      PDF144: "56760925b0a8a528a680c76b32945086f867e04835cb7a23a7a8ffd1baf4d036"
+      PDF145: "311ed38bda55799fdd6d601447affb87899a978355858ec75829c18f56fc0168"
+    records:
+      - id: rule.surgery.provider-ratings
+        path: rules/surgery/provider-ratings.yml
+        printed: "142-144"
+        pdf: "143-145"
+        commit: "0f2514668168b255c221a7ac2c21ed53391b5d26"
+        blob: "7ad1a1b41489e9e617a8ce67a00e463ae2797b20"
+        candidate_sha256: "5fadf6fbabe5ac347f86f54537be05c5c18b8f3eee511550dd1e7bb9fa05552b"
+        baseline_sha256: "dadb96ba7767421bfa7eee92c423d0656200582cab03fb5b8b28ed7fe760b7f4"
+        immutable_sha256: "18c36feb33ae299729195e51c30856328e47f48e11488230739b4c493ef20e37"
+        gate: verified
+        recovery_inspect: verified
+        fields: "All 17 emergency modifiers and 16 rating rows (both columns), independent skill and gear checks, provider-specific approximation and absent-rating outcomes; all seven non-emergency provider rating, skill modifier and search-duration rows, independent attending skill rolls."
+    scoped_natural_sections_reconciled:
+      - "Finding Emergency Medical Care pp142-143, including both original tables and none-result exceptions."
+      - "Non-Emergency Medical Care pp143-144 including the Medical Search and Medical Ratings tables, contact applicability, extra skills and success allocation, in conjunction with the already confirmed procedure.surgery.find-provider (blob ec9426cbddfb2a5d4b71fbff043d2ef86e36cddb)."
+    exceptions: "Prior 409 resolved with fresh unchanged target blob 7e3690033a2d9aad22f3da618ff8815ce9946448 and newly advanced branch HEAD; re-staged exact prior independently reviewed candidate, ordinary Contents update, exact live and commit-specific readback. Retain the prior search record's explicit delta base rating versus gear-increase cap distinction. Adjacent medical-provider descriptions are not certified by this closure."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
 
 coverage:
   - cyberware
