@@ -1,0 +1,71 @@
+id: rule.magic.mits-magical-group-access-original-p64-65
+record_type: rule
+name: Finding, Joining and Founding Magical Groups
+domain: magic
+status: ingested
+effective: {status: current, source: source.mits, page: 64, basis: defines}
+scope: {applies_to: [Characters seeking magical groups, Awakened applicants and founders]}
+resolution:
+  summary: Search, admission and magical-link establishment have separate tests and costs.
+  inputs: [Magical Skill, Magic Attribute, initiation grade, contacts, membership, Karma and dues]
+  outputs: [Search duration, admission, magical link]
+  steps: []
+links:
+  uses: [procedure.magic.initiation]
+  affects: [subsystem.magic.magical-groups]
+  modified_by: []
+  interacts_with: [rule.magic.mits-magical-group-strictures-original-p62-63]
+sources:
+  - {source: source.mits, pages: '64-65', relation: defines, note: Finding a Group, Joining a Group and Founding a Group}
+notes: []
+source: source.mits
+printed_pages: '64-65'
+pdf_pages: '65-66'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  finding:
+    applies_to: Both Awakened and mundane characters, including searches for reasons other than joining.
+    test: GM makes Etiquette (Magical) Test.
+    base_time_days: 60
+    base_target_number: 12
+    awakened_target_modifier: Subtract character Magic; mundane characters receive no Magic modifier.
+    contact_modifier_per_qualifying_contact: -1
+    qualifying_contacts: [Awakened, Talismonger, Fixer regularly dealing with Awakened]
+    successful_time_days: Base time divided by successes
+    zero_successes: 60 days spent without result in an ordinary search.
+    interruption_penalty: None
+    known_group_or_member: Asking may suffice if the character knows the group name or a member personally; reduce base time to 30 days at worst when the character knows what to seek.
+    group_invitation_possible: true
+    joining_search: GM should ensure a group found for an Awakened applicant is one the character could join.
+  joining:
+    karma_cost: 3
+    dues: First month's dues must also be available.
+    third_party_payment: Other group members may pay the Karma or money for the applicant.
+    test_dice: Character's highest Magical Skill or Magic Attribute.
+    target_number: Current membership; subtract applicant's initiation grade if already initiated.
+    target_modifier_per_lost_magic_point_without_geas: 2
+    required_successes: 1
+    first_failure: Cannot admit now; retry in 1D6 months with target number halved on the second application.
+    second_failure: Group cannot admit the character.
+    geas_attitude: A few groups view geasa as weakness; nearly all refuse applicants who have begun the path of burnout.
+    large_groups: Another subgroup may be able to accommodate an applicant when one subgroup cannot.
+  founding:
+    minimum_awakened_members: 2
+    karma_per_joining_member: 3
+    frequency: Once per month
+    base_dice: Number of members
+    additional_dice_karma_cost_each: 3
+    additional_dice_payers: Individual members or group jointly
+    base_target_number: 12
+    target_modifiers:
+      each_additional_admitted_tradition: 2
+      each_adopted_stricture: -1
+      any_member_previously_initiated_in_magical_group: -2
+      each_month_of_dedicated_work_by_all_members: -1
+    dedicated_work: No other tasks except the required rituals and meditations and activities necessary for basic survival.
+    success: Establish magical link and contact avatar; group may then confer reduced initiation Karma costs.
+    failure: No link; group may test again in a later month.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition procedures: magical group access (FASA7907, printed 64-65/PDF 65-66)'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG search times, admission tests, costs and monthly magical-link establishment.'
