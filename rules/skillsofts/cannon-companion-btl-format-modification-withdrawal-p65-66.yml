@@ -1,0 +1,45 @@
+id: rule.skillsofts.cannon-companion-btl-format-modification-withdrawal-p65-66
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '65-66'
+pdf_pages: '66-67'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional BTL format and character condition rules'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp65-66/PDF66-67; game tests and character condition effects supplement original core playback rules.'
+data:
+  reused_core: rule.skills.sr3-core-btl-playback-formats-effects-p296
+  formats:
+    normal_recording: usually Full-X
+    dreamdeck: both chip and deck must be BTL-modified for intended playback quality
+    direct_input: timed single use or limited uses are typical; continuous-play variant exists
+  fictional_equipment_game_tests:
+    convert_simdeck: {skill: Electronics B/R, target_number: 4, base_time_hours: 2, resulting_legality: 3Y}
+    detect_modified_simdeck: {skill: Electronics, target_number: 5}
+    longevity_option_change:
+      applies_to: degrading, one-shot or timer
+      skill: Computer (Hardware) B/R
+      target_number: 6
+      base_time_hours: 6
+      required_game_item: microtronics toolkit
+      failure: chip burns out
+    ras_option_change:
+      simdeck_skill: Electronics B/R
+      direct_input_skill: Computer (Hardware) B/R
+      target_number: 4
+      base_time_hours: 2
+  character_conditions:
+    addiction: use M&M p108 Substance Abuse and CC p69 BTL Addiction Table
+    attribute_loss: on failed Attribute Test and loss of Body or Willpower, GM may apply a Mental Flaw or other fictional side effect
+    withdrawal_extra_stun_boxes: 1 whenever Physical or Stun damage is taken during withdrawal
+    withdrawal_dice_penalty: 1 die on tests for pain resistance, torture or overstimulation
+    personalized_habit: may require extensive fictional psychotherapy
+  chip_types:
+    entities_reused: [entity.skillsoft.dreamchip, entity.skillsoft.moodchip, entity.skillsoft.personafix, entity.skillsoft.tripchip]
+    rating_meaning: complexity and intensity, with addiction statistics possibly dependent on rating
+    moodchip_crash: typically opposite emotion for one or two hours; habitual users can have stronger swings and longer recovery
+    personafix: lower ratings minor effects, higher ratings programmed personality control; may be clustered with skillsofts
+    tripchip: usually Baseline at low ratings, includes emotive tracks at higher ratings
+  scope: Abstract fictional dice and character rules only. Existing four chip price rows and core playback definitions remain unchanged.
