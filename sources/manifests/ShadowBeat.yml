@@ -54,7 +54,8 @@ coverage:
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
   simsense: {printed: "74-83", status: source_verified_section_closed, note: "Original rules-bearing production, output, and playback eligibility fields pp74-83 verified; p79 storage contradiction retained, p82 advertisement and p83 narrative effects distinguished from dice rules. Equipment prices and capability tables pp88-99 separate; SR3 adaptation unresolved."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
-  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 verified; other gear pp88-96, PAB price table p97, and storage media/data rates/trideo p99 remain."}
+  equipment_and_costs: {printed: "88-99", status: partial, note: "Simsense gear pp97-98 and storage media/data rates p99 verified; other gear pp88-96, PAB table p97, and trideo services p99 remain."}
+  media_storage_and_data_rates: {printed: "99", status: source_verified_section_closed, note: "All three storage media prices, capacity details and all eleven data storage rate rows verified; source Gp notation retained, SR3 prices separate."}
   simsense_gear: {printed: "97-98", status: source_verified_section_closed, note: "All Simsense Gear Table rows and associated device parameters; separate PAB table excluded. Original model, price and induction Essence discrepancies retained; SR3 lineage unresolved."}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
 edition_lineage:
@@ -89,6 +90,7 @@ records:
   - ["simsense-output-storage-legacy-p79-80", "78638439e0578f978f1f266684e3e09d585dbe49"]
   - ["simsense-legacy-eligibility-p80-83", "fe5debd025a73471d49dd3d82e23e00ffe4b04b1"]
   - ["simsense-gear-legacy-p97-98", "1705d367601d04afaa88b36b136adc30da733da0"]
+  - ["media-storage-legacy-p99", "8a8039ed5a34cefdc0c66b0c97d30c9fd44b571b"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -386,5 +388,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p97_pdf106", "printed_p98_pdf107"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: equipment.shadowbeat-media-storage-legacy-p99
+    path: equipment/shadowbeat/media-storage-legacy-p99.yml
+    original_printed_pages: "99"
+    original_pdf_pages: "108"
+    commit_sha: "8a8039ed5a34cefdc0c66b0c97d30c9fd44b571b"
+    readback_blob_sha: "55317969297f9e2f1b2a13c51243e0c71901539c"
+    candidate_sha256: "cf197509ca6e6b782b5f23a218637bc305c439a37dfc97b2fcf912793784c9fb"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p99_pdf108"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
