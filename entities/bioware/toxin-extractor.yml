@@ -1,21 +1,32 @@
 id: entity.bioware.toxin-extractor
 record_type: entity
-name: "Toxin Extractor"
+name: Toxin Extractor
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '71'
+pdf_pages: '72'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index_per_level: 0.4
-  availability: "4/4 days"
+  availability: '4/4 days'
   cost_nuyen_per_level: 45000
   street_index: 1
-  legality: "Legal"
-  maximum_levels: "one-half unaugmented Body, rounded down"
-links:
-  uses: [rule.chemistry.drug-exposure]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+  maximum_levels: floor(unaugmented Body / 2)
+data:
+  scope: blood-borne toxin attacks
+  power_reduction_per_level: 1
+  example: {level: 3, incoming_damage_code: 7D, resistance_damage_code: 4D}
+  stress:
+    light: loss of necessary nutrients; supplements may be needed
+    moderate: weight loss and weakness; subtract 1 Body die from Resistance Tests against toxins or poisons
+    serious: accumulated toxins enter the system; side effects include blisters and rashes; Light Physical wound
+    deadly: no filtering bonus
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 71, relation: defines, note: "Toxin Extractor description, game effects, stress effects and statistics"}
-notes:
-  - "Each level reduces the Power of blood-borne toxic attacks by 1 in the fictional game rules."
+  - {source: source.mm, page: 71, relation: defines, note: Toxin Extractor game effects and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p71/PDF72: Toxin Extractor'
+framing: reference_exact
