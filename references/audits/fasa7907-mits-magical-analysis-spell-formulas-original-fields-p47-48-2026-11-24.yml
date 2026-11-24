@@ -1,0 +1,61 @@
+source: source.mits
+publication: 'FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG'
+run_start_head: 954e0c346d161ccca840faa6260eba31e8853abb
+source_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427
+source_pdf_bytes: 123917505
+source_gate: {status: source_pdf_hash_verified, page_images_review: still_required_independently}
+independent_image_review_pdf_pages: [1, 7, 48, 49, 50]
+script_blobs:
+  connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+  preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+  transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+  ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+preflight: {passed: 29, total: 29}
+review:
+  existing_records:
+    - {path: subsystems/magic/enchanting.yml, blob: 70f88ce9211094645b1f6b761521f5ae2a10d0e7, finding: Analysis listed as component but no resolution or target-number rows.}
+    - {path: procedures/magic/spell-design.yml, blob: 86ddc23b863190725d46e92f86d3067fd8eeae1e, finding: General overview lacks formula-design test, base-time table and modifiers. Existing limits-of-sorcery summary remains unchanged.}
+    - {path: rules/magic/spell-formula-market.yml, blob: 840140173c6cd50e7f7d9cfbbc243521587bcc8a, finding: Purchase price and availability table is a separate rule from formula creation.}
+    - {path: rules/magic/spell-characteristics.yml, blob: 79bc37f4a1258fd26cd7ce939e0617994969c658, finding: Core spell characteristics preserved unchanged.}
+  editorial: 'Human-readable baseline fields and candidate fields independently compared against original page images in fictional source context. Headline-only presentation difference; all mechanics frozen. Earlier local formula staging was superseded before submission by source-grounded additions for tradition-specific representation and the mundane designer limitation. No rejected candidate was retried.'
+  sections:
+    - section: Analyzing magical items
+      printed_pages: '47'
+      pdf_pages: '48'
+      reviewed_fields: [eligible_skills, shop_requirement, assensing_alternative, secret_test, five_target_number_rows, assensing_modifier, time_per_success, failure_time, no_information, all_ones_default, gm_exception, information_from_successes]
+      status: closed_mechanical_scope
+    - section: Spell formulas
+      printed_pages: '47-48'
+      pdf_pages: '48-49'
+      reviewed_fields: [tradition_representation, inspiration_sources, reverse_engineering, astral_observation_requirements, action, test, complementary_skill, instant_modifier, success_threshold, awakened_and_mundane_eligibility, default_skills, default_modifier, facility_type, effective_skill, force_ceiling, design_test, target_number, four_base_time_rows, variable_drain_exception, success_time, failure_time, interruptions, facility_bonus, aid_study, totem_modifiers, translation_modifier, worked_example, use_and_legal_trade, physical_electronic_media, gm_exception, program_size, learning_ceiling, force_upgrade_modifier_and_time]
+      status: closed_mechanical_scope
+      boundary: 'Designing New Spells begins on printed p49/PDF50 and is not closed here.'
+transactions:
+  - section: Analyzing magical items
+    receipt: {protocol: sr3-gate/v1, status: verified, record_id: rule.magic.mits-magical-analysis, path: rules/magic/mits-magical-analysis-original-p47.yml, source: source.mits, printed_pages: '47', pdf_pages: '48', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, candidate_sha256: 0b9a8532f3491c45c2090f95a50513bd35f16237272f71d34071d60c24509de1, expected_blob_sha: 2b2c0b1a7a31fff3a1f61f5ecd996b743dca5581, immutable_sha256: 68d154731c1f643c215aaf426bfd038ada29e13d640a411d7b195eae897f4364, commit_sha: 2a17a7b88e9f98b496a6fd28b94a5f272057fb06, readback_blob_sha: 2b2c0b1a7a31fff3a1f61f5ecd996b743dca5581}
+    index: {commit: f11f38517ecda76567d554d91d21f68841f8619c, blob: 989f03bb98b8ac311f179e4ef6ff6ae512ca4dd5}
+    journal_sha256:
+      baseline.yml: 7b0f23284afacf05377083ba7ae341cf44ac14a7320eb16c7e61cb1a8c5cab21
+      candidate.yml: 0b9a8532f3491c45c2090f95a50513bd35f16237272f71d34071d60c24509de1
+      plan.json: 9c12efb6e895c9c067a45973c047422208a617ab339288b04b9d399cd838fcf1
+      receipt.json: 0c609ad0e4395f441c231b14663d7b5469ea39c5471317bd70d9c698563cf618
+    baseline_replace_from: 'Fictional Shadowrun Third Edition rules: magical item analysis (FASA7907)'
+    baseline_replace_to: 'FASA7907 fictional Shadowrun Third Edition: magical item analysis'
+    readback_note: Initial live branch read returned 404 after exact commit readback; fresh main read then returned matching blob and content. No second write.
+  - section: Spell formulas
+    receipt: {protocol: sr3-gate/v1, status: verified, record_id: rule.magic.mits-spell-formulas, path: rules/magic/mits-spell-formulas-original-p47-48.yml, source: source.mits, printed_pages: '47-48', pdf_pages: '48-49', pdf_sha256: d96829f0393ed61052d7d7b8ab9e355c37156788dd5594ff4bd1e30df6eed427, candidate_sha256: 253259872bd222201b9eb31117cdedba6c28ef23beae0b0df7419a4df30e106e, expected_blob_sha: dcf95d976d79a50b7c811a0d2e1d8da26bed33c4, immutable_sha256: 3b4bb47cb3d8792e0f156e28b143dc374d00fd8df5184101fcca3b54c6719326, commit_sha: faeffea4a9c3d12eb828c25bdb4a2f6373eb9776, readback_blob_sha: dcf95d976d79a50b7c811a0d2e1d8da26bed33c4}
+    index: {commit: 3c36315948de8d6391f487ed1fac008f37611e7a, blob: a071cf0faf8662200c01fbf246a426e346cb392a}
+    journal_sha256:
+      baseline.yml: c945e222e5ae32ab12b9a5f5d331dd4903fd02b398e06717e5d5ccf9c85144f3
+      candidate.yml: 253259872bd222201b9eb31117cdedba6c28ef23beae0b0df7419a4df30e106e
+      plan.json: 364f63c9fd07069aac769d0f910dd55970587298ccbea8a9be1927c1520cdbd9
+      receipt.json: d84f224b9a471190489ccf4f602dc6eed0919dcd588d1a3f7df884632892acbc
+    baseline_replace_from: 'Fictional Shadowrun Third Edition rules: spell formula design (FASA7907)'
+    baseline_replace_to: 'FASA7907 fictional Shadowrun Third Edition: spell formula design'
+journal_reconstruction: 'Fetch exact candidate at recorded commit; replace the single baseline headline phrase as above for baseline bytes. Serialize receipt mapping as Python json.dumps(sort_keys=True) plus LF; derive plan by dropping commit_sha/readback_blob_sha, replacing status with preflighted and serializing sort_keys=True, indent=2 plus LF. Baseline, plan and receipt reconstruction verified byte-for-byte for both records; candidate Git blobs matched staged bytes.'
+remaining:
+  - {section: Designing New Spells, printed_pages: '49-56', pdf_pages: '50-57', status: open, obligations: 'Ten-step design procedure, category/type, range and touch rules, category-specific target numbers, duration, Force, resistance, area, elemental effects, Drain calculation and all modifier tables and exceptions.'}
+  - {section: Limits of Sorcery, printed: 47, pdf: 48, status: overview_exists_not_field_level_closed}
+global_page_credit: 0
+whole_chapter_completion_asserted: false
+whole_book_completion_asserted: false
