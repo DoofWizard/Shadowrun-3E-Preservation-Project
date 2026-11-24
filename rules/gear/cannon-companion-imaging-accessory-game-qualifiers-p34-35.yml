@@ -1,0 +1,44 @@
+id: rule.gear.cannon-companion-imaging-accessory-game-qualifiers-p34-35
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '34-35'
+pdf_pages: '35-36'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Imaging accessories game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp34-35/PDF35-36. Combined-item cost accounting, fictional visibility test conditions and recording equipment game ratings.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  combined_imaging_systems:
+    component_count_options: [2, 3]
+    scope: 'Listed imaging systems and SR3 imaging systems.'
+    cost_nuyen: sum of individual component costs
+    game_selection: ordinary switch or cybernetic command if smartlinked
+  extended_range_laser_sight:
+    game_firearms_TN_modifier: -1
+    requires_visible_dot: true
+    fictional_range_limit_meters: {day: 150, night: 500}
+    original_standard_sight_comparison_meters: {day: 50, night: 150}
+    game_environment_exclusions: [mist, smoke, fog, rain]
+    underlying_game_rule: 'SR3 p281 standard laser sight; original p112 weather and distance qualification remains separately registered.'
+  flashlight:
+    game_illumination_limit_meters: 20
+    visibility_category_for_illuminated_target: partial visibility
+    if_partial_light_already_available: no modifier
+    direct_view_of_light: glare visibility modifier
+    source_location_qualification: 'Original prose makes the light source difficult for characters outside its narrow illumination area to locate; no numeric modifier is assigned.'
+    vision_compatibility: {low-light: low-light vision, infrared: thermographic vision}
+  guncam:
+    game_recording_options: [external recording device, integrated vidlink transmitter]
+    transmitter_flux_rating: 2
+    source_price_note: 'Table prices the transmitter at 2,500 nuyen times Rating but prints a dash in the Rating column; prose assigns Flux 2. Do not equate the unspecified price Rating to Flux without adjudication.'
+  existing_market_rows:
+    entities/gear/extended-range-laser-sight.yml: 33d6922e0e08217a18ba12e9af373d79c5e3eb7f
+    entities/gear/flashlight-standard.yml: 502e28aef4fb2c28fc2e4f38131e7afb58bbe989
+    entities/gear/flashlight-low-light.yml: d5d75e00fac10c862d8a3e52ffad09701eef3dd0
+    entities/gear/flashlight-infrared.yml: e3b29f863109b23ad33b162967c81edd4a84aba0
+    entities/gear/guncam.yml: 2819d2029dee6b1b06f39430fdb75644786b7c2f
+    entities/gear/guncam-transmitter.yml: 4b22d71db4770db1ee464f96e34d1cc6eb8886c7
+  source_boundary: 'Fictional game test, item compatibility and pricing fields only; no physical device design or operational guidance.'
