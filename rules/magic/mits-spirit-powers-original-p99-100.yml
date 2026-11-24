@@ -1,0 +1,84 @@
+id: rule.magic.mits-spirit-powers-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '99-100'
+pdf_pages: '100-101'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Original Spirit Powers and Search options
+summary: FASA Corporation, Magic in the Shadows (FASA7907), fictional SR3 tabletop rules, printed pp99-100/PDF100-101.
+data:
+  divination:
+    type: M
+    action: Exclusive Complex
+    range: Self
+    duration: Instant
+    test_dice: Force
+    scope: Limited prediction of next actions of entities in the spirit's domain; successes determine information.
+    maximum_answer_words: 2 * Force
+    adjudication: GM chooses specificity appropriate to the story; players interpret the result.
+  possession:
+    type: M
+    action: Complex
+    range: LOS
+    duration: Sustained
+    basis: Uses the metamagic Possessing procedure with the following differences.
+    willing_host: Astrally active living host may invite entry; loa summoners and serviteurs can be possessed through their established magical link without that astral-activity prerequisite.
+    departure: Spirit decides when to depart unless exorcised.
+    access: Spirit uses its own and host knowledge and skills.
+    physical_attribute_bonus: Force
+    mental_attributes: Replace with spirit attributes.
+    unwilling_host_modifier: 2
+    modifier_scope: Add to all spirit target numbers while occupying an unwilling host.
+    host_unconscious_or_dead: Spirit unharmed and expelled into astral form.
+    banishing: Disrupts possessing spirit rather than killing it.
+    mana_effect_target: Spirit; includes mana spells and critter powers.
+    physical_effect_target: Host body only; includes physical spells and powers.
+    unavailable_powers: [corrosive secretions, engulf, materialization]
+  search:
+    type: P
+    action: Exclusive Complex
+    range: LOS
+    duration: Special
+    basic_extension:
+      target_identification: Summoner must visualize a sufficiently specific target; spirit reads image via their astral link. Vague commands may be incomplete or fail.
+      technology_limit: Nature spirits have difficulty with electronic information; a clearly identified printed file may be located if the spirit understands the concept.
+      outside_domain: Successful test reveals absence; failed test cannot establish presence or absence.
+      astral_barrier_modifier: Add barrier Force to Search target number.
+      barrier_success: Identifies presence inside barrier, not exact position.
+    optional_expanded:
+      selection: GM chooses basic or expanded resolution.
+      base_area_square_meters: 10000 * Force
+      domain_only: true
+      modifier_per_area_doubling: 2
+      dice: 2 * Force
+      living_target_number: 4
+      nonliving_target_number: Object Resistance (SR3 p182)
+      concealment_or_barrier_modifier: Add concealer Essence or barrier Force.
+      ordinary_base_minutes_per_base_area: 20
+      great_spirit_base_minutes_per_base_area: 10
+      empty_search: Spend entire base time.
+      example: Force 4; area 120000 square meters equals three base areas; base time 60 minutes.
+  storm:
+    type: P
+    action: Exclusive
+    range: LOS
+    duration: Sustained
+    maximum_radius_meters: 100 * Force
+    scope: Domain-appropriate phenomena; storm spirits can create storms irrespective of the underlying ground domain.
+    strike:
+      ordered_bound_spirit: Summoner may order a bound spirit using Storm to make a strike.
+      affected: Everyone and everything within storm area unless guarded by a spirit of equal or greater Force (including source spirit), or by a spirit of the targets' domain.
+      action: Complex
+      maximum_per_combat_turn: 1
+      damage: (Force)S
+      armor_protection: false
+      combat_pool_resistance: true
+      vehicle_damage: (1/2 Force)M
+      service_cost: 1
+      summoner_drain: Resist as for conjuring the spirit each strike, without a second great-form Drain Test.
+      uncontrolled_spirit_drain: (Force)D Stun each strike.
+  existing_canon_reused: [rule.spirit-powers.divination, rule.spirit-powers.possession, rule.spirit-powers.search, rule.spirit-powers.storm, rule.spirits.sr3-core-critter-powers-movement-noxious-breath-search-venom-p265]
+  editorial_review: All root text and nested data reviewed against original fictional tabletop rules; preserve willing versus unwilling hosts, exceptions, spell/power targets, area and Drain distinctions.
