@@ -1,0 +1,81 @@
+id: rule.magic.mits-ally-powers-services-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '107-110'
+pdf_pages: '108-111'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 SR3 Ally Spirit powers, inhabiting and services
+summary: FASA Corporation's Magic in the Shadows, fictional tabletop rules, printed 107-110/PDF108-111.
+data:
+  framework:
+    conjuring_eligibility: Any magician able to use Conjuring can create an ally.
+    native_plane: Choose a shamanic metaplane for a shaman or hermetic metaplane for a mage; no powers derive from this choice.
+    native_plane_destruction: Appropriate astral quest to that metaplane can destroy the ally.
+    voluntary_release: Creator may release the ally at any time, permanently forfeiting the invested Magic Point; GM determines the relationship thereafter.
+  aid_power:
+    metadata: [M, Exclusive Complex, LOS, Sustained]
+    drain_magic_bonus: ally Force
+    magical_skill_test_bonus_dice_per_turn: ally Force
+    refresh: as normal power focus
+    astral_form_allowed: true
+  inhabiting:
+    metadata: [P, Automatic, Self, Special]
+    eligible_host: Non-sentient mundane animal or prepared homunculus, not a sapient or Awakened being.
+    state: Dual being, continuously astrally active; cannot leave host, manifest or materialize separately.
+    animal_physical_bonus: ally Force to host physical attributes
+    animal_mental: ally's own mental attributes
+    animal_immunities: [age, pathogens]
+    homunculus_formula: Enchanter needs ally formula; construct by artificing.
+    homunculus_minimum_focus_force: ally Force
+    bonding: Focus must be bonded to summoner.
+    homunculus_physical_bonus: floor(focus Force / 2) to ally's normal physical attributes
+    homunculus_mental: ally's own mental attributes
+    homunculus_armor_both:
+      clay: 2
+      wood: 3
+      bronze: 5
+      stone: 6
+      iron: 8
+    clay: Severe water allergy; immersion 4M per action; high-pressure stream 6S.
+    wood: Severe fire allergy.
+    homunculus_motion: Restricted to shape of shell, awkward movement.
+    active_focus: Cannot deactivate until ally disrupted, banished or removed via ritual of change.
+    destroyed_host: Ally is disrupted and returns to native plane. Replacement same type via ritual of change costs no Karma; alternative astral quest at rating equal to ally Force replaces Inhabiting permanently with Materialization. Failed quest frees ally.
+    free_while_inhabiting: Remains in host; after host destruction a friendly magician who knows true name may recover it by ritual of change or astral quest.
+  materialization:
+    metadata: [P, Exclusive Simple, Self, Special]
+    rules: One form at a time; rematerialize to switch; same physical attributes regardless of form. Inhabiting excludes this power. No great form allies.
+    normal_weapon_immunity: materialized allies only, not inhabited hosts
+  sense_link:
+    metadata: [M, Simple, Self, Sustained]
+    rules: No distance limit; user's own senses suppressed; Simple Action toggles link. Physical-plane view if ally is present there, and assensing without user becoming astrally active. No astral attacks through link.
+  sorcery:
+    metadata: [M, Varies, LOS, Varies]
+    skill: creator's Sorcery rating at creation
+    spell_pool: ally Force
+    learning: Bound ally cannot independently learn spells; creator learns them specifically for ally.
+    drain: Ordinary Sorcery rules; Deadly Stun disrupts ally; Deadly Physical from Drain destroys ally.
+    first_spell: Randomly selected from creator's spells with same Force and limitations.
+  telepathic_link:
+    metadata: [M, Simple, Self, Sustained]
+    distance_limit: none
+    background_count: Ally rolls Force against background count each action with attempted communication, regardless of sender; at least one success required.
+  three_dimensional_movement:
+    metadata: [P, Automatic, Self, Always]
+    materialized_speed: normal movement rate in three dimensions
+    astral_speed: standard astral movement
+  services:
+    recall: Complex Action; ally appears astrally near summoner at end of action.
+    service_order: Simple Action; preparation for a specified service can be requested without an action.
+    location: Ally cannot accompany summoner while elsewhere performing a task; inhabited allies need not remain near summoner.
+    astral_watch_perception_dice: ally Force
+    astral_watch: Watch and report significant astral activity telepathically; can guard a designated site and engage astral intruders.
+    resist_drain_option_1: Ally resists spell Drain instead of caster at the actual spell Force, using its own Sorcery and Spell Pool as allowed by standard rules.
+    resist_drain_option_2: Each point of ally Force expended buys one additional Drain Resistance die; successes accumulate. At Force 0 ally is destroyed, otherwise recover one Force per hour.
+    drain_in_astral_form: physical Drain if ally not materialized
+    other_services: Physical tasks, astral surveillance for ritual Sorcery, astral combat.
+    independence: Ally may choose to perform services without orders as it becomes independent; repeated painful Force expenditure may affect its later relationship if free.
+  canon_correction: rule.spirits.ally-inhabiting describes an ally-Force enhancement for homunculi; original uses half the focus Force, rounded down.
