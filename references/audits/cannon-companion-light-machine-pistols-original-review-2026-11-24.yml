@@ -1,0 +1,89 @@
+id: audit.cannon-companion-light-machine-pistols-original-review-2026-11-24
+record_type: source_reconciliation_audit
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_verification:
+  sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  bytes: 80954335
+  physical_pages: 130
+  actual_verify_source_status: source_pdf_hash_verified
+  manifest_before_blob: bf89994b9064fc81e74e7fc2c150f60e19c0548c
+  original_images_reviewed: [[16, 17], [17, 18], [18, 19], [116, 117]]
+  printed_p17: illustration only
+  preflight_self_tests_passed: 29
+  exact_script_blobs:
+    connector_preflight.py: 331626d7c285b00e541359e315ae2bdd0fa33f2d
+    preservation_method.py: 258a6d16510673cbeba66f4431f80f3fb97ce5cd
+    transaction_recovery.py: ef6a9361e93996eba2b9102b5447e71fef230d4e
+    ingestion_gate.py: a123f7f374822c5f899d3e9df3c7f8709d80abf2
+table_comparison:
+  entity_root: entities/weapons/
+  fields: [concealability, ammunition, mode, damage, weight, availability, cost_nuyen, street_index, legality, recoil_compensation]
+  columns: [filename, live_blob, matching_fields, differing_fields]
+  light_pistols:
+    - [ares-light-fire-70.yml, 7c1440e8064baac6b7d65da6909f7f115ad6a0b9, 10, 0]
+    - [beretta-200st.yml, 1df22581f4cf5a1c79c62ad5244247b17e4bc818, 10, 0]
+    - [ceska-vz-120.yml, 6f24f483c39243540cb663f8d3dab3b4a5227333, 10, 0]
+    - [colt-asp.yml, e367bf61b02c2f414c5cc071b4cc101e2949ad8b, 9, 1]
+    - [fichetti-executive-action.yml, a13fd90da5218e85eeb4c61a7eb1cdd865cf7d98, 10, 0]
+    - [hammerli-model-610s.yml, acd4d3769fb6cd1eed9a9ebc207a502ddaf230d9, 10, 0]
+    - [sa-puzzler.yml, bfce2d4442cbdeaca9e9282080c816098ca38a55, 10, 0]
+    - [seco-ld-120.yml, 0d23de5fb606b1e4ba15ba21ea1d9731bacadc89, 10, 0]
+    - [taurus-multi-6.yml, c949dd8c570499a5f930a02ff82e3104da40f415, 8, 2]
+    - [walther-pb-120.yml, 159a2bed7af74edbe212989b4de440d176188182, 10, 0]
+  machine_pistols:
+    - [ares-crusader.yml, 8ecc9d21a73cf56941143928e54abd55176763fa, 10, 0]
+    - [steyr-tmp.yml, 477af9074431354e4eae1abd7339f5c9ccbcac4a, 10, 0]
+  matching_fields: 117
+  differing_fields: 3
+  all_body_rows_reused: 12
+  body_appendix_agree_on_three_corrections: true
+  appendix_core_only_items: excluded from this source-body section
+  machine_pistol_range_class:
+    path: rules/combat/range-target-number.yml
+    blob: 7e0f09ebf98f40704f050390f098612fae1e593c
+    result: existing combined Light/Machine Pistol range row matches p18 classification; both model game-stat rows match.
+  accessory_rules:
+    path: rules/firearms/accessory-mounts.yml
+    blob: 18b1f057d92cd9b1e80e9bb15c85c98e4ad03914
+    result: existing shared game rule reused where equivalent.
+game_qualifications:
+  light_model_descriptions_reviewed: 10
+  machine_model_descriptions_reviewed: 2
+  new_coverage: fictional character action timing, price and game modifiers, range class exceptions, equipment-option eligibility and abstract dice tests
+  inherited_dependency: WW Infiltrator abstract game test procedure now registered from p16.
+  cross_reference: p38 ammunition game rules remain a separate section obligation.
+transactions:
+  - path: equipment/gear/cannon-companion-light-pistol-table-corrections-p18-116.yml
+    commit: ce0a55d5064815d1b5a1242e0cf4ffc7428e55c7
+    blob: d4f48665daa67f9c6427420f3e3b8582e2a0f342
+    baseline_sha256: cb0ec749420019db76f6253763a7b514c3f8fc17386c4f91abdc4216ffbdcaa1
+    candidate_sha256: cb0ec749420019db76f6253763a7b514c3f8fc17386c4f91abdc4216ffbdcaa1
+    immutable_sha256: 056df2ea011b5d8e1f0f0d5a3e1ced50c2c0b4c60d360d54fd087539bc6adc4e
+    prepare: preflighted
+    confirm: verified
+    index_commit: 8937174f79ba1c7414e1d784f54d9e9a8f743e05
+    index_blob: 0bffa0c70a7b8723d3ec4bf0a275e5e9e171d7be
+    index_readback: exact
+  - path: rules/firearms/cannon-companion-light-pistol-game-qualifiers-p16-18.yml
+    commit: 1232259d686ce5b0cc5378be1231636adf17638d
+    blob: d494ae51bb2515cbdff579070fdf1959a4e821d1
+    baseline_sha256: 59a06d811546df94a075dbd66b56ea9a0ca839a914ef2263cc7ce1486375d5b5
+    candidate_sha256: 59a06d811546df94a075dbd66b56ea9a0ca839a914ef2263cc7ce1486375d5b5
+    immutable_sha256: 26cdbc9ec2f0c4f60fed7c7f6dc62d6c8c008f5c17956af82d32d44b48f63c58
+    prepare: preflighted
+    confirm: verified
+    index_commit: 03409f8bdd310bc7bec453d068d85066dea52af5
+    index_blob: 7fd8cb292ed540e65700cdbfdd66a03cce263580
+    index_readback: exact
+section_results:
+  light_pistols: source_local_game_fields_reconciled_with_shared_corrections_and_ammunition_cross_reference
+  machine_pistols: source_local_game_fields_reconciled_read_only
+  unresolved:
+    - Shared Colt Asp and Taurus Multi-6 entity corrections and historical transaction provenance.
+    - Separate p38 ammunition cross-reference.
+  whole_source_certified: false
+globally_authorized_pages: 0
