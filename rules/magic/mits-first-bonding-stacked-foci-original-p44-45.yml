@@ -1,0 +1,32 @@
+id: rule.magic.mits-first-bonding-stacked-foci
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '44-45'
+pdf_pages: '45-46'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  canonical_context: [procedure.magic.artificing, rule.magic.stacked-foci]
+  first_bonding:
+    requirement: After successful creation and enchantment, pay Karma to finish enchantment. If the enchanter lacks the necessary Karma, enchantment aborts, the focus is useless and materials are wasted. The same Karma bonds the focus to maker or chosen other person; recipient must be present and may pay some or all Karma, enchanter pays balance.
+    karma_multiplier_per_force: {Expendable Anchoring Focus: 2, Homunculus: 3, Specific Spell: 3, Sustaining: 3, Spirit: 4, Centering: 5, Reusable Anchoring: 5, Spell Category: 5, Spell Defense: 5, Shielding: 6, Power: 7, Weapon: 8}
+    table_exception: No Expendable Spell row printed in the First Bonding Cost Table; do not infer its cost from this table.
+    modifiers: {virgin_telesma: -2, radicals_one_material: -1, radicals_two_materials: -2, radicals_three_materials: -4, orichalcum_per_unit: -1, per_two_successes_additional_enchanting_test: -1}
+    additional_test: Optional after creation, Enchanting against Force; +2 TN when bonding for another person. Each two successes reduces Karma by 1.
+    radical_eligibility: For material diversity reductions use units equal to focus Force, as specified in the Alchemical Materials rule on p44; orichalcum has its own per-unit reduction.
+    minimum_karma: focus Force
+    rebonding: Use standard SR3 p190 costs for subsequent bonding.
+  stacked_foci:
+    allowed: A single focus may have multiple functions, for example spirit Force 4 and spell defense Force 3.
+    formula_target_number: Sum component Force ratings.
+    formula_base_time: Sum component focus type base times; formula works only for stacked focus, not individual components.
+    exotic_materials: Use total Force for optional exotic tests.
+    radicals: The source specifies that any benefits from alchemical materials require units equal to the total Force. Read alongside the ordinary per-unit orichalcum rule on p44; the source does not explicitly resolve their interaction.
+    enchanting_target_number: Highest applicable target number plus half the base TN of each other function plus average of component Force ratings; the worked example uses the highest base TN and rounds the average down.
+    first_bonding_karma: Highest base multiplier times total Force.
+    rebonding: Pay appropriate Karma for each function; may pay separately but no use until completely bonded.
+    example: Power Force 2 plus combat spell Force 3; formula TN5 and 90 base days (60+30); Enchanting TN13 before other modifiers (8+3+floor(5/2)); base first bonding 35 Karma (7x5); subsequent bonding 19 Karma (5x2 + 3x3).
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: First bonding and stacked foci, FASA7907, printed 44-45/PDF 45-46'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
