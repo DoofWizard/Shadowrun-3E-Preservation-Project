@@ -1,0 +1,38 @@
+id: audit.cc.fire-holding-original-review-2026-11-23
+record_type: source_review
+source: source.cc
+publication: FASA7908 Cannon Companion, FASA Corporation, Shadowrun Third Edition
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification: source_pdf_hash_verified
+printed_range: [98, 99]
+physical_pdf_range: [99, 100]
+image_review: Both original physical pages rendered and inspected; section boundaries end before Indirect Fire.
+source_local_field_reconciliation:
+  - section: Fire and Incendiaries
+    existing_path: rules/combat/fire-incendiaries.yml
+    existing_blob: b8746033db5f8871d4f53f86ee08e0f7285912cf
+    matching_table_rows: 12
+    reviewed: Six base damage rows and six catching-fire rows, immediate versus ambient damage timing, Impact armor rounding, ignition dice and Object Resistance, carried item damage and escalation, game extinguishing duration and special case, carried ammunition exception.
+    new_record: rule.combat.cannon-companion-fire-damage-timing-exceptions-p98-99
+    commit: 1ff02feb0d9d43f6b7da38a17ba4787ebb8c2f09
+    blob: 7074eedd6be6de7cda07e3a28a40d146a948fcf3
+    index_commit: 36e150d3ab0cf82907c5bead1f4872e3e1daa154
+    index_blob: bf2b490aa6a2526e571142ce8b719174d4100e91
+    gate: verified
+  - section: Holding Weapons
+    existing_path: rules/combat/weapon-holding.yml
+    existing_blob: cb17ac54bb4940255975ede4bb91df4baff0de82
+    matching_table_entries: 12
+    reviewed: All twelve printed modifier entries including special heavy-weapon row, metatype and grip eligibility, discretionary weapon categories, game Power rounding and knockdown outcome.
+    new_record: rule.combat.cannon-companion-weapon-holding-eligibility-rounding-p98-99
+    commit: 32b01bd0995db44e5a1de70b4e6969e3707c6951
+    blob: 4ce960a8c4b76a9b6e32836de909bc9bcc358dc4
+    index_commit: 9e71f6c1557a9fbae2cab5ac3d0ef59f94a1fa84
+    index_blob: a61e61ff49cb4de81041b0a99021884f1069e390
+    gate: verified
+limitations:
+  - Existing shared records reused without modifying them or certifying historical transaction receipts.
+  - The source-local supplements preserve original game conditions; no global rules precedence, executable validation or whole-book certification is asserted.
+  - Adjacent Indirect Fire section is not part of this audit.
+globally_authorized_pages: 0
+whole_book_closed: false
