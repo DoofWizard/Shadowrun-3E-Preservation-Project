@@ -1499,6 +1499,45 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_cybermancy_attention_dual_nature_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: source_pdf_hash_verified
+    original_printed: "57-58"
+    original_pdf: "57,59"
+    original_image_sha256:
+      PDF57: "4b12edc1666df0ef8396634ca78cdd2a861e9815b5ce5441e2ace05c15440f2a"
+      PDF59: "b7e8d602afd17d8050751083509429bcbc6e4c8203009989bfcbd6ece235621a"
+    mapping_note: "PDF58 duplicates printed p57; PDF59 is printed p58."
+    records:
+      - id: rule.cybermancy.lost-in-details
+        path: rules/cybermancy/lost-in-details.yml
+        printed: "58"
+        pdf: "59"
+        commit: "89327253a9f78d08d408283bc0aae850431c3c00"
+        blob: "80310e8d857dede9f80671edf15a12743061a57f"
+        baseline_sha256: "836577f9a2c3d43b943f21e65add27ec5914d6c0be736e27095872d1ae1a8c96"
+        candidate_sha256: "f4a68ccfb5ba6beca3325902102b7f2a48400e027a4d2b96fae8af39cc1efed5"
+        immutable_sha256: "83331f386cff43b1024bda6fad6b57d45d831af012cc68368d0c42b9382efd4e"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Action type, zero successes and minimum TN 5, immediate Willpower test, turn/minute retries, cumulative increase, five failures, stimulator reduction, assistance modifier and action."
+      - id: rule.cybermancy.dual-nature
+        path: rules/cybermancy/dual-nature.yml
+        printed: "57"
+        pdf: "57"
+        commit: "a7119968e416cd4da99345caa9ad9746fefe00b5"
+        blob: "e7ba646106e61fde4dd0bd78d99cf42a8d16d58c"
+        baseline_sha256: "9955bfd60e7872bdc6f419c10896ea7705d3af72e1261bf6bc8ebc4ddf53ce67"
+        candidate_sha256: "e5e681aadd24b362414ea6679a09ea492517ed62652216297e125fd1e868c2d6"
+        immutable_sha256: "a2ba4bb6624d7694d5e3fcc4f6839abf7d86b1d9736aa20d605e6ee6132b45f2"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Permanent dual nature, absence of innate Awakened astral perception, Aura Reading purchase exception, standard rather than complementary skill, default to Intelligence and astral combat."
+    scoped_natural_sections_reconciled: [Lost in the Details, Dual Nature]
+    exceptions: "Changes to Reaction/Perception and Invoked Memory Stimulator remain separately open; existing canonical paths not yet established."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 coverage:
   - cyberware
   - cyberlimbs
