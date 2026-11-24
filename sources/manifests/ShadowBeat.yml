@@ -52,7 +52,7 @@ coverage:
   professional_sports_and_games: {printed: "58-73", status: source_verified_section_closed, note: "Original competition rules pp58-73 accounted for; source contradictions and legacy edition dependencies retained; p69 illustration excluded."}
   court_ball_and_amateur_athletics: {printed: "62-63", status: source_verified_section_closed, note: "Court ball, NAN lacrosse, amateur and Olympic eligibility; original in-world rules only"}
   professional_ball_sports: {printed: "58-62", status: source_verified_section_closed, note: "Competition procedures and eligibility only; narrative rosters excluded"}
-  simsense: {printed: "74-83", status: queued}
+  simsense: {printed: "74-83", status: partial, note: "Original production parameters pp74-78 individually verified; output and playback reconciliation outstanding."}
   character_skills_and_options: {printed: "84-87", status: source_verified_section_closed, note: "p87 full-page art; skills, network/employment and SIN rules pp84-86 preserved"}
   equipment_and_costs: {printed: "88-99", status: queued}
   sasquatch_band_impact: {printed: "16", status: source_verified_section_closed}
@@ -84,6 +84,7 @@ records:
   - ["urban-brawl-match-p68-72", "3e31081180bc820cc309cae2d92cb182fa25e3b1"]
   - ["urban-brawl-roles-p70-71", "75febde8b5e849c08dc3a353dc9f30baad2b56bb"]
   - ["urban-brawl-penalties-p72-73", "700ab2d167533b05c13c9c74622d7943aee9db36"]
+  - ["simsense-production-legacy-p74-78", "49a89c8dcf6908d512368ff20da10ae219910602"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -337,5 +338,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p71_pdf80", "printed_p72_pdf81", "printed_p73_pdf82"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-simsense-production-legacy-p74-78
+    path: rules/shadowbeat/simsense-production-legacy-p74-78.yml
+    original_printed_pages: "74-78"
+    original_pdf_pages: "83-87"
+    commit_sha: "49a89c8dcf6908d512368ff20da10ae219910602"
+    readback_blob_sha: "3124aa33c996c53367ca0e4d53cfddf56cbc5b24"
+    candidate_sha256: "b60d56ad7c9fbf375b5be9fb66cf009b7994756a5a8cabd970f1ea29aa6e3149"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p74_pdf83", "printed_p75_pdf84", "printed_p76_pdf85", "printed_p77_pdf86", "printed_p78_pdf87"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
