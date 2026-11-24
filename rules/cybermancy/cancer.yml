@@ -1,21 +1,40 @@
 id: rule.cybermancy.cancer
 record_type: rule
-name: "Cybermancy Cancer Risk"
+name: Cybermancy Cancer Risk
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '59'
+pdf_pages: '60'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA 1999), Shadowrun Third Edition tabletop RPG: Cybermancy Cancer Risk, p59/PDF60'
 effective: {status: current, source: source.mm, page: 59, basis: defines}
-scope:
-  applies_to: ["cybermantic characters"]
+scope: {applies_to: [cybermantic characters]}
 resolution:
-  summary: "Cybermancy creates a long-term cancer risk. A die roll made during the initial operation is compared to a threshold based on the absolute value of the subject's desired negative Essence, with modifiers for Body and symbiotes. A failed check means cancer develops after a delayed interval and is ultimately fatal without further intervention."
-  inputs: ["desired negative Essence", "Body", "symbiotes"]
-  outputs: ["future cancer risk and onset"]
+  summary: 'In the fictional cybermancy rules, an initial-operation dice roll determines whether a delayed, incurable condition develops.'
+  inputs: [desired negative Essence, unaugmented Body, symbiotes]
+  outputs: [future cancer risk and onset]
   steps: []
+data:
+  initial_operation:
+    roll: 2D6
+    failure_condition: 'modified roll < 2 * abs(desired Essence)'
+    gm_discretion_modifiers:
+      - {unaugmented_body: '4-7', roll_bonus: 1}
+      - {unaugmented_body: '8 or higher', roll_bonus: 2}
+      - {symbiotes: true, roll_bonus: 1}
+  failed_check:
+    onset_months: 10D6
+    incurable: true
+    fatal_after_onset_weeks: '4 + 1D6'
+    gm_chooses_when_to_inform_player: true
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [procedure.cybermancy.operation]
 sources:
-  - {source: source.mm, page: 59, relation: defines, note: "Cancer"}
+  - {source: source.mm, page: 59, relation: defines, note: Cancer}
 notes: []
