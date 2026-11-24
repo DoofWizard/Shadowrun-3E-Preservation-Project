@@ -1,41 +1,62 @@
 id: option.healing.box-by-box
 record_type: option
-name: "Box-by-Box Physical Healing"
+name: Box-by-Box Physical Healing
 domain: healing
 status: ingested
-
-effective:
-  status: optional
-  source: source.mm
-  page: 134
-  basis: adds_option
-
-option_for:
-  - procedures.healing.natural-and-medical
-
+source: source.mm
+printed_pages: '134'
+pdf_pages: '135'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 optional box-by-box healing — seven modifier rows and recovery timing
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop rules, printed p134/PDF135.
+effective: {status: optional, source: source.mm, page: 134, basis: adds_option}
+option_for: [procedures.healing.natural-and-medical]
 selection:
-  timing: "campaign healing rules"
+  timing: campaign healing rules
   prerequisites: []
   incompatible_with: []
-
 effects:
-  - "Replaces the standard SR3 Physical-damage healing stages with healing one Physical damage box at a time."
-  - "Healing without medical care uses an unaugmented Body Test against total Physical damage plus wound and condition modifiers to determine time per box."
-  - "Healing with medical care uses a doubled base period per box plus doctoring modifiers and allows discharge/recovery decisions as damage is reduced."
-
+  - Replaces standard SR3 pp126-127 Physical damage healing stages when selected.
+  - Also applicable to bioware and Attribute Stress healing (M&M p130).
+data:
+  optional_healing_table:
+    below_minimum_lifestyle: '+2 per level below minimum'
+    above_minimum_lifestyle: '-1 per level above minimum'
+    bad_conditions: 1
+    terrible_conditions: 3
+    consistent_recovery_assistance: '-floor(Biotech (Extended Care) / 2)'
+    recovery_assistance_minimum_skill: 3
+    patient_has_bioware: 'ceil(Bio Index / 2)'
+    previous_box_rest_interrupted_by_activity: 1
+  without_medical_care:
+    test: Unaugmented Body
+    target_number: Total Physical damage boxes plus wound modifiers and applicable Optional Healing Table modifiers.
+    base_time_hours: '24 x total wound modifiers'
+    positive_successes_time_hours: base time / successes
+    zero_successes_time_hours: base time x 2
+    time_credit: Rest only; physical activity and strenuous mental activity such as rigging or decking do not count.
+    rest_may_be_interrupted: true
+    completion: Remove one Physical damage box and determine the next box's healing duration anew.
+    new_physical_damage_during_healing: Abort the current process and begin again.
+  with_medical_care:
+    base_time_multiplier: 2
+    applies_expanded_doctoring_modifiers: true
+    rest_may_be_interrupted: false
+    doctor_daily_hours: 'Physical damage boxes / (doctor Biotech + tool Rating)'
+    care_cost_reference: SR3 p128
+    on_new_damage_level:
+      test: Body
+      target_number_reference: SR3 p126 Wound Table
+      discharge_successes: 2
+      automatic_discharge_at: Light wound
 links:
-  modifies:
-    - procedures.healing.natural-and-medical
+  modifies: [procedures.healing.natural-and-medical]
   requires: []
-  interacts_with:
-    - subsystem.damage.stress
-    - subsystem.bioware.core
-
+  interacts_with: [subsystem.damage.stress, subsystem.bioware.core]
 sources:
-  - source: source.mm
-    page: 134
-    relation: adds_option
-    note: "Healing Physical Damage / Optional Healing Table"
-
+  - {source: source.mm, page: 134, relation: adds_option, note: Healing Physical Damage and Optional Healing Table}
 notes:
-  - "Explicitly optional; the page states these rules replace the SR3 pp.126-127 healing rules only when selected."
+  - The original base-time text specifies total wound modifiers, not total target number; retain the printed formula without an invented minimum.
+  - The text cross-references Expanded Doctoring Table as p134; the table itself is printed p133/PDF134.
