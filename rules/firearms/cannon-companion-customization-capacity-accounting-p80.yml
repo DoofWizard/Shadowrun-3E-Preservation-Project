@@ -1,0 +1,37 @@
+id: rule.firearms.cannon-companion-customization-capacity-accounting-p80
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '80'
+pdf_pages: '81'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional tabletop equipment capacity and test accounting'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p80/PDF81. Abstract inventory-slot, design-point and dice-test qualifications, including a discrepancy in the existing shared procedure.'
+data:
+  existing_procedure: procedure.firearms.customize
+  capacity_accounting:
+    mount_limit_per_location: 1
+    applies_to_internal_and_external_slots: true
+    existing_frame_capacity_table: rule.firearms.design-frames
+    capacity_used: sum of fictional FCU costs of existing options and modifications
+    capacity_exhausted: no further capacity-consuming option unless an existing modification is removed
+    integral_design_options_removable: false
+    removed_modification_returns_its_fcu_and_slot: true
+    replacement_base_time_multiplier: 2
+    replacement_time_scope: printed source doubles the installation base time when removal precedes installation
+    existing_procedure_discrepancy: shared procedure assigns doubled time to removal itself; original wording assigns it to replacement installation
+    removable_option_marker_r: FCU is counted only when the option is permanent rather than mount-attached
+  dice_test_accounting:
+    standard_defaulting_applies: true
+    defaulting_reference: SR3 p84
+    two_listed_skills_require_two_tests: true
+    design_stage_installation_test_required: false
+    actual_time: base time divided by successes
+    modification_order_restricted: false
+  point_accounting:
+    design_stage: add the option DP cost to total DPV
+    post_purchase: option DP cost multiplied by 8 nuyen
+    existing_design_workflow: procedure.firearms.design
+  source_boundary: Fictional character inventory accounting and dice resolution only; no physical construction method is specified.
