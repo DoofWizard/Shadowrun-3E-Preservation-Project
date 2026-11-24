@@ -1,0 +1,40 @@
+id: rule.magic.mits-talismongering
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '40-42'
+pdf_pages: '41-43'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  canonical_context: procedure.magic.talismongering
+  eligibility: Awakened or mundane; Talismongering produces no inherently magical object.
+  materials: {herbal: plants and fungi, mineral: crystals and stones, metal: metal ores, raw_unit_kg: {herbal: 5, mineral: 10, metal: 10}, refined_unit_kg: {herbal: 2.5, mineral: 5, metal: 5}}
+  gathering:
+    site: GM determines suitable areas; ritual collection requires an enchanting kit and may require ordinary hand tools. Heavy mining gear, power tools or polluting methods ruin the magical suitability.
+    test: Talismongering (4), Gathering specialization permitted
+    base_days_per_unit: 10
+    duration: 10 days divided by successes; zero successes wastes 10 days with no yield.
+    complementary: Related Knowledge Skill; each two successes adds one Talismongering success.
+    modifiers: {suitable_shaman_totem_domain_dice: 2, appropriate_elemental_or_nature_spirit_dice: spirit Force, spirit_service_cost: 1}
+    commercial: Commercial material may make foci but cannot qualify for the virgin-material bonus.
+  refining:
+    uses: [fetishes, virgin foci, alchemy input]
+    tools: {herbal: kit, mineral_for_fetish: kit, mineral_for_focus: shop, metal: shop}
+    maximum_simultaneous_units: Intelligence
+    test: Talismongering (4); relevant Knowledge Skill complementary as for gathering.
+    base_days: 10
+    duration: Divide base time by successes; no successes wastes 10 days; all ones ruin raw materials.
+    yield: One refined unit per raw unit; refined mass is half the original mass.
+  manufacture:
+    input: Refined materials personally prepared or purchased from a trusted dealer.
+    test: Talismongering (4)
+    base_hours: 24
+    duration: Divide base hours by successes; failure wastes 24 hours; all ones ruin refined materials.
+    fetish_value_nuyen_per_refined_unit: 100
+    ritual_material_value_nuyen_per_refined_unit: 500
+    ritual_material_uses: [ritual sorcery, conjuring, shamanic lodges, hermetic circles]
+    ritual_material_tool: enchanting kit
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition: Talismongering, FASA7907, printed 40-42/PDF 41-43'
+summary: 'FASA Corporation, Magic in the Shadows; original-source tabletop game mechanics.'
