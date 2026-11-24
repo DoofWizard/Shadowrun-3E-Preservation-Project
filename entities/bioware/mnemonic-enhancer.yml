@@ -1,22 +1,29 @@
 id: entity.bioware.mnemonic-enhancer
 record_type: entity
-name: "Mnemonic Enhancer"
+name: Mnemonic Enhancer
 domain: bioware
 status: ingested
-intrinsic:
-  grade: cultured
-  bio_index_per_level: 0.2
-  availability: "6/7 days"
-  cost_nuyen_per_level: 15000
-  street_index: 1
-  legality: "Legal"
-  maximum_levels: 3
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+source: source.mm
+printed_pages: '72-74'
+pdf_pages: '73-75'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {grade: cultured, bio_index_per_level: 0.2, availability: '6/7 days', cost_nuyen_per_level: 15000, street_index: 1, legality: Legal, maximum_levels: 3}
+data:
+  memory_related_intelligence_test_dice: implant level
+  language_skill_test_dice: implant level
+  knowledge_to_intelligence_default_modifier: source states level 2 changes +4 to +3; level 3 continuation not expressly restated
+  knowledge_skill_test_bonus_dice_at_level_3: 1
+  karma_cost_reduction_for_learning_or_improving_skills: {reduction: implant level, minimum_resulting_cost: 1}
+  stress:
+    light: headaches and deja vu
+    moderate: random memories surface with sleep talking or public mumbling; subtract one die on all concentration tests including magical activity and spellcasting
+    serious: {tests_per_day: implant level, timing: GM discretion, willpower_target_number: 6, failure: flashback and loss of awareness of surroundings, duration_minutes: 1D6}
+    deadly: {trigger: any Knowledge or Language Skill Test, willpower_target_number: 6, failure: distraction, all_action_modifier: 2, concentration_action_modifier: 4, duration_minutes: 2D6}
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "72-73", relation: defines, note: "Mnemonic Enhancer description, game effects, stress effects and statistics"}
-notes:
-  - "Adds dice to memory-related Intelligence Tests, improves Knowledge/Language acquisition and reduces Karma cost for learning or improving skills as specified by level."
+  - {source: source.mm, pages: '72-73', relation: defines, note: Mnemonic Enhancer effects and Stress}
+  - {source: source.mm, page: 74, relation: defines, note: Market statistics}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp72-74/PDF73-75: Mnemonic Enhancer'
+framing: reference_exact
