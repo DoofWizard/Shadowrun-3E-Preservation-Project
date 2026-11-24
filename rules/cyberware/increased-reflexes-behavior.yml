@@ -1,22 +1,39 @@
 id: rule.cyberware.increased-reflexes-behavior
 record_type: rule
-name: "Effects of Increased Reflexes"
+name: Effects of Increased Reflexes
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '45'
+pdf_pages: '45'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Effects of Increased Reflexes
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF p45.
 effective: {status: current, source: source.mm, page: 45, basis: extends}
 scope:
-  applies_to: ["characters with wired reflexes or other cybernetic reflex enhancements"]
+  applies_to: [characters with wired reflexes or other cybernetic reflex enhancements]
 resolution:
-  summary: "At gamemaster discretion, reflex-enhanced characters may react instinctively to perceived threats before fully analyzing them. A Perception Test is modified upward according to Initiative enhancement; failure can cause an immediate reflexive response, with a Willpower test allowed to avoid especially destructive reactions."
-  inputs: ["Perception", "Initiative enhancement", "situation"]
-  outputs: ["possible involuntary reaction"]
-  steps: []
+  summary: The GM may invoke a Perception Test when a reflex-enhanced character perceives a threat, including a mistaken threat.
+  inputs: [Perception, Initiative enhancement, situation]
+  outputs: [possible involuntary response]
+  steps:
+    - At GM discretion, make a Perception Test in a perceived-threat situation.
+    - Increase its target number by 1 for each extra 1D6 of Initiative bonus.
+    - Failure produces a reflexive response chosen by the GM.
+    - For a particularly destructive response, the character may make a Willpower Test against the original unmodified Perception target number to prevent the action.
+data:
+  initiative_bonus_die_TN_modifier: 1
+  willpower_test_TN: unmodified Perception Test target number
+  use_frequency: sparingly at GM discretion
+  example_triggers: [unexpected stranger, sudden threatening motion, violent motion in a crowd]
+  possible_responses: [take cover, push a suddenly moving person down, draw and fire a gun]
 links:
   uses: [rule.tests.success-test]
   affects: []
   modified_by: []
   interacts_with: [rule.initiative.initiative]
 sources:
-  - {source: source.mm, page: 45, relation: extends, note: "Effects of Increased Reflexes"}
-notes:
-  - "The source explicitly advises gamemasters to use this rule sparingly."
+  - {source: source.mm, page: 45, relation: extends, note: Effects of Increased Reflexes}
+notes: []
