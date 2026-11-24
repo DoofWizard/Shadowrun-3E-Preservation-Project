@@ -1,0 +1,54 @@
+id: rule.critters.awakened-entry-exceptions-p20
+record_type: rule
+status: reviewed
+source: source.critters
+printed_pages: '20'
+pdf_pages: '20'
+edition_scope: SR3
+content_class:
+- rule_exact
+data:
+  publication:
+    title: Critters
+    publisher: FASA Corporation
+    catalog_number: FASA7002
+    edition: Shadowrun Third Edition
+  supplements: catalog.critters.a-k
+  abrams_lobster:
+    entity: entity.critter.abrams-lobster
+    trigger: A melee attack inflicts damage; the target fails to score any success
+      on Quickness (4).
+    ongoing_grip:
+      first_damage: 6S
+      onset: next lobster action
+      repeat: each subsequent lobster action
+      damage_code_increase_per_turn: 1
+    resistance: Body dice; half normal Impact Armor rating.
+    escape: Strength Test against the result of the lobster's Open Strength Test.
+    release: Does not release a living gripped target even when attacked; if the gripped
+      target is dead and the lobster is attacked, an Intelligence (4) Test is needed
+      to release it and defend itself.
+  afanc:
+    entity: entity.critter.afanc
+    reaction: 3
+    correction: Trailing 20 in legacy stat_block_raw is the printed page number, not
+      a statistic.
+    trigger: Successful melee bite; a successful Quickness (4) Test by the target
+      prevents gripping.
+    escape: Strength Test against the afanc's Open Strength Test result.
+    ongoing_bite:
+      first_damage: 12S
+      onset: next afanc action if the target has not escaped
+      power_increase_per_consecutive_action: 1
+      impact_armor_fraction: 0.5
+    release: Releases a dead or unconscious target if another enemy attacks it.
+    swimming_quickness_multiplier: 4
+    buwaya_variant:
+      replace_power: Engulf
+      with_power: Compulsion
+      intelligence: 1
+framing: reference_exact
+headline: 'FASA7002 Critters: Awakened entry exceptions, Abrams Lobster and Afanc'
+summary: Fictional Shadowrun Third Edition tabletop rules, Critters (FASA Corporation,
+  FASA7002), source.critters printed p20/PDF20; original-source exceptions to
+  existing catalog entries.
