@@ -1,0 +1,53 @@
+id: rule.magic.mits-spell-design-drain-code
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '53-55'
+pdf_pages: '54-56'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  calculation:
+    base_power: Half spell Force rounded down; apply Power modifiers to this Drain Resistance Test target number.
+    base_level: Determine from spell category and effect or Damage Level; apply Level modifiers.
+    overflow: Each additional increase beyond Deadly adds 2 Power.
+    minimum_level: L
+  base_tables:
+    combat: {L: L, M: M, S: S, D: D}
+    detection: {detect_living_or_magic: L, analyze_living_or_magic: M, detect_nonliving: M, analyze_nonliving: S, improve_sense: S, new_sense: D, borrow_sense: D}
+    health: {heal_or_cure: Damage Level, cause_affliction: Damage Level, affects_attribute: M}
+    illusion_directed: {obvious_single_sense: L, obvious_multi_sense: M, realistic_single_sense: M, realistic_multi_sense: S}
+    illusion_indirect: {minor_single_sense: L, major_single_sense: M, severe_single_sense: S, multi_sense_change: '+1 Level'}
+    manipulation: {minor_mental: M, major_mental: S, minor_physical: M, major_physical: S, minor_environmental: L, major_environmental: M, massive_environmental: S}
+  category_conditions:
+    combat: Variable or fixed Damage Level is the base Drain Level.
+    detection:
+      mana: Living or magical targets only; nonliving detection requires physical type.
+      subject: Recipient of new sense must be willing; unwilling detected target may resist normally.
+      normal_sense: One direction or target at a time; area sense covers all directions.
+      radius_meters: Force times Magic; extended sense multiplies by 10.
+      bonus_cap: Force
+    health:
+      damage: Curative or harmful malady severity sets base Level.
+      attributes: Every two successes change Attribute by one point; maximum change equals Force.
+      default: Touch and Voluntary Target already included; LOS and harmful each require +1 Level when applicable; harmful spells may be resisted.
+      permanent: Restoring normal health is exempt from the permanent modifier; otherwise apply it.
+    illusion:
+      directed: Cast on target mind or senses; only physical directed spells affect technological sensors; base Level depends on senses and realism.
+      indirect: Cast on subject or area; anyone observing that subject or area is a target; base Level depends on degree of alteration.
+      damage: Cannot inflict permanent damage directly, but fictional target behavior may have damaging consequences.
+    manipulation:
+      base: Depends on extent of change; damaging effects use Damage Level like combat spells.
+      elemental: Elemental manipulation and certain transformation spells apply Elemental Effects modifier.
+  worked_examples:
+    combat: {Manabolt: '0 Power, Damage Level', Powerbolt: '+1 Power, Damage Level', Stunball: '-1 Power, Damage Level +1'}
+    detection: {Detect_Life: '0 Power, L', Analyze_Device: '+1 Power, M', Clairvoyance: '0 Power, M', Mind_Probe: '0 Power, S'}
+    health: {Heal: '0 Power, Damage Level healed', Treat: '-1 Power, Damage Level healed; damage within last hour', Hibernate: '+1 Power, M', Increase_Attribute: '+1 Power, M', Increase_Cybered_Attribute: '+2 Power, M', Resist_Pain: '-2 Power, affected Damage Level'}
+    illusion: {Entertainment: '0 Power, L', Trid_Entertainment: '+1 Power, L', Invisibility: '0 Power, M', Improved_Invisibility: '+1 Power, M', Mask: '0 Power, M', Physical_Mask: '+1 Power, M', Phantasm: '0 Power, D', Trid_Phantasm: '+1 Power, D'}
+    manipulation: {Control_Thoughts: '+1 Power, S; example threshold equal to Willpower', Flamethrower: '+1 Power, Damage Level +1', Fireball: '+1 Power, Damage Level +2', Astral_Barrier: '+1 Power, S', Barrier: '+2 Power, S', Petrify: '+1 Power, S; living flesh only; threshold half Body'}
+  source_discrepancies:
+    detection_touch: Detection examples on p53 apply Touch reduction; p56 Touch Range note says detection spells do not use the modifier. No invented precedence.
+    control_thoughts: Example on p53 uses full Willpower threshold while general resisted-spells text on p50 gives half Willpower as the usual mana threshold. Preserve specific example and general rule separately.
+framing: reference_exact
+headline: 'Fictional Shadowrun Third Edition spell design Drain Code, FASA7907, printed 53-55/PDF 54-56'
+summary: 'FASA Corporation, Magic in the Shadows: tabletop RPG base Drain calculation, six base tables, category rules and worked examples with source discrepancies retained.'
