@@ -1,20 +1,33 @@
 id: entity.bioware.nictitating-membranes
 record_type: entity
-name: "Nictitating Membranes"
+name: Nictitating Membranes
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '67-69'
+pdf_pages: '68-70'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.1
-  availability: "4/6 days"
+  availability: '4/6 days'
   cost_nuyen: 8000
   street_index: 1
-  legality: "Legal"
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+data:
+  eye_irritant_modifier_reduction: 1
+  examples: [smoke, CS or tear gas]
+  flare_compensation: equivalent to SR3 p299 cyberware against flash and glare
+  underwater_activity: easier; no numeric modifier specified
+  incompatible: [cybereyes, flare-compensation retinal modification, contact lenses]
+  stress:
+    light: watery eyes
+    moderate: additional +1 modifier in low light or worse
+    serious: +1 Perception Test modifier
+    deadly: no bonuses until healed
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "67-69", relation: defines, note: "Nictitating Membranes description, game effects, stress effects and statistics"}
-notes:
-  - "Protects eyes from irritants, reduces glare/flash effects and aids underwater activity; incompatible with cybereyes or flare-compensation retinal modification."
+  - {source: source.mm, pages: '67-69', relation: defines, note: Game effects, Stress and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp67-69/PDF68-70: Nictitating Membranes'
+framing: reference_exact
