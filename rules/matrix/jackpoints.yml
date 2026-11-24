@@ -29,7 +29,7 @@ types:
     io_speed: 500
     base_bandwidth: 50
   illegal:
-    access_modifier: 10
+    access_modifier: 0
     trace_modifier: 0
     io_speed: 300
     base_bandwidth: 20
@@ -62,3 +62,30 @@ resolution:
 sources:
   - {source: source.matrix, pages: "30-33", relation: extends, note: "Jackpoint Values and Hardwired Jackpoints"}
 notes: []
+source: source.matrix
+printed_pages: '30-33'
+pdf_pages: '31-34'
+edition_scope: 'FASA7909 Matrix, FASA Corporation, Shadowrun Third Edition fictional tabletop RPG'
+content_class: [rule_exact]
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Shadowrun Third Edition}
+  source_correction: {field: types.illegal.access_modifier, previous: 10, corrected: 0, printed_page: 32, pdf_page: 33}
+  gm_variation: 'The gamemaster may vary the four game ratings for particular jackpoints.'
+  trace_scope: 'Trace modifier affects the duration of the fictional Trace IC location cycle.'
+  console_condition: 'Console access requires a directly connected workstation and security or superuser account credentials, or a station already logged in with those privileges; otherwise use legal access statistics.'
+  connection_targets:
+    console: host
+    legal: LTG
+    high_speed_legal: LTG
+    illegal: LTG
+    illegal_high_speed: LTG
+    junction_box_tap: 'LTG or host, depending on location in the fictional network'
+  maser_condition: 'Requires maser interface hardware and a maser Matrix power-grid connection.'
+  remote_device_condition: 'The printed I/O Speed and Base Bandwidth for a remote device are typical values; individual devices can have lower limits.'
+  tap_conditions:
+    dataline_tap_rating: 'Equal to cyberterminal MPCP rating for the two fictional tap types.'
+    electronics_build_repair_target_number: 4
+    applicability: 'The source gives this game test for a typical remote device or secured junction box, with potentially more difficult or additional security conditions.'
+framing: reference_exact
+headline: 'FASA7909 Matrix, SR3 printed pp30-33/PDF31-34: jackpoint values and conditions'
+summary: 'Corrects the original illegal-access modifier to zero and preserves the original tabletop jackpoint scope, eligibility and numeric conditions.'
