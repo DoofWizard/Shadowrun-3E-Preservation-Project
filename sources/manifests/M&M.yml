@@ -639,6 +639,34 @@ source_field_review:
       - "Detecting Implants p145, including complete Implant Detection Table."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
+  confirmed_medical_search_2026_11_24:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual:
+      status: source_pdf_hash_verified
+      source: source.mm
+      page_images_review: still_required_independently
+      exit_code: 0
+    independently_reviewed_original_printed: "140-144"
+    independently_reviewed_original_pdf: "141-145"
+    original_publisher_confirmed: "FASA Corporation, copyright 1999"
+    records:
+      - id: procedure.surgery.find-provider
+        path: procedures/surgery/find-provider.yml
+        printed: "143-144"
+        pdf: "144-145"
+        commit: "535c56fa781bfc727f53c15b664b51f932ee34b1"
+        blob: "ec9426cbddfb2a5d4b71fbff043d2ef86e36cddb"
+        candidate_sha256: "475c0d32c85850ec3b7b35090854dc7354bbe90af19ba4e997c0a2f861864257"
+        baseline_sha256: "2b88057cee5c6e62327ef0fbc7e4a1a28d2299201dc4c4e3b3867c0b25909752"
+        immutable_sha256: "8ca2c6c08cea42a8f087b60535aa37e2ed206d35affbe71fe6774e0b9e6a4842"
+        gate: verified
+        fields: "Medical search table modifiers, Etiquette test, time and gear options, applicable provider/contact conditions, individual staff skill checks and Getting in the Door access test and outcomes."
+    scoped_natural_sections_reconciled:
+      - "Getting in the Door p144: access negotiation mechanics."
+    deferred: "Provider ratings transaction received HTTP 409; fresh readback remained at previous blob 7e3690033a2d9aad22f3da618ff8815ce9946448. Emergency care and non-emergency search/rating natural section closure remain open pending accepted rating tables and any remaining original conditions."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
 
 coverage:
   - cyberware
