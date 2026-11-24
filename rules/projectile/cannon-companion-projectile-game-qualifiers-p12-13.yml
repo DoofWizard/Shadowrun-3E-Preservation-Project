@@ -1,0 +1,49 @@
+id: rule.projectile.cannon-companion-projectile-game-qualifiers-p12-13
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '12-13'
+pdf_pages: '13-14'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Projectile equipment game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp12-13/PDF13-14. Original character eligibility, action costs, fictional item compatibility and game range references; source disagreement retained without altering core canon.'
+data:
+  strength_minimum:
+    selected_at_purchase: true
+    affects: [cost, range, Damage_Code]
+    below_minimum_eligible_in_cc: false
+    precedence_exception: 'Original SR3 p117 permits a target-number penalty below minimum; CC p12 says use is prohibited. Preserve both pending adjudication.'
+  projectile_category:
+    governing_skill: Projectile Weapons
+    default_ready_action: 'Ready Weapon Simple Action'
+    default_fire_action: 'Fire Weapon Simple Action'
+    exception: 'Unless otherwise specified.'
+    accessories_require_bow_accessory_mount: true
+  bow_accessory_mount:
+    game_concealability_modifier: -1
+    existing_entity_concealability: null
+    allowed_accessory_count: 1
+    allowed_game_accessory_classes: [imaging, smartlink]
+    smartlink_eligibility: 'Induction pad in character hand holding bow, or smartgoggles.'
+  pistol_crossbow:
+    hands_required: 1
+  repeater_crossbow:
+    range_table_reference: medium_crossbow
+    reuse: 'Existing rule retains first-shot Ready Weapon Simple Action and five-standard-bolt magazine.'
+  sling_launcher:
+    game_space_requirements: {anchor_points: 2, draw_clearance_meters: 2}
+    game_payload_weight_kg_exclusive_upper_bound: 1
+    game_range_reference: aerodynamic_grenade
+    game_scatter_reference: aerodynamic_grenade
+    alternate_character_configuration:
+      characters_required: 3
+      game_target_number_modifier: 1
+      scatter_dice_modifier: 1
+      minimum_strength_applies_to_each_character: true
+      range_strength_rating: 'min(Strength of the three characters)'
+  slingshot:
+    game_range_reference: shuriken
+  reuse: 'Seven other original p13 non-arrowhead item rows match existing entities. Bow mount table value is corrected only in this source-specific record.'
+  source_boundary: 'Fictional character statistics, eligibility, game-action economy, and range-table references; no construction procedure.'
