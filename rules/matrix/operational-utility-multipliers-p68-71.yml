@@ -1,0 +1,44 @@
+id: rule.matrix.operational-utility-multipliers-p68-71
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '68, 70-71'
+pdf_pages: '69, 71-72'
+edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG; original printed pp68,70-71, PDF69,71-72.
+content_class: [rule_exact]
+framing: reference_exact
+headline: Matrix new operational utility statistics and game effects
+summary: Original FASA7909 operational software multipliers, supported in-game System Operations and distinct rating and test exceptions; entity catalog reused.
+data:
+  core_relationship: New operational utilities follow SR3 p220 rules; their multipliers are used in programming size calculations. Reuse core standard System Test modifier and existing operations rather than redefine them.
+  eligible_options: [Adaptive, Bug-Ridden, Crashguard, DINAB, Noise, One-Shot, Optimization, Sensitive, Sneak, Squeeze]
+  entries:
+    Camo: {multiplier: 3, operations: [Redirect Datatrail], additional_effect: Add utility rating to base turns of Trace IC or Track utility location cycle.}
+    Crash: {multiplier: 3, operations: [Block System Operation, Crash Application, Crash Host]}
+    Defuse: {multiplier: 2, operations: [Disarm Data Bomb]}
+    Doorstop: {multiplier: 2, operations: [Freeze Vanishing SAN], additional_effect: In the fictional game keeps the vanishing SAN from fully closing while avoiding an alert.}
+    Encrypt: {multiplier: 1, operations: [Encrypt Access, Encrypt File, Encrypt Slave]}
+    Evaluate: {multiplier: 2, operations: [Locate Paydata]}
+    Mirrors: {multiplier: 3, operations: [Decoy]}
+    Purge: {multiplier: 2, operations: [Disinfect], additional_effect: "Also reduces test target numbers for removing fictional worm programs from files, programs and MPCPs."}
+    Redecorate: {multiplier: 2, operations: [Alter Icon]}
+    Sniffer: {multiplier: 3, operations: [Intercept Data]}
+    Snooper: {multiplier: 2, operations: [Analyze Operation]}
+    Swerve: {multiplier: 3, operations: [Abort Host Shutdown]}
+    Triangulation: {multiplier: 2, operations: [Triangulate], source_operation_term: Triangulation System Tests}
+    Validate: {multiplier: 4, operations: [Dump Log, Invalidate Account, Restrict Icon, Validate Account]}
+  evaluate_rating:
+    periodic_interval: GM selects one game month or after every Matrix run.
+    degradation: Roll 1D6 divided by 2 rounded down separately for each team-owned Evaluate utility; subtract result from effective rating.
+    upgrade: Source copy required; use Knowledge skill Data Brokerage or equivalent in place of Computer (Programming) for upgrading.
+    self_programming_ceiling: Data Brokerage skill rating.
+    optional_karma_recovery: At GM discretion one Karma Point restores one rating point.
+  redecorate_other_icon:
+    targets: [persona, frame, agent, sprite, daemon, otaku, SK]
+    resolution: Attack target in fictional cybercombat with Redecorate. Target rolls Icon Rating Test against utility rating; defender successes subtract from attacker successes.
+    result: Each net success changes one visual aspect of target icon.
+  provenance:
+    legacy_catalog: entities/matrix/utilities.yml
+    legacy_catalog_blob: 258ae24166192261006fedf0c50ea7fbe52e304f
+    reused_core_rule: rule.matrix.sr3-core-matrix-utility-multipliers-effects-p220-222
+    page_mapping: PDF70 is full-page illustration; printed p68 maps to PDF69, printed pp70-71 to PDF71-72. Catalog first six page attributions are corrected here by original folios, not by modifying legacy catalog.
