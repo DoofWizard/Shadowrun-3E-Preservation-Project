@@ -104,6 +104,14 @@ section audits and gate receipts into field-level source/book closure, resolve
 Rigger chassis from its owner, and keep this single ledger current; never
 substitute an additive record-count percentage for verified all-rule scope.
 
+### Coordinator follow-up: Rigger maintenance field discrepancy (2026-11-23)
+
+The revised Power Plant Table pp194–201/PDF196–203 already has a source-local closure audit (`references/audits/r3-revised-power-plant-table-complete-original-review-2026-11-23.json`, blob `09f1e742229bc0e63e5a1564b335e22fb7a84fba`): 10 categories, 331 rows, 50 revised-source verified registrations in manifest blob `c02aa1470425d2173a94493bd98d77e1744cc72a`. The three most recent semantic blobs (battery, fuel cell, diesel) were checked live against their existing verified journals and match. These are prior receipts, not new transactions.
+
+Fresh original FanPro10662 (SHA-256 `88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909`) and FASA7910 (SHA-256 `0857d118371309c73e5393caa0849a94ec11e1c0009c2eda8fa56169e515e860`) PDF downloads independently hash-matched. Original images of both editions' Maintenance and Overhead section were compared (revised printed pp28–29/PDF30–31; historical printed pp28–29/PDF28–29). No revised-edition change was demonstrated, but the historical canonical record `rules/vehicles/maintenance-overhead.yml` (blob `23843646d9b4f882dcf8fac881a8b4b8bcb0b626`) misplaces the rounding rule. Both original editions round **the one-percent Cost Value component upward before adding ten times the past month's Stress Points**. The original worked example uses 1,250 nuyen cost value and 13 nuyen base overhead. Existing canonical text instead says to round the Stress component. Additional explicit source conditions to reconcile: use published base value rather than actual purchase price; failed catch-up maintenance test consumes payment without removing the penalty; current-month maintenance remains due separately. Other observed values (lifestyle discounts, cumulative missed-month modifier, per-month B/R test target and base time) already match the historical record.
+
+Disposition: shared historical canonical discrepancy, not a novel revised-edition rule or authorization to modify FASA7910. Keep it open for a source-owner-authorized, fully gated correction or explicit lineage clarification; never count duplicate revised facts. Chassis Table pp202–205 full reconciliation remains outstanding. This read-only image/hash comparison did not execute the current repository verify-source, preflight, stage, prepare or confirm in the current runtime; no new semantics, section acceptance or globally authorized pages are claimed.
+
 ## Completed Bug City source
 
 | Source | Status | Verified scope |
