@@ -38,7 +38,7 @@ coverage:
   recording_distribution_market: {printed: "10", status: source_verified_section_closed, note: "Original retail and royalty illustrations, transfer timings and Gp definition; p99 rate overlap reused and career payout distinct."}
   instrument_control_eligibility: {printed: "8-10", status: source_verified_section_closed, note: "Original electric and synthesized instrument skill eligibility, optional Electronic Music requirement, OMNI and synthlink input modes; existing gear and performance records reused."}
   impact_tests_group_rehearsals: {printed: "10-11", status: source_verified_section_closed}
-  composition_performance_rating: {printed: "12-13", status: source_verified_section_closed}
+  composition_performance_rating: {printed: "12-13", status: source_verified_section_closed, note: "Apply composition-rating-qualifiers-p12 for single-song rating, exact all-ones result and extended composition royalty and retry conditions."}
   record_sales_status_money_message: {printed: "13-16", status: source_verified_section_closed, note: "Apply rocker-career-corrections-p13-16 to earlier tour prerequisite, parallel booking and distribution formula fields; original conflicts remain unadjudicated."}
   broadcast_and_media: {printed: "18-56", status: source_verified_section_closed, note: "Original mechanical scope: transmission and trideo pp18-23, network tests pp27-29, optional contest terms p31, Beat Sheet, Pix, interviews, evidence and journalism filing/ratings pp38-56 individually verified and indexed. Pp24-26 and pp30,32-37 are setting descriptions, schedules or advertisements, not general dice procedures; p31 terms are optional scenario reference. Color insert separately indexed. Original conflicts retained; SR3 adaptation and whole-book certification remain open."}
   entertainment_contest_terms: {printed: "31", pdf: "32", status: source_verified_section_closed, note: "Original contest eligibility and award terms, optional scenario reference; no generalized resolution rules invented."}
@@ -249,6 +249,7 @@ records:
   - ["contest-scenario-terms-p31", "8780655fdc289237b537f459a11353bad0f13deb"]
   - ["rocker-opener-cost-conflict-p86", "4fcdd1bea12589b7060280550255c1f2888a6d32"]
   - ["rocker-career-corrections-p13-16", "9657eb90c6fb802f446e9ea4ffef01193442ec48"]
+  - ["composition-rating-qualifiers-p12", "9ea5b3e5cbd781fad2548ba9815a1f11197b9161"]
 verified_semantic_records:
   - id: rule.shadowbeat-rocker-concert-impact-open-test-p10-11
     path: rules/shadowbeat/rocker-concert-impact-open-test-p10-11.yml
@@ -799,5 +800,16 @@ verified_semantic_records:
     transaction_status: verified
     source_pdf_verification_status: source_pdf_hash_verified
     source_image_review: ["printed_p13_pdf14", "printed_p14_pdf15", "printed_p15_pdf16", "printed_p16_pdf17"]
+    edition_scope: original_1992_2e_era_sr3_adaptation_unverified
+  - id: rule.shadowbeat-composition-rating-qualifiers-p12
+    path: rules/shadowbeat/composition-rating-qualifiers-p12.yml
+    original_printed_pages: "12"
+    original_pdf_pages: "13"
+    commit_sha: "9ea5b3e5cbd781fad2548ba9815a1f11197b9161"
+    readback_blob_sha: "a4d5682a7d01d8c81824fbdb64dba801da9530e6"
+    candidate_sha256: "724d5c159b46d275af2e09cde43c00fc8e97ee709a53f634792958554a4564df"
+    transaction_status: verified
+    source_pdf_verification_status: source_pdf_hash_verified
+    source_image_review: ["printed_p12_pdf13"]
     edition_scope: original_1992_2e_era_sr3_adaptation_unverified
 global_checkpoint_advance: prohibited_source_specific_shard
