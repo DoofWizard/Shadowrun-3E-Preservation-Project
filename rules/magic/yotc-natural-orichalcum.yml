@@ -1,39 +1,55 @@
 id: rule.magic.yotc-natural-orichalcum
 record_type: rule
-name: "Natural Orichalcum"
-domain: magic
 status: ingested
-effective:
-  status: optional
-  source: source.fanpro-10650
-  printed_page: 149
-  pdf_page: 150
-  basis: defines
-refining:
-  treatment: "Treat natural orichalcum as if it were already a refined material, then process it through alchemical circulation to remove impurities."
-  test: "Enchanting (Alchemy)"
-  target_number: "number of raw orichalcum units multiplied by 3"
-  yield:
-    raw_unit_weight: "20 grams"
-    output: "one 10 gram unit of radical orichalcum per raw unit"
-artificing:
-  enchanting_modifier: "-1 per 2 units of natural orichalcum"
-  comparison: "One unit of synthetic orichalcum provides the same -1 modifier."
-bonding:
-  karma_reduction: "2 units of natural orichalcum reduce Karma cost of bonding by 1"
-market:
-  raw:
-    unit_weight: "20 grams"
-    approximate_price: "25,000¥"
-  refined:
-    unit_weight: "10 grams"
-    approximate_price: "50,000¥"
-identification:
-  primary_test: "Parageology (6)"
-  substitutions:
-    - "appropriate Knowledge skill at GM discretion"
-  assensing_alternative: "5 or more successes on an Assensing Test"
-sources:
-  - {source: source.fanpro-10650, printed_page: 149, pdf_page: 150, relation: defines}
-notes:
-  - "No supersession relationship is inferred."
+source: source.fanpro-10650
+printed_pages: '148-149'
+pdf_pages: '149-150'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  publication: {title: Year of the Comet, publisher: FanPro, catalog_number: FanPro10650, edition: Shadowrun Third Edition}
+  name: Natural Orichalcum
+  domain: magic
+  effective: &effective {status: optional, source: source.fanpro-10650, printed_page: 149, pdf_page: 150, basis: defines}
+  refining: &refining
+    treatment: Treat natural orichalcum as already refined material and use alchemical circulation under MITS p42 before use.
+    prohibited_method: Ordinary raw-metal refining under MITS p41 dissolves natural orichalcum.
+    test: Enchanting (Alchemy)
+    target_number: Number of raw units multiplied by 3.
+    success_required: true
+    yield: {raw_unit_weight: 20 grams, output: one 10 gram unit of radical orichalcum per raw unit}
+  artificing: &artificing
+    enchanting_modifier: -1 per 2 units of natural orichalcum
+    comparison: One unit of synthetic orichalcum provides the same -1 modifier.
+  bonding: &bonding
+    karma_reduction: 2 units of natural orichalcum reduce Karma cost of bonding by 1
+  market: &market
+    raw: {unit_weight: 20 grams, approximate_price: '25,000¥'}
+    refined: {unit_weight: 10 grams, approximate_price: '50,000¥'}
+  identification: &identification
+    primary_test: Parageology (6)
+    substitutions: [appropriate Knowledge skill at GM discretion]
+    assensing_alternative: 5 or more successes on an Assensing Test
+  campaign_availability: &availability
+    discovery: September 2061
+    depletion: Mid-2062; existing known deposits run dry and located but unexploited deposits disappear; no new veins found at that time.
+    scope: Deposit availability, not destruction of recovered material.
+  sources: &sources
+    - {source: source.fanpro-10650, printed_pages: '148-149', pdf_pages: '149-150', relation: defines}
+  notes: &notes
+    - No edition supersession inferred.
+  precedence: Canonical refining and availability fields incorporate the verified constraints record; ordinary raw-metal refining is not a permissible alternate procedure.
+name: Natural Orichalcum
+domain: magic
+effective: *effective
+refining: *refining
+artificing: *artificing
+bonding: *bonding
+market: *market
+identification: *identification
+campaign_availability: *availability
+sources: *sources
+notes: *notes
+framing: reference_exact
+headline: Natural orichalcum refining and availability
+summary: Original alchemical procedure, market values, identification and source-period constraints.
