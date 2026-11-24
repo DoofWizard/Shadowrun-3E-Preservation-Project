@@ -1,19 +1,32 @@
 id: entity.bioware.symbiotes
 record_type: entity
-name: "Symbiotes"
+name: Symbiotes
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '69-70'
+pdf_pages: '70-71'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 0.4, availability: "5/10 days", cost_nuyen: 15000, street_index: 1, legality: "Legal", healing_time_percent: 90}
-    2: {bio_index: 0.7, availability: "5/10 days", cost_nuyen: 35000, street_index: 1, legality: "Legal", healing_time_percent: 70}
-    3: {bio_index: 1.0, availability: "5/10 days", cost_nuyen: 60000, street_index: 1, legality: "Legal", healing_time_percent: 50}
-links:
-  uses: [procedure.healing.natural-and-medical]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {level: 1, bio_index: 0.4, availability: '5/10 days', cost_nuyen: 15000, street_index: 1, legality: Legal, healing_time_percent: 90}
+    '2': {level: 2, bio_index: 0.7, availability: '5/10 days', cost_nuyen: 35000, street_index: 1, legality: Legal, healing_time_percent: 70}
+    '3': {level: 3, bio_index: 1.0, availability: '5/10 days', cost_nuyen: 60000, street_index: 1, legality: Legal, healing_time_percent: 50}
+data:
+  healing_scope: natural healing time
+  lifestyle_increase_percent_per_level: 20
+  lifestyle_interactions: cumulative with suprathyroid cost increase; decreased by digestive expansion
+  nutritional_requirement: increased food and drink intake or costly tailored nutrients, without increased stomach capacity
+  blood_loss: does not significantly impair functioning; symbiotes regenerate as blood supply recovers
+  stress:
+    light: weight loss
+    moderate: increased heat; thermographic observers receive -1 target modifier to notice character; Signature reduced by 1 for sensor and sensor-enhanced Gunnery Tests
+    serious: halve healing-time percentage benefit; normal healing time percentages by level are 95, 85, 75
+    deadly: no healing bonus
+links: {uses: [procedure.healing.natural-and-medical], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "69-70", relation: defines, note: "Symbiotes description, healing table, stress effects and statistics"}
-notes:
-  - "Tailored microorganisms accelerate natural healing and increase food/lifestyle requirements."
+  - {source: source.mm, pages: '69-70', relation: defines, note: Symbiotes game effects and market rows}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp69-70/PDF70-71: Symbiotes'
+framing: reference_exact
