@@ -1,21 +1,66 @@
 id: rule.surgery.provider-ratings
 record_type: rule
-name: "Medical Provider Ratings"
+name: Medical Provider Ratings
 domain: surgery
 status: ingested
+source: source.mm
+printed_pages: "142-144"
+pdf_pages: "143-145"
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 144, basis: defines}
 scope:
-  applies_to: ["medical providers sought for non-emergency treatment"]
-resolution:
-  summary: "Providers have base ratings, staff-skill modifiers and search times based on provider type and equipment level. Better-equipped providers take longer to locate but provide higher staff/tool ratings."
-  inputs: ["provider category", "equipment grade", "search result"]
-  outputs: ["provider rating", "staff rating", "search time"]
-  steps: []
+  applies_to: [emergency and non-emergency medical provider ratings in the tabletop game]
+data:
+  emergency_care:
+    printed_page: 142
+    method: Roll 2D6 separately for the attending practitioner's skill and equipment rating, applying the appropriate modifiers to each roll.
+    modifiers:
+      provider: {DocWagon: 2, CrashCart_or_other_corporate: 1, private: 0, public_or_illegal: -1}
+      response_team: {high_threat: -1, standard_or_crisis: 0}
+      contract: {super_platinum: 3, platinum: 2, gold: 1, basic: 0, none: -1}
+      neighborhood: {AAA_or_AA: 1, A_or_B: 0, C_or_D: -1, E_or_Z: -2}
+      character_without_SIN: -1
+      prisoner_or_under_arrest: -2
+    provider_specific: Response-team and contract modifiers refer to DocWagon; the GM approximates equivalents for other providers.
+    rating_columns: [skill, gear]
+    modified_roll_to_ratings:
+      "0 or less": [null, null]
+      "1": [2, 1]
+      "2": [3, 1]
+      "3": [3, 2]
+      "4": [4, 2]
+      "5": [4, 2]
+      "6": [5, 3]
+      "7": [5, 3]
+      "8": [5, 3]
+      "9": [6, 4]
+      "10": [6, 4]
+      "11": [7, 4]
+      "12": [7, 5]
+      "13": [8, 5]
+      "14": [9, 6]
+      "15 or more": [10, 6]
+    none_result: GM may interpret no rating as absent skill (requiring defaulting), missing equipment, or refusal to provide care.
+  non_emergency_ratings:
+    printed_page: 144
+    columns: [base_rating, skill_roll_modifier, search_time]
+    rows:
+      standard_illegal: [2, -2, 1 day]
+      standard_private_or_public: [3, -1, 2 days]
+      DocWagon_or_corporate_owned: [4, 0, 1 week]
+      alpha_or_bioware_equipped: [5, 1, 2 weeks]
+      beta_or_cultured_bioware_equipped: [6, 2, 1 month]
+      nanoware_equipped: [6, 2, 2 months]
+      delta_equipped: [8, 4, 6 months]
+    skill_resolution: Roll 2D6 with the listed skill modifier, then consult the emergency skill-rating column. Roll separately for each attending skill.
 links:
   uses: [procedure.surgery.find-provider]
   affects: []
   modified_by: []
   interacts_with: []
 sources:
-  - {source: source.mm, pages: "141-144", relation: defines, note: "Medical Providers, Emergency Care/Rating and Medical Ratings tables"}
+  - {source: source.mm, pages: "141-144", relation: defines, note: Medical Providers, Emergency Care/Rating and Medical Ratings tables}
 notes: []
+headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp142-144/PDF143-145: Medical Provider Ratings"
+framing: reference_exact
