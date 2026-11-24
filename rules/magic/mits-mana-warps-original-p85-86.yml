@@ -1,0 +1,43 @@
+id: rule.magic.mits-mana-warps-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '85-86'
+pdf_pages: '86-87'
+edition_scope: SR3
+content_class:
+- rule_exact
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Mana Warps and Deep Space
+summary: Fictional tabletop RPG mechanics from FASA Corporation, printed pp85-86/PDF86-87.
+data:
+  definition: Background count above 5 is a mana warp. Rare extraordinary events or magical depletion can produce it; the source gives the fictional Cermak Blast site (rating 7 at its center), prolonged sacrificial metamagic and strain-III FAB depletion as examples.
+  warp_effects_table:
+    - {rating: 6, magic_reduction: 2, astral_damage: 6L, magical_astral_tn_modifier: 6, drain_power_modifier: 3, drain_level_modifier: 1}
+    - {rating: 7, magic_reduction: 4, astral_damage: 7M, magical_astral_tn_modifier: 7, drain_power_modifier: 3, drain_level_modifier: 1}
+    - {rating: 8, magic_reduction: 6, astral_damage: 8S, magical_astral_tn_modifier: 8, drain_power_modifier: 4, drain_level_modifier: 2}
+    - {rating: 9, magic_reduction: 9, astral_damage: 10D, magical_astral_tn_modifier: 9, drain_power_modifier: 4, drain_level_modifier: 2}
+    - {rating: 10, magic_reduction: 12, astral_damage: 14D, magical_astral_tn_modifier: 10, drain_power_modifier: 5, drain_level_modifier: 3}
+  effective_attributes:
+    application: Reduce Magic for characters, Essence for critters and Force for spirits while inside. Recalculate Spell Pool, physical Drain eligibility and other dependent factors.
+    adept_limit: Total Power Points of simultaneously active powers cannot exceed effective Magic.
+    zero: Magic 0 prevents magic use; critter effective Essence 0 prevents critter powers; spirits at effective Force 0 are disrupted.
+  astral_activity:
+    activation: Astral perception or projection requires a successful Willpower Test at TN equal to background count; failure prevents activation.
+    resistance: At the end of every Combat Turn spent astrally active, resist listed Physical damage using Willpower and Astral Pool if initiated. Dual beings and spirits also resist.
+    dual_being_behavior: A dual being in a warp must pass Willpower TN 6 or become violent and irrational; such beings seek to leave the warp.
+    spirit_escape: Summoned or called spirits oppose their unmodified Force against summoner's unmodified Magic. On spirit victory it returns to its metaplane.
+    mental_flaws: After significant astrally active exposure, GM may assign a Mental Flaw with cost equal to hours spent astrally active in the warp, or assign one at discretion following disruption or severe Drain damage.
+  test_and_drain: Apply listed Drain Code modifiers to all Drain tests and increase local Magical Skill and Astral Test target numbers by warp rating.
+  worked_example:
+    rating: 7
+    spellcaster: Magic 8 becomes 4; Willpower 6 and Intelligence 5 yield Spell Pool 5. Force 6 Moderate Toxic Wave casting TN rises from 4 to 11, Drain from 4D to 9D; Drain is Physical because Force exceeds effective Magic.
+    adept: Magic 6 becomes 2; a three-point Improved Reflexes 2 power cannot be used. Two-point Astral Perception requires Willpower TN 7; failure prevents use, and no other adept powers are usable during that action.
+    projecting_character: All relevant target numbers increase by 7; resist 7M Physical damage each Combat Turn.
+  deep_space:
+    altitude: Gaiasphere extends to about 80 km. At 71 km background count is 1; increases by one per additional kilometer, to maximum 10 at 81 km as stated in source.
+    orbital_facilities: Large concentrations of living beings may reduce count by one or two levels in major orbital stations; a typical suborbital or spaceplane population has negligible effect.
+    return_test: Projecting character beyond Gaiasphere requires Intelligence TN 6 to escape warp and return; confusion and hallucinations may impede return.
+    fast_astral_movement: Rapid travel beyond Gaiasphere exposes traveler to deepest warp immediately, normally 14D Physical each Combat Turn.
+    example: In level-10 warp, only exceptionally high Magic permits spellcasting; Magic above 12 is necessary. Drain 2L becomes 7D and is likely Physical.
+    source_note: Retain source altitude milestones and cap as printed without extrapolating beyond them.
