@@ -1,21 +1,45 @@
 id: rule.cybermancy.possession
 record_type: rule
-name: "Cyberzombie Possession"
+name: Cyberzombie Possession
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '57'
+pdf_pages: '57'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberzombie Possession Tests and Outcomes
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed and PDF p57.
 effective: {status: current, source: source.mm, page: 57, basis: defines}
 scope:
-  applies_to: ["spirits or initiates attempting to possess a cybermantic subject"]
+  applies_to: [spirits or initiates possessing a cybermantic character]
 resolution:
-  summary: "The magical binding that anchors a cybermantic subject also traps a possessing astral form. The possessing entity may attempt to break free with a Complex Action and an opposed Willpower/Force-style test using the source's Essence-based target number; failed attempts leave it trapped. A possessing entity also faces additional resistance when trying to control the body."
-  inputs: ["subject negative Essence", "possessor Willpower or Force", "Spirit Energy or initiate grade"]
-  outputs: ["possessor escapes, remains trapped, or controls the body"]
-  steps: []
+  summary: The fictional cybermantic binding also binds the possessing astral form, which immediately recognizes its predicament.
+  inputs: [subject Essence, possessor Willpower or Force, Spirit Energy or initiate grade]
+  outputs: [escape, continued confinement, body control]
+  steps:
+    - Escape requires a Complex Action and a Willpower or Force Test; success frees the entity and failure leaves it bound.
+    - For control, resolve an Opposed Willpower Test with the possessor target number increased by 2; success grants control and failure leaves the possessor bound.
+    - If the cyberzombie is unconscious, the possessor can control the body under the standard rules.
+data:
+  escape:
+    target_number: '3 * ceil(abs(Essence)) - Spirit Energy or initiate grade, as applicable'
+    additional_attempts: Spirit Energy or initiate grade, as applicable
+    cumulative_target_number_increase_per_additional_attempt: 2
+  confinement:
+    initiate_body_death_reference: SR3 p173
+    astral_form_survives_body_death: true
+    release_conditions: [cyberzombie dies, cybermantic ritual repeated to purge the trapped form]
+  body_control:
+    test: Opposed Willpower
+    possessor_target_number_modifier: 2
+    unconscious_subject_uses_standard_rules: true
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [rule.cybermancy.dual-nature]
 sources:
-  - {source: source.mm, page: 57, relation: defines, note: "Cyberzombie Possession"}
+  - {source: source.mm, page: 57, relation: defines, note: Cyberzombie Possession}
 notes: []
