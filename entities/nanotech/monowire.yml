@@ -1,11 +1,21 @@
 id: entity.nanotech.monowire
 record_type: entity
-name: "Monowire"
+name: Monowire
 domain: nanotech
 status: ingested
-intrinsic: {concealability: 8, availability: "24/14 days", cost_nuyen_per_meter: 2000, street_index: 3, legality: "1-K"}
+source: source.mm
+printed_pages: '95-96'
+pdf_pages: '96-97'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 8, weight: '-', availability: '24/14 days', cost_nuyen_per_meter: 2000, street_index: 3, legality: 1-K}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "95-96", relation: defines, note: "Fictional Shadowrun monowire nanogear description, game effects and statistics"}
+  - {source: source.mm, pages: '95-96', relation: defines, note: 'Fictional Shadowrun monowire nanogear description, game effects and statistics'}
 notes:
-  - "Preserved solely as tabletop game data."
+  - 'Fictional nanogear in the Shadowrun tabletop RPG; the source describes physical security and garrote applications in the game world.'
+data:
+  concealability_condition: extended_and_taut
+  physical_security_rules: {source: source.sr3-core, printed_page: 234}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp95-96/PDF96-97: Monowire game effects'
+framing: reference_exact
