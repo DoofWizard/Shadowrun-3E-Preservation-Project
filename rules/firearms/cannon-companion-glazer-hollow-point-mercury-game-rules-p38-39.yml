@@ -1,0 +1,32 @@
+id: rule.firearms.cannon-companion-glazer-hollow-point-mercury-game-rules-p38-39
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '38-39'
+pdf_pages: '39-40'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Glazer, Hollow Point and Mercury fictional tabletop modifiers'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp38-39/PDF39-40. Game-resolution Power, Damage Level and armor-rating arithmetic; existing catalogue items are reused.'
+data:
+  glazer:
+    item: entity.ammunition.glazer-rounds
+    printed_page: 38
+    power_modifier: 2
+    unarmored_damage_level_modifier: 1
+    armored_power_reduction: '2 x max(Ballistic, Impact)'
+    barrier_rating_multiplier: 2
+    vehicle_armor_rating_multiplier: 2
+  hollow_point:
+    item: entity.ammunition.hollow-point-rounds
+    printed_page: 38
+    power_modifier: 1
+    unarmored_power_modifier_instead: 3
+    armored_power_reduction: 'Ballistic + Impact'
+  mercury:
+    item: entity.ammunition.mercury-rounds
+    printed_pages: '38-39'
+    inherits: entity.ammunition.glazer-rounds
+    exception:
+      power_modifier: 0
