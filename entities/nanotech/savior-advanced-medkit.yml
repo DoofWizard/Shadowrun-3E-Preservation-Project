@@ -1,11 +1,24 @@
 id: entity.nanotech.savior-advanced-medkit
 record_type: entity
-name: "Savior Advanced Medkit"
+name: Savior Advanced Medkit
 domain: nanotech
 status: ingested
-intrinsic: {weight: 4, availability: "6/1 wk", cost_nuyen: 1500, street_index: 2, legality: "Legal", rating: 6}
+source: source.mm
+printed_pages: '95-96'
+pdf_pages: '96-97'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: '-', weight: 4, availability: '6/1 wk', cost_nuyen: 1500, street_index: 2, legality: Legal, rating: 6}
 links: {uses: [procedure.healing.natural-and-medical], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, pages: "95-96", relation: defines, note: "Savior Advanced Medkit description, game effects and statistics"}
+  - {source: source.mm, pages: '95-96', relation: defines, note: 'Savior Advanced Medkit description, game effects and statistics'}
 notes:
-  - "Uses a finite fictional nanite supply and follows ordinary medkit rules with the source's additional test modifiers."
+  - 'Fictional Shiawase Biotech advanced medkit in the Shadowrun tabletop RPG; portable backpack or satchel format.'
+data:
+  ordinary_medkit_rules: {source: source.mm, printed_page: 136}
+  test_TN_modifier: -1
+  affected_tests: [Biotech_First_Aid, Body_to_stabilize]
+  supply_exhaustion: {when: after_treatment, dice: 1D6, results: [1, 2]}
+  supplies: {concealability: 8, weight: '-', availability: '6/1 wk', cost_nuyen: 300, street_index: 2, legality: Legal}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp95-96/PDF96-97: Savior Advanced Medkit game effects'
+framing: reference_exact
