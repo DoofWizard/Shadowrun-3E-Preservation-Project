@@ -1,0 +1,56 @@
+id: rule.combat.cannon-companion-visual-grenade-game-qualifiers-p40-41
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '40-41'
+pdf_pages: '41-42'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional tabletop visual-effect game qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition, original printed pp40-41/PDF41-42. Four catalogue-specific game effects, with target-number and damage-code conditions; existing inventory and core resolution reused.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  flare_grenade:
+    entity: entity.ammunition.flare-grenade
+    duration_game_minutes: 10
+    darkness_modifier_negated_within_game_meters: 30
+    facing_glare_tn_modifier: 2
+    flare_compensation_eliminates_glare: true
+    contact_damage: false
+    ignites_fire: false
+  flash_grenade:
+    entity: entity.ammunition.flash-grenade
+    effect_radius_game_meters: 30
+    facing_initial_tn_modifier: 6
+    tn_reduction_per_game_meters: 5
+    tn_reduction_amount: 1
+    flare_compensation_modifier_reduction: 2
+    tn_reduction_per_full_combat_turn: 2
+    damage_zone_game_meters: 1
+    damage_code: 5L
+  ink_grenade:
+    entity: entity.ammunition.ink-grenade
+    form: nonaerodynamic_only
+    use_context: underwater
+    effect_radius_game_meters: 5
+    inside_cloud_visibility_tn_modifier: 4
+    cumulative_with_other_underwater_vision_modifiers: true
+  superflash_grenade:
+    entity: entity.ammunition.superflash-grenade
+    visible_game_distance_km: 3
+    visibility_condition: unobstructed_line_of_sight
+    facing_resistance_damage_code: 12M Stun
+    power_reduction_per_game_meter: 1
+    flare_compensation_power_reduction: 2
+    armor_effect: none
+    vision_test_tn_modifier_per_damage_box: 1
+    stun_boxes_and_associated_modifier_fade_per_game_minute: 1
+    reflected_light:
+      non_facing_targets_can_be_affected: true
+      reference: SR3 printed p119 Blast in a Confined Space
+      power_reduction_per_game_meter: 1
+    damage_zone_game_meters: 1
+    damage_code: 5L
+  base_game_resolution_reference: rule.combat.sr3-core-grenade-scatter-blast-p118-119
