@@ -11,7 +11,7 @@
   ],
   "framing": "reference_exact",
   "headline": "Host security topology: bouncer and chokepoint game mechanics",
-  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "summary": "FASA Corporation, Matrix (FASA7909), SR3 fictional tabletop RPG, printed pp118,120/PDF119,121: host-only scope, bouncer example and chokepoint route qualifications.",
   "data": {
     "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
     "bouncers": {
@@ -24,7 +24,10 @@
       "example": {
         "old_security": "Green-4",
         "new_security": "Red-8",
-        "secret_sensor_TN": 8
+        "secret_sensor_TN": 8,
+        "trigger": "Security tally accrued during a confidential file download.",
+        "secret_sensor_test_succeeded": true,
+        "reported_result": "Security level increased."
       }
     },
     "chokepoints": {
@@ -86,9 +89,16 @@
           "green",
           "orange"
         ]
-      ]
+      ],
+      "diagram_1_qualification": "The normal grid route reaches the Orange-6 target through the Red-8 host; a direct connection outside the grid route is a separate possibility.",
+      "diagram_2_qualification": "The Red-8 host is on the public route, while the private-grid route reaches the target through the Green-6 host with a dedicated connection."
     },
     "mapping": "Printed p119 / physical PDF120 is a full-page illustration; not cited as mechanics.",
-    "core_comparison": "Core topology record 437f8a33191f23cf7b8db18b9c5fabc3e3f23955 and legacy System Tricks provide access types but not the bouncer procedure and illustrated ratings."
+    "core_comparison": "Core topology record 437f8a33191f23cf7b8db18b9c5fabc3e3f23955 and legacy System Tricks provide access types but not the bouncer procedure and illustrated ratings.",
+    "host_tricks_scope": {
+      "general_scope": "The Host Tricks section states that its techniques apply to hosts only. Explicit host or PLTG applicability in individual SAN rules is preserved separately.",
+      "printed_page": 118,
+      "pdf_page": 119
+    }
   }
 }
