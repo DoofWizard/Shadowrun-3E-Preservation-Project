@@ -3356,6 +3356,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_intro_essence_distinctions_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp6-7/PDF6-7."
+    records:
+      - id: rule.cyberware.mm-essence-distinction-p7
+        path: rules/cyberware/mm-essence-distinction-p7.yml
+        printed: "7"
+        pdf: "7"
+        commit: "51752e87cc17786761309959f9b53a770acade5e"
+        blob: "3610308a2b0906a280270715168f447c28c0c79d"
+        baseline_sha256: "a37e73383f2ba1447c465cead724c540804d177236c918f3ac821ef10e1a7f23"
+        candidate_sha256: "e4216fa31ab876b6096b99f5e398657051fa05c217f4c6494e946b97fd6c5b53"
+        immutable_sha256: "6664f3caf573d20583bfa9e2bdc45cdba10e24b7d953d8340913620b991ada36"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Essence distinctions for ordinary surgery, like-for-like tissue replacement, non-neural implants, cyberware and grade, possible wound/care/addiction causes, bioware and nanites. No additional numerical loss formula inferred."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3369,9 +3389,11 @@ source_field_review:
         evidence: "PDF2-5 contents/publication inspected; PDF1 not independently reviewed this run. No mechanics inferred from navigation."
       - scope: "Introduction and updating characters"
         printed: "6-7"
-        state: partial_review
-        evidence: [confirmed_sr2_augmentation_update_p7_2026_11_25]
-        remaining: "Printed pp6-7/PDF6-7 reviewed; Updating Your Characters confirmed. Bind p7 Developer's Say Essence distinctions and p6 sourcebook revision context without duplicating shared core rules."
+        state: scoped_reconciled
+        evidence: [confirmed_sr2_augmentation_update_p7_2026_11_25, confirmed_intro_essence_distinctions_2026_11_25]
+        original_images_reviewed: "Printed pp6-7/PDF6-7."
+        note: "P6 identifies revised material from Shadowtech, Cybertechnology, Neo-Anarchist's Guide to Real Life, Corporate Security Handbook, Cyberpirates, Lone Star, Renraku Arcology: Shutdown and California Free State; references to Shadowrun rules mean SR3. This is publication-level revision context, not proof of individual supersession. P7 Essence distinctions and SR2 conversion guidance individually confirmed. Chapter previews refer to the corresponding detailed rules."
+        remaining: "No demonstrated residual introduction mechanical gap. Shared core rules unchanged; formal book acceptance and engine testing separate."
       - scope: "Cybertechnology context and equipment through bodyware"
         printed: "8-31"
         state: field_review_not_demonstrated
