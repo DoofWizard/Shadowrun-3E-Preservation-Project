@@ -1,0 +1,63 @@
+id: rule.magic.mits-control-manipulation-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '144-145, 167'
+pdf_pages: '145-146, 168'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Grimoire control manipulations, printed pp144–145 and 167/PDF145–146 and 168
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition; fictional tabletop RPG spell resistance, involuntary magical effects and original spell table codes.
+data:
+  row_columns: [name, type, target, duration, range, drain]
+  table_rows:
+    - [Alter Memory, M, 'W(T)', P, LOS, '(D)']
+    - [Calm Animal, M, 'W(T)', S, LOS, '(M)']
+    - [Calm Pack, M, 'W(T)', S, 'LOS(A)', '(S)']
+    - [Compel Truth, M, 'W(T)', S, LOS, '+1(M)']
+    - [Control Animal, M, 'W(T)', S, LOS, '(S)']
+    - [Control Pack, M, 'W(T)', S, 'LOS(A)', '(D)']
+    - [Mob Mind, M, 'W(T)', S, 'LOS(A)', '+1(D)']
+    - [Mob Mood, M, 'W(T)', S, 'LOS(A)', '+1(S)']
+  category_rule:
+    resistance_attribute: Willpower
+    threshold: Half target Willpower
+    reference: MitS p50
+  alter_memory:
+    memory_count: 1
+    effect: Caster magically changes or deletes the fictional target's memory.
+    repeat_resistance_trigger: Target encounters evidence the false memory is untrue.
+    repeat_resistance_comparison: Original caster successes
+    success_effect: Original memories restored when the spell is overcome.
+    cumulative_resistance_successes: false
+  calm_animal_pack:
+    eligible: Creature with animal-level intelligence
+    single_target: Calm Animal
+    effect: Nonaggressive while sustained
+    area_variant: Calm Pack
+  compel_truth:
+    effect: Fictional target cannot knowingly state a falsehood.
+    belief_exception: The target may state a mistaken belief.
+    refusal_to_speak_allowed: true
+    withholding_information_allowed: true
+    setting_law: The source treats law-enforcement use in fictional UCAS and CAS as violating the suspect's protection against self-incrimination; other fictional nations have used this and other spells in legal cases.
+  control_animal_pack:
+    reference: Control Thoughts, SR3 p196
+    eligible: Nonintelligent animals, determined by GM
+    paranormal_resistance: Higher of Willpower and Essence
+    threshold: Half target Willpower
+    area_variant: Control Pack
+  mob_spells:
+    shared:
+      affected: Only individuals within spell range; a large crowd may be affected only in part.
+      resistance: Each individual resists separately.
+      gm_option: One resistance test for a large NPC group.
+      pedestrian_assumed_willpower: 3
+      threshold: Half target Willpower
+    mob_mind:
+      reference: Control Thoughts, SR3 p196
+      group_control: Targets controlled together, not assigned individual different actions.
+    mob_mood:
+      reference: Control Emotion, SR3 p196
+      effect: Caster controls the fictional crowd's emotional state.
