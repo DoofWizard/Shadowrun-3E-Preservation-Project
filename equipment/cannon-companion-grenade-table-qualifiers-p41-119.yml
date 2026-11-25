@@ -1,0 +1,45 @@
+id: equipment.cannon-companion-grenade-table-qualifiers-p41-119
+record_type: equipment
+status: reviewed
+source: source.cc
+printed_pages: '41,119'
+pdf_pages: '42,120'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'Cannon Companion FASA7908: fictional game catalogue dash and conflicting table bindings'
+summary: 'Original FASA Corporation Shadowrun Third Edition, printed p41/PDF42 and p119/PDF120. Missing source cells, two in-world legality discrepancies and an unassigned shifted inventory row; existing game stats remain unchanged.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  table_dash_bindings:
+    field: blast
+    original_literal: '—'
+    printed_pages: [41, 119]
+    pdf_pages: [42, 120]
+    existing_entities_missing_field: [entity.ammunition.flare-grenade, entity.ammunition.flash-grenade, entity.ammunition.incendiary-grenade, entity.ammunition.ink-grenade]
+    interpretation: No numeric game modifier inferred from the printed dash.
+  smoke_legality_discrepancies:
+    core_catalogue: equipment.explosives.sr3-core-original-market-p283
+    cannon_companion_printed_page: 119
+    core_printed_page: 283
+    rows:
+      Smoke: {cannon_companion: Legal, sr3_core: '5–J'}
+      Smoke (IR): {cannon_companion: Legal, sr3_core: '5–J'}
+    precedence: unresolved
+  splash5_original_alignment:
+    printed_label: Splash5
+    printed_page: 119
+    physical_pdf_page: 120
+    physical_column_cells:
+      conceal: '—'
+      damage: Special
+      blast: '.25'
+      weight: '8/4 days'
+      availability: '50¥'
+      cost: '2'
+      street_index: '3-J'
+      legal: null
+    status: unresolved_column_shift
+    existing_read_only_related_entities: [entity.chemistry.splash-grenade, entity.gear.zic-splash-grenade]
+    note: Cells record their visible positions only; the blank last cell and shifted entries do not establish intended statistics or an item identity.
