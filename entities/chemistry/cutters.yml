@@ -1,15 +1,35 @@
 id: entity.chemistry.cutters
 record_type: entity
-name: "Cutters"
+name: Cutters
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '92, 158'
+pdf_pages: '93, 159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "4/36 hrs"
-  cost_nuyen_per_dose: 10
-  street_index: 1
-  legality: "Legal"
-links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+  nanite_type: Transient
+  cost_nuyen_per_dose: 20000
+  availability: '20/1 mo'
+  street_index: 5
+  legality: 2-Y
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 158, relation: defines, note: "Drugs and pharmaceutical compounds purchasing table statistics"}
+  - {source: source.mm, page: 92, relation: defines, note: 'Nanoware description, game effects, and market statistics'}
+  - {source: source.mm, page: 158, relation: defines, note: 'Nanotechnology purchasing table, Nanoware subsection'}
 notes:
-  - "Preserved strictly as fictional Shadowrun tabletop game data."
+  - 'Fictional Shadowrun RPG nanoware. Legacy chemistry ID and path retained; original nanoware category is explicit. The previously recorded purchasing values belong to a different row on p158.'
+data:
+  category: nanoware
+  vector: Injection
+  speed_minutes: 2
+  damage_code: 9M
+  damage_track: Physical
+  damage_duration_combat_turns: '1D6 + 3'
+  damage_each_consecutive_combat_turn: true
+  expires_after_duration: true
+  damage_staging_reference: {source: source.mm, printed_page: 107, section: Additional Dosage}
+  descriptive_active_time_max_seconds: 30
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp92,158/PDF93,159: Cutters equipment statistics and game effects'
+framing: reference_exact
