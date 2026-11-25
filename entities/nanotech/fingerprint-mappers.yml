@@ -1,11 +1,27 @@
 id: entity.nanotech.fingerprint-mappers
 record_type: entity
-name: "Fingerprint Mappers"
+name: Fingerprint Mappers
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Transient", cost: "Rating x 5,000 nuyen", availability: "12/1 mo", street_index: 2, legality: "5P-Y", rating_range: "1-10"}
+source: source.mm
+printed_pages: '92-93'
+pdf_pages: '93-94'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Transient, cost: 'Rating x 5,000 nuyen', availability: '12/1 mo', street_index: 2, legality: 5P-Y, rating_range: '1-10'}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, pages: "92-93", relation: defines, note: "Fingerprint Mappers description, game effects and statistics"}
+  - {source: source.mm, pages: '92-93', relation: defines, note: 'Fingerprint Mappers description, game effects and statistics'}
 notes:
-  - "Fictional nanoware that temporarily remaps fingerprint skin ridges according to a programmed print."
+  - 'Fictional RPG equipment temporarily changes a character print to a programmed print; not a real-world technique.'
+data:
+  rating_minimum: 1
+  rating_maximum: 10
+  scanner_test: {type: Opposed Test, system_rating_used: true, reference: SR3 p235}
+  remapping_duration_hours: Rating
+  tactile_perception_tn_modifier_during_remapping: 2
+  natural_print_returns_after_days: 30
+  hands_affected_per_treatment: 1
+  reduced_effect: {condition: remapping still in progress, rating_divisor: 2, rounding: down}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp92-93/PDF93-94: Fingerprint Mappers game effects'
+framing: reference_exact
