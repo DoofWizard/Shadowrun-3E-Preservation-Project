@@ -1,13 +1,33 @@
 id: entity.nanotech.taggants
 record_type: entity
-name: "Taggants"
+name: Taggants
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '94-95'
+pdf_pages: '95-96'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  etchers: {nanite_type: "Transient", cost_nuyen: 5000, availability: "6/1 wk", street_index: 1.5, legality: "Legal"}
-  markers: {nanite_type: "Free-floating", cost_nuyen: 10000, availability: "8/2 wks", street_index: 2, legality: "Legal"}
+  etchers: {nanite_type: Transient, cost_nuyen: 5000, availability: '6/1 wk', street_index: 1.5, legality: Legal}
+  markers: {nanite_type: Free-floating, cost_nuyen: 10000, availability: '8/2 wks', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, pages: "94-95", relation: defines, note: "Taggants, etchers and markers description, game effects and statistics"}
+  - {source: source.mm, pages: '94-95', relation: defines, note: 'Taggants, etchers and markers description, game effects and statistics'}
 notes:
-  - "Fictional identification/tracking nanoware represented only as game data."
+  - 'Fictional identification nanoware in the Shadowrun tabletop RPG. The source describes etchers as usually marking convicts or employees, in-world security systems attempting to tag runners for later identification, and message carriers who may be unaware.'
+data:
+  reduced_effect: none_operate_normally_until_gone
+  etchers:
+    imprint: fictional_magnetic_metallic_bone_pattern
+    detection: {devices: [MAD, cyberware_scanner], target_number: 3}
+    readable_by: cyberware_scanner
+    typical_data: [SIN, employee_ID]
+    permanence: usually_permanent
+    removal_options: [specially_programmed_etcher_nanites, surgery]
+  markers:
+    encoded_data_capacity_Mp: 5
+    readable_by: nanoscanner
+    in_world_uses: [identification, message_delivery]
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp94-95/PDF95-96: Taggants game effects'
+framing: reference_exact
