@@ -4,8 +4,8 @@ name: Find Medical Provider
 domain: surgery
 status: ingested
 source: source.mm
-printed_pages: "143-144"
-pdf_pages: "144-145"
+printed_pages: "140-144"
+pdf_pages: "141-145"
 edition_scope: SR3
 content_class: [rule_procedure]
 effective: {status: current, source: source.mm, page: 143, basis: defines}
@@ -42,6 +42,39 @@ data:
       condition: In the game, offering at least the printed compensation threshold generally grants this modifier.
     failed_test: The provider refuses. The GM may allow an Intimidation or other coercion attempt, with the possibility of referral to the authorities.
     conditions: Provider may require identification, payment, lawful service, corporate credentials or scrip, patient records, reporting, or samples.
+  provider_access_conditions:
+    corporate:
+      usual_clientele: [corporate employees, corporate citizens]
+      credentials: corporate ID and SIN required; fictional source also permits convincing forged credentials
+      payment: many accept only corporate scrip
+      employee_care: usual access to trauma and implant treatment
+      outside_clientele: access may be negotiated with a corporate Johnson
+      equipment_and_services: may be sole source of some implants or procedures; alpha-grade or better gear and more skilled doctors more likely
+      emergency_service: some offer equivalent service at higher cost and slower response
+      jurisdiction: many AA and AAA corporate facilities have extraterritorial status; local implant laws need not apply within their own jurisdiction
+      privacy: corporation knows implant and procedure details; possible sample retention, unwanted implantation, or use of the character to test experimental procedures or devices; consent for testing not specified
+    docwagon:
+      jurisdiction: extraterritorial clinics
+      confidentiality: patient location and records generally confidential
+      extradition: generally acknowledges requests from Lone Star and other corporate security organizations
+    private:
+      eligibility: selected clientele; provider may select sectors or criteria
+      exceptions: meeting criteria, doing a favor or payment may obtain access
+      skill_quality: generally above public providers; provider's particular purpose may conflict with character goals
+    public:
+      access: generally open but lack of funds or SIN may delay or cause denial
+      ordinary_wait: at least several hours unless situation is dire
+      payment: some procedures require advance payment
+      emergency_service: no high-threat response; ambulance or EMT encountering combat withdraws and contacts police
+      jurisdiction: subject to local laws
+      service_bias: source describes variable treatment priority based on race and class
+      quality: generally average; privately operated public sites tend to be more professional than government sites
+    black_clinic:
+      access: illegal medical centers, usually specialize in illegal goods and procedures; many do not offer legal services
+      identification_or_SIN_required: false
+      advance_payment_required: true
+      equipment_and_services: high-end facilities may have resources for advanced procedures; usually have connections for used implants and replacement organs
+    scope_note: Qualitative fictional provider conditions affect access and service availability; no extra numerical modifiers inferred beyond the separate Medical Search and Emergency Care tables.
 outcomes: [provider secured, search or access fails]
 links:
   uses: [entity.skill.etiquette, rule.surgery.provider-ratings]
@@ -49,8 +82,10 @@ links:
   produces: []
   modified_by: []
 sources:
+  - {source: source.mm, pages: "140-142", relation: defines, note: Medical Providers / provider access conditions}
   - {source: source.mm, page: 143, relation: defines, note: Non-Emergency Medical Care / Medical Search Table}
   - {source: source.mm, page: 144, relation: clarifies, note: Medical Ratings Table / Getting in the Door}
 notes: []
-headline: "FASA7126 Man & Machine (FASA, Shadowrun Third Edition tabletop rules), printed pp143-144/PDF144-145: Finding Medical Providers"
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop rules), printed pp140-144/PDF141-145: Finding Medical Providers"
 framing: reference_exact
+summary: "Provider-specific fictional access restrictions supplement the existing search and access procedure."
