@@ -1,11 +1,24 @@
 id: entity.nanotech.gremlins
 record_type: entity
-name: "Gremlins"
+name: Gremlins
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Transient", cost_nuyen: 20000, availability: "14/2 wks", street_index: 3, legality: "2-Y"}
+source: source.mm
+printed_pages: '93'
+pdf_pages: '94'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Transient, cost_nuyen: 20000, availability: '14/2 wks', street_index: 3, legality: 2-Y}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.cyberware.core]}
 sources:
-  - {source: source.mm, page: 93, relation: defines, note: "Gremlins fictional nanoware, game effects and statistics"}
+  - {source: source.mm, page: 93, relation: defines, note: 'Gremlins fictional nanoware, game effects and statistics'}
 notes:
-  - "Fictional Shadowrun sabotage nanoware targeting implanted cyberware."
+  - 'Fictional RPG nanoware damages cyberware implants.'
+data:
+  target: implanted cyberware
+  active_duration_per_test: one full day
+  cyberware_wound_effects_per_full_active_day: '1D6'
+  cyberware_wound_effects_reference_printed_page: 126
+  reduced_effect_wound_effects_per_day: '1D6 / 2'
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p93/PDF94: Gremlins game effects'
+framing: reference_exact
