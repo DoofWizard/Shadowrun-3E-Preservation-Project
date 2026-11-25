@@ -1,11 +1,26 @@
 id: entity.nanotech.bioware-regenerator
 record_type: entity
-name: "Bioware Regenerator"
+name: Bioware Regenerator
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Fixed Transient", cost: "10% of implant cost", availability: "10/2 wks", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '91-92'
+pdf_pages: '92-93'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Fixed Transient, cost: '10% of implant cost', availability: '10/2 wks', street_index: 2, legality: Legal}
 links: {uses: [rule.damage.stress-points], requires: [], component_of: [], interacts_with: [subsystem.bioware.core]}
 sources:
-  - {source: source.mm, pages: "91-92", relation: defines, note: "Bioware Regenerator description, game effects and statistics"}
+  - {source: source.mm, pages: '91-92', relation: defines, note: 'Bioware Regenerator description, game effects and statistics'}
 notes:
-  - "Repairs Stress on the attached fictional bioware implant; replenishment requires surgery."
+  - 'Repairs Stress on the attached fictional bioware implant; replenishment requires surgery.'
+data:
+  installation: around a particular bioware implant
+  trigger: attached implant reaches Moderate Stress or higher
+  automatic_stress_reduction_per_day: '1D6 / 2'
+  can_heal_permanent_stress: false
+  can_repair_failed_bioware: false
+  replenishment: {surgery: implant surgery, procedure: repair cyberware, printed_page: 147}
+  reduced_effect_stress_removed_per_day: 1
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp91-92/PDF92-93: Bioware Regenerator game effects'
+framing: reference_exact
