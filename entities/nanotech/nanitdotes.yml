@@ -1,14 +1,30 @@
 id: entity.nanotech.nanitdotes
 record_type: entity
-name: "Nanitdotes"
+name: Nantidotes
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: '94'
+pdf_pages: '95'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   forms:
-    free_floating: {cost: "500 x toxin cost", availability: "10/2 wks", street_index: 2, legality: "Legal"}
-    transient: {cost: "200 x toxin cost", availability: "8/1 wk", street_index: 2, legality: "Legal"}
+    free_floating: {cost: '500 x toxin cost', availability: '10/2 wks', street_index: 2, legality: Legal}
+    transient: {cost: '200 x toxin cost', availability: '8/1 wk', street_index: 2, legality: Legal}
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 94, relation: defines, note: "Nanitdotes description, game effects and statistics"}
+  - {source: source.mm, page: 94, relation: defines, note: 'Nantidotes description, game effects and statistics'}
 notes:
-  - "Fictional game-system antidote nanoware tailored to one specified toxin."
+  - 'Fictional Shadowrun RPG antidote equipment; existing record ID spelling retained for compatibility with canonical references.'
+data:
+  target_toxin_types_per_system: 1
+  activation: detects_designated_toxin
+  closely_related_compounds: {gamemaster_discretion: true, example: [Green Ring 3, Green Ring 8]}
+  before_speed_duration_expires: {toxin_effect: none}
+  after_speed_period: {prevents_further_damage: true, healing_test_tn_modifier: -2}
+  reduced_effect:
+    before_speed_duration_expires: {power_divisor: 2, power_rounding: down, damage_level_reduction: 1, example: {from: Serious, to: Moderate}}
+    after_damage: {further_damage: same_reduction, healing_test_tn_modifier: -1}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p94/PDF95: Nantidotes game effects'
+framing: reference_exact
