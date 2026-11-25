@@ -1,0 +1,28 @@
+id: rule.bioware.general-detection
+record_type: rule
+name: General Bioware Detection
+domain: bioware
+status: ingested
+source: source.mm
+printed_pages: '60'
+pdf_pages: '61'
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 60, basis: defines}
+data:
+  ordinary_detection:
+    intensive_medical_examination_required: true
+    casual_search_distinguishes_augmented_organ: false
+    x_ray_distinguishes_augmented_organ: false
+    x_ray_can_detect_additional_glands_or_organs: true
+  biological_modification_detection:
+    methods: [exploratory surgery, metabolic analysis]
+    metabolic_analysis_examples: [urinalysis, sophisticated blood tests]
+    scope: General detection of biological modification, not identification of specific implant details by clinical scanners.
+links: {uses: [], affects: [], modified_by: [], interacts_with: [rule.surgery.implant-detection]}
+sources:
+  - {source: source.mm, page: 60, relation: defines, note: Bioware Defined}
+notes:
+  - No numeric target number or duration is specified in this subsection.
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), printed p60/PDF61: General Bioware Detection'
+framing: reference_exact
