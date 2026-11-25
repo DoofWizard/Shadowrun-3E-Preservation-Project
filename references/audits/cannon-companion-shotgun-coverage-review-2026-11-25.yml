@@ -1,0 +1,97 @@
+id: audit.cc.shotgun-coverage-2026-11-25
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification: source_pdf_hash_verified
+status: coverage_only
+whole_source_certified: false
+globally_authorized_pages: 0
+basis_manifest_blob: c83c2e7b0d0ac62856aa58ced0250cdded5f769e
+original_page_images_reviewed: [[23, 24], [117, 118]]
+page_mapping: "Pairs are printed page, physical PDF page (one-based)."
+scope: "FASA7908 fictional tabletop shotgun category, five body catalogue rows, seven appendix rows and model game qualifiers; no shared changes or duplicated equipment statistics."
+category_bindings:
+  - fields: [skill, model_skill_links]
+    path: entities/skills/shotguns.yml
+    blob: d2149934e8e20419c02f6497b6d8f23539960604
+  - fields: [prohibited_accessory_categories]
+    path: rules/firearms/accessory-mounts.yml
+    blob: 18b1f057d92cd9b1e80e9bb15c85c98e4ad03914
+  - fields: [default_slug_category, shot_ammunition_rule, relative_armor_effect, choke_reference, smartlink_modifier, laser_sight_exclusion, smart_goggles_exclusion]
+    path: rules/combat/sr3-core-shotgun-choke-spread-exact-p117.yml
+    blob: 7250d36655aafac22d131f9f66f3f421a05502ba
+  - fields: [shot_damage_resolution, armor_resolution, printed_damage_suffix]
+    path: rules/firearms/sr3-core-special-ammunition-effects-p116-117.yml
+    blob: fc0b388bc58e7bf7c663d3a09e00a4bf39008409
+  - fields: [burst_only_uncompensated_recoil_exception]
+    path: rules/combat/sr3-core-recoil-accounting-numeric-p110-113.yml
+    blob: 6d4c5e05c3f132f118c37ccf215e7eea175c56f6
+  - fields: [conditional_rc_notation]
+    path: rules/firearms/sr3-core-loading-system-and-recoil-notation-p276.yml
+    blob: 8c6ff89e4b18476fc2fe9f1eb1803dd16711e4d3
+body_table_comparison:
+  method: "Original p23 independent visual field reading; exact typed comparison of ten explicitly named fields per existing entity, no semantic or null/dash coercion. Displayed currency numbers are compared to the explicitly nuyen-denominated field. Appendix p117 compared independently to the body rows."
+  field_order: [concealability, ammunition, mode, damage, weight, availability, cost_nuyen, street_index, legality, recoil_compensation]
+  exact_matches: 39
+  exact_differences: 11
+  rows:
+    - path: entities/weapons/franchi-spas-22.yml
+      blob: 7e01f02329aaa67861b38fdd3f5b4dd42831e56c
+      exact_matches: 8
+      differences: [concealability, ammunition]
+      appendix_additional_difference: availability
+      source_local_correction: rule.firearms.cannon-companion-spas22-table-variants-p23-117
+    - path: entities/weapons/mossberg-cmdt.yml
+      blob: 798d9417cd8a148363658af94aa561d29b130039
+      exact_matches: 8
+      differences: [ammunition, recoil_compensation]
+    - path: entities/weapons/mossberg-sm-cmdt.yml
+      blob: 7cc946071701d59b3753cf75c89f5337d2fcc59f
+      exact_matches: 8
+      differences: [ammunition, recoil_compensation]
+    - path: entities/weapons/remington-990.yml
+      blob: 58c82b06105190c4e51d6278a2f79978aec5ab8e
+      exact_matches: 8
+      differences: [ammunition, recoil_compensation]
+    - path: entities/weapons/street-sweeper.yml
+      blob: e541507a7daf331a65f8fb45256d10b930b26a07
+      exact_matches: 7
+      differences: [concealability, ammunition, recoil_compensation]
+  appendix_only_core_rows:
+    path: equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml
+    blob: 2d6ad408ffa7a07e887998bbe6fac3de6266c69f
+    exact_displayed_row_bindings:
+      - {model: Defiance T-250, pointer: /data/tables/0/groups/8/rows/0}
+      - {model: Enfield AS-7, pointer: /data/tables/0/groups/8/rows/1}
+    additional_model_rules: {path: equipment/sr3-core-shotgun-heavy-model-features-p279.yml, blob: 047eec67df05f54970e640c8c7367ff7b32b5cdd}
+  exceptions:
+    - "Four ammunition strings differ only by the printed separator space; retain the literal difference rather than asserting byte identity."
+    - "Four RC dashes and one Concealability dash differ from legacy nulls; no conversion asserted."
+    - "SPAS-22 two body-field differences and one appendix Availability variant already have a confirmed source-local correction. Shared precedence and entity repair remain separate."
+model_qualifier_bindings:
+  - path: rules/firearms/cannon-companion-shotgun-model-game-qualifiers-p23.yml
+    fields: [spas_conditional_modifier_and_integral_game_rating, cmdt_absence_and_presence_flags, sm_cmdt_internal_flag, remington_alternate_version_modifiers]
+    semantic_commit: 71b7ad8a65a60bf50e25967fed32c94639dffc66
+    semantic_blob: 02c0a49210a2165cb9c853e070e843db1a6ca23f
+    index_commit: 6ba7a23b92d748d955978393bd07f144c89b5947
+    index_blob: e76587aab94fd90eed5fddd756ae43e0eb4f71d4
+  - path: rules/firearms/cannon-companion-spas22-table-variants-p23-117.yml
+    fields: [source_variant_concealability, source_variant_ammunition, source_variant_availability]
+    semantic_commit: 06dad73fc745a03bd40915e67c3b7d3a956205a8
+    semantic_blob: 6b4a2bd1868ec2e8c8ccae362c89b20c2ceb5962
+    index_commit: 97d246d1036ae27b3eac61915ab5b4ddc3cb4dea
+    index_blob: c57c1b27bd056bf967dfdd3dd163a649b1680c6f
+  - path: rules/firearms/cannon-companion-street-sweeper-tabletop-qualifiers-p23.yml
+    fields: [virtual_resource_price, game_action_costs, game_range_and_damage_routing, fixed_game_setting, discretionary_game_modifier, accessory_eligibility]
+    semantic_commit: b65c8df9c249b88cb0651d4cba942d3c9e8b0739
+    semantic_blob: b131769db6f97b8e87d2ea861f5499206a6b543d
+    index_commit: 73b5ac0c6432ec73b91bb7e6717bfc31bab1a9b3
+    index_blob: f9ab0454ce1e044404827fa85acf67c27cc3142d
+historical_receipts:
+  present_day_stored_consistency: "Three supplied source-specific journals passed evidence_tools.py journals; matching live semantic blobs checked. This is not a new confirmation or new historical receipt."
+  legacy_body_entities: "Original pre-write source-reviewed baselines, plans, confirmations and individual index receipts for the five named preexisting entities are not established in the existing evidence set. No retro-certification."
+  source_context: "The Street Sweeper introductory in-world distribution narrative supplies no new numerical acquisition procedure; existing game market row and abstract resolution record retained."
+conclusion: "Shotgun category references and appendix identities reconciled for coverage; no additional demonstrated tabletop field gap in this limited scope. Shared discrepancies and legacy receipt debt remain, so formal natural-section acceptance is not claimed. No engine validation performed."
