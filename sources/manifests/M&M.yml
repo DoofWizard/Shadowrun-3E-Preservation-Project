@@ -3336,6 +3336,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_sr2_augmentation_update_p7_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp6-7/PDF6-7 and publisher PDF5."
+    records:
+      - id: rule.compatibility.mm-sr2-augmentation-update-p7
+        path: rules/compatibility/mm-sr2-augmentation-update-p7.yml
+        printed: "7"
+        pdf: "7"
+        commit: "a468bb7d3a776d91871fc44bf33c77b6cac881f6"
+        blob: "a33f8a280b1687b841f10291461b8eabe5df5aa2"
+        baseline_sha256: "d3756f3ad76609caad7c0ff5eb81265acbf76ba55a67d97c40e868930ee35759"
+        candidate_sha256: "ed5c8218f86aaf4d355310d862c472add272e00a6367b5db77c79a062b8d8acf"
+        immutable_sha256: "b79322dbdcd32775f5c78d35bf117ec3384c28e1e77535fb40420a99c012025b"
+        gate: verified
+        recovery_inspect: verified
+        fields: "SR2 augmentation conversion, reconfigured devices, cyberlimb attachment Essence, updated installed gear Essence, bioware limit 9 and suggested inactive items. Distinct from core generic conversion; no universal reactivation rule inferred."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3349,7 +3369,9 @@ source_field_review:
         evidence: "PDF2-5 contents/publication inspected; PDF1 not independently reviewed this run. No mechanics inferred from navigation."
       - scope: "Introduction and updating characters"
         printed: "6-7"
-        state: field_review_not_demonstrated
+        state: partial_review
+        evidence: [confirmed_sr2_augmentation_update_p7_2026_11_25]
+        remaining: "Printed pp6-7/PDF6-7 reviewed; Updating Your Characters confirmed. Bind p7 Developer's Say Essence distinctions and p6 sourcebook revision context without duplicating shared core rules."
       - scope: "Cybertechnology context and equipment through bodyware"
         printed: "8-31"
         state: field_review_not_demonstrated
