@@ -1,11 +1,30 @@
 id: entity.nanotech.crashcart-med-alert
 record_type: entity
-name: "CrashCart Med-Alert"
+name: CrashCart Med-Alert
 domain: nanotech
 status: ingested
-intrinsic: {essence: 1.0, cost_nuyen: 100000, availability: "8/2 wks", street_index: 1.5, legality: "Legal"}
+source: source.mm
+printed_pages: '91'
+pdf_pages: '92'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {essence: 1.0, cost_nuyen: 100000, availability: '8/2 wks', street_index: 1.5, legality: Legal}
 links: {uses: [], requires: [entity.nanotech.nanite-hive], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 91, relation: defines, note: "CrashCart Med-Alert description, game effects and statistics"}
+  - {source: source.mm, page: 91, relation: defines, note: 'CrashCart Med-Alert description, game effects and statistics'}
 notes:
-  - "Fictional Shadowrun nano-biomon system combining an advanced biomonitor with a free-floating nanoware component."
+  - 'Fictional Shadowrun nano-biomon system combining an advanced biomonitor with a free-floating nanoware component.'
+data:
+  system: nano-biomonitor
+  biomonitor_is_free_floating_nanoware: true
+  diagnosis_processor_included: true
+  nanite_hive_included: true
+  subdermal_display_included: false
+  analysis: [body chemistry, hormone levels]
+  normal_range_parameters: [age, gender, race]
+  warning: 'Automatically displayed when readings exceed programmed tolerances, provided the system is integrated with a display or other neural interface.'
+  emergency_call_programmable: true
+  medkit_rating: 6
+  cyberlimb: {essence: 0.2, ecu: 2, concealability_modifier: 0}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p91/PDF92: CrashCart Med-Alert game effects'
+framing: reference_exact
