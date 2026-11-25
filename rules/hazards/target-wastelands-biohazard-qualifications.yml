@@ -7,17 +7,24 @@ pdf_pages: "110-111"
 edition_scope: SR3
 content_class: [rule_procedure]
 framing: reference_exact
-headline: Fictional disease and toxin resolution qualifications
+headline: FanPro10653 SR3 Target Wastelands fictional biohazard qualifications pp109-110/PDF110-111
 data:
   source_title: "Target: Wastelands"
   publisher: FanPro
   extends: rule.hazards.target-wastelands-disease-toxin-extensions
+  acid_rain:
+    extends: rule.hazards.target-wastelands-pollution
+    immunity_categories: [toxins, corrosives]
+    protection: Appropriate protective clothing can eliminate the fictional acid rain target-number penalty.
+  disease_test_trigger: The gamemaster determines when a fictional character faces a chance of infection; ongoing infectious conditions require a test once per day.
   filtration:
     power_below_zero: Prevention of infection at negative filtered pathogen Power is a gamemaster option, not mandatory.
     qualifies_legacy: rule.hazards.target-wastelands-disease-toxin-extensions
   infection_contagiousness: An infected character remains contagious at least until onset and possibly longer, depending on the pathogen.
   toxin_exposure: Equipment may restrict the routes by which a toxin can enter the character.
+  toxin_damage_staging: The two-success-per-Damage-Level reduction rule applies to fictional toxins that inflict damage.
   mana_active_aura_deficiency:
     extends: entity.medical.mana-active-aura-deficiency-syndrome
+    first_contest: At symptom onset 24 hours after infection, then every 24 hours.
     victim_net_successes_below_three: No cure or other effect from that level of victim success.
     permanent_loss: At the existing threshold of 20 accumulated infection net successes a metahuman becomes mundane.
