@@ -1,11 +1,36 @@
 id: entity.nanotech.guardian-angel
 record_type: entity
-name: "Guardian Angel"
+name: Guardian Angel
 domain: nanotech
 status: ingested
-intrinsic: {essence: 1.2, cost_nuyen: 130000, availability: "12/1 mo", street_index: 4, legality: "4P-R"}
+source: source.mm
+printed_pages: '91'
+pdf_pages: '92'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {essence: 1.2, cost_nuyen: 130000, availability: '12/1 mo', street_index: 4, legality: '4P-R'}
 links: {uses: [], requires: [entity.nanotech.nanite-hive], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 91, relation: defines, note: "Guardian Angel description, game effects and statistics"}
+  - {source: source.mm, page: 91, relation: defines, note: 'Guardian Angel description, game effects and statistics'}
 notes:
-  - "Fictional Shadowrun military-grade nano-biomon system with enhanced first-aid behavior."
+  - 'Fictional Shadowrun military-grade nano-biomon system with enhanced first-aid behavior.'
+data:
+  system: nano-biomonitor
+  biomonitor_is_free_floating_nanoware: true
+  diagnosis_processor_included: true
+  nanite_hive_included: true
+  subdermal_display_included: false
+  analysis: [body chemistry, hormone levels]
+  normal_range_parameters: [age, gender, race]
+  warning: 'Automatically displayed when readings exceed programmed tolerances, provided the system is integrated with a display or other neural interface.'
+  emergency_call_programmable: true
+  medkit_rating: 6
+  biotech_first_aid_target_number_modifier: -2
+  unconscious: attempts revival
+  deadly_wound:
+    initial_response: attempts stabilization
+    failed_stabilization: {overflow_interval_multiplier: 2, overflow_boxes: 1, interval_combat_turns: 'Body x 2'}
+  incompatible_with: [entity.bioware.metabolic-arrester]
+  cyberlimb: {essence: 0.3, ecu: 2, concealability_modifier: 0}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p91/PDF92: Guardian Angel game effects'
+framing: reference_exact
