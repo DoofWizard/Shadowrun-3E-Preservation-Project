@@ -1,0 +1,37 @@
+id: rule.firearms.cannon-companion-av-capsule-game-bindings-p36-38
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '36, 38'
+pdf_pages: '37, 39'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: AV, capsule and category tabletop game bindings'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp36 and 38/PDF37 and 39. Existing core game-resolution rules and fictional inventory entities are reused; source-specific conditions are recorded.'
+data:
+  general:
+    core_ammunition_reference: 'SR3 pp116, 279'
+    variants: [standard, caseless]
+    variant_must_match_game_weapon_designation: true
+    variant_reference: 'SR3 p276'
+    available_for_each_firearm_class: true
+    class_compatibility_record: rule.firearms.sr3-core-ammunition-class-compatibility-p279
+    class_table_reference: 'Cannon Companion p113'
+    exception: 'Specific item rules may restrict same-class compatibility.'
+  av:
+    item: entity.ammunition.av-rounds
+    nonvehicle_game_rule: 'APDS, SR3 p116'
+    vehicle_game_rule: 'Anti-vehicular, SR3 p149'
+  capsule:
+    item: entity.ammunition.capsule-rounds
+    base_game_rule: 'Gel, SR3 p116'
+    increased_knockdown_chance: false
+    fictional_doses_per_item: 1
+    compound_exposure_condition: Fictional capsule contains a chemical or compound
+    fictional_compound_exposure_reference: 'Man & Machine p105'
+    vulnerability_damage_level_modifier: 1
+    moderate_or_severe_allergy_power_modifier: 2
+    severe_allergy_additional_physical_boxes: 1
+    listed_catalogue_price_basis: 'Nontoxic, nondangerous fictional material'
+    compound_dependent_catalogue_fields: [cost, availability, street_index]
