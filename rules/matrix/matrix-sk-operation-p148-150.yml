@@ -7,8 +7,8 @@ pdf_pages: '149-151'
 edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp148-150/PDF149-151.'
 content_class: [rule_exact]
 framing: reference_exact
-headline: Semi-autonomous knowbot operation and recovery
-summary: Fictional Matrix utility pool timing, combat, native host recovery and trace modifiers for GM-controlled knowbots.
+headline: FASA7909 Matrix — fictional semi-autonomous knowbot operation and recovery
+summary: FASA Corporation, Shadowrun Third Edition tabletop RPG, printed pp148-150/PDF149-151; fictional knowbot utility-pool examples, combat, native-host recovery and trace rules.
 data:
   legacy_comparison: 'subsystems/matrix/autonomous-programs.yml blob 2dcef9eefd15d7c33fe67b4d7d26446ed89d3c48 gives general operation, recovery and trace framework but lacks the following timing and exceptions.'
   movement: Ordinary persona logon to hosts and grids and grid transitions apply.
@@ -20,16 +20,25 @@ data:
     use_deadline: immediately in the same Combat Phase
     after_use: utility disappears; repeated use requires another allocation
     refresh: beginning of each Combat Turn
-    example: {pool: 12, first_pass_deception: 6, second_pass_scanner: 6, remaining: 0}
+    example:
+      pool: 12
+      first_pass_deception: 6
+      first_pass_operation: Logon to Host
+      second_pass_scanner: 6
+      second_pass_operation: Locate Decker
+      remaining: 0
+      allocation_timing: Free Action in each respective Initiative Pass, followed by immediate use
+      exhaustion: No further operational utilities can be created during that Combat Turn.
   combat:
     capabilities: maneuvers, attack and defensive utilities
     damage: ordinary icon damage rules
     filled_condition_monitor: crashes and permanently destroys program
   native_host:
-    origin: mainframe used for creation
+    origin: high-powered mainframe host used for creation
     default_idle_location: native host
     shutdown: rare except major overhaul or reprogramming
     recovery_location: native host
+    recovery_automatic: true
     recovery_interval_minutes: MPCP rating
     recovery_per_interval: one damage box or one reduced Persona Point
     return_exception: normally avoids direct return if it would expose creators through an incriminating datatrail
