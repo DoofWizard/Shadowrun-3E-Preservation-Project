@@ -3175,6 +3175,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_general_bioware_detection_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp60-62/PDF61-63 and publisher copyright PDF5; p61 illustration inspected."
+    records:
+      - id: rule.bioware.general-detection
+        path: rules/bioware/general-detection.yml
+        printed: "60"
+        pdf: "61"
+        commit: "bc57e53c5f45d98a42dda27b581435746d62d603"
+        blob: "54c313e24b378275104d75985ce22bf2580c6a3f"
+        baseline_sha256: "c178a5dac712b27608a59eec460231fed680ccc64c0c3348758598f4a6951041"
+        candidate_sha256: "03f73aabf4c48b17b92b09dfe41aa59e0b14301c3a07285b74070192cb4b51e9"
+        immutable_sha256: "ed085b23093ad5a6df45ff0f0613308e3a627ab2af4e3550f5c627e11f206694"
+        gate: verified
+        recovery_inspect: verified
+        fields: "General detection limits, additional organ exception, detection methods and examples; separate from clinical scanner test rules."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3210,7 +3230,9 @@ source_field_review:
         remaining: "Embedded context mechanics not exhaustively reviewed; Better Off Dead opening obscured PDF56; preserve invoked memory stimulator no-specific-game-effects exception. PDF51 illustration inspected, not inferred blank."
       - scope: "Biotechnology context and implantation"
         printed: "60-62"
-        state: field_review_not_demonstrated
+        state: partial_review
+        evidence: [confirmed_general_bioware_detection_2026_11_25, confirmed_field_backfill_2026_11_23, confirmed_essence_index_examples_2026_11_24]
+        remaining: "Original pp60-62 reviewed. General detection confirmed; recipient matching, grades, used-basic restriction, compatibility, Bio Index and repair cross-reference located in live canon. Distinguish general implantation context (usual immunosuppression and basic-grade rejection wording) from specific surgical failure rules before scope closure; Bio Index original receipt debt remains separately bounded."
       - scope: "Basic bioware"
         printed: "63-71"
         state: item_scope_closed
