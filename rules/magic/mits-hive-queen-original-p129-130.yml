@@ -1,0 +1,52 @@
+id: rule.magic.mits-hive-queen-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '129-130'
+pdf_pages: '130-131'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Insect hive and Queen — original population, summoning and control rules
+summary: Fictional tabletop rules from FASA Corporation's Magic in the Shadows (FASA7907, Shadowrun Third Edition), printed pp129-130/PDF130-131.
+data:
+  hive:
+    common_families: [Ant, Fly, Termite, Wasp]
+    functions: {worker: hive labor, soldier: hive and Queen defense}
+    each_type_forms: [true-form, flesh-form]
+    ant: {queen_count: 1, subtle_group_size: '2-4', typical_hive: underground}
+    fly: {caste_system: false, non_queen_sex: male, functions: [worker, soldier]}
+    termite: {castes: [worker, soldier, Queen], typical_hive: aboveground}
+    wasp: {caste_system: false, multiple_females_possible: true, sexually_mature_female: Queen, hive_requirement: high place open to air}
+    wasp_investiture: The fictional Queen lays eggs in a host immobilized by her toxin, usually during summoning; larvae either merge as flesh-form spirits or consume the host and emerge as true forms.
+  before_queen:
+    controlled_true_form_count_max: Potency * 10
+    controlled_true_form_total_force_max: Magic * Potency * 5
+    flesh_forms_count_against_total: false
+    command: Spirits obey the shaman unless explicitly countermanded by their Queen.
+  after_queen:
+    spirit_energy: As for a free spirit; the Queen is not free until autonomous from her shaman.
+    energy_to_potency: Queen may allocate all or part of her Spirit Energy to shaman Potency and change the allocation at will.
+    allocated_energy_available_to_queen_force: false
+    daily_joint_summoning_points: Queen Force + Queen Spirit Energy + shaman Magic + shaman Potency
+    soldier_cost_points: 2 * soldier Force
+    worker_cost_points: worker Force
+    true_form_soldier_count_max: Queen Force * shaman Charisma
+    true_form_worker_count_max: Queen Force * shaman Willpower * 10
+    potency_exchange: {shaman_potency_cost: 2, queen_force_or_spirit_energy_gain: 1}
+  queen_control:
+    summoning_required: false
+    queen_count_per_shaman_max: 1
+    freedom_attempts: [ordinary spirit freedom conditions, ally escape procedure, whenever shaman Potency rises or falls]
+    gm_may_free_queen_at_discretion: true
+    queen_banished_or_destroyed:
+      shaman_magic: permanently mundane
+      mental_flaw_points: Queen Spirit Energy
+    queen_disrupted:
+      shaman: loses access to Queen-derived additional Potency and extra spirits controlled by it until Queen returns
+    queen_destroyed:
+      workers_and_soldiers: all destroyed regardless of summoner unless they become free spirits
+    queen_free:
+      shaman_retains_power: only at Queen's will
+      willing_alliance: spirit pact (MitS p124)
+  existing_canon: [rule.spirits.insect-hive, rule.spirits.insect-queen-control, entity.spirit.insect-queen-mother]
