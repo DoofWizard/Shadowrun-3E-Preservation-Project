@@ -1,41 +1,35 @@
 id: rule.bioware.essence-index
 record_type: rule
-name: "Essence Index"
+name: Essence Index
 domain: bioware
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 77
-  basis: defines
-
-scope:
-  applies_to:
-    - "characters with implanted bioware"
-
+source: source.mm
+printed_pages: '77'
+pdf_pages: '78'
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 77, basis: defines}
+scope: {applies_to: [characters with implanted bioware]}
 resolution:
-  summary: "Essence Index equals the character's current Essence plus 3. It is the threshold used to determine whether the character carries excessive bioware."
-  inputs:
-    - "current Essence"
-  outputs:
-    - "Essence Index"
-  steps:
-    - "Add 3 to current Essence."
-
+  summary: Essence Index measures the safe biological augmentation capacity; compute current Essence plus 3. Cyberware reduces the capacity through its effect on current Essence.
+  inputs: [current Essence]
+  outputs: [Essence Index]
+  steps: [Add 3 to current Essence.]
+data:
+  formula: current Essence + 3
+  additive_constant: 3
+  examples:
+    without_cybernetic_augmentation: {essence_index: 9}
+    remaining_essence: {essence: 0.05, essence_index: 3.05}
+  excessive_threshold: Bio Index >= Essence Index
+  threshold_effect: Apply additional excessive-bioware drawbacks according to their individual conditions.
 links:
-  uses:
-    - rule.cyberware.essence
-  affects:
-    - rule.bioware.excessive-bioware
+  uses: [rule.cyberware.essence]
+  affects: [rule.bioware.excessive-bioware]
   modified_by: []
-  interacts_with:
-    - rule.bioware.bio-index
-
+  interacts_with: [rule.bioware.bio-index]
 sources:
-  - source: source.mm
-    page: 77
-    relation: defines
-    note: "Essence Index"
-
+  - {source: source.mm, page: 77, relation: defines, note: Essence Index}
 notes: []
+headline: 'Essence Index — FASA7126 Man & Machine, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop rules, printed p77/PDF78'
+framing: reference_exact
