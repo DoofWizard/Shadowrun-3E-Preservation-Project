@@ -3,9 +3,28 @@ record_type: entity
 name: "Nanite Hive"
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: "90-91"
+pdf_pages: "91-92"
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic: {essence: 0.7, cost_nuyen: 80000, availability: "18/2 mo", street_index: 4, legality: "4P-R"}
+data:
+  classification: cyberware
+  supported_system: free-floating nanoware
+  programmed_breeds_per_hive: 1
+  programmable_after_creation: false
+  restoration_percent_per_day: 5
+  example_deadly_wound_full_recovery_days: 10
+  replenishment_interval_months_approximate: 6
+  replenishment_cost_fraction_of_breed_price: 0.10
+  cyberlimb_installation:
+    essence: 0.1
+    ecu: 1
+    concealability_modifier: -1
 links: {uses: [rule.nanotech.nanite-loss], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 91, relation: defines, note: "Nanite Hive description, game effects and statistics"}
-notes:
-  - "Maintains and replenishes a programmed free-floating nanoware system and requires periodic replacement material."
+  - {source: source.mm, pages: "90-91", relation: defines, note: "Nano-implant classification, hive game effects and market row"}
+notes: []
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp90-91/PDF91-92: Nanite Hive restoration and installation"
+framing: reference_exact
