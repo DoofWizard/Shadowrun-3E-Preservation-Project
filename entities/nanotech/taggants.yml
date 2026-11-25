@@ -4,8 +4,8 @@ name: Taggants
 domain: nanotech
 status: ingested
 source: source.mm
-printed_pages: '94-95'
-pdf_pages: '95-96'
+printed_pages: '85,94-95'
+pdf_pages: '86,95-96'
 edition_scope: SR3
 content_class: [equipment_stat]
 intrinsic:
@@ -14,6 +14,7 @@ intrinsic:
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
   - {source: source.mm, pages: '94-95', relation: defines, note: 'Taggants, etchers and markers description, game effects and statistics'}
+  - {source: source.mm, page: 85, relation: extends, note: 'Human Augmentation and Medicine, standard EM cyberware scanner compatibility'}
 notes:
   - 'Fictional identification nanoware in the Shadowrun tabletop RPG. The source describes etchers as usually marking convicts or employees, in-world security systems attempting to tag runners for later identification, and message carriers who may be unaware.'
 data:
@@ -22,6 +23,7 @@ data:
     imprint: fictional_magnetic_metallic_bone_pattern
     detection: {devices: [MAD, cyberware_scanner], target_number: 3}
     readable_by: cyberware_scanner
+    standard_em_cyberware_scanner_can_read: true
     typical_data: [SIN, employee_ID]
     permanence: usually_permanent
     removal_options: [specially_programmed_etcher_nanites, surgery]
@@ -29,5 +31,5 @@ data:
     encoded_data_capacity_Mp: 5
     readable_by: nanoscanner
     in_world_uses: [identification, message_delivery]
-headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp94-95/PDF95-96: Taggants game effects'
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p85,94-95/PDF86,95-96: Taggants game effects and EM scanner compatibility'
 framing: reference_exact
