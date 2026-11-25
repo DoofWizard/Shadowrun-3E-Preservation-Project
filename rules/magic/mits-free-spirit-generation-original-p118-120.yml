@@ -1,0 +1,43 @@
+id: rule.magic.mits-free-spirit-generation-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '118-120'
+pdf_pages: '119-121'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 free spirit random generation and power tables (SR3)
+summary: FASA Corporation's Magic in the Shadows, fictional tabletop RPG rules, printed 118-120/PDF119-121.
+data:
+  type_roll: 1D6 on each table, following redirects; roll again for unclassified if GM does not choose a type.
+  type_tables:
+    basic: {'1': other table 2, '2-3': elemental table 3, '4': nature table 4, '5': ally, '6': toxic then table 4}
+    other: {'1-2': elements table 5, '3': loa table 6, '4': insect table 7, '5': 'reroll: 1-3 blood spirit, 4-6 zombie', '6': unclassified}
+    elemental: {'1-3': 'reroll: 1-3 fire, 4-6 water', '4-6': 'reroll: 1-3 air, 4-6 earth'}
+    nature: {'1-2': 'man: reroll 1-3 city, 4-5 hearth, 6 field', '3-4': 'land: reroll 1 desert, 2-3 forest, 4 mountain, 5-6 prairie', '5': 'sky: reroll 1 mist, 2-3 storm, 4-6 wind', '6': 'water: reroll 1-2 lake, 3-4 river, 5 sea, 6 swamp'}
+    elements: {'1': gnome, '2': manitou, '3-4': salamander, '5': sylph, '6': undine}
+    loa: {'1': 'reroll: 1-3 Agwe, 4-6 Azaca', '2': Erzulie, '3': 'reroll: 1-3 Damballah, 4-6 Obatala', '4': Ghede, '5': 'reroll: 1-3 Ogoun, 4-6 Shango', '6': Legba}
+    insect: {'1': ant, '2': fly, '3': mantid, '4': roach, '5': wasp, '6': 'reroll: 1 beetle, 2 cicada, 3 firefly, 4-5 mosquito, 6 termite'}
+  insect_form_1d6: {'1-5': true form, '6': flesh form}
+  great_form_2d6: [2, 12]
+  force_roll: 2D6 unless chosen by GM
+  energy_roll: 2D6 times 10 percent of Force, rounded up; roll 11 counts as 0 percent and roll 12 as 10 percent.
+  energy_example: Force 7 and roll 7 give Spirit Energy 5.
+  power_count: General rule grants 1D3 on becoming free; random GM generation instructs 1D6 additional powers. Preserve both procedures.
+  power_roll: 3D6 per additional power
+  power_columns: [elemental or blood, nature or elements, ally or loa, insect]
+  power_rows:
+    '3-4': [Animal Form, Human Form, Animal Form, Personal Domain]
+    '5-6': [Astral Gateway, Possession, Astral Gateway, Dispelling]
+    '7': [Possession, Astral Gateway, Possession or Sorcery, Possession]
+    '8-9': [Aura Masking, Aura Masking, Human Form, Human Form]
+    '10-11': [Human Form, Animal Form, Hidden Life, Aura Masking]
+    '12-13': [Sorcery, Personal Domain, Aura Masking, Astral Gateway]
+    '14': [Dispelling, Dispelling, Aura Masking, Sorcery]
+    '15-16': [Hidden Life, Hidden Life, Dispelling, Hidden Life]
+    '17': [Wealth, Wealth, Wealth, Animal Form]
+    '18': [Personal Domain, Sorcery, Personal Domain, Wealth]
+  ally: Retains original powers; design as an ally first; estimate design Karma by rolling one open-ended D6 per Force point, sum times 2.
+  gm_override: GM may select powers even outside normal free spirit powers; may add minor flavor powers.
+  comparison: Adds all seven type tables, ten power rows, exceptional energy rolls, great form and ally costs to rule.spirits.designing-free-spirits.
