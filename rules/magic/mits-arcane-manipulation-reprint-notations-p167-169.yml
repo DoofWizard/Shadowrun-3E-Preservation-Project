@@ -1,0 +1,72 @@
+id: rule.magic.mits-arcane-manipulation-reprint-notations
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '167-169'
+pdf_pages: '168-170'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Arcane Lore Manipulation reprint notation — FASA Corporation Magic in the Shadows (FASA7907), SR3 fictional tabletop RPG, printed pp167–169/PDF168–170
+summary: Arcane Lore target qualifiers and range codes for all 23 starred Manipulation spell rows; source-specific notation alongside the closed FASA7001 spell profiles.
+data:
+  source_identity: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG supplement
+  core_reference_manifest_blob: b0ebffa4985ab544e64857b99e98b17d69ee3184
+  row_columns: [name, target, range]
+  control_printed_167_pdf_168:
+    core_path: rules/magic/sr3-core-control-manipulation-numeric-p196.yml
+    core_blob: 50b1465ac2b06fa7ab845b2661a3cbf0a65854d4
+    rows:
+      - [Control Actions, 'W(T)', LOS]
+      - [Control Emotion, 'W(T)', LOS]
+      - [Control Thoughts, 'W(T)', LOS]
+      - [Influence, 'W(T)', LOS]
+    qualifier: Threshold notation does not imply consent to fictional magical compulsion; the separate core resistance and command exceptions remain intact.
+  elemental_printed_168_pdf_169:
+    core_path: rules/magic/sr3-core-elemental-manipulation-exact-p196-197.yml
+    core_blob: 9a1157a773a09098e9114e29ba2e827f37a06583
+    rows:
+      - [Acid Stream, '4(RC)', LOS]
+      - [Ball Lightning, '4(RC)', 'LOS(A)']
+      - [Fireball, '4(RC)', 'LOS(A)']
+      - [Flamethrower, '4(RC)', LOS]
+      - [Lightning Bolt, '4(RC)', LOS]
+      - [Toxic Wave, '4(RC)', 'LOS(A)']
+    qualifier: Ranged combat notation does not replace the core attack-test and secondary-effect conditions.
+  telekinetic_printed_168_pdf_169:
+    core_path: rules/magic/sr3-core-telekinetic-manipulation-exact-p197-198.yml
+    core_blob: 3b8516e1350de4ab50897788479ad66c3b104660
+    rows:
+      - [Clout, '4(RC)', LOS]
+      - [Fling, '4(RC)', T]
+      - [Levitate, '4(R)', LOS]
+      - [Magic Fingers, 6, LOS]
+      - [Poltergeist, '4(R)', 'LOS(A)']
+    qualification: Fling's table target is 4(RC), while the core stat line directs the reader to its text; retain the separate core ranged-combat, touch, range and mass rules. Levitate and Poltergeist resistance notation does not erase their separate test conditions.
+  transformation_printed_168_169_pdf_169_170:
+    core_path: rules/magic/sr3-core-transformation-manipulations-exact-p198.yml
+    core_blob: 052fc7933e47c27ba3b92c337178bb6564bda2ec
+    printed_168_rows:
+      - [Armor, 6, LOS]
+      - [Astral Barrier, 6, 'LOS(A)']
+      - [Ice Sheet, 4, 'LOS(A)']
+      - [Ignite, '4(T)', LOS]
+      - [Light, 4, 'LOS(A)']
+    printed_169_rows:
+      - [Petrify, 'B(T)', LOS]
+      - [Physical Barrier, 6, 'LOS(A)']
+      - [Shadow, 4, 'LOS(A)']
+    source_drain_notation_difference:
+      spell: Shadow
+      core_printed_198: '+2M'
+      mits_printed_169: '+2(M)'
+      disposition: Preserve both literal forms; no automatic cross-source substitution.
+    qualification: Ignite and Petrify carry threshold markers; their distinct core threshold formulas and subject restrictions remain preserved.
+  scope_limits:
+    - The table key supplies the interpretation of T, R, RC and A in their respective columns. Source-specific target and range notation is retained without duplicating core effect profiles.
+    - Influence's parenthesized Drain notation in this table differs literally from the bare S in the pinned core record; do not infer a substantive difference solely from punctuation.
+    - Source-specific rows and pinned core records are not evidence of engine execution or formal book acceptance.
+  review:
+    original_pages: Fresh verified original Drive PDF; publication identity PDF1 and p6/PDF7; all 23 starred Manipulation rows on printed pp167–169/PDF168–170 directly inspected against the four pinned core records.
+    reviewed_text_paths: [edition_scope, headline, summary, 'data.*']
+    scope: Control, elemental, telekinetic and transformation reprint notation only. Magical Gear and Adept Powers remain separate.
