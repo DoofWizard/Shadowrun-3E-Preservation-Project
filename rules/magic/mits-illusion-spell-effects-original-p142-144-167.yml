@@ -1,0 +1,118 @@
+id: rule.magic.mits-illusion-spell-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '142-144, 167'
+pdf_pages: '143-145, 168'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Illusion spell qualifications and table codes, printed pp142-144 and 167
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition, printed pp142-144 and 167/PDF143-145 and 168; fictional tabletop rules supplementing existing spell entities.
+data:
+  agony:
+    entities: [entity.spell.agony, entity.spell.mass-agony]
+    printed_page: 142
+    penalty: Stun damage track modifier for net successes in boxes
+    maximum_successes: 2 * Force
+    actual_damage: false
+    incapacitation_successes: 10
+    incapacitation: Cannot move or act.
+    exception_test: Willpower (Force) each Initiative Pass with an available action
+    exception_success_condition: More successes than the caster scored
+    exception_action_count: 1
+    exception_tn_modifier: 4
+  blindness:
+    entities: [entity.spell.blindness, entity.spell.mass-blindness]
+    printed_page: 143
+    visual_perception_tn_modifier: min(net successes, Force)
+    seeing_requires: Simple Action and Perception Test
+    affects: [cybereyes, cameras, other visual sensors]
+  chaff:
+    entities: [entity.spell.chaff, entity.spell.flak]
+    printed_page: 143
+    eligible: Nonliving sensor devices only
+    tn_modifier: min(Sorcery Test successes, Force)
+  dream:
+    entity: entity.spell.dream
+    printed_page: 143
+    target_condition: sleeping
+    actual_harm: false
+    successes_determine: vividness and complexity
+    severe_nightmares: No Stun recovery while present; rest during that interval is lost.
+    memory_on_waking: vivid
+    ritual_sorcery_use: supported
+  flash:
+    entity: entity.spell.flash
+    printed_page: 143
+    resistance: Intelligence
+    tn_modifier: min(net successes, Force)
+    modifier_delta_per_full_combat_turn: -2
+    flare_compensation_cyberware_modifier_delta: -2
+    affects: [cameras, cybereyes, other sensors]
+  stink:
+    entities: [entity.spell.stink, entity.spell.stench]
+    printed_page: 143
+    tn_modifier: min(net successes, Force)
+    optional_gm_condition: TN modifier exceeds Willpower
+    optional_gm_test: Body (Force) at start of each Combat Turn
+    optional_gm_failure: Entire turn spent vomiting.
+  camouflage:
+    entities: [entity.spell.camouflage, entity.spell.physical-camouflage]
+    printed_page: 143
+    tn_modifier: 4
+    applies_to: [Perception to see subject, ranged attacks against subject]
+    mana_version: living observers
+    physical_version: also technological sensors
+  double_image:
+    entities: [entity.spell.double-image, entity.spell.physical-double-image]
+    printed_page: 143
+    touch_required: true
+    effect: Adjacent duplicate mimics subject; caster has limited movement control, with confined spaces potentially difficult.
+    incomplete_resistance: Duplicate indistinguishable by sight, sound or smell.
+    substantial: false
+    attacks_pass_through: [bullets, melee attacks]
+    physical_version: also technological sensors
+  foreboding:
+    entity: entity.spell.foreboding
+    printed_page: 143
+    eligible: living beings entering area
+    stay_or_traverse_test: Opposed Willpower Test against spell net successes
+    failure: Must immediately leave area.
+  hot_potato:
+    entity: entity.spell.hot-potato
+    printed_page: 143
+    effect: Area illusion of extreme heat in metal.
+    incomplete_resistance: Opposed Willpower Test against spell net successes
+    failure: Drop held metal and remove worn metal.
+    continued_contact_tn_modifier: min(spell net successes, Force)
+  vehicle_mask:
+    entity: entity.spell.vehicle-mask
+    printed_page: 144
+    eligible: vehicles including drones
+    maximum_vehicle_body: Force
+    apparent_vehicle_size: approximately same Body
+    signature_change_per_two_net_successes: 1
+    signature_change_directions: [increase, decrease]
+    maximum_signature_modifier: Force
+  table:
+    printed_page: 167
+    columns: [entity, type, target, duration, range, drain]
+    rows:
+      - [agony, M, W(R), S, LOS, (M)]
+      - [blindness, P, I(R), S, LOS, +1(M)]
+      - [chaff, P, OR, S, LOS, (S)]
+      - [dream, M, W(R), S, LOS, (M)]
+      - [flak, P, OR, S, LOS(A), (D)]
+      - [flash, P, I(R), I, LOS(A), (S)]
+      - [mass-agony, M, W(R), S, LOS(A), (S)]
+      - [mass-blindness, P, I(R), S, LOS(A), +1(S)]
+      - [stench, M, W(R), S, LOS(A), (S)]
+      - [stink, M, W(R), S, LOS, (M)]
+      - [camouflage, M, 4(R), S, LOS, (L)]
+      - [double-image, M, 4(R), S, T, (S)]
+      - [foreboding, M, 4(R), S, LOS(A), (D)]
+      - [hot-potato, M, 4(R), S, LOS(A), (M)]
+      - [physical-camouflage, P, 4(R), S, LOS, +1(L)]
+      - [physical-double-image, P, 4(R), S, T, +1(S)]
+      - [vehicle-mask, P, 4(R), S, LOS, +1(S)]
