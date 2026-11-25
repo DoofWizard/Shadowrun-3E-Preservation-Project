@@ -1,0 +1,51 @@
+id: rule.magic.mits-gear-market-original-qualifiers
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '169-170'
+pdf_pages: '170-171'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Magical Gear Table residual pricing and availability rules (printed pp169-170/PDF170-171)
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition fictional tabletop role-playing game; source-specific game-market qualifiers and omitted rows.
+data:
+  anchoring_market:
+    entity: entity.magic.anchoring-focus
+    expendable_unbonded_availability: '4/48 hrs'
+    reusable_unbonded_availability: '5/48 hrs'
+    bonded_purchase:
+      availability_increment: '2/48 hrs'
+      street_index_multiplier: 2
+      base_cost_multiplier: 5
+      linked_spell_surcharge: '1,000 nuyen x Force for any linked spells'
+      examples_reference_printed_page: 71
+  spell_formula_market:
+    rule: rule.magic.spell-formula-market
+    street_index_by_drain: {L: 2, M: 2, S: 2, D: 2}
+    legality_code: '(8 - Force)P-T'
+    legality_applies_to: [combat spell formulas, elemental manipulation spell formulas, other spell formulas above Force 3]
+  security_gear_market:
+    biofiber:
+      entity: entity.magic.biofiber
+      availability: 'Force/1 wk'
+      street_index: 2
+      legality: Legal
+    fab_strain_i:
+      entity: entity.magic.fab-strain-i
+      aerosol_packages:
+      - {volume_cubic_meters: 50, availability: '6/1 wk', cost_nuyen: 5000, street_index: 2, legality: '9P-U'}
+      - {volume_cubic_meters: 500, availability: '8/2 wks', cost_nuyen: 45000, street_index: 2, legality: '8P-U'}
+    fab_strain_ii:
+      entity: entity.magic.fab-strain-ii
+      aerosol: {availability: '(Force)/2 wks', cost_nuyen_per_cubic_meter: '5 x Force', street_index: 2, legality: '8P-U'}
+      encased_nutrient_colony: {availability: '(Force x 2)/2 wks', cost_nuyen_per_cubic_meter: '10 x Force', street_index: 2, legality: '8P-U'}
+    guardian_vines:
+      entity: entity.magic.guardian-vines
+      availability: '(Force x 2)/1 mo'
+      street_index: 5
+      legality: '8P-Z'
+    magemask:
+      entity: entity.magic.magesmask
+      original_table_label: Magemask
+  scope_limits: Existing matching prices and other fields remain in their canonical entities and market rules; this supplement adds missing qualifiers and market rows without replacing those records.
