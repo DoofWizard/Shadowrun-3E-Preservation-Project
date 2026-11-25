@@ -1,0 +1,43 @@
+id: rule.vehicles.r3-revised-chassis-selection-qualifications-p108-109
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '108-109'
+pdf_pages: '110-111'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro Rigger 3 Revised (FanPro10662), SR3 fictional tabletop RPG, printed pp108-109/PDF110-111
+summary: Chassis selection qualifications for submarine sealing, UAV profiles, special vehicle control, subtype design limits and the race-car example.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_id: source.fanpro-10662, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  submarine_category: {printed_page: 108, pdf_page: 110, automatic_enviroseal_options: [water, engine], removable: false}
+  vectored_thrust_uav:
+    printed_page: 108
+    pdf_page: 110
+    default_takeoff_profile: VTOL
+    optional_downgrade: VSTOL
+    vstol_chassis_cost_multiplier: 0.5
+    vstol_stall_speed_meters_per_turn: {body_multiplier: 30}
+    vstol_operating_rules_reference: LAV rules p69
+  special_vehicle_control:
+    printed_page: 109
+    pdf_page: 111
+    normal_skill: Special Skill
+    defaulting: In most cases a relevant Vehicle Skill can be used as though it belongs to the skill group; SR3 p84.
+    vcr_defaulting_modifier_multiplier: 0.5
+    vcr_condition: Character with VCR operating a rigged vehicle.
+  special_vehicle_design:
+    printed_page: 109
+    pdf_page: 111
+    semiballistic: {takeoff_profile: Standard, landing_requires_special_runway: true}
+    suborbital: {landing_takeoff_profile: Standard, improved_takeoff_landing_profile_allowed: false}
+    trailer: {power_plant_allowed: false}
+  sports_car_worked_example:
+    printed_page: 109
+    pdf_page: 111
+    removed: [two doors, one extra seat]
+    retained_entry: top
+    starting_cf_increase: 6
+    starting_load_kg_increase: 100
+    chassis_design_points_paid: 125
