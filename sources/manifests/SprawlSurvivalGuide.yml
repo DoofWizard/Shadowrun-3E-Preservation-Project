@@ -513,12 +513,20 @@ bookwide_mechanical_reconciliation_2026_11_25:
     - printed: [14, 20]
       pdf: [15, 21]
       scope: welcome_to_the_jungle
-      state: reviewed_one_new_equipment_record_accepted_other_reference_qualifications_pending
-      accepted: equipment.ssg-disposable-flats-p18
-      remaining_bounded_comparison:
-        - "p14: coffin hotel dimensions and attributed troll-size variant; descriptive spatial reference, compare existing accommodation canon before deciding whether to index."
-        - "p17: typical delivery timing; distinguish contextual estimates from game-rule thresholds."
-        - "p18: automated-store access conditions; compare existing in-game identity/credstick canon without adding an unsupported test."
+      state: coverage_reviewed_with_individually_confirmed_indexed_references
+      accepted:
+        - equipment.ssg-disposable-flats-p18
+        - reference.ssg-coffin-hotel-dimensions-p14
+        - rule.ssg-lodging-access-p14
+        - rule.ssg-automated-transport-payment-p17
+        - rule.ssg-automated-store-entry-p18
+      contextual_reference_only:
+        - "p17/PDF18: ordinary online goods usually arrive in one or two days or overnight; restaurants and grocery stores typically deliver within two hours. These are descriptive expectations, not guaranteed deadlines, Availability rules, or dice thresholds."
+      reviewed_qualifications:
+        - "p14 typical dimensions are approximate; troll-size extra dimension is attributed to Sable, not a universal accommodation specification."
+        - "p14 booking and key expiry and p17 payment/parking conditions are source-specific; no invented test."
+        - "p18 both positive balance and negative warrant check are required; no separate game test specified."
+      acceptance_scope: "Four new records individually confirmed and indexed; no formal natural-section or whole-source acceptance claimed."
     - {printed: [21, 36], pdf: [22, 37], scope: entertainment, state: not_reconciled}
     - {printed: [37, 42], pdf: [38, 43], scope: the_system, state: not_reconciled}
     - {printed: [43, 58], pdf: [44, 59], scope: society, state: not_reconciled}
@@ -552,6 +560,6 @@ bookwide_mechanical_reconciliation_2026_11_25:
   remaining_unreconciled_natural_scopes: 12
   remaining_unreconciled_pdf_pages: 97
   remaining_mechanical_field_count: unknown
-  next_cursor: "Finish bounded p14/p17/p18 reference comparisons, then Entertainment p21/PDF22."
+  next_cursor: "Entertainment p21/PDF22 through printed p36/PDF37; reconcile all game-affecting fields before advancing."
   source_formal_acceptance: not_claimed
   global_page_advance: 0
