@@ -3316,6 +3316,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_nanotech_surgery_prerequisite_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed p84/PDF85 and publisher PDF5; prior confirmed pp83-86,96-97 fields retained."
+    records:
+      - id: rule.nanotech.pilot-and-programming
+        path: rules/nanotech/pilot-and-programming.yml
+        printed: "83-86,96-97"
+        pdf: "84-87,97-98"
+        commit: "4d3ea8330b4096820aaf51a7891c605a85e37874"
+        blob: "1f1306567eb376ce7503c38a1dd780c9ff4ed6b2"
+        baseline_sha256: "77e09613859e8783c874800e4838942b752ccca628b33d3ce6cf6954b3a64dbd"
+        candidate_sha256: "fe117dcfb02a0bd260dd2ad5faf0b777b9415d4a1a14f5b8304eeeac2ba2d2ad"
+        immutable_sha256: "3da7a0a151af33fdb08faae4810ad8900e444f7c15f4c71e6b547164b612b34d"
+        gate: verified
+        recovery_inspect: verified
+        fields: "P84 fictional cybernetic surgery technology prerequisite, roles and named examples; no universal Nanosurgery option or additional test inferred. Supersedes blob 4c6849c6417d9e631b0448b774fb53db88d2dd3c."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3372,11 +3392,11 @@ source_field_review:
         remaining: "Include p76 boundary; Excessive Bioware example correction deferred; Bio Index and Magic Effects original receipt debt; preserve printed grade label."
       - scope: "Nanotechnology context"
         printed: "80-89"
-        state: partial_review
-        evidence: [confirmed_nanotech_context_limits_2026_11_25, confirmed_nanodrone_field_backfill_2026_11_23, confirmed_nanite_persistence_limits_2026_11_25]
-        original_images_reviewed: "Printed pp80-89/PDF81-90, including unnumbered illustration PDF82; publication PDF5."
-        note: "Introductory replication timing, environmental and autonomy limits bound to current Pilot record; p86 no-rigging restriction agrees with existing direct-control record. Corporate research descriptions and historical context deferred to lore. No formal new manufacturing test inferred."
-        remaining: "Review binding for p84 cybernetic surgery prerequisite. P85 standard EM scanner compatibility is confirmed in confirmed_taggants_em_scanner_2026_11_25; p90 corporate continuation has been visually inspected and contains no additional formal game test before the Nanotech Gear heading."
+        state: scoped_reconciled
+        evidence: [confirmed_nanotech_context_limits_2026_11_25, confirmed_nanodrone_field_backfill_2026_11_23, confirmed_nanite_persistence_limits_2026_11_25, confirmed_taggants_em_scanner_2026_11_25, confirmed_nanotech_surgery_prerequisite_2026_11_25]
+        original_images_reviewed: "Cumulative printed pp80-89/PDF81-90, including unnumbered illustration PDF82; publication PDF5. Current p84-85 and p90 continuation visually reviewed."
+        note: "Introductory replication, environment, autonomy, cybernetic surgery and scanner compatibility fields bound to confirmed current records; prior p86 no-rigging restriction retained. No additional formal manufacturing or surgical test inferred. Corporate descriptions and historical context deferred to lore."
+        remaining: "No demonstrated residual mechanical gap from the cumulative context review; formal whole-book acceptance and engine testing remain separate."
       - scope: "Nano-implants and nanoware"
         printed: "90-95"
         state: partial_review
