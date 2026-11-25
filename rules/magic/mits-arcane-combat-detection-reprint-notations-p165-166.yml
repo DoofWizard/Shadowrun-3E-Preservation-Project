@@ -1,0 +1,61 @@
+id: rule.magic.mits-arcane-combat-detection-reprint-notations
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '165-166'
+pdf_pages: '166-167'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Arcane Lore combat and detection reprint notation — FASA Corporation Magic in the Shadows (FASA7907), SR3 fictional tabletop RPG, printed pp165–166/PDF166–167
+summary: Source-specific Arcane Lore target and range codes for twenty starred core spells; core spell effects and already accepted mechanics remain in the closed FASA7001 records.
+data:
+  source_identity: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG supplement
+  core_reference_manifest_blob: b0ebffa4985ab544e64857b99e98b17d69ee3184
+  comparison_basis: The asterisk on these rows identifies core spells. The supplement table supplies explicit target and range notation; preserve that notation without treating all literal differences as mechanical conflicts.
+  columns: [name, target, range]
+  combat_printed_165_pdf_166:
+    core_path: rules/magic/sr3-core-combat-spells-statblocks-p191.yml
+    core_blob: eef1c046fdfcc7164370346c9ea7d7a2497b2b84
+    rows:
+      - [Death Touch, 'W(R)', T]
+      - [Manaball, 'W(R)', 'LOS(A)']
+      - [Manabolt, 'W(R)', LOS]
+      - [Powerball, 'B(R)', 'LOS(A)']
+      - [Powerbolt, 'B(R)', LOS]
+      - [Stunball, 'W(R)', 'LOS(A)']
+      - [Stunbolt, 'W(R)', LOS]
+  detection_printed_165_166_pdf_166_167:
+    core_refs:
+      - [rules/magic/sr3-core-detection-spells-statblocks-p192.yml, effe1eb39865ade5382bdbed0e8d746c7e0cf71c]
+      - [rules/magic/sr3-core-detection-spells-continuation-p193.yml, 86ce89378dcc12d94678c04a06aea21b32315f7f]
+      - [rules/magic/sr3-core-mind-probe-successes-p193.yml, 9c45f04b7ef879564fc5f13099bef72600fdbad8]
+    printed_165:
+      - [Analyze Device, OR, T/D]
+      - [Analyze Truth, 'W(R)', T/D]
+    printed_166:
+      - [Clairaudience, '6(R)', T/D]
+      - [Clairvoyance, '6(R)', T/D]
+      - [Combat Sense, '4', T]
+      - [Detect Enemies, 'DT(R)', T/A]
+      - [Detect Individual, 'DT(R)', T/A]
+      - [Detect Life, 'DT(R)', T/A]
+      - ['Detect (Life Form)', 'DT(R)', T/A]
+      - [Detect Magic, '6(R)', T/A]
+      - ['Detect (Object)', DT, T/A]
+      - [Mindlink, '4(V)', LOS/D]
+      - [Mind Probe, 'W(R)', T/D]
+  source_difference:
+    spell: Detect Magic
+    supplement_table_target: '6(R)'
+    core_canon_target: See Detection Spell Target Number table on original p192
+    status: unresolved_cross_source_target_difference
+    handling: Preserve both source-specific entries; no supersession or conversion inferred.
+  qualifications:
+    - Interpret R only under the supplement key's unwilling-target condition; no new resistance by voluntary recipients is inferred.
+    - Mindlink carries the voluntary-target qualifier; its directional line-of-sight code does not replace the core rules for later movement.
+    - Type, duration and Drain effects remain in the pinned core records. Differences in notation, formatting and absent dedicated range fields are not by themselves rule contradictions.
+  review:
+    original_pages: Fresh Drive original, cover PDF1 and introduction printed p6/PDF7; pp165–166/PDF166–167 with all twenty starred rows and table key directly inspected.
+    text_paths: [edition_scope, headline, summary, 'data.*']
+    scope: Supplement table notation only. No new effect profiles or changes to closed core; Health, Illusion and Manipulation reprints are outside this record.
