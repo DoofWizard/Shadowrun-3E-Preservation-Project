@@ -3276,6 +3276,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_nanotech_context_limits_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp80-89,96-97/PDF81-90,97-98 and publisher PDF5."
+    records:
+      - id: rule.nanotech.pilot-and-programming
+        path: rules/nanotech/pilot-and-programming.yml
+        printed: "83-86,96-97"
+        pdf: "84-87,97-98"
+        commit: "96eef47abfbdb84efcd3496db09ddb8bf352f162"
+        blob: "4c6849c6417d9e631b0448b774fb53db88d2dd3c"
+        baseline_sha256: "a35b744a98ba3ee4eeb35b195cb7313d7b4a50c9e96ad0ee3105af4dddb66e6a"
+        candidate_sha256: "dc2fcf0930767d1a02d5b9a249219f0751ef28d828b9135685adcd2a40b5c555"
+        immutable_sha256: "c756baad56b0e26fdd66481ca6195faff8271d8c37cc2ef77958ff9d206f8716"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Original contextual replication limits and separate timing statements, external control, physical and energy limitations. No new manufacturing test invented. Existing Pilot and facility mechanics retained; supersedes blob 63b3845051f06d2d608c4020b21de289cbf25492."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3332,8 +3352,11 @@ source_field_review:
         remaining: "Include p76 boundary; Excessive Bioware example correction deferred; Bio Index and Magic Effects original receipt debt; preserve printed grade label."
       - scope: "Nanotechnology context"
         printed: "80-89"
-        state: field_review_not_demonstrated
-        remaining: "Check embedded game information, not only titled rules."
+        state: partial_review
+        evidence: [confirmed_nanotech_context_limits_2026_11_25, confirmed_nanodrone_field_backfill_2026_11_23, confirmed_nanite_persistence_limits_2026_11_25]
+        original_images_reviewed: "Printed pp80-89/PDF81-90, including unnumbered illustration PDF82; publication PDF5."
+        note: "Introductory replication timing, environmental and autonomy limits bound to current Pilot record; p86 no-rigging restriction agrees with existing direct-control record. Corporate research descriptions and historical context deferred to lore. No formal new manufacturing test inferred."
+        remaining: "Review bindings for p84 cybernetic surgery prerequisite and p85 standard EM scanner identification of fictional skull imprint, including whether separate mechanics already exist. Check p90 continuation of corporate context as part of next scope."
       - scope: "Nano-implants and nanoware"
         printed: "90-95"
         state: partial_review
