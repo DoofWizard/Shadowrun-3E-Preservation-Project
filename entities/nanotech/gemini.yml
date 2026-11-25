@@ -1,11 +1,25 @@
 id: entity.nanotech.gemini
 record_type: entity
-name: "Gemini"
+name: Gemini
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Transient", cost_nuyen_per_dose: 20500, availability: "14/48 hrs", street_index: 3, legality: "2-Y"}
+source: source.mm
+printed_pages: '93'
+pdf_pages: '94'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Transient, cost_nuyen_per_dose: 20500, availability: '14/48 hrs', street_index: 3, legality: 2-Y}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 93, relation: defines, note: "Gemini fictional nanotech compound, game effects and statistics"}
+  - {source: source.mm, page: 93, relation: defines, note: 'Gemini fictional nanotech compound, game effects and statistics'}
 notes:
-  - "Preserved as fictional Shadowrun game data; produces a programmed emotional state under an external trigger and carries the source's addiction code."
+  - 'In the fictional RPG, the affected character is compelled to exhibit a programmed emotional state when triggered; this is not voluntary.'
+data:
+  compound_table: {vector: Injection, speed: '1 minute', damage: '-', addiction: 6M, tolerance: '-', edge: '2/20', fix_factor: '3 days'}
+  emotional_state: preprogrammed state on trigger
+  mandatory_roleplay_duration: duration of nanites existence
+  alternative_emotion_test: {action: Complex Action, attribute: Charisma, target_number: 8, success_duration_combat_turns: 1, afterwards: programmed state returns}
+  willpower_bonus_while_affected: 1
+  reduced_effect_alternative_emotion_tn: 6
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p93/PDF94: Gemini game effects'
+framing: reference_exact
