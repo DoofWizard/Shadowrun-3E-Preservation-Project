@@ -1,18 +1,47 @@
 id: entity.bioware.adrenal-pump
 record_type: entity
-name: "Adrenal Pump"
+name: Adrenal Pump
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '63-64'
+pdf_pages: '64-65'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 1.25, availability: "10/16 days", cost_nuyen: 60000, street_index: 3, legality: "5P-R"}
-    2: {bio_index: 2.50, availability: "10/16 days", cost_nuyen: 100000, street_index: 3, legality: "5P-R"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {bio_index: 1.25, availability: '10/16 days', cost_nuyen: 60000, street_index: 3, legality: 5P-R}
+    '2': {bio_index: 2.50, availability: '10/16 days', cost_nuyen: 100000, street_index: 3, legality: 5P-R}
+data:
+  duration_combat_turns: '1D6 per level'
+  activation:
+    involuntary: Physical or Stun damage
+    pain_blocking_exception: triggers only once wound modifiers apply
+    gm_discretion: other conditions or emotions; Fear critter power is a likely example
+    voluntary: ACTH game item (source p117)
+    suppression: MAO game item (source p120)
+  bonuses_per_level: {quickness: 1, strength: 2, willpower: 1, reaction: 2}
+  quickness_bonus_increases_reaction: false
+  reaction_bonus_increases_control_pool: false
+  quickness_and_willpower_bonuses_affect_combat_pool: true
+  crash:
+    resistance_attribute: Body
+    damage_level: Deadly Stun
+    power: number of Combat Turns of effect
+  recharge_minutes: '9 + 1D6'
+  early_reactivation_duration_multiplier: 0.5
+  early_reactivation_rounding: down
+  stress:
+    light: twitching and intermittent involuntary shaking
+    moderate: minus one die on all Athletics Tests
+    serious:
+      check: 2D6 on each activation
+      trigger_result: 2
+      consequence: Deadly Physical damage from cardiac arrest; no resistance test
+    deadly: cannot activate deliberately or from ordinary triggers; activates unpredictably
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "63-64", relation: defines, note: "Adrenal Pump description, game effects, stress effects and statistics"}
-notes:
-  - "Each level grants temporary Quickness, Strength, Willpower and Reaction bonuses while active; exact activation duration and crash effects are defined by the source."
+  - {source: source.mm, pages: '63-64', relation: defines, note: Game effects, Stress and both market rows}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp63-64/PDF64-65: Adrenal Pump'
+framing: reference_exact
