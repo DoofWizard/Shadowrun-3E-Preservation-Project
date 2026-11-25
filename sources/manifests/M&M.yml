@@ -3047,6 +3047,28 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_emergency_rating_example_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: source_pdf_hash_verified
+    verification_manifest_blob: "75b4be7e2d1b70c9906d40e65fae2e47d961db1c"
+    original_images_reviewed: "Printed pp142-144/PDF143-145; publisher copyright PDF5."
+    records:
+      - id: rule.surgery.provider-ratings
+        path: rules/surgery/provider-ratings.yml
+        printed: "142-144"
+        pdf: "143-145"
+        commit: "ddc5c8630d84f1c88be444ed890fc33f7b1e8a5f"
+        blob: "356e5fda9a56ff309e22c74013327eb5397d5133"
+        baseline_sha256: "c620d532786d9c8a5e4c5fabbae6d85d189ce615c2eefcc8b4bf5c330dc579a5"
+        candidate_sha256: "4ef649f6b94a47d1fa9c1a3c671ef792f845368496073832e88e44566652d692"
+        immutable_sha256: "a30ef05a640af532b22d7dc668651bbec83b4f5252f730087443ef7a70a56f7f"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Random-care source trigger and Twitch emergency rating worked example; independently reviewed numerical tables and modifiers unchanged."
+    supersedes_prior_record_blob: "7ad1a1b41489e9e617a8ce67a00e463ae2797b20"
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3136,7 +3158,7 @@ source_field_review:
       - scope: "Medical providers and surgical procedures"
         printed: "140-151"
         state: scoped_reconciled_pending_chapter_check
-        evidence: [confirmed_medical_provider_access_2026_11_25, confirmed_medical_search_2026_11_24, confirmed_medical_provider_ratings_2026_11_24, confirmed_implant_detection_2026_11_24, confirmed_surgery_cosmetic_therapeutic_implant_2026_11_23, confirmed_surgical_procedures_options_2026_11_23, confirmed_surgery_damage_costs_2026_11_23]
+        evidence: [confirmed_medical_provider_access_2026_11_25, confirmed_medical_search_2026_11_24, confirmed_medical_provider_ratings_2026_11_24, confirmed_emergency_rating_example_2026_11_25, confirmed_implant_detection_2026_11_24, confirmed_surgery_cosmetic_therapeutic_implant_2026_11_23, confirmed_surgical_procedures_options_2026_11_23, confirmed_surgery_damage_costs_2026_11_23]
         remaining: "Check unbound original fields across chapter; no reopening unchanged scopes absent discrepancy."
       - scope: "Equipment tables"
         printed: "152-158"
