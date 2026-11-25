@@ -3,9 +3,22 @@ record_type: entity
 name: "Nanite Facilitator"
 domain: nanotech
 status: ingested
+source: source.mm
+printed_pages: "90-91, 100"
+pdf_pages: "91-92, 101"
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic: {essence: 0.3, cost_nuyen: 9000, availability: "10/1 mo", street_index: 2, legality: "Legal"}
-links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
+data:
+  classification: cyberware
+  required_for: permanent or long-term free-floating nanoware
+  free_floating_time_loss_percent_per_day: 0
+  physical_damage_loss_percent_per_box: 5
+  blood_filtration_essence_reduction_per_level: 0.05
+  blood_filtration_reference: "SR3 p300"
+links: {uses: [rule.nanotech.nanite-loss], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, pages: "90-91", relation: defines, note: "Nanite Facilitator description, game effects and statistics"}
-notes:
-  - "Supports implanted nanoware and reduces degradation; blood-filtration cyberware modifies Essence cost as specified."
+  - {source: source.mm, pages: "90-91, 100", relation: defines, note: "Nano-implant classification, facilitator game effects, market row and Nanite Loss table"}
+notes: []
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp90-91,100/PDF91-92,101: Nanite Facilitator loss and Essence rules"
+framing: reference_exact
