@@ -1,11 +1,29 @@
 id: entity.nanotech.nanosymbiotes
 record_type: entity
-name: "Nanosymbiotes"
+name: Nanosymbiotes
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Free-floating", cost_nuyen: 70000, availability: "12/1 wk", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '93'
+pdf_pages: '94'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Free-floating, cost_nuyen: 70000, availability: '12/1 wk', street_index: 2, legality: Legal}
 links: {uses: [procedure.healing.natural-and-medical], requires: [], component_of: [], interacts_with: [entity.bioware.symbiotes]}
 sources:
-  - {source: source.mm, page: 93, relation: defines, note: "Nanosymbiotes description, game effects and statistics"}
+  - {source: source.mm, page: 93, relation: defines, note: 'Nanosymbiotes description, game effects and statistics'}
 notes:
-  - "Reduces healing base time in the fictional game rules; incompatible with ordinary symbiotes."
+  - 'Fictional RPG healing augmentation, incompatible with organic symbiotes.'
+data:
+  increased_food_intake_required: false
+  standard_base_healing_time_damage_levels_lower: 1
+  standard_healing_example: {wound: Moderate Physical, ordinary_base_days: 10, revised_base_hours: 24}
+  optional_healing_physical_damage:
+    printed_page: 134
+    wound_modifier_levels_lower: 1
+    example: {wound: Moderate, boxes_healed: 1, without_bioware: true, ordinary_base_hours: 48, revised_base_hours: 24}
+  nanite_loss_percent_per_damage_box: 5
+  compatible_with_symbiotes: false
+  reduced_effect_base_time_multiplier_after_normal_reduction: 1.5
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p93/PDF94: Nanosymbiotes game effects'
+framing: reference_exact
