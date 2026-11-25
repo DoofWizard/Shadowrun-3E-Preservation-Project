@@ -1,10 +1,26 @@
 id: entity.cyberware.balance-augmenter
 record_type: entity
-name: "Balance Augmenter"
+name: Balance Augmenter
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '13-14,153'
+pdf_pages: '13-14,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Balance Augmenter — SR3 balance and Knockdown tests
+summary: FASA7126 Man & Machine Cyberware, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed pp13-14,153/PDF13-14,154.
 intrinsic: {essence: 0.4, cost_nuyen: 14000, availability: "8/2 wks", street_index: 2, legality: "Legal"}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 14, relation: defines, note: "Cyberware table and Balance Augmenter rules"}
+  - {source: source.mm, page: 13, relation: defines, note: "Balance Augmenter game effects"}
+  - {source: source.mm, page: 14, relation: defines, note: "Cyberware table"}
+  - {source: source.mm, page: 153, relation: defines, note: "Equipment table"}
 notes: []
+data:
+  balance_skill_test_target_number_modifier: -2
+  balance_examples: [climbing, crossing a narrow platform, landing after a jump]
+  avoid_knockdown_target_number_modifier: -2
+  avoid_knockdown_reference: SR3 p124
+  intentional_fall_test: {attribute: Willpower, target_number: 4}
