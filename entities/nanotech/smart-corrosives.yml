@@ -1,11 +1,26 @@
 id: entity.nanotech.smart-corrosives
 record_type: entity
-name: "Smart Corrosives"
+name: Smart Corrosives
 domain: nanotech
 status: ingested
-intrinsic: {availability: "12/1 mo", cost_nuyen_per_dose: 7000, street_index: 3, legality: "3P-Y"}
+source: source.mm
+printed_pages: '96'
+pdf_pages: '97'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '12/1 mo', cost_nuyen_per_dose: 7000, street_index: 3, legality: 3P-Y}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 96, relation: defines, note: "Fictional Shadowrun smart-corrosive nanogear description and statistics"}
+  - {source: source.mm, page: 96, relation: defines, note: 'Fictional Shadowrun smart-corrosive nanogear description and statistics'}
 notes:
-  - "Fictional game item programmed to affect a specified material; this record preserves game classification/provenance without operational real-world chemistry."
+  - 'Fictional programmable nanoware in the Shadowrun tabletop RPG; no real-world chemistry specified.'
+data:
+  effect_limit: only_programmed_substance
+  other_materials_affected: false
+  target_substance_examples: [skin, metal, plasteel]
+  application_gear_reference: {source: source.mm, printed_page: 115, section: Chemtech Application Gear}
+  application_gear_examples: [squirtgun, spray_canister, splash_grenade]
+  listed_cost_includes_carried_corrosive: false
+  corrosive_rules_reference: {source: source.mm, printed_page: 111}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p96/PDF97: Smart Corrosives game effects'
+framing: reference_exact
