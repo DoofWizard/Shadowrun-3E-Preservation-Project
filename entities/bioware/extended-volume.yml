@@ -1,19 +1,39 @@
 id: entity.bioware.extended-volume
 record_type: entity
-name: "Extended Volume"
+name: Extended Volume
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '66'
+pdf_pages: '67'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   levels:
-    1: {bio_index: 0.2, availability: "4/4 days", cost_nuyen: 8000, street_index: 1, legality: "Legal"}
-    2: {bio_index: 0.3, availability: "4/4 days", cost_nuyen: 15000, street_index: 1, legality: "Legal"}
-    3: {bio_index: 0.4, availability: "4/4 days", cost_nuyen: 25000, street_index: 1, legality: "Legal"}
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+    '1': {bio_index: 0.2, availability: '4/4 days', cost_nuyen: 8000, street_index: 1, legality: Legal}
+    '2': {bio_index: 0.3, availability: '4/4 days', cost_nuyen: 15000, street_index: 1, legality: Legal}
+    '3': {bio_index: 0.4, availability: '4/4 days', cost_nuyen: 25000, street_index: 1, legality: Legal}
+data:
+  base_breath_hold_seconds: 45
+  additional_breath_hold_seconds_per_level: 45
+  stamina_test_target_modifier_per_level: -1
+  stamina_example: fatigue
+  stress:
+    light: recurrent hiccups and sleep apnea; poor sleep
+    moderate:
+      trigger: high anxiety or strenuous exertion
+      test: {attribute: Body, target_number: 8}
+      failure: hyperventilation
+      willpower_modifier: -1
+      damage: Light Stun
+    serious:
+      condition: hernia from diaphragm injury
+      strength_and_linked_skill_target_modifier: 1
+      damage_on_each_strength_or_linked_skill_test: 6L
+    deadly: Serious Physical wound from partial lung collapse until Stress falls below Deadly
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 66, relation: defines, note: "Extended Volume description, game effects, stress effects and statistics"}
-notes:
-  - "Each level increases breath-holding duration and affects stamina-related tests; stress effects are specified per severity."
+  - {source: source.mm, page: 66, relation: defines, note: Game effects, Stress and market rows; stamina and breath holding reference SRComp p47}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p66/PDF67: Extended Volume'
+framing: reference_exact
