@@ -194,3 +194,48 @@ verified_semantic_records:
     candidate_sha256: 09d2f77b2eded41864ded471c86c8fece9d12f755cd16b35f47759bd2d0ded46
     immutable_sha256: a188a5d9a7c945c07de03e66056fd6d5d992eaeeb8bfb372731358d46b3e07fd
     gate_status: verified
+
+# Mechanics-first closure review; separate from the historical directed-scan status.
+mechanical_closure_review:
+  source_pdf_sha256: c00cfac2526e33041d5adbd0faf5a5ebed27953e42afd2ec356d5e3caff0b08d
+  verification_manifest_blob: 70531ae1c30eccd235df1a42914a796b5a71df3e
+  verify_source: source_pdf_hash_verified
+  current_registration_index_blob: 912ea2717966bfe6bc5c9dc5ce8f2e9733a89e38
+  prior_scoped_closure_audits:
+    surge_p138_143: {path: sources/audits/FanPro10650-surge-p138-143-closure-2026-11-24.yml, blob: 1378fce106d4b2e58850e08653599cfef5cf692f}
+    new_critters_p143_145: {path: sources/audits/FanPro10650-new-critters-p143-145-closure-2026-11-24.yml, blob: 75c8d04bf51b2e71d663083569b09b62b3b2bd29}
+    dragon_totem_p145_146: {path: sources/audits/FanPro10650-dragon-totem-p145-146-closure-2026-11-24.yml, blob: aa67a875ab229ab6153573840a81b1ba2ec4f66f}
+    natural_orichalcum_p148_149: {path: sources/audits/FanPro10650-natural-orichalcum-p148-149-closure-2026-11-24.yml, blob: 1d67f99c6197af26adcc82290c36168530bed122}
+    shedim_p149_153: {path: sources/audits/FanPro10650-shedim-p149-153-closure-2026-11-24.yml, blob: 6f95fa2f40953ea41a62ca09deee833fd50500b3}
+    toxic_zones_p155_156: {path: sources/audits/FanPro10650-toxic-zones-p155-156-closure-2026-11-24.yml, blob: dc53e54b3e2bbe049c620e6a82bb4d59a5b1dadf}
+  scoped_review:
+    - {pdf_pages: "1-4", status: visually_reviewed_front_matter_no_independent_mechanics}
+    - {printed_pages: "4-34", pdf_pages: "5-35", status: earlier_directed_scan_only_mechanical_reconciliation_outstanding}
+    - {printed_pages: "35-41", pdf_pages: "36-42", status: prior_new_critters_audit_context_review}
+    - {printed_pages: "42-133", pdf_pages: "43-134", status: earlier_directed_scan_only_mechanical_reconciliation_outstanding}
+    - {printed_pages: "134-135", pdf_pages: "135-136", status: visually_reviewed_campaign_guidance_and_full_page_art}
+    - {printed_pages: "136", pdf_pages: "137", status: timeline_render_dark_and_clipped_unresolved_scan_quality, note: "Chronology table visible but some text unreadable; no missing text inferred. Not an accepted omission."}
+    - {printed_pages: "137", pdf_pages: "138", status: permanence_rule_confirmed_indexed_other_content_campaign_guidance, record: rule.character.yotc-surge-permanence-p137}
+    - {printed_pages: "138-145", pdf_pages: "139-146", status: prior_surge_and_new_critters_closures_reused}
+    - {printed_pages: "145-146", pdf_pages: "146-147", status: prior_dragon_totem_closure_reused_remaining_hysteria_guidance_visually_reviewed}
+    - {printed_pages: "147-148", pdf_pages: "148-149", status: visually_reviewed_ghost_stories_and_magic_campaign_guidance, note: "Magic examples and MITS pp83-88 references do not define an independent subsystem; orichalcum separately closed."}
+    - {printed_pages: "148-153", pdf_pages: "149-154", status: prior_orichalcum_and_shedim_closures_reused}
+    - {printed_pages: "153-156", pdf_pages: "154-157", status: regional_guidance_visually_reviewed_prior_toxic_zone_closure_reused}
+    - {printed_pages: "156-157", pdf_pages: "157-158", status: adventure_guidance_visually_reviewed_rojo_acceptance_deferred}
+    - {printed_pages: "158-160", pdf_pages: "159-161", status: visually_reviewed_index_no_independent_mechanics, note: "TOC lists Bagging a Body at p158, but actual heading is on p157; p158 is index."}
+    - {pdf_pages: "162", status: visually_reviewed_back_cover}
+  historical_acceptance_debt:
+    rojo_p157:
+      path: entities/spirits/rojo.yml
+      record_id: entity.spirit.rojo
+      printed_pages: "157"
+      pdf_pages: "158"
+      semantic_commit: 4e2725ff67b2f20b9b84b239c180158de93fd0ac
+      live_and_historical_blob: dfee0b76db8503214aea6c4fb87b19a1372bd118
+      present_day_source_review: "Great form city spirit; Force 9, Spirit Energy 5, seven listed powers all match."
+      missing_artifacts: [original_independent_baseline, original_prewrite_plan, original_candidate_digest_receipt, original_confirm_receipt, individual_manifest_index_receipt]
+      search: "Exact-path history contains one pre-gate commit; prior attached and Library journal search yielded no matching original Rojo transaction."
+      status: coverage_reviewed_acceptance_blocked_no_semantic_revision_warranted
+  next_cursor: "Printed pp4-21 embedded mechanics, then pp22-34; use original TOC/index and existing routing, not duplicate inventory."
+  whole_book_certification: false
+  globally_authorized_pages_added: 0
