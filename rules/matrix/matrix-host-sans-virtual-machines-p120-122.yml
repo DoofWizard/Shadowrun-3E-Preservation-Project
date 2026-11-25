@@ -10,15 +10,22 @@
     "rule_exact"
   ],
   "framing": "reference_exact",
-  "headline": "Special host and access-node game rules",
-  "summary": "Source-specific fictional tabletop mechanics supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "headline": "Matrix: host access nodes and virtual-machine resolution (FASA7909 pp120–122)",
+  "summary": "FASA Corporation’s original Shadowrun Third Edition Matrix supplement, printed pp120–122/PDF121–123; fictional tabletop game mechanics, including conditional effects and illustrative ratings.",
   "data": {
     "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
     "trap_doors": {
       "placement": "A game-world connection concealed within a host Control, Index, Files or Slave subsystem.",
       "locate_access_node": "Cannot discover it.",
       "analyze_subsystem": "Success in the containing subsystem reveals it.",
-      "transition": "Resolve the normal Logon operation to connected host/PLTG."
+      "transition": "Resolve the normal Logon operation to connected host/PLTG.",
+      "example": {
+        "printed_page": 120,
+        "entry_host_security": "Green-5",
+        "analyze_access": "No unusual connection is detected.",
+        "analyze_slave": "Reveals dedicated port to another host.",
+        "transition_test": "Successful Access Test to enter the other host."
+      }
     },
     "one_way_SAN": {
       "direction": "Normally outgoing only, even legitimate incoming users are barred.",
@@ -27,7 +34,8 @@
     "dead_end_hosts": {
       "normal_exit": "Reverse access is blocked; Gracefully Logoff is available. Hidden connection may provide another exit.",
       "forced_reverse": "Logon against previous host Access + 1D6.",
-      "decoys": "Locate Access Node, Locate File or Locate Slave can yield misleading pointers to these fictional trap hosts."
+      "decoys": "Locate Access Node, Locate File or Locate Slave can yield misleading pointers to these fictional trap hosts.",
+      "entry_configuration": "One one-way SAN admits entry but blocks ordinary return to the previous host."
     },
     "vanishing_SAN": {
       "availability": "Locate Access Node succeeds in locating it only while active; inactive returns inactive error. Logon to Host or LTG must succeed before closure.",
@@ -36,14 +44,30 @@
         20
       ],
       "window_combat_turns": "1D6+1",
-      "closure": "A connected Matrix user may be dumped immediately and suffer dump shock.",
+      "closure": "If the SAN closes while the user is connected through it from the Matrix, the user is immediately dumped offline and may suffer dump shock.",
       "freeze": "Successful Freeze Vanishing SAN operation keeps current user connected; other incoming access is refused until scheduled reappearance.",
-      "timed": "Same LTG code, fixed or algorithmic/random opening times. If timing unknown, a frame/agent can make recurring Locate Access Node game tests.",
-      "teleporting": "Grid/LTG address changes each activation, either within a grid or between RTGs. A passkey may automatically provide the appropriate game-world destination; change may be deterministic or random.",
-      "triggered": "Opens only on specified game-world trigger or sequence; may be combined with teleporting behavior."
+      "timed": "Same LTG code, fixed or algorithmic/random opening times. If the algorithm is known, the character can determine the opening time. If timing is unknown, a frame or agent can periodically perform Locate Access Node and alert the character when the SAN appears.",
+      "teleporting": "Grid/LTG address changes each activation, either within a grid or between RTGs; when it disappears its prior provider account and LTG code are canceled and replaced. A passkey may automatically provide the appropriate game-world destination; change may be deterministic or random.",
+      "triggered": "Opens only on a specified game-world trigger or sequence; triggers may include events outside the Matrix resulting from slave-device action or input. May be combined with teleporting behavior.",
+      "timed_example": {
+        "printed_page": 120,
+        "daily_opening_times": [
+          "0600",
+          "1200",
+          "1800"
+        ],
+        "time_zone": "Eastern Time"
+      },
+      "teleporting_example": {
+        "printed_page": 121,
+        "opening_GMT": "09:00:01",
+        "closing_GMT": "09:00:07",
+        "next_opening_GMT": "09:01:01",
+        "example_changes_RTG": true
+      }
     },
     "virtual_machines": {
-      "isolation": "Own security code, subsystem ratings, tally and IC. Actions and crash do not alter real host; crash dumps VM occupants. Downloaded decoy data can be replaced with worthless game data.",
+      "isolation": "Own security code, subsystem ratings, tally and IC. System Tests generate tally normally. Actions and crash do not alter real host; crash dumps VM occupants. In most cases, when the VM contains decoy paydata, it replaces the files with worthless game data when downloaded or otherwise transferred out.",
       "rating_limits": "Security Code no greater than real host; each subsystem rating maximum equals corresponding real-host rating minus 2.",
       "detect": "Analyze Host operation specifically checking for VM.",
       "breakout": {
@@ -55,9 +79,18 @@
           "Red": 4
         },
         "failure": "Increase security tally by shortfall in successes.",
-        "carryover": "All VM security tally carries into real host."
+        "carryover": "All VM security tally carries into real host.",
+        "threshold_basis": "Use the Security Code of the VM being exited, not the real host."
       },
-      "nesting": "Same rating constraints apply recursively to VMs nested within VMs."
+      "nesting": "Same rating constraints apply recursively to VMs nested within VMs.",
+      "entry": "Logon enters the simulated host instead of the real host; the user may not know this.",
+      "nesting_example": {
+        "printed_page": 122,
+        "next_VM_security": "Red-6",
+        "real_host_security": "Red-8",
+        "paydata_outcome": "The retrieved illustrative paydata has no real value.",
+        "logged_on_VM_security": "Green-4"
+      }
     }
   }
 }
