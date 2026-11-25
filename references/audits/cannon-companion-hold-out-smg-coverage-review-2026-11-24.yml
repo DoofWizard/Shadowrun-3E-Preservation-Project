@@ -1,0 +1,97 @@
+id: audit.cc.hold-out-smg-coverage-2026-11-24
+source: source.cc
+publication: Cannon Companion
+publisher: FASA Corporation
+edition: SR3
+catalog_number: FASA7908
+source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+source_verification: source_pdf_hash_verified
+status: coverage_only
+whole_source_certified: false
+globally_authorized_pages: 0
+original_page_images_reviewed:
+  - [15, 16]
+  - [16, 17]
+  - [19, 20]
+  - [20, 21]
+  - [21, 22]
+  - [116, 117]
+  - [117, 118]
+page_mapping: "Pairs are printed page, physical PDF page (one-based)."
+shared_core_table:
+  path: equipment/sr3-core-firearm-heavy-weapon-market-tables-p278-279.yml
+  blob: 2d6ad408ffa7a07e887998bbe6fac3de6266c69f
+shared_category_rule:
+  path: rules/firearms/accessory-mounts.yml
+  blob: 18b1f057d92cd9b1e80e9bb15c85c98e4ad03914
+hold_out:
+  coverage: "Five body rows, two appendix-only core rows, category and model game qualifications reconciled."
+  table_fields: [concealability, ammunition, mode, damage, weight, availability, cost_nuyen, street_index, legality]
+  matching_body_fields: 45
+  body_rows:
+    - [entities/weapons/cavalier-scout.yml, e56e5ee54ec2cd265ab608542c2e028c47695e61]
+    - [entities/weapons/morrissey-elan.yml, 79c842a9c8338940f69ec5fadae8d9a1792f4590]
+    - [entities/weapons/racercot-sting.yml, d82692679787463d2248e5bb1381d2763afa0fe7]
+    - [entities/weapons/tiffani-needler.yml, b3f60a39f8086fca56f684de9346a1d22840b020]
+    - [entities/weapons/tiffani-self-defender.yml, fba6663cc1f5212ca8e50bdba69df00ad87612c2]
+  appendix_only_core_row_pointers:
+    - /data/tables/0/groups/0/rows/0
+    - /data/tables/0/groups/0/rows/1
+  appendix_only_core_rows_exact: 2
+  category_skill_blob: 72a31baf2071be13b223af95bc39cbf79130566c
+  source_qualifier_receipt:
+    semantic_commit: 2cca3e5bdbf1f760a92e90c55b65e13af6869b42
+    semantic_blob: deb757f711ce37bfebf9f9607ea7068ed9c33e57
+    index_commit: fb2bd84df22dcf2248f480a011974c65533db8b9
+    index_blob: 891340cf1953e4374c3664d29cdfe4c216e450a9
+    historical_journal_present: true
+  source_identity_binding:
+    path: rules/firearms/cannon-companion-hold-out-identity-binding-p16-116.yml
+    semantic_commit: cb9f5b9b74604ab8ac7e001856795ab96ad5b908
+    semantic_blob: 6625207dc02c59a791160f170515ce20b865baea
+    prepare: preflighted
+    confirm: verified
+    index_commit: a6594c0f8ff4d75131930bc7efd5f3cc70e2fbe9
+    index_blob: fbb8b7da9885a25a4e63080439e3343758c68a4e
+    commit_and_live_readback: exact
+  exceptions:
+    - "Original name Raecor Sting bound to existing differently named shared entity; no shared edit."
+    - "Five printed RC dashes differ in storage type from legacy nulls; no conversion asserted."
+    - "Original pre-write baseline, plan, confirm and index artifacts for five legacy body entities not located in the supplied transaction archives; formal certification withheld."
+smg:
+  coverage: "Eleven body rows, five appendix-only core rows, category and model game qualifications reconciled."
+  matching_body_fields_excluding_rc: 98
+  remaining_body_field_difference: "SCK Model 100 mode is covered by existing confirmed source-local correction; shared entity remains different."
+  body_rows:
+    - [entities/weapons/beretta-model-70.yml, cdad4424c62d7f9abe4dd12e667fe4f0b606b7ba]
+    - [entities/weapons/colt-cobra-tz-110.yml, 74c04e6d7ac147cece0a89a2332834faa3309ec2]
+    - [entities/weapons/colt-cobra-tz-115.yml, 60fb06dfdcf9a880a867349787799d73041b8aa4]
+    - [entities/weapons/colt-cobra-tz-118.yml, e604a82390d83220247bdee6bb3df96f916125a6]
+    - [entities/weapons/colt-m24a3-water-carbine.yml, 5c0099646985199d14b93af0d70dec78ed40eb0d]
+    - [entities/weapons/hk-mp-5-tx.yml, 2da7cd82e17b79c41efe5f9847c866c2aba21a5b]
+    - [entities/weapons/ingram-supermach-100.yml, e8471acb6132d26c4891951f41925c4b9babc3c0]
+    - [entities/weapons/ingram-supermach-100-extended.yml, b9c7462939320396a1c2d85d11175bf811923637]
+    - [entities/weapons/ingram-warrior-10.yml, eb1070ace82b815bbef6f8582f741023d9f4d29f]
+    - [entities/weapons/sandler-tmp.yml, 31d6fd5f4ae27ca2031ef10e559c59d7e7dd7a65]
+    - [entities/weapons/sck-model-100.yml, 994953a970a0f62e120628d7e59d8a869359809e]
+  appendix_only_core_row_pointers:
+    - /data/tables/0/groups/5/rows/0
+    - /data/tables/0/groups/5/rows/1
+    - /data/tables/0/groups/5/rows/2
+    - /data/tables/0/groups/5/rows/3
+    - /data/tables/0/groups/5/rows/4
+  appendix_only_core_rows_exact: 5
+  category_skill_blob: 6b01d0bd84ab0bb979508506b72197f0a99a230a
+  source_local_receipts:
+    - semantic_commit: 2ff1fde43257174dbfbf07b11011b0961eb44694
+      semantic_blob: 55131ecbdabdc50d437ed064e31d3aa4fac60978
+      index_commit: 4c087808f9885c7e7565a9bc703ac0e8df0fda4e
+      index_blob: 4ad8c3b92a720cea5effd8ca4f8e23f02eef3291
+    - semantic_commit: 224d87d8a8c3cb8b15e1af40bb62a5c16f191ce5
+      semantic_blob: 2ff9e4c54f815219d46db23e6b9b198a3817e0b1
+      index_commit: 2ef9bd7c875c749f01a11a340d042c1ca7fd02ad
+      index_blob: ab20c44f453fd005040083402779d1a2c1857f71
+  exceptions:
+    - "Six printed RC dashes differ in storage type from legacy null; one conditional RC spacing differs. No silent conversion."
+    - "Original pre-write baseline, plan, confirm and index artifacts for eleven legacy body entities not located in the supplied transaction archives; formal certification withheld."
+    - "Existing source-local correction is distinct from shared SCK adjudication."
