@@ -1,0 +1,43 @@
+id: rule.ssg-credstick-validation-lifecycle-p38-40
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10667
+printed_pages: '38-40'
+pdf_pages: '39-41'
+edition_scope: FanPro Sprawl Survival Guide (FanPro10667, 2003), Shadowrun Third Edition fictional tabletop supplement
+content_class: [rule_procedure]
+framing: reference_exact
+headline: FanPro10667 SR3 fictional credstick lifecycle and banking access, pp38-40/PDF39-41
+summary: Typical monthly validation requirement and certified-transfer and reader qualifiers, distinct from original core dice rules.
+data:
+  registered_p38:
+    linked_bank_accounts: one or more
+    ordinary_reader_validated_transaction: immediate
+    stick_to_stick_validation: recorded and validated by a credstick reader before valid
+    unvalidated_balance_risk: character may accidentally overdraw accounts
+    usual_issuer_validation_interval_months: 1
+    interval_qualification: most issuing companies require it; not a universal deadline
+    registered_as_certified_for_transfer: money must be allocated as certified before the transaction
+    transaction_log_scope: device interactions and financial transactions; some purchases leave consumer-profile cookies
+    default_beacon_response: [basic ID information, credit balance, issued permits, purchase cookies]
+    transaction_log_manual_erasure: permitted at any time
+    occupational_or_equipment_license: most licenses require carrying the credstick while working or using or transporting the equipment
+    contract_change: stored contracts may not be modified by other parties without the holder's consent
+  certified_p38:
+    transaction_amount_ceiling: none
+    stores_identification: false
+    stored_other_information: simple financial transaction log only
+    bearer_use: identity check not required; whoever holds it may use it
+  reader_p38:
+    ordinary_slot: reads information only
+    verification_reader: verifies data against linked databases and authorizes payments including stick-to-stick transfers
+    establishment_firmware: access limited to data required for its operation
+    distributor_access: permanent remote access and logged transactions; remote disabling possible
+  banking_p40:
+    kiosk_or_booth_admission: legitimate credstick required
+  reuse:
+    core_numeric: rule.identity.sr3-core-credstick-tiers-forgery-numeric-p239
+    core_lifecycle: rule.identity.sr3-core-credstick-use-offline-certification-p239
+    ssg_beacon: equipment.ssg-credstick-beacons-p123
+    ssg_reader_tests: rule.economy.ssg-fictional-credstick-system-tests-p123-125
+  scope: No new dice test, reader rating or universal financial validation deadline; existing core failure consequences and optional SSG test procedures remain unchanged.
