@@ -3215,6 +3215,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_bioware_grade_rejection_scope_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp60-62,76-77,147-148/PDF61-63,77-78,148-149; publisher copyright PDF5."
+    records:
+      - id: option.bioware.grades
+        path: options/bioware/grades.yml
+        printed: "60,62,76-77,148"
+        pdf: "61,63,77-78,149"
+        commit: "904263e6a48e7173750cc97c01fcbab03d077c00"
+        blob: "b6d9dd44862c0255ac4659ab1ff83e9a5ce13004"
+        baseline_sha256: "9e3835d288b79e70f7fb64a2bfc284e18558b95d98db6689bd3dc51214594f96"
+        candidate_sha256: "f9da2448354bac00f45f020a3cfe117b743e2cf13fc2d56e3ed6af6706e41981"
+        immutable_sha256: "4ef11a829e6d001ad4a1ac25be151de2307927f37b5c23433d9f20d2fd2633a9"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Corrected cross-reference: p148 Install Bioware failure, not p147 Install Cyberware. General p62 rejection wording preserved; no inferred basic-grade exception. Supersedes prior grade context blob only; retains earlier transaction history."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3250,9 +3270,10 @@ source_field_review:
         remaining: "Embedded context mechanics not exhaustively reviewed; Better Off Dead opening obscured PDF56; preserve invoked memory stimulator no-specific-game-effects exception. PDF51 illustration inspected, not inferred blank."
       - scope: "Biotechnology context and implantation"
         printed: "60-62"
-        state: partial_review
-        evidence: [confirmed_general_bioware_detection_2026_11_25, confirmed_field_backfill_2026_11_23, confirmed_essence_index_examples_2026_11_24]
-        remaining: "Original pp60-62 reviewed. General detection confirmed; recipient matching, grades, used-basic restriction, compatibility, Bio Index and repair cross-reference located in live canon. Distinguish general implantation context (usual immunosuppression and basic-grade rejection wording) from specific surgical failure rules before scope closure; Bio Index original receipt debt remains separately bounded."
+        state: scoped_reconciled
+        evidence: [confirmed_general_bioware_detection_2026_11_25, confirmed_bioware_grade_rejection_scope_2026_11_25, confirmed_field_backfill_2026_11_23, confirmed_essence_index_examples_2026_11_24]
+        note: "Original pp60-62/PDF61-63 inspected; p61 illustration has no independent game mechanics. General detection and grade/implantation context individually confirmed; matching, used-grade eligibility, compatibility, natural repair, Essence/Bio Index, drawbacks and Awakened effects located in live canon. Corporate setting paragraphs deferred to lore. General rejection description and explicit p148 failure rule both retained. No residual field gap demonstrated within this context scope."
+        remaining: "Original Bio Index receipt debt remains separately bounded under pp77-79; scope closure is mechanical coverage, not separate book acceptance. Preserve the source rejection wording without inventing a basic-grade exception."
       - scope: "Basic bioware"
         printed: "63-71"
         state: item_scope_closed
