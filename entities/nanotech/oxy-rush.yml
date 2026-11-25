@@ -1,11 +1,25 @@
 id: entity.nanotech.oxy-rush
 record_type: entity
-name: "Oxy-Rush"
+name: Oxy-Rush
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Transient", cost_nuyen: 10000, availability: "8/2 wks", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '94'
+pdf_pages: '95'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Transient, cost_nuyen: 10000, availability: '8/2 wks', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 94, relation: defines, note: "Oxy-Rush description, game effects and statistics"}
+  - {source: source.mm, page: 94, relation: defines, note: 'Oxy-Rush description, game effects and statistics'}
 notes:
-  - "Fictional nanoware that extends breath-holding and gives specified Athletics/Pain Resistance benefits; incompatible with oxygenated fluorocarbons."
+  - 'Fictional augmentation in the Shadowrun tabletop RPG, not real-world medical guidance.'
+data:
+  breath_holding: {duration: hours, ends_when_nanites_wear_out: true}
+  athletics_bonus_dice: 2
+  pain_resistance_equivalent_levels: 1
+  pain_resistance_reference: {source: source.sr3-core, printed_page: 170}
+  oxygenated_fluorocarbons: {compatible: false, printed_page: 113, both_applied: use_strongest_effect_only}
+  reduced_effect: {breath_holding_retained: true, athletics_bonus_dice: 1}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p94/PDF95: Oxy-Rush game effects'
+framing: reference_exact
