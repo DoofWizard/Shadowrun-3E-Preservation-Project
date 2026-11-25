@@ -440,3 +440,70 @@ ssg_detailed_lifestyles_victory_gardens_source_wording_correction_2026_11_22:
   actual_stage_prepare_confirm_recovery_inspect: verified
   new_global_contiguous_pages: 0
   Denver_checkpoint_changed: false
+
+
+# Book-wide mechanical reconciliation, distinct from historical sequential scan.
+bookwide_mechanical_reconciliation_2026_11_25:
+  source_id: source.fanpro-10667
+  original_pdf_sha256: b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f
+  physical_pdf_pages: 146
+  source_verification: source_pdf_hash_verified
+  verified_against_manifest_blob: d446f736dabe0b2e4433ffeea38dcb6bba03f60d
+  original_page_mapping: "Printed p + 1 = physical PDF p; front matter and back cover separately classified."
+  live_prior_index_matches: 17
+  new_individual_index_commit: a1dd724dbf3c8ffd0fd016965f021341ba3f4f8e
+  new_individual_index_blob: a8a3d076d139f50af5ab675b8911b817db89d0e2
+  page_checklist:
+    - {pdf: [1, 4], scope: front_matter, state: visually_reviewed_no_independent_mechanics}
+    - {printed: [4, 5], pdf: [5, 6], scope: introduction_and_basics, state: visually_reviewed_no_independent_mechanics}
+    - printed: [6, 13]
+      pdf: [7, 14]
+      scope: humble_homes
+      state: coverage_reviewed
+      compared_existing: [equipment.ssg-home-telecom-public-dataterm-p118-121, rule.matrix.ssg-household-telecom-host-operations-p120, rule.matrix.ssg-domestic-drone-command-p120]
+      note: "Continuation at start of p14 reviewed; p7 full-page art."
+    - printed: [14, 20]
+      pdf: [15, 21]
+      scope: welcome_to_the_jungle
+      state: reviewed_one_new_equipment_record_accepted_other_reference_qualifications_pending
+      accepted: equipment.ssg-disposable-flats-p18
+      remaining_bounded_comparison:
+        - "p14: coffin hotel dimensions and attributed troll-size variant; descriptive spatial reference, compare existing accommodation canon before deciding whether to index."
+        - "p17: typical delivery timing; distinguish contextual estimates from game-rule thresholds."
+        - "p18: automated-store access conditions; compare existing in-game identity/credstick canon without adding an unsupported test."
+    - {printed: [21, 36], pdf: [22, 37], scope: entertainment, state: not_reconciled}
+    - {printed: [37, 42], pdf: [38, 43], scope: the_system, state: not_reconciled}
+    - {printed: [43, 58], pdf: [44, 59], scope: society, state: not_reconciled}
+    - {printed: [59, 61], pdf: [60, 62], scope: modern_travel, state: not_reconciled}
+    - {printed: [62, 70], pdf: [63, 71], scope: shadow_travel_and_culture_shock_continuation, state: not_reconciled}
+    - {printed: [71, 80], pdf: [72, 81], scope: global_report, state: not_reconciled}
+    - {printed: [81, 84], pdf: [82, 85], scope: the_scoop, state: not_reconciled}
+    - {printed: [85, 92], pdf: [86, 93], scope: the_switch, state: not_reconciled}
+    - {printed: [93, 98], pdf: [94, 99], scope: the_hook_up_and_switch_continuation, state: not_reconciled}
+    - {printed: [99, 108], pdf: [100, 109], scope: the_plan, state: not_reconciled}
+    - {printed: [109, 113], pdf: [110, 114], scope: the_enemy, state: not_reconciled}
+    - {printed: [114, 117], pdf: [115, 118], scope: the_crew, state: not_reconciled}
+    - printed: [118, 126]
+      pdf: [119, 127]
+      scope: game_information
+      state: prior_scoped_mechanical_closeout_reused
+      existing_audit: references/audits/ssg-game-info-p118-126-finite-source-reconciliation-2026-11-20.yml
+      audit_current_blob: 58c5c64e1306719b3e28ccaf032655c232e241eb
+      registered_records: 11
+      unresolved: "p123 paint/controller Availability versus Street Index typeset columns preserved without inferred swap."
+    - printed: [127, 144]
+      pdf: [128, 145]
+      scope: detailed_lifestyles
+      state: prior_scoped_mechanical_closeout_reused
+      existing_manifest_scope: ssg_detailed_lifestyles_available_source_mechanics_closeout_2026_11_22
+      registered_records: 6
+      unresolved: "House of the Dead modifier example versus general cap; Victory Gardens Housing versus listed Space category."
+    - {pdf: [146, 146], scope: back_cover, state: visually_reviewed_no_independent_mechanics}
+  historical_journal_search: "Conversation/Library title search for FANPRO10667 journal, SSG journal and Sprawl Survival Guide receipt returned no hits; not evidence of nonexistence. Original per-record artifact recovery remains unadjudicated."
+  current_reviewed_pdf_pages: 22
+  remaining_unreconciled_natural_scopes: 12
+  remaining_unreconciled_pdf_pages: 97
+  remaining_mechanical_field_count: unknown
+  next_cursor: "Finish bounded p14/p17/p18 reference comparisons, then Entertainment p21/PDF22."
+  source_formal_acceptance: not_claimed
+  global_page_advance: 0
