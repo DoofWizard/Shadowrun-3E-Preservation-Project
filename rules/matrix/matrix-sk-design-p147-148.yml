@@ -7,8 +7,8 @@ pdf_pages: '148-149'
 edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp147-148/PDF148-149.'
 content_class: [rule_exact]
 framing: reference_exact
-headline: Semi-autonomous knowbot design and allocation
-summary: GM design parameters for fictional autonomous Matrix personas, expanding the existing subsystem.
+headline: FASA7909 Matrix — fictional semi-autonomous knowbot design and allocation
+summary: FASA Corporation, Shadowrun Third Edition tabletop RPG, printed pp147-148/PDF148-149; GM design and allocation rules for fictional autonomous Matrix personas.
 data:
   legacy_comparison: 'subsystems/matrix/autonomous-programs.yml blob 2dcef9eefd15d7c33fe67b4d7d26446ed89d3c48 describes allocation categories without these numeric costs and limits.'
   design:
@@ -38,5 +38,10 @@ data:
       operational_utilities: excluded
       cost_per_utility_rating_point: 1
       maximum_utility_rating: MPCP
-    utility_pool: {cost_per_point: 2, maximum: MPCP}
+    utility_pool:
+      cost_per_point: 2
+      maximum: MPCP
+      exclusive_to_SKs: true
+      optional_purchase: true
+      source_qualification: Allocation text permits purchase; operation text describes each SK as having a Utility Pool. No mandatory minimum rating is specified.
   hacking_pool: MPCP
