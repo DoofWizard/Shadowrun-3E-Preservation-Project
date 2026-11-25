@@ -3,18 +3,32 @@ record_type: entity
 name: "Cat's Eyes"
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '64'
+pdf_pages: '65'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.2
-  availability: "4/6 days"
+  availability: '4/6 days'
   cost_nuyen: 15000
   street_index: 1
-  legality: "Legal"
-links:
-  uses: [rule.vision.low-light-and-thermographic]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  legality: Legal
+data:
+  vision: natural low-light
+  racial_vision_benefits_retained: false
+  racial_vision_example: thermographic vision
+  visibility_modifier_category: natural
+  color_vision: true
+  incompatible: [cybereyes, retinal modification cyberware]
+  stress:
+    light: intermittent difficulty discriminating colors and sensitivity to bright light
+    moderate: additional +1 modifier from flash-paks and strobe lights
+    serious: grayscale vision; +4 Perception modifier for color discrimination
+    deadly: blindness; +8 to visual Perception Tests and actions requiring sight
+links: {uses: [rule.vision.low-light-and-thermographic], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, page: 64, relation: defines, note: "Cat's Eyes description, game effects, stress effects and statistics"}
-notes:
-  - "Provides natural low-light vision rather than cybernetic vision."
+  - {source: source.mm, page: 64, relation: defines, note: Game effects, Stress and market row; SR3 visibility p111}
+notes: []
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p64/PDF65: Cat's Eyes"
+framing: reference_exact
