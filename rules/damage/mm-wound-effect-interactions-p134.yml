@@ -1,0 +1,36 @@
+id: rule.damage.mm-wound-effect-interactions-p134
+record_type: rule
+status: source_reviewed
+source: source.mm
+printed_pages: '134'
+pdf_pages: '135'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine — Called Shots and Deadlier Over-Damage with Wound Effects
+summary: Published fictional Shadowrun Third Edition tabletop game rules from FASA Corporation (1999), Man & Machine, printed p134/PDF135; conditional interactions with the core combat options.
+data:
+  publication: 'Man & Machine: Cyberware'
+  publisher: FASA Corporation
+  catalog: FASA7126
+  edition: Shadowrun Third Edition
+  called_shot:
+    prerequisite: successful called shot under SR3 p114
+    choice_owner: attacker
+    alternative_to: increasing the attack Damage Level
+    guaranteed_wound_effects: 1
+    additional_wound_effects_possible: true
+    guaranteed_effect_type_selection:
+      owner: gamemaster
+      choices: [Wound Effect Table, specific wound effect type appropriate to the attack]
+  deadlier_over_damage:
+    prerequisite: Deadlier Over-Damage used together with wound effects
+    staged_damage_level: Deadly
+    remaining_successes_per_wound_effect: 2
+    wound_effects_per_group: 1
+    additional_to_attack_damage_wound_effects: true
+    effect_type_selection: Wound Effect Table
+  references:
+    - rule.damage.wound-effects
+    - rule.combat.called-shots
+    - rule.combat.sr3-core-optional-deadlier-overdamage-p126
