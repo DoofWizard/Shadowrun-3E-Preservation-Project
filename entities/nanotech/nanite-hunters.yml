@@ -1,11 +1,25 @@
 id: entity.nanotech.nanite-hunters
 record_type: entity
-name: "Nanite Hunters"
+name: Nanite Hunters
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Transient", cost_nuyen: 20000, availability: "16/3 wks", street_index: 3, legality: "4-Y"}
+source: source.mm
+printed_pages: '93'
+pdf_pages: '94'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Transient, cost_nuyen: 20000, availability: '16/3 wks', street_index: 3, legality: 4-Y}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 93, relation: defines, note: "Nanite Hunters fictional nanoware, game effects and statistics"}
+  - {source: source.mm, page: 93, relation: defines, note: 'Nanite Hunters fictional nanoware, game effects and statistics'}
 notes:
-  - "Programmed in-game to reduce a specified nanoware system over time."
+  - 'Fictional game equipment targets a designated nanoware system.'
+data:
+  target: specific programmed nanoware system
+  target_selection_required: true
+  target_example: nanosymbiotes
+  activation: after injection in game
+  targeted_system_reduction_percent_per_hour: '1D6'
+  reduced_effect_reduction_percent_per_hour: '1D6 / 2'
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p93/PDF94: Nanite Hunters game effects'
+framing: reference_exact
