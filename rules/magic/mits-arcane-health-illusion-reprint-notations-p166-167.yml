@@ -1,0 +1,76 @@
+id: rule.magic.mits-arcane-health-illusion-reprint-notations
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '166-167'
+pdf_pages: '167-168'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Arcane Lore Health and Illusion reprint notation — FASA Corporation Magic in the Shadows (FASA7907), SR3 fictional tabletop RPG, printed pp166–167/PDF167–168
+summary: Arcane Lore target qualifiers and range codes for 33 starred core spell rows; the closed FASA7001 spell profiles remain authoritative for their own source.
+data:
+  source_identity: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG supplement
+  core_reference_manifest_blob: b0ebffa4985ab544e64857b99e98b17d69ee3184
+  health_printed_166_pdf_167:
+    core_refs:
+      - [rules/magic/sr3-core-health-antidote-cure-disease-detox-p193.yml, 51ca8f3e115152e9154456331e78b803a095d35a]
+      - [rules/magic/sr3-core-decrease-attribute-numeric-p193.yml, 615a4b7679ec6062a53aaaeffe33ed614f883b12]
+      - [rules/magic/sr3-core-heal-treat-p193-194.yml, e36ff34809005695f15047dd6e43891bfc4e81d5]
+      - [rules/magic/sr3-core-increase-attributes-reaction-reflexes-p194.yml, 2bae4cf8239c14ab12b85d8f2ef307e52e7dabb2]
+      - [rules/magic/sr3-core-health-survival-and-support-spells-p194.yml, dc2aad1db000da5264ddfb525b47a30244ae2b34]
+    range_all_rows: T
+    columns: [name, target]
+    rows:
+      - [Antidote, 'Toxin Power(V)']
+      - [Cure Disease, 'Disease Power(V)']
+      - ['Decrease (Attribute)', '10 - Essence(R)']
+      - ['Decrease (Cybered Att.)', '10 - Essence(R)']
+      - [Detox, 'Toxin Power(V)']
+      - [Heal, '10 - Essence(V)']
+      - [Healthy Glow, '4(V)']
+      - [Hibernate, '4(V)']
+      - ['Increase (Attribute)', 'Attribute(V)']
+      - ['Increase (Cybered Att.)', 'Attribute(V)']
+      - [Increase Reaction, 'Reaction(V)']
+      - [Increase Reflexes +1 Initiative Die, 'Reaction(V)']
+      - [Increase Reflexes +2 Initiative Dice, 'Reaction(V)']
+      - [Increase Reflexes +3 Initiative Dice, 'Reaction(V)']
+      - [Oxygenate, '4(V)']
+      - [Prophylaxis, '4(V)']
+      - [Resist Pain, '4(V)']
+      - [Stabilize, '4 + minutes(V)']
+      - [Treat, '10 - Essence(V)']
+    source_comparison_limits:
+      - The supplement lists Toxin Power for Antidote and Detox, while the pinned core stat lines use Toxin Strength; preserve the literal difference without inferring a new formula.
+      - Hibernate's supplement row bears V; the pinned core effect expressly permits a voluntary or unconscious subject. The table notation must not silently erase that exception.
+      - Heal and Treat use Damage Level in the supplement Drain column and Patient Wound Level in the core record; the core wound-level basis and timing remain recorded separately.
+      - Stabilize's abbreviated target does not replace the core elapsed-minute condition or minimum Force requirement.
+  illusion_printed_167_pdf_168:
+    core_path: rules/magic/sr3-core-illusion-spell-statblocks-p195-196.yml
+    core_blob: eae0f1cf15d2f2616faac8565754cf79cd250c9b
+    columns: [name, target, range]
+    directed:
+      - [Chaos, 'I(R)', LOS]
+      - [Chaotic World, 'I(R)', 'LOS(A)']
+      - [Confusion, 'W(R)', LOS]
+      - [Entertainment, 'W(V)', 'LOS(A)']
+      - [Mass Confusion, 'W(R)', 'LOS(A)']
+      - [Trid Entertainment, 'I(V)', 'LOS(A)']
+    indirect:
+      - [Improved Invisibility, '4(R)', LOS]
+      - [Invisibility, '4(R)', LOS]
+      - [Mask, '4(R)', LOS]
+      - [Phantasm, '4(R)', 'LOS(A)']
+      - [Physical Mask, '4(R)', LOS]
+      - [Silence, '4(R)', 'LOS(A)']
+      - [Stealth, '4(R)', LOS]
+      - [Trid Phantasm, '4(R)', 'LOS(A)']
+    qualification: The original key's unwilling-target resistance and voluntary-target qualifiers apply; no changes to separately preserved core illusion-resistance rules are inferred.
+  scope_limits:
+    - Core effect profiles, type, duration and Drain mechanics remain in the pinned core records. Different literal formatting is not by itself a substantive mechanical discrepancy.
+    - Preserve source-specific row notation, not duplicate spell entities or a silent cross-source replacement.
+  review:
+    original_pages: Fresh verified original Drive PDF; publication identity PDF1 and p6/PDF7; all 33 starred rows on printed pp166–167/PDF167–168 directly inspected against core records.
+    reviewed_text_paths: [edition_scope, headline, summary, 'data.*']
+    scope: Health and Illusion reprint notation only; Manipulation reprints remain separate. No formal book closure or engine execution asserted.
