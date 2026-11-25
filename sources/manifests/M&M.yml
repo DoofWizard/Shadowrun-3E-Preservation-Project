@@ -3223,9 +3223,18 @@ source_field_review:
         remaining: "No demonstrated residual mechanical gap in this scope; separate Finding Treatment and surgical procedure chapter comparison remains open. Not formal whole-book acceptance."
       - scope: "Medical providers and surgical procedures"
         printed: "140-151"
-        state: scoped_reconciled_pending_chapter_check
-        evidence: [confirmed_medical_provider_access_2026_11_25, confirmed_medical_search_2026_11_24, confirmed_medical_provider_ratings_2026_11_24, confirmed_emergency_rating_example_2026_11_25, confirmed_implant_detection_2026_11_24, confirmed_surgery_cosmetic_therapeutic_implant_2026_11_23, confirmed_surgical_procedures_options_2026_11_23, confirmed_surgery_damage_costs_2026_11_23]
-        remaining: "Check unbound original fields across chapter; no reopening unchanged scopes absent discrepancy."
+        state: scoped_reconciled
+        evidence: [confirmed_medical_provider_access_2026_11_25, confirmed_medical_search_2026_11_24, confirmed_medical_provider_ratings_2026_11_24, confirmed_emergency_rating_example_2026_11_25, confirmed_non_emergency_search_example_2026_11_25, confirmed_medical_profile_details_2026_11_25, confirmed_surgical_planning_option_selection_2026_11_25, confirmed_implant_detection_2026_11_24, confirmed_surgery_cosmetic_therapeutic_implant_2026_11_23, confirmed_surgical_procedures_options_2026_11_23, confirmed_surgery_damage_costs_2026_11_23]
+        original_images_reviewed: "Printed pp140-151/PDF141-152; copyright PDF5; cumulative exact-field closures reused."
+        finite_natural_scopes:
+          - {printed: "140-144", records: [procedure.surgery.find-provider, rule.surgery.provider-ratings], fields: "Provider categories and restrictions, search and access, emergency and non-emergency tables, both original worked examples."}
+          - {printed: "144-145", records: [procedure.surgery.operation, rule.surgery.implant-detection], fields: "Six result rows, threshold and stopping conditions, profiling, diagnosis, seven scan TN rows and five success detail rows."}
+          - {printed: "145-146", records: [procedure.surgery.planning, rule.surgery.surgical-test], fields: "Option selection and detection, five planning times, six multipliers, 29 test modifiers, anesthesia, skill, gear and duration."}
+          - {printed: "146-148", records: [procedure.surgery.cosmetic, procedure.surgery.implant, procedure.surgery.therapeutic, procedure.surgery.transplant, procedure.surgery.trauma], fields: "Procedure TNs, success and failure conditions, eligibility, exceptions, trauma formula and example, procedure-specific options."}
+          - {printed: "148-150", records: [option.surgery.surgical-options], fields: "Twelve negative and fourteen positive options, limits, thresholds, character creation option and literal source ambiguity notes."}
+          - {printed: "150-151", records: [rule.surgery.surgery-damage, rule.surgery.surgical-costs], fields: "Procedure wounds, ten implant damage ranges, neural multiplier, exceptions, costs and multipliers, growth times and footnote."}
+        note: "Three current-run semantic corrections individually verified and indexed. Eleven unchanged procedure/rating records and eight prior skills/tools/body-parts records matched their registered current live blobs. Cumulative surgery chapter mechanics pp135-151 reconciled at scoped level; this is not separate whole-book acceptance or engine testing."
+        remaining: "Retain original surgical-option and cost-range ambiguities already documented; no demonstrated remaining chapter mechanical gap from the cumulative review."
       - scope: "Equipment tables"
         printed: "152-158"
         state: partial_review
@@ -3246,7 +3255,7 @@ source_field_review:
           - {path: entities/cyberware/replacement-modification.yml, commit: "d3dcdb3d7ca860f08e9f2e4c6fbb9b9b401cfcbe", blob: "640dc7d87d417679df3778409f195e48188a0a90"}
           - {path: entities/cyberware/weapon-mount-articulated-arm.yml, commit: "8de3e4dcf565df8c27028c21150c0e6332d5934e", blob: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"}
         missing: "Original immutable baseline, plan, candidate, actual confirmation artifact and individual indexing receipt; negative archive/title search retained until evidence changes."
-    next_cursor: "Surgery: remaining unbound fields in Finding Treatment and surgical procedures pp140-151; reuse reconciled skills/tools/body parts and provider scopes unless discrepancy. Then damage p134 and nanoware local gaps."
+    next_cursor: "Damage and healing: printed p134 Called Shots and Deadlier Over-Damage and p125 embedded material; then nanoware local gaps and remaining bioware/implant scopes. Reuse reconciled surgery chapter absent demonstrated discrepancy."
     original_field_denominator: unknown
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
