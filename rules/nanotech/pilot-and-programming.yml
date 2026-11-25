@@ -1,17 +1,19 @@
 id: rule.nanotech.pilot-and-programming
 record_type: rule
-name: "Nanite Pilot Ratings and Programming"
+name: Nanite Pilot Ratings and Programming
 domain: nanotech
 status: ingested
 source: source.mm
-printed_pages: "96-97"
-pdf_pages: "97-98"
+printed_pages: "83-86,96-97"
+pdf_pages: "84-87,97-98"
 edition_scope: SR3
 content_class: [rule_exact]
+framing: reference_exact
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp83-86,96-97/PDF84-87,97-98: nanite capabilities and facility costs"
 effective: {status: current, source: source.mm, page: 96, basis: defines}
 scope: {applies_to: ["nanoware and nanodrones"]}
 resolution:
-  summary: "Determine fictional nanite capabilities from Pilot Rating and calculate industrial nanotech facility costs."
+  summary: "Determine fictional nanite capabilities from Pilot Rating and calculate industrial nanotech facility costs. Keep introductory technological constraints separate from formal game tests."
   inputs: ["nanite type", "Pilot Rating", "facility type", "base facility cost"]
   outputs: ["available functions", "facility cost"]
   steps: []
@@ -43,10 +45,32 @@ data:
       single_use_production_line_nuyen: "research facility cost + non-nanotech facility cost"
       multi_use_production_line_nuyen: "reprogrammable nanite facility cost + non-nanotech facility cost"
       non_nanotech_facility_reference: "SR3 p288"
+  contextual_limits:
+    interpretation: "Fictional setting constraints stated in the introduction; no new manufacturing test or pricing formula is supplied there."
+    replication:
+      printed_pages: "83,86"
+      in_body_replication_possible: false
+      controlled_environment_and_suitable_materials_required: true
+      typical_ideal_replication_days: [10, 15]
+      best_case_minimum_days: 7
+      best_case_requires_suspending_other_functions: true
+      timing_note: "The 10-15 day current ideal-environment description and the separate at-least-one-week best-case statement are retained without equating them or establishing a die-roll mechanic."
+      market_factories: "Commercial factories require specialized proprietary inputs or produce sterile systems incapable of further replication."
+    autonomy:
+      printed_pages: "83,86"
+      complex_manufacture_requires_external_controller: true
+      large_adaptive_projects: "May require a semi-autonomous knowbot; the source describes possible AI research as unconfirmed."
+      direct_metahuman_interface_supported: false
+      programming_changes: "Use the external controller; apply the explicit reprogramming and direct-control rules separately."
+    physical_scope:
+      printed_page: 86
+      direct_gross_body_change: false
+      major_indirect_effects_possible: true
+      energy_storage: "Limited to operating the nanite itself."
+      environmental_vulnerability: "Stress, shock and environmental changes affect the systems."
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core]}
 sources:
   - {source: source.mm, pages: "96-97", relation: defines, note: "Nanotech and its Uses, Nanodrones, Nanotech Facility Costs"}
+  - {source: source.mm, pages: "83-86", relation: extends, note: "Self-Replication, Autonomy and What It Can't Do; contextual constraints rather than additional mechanical tests"}
 notes:
   - "The separate reprogramming rule handles eligibility, controller requirements, and task duration."
-headline: "FASA7126 Man & Machine (FASA, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp96-97/PDF pp97-98: Nanite Pilot Ratings and Facility Costs"
-framing: reference_exact
