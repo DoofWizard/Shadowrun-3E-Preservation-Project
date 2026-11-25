@@ -1,0 +1,62 @@
+id: rule.firearms.cannon-companion-shotgun-ammunition-game-rules-p39
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '39'
+pdf_pages: '40'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: five shotgun ammunition fictional tabletop rule bindings'
+summary: 'FASA Corporation Shadowrun Third Edition, printed p39/PDF40. Original game eligibility, dice outcomes, armor ratings, and damage resolution; catalogue statistics reused.'
+data:
+  category:
+    weapon_classes: [shotgun pistol, shotgun rifle]
+    permitted_game_ammunition: [shot rounds, slug rounds]
+    ordinary_slug_rules: 'Regular ammunition, SR3 p281; use standard shotgun Damage Code.'
+    other_special_ammunition: 'Other firearm special ammunition may be used as shotgun slugs.'
+    shot_shell_rules_reference: 'SR3 p117'
+    shell_compatibility: 'Interchangeable among game weapons capable of firing shotgun shells, pistol or rifle.'
+    listed_special_types_shotguns_only: true
+  big_ds_temper:
+    item: entity.ammunition.big-ds-temper-shells
+    game_range_table: taser
+    shotgun_spread_and_choke_apply: true
+    power_modifier: 2
+    armor_reduction: 'floor(Impact Armor / 2)'
+    secondary_effect_reference: 'Cannon Companion p98, Fire and Incendiaries'
+    secondary_effect_eligibility: 'Damaged characters and nearby flammable game objects.'
+    equipment_failure_test:
+      timing: each use
+      die: 1D6
+      failure_face: 1
+      result: game weapon unusable until repaired
+      repair_skill_test: appropriate B/R (5)
+      repair_base_time_hours: 72
+      repair_game_facility: gunsmithing shop
+  bola:
+    item: entity.ammunition.bola-rounds
+    power_modifier: 1
+    knockdown_test_target_number: full weapon Power
+    game_range_table: heavy pistol
+    game_ammunition_count_per_round: 1
+  flare:
+    item: entity.ammunition.flare-rounds
+    game_range_table: heavy pistol
+    extreme_range_limit_meters: 60
+    effect_at_extreme_limit: signal or location marker
+    damage_code: 4M
+    armor_reduction: half Impact Armor
+    secondary_fire_effect_reference: 'Magic in the Shadows pp51-52'
+    secondary_fire_die_roll_modifier: -2
+    ongoing_fire_damage_reference: 'Cannon Companion p98'
+  shock_lock:
+    item: entity.ammunition.shock-lock-rounds
+    door_barrier_rating: 'floor(Barrier Rating / 2)'
+    other_game_targets: standard explosive round rules
+  stun:
+    item: entity.ammunition.stun-shells
+    base_rules: standard shot shells
+    damage_track: Stun
+    power_reduction: '2 x Impact Armor'
+    ballistic_armor_reduces: false
