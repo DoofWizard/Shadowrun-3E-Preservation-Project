@@ -3501,7 +3501,7 @@ source_field_review:
         evidence: [confirmed_intro_cyberware_grades_2026_11_25, confirmed_intro_essence_distinctions_2026_11_25, confirmed_direct_neural_interface_2026_11_25, confirmed_balance_augmenter_2026_11_25, confirmed_chemical_analyzer_2026_11_25, confirmed_chemical_analyzer_essence_discrepancy_2026_11_25]
         original_images_reviewed: "Printed pp8,10-14/PDF8,10-14; PDF9 illustration visually inspected; selected p153/PDF154 equipment rows."
         note: "Balance Augmenter and Chemical Analyzer item effects individually confirmed and indexed; latter's printed p14 .2 versus p153 2 Essence discrepancy retained. P11-12 classification and body-powered context reviewed; p14 eye laser batteries are an explicit exception to a universal battery-free interpretation. Corporate descriptions deferred to lore."
-        remaining: "Eye Datajack location/effects and Optiscan Link rules and cost resolved in confirmed_eye_datajack_2026_11_25, confirmed_optiscan_cost_2026_11_25 and confirmed_optical_scanning_link_2026_11_25. Continue p14-31 senseware and remaining equipment classes; p153 Eye Camera Street Index discrepancy (live 1, original 2) requires correction. Canonical binding of p11-12 classification and power context remains unresolved. Interconnectivity p10 matches existing subsystem entry condition and router rule; do not bypass prior p46 path restriction."
+        remaining: "Eye Datajack location/effects and Optiscan Link rules and cost resolved in confirmed_eye_datajack_2026_11_25, confirmed_optiscan_cost_2026_11_25 and confirmed_optical_scanning_link_2026_11_25. Continue p14-31 senseware and remaining equipment classes; p153 Eye Camera Street Index corrected (1 to 2) in confirmed_eye_camera_street_index_2026_11_25. Canonical binding of p11-12 classification and power context remains unresolved. Interconnectivity p10 matches existing subsystem entry condition and router rule; do not bypass prior p46 path restriction."
       - scope: "Cyberlimbs and accessories"
         printed: "32-41"
         state: partial_review_and_receipt_debt
@@ -3685,6 +3685,26 @@ source_field_review:
         immutable_sha256: "e3d8cded88eeaa489b430f249c93f9512db1485edf48bbb7db36ac3008505e22"
         gate: verified
         fields: "Original fictional communication limits, +4 inclusive Perception threshold, transducer/display/datajack distinctions, DNI requirement, motion, optional RAS reference, no simsense/rigging/decking and both Concealability 10 values. Purchase row separately indexed."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
+  confirmed_eye_camera_street_index_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed p153/PDF154."
+    records:
+      - id: entity.cyberware.eye-camera
+        path: entities/cyberware/eye-camera.yml
+        printed: "153"
+        pdf: "154"
+        commit: "8cdd398f9b36d0b20226b57c314ad5960458b6f4"
+        blob: "e4af64caf504e2fe762413ef7315615c3e9a6baf"
+        baseline_sha256: "8c1c6b5992197ec1a8fb7aacdb6841700c565280cad47d57a58ff1d5d22a370b"
+        candidate_sha256: "f65c479d03eb1871bb55f3b593062a298f44970471ff754221cbe5bd9e46f5c6"
+        immutable_sha256: "218dd9fc2adca14c44cb22ae583dcb4e54b3b395ff07c0b3c8552f5efb60ea09"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Original Eye Camera Street Index 2 replaces legacy 1; other four equipment row fields unchanged."
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
