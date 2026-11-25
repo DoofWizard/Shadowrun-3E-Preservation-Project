@@ -1,0 +1,90 @@
+id: rule.magic.mits-detection-spell-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '140-141, 165-166'
+pdf_pages: '141-142, 166-167'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Grimoire detection spell effect conditions and Arcane Lore codes
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition, printed pp140-141 and 165-166/PDF141-142 and 166-167. Fictional tabletop rules clarify nine historical spell entities, including Diagnose duration and Analyze Magic eligibility.
+data:
+  general:
+    source_printed: 140
+    subject: Willing only; most spells require touching subject.
+    targets: Subject directs the new or enhanced sense at targets; their Willpower Spell Resistance Test subtracts successes from caster successes.
+    sense_range_m: Force * Magic
+    basic_sr3_extended_sense_conversion: {drain_level_delta: 1, range_m: Force * Magic * 10}
+    touch_to_los_conversion_drain_level_delta: 1
+    cross_reference: Printed p56 spell-design Extended Sense condition specifies area-sense; p140 describes any basic SR3 detection spell. Preserve the distinction.
+  analyze_magic:
+    target_eligibility: Spell, spirit or magical item; TN is Force of spell, spirit or focus.
+    information: Use SR3 p172 Assensing Table; subject analyzes as though assensing.
+    aura_reading_complement_allowed: false
+    correction: Historical entity's added general assensed-being category is not stated by this spell.
+  animal_sense:
+    eligible_animal: Non-sentient, non-paranormal.
+    effect: Subject borrows one animal sense instead of own corresponding sense.
+    resistance: Animal supplying sense resists; things sensed do not resist.
+    perception_success_cap: Casting successes
+    restrictions: No control of animal's actions; no spell targeting through its senses; animal must be within range.
+    switch_animal_action: Simple Action
+    switch_condition: Spell sustained and other animal within range.
+    separate_spell_per_sense: true
+    examples: [sight, smell, sonar]
+    sonar_limit: Useful only for animals possessing that sense.
+  astral_window:
+    barrier_force_visible_per_net_success: 1
+    maximum_barrier_force_visible: Spell Force
+    opaque_if: Caster successes less than barrier Force.
+    resistance: Barrier Force
+    viewer: Subject only; subject must be astrally active.
+    cast_through_barrier: false
+    creator_alerted: false
+  catalog:
+    effect: Area sense gives inventory of quantities of all nonliving items in range on successful Sorcery Test; subject can write or dictate it.
+    extra_successes: Greater detail and description.
+    after_spell: Caster cannot recall exact quantities or items.
+    unrecognized_by_subject_on_sight: Listed as unknown.
+  diagnose:
+    corrected_duration: I
+    historical_duration: S
+    success_thresholds: {'1': General health and whether Essence is normal or low, '3': Specific illness or injury, '5': Specific viruses or internal injuries}
+    maximum_successes: Spell Force
+  enhance_aim:
+    applies: Ranged attacks against targets within sense range.
+    net_successes_per_tn_delta: 2
+    tn_delta: -1
+    maximum_modifier_magnitude: Half spell Force
+    stacks_with: [non-cyber targeting devices, optical-based cyberware]
+    does_not_stack_with: Electronic-based cyberware such as smartlinks.
+  eyes_of_the_pack:
+    target: Voluntary metahuman within range.
+    switch_target_action: Simple Action
+    switch_condition: While spell sustained, choose another pack member in range.
+    restrictions: No control of target actions; no casting or astral perception through borrowed sight.
+    perception_success_cap: Casting successes
+    anything_seen_resists: false
+  night_vision:
+    effect_reference: Low-light vision as SR3 p300 cybernetic enhancement.
+    subject: Voluntary
+    table_flag_note: p166 prints 6(R); preserve alongside voluntary-subject prose, not an inferred unwilling-recipient rule.
+  translate:
+    target: Voluntary
+    effect: Low-level telepathic link lets subject and target understand each other's spoken language.
+    quality: Sorcery Test successes, capped at spell Force.
+    limit: Better at intent than exact wording; not suited to delicate diplomacy.
+  individual_touch_requirement: All nine listed MitS detection spells explicitly require caster to touch subject.
+  table_codes:
+    columns: [entity, target_code, range_code]
+    rows:
+      - [entity.spell.analyze-magic, F(R), T/D]
+      - [entity.spell.animal-sense, W(R), T/D]
+      - [entity.spell.astral-window, F(R), T/D]
+      - [entity.spell.catalog, '6', T/A]
+      - [entity.spell.diagnose, W(R), T/D]
+      - [entity.spell.enhance-aim, 6(R), T/D]
+      - [entity.spell.eyes-of-the-pack, 6(V), T/D]
+      - [entity.spell.night-vision, 6(R), T/D]
+      - [entity.spell.translate, 4(V), T/D]
