@@ -582,3 +582,97 @@ verified_semantic_revision_history_2026_11_24:
     candidate_sha256: 9ca085e7f0e5c7546027bf1a39fa62fedc06e5ea10d333884dca146cb61318dd
     immutable_sha256: 7251aefac6c761afd81b005cc41323c851cc41429a78ff468019b36a11a30693
     gate_status: verified
+
+# Source-wide administrative reconciliation; not a semantic transaction or whole-book acceptance.
+mechanical_book_checklist_2026_11_25:
+  original_drive_id: "1WNRS1kMVi7eWIboZkukbRzKio3CasWwQ"
+  original_sha256: "40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7"
+  original_pdf_pages: 48
+  source_verification_manifest_blob: "158e8424f08ce6ad562cd580359985058e06c64e"
+  source_verification_result: source_pdf_hash_verified
+  printed_pdf_mapping: "Numbered pages match physical PDF pages; cover is PDF page 1."
+  current_registered_blobs_checked: 43
+  current_registered_blob_mismatches: 0
+  current_run_direct_image_review: "PDF 1-4, 5, 19, 21, 25-27, 29, 31-33, 39-40, 48; prior scoped reviews reused."
+  scopes:
+    - scope: front_matter
+      pdf_pages: "1-4"
+      disposition: nonmechanical_reviewed
+      evidence: "Cover, contents, credits and introductory setting material directly reviewed; no new independent resolution procedure identified."
+    - scope: general_critter_rules
+      printed_pdf_pages: "5-6"
+      disposition: prior_scoped_closure_reused
+      evidence: mechanical_scope_general_and_power_framework_2026_11_23
+    - scope: general_power_framework
+      printed_pdf_pages: "6-7"
+      disposition: prior_scoped_closure_reused
+      evidence: mechanical_scope_general_and_power_framework_2026_11_23
+    - scope: individual_power_catalog
+      printed_pdf_pages: "7-14"
+      disposition: prior_scoped_closure_reused
+      evidence: mechanical_scope_power_catalog_2026_11_23
+    - scope: weaknesses
+      printed_pdf_pages: "14-15"
+      disposition: coverage_reconciled_acceptance_blocked
+      field_groups: "Allergy severity and exposure, dietary requirement, essence loss, reduced senses, vulnerability and recovery."
+      accepted_record: subsystem.critters.weaknesses-mutation-toxicity
+      historical_receipt_debt: rule.critters.weakness-conditions-p15
+    - scope: mutant_critters
+      printed_pdf_pages: "15-17"
+      disposition: coverage_reconciled_acceptance_blocked
+      field_groups: "Creation cost and effective Essence, characteristic choices, size and attributes, enhanced senses, bear examples, paranormal mutation and behavior."
+      accepted_record: subsystem.critters.weaknesses-mutation-toxicity
+      historical_receipt_debt: rule.critters.mutant-creation-conditions-p15-17
+    - scope: toxic_critters
+      printed_pdf_pages: "17"
+      disposition: coverage_reconciled_acceptance_blocked
+      field_groups: "Power costs and use, recovery, replacement, Combat Pool exchange, primary and secondary choices, weaknesses, examples and shaman relationship."
+      accepted_record: subsystem.critters.weaknesses-mutation-toxicity
+      historical_receipt_debt: rule.critters.toxic-power-conditions-p17
+    - scope: creature_statistics_and_reference_tables
+      printed_pdf_pages: "18-20"
+      disposition: prior_scoped_closure_reused
+      evidence: mechanical_scope_closeout_2026_11_23
+      table_rows: 30
+    - scope: awakened_creatures
+      printed_pdf_pages: "20-48"
+      disposition: coverage_review_through_final_page_acceptance_blocked
+      source_contents_headings: 132
+      aggregate_catalog_headings: 131
+      additional_heading: "Ekyelebenle, p27, rule.critters.awakened-entry-exceptions-p27"
+      aggregate_catalog_blobs:
+        entities/critters/catalog-a-k.yml: "16c5489a0cb4c38b5f913dc6523b7e687f1c9ce0"
+        entities/critters/catalog-l-z.yml: "858751a4476862a674a1f1e6c5a48f2a0dc6312d"
+      evidence: "Current indexed exceptions and revisions under verified_semantic_records; prior sequential source reviews through p48. Original pp31-33 stat rows, powers, weaknesses and notes compared again against catalog and p31, p28-p31-p32, p33 supplements; no new mechanical correction demonstrated. Heading count establishes roster coverage only."
+      acceptance_gap: "Original pre-write independent baseline, plan and confirm artifacts for legacy aggregate catalog fields and unrecovered exception revisions are not established by present-day blob checks. A complete field-level acceptance matrix is not certified."
+  historical_receipt_debt:
+    missing_artifacts: "Independent baseline bytes, original pre-write plan/journal, actual confirm receipt; old commit/index matches alone do not substitute."
+    weakness_conditions_commit: "9e85d377e9f5c5ac91d3963f2fbb7d5ccdd8d8e2"
+    mutant_creation_conditions_commit: "fbc8fcee79035e5e8c754afc36339a5f50d81a80"
+    toxic_power_conditions_commit: "e2c1eebd53026a2d8e2f6d2c0c6f3fc559b14de7"
+    legacy_aggregate_catalogs: "Both pinned catalog paths above; original acceptance artifacts not established."
+    original_journals_rechecked_not_new_receipts:
+      - "387cb874667386e7e67877465231ee3bc7a5a3cd"
+      - "759503d2f598108bca46aef29f4482bb62f55676"
+      - "e030e7ba4b91fc20fd5b206b3e481262930a1d45"
+      - "6d4edf12896244bc4594c861c417c5c3a515eb2d"
+  bounded_unresolved_readings:
+    - "pp5/19 Reaction versus Initiative Combat Pool cap; retain distinct printed statements."
+    - "pp15-17 mutant size wording, bear damage notation, existing paranormal power cost not expressly exempted, toxic recovery allocation unspecified."
+    - "p21 Aitvaras Willpower 52 as printed."
+    - "p25 Corpselight encounter and minimum/maximum conflict."
+    - "p26 Western Dragon Initiative die notation incomplete; Eastern Dragon attack differs from core."
+    - "p27 Dzoo-noo-qua Initiative not stated; Ekyelebenle bite count unspecified."
+    - "p29 Fomorian Strength formula ambiguous."
+    - "p40 Protean Strength at exactly 40 kg unspecified; Salamander Reaction notation F 5 ambiguous."
+    - "p48 Wyvern attack notation 95 as printed."
+  prior_scoped_closures_reused: 4
+  coverage_review_scopes_acceptance_blocked: 4
+  nonmechanical_scopes: 1
+  new_fully_certified_scopes: 0
+  new_semantic_records: 0
+  newly_recovered_historical_receipts: 0
+  formal_whole_book_acceptance: false
+  remaining_mechanical_field_count: unknown
+  next_owned_source: "FanPro10653 Target: Wastelands, pp117-120 onward; retain Critters dossier for coordinator review; reopen only demonstrated discrepancy or changed acceptance evidence."
+  globally_authorized_pages_added: 0
