@@ -1,0 +1,59 @@
+id: rule.magic.mits-adept-power-original-conditions
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '149-151,164-165'
+pdf_pages: '150-152,165-166'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Adept power conditions — Magic in the Shadows, FASA Corporation, FASA7907, SR3 fictional tabletop RPG, pp149–151 and 164–165/PDF150–152 and 165–166
+summary: Original mechanical conditions, exceptions and examples supplementing the twenty-one historical adept power records.
+data:
+  source_identity: FASA Corporation, Magic in the Shadows, FASA7907, Shadowrun Third Edition fictional tabletop RPG supplement
+  powers:
+    blind_fighting: {cost: 0.5, blind_fire_or_full_darkness_visibility_modifier: 4, cover: standard_target_bonuses_remain}
+    counterstrike: {cost_per_level: 0.5, dice_per_level: 1, test: melee_counterattack_only, armed_or_unarmed: true}
+    delay_damage:
+      costs: {obvious: 1, silent: 2}
+      procedure: Declare before the fictional unarmed Attack Test; normal Damage Resistance Test applies. Successful incompletely resisted damage is held as an aura charge until the delay chosen at attack time expires.
+      max_hours: 24
+      obvious: Normal attack resolution; no immediate damage.
+      silent: Target cannot defend or counterattack; attacker cannot use Combat Pool; fictional unobtrusive contact does not appear to be an attack and is unlikely to be remembered.
+      sustain: {exclusive_magical_activities_allowed: false, all_test_modifier: 2, dropping_power: dissipates_damage_without_effect}
+      astral_detection_assensing_successes: 2
+      dispelling: {target_number: attack_Power, drain: attack_Damage_Code, timing: before_charge_takes_effect}
+      interaction: Killing Hands can supply the unarmed damage code.
+    distance_strike:
+      cost: 2
+      range_meters: Magic
+      attack: Standard Unarmed Combat Test and unarmed damage; ignore Reach. Defender uses ranged combat resistance with Combat Pool and Body; no counterattack. Dodge successes exceeding attack successes cause a miss.
+      astral_barrier: blocks_targets_beyond_it_on_either_plane
+      example: {unarmed_skill: 6, attack_pool: 4, attack_TN: 4, attack_successes: 6, dodge_pool: 5, dodge_TN: 4, dodge_successes: 4, Body: 4, resistance_TN: 5, Strength: 7, Impact_Armor: 2, resistance_successes: 2, stated_base_damage: 5M, stated_result: Moderate_wound}
+    empathic_sense: {cost: 0.5, visibility: unaided_sight, perception_TN: 4, information_table: SR3_p172_Assensing, masking: can_defeat_power_initiates_use_normal_penetration_p76, actual_assensing: false, aura_reading_skill_allowed: false, dual_natured: false}
+    flexibility: {cost_by_level: {'1': 0.5, '2': 1}, escape_artist_TN_modifier_per_level: -1, applies_to: bindings_and_unarmed_holds, small_openings: Flexibility_Test_GM_sets_TN}
+    freefall: {cost_per_level: 0.25, safe_distance_meters_per_level: 2, safe_surface: no_injury_or_resistance_test_within_allowance, excess_distance: subtract_allowance_before_damage, dangerous_surface: falling_damage_protection_remains_surface_damage_at_GM_discretion}
+    great_leap: {cost_per_level: 0.25, jumping_test_dice_per_level: 1, maximum_distance: add_level_to_Quickness, reference: SRComp_p47, example: {Quickness: 6, level: 4, maximum_meters: 10, Athletics: 5, extra_dice: 4, TN: 10, successes: 1, result: success}}
+    iron_will: {cost_per_level: 0.5, resistance_dice_per_level: 1, applies_to: mind_control_or_alteration_including_manipulation_spells_and_critter_powers, excludes: illusion_and_mana_combat_spells}
+    magic_sense: {cost: 0.5, radius_meters: Magic_times_5, perception_TN_and_information: SR3_p192_Detection_Spell_Table, astrally_active: false}
+    missile_mastery: {cost: 1, test: Throwing_Skill, unusual_missile_damage: floor_half_Strength_L, armor: Impact, edged_or_pointed_damage: Physical, blunt_damage: Stun, standard_missile_Power_modifier: 2}
+    nerve_strike: {cost: 1, test: standard_unarmed_attack, human_metahuman_base_TN: 4, critter_base_TN: 6_or_higher_for_unusual_anatomy, add_target_Impact_Armor: true, ordinary_damage: false, net_successes_per_Quickness_lost: 2, paralysis_at_Quickness: 0, recovery_Quickness_per_minute: 1, immune: targets_without_functional_nervous_system_including_machines_spirits_zombies}
+    quick_draw: {cost: 0.5, reaction_TN: 4, eligible: single_melee_missile_throwing_weapon_or_firearm, draw_and_ready: included_in_attack_action, complex_weapon: draw_and_attack_in_one_Combat_Phase, simple_weapon: draw_and_two_Attack_Tests_in_one_Combat_Phase, reference: SR3_p107}
+    quick_strike: {cost: 3, first_action_passes_per_Combat_Turn: 1, consumes_action_for_pass: true, requires_action_available: true, requires_unwounded: true, initiative_score_changed: false}
+    rooting: {cost_per_level: 0.25, activation: Simple_Action, resistance_dice_per_level: 1, resist: knockdown_throw_levitation_or_other_forced_movement, movement_allowed: false, other_actions_including_attacks_allowed: true, all_TN_modifier: 2}
+    sixth_sense: {cost_per_level: 0.25, dice_per_level: 1, eligible_test: Reaction_for_Surprise_only, other_Reaction_or_Initiative_rolls: excluded}
+    smashing_blow:
+      cost: 1
+      test: Unarmed_Combat_TN_4
+      resolution: Add successes to Strength and compare to unmodified Barrier Rating using SR3 p124 Barrier Effect Table.
+      interactions: Increased Strength or Strength Boost can combine; astrally perceiving adepts can use against objects including astral barriers, adding 2 to Charisma for such attacks.
+      example: {initial_barrier: 6, Unarmed_Combat: 6, TN: 4, Strength: 5, first_successes: 3, first_total: 8, reduced_barrier: 5, second_successes: 4, second_total: 9, final_barrier: 4, opening_meters: 0.5}
+    spell_shroud: {cost_per_level: 0.25, resistance_dice_per_level: 1, eligible: detection_spells_only, excludes: astral_aura_reading_astral_detection_and_Masking_Tests}
+    temperature_tolerance: {cost_per_level: 0.25, resistance_dice_per_level: 1, applies_to: extreme_heat_and_cold_and_primary_and_secondary_elemental_manipulation_spell_effects}
+    traceless_walk: {cost: 0.5, soft_brittle_surfaces: no_visible_traces, contact_noise: none, clothing_and_gear_noise: possible, hearing_Perception_TN_modifier: 4, ground_motion_or_pressure_sensors: not_triggered, liquid_surface_walking: false, deep_snow: no_sinking, nonvisual_tracking: possible}
+    true_sight: {cost_per_level: 0.25, resistance_dice_per_level: 1, eligible: illusion_spells_and_illusion_based_critter_powers}
+  original_table_reference: Each of the twenty-one costs agrees with the corresponding original Physical Adept Powers Table entry on printed pp164–165. Other table rows refer to core or Magical Power p22 and are a separate comparison scope.
+  review:
+    original_pages: Cover PDF1 and introduction p6/PDF7; all power definitions pp149–151/PDF150–152 and table pp164–165/PDF165–166 directly inspected.
+    text_paths: [headline, summary, 'data.*']
+    comparison: Historical entities contain costs and abbreviated effects; this record supplies the missing precision, conditions and examples, without altering them.
