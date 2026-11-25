@@ -1,0 +1,108 @@
+id: rule.magic.mits-health-spell-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '141-142, 166'
+pdf_pages: '142-143, 167'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Health spell mechanics, printed pp141-142 and 166
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition, printed pp141-142 and 166/PDF142-143 and 167; fictional tabletop spell rules supplying missing effects, limits and table codes.
+data:
+  general:
+    source_printed: 141
+    default_range: touch
+    line_of_sight_conversion_drain_level_delta: 1
+    allergy_severity_to_drain: {Nuisance: L, Mild: M, Moderate: S, Severe: D}
+  alleviate_allergy:
+    entity: entity.spell.alleviate-allergy
+    source_printed: 141
+    successes_per_severity_reduction: 2
+    maximum_successes: Force
+    simultaneous_allergies_per_spell: 1
+    effect: Reduces or blocks effects, not the underlying allergy; does not mitigate Vulnerabilities. The fictional vampire example distinguishes sunlight allergy from extra damage from wooden weapons.
+  awaken:
+    entity: entity.spell.awaken
+    source_printed: [141, 142]
+    minimum_successes: 1
+    conscious_duration_minutes: Force * successes
+    after_duration: Target returns to unconsciousness.
+    stun_damage_healed: 0
+    stun_damage_modifier_multiplier: 0.5
+  cause_allergy:
+    entity: entity.spell.cause-allergy
+    source_printed: 142
+    selection: Caster selects material and initial severity subject to GM discretion.
+    resistance_attribute: Body
+    additional_successes_per_severity_increase: 2
+    maximum_severity: Severe
+    qualification: Severe fictional allergies to materials such as sunlight or iron can be fatal if sustained long enough.
+    counterspell: Alleviate Allergy cancels the effect while sustained.
+  cripple_limb:
+    entity: entity.spell.cripple-limb
+    source_printed: 142
+    eligible: One touched organic limb (arm, leg, tail, fin or wing).
+    threshold: Body / 2
+    resistance_attribute: Body
+    affected_limb_test_tn_modifier: Force + successes above Threshold
+    effect_duration: while sustained
+  decrease_reaction:
+    entities: [entity.spell.decrease-reaction, entity.spell.decrease-cybered-reaction]
+    source_printed: 142
+    resistance_attribute: Reaction
+    net_successes_per_reduction: 2
+    reduction_per_increment: 1
+    maximum_reduction: Force
+    reaction_zero: Roll Initiative dice normally; automatically fail Surprise Tests.
+    ordinary_version: Does not affect targets whose Reaction is cyberware-boosted.
+    cybered_version: Also affects cyber-enhanced Reaction.
+  decrease_reflexes:
+    entity: entity.spell.decrease-reflexes
+    source_printed: 142
+    resistance_attribute: Reaction
+    net_successes_per_die_removed: 2
+    maximum_dice_removed_by_version: [1, 2, 3]
+    no_dice_remaining: Use Reaction for Initiative.
+  fast:
+    entity: entity.spell.fast
+    source_printed: 142
+    duration_hours_after_permanence: (Force + successes) * 12
+    effect: Suppresses hunger and thirst and symptoms of deprivation, not the need for food or water.
+  intoxication:
+    entity: entity.spell.intoxication
+    source_printed: 142
+    resistance_dice: Body + blood filter rating
+    tn_modifier_per_net_success: 1
+    maximum_modifier: Force
+    counters: Antidote or Detox use spell Force as toxin Strength.
+    natural_recovery_hours: Force / 2
+  nutrition:
+    entity: entity.spell.nutrition
+    source_printed: 142
+    duration_hours: (Force + successes) * 12
+    effect: Mana supplies nourishment, preventing starvation and dehydration, without satisfying hunger or thirst sensations.
+  preserve:
+    entity: entity.spell.preserve
+    source_printed: 142
+    duration_hours_after_permanence: (Force + successes) * 12
+    eligible: Inert organic material including food, drink, cadavers and samples usable as ritual-sorcery material links.
+    effect: Prevents drying, decay and putrefaction.
+  original_health_table_subset:
+    source_printed: 166
+    columns: [name, type, target_code, duration, range, drain]
+    rows:
+      - [Alleviate Allergy, P, 10 - Essence(V), S, T, (Allergy Level)]
+      - [Awaken, M, 4(V), I, T, -2(Stun Damage Level)]
+      - [Cause Allergy, P, 10 - Essence(R), S, T, +2(Allergy Level +1)]
+      - [Cripple Limb, P, B(T), S, T, +1(S)]
+      - [Decrease Cybered Reaction, P, 10 - Essence(R), S, T, +2(D)]
+      - [Decrease Reaction, M, 10 - Essence(R), S, T, +1(D)]
+      - [Decrease Reflexes -1, P, 10 - Essence(R), S, T, +2(D)]
+      - [Decrease Reflexes -2, P, 10 - Essence(R), S, T, +4(D)]
+      - [Decrease Reflexes -3, P, 10 - Essence(R), S, T, +6(D)]
+      - [Fast, M, 4(V), P, T, -2(M)]
+      - [Intoxication, P, B(R), P, T, +1(D)]
+      - [Nutrition, P, 4(V), P, T, +1(M)]
+      - [Preserve, P, '4', P, T, +1(M)]
+    unresolved_source_notation: Cripple Limb table prints B(T) while prose explicitly says Body resistance. Retain both without interpreting T as R.
