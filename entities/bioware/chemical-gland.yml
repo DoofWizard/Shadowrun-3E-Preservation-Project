@@ -1,23 +1,62 @@
 id: entity.bioware.chemical-gland
 record_type: entity
-name: "Chemical Gland"
+name: Chemical Gland
 domain: bioware
 status: ingested
+source: source.mm
+printed_pages: '64-66'
+pdf_pages: '65-67'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.6
-  availability: "10/4 days"
-  cost: "Special"
+  availability: '10/4 days'
+  cost: Special
   street_index: 3
-  legality: "5-Q"
-  production_time_per_dose: "24 hours"
+  legality: 5-Q
+  production_time_per_dose: '24 hours'
   maximum_stored_doses: 5
-  delivery_modes: ["exhalation spray", "spit", "internal release", "weapon reservoir"]
-links:
-  uses: [rule.chemistry.drug-exposure]
-  requires: []
-  component_of: []
-  interacts_with: [rule.damage.stress-points]
+  delivery_modes: [exhalation spray, spit, internal release, weapon reservoir]
+data:
+  compound_selection:
+    number_of_compound_types: 1
+    category: naturally occurring compound in game
+    selection_before_implantation: true
+    availability_at_gm_discretion: true
+    resistance_body_multiplier: 2
+    resistance_body_basis: unaugmented Body
+    resistance_scope: attacks using the same compound as the implanted gland
+  cost_nuyen: '30000 + 100 * price of one game dose'
+  delivery_game_mechanics:
+    exhalation_spray:
+      action: Complex Action
+      test: Ranged Attack Test
+      attack_skill: Quickness
+      combat_pool_allowed: true
+      maximum_range_meters: 'floor(unaugmented Body / 2)'
+      shotgun_choke_setting: 2
+      lingering_cloud: false
+    spit:
+      inherits_attack_test_and_action_from: exhalation spray
+      shotgun_spread_rules_apply: false
+      maximum_range_meters: unaugmented Body
+      maximum_targets: 1
+      target_number_modifier_per_meter: 1
+    internal_release:
+      maintained_in_body_game_doses: 1
+    weapon_reservoir:
+      bladed_cyberweapon_coated_on_retraction: true
+      compatible_cyberweapons: [cyber dartgun, cybersquirt]
+      dose_limited: true
+  stress:
+    light: irritation, swelling and discomfort
+    moderate: one new game dose every 48 hours
+    serious: storage limit two game doses
+    deadly: production stops until character healed
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - {source: source.mm, pages: "64-66", relation: defines, note: "Chemical Gland description, delivery modes, game effects, stress effects and statistics"}
+  - {source: source.mm, pages: '64-66', relation: defines, note: Game effects, Stress and market row; SR3 shotgun spread p117}
 notes:
-  - "The implanted gland is tailored to manufacture one chosen compound; compound availability and legality remain separate."
+  - Fictional tabletop game mechanics only; compound availability and legality remain separate.
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp64-66/PDF65-67: Chemical Gland'
+framing: reference_exact
