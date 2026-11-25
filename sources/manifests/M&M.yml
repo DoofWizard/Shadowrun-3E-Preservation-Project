@@ -3255,6 +3255,27 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_nanoware_installation_example_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed p99/PDF100; publisher copyright PDF5."
+    records:
+      - id: procedure.nanotech.installation
+        path: procedures/nanotech/installation.yml
+        printed: "99"
+        pdf: "100"
+        commit: "0e933195e1dd5a82a0f0cb31fd04210659e1d18e"
+        blob: "938281534bd6dfbac0338473f290fac0bb709af3"
+        baseline_sha256: "01ac5211fcea240d5dc7ba8da5bac261cc6aa17b25a52859815c843c69708d8a"
+        candidate_sha256: "90602d3ca7bacf79751bf89c54ead2165b25b07649a09e32f66dbd0bef26b792"
+        immutable_sha256: "3c0416144e01d30f1cc3cb17d5d63051fec8fde2d6e54a41866a34caef38c99e"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Original Manx example: named system, first installation, facilitator references, two reported sixes, recovery days, example-specific duration. Existing procedure conditions unchanged."
+    historical_receipt_debt: "New source-grounded semantic correction has a fresh receipt. It does not recover the original missing journal for commit f03a25792837cb796fd23cd62f60129a7b1390d9 or retrospectively certify that transaction."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3325,9 +3346,16 @@ source_field_review:
         note: "Nanogear includes p95 boundary. p96-97 original rechecked and three prior nanodrone blobs match; no duplicate extraction."
       - scope: "Nanoware general rules"
         printed: "98-100"
-        state: partial_review_and_receipt_debt
-        evidence: [confirmed_nanoware_field_backfill_2026_11_23, confirmed_nanoware_detection_2026_11_23, confirmed_nanite_persistence_limits_2026_11_25]
-        remaining: "Installation original immutable receipt debt; retain existing threshold, example arithmetic and detection uncertainties."
+        state: scoped_reconciled
+        evidence: [confirmed_nanoware_field_backfill_2026_11_23, confirmed_nanoware_detection_2026_11_23, confirmed_nanite_persistence_limits_2026_11_25, confirmed_nanoware_installation_example_2026_11_25]
+        original_images_reviewed: "Printed pp98-100/PDF99-101 and publisher PDF5."
+        finite_natural_scopes:
+          - {printed: "98", records: [rule.nanotech.classification, rule.nanotech.acquisition-legality, rule.nanotech.excessive-nanoware], fields: "Categories, fixed/released systems, concurrent limits, Magic, acquisition, clinic grades, costs and permits."}
+          - {printed: "99", records: [procedure.nanotech.installation, rule.nanotech.immune-tailoring], fields: "All three installation methods, Body TNs, medical care, rejection, facilitator and compatibility conditions, worked example."}
+          - {printed: "99-100", records: [rule.nanotech.nanite-loss, rule.nanotech.maintenance, rule.nanotech.excessive-nanoware], fields: "Six loss table cells, three effectiveness ranges, persistence, bleeding, healing, excess system penalty, maintenance and original arithmetic caveats."}
+          - {printed: "100", records: [rule.nanotech.detection], fields: "Thermographic/Sensor modifier, three detection TNs, two effectiveness modifiers and separate tests."}
+        note: "Two new source-grounded corrections individually confirmed/indexed; remaining general-rule fields compared against prior matching live canonical records. Mechanical coverage reconciliation only, not retroactive certification, formal book acceptance or engine testing."
+        remaining: "Retain documented source contradictions (25 percent remaining boundary, Percent Loss header, worked-example arithmetic and detection modifier stacking). Original installation transaction receipt debt remains separately bounded; current new transaction receipt does not recover it."
       - scope: "Chemistry"
         printed: "101-123"
         state: field_review_not_demonstrated
