@@ -1,0 +1,59 @@
+id: rule.magic.mits-combat-spell-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '138, 140, 165'
+pdf_pages: '139, 141, 166'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Grimoire combat spell effects, original p138, p140 and p165
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition, printed pp138, 140, 165/PDF139, 141, 166. Fictional tabletop mechanics add missing effect qualifications and printed table range/target codes to the existing spell entities.
+data:
+  general:
+    source_printed: 138
+    paired_versions_default: First single-target, second area-effect unless otherwise specified.
+    sr3_combat_touch_conversion_drain_level_delta: -1
+    combat_spells: Damage-causing; resisted by target.
+  shattershield:
+    entity: entity.spell.shattershield
+    source_printed: 140
+    touch: Physical component or astral form of the barrier.
+    resistance_dice: Barrier Force; creator may add spell defense dice regardless of location.
+    success_condition: Caster successes strictly exceed barrier successes.
+    success_effect: Barrier destroyed.
+    otherwise: No effect.
+  slay_slaughter:
+    entities: [entity.spell.slay-race-species, entity.spell.slaughter-race-species]
+    source_printed: 140
+    separate_spell: Each biological race or species requires its own version of each spell.
+    excludes: Social status and other nonbiological distinctions are not targeting criteria.
+  spiritbolt_spiritblast:
+    entities: [entity.spell.spiritbolt, entity.spell.spiritblast]
+    source_printed: 140
+    inherits: [Manabolt, Manaball]
+    restriction: Damage only spirits.
+  stun_touch:
+    entity: entity.spell.stun-touch
+    source_printed: 140
+    inherits: Stunbolt, except caster must touch target.
+  wreck_ram:
+    entities: [entity.spell.wreck-object, entity.spell.ram-object]
+    source_printed: 140
+    inherits: Powerbolt for a specified class of nonliving object.
+    separate_spell: Each different object type requires a separate Wreck spell.
+    examples: [vehicle, door, gun, computer]
+    ram: Same as Wreck except caster must touch target.
+  table_range_and_target_codes:
+    source_printed: 165
+    columns: [entity, target_code, range_code]
+    rows:
+      - [entity.spell.ram-object, OR, T]
+      - [entity.spell.shattershield, F(R), T]
+      - [entity.spell.slaughter-race-species, W(R), LOS(A)]
+      - [entity.spell.slay-race-species, W(R), LOS]
+      - [entity.spell.spiritblast, F(R), LOS(A)]
+      - [entity.spell.spiritbolt, F(R), LOS]
+      - [entity.spell.stun-touch, W(R), T]
+      - [entity.spell.wreck-object, OR, LOS]
+    interpretation: The table prints no R suffix for Ram or Wreck; the general combat resistance statement is retained without inferring an additional test for objects.
