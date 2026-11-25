@@ -3231,10 +3231,18 @@ source_field_review:
         remaining: "Context and embedded rules pp101-105, drug rules pp105-107, chemical rules/substance abuse pp107-110, applied chemtech pp111-117, pharmaceuticals pp117-122, magical compounds pp122-123; compare fictional game fields and tables."
       - scope: "Damage and healing"
         printed: "124-134"
-        state: partial_review
-        evidence: [confirmed_stress_test_wound_failure_2026_11_24, confirmed_stress_points_cyber_bio_wounds_2026_11_24, confirmed_attribute_damage_repair_2026_11_24, confirmed_implant_stress_repair_2026_11_24, confirmed_consciousness_scars_dermal_2026_11_24, confirmed_expanded_first_aid_2026_11_24, confirmed_expanded_doctoring_2026_11_24, confirmed_box_by_box_healing_2026_11_24]
-        note: "PDF126/p125 illustration reviewed; no separate mechanics observed. Both p134/PDF135 wound-effect interactions confirmed in confirmed_wound_effect_interactions_2026_11_25."
-        remaining: "Cumulative prior damage and healing field/receipt reconciliation remains before chapter-wide certification."
+        state: scoped_reconciled
+        evidence: [confirmed_stress_test_wound_failure_2026_11_24, confirmed_stress_points_cyber_bio_wounds_2026_11_24, confirmed_attribute_damage_repair_2026_11_24, confirmed_implant_stress_repair_2026_11_24, confirmed_consciousness_scars_dermal_2026_11_24, confirmed_expanded_first_aid_2026_11_24, confirmed_expanded_doctoring_2026_11_24, confirmed_box_by_box_healing_2026_11_24, confirmed_wound_effect_interactions_2026_11_25]
+        original_images_reviewed: "Cumulative printed pp124,126-134/PDF125,127-135 in earlier scoped receipts; current PDF126/p125 illustration and PDF135/p134 optional interactions, PDF3-5 contents and publisher inspected."
+        finite_natural_scopes:
+          - {printed: "124,126", records: [rule.damage.stress-points, rule.damage.stress-test], fields: "Stress sources and points, levels, test tables and exceptions."}
+          - {printed: "125", disposition: "Illustration visually inspected; no separately actionable mechanics observed."}
+          - {printed: "126-129", records: [rule.damage.wound-effects, rule.damage.cybersystem-wound-effects, rule.damage.cyberware-failure, rule.damage.bioware-wound-effects, rule.damage.attribute-damage], fields: "Wound determination/classification, electrical and implant slot rules, failure tables, Attribute damage and permanent damage."}
+          - {printed: "130-131", records: [procedure.damage.cyberware-stress-repair, procedure.damage.bioware-stress-repair, rule.damage.attribute-damage, rule.damage.stress-points], fields: "Repair tests, costs, natural/medical/magical repair, maintenance, upkeep and optional Attribute dice."}
+          - {printed: "131-133", records: [rule.damage.consciousness, rule.damage.scarring, rule.damage.dermal-armor-damage], fields: "Consciousness, revival, disablement, scar tables, dermal damage and repair."}
+          - {printed: "132-134", records: [option.healing.expanded-first-aid, option.healing.expanded-doctoring, option.healing.box-by-box, rule.damage.mm-wound-effect-interactions-p134], fields: "Optional First Aid and doctoring modifiers, box-by-box healing and discharge, called-shot and over-damage wound effects."}
+        note: "Fifteen prior canonical record blobs match their registered live refs; one new individually confirmed/indexed record. Earlier First Aid conflict superseded by later confirmed entry. Cumulative chapter field reconciliation, not a new full source re-review, separate whole-book acceptance or engine testing."
+        remaining: "Retain original box-by-box duration wording and printed Expanded Doctoring page-reference ambiguity; no demonstrated residual chapter mechanical gap from cumulative reviewed scopes."
       - scope: "Surgical skills, tools, facilities and body parts"
         printed: "135-139"
         state: scoped_reconciled
@@ -3276,7 +3284,7 @@ source_field_review:
           - {path: entities/cyberware/replacement-modification.yml, commit: "d3dcdb3d7ca860f08e9f2e4c6fbb9b9b401cfcbe", blob: "640dc7d87d417679df3778409f195e48188a0a90"}
           - {path: entities/cyberware/weapon-mount-articulated-arm.yml, commit: "8de3e4dcf565df8c27028c21150c0e6332d5934e", blob: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"}
         missing: "Original immutable baseline, plan, candidate, actual confirmation artifact and individual indexing receipt; negative archive/title search retained until evidence changes."
-    next_cursor: "Damage and healing: reconcile cumulative exact accepted fields and receipts against prior reviewed pp124-134; then nanoware local gaps and remaining bioware/implant scopes. Reuse reconciled surgery chapter absent demonstrated discrepancy."
+    next_cursor: "Resolve remaining nanoware item gaps (Cutters actual path and Retinal Tailors prior conflict), then remaining bioware/implant scopes. Reuse reconciled Damage and Healing and Surgery chapters absent demonstrated discrepancy."
     original_field_denominator: unknown
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
