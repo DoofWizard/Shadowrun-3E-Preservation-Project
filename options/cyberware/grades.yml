@@ -4,13 +4,13 @@ name: Cyberware Grades
 domain: cyberware
 status: ingested
 source: source.mm
-printed_pages: '44-45'
-pdf_pages: '44-45'
+printed_pages: '10-11,44-45'
+pdf_pages: '10-11,44-45'
 edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
-headline: Cyberware Grades and Availability
-summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF pp44-45.
+headline: Cyberware Grades, Acquisition and Implantation Conditions
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed and PDF pp10-11,44-45.
 effective: {status: current, source: source.mm, page: 45, basis: extends}
 option_for: [entity.cyberware.cyberware]
 selection:
@@ -39,11 +39,35 @@ data:
     separately_purchased_system_components: same grade
     cyberlimb_or_body_compartment_devices: exempt from matching the grade of the containing limb or compartment
   used_stress: {permanent_points: 1D3, removable: false, cumulative_with_new_stress: true}
+  introductory_grade_conditions:
+    basic:
+      ordinary_surgeon_or_street_doctor_can_implant: true
+      individualized_or_purpose_specific_customization: false
+    alpha:
+      generally_ordered: true
+      beginning_to_be_stocked: true
+    beta:
+      special_order_required: true
+      custom_fitted_to_user: true
+      preimplant_screening: [body condition assessment, chemical tests, DNA screening]
+      takes_longer_to_produce: true
+    delta:
+      custom_built_during_surgical_process: true
+      surgeon_training: [microelectronics, medicine]
+      implants_parts_tools_cost_multiplier: 8
+      street_availability: unavailable
+      capable_clinics_often_offer_cybermancy_access: true
+      medical_costs_and_repair_times: qualitatively much higher than standard, no numeric factor specified here
+    used_delta:
+      ordinarily_purchasable: false
+      if_acquired_otherwise: may be installed as betaware
+      note: No general change to the implant's grade or additional numerical cost modifier is stated here.
 links:
   modifies: [entity.cyberware.cyberware]
   requires: []
   interacts_with: [rule.cyberware.used-cyberware-stress]
 sources:
+  - {source: source.mm, pages: "10-11", relation: extends, note: Introductory cyberware grade acquisition and implantation conditions}
   - {source: source.mm, page: 44, relation: extends, note: Cyberware Grades introduction}
   - {source: source.mm, page: 45, relation: defines, note: Grade table and grade rules}
 notes: []
