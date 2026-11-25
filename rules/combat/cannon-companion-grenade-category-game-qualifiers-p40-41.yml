@@ -1,0 +1,66 @@
+id: rule.combat.cannon-companion-grenade-category-game-qualifiers-p40-41
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '40-41'
+pdf_pages: '41-42'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Cannon Companion FASA7908: fictional tabletop category and game damage qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition, original printed pp40-41/PDF41-42. Remaining named item game effects, category restrictions and combat-turn conditions, reusing base resolution and catalogue records.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  general:
+    base_resolution: rule.combat.sr3-core-grenade-scatter-blast-p118-119
+    base_catalogue_reference: SR3 printed p282
+    listed_item_forms: [hand_grenade, minigrenade]
+    hand_grenade_variants: [aerodynamic, nonaerodynamic]
+    aerodynamic_range_reference: original SR3 grenade range rules
+    nonaerodynamic_special_game_eligibility: trap
+    flare_is_nonexploding_game_effect: true
+  dual_charge:
+    entity: entity.ammunition.dual-charge-grenade
+    allowed_game_effect_sources: [Cannon Companion, SR3, Man & Machine]
+    excluded_effect_types: [Superflash, Incendiary, Flare]
+    component_effect_count: 2
+    resolve_simultaneously: true
+    resolve_each_as_own_game_category: true
+    halve_game_power: true
+    halve_game_radius: true
+    halve_other_game_effects: true
+    rounding: down
+  ipe:
+    entities: [entity.ammunition.ipe-concussion-grenade, entity.ammunition.ipe-defensive-grenade, entity.ammunition.ipe-offensive-grenade]
+    offensive_defensive_variants: [HE, AP]
+    ap_game_rule_reference: SR3 printed p116 flechette ammunition rules
+    inventory_damage_and_blast_fields: use_existing_entity_rows
+  incendiary:
+    entity: entity.ammunition.incendiary-grenade
+    game_fire_check_radius_meters: 10
+    game_fire_check_reference: Cannon Companion printed p98
+    game_fire_check_roll_modifier: 2
+    effect_duration_combat_turns: 10
+    darkness_modifier_negated_within_game_meters: 30
+    facing_glare_tn_modifier: 2
+    flare_compensation_eliminates_glare: true
+    damage_resistance_condition: character contact or movement within one game meter
+    damage_code: 8M
+    damage_resistance_impact_armor_multiplier: 0.5
+    armor_rounding: down
+    additional_game_fire_reference: Cannon Companion printed p98 Fire and Incendiaries
+  white_phosphorus:
+    entity: entity.ammunition.white-phosphorus-grenade
+    first_damage_code_role: initial_game_blast
+    second_damage_code_role: subsequent_game_turn_damage
+    game_effect_radius_meters: 15
+    affected_targets: anyone or anything within the initial game area
+    ongoing_damage_timing: beginning of each subsequent Combat Turn
+    ongoing_damage_impact_armor_multiplier: 0.5
+    armor_rounding: down
+    ongoing_duration_combat_turns: 15
+    flammable_game_objects_can_catch_fire: true
+    fire_game_rule_reference: Cannon Companion printed p98
+    total_air_exclusion_game_condition_ends_effect_after_full_combat_turns: 2
+  existing_visual_effect_binding: rule.combat.cannon-companion-visual-grenade-game-qualifiers-p40-41
