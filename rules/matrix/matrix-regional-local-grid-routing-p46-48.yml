@@ -1,0 +1,26 @@
+id: rule.matrix.matrix-regional-local-grid-routing-p46-48
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '46-48'
+pdf_pages: '47-49'
+edition_scope: 'Matrix (FASA7909), FASA Corporation, Shadowrun Third Edition tabletop RPG'
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'FASA7909 Matrix original regional and local grid routing, printed pp46-48/PDF47-49'
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog_number: FASA7909, edition: SR3}
+  regional_grids:
+    source_printed: 46
+    tier: top
+    connected_to_other_RTGs: all
+    lower_tier: LTGs
+    function: 'An RTG acts as a gateway to other RTGs and its subordinate LTGs.'
+    host_attachment: 'Direct host connections to an RTG are rare, not prohibited.'
+  local_grids:
+    source_printed: 47
+    direct_LTG_to_LTG_portal: false
+    same_parent_route: [origin_LTG, parent_RTG, destination_LTG]
+    different_parent_route: [origin_LTG, origin_RTG, destination_RTG, destination_LTG]
+    qualification: 'These routes describe the fictional grid topology, not automatic success at any Logon operation.'
+  relationship: 'Extends the general grid topology record with explicit regional/local transition conditions. Satellite exceptions remain in rule.matrix.matrix-satellite-rtg-ratings-p47; PLTG access and host topology remain in the existing core and Matrix records.'
