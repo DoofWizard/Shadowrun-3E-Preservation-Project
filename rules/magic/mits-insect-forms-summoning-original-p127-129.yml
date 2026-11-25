@@ -1,0 +1,72 @@
+id: rule.magic.mits-insect-forms-summoning-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '127-129'
+pdf_pages: '128-130'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Insect spirits — original form statistics, summoning and Transformation Table
+summary: Fictional Shadowrun Third Edition rules from FASA Corporation, Magic in the Shadows (FASA7907), printed pp127-129/PDF128-130.
+data:
+  shaman:
+    full_magician: true
+    known_aspected_insect_magicians: none reported by the source
+    insect_totem_special_advantages_disadvantages: none
+    summon_domain: any
+    initial_potency: floor(1D6 / 2)
+    potency_goals: Fulfillment of fictional goals that secure food, safety and expansion for the nest, or analogous social goals, increases Potency and may bring material wealth.
+  true_form:
+    ordinary_spirit_rules: true
+    appearance: Human-sized version of the actual insect, without hybrid distortion.
+    astral_operation_and_materialization: true
+    winged_materialized_flight: true
+    materialized_vertical_surface_movement: true
+    has_force_attribute: true
+    insecticide_vulnerability: true
+    banishing_force: 2 * Force
+    worker_and_soldier_forms: true
+    queen_mother: Normally always true-form in appearance and manifestation, except mantids (p131); usually 4 to 6 meters long.
+  flesh_form:
+    dual_natured: true
+    has_force_attribute: true
+    banishable: false
+    agency: The insect spirit overrides the original host's will; the merge is permanent.
+    worker:
+      physical_attributes: host physical attributes - 1 each
+      mental_attributes: spirit Force
+      powers: [Skill]
+      weaknesses: [Reduced Senses (Sight)]
+      insecticide_vulnerability: false
+    soldier:
+      physical_attributes: host physical attributes + spirit Force each
+      mental_attributes: spirit Force
+      insecticide_vulnerability: false
+      natural_armor: none
+      manufactured_armor_permitted: true
+      solitary_flesh_forms: Treat both male and female solitary flesh-form spirits as soldiers.
+  summoning:
+    worker_soldier: Ordinary Conjuring procedure (SR3 p186).
+    queen_mother: Requires initiate with Invoking metamagic; apply the insect-spirit rules and Great Form summoning rules (MitS p106).
+    host: Living body, ordinarily metahuman; animals and paracritters are also possible.
+    incubation_weeks: spirit Force
+    transformation_test: Opposed Test of host Willpower against spirit Force.
+    queen_mother_assistance_host_tn_modifier: 2
+    irreversible: After incubation begins, the host cannot be saved (subject to GM discretion); even banishing or destroying the spirit results in the host's death.
+    initial_karma_pool:
+      flesh_form: 1
+      true_form: 2
+      queen_mother: 4
+      good_merge: ceil(host Karma Pool / 2)
+  transformation_table:
+    - {host_net_successes: '0 or fewer', result: True form emerges and the fictional host is destroyed.}
+    - {host_net_successes: '1-2', result: Flesh-form; host becomes a human-sized insect version with extensive bodily changes.}
+    - {host_net_successes: '3', result: Flesh-form; several insect characteristics such as chitinous armor, compound eyes or underdeveloped extra limbs.}
+    - {host_net_successes: '4', result: Flesh-form; only one physical insect characteristic.}
+    - {host_net_successes: '5+', result: Good merge flesh-form; original host shape retained, Aura Masking gained, access to host memories and ability to mimic host; not free and remains controlled by Queen or shaman. Worker spirits usually leave the mimicking ability unused.}
+  existing_canon:
+    - option.magic.insect-shaman
+    - rule.spirits.insect-forms
+    - procedure.magic.summon-insect-spirit
+  scope_limit: Hive and solitary spirit-specific rules and statistics are separate natural sections.
