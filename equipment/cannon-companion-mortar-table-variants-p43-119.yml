@@ -1,0 +1,43 @@
+id: equipment.cannon-companion-mortar-table-variants-p43-119
+record_type: equipment
+status: reviewed
+source: source.cc
+printed_pages: '43,119'
+pdf_pages: '44,120'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: Cannon Companion (FASA7908) fictional SR3 catalogue table alignment variants
+summary: "FASA Corporation Shadowrun Third Edition Cannon Companion, printed pp43 and 119 (PDF44 and 120): two misaligned appendix rows and seven literal differences from existing game entities."
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  table: Mortar Rounds
+  appendix_alignment:
+    printed_page: 119
+    pdf_page: 120
+    columns: [row_label_area, conceal, damage, blast, weight, availability, cost, street_index, legal]
+    physical_cells:
+      - ['Solar 3', 'Special', 'Special', '3.5', '18/2 wks', '200¥', '2', '1–J', null]
+      - ['Splash3', 'Special', 'Special', '5', '18/1 wk', '300¥', '3', 'As chemical', null]
+    null_meaning: No value is printed in the final aligned cell of these two rows.
+    body_reference:
+      printed_page: 43
+      pdf_page: 44
+      entity_ids: [entity.ammunition.mortar-round-solar, entity.ammunition.mortar-round-splash]
+      observation: The body table has separate item names and normally aligned fields for both rows.
+    precedence: unresolved
+    interpretation: No reassignment of the displaced appendix cells to intended fields is inferred.
+  body_literal_variants:
+    printed_page: 43
+    pdf_page: 44
+    original_dash_fields:
+      - {entity: entity.ammunition.mortar-round-incendiary, fields: [blast]}
+      - {entity: entity.ammunition.mortar-round-seeker, fields: [concealability]}
+      - {entity: entity.ammunition.mortar-round-smoke, fields: [damage, blast]}
+      - {entity: entity.ammunition.mortar-round-smoke-ir, fields: [damage, blast]}
+    original_dash: '—'
+    existing_entity_value: null
+    other_literal_variant: {entity: entity.ammunition.mortar-round-seeker, field: weight, original: '+.5', existing: '+0.5'}
+    interpretation: Literal differences are preserved without assigning new game meanings.
+  scope: Original fictional inventory table layout and literal-value discrepancies only; existing aligned game catalogue values are reused.
