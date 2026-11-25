@@ -1,16 +1,39 @@
 id: rule.cyberware.optical-scanning-link
 record_type: rule
-name: "Optical Scanning Link"
+name: Optical Scanning Link
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '14-15'
+pdf_pages: '14-15'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Optical Scanning Link — SR3 communication and interface constraints
+summary: FASA7126 Man & Machine Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop RPG, printed pp14-15/PDF14-15.
 effective: {status: current, source: source.mm, page: 14, basis: defines}
 scope: {applies_to: ["optiscan links and compatible optical devices"]}
 resolution:
-  summary: "An optical scanning link transfers data through an infrared optical beam rather than radio. It requires line of sight, is disrupted by obscurants, and can link to compatible datajack or external optical devices through the required interface."
+  summary: "The fictional optiscan system transfers data optically rather than by radio. Its game use is limited by range, line of sight, interface requirements and character motion."
   inputs: ["line of sight", "compatible transmitter/receiver", "environmental obscurants"]
   outputs: ["successful or failed optical data link"]
   steps: []
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberware.interconnectivity]}
 sources:
-  - {source: source.mm, page: 14, relation: defines, note: "Optical Scanning Link"}
+  - {source: source.mm, pages: "14-15", relation: defines, note: "Optical Scanning Link"}
 notes: []
+data:
+  line_of_sight_required: true
+  within_range_required: true
+  radio_jamming_applies: false
+  interception: difficult
+  disruption: {blocked_line_of_sight: true, perception_modifier_threshold: 4, threshold_inclusive: true}
+  character_transmission_requires: transducer
+  character_receiving_requires_any: [display link, transducer]
+  external_remote_interface: {device_datajack_port_required: true, linked_datajack_required: true, transducer_sufficient: false, external_device_dni_required: true, dni_reference: M&M p39}
+  movement_constraint: nearly impossible to communicate while moving
+  optional_ras_override_reference: M&M p22
+  simsense_supported: false
+  rigging_supported: false
+  decking_supported: false
+  concealability: {eye_unit: 10, remote_adaptor: 10}
