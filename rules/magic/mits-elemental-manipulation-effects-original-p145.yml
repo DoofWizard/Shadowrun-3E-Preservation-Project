@@ -1,0 +1,46 @@
+id: rule.magic.mits-elemental-manipulation-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '145, 168'
+pdf_pages: '146, 169'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Grimoire elemental manipulations, printed pp145 and 168/PDF146 and 169
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition; fictional RPG elemental spell mechanics and original table entries.
+data:
+  row_columns: [name, type, target, duration, range, drain]
+  table_rows:
+    - [Laser, P, '4(RC)', I, LOS, '+1(Damage Level +1)']
+    - [Nova, P, '4(RC)', I, 'LOS(A)', '+1(Damage Level +2)']
+    - [Smoke Cloud, P, '4(RC)', I, 'LOS(A)', '(Damage Level +2)']
+    - [Steam, P, '4(RC)', I, LOS, '(Damage Level +1)']
+    - [Thunderbolt, P, '4(RC)', I, LOS, '(Damage Level +1)']
+    - [Thunderclap, P, '4(RC)', I, 'LOS(A)', '(Damage Level +2)']
+  laser_nova:
+    elemental_effect: light
+    reference: MitS p52
+    damage_description: Burning damage from fictional magical light
+    extra_damage_condition: Creature allergic or vulnerable to sunlight
+    extra_damage_reference: Critters p15
+    area_variant: Nova
+  steam_smoke_cloud:
+    damage: Stun
+    elemental_effect: smoke
+    reference: MitS p52
+    area_variant: Smoke Cloud
+    perception_test_modifier: 4
+    air_filter_armor: Half filter rating rounded down
+  thunderbolt_thunderclap:
+    damage: Stun
+    elemental_effect: blast
+    reference: MitS p52
+    deafness_combat_turns: One per two caster successes, capped at spell Force
+    area_variant: Thunderclap
+  correction:
+    historical_entity: entity.spell.thunderclap
+    historical_blob: fc38e77af7d517e9db32276560cf2520dcb8c91f
+    historical_drain: '(Damage Level -2)'
+    source_drain: '(Damage Level +2)'
+    basis: Both printed definition p145 and table p168 agree on positive two.
