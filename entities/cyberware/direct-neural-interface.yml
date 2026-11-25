@@ -1,17 +1,45 @@
 id: entity.cyberware.direct-neural-interface
 record_type: entity
-name: "Direct Neural Interface"
+name: Direct Neural Interface
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '8,10,38-39,155'
+pdf_pages: '8,10,38-39,156'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp8,10,38-39,155 — Direct Neural Interface
 intrinsic:
   essence: 0.1
   ecu: 0.25
   cost_nuyen: 4500
-  concealability: 0
-  availability: "4/6 days"
+  concealability: null
+  availability: '4/6 days'
   street_index: 1
-  legality: "5P-Q"
+  legality: 5P-Q
+data:
+  ordinary_neural_control:
+    typical_cyberware: Most implants connect to the brain or nervous system and respond to mental commands, usually through physiological impulses.
+    conscious_verbal_command_required: false
+  dedicated_interface:
+    function: Dedicated datajack connection between the brain and equipment adapted for neural control.
+    typical_installations: [cyberlimbs, body compartments]
+    external_dni_adapted_devices_controllable_via_datajack: true
+    unadapted_equipment_controllable_via_dni: false
+    relocated_headware: Most headware installed in cyberlimbs is already adapted but requires the interface implant for the brain connection.
+    example: A cyberdeck housed in a cyberlimb needs an external cable between the datajack and deck jackport unless connected to the user by DNI.
+    output_interfaces: {text: display link, images: image link, simsense_example: simrig}
+    output_requires_appropriate_translation_gear: true
+  purchasing:
+    concealability_source_mark: printed dash
+    adaptation_entity: entity.cyberware.direct-neural-interface-adaptation
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 155, relation: defines, note: "Cyberlimb enhancement equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 8, relation: defines, note: General neural control}
+  - {source: source.mm, page: 10, relation: defines, note: Devices without automatic neural connection}
+  - {source: source.mm, page: 38, relation: defines, note: Direct Neural Interface game effects}
+  - {source: source.mm, page: 39, relation: defines, note: Cyberlimb equipment table}
+  - {source: source.mm, page: 155, relation: defines, note: Cyberlimb enhancement equipment table statistics}
+notes:
+  - Printed p10 directs the reader to p39 for DNI; the explanatory game-effects text is on p38 and the purchase table is on p39.
