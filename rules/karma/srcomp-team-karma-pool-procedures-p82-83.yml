@@ -22,14 +22,18 @@ data:
   formation:
     minimum_contribution_per_member:
       karma_pool_points: 1
-    transfer: Each member contributes at least 1 point from personal Karma Pool to
-      a Team Karma Pool.
+    transfer: At team formation, each member should contribute at least 1 point from personal Karma Pool to the Team Karma Pool.
+    membership_list: At formation, the group should list the team members.
     permanency: Contributed personal Karma Pool points are permanently removed from
       the contributing character.
     refresh: The Team Karma Pool refreshes when personal Karma Pools refresh.
     burned_points: Team Karma Pool points spent for extra successes or otherwise burned
       are permanently lost, as with personal Karma Pool.
+  joining_existing_team:
+    mandatory_contribution_points: 1
+    scope: When a new member joins an existing team, the new member must contribute 1 point of Team Karma.
   multiple_teams:
+    contribution_value_formula: Team Karma contribution value equals Karma Pool points transferred minus the number of additional teams to which the character belongs.
     contribution_cost_formula: Cost in personal Karma Pool Points equals desired Team
       Karma contribution plus 1 point for each additional team the character belongs
       to.
@@ -39,6 +43,8 @@ data:
     example_contributed_points: 2
     example_personal_pool_cost: 4
   use:
+    personal_pool_equivalence: Any team member uses Team Karma points in the same way as personal Karma Pool points, subject to team-use conditions.
+    gm_guidance: Gamemasters should monitor Team Karma so it does not merely increase the dice available to players.
     group_only: A character may use Team Karma only when acting with the team or on
       the team’s behalf, not on an unrelated solo run.
     consent: Use requires agreement by a majority of team members.
@@ -63,8 +69,7 @@ data:
       applies.
   death_and_replacement:
     death: No Team Karma is lost when a team member dies.
-    replacement: The replacement is treated as a new character and must make the standard
-      initial contribution.
+    replacement: The replacement is treated as a new character and must make the new-member contribution.
   npc_teams:
     gm_option: If player characters use Team Karma, the gamemaster should apply it
       to coordinated NPC teams as well.
@@ -89,7 +94,5 @@ data:
     and are not cumulative.
   - The first formation contribution is a minimum, not a maximum.
 framing: reference_exact
-headline: rule.karma.srcomp-team-karma-pool-procedures-p82-83 — archival rule_procedure
-  record
-summary: Source-indexed rule_procedure from source.srcomp, printed pages 82-83; substantive
-  assertions and provenance are in the structured data.
+headline: "FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition fictional tabletop RPG: optional Team Karma, printed pp82-83/PDF83-84"
+summary: Formation recommendations and mandatory new-member contribution are distinct; the source also specifies personal-pool-equivalent use, direct contribution valuation, and GM oversight.
