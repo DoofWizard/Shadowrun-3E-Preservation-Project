@@ -1,11 +1,27 @@
 id: entity.nanotech.carcerand-plus
 record_type: entity
-name: "Carcerand-Plus"
+name: Carcerand-Plus
 domain: nanotech
 status: ingested
-intrinsic: {nanite_type: "Free-floating", cost_nuyen: 30000, availability: "12/2 wks", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '92'
+pdf_pages: '93'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {nanite_type: Free-floating, cost_nuyen: 30000, availability: '12/2 wks', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 158, relation: defines, note: "Nanoware equipment table statistics"}
+  - {source: source.mm, page: 158, relation: defines, note: 'Nanoware equipment table statistics'}
+  - {source: source.mm, page: 92, relation: defines, note: 'Original item game effects and both market rows'}
 notes:
-  - "Fictional Shadowrun nanoware preserved as tabletop game data."
+  - 'Fictional tabletop RPG nanoware; no real-world compound handling is described here.'
+data:
+  compound_dose_equivalent: 1
+  trigger_condition_must_be_specified_before_installation: true
+  duration: until trigger condition is met or nanites are purged
+  effect_on_trigger: release the stored fictional compound
+  market_rows:
+    - {nanite_type: Free-floating, cost_nuyen: 30000, availability: '12/2 wks', street_index: 2, legality: Legal}
+    - {nanite_type: Transient, cost_nuyen: 7000, availability: '10/1 wk', street_index: 2, legality: Legal}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), p92/PDF93: Carcerand-Plus game effects'
+framing: reference_exact
