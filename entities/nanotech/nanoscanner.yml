@@ -1,10 +1,26 @@
 id: entity.nanotech.nanoscanner
 record_type: entity
-name: "Nanoscanner"
+name: Nanoscanner
 domain: nanotech
 status: ingested
-intrinsic: {concealability: 6, weight: 1, availability: "Rating/1 wk", cost: "5,000 nuyen x Rating", street_index: 2, legality: "8P-U", rating_range: "1-10"}
+source: source.mm
+printed_pages: '95-96'
+pdf_pages: '96-97'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 6, weight: 1, availability: 'Rating/1 wk', cost: '5,000 nuyen x Rating', street_index: 2, legality: 8P-U, rating_range: '1-10'}
 links: {uses: [rule.nanotech.detection], requires: [], component_of: [], interacts_with: [subsystem.nanotech.core]}
 sources:
-  - {source: source.mm, page: 95, relation: defines, note: "Nanoscanner description, game effects and statistics"}
-notes: []
+  - {source: source.mm, page: 95, relation: defines, note: 'Nanoscanner description and game effects'}
+  - {source: source.mm, page: 96, relation: defines, note: 'Nanogear market statistics'}
+notes:
+  - 'Fictional handheld nanoware diagnostic equipment in the Shadowrun tabletop RPG.'
+data:
+  rating_minimum: 1
+  rating_maximum: 10
+  detection_dice: Rating
+  sample_types: [blood, saliva, tissue, other_materials]
+  detected_nanites_analysis: [carried_data, general_construction, purpose]
+  detection_reference: {source: source.mm, printed_page: 100}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp95-96/PDF96-97: Nanoscanner game effects'
+framing: reference_exact
