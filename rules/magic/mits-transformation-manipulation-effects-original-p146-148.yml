@@ -1,0 +1,173 @@
+id: rule.magic.mits-transformation-manipulation-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '146-148, 168-169'
+pdf_pages: '147-149, 169-170'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Shadowrun Third Edition fictional game rules — FASA7907 Magic in the Shadows Transformation Manipulations, pp146–148 and 168–169
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition fictional tabletop game; transformation spell effects and original reference rows.
+data:
+  row_columns: [name, type, target, duration, range, drain]
+  table_rows:
+    - [Alter Temperature, P, '4', S, 'LOS(A)', '+2(M)']
+    - [Astral Armor, M, '6', S, LOS, '+1(M)']
+    - ['Clean (Element)', P, '6', P, 'LOS(A)', '+1(S)']
+    - [Control Fire, P, Power of fire, S, 'LOS(A)', '+2(M)']
+    - [Create Food, P, '4', P, LOS, '+1(S)']
+    - [Fashion, P, '6', P, T, '+1(L)']
+    - [Firewall, P, '4', S, 'LOS(A)', '+2(S)']
+    - [Fix, P, OR, P, T, '(S)']
+    - [Flame Aura, P, '4', S, LOS, '+2(M)']
+    - [Freeze Water, P, '4', I, 'LOS(A)', '+1(M)']
+    - [Glue, P, '4', S, LOS, '+2(M)']
+    - [Glue Strip, P, '4', S, 'LOS(A)', '+2(S)']
+    - [Limited Armor, P, '6', S, LOS, '+2(L)']
+    - [Limited Physical Barrier, P, '6', S, 'LOS(A)', '+2(M)']
+    - [Makeover, P, '6(V)', P, LOS, '+1(M)']
+    - [Mana Static, M, '4', P, 'LOS(A)', '(D)']
+    - [Mist, P, '4', I, 'LOS(A)', '+1(M)']
+    - [Reinforce, P, OR, S, LOS, '+1(M)']
+    - [Shapechange, P, 'B(T)(V)', S, LOS, '+1(M)']
+    - [Spell Shield, M, '6', S, LOS, '(M)']
+    - [Spell Wall, M, '6', S, 'LOS(A)', '(S)']
+    - [Spirit Barrier, M, '6', S, 'LOS(A)', '(S)']
+    - [Sterilize, P, '4', I, 'LOS(A)', '+1(M)']
+    - [Transform, P, 'B(T)', S, LOS, '+1(S)']
+    - [Wind, P, '4', S, 'LOS(A)', '+2(M)']
+  alter_temperature:
+    delta_celsius_per_two_successes: 5
+    maximum_absolute_delta_celsius: Force × 5
+    example_force_4_limit_celsius: 20
+    gm_discretion: Extreme ambient temperature effects and possible machine interference.
+    typical_unprotected_extreme_temperature_damage_per_minute: 4L Stun
+  astral_armor:
+    target: Single subject; astral space only, against astral combat attacks.
+    required_successes: 1
+    armor_rating: Force
+    extra_successes_add_armor: false
+    exclusions: Background count and mana warp effects.
+  clean_element:
+    elements: [air, earth, water]
+    separate_spell_per_element: true
+    effect: Removes impurities within the area volume; successes establish degree of purification.
+    examples: Airborne toxic fumes or drinking water; muddy water 1–2 successes, contaminated runoff may require 5.
+  control_fire:
+    scope: Normal flames in LOS, area effect.
+    target_number: Fire Power Rating
+    movement_meters_per_success: 1
+    movement_requires_fuel: true
+    power_change_per_two_successes: 1
+    maximum_absolute_power_change: Force
+    exclusions: Magical flames such as fire elementals.
+    exceptions: Ordinary fires caused by Ignite or fire elemental-effect spells are eligible.
+    example_power: {small_campfire: [3, 4], building_or_forest_fire_high: [15, 20]}
+  create_food:
+    adult_human_servings: Successes capped at Force
+    default_quality: Plain and filling
+    gm_option: Extra successes may improve quality.
+  fashion:
+    definition_drain: '+1(M)'
+    table_drain: '+1(L)'
+    conflict: Both printed forms retained; no precedence inferred.
+    touch_required: true
+    style: Successes determine styling; cut, color and fit may change.
+    invariant: Protective value, weight and approximately equal coverage area.
+    maximum_total_ballistic_plus_impact_armor: Force + 1 per two successes
+  firewall:
+    height_meters: Force / 2
+    length_or_radius_meters: Magic / 2
+    contact_damage: (Force)M
+    cover: Partial Cover behind wall (SR3 p112)
+    solid_or_blocks_attacks: false
+    ignition: A successful fire elemental secondary-effects roll (MitS p52) may ignite objects passing through.
+  fix:
+    scope: Nonliving material including vehicles; caster touches item.
+    maximum_weight_kg: Magic
+    all_pieces_required_for_broken_item: true
+    repair_per_success: 1 Barrier Rating point or damage box
+    maximum_repair: Force
+    attempts_per_set_of_damage: 1
+  flame_aura:
+    extension_cm: Successes
+    melee_attacker_resists: (Force)M damage
+    impact_armor: Applies if GM determines attacker used an armored body part.
+    subject_successful_melee_attack_damage_code_power_bonus: 2
+  freeze_water:
+    scope: Area water becomes ice; no living targets including spirits.
+    large_body: All water in range freezes; containers or pipes may burst.
+    melting: Normal ambient-temperature melting.
+    polluted_water: Increased TN, unspecified amount.
+    freezing_degree: Successes capped at Force
+    rainstorm_examples: {sleet: 1, snow: 3, hail: 5}
+  glue_and_glue_strip:
+    scope: Fictional target bonded to a contacted surface; table distinguishes LOS from area LOS.
+    bond_strength: Force
+    separation_test: Strength (Force), successes must exceed original Sorcery successes.
+    surface_failure: Barrier Rating below bond Strength means surface tears during separation.
+    living_subject_damage: Moderate, staged down by extra Strength Test successes.
+  limited_armor_and_barrier:
+    variants: Armor (SR3 p198) or Physical Barrier (SR3 p198) restricted to a single damage category per spell.
+    categories:
+      Blade: All bladed weapons
+      Blast: Grenades and other explosives
+      Bullet: Bullets and other ballistic weapons
+      Cold: Cold and ice elemental effects
+      Heat: Heat and fire including elemental fire spells
+    other_categories: GM approval
+  makeover:
+    voluntary_subject: true
+    scope: Hair, cosmetics, clothing, teeth and plaque; permanent as equivalent salon treatment.
+    style_degree: Successes
+  mana_static:
+    background_count_per_two_successes: 1
+    cap: min(Force, 5)
+    penalty: Normal background count increases TN of all magic tests in area, including caster.
+    after_permanent_decay_per_hour: 1
+  mist:
+    radius_meters: Magic
+    vision_penalty_per_two_successes: 1
+    maximum_penalty: min(Force, 8)
+    penalty_decay_per_combat_turn: 2
+    environment: Dissipation based on temperature and wind.
+  reinforce:
+    maximum_object_area_square_meters: Magic
+    barrier_rating_increase_per_two_successes: 1
+    maximum_increase: Force
+  shapechange_and_transform:
+    shapechange_target: Voluntary fictional target, normal critter form chosen by caster.
+    transform_target: Involuntary targets eligible.
+    threshold: Half target Body (rounded down in example) plus difference between critter and target unaugmented Body.
+    maximum_body_difference: Force
+    example: Body 3 to Body 8 tiger gives Threshold 6 (1 + 5).
+    reference: Critters p19 statistics; add critter Armor Rating to Body for Threshold.
+    attributes: Critter physical Attributes and subject mental Attributes; normal Reaction and Combat Pool.
+    extra_initiative_dice_from_critter: false
+    reach_bonus: Critter Reach if any
+    gm_option: Natural attacks may be handled as hand razors or spurs.
+    equipment: Clothing and equipment do not transform and may be damaged or destroyed during change.
+    cyberware: Essence-paid cyberware transforms but cannot be used in critter form.
+    magic: Casting and conjuring remain possible; speech unavailable and other limitations of critter form apply.
+  spell_shield_and_wall:
+    tn_bonus: floor(successes / 2), capped at Force
+    planes: [physical, astral]
+    shield: Increases TN for spells cast at subject.
+    wall: Area dome; radius and height each equal Magic in meters; protects inside targets against spells cast from outside.
+  spirit_barrier:
+    variant: Astral Barrier (SR3 p198)
+    eligibility: Spirits only, including materialized spirits.
+    additional_effect: Impedes spirit powers.
+  sterilize:
+    duration: I
+    effect: Fictional area spell affects detached biomaterial and microorganisms; affected material cannot serve as ritual material link (MitS p34).
+    living_target_exception: Biomaterial attached to a living being and resident microorganisms unaffected.
+    in_game_identification_test_tn_modifier_per_success: 2
+    success_cap: Force
+  wind:
+    radius_meters: Magic
+    direction: Caster choice
+    gust_strength: Sorcery successes capped at Force
+    object_effect: Light objects scatter; freestanding items with Barrier Rating below Strength topple.
+    knockdown: Living targets test against Strength at casting and start of each Combat Turn (SR3 p124).
