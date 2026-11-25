@@ -9,7 +9,7 @@ pdf_pages: "84-87,97-98"
 edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
-headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp83-86,96-97/PDF84-87,97-98: nanite capabilities and facility costs"
+headline: "FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp83-86,96-97/PDF84-87,97-98: nanite capabilities, surgery prerequisites and facility costs"
 effective: {status: current, source: source.mm, page: 96, basis: defines}
 scope: {applies_to: ["nanoware and nanodrones"]}
 resolution:
@@ -62,6 +62,13 @@ data:
       large_adaptive_projects: "May require a semi-autonomous knowbot; the source describes possible AI research as unconfirmed."
       direct_metahuman_interface_supported: false
       programming_changes: "Use the external controller; apply the explicit reprogramming and direct-control rules separately."
+    cybernetic_surgery:
+      printed_page: 84
+      required_for_all_cybernetic_surgery: true
+      roles: [implanting standalone cyberware, producing effects of other cyberware, connecting cyberware to neural pathways]
+      examples: [bone lacing, skillwires, dermal plating, wired reflexes, datajack, balance augmentors, retinal duplication, orthoskin, dermal sheathing]
+      direct_integration_examples: [cybereye accessories, filtration systems, chemical immunity tools, chemical analysis tools]
+      distinction: "This is a fictional technology prerequisite, not an additional surgical test or a requirement to select the Nanosurgery option for every implant. Apply the actual procedure and option rules separately."
     physical_scope:
       printed_page: 86
       direct_gross_body_change: false
@@ -71,6 +78,6 @@ data:
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.nanotech.core]}
 sources:
   - {source: source.mm, pages: "96-97", relation: defines, note: "Nanotech and its Uses, Nanodrones, Nanotech Facility Costs"}
-  - {source: source.mm, pages: "83-86", relation: extends, note: "Self-Replication, Autonomy and What It Can't Do; contextual constraints rather than additional mechanical tests"}
+  - {source: source.mm, pages: "83-86", relation: extends, note: "Self-Replication, Human Augmentation and Medicine, Autonomy and What It Can't Do; contextual constraints rather than additional mechanical tests"}
 notes:
   - "The separate reprogramming rule handles eligibility, controller requirements, and task duration."
