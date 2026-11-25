@@ -2430,7 +2430,56 @@ book_closure_checklist_2026_11_25:
     - pdf: [37, 45]
       scope: "Ammunition and explosives catalogue"
       status: prior_review_partial
-      evidence_or_gap: "24_hi_c_plastic_rounds and 25 Glazer/Hollow Point/Mercury and AV/capsule bindings individually confirmed. Nine p38 acquisition rows (63 fields) match existing entity bytes by exact typed comparison; Incendiary and Tracker game bindings confirmed and indexed. Shotgun ammunition category and five item-specific game bindings indexed, all five p39 catalogue rows (35 fields) matched. Eight miscellaneous catalogue rows and two body/appendix discrepancies now confirmed and indexed. Five miscellaneous game-rule binding groups confirmed and indexed. Three additional ordinary appendix rows and two cross-source discrepancies confirmed and indexed; existing core catalogue and chemistry records referenced. Exact ordinary-row and footnote comparison to be finalized before broader scope closure."
+      evidence_or_gap: "24_hi_c_plastic_rounds and 25 Glazer/Hollow Point/Mercury and AV/capsule bindings individually confirmed. Nine p38 acquisition rows (63 fields) match existing entity bytes by exact typed comparison; Incendiary and Tracker game bindings confirmed and indexed. Shotgun ammunition category and five item-specific game bindings indexed, all five p39 catalogue rows (35 fields) matched. Eight miscellaneous catalogue rows and two body/appendix discrepancies now confirmed and indexed. Five miscellaneous game-rule binding groups confirmed and indexed. All 35 ammunition appendix rows and both footnotes reconciled for catalogue coverage; original cross-source variants and legacy receipt debt retained. Broader explosives catalogue and three ordinary-row delegated game-rule references remain to reconcile; no natural-section certification."
+      ammunition_appendix_coverage_audit:
+        acceptance: coverage_only
+        basis_manifest_blob: 2d476e3fc0ebeebef189308ca2121dc4ecdd4115
+        original_images_reviewed: [[118, 119], [119, 120]]
+        source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+        appendix_rows: {ordinary: 22, shotgun: 5, miscellaneous: 8, total: 35}
+        core_catalogue_binding:
+          path: equipment/sr3-core-ammunition-rockets-missiles-pricing-p281.yml
+          blob: 28ec27bdfe39c4838e8aa92282cb0ba7b20cc27a
+          compared_rows: 10
+          exact_fields: 70
+          compared_fields: 80
+          literal_differences: {legality_abbreviation: 9, apds_legality_code: 1}
+          footnotes: "Both original p119 game table qualifiers match the core record in substance; no rounding added."
+        existing_special_shotgun_entity_binding:
+          path_prefix: entities/ammunition/
+          path_suffix: .yml
+          compared_rows: 14
+          exact_fields: 98
+          compared_fields: 98
+          slug_blob_pairs:
+            - [av-rounds, a256049dd01b166d87c3bec4cc3893d8af88e9e3]
+            - [capsule-rounds, ebab113abd3cadf1da0be2277ff69951f97e7e42]
+            - [glazer-rounds, 78aa5dc0267ab5816acbf10403cfce05b0373aa8]
+            - [hi-c-plastic-rounds, 34880cbec541af807652fd0eac3ad9cfda5ecbb2]
+            - [hollow-point-rounds, fc9c8d2beb4223ca372e7917bed68239bdc5eaf5]
+            - [incendiary-rounds, 78f05197eb60862ff488267949ca601b728cf6a0]
+            - [mercury-rounds, a611571823752b7c03d8eb5877a2e9917c7dc11e]
+            - [tracker-rounds-aod, 2ca2af1e339a3d6607542097c488281851f30245]
+            - [tracker-rounds-standard, e0c478751c5f2a49ba1017fc65d7d36b96be47d7]
+            - [big-ds-temper-shells, 5a329ebe9d053bdc048db242c4d210e1c790c929]
+            - [bola-rounds, 86056d80dbd6cd047e5b0dddb4c0aa2811f66a5a]
+            - [flare-rounds, fa462a893ff0484f8055af79def715af0e726fc8]
+            - [shock-lock-rounds, 1f0ad32a73917730801b8488490696ea5a8ecd15]
+            - [stun-shells, cbe21143a6f5438f0f1f7691e87a1412d2232d40]
+          method: "Exact typed values, original table heading and currency mapped explicitly to cost field; no semantic normalization."
+        additional_ordinary_binding:
+          id: equipment.cannon-companion-ordinary-ammunition-appendix-gaps-p118
+          blob: d1c76af7759318d5f68acdc53cec075a8b7103b2
+          rows: 3
+          fields: 21
+          cross_source_discrepancies: [APDS_legality, paint_rounds_availability]
+          paint_entity_blob: 226f8a918386669e2babedec89b029a7f6594094
+        miscellaneous_binding:
+          id: equipment.cannon-companion-misc-ammunition-table-p40-118-119
+          blob: 5ca4be64c34f9f714731df0a6e525b99dcb074b6
+          rows: 8
+          retained_body_appendix_discrepancies: 2
+        outstanding: "Existing legacy entities retain bounded original transaction receipt debt; no retro-certification. Three appendix-only ordinary rows delegate damage to game rules; external source bindings and remaining explosives subscopes require review. Shared precedence unresolved."
     - pdf: [46, 51]
       scope: "Armor clothing"
       status: prior_review_partial
@@ -2499,7 +2548,7 @@ book_closure_checklist_2026_11_25:
       scope: "Combat record sheet and back cover"
       status: reviewed_reference_layout
       evidence_or_gap: "Visually classified forms and back-cover material; no populated numerical game table seen in these two pages; no new acceptance implied."
-  next_cursor: "Finalize original p118 ordinary ammunition row comparisons and p119 footnote bindings; reuse the new ordinary appendix gap record and earlier miscellaneous and special catalogue registrations. Continue with remaining explosives catalogue only after this comparison."
+  next_cursor: "Resolve delegated game-rule references for dart, paint and stun rounds without duplicating acquisition rows; then review remaining explosives catalogue printed pp40-44/PDF41-45 and matching appendix. Ordinary, special, shotgun and miscellaneous ammunition catalogue rows plus p119 footnotes coverage reconciled; do not reopen absent a demonstrated discrepancy."
 
 source_mechanics_reconciliation_2026_11_25_record_sheet:
   acceptance: coverage_reconciled_acceptance_blocked
