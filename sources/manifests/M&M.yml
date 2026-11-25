@@ -3135,6 +3135,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_wound_effect_interactions_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp125,134/PDF126,135 and publisher copyright PDF5. PDF126 is an illustration with no separate game mechanics observed."
+    records:
+      - id: rule.damage.mm-wound-effect-interactions-p134
+        path: rules/damage/mm-wound-effect-interactions-p134.yml
+        printed: "134"
+        pdf: "135"
+        commit: "ef44ea808c5e746a0eee5d3bbb7c68c6fc78e707"
+        blob: "b668bf4ab173bf7ca2b0778dbdbbae66c1b283b2"
+        baseline_sha256: "6f03cc9b57b7ff0fdbae92323337cbb606652ca249e27e4b4b0dd8ccb86e2d5c"
+        candidate_sha256: "ca80108f8abf5a561992fe0570b420d0bd18a5cba28c8b0c896a1c739e569220"
+        immutable_sha256: "abe9d65fe29e55c2e090ff63aafc7a944a32ed871244ec3f93a6a0d677e8dd22"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Successful called shot alternative, guaranteed effect, GM type selection, extra effects possible; Deadlier Over-Damage joint-use condition, two remaining successes per extra wound effect, additive effect and classification table."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3213,7 +3233,8 @@ source_field_review:
         printed: "124-134"
         state: partial_review
         evidence: [confirmed_stress_test_wound_failure_2026_11_24, confirmed_stress_points_cyber_bio_wounds_2026_11_24, confirmed_attribute_damage_repair_2026_11_24, confirmed_implant_stress_repair_2026_11_24, confirmed_consciousness_scars_dermal_2026_11_24, confirmed_expanded_first_aid_2026_11_24, confirmed_expanded_doctoring_2026_11_24, confirmed_box_by_box_healing_2026_11_24]
-        remaining: "Verify p125 embedded material and Called Shots/Deadlier Over-Damage p134; no chapter-wide certification yet."
+        note: "PDF126/p125 illustration reviewed; no separate mechanics observed. Both p134/PDF135 wound-effect interactions confirmed in confirmed_wound_effect_interactions_2026_11_25."
+        remaining: "Cumulative prior damage and healing field/receipt reconciliation remains before chapter-wide certification."
       - scope: "Surgical skills, tools, facilities and body parts"
         printed: "135-139"
         state: scoped_reconciled
@@ -3255,7 +3276,7 @@ source_field_review:
           - {path: entities/cyberware/replacement-modification.yml, commit: "d3dcdb3d7ca860f08e9f2e4c6fbb9b9b401cfcbe", blob: "640dc7d87d417679df3778409f195e48188a0a90"}
           - {path: entities/cyberware/weapon-mount-articulated-arm.yml, commit: "8de3e4dcf565df8c27028c21150c0e6332d5934e", blob: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"}
         missing: "Original immutable baseline, plan, candidate, actual confirmation artifact and individual indexing receipt; negative archive/title search retained until evidence changes."
-    next_cursor: "Damage and healing: printed p134 Called Shots and Deadlier Over-Damage and p125 embedded material; then nanoware local gaps and remaining bioware/implant scopes. Reuse reconciled surgery chapter absent demonstrated discrepancy."
+    next_cursor: "Damage and healing: reconcile cumulative exact accepted fields and receipts against prior reviewed pp124-134; then nanoware local gaps and remaining bioware/implant scopes. Reuse reconciled surgery chapter absent demonstrated discrepancy."
     original_field_denominator: unknown
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
