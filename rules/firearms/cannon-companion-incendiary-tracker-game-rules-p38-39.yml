@@ -1,0 +1,50 @@
+id: rule.firearms.cannon-companion-incendiary-tracker-game-rules-p38-39
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '38-39'
+pdf_pages: '39-40'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Incendiary and Tracker fictional tabletop game bindings'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp38-39/PDF39-40. Game-specific dice tests, damage codes, ongoing effects and inventory outcomes; existing catalogue entities reused.'
+data:
+  incendiary:
+    item: entity.ammunition.incendiary-rounds
+    printed_page: 38
+    game_inventory_patterns: ['every third round', 'entire clip']
+    targeting_bonus_reference: rule.firearms.sr3-core-special-ammunition-effects-p116-117
+    game_targeting_bonus: 'Same as tracer rounds in either pattern.'
+    burst_power: 'Apply standard burst-fire Power rules, including these rounds.'
+    ongoing_damage:
+      timing: end of each Combat Turn
+      test: Body Resistance Test
+      initial_power: '2 x number of incendiary rounds that struck the character'
+      damage_level: L
+      power_reduction_per_combat_turn: 2
+      power_added_per_additional_hit: 2
+      armor_reduces: false
+      combat_pool_allowed: false
+      secondary_effect_reference: 'Cannon Companion printed p98, Fire and Incendiaries'
+      secondary_effect_eligibility: 'Flammable in-game materials, including character clothing and gear.'
+    malfunction:
+      condition: 'Number of ones in Attack Test exceeds floor(number of dice rolled / 2).'
+      consecutive_combat_phase_automatic_ones: 1
+      additional_attack_on_firing_character: 'One point-blank game attack using base weapon Damage Code.'
+      armor_reduces: true
+      combat_pool_allowed: false
+      if_attack_fails:
+        combat_phase_ends_immediately: true
+        game_weapon_status: severely damaged and unusable
+        possible_secondary_effect: fire
+  tracker:
+    items: [entity.ammunition.tracker-rounds-aod, entity.ammunition.tracker-rounds-standard]
+    printed_page: 39
+    game_signal_reference: 'SR3 printed p291'
+    game_locator_dependency: signal locator
+    if_target_takes_damage: tracking effect established past armor
+    if_target_resists_damage:
+      die: 1D6
+      successful_faces: [1, 6]
+      outcome: tracker effect established in armor
