@@ -1,0 +1,69 @@
+id: rule.magic.mits-solitary-insects-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '130-132'
+pdf_pages: '131-133'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Solitary insect spirits — original summoning, propagation and nest limits
+summary: Fictional tabletop rules from FASA Corporation's Magic in the Shadows (FASA7907, Shadowrun Third Edition), printed pp130-132/PDF131-133.
+data:
+  general:
+    hive_required: false
+    classes: [male, female]
+    both_flesh_form_sexes_use_soldier_physical_attributes: true
+    female_always_mother: false
+    cicada_female_always_mother: true
+    nest_departure: At will subject to shaman control if any.
+    beetle: {male_always_soldier: true, male_winged: true, female_winged: false}
+    cicada_and_firefly: Summoned using Building the Nest rules.
+    roach_and_mosquito_incubation_days: 10
+    mosquito_cocoon_environment: still or very slow-moving water
+  mantid:
+    shaman_controlled_female_max: 1
+    shaman_controlled_male_max: shaman Magic
+    female_summoning: queen summoning rules
+    male_summoning: standard insect summoning rules (MitS p128)
+    reproduction_interval_weeks: 2D6
+    minimum_male_spirits_consumed: 1
+    consumed_force_max: female Force + female Spirit Energy
+    excess: Partially consumed male retains remaining Force; next reproductive cycle starts with that male.
+    merging_time_hours: male Force
+    new_spirit_force_budget: 2 * consumed Force
+    host_sex: matches created spirit sex
+    male_investment_cost_per_force: 1
+    female_investment_cost_per_force: 2
+    investiture_hours_per_force: 1
+    female_form: flesh-form without insect features
+    female_power: Aura Masking
+    female_host_memories_and_mimicry: true
+    male_form: true-form
+    cross_form_merging_allowed: true
+    controlled_female_can_produce_females: only with shaman permission
+    alternative_consumption: other insect spirits may supply Force in place of males
+  mosquito_attack:
+    initial_attack: successful normal-damage attack to pierce target
+    next_action_test: Opposed Test of spirit Force against target unaugmented Body
+    damage_boxes_per_success: 1
+    continuation: until target dies or breaks away; no other spirit actions while feeding
+    escape: win Opposed Strength Test against mosquito
+  building_nest:
+    exception: mantids use their own rules
+    shaman_controlled_count_either_sex_max: (Magic + Willpower) * Potency
+    at_cap: further summoning requires at least one Mother; with Mother assistance no count limit
+    mother_investiture_days: 10
+    mother_drain_effective_force: ceil(1.5 * Mother Force)
+    example: {mother_force: 5, drain_effective_force: 8}
+    mother_has_spirit_energy: true
+    mother_other_free_spirit_abilities: only after becoming free
+    mother_form: true-form (mantid exception on p131)
+    daily_offspring_total_force_max: Mother Force + Mother Spirit Energy
+    individual_offspring_force_max: Mother Force
+    new_mother_production_days: 2 * producing Mother Force
+    new_mother_force: producing Mother Force
+    new_mother_permission: shaman permits or producing Mother is free
+    other_offspring_during_mother_production: false
+    offspring_mother_of_free_mother_is_free: true
+  existing_canon: [rule.spirits.solitary-insect-spirits, entity.spirit.insect-queen-mother]
