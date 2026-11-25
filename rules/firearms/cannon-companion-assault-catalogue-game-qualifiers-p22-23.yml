@@ -1,0 +1,78 @@
+id: rule.firearms.cannon-companion-assault-catalogue-game-qualifiers-p22-23
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '22-23'
+pdf_pages: '23-24'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion SR3: fictional assault catalogue game qualifiers'
+summary: 'FASA Corporation, Shadowrun Third Edition fictional tabletop RPG, printed pp22-23/PDF23-24. Game-only skill eligibility, integral game traits, conditional game modifiers and configuration-specific inventory classes; accepted base ratings are not duplicated.'
+data:
+  nonmodular_catalogue_skill:
+    original_skill: Assault Rifles
+    existing_game_entities: [entity.weapon.ares-alpha, entity.weapon.ares-hvar, entity.weapon.colt-m22a2, entity.weapon.colt-m23, entity.weapon.hk-g12a3z, entity.weapon.sernopal-vz-88v]
+  ares_alpha:
+    integral_game_smartlink_rating: 2
+    integral_game_secondary_launcher: true
+    game_accessory_mount_eligibility: {barrel: true, top: true, underbarrel: false}
+    base_game_recoil_rating_reused: true
+  ares_hvar:
+    integral_game_smartlink_rating: 2
+    barrel_game_accessories_allowed: false
+    burst_game_resolution:
+      virtual_round_count: 6
+      damage_code: 12D
+      uncompensated_game_recoil_modifiers: [6, 12]
+      compensated_game_recoil_modifiers: [3, 9]
+      second_modifier_scope: same_Combat_Phase
+    full_auto_game_resolution:
+      maximum_virtual_rounds_per_Combat_Phase: 18
+      multiple_targets_allowed: true
+      minimum_virtual_rounds_per_game_burst: 6
+      referenced_core_printed_page: 115
+  colt_m22a2:
+    integral_game_image_scope_rating: 2
+    scope_game_mount: top
+    integral_game_secondary_launcher: true
+    recoil_accessory_game_slot: barrel
+    base_game_recoil_rating_reused: true
+  colt_m23:
+    integral_game_accessories_present: false
+  hk_g12a3z:
+    integral_game_laser_sight: true
+    integral_game_laser_mount: top
+    telescoping_stock_game_trait: true
+    optional_game_secondary_launcher_concealability_modifier: -1
+    recoil_accessory_game_slot: barrel
+    base_game_recoil_rating_reused: true
+  hk_g38:
+    all_game_configurations:
+      integral_game_laser_sight: true
+      integral_low_light_game_optics: true
+      integral_game_image_scope_rating: 2
+      optics_game_mount: top
+      integral_game_laser_mount: top
+      recoil_accessory_game_slot: barrel
+      game_ammunition_class: assault_rifle
+      base_game_recoil_rating_reused: true
+  semopal_vz_88v:
+    integral_game_laser_sight: true
+    integral_game_laser_mount: underbarrel
+    folding_stock_game_trait: true
+    integral_game_image_scope_rating: 2
+    scope_game_mount: top
+    recoil_accessory_game_slot: barrel
+    base_game_recoil_rating_reused: true
+  steyr_aug_csl:
+    all_game_configurations:
+      integral_game_laser_sight: true
+      integral_game_laser_mount: top
+      optional_external_game_smartgun_concealability_modifier: 0
+      recoil_accessory_game_slot: barrel
+      game_ammunition_class: assault_rifle
+      base_game_recoil_rating_reused: true
+  existing_modular_game_tests: rule.firearms.cannon-companion-modular-rifle-game-tests-p22-23
+  existing_base_game_stats_reused: true
+  shared_entities_changed: false
