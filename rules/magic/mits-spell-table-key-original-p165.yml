@@ -1,0 +1,57 @@
+id: rule.magic.mits-spell-table-key-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '165'
+pdf_pages: '166'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Arcane Lore spell table notation, printed p165/PDF166
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition; fictional RPG reference key for spell names, types, target numbers, durations, ranges and Drain.
+data:
+  name_marker:
+    '*': SR3 core spell
+    unmarked: Magic in the Shadows spell
+  type_codes:
+    M: Mana
+    P: Physical
+  type_reference: SR3 p178
+  target_base_codes:
+    W: Willpower
+    B: Body
+    I: Intelligence
+    Q: Quickness
+    F: Force
+    OR: Object Resistance
+  target_qualifiers:
+    R:
+      condition: Unwilling target
+      resolution: Spell Resistance Test
+      reference: SR3 p183
+    T:
+      resisted: true
+      threshold: Usually half target Attribute
+      reference: MitS p50
+    RC: Treated as Ranged Combat attack
+    V: Voluntary Target required
+    DT: Target number from Detection Table, SR3 p192
+  duration_codes:
+    I: Instant
+    S: Sustained
+    P: Permanent
+  duration_reference: SR3 p178
+  range_codes:
+    LOS: Line of sight
+    T: Touch
+    A: Area effect
+  detection_range_suffix:
+    D: Directional sense
+    A: Area sense detecting targets in all directions
+    delimiter: '/'
+  drain_notation:
+    power_base: Half spell Force rounded down
+    power_modifier: Modifier to Drain Power
+    level: Base Damage Level of Drain
+    variable_level: Spells causing or healing damage use level of damage the spell may cause or heal
+    above_deadly_power_per_level: 2
