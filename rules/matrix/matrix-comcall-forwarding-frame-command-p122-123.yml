@@ -11,12 +11,13 @@
   ],
   "framing": "reference_exact",
   "headline": "FASA7909 Matrix (FASA Corporation, SR3): fictional comcall and frame command game checks",
-  "summary": "Source-specific fictional tabletop mechanics from printed pp122-123/PDF123-124 supplement the existing System Tricks subsystem; no shared SR3 records are changed.",
+  "summary": "FASA Corporation Matrix (FASA7909), SR3 fictional tabletop RPG, pp122-123/PDF123-124: retain explicit selective-forwarding option and conditional service effects.",
   "data": {
     "legacy_comparison": "subsystems/matrix/system-tricks.yml (04fc463bc6c0b3af7473f7b5e543b41a74ba0fe5) lists the feature names but does not specify the game resolution mechanics below.",
     "account_forwarding": {
       "game_test": "After Locate Access Node, make System Test against grid Index reduced by Commlink utility to learn fictional forward status and destination. A similar test detects active status. Active commcodes permit Tap Comcall under core rules.",
-      "per_link": "Repeat for each fictional link; grid changes may be necessary."
+      "per_link": "Repeat for each fictional link; grid changes may be necessary.",
+      "selective_forwarding_option": true
     },
     "command_set_forwarding": {
       "game_operations": "A host-based command set may use Make Comcall and Validate Account to receive a temporary game commcode. Normally works for only a few calls.",
@@ -29,7 +30,7 @@
       "monthly_fee_nuyen_typical": 100,
       "higher_security_price": "Higher, unspecified.",
       "equipment_requirement": "Data-encryption system (SR3 p291).",
-      "game_effect": "Redirect service can remove identifying game information and delay message; second leg encrypted only if destination has equipment. Records may be protected by Scramble IC or absent after redirection.",
+      "game_effect": "In the fictional service, identifying game information is removed before redirection; a random delay is typical, especially for email and fax traffic. The second leg is encrypted only if the destination has the required equipment. Records may be protected by Scramble IC or absent after redirection.",
       "trace_limitation": "Game character must access service host; there is no automatic destination reveal or new numeric test specified."
     },
     "frame_command": {
