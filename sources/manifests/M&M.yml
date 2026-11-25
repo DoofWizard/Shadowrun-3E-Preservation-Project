@@ -3376,6 +3376,26 @@ source_field_review:
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
 
+  confirmed_intro_cyberware_grades_2026_11_25:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed pp10-11,44-45/PDF10-11,44-45."
+    records:
+      - id: option.cyberware.grades
+        path: options/cyberware/grades.yml
+        printed: "10-11,44-45"
+        pdf: "10-11,44-45"
+        commit: "be5ce159f26d2d211806d09428200c2b66b5066c"
+        blob: "c8a2c31c4433ba761060b1c77ce15b9966942256"
+        baseline_sha256: "31f92471b956c34e3a87be2d8c8981d09c23c0b23491dd3e9015d6e233fe54e0"
+        candidate_sha256: "e80d1ecdfca7844e006e508ca38f66b93afc079448b84040906fd33edfc18ce1"
+        immutable_sha256: "d8ade55fde05f1f2861f3fb577420c1bf3e76d6325dc5a7cc8128686a8ef441e"
+        gate: verified
+        recovery_inspect: verified
+        fields: "Introductory grade-specific customization, acquisition, screening, surgical training, delta equipment cost and exceptional used-delta implantation as beta; existing grade table and detailed rules retained. Supersedes blob 433559504d47e642bbbbca278eceee69c2ed998b."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
+
   book_closure_checklist:
     status: open
     original_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
@@ -3385,8 +3405,8 @@ source_field_review:
     scopes:
       - scope: "Front matter"
         printed: "1-5"
-        state: partial_review
-        evidence: "PDF2-5 contents/publication inspected; PDF1 not independently reviewed this run. No mechanics inferred from navigation."
+        state: navigation_reviewed
+        evidence: "PDF1 cover visually inspected; prior PDF2-5 contents/publication review retained. No standalone game mechanics observed on cover; no mechanics inferred from navigation."
       - scope: "Introduction and updating characters"
         printed: "6-7"
         state: scoped_reconciled
@@ -3396,8 +3416,10 @@ source_field_review:
         remaining: "No demonstrated residual introduction mechanical gap. Shared core rules unchanged; formal book acceptance and engine testing separate."
       - scope: "Cybertechnology context and equipment through bodyware"
         printed: "8-31"
-        state: field_review_not_demonstrated
-        remaining: "Implanting, grades, classifications, power sources, power players, senseware, communications, brainware, riggerware, bodyware; embedded game info, examples and market rows."
+        state: partial_review
+        evidence: [confirmed_intro_cyberware_grades_2026_11_25, confirmed_intro_essence_distinctions_2026_11_25]
+        original_images_reviewed: "Printed pp8,10-11/PDF8,10-11; PDF9 illustration visually inspected."
+        remaining: "Bind pp8,10-11 DNI, interconnectivity, classification and body-powered cyberware context to existing accepted fields; do not bypass prior p46 path restriction. Review pp12-31 power-source continuation, power players, senseware, communications, brainware, riggerware, bodyware and all embedded game info, examples and market rows."
       - scope: "Cyberlimbs and accessories"
         printed: "32-41"
         state: partial_review_and_receipt_debt
