@@ -11,8 +11,8 @@ content_class:
 headline: 'FASA Corporation Shadowrun Companion (FASA7905a), Shadowrun Third Edition,
   source.srcomp, fictional tabletop RPG: Point-based creation Attribute and Skill
   allocation, original printed pp14-15/PDF15-16.'
-summary: Original Building Point conversion, creation limits and optional knowledge
-  and otaku Channel allocation.
+summary: Original Building Point conversion, creation limits, optional knowledge and
+  otaku Channel allocation, and illustrative printed character allocations.
 data:
   publication:
     title: Shadowrun Companion
@@ -64,6 +64,70 @@ data:
     Intelligence_4_free_skill_points:
       Knowledge: 20
       Language: 6
+  worked_character_examples_p14_15:
+    scope: Printed illustrative characters and their allocation sequence; not mandatory build templates.
+    GM_starting_BP_each: 123
+    attribute_order: [Body, Quickness, Strength, Charisma, Intelligence, Willpower, Essence, Magic, Reaction]
+    Anton:
+      race: human
+      race_BP: 0
+      magic: mundane
+      attribute_BP: 60
+      attribute_points: 30
+      BP_after_attributes: 73
+      printed_attribute_values: [6, 6, 6, 3, 5, 4, 6, '-', 5]
+      active_skill_BP: 48
+      BP_after_skills: 25
+      free_knowledge_points: 25
+      free_language_points: 7
+      active_skills: {Car: 5, Computer: 4, Cyber-Implant Combat: 5, Etiquette: 3, Intimidation: 5, Negotiation: 3, Pistols: 6, Stealth: 4, Submachine Guns: 5, Unarmed Combat: 6}
+      intimidation_linked_Charisma: 3
+      intimidation_extra_BP: 2
+      knowledge_skills: {Demolitions Background: 4, Italian Cuisine: 4, Mafia Business: 5, Mafia Politics: 5, Security Procedures: 5, Urban Brawl: 2}
+      languages:
+        English: {rating: 4, Read_Write: 2}
+        Italian: {rating: 2, Read_Write: 1}
+      subsequent_specialization: {Etiquette: 2, Underworld: 4}
+      final_resource_BP: 25
+      starting_nuyen: 650000
+    Jenny:
+      race: ork
+      intended_transformation: ghoul
+      race_BP: 5
+      ghoul_BP: 10
+      BP_after_race: 108
+      magic: adept
+      magic_BP: 25
+      BP_after_magic: 83
+      starting_Power_Points: 6
+      transformation_qualification: The example states one Power Point will be lost on transformation unless a geas is taken; see Magic in the Shadows and the ghoul creation rules.
+      attribute_BP: 40
+      attribute_points: 20
+      allocated_before_racial_modifiers: {Body: 1, Quickness: 5, Strength: 1, Charisma: 3, Intelligence: 5, Willpower: 5}
+      ork_modifiers: {Body: 3, Strength: 2, Charisma: -1, Intelligence: -1}
+      printed_attribute_values: [4, 5, 3, 2, 4, 5, 6, 6, 4]
+      ghoul_modifiers_apply_at_this_stage: false
+      BP_after_attributes: 43
+      active_skill_BP: 38
+      BP_after_skills: 5
+      free_knowledge_points: 20
+      free_language_points: 6
+      active_skill_purchases:
+      - {skill: Athletics, rating: 6, printed_BP: 8}
+      - {skill: Aura Reading, rating: 3, printed_BP: 3}
+      - {skill: Biotech, rating: 4, printed_BP: 4}
+      - {skill: Etiquette, rating: 2, printed_BP: 2}
+      - {skill: Intimidation, rating: 3, printed_BP: 4}
+      - {skill: Pistols, rating: 3, printed_BP: 3}
+      - {skill: Stealth, rating: 5, printed_BP: 5}
+      - {skill: Unarmed Combat, rating: 6, printed_BP: 9}
+      knowledge_skills: {Biology: 4, Ghoul Haunts: 3, Magic Background: 4, Organleggers: 3, Paranormal Animals: 3, Seattle Sewers: 3}
+      languages:
+        English: {rating: 5, Read_Write: 2}
+      final_resource_BP: 5
+      starting_nuyen: 20000
+      next_step: Willpower roll for ghoul transformation; see printed p32.
+    printed_example_qualification: Preserve the printed Jenny description of 38 Skill Points and the itemized 38 BP expenditure without interpreting 38 as the sum of purchased ratings. Anton Magic is a printed dash, not zero.
   related_accepted_canon:
   - option.character-creation.point-based-design
   - rule.character-creation.active-skill-purchase
