@@ -1,28 +1,37 @@
 id: entity.bioware.metabolic-arrester
 record_type: entity
-name: "Metabolic Arrester"
+name: Metabolic Arrester
 domain: bioware
 status: ingested
-
+source: source.mm
+printed_pages: '66-67'
+pdf_pages: '67-68'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   bio_index: 0.6
-  availability: "6/8 days"
+  availability: '6/8 days'
   cost_nuyen: 20000
   street_index: 1.5
-  legality: "Legal"
-
-links:
-  uses: []
-  requires: []
-  component_of: []
-  interacts_with:
-    - rule.damage.stress-points
-
+  legality: Legal
+data:
+  activation_physical_damage_boxes: 10
+  metabolic_rate_divisor: 5
+  hibernate_equivalent_successes: 5
+  unstabilized_overflow:
+    damage_boxes: 1
+    interval_combat_turns: 'Body * 5'
+    normal_interval_combat_turns: Body
+  active_life_detection: {skill: Biotech, target_number: 4}
+  incompatible: [suprathyroid gland, adrenal pump]
+  stress:
+    light: fatigue and increased sleep need
+    moderate: metabolic rate divisor becomes 2
+    serious: activates at Serious Physical damage; character becomes unconscious and metabolism slows
+    deadly: implant ceases functioning
+links: {uses: [], requires: [], component_of: [], interacts_with: [rule.damage.stress-points]}
 sources:
-  - source: source.mm
-    pages: "66-67"
-    relation: defines
-    note: "Metabolic Arrester description, game effects, stress effects and statistics"
-
-notes:
-  - "Fictional Shadowrun bioware implant that slows the character's metabolism under specified game conditions; incompatible with suprathyroid gland and adrenal pump."
+  - {source: source.mm, pages: '66-67', relation: defines, note: Game effects, Stress and market row}
+notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp66-67/PDF67-68: Metabolic Arrester'
+framing: reference_exact
