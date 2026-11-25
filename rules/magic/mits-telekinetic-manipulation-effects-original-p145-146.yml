@@ -1,0 +1,93 @@
+id: rule.magic.mits-telekinetic-manipulation-effects-original
+record_type: rule
+status: source_reviewed
+source: source.mits
+printed_pages: '145-146, 168'
+pdf_pages: '146-147, 169'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Grimoire telekinetic manipulations, printed pp145–146 and 168/PDF146–147 and 169
+summary: FASA Corporation, Magic in the Shadows, Shadowrun Third Edition; fictional tabletop spell effects and original reference-table entries.
+data:
+  row_columns: [name, type, target, duration, range, drain]
+  table_rows:
+    - [Animate, P, OR, S, LOS, '+1(M)']
+    - [Bind, P, 'Q(R)', S, LOS, '+2(M)']
+    - [Catfall, P, '4', S, LOS, '+1(M)']
+    - [Deflect, P, '4', S, LOS, '+2(M)']
+    - [Gecko Crawl, P, '4', S, LOS, '+2(M)']
+    - [Lock, P, '4', S, LOS, '+2(M)']
+    - [Net, P, 'Q(R)', S, 'LOS(A)', '+2(S)']
+    - [Redirect, P, '4(RC)', I, LOS, '+1(Damage Level)']
+    - [Shape Earth, P, '4', S, 'LOS(A)', '+2(M)']
+    - [Shape Water, P, '4', S, 'LOS(A)', '+2(M)']
+    - ['Use (Skill)', P, '6', S, LOS, '+2(L)']
+  definition_only_stats:
+    columns: [name, type, target, duration, drain]
+    rows:
+      - [Mana Bind, M, Q, S, '+1(M)']
+      - [Mana Net, M, Q, S, '+1(S)']
+    note: Neither mana variant appears in the printed p168 telekinetic table.
+  animate:
+    scope: Inanimate whole object; movement follows structure with magically imparted flexibility, including articulated movement of solid statues.
+    examples: Balls roll, rugs crawl, humanoid statues walk; solid statues may move as if jointed.
+    prohibited: Moving just one component of an object.
+    rate_meters_per_turn: Magic × successes
+    printed_cap: Maximum equal to spell Force; parenthetical follows successes in the original formula.
+    gm_may_reduce_rate: true
+    strength_or_quickness_if_needed: Caster successes
+  bind_net:
+    caster_target_number: Target Quickness
+    resistance: Target Quickness Spell Resistance Test; no Combat Pool dice.
+    restriction: Bound fictional target cannot move normally; crawling, hopping and dodging remain possible.
+    quickness_reduction: Caster successes capped at Force, for movement rate and Combat Pool calculations.
+    escape_test: Strength (Force); target must exceed caster Sorcery Test successes.
+    objects: May constrain movable or rotating components of inanimate objects; propulsion type can allow a drone or vehicle to keep moving.
+    mana_variants: Mana Bind and Mana Net otherwise follow the corresponding physical spells but affect only living or magical targets.
+  catfall:
+    landing: Subject always lands upright.
+    safe_fall_meters: Successes × Force
+    excess_fall: Subtract safe distance before calculating damage.
+  deflect:
+    bonus_combat_pool_dice: 1 per 2 successes
+    maximum_bonus_dice: Force
+    eligible_tests: Dodge and Damage Resistance against ranged physical attacks only.
+    visibility: Subtle effect may initially appear to be a missed shot or poor aim.
+  gecko_crawl:
+    surfaces: Vertical and overhead
+    rate_meters_per_turn: Magic × successes
+    printed_cap: Maximum equal to Force; parenthetical follows successes in the original formula.
+    gravity: Subject falls if separated from surface.
+    gm_option: Climbing Tests for especially slick surfaces.
+  lock:
+    targets: Door, portal, closure or similar object
+    holding_strength: Successes, capped at twice Force
+  redirect:
+    incoming_attack: Melee attack against caster or anyone within line of sight
+    timing: Caster must have delayed action; cast after melee attack succeeds and before damage resistance.
+    failure: If spell successes do not exceed melee successes, attack resolves normally; if caster is target, caster resists with Body only, not Combat Pool.
+    success: Redirect as ranged combat attack toward any target within line of sight.
+    required_net_successes: 1
+    additional_successes: Up to Force improve attack under normal rules.
+    base_damage: Original melee attack damage
+    maximum_power: Spell Force
+    new_target_defense: Normal dodge and resistance
+  shape_earth:
+    volume_cubic_meters: Caster Magic
+    movement_meters_per_combat_turn: 1 per success, capped at Force
+    eligible_material: Soil and rock, not processed mineral material such as glass, metal or concrete.
+    minimum_force: Material Barrier Rating
+    barrier_ratings:
+      loose_soil: 1
+      packed_earth: 2
+      gravel_or_loose_rock: 4
+      stone: 6 or more
+    persistence: New shape remains after spell ends but collapses if material cannot support it.
+  shape_water:
+    effect: Same procedure as Shape Earth, applied to water.
+  use_skill:
+    reference: Magic Fingers, SR3 p197
+    maximum_skill_rating: Successes capped at Force
+    prerequisites: Caster knows the skill; separate spell per skill; GM determines eligibility; skill requires physical action.
+    source_examples: [Unarmed Combat, Electronics, Demolitions]
