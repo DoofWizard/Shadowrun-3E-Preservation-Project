@@ -8,10 +8,10 @@ edition_scope: SR3
 content_class: [campaign_guidance]
 framing: newsroom_neutral
 headline: Fictional Shadowrun SR3 Houses templates (FanPro25003), printed pp77-79/PDF78-80
-summary: Source-specific residential location guidance in Mr. Johnson's Little Black Book, FanPro, SR3.
+summary: Source-specific residential location guidance in Mr. Johnson's Little Black Book, FanPro, SR3, including scenario context.
 data:
   publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
-  general: Houses typically have more access points than apartments, private parking and fencing; owner-occupied homes tend to have stronger security than rentals; affluent neighbors may organize watches or shared private patrols.
+  general: Houses typically have more access points than apartments, private parking and fencing; owner-occupied homes tend to have stronger security than rentals; affluent neighbors may organize watches or shared private patrols. Security varies with the owner.
   templates:
   - name: The Carriage House
     printed_page: 78
@@ -20,6 +20,8 @@ data:
     lifestyle: {level: High, points: 26, edges: [Vigilant Security, Concerned Neighbors]}
     layout: {stories: 2, bedrooms: 3, bathrooms: 2, enclosed_yard: true, living_room_m: [8, 6.5], office_m: [4, 5], ground_floor_bedrooms: 2, ground_floor_bedroom_m: [5, 7], master_bedroom_m: [9, 8]}
     game_context: Furnished Ares guest residence with Matrix-ready office computer and home telecom; Knight Errant patrols the enclave regularly and is more visible when occupied; guests suspect monitoring by Ares administration, not established fact.
+    additional_layout: {enclave_position: near center, living_room_couches: 2, kitchen: full, ground_floor_bathroom: between bedrooms, upper_floor: master bedroom and adjoining bath}
+    scenario_context: The fictional enclave has uniform exterior designs and landscaping; visiting officials use furnished homes. The book describes local teenagers returning home late without authorization as a possible source of scenario information about neighborhood security. The home telecom has a high-speed Matrix line.
   - name: Brownstone
     printed_page: 79
     zone: AA
@@ -31,6 +33,8 @@ data:
     ward_rating: 4
     maglock_rating: 5
     alarms: [door, window, Panicbutton]
+    additional_layout: {owner: family, renter: Matrix programmer, second_floor_playroom: true, master_bedroom_floor: 3, master_bedroom_combined_rooms: 2, central_stair_access: all floors and roof}
+    scenario_context: In the fictional template the alarms notify the security contractor in case of intruders. Local police are described as quick to stop people they think do not belong in the area.
   - name: Government Safe House
     printed_page: 79
     zone: C
@@ -43,3 +47,5 @@ data:
     panicbutton: false
     bias: Local in-world prejudice against metahumans associated by the source with a neighborhood ork gang.
     game_context: Fictional FBI residence for protective custody with Escape Tunnel edge, Bureau LTG access and internal security response; Lone Star patrols irregularly and responds slowly; local police are involved only if necessary.
+    additional_layout: {split_level: true, master_bedroom_wing: west, other_bedrooms_wing: east, living_room_kitchen_den: center, basement_stairs: kitchen}
+    scenario_context: The two fictional agents pose as a married couple working for Choi Acquisitions, with a cover story explaining frequent absences. Exterior camera information is routed to the security room; the house has an alarm independent of Panicbutton. The Bureau LTG is reachable from any house Matrix port. The tunnel is used for protective-custody transit.
