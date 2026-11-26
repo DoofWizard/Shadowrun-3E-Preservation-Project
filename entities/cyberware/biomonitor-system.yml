@@ -1,11 +1,26 @@
 id: entity.cyberware.biomonitor-system
 record_type: entity
-name: "Biomonitor System"
+name: Biomonitor System
 domain: cyberware
 status: ingested
-intrinsic: {}
+source: source.mm
+printed_pages: '25-26,153'
+pdf_pages: '25-26,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Biomonitor System — SR3 component compatibility and purchase mechanics
+summary: Fictional tabletop RPG equipment in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third Edition, printed pp25-26,153/PDF25-26,154.
+intrinsic:
+  biomonitor: {essence: 0.3, cost_nuyen: 5000, availability: '6/72 hrs', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.surgery.core]}
 sources:
-  - {source: source.mm, pages: "25-26", relation: defines, note: "Biomonitor System and its components"}
-notes:
-  - "System consists of biomonitor, diagnosis processor, and subdermal display; components may be implanted separately or linked."
+  - {source: source.mm, pages: '25-26', relation: defines, note: Biomonitor System and component game effects}
+  - {source: source.mm, page: 153, relation: defines, note: Biomonitor purchase row}
+notes: []
+data:
+  components: [biomonitor, diagnosis processor, subdermal display]
+  installation_options: [prelinked whole, separate components]
+  biomonitor_location: chest
+  monitored_values: [heart rate, blood pressure, respiration rate, temperature, blood sugar, blood alcohol, blood cell counts]
+  output_options: [display link, datajacked medkit, diagnosis processor]
