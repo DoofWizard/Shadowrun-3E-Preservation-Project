@@ -1,0 +1,39 @@
+id: rule.combat.cannon-companion-mortar-visibility-p43-44
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '43-44'
+pdf_pages: '44-45'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional tabletop visibility modifiers'
+summary: 'FASA Corporation Shadowrun Third Edition, printed pp43-44/PDF44-45. Smoke, IR smoke and Solar game visibility modifiers; existing equipment records retained.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  smoke:
+    entity: entity.ammunition.mortar-round-smoke
+    cloud_radius_game_meters: 15
+    duration_game_minutes: 4
+    standard_vision_obscured: true
+    test_modifier_reference: 'Cannon Companion printed p106 smoke rules'
+    ir_variant:
+      entity: entity.ammunition.mortar-round-smoke-ir
+      also_obscures_thermographic_vision: true
+  solar:
+    entity: entity.ammunition.mortar-round-solar
+    initial_flash:
+      condition: Character is looking toward the impact in the fictional encounter.
+      applies_to: All tests requiring vision, including combat.
+      tn_modifier: 8
+      tn_reduction_per_game_meters: 5
+      tn_reduction_amount: 1
+      flare_compensation_reduction: 2
+      tn_reduction_per_full_combat_turn: 2
+    illumination:
+      duration_game_minutes: 5
+      darkness_modifier_negated_within_game_meters: 40
+      direct_view_glare_tn_modifier: 4
+      direct_view_glare_with_flare_compensation: 2
+  scope: Tabletop visibility mechanics only; existing inventory statistics are referenced rather than restated.
