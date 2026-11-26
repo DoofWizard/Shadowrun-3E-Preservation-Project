@@ -1,10 +1,25 @@
 id: entity.cyberware.battletac-fddm
 record_type: entity
-name: "BattleTac FDDM"
+name: BattleTac FDDM
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.15, cost_nuyen: 200000, availability: "10/21 days", street_index: 3, legality: "5P-R"}
+source: source.mm
+printed_pages: '23,25,152'
+pdf_pages: '23,25,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: BattleTac FDDM — fictional SR3 drone eligibility and master-unit requirements
+summary: Fictional tabletop game equipment rules in Man & Machine Cyberware (FASA7126, FASA Corporation, 1999, Shadowrun Third Edition), printed pp23,25,152/PDF23,25,153.
+intrinsic: {essence: 0.15, cost_nuyen: 200000, availability: '10/21 days', street_index: 3, legality: '5P-R'}
 links: {uses: [rule.cyberware.battletac-network], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "23-25", relation: defines, note: "BattleTac Fire Direction Data Manager master unit and statistics"}
+  - {source: source.mm, page: 23, relation: defines, note: FDDM game effects}
+  - {source: source.mm, page: 25, relation: defines, note: Riggerware purchase table}
+  - {source: source.mm, page: 152, relation: defines, note: Equipment table}
 notes: []
+data:
+  source_name: Fire Direction Data Manager (FDDM)
+  game_effect: permits an equipped game drone to attack a target detected by another game drone without its own visual contact
+  required_game_components: [remote control deck with FDDM master accessory, FDDM-adapted spotting drone, FDDM-adapted attacking drone]
+  further_game_rules: {title: Rigger 2, printed_page: 60, topic: Indirect Fire}
