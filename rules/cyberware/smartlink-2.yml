@@ -1,16 +1,91 @@
 id: rule.cyberware.smartlink-2
 record_type: rule
-name: "Smartlink-2"
+name: Smartlink-2
 domain: cyberware
 status: ingested
-effective: {status: current, source: source.mm, page: 31, basis: extends}
-scope: {applies_to: ["Smartlink-2 systems and smartlinked weapons"]}
+source: source.mm
+printed_pages: 31-33
+pdf_pages: 31-33
+edition_scope: SR3
+content_class:
+- rule_exact
+framing: reference_exact
+headline: Smartlink subsystem and accessory game effects
+summary: FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third
+  Edition tabletop RPG, printed and PDF pp31-33.
+effective:
+  status: current
+  source: source.mm
+  page: 31
+  basis: extends
+scope:
+  applies_to:
+  - Smartlink-2 systems and smartlinked weapons
 resolution:
-  summary: "Smartlink-2 improves target acquisition beyond standard smartlink behavior and adds special handling for linked grenade launchers, air-timed mini-grenades and compatible smartlink subsystems. The system requires Smartlink-2-compatible hardware for its enhanced benefits."
-  inputs: ["weapon", "smartlink generation", "installed subsystems"]
-  outputs: ["ranged-combat target-number and linked-system benefits"]
+  summary: Smartlink-2 general game effects are maintained in entity.cyberware.smartlink-2;
+    this record defines subsystem composition and accessory rules.
+  inputs:
+  - weapon
+  - smartlink generation
+  - installed subsystems
+  outputs:
+  - ranged-combat target-number and linked-system benefits
   steps: []
-links: {uses: [], affects: [], modified_by: [], interacts_with: []}
+links:
+  uses:
+  - entity.cyberware.smartlink-2
+  affects: []
+  modified_by: []
+  interacts_with: []
 sources:
-  - {source: source.mm, pages: "31-33", relation: extends, note: "Smartlink-2 and subsystem/accessory rules"}
+- source: source.mm
+  pages: 31-33
+  relation: extends
+  note: Smartlink-2 and subsystem/accessory rules
 notes: []
+data:
+  general_smartlink2_effects: entity.cyberware.smartlink-2
+  subsystem_requirements:
+    all_four_components_or_substitutes_required: true
+    components:
+    - component: input-output device
+      typical: subdermal palm induction pad
+      substitute: direct datajack connection
+    - component: eye display
+      substitutes:
+      - image link
+      - smart goggles
+    - component: ballistics processor
+      choices:
+      - standard
+      - Smartlink-2
+    - component: limited simsense rig
+      substitute: simrig
+      function: body posture and weapon position sensing
+    induction_pad_detectable_by_touch: true
+    existing_image_link_requires_connection_to_system: true
+    non_entirely_cybernetic_ranged_combat_modifier: -1
+    modifier_condition: any stated substitution is made
+    required_weapon_equipment: matching smartlink or Smartlink-2
+    camera_function: false
+    distinguishes_friends_from_enemies: false
+    visual_indication: direction weapon is pointed
+    second_hand: second induction pad linked to existing system is sufficient
+  range_finder:
+    requires: smartlink
+    display: current distance beneath targeting icon in field of vision
+    smartlink2_long_range_modifier: -1
+    smartlink2_extreme_range_modifier: -2
+    cumulative_with_image_magnification_range_modifiers: false
+    linked_air_timed_mini_grenade_game_effect:
+      conditions:
+      - smartlinked grenade launcher
+      - air-timed mini-grenades
+      distance_setting: automatic
+      scatter_dice_without: 3D6
+      scatter_dice_with: 1D6
+  personalized_smartlink_safety:
+    game_equipment_function: weapon safety remains engaged unless in contact with
+      a smartlink system with the matching encrypted serial number
+    multiple_authorized_smartlink_systems_possible: true
+    serial_number_encryption_rating: 8
