@@ -1,10 +1,40 @@
 id: entity.cyberware.asist-converter
 record_type: entity
-name: "ASIST Converter"
+name: ASIST Converter
 domain: cyberware
 status: ingested
-intrinsic: {cost_nuyen: 1000, availability: "4/48 hrs", street_index: 1, legality: "Legal"}
+source: source.mm
+printed_pages: '19,152'
+pdf_pages: '19,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: ASIST Converter — interface requirements and distinct purchase variants
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp19,152/PDF19,153.
+intrinsic:
+  variants:
+    external_plug_in:
+      essence: '—'
+      cost_nuyen: 50
+      availability: '4/24 hrs'
+      street_index: 1
+      legality: Legal
+    datajack_accessory:
+      essence: '—'
+      cost_nuyen: 1000
+      availability: '6/36 hrs'
+      street_index: 1.5
+      legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 19, relation: defines, note: "ASIST Converter description and statistics"}
+  - {source: source.mm, page: 19, relation: defines, note: 'Device description, game effects and local table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Matrixware equipment table'}
 notes: []
+data:
+  signal_conversion: bidirectional conversion between simsense signals through a datajack and signals interpretable by the metahuman brain
+  technology_included_in: [simdecks, cyberdecks, remote control decks, other direct neural interface devices]
+  otaku_matrix_access_without_cyberdeck:
+    requires_asist_converter: true
+    purpose: translate data in both directions through the datajack
+  form_options: [external plug-in module, integral datajack modification]
+  integral_datajack_modification_additional_essence: 0
