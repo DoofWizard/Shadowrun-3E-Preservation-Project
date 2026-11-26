@@ -168,7 +168,7 @@ verified_semantic_revision_history_2026_11_24:
 
 # Single finite book checklist for the mechanics-first closure pass; legacy normalization status is not formal acceptance.
 mechanical_book_checklist_2026_11_26:
-  source_verification_manifest_blob: ef6481e4b8c287f0ae49d17d99ebd7617207d25a
+  source_verification_manifest_blob: 85110543a4a9f6ffa18a7b0c343b20ba33e97159
   source_verification_result: source_pdf_hash_verified
   original_pdf_sha256: e2abcabc617bb49a2bb5c2de7daea414db622556ca3d8ceeca0e3ddc7b4843b6
   original_pdf_pages: 212
@@ -220,12 +220,13 @@ mechanical_book_checklist_2026_11_26:
     - printed: [179, 181]
       pdf: [181, 183]
       scope: dragon_magic
-      disposition: bounded_mechanical_corrections_pending
-      field_checklist: "Magic attribute/loss; tradition; sorcery and ritual preparation, links and team; conjuring eligibility/action/capacity/overlap/Invoking/ally/blood/free-spirit and banishment exceptions; enchanting and ritual link; initiation; astral dual nature, targeting, projection and pools directly compared."
+      disposition: mechanical_coverage_reconciled_acceptance_debt
+      field_checklist: "Magic attribute/loss; tradition; sorcery and ritual preparation, links and team; conjuring eligibility/action/capacity/overlap/Invoking/ally/blood/free-spirit and banishment exceptions; enchanting and ritual link; initiation; astral dual nature, targeting, projection and pools directly compared. Revised source-specific supplement corrects legacy initiation status and frequency grouping, distinguishes access from rarity, records grade-based technique knowledge and GM selection, qualifies metaplanar projection by initiation, clarifies Sacrificing prerequisite and optional focus retention, and preserves rare ally summoning."
       comparisons:
         - {path: rules/dragons/magic.yml, blob: d71db089048558f8ec5a1960fe3124ed31b4ef3a}
-        - {path: rules/dragons/dotsw-magic-qualifications-p179-181.yml, blob: c1236596a243496341d6aac363ce4de9b3f87501, commit: 16ba71a5a83cf76548ecb0a167ec65108465a7ee, index_commit: f8cc0dbd9f8adc2be141bf3c1397dcb83c7f1e00}
-      remaining: "p180/PDF182: legacy rarer_metamagic incorrectly groups Sensing, Absorption, Filtering, Psychometry and Severing with explicitly uncommon Divining and Possessing; additional access is not a frequency statement. Add explicit grade-based technique count and GM selection. p181/PDF183: compare and preserve initiation qualification for metaplanar projection. Existing supplement's registered digests retained; original baseline/plan/confirm/index artifact files for legacy and supplement not located. Corrections require genuine separate transaction."
+        - {path: rules/dragons/dotsw-magic-qualifications-p179-181.yml, blob: 8f0e729af8999e91f4d6b83b5c9922c2f10ee8ef, commit: 1018334b3b93477a264f7277246bc7762a9d28ea, index_commit: 52c8b2e847d6e9b1c8b2eca16345ed968e8994cf}
+      current_revision_evidence: {candidate_sha256: 05ad48e5cc901b0220a6a7a103f35f7637ab2785c2c1e6b2b64dfa6d69fa630b, immutable_sha256: 08f53880fb83fe277b63c9ad0277419bf9cbd49ad3f8485aea132963084a8f34, baseline_sha256: 12a164ada89b6d78b4c323abf3c8bc7ac31871c1f6a72f6906db546319a28e35, gate_status: verified, indexed_manifest_blob: 69a19704fb9b77361ad6fe426e4334a7177c6e57, journal: FANPRO10666-2026-11-26-magic-confirmed.zip}
+      remaining: "No demonstrated mechanical gap after current source review and verified correction. Legacy magic.yml remains historical original-gate debt, including original independent baseline, prepare, confirm and individual indexing artifacts. Superseded supplemental revisions retained in revision history; their original journal/confirm/index receipt files not recovered. Current corrected revision has new actual evidence and is not retro-certification."
     - printed: [181, 182]
       pdf: [183, 184]
       scope: dragons_and_technology
@@ -236,13 +237,30 @@ mechanical_book_checklist_2026_11_26:
         - {path: rules/dragons/dotsw-technology-flight-qualifications-p181-182.yml, blob: 9a9630606e24355be066d7648657398d59718ef0, commit: 00e4c4ea4db4fc2e906a556777e30ae879cef78e, index_commit: 8a7351a1581ba426b480e666086fe961d5a2127b}
       remaining: "No demonstrated mechanical gap. Legacy original baseline/plan/confirm/index artifacts and supplement original journal/confirm/index receipt files not located; no new acceptance claimed."
     - {printed: [182, 183], pdf: [184, 185], scope: dealing_with_dragons, disposition: reviewed_no_standalone_mechanical_gap, evidence: "Directly reviewed campaign advice and existing rule references; no standalone resolution test, modifier or stat added. Narrative guidance not recast as universal rules."}
-    - {printed: [183, 185], pdf: [185, 187], scope: drakes, disposition: current_pass_unreconciled}
-    - {printed: [185, 186], pdf: [187, 188], scope: draco_foundation_game_information, disposition: current_pass_unreconciled}
+    - printed: [183, 185]
+      pdf: [185, 187]
+      scope: drakes
+      disposition: mechanical_coverage_reconciled_acceptance_debt
+      field_checklist: "True and bred drake eight attributes, both initiatives, three pools, attack and positive reach; all listed powers and magical skills caveats; individual statistics, fixed humanoid form and mental continuity; transformation action and equipment effects; astral perception/projection, detection thresholds and Masking; implant losses and form limitation; first-transformation signal; optional player creation priority, build-point cost, Hunted flaw and protected patron replacement. Both average dracoform rows and exact PC/supplement fields match 38/38 typed comparisons. Narrative examples and attributed servant relationships not converted to a new resolution test. Retain earlier Threats 2 individual-generation formula separately."
+      comparisons:
+        - {path: rules/dragons/drakes.yml, blob: c0ac416f6efe818bd8b010cade6344ff4c89fa29, historical_commit: dcbf1b270140391f5e135b79388fd199491f3c48}
+        - {path: rules/character-creation/bred-drake-player-characters.yml, blob: 71a8e2ac7ecc748baf3190b561f7bde5b87a6104, historical_commit: dcbf1b270140391f5e135b79388fd199491f3c48}
+        - {path: rules/dragons/dotsw-drake-statistic-qualifications-p184.yml, blob: dc8e9c6c6e4db66d4163c70342301523a595a0ac, commit: 91ae3014175c2ab4ff40e84d61d20cc611407cf6, index_commit: dfb98cdf25ec0a1e27ad777c703cad7f4489b4a0}
+        - {path: rules/dragons/dotsw-drake-form-player-qualifications-p185.yml, blob: fc5451099a5abd85c42c7fcb24981262e781e166, commit: f9dfc7caf73b038963c4ab2e8b9cd152c82e099e, index_commit: 41f4d2e1790a8fa15218e73b5f038b3cd852381a}
+      remaining: "No demonstrated mechanical gap. Original independent baseline/prepare/confirm/index receipts for the two legacy records not located. Both supplement index commits and registered digests exist, but original baseline, plan, confirm and index-receipt files not located in available targeted journal search. Current comparisons are coverage only."
+    - printed: [185, 186]
+      pdf: [187, 188]
+      scope: draco_foundation_game_information
+      disposition: mechanical_coverage_reconciled_acceptance_debt
+      field_checklist: "Default Superhuman NPC guidance, attribute/skill ratings generally three or more above player characters, high-power campaign Superior or Equal alternatives, Inferior only unlikely except supremely capable player characters, precise NPC abilities at GM discretion. Rest is campaign framing and illustrative scenarios; no additional universal modifier or procedure inferred."
+      comparisons:
+        - {path: rules/campaign/draco-foundation-npc-power.yml, blob: 39c307045de2b12f4dcf8d08fd72d799b794d8e9, historical_commit: dcbf1b270140391f5e135b79388fd199491f3c48}
+      remaining: "No demonstrated mechanical gap. Legacy source-specific campaign guidance lacks original independent baseline/prepare/confirm/index receipt set; current source comparison is coverage only."
     - {printed: [186, 200], pdf: [188, 202], scope: named_dragon_game_information, disposition: current_pass_unreconciled, note: "Include Earth Magic, dracobot rows, Transys ratings, Knights and Spirit of Denver."}
     - {pdf: [203, 212], scope: index_and_end_matter, disposition: partially_directly_reviewed, evidence: "PDF203 index opening directly reviewed; PDF204-212 still to classify from images."}
-  original_page_range_routing: "All 212 physical page positions assigned to provisional natural scopes, some shared boundaries. PDF3-6, 177-185 and 203 directly reviewed across the current closure pass. Remaining page content and finite field counts not established by routing."
+  original_page_range_routing: "All 212 physical page positions assigned to provisional natural scopes, some shared boundaries. PDF3-6, 177-188 and 203 directly reviewed across the current closure pass. Remaining page content and finite field counts not established by routing."
   remaining_mechanical_field_count: unknown
   new_fully_certified_scopes: 0
   source_formal_acceptance: not_claimed
-  next_cursor: "Finish bounded p180-181 initiation/metamagic qualifications by genuine source-specific transaction; then Drakes pp183-185/PDF185-187. Retain exact legacy and supplemental evidence; prior journal searches across available Drive/Library/conversation and GitHub history found index commits but no original artifact sets for the four reviewed mechanical scopes. Repeat negative search only if evidence changes."
+  next_cursor: "Named dragon Game Information pp186-200/PDF188-202, starting with Aden and Celedyr; then embedded mechanical claims in earlier profiles. Reuse closed magic, drake and Foundation scopes; historical receipt debt remains bounded in their individual comparisons."
   global_pages_advanced: 0
