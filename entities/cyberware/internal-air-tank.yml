@@ -1,15 +1,50 @@
 id: entity.cyberware.internal-air-tank
 record_type: entity
-name: "Internal Air Tank"
+name: Internal Air Tank
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '29,154'
+pdf_pages: '29,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Internal Air Tank — SR3 breathing, swimming and Stress rules
+summary: Fictional augmentation rules from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp29,154/PDF29,155.
 intrinsic:
   essence: 0.25
   cost_nuyen: 1200
-  availability: "4/5 days"
+  availability: '4/5 days'
   street_index: 1.5
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 29, relation: defines, note: Game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes: []
+data:
+  independent_breathing_source: true
+  installation_condition: implanted beneath a lung; partial lung removal required by source description
+  airborne_compound_immunity_condition: character breathing from tank
+  nominal_air_duration_minutes: 75
+  duration_approximate: true
+  air_consumption_variables: [underwater depth, lung capacity, activity]
+  refill_time_minutes: 5
+  underwater_treading_or_floating_test_modifier: -1
+  underwater_reference: SR Companion p48
+  alternative_gaseous_contents: permitted by fictional source
+  stress_check:
+    condition: whenever tank takes Stress
+    roll: 1D6
+    explosion_result: 1
+    stress_reference: Man & Machine p127
+  explosion:
+    owner_damage_code: 10S
+    owner_external_armor_applies: false
+    owner_internal_impact_armor_applies: true
+    owner_external_armor_examples: [worn armor, dermal plating, dermal sheath]
+    owner_internal_armor_example: bone lacing
+    nearby_characters_may_take_damage: true
+    nearby_power_modifier_per_meter: -2
+    nearby_external_impact_armor_reduces_power: true
+  accessory: tracheal vent
