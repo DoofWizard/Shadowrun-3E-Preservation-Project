@@ -2803,8 +2803,22 @@ book_closure_checklist_2026_11_25:
         disposition: coverage_only
     - pdf: [55, 58]
       scope: "Gear and underwater equipment"
-      status: prior_review_partial
-      evidence_or_gap: "23_gear, 23_parachuting, 23_underwater_gear; external BattleTac dependency separate."
+      status: coverage_reconciled_acceptance_blocked
+      evidence_or_gap: "Reuse the three original field audits and their unchanged entity and source-specific record bindings. Fresh source images printed pp53-57/PDF54-58 and corresponding gear table portions on pp122-123/PDF123-124 reviewed. Body scopes include 3 BattleTac, 16 tactical communication, 3 parachuting and 14 underwater acquisition rows. All 34 inherited entity blobs and eight source-specific record blobs match the prior bindings; two source-local records preserve the missing portable-master and JIM enhancement rows, and the face-mask/snorkel shared weight discrepancy remains explicitly bound. The 35 corresponding gear rows on pp122-123 were visually cross-checked with the body tables; remote-trigger accessory appendix remains outside this scoped comparison. No new source-local mechanical gap established; other appendix-only equipment remains in the consolidated equipment scope. Formal acceptance and external dependency validation remain separate."
+      scope_recheck_2026_11_26:
+        basis_manifest_blob: 4ff7b61a53befffb3d4ff68d1ed5d4ed63ccaf47
+        source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+        actual_source_verification: source_pdf_hash_verified
+        prior_audit_blobs: [88758327c3696e4bb3f4c1c9750d35ea1ca36d4c, 17a5d5f17dd134261927080a7e138a696969d008, cc3bdba7350f80c84ee0eaab1fd12c61f0197f3b]
+        inherited_entity_rows_matched_by_audit_blob: 34
+        source_specific_record_blobs: [cac0a9747444c9f54071794c39d53255edac30cd, 9d511b4a45f5192ec9f9016161543454dadb09e3, 796caf40754b8487800060ba98be9fa31b5e7e01, ba9612f3cd883f4e476eed842a07a4e7502c5d78, a2af501c46e557e104b2aace1d634a6602f2c896, 31d7630567e6d8dfe79bb4b6277d48f05df52ad0, 1873e005c9a3e1b5bc5463f6d08dc1c376a3d38c, ce36b54596d1043a86e332bd73ad531a7f4611fc]
+        external_dependency_change:
+          path: rules/cyberware/tactical-computer.yml
+          prior_audit_blob: 4a219be040c2493379acba5216489774ad68c695
+          current_blob: 6d9a7c0ceebcca758a907674220f4b35ddf69475
+          disposition: "Live shared Man and Machine rule now contains an explicit Small Unit Tactics rating bonus table and BattleTac master eligibility. CC p53 refers to M&M p22 and does not quantify that bonus. Dependency is identifiable but applicability to noncybernetic master/receiver components and original external-source acceptance are not established here; do not apply the table indiscriminately."
+        acceptance_debt: "Original baseline, prepare, confirm and individual index artifacts for the 34 inherited entity paths remain unestablished; eight source-specific registrations retain prior audit transaction digest/index references, not newly recovered original journals. Reuse existing evidence map. Face-mask/snorkel inherited weight 1 versus printed dash remains a shared precedence discrepancy; retain the source-local correction. No new semantic transaction or historical receipt inferred."
+        disposition: coverage_only
     - pdf: [59, 65]
       scope: "Skillsoft systems and programming"
       status: prior_review_partial
