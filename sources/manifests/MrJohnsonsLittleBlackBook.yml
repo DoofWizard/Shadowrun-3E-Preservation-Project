@@ -22,7 +22,7 @@ routing:
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
-  - {range: "122-124", section: Quick resolution systems, status: partial_vehicle_verified_decking_pending}
+  - {range: "122-124", section: Quick resolution systems, status: mechanics_covered_scoped_and_coverage_only}
 verified_semantic_records:
   - id: reference.mjlbb.high-level-campaign-guidance-p118-119
     path: references/campaign/mjlbb-high-level-campaign-guidance-p118-119.yml
@@ -102,14 +102,37 @@ verified_semantic_records:
     immutable_sha256: e908fd826661eee1aa54a328ed2922ba8389a7a85654de1bd8824b94ec94191a
     gate: verified
     contiguous_advance: false
-pending_normalization:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
     path: rules/matrix/mjlbb-quick-resolution-decking-p122-124.yml
-    range_printed: [122, 124]
-    range_pdf: [123, 125]
+    range_printed:
+    - 122
+    - 124
+    range_pdf:
+    - 123
+    - 125
+    content_class: rule_procedure
+    commit: f66ce029cb5efda57bb0a6d75a53aab0ed3be52c
+    blob: 7d4472ae3a1fcb78e44cc8131905b5f47a43fe92
+    baseline_sha256: be0ffb90b50da0f59eca02a3550697ed938a455e27ab02b2188938953066f01b
+    candidate_sha256: 31bcb067931443c82ba5b119085170d3fc8e651a794809f74b75cd3752f42254
+    immutable_sha256: 0436e84489e1e87ce6635911e6d9d3f19c9e8f1ada82ed26c8642afffd9f10d0
+    gate: verified
+    contiguous_advance: false
+    journal_library_id: libfile_94f34b55a2148191a1bd05a8fc695686
+pending_normalization: []
+resolved_pending_history:
+  - id: rule.mjlbb.quick-resolution-decking-p122-124
+    path: rules/matrix/mjlbb-quick-resolution-decking-p122-124.yml
+    range_printed:
+    - 122
+    - 124
+    range_pdf:
+    - 123
+    - 125
     candidate_sha256: 7e337d54a59d1a190510d1436f803b9d482dddd329d85963da1823f75bd2eabc
     expected_blob: 03630922b7c57c423776457f73d3f3ae0f6dc533
-    reason: "create_file returned HTTP 409 ref conflict; exact-path readback returned 404; no confirmation"
+    reason: 'create_file returned HTTP 409 ref conflict; exact-path readback returned 404;
+      no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Complete pending quick decking transaction after conflict reconciliation, then original review of pp4-115. Whole-book field checklist not established."
+next_cursor: "Original review pp4-115; quick-resolution systems scoped coverage complete. Whole-book field checklist not established."
