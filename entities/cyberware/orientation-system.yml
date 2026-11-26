@@ -1,11 +1,30 @@
 id: entity.cyberware.orientation-system
 record_type: entity
-name: "Orientation System"
+name: Orientation System
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.25, cost_nuyen: 15000, availability: "5/6 days", street_index: 1.5, legality: "Legal"}
+source: source.mm
+printed_pages: '18,153'
+pdf_pages: '18,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Orientation System — mapping and navigation effects
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp18,153/PDF18,154.
+intrinsic: {essence: 0.25, cost_nuyen: 15000, availability: '5/6 days', street_index: 1.5, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: [entity.cyberware.internal-gps]}
 sources:
-  - {source: source.mm, page: 18, relation: defines, note: "Orientation System game effects and statistics"}
-notes:
-  - "Combines mapping, positioning inputs and imaging software."
+  - {source: source.mm, page: 18, relation: defines, note: 'Mapping game effects and purchase row'}
+  - {source: source.mm, page: 153, relation: defines, note: 'Equipment table'}
+notes: []
+data:
+  gps_input_links: [internal, datajack, radio]
+  mapsoft_input_links: [chipjack, headware memory, datajack]
+  output_links: [image link, datajack]
+  display: [three-dimensional map, user position, elevation relative to sea or street level, other GPS and tracker inputs, distances between reference points and icons]
+  navigation_effects: subject to input information, map detail and gamemaster discretion
+  example_uses: [determine position, navigate course, follow a target fitted with a tracking signal, find nearest exit]
+  example_mapsoft_prices_nuyen: {basic city street map: 25, detailed city block map: 1000}
+  mapsoft_price_and_size_basis: completeness and complexity
+  illicit_mapsoft_market: gamemaster may increase availability and street index as appropriate
+  map_creation_requires: [sensory input such as GPS or ultrasound, headware or datajack-linked storage memory]
