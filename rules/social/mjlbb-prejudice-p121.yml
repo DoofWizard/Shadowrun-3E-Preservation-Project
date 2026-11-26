@@ -1,0 +1,54 @@
+id: rule.mjlbb.prejudice-p121
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '121'
+pdf_pages: '122'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro25003, FanPro, SR3 fictional Shadowrun, printed p121/PDF122: optional NPC prejudice mechanics"
+summary: Original optional tabletop NPC bias generation, eleven table rows, category definitions and social test consequences.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  lineage: Explicit substitution or expansion for Racism Points in SR3 p92; optional GM system.
+  generation:
+    presence: {dice: 1D6, biased_on: [1]}
+    points: {dice: 1D6, open_ended: true}
+    category_roll: {dice: 2D6, points_per_roll_default: 1, points_per_roll_if_6_or_more: 2}
+    odd_point_note: The source does not specify how to allocate an odd remaining point when using the two-point grouping.
+  social_test_modifier:
+    affected_test: Charisma-linked skill test by a character belonging to the targeted category against the biased fictional NPC.
+    modifier_per_bias_point: 1
+    example: {category: Awakened, bias_points: 3, test: Negotiation, modifier: 3}
+  table:
+    - {roll: 2, bias: Women (misogyny)}
+    - {roll: 3, bias: Other}
+    - {roll: 4, bias: Orks and Trolls}
+    - {roll: 5, bias: Women (misogyny)}
+    - {roll: 6, bias: One particular ethnicity/culture/religion}
+    - {roll: 7, bias: One Metatype}
+    - {roll: 8, bias: The Awakened}
+    - {roll: 9, bias: Homosexuals}
+    - {roll: 10, bias: All (other) Metatypes}
+    - {roll: 11, bias: Other}
+    - {roll: 12, bias: Homosexuals}
+  table_key:
+    women: Bias against women as described by the source's misogyny category.
+    other: GM chooses a bias appropriate to the fictional NPC; examples include age, weight, obvious cyberware, other sentient beings, a specific metavariant, men and mundanes.
+    orks_and_trolls: Both fictional metatypes are targeted.
+    particular_ethnicity_culture_class_religion: GM chooses the targeted group appropriate to the fictional NPC; the explanatory key includes class although table row 6 does not.
+    one_metatype:
+      selection: GM choice or 1D6.
+      rolls: {"1": Humans, "2": Elves, "3": Dwarfs, "4": Orks, "5": Trolls, "6": Changelings}
+      metavariants: Group with parent metatype.
+    awakened: Includes full and aspected magicians, adepts and anyone displaying supernatural abilities.
+    homosexuals: The source's category also encompasses bisexual, transgender, androgynous and neuter characters; this is a description of fictional NPC prejudice, not an equivalence of identities.
+  adjustable_setting:
+    default_reported_probability_percent_approx: 17
+    original_sr3_racism_probability_percent: 25
+    lower_prejudice_options:
+      - {presence_dice: 2D6, biased_on_max: 3}
+      - {bias_points_dice: 1D3}
+    higher_prejudice_option: {presence_dice: 1D6, biased_on: [1, 2, 3]}
+    qualification: Alternative GM options, not cumulative requirements; a biased NPC is more likely under this system to have biases toward several categories.
