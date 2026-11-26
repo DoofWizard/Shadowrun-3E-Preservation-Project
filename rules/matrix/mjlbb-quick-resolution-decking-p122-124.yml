@@ -1,0 +1,53 @@
+id: rule.mjlbb.quick-resolution-decking-p122-124
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '122-124'
+pdf_pages: '123-125'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'FanPro25003, FanPro, SR3: fictional Shadowrun quick decking resolution, printed pp122-124/PDF123-125'
+summary: Optional single-test and multi-test tabletop Matrix procedures, pool spending, alert responses and modifiers.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  scope: Optional fictional Matrix rules for abbreviated runs, not a replacement for ordinary decking; the GM should retain incentives for decker development and narrate the results.
+  references: [FanPro25003 p35, SRComp p107]
+  actions_per_combat_turn: {qualifier: rule_of_thumb, basis: number_of_initiative_dice, example: {initiative: '6 + 3D6', actions: 3}}
+  single_test:
+    printed_pages: '122-123'
+    use: Rapid resolution when little time is available or for routine easy runs.
+    preparation: List each desired action or individual information item; order from easiest to hardest or by decker priorities. Alternatively omit list and allow a chosen action or inquiry per net success.
+    test: {skill: Computer (Decking), pool: all_available_Hacking_Pool, target_number: system_security_value}
+    threshold_by_security_code: {Blue: 1, Green: 2, Orange: 3, Red: 4}
+    result: Each success above threshold buys one item, action or inquiry.
+    optional_consequence: {test_dice: system_security_value, target_number: decker_detection_factor, persona_damage_per_success: 1, alternative_outcomes: [successful_trace, deck_MPCP_damage, damage_to_decker_from_gray_or_black_IC]}
+    example: {decker: Glitch, host: Orange-4, dice: 13, target_number: 4, successes: 6, threshold: 3, net_successes: 3, actions: [room_number_lookup, floor_camera_access, intercept_calls_to_police], further_actions: fail, narrated_consequence: Trace IC forces jack-out}
+  series_of_tests:
+    printed_pages: '123-124'
+    standard_test: {skill: Computer (Decking), target_number: system_security_value, hacking_pool_as_dice: false}
+    hacking_pool: {automatic_success_per_point: 1, IC_suppressed_per_point: 1, spending_timing: at_any_time, suppression_requires_fight: false, refresh: end_of_run}
+    system_pool: {Blue: 1, Green: 2, Orange: 3, Red: 4, decker_success_negated_per_point: 1, IC_automatic_success_per_point: 1, refresh: end_of_run}
+    actions:
+      - {name: Access, TN: system_security_value, trigger: log_on_to_new_host_or_grid, failure: no_logon}
+      - {name: Search, TN: system_security_value, trigger: operation_normally_using_Index, failure: alert}
+      - {name: Control, TN: system_security_value, trigger: non_Search_operation_normally_using_Control_Files_or_Slave, failure: alert}
+      - name: Fight
+        test: Computer versus IC Rating, opposed
+        damage_boxes_per_net_success: 1
+        damage_recipient: opponent
+        targets: {gray_IC: persona, black_IC: decker}
+        trace_IC: {net_successes_required: 10, before_threshold: no_effect, at_threshold: decker_traced}
+        while_fighting: Other actions prohibited except suppressing IC, escaping or continuing fight.
+      - name: Escape
+        test: Computer versus IC Rating, opposed
+        decker_wins: escapes and may continue other actions
+        IC_wins: resolve as successful IC attack
+        IC_win_condition: more_net_successes
+    alert: {response: IC dispatched on each alert, selection: first gray or trace IC from security sheaf then progress upward or select appropriate IC, shutdown_at: 5}
+    computer_test_modifiers:
+      - {condition: lacks_appropriate_utility, modifier: 2}
+      - {condition: first_alert_triggered, modifier: 1}
+      - {condition: second_alert_triggered, modifier: 2}
+      - {condition: suppressed_IC, modifier_per_IC: 1}
+    source_note: The source does not specify tie handling or whether the first and second alert modifiers accumulate; no interpretation added.
