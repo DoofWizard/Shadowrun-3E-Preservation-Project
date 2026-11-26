@@ -1,15 +1,40 @@
 id: entity.cyberware.hydraulic-jacks
 record_type: entity
-name: "Hydraulic Jacks"
+name: Hydraulic Jacks
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '29,154'
+pdf_pages: '29,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Hydraulic Jacks — SR3 movement and fall modifiers
+summary: Fictional augmentation rules from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp29,154/PDF29,155.
 intrinsic:
-  essence: "0.75 + 0.25 per Rating"
-  cost: "Rating x 5,000 nuyen"
-  availability: "5/6 days"
+  essence: '0.75 + 0.25 per Rating'
+  cost: 'Rating x 5,000 nuyen'
+  availability: '5/6 days'
   street_index: 1
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 29, relation: defines, note: Game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes: []
+data:
+  maximum_rating: 5
+  maximum_jump_distance_bonus_percent_per_rating: 20
+  jump_distance_scope: [vertical, horizontal]
+  jump_reference: SR Companion p47
+  athletics_running_bonus_dice_per_rating: 1
+  athletics_jumping_bonus_dice_per_rating: 1
+  fall_power_reduction: Rating
+  fall_power_reduction_condition: character lands on feet
+  landing_test:
+    attribute: Quickness
+    base_target_number: 5
+    base_height_max_meters: 5
+    additional_height_increment_meters: 4
+    target_number_increase_per_increment: 1
+  installation: extensive and obvious leg modification; most common with cyberlegs, not exclusive to them
