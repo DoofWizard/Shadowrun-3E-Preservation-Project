@@ -155,3 +155,56 @@ verified_semantic_revision_history_2026_11_24:
     candidate_sha256: 674fcb9d2dcb189d0f89a53a1ee239cf6f2aa1cbd0e108f98569202ee15a861e
     immutable_sha256: 72e2c06bcd69adebfca7b6108f57837426ddb73e8d1a4590f471e31d381ecfcb
     gate_status: verified
+
+# Single finite book checklist for the mechanics-first closure pass; legacy normalization status is not formal acceptance.
+mechanical_book_checklist_2026_11_26:
+  source_verification_manifest_blob: 9e582d2fed2b6e0155f3a0fec47cd7be8606df16
+  source_verification_result: source_pdf_hash_verified
+  original_pdf_sha256: e2abcabc617bb49a2bb5c2de7daea414db622556ca3d8ceeca0e3ddc7b4843b6
+  original_pdf_pages: 212
+  page_mapping: "Printed pages in the reviewed contents and Game Information use PDF page = printed page + 2. Physical front and back matter are not inferred blank."
+  checklist_origin: "Original contents PDF4-6, Game Information opening PDF177 and index start PDF203; prior manifest describes legacy sequential review. Unreconciled means no independent current-pass field-level coverage established, not a claim that no earlier scan occurred."
+  page_checklist:
+    - {pdf: [1, 6], scope: front_matter, disposition: partially_directly_reviewed, evidence: "PDF3-6 title, contents and credits; PDF1-2 not independently reviewed in current pass."}
+    - {printed: [5, 6], pdf: [7, 8], scope: introduction, disposition: current_pass_unreconciled}
+    - {printed: [7, 23], pdf: [9, 25], scope: dragon_download, disposition: current_pass_unreconciled, note: "Compare embedded physical, magical, lifecycle and servant qualifications; legacy normalized."}
+    - {printed: [24, 34], pdf: [26, 36], scope: draco_foundation, disposition: current_pass_unreconciled}
+    - {printed: [35, 45], pdf: [37, 47], scope: aden, disposition: current_pass_unreconciled}
+    - {printed: [46, 58], pdf: [48, 60], scope: celedyr, disposition: current_pass_unreconciled}
+    - {printed: [59, 69], pdf: [61, 71], scope: ghostwalker, disposition: current_pass_unreconciled}
+    - {printed: [70, 82], pdf: [72, 84], scope: hestaby, disposition: current_pass_unreconciled}
+    - {printed: [83, 93], pdf: [85, 95], scope: hualpa, disposition: current_pass_unreconciled}
+    - {printed: [94, 106], pdf: [96, 108], scope: lofwyr, disposition: current_pass_unreconciled}
+    - {printed: [107, 118], pdf: [109, 120], scope: lung, disposition: current_pass_unreconciled}
+    - {printed: [119, 131], pdf: [121, 133], scope: masaru, disposition: current_pass_unreconciled}
+    - {printed: [132, 142], pdf: [134, 144], scope: rhonabwy_and_sea_dragon, disposition: current_pass_unreconciled}
+    - {printed: [143, 154], pdf: [145, 156], scope: ryumyo, disposition: current_pass_unreconciled, note: "Include dragon-line and aspected-mana qualifications."}
+    - {printed: [155, 174], pdf: [157, 176], scope: nest_of_serpents, disposition: current_pass_unreconciled}
+    - printed: [175, 178]
+      pdf: [177, 180]
+      scope: dragon_types
+      disposition: numeric_rows_reconciled_qualitative_comparisons_pending
+      field_checklist:
+        - "p175 official supersession statement matches type-statlines effective basis; no core rewrite."
+        - "p176 eastern, feathered serpent and sea dragon eight attributes, both initiatives, three pools, attack and reach each match exact typed comparisons; Sirrush identical normal eastern statistics retained."
+        - "PDF179 (p177 position) full-page illustration directly visually reviewed, not inferred blank."
+        - "p178 western fifteen fields and great-dragon twelve fields including literal B +10/12, Q +3 (+1), E 12Z, both initiative adjustments, attack and reach match. Plus sign application preserved; no inferred arithmetic conversion."
+        - "Existing type-profile supplement distinguishes ordinary sea dragon from named great dragon and preserves water/air breathing, terrestrial movement and manual dexterity; no unsupported numeric movement modifier."
+      comparisons:
+        legacy_type_statlines: {path: rules/dragons/type-statlines.yml, blob: 37a4b111e4441992e358fc88adb5cb956cb4e7d0, typed_fields_matching: 72}
+        indexed_type_profile_supplement: {path: rules/dragons/dotsw-type-profile-scope-p175-178.yml, blob: 2dac897daebcc882abaf4216dfa6cdb0cb3a65b0, commit: 11c52faf04544d3ccf98b193c0d54c647d4d955d}
+      remaining: "Compare all type-specific descriptive dimensions, anatomical capabilities and great-dragon language/magic qualifications to legacy dragon records before scope closeout. Original independent baseline, prepare, confirm and individual indexing evidence for legacy type-statlines not established by current exact-byte and source-field checks. Supplemental original receipt still to be located; do not infer acceptance."
+    - {printed: [178, 179], pdf: [180, 181], scope: dragon_powers, disposition: current_pass_unreconciled, note: "Shared page boundary; p178 seen, power-specific comparison pending."}
+    - {printed: [179, 181], pdf: [181, 183], scope: dragon_magic, disposition: current_pass_unreconciled}
+    - {printed: [181, 182], pdf: [183, 184], scope: dragons_and_technology, disposition: current_pass_unreconciled}
+    - {printed: [182, 183], pdf: [184, 185], scope: dealing_with_dragons, disposition: current_pass_unreconciled}
+    - {printed: [183, 185], pdf: [185, 187], scope: drakes, disposition: current_pass_unreconciled}
+    - {printed: [185, 186], pdf: [187, 188], scope: draco_foundation_game_information, disposition: current_pass_unreconciled}
+    - {printed: [186, 200], pdf: [188, 202], scope: named_dragon_game_information, disposition: current_pass_unreconciled, note: "Include Earth Magic, dracobot rows, Transys ratings, Knights and Spirit of Denver."}
+    - {pdf: [203, 212], scope: index_and_end_matter, disposition: partially_directly_reviewed, evidence: "PDF203 index opening directly reviewed; PDF204-212 still to classify from images."}
+  original_page_range_routing: "All 212 physical page positions assigned to provisional natural scopes, some shared boundaries. Only PDF3-6, 177-180 and 203 directly reviewed in this pass. Remaining page content and finite field counts not established by routing."
+  remaining_mechanical_field_count: unknown
+  new_fully_certified_scopes: 0
+  source_formal_acceptance: not_claimed
+  next_cursor: "Finish dragon type qualitative comparisons and evidence mapping; then Dragon Powers pp178-179/PDF180-181, preserving prior indexed supplement."
+  global_pages_advanced: 0
