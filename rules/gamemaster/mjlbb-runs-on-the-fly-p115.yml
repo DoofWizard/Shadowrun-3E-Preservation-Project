@@ -1,0 +1,119 @@
+id: rule.mjlbb.runs-on-the-fly-p115
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '115'
+pdf_pages: '116'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro25003, FanPro, SR3: Runs on the Fly"
+summary: Optional fictional tabletop mission generator, preserving printed dice labels and overlapping ranges.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  procedure: Roll the indicated number of six-sided dice and sum them. GM may reroll, substitute, or stop using the tables when a suitable fictional scenario idea emerges.
+  row_schema: [minimum_roll, maximum_roll, outcome]
+  tables:
+    contact:
+      die: 2D6
+      rows:
+        - [2, 3, friend in distress]
+        - [4, 8, usual fixer]
+        - [9, 9, direct approach by Johnson or another sponsor]
+        - [10, 10, no contact because situation personally affects a team member]
+        - [11, 11, unusual person or entity such as free spirit or shapeshifter or disguised dragon]
+        - [12, 12, unknown or secret person]
+    motivation:
+      die: 1D6
+      rows:
+        - [1, 2, financial gain for sponsor]
+        - [3, 3, sponsor seeks revenge for past act or slight]
+        - [4, 4, personal objective of sponsor]
+        - [5, 5, sponsor seeks to correct actual or perceived wrong]
+        - [6, 6, sponsor seeks advantage over a corporation]
+    meeting:
+      die: 1D6
+      rows:
+        - [1, 1, usual type of meeting venue]
+        - [2, 2, venue unfamiliar to team]
+        - [3, 3, Matrix]
+        - [4, 4, another city]
+        - [5, 5, unusual location such as underwater or aboard aircraft]
+        - [6, 6, remote outdoor setting]
+    job_type:
+      die: 2D6
+      rows:
+        - [2, 2, bodyguarding]
+        - [3, 3, courier or smuggling]
+        - [4, 4, datasteal]
+        - [5, 6, investigation]
+        - [7, 7, extraction (kidnapping)]
+        - [8, 8, plant]
+        - [9, 10, object retrieval]
+        - [11, 11, security]
+        - [12, 12, roll on Table X]
+      reference: SRComp p100
+    table_x:
+      printed_die: 2F6
+      rows:
+        - [2, 2, assassination]
+        - [3, 4, blackmail]
+        - [5, 5, distraction]
+        - [6, 6, destruction]
+        - [7, 7, encryption or decryption]
+        - [8, 8, enforcement]
+        - [9, 9, hoax or counterfeit]
+        - [10, 10, tailchaser]
+        - [11, 11, war]
+        - [12, 12, wild things]
+    compensation:
+      die: 1D6
+      rows:
+        - [1, 2, standard team rate]
+        - [3, 3, somewhat below standard]
+        - [4, 4, somewhat above standard]
+        - [5, 5, nonstandard payment such as gear or information]
+        - [6, 6, very unusual payment type such as rare item or magical equipment]
+    sponsor_honesty:
+      die: 1D6
+      rows:
+        - [1, 1, relatively honest within limits of sponsor knowledge]
+        - [2, 3, mostly honest but conceals some facts]
+        - [4, 5, mostly dishonest and misrepresents job to obtain agreement]
+        - [6, 6, entirely dishonest and indifferent to possible team deaths during fictional mission]
+    physical_location:
+      die: 2D6
+      rows:
+        - [2, 3, another UCAS city]
+        - [4, 8, team hometown]
+        - [8, 9, city outside UCAS]
+        - [10, 10, ordinary wilderness such as forest or snow or mountain]
+        - [11, 11, hostile locale such as underwater or space or desert]
+        - [12, 12, exotic locale such as metaplanes or Matrix or dragon lair]
+    security:
+      die: 2D6
+      rows:
+        - [2, 4, low (relatively easy ingress and egress)]
+        - [5, 9, medium (ordinary security)]
+        - [10, 11, high (additional or exotic security such as magic or paracritters)]
+        - [12, 12, very high (low chance of emerging unharmed)]
+    complications:
+      die: 2D6
+      rows:
+        - [2, 2, none (source treats as very rare)]
+        - [3, 6, mission parameters differ greatly from sponsor account]
+        - [7, 8, additional or unexpected security]
+        - [9, 10, betrayal by sponsor or sponsor agents or both]
+        - [11, 11, enemy of team or team member appears]
+        - [12, 12, unexpected personal event for team member such as illness or contact crisis or SURGE]
+    successful_completion:
+      printed_die: 2d6
+      rows:
+        - [2, 2, sponsor attempts to eliminate team]
+        - [3, 6, sponsor reluctantly pays outstanding agreed fee]
+        - [7, 9, sponsor pays outstanding fee and promises recommendations for future jobs]
+        - [10, 11, sponsor attempts to renegotiate fee downward]
+        - [12, 12, sponsor fails to appear at meeting]
+  unresolved_source_discrepancies:
+    - Table X die label is printed 2F6 although general instructions specify D6s; retain without silent correction.
+    - Physical location ranges overlap at 8; retain both rows with no inferred precedence.
