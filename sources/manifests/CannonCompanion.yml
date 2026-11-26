@@ -374,14 +374,24 @@ source_mechanics_reconciliation_2026_11_23_underwater_activity:
       range_printed: [108, 111]
       range_pdf: [109, 112]
       content_class: rule_exact
-      commit: 78218c24595f331fae5f142cdb701f56b82eab54
-      blob: 032e38b3e43fdbb8e90455e18e104c20cf50c011
-      baseline_sha256: b308bce6bf01a293d94a40a09534662889896e760de48cea08fb109f4e5cd568
-      candidate_sha256: e6b699cc9276db18e0be287606128bcaae4fed5eb9aa9a0f13c50c0646a28fd5
-      immutable_sha256: 2ed04d554e3ebeddafa105b0087dd780b82927ff93efde9bc933a3970f3bc1e2
+      commit: 8669a28af875385495fc31f537e9a51a5e97cddc
+      blob: a7fc80f2bc1721ebabd03cb6645bc19007b0349c
+      baseline_sha256: 07908bbb591ae32709abb4ab5487905fca13aab7005f1ba95ebfb9e6a12e7080
+      candidate_sha256: 95a9ab81056e8c1bfd3e39c6db3e1a3f3126d0439eb62a4b646cef2553931c0b
+      immutable_sha256: fba93e7045c0ff38933169a54bc39a4a9def77dcf5b09ab0cca67bc437846125
+      original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
       gate: verified
       contiguous_advance: false
-      scope: "Original tabletop safe-time declaration, four-row hazard eligibility table, game test conditions and printed ambiguities."
+      scope: "Original tabletop safe-time declaration, four-row hazard eligibility table, game test conditions, explicit possible rather than automatic hazard occurrence, p110 numerical worked example and printed ambiguities."
+      prior_verified_revision:
+        commit: 78218c24595f331fae5f142cdb701f56b82eab54
+        blob: 032e38b3e43fdbb8e90455e18e104c20cf50c011
+        baseline_sha256: b308bce6bf01a293d94a40a09534662889896e760de48cea08fb109f4e5cd568
+        candidate_sha256: e6b699cc9276db18e0be287606128bcaae4fed5eb9aa9a0f13c50c0646a28fd5
+        immutable_sha256: 2ed04d554e3ebeddafa105b0087dd780b82927ff93efde9bc933a3970f3bc1e2
+        gate: verified
+        historical_index_commit: 9366a71a1c2c992cd1c72afaa83e4fc4ecb5da27
+        historical_index_blob: 9cf66d6e34ca4fc92dd05cca65c3aacdf43d4c9b
     - id: rule.magic.cannon-companion-underwater-magic-original-p112
       path: rules/magic/cannon-companion-underwater-magic-original-p112.yml
       range_printed: [112, 112]
@@ -2807,8 +2817,8 @@ book_closure_checklist_2026_11_25:
       evidence_or_gap: "23_signatures, 23_smoke_and_sound, 23_second_pass, 24_active_skill_scope; active-skills baseline digest mismatch remains distinct."
     - pdf: [109, 113]
       scope: "Underwater game rules"
-      status: prior_review_partial
-      evidence_or_gap: "23_underwater_activity; original field audit retained."
+      status: coverage_reconciled_acceptance_blocked
+      evidence_or_gap: "Reuse original p107-112/PDF108-113 field audit 05d54959794c624dae6472fd50a2373d1f0d99c6 and unchanged shared subsystem 2963252755523285582a56614dfce0255df36721. Four source-specific record paths matched the prior audit before the p109-110 correction; optional hazard occurrence and original numerical example now individually confirmed and indexed. Five safe-time rows, four hazard eligibility rows and 24 vision cells retained; no new full original-section review claimed. Shared subsystem receipt artifacts (independent baseline, prepare plan, confirmation and individual index) not established; original ambiguity and shared precedence remain unresolved. Formal acceptance and engine validation separate."
     - pdf: [114, 115]
       scope: "Range and linked attribute reference tables"
       status: prior_review_partial
