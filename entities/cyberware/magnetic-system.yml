@@ -1,15 +1,28 @@
 id: entity.cyberware.magnetic-system
 record_type: entity
-name: "Magnetic System"
+name: Magnetic System
 domain: cyberware
 status: ingested
-intrinsic:
-  essence: 0.3
-  cost_nuyen: 2800
-  availability: "6/7 days"
-  street_index: 2
-  legality: "Legal"
+source: source.mm
+printed_pages: '30-31,154'
+pdf_pages: '30-31,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Magnetic System — SR3 holding and clinging modifiers
+summary: Fictional tabletop equipment from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp30-31,154/PDF30-31,155.
+intrinsic: {essence: 0.3, cost_nuyen: 2800, availability: '6/7 days', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 30, relation: defines, note: Magnetic System game effects}
+  - {source: source.mm, pages: '31,154', relation: defines, note: Matching purchase tables}
 notes: []
+data:
+  activated_effect:
+    strength_bonus: 4
+    applies_only_to: holding or clinging to ferrous metal objects
+  maximum_systems_per_limb: 1
+  approximate_supported_mass_kg_per_limb_system: 25
+  multiple_systems_cumulative: true
+  example: A 75 kg character requires at least three systems to cling by magnetic force alone.
+  electronics_interference: false
