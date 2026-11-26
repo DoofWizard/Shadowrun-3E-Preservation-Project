@@ -1,0 +1,71 @@
+id: rule.combat.cannon-companion-martial-conversion-examples-p93
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '93'
+pdf_pages: '94'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion SR3: character conversion worked examples'
+summary: 'FASA Corporation fictional tabletop RPG, printed p93/PDF94; original numerical examples supplement the existing optional advanced melee character conversion procedure.'
+data:
+  existing_records: [procedure.combat.convert-advanced-melee, option.combat.cannon-companion-martial-conversion-adept-qualifiers-p93]
+  general_examples:
+    - {base: 5, specializations: [], output: {Brawling: 5}}
+    - {base: 6, specializations: {Subduing Combat: 10}, differences: [4], divided_rounded_down: [2], output: {Brawling: 8}}
+    - {base: 4, specializations: {Karate: 5}, optional_style_output: {Karate: 4}}
+    - base: 4
+      specializations: {Kung Fu: 6, Biting: 7}
+      alternative_outputs: [{Brawling: 6}, {Kung Fu: 6}]
+      mutually_exclusive_full_outputs: true
+      gm_optional_split_example: {Brawling: 2, Kung Fu: 4}
+  sample_character_reference: SR3 core printed pp65-80
+  sample_character_examples:
+    - character: Adept
+      base: 6
+      output: {Brawling: 6}
+      optional_maneuvers: 3
+      chosen_example: [Full Offense, Kick Attack, Zoning]
+      improved_ability: {prior_unarmed: 2, converted_brawling: 2}
+    - characters: [Combat Decker, Investigator, Mercenary, Sprawl Ganger, Tribal Shaman]
+      output: Brawling at unchanged base rating
+      optional_maneuver_count: floor(rating / 2)
+    - character: Covert Ops Specialist
+      base: 3
+      specializations: {Kick Attack: 5}
+      difference: 2
+      divided_rounded_down: 1
+      output: {Brawling: 4}
+      optional_maneuvers: 2
+      chosen_example: [Kick Attack, Close Combat]
+    - character: Face
+      base: 2
+      specializations: {Carromeleg: 4}
+      difference: 2
+      divided_rounded_down: 1
+      output: {Carromeleg: 3}
+      maneuvers: 1
+      eligibility_style: Capoeira
+      chosen_example: Ground Fighting
+      selection_reason: Style bonus dice for this maneuver.
+    - character: Street Shaman
+      base: 2
+      specializations: {Bite: 4}
+      difference: 2
+      divided_rounded_down: 1
+      output: {Brawling: 3}
+      optional_maneuvers: 1
+      chosen_example: Close Combat
+    - character: Street Samurai
+      hypothetical_example: true
+      base: 4
+      specializations: {Pentjak-Silat: 6, Head Butts: 7}
+      differences: [2, 3]
+      divided_rounded_down: [1, 1]
+      alternative_outputs: [{Brawling: 6}, {Pentjak-Silat: 6}]
+      selected_output: {Pentjak-Silat: 6}
+      maneuvers: 3
+      chosen_example: [Multi-Strike, Whirling, Multi-Strike (Cyber-Implant Weaponry)]
+      third_choice_basis: Pentjak-Silat style advantage extends a previously selected maneuver to the named separate skill.
+  other_sample_characters: No conversion is needed for other sample characters without Unarmed Combat.
