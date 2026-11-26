@@ -1,15 +1,31 @@
 id: entity.cyberware.router
 record_type: entity
-name: "Router"
+name: Router
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '22,152'
+pdf_pages: '22,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Router — SR3 port Essence and purchase costs
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp22,152/PDF22,153.
 intrinsic:
   essence: 0.1
   cost_nuyen: 1000
-  availability: "Always"
+  availability: Always
   street_index: 1
-  legality: "Legal"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: Legal
+links: {uses: [rule.cyberware.router-interconnectivity], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
+  - {source: source.mm, page: 22, relation: defines, note: Local equipment table and port price footnote}
+  - {source: source.mm, page: 152, relation: defines, note: Brainware equipment table}
 notes: []
+data:
+  each_port:
+    essence: 0.01
+    cost_nuyen_by_connected_device: {headware: 200, non_headware_cyberware: 500}
+    availability: Always
+    street_index: 1
+    legality: Legal
