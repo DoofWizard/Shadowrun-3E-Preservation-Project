@@ -1,0 +1,39 @@
+id: reference.mjlbb.one-shot-moving-violation-p96-97
+record_type: reference
+status: ingested
+source: source.fanpro-25003
+printed_pages: '96-97'
+pdf_pages: '97-98'
+edition_scope: SR3
+content_class: [campaign_guidance]
+framing: newsroom_neutral
+headline: "FanPro25003, FanPro, SR3 fictional Shadowrun, printed pp96-97/PDF97-98: Moving Violation"
+summary: Optional tabletop scenario constraints for compensation, NPC ratings, vehicle operation and GM adjudication, limited to the fictional adventure.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  scenario: Moving Violation
+  offered_pay_nuyen: 5000
+  mission_conditions: The fictional Johnson requires retrieval of a specified telecom prototype without detection or stopping the truck; he supplies its container serial number and vehicle description and plate, but not the container position or exact route.
+  vehicle:
+    model: Conestoga Trailblazer
+    reference: Rigger 3 p169
+    wheels: 24
+    configuration: Extended trailer; driverless autonav in the default version.
+    speed_condition: {relation: greater_than, value_kph: 112}
+    security:
+      keyed_doors: {side: 2, rear_double_door_sets: 1, type: keypad maglock}
+      roof_ac_alarm: {test: Electronics B/R, target_number: 8, success: Alarm overcome}
+    control:
+      default_mode: Treat as captain's chair mode while under autonav.
+      monitoring_exception: No operator monitors the vehicle until an alarm or an attempted drone hack.
+      takeover: An intrusion or program deviation detected by autonav transfers control immediately to the fictional company rigger over satellite remote; an attack detected by that rigger prompts direct control.
+      rigger_gear: {vehicle_control_rig_rating: 2, remote_control_deck_rating: 8, encryption_rating: 6}
+      secrecy: The GM treats drone hacking as a last resort because it will almost certainly expose the team.
+  cast:
+    - {name: Jon Mastriani (Mr. Johnson), npc_rating: Inferior, professional_rating: 2}
+    - {name: Telemex Security, npc_rating: Inferior, professional_rating: 3}
+  adjudication:
+    - The fictional security team arrives at the handoff and prioritizes recovery of the prototype; after transfer to the Johnson, the team ignores the runners.
+    - For a harder version, the GM can add a driver and a security officer inside the trailer, contradicting the Johnson's original information.
+    - The GM may turn the prototype into a military communications device that is unusable without special knowledge; only a few scientists can decipher it.
+  scope: Scenario-specific constraints, ratings and optional adjustments; no new general vehicle rule or generic alarm test is established.
