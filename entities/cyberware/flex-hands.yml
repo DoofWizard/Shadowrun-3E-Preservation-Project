@@ -1,15 +1,30 @@
 id: entity.cyberware.flex-hands
 record_type: entity
-name: "Flex Hands"
+name: Flex Hands
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '28-29,154'
+pdf_pages: '28-29,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Flex Hands — SR3 test modifiers and compatibility
+summary: Fictional augmentation rules from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp28-29,154/PDF28-29,155.
 intrinsic:
   essence: 0.4
   cost_nuyen: 8000
-  availability: "6/72 hrs"
+  availability: '6/72 hrs'
   street_index: 2
-  legality: "Legal"
+  legality: '7P-N'
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 28, relation: defines, note: Augmentation description}
+  - {source: source.mm, page: 29, relation: defines, note: Game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes: []
+data:
+  target_number_modifier: -2
+  applicable_tests: [all Escape Artist skill tests, other tests involving hand contortions]
+  incompatible_augmentation: bone lacing
+  can_switch_on_and_off: true
