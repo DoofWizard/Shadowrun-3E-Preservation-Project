@@ -7,8 +7,8 @@ pdf_pages: '138-140'
 edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp137-139/PDF138-140.'
 content_class: [rule_exact]
 framing: reference_exact
-headline: Otaku living persona in play
-summary: Exact detection, familiarity, interface, damage recovery and channel mechanics; prior subsystem retained.
+headline: Matrix FASA7909 living persona rules, printed pp137-139
+summary: FASA Corporation Shadowrun Third Edition fictional tabletop RPG living persona and channel mechanics, printed pp137-139/PDF138-140; includes source example qualifications.
 data:
   legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 summarizes the persona framework without these explicit modifiers, restrictions and damage procedures.'
   detection_factor: 'floor((Masking + Sleaze) / 2) + 1'
@@ -25,12 +25,15 @@ data:
     gray_IC: Persona icon Condition Monitor damage also applies to the otaku Stun Condition Monitor.
     black_IC: Physical damage as for deckers.
     gray_ripper_IC: Reduced persona attribute persists until healed; apply Bioware Stress Repair (Man and Machine p130), one Stress Point per rating point lost.
-    attribute_crashed_to_zero: Reduce associated Mental attribute or attributes by 1 until persona rating recovers to half original rating. Examples establish Evasion 6 recovery threshold 3 and Masking 7 recovery threshold 4, with both Willpower and Charisma penalized for Masking.
+    stress_repair_example: {persona_attribute: Sensor, rating_loss: 3, stress_points: 3, stress_damage_level: Moderate}
+    attribute_crashed_to_zero: Reduce associated Mental attribute or attributes by 1 until persona rating recovers to half original rating. Examples establish Evasion 6 recovery threshold 3 with Intelligence reduced by 1, and Masking 7 recovery threshold 4 with both Willpower and Charisma reduced by 1.
     worms: No effect on living personas.
   improvement: Increasing Mental attributes with Karma increases linked persona ratings; submersion may also improve persona.
   SOTA: Always current; no action on SOTA advancement required.
   jackpoints: All wired jackpoints except maser power grids; wireless use requires suitable external interface.
   using_channels:
     system_test_TN_reduction: Appropriate channel rating substitutes for operational utility rating.
+    locate_paydata_example: {test: Index, target_number: 'host Index rating minus otaku Index channel rating'}
     memory_cost: 0
     immunity: Channels are not programs and are unaffected by tar IC and utility-targeting programs such as hog.
+    immunity_example: Use of the Control channel in the presence of tar baby IC does not trigger that IC.
