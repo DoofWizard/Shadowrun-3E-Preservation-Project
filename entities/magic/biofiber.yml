@@ -6,8 +6,22 @@ status: ingested
 intrinsic:
   maximum_force: 10
   cost_nuyen_per_force_square_meter: 100
+  monthly_upkeep_nuyen_per_square_meter: 5
 links: {uses: [rule.magic.astral-barriers], requires: [], component_of: [], interacts_with: [subsystem.magic.astral-security]}
 sources:
   - {source: source.mits, page: 90, relation: defines, note: "Biofiber astral-security option"}
 notes:
   - "Dual-natured bioengineered plant material used as a living astral barrier; destroying the barrier kills the biofiber."
+source: source.mits
+printed_pages: '90'
+pdf_pages: '91'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  purchase_cost_nuyen: {per_force_per_square_meter: 100}
+  upkeep: {nuyen_per_square_meter: 5, interval: month, covers: [nutrients, care]}
+  maximum_force: 10
+  barrier: Living dual-natured biofiber acts as a normal astral barrier with a Force rating while maintained with nutrients. Destruction of the astral barrier kills the biofiber.
+headline: 'FASA7907 Magic in the Shadows: Biofiber upkeep (FASA Corporation, SR3, p90/PDF91)'
+summary: 'Fictional tabletop RPG astral barrier cost and maintenance rules.'
+framing: reference_exact
