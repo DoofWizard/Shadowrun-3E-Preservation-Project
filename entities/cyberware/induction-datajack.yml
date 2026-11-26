@@ -1,15 +1,30 @@
 id: entity.cyberware.induction-datajack
 record_type: entity
-name: "Induction Datajack"
+name: Induction Datajack
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '21,152'
+pdf_pages: '21,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Induction Datajack — SR3 interface and detection rules
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp21,152/PDF21,153.
 intrinsic:
   essence: 0.3
   cost_nuyen: 3000
-  availability: "5/4 days"
+  availability: '5/4 days'
   street_index: 2
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
+  - {source: source.mm, page: 21, relation: defines, note: 'Game effects and local equipment table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Headware equipment table statistics'}
 notes: []
+data:
+  operation: Functions as an ordinary datajack (SR3 p298). The game implant sits below the skin; a magnetic induction adaptor on the jack cable aligns it for optical transfer through the skin.
+  detection:
+    visual_scan_detectable: false
+    physical_search_concealability: 10
+    cyber_scan_target_number_modifier: 1
