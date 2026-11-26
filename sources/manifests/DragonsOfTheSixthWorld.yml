@@ -158,7 +158,7 @@ verified_semantic_revision_history_2026_11_24:
 
 # Single finite book checklist for the mechanics-first closure pass; legacy normalization status is not formal acceptance.
 mechanical_book_checklist_2026_11_26:
-  source_verification_manifest_blob: 9e582d2fed2b6e0155f3a0fec47cd7be8606df16
+  source_verification_manifest_blob: ef6481e4b8c287f0ae49d17d99ebd7617207d25a
   source_verification_result: source_pdf_hash_verified
   original_pdf_sha256: e2abcabc617bb49a2bb5c2de7daea414db622556ca3d8ceeca0e3ddc7b4843b6
   original_pdf_pages: 212
@@ -183,7 +183,7 @@ mechanical_book_checklist_2026_11_26:
     - printed: [175, 178]
       pdf: [177, 180]
       scope: dragon_types
-      disposition: numeric_rows_reconciled_qualitative_comparisons_pending
+      disposition: mechanical_coverage_reconciled_acceptance_debt
       field_checklist:
         - "p175 official supersession statement matches type-statlines effective basis; no core rewrite."
         - "p176 eastern, feathered serpent and sea dragon eight attributes, both initiatives, three pools, attack and reach each match exact typed comparisons; Sirrush identical normal eastern statistics retained."
@@ -193,18 +193,46 @@ mechanical_book_checklist_2026_11_26:
       comparisons:
         legacy_type_statlines: {path: rules/dragons/type-statlines.yml, blob: 37a4b111e4441992e358fc88adb5cb956cb4e7d0, typed_fields_matching: 72}
         indexed_type_profile_supplement: {path: rules/dragons/dotsw-type-profile-scope-p175-178.yml, blob: 2dac897daebcc882abaf4216dfa6cdb0cb3a65b0, commit: 11c52faf04544d3ccf98b193c0d54c647d4d955d}
-      remaining: "Compare all type-specific descriptive dimensions, anatomical capabilities and great-dragon language/magic qualifications to legacy dragon records before scope closeout. Original independent baseline, prepare, confirm and individual indexing evidence for legacy type-statlines not established by current exact-byte and source-field checks. Supplemental original receipt still to be located; do not infer acceptance."
-    - {printed: [178, 179], pdf: [180, 181], scope: dragon_powers, disposition: current_pass_unreconciled, note: "Shared page boundary; p178 seen, power-specific comparison pending."}
-    - {printed: [179, 181], pdf: [181, 183], scope: dragon_magic, disposition: current_pass_unreconciled}
-    - {printed: [181, 182], pdf: [183, 184], scope: dragons_and_technology, disposition: current_pass_unreconciled}
-    - {printed: [182, 183], pdf: [184, 185], scope: dealing_with_dragons, disposition: current_pass_unreconciled}
+        core_morphology_read_only: {path: world/dragons/sr3-core-dragon-type-physical-source-p268.yml, blob: 5c88f90b3954ce1af19815ac17392090ad2fa033}
+      qualitative_review: "Printed pp175-178/PDF177-180: existing core morphology supports eastern, Sirrush, feathered serpent and western anatomical qualifications and great-dragon language/magic; the FanPro supplement covers all-species great-dragon scope and sea-dragon capabilities. No size-derived rules inferred. Feathered-serpent African distribution and sea-dragon descriptive length/swimming details remain deferred world description, not numeric mechanical fields."
+      prior_individual_index_commit: 308fd34ca0b39637b044f077c6d4824003056d78
+      remaining: "No demonstrated mechanical gap after comparison. Legacy type-statlines lacks located original independent baseline/plan/confirm/index artifacts. Supplement has exact semantic and index commits and registered candidate/immutable digests above, but original baseline, plan, confirm output and indexing receipt files not located. Coverage only."
+    - printed: [178, 179]
+      pdf: [180, 181]
+      scope: dragon_powers
+      disposition: mechanical_coverage_reconciled_acceptance_debt
+      field_checklist: "Innate/individual/great powers; Karma quantities, optional purchase cap; dragonspeech range, recipients, language, detection, resistance test/duration/action modifier, background count and extensions; Innate Spell Force/drain/sustain; metahuman form actions and attributes; all Twist Fate uses, timing, Karma costs, line of sight, opposing test, tie, reroll and refresh exceptions compared against legacy plus indexed supplement."
+      comparisons:
+        - {path: rules/dragons/powers-karma-dragonspeech.yml, blob: 9b38b0917cfc115729869d7275f5e13d84a550ea}
+        - {path: rules/dragons/innate-spell-metahuman-form-twist-fate.yml, blob: 34bc8beb449ad005478f8767ced7c8356c6d3c62}
+        - {path: rules/dragons/dotsw-power-qualifications-p178-179.yml, blob: 2a055e7496902a035bcd474263e568191f56d7fd, commit: 3140863184267da0e2b9bfefaeaed3d865505ed7, index_commit: 6464e3641e88d544a57b37dc77136b40b7ebcd15}
+      remaining: "No demonstrated mechanical gap. Original baseline/plan/confirm/index artifacts for legacy records and original journal/confirm/index receipt files for supplement not located; current comparisons do not retro-certify."
+    - printed: [179, 181]
+      pdf: [181, 183]
+      scope: dragon_magic
+      disposition: bounded_mechanical_corrections_pending
+      field_checklist: "Magic attribute/loss; tradition; sorcery and ritual preparation, links and team; conjuring eligibility/action/capacity/overlap/Invoking/ally/blood/free-spirit and banishment exceptions; enchanting and ritual link; initiation; astral dual nature, targeting, projection and pools directly compared."
+      comparisons:
+        - {path: rules/dragons/magic.yml, blob: d71db089048558f8ec5a1960fe3124ed31b4ef3a}
+        - {path: rules/dragons/dotsw-magic-qualifications-p179-181.yml, blob: c1236596a243496341d6aac363ce4de9b3f87501, commit: 16ba71a5a83cf76548ecb0a167ec65108465a7ee, index_commit: f8cc0dbd9f8adc2be141bf3c1397dcb83c7f1e00}
+      remaining: "p180/PDF182: legacy rarer_metamagic incorrectly groups Sensing, Absorption, Filtering, Psychometry and Severing with explicitly uncommon Divining and Possessing; additional access is not a frequency statement. Add explicit grade-based technique count and GM selection. p181/PDF183: compare and preserve initiation qualification for metaplanar projection. Existing supplement's registered digests retained; original baseline/plan/confirm/index artifact files for legacy and supplement not located. Corrections require genuine separate transaction."
+    - printed: [181, 182]
+      pdf: [183, 184]
+      scope: dragons_and_technology
+      disposition: mechanical_coverage_reconciled_acceptance_debt
+      field_checklist: "Implant stress check and regression duration; cyberware grade/cost/Essence/Bio Index and surgical skill; Matrix device/form and hitching exceptions; ranged size modifier; flight speed, acceleration, ceiling, Reaction/Handling, pool cap, failures; optional vehicle modes, points, movement, ramming, missile attack/dodge, signature, resistance and armor compared against legacy plus indexed supplement."
+      comparisons:
+        - {path: rules/dragons/technology-flight-vehicle-combat.yml, blob: 39f113ae28957040304ddb9cba9c937490a6ed41}
+        - {path: rules/dragons/dotsw-technology-flight-qualifications-p181-182.yml, blob: 9a9630606e24355be066d7648657398d59718ef0, commit: 00e4c4ea4db4fc2e906a556777e30ae879cef78e, index_commit: 8a7351a1581ba426b480e666086fe961d5a2127b}
+      remaining: "No demonstrated mechanical gap. Legacy original baseline/plan/confirm/index artifacts and supplement original journal/confirm/index receipt files not located; no new acceptance claimed."
+    - {printed: [182, 183], pdf: [184, 185], scope: dealing_with_dragons, disposition: reviewed_no_standalone_mechanical_gap, evidence: "Directly reviewed campaign advice and existing rule references; no standalone resolution test, modifier or stat added. Narrative guidance not recast as universal rules."}
     - {printed: [183, 185], pdf: [185, 187], scope: drakes, disposition: current_pass_unreconciled}
     - {printed: [185, 186], pdf: [187, 188], scope: draco_foundation_game_information, disposition: current_pass_unreconciled}
     - {printed: [186, 200], pdf: [188, 202], scope: named_dragon_game_information, disposition: current_pass_unreconciled, note: "Include Earth Magic, dracobot rows, Transys ratings, Knights and Spirit of Denver."}
     - {pdf: [203, 212], scope: index_and_end_matter, disposition: partially_directly_reviewed, evidence: "PDF203 index opening directly reviewed; PDF204-212 still to classify from images."}
-  original_page_range_routing: "All 212 physical page positions assigned to provisional natural scopes, some shared boundaries. Only PDF3-6, 177-180 and 203 directly reviewed in this pass. Remaining page content and finite field counts not established by routing."
+  original_page_range_routing: "All 212 physical page positions assigned to provisional natural scopes, some shared boundaries. PDF3-6, 177-185 and 203 directly reviewed across the current closure pass. Remaining page content and finite field counts not established by routing."
   remaining_mechanical_field_count: unknown
   new_fully_certified_scopes: 0
   source_formal_acceptance: not_claimed
-  next_cursor: "Finish dragon type qualitative comparisons and evidence mapping; then Dragon Powers pp178-179/PDF180-181, preserving prior indexed supplement."
+  next_cursor: "Finish bounded p180-181 initiation/metamagic qualifications by genuine source-specific transaction; then Drakes pp183-185/PDF185-187. Retain exact legacy and supplemental evidence; prior journal searches across available Drive/Library/conversation and GitHub history found index commits but no original artifact sets for the four reviewed mechanical scopes. Repeat negative search only if evidence changes."
   global_pages_advanced: 0
