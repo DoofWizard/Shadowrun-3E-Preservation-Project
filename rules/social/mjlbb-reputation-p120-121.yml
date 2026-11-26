@@ -1,0 +1,54 @@
+id: rule.mjlbb.reputation-p120-121
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '120-121'
+pdf_pages: '121-122'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: "FanPro25003, FanPro, SR3 fictional Shadowrun, printed pp120-121/PDF121-122: reputation rules"
+summary: Optional Street Cred, Notoriety and Public Awareness scores, modifiers and examples.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  scope: Optional GM reputation system; track Street Cred, Notoriety and Public Awareness separately.
+  street_cred:
+    printed_page: 120
+    base: {numerator: total_karma_earned, divisor: 10, rounding: nearest_normal}
+    example: {total_karma_earned: 34, unrounded: 3.4, street_cred: 3}
+    discretionary_awards: GM may add points for extraordinary adventures, victories or escapes.
+    examples_awarding_one_point: [First fictional runner to enter and leave Renraku Arcology alive, Surviving an encounter with Lofwyr, Defeating the Crimson Crush gang alone, Defeating Damien Knight at chess]
+    social_open_test: Full Street Cred modifier on applicable Social Skill Open Tests.
+    open_test_example: {street_cred: 4, skill: Intimidation, modifier: 4}
+    regular_social_test: Street Cred may provide Complementary skill dice on non-Open Social Skill Tests.
+    awareness_required: true
+    impersonation_exception: GM may permit use of another character's Street Cred when successfully impersonating that character.
+  notoriety:
+    printed_pages: '120-121'
+    initial: 0
+    edge_flaw_modifiers:
+      - {name: Bad Reputation, type: flaw, modifier: '+Value', reference: SRComp p25}
+      - {name: Braggart, type: flaw, modifier: 1}
+      - {name: Good Reputation, type: edge, modifier: '-Value'}
+      - {name: Liar, type: flaw, modifier: 1}
+      - {name: Police Record, type: flaw, modifier: 3}
+      - {name: Uncouth, type: flaw, modifier: 2}
+    awards: GM discretion; example events may earn one point, not automatic fixed penalties.
+    example_events: [Failure or refusal to complete a run, Offending Mr. Johnson, Starting and losing a fight, Extremely obnoxious or callous conduct, Arrest, Betrayal, Killing an innocent person, Acquiring a powerful enemy or a contract on the character's life, Working for a dragon, Extraordinary bad luck]
+    repeat_award: No additional point for a deed already rewarded with Notoriety unless the character has done it in a completely novel manner.
+    trust_or_persuasion: {operation: subtract_notoriety_from_street_cred, effective_street_cred_minimum: 0}
+    intimidation_or_fear: {operation: add_notoriety_to_street_cred}
+    intimidation_example: {street_cred: 2, notoriety: 4, effective_street_cred: 6}
+    awareness_required: true
+    reduction: {street_cred_sacrificed: 2, notoriety_reduced: 1}
+  public_awareness:
+    printed_page: 121
+    formula: '20 - Street Cred - Notoriety'
+    example: {street_cred: 11, notoriety: 2, public_awareness: 7}
+    gm_adjustment: Secrecy and low-profile efforts may lower score; intentional or unintended news coverage may increase it.
+    recognition_thresholds:
+      - {minimum: 15, recognition: Known among those monitoring the shadows}
+      - {minimum: 20, recognition: Household name; possible fictional media portrayals}
+    test: Public Awareness is the TN for appropriate Knowledge Skill Tests by outsiders to determine recognition and what they know of the runner's history and reputation.
+    recognition_effect: If the outsider knows the runner's reputation, Street Cred and Notoriety rules apply.
+    source_note: Printed formula and worked example agree; retain subtraction despite qualitative prose suggesting more reputation increases awareness. No unprinted bounds or inverse formula supplied.
