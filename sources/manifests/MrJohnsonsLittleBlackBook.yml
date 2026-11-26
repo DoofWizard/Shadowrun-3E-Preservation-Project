@@ -12,14 +12,14 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed p118/PDF119 confirmed visually. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
   - {range: "70-92", section: Locations and generation charts, status: pending_original_mechanics_review}
   - {range: "93-115", section: Scenarios and random encounters, status: pending_original_mechanics_review}
-  - {range: "116-118", section: Low-level campaigns, status: partially_resolved, remaining: discretionary_campaign_guidance_pp116_118}
+  - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: pending_original_mechanics_review}
   - {range: "122 onward", section: Quick resolution systems, status: pending_original_mechanics_review}
@@ -54,6 +54,18 @@ verified_semantic_records:
     immutable_sha256: f3fab3c047ff28240b90dd6800883a47dfe1f4c6adaead15da07048ffdddb7b2
     gate: verified
     contiguous_advance: false
+  - id: reference.mjlbb.low-level-campaign-guidance-p116-118
+    path: references/campaign/mjlbb-low-level-campaign-guidance-p116-118.yml
+    range_printed: [116, 118]
+    range_pdf: [117, 119]
+    content_class: campaign_guidance
+    commit: adc9de8f9a93d7c795192140dd00a55d788871a3
+    blob: 8d0b6bba74ef88c7f5c1525871ba5c5bf83c291f
+    baseline_sha256: bb8b5a2e03c6dd33e030364ac98025814e9b43c410d232a8189e463cd77ea7d2
+    candidate_sha256: 55e2959ad5fd86529d2ca3dca6d4d22c3de93e077b4052ed717b7c52b49fd22c
+    immutable_sha256: 1ecec839a2bfadf5c26a66519f6c80f7ff16b9f111b749315954779a8df49198
+    gate: verified
+    contiguous_advance: false
 pending_normalization: []
 global_pages_advanced: 0
-next_cursor: "Low-level creation p118/PDF119 confirmed and indexed. PDF118 visually reviewed full-page illustration. Resolve discretionary low-level campaign guidance pp116-118, then reputation and prejudice pp120-121. Whole-book field checklist not established."
+next_cursor: "Low-level campaign scope covered. Reputation and prejudice pp120-121 visually reviewed, not yet registered. Next preserve both natural rule scopes, then quick resolution. Whole-book field checklist not established."
