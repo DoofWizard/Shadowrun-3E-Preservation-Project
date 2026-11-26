@@ -8,10 +8,10 @@ edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition ficti
 content_class: [rule_exact]
 framing: reference_exact
 headline: Otaku submersion, echoes and Fading
-summary: Complete numerical expansion of the existing Otaku advancement framework.
+summary: FASA Corporation Matrix FASA7909 SR3 fictional tabletop RPG pp143-146/PDF144-147; submersion, echoes and Fading mechanics.
 data:
   legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 provides generic advancement, echoes and Fading.'
-  submersion: {requires: resonance well, duration: days with no exact count, first_grade: 1, grade_increment: 1, echoes_per_grade: 1, cost_karma: '2 * desired grade + 10'}
+  submersion: {requires: resonance well, duration: days with no exact count, first_grade: 1, grade_increment: 1, echoes_per_grade: 1, cost_karma: '2 * desired grade + 10', continuous_jack_in_required: true, echo_selected_by: player, example_third_grade_karma: 16}
   echo_selection: {incremental: repeatable, static: once per type except Resonance Link}
   incremental:
     improved_io: {increase_Mp: 100, cap: 'Intelligence * 200 Mp'}
@@ -33,6 +33,7 @@ data:
       prerequisite: Info Sortilage Knowledge skill
       complementary_dice: Info Sortilage skill for Computer (Search Operations) tests
       minimum_search_successes: 5
+      search_prerequisite: Accumulate the minimum successes using standard Information Searches rules on p124 before analysis.
       analysis_hours: '1D6 / 2'
       test: GM Open Test using Info Sortilage skill
       results: {'4': obvious, '5': unclear, '7': hidden, '8': secret, '10': top secret}
@@ -52,13 +53,14 @@ data:
       conservation: each increase offset by equal reduction of another persona attribute
       duration: until jackout, dump or further reallocation Complex Action
     traceroute:
-      game_effect: locate an online fictional character or most recent location of their Matrix interaction
+      game_effect: Locate an online fictional character or the most recent physical location from which that character interacted with the fictional Matrix.
       test: MPCP
       base_target: 8
       hacking_pool: prohibited
       no_successes: failure
       all_ones: misleading information
       base_hours: number of grids encompassed
+      example_base_hours_four_grids: 4
       final_hours: base hours divided by successes
       modifiers:
         transaction_frequency: {hourly: -1, few_per_day: 0, less_than_daily: 1, weekly: 3}
