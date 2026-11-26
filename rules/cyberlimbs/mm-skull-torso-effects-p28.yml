@@ -1,0 +1,46 @@
+id: rule.cyberlimbs.mm-skull-torso-effects-p28
+record_type: rule
+name: Cyberskull and Cybertorso Game Effects
+domain: cyberlimbs
+status: ingested
+source: source.mm
+printed_pages: '28'
+pdf_pages: '28'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p28/PDF28: Cyberskull and Cybertorso'
+effective: {status: current, source: source.mm, page: 28, basis: defines}
+scope: {applies_to: [cyberskulls, cybertorsos]}
+resolution:
+  summary: Apply the stated protection, attribute, social and reinforcement effects to fictional game characters.
+  inputs: [replacement type, affected game equipment, Stress incurred, called-shot location, enhancement amount]
+  outputs: [Stress adjustment, Damage Level adjustment, social test modifiers, Body bonus, Essence adjustment]
+  steps: []
+data:
+  cyberskull:
+    variants: [obvious, synthetic]
+    headware_damage:
+      reference: Man & Machine p127
+      stress_incurred_modifier: -2
+      no_headware_damage_if_adjusted_stress_at_most: 0
+    called_shot_to_head_damage_level_modifier: -1
+    obvious_only:
+      charisma_and_social_skill_test_penalty: 4
+      open_ended_intimidation_test_bonus: 3
+  cybertorso:
+    variants: [obvious, synthetic]
+    body_attribute_bonus: 1
+    internal_bodyware_protection: same Stress reduction and no-damage condition as cyberskull headware protection
+    strength_or_quickness_enhancement:
+      points_above: 3
+      additional_essence_cost_multiplier: 0.5
+      rounding: up
+      reference: Man & Machine p33
+  both:
+    armor_reference: Man & Machine p35
+    capacity_reference: Man & Machine p36
+links: {uses: [rule.cyberlimbs.attributes, rule.cyberlimbs.body-plating, rule.cyberlimbs.equipment-capacity], affects: [entity.cyberware.cyberlimb-obvious-skull, entity.cyberware.cyberlimb-synthetic-skull, entity.cyberware.cyberlimb-obvious-torso, entity.cyberware.cyberlimb-synthetic-torso], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 28, relation: defines, note: Cyberskull and Cybertorso game effects}
+notes: []
