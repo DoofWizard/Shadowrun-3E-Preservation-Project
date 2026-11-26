@@ -1,0 +1,122 @@
+id: rule.mjlbb.neighborhood-generation-p90-92
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '90-92'
+pdf_pages: '91-93'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro25003, FanPro, SR3: neighborhood and location generation"
+summary: Optional fictional tabletop procedure for generating city blocks, with original table inconsistencies retained.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  reference: New Seattle pp109-111 (neighborhood security ratings)
+  procedure:
+    - {step: 1, action: choose neighborhood or roll 1D6, retain: neighborhood_modifier, exception: AAA and Z require GM selection}
+    - {step: 2, action: determine number and type of sites, average_block_count: 2D6, type_roll_per_site: 1D6}
+    - {step: 3, action: determine site details, die: 1D6, add: neighborhood_modifier, lookup: corresponding location table}
+  neighborhood_rows:
+    - [GM_choice, AAA, 2]
+    - [1, AA, 1]
+    - [2, A, 0]
+    - [3, B, 0]
+    - [4, C, -1]
+    - [5, D, -1]
+    - [6, E, -2]
+    - [GM_choice, Z, -2]
+  type_rows: {'1': public_service, '2': public_location, '3': store, '4': residence, '5': restaurant, '6': corporate_facility}
+  details:
+    row_schema: [modified_roll, result, size_marker]
+    size_marker_meaning: {'0': unmarked, '1': half a city block or more, '2': one or more city blocks possible}
+    public_service:
+      printed_die: 1D6
+      rows:
+        - [-1, abandoned or condemned or burned-out public facility (roll again), 0]
+        - [0, power or water plant or another utility, 2]
+        - [1, social services office, 1]
+        - [2, public transit station (train or monorail or bus or ferry), 1]
+        - [3, post office or city/state offices, 1]
+        - [4, fire or police station, 1]
+        - [5, public or vocational school or city college, 2]
+        - [6, hospital or clinic, 1]
+        - [7, private school or college, 2]
+        - [8, courthouse or embassy or federal offices, 1]
+    public_location:
+      printed_die: 1D6
+      rows:
+        - [-1, reclaimed wilderness or toxic zone, 2]
+        - [0, abandoned or condemned or burned-out building, 0]
+        - [1, vacant lot, 0]
+        - [2, open market or black-market bazaar, 2]
+        - [3, bar or nightclub, 1]
+        - [4, parking lot or garage, 1]
+        - [5, hotel or motel or coffin hotel, 1]
+        - [6, park, 2]
+        - [7, library or theater or museum or civic center, 1]
+        - [8, church or synagogue or temple, 1]
+    store:
+      printed_die: 1D6
+      rows:
+        - [-1, illicit street dealer, 0]
+        - [0, closed business, 0]
+        - [1, streetdoc black clinic, 0]
+        - [2, liquor store, 0]
+        - [3, gun or vehicle or magic or pawn shop, 0]
+        - [4, Stuffer Shack or vending store or fuel/recharge station, 0]
+        - [5, grocery or electronics or media shop, 1]
+        - [6, boutique or salon or clothing store or body shop, 0]
+        - [7, jewelry or upscale shop, 0]
+        - [8, bank, 0]
+    residence:
+      printed_die: 1D6
+      rows:
+        - [-1, tent city, 1]
+        - [0, prefab dwelling or squatter shack, 0]
+        - [1, mobile home, 0]
+        - [2, abandoned tenement or squat, 0]
+        - [3, 5-20 story apartment or co-op or condo, 1]
+        - [4, brownstone or duplex or multiplex, 0]
+        - [5, house or townhouse, 0]
+        - [6, gated community, 2]
+        - [7, luxury high-rise, 1]
+        - [8, mansion, 2]
+    corporate_facility:
+      printed_die: 2D6
+      rows:
+        - [-1, secret testing or research site, 1]
+        - [0, abandoned or condemned or burned-out building, 1]
+        - [1, warehouse or supply depot or shipping center, 2]
+        - [2, factory, 1]
+        - [3, corporate housing enclave, 2]
+        - [4, industrial complex, 2]
+        - [5, lab or research site, 1]
+        - [6, office or headquarters, 1]
+        - [7, training site or school, 1]
+        - [8, arcology, 2]
+    restaurant: No random detail chart; GM draws on a familiar restaurant instead.
+  discretionary_alternatives:
+    public_service: [commuter helipad, morgue, FBI office, military recruiting office, university, Matrix provider node]
+    public_location: [strip club, casino, zoo, sports arena, beach, boat docks, minor airport, arcade, amusement park, meeting hall, convention center, health club]
+    store: [mall, strip mall, superstore, toy store, chop shop, warez store, bail bondsman, scrap yard]
+    corporate_facility: [law office, corporate clinic, broadcast station, call center, trid/sim studio, farm/ranch/aquafarm]
+  discretion:
+    - Common site types can repeat; exceptional sites can be added by GM choice.
+    - For multiple residences the GM chooses whether independent or grouped in one apartment complex.
+    - Use judgment when grouping large sites with other locations.
+  example:
+    neighborhood: {die: 6, rating: E, modifier: -2}
+    site_count: 7
+    type_rolls: [1, 1, 1, 2, 3, 4, 6]
+    public_service_raw: [1, 2, 4]
+    public_service_modified: [-1, 0, 2]
+    public_service_results_in_narrative_order: [transit_station, power_plant, abandoned_building]
+    public_location: {raw: 5, modified: 3, result: bar}
+    store: {raw: 2, modified: 0, result: closed_business}
+    residence: {raw: 4, modified: 2, result: squat}
+    corporate: {raw: 1, modified: -1, result: secret_research_facility}
+    layout: Squat between bar and closed electronics shop; bus station and condemned hospital at street ends; power plant across street contains secret corporate facility.
+  unresolved_source_discrepancies:
+    - Step 3 calls for 1D6, but corporate detail header says 2D6 and has only -1 through 8 outcomes; no unprinted outcomes supplied.
+    - Example calls type roll 4 a restaurant, then uses the residence chart; the table assigns 4 to residence and 5 to restaurant.
+    - Example alternates fixer and decker labels and narrates transit and abandoned facilities in reverse order relative to modified rolls; the -1 public service row calls for a further roll whose value is not supplied.
