@@ -1,0 +1,52 @@
+id: rule.mjlbb.quick-resolution-vehicle-combat-p123-124
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '123-124'
+pdf_pages: '124-125'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'FanPro25003, FanPro, SR3: fictional Shadowrun quick vehicle combat, printed pp123-124/PDF124-125'
+summary: Optional abstract vehicle resolution, five maneuvers, damage codes and situational modifiers.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  scope: Optional abstract fictional vehicle combat rules; GM estimates combat-relevant distances. Rigger 3 p80 alternate vehicle combat is a separate referenced system for integration with characters on foot.
+  initiative: normal_character_initiative
+  driver_or_pilot_eligibility: rigged_or_unrigged
+  maneuvers_per_combat_turn: 1
+  action_type: Complex Action
+  resolution: Vehicle Skill (Handling) Success Contest
+  control_pool_allowed: true
+  maneuvers:
+    - name: Flee
+      test: Both drivers make Vehicle Skill (Handling) Tests; fleeing driver must score more successes.
+      effect: Fleeing vehicle cannot be attacked or rammed by the selected opposing vehicle or its occupants.
+      multiple_targets: May select multiple vehicles; apply +2 per additional target to fleeing driver's test; success is evaluated independently against each target.
+      after_success: Remains in combat; may attempt Escape next turn.
+    - name: Pursue
+      prerequisite: Target vehicle has successfully fled from pursuer.
+      test: Both drivers make Vehicle Skill (Handling) Tests; pursuer must score more successes.
+      effect: Pursuit restored; attacks by vehicle or occupants and Ram attempts against target become possible again.
+    - name: Position
+      test: Both drivers make Vehicle Skill (Handling) Tests; positioning driver must score more successes.
+      effect: {target_number_modifier: -2, applies_to: any_tests_against_selected_target_vehicle, expires: end_of_next_combat_turn}
+    - name: Ram
+      test: Both drivers make Vehicle Skill (Handling) Tests; rammer must score more successes.
+      target_damage: {power: ramming_vehicle_Body, level: M, stage_up_per_extra_successes: 2}
+      rammer_damage: {power: rammed_vehicle_Body, level: L}
+      crash_avoidance: {test: Vehicle Skill (Handling), required_for: both_drivers, ramming_driver_modifier: -2}
+      crash_effect: {power: Barrier_Rating, level: M, barrier: GM_discretion_based_on_collision, movement: complete_stop}
+    - name: Escape
+      prerequisite: Successful Flee and no successful Pursue by that target for one full Combat Turn.
+      test: Both drivers make Vehicle Skill (Handling) Tests; escaping driver gets -2 and must score more successes.
+      effect: Leaves combat with that vehicle and cannot be pursued by it again.
+  modifier_table:
+    all_maneuvers:
+      - {condition: rigged_driver, modifier: '-VCR Rating'}
+      - {condition: opposing_car_higher_Speed, modifier: 1}
+      - {condition: opposing_car_lower_Speed, modifier: -1}
+      - {condition: successful_Position_against_opponent, modifier: -2}
+    flee_only: {each_additional_target_vehicle: 2}
+    escape_only: {escapee: -2}
+  source_note: Preserve abstract distance adjudication and original damage notation. The text requires more successes for maneuver success; it does not supply a separate tie procedure.
