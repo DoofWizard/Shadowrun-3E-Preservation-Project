@@ -1,14 +1,33 @@
 id: entity.cyberware.auto-injector
 record_type: entity
-name: "Auto-Injector"
+name: Auto-Injector
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '25,153'
+pdf_pages: '25,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Auto-Injector — SR3 purchase statistics and game limits
+summary: Fictional tabletop RPG equipment in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third Edition, printed pp25,153/PDF25,154.
 intrinsic:
-  reusable: {essence: 0.2, cost_nuyen: 1000, availability: "4/72 hrs", street_index: 1.5, legality: "6P-N"}
-  one_shot: {essence: 0.05, cost_nuyen: 1500, availability: "4/72 hrs", street_index: 1.5, legality: "4P-Q"}
-  extra_dose_capacity: {cost_nuyen_per_dose: 500}
+  reusable: {essence: 0.1, cost_nuyen: 1000, contents_cost_additional: true, availability: '4/72 hrs', street_index: 1.5, legality: '6P-N'}
+  one_shot: {essence: 0.05, cost_nuyen: 1500, contents_cost_additional: true, availability: '4/72 hrs', street_index: 1.5, legality: '4P-Q'}
+  extra_dose_capacity: {essence: '-', cost_nuyen_per_dose: 500, availability: '4/72 hrs', street_index: 1.5, legality: As above}
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [entities.medical.medkit]}
 sources:
-  - {source: source.mm, page: 25, relation: defines, note: "Auto-Injector description and table statistics"}
+  - {source: source.mm, page: 25, relation: defines, note: Auto-Injector description and game effects}
+  - {source: source.mm, page: 153, relation: defines, note: Equipment table}
 notes:
-  - "Fictional Shadowrun delivery implant; contents and effects are represented separately."
+  - The fictional source describes both medical use and involuntary use for control or harm; the item itself confers no independent substance effect.
+data:
+  standard_dose_capacity: 1
+  maximum_expanded_total_dose_capacity: 5
+  reusable_can_be_refilled: true
+  reusable_continuous_delivery_option: true
+  one_shot_single_use: true
+  one_shot_usually_not_visually_detectable: true
+  activation_trigger_selected_at_purchase: true
+  fictional_trigger_categories: [timer, linked device signal, specified in-game chemical condition]
+  effects_reference: Chemistry p101
