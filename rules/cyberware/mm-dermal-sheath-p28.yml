@@ -1,0 +1,51 @@
+id: rule.cyberware.mm-dermal-sheath-p28
+record_type: rule
+name: Dermal Sheath Game Effects and Options
+domain: cyberware
+status: ingested
+source: source.mm
+printed_pages: '28,154'
+pdf_pages: '28,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp28,154/PDF28,155: dermal sheath rules and options'
+effective: {status: current, source: source.mm, page: 28, basis: defines}
+scope: {applies_to: [fictional dermal sheath augmentation]}
+resolution:
+  summary: Apply the sheath rating bonuses and the optional ruthenium and scanner rules.
+  inputs: [dermal sheath rating, optional ruthenium sheath, linked source, optional imaging scanner]
+  outputs: [Body bonus, Impact armor, game action, option purchase modifiers]
+  steps: []
+data:
+  body_attribute_bonus: rating + 1
+  impact_armor: ceil(rating / 2)
+  example: {rating: 2, body_bonus: 3}
+  ruthenium_sheath:
+    effects_reference: Man & Machine p114 ruthenium polymers
+    logic_circuits_DNI_equipped: true
+    change_coloration_by_mental_command_action: Simple
+    display_linked_text_or_images: true
+    imaging_scanner_connections: [implanted, external linked by datajack]
+    purchase_modifier:
+      essence: 0.2
+      cost_nuyen: 150000
+      availability: '+2/+4 days'
+      street_index: 0.25
+      legality: '4P-N'
+      concealability: '—'
+  implanted_image_scanner_each:
+    purchase_modifier:
+      essence: 0.05
+      cost_nuyen: 8000
+      availability: '—'
+      street_index: '—'
+      legality: '—'
+      concealability: '—'
+  purchase_modifier_basis: The plus signs on the option rows identify additions to the relevant sheath statistics; no numerical value is inferred from a dash.
+links: {uses: [entity.chemistry.ruthenium-polymers, entity.chemistry.imaging-scanner], affects: [entity.cyberware.dermal-sheath-1, entity.cyberware.dermal-sheath-2, entity.cyberware.dermal-sheath-3], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 28, relation: defines, note: Dermal Sheath game effects and option rows}
+  - {source: source.mm, page: 154, relation: defines, note: Repeated Bodyware option rows}
+notes:
+  - The implant option rows are distinct from the general chemistry equipment purchases; do not apply both costs to the same item without a rule requiring it.
