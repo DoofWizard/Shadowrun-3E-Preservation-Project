@@ -12,13 +12,13 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot portion of p107 remains open. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
   - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure only pp90-92; pp70-90 earlier location mechanics remain open"}
-  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; pp93-114 remain open"}
+  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; random encounters pp107-114; preceding One Shots pp93-107 remain open"}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
@@ -149,6 +149,21 @@ verified_semantic_records:
     prewrite_journal_library_id: libfile_bcf92c4445348191bc0697284f1e7510
     coverage: "11 tables, 66 outcome rows, optional reroll/substitution/stop conditions"
     unresolved: "Printed Table X 2F6; location ranges overlap at roll 8"
+  - id: rule.mjlbb.random-encounters-p107-114
+    path: rules/gamemaster/mjlbb-random-encounters-p107-114.yml
+    range_printed: [107, 114]
+    range_pdf: [108, 115]
+    content_class: rule_procedure
+    commit: 24544011a1619725dbf8dd67fb582f6ee4efa748
+    blob: 78df6a67403b8ebb1b1e167c45d53740648fb854
+    baseline_sha256: c4848eebeea8dbd2f33721274747501ee1eb6b3db7d8d982eb3b6d8e99133a06
+    candidate_sha256: 6a0d4ee56d3967e3449806d75b19b88327db1814e77fb75f0bc9e387df29dc6a
+    immutable_sha256: dd3a6f8ff3acf1d8073b5e33fd85eabc22dd4962be2e0e0325a597fca4f5be2a
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_c2c2f267c6208191852f52bcc720f60d
+    coverage: "Seven 1D6 tables, 42 rows, encounter selection and numeric scenario parameters; prior One Shot on p107 excluded"
+    unresolved: "Two chart/heading label variants retained"
 pending_normalization: []
 resolved_pending_history:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
@@ -165,4 +180,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Review random encounter chart p108 and accompanying mechanics pp107-114, then scenario pp93-106 and remaining pp4-90 location/NPC/campaign mechanics. Neighborhood generation and Runs on the Fly scoped coverage complete; whole-book field checklist not established."
+next_cursor: "Review One Shots pp93-107, including p107 SURGEd Cerberus Hound statistics and action exceptions, then remaining pp4-90 location/NPC/campaign mechanics. Random encounter selection and numeric setup, neighborhood generation and Runs on the Fly scoped coverage complete; whole-book field checklist not established."
