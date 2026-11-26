@@ -1,10 +1,35 @@
 id: entity.cyberware.battletac-cyberlink
 record_type: entity
-name: "BattleTac Cyberlink"
+name: BattleTac Cyberlink
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.2, cost_nuyen: 30000, availability: "12/30 days", street_index: 4, legality: "2P-R"}
+source: source.mm
+printed_pages: '23,152'
+pdf_pages: '23,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: BattleTac Cyberlink — SR3 receiver and orientation-system discounts
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp23,152/PDF23,153.
+intrinsic: {essence: 0.2, cost_nuyen: 30000, availability: '12/30 days', street_index: 4, legality: '2P-R'}
 links: {uses: [rule.cyberware.battletac-network], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 23, relation: defines, note: "BattleTac Cyberlink description and statistics"}
+  - {source: source.mm, page: 23, relation: defines, note: BattleTac Cyberlink description and statistics}
+  - {source: source.mm, page: 152, relation: defines, note: Brainware equipment table}
 notes: []
+data:
+  receiver:
+    radio_link_required: true
+    constructs_tactical_map_from_battletac_data: true
+    display_options: [image link, other display via datajack]
+    supports_small_unit_tactics: true
+    supports_other_battletac_features: [indirect fire]
+    effect_rule: rule.cyberware.battletac-network
+  sensory_input:
+    linked_cybernetic_senses_convert_to_battletac_protocol: true
+    transmits_via_linked_radio_to_master: true
+    usable_as_master_sensory_input: true
+  orientation_system_discount:
+    condition: installed with an orientation system
+    purchase_cost_multiplier: 0.5
+    essence_cost_multiplier: 0.5
