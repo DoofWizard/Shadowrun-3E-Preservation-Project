@@ -8,7 +8,7 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7908 Cannon Companion: fictional skillsoft design and capacity qualifications'
-summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp60-62/PDF61-63; original numeric qualifications supplement the existing skillsoft option records without replacing their purchase table.'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp60-62/PDF61-63; original numeric and operating qualifications supplement the existing skillsoft option records without replacing their purchase table.'
 data:
   design:
     design_rating: base rating plus cumulative option rating adjustments
@@ -19,6 +19,8 @@ data:
     cost_basis: design size, not actual storage size
     normal_asist_basis: base rating, subject to explicit option exceptions
   adaptive:
+    ordinary_skillsoft_operation: base rating only unless an explicit option changes it
+    adaptive_operating_rating: any rating up to base rating; lower operation permits use with otherwise insufficient compatible cyberware
     existing: option.skillsofts.adaptive
     other_option_ratings: selectable up to their ratings, automatically reduced to match operating skillsoft rating
     pulse: calculate operating size at reduced rating; stored actual size unchanged
@@ -31,6 +33,7 @@ data:
     headware_exception: directory overhead does not apply to an individual program loaded and used from headware
     directory_level_may_exceed_individual_rating: true
     chip_size: sum of individual program sizes including directory
+    design_rating_basis: each skillsoft program and the directory use their own design rating
   customized:
     existing: option.skillsofts.customized
     intended_user_skill_bonus: 1
@@ -70,11 +73,13 @@ data:
   one_shot:
     existing: option.skillsofts.one-shot
     expiry: one hour after activation or upon deactivation, whichever occurs first
+    expiry_effect: both fictional chip and program are destroyed; ordinary first skill use alone is not the stated expiry condition
     actual_size_multiplier: 0.25
     design_size_multiplier: 1.5
   pluscode:
     existing: option.skillsofts.pluscode
     maximum_base_rating: skillwire ASIST rating
     minimum_asist_consumption: 1
+    asist_consumption: base skillsoft rating minus Pluscode rating; effective base skill rating unchanged
     maximum_pluscode_rating: base rating minus 1
   scope: Existing option records retain design modifiers and purchasing rows; this record adds original qualifications only. The p64 example's 75 divided by 2 rounded up is printed as 37 Mp, which is arithmetically inconsistent and is not silently corrected.
