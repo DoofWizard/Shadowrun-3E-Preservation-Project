@@ -1,82 +1,88 @@
 id: rule.matrix.target-matrix-host-rules
 record_type: rule
-name: "Target: Matrix - Host Procedures"
+name: 'Target: Matrix - Host Procedures'
 domain: matrix
 status: ingested
 source: source.fasa-7219
-printed_pages: "123-125"
-pdf_pages: "124-126"
-
+printed_pages: '123-125'
+pdf_pages: '124-126'
+edition_scope: 'FASA7219 Target: Matrix, FASA, Shadowrun Third Edition fictional tabletop game'
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'FASA7219 Target: Matrix SR3 host procedures, pp123-125 / PDF124-126'
+summary: 'Fictional tabletop host procedure reconciliation with exact source qualifications and specialist record lineage.'
+data:
+  publication: {title: 'Target: Matrix', publisher: FASA, catalog: FASA7219, edition: Shadowrun Third Edition}
+  detailed_records:
+    - rule.matrix.target-matrix-seattle-gridlock-p123
+    - rule.matrix.target-matrix-seattle-asist-overload-p123
+    - rule.matrix.target-matrix-hacker-house-p123-124
+    - rule.matrix.target-matrix-lone-star-host-p124
+    - rule.matrix.target-matrix-malaysian-independent-bank-p124
+    - rule.matrix.target-matrix-peoples-university-p124
+    - rule.matrix.target-matrix-zurich-orbital-host-p124-125
+    - rule.matrix.target-matrix-other-host-guidance-p125
+  seattle_host_sheafs: 'GM generates corporate host sheafs appropriate to the campaign; host descriptions beginning p57 provide context.'
+  hacker_house_language: 'The vendor uses its own programming language; this accounts for the optional bug and glitch modifiers.'
+  hacker_house_guest: 'Anyone locating a display node may enter as a guest with very restricted privileges.'
 virtual_seattle:
   seattle_rtg:
-    security_code: "Green-5/6/9/6/6"
-    sheaf: "Use Green Grid security sheaf from Matrix p.114."
+    security_code: 'Green-5/6/9/6/6/6'
+    sheaf: 'Green Grid security sheaf, Matrix p114; Seattle LTGs have approximately the same ratings and security.'
   asist_filter_overload:
-    occurrence_test:
-      RTG_login: "roll 2D6"
-      LTG_login: "roll 3D6"
-      trigger: "all 1s"
+    occurrence_test: {RTG_login: '2D6', LTG_login: '3D6', trigger: 'all dice show 1'}
     effect:
-      cold_ASIST: "+4 TN to all tests"
-      hot_ASIST: "+6 TN to all tests"
-      duration: "until ASIST interface reset; reset takes Simple Action"
-      diagnose: "Computer (Hardware) (4)"
+      cold_ASIST: '+4 TN to all target numbers'
+      hot_ASIST: '+6 TN to all target numbers'
+      duration: 'Begins during that visit at GM-selected timing; ends on reset (Simple Action).'
+      diagnose: 'Computer (Hardware) (4)'
     panics:
-      trigger: "Affected for more than one full Combat Turn."
-      test: "Willpower (5)"
-      failure: "Panic-drive state; cannot access Matrix or simsense without recurrence until recovered."
-      recovery: "Recovering From Psychotropic Effects as Rating 5 psychotropic IC."
+      trigger: 'More than one full Combat Turn of overload.'
+      test: 'Willpower (5)'
+      failure: 'Panic persists until jack-out; Matrix or simsense access causes recurrence until recovery.'
+      recovery: 'Matrix p109 recovery as Rating 5 psychotropic IC.'
   gridlock:
-    apply_one_or_more:
-      - "I/O Speed reduced by 1D6 x 10%."
-      - "Base bandwidth reduced by 1D6 x 10%."
-      - "Sensors and/or Evasion work at half value, round up."
-      - "Response Increase, hot ASIST and/or reality filters grant no Initiative modifiers."
-      - "+1 TN to all System Tests."
-      - "Black/brownout hits grid section; users may be trapped/dumped with dumpshock or moved to random host."
-
+    apply_one: 'GM may choose one effect during heavy traffic, including on other busy grids; see detailed record for six alternatives.'
 hacker_house:
-  public_access: "Guest users have extremely limited privileges; catalog free to browse."
-  demos: "One-shot demo copies cost 10% of asking price; dangerous/illegal programs are excluded and stored on isolated host."
-  secure_catalog_access: "Pay 100¥ to access isolated catalog host."
-  availability: "Availability Test; if available, base time reduced to 8 hours and Street Index -0.5."
-  custom_programming: "Raise Street Index by 1 for final cost; programming time at GM discretion."
-  optional_bug_rule: "Hacker House uses own language, giving Bug Test Modifier -4 and Glitch-table modifier -2."
-
+  public_access: 'Any Shadowland node; hidden display nodes also exist. Most catalog entries are free to browse.'
+  demos: 'One-shot demos cost 10% of asking price; no demos from the isolated catalog.'
+  secure_catalog_access: '100 nuyen entry fee; a catalog agent assists customers.'
+  availability: 'Standard Availability Test; if available, base time 8 hours and Street Index -0.5; standard price otherwise per Matrix p94.'
+  custom_programming: 'Street Index +1 for final cost; GM determines duration under Matrix programming rules.'
+  optional_bug_rule: 'If optional rules (Matrix p81) apply, Bug Test Modifier -4 and Glitch-table modifier -2; software may contain bugs.'
+  account: 'A purchase results in a personal account for subsequent logins.'
 lone_star:
   gridsec:
-    rating: "Equal and Trained"
-    utilities: "black hammer, killjoy and track at rating 6+; others GM discretion"
-    deck: "Novatech Hyperdeck-6"
-  superior_or_superhuman_gridsec_deck: "Novatech Slimcase-10"
+    rating: 'Typically Equal and Trained.'
+    utilities: 'Black hammer, killjoy and track typically rating 6 or higher; other utilities at GM discretion.'
+    deck: 'Equal-rated deckers use Novatech Hyperdeck-6.'
+  superior_or_superhuman_gridsec_deck: 'Novatech Slimcase-10'
+  rookie_training: 'Novatech Z-Term'
   file_integrity:
-    - "Critical files may use worms, data bombs or Pavlov data bombs."
-    - "If altered on local host, note Control Test used to authenticate headers."
-    - "Unauthenticated files may be detected on sync with main office every four hours."
-
+    - 'Important files usually protected by worms, data bombs or Pavlov data bombs.'
+    - 'For altered local files, note Control Test for header authentication under Edit File (SR3 p216).'
+    - 'Unauthenticated alteration is noticed at four-hour main-office synchronization; GridSec investigates and may monitor the file or use it as a trap.'
+  sheaf: 'Target: Matrix p133'
 malaysian_independent_bank:
-  account: "No SIN required; anonymous clients need minimum balance beginning at 10,000¥, lower with more identification."
-  services: ["electronic lock-boxes","anonymous remailing","other privacy services"]
-  note: "Typical host security sheaf provided separately."
-
+  account: 'No SIN required; passcode-only clients require a balance starting at 10000 nuyen, reduced with more identification.'
+  services: ['electronic lock-boxes', 'anonymous remailing', 'other privacy services']
+  note: 'Service fees are high but unspecified; sheaf p134.'
 peoples_university:
-  access: "Resistance-region characters can enroll broadly; virtual instructors and simsense learning are available."
-  instructors: "GM determines skill of instructors for training."
-  note: "Standard host security sheaf provided separately."
-
+  access: 'Characters must be both from the California Bay Area and members of the Resistance; almost any course, live or virtual instructors and simsense learning.'
+  instructors: 'GM sets instructor skill for teaching new skills; SR3 p95 Instruction.'
+  note: 'Standard host sheaf p134.'
 zurich_orbital:
   access:
-    - "Requires locating dedicated satellite uplinks and a disappearing SAN."
-    - "SANs use scramble-13 IC and stay open only for timed period."
-    - "Freeze Vanishing SAN attempts suffer +4 TN."
-    - "Validate Account can mark priority user but suffers +6 TN."
-  sysops: "Z-O Fates count as Superhuman and Professional deckers with modified Fairlight Excaliburs; all have Z-O System Familiarity."
-  black_hammer: "Each carries black hammer rating 1D6 + 6 including targeting option."
-
+    - 'Dedicated satellite uplink and vanishing SAN are prerequisites in the fictional host scenario.'
+    - 'SAN has scramble-13 IC and stays open for an unspecified timed interval.'
+    - 'Freeze Vanishing SAN +4 TN (Matrix p99).'
+    - 'Validate Account +6 TN to obtain priority handoff instead of disconnection.'
+  sysops: 'Fates are Superhuman and Professional deckers using modified Fairlight Excaliburs; Zurich-Orbital System Familiarity (Matrix p24); utilities at GM discretion.'
+  black_hammer: 'Maenads, not Fates, each have black hammer 1D6 + 6 with targeting option; GM chooses SK, agent or smart frame.'
+  sheaf: 'Target: Matrix p134'
 other_matrix_hosts:
-  clubs: "Etiquette (Matrix) commonly used for social interaction without faces cues."
-  hot_asist_games: "Illegal/high-risk game hosts may use hot ASIST."
-  brothels: "No universal mechanics beyond ordinary Matrix/contact/investigation use."
-
+  clubs: 'Etiquette (Matrix), Matrix p124, commonly used in social encounters.'
+  hot_asist_games: 'Most games use cold ASIST; some fictional illegal, more expensive hot ASIST games pit deckers against deckers or nonlethal IC.'
+  brothels: 'GM determines presentation based on group composition; no universal numeric procedure supplied.'
 sources:
-  - {source: source.fasa-7219, printed_pages: "123-125", pdf_pages: "124-126", relation: defines_rules}
+  - {source: source.fasa-7219, printed_pages: '123-125', pdf_pages: '124-126', relation: defines_rules}
