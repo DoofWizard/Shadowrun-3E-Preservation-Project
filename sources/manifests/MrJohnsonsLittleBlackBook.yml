@@ -12,13 +12,13 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
   - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure only pp90-92; pp70-90 earlier location mechanics remain open"}
-  - {range: "93-115", section: Scenarios and random encounters, status: pending_original_mechanics_review}
+  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; pp93-114 remain open"}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
@@ -134,6 +134,21 @@ verified_semantic_records:
     prewrite_journal_library_id: libfile_9287e37e1fc88191b6bfab82e50ed1db
     coverage: "64 outcome rows; three-step procedure, size markers, reroll, restaurant exception, discretionary alternatives and worked example"
     unresolved: "Corporate table die header conflicts with step 3; worked example discrepancies retained without inferred correction"
+  - id: rule.mjlbb.runs-on-the-fly-p115
+    path: rules/gamemaster/mjlbb-runs-on-the-fly-p115.yml
+    range_printed: [115, 115]
+    range_pdf: [116, 116]
+    content_class: rule_procedure
+    commit: 9935ad013e40a2d5622801702fa1f78271c54eda
+    blob: a7092f07c01ab7941cd392f27ab506c2211ce530
+    baseline_sha256: dd9c87908ebcd9cc3777114313087f30e5ec7f0dae24fd0a26e2e6a47e536174
+    candidate_sha256: dd465f920f5f41775c641716e415ea4c8b3ce1c9768e5789f77216a83675eb1e
+    immutable_sha256: 18bdeac1266a89a6f04e23ee8527d5cf47224676851bd2de794c0f0a160fae01
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_bcf92c4445348191bc0697284f1e7510
+    coverage: "11 tables, 66 outcome rows, optional reroll/substitution/stop conditions"
+    unresolved: "Printed Table X 2F6; location ranges overlap at roll 8"
 pending_normalization: []
 resolved_pending_history:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
@@ -150,4 +165,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Original review pp93-115 scenario and random encounter rules, then remaining pp4-90 location/NPC/campaign mechanics. Neighborhood generation scoped coverage complete; whole-book field checklist not established."
+next_cursor: "Review random encounter chart p108 and accompanying mechanics pp107-114, then scenario pp93-106 and remaining pp4-90 location/NPC/campaign mechanics. Neighborhood generation and Runs on the Fly scoped coverage complete; whole-book field checklist not established."
