@@ -1,0 +1,37 @@
+id: rule.matrix.persona-protection-transmission-qualifications-p20-21
+record_type: rule
+status: source_reviewed
+source: source.matrix
+printed_pages: '20-21'
+pdf_pages: '21-22'
+edition_scope: 'Matrix, FASA Corporation FASA7909, Shadowrun Third Edition fictional tabletop RPG'
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7909 Matrix (SR3), printed pp20-21/PDF21-22: persona and protective-system qualifications'
+summary: 'Original fictional tabletop game persona access minima, legality, ICCM resistance-test handling and multiplexed transfer example.'
+data:
+  publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Shadowrun Third Edition}
+  persona:
+    printed_pages: '20-21'
+    pdf_pages: '21-22'
+    minimum_virtual_reality_access_ratings: {Bod: 1, Sensor: 1}
+    MPCP_legality_scope: In most locales the legal MPCP ceiling is Rating 4.
+    Evasion: {legality: '3P-S', permitted_use: Matrix security specialists, standard_cyberterminal_installed: false}
+    Masking: {legality: '2-S', usual_status: illegal}
+    SASS: Some fictional security deckers must use their signatures on home systems; SASS applies signatures on some systems and masks them on others automatically.
+    icon_rating_examples: {'1': Poor low-resolution monochrome image, '12': Seamless motion and very high visual realism}
+    reuse_rating_caps: rule.matrix.component-construction-p56-58
+  ICCM:
+    printed_page: 21
+    pdf_page: 22
+    extends: rule.matrix.iccm-protection
+    jackout_test_target: IC Rating
+    resistance_result_choice: Player chooses the better of separate Body and Willpower tests.
+    Karma_Pool_dice: Roll separately and add their result to the chosen resistance test.
+  transmission:
+    printed_page: 21
+    pdf_page: 22
+    extends: rule.matrix.transmission-multiplexing
+    unit: Mp per Combat Turn
+    allocation: User may divide available I/O Speed between concurrent jobs in any proportion.
+    source_example: {IO_Speed: 100, download_Mp_per_Combat_Turn: 25, upload_Mp_per_Combat_Turn: 75}
