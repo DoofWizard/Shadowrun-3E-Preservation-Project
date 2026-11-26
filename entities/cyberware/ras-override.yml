@@ -1,15 +1,43 @@
 id: entity.cyberware.ras-override
 record_type: entity
-name: "Ras Override"
+name: RAS Override
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '21-22,152'
+pdf_pages: '21-22,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: RAS Override — SR3 real-world test modifiers and disabler rules
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), pp21-22,152/PDF21-22,153.
 intrinsic:
   essence: 0.05
   cost_nuyen: 1000
-  availability: "4/48 hrs"
+  availability: '4/48 hrs'
   street_index: 1
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
+  - {source: source.mm, page: 21, relation: defines, note: 'RAS operation and initial game effects'}
+  - {source: source.mm, page: 22, relation: defines, note: 'Disabler effects and local equipment table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Headware equipment table statistics'}
 notes: []
+data:
+  installation:
+    included_in: [simdeck, cyberdeck, remote control deck, simrig, cranial cyberdeck, cranial remote control deck]
+    independent_implant_available: true
+    source_context: The fictional source describes use with optiscan links and reports that some penal institutions use remotely activated implants with simsense systems to hinder troublesome inmates.
+  operation:
+    natural_sensory_input_inhibited: true
+    natural_muscle_control_inhibited: true
+    pain_and_damaging_heat_still_perceived: true
+    minor_muscle_activity_allowed_to_prevent_cramping: true
+  active_effects:
+    perception_tests_modifier: 8
+    actions_involving_real_world_modifier: 8
+  ras_override_disabler:
+    available_in_some_sims: true
+    incapacitates_override: true
+    simultaneous_sim_and_real_world_experience: true
+    target_number_modifier: {maximum: 4, scope: all target numbers, condition: depends on the sim}
