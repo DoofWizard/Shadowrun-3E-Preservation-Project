@@ -1,15 +1,36 @@
 id: entity.cyberware.foot-anchor
 record_type: entity
-name: "Foot Anchor"
+name: Foot Anchor
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '29,154'
+pdf_pages: '29,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Foot Anchor — SR3 equipment and game modifiers
+summary: Fictional augmentation rules from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp29,154/PDF29,155.
 intrinsic:
   essence: 0.4
   cost_nuyen: 14000
-  availability: "6/77 days"
+  availability: '6/7 days'
   street_index: 2
-  legality: "7P-N"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 29, relation: defines, note: Game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes: []
+data:
+  installation_maximum_per_foot: 1
+  installation_condition: intended primarily for cyberfeet; natural feet require additional bracing
+  maximum_barrier_rating: 10
+  example_pavement_barrier_rating: 8
+  supported_weight_bonus_kg_per_anchored_foot_at_rating_10: 50
+  supported_weight_bonus_reduction_kg_per_barrier_rating_below_10: 5
+  weapon_damage_code: (STR - 1)M
+  weapon_extended_movement_rate: floor(Quickness / 2)
+  weapon_extended_dodge_test_modifier: 1
+  anchored_recoil_reduction_per_anchor: 1
+  anchored_knockdown_resistance_tn_modifier_per_anchor: -1
