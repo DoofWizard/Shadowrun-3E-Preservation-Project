@@ -1,0 +1,49 @@
+id: rule.combat.cannon-companion-p44-vehicle-game-tests
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '44'
+pdf_pages: '45'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: abstract vehicle and electronic tabletop RPG modifiers'
+summary: 'FASA Corporation, Shadowrun Third Edition, FASA7908, printed p44/PDF45. Fictional dice tests, game ratings, damage tracks and rule references; no construction or real-world procedure.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  game_rules:
+    jabberwocky:
+      entities: [entity.ammunition.mp-jabberwocky-missile, entity.ammunition.mp-jabberwocky-rocket]
+      rating: 4
+      flux: 6
+      circular_game_radius_expression: '2D6 * ceil(Launch Weapons Test successes / 2) + 10'
+      effect_scope: All game transmissions of the selected type inside the game area, including friendly and opposing transmissions; none outside.
+      references: [SR3 p291 Jammers, SR3 p138 Electronic Countermeasures]
+      game_categories: [standard radio communications, sensors, rigger remote control networks]
+    seeker:
+      entity: entity.ammunition.seeker-head
+      game_reference: Cannon Companion p100 Indirect Fire
+      indirect_fire_available: true
+      compatible_game_inventory: [missiles, rockets]
+    sam:
+      entity: entity.ammunition.surface-to-air-missile
+      extreme_range_m: 5000
+      ground_target_game_test: Launch Weapons
+      ground_target_tn_modifier: 4
+      ground_target_damage_code: 7D
+      anti_vehicular_game_class: true
+      barrier_rating_multiplier: 0.5
+      vehicle_armor_multiplier: 0.5
+    zapper:
+      entity: entity.ammunition.zapper-static-discharge-rocket
+      anti_vehicular_game_class: true
+      affected_game_entities: [vehicles, drones]
+      trigger: Damage to a rigged or remotely controlled drone or vehicle.
+      resistance_test: Willpower
+      power_expression: '4 + VCR Rating'
+      remote_drone_control_power_modifier: -2
+      damage_level_relative_to_vehicle_damage: 1
+      ordinary_rigger_damage_track: Physical
+      captains_chair_or_nonrigger_cybernetic_control_damage_track: Stun
+  scope_note: Existing catalogue statistics and general missile resolution remain read-only. This record covers game tests and numeric game modifiers; other source descriptions and dependencies are not certified here.
