@@ -7,11 +7,20 @@ pdf_pages: '110-111'
 edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
 content_class: [rule_exact]
 headline: FanPro Rigger 3 Revised (FanPro10662), SR3 fictional tabletop RPG, printed pp108-109/PDF110-111
-summary: Chassis selection qualifications for submarine sealing, UAV profiles, special vehicle control, subtype design limits and the race-car example.
+summary: Chassis selection qualifications for submarine classification, rider use, UAV profiles, special vehicle control and both chassis worked examples.
 framing: reference_exact
 data:
   publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_id: source.fanpro-10662, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
   submarine_category: {printed_page: 108, pdf_page: 110, automatic_enviroseal_options: [water, engine], removable: false}
+  minisub_classification:
+    printed_page: 108
+    pdf_page: 110
+    displacement_metric_tons_exclusive_upper_bound: 100
+    treated_as: regular vehicle rather than ship-sized vessel
+    passenger_capacity_context: {light: 'roughly one or two passengers', medium: 'approximately six people'}
+    capacity_context_is_fixed_seating_rating: false
+  patrol_submarine: {printed_page: 108, pdf_page: 110, nuclear_power_plant_allowed: false}
+  sea_sled: {printed_page: 108, pdf_page: 110, unmanned_submarine: true, divers_may_ride: true, rider_use_effect: extends diving range, numerical_range_modifier_specified: false}
   vectored_thrust_uav:
     printed_page: 108
     pdf_page: 110
@@ -33,9 +42,18 @@ data:
     semiballistic: {takeoff_profile: Standard, landing_requires_special_runway: true}
     suborbital: {landing_takeoff_profile: Standard, improved_takeoff_landing_profile_allowed: false}
     trailer: {power_plant_allowed: false}
+  sand_buggy_worked_example:
+    printed_page: 109
+    pdf_page: 111
+    printed_chassis_table_reference: 169
+    initial_seating: {type: bench, people: 2}
+    entry: open
   sports_car_worked_example:
     printed_page: 109
     pdf_page: 111
+    initial_seating: {type: bucket, count: 2}
+    initial_doors: 2
+    initial_top_entry: true
     removed: [two doors, one extra seat]
     retained_entry: top
     starting_cf_increase: 6
