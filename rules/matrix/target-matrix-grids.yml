@@ -1,49 +1,57 @@
 id: rule.matrix.target-matrix-grids
 record_type: rule
-name: "Target: Matrix - Grid Extensions"
+name: 'Target: Matrix - Grid Extensions'
 domain: matrix
 status: ingested
 source: source.fasa-7219
-printed_pages: "116-119"
-pdf_pages: "117-120"
-
+printed_pages: 116-119
+pdf_pages: 117-120
 satellite_host_ratings:
-  comsats: {security_code: "Orange-8", acifs: "9/12/9/7/7"}
-  weather_sats: {security_code: "Orange-7", acifs: "6/10/7/7/9"}
-  research_sats: {security_code: "Orange-9", acifs: "7/10/9/8/9"}
-  surveillance_sats: {security_code: "Red-10", acifs: "12/14/12/12/12"}
-  sat_control_systems: {security_code: "Red-9", acifs: "10/14/12/9/11"}
-
+  comsats:
+    security_code: Orange-8
+    acifs: 9/12/9/7/7
+  weather_sats:
+    security_code: Orange-7
+    acifs: 6/10/7/7/9
+  research_sats:
+    security_code: Orange-9
+    acifs: 7/10/9/8/9
+  surveillance_sats:
+    security_code: Red-10
+    acifs: 12/14/12/12/12
+  sat_control_systems:
+    security_code: Red-9
+    acifs: 10/14/12/9/11
 angel_satcon:
-  - "Angel SatCom satellites use scramble-5 IC; successful Decrypt Access is required."
-  - "When atmospheric conditions may interfere with sensor equipment, roll 1D6; on 1, conditions interfere with attempted device use."
-
+- Angel SatCom satellite SANs are always protected by scramble-5 IC; successful Decrypt Access is required for entry.
+- When the satellite instrumentation or communications/surveillance devices are used, roll 1D6; on 1, atmospheric conditions interfere with attempted use. GM determines
+  device effectiveness.
 chicago_noose_net:
-  grid_security: "Random Easy-difficulty grid security; Orange is base level."
-  trace: "Tracing a character jacked in from inside Noose Net receives +4 Trace modifier; gamemaster may rule tracing impossible."
+  grid_security: Random Easy-difficulty grid security; Orange is base level.
+  trace: Tracing a character jacked in from inside Noose Net receives +4 Trace modifier; gamemaster may rule tracing impossible.
   access_anomaly:
-    test: "On Logon to RTG, roll 2D6 and add results."
-    threshold: "10+ triggers unusual grid behavior."
-    resolution: "Roll 3D6 on Wild Matrix Table, or gamemaster invents an appropriate occurrence."
-  resonance_well_search: "Attempts to create a resonance well in Noose Net receive -2 target number modifier."
-
+    test: On Logon to RTG, roll 2D6 and add results.
+    threshold: 10+ triggers unusual grid behavior for as long as the character accesses the grid.
+    resolution: Roll 3D6 on Wild Matrix Table, or gamemaster invents an appropriate occurrence.
+  resonance_well_search: When founding a tribe in Noose Net, attempts to create a resonance well receive a -2 target number modifier.
 wild_matrix_table:
-  "3-4": "Incompatibility; use Archaic Systems rules."
-  "5": "ASIST feedback; use Archaic Systems rules."
-  "6": "Subsystem infected with worms; roll Worm Table, then 1D6: 1-2 Access, 3 Control, 4 Index, 5 Files, 6 Slave."
-  "7-8": "System delays; lose Response Increase bonuses, excluding reality filters/pure DNI."
-  "9": "Grid cannot support full simsense; apply +1 TN to all Matrix activity."
-  "10": "Overlapping security; halve trigger intervals (round up) or generate two sheafs and compare tally against both."
-  "11": "Weak interface; use Archaic Systems rules."
-  "12": "Power fluctuations; once/minute Bod (6) or stalled/hung; failure = no actions next Combat Turn; all 1s = dump shock."
-  "13": "Partially corrupted file system; +2 TN to all Index and Files Tests."
-  "14-15": "Stray signals/static; +2 TN to all Sensor Tests."
-  "16-17": "Weak bandwidth; use Archaic Systems rules."
-  "18": "IC construct identifies intruder and attacks; cascading blaster-5 and tar pit-5 IC."
-
+  3-4: Incompatibility; use Archaic Systems rules.
+  '5': ASIST feedback; use Archaic Systems rules.
+  '6': 'Subsystem infected with worms; roll Worm Table, then 1D6: 1-2 Access, 3 Control, 4 Index, 5 Files, 6 Slave.'
+  7-8: System delays; lose Response Increase bonuses, excluding reality filters/pure DNI.
+  '9': Grid cannot support full simsense; visual output becomes high-resolution line drawings and other sensory input is dropped; apply +1 TN to all Matrix activity.
+  '10': Two independent grid security processes; halve trigger intervals (round up) or generate two security sheafs and compare the character’s security tally against
+    both.
+  '11': Weak interface; use Archaic Systems rules.
+  '12': Power fluctuations; once/minute Bod (6) or stalled/hung; failure = no actions next Combat Turn; all 1s = dumped from the system and suffers dump shock.
+  '13': Partially corrupted file system; +2 TN to all Index and Files Tests.
+  14-15: Stray signals/static; +2 TN to all Sensor Tests.
+  16-17: Weak bandwidth; use Archaic Systems rules.
+  '18': IC construct identifies intruder and attacks; cascading blaster-5 and tar pit-5 IC.
 doj:
-  edit_file_modifier: "+4 unless using superuser account"
-  offline_archive: "Files older than five years may be moved to offline chips in physical warehouses; retrieval may require physical/social legwork."
+  edit_file_modifier: +4 unless using superuser account
+  offline_archive: Standard DOJ policy transfers material more than five years old to offline storage chips in physical warehouses; a DOJ worker with warehouse access
+    must locate and upload the file. The fictional requester must complete the required forms and pass an ID check, or succeed in bribing the worker.
   search_modifiers:
     INS: 2
     FBI: -1
@@ -52,72 +60,86 @@ doj:
     Bureau_of_Prisons: 2
     Anti_Trust_Division: 0
     Office_of_Inspector_General: -1
-
+  additional_search_modifiers: GM may apply additional target number modifiers to Computer (Search Operations) Tests because of interagency file transfers and bureaucracy.
+  matrix_marshals: UCAS Matrix Marshals are Equal NPCs, usually encountered in pairs or squads; utilities include BattleTac Matrixlink, track, and attack and defense
+    utilities.
 magicknet:
-  annual_fee: "1,000¥"
+  annual_fee: 1,000¥
   undernet_search_modifier: -1
-  undernet_access: "Requires in-the-know contact and successful social test(s), such as Etiquette (Matrix), Etiquette (Magic), or Negotiations (Bribery)."
+  undernet_access: A character must find a knowledgeable contact and persuade them to provide access details; this may require Etiquette (Matrix), Etiquette (Magic)
+    or Negotiations (Bribery) Test(s). Alternatively the character can purchase the Magick Undernet as a contact during character creation.
   threshold_guardian:
-    type: "semi-autonomous knowbot"
+    type: semi-autonomous knowbot
     stats:
       core_rating: 8
-      mpcp: "8/6/6/4/8"
+      mpcp: 8/6/6/4/8
       pilot_skill: 8
-      initiative: "8 + 4D6"
+      initiative: 8 + 4D6
       utility_pool: 8
       hacking_pool: 8
       utility_payload: 23
-      utilities: {Attack_S: 8, Armor: 4, Scanner: 6, Lock_on: 5}
-
+      utilities:
+        Attack_S: 8
+        Armor: 4
+        Scanner: 6
+        Lock_on: 5
+  official_search_modifier: 0
+  library_access: Magical library nodes charge extra for research time, beyond the annual membership fee.
 service_providers:
   UOL:
     search_modifier: -1
-    note: "Low security makes users targets for hostile activity; operator may intercept user data."
+    note: Low security attracts deckers; operator routinely intercepts data and monitors users. The GM determines when and if this occurs.
   PlanetLink:
-    security: "normally standard"
-    note: "Some game operators may run games at BTL levels; treat extended play as Rating 4 BTL dreamchip exposure using cited addiction rules."
+    note: The book reports a rumor that some games operate at BTL levels. A hot ASIST interface is required for full effect; at GM discretion extended play risks
+      BTL addiction. Treat such games as Rating 4 BTL dreamchips using Man & Machine p108 Substance Abuse rules and Cannon Companion p69 BTL Addiction Table.
   Yamatetsu_MetaMatrix:
-    meta_modified_gear_discount: "5% reduction to cost increase for meta-modified gear obtained through MetaMatrix"
+    meta_modified_gear_discount: 5% reduction to cost increase for meta-modified gear obtained through MetaMatrix
     metahuman_search_modifier: -1
-
 pueblo_grids:
-  party_ic: "Reduce normal party-IC to-hit penalty by 1; e.g. three-piece cluster gives +1 instead of +2."
+  party_ic: Pueblo grid and host party IC reduces the normal party-IC to-hit penalty by 1; e.g. three-piece cluster gives +1 instead of +2.
   navigation:
-    route_memory: "If heading toward a host with LTG code or after successful Locate Access Node, roll 1D6/2 round up; number = grids away. If following known iconography trail, roll 1D6."
+    route_memory: If heading toward a host with LTG code or after successful Locate Access Node, roll 1D6/2 round up; number = grids away. If following known iconography
+      trail, roll 1D6.
     table:
-      "1-2": "Dead-end LTG; backtrack or Locate Access Node."
-      "3-4": "A SAN leads to a different/higher-security LTG; enter or Locate Access Node for directions."
-      "5-6": "Path leads where expected."
-  software_availability: "Reduce Availability of programs obtained through this source by 2."
-
+      1-2: Dead-end LTG; backtrack or Locate Access Node.
+      3-4: A SAN leads to a completely different LTG (possibly higher security); try a different route or perform Locate Access Node for directions.
+      5-6: Path leads where expected.
+  software_availability: Reduce Availability of programs acquired through the Pueblo black market by 2.
 saeder_krupp_prime:
-  passkey_duration: "After obtaining passkey, roll 1D6; result is number of days it remains valid."
-  trace_ic: "+2 rating when locating intruder originating inside PLTG or from European/Russian/Middle Eastern grid."
-
+  passkey_duration: After obtaining a passkey, roll 1D6; result is days it remains valid, after which the character needs a new passkey.
+  trace_ic: +2 rating when locating intruder originating inside PLTG or from European/Russian/Middle Eastern grid.
 shiawase_mifd:
   search_modifier: -3
   smart_frames:
     core_rating: 9
-    initiative: "9 + 3D6"
+    initiative: 9 + 3D6
     pilot_rating: 5
     bod: 3
     evasion: 0
     masking: 0
     sensor: 6
-    utilities: {Attack_M_sensitive: 4, Armor_sensitive: 4, Sniffer_sensitive: 6, Browse_sensitive: 6}
+    utilities:
+      Attack_M_sensitive: 4
+      Armor_sensitive: 4
+      Sniffer_sensitive: 6
+      Browse_sensitive: 6
   agents:
     core_rating: 6
-    initiative: "6 + 3D6"
+    initiative: 6 + 3D6
     pilot_rating: 5
     hacking_pool: 6
     bod: 6
     evasion: 0
     masking: 0
     sensor: 6
-    utilities: {Attack_M_sensitive: 4, Armor_sensitive: 4, Sniffer_sensitive: 6, Browse_sensitive: 6}
+    utilities:
+      Attack_M_sensitive: 4
+      Armor_sensitive: 4
+      Sniffer_sensitive: 6
+      Browse_sensitive: 6
   semi_autonomous_knowbots:
     core_rating: 6
-    initiative: "6 + 4D6"
+    initiative: 6 + 4D6
     pilot_rating: 6
     hacking_pool: 6
     utility_pool: 6
@@ -125,16 +147,62 @@ shiawase_mifd:
     evasion: 6
     masking: 0
     sensor: 6
-    utilities: {Attack_S_sensitive: 4, Armor_sensitive: 6, Track_sensitive: 5}
-  security_tally: "Add frame/agent/SK rating to decker's tally when trashed, as IC."
-
+    utilities:
+      Attack_S_sensitive: 4
+      Armor_sensitive: 6
+      Track_sensitive: 5
+  security_tally: Add frame/agent/SK rating to decker's tally when trashed, as IC.
 transys_neuronet:
-  caerlion: "Master power-grid host; physical access at HECEDS uses power-grid interface."
+  caerlion: Caerleon uses a maser power grid; a character physically accessing it needs a maser power grid interface.
   boreworm:
     size_multiplier: 4
-    attack: "When icon takes damage, worm makes Attack Test using its rating vs target number MPCP + Hardening."
-    success: "Permanently removes one level of Hardening, then begins removing MPCP levels by same procedure."
-    repair: "Only replacement of damaged MPCP repairs this damage."
-
+    attack: When icon takes damage, worm makes Attack Test using its rating vs target number MPCP + Hardening.
+    success: Permanently removes one level of Hardening, then begins removing MPCP levels by same procedure.
+    repair: Only replacement of damaged MPCP repairs this damage.
 sources:
-  - {source: source.fasa-7219, printed_pages: "116-119", pdf_pages: "117-120", relation: defines_rules}
+- source: source.fasa-7219
+  printed_pages: 116-119
+  pdf_pages: 117-120
+  relation: defines_rules
+edition_scope: 'FASA7219 Target: Matrix, FASA Corporation, Shadowrun Third Edition fictional tabletop roleplaying game; no modern network extrapolation.'
+content_class:
+- rule_exact
+framing: reference_exact
+data:
+  publication:
+    title: 'Target: Matrix'
+    publisher: FASA Corporation
+    catalog_number: FASA7219
+    edition: Shadowrun Third Edition
+    source_id: source.fasa-7219
+    original_pdf_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+  page_map:
+    printed: 116-119
+    pdf: 117-120
+  angel_satcon_qualifications:
+    printed_page: 116
+    satellite_grid_and_uplink_rules: Matrix pp47 and 34 respectively; RTG ratings and Density modifiers on Matrix p47.
+    host_table_scope: Typical ratings by satellite function; GM may vary them and use timed or triggered SAN effects from Matrix pp120-121.
+  provider_sheaf_qualification:
+    printed_page: 118
+    typical_sheaf: 'Target: Matrix p132 is Green-Average; for Green-Hard, GM may increase IC ratings.'
+  shiawase_sheaf_reference:
+    printed_page: 119
+    printed_cross_reference: 113
+    note: Original p119 references p113; retain this printed reference separately from the actual security-sheaf listing.
+  lineage:
+    noose_net_session_sheafs: rule.matrix.target-matrix-noose-net-session-sheafs-p116
+    pueblo_tally_carryover: Existing SR3 core security tally rule retained; no duplicate procedure.
+  search_scope:
+    UOL: All Computer (Search Operations) Tests on UOL receive its listed modifier.
+    Shiawase_MIFD: Computer (Search Operations) Tests in MIFD databases receive its listed modifier.
+  pueblo_navigation_scope:
+    printed_page: 119
+    changing_connections: The LTG connections are rearranged semi-regularly; prior route knowledge is not reliable. The iconography navigation roll applies when relying
+      on prior visit/trail knowledge.
+  saeder_krupp_prime_qualification:
+    printed_page: 119
+    SAN_location: The source requires extensive legwork or Matrix investigation to locate one of the fictional PLTG SANs; merely happening upon one is almost nil.
+headline: 'Target: Matrix (FASA7219, SR3), grid rules pp116-119 / PDF117-120'
+summary: 'Original FASA7219 grid mechanics: corrected qualifications, retained numeric ratings and source-specific exceptions for the fictional Shadowrun Third Edition
+  tabletop game.'
