@@ -3,9 +3,23 @@ record_type: entity
 name: "Leech Constructs"
 domain: magic
 status: ingested
-intrinsic: {maximum_barrier_rating_bonus: 1.5}
+intrinsic: {maximum_barrier_rating_multiplier: 1.5}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.magic.astral-security]}
 sources:
-  - {source: source.mits, page: 91, relation: defines, note: "Leech Constructs"}
+  - {source: source.mits, pages: "91", relation: defines, note: "Leech Constructs"}
 notes:
-  - "Bioengineered security organism that reinforces physical barriers and acts as a passive astral alarm."
+  - "Fictional bioengineered security organism that reinforces barriers and provides an astral alarm; the book states that it is not available on the street."
+source: source.mits
+printed_pages: '91'
+pdf_pages: '92'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: 'Fictional Shadowrun Third Edition tabletop rules: Leech Constructs, Magic in the Shadows (FASA Corporation, FASA7907), p91/PDF92'
+framing: reference_exact
+data:
+  initial_phase: {duration: first few days, movement: slow, attachment: adhesive fixation to objects}
+  hardening: {after_days: 2, metabolism: slows considerably, remains_attached: true, skin: hardens}
+  reinforcement: {maximum_final_barrier_rating: 1.5 x original surface Barrier Rating}
+  alarm: {trigger: astral form moves through leech, detection: automatic, audible_signal: high pitched wail for several minutes, detectable_by: mundane security}
+  combat: {statistics: none, hit: automatically kills leech}
+  removal: {condition: epoxied leech, test: Strength, target_number: 12}
