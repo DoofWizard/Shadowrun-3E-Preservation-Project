@@ -1,15 +1,41 @@
 id: entity.cyberware.data-compressor
 record_type: entity
-name: "Data Compressor"
+name: Data Compactor
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '20,152'
+pdf_pages: '20,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Data Compactor — SR3 compression, access timing and rating-specific statistics
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp20,152/PDF20,153.
 intrinsic:
-  essence: 0.2
-  cost_nuyen: 10000
-  availability: "6/60 hrs"
-  street_index: 1
-  legality: "Legal"
+  rating_rows:
+    - {rating: 1, essence: 0.1, cost_nuyen: 9500, availability: '6/60 hrs', street_index: 1, legality: Legal}
+    - {rating: 2, essence: 0.15, cost_nuyen: 19000, availability: '6/60 hrs', street_index: 1, legality: Legal}
+    - {rating: 3, essence: 0.2, cost_nuyen: 28500, availability: '6/60 hrs', street_index: 1, legality: Legal}
+    - {rating: 4, essence: 0.25, cost_nuyen: 38000, availability: '6/60 hrs', street_index: 1, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 20, relation: defines, note: 'Game effects and rating table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Headware equipment table statistics'}
+notes:
+  - Existing canonical ID retained for compatibility; the original item name is Data Compactor, not Data Compressor. The former generic price has no matching original row.
+data:
+  compression:
+    headware_memory_only: true
+    size_reduction_percent_per_rating: 20
+    optional_per_file: true
+    example: {rating: 3, original_mp: 100, reduction_percent: 60, stored_mp: 40}
+    reading_requires_decompression: true
+    decompression: Automatic when needed; a decker may also decompress the data with a compressor utility.
+  access:
+    ordinary_access_or_transfer: Simple Action
+    compressed_ratings_1_and_2: Simple Action
+    compressed_ratings_3_and_4: Complex Action
+  joint_installation:
+    with: Data Lock (SR3 p298)
+    compactor_cost_reduction_percent: 50
+    compactor_essence_reduction_percent: 50
