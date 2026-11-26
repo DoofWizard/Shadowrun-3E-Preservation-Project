@@ -7,14 +7,18 @@ pdf_pages: '56-57'
 edition_scope: FASA Corporation Matrix (FASA7909), Shadowrun Third Edition fictional tabletop RPG, original cyberterminal construction game tests.
 content_class: [rule_procedure]
 framing: reference_exact
-headline: Matrix cyberterminal construction test timing and conditions
-summary: Original four-stage construction task resolution, time, wound penalties, design and encoding rules.
+headline: FASA7909 Matrix (FASA Corporation, SR3) construction tests, printed pp55-56/PDF56-57
+summary: Fictional Shadowrun Third Edition construction procedure, including exclusive task effort, shift and overtime examples and the software prerequisite.
 data:
   publication: {title: Matrix, publisher: FASA Corporation, catalog: FASA7909, edition: Third Edition}
   stages: [design, software, cook, installation]
+  tests_per_stage: One test represents the individual tasks in each required construction stage.
   primary_skill: Computer B/R
   failed_success_test: {time_before_failure_discovered: 'base time divided by 2D6, rounded up', restart: true}
-  workday: {normal_hours: 8, effective_hours_per_overtime_hour_after_8: 0.5, effective_hours_per_hour_after_15: 0.25, shifts_allowed: true}
+  workday: {normal_hours: 8, effective_hours_per_overtime_hour_after_8: 0.5, effective_hours_per_hour_after_15: 0.25, shifts_allowed: true, normal_workday_uninterrupted: true, simultaneous_other_tasks_allowed_during_construction_work: false}
+  time_examples:
+    ten_hours_work: {elapsed_hours: 10, effective_hours: 9}
+    twenty_hour_task: {required_hours: 20, separate_work_shifts_hours: [5, 8, 7], other_activities_between_shifts_allowed: true}
   health:
     Light: {work_fraction: 1}
     Moderate: {work_fraction: 0.5}
@@ -28,6 +32,7 @@ data:
     success_allocation: Choose either divide base time by successes or use every two successes to reduce Cook or Installation TN by one; reductions may be allocated between those two tests.
     no_success: Component construction may proceed with +2 TN on other required tests.
   software: Required for components that need a program; use p76 programming rules or buy an existing package; component description supplies rating and size multiplier.
+  software_required_for_use: A component that depends on software cannot be used without that software.
   cook:
     skill: Computer B/R
     TN: 4
