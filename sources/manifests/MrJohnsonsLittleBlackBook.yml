@@ -12,12 +12,12 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot p107 creature stat block and independent-head exceptions visually reviewed; One Shots format and Sit on This pp93-94/PDF94-95 visually reviewed; PDF96 (printed p95) full-page illustration reviewed; Moving Violation pp96-97/PDF97-98 reviewed and covered; Deliver Me from Evil p97/PDF98 reviewed and covered; Mister, Can You Help Me Find My Parents? pp98-99/PDF99-100 reviewed and covered; Politics pp97-98/PDF98-99 reviewed and covered; Kidnapped! pp99-100/PDF100-101 reviewed and covered; Haunting pp100-101/PDF101-102 reviewed and covered; Trouble on Fifth Avenue pp101-102/PDF102-103 reviewed and covered; What Are You Playing At? pp102-103 reviewed and indexed; Where the Wild Things Are pp105-107/PDF106-108 reviewed and indexed; A Matter of Job Security p104/PDF105 reviewed and indexed; The Big Nothing pp104-105/PDF105-106 reviewed and indexed. Sprawl Sites introduction and apartment templates pp70-73/PDF71-74 visually reviewed; PDF72 full-page illustration, no rules text. Bars pp73-74/PDF74-75 visually reviewed and indexed; City Streets pp74-76/PDF75-77 visually reviewed and indexed; Corporate Offices starts p76 and remains open. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot p107 creature stat block and independent-head exceptions visually reviewed; One Shots format and Sit on This pp93-94/PDF94-95 visually reviewed; PDF96 (printed p95) full-page illustration reviewed; Moving Violation pp96-97/PDF97-98 reviewed and covered; Deliver Me from Evil p97/PDF98 reviewed and covered; Mister, Can You Help Me Find My Parents? pp98-99/PDF99-100 reviewed and covered; Politics pp97-98/PDF98-99 reviewed and covered; Kidnapped! pp99-100/PDF100-101 reviewed and covered; Haunting pp100-101/PDF101-102 reviewed and covered; Trouble on Fifth Avenue pp101-102/PDF102-103 reviewed and covered; What Are You Playing At? pp102-103 reviewed and indexed; Where the Wild Things Are pp105-107/PDF106-108 reviewed and indexed; A Matter of Job Security p104/PDF105 reviewed and indexed; The Big Nothing pp104-105/PDF105-106 reviewed and indexed. Sprawl Sites introduction and apartment templates pp70-73/PDF71-74 visually reviewed; PDF72 full-page illustration, no rules text. Bars pp73-74/PDF74-75 visually reviewed and indexed; City Streets pp74-76/PDF75-77 visually reviewed and indexed; Corporate Offices pp76-77/PDF77-78 visually reviewed and indexed; Hotels p77 remains open. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
-  - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure pp90-92; apartment templates and location conventions pp70-73 indexed; bar templates pp73-74 indexed; City Streets pp74-76 indexed; Corporate Offices p76 onward through p90 remain open"}
+  - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure pp90-92; apartment templates and location conventions pp70-73 indexed; bar templates pp73-74 indexed; City Streets pp74-76 indexed; Corporate Offices pp76-77 indexed; Hotels p77 onward through p90 remain open"}
   - {range: "93-115", section: Scenarios and random encounters, status: mechanics_covered_scoped_and_coverage_only, covered_scope: "Runs on the Fly p115; random encounters pp107-114; SURGEd Cerberus Hound p107 covered; One Shots format and Sit on This pp93-94 covered; p95 illustration reviewed; Moving Violation pp96-97 covered; Deliver Me from Evil p97 covered; Find My Parents pp98-99 covered; Politics pp97-98 confirmed and indexed; Kidnapped! pp99-100 covered; Haunting pp100-101 covered; Trouble on Fifth Avenue pp101-102 covered; What Are You Playing At? pp102-103 covered; Where the Wild Things Are pp105-107 covered; A Matter of Job Security p104 covered; The Big Nothing pp104-105 covered"}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
@@ -388,6 +388,20 @@ verified_semantic_records:
     contiguous_advance: false
     prewrite_journal_library_id: libfile_df1f285b2f9c81919b7891800e8b68be
     coverage: "City Streets conventions and three templates with conditional zone ratings, access, layout, NPC and security conditions"
+  - id: reference.mjlbb.corporate-office-templates-p76-77
+    path: references/campaign/mjlbb-corporate-office-templates-p76-77.yml
+    range_printed: [76, 77]
+    range_pdf: [77, 78]
+    content_class: campaign_guidance
+    commit: a8cc973821ec60ee6834ed5849dd15bdfc1164d4
+    blob: 8a676ae2bdadcf2261425c7df09847163f310d8d
+    baseline_sha256: df5825ffb4bdee768ca342ddcbbf86f2d71e7bbb9d83425266bda68c93b7e5db
+    candidate_sha256: 83456be339418e797ab8f5aefacc9586bcfeac8eaa02bcc57669ab7d7fce40ea
+    immutable_sha256: 83514dcabb9a7ecde21afc99404904ed1074b0f021c5a70ba42f7ed496b96f4b
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_e82f9342cec88191aef266dc4698c67a
+    coverage: "Corporate Offices conventions and three templates with host, zone, occupancy, dimensions and security conditions"
 pending_normalization: []
 resolved_pending_history:
   - id: reference.mjlbb.one-shot-politics-p97-98
@@ -412,4 +426,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Locations: Corporate Offices p76 onward through p90; then pp4-69 contacts, NPC and campaign mechanics. Whole-book field checklist not established."
+next_cursor: "Locations: Hotels p77 onward through p90; then pp4-69 contacts, NPC and campaign mechanics. Whole-book field checklist not established."
