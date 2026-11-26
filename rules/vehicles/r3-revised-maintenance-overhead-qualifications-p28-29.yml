@@ -28,6 +28,23 @@ data:
     cost_value_nuyen: 1250
     stress_points: 0
     monthly_overhead_nuyen: 13
+  overhead_includes: [routine_maintenance, fuel, storage]
+  fleet_worked_example:
+    stress_points_each: 0
+    rows:
+      - {vehicle: Modified Hughes Stallion, cost_value_nuyen: 500000, overhead_nuyen: 5000}
+      - {vehicle: Modified Leyland-Rover van, cost_value_nuyen: 40000, overhead_nuyen: 400}
+      - {vehicle: Eurocar Westwind 2000, cost_value_nuyen: 100000, overhead_nuyen: 1000}
+      - {vehicle: Aztechnology GCR-23C Crawler drone, cost_value_nuyen: 1250, overhead_nuyen: 13}
+    total_overhead_nuyen: 6413
+    middle_lifestyle_example: {discount_nuyen: 200, remaining_before_karma_nuyen: 6213}
+    luxury_lifestyle_example: {months: 6, discount_nuyen: 3000, remaining_before_karma_nuyen: 3413}
+  neglect_worked_example:
+    vehicle: Eurocar Westwind 2000
+    missed_months: 2
+    initial_stress_test_modifier: -2
+    first_catch_up: {payment_nuyen: 1000, skill: Car B/R, target_number: 4, success: true, remaining_modifier: -1}
+    second_catch_up: {payment_nuyen: 1000, success: false, remaining_modifier: -1}
   distinction: Maintenance rules represent normal-use degradation, not the technological obsolescence SOTA rules in Shadowrun Companion pp85-87.
   provenance:
     publication: Rigger 3 Revised
@@ -36,5 +53,5 @@ data:
     edition: Shadowrun Third Edition
     original_source_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
 headline: FanPro10662 Rigger 3 Revised vehicle maintenance qualifications, printed pp28-29/PDF30-31
-summary: Fictional Shadowrun Third Edition maintenance rules; restore the published-value basis, rounding order, and failed catch-up test consequences without modifying historical canonical records.
+summary: Fictional Shadowrun Third Edition maintenance rules; preserve the original four-vehicle calculation, lifestyle discounts, missed-month example and cost categories alongside the previously indexed qualifications.
 framing: reference_exact
