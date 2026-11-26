@@ -1,15 +1,30 @@
 id: entity.cyberware.low-frequency-modulator
 record_type: entity
-name: "Low Frequency Modulator"
+name: Low Frequency Modulator
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '18-19,152'
+pdf_pages: '18-19,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Low Frequency Modulator — equipment row and voice-mask reference
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp18-19,152/PDF18-19,153.
 intrinsic:
-  essence: null
+  essence: '—'
   cost_nuyen: 8000
-  availability: "6/48 hrs"
+  availability: '6/48 hrs'
   street_index: 1.25
-  legality: "6P-Q"
+  legality: '6P-Q'
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Communications headware equipment table statistics"}
+  - {source: source.mm, page: 18, relation: defines, note: 'Internal voice mask accessories'}
+  - {source: source.mm, page: 19, relation: defines, note: 'Game effects and local table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Communications headware equipment table statistics'}
 notes: []
+data:
+  accessory_of: entity.cyberware.internal-voice-mask
+  compatible_hearing: low-frequency hearing cyberware
+  game_effects_reference: entity.cyberware.internal-voice-mask
+  modifier_application: use the referenced accessory rules once
