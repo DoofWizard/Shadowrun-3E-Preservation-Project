@@ -1,15 +1,24 @@
 id: entity.cyberware.scanner-accessory
 record_type: entity
-name: "Scanner Accessory"
+name: Scanner Accessory
 domain: cyberware
 status: ingested
-intrinsic:
-  essence: null
-  cost: "Rating x 500 nuyen"
-  availability: "Rating/72 hrs"
-  street_index: 3
-  legality: "6P-V"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '27,154'
+pdf_pages: '27,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Scanner Accessory — SR3 component and eligible game inputs
+summary: Fictional tabletop RPG equipment in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third Edition, printed pp27,154/PDF27,155.
+intrinsic: {essence: '-', cost: 'Rating x 500 nuyen', availability: 'Rating/72 hrs', street_index: 3, legality: '6P-V'}
+links: {uses: [], requires: [], component_of: [], interacts_with: [entity.cyberware.synthetic-fingerprint]}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 27, relation: defines, note: Scanner Accessory description and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Equipment table}
 notes: []
+data:
+  fictional_game_inputs: [hand of living or recently deceased character, readable print recently left by its owner on an appropriate surface]
+  output: print pattern for linked synthetic fingertip
+  portable: true
+  linked_fingerprint_game_rule: entity.cyberware.synthetic-fingerprint
