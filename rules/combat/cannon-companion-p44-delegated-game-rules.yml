@@ -1,0 +1,29 @@
+id: rule.combat.cannon-companion-p44-delegated-game-rules
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '44'
+pdf_pages: '45'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: delegated fictional RPG rule references'
+summary: 'FASA Corporation, Shadowrun Third Edition, FASA7908, printed p44/PDF45. Original game-rule cross-references and an inventory pricing condition, without duplicating underlying rule records.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, edition: Third Edition, catalog: FASA7908, source_id: source.cc}
+  original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+  splash_round:
+    entity: entity.ammunition.mortar-round-splash
+    listed_cost_includes_compound: false
+    game_effect_reference: {publication: Man & Machine, printed_page: 105, section: Drug Effects}
+  white_phosphorus_mortar:
+    entity: entity.ammunition.mortar-round-white-phosphorus
+    inherits_game_effect_from: entity.ammunition.white-phosphorus-grenade
+    game_effect_reference: {publication: Cannon Companion, printed_page: 41}
+    damage_code_qualification: higher damage codes for the mortar inventory item
+    existing_rule: rule.combat.cannon-companion-grenade-category-game-qualifiers-p40-41
+  missiles_and_rockets:
+    game_rules_and_statistics_reference: {publication: Shadowrun Third Edition, printed_page: 120}
+    existing_core_record: rule.combat.sr3-core-rocket-missile-numeric-p120
+    existing_cc_qualifications: rule.combat.cannon-companion-missile-resolution-timing-qualifiers-p101-102
+  scope_note: Only original game-rule references and inventory pricing qualification are registered here. The external reference is not independently source-certified; shared timing precedence remains unresolved.
