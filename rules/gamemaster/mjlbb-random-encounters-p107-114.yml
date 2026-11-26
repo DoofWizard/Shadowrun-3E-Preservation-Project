@@ -1,0 +1,126 @@
+id: rule.mjlbb.random-encounters-p107-114
+record_type: rule
+status: ingested
+source: source.fanpro-25003
+printed_pages: '107-114'
+pdf_pages: '108-115'
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro25003, FanPro, SR3, pp107-114/PDF108-115: Random Encounters"
+summary: Fictional Shadowrun tabletop encounter selector with seven tables, scenario parameters and discretionary conditions.
+data:
+  publication: {title: "Mr. Johnson's Little Black Book", publisher: FanPro, edition: SR3, catalog: FanPro25003}
+  procedure:
+    printed_page: 107
+    pdf_page: 108
+    steps: [Roll 1D6 on encounter type chart, Independently roll 1D6 on the selected type's encounter chart]
+    reuse: Repeat encounters with altered details and reasons appropriate to the campaign; arrival timing can alter the scenario.
+    location: The listed venues are optional; adapt to the neighborhood. A celebrity in a Z-rated neighborhood is unlikely except under circumstances such as a heavily guarded filming session.
+    use: Encounters may be social or introduce a new run or campaign rather than involve combat.
+  tables:
+    printed_page: 108
+    pdf_page: 109
+    die_each: 1D6
+    row_schema: [roll, outcome]
+    type: [[1, Gang], [2, Police/Security], [3, Racial], [4, Social], [5, Organized Crime], [6, Magic]]
+    gang: [[1, Shakedown], [2, Turf War], [3, Initiation], [4, Rough Riding], [5, Vigilantes], [6, The Car Jack]]
+    police_security: [[1, Pulled Over], [2, The Trap], [3, Accidents], [4, The Rescue], [5, Corporate Action], [6, On Patrol]]
+    racial: [[1, Mothers against Metas], [2, A Night among Ghouls], [3, Racially Motivated], [4, Out of Place], [5, Something Completely Different], [6, Homeless]]
+    social: [[1, In the Club], [2, Bigwigs], [3, Film at Eleven], [4, A Message from the Lord], [5, Professional Courtesy], [6, Starstruck]]
+    organized_crime: [[1, Lost Little Joyboy], [2, Roll Call], [3, Triad War Party], [4, Hit Men], [5, The Snitch], [6, Followed]]
+    magic: [[1, Some Kind of Pet], [2, The Blood Mage], [3, Terror First!], [4, Dead Man Walking], [5, The Show], [6, Elemental on the Loose]]
+  scenario_parameters:
+    shakedown:
+      printed_page: 107
+      pdf_page: 108
+      suggested_gangers_per_runner: 2
+      condition: In this fictional encounter the gang attacks only if it clearly outnumbers or overpowers the victims; paying them off is an alternative to fighting.
+    turf_war:
+      printed_page: 108
+      pdf_page: 109
+      large_fight_per_side: 2D6
+      uneven_fight_attackers: 1D6
+      uneven_fight_rivals: [1, 2]
+      condition: Nonparticipants not wearing rival colors are normally ignored unless they intervene; lethal force is generally limited to elevated hostilities.
+    initiation:
+      printed_page: 108
+      pdf_page: 109
+      fighters_per_side: 1
+      observing_gangers: 1D6
+      observer_intervention: Only if other runners intervene.
+    rough_riding:
+      printed_page: 109
+      pdf_page: 110
+      suggested_location: highway
+      wager_options: [owner certification chips, certified credsticks]
+      credstick_max_nuyen: 800
+    on_patrol:
+      printed_page: 110
+      pdf_page: 111
+      officer_count: 2
+      test: Perception
+      test_per: officer
+      target_number: null
+      condition: GM discretion; if officers notice obvious weapons or armor or indications of suspicious activity, they stop the runners or call for backup.
+    night_among_ghouls:
+      printed_page: 111
+      pdf_page: 112
+      hunting_pack_size: 2D6
+      intended_captives: 1
+      retreat_condition: The remaining fictional ghouls retreat after one runner is captured.
+      alternative: The team instead encounters ghouls carrying off another victim and decides whether to intervene.
+    out_of_place:
+      printed_page: 111
+      pdf_page: 112
+      group_size: 3D6
+      condition: Most are noncombatants; the default elf group can be replaced by another metatype or ethnic, cultural or religious group.
+    roll_call:
+      printed_page: 113
+      pdf_page: 114
+      backup_soldiers: 1D6
+      condition: The fictional Yakuza collector calls for support against runners perceived as a threat.
+    triad_war_party:
+      printed_page: 113
+      pdf_page: 114
+      crew_size: 8
+    hit_men:
+      printed_page: 113
+      pdf_page: 114
+      npc_count: 2
+      npc_archetype: Weapons Specialist
+      reference: SR3 p80
+    snitch:
+      printed_page: 113
+      pdf_page: 114
+      information_price_nuyen: {minimum: 25, maximum: 2500}
+      condition: Varies with campaign level; payment by direct transfer or certified credsticks.
+    followed:
+      printed_page: 113
+      pdf_page: 114
+      test: Perception
+      target_number: 5
+      result: Runners recognize they are being followed.
+    blood_mage:
+      printed_page: 114
+      pdf_page: 115
+      assailant_count: 6
+      condition: The fictional accused mage usually is not a blood mage; other anti-magic prejudice can be substituted.
+    terror_first:
+      printed_page: 114
+      pdf_page: 115
+      spirit_type: city spirit
+      force: {minimum: 2, maximum: 5}
+    dead_man_walking:
+      printed_page: 114
+      pdf_page: 115
+      possible_entities: [shedim inhabiting a corpse, ghoul, zombie servant, apparition, specter, living person]
+      references: [Year of the Comet p149, Magic in the Shadows p104, Magic in the Shadows p121]
+    the_show:
+      printed_page: 114
+      pdf_page: 115
+      condition: If the fictional illusionist detects a mage in the audience, she focuses on that mage and proposes a display of magical effects.
+  scope: Encounter-selection rules, game-affecting setup values and conditions; narrative dialogue is not reproduced. The SURGEd Cerberus Hound on p107 belongs to the preceding One Shot and is not covered by this record.
+  source_label_discrepancies:
+    - Chart says Corporate Action; scenario heading says A Corporate Action.
+    - Chart says Lost Little Joyboy; scenario heading says Little Lost Joyboy.
