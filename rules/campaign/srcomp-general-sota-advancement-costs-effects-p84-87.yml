@@ -45,9 +45,9 @@ data:
     game_master_discretion: The gamemaster chooses the affected subfield and may customize
       the table, die results, and effects.
   global_cost_modifiers:
-    lifestyle_luxury: Character with a maintained Luxury lifestyle may reduce final
+    lifestyle_luxury: Character with a maintained Luxury lifestyle automatically qualifies to reduce final
       nuyen cost of a SOTA advance by 25 percent.
-    lifestyle_high: Character with a maintained High lifestyle may reduce final nuyen
+    lifestyle_high: Character with a maintained High lifestyle automatically qualifies to reduce final nuyen
       cost of a SOTA advance by 10 percent.
     cyberware_grades: Alpha-grade and standard-grade cyberware are subject to relevant
       SOTA cost; beta- and delta-grade cyberware are exempt in this publication for
@@ -72,7 +72,7 @@ data:
       Table; do not automatically reduce all four.
   - field: Vehicles/Rigger Technology (vehicle-control rig or remote deck)
     factor_formula: 10 × initial Reaction bonus provided by cyberware; source example
-      uses 10 factor for a Level 1 VCR and 20 for Level 2
+      uses 10 factor for Level 1 VCRs and remote decks and 20 for Level 2 items
     nuyen_per_factor_point: 1000
     karma_option: Each Good Karma point spent reduces nuyen cost by 500 rather than
       factor size.
@@ -81,8 +81,8 @@ data:
   - field: Personal Armor
     factor_formula: Ballistic Armor Rating of each individual piece of personal armor
     nuyen_per_factor_point: 500
-    failure: Reduce the Ballistic Armor Rating of every affected and unpaid personal-armor
-      piece by 1.
+    failure: Reduce the Ballistic Armor Rating of all personal armor owned by a character
+      who does not pay the SOTA cost by 1.
   - field: NERPS
     factor_formula: not applicable
     failure: No game effect; this table entry represents pop-culture novelty.
@@ -99,6 +99,7 @@ data:
     factor_formula: 10 × current rating of affected ECM/electronic countermeasure
     cost: 'Each SOTA Factor point costs 1 percent of the device’s original price (source
       example Rating 6: factor 60; upkeep 60 percent of initial price).'
+    worked_example_p86: {device_rating: 6, sota_factor: 60, initial_price_nuyen: 60000, upkeep_percent: 60, upkeep_nuyen: 36000}
     failure: Reduce by 1 the ratings of affected maglock keys or surveillance devices
       and affected equipment ECM ratings.
   - field: ECCM
@@ -139,8 +140,8 @@ data:
       SOTA Factor cost to maintain ratings, requiring retraining and money.
     roleplaying_requirements: The GM may require additional in-game acquisition or training tasks beyond payment and may count time, information, tools and equipment among the resources needed to keep up with SOTA.
   cross_references:
-  - Virtual Realities 2.0 Matrix SOTA is external and not reimplemented here.
-  - Rigger 2 Major Systems Table supplies linked vehicle subsystem attributes; its
+  - Virtual Realities 2.0 p78 Matrix SOTA is external and not reimplemented here.
+  - Rigger 2 p86 Major Systems Table supplies linked vehicle subsystem attributes; its
     values are not invented here.
   - Optional Training Rules p48 apply to retraining after two unpaid advances.
   printed_source_ambiguities:
