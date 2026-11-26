@@ -12,12 +12,12 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
-  - {range: "70-92", section: Locations and generation charts, status: pending_original_mechanics_review}
+  - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure only pp90-92; pp70-90 earlier location mechanics remain open"}
   - {range: "93-115", section: Scenarios and random encounters, status: pending_original_mechanics_review}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
@@ -119,6 +119,21 @@ verified_semantic_records:
     gate: verified
     contiguous_advance: false
     journal_library_id: libfile_94f34b55a2148191a1bd05a8fc695686
+  - id: rule.mjlbb.neighborhood-generation-p90-92
+    path: rules/gamemaster/mjlbb-neighborhood-generation-p90-92.yml
+    range_printed: [90, 92]
+    range_pdf: [91, 93]
+    content_class: rule_procedure
+    commit: 82082c4b4d9302f89b31255ef4d9e71a26a568cc
+    blob: 12385ba1a463389f2fa64c7fe24d3918a5c122ba
+    baseline_sha256: b53230de54209c2bbcdb6ff5d64421adfc25fd74ec2ee1c0139c36a0d9cefd12
+    candidate_sha256: 825a7a71a80ec76e70cebd46937d1069f1f2fcff64cd5060696239bb80fb9156
+    immutable_sha256: 3a04eee016534561bee01f6e412f4cdaf258c2071cbeeeb30e50ac6b3f1b38b6
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_9287e37e1fc88191b6bfab82e50ed1db
+    coverage: "64 outcome rows; three-step procedure, size markers, reroll, restaurant exception, discretionary alternatives and worked example"
+    unresolved: "Corporate table die header conflicts with step 3; worked example discrepancies retained without inferred correction"
 pending_normalization: []
 resolved_pending_history:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
@@ -135,4 +150,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Original review pp4-115; quick-resolution systems scoped coverage complete. Whole-book field checklist not established."
+next_cursor: "Original review pp93-115 scenario and random encounter rules, then remaining pp4-90 location/NPC/campaign mechanics. Neighborhood generation scoped coverage complete; whole-book field checklist not established."
