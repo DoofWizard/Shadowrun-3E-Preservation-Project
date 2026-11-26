@@ -35,7 +35,7 @@ data:
     existing: option.skillsofts.customized
     intended_user_skill_bonus: 1
     bonus_counts_for_pulse_or_design: false
-    other_user: {all_target_numbers: 2, effective_skill: half base rating rounded up, per_use_stun: '(Rating)L', resistance: Willpower}
+    other_user: {all_target_numbers: 2, target_number_modifier_duration: while the soft is active, effective_skill: half base rating rounded up, per_use_stun: '(Rating)L', resistance: Willpower}
     purchase: special order with in-game examination and skillwire diagnostics
     actual_size_multiplier: 0.5
     design_size_increase_percent: 150
@@ -59,9 +59,10 @@ data:
     existing: option.skillsofts.implant
     effective_skill: full base rating
     asist_consumption: half base rating rounded up
+    maximum_implant_rating: twice the skillwire ASIST rating
     actual_size_multiplier: 0.5
     design_size_increase_percent: 150
-    capacity_conflict: implant overrides ordinary softs; between implants higher rating prevails
+    capacity_conflict: implant overrides ordinary running softs only if it requires more Mp or ASIST to run; between competing implants higher rating prevails
     incompatible: [pluscode, optimization]
   limitation:
     existing: option.skillsofts.limitation
