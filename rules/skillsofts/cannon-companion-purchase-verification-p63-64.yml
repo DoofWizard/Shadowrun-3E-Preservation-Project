@@ -8,19 +8,20 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7908 Cannon Companion: skillsoft purchase and verification game procedure'
-summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp63-64/PDF64-65; purchasing conditions and five-row verification table supplement existing option acquisition modifiers.'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp63-64/PDF64-65; purchasing conditions, original price terminology and five-row verification table supplement existing option acquisition modifiers.'
 data:
   purchase:
     choose_options: player specifies options and may choose alternatives with gamemaster permission for failed Availability rolls
     permits_required: where applicable
     cost_basis: design size rather than actual size; apply option price adjustments
+    cost_basis_source_qualification: p63 prose names Design rating rather than actual size; p64 worked example explicitly uses design size in Mp as the price basis. Retain both without resolving precedence.
     combined_availability_and_street_index: only highest adjustment in each category applies
     static_and_virus_sold_as_other_soft: use advertised soft statistics, not hidden option statistics
-    gm_discretion: may restrict options without relevant Knowledge or Social skills or introduce an undisclosed game disadvantage
+    gm_discretion: may restrict options without relevant Knowledge or Social skills or intentionally misrepresent the purchase to the character for a game disadvantage or dramatic or humorous effect
     existing_option_table_rows_reused: [adaptive, cluster, customized, defective, dimap, implant, limitation, one-shot, optimization, overdrive, pluscode, static, virus]
   verification:
-    address_table: computer or pocket secretary can read it; listed contents may be inaccurate
-    basic_size_check: {skill: Computer (Cybernetics), target_number: 4, result: actual size}
+    address_table: computer or pocket secretary can read it; intended to identify both skills and options but may be deliberately altered to report false contents
+    basic_size_check: {skill: Computer (Cybernetics), target_number: 4, result: actual size, requires_success: true}
     full_analysis:
       equipment: computer with capacity to load entire actual skillsoft size
       skill: Computer (Cybernetics)
