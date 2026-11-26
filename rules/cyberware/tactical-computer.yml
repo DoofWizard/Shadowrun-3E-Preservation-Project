@@ -1,16 +1,59 @@
 id: rule.cyberware.tactical-computer
 record_type: rule
-name: "Tactical Computer"
+name: Tactical Computer
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '22-23'
+pdf_pages: '22-23'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Tactical Computer — SR3 sensory rating and bonus table
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed/PDF pp22-23.
 effective: {status: current, source: source.mm, page: 22, basis: defines}
-scope: {applies_to: ["characters using a tactical computer"]}
+scope: {applies_to: [characters using a tactical computer]}
 resolution:
-  summary: "A tactical computer combines multiple sensory inputs and tactical software to improve combat decision-making. Each sense requires a dedicated or generic input port and an appropriate tactical-sense program. Every two usable senses increase the tactical rating, which can provide Combat Pool dice and Small Unit Tactics benefits subject to the source's limits."
-  inputs: ["usable senses", "port assignments", "tactical sense programs", "tactical computer rating"]
-  outputs: ["Combat Pool bonus and Small Unit Tactics benefits"]
+  summary: Applicable sensory inputs determine rating and associated tabletop combat bonuses.
+  inputs: [usable senses, port assignments, tactical sense programs, tactical computer rating]
+  outputs: [Combat Pool bonus, Surprise Test Combat Pool access, Small Unit Tactics bonus]
   steps: []
 links: {uses: [rule.cyberware.router-interconnectivity], affects: [], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "22-23", relation: defines, note: "Tactical Computer, BattleTac and tactical-computer bonuses"}
+  - {source: source.mm, pages: '22-23', relation: defines, note: Tactical Computer effects and bonus table}
 notes: []
+data:
+  input:
+    dedicated_port: fixed sense assigned at installation
+    generic_port: reassignable to different senses
+    eligible_sources: [natural senses, cybernetic sense implants, linked external sensors]
+    basic_senses_auto_connected: [normal sight, hearing, taste, touch, smell]
+    tactical_program_required_per_sense: true
+    program_memory_mp: 50
+    program_locations: [chip, headware memory, linked device]
+    applicability: Only useful sensory data in the current combat situation counts; GM determines relevance.
+    examples: [normal vision in near or total darkness is unusable, touch and taste seldom apply]
+    radio_channels_per_received_sense: 1
+    orientation_system_senses: 2
+    orientation_system_requires_linked_port: true
+  bonuses:
+    applicable_senses_per_rating_point: 2
+    combat_pool_dice_per_rating_point: 1
+    maximum_combat_pool_bonus_dice: 4
+    small_unit_tactics_bonus_per_rating_point: 1
+    surprise_test_combat_pool_percent_per_rating_point: 25
+    maximum_surprise_test_combat_pool_percent: 100
+    small_unit_tactics_untrained: Use bonus as skill rating.
+    applies_to: [ranged combat, melee combat]
+    excluded: [rigging, decking]
+    rows:
+      - {rating: 1, combat_pool_bonus: 1, surprise_test_pool_percent: 25, small_unit_tactics_bonus: 1}
+      - {rating: 2, combat_pool_bonus: 2, surprise_test_pool_percent: 50, small_unit_tactics_bonus: 2}
+      - {rating: 3, combat_pool_bonus: 3, surprise_test_pool_percent: 75, small_unit_tactics_bonus: 3}
+      - {rating: 4, combat_pool_bonus: 4, surprise_test_pool_percent: 100, small_unit_tactics_bonus: 4}
+  operation:
+    background_tasks: true
+    actions_required: 0
+    standalone_allowed: true
+    battletac_master_requires: [BattleTac protocol modification, linked radio]
+    battletac_master_transmits_data_to: [cybernetic receiver units, external receiver units]
