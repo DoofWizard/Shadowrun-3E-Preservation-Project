@@ -1,15 +1,34 @@
 id: entity.cyberware.cyberfins
 record_type: entity
-name: "Cyberfins"
+name: Cyberfins
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '27-28,154'
+pdf_pages: '27-28,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberfins — SR3 movement and equipment compatibility
+summary: Fictional tabletop RPG augmentation in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp27-28,154/PDF27-28,155.
 intrinsic:
   essence: 0.3
+  concealability: '—'
   cost_nuyen: 10500
-  availability: "5/48 hrs"
+  availability: '5/48 hrs'
   street_index: 1.25
-  legality: "3P-N"
+  legality: '3P-N'
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 27, relation: defines, note: Cyberfins description}
+  - {source: source.mm, page: 28, relation: defines, note: Game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes: []
+data:
+  swimming_rate_multiplier: 0.5
+  movement_rate_basis: normal walking or running rate
+  swimming_reference: SR Companion p47
+  deployment: extended
+  attack_rule_reference: hand razors
+  attack_power_modifier: -1
+  incompatible_equipment: [standard swim fins, any gloves]
