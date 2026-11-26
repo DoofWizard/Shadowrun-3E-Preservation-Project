@@ -12,7 +12,7 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
@@ -22,7 +22,7 @@ routing:
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
-  - {range: "122 onward", section: Quick resolution systems, status: pending_original_mechanics_review}
+  - {range: "122-124", section: Quick resolution systems, status: partial_vehicle_verified_decking_pending}
 verified_semantic_records:
   - id: reference.mjlbb.high-level-campaign-guidance-p118-119
     path: references/campaign/mjlbb-high-level-campaign-guidance-p118-119.yml
@@ -90,6 +90,26 @@ verified_semantic_records:
     immutable_sha256: a1cc4ec910495fed4a3f1a2d63810685fe0b2f2312755ce210bc36e4bb5267e3
     gate: verified
     contiguous_advance: false
-pending_normalization: []
+  - id: rule.mjlbb.quick-resolution-vehicle-combat-p123-124
+    path: rules/vehicle/mjlbb-quick-resolution-vehicle-combat-p123-124.yml
+    range_printed: [123, 124]
+    range_pdf: [124, 125]
+    content_class: rule_procedure
+    commit: bc3f33d76421c7d74e82cd4e0db6d58f40f1be52
+    blob: 2e828b3866dfc1a6399e740c2830aafb72759d0e
+    baseline_sha256: b3bd55fd80c7b79e622de020c6997fdf6b810fe5a25560f01b94bc29267c06f2
+    candidate_sha256: 4930e654edc89deca62c08cb996d48ca1935c1d928cca027c388aec14b5c0b03
+    immutable_sha256: e908fd826661eee1aa54a328ed2922ba8389a7a85654de1bd8824b94ec94191a
+    gate: verified
+    contiguous_advance: false
+pending_normalization:
+  - id: rule.mjlbb.quick-resolution-decking-p122-124
+    path: rules/matrix/mjlbb-quick-resolution-decking-p122-124.yml
+    range_printed: [122, 124]
+    range_pdf: [123, 125]
+    candidate_sha256: 7e337d54a59d1a190510d1436f803b9d482dddd329d85963da1823f75bd2eabc
+    expected_blob: 03630922b7c57c423776457f73d3f3ae0f6dc533
+    reason: "create_file returned HTTP 409 ref conflict; exact-path readback returned 404; no confirmation"
+    journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Low/high-level campaigns and reputation/prejudice scopes covered. Next quick resolution pp122-124; preserve original formula/row-key and odd-point ambiguities. Whole-book field checklist not established."
+next_cursor: "Complete pending quick decking transaction after conflict reconciliation, then original review of pp4-115. Whole-book field checklist not established."
