@@ -1,15 +1,38 @@
 id: entity.cyberware.internal-voice-mask
 record_type: entity
-name: "Internal Voice Mask"
+name: Internal Voice Mask
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '18-19,152'
+pdf_pages: '18-19,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Internal Voice Mask — limitations and modulator action timing
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp18-19,152/PDF18-19,153.
 intrinsic:
   essence: 0.1
-  cost: "Rating x 4,000 nuyen"
-  availability: "6/48 hrs"
+  cost: 'Rating x 4,000 nuyen'
+  availability: '6/48 hrs'
   street_index: 1
-  legality: "6P-Q"
+  legality: '6P-Q'
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Communications headware equipment table statistics"}
+  - {source: source.mm, page: 18, relation: defines, note: 'Device and modulator context'}
+  - {source: source.mm, page: 19, relation: defines, note: 'Game effects and purchase statistics'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Equipment table'}
 notes: []
+data:
+  normal_effect: alters pitch and timbre so the character's voice is not recognizable
+  base_rules: {source: source.sr3-core, printed_page: 291, reference: external voice mask}
+  voice_imitation_allowed: false
+  optional_modulators:
+    - {id: entity.cyberware.high-frequency-modulator, compatible_hearing: high-frequency hearing cyberware}
+    - {id: entity.cyberware.low-frequency-modulator, compatible_hearing: low-frequency hearing cyberware}
+  modulator_output: high or low frequencies inaudible to most metahumans
+  low_frequency_speech:
+    short_word_or_phrase_action: Simple Action
+    full_sentence_action: Complex Action
+    relative_information_rate: lower than ordinary speech
+    fictional_acoustic_properties: travels farther and passes through barriers more readily than ordinary sound
