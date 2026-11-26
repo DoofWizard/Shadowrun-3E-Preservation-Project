@@ -1,16 +1,41 @@
 id: rule.cyberware.router-interconnectivity
 record_type: rule
-name: "Router Interconnectivity"
+name: Router Interconnectivity
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '22'
+pdf_pages: '22'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Router — SR3 dedicated device ports and neural-interface boundaries
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed/PDF p22.
 effective: {status: current, source: source.mm, page: 22, basis: defines}
-scope: {applies_to: ["cyberware devices connected through a router"]}
+scope: {applies_to: ['cyberware devices connected through a router']}
 resolution:
-  summary: "A router provides multiple dedicated or generic cyberware ports, letting linked devices exchange data. Dedicated ports accept one assigned input; generic ports can be reassigned. Routers can connect to external devices through an appropriate interface and have a maximum of ten ports excluding the brain connection."
-  inputs: ["router ports", "connected devices", "port assignment"]
-  outputs: ["allowed cyberware data paths"]
+  summary: A router supports communication and data exchange among linked devices, but control requires a direct neural interface.
+  inputs: [router ports, connected devices, datajack or router link]
+  outputs: [allowed cyberware data paths]
   steps: []
 links: {uses: [], affects: [], modified_by: [], interacts_with: [subsystem.cyberware.interconnectivity]}
 sources:
-  - {source: source.mm, page: 22, relation: defines, note: "Router game effects and port rules"}
+  - {source: source.mm, page: 22, relation: defines, note: 'Router game effects and port rules'}
 notes: []
+data:
+  connection:
+    direct_neural_interface_to_brain: true
+    ports_per_linked_device: 1
+    ports_used_by_brain_connection: 0
+    ports_at_each_end_of_datajack_or_router_link: 1
+    maximum_ports_excluding_brain: 10
+    non_headware_requires_microfilament_fiberoptic_cables: true
+    datajack_link_allows_exchange_between_connected_devices_including_external_devices: true
+  cyberlimbs:
+    router_direct_connection_to_internal_devices_allowed: false
+    internal_devices_require_dni: true
+    cyberlimb_dni_may_link_to_router_as_headware: true
+  control:
+    router_allows_communication_and_data_transfer: true
+    router_alone_allows_cybernetic_control: false
+    cybernetic_control_requires_dni: true
