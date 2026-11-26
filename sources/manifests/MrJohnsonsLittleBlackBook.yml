@@ -12,13 +12,13 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot p107 creature stat block and independent-head exceptions visually reviewed; One Shots format and Sit on This pp93-94/PDF94-95 visually reviewed; PDF96 (printed p95) full-page illustration reviewed; Moving Violation pp96-97/PDF97-98 reviewed and covered; Deliver Me from Evil p97/PDF98 reviewed and covered; Mister, Can You Help Me Find My Parents? pp98-99/PDF99-100 reviewed and covered; remaining One Shots mechanics open. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot p107 creature stat block and independent-head exceptions visually reviewed; One Shots format and Sit on This pp93-94/PDF94-95 visually reviewed; PDF96 (printed p95) full-page illustration reviewed; Moving Violation pp96-97/PDF97-98 reviewed and covered; Deliver Me from Evil p97/PDF98 reviewed and covered; Mister, Can You Help Me Find My Parents? pp98-99/PDF99-100 reviewed and covered; Politics pp97-98/PDF98-99 reviewed and covered; remaining One Shots mechanics open. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
   - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure only pp90-92; pp70-90 earlier location mechanics remain open"}
-  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; random encounters pp107-114; SURGEd Cerberus Hound p107 covered; One Shots format and Sit on This pp93-94 covered; p95 illustration reviewed; Moving Violation pp96-97 covered; Deliver Me from Evil p97 covered; Find My Parents pp98-99 covered; Politics pp97-98 staged but unconfirmed; remaining scenarios starting Kidnapped! p99 through p107 open"}
+  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; random encounters pp107-114; SURGEd Cerberus Hound p107 covered; One Shots format and Sit on This pp93-94 covered; p95 illustration reviewed; Moving Violation pp96-97 covered; Deliver Me from Evil p97 covered; Find My Parents pp98-99 covered; Politics pp97-98 confirmed and indexed; remaining scenarios starting Kidnapped! p99 through p107 open"}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
@@ -234,7 +234,22 @@ verified_semantic_records:
     contiguous_advance: false
     prewrite_journal_library_id: libfile_786d00db4eb88191b58149066b6704fa
     coverage: "Find My Parents alternative compensation, conditional payment, NPC rating, location template and optional scenario adjustments"
-pending_normalization:
+  - id: reference.mjlbb.one-shot-politics-p97-98
+    path: references/campaign/mjlbb-one-shot-politics-p97-98.yml
+    range_printed: [97, 98]
+    range_pdf: [98, 99]
+    content_class: campaign_guidance
+    commit: 2be56ee4885a94139dedc652c4d9c2fe7b0c7312
+    blob: 606a00943cd9ad534765f0b3dc0446915135876e
+    baseline_sha256: 0ed51dcd6c006d07523c12419d751410ea23456676aa9d7526e306d68b6aa364
+    candidate_sha256: 79e01670825a4dde0f44fa57a516fc78578b27b2dba94dc91c40c9ef60c5c2b1
+    immutable_sha256: 470ccd23e73632235a921314b4bb00e1f308ec5e9201ab5454d793e1ba993fb5
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_d20d60632e888191a9e0d2eda82f140d
+    coverage: "Politics scenario rating, three phases, success condition, location references and optional encounter difficulty"
+pending_normalization: []
+resolved_pending_history:
   - id: reference.mjlbb.one-shot-politics-p97-98
     path: references/campaign/mjlbb-one-shot-politics-p97-98.yml
     range_printed: [97, 98]
@@ -243,7 +258,6 @@ pending_normalization:
     expected_blob: 1339af3fd8decff19daf111cd989dc232379eba4
     reason: "create_file returned HTTP 409 ref conflict; exact-path fetch then HTTP 404; no confirmation"
     journal_library_id: libfile_6d51cbee83848191a29af2c7b4442970
-resolved_pending_history:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
     path: rules/matrix/mjlbb-quick-resolution-decking-p122-124.yml
     range_printed:
@@ -258,4 +272,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Reconcile pending Politics pp97-98; review Kidnapped! p99 and subsequent One Shots through p107, including NPC ratings and specific scenario rules; pp93-94 format and Sit on This covered; p95 illustration reviewed; Moving Violation pp96-97, Deliver Me from Evil p97, Find My Parents pp98-99 and p107 SURGEd Cerberus Hound confirmed and indexed. Then remaining pp4-90 location/NPC/campaign mechanics. Whole-book field checklist not established."
+next_cursor: "Politics pp97-98 confirmed and indexed; review Kidnapped! p99 and subsequent One Shots through p107, including NPC ratings and specific scenario rules; pp93-94 format and Sit on This covered; p95 illustration reviewed; Moving Violation pp96-97, Deliver Me from Evil p97, Find My Parents pp98-99 and p107 SURGEd Cerberus Hound confirmed and indexed. Then remaining pp4-90 location/NPC/campaign mechanics. Whole-book field checklist not established."
