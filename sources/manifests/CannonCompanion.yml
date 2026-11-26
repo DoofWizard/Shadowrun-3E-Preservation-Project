@@ -125,15 +125,23 @@ postcompletion_source_table_reconciliation:
       range_printed: [97, 97]
       range_pdf: [98, 98]
       content_class: rule_exact
-      commit: 9bdf4ca8a2deacc3cb4f21f31f9926ac6f5e6e00
-      blob: 412a73558c17b480af6dce16b98250e343ab38b1
-      baseline_sha256: 0e2b740d407b8e9a95770a0e96a12911d4f103d95d9e168c605f47dda17fd82b
-      candidate_sha256: df64d89dc673cd1a2f48e9836abf3c0c2ba4b7dca8917fd98a23398dd23ff569
-      immutable_sha256: a9e91e97880a63da74898c270d1857ab162c5345b047e2a63bbaeaa04aa156c8
+      commit: 70ef7f063ab1c7aa9416eee004c2bf40b9128f46
+      blob: 8a476657b042faaddb5799f9d8edf884690c4b76
+      baseline_sha256: 2da554a470e455d93324a6759977133e3530be3d8da07078b4efd7e0fd3317e7
+      candidate_sha256: 80bf457e560fed94b9aa9e6a6d599a13013820a8bb6e30776b561cd973c7d03a
+      immutable_sha256: da03eecd842682720ad86b284bea55bd06f56cd43d6c04c5d213ca7c5cabe8e0
       original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
       gate: verified
       contiguous_advance: false
-      scope: "Original relevant Athletics specializations and worked dodging example; shared option reused read-only"
+      scope: "Original relevant Athletics specializations, character-specific dice expiry and worked dodging example; shared option reused read-only"
+      prior_verified_revision:
+        commit: 9bdf4ca8a2deacc3cb4f21f31f9926ac6f5e6e00
+        blob: 412a73558c17b480af6dce16b98250e343ab38b1
+        baseline_sha256: 0e2b740d407b8e9a95770a0e96a12911d4f103d95d9e168c605f47dda17fd82b
+        candidate_sha256: df64d89dc673cd1a2f48e9836abf3c0c2ba4b7dca8917fd98a23398dd23ff569
+        immutable_sha256: a9e91e97880a63da74898c270d1857ab162c5345b047e2a63bbaeaa04aa156c8
+        gate: verified
+        original_journal: not_established_in_this_run
 
 source_mechanics_reconciliation_2026_11_23_second_pass:
   acceptance: not_certified_whole_source
@@ -2924,8 +2932,31 @@ book_closure_checklist_2026_11_25:
       evidence_or_gap: "23_advanced_melee_options and 23_martial_arts; retain exact audit scopes and unresolved evidence. Original p93/PDF94 four general conversion examples and six sample-character example groups now individually confirmed and indexed; shared conversion procedure reused. No formal scope acceptance."
     - pdf: [95, 98]
       scope: "Ambidexterity, armor, athletics and cover"
-      status: prior_review_partial
-      evidence_or_gap: "23_handedness, 23_second_pass, 23_camouflage_cover, postcompletion_source_table_reconciliation; retain audited fields and exact conflicts. Original p96 untrained secondary dice rounding and two worked examples individually confirmed and indexed. Cover estimation, exact reciprocal modifier and both numerical examples now confirmed and individually indexed; existing five table rows reused. No formal acceptance."
+      status: coverage_reconciled_acceptance_blocked
+      evidence_or_gap: "Original pp94-98/PDF95-99 mechanical scope reviewed, including p95 illustration and p98 five-row cover table only. All fourteen live canonical bindings checked against original images and existing scoped audits; one character-specific Athletics expiry qualifier corrected and individually confirmed. Existing offhand and cover journals checked for stored consistency. Shared rules remain read-only; camouflage eligibility supplements qualify the overly broad inherited modifiers. Original p94 recommends GM/player review and agreement before adopting optional rules; retained as campaign selection context, not a hard mechanical prerequisite. No formal acceptance."
+      coverage_recheck:
+        basis_manifest_blob: 4a9b3ae779d2c283b2512f83b895d41a9ed83178
+        source_verification: source_pdf_hash_verified
+        original_images: [95, 96, 97, 98, 99]
+        original_table_rows: {primary_melee: 10, secondary_melee: 17, cover: 5}
+        shared_bindings:
+          options/combat/two-weapon-fighting.yml: d997e9c31de0bd78e833abc2c61853c26edce534
+          rules/combat/sr3-core-attacker-situational-numeric-p112.yml: 34dfbdc5900e78e3e8524f578640ff38988ea1e8
+          options/combat/armor-degradation.yml: b49504d58abaae5143b1a2653eed9c69ab92ef82
+          procedures/armor/repair.yml: d2e24d2a7572ebf018426c5790ff54e415bccdfc
+          options/combat/athletics-dodging.yml: 3fdc38f914c1c3fb64e374ec3b4eca20464fd9b8
+          rules/combat/camouflage.yml: 578422aea17911cbf802d41ca5a7acf6039edc11
+          modifiers/combat/partial-cover.yml: 87c173f3b8fb5730d62ddb61a4a0efa7313b0d5d
+        source_local_bindings:
+          rules/skills/cannon-companion-offhand-general-test-modifiers-p94-96.yml: b980607454dfcb085d391255389d6ed2774b2c32
+          rules/combat/cannon-companion-two-weapon-melee-eligibility-p96.yml: d2b9b480dcdef246741b80184495a10089ad723e
+          rules/combat/cannon-companion-simultaneous-action-compatibility-p94.yml: 55579f37a53094206b56f79d02ba468166d6144b
+          rules/armor/cannon-companion-degradation-repair-clarifications-p96-97.yml: 7bfc17ac9bcd15ccb0e70393d06f17e17bb611d2
+          options/combat/cannon-companion-athletics-dodging-specializations-p97.yml: 8a476657b042faaddb5799f9d8edf884690c4b76
+          rules/combat/cannon-companion-camouflage-eligibility-original-p97.yml: 6feb86e1c2d0f9c2e041501ef626b92ed7f1b2ec
+          rules/combat/cannon-companion-cover-estimation-examples-p97.yml: f34c48185ff8c44e2a3809691274cafcaf9be2b4
+        receipt_debt: "Original baseline, prepare, confirm and individual index artifacts for six inherited CC bindings and four older source-local supplements (melee eligibility, action compatibility, armor clarification, camouflage eligibility) not established here; prior Athletics revision journal also unestablished. Core is independently closed and read-only. Existing audit digest and commit references retained; current recheck is not retroactive acceptance."
+        remaining_shared_precedence: "Camouflage mismatch and movement eligibility, exact half cover penalty, and character-specific Athletics expiry are represented by source-local supplements; shared rule wording remains unchanged."
     - pdf: [99, 103]
       scope: "Advanced combat game resolution and movement"
       status: prior_review_partial
