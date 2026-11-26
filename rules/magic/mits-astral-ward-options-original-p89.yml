@@ -1,0 +1,74 @@
+id: rule.magic.mits-astral-ward-options-original
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '89'
+pdf_pages: '90'
+edition_scope: SR3
+content_class:
+- rule_procedure
+data:
+  source_scope: Readable ward options in the fictional Shadowrun rulebook; the preceding
+    aura-synchronization procedure begins on damaged printed p88 and is not reconstructed
+    here.
+  standard_ward_reference: SR3 core p174
+  creator_notice: The creator automatically knows when the ward is attacked in astral
+    combat.
+  spirit_creation:
+    service: A spirit may create a ward as a service or favor for its summoner.
+    test_substitution: Force replaces Magic in the ward creation test.
+    masking_eligibility: A spirit with Aura Masking may create masking wards (MitS
+      p117).
+  alarm_ward:
+    detection: Astral Perception Test by an astrally projecting or perceiving character.
+    detection_target_modifier: Ward Force
+    notice: Creator is alerted by an unauthorized astral entity crossing the boundary.
+    synchronized_aura: Initiates may fool it using the normal ward aura-synchronization
+      rule.
+    creation: Standard ward procedure
+    creation_time_multiplier: 0.5
+  polarized_ward:
+    visibility: Opaque from one direction; nearly invisible from the other. A viewer
+      on the clear side can see the opaque-side surroundings.
+    detection: Astral Perception Test by projecting or perceiving characters to notice
+      the clear side.
+    detection_target_number: 8
+    barrier_directions: both
+    creation: Standard ward procedure
+  masking_ward:
+    eligible_creators:
+    - initiate with Masking
+    - spirit with Aura Masking
+    standard_ward_properties: true
+    masks: Magical effects within the ward appear mundane in astral space if their
+      Force does not exceed ward Force.
+    effect_force_ceiling: Ward Force
+    eligible_viewers:
+    - initiate
+    - spirit with Aura Masking
+    penetration_test: Magic Test
+    penetration_target_number: Ward Force
+    penetration_success_threshold: At least the difference in grades between creator
+      and viewer.
+    failed_penetration: Ward remains unseen but blocks movement. Contact can reveal
+      it for normal astral combat; spell targeting and synchronized-aura deception
+      require visibility.
+    successful_penetration: The ward and magical activity masked beyond it become
+      visible to the viewer.
+    external_view_only: true
+    breach: Effects masked by the ward become visible when its astral barrier is breached.
+    nested_opaque_barrier: Remains opaque and visible externally.
+    creation: Standard ward procedure
+    cooperative_creation_grade: Lowest grade among the cooperating initiates for penetration
+      resolution.
+  canon_relationships:
+    extends:
+    - subsystem.magic.astral-security
+    - rule.magic.astral-barriers
+    scope: Adds source-specific options rather than replacing standard SR3 barrier
+      rules.
+headline: 'FASA7907 Magic in the Shadows: ward options (SR3, FASA Corporation, printed
+  p89/PDF90)'
+summary: 'Fictional tabletop game rules: spirit ward creation, alarm, polarized and
+  masking wards.'
+framing: reference_exact
