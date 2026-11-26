@@ -12,13 +12,13 @@ source_drive_id: 1NlfIQlYjjBfjloAl-xketCgFZ1OTwu-z
 intake_blob: fd48a2fb3ae67b4b663923cb6d02f2e719f83705
 status: ingesting
 scan_depth: directed
-page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot portion of p107 remains open. All other mapping requires direct review."
+page_map_scope: "Original TOC printed pp2-3/PDF3-4; original printed pp116-118/PDF117-119 and pp120-121/PDF121-122 visually inspected. Printed pp122-124/PDF123-125 visually reviewed; PDF126 is rear cover. Neighborhood generation printed pp90-92/PDF91-93 visually reviewed; earlier location descriptions on p90 remain for review. Runs on the Fly printed p115/PDF116 visually reviewed. Random encounters printed pp107-114/PDF108-115 visually reviewed; preceding One Shot p107 creature stat block and independent-head exceptions visually reviewed; other One Shots mechanics remain open. All other mapping requires direct review."
 routing:
   - {range: "4", section: Introduction, status: pending_original_mechanics_review}
   - {range: "5-35", section: Anatomy of a Shadowrun, status: pending_original_mechanics_review}
   - {range: "36-69", section: Contacts and NPCs, status: pending_original_mechanics_review}
   - {range: "70-92", section: Locations and generation charts, status: partial_scoped_coverage, covered_scope: "Neighborhood generation procedure only pp90-92; pp70-90 earlier location mechanics remain open"}
-  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; random encounters pp107-114; preceding One Shots pp93-107 remain open"}
+  - {range: "93-115", section: Scenarios and random encounters, status: partial_scoped_coverage, covered_scope: "Runs on the Fly p115; random encounters pp107-114; SURGEd Cerberus Hound p107 covered; other One Shots pp93-107 remain open"}
   - {range: "116-118", section: Low-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "118-119", section: High-level campaigns, status: mechanics_covered_scoped_and_coverage_only}
   - {range: "120-121", section: Reputation and prejudice, status: mechanics_covered_scoped_and_coverage_only}
@@ -164,6 +164,20 @@ verified_semantic_records:
     prewrite_journal_library_id: libfile_c2c2f267c6208191852f52bcc720f60d
     coverage: "Seven 1D6 tables, 42 rows, encounter selection and numeric scenario parameters; prior One Shot on p107 excluded"
     unresolved: "Two chart/heading label variants retained"
+  - id: entity.mjlbb.surged-cerberus-hound-p107
+    path: entities/critters/mjlbb-surged-cerberus-hound-p107.yml
+    range_printed: [107, 107]
+    range_pdf: [108, 108]
+    content_class: rule_exact
+    commit: 2ff09ddca1806619c7e761d96aefa651349c3247
+    blob: 5dc7a21034b396d669431b612d84285604ad83a1
+    baseline_sha256: fdbf3e3b08b9ef7de798877f3b1edcbbe89fe5556684c50c0548aba4446b07ad
+    candidate_sha256: 6e53e01abc79be96ad6643da4fc0b7ae149babf97bd815e8741cf0458dea11eb
+    immutable_sha256: ed2509bb5fcf3def8e3cefc7289c1babf6a480bb3e603c4582e2ed79dff3a8e5
+    gate: verified
+    contiguous_advance: false
+    prewrite_journal_library_id: libfile_726b566aae2c819191e097ecfdd60ecb
+    coverage: "Individual SURGEd variant stat block and independent-head action exceptions; not ordinary species supersession"
 pending_normalization: []
 resolved_pending_history:
   - id: rule.mjlbb.quick-resolution-decking-p122-124
@@ -180,4 +194,4 @@ resolved_pending_history:
       no confirmation'
     journal_library_id: libfile_5c6ea277a7d88191bd0c1d9a757c6623
 global_pages_advanced: 0
-next_cursor: "Review One Shots pp93-107, including p107 SURGEd Cerberus Hound statistics and action exceptions, then remaining pp4-90 location/NPC/campaign mechanics. Random encounter selection and numeric setup, neighborhood generation and Runs on the Fly scoped coverage complete; whole-book field checklist not established."
+next_cursor: "Review remaining One Shots pp93-107, including NPC ratings and specific scenario rules; p107 SURGEd Cerberus Hound stat block confirmed and indexed. Then remaining pp4-90 location/NPC/campaign mechanics. Random encounter selection and numeric setup, neighborhood generation and Runs on the Fly scoped coverage complete; whole-book field checklist not established."
