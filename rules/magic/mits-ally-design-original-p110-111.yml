@@ -7,13 +7,14 @@ pdf_pages: '111-112'
 edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
-headline: FASA7907 SR3 Ally Spirit design and Karma costs
+headline: FASA7907 SR3 Ally Spirit design, Karma costs and original skill-cost discrepancy
 summary: FASA Corporation's Magic in the Shadows, fictional tabletop rules, printed 110-111/PDF111-112.
 data:
   forms:
     initial_karma: 0
     extra_form_karma: 1
     restrictions: GM approves the forms; an inhabiting ally has no materialized form. Form choice does not change attributes.
+    permitted_form_examples: [metahuman, animal, mechanical device]
   force:
     initial_magic_cost: 1
     additional_force_karma: 5 * current Force per point
@@ -24,10 +25,13 @@ data:
     mental_initial: creator's ratings at creation
     mental_change_allowed: false
     initial_karma: 0
+    mental_creator_later_changes_affect_ally: false
   skills:
     initial_sorcery: creator's Sorcery at conjuring
     initial_active_karma_per_point: 1
     initial_knowledge_karma_per_point: 0.5
+    initial_cost_prose_p110_karma_per_skill_point: 1
+    initial_cost_conflict: Printed p110 prose gives one Karma per point for all skills; the p111 cost block distinguishes Active and Knowledge Skills. Retain both statements without selecting an overriding rule.
     later_increase_karma: current skill rating per point for either skill class
     ceiling: creator's corresponding skill rating; only skills the creator has
     prohibited: Conjuring
@@ -35,6 +39,7 @@ data:
   powers:
     sense_link_karma: 5
     other_listed_power_karma: 0
+    zero_cost_powers: [Aid Power, Inhabiting, Materialization, Sorcery, Telepathic Link, Three-Dimensional Movement]
   spells:
     initial_random_spell_karma: 0
     initial_random_spell_condition: Ally has Sorcery power; select randomly from creator's spells.
@@ -46,11 +51,12 @@ data:
     additional_points_cost: one point from creator's Karma Pool per point added
     maximum: 2 * ally Force
     later_transfer: requires ritual of change
+    use: Standard character Karma Pool rules apply; allies often use the pool in escape attempts.
   example:
     force_4_karma: 30
     two_extra_forms_karma: 2
     strength_4_to_7_karma: 15
     total_karma: 47
   canon_corrections:
-    - rule.spirits.designing-ally conflates creation and later skill cost; initial Knowledge Skills cost 0.5 per point.
+    - rule.spirits.designing-ally conflates creation and later skill cost; the p111 cost block specifies initial Knowledge Skills at 0.5 per point, while p110 prose states one per point for all skills.
     - Extra Karma Pool is transferred from the creator's Karma Pool, not ordinary Good Karma.
