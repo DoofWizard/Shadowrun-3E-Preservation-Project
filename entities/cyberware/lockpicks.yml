@@ -1,15 +1,27 @@
 id: entity.cyberware.lockpicks
 record_type: entity
-name: "Lockpicks"
+name: Lockpicks
 domain: cyberware
 status: ingested
-intrinsic:
-  essence: null
-  cost_nuyen: 500
-  availability: "8/2 wks"
-  street_index: 3
-  legality: "6P-N"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '27,154'
+pdf_pages: '27,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Lockpicks — SR3 Active Skill, equipment and base time
+summary: Fictional tabletop RPG equipment in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third Edition, printed pp27,154/PDF27,155.
+intrinsic: {essence: '-', cost_nuyen: 500, availability: '8/2 wks', street_index: 3, legality: '6P-Q'}
+links: {uses: [], requires: [], component_of: [entity.cyberware.body-compartment], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 27, relation: defines, note: Lockpicks game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Equipment table}
 notes: []
+data:
+  applicable_lock_class: key-and-tumbler
+  typical_lock_ratings: [4, 5]
+  required_active_skill: Lockpicking
+  linked_attribute: Quickness
+  requires_both_hands: true
+  required_game_equipment: [pick, 'torque wrench (external or implanted)']
+  base_time_seconds: '20 x lock Rating'
