@@ -8,7 +8,7 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7908 Cannon Companion: skillsoft activation and capacity game rules'
-summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp58 and 60/PDF59 and 61; intervening p59 is illustration. Original action economy, skillwire capacity and upgrade cost conditions supplement accepted core.'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp58 and 60/PDF59 and 61; intervening p59 is illustration. Original external relay eligibility and processor-only Pulse upgrade requirement supplement the existing activation and capacity rules.'
 data:
   existing_core_records:
     - rule.skills.sr3-core-skillsoft-chip-access-memory-p295-296
@@ -16,6 +16,9 @@ data:
   existing_supplement: subsystem.skillsofts.cc-options
   activation:
     access_prerequisite: compatible cyberware with accessible chip or memory
+    external_relay_devices:
+      - skillsoft jukebox
+      - other computer with appropriate accessories
     headware_loading_action: Simple
     io_speed_reference: I/O Speed, p46 (publication not specified in the printed cross-reference)
     activate_action: Free
@@ -29,6 +32,7 @@ data:
     skillwire_memory_storage_provided: false
     skillwires_work_with_knowsofts: false
   pulse_rating_upgrade:
+    component_requirement: Only a new processor must be purchased and implanted in the fictional skillwire system.
     fictional_upgrade_category: cyberware upgrade; M&M p47 Implant Surgery
     price_formula: price of system with desired Pulse rating minus price of existing system with current Pulse rating
   scope: Core chip access, skill types, capacity definitions and purchase limits reused; no alteration of core hardware records.
