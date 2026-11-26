@@ -1,53 +1,85 @@
 id: rule.matrix.target-matrix-data-havens
 record_type: rule
-name: "Target: Matrix - Data Haven Procedures"
+name: 'Target: Matrix - Data Haven Procedures'
 domain: matrix
 status: ingested
 source: source.fasa-7219
-printed_pages: "120-122"
-pdf_pages: "121-123"
-
+printed_pages: 120-122
+pdf_pages: 121-123
 general:
-  - "Data-haven contact upkeep may be purchased during character creation under standard contact rules."
-  - "No universal security sheaf is provided because haven security changes frequently; gamemaster sets current security."
-
+- Data havens may be purchased as contacts during character creation (Matrix p128); contact upkeep covers the time and expense of knowing how to access and being
+  able to access the haven.
+- No security sheafs are included for data havens because player-character intrusion is unlikely and their security changes frequently; the GM determines each haven’s
+  security in the campaign.
 shadowland:
-  discovery: "Best reached through reputation, contacts and instructions/passcodes rather than brute-force discovery."
-  security: "Nodes use independent security with checkpoints; security deckers remain ready and IC is normally configured aggressively."
-  architecture: "Nodes are mirrored/backed up through the Nexus so one node's loss does not remove information availability."
-
+  discovery: Best reached through reputation, contacts and instructions/passcodes rather than brute-force discovery.
+  security: Nodes handle security independently; chokepoints are common, sometimes with trapdoors or vanishing SANs. Security deckers are ready and IC is normally
+    configured aggressively.
+  architecture: Nodes are mirrored/backed up through the Nexus so one node's loss does not remove information availability.
 nexus:
   access:
-    - "Reach through a Shadowland node."
-    - "Pass operator/security approval and supply valid passcodes."
-    - "Circumventing procedures triggers active alerts and aggressive IC/security deckers."
-
+  - Reach through a Shadowland node.
+  - Enter the killing jars and await approval; provide proper passcodes OR otherwise convince the security decker on duty to permit access.
+  - Circumventing the procedure results in active alerts, aggressive grey-to-black IC and live security deckers.
 asgard:
-  connection: "Use Satellite Uplink rules."
+  connection: Use Satellite Uplink rules.
   density_modifier: 4
-  connection_window: "two hours per day"
+  connection_window: two hours per day
   market:
-    - "Users may buy or sell data through anonymous accounts."
-    - "Asgard keeps roughly 40-80% of purchase price as commission."
-    - "Unsold/unauctioned data older than two weeks is archived and searchable for a fee."
-  services: ["electronic drop-box","satellite surveillance"]
-
+  - The fictional Asgard sysops assign traceless anonymous accounts used for both buying and selling data.
+  - Asgard keeps roughly 40-80% of purchase price as commission.
+  - Asgard does not normally hold data more than two weeks. Data that fails to sell or cannot be auctioned without disclosing its contents is placed in a searchable
+    archive that charges a fee.
+  services:
+  - electronic drop-box
+  - satellite surveillance
 azziewatch:
-  focus: "Aztlan/Aztechnology intelligence and regional border/troop information."
-  security_context: "Frequent hostile attempts are expected; gamemaster should treat the haven as a high-risk target."
-
+  focus: Aztlan/Aztechnology intelligence and regional border/troop information.
+  security_context: Frequent hostile attempts are expected; gamemaster should treat the haven as a high-risk target.
 helix:
-  public_access: "Address can be used like a public host; checkpoint trace is performed against persona."
+  public_access: Log on using the public host address; wait in the chokepoint while the persona is traced. If the address is approved, visitor authorization and entry
+    follow. Access to Helix itself has no fee; data charges are separate.
   visitor_privileges:
-    - "Limited personal-account privileges."
-    - "Can read files."
-    - "Upload Data does not automatically succeed."
-    - "Download Data succeeds only for items made available."
-  registered_users: "Normal personal-account privileges; no automatic trace on login."
-
+  - Limited personal-account privileges.
+  - Can read files.
+  - Upload Data does not automatically succeed.
+  - Download Data succeeds only for items made available.
+  registered_users: Normal personal-account privileges; no automatic trace on login.
 other_havens:
-  - "Kalinin, Manchester, Morgue and Mosaic are described as specialized regional/research havens."
-  - "Their distinctive content and access conditions should be preserved as setting constraints; no additional universal numeric mechanic is specified in this range."
-
+- Kalinin, Manchester and Morgue are described as specialized regional/research havens.
+- Their distinctive content and access conditions should be preserved as setting constraints; no additional universal numeric mechanic is specified in this range.
 sources:
-  - {source: source.fasa-7219, printed_pages: "120-122", pdf_pages: "121-123", relation: defines_rules}
+- source: source.fasa-7219
+  printed_pages: 120-122
+  pdf_pages: 121-123
+  relation: defines_rules
+edition_scope: 'FASA7219 Target: Matrix, FASA Corporation, Shadowrun Third Edition fictional tabletop rules; no modern network extrapolation.'
+content_class:
+- rule_procedure
+framing: reference_exact
+data:
+  publication:
+    title: 'Target: Matrix'
+    publisher: FASA Corporation
+    catalog_number: FASA7219
+    edition: Shadowrun Third Edition
+    source_id: source.fasa-7219
+    original_pdf_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+  page_map:
+    printed: 120-122
+    pdf: 121-123
+  helix_rubble_heap:
+    printed_page: 122
+    data_cost: Free; no fixed time or test is given. Unorganized data may require hours of searching, especially without a very specific target.
+  morgue_access_qualification:
+    printed_page: 122
+    virtual_machine_condition: The source requires breaking out of the fictional virtual machine before finding the SAN to the haven; this qualification extends the
+      existing Morgue access record. See Matrix p121.
+    icon_appearance: 'Icons substantially different from those described on Target: Matrix p50 attract unwanted attention; no fixed modifier is given.'
+    guide_identity: MRG Guides are smart frames using standard UMS features except long silver robes; IC constructs with identical icons are mixed among the Guides.
+  lineage:
+    helix_price: rule.matrix.target-matrix-helix-data-pricing-p122
+    helix_and_morgue_access: rule.matrix.target-matrix-helix-morgue-access-p121-122
+    omitted_legacy_reference: Mosaic is not described in this cited printed range; no lore or rule about Mosaic is inferred here.
+headline: 'FASA7219 Target: Matrix (SR3) data haven rules pp120-122 / PDF121-123'
+summary: Original FASA7219 data haven procedures with corrected contact, admission, market and source-specific virtual-host conditions.
