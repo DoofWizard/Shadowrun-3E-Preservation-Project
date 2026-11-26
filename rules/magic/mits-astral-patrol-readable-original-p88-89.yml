@@ -1,0 +1,53 @@
+id: rule.magic.mits-astral-patrol-readable-original
+record_type: rule
+status: ingested
+source: source.mits
+printed_pages: '88-89'
+pdf_pages: '89-90'
+edition_scope: SR3
+content_class: [rule_procedure]
+data:
+  scope: Readable fictional astral patrol and barrier rules; lower printed p88 is damaged and its missing procedure is not inferred.
+  patrol_spirits:
+    elemental_service_hours: 24
+    permanent_elemental_guard_karma: Elemental Force
+    permanent_binding_reference: MitS p98
+    nature_spirit: Guards a site within its domain until services end at the next sunrise or sunset.
+    other_guard_types: [spirits of the elements, ancestor spirits, watchers, loa, blood spirits, allies]
+    watcher_reference: MitS p101
+    dual_natured_critter_limitation: Cannot pass through physical objects in pursuit of astral intruders; can alert mundane guards.
+  passive_barriers:
+    examples: [shamanic lodges, wards]
+    hermetic_circle: Effective as a barrier only while in use.
+    anchored_spells: May supply reactive wards and similar measures (MitS p70).
+  patrol_modifier_table:
+    source_printed_page: 89
+    area_square_meters:
+      - {condition: 'less than 2000', modifier: 0}
+      - {minimum: 2001, maximum: 5000, modifier: 1}
+      - {minimum: 5001, maximum: 10000, modifier: 2}
+      - {minimum: 10001, maximum: 20000, modifier: 4}
+      - {minimum: 20001, maximum: 40000, modifier: 6}
+      - {minimum: 40001, maximum: 80000, modifier: 8}
+    area_boundary_note: The original table does not specify exactly 2000 square meters or areas above 80000 square meters.
+    terrain:
+      - {type: Open, examples: 'open, flat countryside', modifier: -4}
+      - {type: Normal, examples: typical countryside, modifier: -2}
+      - {type: Restricted, examples: 'light woods, suburban streets', modifier: 0}
+      - {type: Tight, examples: 'urban mazes, dense woods', modifier: 2}
+      - {type: Complex, examples: building interiors, modifier: 4}
+    background_count: Add background count level.
+    active_foci_or_spells: {modifier: -1, per_force_points: 2, exception: unless masked}
+    intruder_present_astrally: {modifier: -1, per_magic_points: 2}
+    intruder_is_spirit: {modifier: -1, per_force_points: 2}
+    guard_spirit_with_search_power: -2
+    additional_astral_patrol_guards_same_area: {modifier: -1, per_additional_guard: 1}
+  barrier_contest_readable_continuation:
+    passage: An initiate or spirit winning the Success Contest against the barrier may pass through freely as its creator can.
+    tie: Barrier wins.
+    later_crossing: Requires winning a new Success Contest.
+    missing_context: Test pools and target numbers from lower printed p88 are unverified.
+  extends: [subsystem.magic.astral-security, rule.magic.astral-barriers]
+headline: 'FASA7907 Magic in the Shadows: readable astral patrol rules (FASA Corporation, SR3, pp88-89/PDF89-90)'
+summary: 'Fictional tabletop game mechanics: patrol modifiers, spirit guard conditions and the readable barrier contest continuation.'
+framing: reference_exact
