@@ -7,7 +7,7 @@ pdf_pages: '140-142'
 edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp139-141/PDF140-142.'
 content_class: [rule_exact]
 framing: reference_exact
-headline: Otaku complex form creation and use
+headline: Otaku complex forms in FASA Matrix (SR3 fictional tabletop RPG)
 summary: Exact form eligibility, learning, cost, recovery and improvised combat mechanics; prior subsystem retained.
 data:
   legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 lacks the exact complex-form creation, recovery and improvisation procedures.'
@@ -27,22 +27,27 @@ data:
     failure_consequence: Restart training; no Karma-purchased successes on failed test.
     all_ones: Permanent mental block prevents learning that form.
     teaching:
+      teacher_knows_form: true
       teacher_instruction_skill_minimum: Form rating
       test: Teacher Instruction (4)
       learner_bonus_dice: 'floor(teacher successes / 2)'
       learned_form: Same rating and options as teacher.
     completion_good_karma: 1
+    completion_cost_independent_of_rating: true
     upgrade: Create new version using ordinary program upgrade time calculation (p81); pay 1 Good Karma Point for new form.
   restoration:
+    utility_or_IC_damage_examples: [hog, tar pit]
+    use_related_rating_loss_examples: [shield, armor]
     utility_or_IC_damage: Inactive until jackout; regenerate 1 rating point per hour after all Stun and Physical Condition Monitor damage healed.
     use_related_rating_loss: A Complex Action and Willpower Test against full form rating restores full rating on success; failure leaves reduced rating, with same regeneration rule as utility or IC damage.
   improvised_attack:
     one_shot: true
     rating_per_hacking_pool_die: 2
+    example: {hacking_pool_dice: 3, rating: 6}
     rating_cap: Computer (Programming)
     damage_test: Computer (Decking) against system Security Value minus 1.
     successes_to_damage: {'1': Light, '2': Moderate, '3': Serious, '4+': Deadly}
   improvised_defense:
     dice: Hacking Pool dice up to Computer skill.
-    target_number: 'ceil(attacker Computer skill or Security Value / 2)'
+    target_number: 'ceil((attacker Computer skill or Security Value) / 2)'
     resolution: Subtract defender successes from attacker successes; block completely at zero or fewer net successes.
