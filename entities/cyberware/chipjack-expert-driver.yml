@@ -1,15 +1,36 @@
 id: entity.cyberware.chipjack-expert-driver
 record_type: entity
-name: "Chipjack Expert Driver"
+name: Chipjack Expert Driver
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '19,152'
+pdf_pages: '19,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Chipjack Expert Driver — Task Pool and unresolved Essence formulas
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp19,152/PDF19,153.
 intrinsic:
-  essence: "Rating x 0.1"
-  cost: "Rating x 5,000 nuyen"
-  availability: "4/48 hrs"
+  essence: 'Rating x 0.1'
+  cost: 'Rating x 5,000 nuyen'
+  availability: '4/48 hrs'
   street_index: 1
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
+  - {source: source.mm, page: 19, relation: defines, note: 'Game effects and local purchase table'}
+  - {source: source.mm, page: 152, relation: defines, note: 'Headware equipment table statistics'}
 notes: []
+data:
+  task_pool:
+    dice: Rating
+    application: skill encoded on a chip
+    reference: {source: source.mm, printed_page: 48, section: Task Pool}
+  applicable_skillsofts: any
+  separate_purchase_required_per_chipjack: true
+  original_essence_discrepancy:
+    status: unresolved
+    local_table: {printed_page: 19, pdf_page: 19, formula: '0.1 / Rating'}
+    appendix_table: {printed_page: 152, pdf_page: 153, formula: 'Rating x 0.1'}
+    canonical_intrinsic_basis: appendix table retained without adjudicating the discrepancy
