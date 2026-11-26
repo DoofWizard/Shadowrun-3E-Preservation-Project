@@ -3,13 +3,28 @@ record_type: entity
 name: "Stepped Reflex Trigger Modification"
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '32-33,154'
+pdf_pages: '32-33,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Stepped Reflex Trigger Modification — SR3 action and operating level
+summary: Fictional tabletop equipment from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3; printed pp32-33,154/PDF32-33,155.
 intrinsic:
-  essence: null
-  cost: "+25%"
-  availability: "As wired reflexes"
-  street_index: 1
-  legality: "4P-Q"
+  essence: '-'
+  cost: '+25%'
+  availability: 'As wired reflexes'
+  street_index: 'As wired reflexes'
+  legality: '4P-Q'
 links: {uses: [], requires: [], component_of: [], interacts_with: [rule.cyberware.increased-reflexes-behavior]}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 32, relation: defines, note: Stepped reflex trigger game effects}
+  - {source: source.mm, pages: '33,154', relation: defines, note: Matching equipment statistics}
 notes: []
+data:
+  prerequisite: reflex trigger modified for stepped operation of wired reflexes
+  action_cost: Simple Action
+  permitted_changes: [turn reflexes on, turn reflexes off, switch to lower level, switch to higher level]
+  maximum_operating_level: actual purchased wired reflexes level
+  core_reference: SR3 p302
