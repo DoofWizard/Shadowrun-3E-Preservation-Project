@@ -7,7 +7,7 @@ pdf_pages: '137-138'
 edition_scope: 'FASA Corporation, Matrix FASA7909, Shadowrun Third Edition fictional tabletop RPG, printed pp136-137/PDF137-138.'
 content_class: [rule_exact]
 framing: reference_exact
-headline: Otaku creation mechanics
+headline: Otaku character creation in FASA Matrix (SR3 fictional tabletop RPG)
 summary: Exact starting constraints, channel allocations, resources, path modifiers and living persona ratings; the existing Otaku subsystem remains unchanged.
 data:
   legacy_comparison: 'subsystems/matrix/otaku.yml blob 5ca1f878a1ff9428f66259d8093d927b757d9d15 preserves the general framework but lacks the exact numeric creation limits and persona formulas.'
@@ -22,6 +22,7 @@ data:
         troll_quickness_points: 2
         racial_modified_limit_modifiers: {physical: -2, mental: 2}
         extra_mental_attribute_points: 2
+        extra_points_mental_only: true
       attribute_maximum: 'Racial Modified Limit x 1.5, standard rules'
     skills:
       computer: {minimum: 6, maximum: 8, specialization: unrestricted}
@@ -30,16 +31,20 @@ data:
     channels:
       names: [Access, Control, Index, Files, Slave]
       bonus_points: 'ceil((Intelligence + Willpower + Charisma) / 3)'
+      bonus_points_channel_only: true
       ordinary_active_skill_points_allowed: true
       descending_starting_rating_caps: [6, 5, 4, 3, 3]
       linked_attribute: Willpower
       defaulting_from_channel: prohibited
       advancement: Ordinary active skill Karma rules.
       specialization: Can emulate a single operational utility.
+      specialization_example: {channel: Control, utility: Analyze}
     resources:
       personal_nuyen: 5000
+      personal_nuyen_independent_of_resources: true
       base_tribal_lifestyle: Squatter
       priority_increase: One lifestyle level per Resources priority above E.
+      priority_example: {resources_priority: C, tribal_start: Squatter, tribal_result: Middle}
       point_increase: One lifestyle level per 5 Building Points allocated to Resources.
       individual_lifestyle: May maintain separate lifestyle or use tribe resources.
       required_interface: [datajack, ASIST converter]
@@ -66,5 +71,6 @@ data:
       cyberadept: {complex_form_effective_rating_bonus: 1, size_changed: false, form_must_already_exist: true}
       technoshaman: {channel_TN_modifier: -1}
   AI_created_otaku:
-    ordinary_abilities: Same as other otaku but generally with at least one serious flaw; may lose powers outside the creating AI's influence.
+    ordinary_abilities: Same as other otaku but generally with at least one serious flaw; in most cases abilities are lost outside the creating AI's influence.
+    example: In the fictional setting, otaku created by Deus within the Renraku Arcology Matrix cannot use channels or complex forms outside the arcology.
     GM_guidance: Restrict to NPCs; player use is not recommended.
