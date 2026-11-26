@@ -1,15 +1,32 @@
 id: entity.cyberware.ultrasound-vision
 record_type: entity
-name: "Ultrasound Vision"
+name: Ultrasound Vision
 domain: cyberware
 status: ingested
-intrinsic:
-  essence: 0.5
-  cost_nuyen: 10000
-  availability: "6/48 hrs"
-  street_index: 2
-  legality: "Legal"
+source: source.mm
+printed_pages: '18,153'
+pdf_pages: '18,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Ultrasound Vision — visibility, illusions and hearing interaction
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed pp18,153/PDF18,154.
+intrinsic: {essence: 0.5, cost_nuyen: 10000, availability: '6/48 hrs', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 153, relation: defines, note: "Visual sensory cyberware equipment table statistics"}
+  - {source: source.mm, page: 18, relation: defines, note: 'Game effects and purchase row'}
+  - {source: source.mm, page: 153, relation: defines, note: 'Equipment table'}
 notes: []
+data:
+  components: [emitter in one eye, receiver in other eye, processor in eyes]
+  activated_display: topographic echo image overlay on sight
+  visibility_modifier_multiplier: 0.5
+  visibility_modifier_rounding: up
+  high_frequency_hearing_installation: {cost_multiplier: 0.8, essence_multiplier: 0.8}
+  sight_affecting_indirect_illusion: does not affect ultrasound
+  ultrasound_only_visible_character: {magic_targeting_allowed: false, other_action_target_number_modifier: 4}
+  sound_affecting_indirect_illusion: affects ultrasound
+  silence_spell: silenced characters do not appear and cannot be located by a gap in the ultrasound image
+  white_noise_action_target_number_modifier: white noise generator rating
+  cybernetic_ultrasound_illusion_types: [mana-based indirect, physical indirect]
+  mana_illusion_reason: purchased with Essence
