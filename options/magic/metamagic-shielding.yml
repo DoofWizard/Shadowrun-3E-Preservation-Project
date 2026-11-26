@@ -17,7 +17,7 @@ selection:
   incompatible_with: []
 effects:
 - Protects up to grade subjects within line of sight using allocated Sorcery and Spell Pool dice.
-- Subjects receive allocated dice for Spell Resistance until the initiate next acts; hostile spell target numbers increase by one per allocated die up to grade.
+- Subjects receive allocated dice for Spell Resistance until the initiate next acts; target numbers of any spell against a protected subject increase by one per allocated die up to grade.
 - Multiple initiates may stack protection.
 links:
   modifies:
@@ -48,8 +48,12 @@ data:
     duration: Until initiate's next Action; dice may then be reallocated.
     spell_types: All spells including elemental manipulations.
     spell_target_number_modifier: +1 per die allocated, capped at initiation grade.
+    spell_target_number_modifier_scope: Any spell against the protected subject.
     stacking: Multiple initiates may stack shielding for an individual or group.
   example:
+    initiate: Cullen Trey
+    other_protected_subject: Jack Skater
+    other_subject_magical_status: mundane
     grade: 3
     sorcery: 7
     spell_pool: 6
@@ -59,5 +63,5 @@ data:
     resistance_bonus: 4
     spell_tn_modifier: 3
 framing: reference_exact
-headline: 'Fictional Shadowrun Third Edition metamagic: Shielding (FASA7907, printed 79/PDF 80)'
+headline: 'FASA Corporation fictional Shadowrun Third Edition metamagic: Shielding (FASA7907, printed 79/PDF 80)'
 summary: FASA Corporation, Magic in the Shadows; tabletop RPG mechanical fields and exceptions from printed 79/PDF 80.
