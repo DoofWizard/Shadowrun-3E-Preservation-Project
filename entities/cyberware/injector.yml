@@ -1,15 +1,27 @@
 id: entity.cyberware.injector
 record_type: entity
-name: "Injector"
+name: Injector
 domain: cyberware
 status: ingested
-intrinsic:
-  essence: null
-  cost: "500 nuyen + contents"
-  availability: "4/72 hrs"
-  street_index: 1.5
-  legality: "Legal"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '27,154'
+pdf_pages: '27,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Injector — SR3 dose capacity and damage restrictions
+summary: Fictional tabletop RPG equipment in FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, Shadowrun Third Edition, printed pp27,154/PDF27,155.
+intrinsic: {essence: '-', cost: '500 nuyen + contents', availability: '4/72 hrs', street_index: 1.5, legality: '6P-N'}
+links: {uses: [], requires: [], component_of: [entity.cyberware.body-compartment], interacts_with: []}
 sources:
-  - {source: source.mm, page: 154, relation: defines, note: "Bodyware equipment table statistics"}
+  - {source: source.mm, page: 27, relation: defines, note: Injector game effects and purchase row}
+  - {source: source.mm, page: 154, relation: defines, note: Equipment table}
 notes: []
+data:
+  dose_capacity: 1
+  eligible_contents: [chemical, poison, toxin, other appropriate compound]
+  needle_damage_code: '(STR + 3)L'
+  maximum_damage_level: Moderate
+  penetrates_hardened_armor: false
+  injection_condition: target must suffer damage in the game attack
+  dose_replacement_minutes: 2
