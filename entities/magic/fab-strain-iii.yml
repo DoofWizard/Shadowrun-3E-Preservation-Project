@@ -8,4 +8,55 @@ links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.mag
 sources:
   - {source: source.mits, pages: "90-91", relation: defines, note: "FAB Strain-III behavior, draining, and countermeasures"}
 notes:
-  - "Fictional Shadowrun organism that drains magical/astral energy according to the source's Force-based rules."
+  - "Fictional Shadowrun magical organism; the effects below concern imaginary astral energy, not real bacteria."
+source: source.mits
+printed_pages: '90-91'
+pdf_pages: '91-92'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: 'Fictional Shadowrun Third Edition tabletop rules: FAB Strain-III, Magic in the Shadows (FASA Corporation, FASA7907), pp90-91/PDF91-92'
+framing: reference_exact
+data:
+  cloud:
+    shape: spherical
+    radius: approximately cloud Force rating
+    radius_unit: unspecified in original passage
+    variable_size: true
+    contracts_on_attachment: usually
+    speed_meters_per_combat_turn: 1
+    physical_visibility: invisible
+    physical_harm: none
+    physical_carriers: Awakened characters may carry clouds unwittingly
+    astral_appearance: faintly glowing cloud
+  identification:
+    alternative_tests: [{test: Magic Background, target_number: 8}, {test: Astral Perception, target_number: 12 minus cloud rating}]
+    failure: mistaken for innocuous low background count
+  feeding:
+    targets: [astrally active Awakened characters, astrally active critters, foci, astral objects including wards]
+    attachment: contact with astrally active target
+    selection: highest rating target
+    ignores: characters using Masking to appear mundane
+    test: cloud Force Test
+    target_number_by_target: {foci: Force, spirits: Force, Awakened characters: Magic, critters: Essence}
+    wards_target_number: not separately specified
+    base_time_hours: [{rating: '1-5', hours: 18}, {rating: '6-9', hours: 12}, {rating: '10+', hours: 6}]
+    interval: base time divided by successes
+    zero_successes: base time passes without effect
+    drain_per_successful_interval: 1
+    attributes_drained: [Force, Magic, Essence]
+    cloud_force_gain_per_point_drained: 1
+    repeats_until: [target energy exhausted, cloud killed]
+    split: {trigger_force: 11, continuing_cloud_force: 6, departing_cloud_force: 5}
+    symptoms_in_living_targets: fever and weakness progressively worsen as energy is drained
+    losses_permanent: true
+    at_zero: {magical_objects: destroyed, living_beings: killed}
+  countermeasures:
+    character_ceases_astral_activity: hinders feeding but remains carrier pending renewed activity
+    focus_deactivation: hinders feeding but remains carrier pending renewed activity
+    dual_natured_critters: cannot cease astral activity
+    spirit_returns_home_metaplane: removes infestation; source states clouds appear absent from metaplanes
+    astral_combat: standard rules
+    sterilize: {spell: Sterilize, printed_page: 148}
+    cure_disease: {spell: Cure Disease, severity: Deadly, sorcery_successes_per_force_loss: 2, force_loss_per_increment: 1, permanent_reduction: true, destroyed_at_force: 0}
+  starvation: {condition: nothing to feed on, force_loss_per_week: 1}
+  background_count: {can_feed: true, extended_survival_force: equal to background count}
