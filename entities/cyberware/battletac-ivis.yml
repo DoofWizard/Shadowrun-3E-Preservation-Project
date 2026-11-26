@@ -1,10 +1,28 @@
 id: entity.cyberware.battletac-ivis
 record_type: entity
-name: "BattleTac IVIS"
+name: BattleTac IVIS
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.15, cost_nuyen: 150000, availability: "8/14 days", street_index: 3, legality: "5P-R"}
+source: source.mm
+printed_pages: '23,25,152'
+pdf_pages: '23,25,153'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: BattleTac IVIS — SR3 command test and shared dice pool
+summary: Fictional tabletop game rules in Man & Machine Cyberware (FASA7126, FASA Corporation, 1999, Shadowrun Third Edition), printed pp23,25,152/PDF23,25,153.
+intrinsic: {essence: 0.15, cost_nuyen: 150000, availability: '8/14 days', street_index: 3, legality: '5P-R'}
 links: {uses: [rule.cyberware.battletac-network], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "23-25", relation: defines, note: "BattleTac IVIS master unit and statistics"}
+  - {source: source.mm, page: 23, relation: defines, note: IVIS game effects}
+  - {source: source.mm, page: 25, relation: defines, note: Riggerware purchase table}
+  - {source: source.mm, page: 152, relation: defines, note: Equipment table}
 notes: []
+data:
+  source_name: Inter-Vehicle Information System (IVIS)
+  eligible_drones: only drones with IVIS-compatible modified pilots
+  command_test: {skill: Small Unit Tactics, specialization: Vehicle Tactics, target_number: 5}
+  successes_allocated_between: [extra dice for group Comprehension Test, shared IVIS Pool]
+  pool_use: any tests by drones in the group; normal dice pool rules
+  pool_duration: until task completed or new task assigned
+  pool_unavailable_to: drones currently jumped into by a rigger
