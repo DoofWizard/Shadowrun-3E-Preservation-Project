@@ -2196,3 +2196,45 @@ chassis_selection_recheck_2026_11_26:
   new_semantic_records: 0
   global_page_credit: 0
   formal_section_acceptance: false
+  continuation_review_2026_11_26:
+    exact_full_manifest_input_blob: 6b8090c916d0dd2f720e4b7d19922d8a9e9d1fe4
+    actual_verify_source: source_pdf_hash_verified
+    original_printed_pages: [108, 109, 202, 204, 205]
+    physical_pdf_pages: [110, 111, 204, 206, 207]
+    source_image_sha256:
+      '110': a656d8d6db023e273e67a4753b9871aad293210ec486cc2e87d41a24dccf201a
+      '111': b68f5e7984bdb1d844dd02948f0809f0c09dd7d2012c320412a6bbcd8af532ea
+      '204': b7f39d805dbe8b0f63f9920d01eb7c773aaa0101386cbc69c849a5a3a56d7058
+      '206': 255c60d96149ea7bb5b0cb593d10b0ce7c25402aa3cd631e8c98d445e3f0e94c
+      '207': d8a551764df1b871b933c95356ea8f2d5947177b2382bb1551feb7d160a8c9d3
+    source_review_scope: 'Printed pp108-109 fully visually rechecked; only selected relevant rows/columns on pp202,204,205 compared, not full table closure.'
+    historical_canonical:
+      path: rules/vehicles/chassis-reference.yml
+      blob: 6a41d3c5914376a1a47d4195d828bbe518f13fd9
+      historical_normalization_commit: 14827e80f4e30d8e1d88748a13e71713c1766a17
+      historical_design_commit: f553fb38270dbf8b0ac4bbd4d43a28f8a58555a3
+      design_chassis_blob: df4dde475b5fffb61c83d59f1d2977cab5cc45c4
+      design_power_plants_blob: 1110484d496dc26a02c97a01b85df04a82d294f4
+    typed_comparison:
+      prose_to_canon: {checked: 34, exact: 27, different: 7}
+      matched_body_rows: [110, 111, 109, 115, 114, 113, 93, 94, 95, 96, 101, 102, 100, 99, 98]
+      matched_body_column: 2
+      matched_example_rows: [21, 23]
+      matched_example_columns: [5, 2, 6, 3, 4, 11]
+      differing_commercial_hull_rows: [107, 108, 106]
+      differing_example_columns: [7, 8]
+      table_literal_recheck: {checked: 11, exact: 11, different: 0}
+      literal_table_hull_rows: [107, 108, 106]
+      literal_table_example_rows: [21, 23]
+      literal_table_example_columns: [7, 8, 9, 10]
+      conclusion: 'The three prose Hull integers versus H-suffixed table strings and four prose zeroes versus paired table strings are not exact typed equality. Original revised tables explicitly match all seven historical canonical strings plus four seating/entry cells; retain both source presentations without converting them or claiming an edition change. Reuse the 27 exact prose bindings and 11 exact table bindings rather than duplicating records.'
+    manually_reconciled: 'Historical design-power-plants explicitly requires Chemical Rocket for both semiballistic and suborbital. Historical chassis reference contains the five described locomotive and three rail-car subtypes; do not erase its additional non-rail row. Existing revised chassis qualification retains the special skill/defaulting and race-car changes.'
+    remaining_precise_fields:
+      - 'Minisub displacement boundary and regular-vehicle classification; descriptive passenger capacity wording must not be silently converted into a fixed seating rating.'
+      - 'Sea sled rider-use condition; patrol submarine non-nuclear power-plant restriction requires comparison to the actual power-plant records.'
+      - 'Sand buggy open-entry and bench capacity; sports-car bucket-seat and entry wording and printed p169 table reference as separate example provenance. Numeric/table fields are matched, not new mechanics.'
+      - 'Historical chassis-reference and design records: original independent baseline, prepare, confirm and individual index artifacts remain unestablished; located normalization commits are not receipts.'
+    disposition: partial_original_field_recheck_coverage_only
+    formal_section_acceptance: false
+    new_semantic_records: 0
+    global_page_credit: 0
