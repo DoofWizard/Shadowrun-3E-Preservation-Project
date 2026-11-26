@@ -1,0 +1,175 @@
+id: rule.magic.mits-magical-paths-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '14-21'
+pdf_pages: '15-22'
+edition_scope: SR3
+content_class: [character_option]
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Tradition and path mechanical qualifications
+summary: FASA Corporation, Magic in the Shadows, FASA7907, original SR3 fictional tabletop options, printed pp14-21/PDF15-22.
+data:
+  common:
+    printed_pages: '14-16'
+    rules: Cultural style does not change the underlying skill, spell, spirit or adept rules except for explicit options.
+    shamanic_style_choices_permanent: true
+  shamans:
+    printed_pages: '16-17'
+    wilderness:
+      summon: [land, sky, water]
+      excluded: [man]
+      duration: Until the later of the next sunrise and sunset.
+    urban:
+      summon: [man, sky]
+      excluded: [land, water]
+      duration: One day and one night, in either order.
+    wilderness_and_urban:
+      banish: Any spirit type.
+      control: Only spirits the character can summon.
+    spirits_of_elements:
+      allowed_types: [salamander, gnome, sylph, undine, manitou]
+      chosen_types: 1
+      replaces: Spirits of man.
+      selection: Type must suit the magical tradition.
+      eligible: [full magician shaman, aspected shamanic conjurer]
+      excluded: [wilderness shaman, urban shaman, shamanist]
+    ancestor:
+      full_magician: true
+      replaces: Spirits of man and all corresponding totem bonuses.
+      other_nature_spirits: Normal summoning.
+      shamanist: Only if totem grants a spirits-of-man advantage; replace that ability and bonus with ancestor spirits.
+      shamanic_conjurer: Same spirit access as ancestor shaman.
+    pantheism:
+      fixed_totem_advantages_disadvantages: false
+      cycle_days: 28
+      initial_spell_category_bonus_dice: 2
+      initial_spirit_type_bonus_dice: 2
+      spell_categories: [combat, detection, health, illusion, manipulation]
+      spirit_types: [land, man, sky, water]
+      selection: At each new moon the gamemaster selects a new category and spirit type suited to current character goals.
+      behavioral_requirements: Player defines a detailed code permitting the gamemaster to judge adherence.
+      deviation_magic_loss_points: 1
+      recovery: Many rituals of apology and repentance are recommended; no fixed numerical recovery procedure stated here.
+      astral_quest: Visit all four shamanic metaplanes; any failed quest invalidates the entire quest and requires starting again.
+      shamanist_allowed: false
+      other_aspected_magicians_allowed: true
+  mage:
+    printed_page: 17
+    hermetic_school:
+      matching_circle_or_library_dice: 1
+      nonmatching_circle_or_library_dice: -1
+      applies_to: Magical operations using the applicable circle or library.
+    elemental_mage:
+      eligible: Full hermetic magician only.
+      alignment_permanent: true
+      aligned_spell_and_spirit_dice: 2
+      opposed_spell_and_spirit_dice: -1
+      opposing_pairs: [[fire, water], [earth, air]]
+      fire_example: Combat spells and fire elementals +2 dice; illusion spells and water elementals -1 die (SR3 p187).
+  wuxing:
+    printed_pages: '17-19'
+    totem_modifiers: false
+    spell_associations: {wood: detection, fire: combat, earth: health, metal: manipulation, water: illusion}
+    summon: [spirits of the elements, spirits of man]
+    ancestor_substitution: Ancestor spirits instead of spirits of man is a tradition option.
+    prohibited_elementals: Summoning and controlling elementals.
+    prohibited_nature_types: [land, sky, water]
+    resources: Libraries and circles rather than lodges.
+    school_option: Some follow a particular school analogous to hermetic schools.
+    dragon_lines: Use natural manalines and power sites under p84 rules.
+    aspected:
+      conjurer: Same spirit access as full wujen; no Sorcery.
+      sorcerer: Same Sorcery as full wujen; no Conjuring.
+      elementalist_or_shamanist: Not available.
+      wu_fa: Restricted to spells and spirits corresponding to one stem.
+      examples: {wood: [detection spells, wood spirits], metal: [manipulation spells, sylphs]}
+  voodoo:
+    printed_pages: '19-20'
+    houngan:
+      full_magician: true
+      conjuring: Only loa spirits, not nature spirits, elementals or spirits of the elements.
+      patron: Player chooses a patron loa; behavior and modifiers follow the totem model.
+      urban_wilderness_division: false
+      minor_deviation: Loss of advantages granted by patron.
+      serious_deviation: May cause loss of one Magic Point or possession by a fictional loa spirit (p102).
+      hounfour: Uses shamanic lodge rules (SR3 p166).
+    voodounista:
+      aspect: Shamanist.
+      spells: Only those with patron bonus.
+      spirits: Only the patron's associated loa spirit.
+      astral_perception: Standard.
+    other_aspects:
+      sorcerer: Shamanic sorcerer rules.
+      conjurer: Loa spirits only.
+      patron_modifiers_and_aspect_restrictions: Normal.
+    obeyifa:
+      aspect: Aspected magician.
+      conjuring: Nature spirits only; personal gris-gris required for every summoning.
+      creation: Same time, cost and difficulty as an expendable spell focus (p39); cannot purchase; user must make own.
+      conjuring_aid: None beyond retaining the spirit.
+      maximum_spirit_force: Force of gris-gris.
+      command: Summoner only.
+      retention: Until services exhausted; not released by sunrise, sunset or summoner unconsciousness; freed on summoner death.
+      transport: Can be transported and called beyond domain; domain-specific powers unavailable outside domain.
+      simultaneous_spirit_limit: Charisma.
+      spirits_per_gris_gris: 1
+      active_dual_nature: Only while occupied; becomes inert upon departure and requires re-enchantment.
+      other_magicians: May banish a retained spirit, not control it.
+      enchanting: Full standard access.
+      sorcery: Not available.
+      astral_perception: Standard for aspected magicians.
+  wheel:
+    printed_pages: '20-21'
+    choice_permanent: true
+    bonuses_cumulative_unless_specified: true
+    default: Hermetic full magician rules unless specified; totem-style modifiers.
+    conjuring: Hermetic circles for elementals; standard procedures for nature spirits and spirits of the elements.
+    banish: Any spirit.
+    control: Only spirits the follower can summon.
+    warrior:
+      adept: No special numerical bonuses or penalties; access to a magical group for initiation and teaching.
+      customary_geasa: Optional limitations related to home ground and the Path holy day and time.
+      forbidden_elemental: air
+      substitute: land spirits
+      combat_spell_dice: 1
+      land_spirit_dice: 2
+      extra_combat_die_each: [winter, within 72 hours of Imbolc (February 2), Ulster, hills or mountains]
+      illusion_spell_dice: -1
+      minimum_melee_combat_skill: 4
+    steward:
+      forbidden_elemental: earth
+      substitute: sky spirits
+      health_spell_dice: 1
+      sky_spirit_dice: 2
+      extra_health_die_each: [spring, within 72 hours of Beltane (May 1), Leinster, airborne by flying or levitation]
+      manipulation_spell_dice: -1
+      minimum_charisma_linked_skill: 4
+    bard:
+      forbidden_elemental: water
+      substitute: spirits of the flames
+      control_manipulation_spell_dice: 1
+      flame_spirit_dice: 2
+      extra_control_manipulation_die_each: [summer, within 72 hours of Lugnasad (August 1), Munster, within 4 meters and line of sight of a fire at least campfire size]
+      health_spell_dice: -1
+      minimum_artistic_knowledge_skill: 4
+    druid:
+      forbidden_elemental: fire
+      substitute: water nature spirits
+      illusion_spell_dice: 1
+      water_spirit_dice: 2
+      extra_illusion_die_each: [autumn, within 72 hours of Samhain (November 2), Connaught, on or in water]
+      combat_spell_dice: -1
+      minimum_appropriate_knowledge_skill: 4
+      example_skills: [History, Herbal Lore, Law]
+    righ:
+      eligible: Only the most enlightened elves, restricted to rare NPCs.
+      all_spell_dice: 4
+      dispelling_dice: 1
+      additional_spell_dice_in_meath: 1
+      summon: All spirits including elementals, nature spirits and spirits of the elements.
+    aspected:
+      spells_and_spirits: Only those with Path bonus.
+      astral_perception: true
+      astral_projection: false
+      bard_example: Control manipulation spells and spirits of the flames only.
