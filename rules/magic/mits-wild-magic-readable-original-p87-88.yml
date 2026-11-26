@@ -1,0 +1,35 @@
+id: rule.magic.mits-wild-magic-readable-original
+record_type: rule
+status: reviewed
+source: source.mits
+printed_pages: '87-88'
+pdf_pages: '88-89'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7907 Magic in the Shadows (SR3) - Wild Magic daily test and readable table rows
+summary: FASA Corporation Shadowrun Third Edition fictional tabletop rules, printed pp87-88/PDF88-89; readable portion only.
+data:
+  extends: rule.magic.wild-magic
+  daily_event:
+    dice: 2D6
+    timing: Sunset on each day the characters are in an area considered wild.
+    threshold: 10
+    comparison: greater_than_or_equal
+    effect: An unusual magical event occurs.
+    selection: The gamemaster may invent the event or create a random event table using the original Wild Magic Table as a template; individual areas may have their own characteristic results.
+  original_table:
+    dice: 3D6
+    readable_complete_rows:
+      - {roll: '3-4', effect: '2D6 recently deceased bodies rise as corpse cadavres (Critters p25).'}
+      - {roll: '5', effect: 'A recently killed individual returns as an apparition ghost (MitS p120).'}
+      - {roll: '6', effect: 'A recently killed individual returns as a specter (MitS p121).'}
+      - {roll: '7-8', effect: 'Random paranormal creature attacks for 24 hours, such as devil rats or harpies (Critters).'}
+      - {roll: '9-12', effect: 'Mana surge effects are suspended for one hour that day; select or randomly determine the hour.'}
+      - {roll: '13', effect: 'An uncontrolled spirit of Force 2D6 appears and goes on a rampage.'}
+    incomplete_visible_row:
+      roll: '14'
+      visible_rule: At sunrise all bound spirits have one test that day to become free, as if they were ally spirits (Losing an Ally, p112).
+      limitation: The row continues with a conditional sentence whose conclusion is not visible; this is not a complete row.
+    source_defect: The lower region of printed p88/PDF89 is unreadable in the cataloged original. The remaining row 14 condition and any later results cannot be certified from this copy.
+  scope_limit: This is the readable portion of Wild Magic only; it does not certify the whole table, Astral Security, or the missing lower page region.
