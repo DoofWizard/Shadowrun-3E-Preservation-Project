@@ -1,11 +1,25 @@
 id: entity.cyberware.jolt-alert
 record_type: entity
-name: "Jolt-Alert"
+name: Jolt-Alert
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.1, cost_nuyen: 1500, availability: "4/48 hrs", street_index: 1.5, legality: "Legal"}
+source: source.mm
+printed_pages: '29-30,154'
+pdf_pages: '29-30,155'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Jolt-Alert — SR3 triggering and awakening exception
+summary: Fictional augmentation rules from FASA7126 Man & Machine Cyberware, FASA Corporation, 1999, SR3, printed pp29-30,154/PDF29-30,155.
+intrinsic: {essence: 0.1, cost_nuyen: 1500, availability: '4/48 hrs', street_index: 1.5, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "29-30", relation: defines, note: "Jolt-Alert description and statistics"}
+  - {source: source.mm, pages: '29-30', relation: defines, note: Jolt-Alert description and game effects}
+  - {source: source.mm, page: 154, relation: defines, note: Bodyware equipment table statistics}
 notes:
-  - "When triggered, instantly wakes the user except where the source excludes awakening from Deadly Stun."
+  - When triggered, instantly wakes the user except where the source excludes awakening from Deadly Stun.
+data:
+  trigger_link_required: true
+  trigger_examples: [retinal clock, headware telephone, datajack-linked external alarm system]
+  awakening: instant upon trigger
+  cannot_awaken_from: Deadly Stun damage
