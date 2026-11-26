@@ -6,6 +6,30 @@ status: ingested
 intrinsic: {dual_natured: true, cost_nuyen_per_force_square_meter: 100}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.magic.astral-security]}
 sources:
-  - {source: source.mits, pages: "91-92", relation: defines, note: "Guardian Vines astral-security organism"}
+  - {source: source.mits, pages: "91", relation: defines, note: "Guardian Vines astral-security organism"}
 notes:
-  - "Dual-natured Awakened plant used to physically cover surfaces while its astral form grapples intruders."
+  - "Fictional Awakened plant in Shadowrun; astral form remains tethered to its physical form."
+source: source.mits
+printed_pages: '91'
+pdf_pages: '92'
+edition_scope: SR3
+content_class: [rule_exact]
+headline: 'Fictional Shadowrun Third Edition tabletop rules: Guardian Vines, Magic in the Shadows (FASA Corporation, FASA7907), p91/PDF92'
+framing: reference_exact
+data:
+  force_calculation: as for a spirit
+  astral_projection: {range: a few meters from physical form, use_force_when_projecting: true, otherwise_use_standard_statistics: true}
+  astral_contact: engages touching astral forms in astral combat
+  attributes: {B: F, S: F + 3, Q: F, C: F, W: F, I: F, E: F, R: F + 2}
+  initiative: {physical: R + 1D6, astral: F + 20 + 1D6}
+  attack: {physical: Strength (M), astral: Force (M)}
+  pools: {combat: F x 1.5, astral_combat: F x 1.5, karma: F + 3}
+  reach: {normal: 1, older_larger_possible: 2, applies_to: [physical, astral]}
+  grapple:
+    test: Melee Attack Test
+    dice: {physical: Reaction, astral: Force}
+    success: net successes at least target Quickness
+    escape: {action: Complex Action, test: Opposed Strength Test, condition: win, added_dice: net successes of vines on initial Melee Attack Test}
+  powers: {possible: Essence Drain, reference: 'Critters p10'}
+  cost_qualifier: approximate in p91 prose
+  cost_example: {area_square_meters: 100, nuyen: 10000 x Force}
