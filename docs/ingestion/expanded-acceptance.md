@@ -347,3 +347,34 @@ Actual blocker_triage.py (blob `e5757595a0c910dc56b14efff770cb84ab4317e0`) ran o
 Distinct SOTA2064 manual archive handoff: freshly acquired recovery archive SHA256 `98da0c21e9b1d1c2ed89d0f7654f9ad314a789b9856beba6efeec673bcafb2ac`; all five nested original archives match their recorded SHA. Actual live-blob-matched ingestion_gate.py prepare and confirm rechecks matched all eight archived original plans/confirm receipts. Fresh exact-path GitHub historical blob reads and historical StateOfTheArt2064.yml index snapshot blob reads matched eight of eight each. Six original index receipts are present in archive; media van and police drone lack original local index receipt; historical GitHub index snapshots exist but are not original local index receipts. Five record blobs unchanged at pinned main; three newer current blobs require separate correction transaction evidence: adept competition `ad92d15ba658ebf52675b31da4ecf76bfd9e0d4e`, custody timing `aa182f9f2ba9c1d88157ac72136d27e4fbecabf5`, international competition `4e2a25fa35d6f897619b5e324679c51dabb34dd0`. Exact original historical semantic/index pins are in the recovered archive recovery-evidence.json, which remains the authoritative handoff; original editorial chronology and original local index snapshot custody not established here. Present-day rechecks are not new historical receipts, fresh SOTA original review or source certification.
 
 New accepted mechanical fields, records, formal source decisions and global page advancement: zero. No source manifest, canon, common gate or schedule changes.
+
+
+## Offline full-history recovery for the production validator
+
+**Fixed infrastructure bottleneck (not sourcebook certification):** The first real FASA7905a assessment verified both original PDFs but could not run the full local Git proof chain because its ephemeral environment lacked complete Git history. `.github/workflows/sr3-acceptance-history-export.yml` now creates a **portable, complete Git bundle** in GitHub Actions on relevant pushes or manual dispatch, without credentials or external uploads. A full-depth Git checkout verifies that the original FASA7001 acceptance receipt commit is an ancestor of the source HEAD and that all three original immutable receipt/snapshot blobs exactly match. It then bundles a new `acceptance-snapshot` branch at that HEAD, verifies the bundle, restores a fresh local clone from the bundle, and rechecks its HEAD and receipt ancestry before uploading a short-retention (3-day) artifact with:
+- `sr3-acceptance-history.bundle`: actual full Git object history and the named `acceptance-snapshot` ref.
+- `sr3-acceptance-snapshot.json`: exact source HEAD, accepted core commit/blob, bundle SHA-256 and byte length, reachable commit count, *non*-certification flags.
+
+The bundle is **history transport, not source evidence or a new authority**. The validator still requires the original authenticated PDF, source-reviewed entire-book field inventory, independently pinned review/bindings/evidence inputs, and original historical journals. Neither the JSON nor the workflow certifies mechanical correctness.
+
+### Using the verified bundle without a GitHub clone or working network
+
+1. Obtain the actual workflow run's artifact from the repository's GitHub **Actions → SR3 acceptance complete Git history export**, or through the connected GitHub Actions artifact retrieval tool. Use the repository's authenticated workflow-run/artifact identity, not an arbitrary ZIP or pasted blob.
+2. Materialize and extract the artifact outside the authoritative Git working tree. Independently read the intended current/pinned main commit SHA from connected GitHub. Compare the artifact's head and SHA-256 against that pinned source and authenticate the artifact origin; the bundle and its accompanying JSON are not independent attestations of themselves.
+3. Use the following local checks and clone (replace `PINNED_MAIN_SHA` with the complete independently observed 40-character SHA):
+
+```sh
+sha256sum sr3-acceptance-history.bundle
+git bundle verify sr3-acceptance-history.bundle
+git clone -b acceptance-snapshot sr3-acceptance-history.bundle /tmp/sr3-full-history
+test "$(git -C /tmp/sr3-full-history rev-parse HEAD)" = "PINNED_MAIN_SHA"
+git -C /tmp/sr3-full-history merge-base --is-ancestor \
+  6baeb5dffd92dbdcbe50aa451d637e8ae9702316 PINNED_MAIN_SHA
+test "$(git -C /tmp/sr3-full-history rev-parse \
+  6baeb5dffd92dbdcbe50aa451d637e8ae9702316:references/audits/fasa7001-available-source-mechanical-core-acceptance-confirmed-2026-11-21.json)" \
+  = "d11888c9f20b5603f874f4e976dff3e23c8cde98"
+```
+
+The normal full `validator.py --repo /tmp/sr3-full-history --head PINNED_MAIN_SHA` invocation from the preceding section then works with true immutable historical Git objects. This removes the environment's **unavailable Git history** blocker; it does not resolve missing historical receipt files, original source-only review, the 27 unaccepted Simple/Complex accepted-core group obligations or the remaining 112 shared Companion action references.
+
+**Verification status at authoring:** The bundle/create/verify/clone/HEAD-ancestry procedure was executed successfully using a synthetic two-commit local Git repository; the exact workflow file was committed and independently read back from GitHub. **No actual GitHub Actions run/artifact or full production Companion PASS has yet been independently observed.** Do not advance any acceptance flag from this workflow alone.
