@@ -78,6 +78,7 @@ data:
     eligible_tests: Tests on the astral plane or metaplanes except Magical Skill Tests; explicitly includes Astral Combat Tests even when Sorcery is used, and Astral Perception Tests.
     refresh: Standard dice-pool refresh rules.
   alter_signature:
+    method: The character unlearns the existing style of magic and learns a new one.
     test: Magic Test
     target_number: 6 + new initiation grade + prior failed signature alteration attempts
     extra_dice: Karma only
@@ -85,6 +86,15 @@ data:
     success: Altered signature prevents recognition based on the old signature.
     failure: Retain existing signature; retry only on a subsequent initiation, with cumulative +1 target number per failure.
     incompatible_choices: Learning a new metamagical technique or shedding a geas for this grade.
+    worked_example:
+      character: Bandi
+      desired_grade: 3
+      magic: 8
+      target_number: 9
+      successes_rolled: 1
+      outcome: signature unchanged
+      retry: next initiation
+      retry_target_number_modifier: 1
   karma_cost:
     base: 5 + desired grade
     rounding: down
@@ -94,8 +104,10 @@ data:
       group_without_ordeal: 2
       group_with_ordeal: 1.5
     examples:
+      character: Eli
+      tradition: owl shaman
       grade_1: {self_without_ordeal: 18, self_with_ordeal: 15, group_without_ordeal: 12, group_with_ordeal: 9}
       grade_2: {self_without_ordeal: 21, self_with_ordeal: 17, group_without_ordeal: 14, group_with_ordeal: 10}
 framing: reference_exact
 headline: 'Fictional Shadowrun Third Edition procedure: Initiation (FASA7907, printed 57-58/PDF 58-59)'
-summary: FASA Corporation, Magic in the Shadows; tabletop RPG initiation eligibility, grade benefits, astral abilities, signature alteration and Karma cost table.
+summary: FASA Corporation, Magic in the Shadows; tabletop RPG initiation eligibility, grade benefits, astral abilities, signature alteration and worked tests, and Karma cost table.
