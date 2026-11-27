@@ -1,0 +1,23 @@
+id: rule.security.r3-revised-ccss-perception-area-p48
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '48'
+pdf_pages: '50'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition fictional RPG, printed p48/PDF50
+summary: Revised original CCSS rules specify focused perception limits, retained tactile awareness and system coverage boundaries.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_id: source.fanpro-10662, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_subsystem: {id: subsystem.security.ccss, path: subsystems/security/ccss.yml, blob: 856a6673b26f58fa175a02a9325ff4a87dd36607}
+  focused_perception:
+    senses: [audio, visual]
+    time: real time
+    area_limits:
+      room: {number: 1, area_square_meters: {operator: lt, value: 100}}
+      corridor: {length_meters: {operator: lt, value: 25}}
+    overall_system_awareness_retained_via: tactile senses
+  coverage: rigger perception is limited to the area covered by that CCSS; separate CCSS installations may cover different facility areas
+  disposition: Strict printed limits on focused perception, not inclusive boundaries or an inferred facility-size limit. Existing action economy, perception target numbers and pool rules remain unchanged; no historical printed-edition difference inferred.
