@@ -1,0 +1,44 @@
+id: rule.system-failure.jormungand-p67
+record_type: rule
+status: ingested
+source: source.fanpro-25014
+printed_pages: '67'
+pdf_pages: '68'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'System Failure (FanPro, FanPro25014, SR3), fictional Shadowrun p67/PDF68: Jormungand game statistics and Echoes'
+data:
+  publication:
+    title: System Failure
+    publisher: FanPro
+    edition: SR3
+    catalog: FanPro25014
+  name: Jormungand
+  kind: Chimaera, unique daemon/worm construct
+  persona:
+    bod: 6
+    evasion: 5
+    masking: 2
+    sensors: 5
+  pilot_rating: 5
+  hacking_pool: 6
+  attack: '6D'
+  echoes:
+    - Cascading Code
+    - Enhanced Distortion Echo
+    - Siphon
+    - Traceroute
+  traceroute_scope: high traffic areas
+  cascading_code:
+    rating_increment: 1
+    affected: [all Persona Ratings, Attack Rating]
+    triggers: [each minute after release, each defeat in cybercombat]
+  enhanced_distortion_echo:
+    turns_present_in_host_per_increment: 2
+    local_target_number_increment: 1
+    maximum_modifier: {system_security_value_multiplier: 2}
+    affected_tests: tests involving non-Dissonant users, subsystems, constructs and programs
+  branch_resolution:
+    code_egg_exists: Respawns at the nearest Dissonance Pool after defeat, with Cascading Code escalation.
+    code_egg_host_destroyed: The corresponding branch decays; existing damage persists.
