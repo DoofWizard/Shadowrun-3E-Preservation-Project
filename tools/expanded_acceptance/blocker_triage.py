@@ -151,8 +151,22 @@ def scan(review, bindings, evidence):
         path, pointer = b.get('path'), b.get('pointer')
         if not isinstance(path, str) or not path or not isinstance(pointer, str) or not pointer.startswith('/data/'):
             add('binding', fid, 'substantive_canonical_path_and_pointer_required'); continue
-        if b.get('mode', 'source_local') != 'source_local':
+        mode = b.get('mode', 'source_local')
+        if mode == 'sr3-accepted-core-equivalence/v1':
+            core = evidence.get('accepted_core_equivalence')
+            if not isinstance(core, dict) or core.get('protocol') != mode or not core.get('receipt_commit') or not core.get('receipt_blob'):
+                add('equivalence', fid, 'accepted_core_receipt_proof_missing')
+            if not b.get('core_obligation'):
+                add('equivalence', fid, 'accepted_core_obligation_missing')
+            if not isinstance(core, dict) or not isinstance(core.get('comparisons'), dict) or fid not in core['comparisons']:
+                add('equivalence', fid, 'independent_original_page_comparison_missing')
+            # A core reference uses the actual accepted FASA7001 receipt, not
+            # an invented historical Companion transaction. The independent
+            # expanded validator must verify this evidence at pinned Git HEAD.
+            continue
+        if mode != 'source_local':
             add('equivalence', fid, 'external_equivalence_requires_own_reviewed_lineage_and_accepted_target_proof')
+            continue
         if path not in transactions:
             add('receipt', path, 'no_accepted_transaction_evidence'); continue
         t = transactions[path]
