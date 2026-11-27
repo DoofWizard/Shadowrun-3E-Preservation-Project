@@ -428,3 +428,55 @@ The existing 112 other-source links (not independently re-reviewed against their
 - Complex: combat 1, 3; critter 1, 3, 6–17, 19–33, 35; decking 1, 3, 5–9, 11–15, 17–18; magic 4, 6, 11, 13–14, 20–22; rigging 1–2, 4–5, 7, 10–19.
 
 Totals: critter 40, decking 31, magic 16, rigging 22, combat 3. Existing 37 owned row evidence unchanged. Historical receipt and edition/lineage adjudication debt is separate from mechanics. Existing 18-scope owner inventory is not a newly authenticated complete independent page/field review. Full local authentic Git history bundle and independently authenticated complete 138-page reviewer/binding/custody input pack were not materialized in this run; historical blob snapshots are not a replacement. Prior actual production validator BLOCKED remains; not rerun with invented inputs. The new discrepancy prevents a clean mechanical-fidelity verdict for the mapped action field. No new source semantic/index commit, formal book certification, recovered historical receipt or global page credit. Next: owner adjudicate the exact Fire Weapon field; obtain accepted-parent proof and source review for remaining 22, then group other-source review by actual target publication while preserving original edition and exceptions.
+
+
+## 2026-11-27 production history recovery and bounded Actions Matrix/rigging reconciliation
+
+**Actual production full-history transport verified.** GitHub Actions run [45953667935](https://github.com/DoofWizard/Shadowrun-3E-Preservation-Project/actions/runs/45953667935) completed successfully at independently fetched main `ded2a66c23ca848dccc767789521be0b4133f422`. Authenticated artifact 15177752546, `sr3-acceptance-history-45953667935`, downloaded; ZIP SHA256 `8e71ac6fa3a3e67546e2c1febf8a1d7f2cf5c70df1b3a81bcc7fd88be65e1eda` matched GitHub artifact digest. Bundle SHA256 `0659484ebfe5b2a833e27485a0b36b0fc10ab98a84bea580d23634f106ba1913` matched snapshot; actual git bundle verify, clone, non-shallow HEAD, git fsck connectivity, original receipt ancestry and receipt blob `d11888c9f20b5603f874f4e976dff3e23c8cde98` and historical manifest blob `a79b28a3970668982ef44a5318642ed55848839a` checked. This resolves the local-history transport blocker for this pinned HEAD, not missing original evidence.
+
+Fresh Drive PDF acquisition and actual verify-source: FASA7905a `8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5`, FASA7001 `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914`, both `source_pdf_hash_verified` against live exact manifest blobs `4c014f59d657cb872eef541f8a2693b26d8d2a6e` and `b0ebffa4985ab544e64857b99e98b17d69ee3184`. All eight protected runtime blobs matched; actual 29 editorial + 56 ingestion/preservation/recovery tests passed. Expanded full local discovery did not finish before command timeout; no claim of its pass. GitHub reported expanded contract checks run 45953667928 success at same HEAD.
+
+Original Companion p130/PDF131 and core pp215–219/PDF224–228, p157/PDF158, p152/PDF153 visually inspected. Selected the existing 26-row additional_batch in the unchanged Companion closure checklist, rather than constructing a new queue. Actual typed comparisons matched 32 retained owner field values against canonical records; independently read index class and original controlling procedure classifications agree for these 26 rows. This is bounded action-class coverage, not a full independent review of every target procedure or a new historical receipt. All five target record blobs identical at original acceptance commit and pinned HEAD:
+
+- analysis: rules/matrix/sr3-core-interrogation-analysis-operations-p214-215.yml, `8b2ef0b38fc5e9f2dd4a2f989af38fb45ce0dfff`.
+- data: rules/matrix/sr3-core-data-decrypt-edit-locate-p216-217.yml, `7503036d8b8d6a70a456d752d3fb8cbd214d0c1e`.
+- grid: rules/matrix/sr3-core-grid-comcall-monitoring-operations-p218-219.yml, `c6b84e61f1b69416c848440e370b81306788cd8f`.
+- drone: rules/drones/sr3-core-remote-command-action-comprehension-p157.yml, `ced95d126b7f765220fac091eb48bf6efaa35457`.
+- gunnery: rules/vehicles/sr3-core-gunnery-resolution-p151-152.yml, `b263f5a6a25260dc3f458fa8f4957decbf9f9870`.
+
+Historical queue at `6baeb5dffd92dbdcbe50aa451d637e8ae9702316` (not current queue): **20 rows have all corresponding historical accepted parent pointers, 6 rows (8 field bindings) lack them.** Exact obligations are obligation.<record id>.<parent suffix>; pointers below are relative to the named target's /data. One-based Companion row positions are from the existing owner checklist.
+
+| Companion row | Target pointer(s) | Historical accepted parent |
+|---|---|---|
+| free.decking[2] | analysis listed_operations/1/action; /2/action | missing |
+| free.decking[4] | analysis monitored_operations/maintenance_action | missing |
+| free.decking[8] | grid operations/5/if_insufficient_active_memory | operations |
+| simple.decking[1] | analysis listed_operations/3/action; /4/action | missing |
+| simple.decking[3] | data operation_definitions/0/action; /1/action; /2/action | operation_definitions |
+| simple.decking[4] | data operation_definitions/3/action | operation_definitions |
+| simple.decking[5] | data operation_definitions/4/action | operation_definitions |
+| simple.decking[7] | grid operations/3/action | operations |
+| simple.decking[11] | grid operations/5/action | operations |
+| complex.decking[1] | analysis listed_operations/0/action | missing |
+| complex.decking[3] | analysis listed_operations/5/action | missing |
+| complex.decking[8] | data operation_definitions/5/action | operation_definitions |
+| complex.decking[9] | data operation_definitions/6/action | operation_definitions |
+| complex.decking[13] | data operation_definitions/12/action; grid operations/0/action; /1/action | operation_definitions; operations |
+| complex.decking[14] | grid operations/2/action | operations |
+| complex.decking[15] | grid operations/4/action | operations |
+| complex.decking[18] | grid operations/6/action | operations |
+| free.rigging[3] | drone declared_action_examples/free/1 | declared_action_examples |
+| simple.rigging[2] | drone declared_action_examples/simple/0 | declared_action_examples |
+| simple.rigging[3] | drone declared_action_examples/simple/3 | declared_action_examples |
+| simple.rigging[5] | drone declared_action_examples/simple/2 | declared_action_examples |
+| simple.rigging[6] | drone declared_action_examples/simple/3 | declared_action_examples |
+| complex.rigging[10] | drone declared_action_examples/complex/1 | declared_action_examples |
+| complex.rigging[11] | gunnery sensor_enhanced/lock_action | missing |
+| complex.rigging[12] | drone declared_action_examples/complex/2 | declared_action_examples |
+| complex.rigging[13] | drone declared_action_examples/complex/3 | declared_action_examples |
+
+Do not expand index abbreviations into unconditional rules: monitored operations require maintenance each Initiative Pass and restart test on interruption; memory unloading Free applies to insufficient active memory before loading (Simple, no test); decrypt prerequisites, ongoing download interruption, monitored slave/comcall procedures and separate grid logons remain controlling. Drone status report is single-drone; identical simultaneous Free actions require captain's-chair mode, not distinct actions; direct primary-drone operation is separate from command issuance; secondary observation is Complex while controlling a primary; sensor lock requires successful Sensor Test before the separate sensor-enhanced attack. All conditions remain in original target records; no inferred CCSS, later Matrix or SR2 equivalence. No new discrepancy demonstrated in these bounded index class comparisons.
+
+Real pinned-input triage on this partial 26-row/32-field diagnostic: TRIAGE_ONLY, 41 equivalence, 1 independence, 1 inventory and 4 original_rule diagnostics (overlapping prerequisites, not missing rules). Input SHA256 review `279274e8771d79899a6480cd8bc87f2361d873a8757faf028ccf92946f11b2e9`, bindings `89292fd54f089f9d78bd591b8e205b928c73484d51df36ad54527dd339d317eb`, evidence `aaeb4f0d6e8f9dc7f9d1ba372fa0e3d143d06fafdf04c54ee6c323b08baf34f9`. Actual validator with full restored production Git and fresh original Companion PDF executed and returned `{"status":"BLOCKED","reason":"independent_review_required","formal_acceptance":false,"global_pages_advanced":0}`. Not an environmental Git failure: authentic independently pinned custodian, full source-derived field/page review (PDF1–130,132–138 outside this bounded review), row-level comparison attestations, source-local original journals and contradiction/edition adjudication remain required. No fabricated custodian, historical journal, zero-rule disposition or equivalence.
+
+Remaining original action references: 86 of previously listed 112 other shared mappings still outside this bounded source comparison; the six newly isolated missing-parent rows are documentary/acceptance obligations, not six missing mechanics. The previously recorded 22 unresolved Simple/Complex accepted-parent candidates and Fire Weapon field discrepancy remain with appropriate owner; 11 Free and five alternate parent candidates are not promoted to formal acceptance. New semantic records/corrections, recovered historical receipts, formally accepted sources and global pages advanced: zero. No protected path or worker control modified.
