@@ -79,6 +79,50 @@ exclusive write ownership.
    issue automatic source decisions. Existing coordinator-only routing and
    ownership adjudication remain in force.
 
+## Bounded 404 recovery (2026-11-27)
+
+Apply at the first observed 404, not on every successful transaction. Preserve
+the exact diagnostic, operation, repository, branch/ref, case-sensitive path,
+stable record ID and expected/observed blob or commit when available. Do not
+infer a provider status from a wrapper error. The offline diagnostic is:
+
+    python tools/ingestion/transaction_recovery.py classify-failure read "HTTP 404"
+
+Pass --http-status 404 only for a separately observed GitHub response.
+"404: Action not found" before action invocation is a tool-route failure, not a
+missing GitHub file. A connector-level safety rejection remains a separate
+restriction; do not bypass or replay denied content.
+
+For repository path resolution, use the live owned source manifest and its
+registered ID/path and blob as the first locator, then the canonical lineage
+index or a bounded directory/tree listing at the intended ref. Never infer
+a path from the record's topic (e.g. True Names belongs at
+rules/spirits/true-names.yml). Inspect exact spelling/case and verify the live
+ID, source and blob against the expected evidence. Use a known accessible
+repository/ref and parent listing to distinguish a genuinely missing file from
+a bad ref, stale path or insufficient access. A bare read 404 is not evidence
+that a prior write failed or that the file is absent. Do not create duplicates
+or silently rewrite historical paths/receipts.
+
+For an attempted write with uncertain result, retain the exact prepared journal.
+Use ordinary read-only checks of the intended ref/path and actual commit.
+If the exact candidate blob and actual commit are established, follow normal
+ingestion_gate.confirm and source-specific indexing. If they differ or cannot
+be located, preserve the pending item and report the precise blocker; do not
+overwrite a divergent blob or infer page credit. No retry of denied unchanged
+bytes, alternate write APIs, fabricated confirmation or disabled workers.
+Only a demonstrably resolved condition and existing authorization permit a
+normal Contents operation. For semantic writes, use preservation_method.py
+log-failure and decide; do not supply --remote-absent from a bare 404.
+
+Limit each blocked path to one targeted manifest/index/parent lookup and one
+corrected exact-path read when warranted. If unresolved, continue another
+eligible owned open scope in the same run; do not repeatedly guess paths or
+create another queue. Route-level failures in automation monitoring are handled
+by the coordinator using supported task status lookup; do not change workers'
+schedules or duplicate tasks to compensate. These diagnostics do not replace
+any verification, acceptance or source-ownership gate.
+
 ## Running the cache
 
 Python 3 with PyMuPDF. Initial benchmark used PyMuPDF 1.26.7. Fetch the live
