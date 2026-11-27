@@ -1,0 +1,39 @@
+id: rule.cyberware.mm-cybergun-game-boundaries-p41
+record_type: rule
+name: Cybergun game boundaries
+domain: cyberware
+status: source_reviewed
+source: source.mm
+printed_pages: '41'
+pdf_pages: '41'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop RPG, printed/PDF p41 — cybergun eligibility
+summary: Original tabletop implant eligibility, activation prerequisites, ammunition-table interpretation, Concealability conditions and accessory restrictions; no duplicate equipment statistics.
+data:
+  source_publication: {title: 'Man & Machine: Cyberware', publisher: FASA Corporation, catalog_number: FASA7126, edition: SR3, printed_page: 41, physical_pdf_page: 41}
+  cyberweapon_activation:
+    reflexive_activation_requires: entity.cyberware.direct-neural-interface
+    without_dni: manual triggering required
+    smartgun_link_requires: [smartlink-equipped game weapon, router connection to smartlink system]
+  cyberguns:
+    eligible_character_implants: [cyberarm, natural limb]
+    integral_magazine: true
+    external_clip_port_optional: true
+    ammo_table_notation: {before_slash: built-in ammunition capacity, after_slash: external clip capacity}
+    concealability_table_scope: concealed within a natural arm
+    obvious_when: [fired, external clip in use]
+    permitted_accessories: [smartlink, laser sight, silencer, sound suppressor]
+    silencer_eligible_game_classes: [light pistol, heavy pistol]
+    sound_suppressor_eligible_game_classes: [machine pistol, submachine gun]
+    recoil_compensation_allowed: false
+    other_unlisted_accessories_allowed: false
+    accessory_effects_reference: SR3 printed p281
+  existing_rules_reused:
+    - entity.cyberware.direct-neural-interface
+    - rule.cyberware.smartlink-2
+    - rule.cyberware.router-interconnectivity
+    - rule.firearms.sr3-core-sighting-suppression-accessories-p281
+    - rule.firearms.sr3-core-silencer-notice-modifier-errata-p281
+  scope_limit: Apply these fictional game eligibility conditions once; do not reproduce purchase fields, core accessory modifiers, the separate weapon-mount rules, or device-specific dartgun and cybersquirt mechanics.
