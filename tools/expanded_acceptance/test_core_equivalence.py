@@ -74,6 +74,7 @@ class CoreEquivalenceTests(unittest.TestCase):
                      'source_image_review':'fixture original p130 image',
                      'core_image_review':'fixture original core p102 image'}}}
         self.git.bytes[(self.commit,self.path)]=dump(self.record)
+        self.git.bytes[(self.git.head,self.path)]=dump(self.record)
         self.git.bytes[(self.commit,CORE_MANIFEST)]=mr
         self.git.bytes[(self.commit,CORE_QUEUE)]=qr
         self.git.bytes[(self.commit,CORE_RECEIPT)]=json.dumps(self.receipt).encode()
@@ -108,6 +109,10 @@ class CoreEquivalenceTests(unittest.TestCase):
         self.receipt['assessment']['manifest_blob']=git_blob(dump(self.manifest))
         self.git.bytes[(self.commit,CORE_RECEIPT)]=json.dumps(self.receipt).encode()
         self.proof['receipt_blob']=git_blob(self.git.bytes[(self.commit,CORE_RECEIPT)])
+        self.reject()
+
+    def test_modified_live_core_record_refused(self):
+        self.git.bytes[(self.git.head,self.path)] += b'\n'
         self.reject()
 
     def test_fake_receipt_refused(self):
