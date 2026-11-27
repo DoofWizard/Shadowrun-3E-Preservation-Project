@@ -3,23 +3,37 @@ record_type: rule
 name: "Target: Wastelands Deep-Sea Pressure Mechanics"
 domain: hazards
 status: ingested
+source: source.fanpro-10653
+printed_pages: "130-131"
+pdf_pages: "131-132"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition tabletop pressure mechanics from FanPro's Target: Wastelands (FanPro10653, 2002), printed pp130-131/PDF131-132"
 effective: {status: source_specific, source: source.fanpro-10653, pages: "130-131", pdf_pages: "131-132", basis: defines}
-cyberware_pressure:
-  threshold: "Below 200 meters / above roughly 20 atmospheres, make a Stress Test for affected implants using implant grade to determine dice."
+cyberware_pressure: &pressure
+  threshold: "When a fictional character descends beyond 200 meters (20 atmospheres ambient), make a Stress Test, using implant grade to determine dice."
   recurrence: "Make another Stress Test for each additional 200 meters of depth."
-  selection: "The gamemaster may test each piece or determine the affected item randomly."
-  internal_headware: "Internal headware is generally protected by cranial fluid; tooth compartments are called out as an exception."
-breathing_mixtures:
-  nitrox: "High-oxygen nitrox may call for Body (4) against inner-ear infection and a Stress Test for cybernetic equipment."
-  heliox: "Helium transfers heat much faster and can distort voice communications; cyberware and communications equipment may require Stress Tests."
-  trimix: "Effects are less severe but equipment remains subject to adverse-condition Stress Tests."
-oxygenate_interaction: "Sustaining Oxygenate on a character deep underwater can create oxygen-toxicity problems; the cited source applies one box of Physical damage per minute until ascent or the spell ends."
+  selection: "The gamemaster decides whether to test every item or select the affected item randomly."
+  internal_headware: "The gamemaster may exempt equipment such as internal headware because cranial fluid buffers pressure; tooth compartments are excepted."
+breathing_mixtures: &mixtures
+  nitrox: "High-oxygen nitrox is excepted from the exotic-atmosphere problems described here."
+  heliox: "Heliox conducts heat six times faster than nitrogen, with qualitative thermographic consequences; make a Body (4) Test against inner-ear infection and a Stress Test for the implant in question. Cyberear malfunction risk increases; implanted subvocal microphones, radios and telephones cannot be used properly."
+  trimix: "The effects are less severe in warmer trimix; equipment in either heliox or trimix still warrants adverse-condition Stress Tests."
+oxygenate_interaction: &oxygenate "A character with Oxygenate sustained on them deep underwater suffers oxygen toxicity: one box of Physical damage per minute until ascent or the spell is dropped."
 links:
   uses: [rule.damage.stress-test, rule.damage.stress-points]
   affects: []
   modified_by: []
   interacts_with: [rule.hazards.target-wastelands-deep-sea-environments]
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  cyberware_pressure: *pressure
+  breathing_mixtures: *mixtures
+  oxygenate_interaction: *oxygenate
 sources:
   - {source: source.fanpro-10653, pages: "130-131", pdf_pages: "131-132", relation: defines}
 notes:
-  - "These rules supplement the Cannon Companion underwater procedures cited by the source."
+  - "These fictional rules supplement the Cannon Companion underwater procedures cited by the source; the pressure and spell mechanics are on printed p130/PDF131."
