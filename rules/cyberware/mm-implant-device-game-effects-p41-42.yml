@@ -1,0 +1,56 @@
+id: rule.cyberware.mm-implant-device-game-effects-p41-42
+record_type: rule
+name: Cyberweapon device-specific game effects
+domain: cyberware
+status: source_reviewed
+source: source.mm
+printed_pages: '41-42'
+pdf_pages: '41-42'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999), fictional Shadowrun Third Edition tabletop game, printed and PDF pp41-42: specific implant effects'
+summary: Original SR3 game resolution, eligibility, inventory and Stress fields from printed pp41-42; existing entity statistics and common rules are reused.
+data:
+  source_publication: {title: 'Man & Machine: Cyberware', publisher: FASA Corporation, catalog_number: FASA7126, edition: SR3}
+  cyber_dartgun:
+    entity: entity.cyberware.cyber-dartgun
+    printed_page: 41
+    game_weapon_class: light pistol
+    doses_per_dart: 1
+    attack_resolution: standard ranged combat rules
+    drug_effects: {rule: rule.chemistry.drug-exposure, printed_page: 105}
+  cybergun_reload:
+    printed_page: 41
+    applies_to: rule.cyberware.mm-cybergun-game-boundaries-p41
+    integral_magazine_reload_access: true
+    external_clip_port_required_to_reload: false
+  cybersquirt:
+    entity: entity.cyberware.cybersquirt
+    printed_page: 42
+    game_range_class: light pistol
+    chemical_power_reduction_for_porous_game_armor: {attribute: Impact Armor, divisor: 2, round: up}
+    penetrating_effect_immunity: [fully sealed rigid armor, suit specifically designed to protect against chemical or biological agents]
+    canister_service: {shots: 50, cost_nuyen: 50, alternatives: [replacement, recharge]}
+    stress_check: {trigger: each time the implant takes Stress, dice: 1D6, leak_results: [1, 6], affected_character: implant owner, effect_reference: 'Chemistry, printed p101'}
+    permitted_game_accessories: [smartlink, laser sight]
+    other_accessories_allowed: false
+    compound_effects_reference: 'Drug Effects, printed p105'
+  cyber_taser:
+    entity: entity.cyberware.cyber-taser
+    printed_page: 42
+    eligible_game_implant_locations: [cyberarm, cyberhand, natural hand]
+    game_range_class: standard taser
+    permitted_game_accessories: [smartlink, laser sight]
+    other_accessories_allowed: false
+    existing_damage_reload_and_recharge_fields: entity.cyberware.cyber-taser
+  venom_sack:
+    entity: entity.cyberware.venom-sack
+    printed_page: 42
+    compatible_game_implants: [implant blade, dart weapon]
+    simultaneous_doses_per_blade_or_dart: 1
+    dose_consumed_when: weapon strikes target
+    refill_test: {skill: Biotech, target_number: 6, base_time_minutes: 10}
+    effect_resolution: {rule: rule.chemistry.drug-exposure, printed_page: 105}
+  reuse_existing_purchase_and_capacity_fields: true
+  scope_limit: 'These are fictional tabletop resolution and inventory rules, not physical engineering instructions; existing entity statistics, the general cybergun rule, and the separate Shock Hand addendum remain controlling for their own fields.'
