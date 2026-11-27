@@ -3,10 +3,26 @@ record_type: entity
 name: "Kid Stealth Legs"
 domain: cyberware
 status: ingested
-intrinsic: {essence_each: 1, equipment_capacity_each: 10, cost_nuyen_each: 100000, availability: "6/2 wks", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '37,39,155'
+pdf_pages: '37,39,156'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp37,39,155/PDF37,39,156 — Kid Stealth Legs purchase and capacity fields
+intrinsic: {essence_each: 1, equipment_capacity_each: 10, cost_nuyen_each: 100000, concealability: '-', availability: "6/2 wks", street_index: 2, legality: "Legal"}
 links: {uses: [], requires: [], component_of: [], interacts_with: [subsystem.cyberlimbs.core]}
 sources:
-  - {source: source.mm, page: 39, relation: defines, note: "Kid Stealth Legs description and statistics"}
+  - {source: source.mm, page: 37, relation: defines, note: "Kid Stealth Legs game effects and capacity"}
+  - {source: source.mm, page: 39, relation: defines, note: "Cyberware purchase table"}
   - {source: source.mm, page: 155, relation: references, note: "Cyberlimb table"}
 notes:
   - "Digitigrade fictional cyberlegs that modify movement and kicking power as specified by the source."
+data:
+  purchase_each: {essence: 1, cost_nuyen: 100000, concealability: '-', availability: "6/2 wks", street_index: 2, legality: Legal}
+  original_ecu_entries:
+    printed_p39: '-'
+    printed_p155_available: 10
+    printed_p37_game_effect_capacity_each: 10
+  ecu_interpretation: Printed p155 expressly labels the column as capacity available, and p37 confirms 10 units per leg. The p39 ECU cell is a dash; retain both original entries without inferring zero capacity or an erratum.
+  game_effects_record: rule.cyberlimbs.accessory-effects
