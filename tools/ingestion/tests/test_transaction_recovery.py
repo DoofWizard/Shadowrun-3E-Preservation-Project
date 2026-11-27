@@ -111,6 +111,26 @@ class RecoveryTests(unittest.TestCase):
         self.assertFalse(r['cause_proved'])
         self.assertEqual(tr.classify_failure('create','explicit',403,True)['next_action'],'stop_preserve_pending')
         self.assertEqual(tr.classify_failure('update','sha mismatch',409)['category'],'stale_sha')
+    def test_not_found_layers_are_not_remote_absence(self):
+        route = "NOT_FOUND: HTTP error prior to action invocation. HTTPException: 404: Action not found"
+        for operation in ('read', 'create', 'update', 'manifest', 'checkpoint'):
+            with self.subTest(operation=operation):
+                result = tr.classify_failure(operation, route, 404)
+                self.assertEqual(result['category'], 'tool_route_not_found')
+                self.assertIsNone(result['github_http_status'])
+                self.assertFalse(result['cause_proved'])
+        for operation, category in (('read', 'provider_read_not_found'),
+                                    ('create', 'provider_write_not_found'),
+                                    ('update', 'provider_write_not_found'),
+                                    ('manifest', 'provider_not_found')):
+            with self.subTest(operation=operation):
+                result = tr.classify_failure(operation, 'Not Found', 404)
+                self.assertEqual(result['category'], category)
+                self.assertEqual(result['github_http_status'], 404)
+                self.assertFalse(result['cause_proved'])
+        self.assertEqual(tr.classify_failure('read', 'HTTP 404')['category'], 'unattributed_not_found')
+        self.assertEqual(tr.classify_failure('create', route, 404, True)['category'], 'explicit_restriction')
+        self.assertEqual(tr.classify_failure('create', '404 blocked by OpenAI safety checks')['category'], 'ambiguous_tool_layer_rejection')
     def test_stage_exact_candidate_and_no_overwrite(self):
         with tempfile.TemporaryDirectory() as tmp:
             root=Path(tmp);b=root/'b.yml';c=root/'c.yml';gate=root/'fake_gate.py'
