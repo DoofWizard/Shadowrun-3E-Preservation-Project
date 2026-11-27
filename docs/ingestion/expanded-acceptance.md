@@ -838,3 +838,59 @@ BLOCKED here is a bounded prerequisite disposition, not a validator exit.
 Machine-readable local diagnostic Wastelands_Acceptance_Bounded_Evidence_2026-11-27.json
 SHA-256 de010d2e24ff95f80a3682678d910609ad31013b5fc23dd33f8233b986e31473.
 No common gate, source canon or manifest changed; no page credit.
+
+
+## Man & Machine — two newly indexed source-owner addenda, 2026-11-27
+
+Forward-only workflow read at blob 2afd00d765314d425430618e2bb5b31f4440fdc6.
+Read-only archival reconciliation at main dd4b4957f732f90ed259f19d7be46af67dc178e7,
+M&M manifest blob 859c237e0e26dbd29543453861ddce52077bb578. Do not reopen the
+already corrected original scopes or duplicate their mechanics. Four retained
+source-owner ZIPs were reacquired by Library ID, CRC checked, hashed; both
+prewrite/confirmed pairs retain byte-identical baseline, candidate, plan and
+source-review files. Both actual protected prepare and confirm rechecks
+match the original retained JSON, and candidate Git blobs match historical
+and pinned-head exact-path readbacks. Eight live dependency blob pins matched
+the kit; 29 preflight and 56 gate/preservation/recovery tests passed.
+
+| Source scope | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| Signature p47/PDF47 | 3b5b0dc4e6a86ffc8effa96b3ad5446f2a085332 / df2f74015e4a0946cc38fcf1df3127057aa653b9 | e780530b2f706c235572f7e7f4bba78f743767d2 / 80316bfa511a6bc6b581df09e15740a1edc98467 |
+| Shock Hand pp42–43,156/PDF42–43,157 | 41280ee3cb6e7d2050a0aa4bcf1a12a29c84b1aa / 5b9e3cfab95261679d8467db40303f7d6e901ba3 | c42232389a9261a911dd4db7d36beb80c5ca89f4 / 5cdad565952006b01c9db59198dd32e02a56ef8d |
+
+Both index commits change the M&M manifest alone and their nested registration
+entries match pinned-head entries. Connector comparison establishes both index
+commits ancestral to the pinned head, with Signature directly one commit
+after the semantic write and Shock Hand two commits after its write. The exact
+Shock Hand index parent has not been independently fetched. Nine selected
+typed source-owner review-to-candidate field comparisons matched; two further
+archived image/modifier digest checks matched. The existing Signature modifier
+blob fb722046f7f4a428a1e501b240e75ea0b078fb79 remains unchanged. Shock Hand
+entity blobs b65d52987d8254cd9fce8c0bb344d6308a64b2d9 and
+9963851a6dc29a0cff7f071199276520f78e48a1 still share the same ID; the latter
+still points to p155. No consumer inventory or safe migration established;
+the connector code-search queries returned no results, which is not evidence
+of absence. Preserve both files pending source-owner/coordinator adjudication.
+
+Archive SHA256 prewrite / confirmed:
+- Signature: c7ad5bf395d951d4df059b078ff97e4dc8c1b12a0fe8bd297eeb0aba66f03f5c /
+  710d09bb4787d259d2ed87ebe9b367f28462d8c24c223d366ac73d426d07d7fb.
+- Shock Hand: 997b46641b09859131052254f09c300a96c44462115639ee89dd07aad0da020e /
+  618f7fcc2900279e50908582fc95356a050ad323483ecbcaad6285de656282c2.
+
+Exact archival-only blocker: neither confirmed ZIP contains an original local
+indexed-manifest snapshot; their actual receipts explicitly disclose that
+limitation. Do not manufacture it from later Git export. Both use new index
+receipt layouts unsupported by inline_index_receipt.py (live blob
+c17c1b65541aee2d8c79dea20181f351621251bd); that verifier's path regex also
+excludes the literal ampersand in sources/manifests/M&M.yml. These are specific
+future adapter requirements, not justification to bypass the mandatory
+original artifact or to spend this run rewriting the verifier. Independent
+review and complete source-wide bindings remain unestablished. The original
+source SHA recorded by the owner is
+6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8;
+no fresh original PDF selection, extraction, cache or verify-source was
+performed in this archival reconciliation. Full production CLI not executed.
+Diagnostic MM_Original_Receipt_Reconciliation_2026-11-27.json SHA256
+252b661d30d59be866b4e7f3e814310a7acf61859eb225478c5294a2f077d5b9.
+No new semantic writes, no formal book acceptance, no global page credit.
