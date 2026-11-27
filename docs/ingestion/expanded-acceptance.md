@@ -722,3 +722,64 @@ Eleven new local synthetic unit tests passed for the exact verifier bytes, inclu
 Real bounded diagnostic: reacquired three original Rigger10662 confirmed archives for MIJI and CCSS action/perception. All three original index receipt and archived manifest byte pairs passed verify_bytes against independently fetched historical Git blob pins (index commits c52c1ca4058afed8cea35fe2c1a4b7ea754ea268, c2f045b4bd4e4f934245014788675ce35298f65d, 98304ff4eab26ae5f4d6fff14a23782cb8f21778). Each fetched commit listed the manifest alone. Actual full-history parent ancestry was not rechecked this run; two receipt parent pins remain unchecked against Git parent objects in this diagnostic. Diagnostic Rigger_Inline_Index_Receipt_Diagnostic_2026-11-27.json SHA256 e293a89e956686824b12ed235ba06bc56e67cfd12516587d75ed8590cfa6cff0. No new receipt recovery, no claim of independent editorial custody, no source PDF extraction or fresh source verification.
 
 The SOTA2064 recovery archive SHA256 98da0c21e9b1d1c2ed89d0f7654f9ad314a789b9856beba6efeec673bcafb2ac was reacquired; embedded archives do not supply per-index original snapshot files for the eight historical transactions. The adjudication archive contains a manifest, not eight individually pinned original index snapshots. Do not substitute later Git exports or infer missing receipts for media van and police drones. Next: production CLI regression with original-artifact fixture, and precise triage of unsupported historical index schemas / missing original snapshots; independent Companion review and lineage remain unresolved. No semantic writes, new formal source acceptance, or global page credit.
+
+## Matrix correction receipt schema (2026-11-27)
+
+The two newly available Matrix source-owner correction archives retain original
+prewrite baseline/candidate/plan, verified confirmation, index receipt and
+indexed-manifest snapshot. Their receipt layout uses both commit/blob and
+commit_sha/blob_sha, previous_blob, semantic_commit/semantic_blob, and
+exact_commit_and_branch_readback. The old inline verifier rejected this
+authentic shape. The narrow Matrix.yml adapter now requires the exact key set,
+identical aliases, literal true, exact historical manifest snapshot and
+independently pinned semantic commit/blob and parent manifest blob. Production
+verify() obtains the parent from the existing actual index-transition proof;
+it does not replace that proof. Conflicting aliases and missing pins block.
+
+Observed archived source-owner review and exact current rule bytes:
+* Scan Icon p101/PDF102 (record pp101–102/PDF102–103): active-memory OR
+  frame/agent utility eligibility and running-Sleaze condition restored.
+  Semantic e8271dba218179a5ee27ce408dcd931524123e09 / blob
+  3408fff7a0aa662fac518d2fa21031697d63031c; index
+  922860d036ae7985fce83ad943b39018f97f4385 / blob
+  9791a5af8019349ac836f0afe84c355b2ccd06fc.
+* Dump Log p98/PDF99 (record pp98–99/PDF99–100): baseline identifiers
+  and security-dependent additional records restored, p40 discretion retained.
+  Semantic 70f142cab2414c8e540f6d7f249b6d93f9b2db08 / blob
+  752b38d951fba2a7c217d39d570d26a709bf20cd; index
+  9452df9f8215dc06f5ef03e77c9db33b35d8f33a / blob
+  714aeff0d47a15570b93f7be2d66cd42a742c48d.
+
+Both pre/post archive pairs passed CRC and exact prewrite member comparison.
+Actual pinned original prepare and confirm rechecks matched both retained
+receipts. Eight selected typed bindings matched the archived source-owner
+review; semantic historical/live blobs, archived historical index blobs
+and exact current registration text matched. Connector commit file lists
+each showed only the expected path. The lower-level receipt diagnostic
+passed using independently fetched manifest blobs at each semantic commit
+as prior-blob comparison pins. Actual index-parent ancestry, independent
+original review, historical custody and full-book acceptance were NOT
+established by this run. No fresh PDF verify-source execution is claimed
+(the archived source SHA is
+b5be5f7d6b51823ea51545b7816f3813ddc9f3bf4b674e4aa261030edbdb02fe).
+Use the original archived journals, not reconstructed receipts.
+
+Archive SHA-256 pre/post:
+* Scan: c218c52c942178c005f39b11b9135a99abd59323babc89f4bbacdde302917053 /
+  810496120aa0013cd7bae6fb195456c3104747855f0912dbc28b71a3fa12ad39.
+* Dump: b6159521360310ec6fc2c4f21f4101f1f519dc43fd578336602435927dde42fe /
+  f3ee29186f6386203a8074e1e38078aadf8992a9711e083dc88f2705b011c82d.
+
+20 inline receipt tests passed (11 existing + 9 Matrix), 85 protected tests
+passed using all eight live-blob-matched runtime dependencies. Full expanded
+CLI integration remains outstanding; older synthetic positive fixture needs
+the mandatory original index artifacts. Ordinary Contents writes and exact
+commit/live byte readbacks matched locally tested blobs:
+* inline_index_receipt.py: 62027a07d58af410b9bcc0e0a9896df14e61dd8d,
+  blob c17c1b65541aee2d8c79dea20181f351621251bd.
+* test_matrix_inline_receipt.py: 19bc73c27784617dfa2eff64eabafc12bfb85c1e,
+  blob 41d62569a5cd7ebed690526d4f22f7af76c64a6a.
+
+The two Companion cross-source Matrix concerns now have matching
+source-owner corrected fields, not a formal cross-source acceptance.
+No semantic or manifest writes by this worker; global page credit zero.
