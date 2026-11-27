@@ -262,6 +262,24 @@ def main():
         pdf_sha = sha(Path(a.pdf).read_bytes())
         need(verification['status'] == 'source_pdf_hash_verified' and verification['source'] == review['source']['id'] and verification['sha256'] == pdf_sha, 'actual_source_verification_required')
         result = assess(git, review, bindings, evidence, pdf_sha, count)
+        # assess() is the structural comparison; the CLI additionally proves
+        # each actual historical registration transition, for both layouts.
+        from index_transition import verify as verify_index_transition
+        transitions = {}
+        for path in sorted({b['path'] for b in bindings.values() if b.get('mode', 'source_local') == 'source_local'}):
+            e = evidence['transactions'][path]
+            record = parse(git.read(path))
+            if e.get('layout') == 'split_archive/v1':
+                d = result['archive_diagnostics'][path]
+                pointer = '/' + d['registration_key'].replace('~', '~0').replace('/', '~1')
+                index_commit, semantic_commit = d['index_commit'], d['semantic_commit']
+            else:
+                pointer = e['index_pointer']
+                index_commit, semantic_commit = e['index_commit'], e['confirm']['commit_sha']
+            transitions[path] = verify_index_transition(
+                git, review['source']['manifest'], index_commit, pointer,
+                (record['id'], path, semantic_commit, blob(git.read(path))), parse, ptr, blob)
+        result['index_registration_transitions'] = transitions
         with tempfile.TemporaryDirectory() as tmp:
             t = Path(tmp)
             for name in ('ingestion_gate.py', 'connector_preflight.py'):
