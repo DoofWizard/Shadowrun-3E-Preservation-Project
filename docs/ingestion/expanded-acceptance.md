@@ -894,3 +894,60 @@ performed in this archival reconciliation. Full production CLI not executed.
 Diagnostic MM_Original_Receipt_Reconciliation_2026-11-27.json SHA256
 252b661d30d59be866b4e7f3e814310a7acf61859eb225478c5294a2f077d5b9.
 No new semantic writes, no formal book acceptance, no global page credit.
+
+
+## Man & Machine — four newly indexed equipment-table corrections, 2026-11-27
+
+Read-only reconciliation of newly available owner transactions, pinned main
+eaa55ef4f3c2332bdf3490f34e34e11585c412fa, manifest blob
+e1e02eeac39f3dfa9b48d6040f52589204043985. Forward-only workflow blob
+2afd00d765314d425430618e2bb5b31f4440fdc6 read. No prior reconciled section
+reopened. Printed pp41,155/PDF41,156 as recorded by the source owner.
+
+| Record suffix | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| external-clip-port | 365eae9cda129090fa13d3c9b6cd551388317737 / ebe2b16c12d8bcf4e3848be715c8f07695dc260f | 677b423943b636a49e7f66a10f9033ec088263f5 / 9987ba006a064a32929b7d20bbf778be213a94df |
+| laser-sight | 6c6040d47a7e9e2db6719bc5104a0d78d6b37d62 / 3452248a3768ac833a90a79e07a7340ab462355a | 04119f7f346a1146dc7f96f80d293183e3659c80 / 3be24137c1eb10e2549cb92687b07daca475d60b |
+| silencer | 1f0e5a2fe363ee0e526362a38d4ea8d13e4a148c / 0a50c984f2f745f0327f62c59f4dc40466c8b79a | aede58d19a20624835c819babd5b2b3624733e14 / fd5bd7452d55cb4221ef72ea53ab5184d1c2091c |
+| sound-suppressor | 9c8be54dcefcc4cfff2180a5960694ac7f269767 / 5223b9f32e465f012f7efd3f3afea14ff72a0214 | a3546c29174598e2fff7880d5f3f5c25c9df0d73 / 5436104048acc372079ed6bbc63ce6e16101b8fa |
+
+All four original confirmed archives retain the original indexed-manifest
+snapshot, unlike the previous Signature/Shock Hand archives. All six distinct
+prewrite/confirmed ZIPs pass CRC. Original baseline/candidate/plan bytes match
+across archive pairs; actual protected prepare and confirm re-executions match
+retained JSON (4/4 each). Historical and pinned-head candidate Git blobs and
+historical index manifest blobs match local exact hashes. Exact registration
+excerpts match historical and pinned-head manifests. Each semantic commit
+changes only its entity path and each index commit changes only M&M.yml.
+Authenticated comparisons establish all four index commits ancestral to pinned
+head; three index commits are one commit ahead of their semantic write, while
+silencer is two ahead, so its exact index parent remains unestablished.
+Twenty newly restored intrinsic fields match the actual source-owner commit
+patches and archived baseline/candidate with exact types, including literal
+dash strings. This is a commit-delta and archival comparison, not independent
+original-image field review. All eight runtime dependency pins match;
+29 editorial + 40 ingestion/preservation + 16 recovery tests passed.
+
+New specific acceptance blockers: each original index receipt contains only
+commit_sha and blob_sha, not a literal original exact-readback marker. The
+archived snapshots and current readbacks do not supply missing historical
+attestations. The live validator blob 24cbf4218164c410a2cb2ee0b0b539d3f53977ba
+requires /data/ bindings, excluding these legitimate /intrinsic/ equipment
+properties, and its safe-path rule excludes the literal ampersand in M&M.yml.
+The inline verifier blob c17c1b65541aee2d8c79dea20181f351621251bd likewise
+excludes that manifest path. Preserve these concrete adapter requirements
+without waiving historical evidence. Independent source review and complete
+book bindings remain outstanding. No full production validator executed.
+
+Latest p41 tabletop boundaries source-owner commit
+e98a3c74a3aae645c10900e1c31e47241acfd9b0 / 9cb0796d3bc700af679fdf3dca389d84e0f71b26
+and index eaa55ef4f3c2332bdf3490f34e34e11585c412fa observed. Its prewrite ZIP
+was located but confirmed archive was not present in the returned latest
+folder listing; defer that distinct scope until original artifacts arrive.
+No duplicate semantic transaction. The original source SHA is
+6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8
+as retained by the owner. No fresh PDF verification or cache use claimed
+during this archival reconciliation. Machine-readable diagnostic
+MM_Accessory_Receipt_Reconciliation_2026-11-27.json SHA256
+ac7f093ae6e6465ed5d21c3ed9d26a7c10a20095c71f60a06e4387342fb085ff.
+No semantic writes, formal book acceptance, or global page credit.
