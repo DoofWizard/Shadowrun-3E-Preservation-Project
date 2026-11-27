@@ -277,3 +277,28 @@ conditions, units and conflicts. Companion p130's outstanding receipt links
 are not closed. No production original PDF verification, newly recovered
 historical receipt, accepted semantic record or formal source decision this
 run. No protected files, source manifests, canon or global pages changed.
+
+## All-at-once prerequisite triage (read-only)
+
+Use `tools/expanded_acceptance/blocker_triage.py` **before** the more expensive acceptance validator to enumerate all structurally evident prerequisite problems in one run. This reduces the historical receipt one-error-at-a-time loop. It does not inspect original page pixels, verify source truth, parse Git commits, prove a transaction, resolve cross-source equivalence, approve omissions, or certify any rulebook.
+
+Inputs are **separately and externally pinned** UTF-8 review, bindings and evidence JSON files from the same independently prepared sourcebook dossier already specified above. It never generates a supposedly complete review from existing canonical records or treats an absent rule as a zero-rule page.
+
+```sh
+python tools/expanded_acceptance/blocker_triage.py \
+  --review /local/book-review.json --review-sha EXACT_SHA256 \
+  --bindings /local/book-bindings.json --bindings-sha EXACT_SHA256 \
+  --evidence /local/book-evidence.json --evidence-sha EXACT_SHA256
+```
+
+The output is deterministic JSON with `status: TRIAGE_ONLY`, a complete list of detected prerequisite blocker codes, counts by category and individual field/path locations. The CLI fails for invalid external input pins; even **zero detected structural blockers is not PASS**. It must be followed by actual original-source editorial review, the independent `validator.py` with the fresh cataloged original PDF, recorded gate checks, and explicit source-level coordinator certification. Any foreign-source field is classified as requiring independently reviewed edition/lineage and accepted target proof; it cannot be silently treated as a source-local binding.
+
+Eight synthetic tests were actually executed locally with all eight passing; the source and test GitHub blobs matched the exact locally executed files after ordinary Contents commits and readback:
+* Diagnostic source: `tools/expanded_acceptance/blocker_triage.py`; semantic commit `355c7cb38dcd896c25cb9165855de690dd95d484`, blob `99be586e2240f3deb5eb7852d174d4182c3f72d5`.
+* Regression tests: `tools/expanded_acceptance/test_blocker_triage.py`; commit `f9763b48e58cef5e777bdbdc124f421e6b8eefd1`, blob `6c40a413f32a50f2e055158131578fca17a59297`.
+
+```sh
+PYTHONPATH=tools/expanded_acceptance python -m unittest discover -s tools/expanded_acceptance -p test_blocker_triage.py -v
+```
+
+**Highest-priority production handoff:** Complete ONE independently sourced full-book review/bindings/evidence pack for the nearest-complete owned supplement (initial candidate: FASA7905a Shadowrun Companion). Use this triage to enumerate exact missing original review/page/equivalence/receipt inputs, and resolve or bound those without fabricating history. Next run `validator.py` against the fresh authentic original PDF and live full Git history. Present the coordinator either a verified source-specific PASS candidate with the independent acceptance prerequisites, or exact BLOCKED reasons, never a synthetic certification or unchanged-status essay. Formal expanded-source/corpus acceptance requires the separate authorized final procedure; no such certification is conferred by this diagnostic.
