@@ -39,11 +39,12 @@ def artifact(a):
 
 
 def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
-                 historical_blob, parent_blob=None):
+                 historical_blob, parent_blob=None, *,
+                 semantic_commit=None, semantic_blob=None):
     """Check exact archived bytes against independently obtained Git blob pins.
 
     This lower-level diagnostic does not establish Git ancestry or custody.
-    Supported schemas are the observed Rigger and split-archive receipt shapes.
+    Supported schemas are the observed Rigger, split and Matrix receipt shapes.
     """
     r = json.loads(receipt_raw, object_pairs_hook=pairs)
     require(isinstance(r, dict), 'inline_index_receipt_object_required')
@@ -69,6 +70,26 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_registration_key_required')
         prior = None
         schema = 'split-index-receipt/v1'
+    elif 'exact_commit_and_branch_readback' in r:
+        required = {'path', 'commit', 'blob', 'previous_blob', 'semantic_commit',
+                    'semantic_blob', 'exact_commit_and_branch_readback', 'commit_sha', 'blob_sha'}
+        require(set(r) == required, 'inline_index_matrix_receipt_fields')
+        require(manifest_path == 'sources/manifests/Matrix.yml',
+                'inline_index_matrix_manifest_required')
+        commit, recorded_blob, path = r['commit'], r['blob'], r['path']
+        require((r['commit_sha'], r['blob_sha']) == (commit, recorded_blob),
+                'inline_index_matrix_conflicting_aliases')
+        require(r['exact_commit_and_branch_readback'] is True,
+                'inline_index_original_readback_missing')
+        require(all(isinstance(x, str) and re.fullmatch(r'[0-9a-f]{40}', x)
+                    for x in (semantic_commit, semantic_blob, parent_blob)),
+                'inline_index_matrix_external_pins_required')
+        require((r['semantic_commit'], r['semantic_blob']) == (semantic_commit, semantic_blob),
+                'inline_index_matrix_semantic_identity_mismatch')
+        prior = r['previous_blob']
+        require(isinstance(prior, str) and prior == parent_blob,
+                'inline_index_parent_blob_mismatch')
+        schema = 'matrix-index-receipt/v1'
     else:
         raise ValueError('inline_index_unsupported_receipt_schema')
     require((commit, recorded_blob, path) == (index_commit, historical_blob, manifest_path),
@@ -100,10 +121,16 @@ def verify(git, manifest_path, transaction, transition):
     require(snapshot == actual, 'inline_index_snapshot_bytes_mismatch')
     r = json.loads(receipt, object_pairs_hook=pairs)
     prior = None
-    if 'prior_blob_sha' in r:
+    if 'prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r:
         prior = blob(git.read(manifest_path, transition['index_parent']))
     if 'registration_key' in r:
         key = r['registration_key']
         require(isinstance(key, str) and transition['index_pointer'] == '/' +
                 key.replace('~', '~0').replace('/', '~1'), 'inline_index_registration_pointer_mismatch')
+    if 'exact_commit_and_branch_readback' in r:
+        confirm = transaction['confirm']
+        require(confirm['status'] == 'verified', 'inline_index_matrix_verified_confirm_required')
+        return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior,
+                            semantic_commit=confirm['commit_sha'],
+                            semantic_blob=confirm['readback_blob_sha'])
     return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior)
