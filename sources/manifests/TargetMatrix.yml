@@ -601,7 +601,7 @@ book_mechanical_closure_checklist_2026_11_26:
     'PDF1-6': {status: screened, evidence: front_matter}
     'pp6-22': {status: reconciled_coverage_only, evidence: grids_embedded_mechanics_reconciliation_2026_11_26, unresolved: bounded attributed access-description discrepancy}
     'pp23-51': {status: reconciled_coverage_only, evidence: data_havens_embedded_mechanics_reconciliation_2026_11_26, unresolved: historical independent receipts and formal scoped acceptance}
-    'pp52-65': {status: historical_directed_coverage_only, remaining: independent embedded mechanics comparison}
+    'pp52-65': {status: partially_reconciled, evidence: seattle_embedded_mechanics_reconciliation_2026_11_26, remaining: Mosaic pp52-53 and Seattle host-specific access/security qualifications}
     'pp66-81': {status: historical_directed_coverage_only, remaining: independent embedded mechanics comparison}
     'pp82-93': {status: historical_directed_coverage_only, remaining: independent embedded mechanics comparison}
     'pp94-105': {status: historical_directed_coverage_only, remaining: independent embedded mechanics comparison}
@@ -792,6 +792,43 @@ data_havens_embedded_mechanics_reconciliation_2026_11_26:
     - 'pp35-36: Asgard chapter access conditions indexed; p35 window slightly under two hours versus p121 explicit two-hour daily window preserved as bounded source discrepancy, with no inferred replacement.'
     - 'p39, pp43-44, 46-47, 49-50: outstanding regional haven access and architecture qualifications individually confirmed and indexed; exact disjoint citations retained. Prior attributed and explicit Game Information records remain distinct.'
   scope_status: reconciled_coverage_only
+  formal_scope_acceptance: not_established
+  global_pages_authorized: 0
+  global_checkpoint_advanced: false
+
+seattle_embedded_mechanics_reconciliation_2026_11_26:
+  original_pdf_sha256: dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b
+  actual_verify_source: source_pdf_hash_verified
+  live_manifest_at_review: 49d5c8508977e82a1be30e0e7a2c2ab28ec5744b
+  original_images_reviewed_printed: [52, 65]
+  original_images_reviewed_pdf: [53, 66]
+  verified_semantic_records:
+    - id: rule.matrix.target-matrix-seattle-host-heading-classifications-p57-65
+      path: rules/matrix/target-matrix-seattle-host-heading-classifications-p57-65.yml
+      range_printed: [57, 65]
+      range_pdf: [58, 66]
+      content_class: rule_exact
+      commit: e9f943eb5933b6fc3b06f873ab8cafa151fb6a3e
+      blob: f1e13325aa3f434f7b87e63bacc0e4af447a7586
+      baseline_sha256: dba2adaa279d18d6edb23ac079f57097f807acc77719e98b6bc6864ba861769b
+      candidate_sha256: cf8518954f4ccc29833779a0adbaeb5aa4fe299a80a275ec0a90ec85d5734b8a
+      immutable_sha256: fda86176b965d68e74cbb66defcd2ca3af942ac29989fdfafaef951fee5d8e6d
+      gate: verified
+      contiguous_advance: false
+      fields: 'Thirteen printed security headings and fictional LTG identifiers, including variable and qualified security levels and duplicate printed identifiers.'
+  retained_comparison_records:
+    - {path: world/matrix/target-matrix-virtual-seattle.yml, blob: f819a0c6b13b677570cf9ac558f3ff543e476567}
+    - {path: rules/matrix/target-matrix-host-rules.yml, blob: 1b5b7ae3b9bc7b28495b8894b49bbf31437823d0}
+    - {path: rules/matrix/target-matrix-seattle-gridlock-p123.yml, blob: 20c2babdcd766202f8a185b4829e15441f187c5b}
+    - {path: rules/matrix/target-matrix-seattle-asist-overload-p123.yml, blob: 0556d95a0b0208c93a55e00abcf65b84040dbab8}
+  demonstrated_routing_discrepancy: 'Printed pp52-53 actually finish Data Havens (Mosaic); Virtual Seattle opens p54, Hosts opens p66. Existing routing preserved pending individual Mosaic reconciliation.'
+  scope_status: partially_reconciled
+  remaining: 'Mosaic p52-53 access timing and admission qualifications; Seattle host-specific access and security conditions pp57-65, compared against existing records. No duplicate p123 gridlock or ASIST rule.'
+  dependency_fingerprints:
+    catalog: 31315a037d5798616e2de8fc9cbaeef0c2e4d8c5
+    worker_handoff: ac3c611d45462c9954c3b9059c4196485cd63a71
+    pass_b_handoff: f838749c389548955217fb9af1536e421e70268b
+    runtime_snapshot: '2026-11-24 eight exact live blob matches'
   formal_scope_acceptance: not_established
   global_pages_authorized: 0
   global_checkpoint_advanced: false
