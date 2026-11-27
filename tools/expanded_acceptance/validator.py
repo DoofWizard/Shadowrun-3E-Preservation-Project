@@ -108,7 +108,11 @@ class Git:
     def changed(self, path, ref):
         self.commit(ref)
         parents = self.run('rev-list', '--parents', '-n', '1', ref).decode().split()
-        need(len(parents) == 2 and self.run('diff', '--name-only', parents[1], ref, '--', path).decode().splitlines() == [path], 'exact_path_commit_required:' + path)
+        # Inspect the complete tree delta, not a path-filtered diff. Treat a
+        # rename as a deletion plus an addition; neither is a one-path write.
+        need(len(parents) == 2, 'exact_path_commit_required:' + path)
+        changed = self.run('diff', '--no-renames', '--name-only', '-z', parents[1], ref, '--')
+        need(changed == path.encode('utf-8') + b'\0', 'exact_path_commit_required:' + path)
 
     def read(self, path, ref=None):
         need(isinstance(path, str) and re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path) and not {'..', '.'}.intersection(path.split('/')), 'unsafe_path')
