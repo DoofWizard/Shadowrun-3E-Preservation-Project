@@ -13,8 +13,14 @@ ROOT = Path(__file__).resolve().parents[2]
 
 class TransitionTests(unittest.TestCase):
     def setUp(self):
-        self.old = (ROOT / t.OLD_MANIFEST).read_bytes()
+        # Transition regression inputs MUST be the exact historically
+        # approved outgoing snapshot, not today's legitimately advancing
+        # production LoneStar.yml (which will fail OLD_BLOB as it should).
+        # The fixture is the actual original Git blob, copied unchanged.
+        self.old = (ROOT / 'tools/ingestion/fixtures/FASA7115-transition-outgoing-original.yml').read_bytes()
+        self.assertEqual(git_blob(self.old), t.OLD_BLOB)
         self.before = (ROOT / t.ARCHIVE).read_bytes()
+        self.assertEqual(git_blob(self.before), t.OLD_CHECKPOINT_BLOB)
         target = parse_yaml((ROOT / t.MANIFEST).read_bytes())
         # Later normal worker progress must not turn this regression fixture into
         # a request to reset production. Reset only this in-memory test input.
@@ -36,6 +42,15 @@ class TransitionTests(unittest.TestCase):
                     target_raw=self.target, receipt_raw=self.receipt, readbacks=self.readbacks)
         args.update(kwargs)
         return t.activate(**args)
+
+    def test_historical_transition_fixture_never_rewrites_live_source(self):
+        # Old fixture is intentionally separate from the advancing live path.
+        # A cosmetically changed historical manifest must still fail closed.
+        self.assertEqual(git_blob(self.old), t.OLD_BLOB)
+        self.assertEqual(git_blob(self.before), t.OLD_CHECKPOINT_BLOB)
+        with self.assertRaisesRegex(ValueError, 'outgoing_manifest_changed_reconcile'):
+            t.authorize(self.old + b'\n# deliberate unsigned mutation\n',
+                        self.before, self.target, t.TARGET_SHA)
 
     def test_zero_credit_and_preserved_old_state(self):
         old = self.old
