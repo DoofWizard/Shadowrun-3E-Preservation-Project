@@ -3,7 +3,14 @@ record_type: entity
 name: "Alter Pressure"
 domain: spells
 status: ingested
-intrinsic:
+source: source.fanpro-10653
+printed_pages: "130"
+pdf_pages: "131"
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: "Fictional Shadowrun Third Edition tabletop spell Alter Pressure — FanPro Target: Wastelands (FanPro10653, 2002), printed p130/PDF131"
+intrinsic: &spell
   category: "transformation manipulation"
   type: "P"
   target: "4"
@@ -12,15 +19,25 @@ intrinsic:
   drain: "+2(S)"
   area: "Magic x 10 meters radius"
   effect: "Each success shifts local pressure by one atmosphere above or below ambient, limited by Force."
+  maximum_effective_successes: "Force"
   depth_reference: "Underwater ambient pressure rises by roughly one atmosphere per 10 meters."
   uses:
     - "May affect pressure-control systems and structures."
     - "May be used as a hyperbaric-style acclimatization aid."
+  worked_example: {force: 4, maximum_pressure_shift_atmospheres: 4}
+  structural_effects: "The fictional spell may activate deep-sea station life-support safety systems; sufficiently high Force may compromise exterior walls or seals. It may also affect pressurized aircraft cabins at high altitude. The gamemaster determines exact effects from circumstances."
+  prolonged_exposure: "Characters remaining in the spell area too long may experience oxygen toxicity, decompression sickness, nitrogen narcosis or other hazards covered in Cannon Companion pp109-111; no independent exposure duration is specified here."
+  acclimatization: "May acclimatize a character after ascent from depth in the manner of a hyperbaric chamber."
 links:
   uses: [rule.magic.spell-characteristics]
   requires: []
   component_of: []
   interacts_with: [rule.hazards.target-wastelands-deep-sea-game-information]
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  intrinsic: *spell
 sources:
   - {source: source.fanpro-10653, page: 130, pdf_page: 131, relation: defines}
 notes: []
