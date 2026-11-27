@@ -151,3 +151,63 @@ ef6a9361e93996eba2b9102b5447e71fef230d4e; preservation_method.py blob
 331626d7c285b00e541359e315ae2bdd0fa33f2d. No protected gate or existing test
 was changed. No real book assessment, semantic record acceptance, historical
 receipt recovery, or global page advancement is claimed.
+
+## Split historical journal adapter (v1 diagnostic, 2026-11-26)
+
+`tools/expanded_acceptance/archive_adapter.py` supports the actual retained
+split prewrite/confirmed ZIP layout and root correction registration schema
+observed in the Companion worked character examples. It is a separate
+read-only diagnostic, not yet wired into validator.py. It requires separately
+pinned archive SHA-256 values and Git blobs observed at the original semantic
+commit, current record, and original index commit. It compares all four
+prewrite members byte-for-byte, checks the exact original confirmation and
+index registration, and actually re-executes the unchanged prepare and confirm
+scripts as present-day consistency checks. It rejects unexpected/duplicate
+members, changed archives, missing evidence and divergent record/index bytes.
+It does not extract archives to arbitrary paths or mutate Git.
+
+Even consistent archives return BLOCKED: the original text review is not
+invented into a historical structured editorial receipt. Independently verify
+its custody, exact source/page/class/edition binding, chronology and source
+images; check exact-path ancestry and current index entry before any candidate
+acceptance. The caller must independently authenticate the supplied gate
+scripts and the external pins. The CLI always exits 1; inspect
+journal_consistency for the narrower successful diagnostic. No new gate
+receipt is issued. Other index shapes and shared-source equivalence remain
+unsupported.
+
+Engineering evidence, 2026-11-26: the already-known point-buy example journal
+pair (Library IDs libfile_34491f51843c819189ccabda7a0636b5 and
+libfile_4670cc0116b48191a7266069864b5ed9) was actually materialized and checked.
+Archive SHA-256 values respectively:
+130ffd89defd12a801b83ad8c309bf8d38ac77be91c97cb3f6b6b09345d5cb41 and
+ee455f29b9c866b9a433b20e5ff037e7815160f7a20d99bf6da05db9ed42cea6.
+Original plan SHA-256 470515d9027982ddca86bd94a89101450ecc0efd825c1e3d59f2a1caa667912b;
+original confirm SHA-256 e25801b022328353f05ffe17b7fbe0a704282098095c4895e2ef96b2276d7234;
+original review SHA-256 75ac429ec1607815f82a8bc37871a902c38ca978471238bddee7f7e6e89a4844.
+The semantic commit 335e8d007c52897a8a763b9a79974d88ef4511ba and live record
+both matched blob 6b534bd0503c815f0a428b7399fda6f06d6559c3. The index commit
+37d775931f6c59c6ad6296c45acf2c7f547729e0 matched stored manifest blob
+e0560485f789a2b3d99beebafcf06c842911aed7. The exact root registration line
+srcomp_point_buy_worked_character_examples_original_p14_15_2026_11_25
+was identical in that commit and the current SRComp manifest blob
+4c014f59d657cb872eef541f8a2693b26d8d2a6e. Actual prepare and confirm replay
+matched the retained receipts. Diagnostic: consistent_stored_evidence,
+source acceptance BLOCKED. This is an existing known journal, not a newly
+recovered missing receipt, fresh original PDF verification or formal closure.
+
+Eight new archive tests passed (`python -m unittest test_archive_adapter -v`).
+The eight runtime dependency blobs matched live main and local integrity;
+29 preflight, 40 ingestion/preservation and 16 recovery tests passed.
+Exact ordinary Contents commits and fresh commit/live byte readbacks:
+* archive_adapter.py: 9f12a2ffa2d05d41037aeece298d5a908040593f,
+  blob 11ea9839a0cbaa66d78df94d74017166fc6d3508.
+* test_archive_adapter.py: a4405c904d63161849da82c693edb1e98fb331ea,
+  blob 7c891542829ca5c880535ea228926e4b3ebc9c7c.
+
+Next: integrate independently authenticated editorial bindings for original
+text-review artifacts without rewriting them, verify ancestry and current
+registration in the main validator, and then implement explicit cross-source
+field equivalence with separately pinned source inventories and transaction
+evidence. No canon, source manifests, historical journals or protected gates
+changed. Global pages advanced: zero.
