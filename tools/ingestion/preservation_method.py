@@ -127,7 +127,7 @@ def record_failure(journal: Path, operation: str, diagnostic: str,
             'attempt_log_candidate_mismatch')
     entry = {'operation': operation, 'candidate_sha256': plan['candidate_sha256'],
              'category': classification['category'],
-             'github_http_status': http_status,
+             'github_http_status': classification['github_http_status'],
              'explicit_restriction': explicit,
              'observed_error': diagnostic[:512],
              'observed_error_sha256': digest(diagnostic.encode('utf-8'))}
@@ -145,7 +145,7 @@ def record_failure(journal: Path, operation: str, diagnostic: str,
             if temp.exists():
                 temp.unlink()
     return {'status': 'observed_failure_logged', 'path': plan['path'],
-            'category': classification['category'], 'github_http_status': http_status,
+            'category': classification['category'], 'github_http_status': classification['github_http_status'],
             'attempts': len(attempts), 'cause_proved': classification['cause_proved']}
 
 def decide(journal: Path, *, remote_absent: bool = False,
@@ -154,7 +154,9 @@ def decide(journal: Path, *, remote_absent: bool = False,
     """Make a *non-executing* recommendation from real recorded evidence.
 
     Remote observations must come from fresh ordinary GitHub readback; an omitted
-    observation is UNKNOWN, not proof that a file does not exist.
+    observation is UNKNOWN, not proof that a file does not exist. A bare 404
+    is not sufficient to set remote_absent: resolve repository/ref, access,
+    exact case-sensitive path and parent directory using ordinary reads first.
     """
     plan, _ = load_stage(journal)
     attempts = error_log(journal)
@@ -192,6 +194,10 @@ def decide(journal: Path, *, remote_absent: bool = False,
         return {**base, 'decision': 'check_provider_state_and_permitted_normal_retry'}
     if last == 'provider_denial':
         return {**base, 'decision': 'check_permissions_no_alternate_api'}
+    if last == 'tool_route_not_found':
+        return {**base, 'decision': 'defer_pending_supported_action_availability'}
+    if last in ('provider_read_not_found', 'provider_write_not_found', 'provider_not_found', 'unattributed_not_found'):
+        return {**base, 'decision': 'resolve_repository_ref_path_and_access_no_replay'}
     return {**base, 'decision': 'defer_pending_review'}
 
 def verify_source_pdf(pdf_path: Path, manifest_path: Path) -> dict:
@@ -225,7 +231,7 @@ def main() -> int:
     p.add_argument('--explicit-restriction', action='store_true')
     p = sub.add_parser('decide')
     p.add_argument('journal', type=Path)
-    p.add_argument('--remote-absent', action='store_true')
+    p.add_argument('--remote-absent', action='store_true', help='Independently established exact-path absence; never a bare 404')
     p.add_argument('--observed-blob')
     p.add_argument('--commit-sha')
     args = parser.parse_args()
