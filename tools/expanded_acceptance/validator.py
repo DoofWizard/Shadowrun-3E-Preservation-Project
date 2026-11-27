@@ -284,6 +284,17 @@ def main():
                 git, review['source']['manifest'], index_commit, pointer,
                 (record['id'], path, semantic_commit, blob(git.read(path))), parse, ptr, blob)
         result['index_registration_transitions'] = transitions
+        # Original local index artifacts are distinct from present-day Git
+        # history. Inline evidence must retain both; split archives already
+        # bind their original receipt and snapshot in bind_archive().
+        from inline_index_receipt import verify as verify_inline_index_receipt
+        original_index_artifacts = {}
+        for path, transition in transitions.items():
+            e = evidence['transactions'][path]
+            if e.get('layout') != 'split_archive/v1':
+                original_index_artifacts[path] = verify_inline_index_receipt(
+                    git, review['source']['manifest'], e, transition)
+        result['original_inline_index_artifacts'] = original_index_artifacts
         with tempfile.TemporaryDirectory() as tmp:
             t = Path(tmp)
             for name in ('ingestion_gate.py', 'connector_preflight.py'):
