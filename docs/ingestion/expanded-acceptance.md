@@ -783,3 +783,58 @@ commit/live byte readbacks matched locally tested blobs:
 The two Companion cross-source Matrix concerns now have matching
 source-owner corrected fields, not a formal cross-source acceptance.
 No semantic or manifest writes by this worker; global page credit zero.
+
+
+## Target: Wastelands — bounded production evidence reconciliation, 2026-11-27
+
+Pinned main 5f229593a3f3e976cabd7d06d459899b02192d16; live source manifest
+916247d5094422dadc0aed0a63f48d5244c3fd74. Fresh cataloged FanPro10653 original
+(138 physical pages) returned actual source_pdf_hash_verified, SHA-256
+31db497dcbe649eda35b596ed2dff9475241518027137c65f35ea720b03d0c6b.
+Printed pp112–117/PDF113–118 visually inspected for the bounded scopes below.
+30/30 exact typed biohazard equipment table properties match, including the
+two printed dashes. Actual protected suites: 29 + 40 + 16 = 85 passed.
+Four retained prewrite/confirmed archive pairs match their original bytes,
+prepare/confirm re-executions, semantic blob at original commit and pinned
+main, archived index snapshot and current unique registration. These are
+present-day rechecks, not invented historical reviews or new transactions.
+
+| Scope | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| Mutation | 85ef7b61046b2d26203b9e540f6ab2c6490cdec7 / 9047141e6ce053a8f075ed8e435e003fc8c4f173 | 30ee0558712c1e76f110a56be48eb85ea9286d03 / 6f0824a14454ea9bfb0d067a511f73112dd5c32f |
+| Toxic domains | 0391d85c27fe20fe83ba302664870979a23f7d83 / f67ff781054cc510035562b5c424ade34b473579 | d3358a87b50bb62def203febaab1ec9900822373 / a6ccd17db97132cf17488760c5fcb5f2eb835dec |
+| Biohazard equipment | 5b14c86f5a9cbf2f689cda132754549227a458f4 / 296036c8f6960d5a17695480ee5ce5148fa5f1e0 | 02577686eaab006454d26da06b7dc1fc394f8d73 / f7a756528477bfe5b96f882e4e6d261d1b69984e |
+| Sand and Gear | 41594badee9470ff36b6109f9051ffc86acd7d2e / dd44da81a65dda6d11932ea691fbb98aa89a1ccf | 848ea4b63e312b1fe5d11650639222efab6ce2ba / 5d0b49c82169511276fe655d9cdec9a41feac7d6 |
+
+Authenticated GitHub comparisons show all four index commits ancestral to
+pinned main, three directly one commit ahead of the semantic write. Mutation
+has six intervening-interval commits (ahead_by=6), and its exact index parent
+was not independently recovered; prior manifest blob at semantic commit and
+the index addition patch agree with the original receipt. Do not treat this
+as full-history proof. Existing mutation/toxic qualification records retain
+the source's option limits, dice, examples, potency guideline and Aura
+Masking condition. No new missing gameplay procedure established. Rad-Suit
+p113 explicitly refers to damage to the wearer: preserve that qualification
+in any authorized owner clarification; do not infer a radiation boundary.
+
+All eight formal scope dispositions remain BLOCKED, not newly certified:
+survival/navigation (legacy skill evidence); pollution/disease/radiation
+(bounded gear verification above, radiation boundary and legacy receipts);
+mutation/toxic (two pairs verified, sterile shaman original journal and
+mutation parent proof missing); desert (one pair verified, Black Wasp journal
+and legacy receipts); polar (original Temperature Tolerance wording and
+Silap Innua pool, legacy receipts); orbital (prior corrections retained,
+legacy evidence); underwater (literal 6MN and legacy receipts); vehicle
+adaptation (Stress and landing-distance variants, legacy receipts). All still
+require complete independent original-derived field bindings and editorial
+custody. Do not reopen unchanged scopes merely to repeat this assessment.
+
+The current invocation could not acquire the authenticated full Git bundle
+at pinned HEAD or independently pinned complete 138-page review, bindings
+and evidence JSON files. The connector's PR-only workflow listing returned no
+runs for pinned main; the Library search yielded no exact bundle artifact.
+The actual full-book triage and validator CLI were therefore NOT executed;
+BLOCKED here is a bounded prerequisite disposition, not a validator exit.
+Machine-readable local diagnostic Wastelands_Acceptance_Bounded_Evidence_2026-11-27.json
+SHA-256 de010d2e24ff95f80a3682678d910609ad31013b5fc23dd33f8233b986e31473.
+No common gate, source canon or manifest changed; no page credit.
