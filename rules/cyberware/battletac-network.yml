@@ -3,14 +3,54 @@ record_type: rule
 name: "BattleTac Network"
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '42-44'
+pdf_pages: '42-44'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 42, basis: defines}
 scope: {applies_to: ["BattleTac master/receiver networks and compatible drones or remote-control systems"]}
 resolution:
-  summary: "BattleTac links a master component to receiver components and continuously shares tactical data, maps, unit status, target information and requests. Networked units can receive Small Unit Tactics and Initiative-related benefits, and compatible drone networks can exchange BattleTac information through the required interfaces."
+  summary: "In the fictional RPG, master and receiver components exchange continually updated game information; game effects include Small Unit Tactics, Initiative, shared information and indirect fire under the referenced game rules."
   inputs: ["master component", "receiver components", "network membership", "Small Unit Tactics"]
   outputs: ["shared tactical information and network bonuses"]
   steps: []
+data:
+  components:
+    minimum_components: 2
+    required_types: [master, receiver]
+    purchase_forms_for_each: [external, cybernetic implant]
+    equipment_reference: "Tactical Computer and BattleTac Cyberlink, M&M p23"
+    master_inputs: [linked sensory sources, unit and drone status, map features, targeting data, requests and commands, video feeds]
+    update: continuous
+    receiver_function: consultation of shared information and suggestions
+  game_effects:
+    small_unit_tactics_skill_increase_possible: true
+    initiative_bonus_possible: true
+    small_unit_tactics_reference: "M&M p47"
+    indirect_fire_against_designated_targets_reference: "Rigger 2 p60"
+    sharing_known_information: {action: Simple Action}
+    linked_sensory_information_feed: automatic
+    data_access:
+      cyberlink_or_tactical_computer: automatic
+      receiver_component: Simple Action
+  drone_networks:
+    ivis_remote_control_network_can_mimic_battletac: true
+    complex_orders_require: {remote_control_deck: IVIS master component, drones: IVIS equipped}
+    integration:
+      rigger_and_remote_control_deck_role: node between master and drones, relaying data in both directions
+      required_interface_options: ["BattleTac cyberlink connected to remote control deck", "BattleTac receiver connected to remote control deck", "BattleTac master component if rigger is network focal point"]
+      dedicated_remote_control_deck_ports: 1
+      information_exchange: same as BattleTac game effects
+      small_unit_tactics_initiative_bonus_recipients: [rigger, drones]
+    indirect_fire:
+      requires_battletac_fddm: true
+      remote_control_deck_and_drones_equipped: true
+      spotter_eligibility: drones and other BattleTac network members may serve reciprocally as spotters under the game rules
 links: {uses: [rule.cyberware.tactical-computer], affects: [], modified_by: [], interacts_with: []}
 sources:
   - {source: source.mm, pages: "42-44", relation: defines, note: "BattleTac systems, game effects and drone networks"}
 notes: []
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed and PDF pp42-44: BattleTac Systems'
+framing: reference_exact
+summary: 'Original fictional tabletop game rules for network components, information action costs and drone-network eligibility.'
