@@ -108,6 +108,7 @@ def verify(git, source, original_field, original_page, binding,
     check(re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path) and
           '..' not in path.split('/'), 'invalid_core_record_path')
     raw = git.read(path, commit)
+    check(git.read(path) == raw, 'accepted_core_target_modified_after_acceptance')
     rec = safe_load(raw)
     check(rec['id'] == core_id and rec['source'] == CORE_SOURCE and
           rec['content_class'] == [original_field['class']],
