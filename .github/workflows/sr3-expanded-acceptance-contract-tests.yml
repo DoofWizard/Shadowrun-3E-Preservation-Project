@@ -1,0 +1,35 @@
+name: SR3 expanded acceptance contract checks
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tools/expanded_acceptance/**'
+      - 'docs/ingestion/expanded-acceptance.md'
+      - '.github/workflows/sr3-expanded-acceptance-contract-tests.yml'
+  pull_request:
+    paths:
+      - 'tools/expanded_acceptance/**'
+      - 'docs/ingestion/expanded-acceptance.md'
+      - '.github/workflows/sr3-expanded-acceptance-contract-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fail-closed-contract-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install validation dependencies
+        run: python -m pip install PyYAML==6.0.2 PyMuPDF==1.26.3
+      - name: Compile read-only acceptance tools
+        run: python -m compileall -q tools/expanded_acceptance
+      - name: Exercise structural, split-archive, independent-core and CLI adversarial tests
+        env:
+          PYTHONPATH: tools/expanded_acceptance:tools/ingestion
+        run: python -m unittest discover -s tools/expanded_acceptance -p 'test_*.py' -v
