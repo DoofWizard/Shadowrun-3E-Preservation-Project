@@ -20,9 +20,10 @@ data:
     material_link: Attuned animal or item can serve as material ritual link to adept (MITS p34).
     animal:
       normal_target: Friendly mundane non-sentient animal; coercion prevents attunement.
+      rapport_requirement: Adept must first befriend the animal and gain its trust; established rapport permits ritual bonding.
       familiarization_test: {skill: Animal Handling or similar, target_number: 5, base_time_weeks: 2, extra_successes: May divide duration, failure: Restart}
       bonding_karma: animal Essence
-      effect: Sense Link (MITS p109); adept experiences animal senses and can convey simple low-level telepathic commands.
+      effect: Bonded animal gains Sense Link (MITS p109); adept experiences animal senses and can convey simple low-level telepathic commands.
       commands: Not automatically successful; disposition and danger matter; GM may call Animal Handling or appropriate test.
       range_meters: (Magic + Charisma + Willpower) * 10
       beyond_range: Contact lost.
@@ -39,6 +40,7 @@ data:
       eligible: Vehicle, weapon or gear.
       familiarization_test: {skill: relevant Build/Repair, target_number: 5, base_time_weeks: 1}
       alternative: Build, forge or construct item from scratch.
+      familiarization_success: Success on the relevant Build/Repair test permits bonding by an appropriate ritual.
       bonding_karma: Object Resistance (SR3 p182).
       effect: -1 TN for skill tests using, controlling or handling attuned item.
       exceptions: No bonus through cybernetic interface (VCR, datajack, smartlink); no bonus to magical skills such as Sorcery, Conjuring, Centering or Enchanting.
@@ -99,7 +101,7 @@ data:
   virtuoso:
     printed_page: 64
     scope: Original inspired physical or performance artwork by adept artist.
-    creation_test: {skill: appropriate artistic Knowledge skill, target_number: 9, base_time_months: 1, bonus_dice: Initiate Grade}
+    creation_test: {skill: appropriate artistic Knowledge skill, target_number: 9, base_time_months: 1, bonus_dice: Initiate Grade, bonus_dice_optional: true}
     rating: Successes; some successes may instead reduce base time.
     karma_rating_boost: 1 rating per 2 Good Karma spent at creation, total Karma spent cannot exceed creator artistic skill.
     background_count: Rating, emotionally charged according to artwork and aspected to creator so it does not interfere with creator.
