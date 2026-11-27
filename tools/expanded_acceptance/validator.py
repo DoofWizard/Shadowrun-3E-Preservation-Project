@@ -8,6 +8,7 @@ import re
 import subprocess
 import sys
 import tempfile
+import zipfile
 from pathlib import Path
 
 import yaml
@@ -176,48 +177,54 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
         seen.update(ids)
     need(seen == {i for i, (f, _) in fields.items() if f['lineage'] == 'preserved_variant'}, 'unmapped_variant')
     cache = {}
+    archive_diagnostics = {}
     for fid, (f, p) in fields.items():
         b = bindings[fid]
         path = b['path']
         need(b['pointer'].startswith('/data/'), 'cosmetic_binding:' + fid)
         if path not in cache:
             e = evidence['transactions'][path]
-            rraw = git.read(path)
-            r = parse(rraw)
-            plan, receipt = e['plan'], e['confirm']
-            need(e['historical_confirm_artifact'] and e['prewrite_journal_artifact'] and e['editorial_review_artifact'], 'historical_evidence_missing:' + path)
-            journal = e['prewrite_journal_artifact']
-            baseline_raw = artifact(journal['baseline'])
-            need(artifact(journal['candidate']) == rraw and sha(baseline_raw) == e['baseline_sha256'] and json.loads(artifact(journal['plan']), object_pairs_hook=pairs) == plan, 'historical_journal_bytes_mismatch')
-            frozen = lambda rec: {k: v for k, v in rec.items() if k not in {'headline', 'summary', 'framing'}}
-            need(encoded(frozen(parse(baseline_raw))) == encoded(frozen(r)) and sha(encoded(frozen(r))) == plan['immutable_sha256'], 'historical_immutable_mismatch')
-            need(json.loads(artifact(e['historical_confirm_artifact']), object_pairs_hook=pairs) == receipt, 'historical_confirm_artifact_mismatch')
-            editorial = json.loads(artifact(e['editorial_review_artifact']), object_pairs_hook=pairs)
-            need(editorial['source'] == s['id'] and editorial['source_sha256'] == pdf_sha and editorial['edition'] == s['edition'] and editorial['publisher'] == s['publisher'] and editorial['catalog'] == s['catalog'] and editorial['path'] == path and editorial['candidate_sha256'] == sha(rraw) and editorial['baseline_sha256'] == e['baseline_sha256'] and editorial['baseline_reviewed_independently'] is True and editorial['candidate_reviewed_independently'] is True and editorial['nested_text_reviewed'] is True and editorial['printed_pages'] == r['printed_pages'] and editorial['pdf_pages'] == r['pdf_pages'] and editorial['reviewed_edition_scope'] == r['edition_scope'], 'editorial_evidence_mismatch')
-            need(re.fullmatch(r'[0-9a-f]{64}', e['baseline_sha256']) and re.fullmatch(r'[0-9a-f]{64}', plan['immutable_sha256']), 'journal_digest_missing')
-            need(plan['protocol'] == 'sr3-gate/v1' and plan['status'] == 'preflighted', 'historical_prepare_missing')
-            commit, index_commit = receipt['commit_sha'], e['index_commit']
-            need(receipt == {**plan, 'status': 'verified', 'commit_sha': commit, 'readback_blob_sha': blob(rraw)}, 'historical_confirm_mismatch')
-            for k, v in [('path', path), ('source', s['id']), ('pdf_sha256', pdf_sha), ('record_id', r['id']), ('printed_pages', r['printed_pages']), ('pdf_pages', r['pdf_pages']), ('candidate_sha256', sha(rraw)), ('expected_blob_sha', blob(rraw))]:
-                need(plan[k] == v, 'historical_plan_mismatch:' + k)
-            need(r['source'] == s['id'] and r['edition_scope'] == editorial['reviewed_edition_scope'], 'record_source_or_edition_mismatch')
-            git.changed(path, commit)
-            git.changed(mp, index_commit)
-            git.ancestor(commit, index_commit)
-            git.ancestor(index_commit, git.head)
-            need(git.read(path, commit) == rraw, 'semantic_commit_bytes_mismatch')
-            ip = e['index_pointer']
-            entry = ptr(manifest, ip)
-            need(entry == ptr(parse(git.read(mp, index_commit)), ip), 'index_history_mismatch')
-            for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
-                need(entry[k] == v, 'unindexed_or_changed_record:' + k)
-            need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
+            if e.get('layout') == 'split_archive/v1':
+                from receipt_binding import bind_archive
+                r, archive_diagnostics[path] = bind_archive(git, s, path, e, review['reviewer'], evidence['custodian'])
+            else:
+                need('layout' not in e, 'unsupported_transaction_layout')
+                rraw = git.read(path)
+                r = parse(rraw)
+                plan, receipt = e['plan'], e['confirm']
+                need(e['historical_confirm_artifact'] and e['prewrite_journal_artifact'] and e['editorial_review_artifact'], 'historical_evidence_missing:' + path)
+                journal = e['prewrite_journal_artifact']
+                baseline_raw = artifact(journal['baseline'])
+                need(artifact(journal['candidate']) == rraw and sha(baseline_raw) == e['baseline_sha256'] and json.loads(artifact(journal['plan']), object_pairs_hook=pairs) == plan, 'historical_journal_bytes_mismatch')
+                frozen = lambda rec: {k: v for k, v in rec.items() if k not in {'headline', 'summary', 'framing'}}
+                need(encoded(frozen(parse(baseline_raw))) == encoded(frozen(r)) and sha(encoded(frozen(r))) == plan['immutable_sha256'], 'historical_immutable_mismatch')
+                need(json.loads(artifact(e['historical_confirm_artifact']), object_pairs_hook=pairs) == receipt, 'historical_confirm_artifact_mismatch')
+                editorial = json.loads(artifact(e['editorial_review_artifact']), object_pairs_hook=pairs)
+                need(editorial['source'] == s['id'] and editorial['source_sha256'] == pdf_sha and editorial['edition'] == s['edition'] and editorial['publisher'] == s['publisher'] and editorial['catalog'] == s['catalog'] and editorial['path'] == path and editorial['candidate_sha256'] == sha(rraw) and editorial['baseline_sha256'] == e['baseline_sha256'] and editorial['baseline_reviewed_independently'] is True and editorial['candidate_reviewed_independently'] is True and editorial['nested_text_reviewed'] is True and editorial['printed_pages'] == r['printed_pages'] and editorial['pdf_pages'] == r['pdf_pages'] and editorial['reviewed_edition_scope'] == r['edition_scope'], 'editorial_evidence_mismatch')
+                need(re.fullmatch(r'[0-9a-f]{64}', e['baseline_sha256']) and re.fullmatch(r'[0-9a-f]{64}', plan['immutable_sha256']), 'journal_digest_missing')
+                need(plan['protocol'] == 'sr3-gate/v1' and plan['status'] == 'preflighted', 'historical_prepare_missing')
+                commit, index_commit = receipt['commit_sha'], e['index_commit']
+                need(receipt == {**plan, 'status': 'verified', 'commit_sha': commit, 'readback_blob_sha': blob(rraw)}, 'historical_confirm_mismatch')
+                for k, v in [('path', path), ('source', s['id']), ('pdf_sha256', pdf_sha), ('record_id', r['id']), ('printed_pages', r['printed_pages']), ('pdf_pages', r['pdf_pages']), ('candidate_sha256', sha(rraw)), ('expected_blob_sha', blob(rraw))]:
+                    need(plan[k] == v, 'historical_plan_mismatch:' + k)
+                need(r['source'] == s['id'] and r['edition_scope'] == editorial['reviewed_edition_scope'], 'record_source_or_edition_mismatch')
+                git.changed(path, commit)
+                git.changed(mp, index_commit)
+                git.ancestor(commit, index_commit)
+                git.ancestor(index_commit, git.head)
+                need(git.read(path, commit) == rraw, 'semantic_commit_bytes_mismatch')
+                ip = e['index_pointer']
+                entry = ptr(manifest, ip)
+                need(entry == ptr(parse(git.read(mp, index_commit)), ip), 'index_history_mismatch')
+                for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
+                    need(entry[k] == v, 'unindexed_or_changed_record:' + k)
+                need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
             cache[path] = r
         r = cache[path]
         need(r['content_class'] == [f['class']], 'bound_class_mismatch:' + fid)
         need(p['printed'] in page_set(r['printed_pages']) and p['pdf'] in page_set(r['pdf_pages']), 'bound_page_mismatch:' + fid)
         need(encoded(ptr(r, b['pointer'])) == encoded(f['value']), 'typed_field_mismatch:' + fid)
-    return {'protocol': PROTOCOL, 'status': 'PASS', 'source': s['id'], 'manifest_blob': blob(mr), 'head': git.head, 'source_sha256': pdf_sha, 'fields': len(fields), 'physical_pages_checked': pdf_count, 'records_checked': len(cache), 'formal_acceptance': False, 'engine_certified': False, 'global_pages_advanced': 0}
+    return {'protocol': PROTOCOL, 'status': 'PASS', 'source': s['id'], 'manifest_blob': blob(mr), 'head': git.head, 'source_sha256': pdf_sha, 'fields': len(fields), 'physical_pages_checked': pdf_count, 'records_checked': len(cache), 'archive_diagnostics': archive_diagnostics, 'formal_acceptance': False, 'engine_certified': False, 'global_pages_advanced': 0}
 
 
 def main():
@@ -250,6 +257,8 @@ def main():
                 (t / name).write_bytes(git.read('tools/ingestion/' + name))
             for path in sorted({b['path'] for b in bindings.values()}):
                 e = evidence['transactions'][path]
+                if e.get('layout') == 'split_archive/v1':
+                    continue  # Both actual gate rechecks already ran in bind_archive.
                 j = e['prewrite_journal_artifact']
                 (t / 'baseline.yml').write_bytes(artifact(j['baseline']))
                 (t / 'candidate.yml').write_bytes(artifact(j['candidate']))
@@ -259,7 +268,7 @@ def main():
         result.update(source_verification=verification, review_sha256=a.review_sha, bindings_sha256=a.bindings_sha, evidence_sha256=a.evidence_sha, validator_blob=blob(Path(__file__).read_bytes()))
         print(json.dumps(result, sort_keys=True))
         return 0
-    except (ValueError, TypeError, KeyError, IndexError, OSError, subprocess.SubprocessError, yaml.YAMLError, ImportError) as exc:
+    except (ValueError, TypeError, KeyError, IndexError, OSError, subprocess.SubprocessError, yaml.YAMLError, ImportError, zipfile.BadZipFile, AttributeError) as exc:
         print(json.dumps({'protocol': PROTOCOL, 'status': 'BLOCKED', 'reason': str(exc), 'formal_acceptance': False, 'global_pages_advanced': 0}))
         return 1
 
