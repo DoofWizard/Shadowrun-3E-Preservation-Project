@@ -1572,6 +1572,40 @@ p202 remaining car/aircraft/hovercraft/rotor rows: 35 rows, 385 typed fields, 38
 
 All 104 inventory identities compared to live manifest directory; changed specialist manifest blobs observed and inspected, individual semantic/index reconciliation not completed: CannonCompanion `b44e8dd4af4dd76c66171a8d22153c1643d07ae8`, MitS `3adb7f985743dc19c252c22e2a4952f8b4934b00`, TargetMatrix `aebf5466822d09016fb7fd1fce8da963667ca311`, M&M `3ab28c7153744a953a32dc184de9f4d13c2009ab`, TargetWastelands `f7a756528477bfe5b96f882e4e6d261d1b69984e`, SOTA2064 `7ee720178ef1f8e92cca35644a893ed2f048dcab`. Prior reconciled pins retained pending exact receipts. Acceptance engineering doc `229e28245247d7b96636ffcf47503f9fe677fd7d` reports eight further shared action comparisons, 12 remaining outside bounded comparison; reported validator BLOCKED independent_review_required, not independently rerun here. Scan Icon active-memory and Dump Log baseline identifier qualifications require Matrix owner adjudication; not independently verified new global omissions. Closed core remains unchanged. Handoff blobs `ac3c611d45462c9954c3b9059c4196485cd63a71` and `f838749c389548955217fb9af1536e421e70268b`; catalog and Denver unchanged. No historical receipts recovered, formal book decisions or global pages advanced. Next: chassis feature/qualifier comparison and named design gaps, then source-closure adjudication under permanent priorities.
 
+
+### 2026-11-27 — CCSS action qualifiers and source-closure reconciliation
+
+Fresh cataloged FanPro10662 original SHA256 `88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909`; actual verify-source `source_pdf_hash_verified` against full live manifest `7da4fbd19a572d7f64793a625675f96e3c79a713`. Original p37/PDF39 and p48/PDF50 visually inspected. Eight pinned runtime dependencies matched; preflight 29 and ingestion/preservation/recovery 56 tests passed.
+
+New source-local rule `rules/security/r3-revised-ccss-action-qualifications-p48.yml` restores sensor activation timing, arm/disarm mount choices, intercom area choices, armed-weapon prerequisite and direct-control Combat Pool eligibility. Existing room-control pool restoration already bound in `subsystems/security/ccss.yml` blob `856a6673b26f58fa175a02a9325ff4a87dd36607`; no duplicate. Semantic commit `cb2732c25a68e6c17a3e42d318eb264b7da78343` / blob `a6fde73072274ac2a41e644f295b548d9d515a80`; actual prepare and confirm verified; individual index `c2f045b4bd4e4f934245014788675ce35298f65d` / manifest `e8d5ab33161672f32c8111bfbdd4b28021f7d1bc`; exact historical/live readbacks agree. 111 prior registrations preserved, 112 now. Prewrite journal `libfile_1e33ed9dcc8081919dbf64e9a968a8a5` SHA256 `234fb9939a85be68cb4ea48046cee15c3b52c01f292339958ef648b54d49d74f`; confirmed journal `libfile_02badf62db148191ab470bf52569738b` SHA256 `b47bbabbe3aa9375ca308c1daa959067d6b4e62d5dc43c097dd222a76c97ef67`.
+
+Next owned mechanical cursor: p37 continuing mutual communications range and immediate target awareness not explicit in `rules/rigging/miji.yml` blob `8566f68df3f0e63797d8409d57ffc019c7fcac63`; entry-range restriction already bound in `procedure/rigging/remote-control-network-infiltration.yml` blob `badec9ffa25e5e6f329fb34dfdc41f6fdc7aaedc`; optional partial-MIJI range separately represented. Resolve scope without overriding historical edition. p48 room/corridor size qualifications remain a separate bounded review. No p37 transaction yet.
+
+Four specialist original stored journal sets reconciled with exact historical/current semantic bytes and exact individual index commit manifests; no new historical receipts or independent original PDF review of these four in this run:
+
+| Scope | Semantic commit / blob | Index commit / blob |
+| --- | --- | --- |
+| Matrix Scan Icon | `e8271dba218179a5ee27ce408dcd931524123e09` / `3408fff7a0aa662fac518d2fa21031697d63031c` | `922860d036ae7985fce83ad943b39018f97f4385` / `9791a5af8019349ac836f0afe84c355b2ccd06fc` |
+| Matrix Dump Log | `70f142cab2414c8e540f6d7f249b6d93f9b2db08` / `752b38d951fba2a7c217d39d570d26a709bf20cd` | `9452df9f8215dc06f5ef03e77c9db33b35d8f33a` / `714aeff0d47a15570b93f7be2d66cd42a742c48d` |
+| Target Wastelands Sand and Gear | `41594badee9470ff36b6109f9051ffc86acd7d2e` / `dd44da81a65dda6d11932ea691fbb98aa89a1ccf` | `848ea4b63e312b1fe5d11650639222efab6ce2ba` / `5d0b49c82169511276fe655d9cdec9a41feac7d6` |
+| System Failure p81 | `992dcbfddf571fc8cb94567b047df29bc0b14d41` / `ad34a0503459be16c4013ab20d524ab1d3612942` | `f36e7ff34ba87cc42e158ff5a785765857c7e5f9` / `e6e875ab6abeaed03858a06685e16981888b3049` |
+
+Target Wastelands receipt uses different index keys from the generic helper; direct stored full index blob and typed registration comparison matched. The Matrix owner corrections address the previously reported Scan Icon and Dump Log concerns. Other changed specialist registrations remain pending individual reconciliation.
+
+Current candidate source decisions: none meets independent formal acceptance inputs. Owner coverage claims are not coordinator original-source certification.
+
+| Candidate | Live manifest | Remaining obligation |
+| --- | --- | --- |
+| Loose Alliances | `90cae8c7a434fec68797ff88f4ea847b4bb6195e` | 30 owner-classified scopes, no demonstrated remaining source-local gap; archaeological-teams successful historical baseline/plan/confirm/index absent; Dragonheart external publication lineage unresolved. |
+| Sprawl Survival Guide | `7f7064b6f9941de0d1248b64f27ca9af2201933d` | 146 owner-reviewed pages; p123 column ambiguity, House of the Dead modifier cap, Victory Gardens category and p66/p124 rental conflicts, sports exceptions; independent inventory/receipt adjudication. |
+| Target Wastelands | `5d0b49c82169511276fe655d9cdec9a41feac7d6` | Eight outstanding formal scopes; source contradictions and bounded historical receipt debt. No further demonstrated missing field in reviewed comparisons. |
+| Dragons | `84fc3d345241e901ec5cc5c24f7c7b3e536c829f` | 24 owner-reviewed scopes, 212 pages; no demonstrated missing field, exact original inventory and historical drake/Draco/named-dragon receipt custody unresolved. |
+| Companion | `4c014f59d657cb872eef541f8a2693b26d8d2a6e` | Acceptance engineering doc `9274f8a14a80dca5ea8c19e0ed73daecf96f7c43`: 112-row comparison queue now zero unexamined, not zero unresolved; final grapple/entanglement comparison partial; eight rigging refs lack authenticated Rigger 2 lineage. Actual specialist triage: 9 binding, 3 equivalence, 1 independence, 1 inventory, 5 original-rule entries; validator BLOCKED independent_review_required. Not independently rerun here. |
+| SOTA2064 | `5abad674d6f0c19466ac2332d3d063023daf2876` | Culture Shock, Behind the Badge and historical receipt debt; latest adept metamagic reconciliation observed, individual readbacks pending; Somatic Control overlap unresolved. |
+| SOTA2063 | `143ab1b4ea88d60ed42dfead35667f298b01da59` | 130 classified pages; five directed ranges require exhaustive independent binding; pp74–75 equipment historical receipt debt. |
+
+No source-wide acceptance, no recovered historical receipts, no global page advance. Preserve prior core acceptance, accepted scan omissions, Denver checkpoint, ownership and existing 104-source routing inventory. No protected-path writes.
+
 ## Completion rule
 
 A source is not marked `complete` until:
