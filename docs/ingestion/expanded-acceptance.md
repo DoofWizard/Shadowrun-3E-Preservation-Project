@@ -378,3 +378,53 @@ test "$(git -C /tmp/sr3-full-history rev-parse \
 The normal full `validator.py --repo /tmp/sr3-full-history --head PINNED_MAIN_SHA` invocation from the preceding section then works with true immutable historical Git objects. This removes the environment's **unavailable Git history** blocker; it does not resolve missing historical receipt files, original source-only review, the 27 unaccepted Simple/Complex accepted-core group obligations or the remaining 112 shared Companion action references.
 
 **Verification status at authoring:** The bundle/create/verify/clone/HEAD-ancestry procedure was executed successfully using a synthetic two-commit local Git repository; the exact workflow file was committed and independently read back from GitHub. **No actual GitHub Actions run/artifact or full production Companion PASS has yet been independently observed.** Do not advance any acceptance flag from this workflow alone.
+
+## 2026-11-27 mechanics sprint: Companion Actions — additional accepted-parent candidates and one original-rule discrepancy
+
+Read-only assessment at main `47b5be9e09c43380f56be85f979c0386df2a2578`. Exact live Companion manifest `4c014f59d657cb872eef541f8a2693b26d8d2a6e`; core manifest `b0ebffa4985ab544e64857b99e98b17d69ee3184`; catalog `31315a037d5798616e2de8fc9cbaeef0c2e4d8c5`. Fresh cataloged Drive originals independently returned actual `preservation_method.py verify-source` status `source_pdf_hash_verified`:
+
+- FASA7905a: 138 physical pages, SHA-256 `8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5`.
+- FASA7001: 345 physical pages, SHA-256 `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914`.
+
+Original Companion printed p130/PDF131 and relevant original core action, ranged-combat, reflex-trigger and magic passages directly viewed. Eight protected dependency/editorial blobs matched the runtime kit; actual existing tests passed 29 preflight, 40 ingestion/preservation, 16 recovery. No original receipt was reconstructed or new source transaction performed.
+
+### A. Demonstrated mechanical field mismatch — coordinator/core-owner adjudication required
+
+Companion `simple.combat[2]` is the Fire Weapon (SS, SA or BF) index reference. Core printed p106/PDF107, Fire Weapon, expressly permits firing one shot from each held weapon within a single Simple Action. The current and historically indexed phase record `rules/actions/sr3-core-combat-phase-action-timing-p104-108.yml`, blob `87371b67cf6ac9e57ffd276d44713eaa3cdafcfd`, semantic commit `5a5cdb69809565fd76f4029933f02be0af75a4c7`, field `/data/selected_simple_actions/0/rule` instead requires a separate Simple Action for each weapon. This is a source-versus-field action-economy mismatch, not evidence that all canon omits dual-weapon rules. Original p112/PDF113 and existing `rules/combat/sr3-core-attacker-situational-numeric-p112.yml`, blob `34dfbdc5900e78e3e8524f578640ff38988ea1e8`, `/data/using_second_firearm` preserve pistol/SMG eligibility, +2 TN per weapon, applicable targeting-aid restriction and cross-weapon uncompensated recoil. Generic p115/PDF116 single-weapon action costs do not cancel the special two-weapon provision. Refer this exact field to coordinator/core owner for source-reviewed correction and supplemental accepted-field evidence if authorized. Protected closed core remains unchanged; do not silently rewrite its historical receipt.
+
+### B. Five new alternate historical accepted-parent candidates (index class, not full procedure identity)
+
+Historical acceptance commit `6baeb5dffd92dbdcbe50aa451d637e8ae9702316`, receipt blob `d11888c9f20b5603f874f4e976dff3e23c8cde98`, original obligation queue blob `366ee748f51dbf2b699a26edbc1215352743191d`, original manifest blob `a79b28a3970668982ef44a5318642ed55848839a`. Checked exact historical queue parent pointers and independently fetched historical/current identical target blobs. Compared original p130 index rows with the actual core original printed/PDF pages below. Indices are the existing one-based Companion row identifiers.
+
+| Companion row | Core source | Accepted obligation (prefix obligation.rule.) | Exact data pointer(s) | Required qualification |
+| --- | --- | --- | --- | --- |
+| simple.magic[2] | 186/195 | magic.sr3-core-conjuring-summon-nature-elemental-exact-p186.nature_spirit_summoning | /data/nature_spirit_summoning/summoned_standby_call | Simple, non-Exclusive; previously summoned standby spirit, shaman still in domain; not summoning |
+| complex.magic[2] | 172/173 | magic.sr3-core-astral-projection-attributes-movement-p172-173.projection_actions | /data/projection_actions/enter; /data/projection_actions/exit; /data/projection_actions/during_projection | Exclusive Complex entry and return; ongoing projection restriction remains |
+| complex.magic[3] | 189/198 | magic.sr3-core-spirit-control-banishing-exact-p189.banishing | /data/banishing/action | Exclusive Complex; preserve eligibility, contest and original astral restrictions |
+| complex.magic[9] | 189/198 | magic.sr3-core-spirit-control-banishing-exact-p189.controlling_spirits | /data/controlling_spirits/action | Exclusive Complex; preserve spirit type eligibility, opposition and summoner bonus |
+| complex.magic[12] | 172/173 | magic.sr3-core-assensing-astral-signatures-p171-172.astral_signatures | /data/astral_signatures/timing | Complex Actions equal Force; astral perception, skill test, Drain and intrinsic-signature exclusion remain |
+
+Exact target files and historical/current blobs:
+- `rules/magic/sr3-core-conjuring-summon-nature-elemental-exact-p186.yml` — `e470ad27b21804394cfcfa95ea3b5ae43a5e010e`.
+- `rules/magic/sr3-core-astral-projection-attributes-movement-p172-173.yml` — `974e21185f2403741453da313896460641e0fb81`.
+- `rules/magic/sr3-core-spirit-control-banishing-exact-p189.yml` — `cb1253425d56ef7f027d69bcde0d0b3808a91cc0`.
+- `rules/magic/sr3-core-assensing-astral-signatures-p171-172.yml` — `b9bca9574a128959d2136fb95710c3b1fe7db0af`.
+
+These five are source-audited index-class candidates using genuine alternate accepted parent obligations. They are NOT five newly certified rules. Some target values are full procedures rather than the index's label, and the current narrow indexed-action-reference adapter does not automatically approve them. Independent scope/exception attestation, actual validator support and coordinator adjudication remain required. Never infer accepted scope of neighboring fields solely from record membership.
+
+### C. Exact remaining dispositions
+
+All 38 mapped core labels were independently read from original p130 and matched the owner's inventory. Eleven Free rows have the previously established accepted parent `selected_free_actions`; eight bounded label/class matches plus the three separately resolved index abbreviations (Activate Cyberware, Observe, Speak a Word), with original controlling conditions retained. None is newly formally accepted. Of 27 Simple/Complex rows lacking acceptance coverage in the initial two target groups, five now have the alternate parent candidates above; 22 do not yet have independently verified alternate accepted-field proofs:
+
+- simple.general 1–5; simple.combat 1–6, 8–9; simple.magic 3, 10.
+- complex.general 1–2; complex.combat 2, 4–5; complex.magic 5; complex.rigging 8.
+
+The Fire Weapon mismatch is within those 22. Core p301/PDF310 confirms the reflex trigger's Simple toggle and original conditions, but the historical acceptance queue does not cover /data/reflex_trigger. Generic core p115 firing-mode provisions and p280 reloading-table lead are not blanket substitutes for unaccepted action groups; p280 source review is still needed for exact candidate conditions.
+
+The existing 112 other-source links (not independently re-reviewed against their foreign originals in this run) remain coverage-only; exact positions below preserve existing mappings rather than imply new missing rules:
+
+- Free: critter 1–6; decking 2–5, 7–9; magic 2, 4, 6–7; rigging 2–4.
+- Simple: combat 7; critter 1–4; decking 1–5, 7–8, 10–12; magic 4–7; rigging 2–3, 5–6.
+- Complex: combat 1, 3; critter 1, 3, 6–17, 19–33, 35; decking 1, 3, 5–9, 11–15, 17–18; magic 4, 6, 11, 13–14, 20–22; rigging 1–2, 4–5, 7, 10–19.
+
+Totals: critter 40, decking 31, magic 16, rigging 22, combat 3. Existing 37 owned row evidence unchanged. Historical receipt and edition/lineage adjudication debt is separate from mechanics. Existing 18-scope owner inventory is not a newly authenticated complete independent page/field review. Full local authentic Git history bundle and independently authenticated complete 138-page reviewer/binding/custody input pack were not materialized in this run; historical blob snapshots are not a replacement. Prior actual production validator BLOCKED remains; not rerun with invented inputs. The new discrepancy prevents a clean mechanical-fidelity verdict for the mapped action field. No new source semantic/index commit, formal book certification, recovered historical receipt or global page credit. Next: owner adjudicate the exact Fire Weapon field; obtain accepted-parent proof and source review for remaining 22, then group other-source review by actual target publication while preserving original edition and exceptions.
