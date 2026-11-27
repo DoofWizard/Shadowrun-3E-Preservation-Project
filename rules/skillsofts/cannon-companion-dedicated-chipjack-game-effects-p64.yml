@@ -8,7 +8,7 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7908 Cannon Companion: dedicated chipjack fictional game effects'
-summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p64/PDF65. Original dedicated-chipjack game eligibility, removal test and optional movement modifier, distinct from ordinary chipjack and implant option records.'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p64/PDF65. Original dedicated-chipjack eligibility, built-in chip, removal test and exceptions, and optional RAS restriction; distinct from ordinary chipjack and implant option records.'
 data:
   existing_records:
     - option.skillsofts.implant
@@ -16,14 +16,17 @@ data:
     - rule.cyberware.sr3-core-chipjack-data-lock-tooth-compartment-p298-299
   game_device:
     designated_chip: one specific implant-option skillsoft or BTL
+    designated_chip_built_into_jack: true
     compatible_other_chip_types: false
     linked_headware_communications: optional remote activation or deactivation in fictional game
     normal_chipjack_rules_apply_except_eligibility: true
+    installation_context: The fictional source states that dedicated chipjacks are usually installed without the bearer's consent.
   game_removal_test:
     skill: Biotech (Cybertechnology)
     target_number: 8
     requires_success: true
-    source_exceptions: Fictional GM may specify a permanently fixed chip or an additional adverse consequence; no universal alternate test is supplied.
+    source_exceptions: The book describes some fictional corporations using permanently fixed chips or a fictional cranial bomb or other trap triggered by chip removal; no universal alternate test is supplied.
+    permanently_fixed_chip_requires_removal_of_entire_jack: true
   optional_ras_override:
     reference: M&M p21
     movement_while_chip_active: prevented
