@@ -3,27 +3,42 @@ record_type: rule
 name: "Target: Wastelands Critter Mutation"
 domain: critters
 status: ingested
+source: source.fanpro-10653
+printed_pages: "113-114"
+pdf_pages: "114-115"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "Target: Wastelands (FanPro10653, FanPro 2002), fictional Shadowrun Third Edition mutant critter rule correction, printed pp113-114/PDF pp114-115"
 effective: {status: source_specific, source: source.fanpro-10653, pages: "113-114", pdf_pages: "114-115", basis: defines}
-mutation_index:
+mutation_index: &mutation_index
   model: "Analogous to Bioware Bio Index."
   maximum: "Essence"
   effects: "Carries the Bio Index drawbacks for immunity and healing."
-options:
+options: &options
   enhanced_attribute: "+1 Mutation Index per added Attribute point; for a bioware-like increase use the lower applicable cost."
   enhanced_sense: "+1 Mutation Index."
   bioware_ability: "Add the selected bioware's Bio Index."
   paranormal_ability: "+3 Mutation Index; use normal Essence when resolving the added power."
   physical_edge: "Mutation Index cost equals the Edge value."
-drawbacks:
-  frequency: "At least one drawback per 2 Mutation Index."
-  examples: ["visible deformity", "pathological physical flaw", "permanent Light Wound", "Weakness"]
-paranormal_critters:
-  threshold: "At Mutation Index equal to or greater than Essence, Essence-based paranormal powers cannot be used."
+drawbacks: &drawbacks
+  frequency: "GM guideline: aim for at least one drawback per 2 Mutation Index points; not a mandatory minimum."
+  examples: ["visible deformity", "appropriate Physical Flaw", "permanent Light Wound", "Weakness"]
+paranormal_critters: &paranormal_critters
+  threshold: "At Mutation Index equal to Essence, Essence-based paranormal powers cannot be used. A higher index is not allowed."
   effect_roll:
     "1-2": "effective Essence for paranormal powers is reduced by Mutation Index"
     "3-4": "no change"
     "5-6": "effective Essence for paranormal powers is increased by Mutation Index"
   astral_exception: "Purely astral beings do not mutate."
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  mutation_index: *mutation_index
+  options: *options
+  drawbacks: *drawbacks
+  paranormal_critters: *paranormal_critters
 links:
   uses: []
   affects: []
