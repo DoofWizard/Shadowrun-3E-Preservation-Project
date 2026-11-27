@@ -1,8 +1,9 @@
 """Fail-closed reuse of a formally accepted SR3 core field by another SR3 source.
 
 This read-only adapter certifies neither the original source, a historical
-transaction nor the whole supplement. It accepts only exact restatements backed
-by the original FASA7001 core receipt and independent original-page comparison.
+transaction nor the whole supplement. It accepts exact restatements, plus narrowly audited index-only action
+references whose full core conditions must remain controlling, backed by the
+FASA7001 acceptance receipt and independent original-page comparison.
 It never rewrites source rules, source order or edition precedence.
 """
 import hashlib
@@ -135,10 +136,51 @@ def verify(git, source, original_field, original_page, binding,
           comparison.get('original_heading') == original_field['heading'] and
           comparison.get('lineage') == original_field['lineage'],
           'comparison_source_or_field_binding_mismatch')
-    check(comparison.get('relation') == 'exact_restatement' and
-          all(comparison.get(k) == 'identical' for k in
-              ('rule_scope','conditions','exceptions','units','optional_status')),
-          'conditional_or_partial_equivalence_not_proven')
+    relation = comparison.get('relation')
+    if relation == 'indexed_action_reference':
+        # FASA7905a p130 is a consolidated ACTION INDEX, explicitly referring
+        # readers to SR3 and other books for the rules. It is NOT an alternate
+        # detailed procedure. For these three independently reviewed entries,
+        # the p105 SR3 qualifying conditions remain fully operative.
+        action = original_field['value']
+        check(source['id'] == 'source.srcomp' and
+              source['sha256'] == '8c52409108459a130ff6292722d98dc1f7a65cf870e63a363c34dc1dc299afd5' and
+              original_page['printed'] == 130 and original_page['pdf'] == 131,
+              'not_the_reviewed_companion_action_index')
+        check(original_field.get('kind') == 'row' and
+              original_field['lineage'] == 'sr3_effective' and nested and
+              selected_pointer.startswith('/data/selected_free_actions/') and
+              selected_pointer.endswith('/action') and
+              pointer == '/data/selected_free_actions',
+              'not_an_accepted_core_free_action_label')
+        check(action in ('Activate Cyberware', 'Observe', 'Speak a Word') and
+              comparison.get('indexed_action_class') == 'Free' and
+              comparison.get('indexed_action_group') == 'General' and
+              comparison.get('appendix_is_reference_only') is True and
+              comparison.get('no_new_or_conflicting_rules_on_appendix_page') is True and
+              comparison.get('preserve_core_conditions_without_weakening') is True,
+              'index_reference_scope_or_action_discrepancy')
+        check(comparison.get('rule_scope') == 'core_procedure_controls' and
+              comparison.get('conditions') == 'core_conditions_preserved' and
+              comparison.get('exceptions') == 'core_exceptions_preserved' and
+              comparison.get('optional_status') == 'core_status_preserved',
+              'index_reference_attempts_to_override_core_rule')
+        # Do not merely match the headline: bind the full accepted condition
+        # for the original source's action entry, so it cannot be discarded by
+        # an index label during game-rule generation.
+        core_condition_pointer = selected_pointer[:-len('/action')] + '/condition'
+        condition = ptr(rec, core_condition_pointer)
+        check(isinstance(condition, str) and condition.strip() and
+              comparison.get('full_core_condition') == condition and
+              comparison.get('core_condition_pointer') == core_condition_pointer,
+              'full_core_action_condition_not_preserved')
+        result_status = 'CORE_ACTION_INDEX_REFERENCE_CANDIDATE'
+    else:
+        check(relation == 'exact_restatement' and
+              all(comparison.get(k) == 'identical' for k in
+                  ('rule_scope','conditions','exceptions','units','optional_status')),
+              'conditional_or_partial_equivalence_not_proven')
+        result_status = 'CORE_FIELD_MATCH_CANDIDATE'
     if nested:
         check(comparison.get('accepted_core_group_pointer') == pointer and
               comparison.get('reviewed_subfield_pointer') == selected_pointer and
@@ -155,7 +197,7 @@ def verify(git, source, original_field, original_page, binding,
           'independent_original_page_equivalence_review_required')
     # The caller must authenticate the supplied review locators and reviewer;
     # syntactic presence is deliberately NOT original-page certification.
-    return {'protocol': PROTOCOL, 'status': 'CORE_FIELD_MATCH_CANDIDATE',
+    return {'protocol': PROTOCOL, 'status': result_status,
             'source_field_id': original_field['id'],
             'core_obligation': obligation, 'core_record_id': core_id,
             'core_path': path, 'core_record_blob': git_blob(raw),
