@@ -293,9 +293,9 @@ python tools/expanded_acceptance/blocker_triage.py \
 
 The output is deterministic JSON with `status: TRIAGE_ONLY`, a complete list of detected prerequisite blocker codes, counts by category and individual field/path locations. The CLI fails for invalid external input pins; even **zero detected structural blockers is not PASS**. It must be followed by actual original-source editorial review, the independent `validator.py` with the fresh cataloged original PDF, recorded gate checks, and explicit source-level coordinator certification. Any foreign-source field is classified as requiring independently reviewed edition/lineage and accepted target proof; it cannot be silently treated as a source-local binding.
 
-Eight synthetic tests were actually executed locally with all eight passing; the source and test GitHub blobs matched the exact locally executed files after ordinary Contents commits and readback:
-* Diagnostic source: `tools/expanded_acceptance/blocker_triage.py`; semantic commit `355c7cb38dcd896c25cb9165855de690dd95d484`, blob `99be586e2240f3deb5eb7852d174d4182c3f72d5`.
-* Regression tests: `tools/expanded_acceptance/test_blocker_triage.py`; commit `f9763b48e58cef5e777bdbdc124f421e6b8eefd1`, blob `6c40a413f32a50f2e055158131578fca17a59297`.
+Twelve synthetic tests were actually executed locally with all twelve passing; the source and test GitHub blobs matched the exact locally executed files after ordinary Contents commits and readback:
+* Diagnostic source: `tools/expanded_acceptance/blocker_triage.py`; latest validation-hardening commit `facc338e6bad5b42aef2e215277add3b0cb08192`, blob `c305ffb80d6413e8db4745cd49f17cb038854bb2`.
+* Regression tests: `tools/expanded_acceptance/test_blocker_triage.py`; latest twelve-case commit `e41cc42239e9c2849060b760127288a939ef7275`, blob `c71c42653bc8e69dcba9abbe039906b7e2c637fa`.
 
 ```sh
 PYTHONPATH=tools/expanded_acceptance python -m unittest discover -s tools/expanded_acceptance -p test_blocker_triage.py -v
