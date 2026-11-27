@@ -1,0 +1,26 @@
+id: rule.cyberware.mm-signature-baseline-p47
+record_type: rule
+status: source_reviewed
+source: source.mm
+printed_pages: '47'
+pdf_pages: '47'
+edition_scope: FASA7126 Man & Machine Cyberware, FASA Corporation 1999, Shadowrun Third Edition
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 p47 — character Signature baselines for sensors and Gunnery
+summary: Original Man & Machine Cyberware, printed/PDF p47; restores typed starting Signature values while reusing the already preserved cyberware penalty unchanged.
+data:
+  original_section: Cyberware and Signature
+  character_signature:
+    normally_applies: true
+    ordinary_metahumans_other_than_trolls: 6
+    trolls: 5
+    purpose:
+      - Sensor Tests
+      - sensor-enhanced Gunnery Tests
+  modifier_reuse:
+    existing_modifier_id: modifier.cyberware.signature
+    existing_modifier_path: modifiers/cyberware/signature.yml
+    dependency: Apply the pre-existing Essence and cyberzombie Signature modifier to the baseline once; do not interpret the baseline as a separate penalty or double-apply that modifier.
+    base_record_does_not_repeat_modifier: true
+  source_caveat: The original uses the word normally; no universal Signature value beyond the two specified test contexts is inferred.
