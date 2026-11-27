@@ -4,25 +4,41 @@ name: "Target: Wastelands Sand and Equipment Stress"
 domain: equipment
 status: ingested
 context: "fictional tabletop RPG equipment-maintenance rule"
+source: source.fanpro-10653
+printed_pages: "116-117"
+pdf_pages: "117-118"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro10653 Target: Wastelands (FanPro, 2002), fictional SR3 Sand and Gear mechanics, printed pp116-117/PDF117-118"
 effective: {status: source_specific, source: source.fanpro-10653, pages: "116-117", pdf_pages: "117-118", basis: defines}
 
-environmental_stress:
-  exposed_gear: "Exposed weapons, external cyberware and vehicles take 1 Stress Point per day in desert conditions."
-  maintained_or_adapted: "Daily implant cleaning/maintenance, or matching vehicle hostile-environment/desert adaptation, reduces this to 1 Stress Point per week."
+environmental_stress: &stress
+  exposed_gear: "Weapons, exposed cyberware and vehicles are vulnerable to sand; the daily Stress rule specifies external cyberware and vehicles only."
+  daily_stress_points: 1
+  maintained_or_adapted: "Daily implant cleaning and maintenance, or matching vehicle hostile-environment/desert adaptation, reduces the daily rate to 1 Stress Point per week."
 
-moving_parts:
-  daily_check: "Each day an item with moving parts is used, roll 1D6."
+moving_parts: &moving
+  daily_check: "Each day a firearm or other item with moving parts is used, roll 1D6."
   jam: "On a 1, the item jams and needs an appropriate Build/Repair (4) test with a base time of 1 hour before use."
-  poor_cleaning: "If not cleaned regularly, increase the jam range by 1 each day; on day two the item jams on 1-2."
-  timing: "The gamemaster may place a resulting jam at an appropriate dramatic moment."
+  poor_cleaning: "If not cleaned regularly, the gamemaster may increase the jam range by 1 per day; on day two the item jams on 1-2 if this option is used."
+  timing: "The source recommends that the gamemaster time the resulting jam for dramatic tension."
 
-sandstorm_interaction:
+sandstorm_interaction: &sandstorm
   rule: "During a sandstorm, double the Stress Points inflicted and the jam likelihood."
 
 links:
   uses: [rule.damage.stress-test, rule.damage.stress-points]
-  interacts_with: [rule.vehicles.target-wastelands-hostile-environment-adaptation]
+  interacts_with: [rule.vehicles.target-wastelands-hostile-environment-adaptation, rule.vehicles.target-wastelands-adaptation-qualifications]
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  environmental_stress: *stress
+  moving_parts: *moving
+  sandstorm_interaction: *sandstorm
 sources:
   - {source: source.fanpro-10653, pages: "116-117", pdf_pages: "117-118", relation: defines}
 notes:
   - "All effects are fictional game mechanics."
+  - "For the unresolved difference between specific and general adaptation Stress rates, see the vehicle adaptation qualifications; no precedence is inferred here."
