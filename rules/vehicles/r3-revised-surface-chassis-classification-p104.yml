@@ -1,0 +1,19 @@
+id: rule.vehicles.r3-revised-surface-chassis-classification-p104
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '104'
+pdf_pages: '106'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition fictional RPG, printed p104/PDF106
+summary: Surface vessel chassis selection uses strict mass and length bounds; preserve the differing printed boat qualifications.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_id: source.fanpro-10662, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  boat_chassis_definition: {printed_page: 104, pdf_page: 106, surface_watercraft: true, mass_metric_tons_exclusive_upper_bound: 100, length_m_exclusive_upper_bound: 50, conjunction: and, printed_ship_cross_reference: 106}
+  related_source_definitions:
+    ship_attributes: {printed_page: 51, pdf_page: 53, ship_length_m_exclusive_lower_bound: 50, ship_displacement_metric_tons_exclusive_lower_bound: 100, ship_conjunction: and, smaller_in_length_or_tonnage_classified_as: boat, vessel_applies_to: [ships, boats], definition_applies_to: [surface vessels, submarines]}
+    ship_chassis: {printed_page: 107, pdf_page: 109, surface_watercraft: true, length_m_exclusive_lower_bound: 50, mass_metric_tons_exclusive_lower_bound: 100, conjunction: and}
+  unresolved_application: The boat chassis definition uses both upper bounds; the ship attributes definition classifies craft smaller in either dimension as boats. Preserve the differing formulations, without assigning a new chassis rule to mixed-dimension cases or inventing inclusive equality at either threshold.
+  existing_binding: {id: rule.vehicles.ship-attributes, path: rules/vehicles/ship-attributes.yml, blob: 2662e83b9a50579ca4f586df8948859c16878648, relation: retain existing ship threshold; this source-specific record supplies the precise boat chassis wording and its qualification}
