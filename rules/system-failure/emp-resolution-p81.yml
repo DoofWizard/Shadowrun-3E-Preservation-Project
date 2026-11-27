@@ -1,0 +1,48 @@
+id: rule.system-failure.emp-resolution-p81
+record_type: rule
+status: ingested
+source: source.fanpro-25014
+printed_pages: '81'
+pdf_pages: '82'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'System Failure (FanPro25014, FanPro, SR3): fictional RPG equipment damage resolution, printed p81/PDF82'
+data:
+  publication: {title: System Failure, publisher: FanPro, edition: SR3, catalog: FanPro25014}
+  test:
+    type: Opposed Test
+    scope: [power systems, cyberware, sensors, electronics, microtronics]
+    opposing_ratings: [relevant equipment rating, fictional pulse rating]
+    pulse_base_rating: 25
+    pulse_rating_modifiers_per_kilometer:
+      airborne: -1
+      ground_level_built_up_urban_area: -2
+    default_rating_for_cyberware_and_hardened_electronics: 9
+    secondhand_rating_modifier: -2
+    age_rating_modifier_per_5_years: -2
+    sample_effects_cumulative: true
+  table:
+    - successes: '0'
+      damage: none
+    - successes: '1'
+      damage: minor
+      required_response: Reset and use standard system diagnostic and repair functions.
+      examples: [terminal crashes and glitches, erased chips, electronic power surge, older power-grid relay burnout, brief communication disruption]
+    - successes: '2–3'
+      damage: moderate
+      required_response: Technical intervention and replacement of internal hardware or software or both.
+      examples: [trid short circuits, cyberlimb glitches, DNI and display link formatting, electric motor repairs, erased pocket secretary memory, temporary cell maser and radio scrambling, power-grid failure]
+    - successes: '4–5'
+      damage: serious
+      required_response: Replace major hardware components or fully reboot software or both.
+      examples: [Matrix RTG and gridlink failure, major electrical short circuits, host and cyberdeck surge damage, rigger electroshock feedback, cell maser and radio disruption lasting several days]
+    - successes: '6+'
+      damage: destroyed or system crash
+      required_response: Wholesale replacement.
+      examples: [irreparable electric motor and generator damage, vital components in hardened electronics burned out, intermittent local communications for weeks]
+  contextual_conditions:
+    damage_or_data_loss_on_hardened_systems_cumulative_with_jormungand: true
+    older_systems_over_5_to_6_years_may_need_technical_assistance: true
+    older_system_examples: [secondhand cyberware, smartgun adapters, drones]
+    surviving_communications_disruption: several days
