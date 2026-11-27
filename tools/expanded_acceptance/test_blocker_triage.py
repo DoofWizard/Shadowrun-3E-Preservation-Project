@@ -101,7 +101,6 @@ class TriageTests(unittest.TestCase):
         self.assertIn('orphan_transaction_not_bound_to_original_field',codes)
 
 
-
     def test_accepted_core_reference_without_independent_proof(self):
         self.bindings['a'].update(mode='sr3-accepted-core-equivalence/v1', core_obligation='obligation.core.a')
         self.evidence['transactions']={}
