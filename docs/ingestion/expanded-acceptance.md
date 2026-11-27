@@ -951,3 +951,54 @@ during this archival reconciliation. Machine-readable diagnostic
 MM_Accessory_Receipt_Reconciliation_2026-11-27.json SHA256
 ac7f093ae6e6465ed5d21c3ed9d26a7c10a20095c71f60a06e4387342fb085ff.
 No semantic writes, formal book acceptance, or global page credit.
+
+
+## Newly recovered p41 M&M and p154 Rigger Revised journals — 2026-11-27
+
+Read-only reconciliation at pinned main d4addd8922713e7c430a13dcb6a707c3b72459c6;
+forward-only workflow blob 2afd00d765314d425430618e2bb5b31f4440fdc6 read.
+Four newly selected prewrite/confirmed ZIPs pass CRC; the original baseline,
+candidate, plan and review bytes agree across each pair. Actual gate prepare
+and confirm re-executions match both retained receipts. All eight kit dependency
+pins match live; 29 editorial, 40 ingestion/preservation and 16 recovery tests
+passed. Both original indexed snapshots match historical and pinned-head manifest
+blob pins; both candidate blobs match exact-path semantic and pinned-head reads.
+Both index commits are directly one commit ahead of their semantic write,
+change only the corresponding manifest, add the absent registration, and are
+ancestors of pinned HEAD.
+
+| Source scope | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| M&M p41/PDF41 game boundaries | e98a3c74a3aae645c10900e1c31e47241acfd9b0 / 9cb0796d3bc700af679fdf3dca389d84e0f71b26 | eaa55ef4f3c2332bdf3490f34e34e11585c412fa / e1e02eeac39f3dfa9b48d6040f52589204043985 |
+| Rigger Revised p154/PDF156 medium sidecar | 3ba7600925be49a7317884c295c46a0de347ab3f / e0de56b1fe4bf5cba3460f2a2ac2505f3e0d46ab | bc547a1f4c4412ed70bedd4ad7b7f051f95f1c5b / 79af758172c9cebdfb15b69aaa8146022c83deb5 |
+
+M&M original confirmed archive now available, registration pointer
+/source_field_review/confirmed_cybergun_game_boundaries_p41_2026_11_27/records/0.
+This is the previously deferred p41 scope only. Source-owner verification
+receipt retains SHA256 6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8.
+Original index receipt has only commit_sha/blob_sha; explicit historical
+readback attestation remains absent, and M&M manifest path is unsupported.
+
+Rigger Revised registration /verified_semantic_records/115 and original
+index receipt include explicit readbacks_exact=true and exact registration.
+Owner review's medium sidecar price 2000 matches the typed canonical integer.
+IMPORTANT demonstrated reference discrepancy: the same new rule claims that
+the historical normalized medium price is 2500 at
+rules/vehicles/customization-accessories.yml blob
+2279fc22ec373a343dca1c27de6cd7d3fcc31225. Exact path fetched at the semantic
+commit and pinned HEAD has that very blob, but its sidecar retrofit sequence
+is 1,000/2,000/3,500 nuyen. Thus the claimed difference from that historical
+canonical blob is not supported; the two recorded medium prices already
+agree. Source owner must adjudicate/correct the historical-reference metadata
+with original edition review. Do not duplicate the price or infer the printed
+FASA7910 edition from normalization. Original revised source SHA retained:
+88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909.
+The original Rigger receipt uses index_commit/manifest_blob/registration/
+readbacks_exact and is not yet supported by the inline verifier's strict
+schemas. This does not make it a formal acceptance receipt.
+
+No fresh original PDF review, cache use, full production CLI, independent
+book-wide review, semantic writes or formal acceptance claimed. No global
+page credit. Machine-readable diagnostic
+Expanded_Acceptance_New_Journals_2026-11-27.json SHA256
+9445a9338e9cef90affcdbb81c4cf10229b543f8d88177ed64bd745e2371c6c2.
