@@ -180,6 +180,13 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
     archive_diagnostics = {}
     for fid, (f, p) in fields.items():
         b = bindings[fid]
+        if b.get('mode') == 'sr3-accepted-core-equivalence/v1':
+            from core_equivalence import verify as verify_accepted_core_equivalence
+            archive_diagnostics['core_equivalence:' + fid] = verify_accepted_core_equivalence(
+                git, s, f, p, b, evidence.get('accepted_core_equivalence'),
+                review['reviewer'], evidence['custodian'])
+            continue
+        need(b.get('mode', 'source_local') == 'source_local', 'unsupported_binding_mode:' + fid)
         path = b['path']
         need(b['pointer'].startswith('/data/'), 'cosmetic_binding:' + fid)
         if path not in cache:
@@ -224,7 +231,7 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
         need(r['content_class'] == [f['class']], 'bound_class_mismatch:' + fid)
         need(p['printed'] in page_set(r['printed_pages']) and p['pdf'] in page_set(r['pdf_pages']), 'bound_page_mismatch:' + fid)
         need(encoded(ptr(r, b['pointer'])) == encoded(f['value']), 'typed_field_mismatch:' + fid)
-    return {'protocol': PROTOCOL, 'status': 'PASS', 'source': s['id'], 'manifest_blob': blob(mr), 'head': git.head, 'source_sha256': pdf_sha, 'fields': len(fields), 'physical_pages_checked': pdf_count, 'records_checked': len(cache), 'archive_diagnostics': archive_diagnostics, 'formal_acceptance': False, 'engine_certified': False, 'global_pages_advanced': 0}
+    return {'protocol': PROTOCOL, 'status': 'PASS', 'source': s['id'], 'manifest_blob': blob(mr), 'head': git.head, 'source_sha256': pdf_sha, 'fields': len(fields), 'physical_pages_checked': pdf_count, 'records_checked': len(cache), 'accepted_core_match_candidates': sum(k.startswith('core_equivalence:') for k in archive_diagnostics), 'archive_diagnostics': archive_diagnostics, 'formal_acceptance': False, 'engine_certified': False, 'global_pages_advanced': 0}
 
 
 def main():
@@ -255,7 +262,7 @@ def main():
             t = Path(tmp)
             for name in ('ingestion_gate.py', 'connector_preflight.py'):
                 (t / name).write_bytes(git.read('tools/ingestion/' + name))
-            for path in sorted({b['path'] for b in bindings.values()}):
+            for path in sorted({b['path'] for b in bindings.values() if b.get('mode', 'source_local') == 'source_local'}):
                 e = evidence['transactions'][path]
                 if e.get('layout') == 'split_archive/v1':
                     continue  # Both actual gate rechecks already ran in bind_archive.
