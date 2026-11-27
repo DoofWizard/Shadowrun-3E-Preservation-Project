@@ -3,15 +3,26 @@ record_type: entity
 name: "Venom Sack"
 domain: cyberware
 status: ingested
-
+source: source.mm
+printed_pages: '42-43, 156'
+pdf_pages: '42-43, 157'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence_cost: 0.05
   capacity: "2 doses"
+  concealability: '-'
+  ammunition: '-'
+  mode: '-'
+  damage: '-'
   cost_nuyen: 500
   availability: "4/48 hrs"
   street_index: 2
   legality: "4P-Q"
-
+data:
+  original_dash_fields: [concealability, ammunition, mode, damage]
+  purchase_capacity_increment_doses: 2
+  purchase_cost_excludes_compound: true
 links:
   uses:
     - rule.chemistry.drug-exposure
@@ -19,16 +30,12 @@ links:
   component_of: []
   interacts_with:
     - entity.skill.biotech
-
 sources:
-  - source: source.mm
-    page: 42
-    relation: defines
-    note: "Venom Sack description and game effects"
-  - source: source.mm
-    page: 43
-    relation: defines
-    note: "Cyberware statistics table"
-
+  - {source: source.mm, page: 42, relation: defines, note: "Venom Sack description and game effects"}
+  - {source: source.mm, page: 43, relation: defines, note: "Cyberware statistics table"}
+  - {source: source.mm, page: 156, relation: defines, note: "Consolidated equipment table"}
 notes:
   - "Fictional Shadowrun cyberware accessory represented as game data; compatible compound mechanics are linked rather than duplicated."
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp42-43/156, PDF pp42-43/157: Venom Sack purchase row'
+framing: reference_exact
+summary: Original fictional tabletop purchase statistics retain four printed dash fields and the two-dose purchase increment.
