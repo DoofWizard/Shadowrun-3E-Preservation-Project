@@ -3,23 +3,37 @@ record_type: entity
 name: "Cybersquirt"
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '41-43, 155'
+pdf_pages: '41-43, 156'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence_cost: 0.4
   concealability: 8
-  ammunition: "10 chemical doses"
+  ammunition: "10/10(c)"
   mode: "SA"
   damage: "Special"
   cost_nuyen: 1400
   availability: "8/6 days"
   street_index: 2
   legality: "5P-Q"
+data:
+  internal_chemical_rounds: 10
+  internal_gel_capacity_shots: 10
+  external_clip_ammunition_as_printed: "10(c)"
 links:
   uses: [rule.chemistry.drug-exposure]
   requires: []
   component_of: []
   interacts_with: [rule.damage.stress-points]
 sources:
+  - {source: source.mm, page: 41, relation: defines, note: "Cybersquirt description and game effects"}
   - {source: source.mm, page: 42, relation: defines, note: "Cybersquirt description and game effects"}
   - {source: source.mm, page: 43, relation: defines, note: "Cyberweapon statistics table"}
+  - {source: source.mm, page: 155, relation: defines, note: "Consolidated equipment table"}
 notes:
   - "Implanted chemical-spray weapon; reservoir and stress/leak behavior are handled by linked rules rather than duplicated here."
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp41-43/155, PDF pp41-43/156: Cybersquirt purchase row'
+framing: reference_exact
+summary: Original fictional tabletop purchase statistics restore the full printed ammunition notation and both internal reservoir capacities.
