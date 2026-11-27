@@ -8,6 +8,8 @@ from pathlib import Path
 import tempfile
 
 import yaml
+
+from source_edition import manifest_edition_matches, record_edition_matches
 from archive_adapter import (PRE, POST, Strict, blob, inspect, load_json,
                              read_archive, require, sha)
 
@@ -50,8 +52,10 @@ def bind_archive(git, source, path, transaction, inventory_reviewer, custodian):
     require(historic == current == a['journal/candidate.yml'] and indexed == b['journal/indexed-manifest.yml'], 'archive_exact_git_bytes_mismatch')
     key = idx['registration_key']
     require(exact(live_manifest[key], historical_manifest[key]), 'archive_live_registration_changed')
-    for k, v in {'id': source['id'], 'source_pdf_sha256': source['sha256'], 'edition': source['edition'], 'catalog_number': source['catalog'], 'publisher': source['publisher']}.items():
+    for k, v in {'id': source['id'], 'source_pdf_sha256': source['sha256'], 'catalog_number': source['catalog'], 'publisher': source['publisher']}.items():
         require(live_manifest[k] == v and historical_manifest[k] == v, 'archive_manifest_identity_mismatch:' + k)
+    require(manifest_edition_matches(source, live_manifest) and manifest_edition_matches(source, historical_manifest), 'archive_manifest_identity_mismatch:edition')
+    require(record_edition_matches(source, record), 'archive_record_source_or_edition_mismatch')
     att = load_json(att_raw)
     expected = {'protocol': 'sr3-expanded-editorial-binding/v1', 'source': source['id'],
                 'source_sha256': source['sha256'], 'edition': source['edition'],
