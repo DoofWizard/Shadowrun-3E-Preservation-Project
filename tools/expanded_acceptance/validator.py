@@ -104,6 +104,11 @@ class Git:
         self.commit(new)
         self.run('merge-base', '--is-ancestor', old, new)
 
+    def changed(self, path, ref):
+        self.commit(ref)
+        parents = self.run('rev-list', '--parents', '-n', '1', ref).decode().split()
+        need(len(parents) == 2 and self.run('diff', '--name-only', parents[1], ref, '--', path).decode().splitlines() == [path], 'exact_path_commit_required:' + path)
+
     def read(self, path, ref=None):
         need(isinstance(path, str) and re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path) and not {'..', '.'}.intersection(path.split('/')), 'unsafe_path')
         return self.run('show', (ref or self.head) + ':' + path)
@@ -182,7 +187,10 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
             plan, receipt = e['plan'], e['confirm']
             need(e['historical_confirm_artifact'] and e['prewrite_journal_artifact'] and e['editorial_review_artifact'], 'historical_evidence_missing:' + path)
             journal = e['prewrite_journal_artifact']
-            need(artifact(journal['candidate']) == rraw and sha(artifact(journal['baseline'])) == e['baseline_sha256'] and json.loads(artifact(journal['plan']), object_pairs_hook=pairs) == plan, 'historical_journal_bytes_mismatch')
+            baseline_raw = artifact(journal['baseline'])
+            need(artifact(journal['candidate']) == rraw and sha(baseline_raw) == e['baseline_sha256'] and json.loads(artifact(journal['plan']), object_pairs_hook=pairs) == plan, 'historical_journal_bytes_mismatch')
+            frozen = lambda rec: {k: v for k, v in rec.items() if k not in {'headline', 'summary', 'framing'}}
+            need(encoded(frozen(parse(baseline_raw))) == encoded(frozen(r)) and sha(encoded(frozen(r))) == plan['immutable_sha256'], 'historical_immutable_mismatch')
             need(json.loads(artifact(e['historical_confirm_artifact']), object_pairs_hook=pairs) == receipt, 'historical_confirm_artifact_mismatch')
             editorial = json.loads(artifact(e['editorial_review_artifact']), object_pairs_hook=pairs)
             need(editorial['source'] == s['id'] and editorial['source_sha256'] == pdf_sha and editorial['edition'] == s['edition'] and editorial['publisher'] == s['publisher'] and editorial['catalog'] == s['catalog'] and editorial['path'] == path and editorial['candidate_sha256'] == sha(rraw) and editorial['baseline_sha256'] == e['baseline_sha256'] and editorial['baseline_reviewed_independently'] is True and editorial['candidate_reviewed_independently'] is True and editorial['nested_text_reviewed'] is True and editorial['printed_pages'] == r['printed_pages'] and editorial['pdf_pages'] == r['pdf_pages'] and editorial['reviewed_edition_scope'] == r['edition_scope'], 'editorial_evidence_mismatch')
@@ -193,6 +201,8 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
             for k, v in [('path', path), ('source', s['id']), ('pdf_sha256', pdf_sha), ('record_id', r['id']), ('printed_pages', r['printed_pages']), ('pdf_pages', r['pdf_pages']), ('candidate_sha256', sha(rraw)), ('expected_blob_sha', blob(rraw))]:
                 need(plan[k] == v, 'historical_plan_mismatch:' + k)
             need(r['source'] == s['id'] and r['edition_scope'] == editorial['reviewed_edition_scope'], 'record_source_or_edition_mismatch')
+            git.changed(path, commit)
+            git.changed(mp, index_commit)
             git.ancestor(commit, index_commit)
             git.ancestor(index_commit, git.head)
             need(git.read(path, commit) == rraw, 'semantic_commit_bytes_mismatch')
@@ -234,6 +244,18 @@ def main():
         pdf_sha = sha(Path(a.pdf).read_bytes())
         need(verification['status'] == 'source_pdf_hash_verified' and verification['source'] == review['source']['id'] and verification['sha256'] == pdf_sha, 'actual_source_verification_required')
         result = assess(git, review, bindings, evidence, pdf_sha, count)
+        with tempfile.TemporaryDirectory() as tmp:
+            t = Path(tmp)
+            for name in ('ingestion_gate.py', 'connector_preflight.py'):
+                (t / name).write_bytes(git.read('tools/ingestion/' + name))
+            for path in sorted({b['path'] for b in bindings.values()}):
+                e = evidence['transactions'][path]
+                j = e['prewrite_journal_artifact']
+                (t / 'baseline.yml').write_bytes(artifact(j['baseline']))
+                (t / 'candidate.yml').write_bytes(artifact(j['candidate']))
+                actual = subprocess.check_output([sys.executable, str(t / 'ingestion_gate.py'), 'prepare', str(t / 'baseline.yml'), str(t / 'candidate.yml'), path, review['source']['id'], pdf_sha])
+                need(json.loads(actual) == e['plan'], 'present_day_prepare_recheck_mismatch:' + path)
+        result['present_day_prepare_rechecked'] = result['records_checked']
         result.update(source_verification=verification, review_sha256=a.review_sha, bindings_sha256=a.bindings_sha, evidence_sha256=a.evidence_sha, validator_blob=blob(Path(__file__).read_bytes()))
         print(json.dumps(result, sort_keys=True))
         return 0
