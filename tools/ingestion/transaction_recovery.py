@@ -253,24 +253,43 @@ def authorize(manifest,checkpoint,receipts,pending_id:str,start:int,start_pdf:in
     return {'authorized':True,'protocol':'sr3-recovery/v1','source':manifest['id'],'pending_id':pending_id,'from':[start,start_pdf],'next':[next_printed,next_pdf], 'records':[{k:r[k] for k in ('path','commit_sha','expected_blob_sha')} for r in receipts]}
 
 def classify_failure(operation:str, diagnostic:str, http_status:int|None=None, explicit_restriction:bool=False):
-    """Classify observable failures without guessing a hidden safety trigger."""
+    """Classify observable failures without inferring missing files or hidden triggers.
+
+    http_status is a separately observed GitHub HTTP status, not a connector
+    wrapper status. A 404 alone is never proof of remote absence.
+    """
     require(operation in {'create','update','read','preflight','confirm','manifest','checkpoint'},'invalid_operation')
     message=diagnostic.lower()
+    not_found = bool(re.search(r'\b404\b', message)) or http_status == 404
+    route_failure = not_found and ('prior to action invocation' in message or
+                                  'action not found' in message)
+    github_status = None if route_failure else http_status
     if explicit_restriction:
         category,action='explicit_restriction','stop_preserve_pending'
+    elif 'blocked by openai' in message or 'safety checks' in message:
+        category,action='ambiguous_tool_layer_rejection','readback_and_check_permissions'
+    elif route_failure:
+        category,action='tool_route_not_found','check_supported_action_preserve_pending'
+    elif github_status == 404:
+        if operation == 'read':
+            category,action='provider_read_not_found','resolve_repository_ref_path_access_no_absence_inference'
+        elif operation in {'create','update'}:
+            category,action='provider_write_not_found','verify_repository_ref_path_access_and_readback_no_replay'
+        else:
+            category,action='provider_not_found','resolve_operation_repository_ref_path_access'
+    elif not_found:
+        category,action='unattributed_not_found','identify_error_layer_and_operation_no_absence_inference'
     elif http_status in {409,412} or (http_status==422 and 'sha' in message):
         category,action='stale_sha','refresh_then_reconcile'
     elif http_status in {401,403}:
         category,action='provider_denial','inspect_permissions_no_alternate_api'
     elif http_status==429 or http_status in {500,502,503,504}:
         category,action='transient_provider_error','readback_then_retry_when_allowed'
-    elif 'blocked by openai' in message or 'safety checks' in message:
-        category,action='ambiguous_tool_layer_rejection','readback_and_check_permissions'
     elif operation=='preflight':
         category,action='preflight_failure','repair_schema_or_provenance_before_write'
     else:
         category,action='unclassified','inspect_readback_and_evidence'
-    return {'category':category,'next_action':action,'github_http_status':http_status,'cause_proved':False}
+    return {'category':category,'next_action':action,'github_http_status':github_status,'cause_proved':False}
 
 def _replace_one(text:str,pattern:str,replacement:str):
     result,count=re.subn(pattern,replacement,text,count=1,flags=re.M)
@@ -410,10 +429,12 @@ def cli():
     p=subs.add_parser('authorize');p.add_argument('manifest',type=Path);p.add_argument('checkpoint',type=Path);p.add_argument('receipts',type=Path);p.add_argument('pending');p.add_argument('start',type=int);p.add_argument('start_pdf',type=int);p.add_argument('next',type=int);p.add_argument('next_pdf',type=int);p.add_argument('paths',nargs='+')
     p=subs.add_parser('manifest-proposal');p.add_argument('manifest',type=Path);p.add_argument('authorization',type=Path);p.add_argument('keys',type=Path);p.add_argument('output',type=Path)
     p=subs.add_parser('checkpoint-proposal');p.add_argument('manifest_after',type=Path);p.add_argument('checkpoint_before',type=Path);p.add_argument('manifest_commit');p.add_argument('output',type=Path)
+    p=subs.add_parser('classify-failure');p.add_argument('operation',choices=('create','update','read','preflight','confirm','manifest','checkpoint'));p.add_argument('diagnostic');p.add_argument('--http-status',type=int);p.add_argument('--explicit-restriction',action='store_true')
     args=a.parse_args()
     try:
         if args.mode=='stage': result=stage(args.baseline,args.candidate,args.path,args.source,args.pdf_sha,args.journal)
         elif args.mode=='inspect':result=inspect(args.journal,args.observed_blob,args.commit)
+        elif args.mode=='classify-failure':result=classify_failure(args.operation,args.diagnostic,args.http_status,args.explicit_restriction)
         elif args.mode=='audit':result=state(parse_yaml(args.manifest.read_text()),parse_yaml(args.checkpoint.read_text()))
         elif args.mode=='authorize':result=authorize(parse_yaml(args.manifest.read_text()),parse_yaml(args.checkpoint.read_text()),json.loads(args.receipts.read_text()),args.pending,args.start,args.start_pdf,args.next,args.next_pdf,args.paths)
         elif args.mode=='manifest-proposal':
