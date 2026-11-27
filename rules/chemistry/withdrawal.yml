@@ -1,49 +1,63 @@
 id: rule.chemistry.withdrawal
 record_type: rule
-name: "Addiction Withdrawal"
+name: Addiction Withdrawal
 domain: chemistry
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 109
-  basis: defines
-
-scope:
-  applies_to:
-    - "addicted characters attempting to quit or missing required fixes"
-
+source: source.mm
+printed_pages: '109-110'
+pdf_pages: '110-111'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: SR3 fictional character withdrawal tests and recovery modifiers
+summary: FASA7126 Man & Machine, FASA Corporation, 1999, Shadowrun Third Edition tabletop RPG; printed pp109-110/PDF110-111. Game-state rules, not medical advice.
+effective: {status: current, source: source.mm, page: 109, basis: defines}
+scope: {applies_to: [fictional addicted characters in voluntary or forced withdrawal and subsequent recovery]}
 resolution:
-  summary: "An addicted character who exceeds the Fix Factor without another dose enters withdrawal unless the interval is extended by the specified resistance test. Quitting requires Willpower tests against Addiction Rating with additional difficulty for physical or combined dependence; prolonged addiction can cause permanent attribute, Essence or Condition Monitor losses."
-  inputs:
-    - "Fix Factor"
-    - "Addiction Rating/Code"
-    - "Body"
-    - "Willpower"
-  outputs:
-    - "withdrawal state"
-    - "continued addiction or recovery"
-    - "possible permanent harm"
-
-links:
-  uses:
-    - rule.chemistry.addiction
-  affects:
-    - rule.attributes.attribute-ratings
-    - rule.cyberware.essence
-    - rule.condition.condition-monitor
-  modified_by: []
-  interacts_with: []
-
+  summary: Game rules govern the recovery attempt, withdrawal modes, character-sheet penalties, recovery and relapse.
+  inputs: [Addiction Rating, Addiction Code, Willpower, Fix Factor, character condition]
+  outputs: [withdrawal state, rating changes, target-number penalties, recovery state]
+  steps: []
+data:
+  voluntary_attempt:
+    gm_must_find_attempt_warranted: true
+    test: {attribute: Willpower, base_tn: current Addiction Rating, code_modifiers: {mental: 1, physical: 3, both: 4}}
+    mitigating_circumstances: GM may modify the test for support and treatment in the fictional setting
+    success: immediate voluntary withdrawal
+    failure: character seeks the substance; forced withdrawal if other characters prevent access
+  voluntary_withdrawal:
+    addiction_rating_decrease: {points: 1, interval_days: 2, floor: base Addiction Rating}
+    completion: at base Addiction Rating
+    addiction_losses: temporarily halted but not removed
+    tn_modifiers: {general: 2, concentration_including_spellcasting: 4}
+    relapse: {withdrawal_penalties_removed: true, addicted: true, current_addiction_rating_increase: 1}
+  forced_withdrawal:
+    trigger: character fails to obtain required fix, including prevention by other characters
+    addiction_losses: continue
+    tn_modifiers: {general: 3, concentration_including_spellcasting: 6}
+    persistent_condition: Moderate mental wound, cumulative with addiction-caused Stun damage
+    addiction_rating_decrease: {points: 1, interval_hours: 24, floor: base Addiction Rating}
+    completion: at base Addiction Rating
+    relapse: {withdrawal_effects_and_penalties_removed: true, current_addiction_rating_increase: 1}
+  magic: {direct_addiction_recovery: false, resist_pain_spell_can_alleviate_forced_withdrawal_pain: true}
+  recovery:
+    rest_length: equal to Addiction Rating; unit not explicitly stated in this sentence
+    tn_modifiers: {general: 1, concentration: 2}
+    lost_monitor_boxes_recovered_per_three_days_rest: {physical: 1, mental: 1}
+    end_of_rest: all performance penalties removed
+    permanent_losses: [Essence, Racial Maximum]
+    other_attribute_losses: may be improved under standard rules
+  relapse_after_recovery:
+    test: {gm_discretion: true, attribute: Willpower, tn: Addiction Rating, modifiers: elapsed time and exceptional fictional treatment or counseling}
+    if_character_uses_again: {addicted_immediately: true, addiction_rating_increase: 1}
+    tolerance_decline_reference: rule.chemistry.tolerance
+  examples:
+    voluntary_attempt: {current_addiction_rating: 13, mental_modifier: 1, tn: 14, karma_used: true, rolls: [2, 4, 7, 9, 17]}
+    voluntary_withdrawal_printed: {current_addiction_rating: 13, stated_days: 26, stated_calculation: '2 x 13', source_conflict: general rule ends at base rating rather than zero}
+    forced_withdrawal_printed: {rating_before_relapse: 13, rating_after_relapse: 14, base_rating: 4, stated_days: 10}
+  original_wording_uncertainty: Forced-withdrawal prose describes persistence until another dose but also explicitly ends addiction at the base rating; preserve both conditions without adjudicating precedence.
+links: {uses: [rule.chemistry.addiction], affects: [rule.attributes.attribute-ratings, rule.cyberware.essence, rule.condition.condition-monitor], modified_by: [], interacts_with: [rule.chemistry.tolerance]}
 sources:
-  - source: source.mm
-    page: 109
-    relation: defines
-    note: "Getting a Fix / Addiction Effects / Kicking the Habit"
-  - source: source.mm
-    page: 110
-    relation: extends
-    note: "Continuation of withdrawal/addiction recovery rules"
-
+  - {source: source.mm, page: 109, relation: defines, note: Kicking the Habit}
+  - {source: source.mm, page: 110, relation: extends, note: Withdrawal, Forced Withdrawal, Recovery and Staying Clean}
 notes: []
