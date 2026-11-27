@@ -20,7 +20,7 @@ def sha(data):
 class TriageTests(unittest.TestCase):
     def setUp(self):
         self.field={'id':'a','heading':'Table row','class':'rule_exact','kind':'row','lineage':'sr3_effective','value':4}
-        self.review={'protocol':'sr3-expanded-acceptance/v1','reviewer':'synthetic R','source':{'id':'source.demo','sha256':'a'*64,'manifest':'sources/manifests/demo.yml','catalog':'DEMO','publisher':'Test','edition':'SR3','physical_pages':2},'unresolved_fields':[],'pages':[{'pdf':1,'printed':None,'heading':'front','image_review':'fixture','disposition':'zero_rules','reason':'art','fields':[]},{'pdf':2,'printed':1,'heading':'Table','image_review':'fixture','disposition':'mechanical','fields':[self.field]}]}
+        self.review={'protocol':'sr3-expanded-acceptance/v1','reviewer':'synthetic R','source':{'id':'source.demo','sha256':'a'*64,'manifest':'sources/manifests/demo.yml','catalog':'DEMO','publisher':'Test','edition':'SR3','physical_pages':2},'unresolved_fields':[],'unrepresented_printed':[],'expected_printed_folios':[1],'contradictions':[],'pages':[{'pdf':1,'printed':None,'heading':'front','image_review':'fixture','disposition':'zero_rules','reason':'art','fields':[]},{'pdf':2,'printed':1,'heading':'Table','image_review':'fixture','disposition':'mechanical','fields':[self.field]}]}
         self.bindings={'a':{'path':'rules/demo.yml','pointer':'/data/tn'}}
         self.journal={'baseline':{'bytes_base64':b64(b'a')},'candidate':{'bytes_base64':b64(b'b')},'plan':{'bytes_base64':b64(b'c')}}
         self.tx={'plan':{'status':'preflighted'},'confirm':{'status':'verified'},'baseline_sha256':'a'*64,'prewrite_journal_artifact':self.journal,'historical_confirm_artifact':{'x':1},'editorial_review_artifact':{'x':1},'index_commit':'b'*40,'index_pointer':'/verified/0'}
@@ -70,6 +70,30 @@ class TriageTests(unittest.TestCase):
             p=Path(d)/'review.json'; raw=json.dumps(self.review).encode(); p.write_bytes(raw)
             self.assertEqual(load_pinned(p,sha(raw)),self.review)
             with self.assertRaises(ValueError):load_pinned(p,'0'*64)
+
+    def test_missing_folio_and_contradiction_inventories(self):
+        del self.review['expected_printed_folios']
+        del self.review['contradictions']
+        codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('expected_printed_folios_not_reconciled',codes)
+        self.assertIn('explicit_contradiction_inventory_missing',codes)
+
+    def test_unreviewed_legacy_equivalence_blocked(self):
+        self.review['source']['edition']='SR2'
+        self.field['lineage']='sr2_superseded'
+        codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('sr2_precedence_or_named_successor_unresolved',codes)
+
+    def test_zero_rules_without_reason_flagged(self):
+        del self.review['pages'][0]['reason']
+        codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('no_rule_page_not_justified',codes)
+
+    def test_omission_requires_explicit_authority(self):
+        p=self.review['pages'][0]
+        p.update(disposition='owner_omission',reason='source gap')
+        codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('omission_lacks_owner_authority',codes)
 
     def test_orphan_transaction_is_not_silent(self):
         self.evidence['transactions']['rules/orphan.yml']=copy.deepcopy(self.tx)
