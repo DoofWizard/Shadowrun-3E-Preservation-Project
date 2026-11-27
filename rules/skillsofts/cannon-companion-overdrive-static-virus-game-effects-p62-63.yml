@@ -8,7 +8,7 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7908 Cannon Companion: fictional skillsoft adverse game effects'
-summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp62-63/PDF63-64; dice, target numbers, duration and fictional cyberware Stress conditions omitted from the existing option summaries.'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed pp62-63/PDF63-64; dice, target numbers, duration, option compatibility, and fictional cyberware Stress conditions.'
 data:
   overdrive:
     existing: option.skillsofts.overdrive
@@ -34,6 +34,7 @@ data:
   virus:
     existing: option.skillsofts.virus
     multiple_options_allowed: true
+    can_combine_with_other_programming_options: true
     design_rating_unchanged: true
     additional_size: separate fictional program sized using Virus rating and multiplier 3
     trigger: generally activated and skill used; some trigger on activation or a specified action sequence
@@ -45,10 +46,13 @@ data:
       game_equipment: cybernetics toolkit and computer memory equal to Snow rating cubed
     twitch:
       active_skill_target_number_modifier: Twitch rating while active
+      modifier_scope: all Active skill use
     buzz:
       game_effect: BTL sensation tied to skill use; BTL addiction rules apply (p65)
     looper:
       chance_percent: 50
+      chance_trigger: whenever a skillsoft is used in the infected system
+      infected_system: knowsoft link or skillwires firmware
       game_effect: unable to cease using skill
       duration: 1D6 hours or successful Willpower test against twice Looper rating
       game_repair: same as Snow
