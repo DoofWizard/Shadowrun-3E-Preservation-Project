@@ -16,6 +16,9 @@ from pathlib import Path
 PROTOCOL = 'sr3-expanded-acceptance/v1'
 HEX64 = re.compile(r'[a-f0-9]{64}\Z')
 SPLIT = 'split_archive/v1'
+CLASSES = {'rule_exact', 'rule_procedure', 'equipment_stat', 'character_option', 'campaign_guidance'}
+KINDS = {'rule', 'row', 'condition', 'exception', 'example', 'procedure'}
+LINEAGES = {'sr3_effective', 'sr3_optional', 'sr2_unsuperseded', 'sr2_superseded', 'preserved_variant'}
 
 
 def unique_pairs(items):
@@ -54,6 +57,8 @@ def scan(review, bindings, evidence):
     if not isinstance(source, dict) or not all(source.get(k) for k in ('id','sha256','manifest','catalog','publisher','edition','physical_pages')):
         add('source', 'source', 'original_source_identity_or_pdf_pin_missing')
         source = source if isinstance(source, dict) else {}
+    if source.get('edition') not in ('SR2','SR3') or not isinstance(source.get('sha256'),str) or not HEX64.fullmatch(source['sha256']):
+        add('source', 'source', 'invalid_source_edition_or_pdf_hash')
     unresolved = review.get('unresolved_fields', None)
     if unresolved is None:
         add('inventory', 'source', 'explicit_unresolved_field_list_missing')
@@ -70,6 +75,16 @@ def scan(review, bindings, evidence):
     if type(expected_count) is not int or observed != list(range(1, expected_count+1)):
         add('inventory', 'source', 'physical_page_coverage_unproven')
     printed = set()
+    if not isinstance(review.get('unrepresented_printed'), list):
+        add('inventory', 'source', 'unrepresented_printed_folios_list_missing')
+    unrepresented = set()
+    for item in review.get('unrepresented_printed', []):
+        if not isinstance(item, dict) or type(item.get('printed')) is not int or not item.get('reason') or not item.get('authority') or item.get('no_page_credit') is not True or item.get('disposition') not in ('accepted_scan_omission','original_folio_not_present'):
+            add('inventory', 'unrepresented', 'unverified_or_unauthorized_printed_gap')
+            continue
+        if item['printed'] in unrepresented:
+            add('inventory', item['printed'], 'duplicate_unrepresented_printed_folio')
+        unrepresented.add(item['printed'])
     for page in pages:
         if not isinstance(page, dict):
             add('inventory', 'page', 'invalid_page_entry'); continue
@@ -88,6 +103,11 @@ def scan(review, bindings, evidence):
             add('inventory', 'PDF '+str(n), 'mechanical_page_has_no_original_derived_fields')
         if page.get('disposition') not in ('mechanical','zero_rules','owner_omission'):
             add('inventory', 'PDF '+str(n), 'unclassified_original_page')
+        elif page['disposition'] != 'mechanical':
+            if ff or not page.get('reason'):
+                add('inventory', 'PDF '+str(n), 'no_rule_page_not_justified')
+            if page['disposition'] == 'owner_omission' and (not page.get('owner_authority') or page.get('no_page_credit') is not True):
+                add('inventory', 'PDF '+str(n), 'omission_lacks_owner_authority')
         for f in ff:
             if not isinstance(f, dict) or not isinstance(f.get('id'), str) or not f['id']:
                 add('inventory', 'PDF '+str(n), 'invalid_rule_field'); continue
@@ -95,8 +115,28 @@ def scan(review, bindings, evidence):
             if fid in fields:
                 add('inventory', fid, 'duplicate_original_rule_obligation')
             fields[fid] = f
-            if not f.get('heading') or not f.get('lineage') or f.get('value') in (None,'',[],{}):
+            if not f.get('heading') or f.get('lineage') not in LINEAGES or f.get('class') not in CLASSES or f.get('kind') not in KINDS or f.get('value') in (None,'',[],{}):
                 add('original_rule', fid, 'incomplete_field_or_lineage')
+            if f.get('lineage', '').startswith('sr2') and (not f.get('precedence_review') or (f['lineage']=='sr2_superseded' and not f.get('named_successor'))):
+                add('equivalence', fid, 'sr2_precedence_or_named_successor_unresolved')
+            if (source.get('edition') == 'SR2' and f.get('lineage', '').startswith('sr3')) or (source.get('edition') == 'SR3' and f.get('lineage', '').startswith('sr2')):
+                add('equivalence', fid, 'field_lineage_mismatches_original_edition')
+    expected = review.get('expected_printed_folios')
+    if not isinstance(expected,list) or expected != sorted(printed | unrepresented) or printed & unrepresented:
+        add('inventory', 'source', 'expected_printed_folios_not_reconciled')
+    contradictions = review.get('contradictions')
+    if not isinstance(contradictions,list):
+        add('equivalence', 'source', 'explicit_contradiction_inventory_missing')
+    else:
+        listed = set()
+        for conflict in contradictions:
+            ids = conflict.get('fields',[]) if isinstance(conflict,dict) else []
+            if not isinstance(ids,list) or len(set(ids)) < 2 or not set(ids).issubset(fields) or not isinstance(conflict,dict) or conflict.get('disposition') != 'preserve_distinct_variants' or not conflict.get('reason'):
+                add('equivalence', str(ids), 'unreviewed_or_collapsed_contradiction')
+            else:
+                listed.update(ids)
+        if listed != {k for k,v in fields.items() if v.get('lineage')=='preserved_variant'}:
+            add('equivalence', 'source', 'unmapped_preserved_variant')
     for f in sorted(set(fields) - set(bindings)):
         add('binding', f, 'original_rule_has_no_canonical_binding')
     for f in sorted(set(bindings) - set(fields)):
