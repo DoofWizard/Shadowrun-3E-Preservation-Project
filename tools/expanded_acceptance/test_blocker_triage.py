@@ -101,5 +101,26 @@ class TriageTests(unittest.TestCase):
         self.assertIn('orphan_transaction_not_bound_to_original_field',codes)
 
 
+
+    def test_accepted_core_reference_without_independent_proof(self):
+        self.bindings['a'].update(mode='sr3-accepted-core-equivalence/v1', core_obligation='obligation.core.a')
+        self.evidence['transactions']={}
+        errors={e['code'] for e in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('accepted_core_receipt_proof_missing',errors)
+        self.assertIn('independent_original_page_comparison_missing',errors)
+        self.assertNotIn('no_accepted_transaction_evidence',errors)
+
+    def test_accepted_core_reference_is_only_triage_candidate(self):
+        self.bindings['a'].update(mode='sr3-accepted-core-equivalence/v1', core_obligation='obligation.core.a')
+        self.evidence['transactions']={}
+        self.evidence['accepted_core_equivalence']={
+            'protocol':'sr3-accepted-core-equivalence/v1',
+            'receipt_commit':'a'*40, 'receipt_blob':'b'*40,
+            'comparisons':{'a':{'reviewer':'fixture'}}}
+        r=scan(self.review,self.bindings,self.evidence)
+        self.assertEqual(r['status'],'TRIAGE_ONLY')
+        self.assertEqual(r['blocker_counts'],{})
+        self.assertFalse(r['formal_acceptance'])
+
 if __name__=='__main__':
     unittest.main()
