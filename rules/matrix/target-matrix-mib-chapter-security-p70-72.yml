@@ -1,0 +1,28 @@
+id: rule.matrix.target-matrix-mib-chapter-security-p70-72
+record_type: rule
+status: source_reviewed
+source: source.fasa-7219
+printed_pages: '70-72'
+pdf_pages: '71-73'
+edition_scope: 'FASA7219 Target: Matrix, FASA, Shadowrun Third Edition fictional tabletop RPG'
+content_class: [rule_procedure]
+framing: reference_exact
+headline: 'FASA7219 Target: Matrix SR3 pp70-72/PDF71-73: Malaysian Independent Bank security'
+summary: 'Original fictional host heading corrects the legacy classification; attributed access layers and defender staffing are chapter-specific.'
+data:
+  publication: {title: 'Target: Matrix', publisher: FASA, catalog: FASA7219, edition: Shadowrun Third Edition}
+  heading_security: {minimum: Green-Average, maximum: Red-Hard}
+  corrected_legacy_field: world/matrix/target-matrix-hosts.yml#/hosts/malaysian_independent_bank/security_code
+  architecture:
+    attributed_to: Snow Tiger
+    layers:
+      - {level: 1, access: public}
+      - {level: 2, access: client, functions: banking and account transactions}
+      - {level: 3, access: private area for top clients and non-advertised services}
+      - {level: 4, access: internal bank operations and detailed records}
+    chokepoint_separated_layers: [3, 4]
+  defenders:
+    attributed_to: BG
+    approximate_security_deckers_at_any_time: 12
+    function: monitor traffic and support IC as needed
+  qualification: 'Chapter descriptions are attributed fictional host conditions; the explicit Game Information account rules on p124 and sheaf on p134 are retained.'
