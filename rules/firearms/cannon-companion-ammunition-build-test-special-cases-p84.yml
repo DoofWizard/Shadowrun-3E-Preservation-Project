@@ -1,0 +1,31 @@
+id: rule.firearms.cannon-companion-ammunition-build-test-special-cases-p84
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '84'
+pdf_pages: '85'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Fictional SR3 tabletop game: ammunition Build/Repair test exceptions'
+summary: 'FASA Corporation, Cannon Companion (FASA7908), fictional Shadowrun Third Edition tabletop RPG, printed p84/PDF85.'
+data:
+  extends: procedure.firearms.ammunition-manufacture
+  special_rules_apply_to: [cased, caseless]
+  game_tool_eligibility:
+    assault_cannon_standard: shop_only
+    assault_cannon_av: shop_only
+    gyrojet: shop_only
+    netgun_rounds: shop_only
+    spear_gun_spears: shop_only
+    shotgun_slugs: kit_allowed
+    shotgun_shot: kit_allowed
+  capsule_rounds:
+    separate_game_component_acquisition_or_creation: true
+    delegated_rule: 'Man & Machine p108'
+  incendiary_build_test:
+    mishap_when: rolled_ones_exceed_successes
+    consequence: in_game_fire
+    fire_base_damage_code: 6M
+    delegated_fire_rule: 'Cannon Companion p98'
+  existing_rule_reused: Additional successes for the incendiary game test reduce cost only, not time.
