@@ -1,0 +1,81 @@
+name: SR3 acceptance complete Git history export
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/sr3-acceptance-history-export.yml'
+      - 'tools/expanded_acceptance/**'
+      - 'docs/ingestion/expanded-acceptance.md'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  portable-verified-history:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout full original Git history
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Preserve accepted-core lineage and complete snapshot
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "$(git rev-parse --is-shallow-repository)" = "false"
+          HEAD_SHA="$(git rev-parse HEAD)"
+          CORE_ACCEPT="6baeb5dffd92dbdcbe50aa451d637e8ae9702316"
+          CORE_RECEIPT="references/audits/fasa7001-available-source-mechanical-core-acceptance-confirmed-2026-11-21.json"
+          git cat-file -e "${CORE_ACCEPT}^{commit}"
+          git merge-base --is-ancestor "$CORE_ACCEPT" "$HEAD_SHA"
+          test "$(git rev-parse "${CORE_ACCEPT}:${CORE_RECEIPT}")" = "d11888c9f20b5603f874f4e976dff3e23c8cde98"
+          test "$(git rev-parse "${CORE_ACCEPT}:sources/manifests/SR3.yml")" = "a79b28a3970668982ef44a5318642ed55848839a"
+          test "$(git rev-parse "${CORE_ACCEPT}:docs/engine-readiness/FASA7001_CORE_RULES_CLOSURE_QUEUE_2026-11-11.yml")" = "366ee748f51dbf2b699a26edbc1215352743191d"
+
+          git branch -f acceptance-snapshot "$HEAD_SHA"
+          git bundle create "${RUNNER_TEMP}/sr3-acceptance-history.bundle" refs/heads/acceptance-snapshot
+          git bundle verify "${RUNNER_TEMP}/sr3-acceptance-history.bundle"
+          git clone --quiet -b acceptance-snapshot "${RUNNER_TEMP}/sr3-acceptance-history.bundle" "${RUNNER_TEMP}/restored-acceptance"
+          test "$(git -C "${RUNNER_TEMP}/restored-acceptance" rev-parse HEAD)" = "$HEAD_SHA"
+          test "$(git -C "${RUNNER_TEMP}/restored-acceptance" rev-parse "${CORE_ACCEPT}:${CORE_RECEIPT}")" = "d11888c9f20b5603f874f4e976dff3e23c8cde98"
+          git -C "${RUNNER_TEMP}/restored-acceptance" merge-base --is-ancestor "$CORE_ACCEPT" "$HEAD_SHA"
+
+          export HEAD_SHA CORE_ACCEPT
+          python - <<'PY'
+          import hashlib, json, os, pathlib, subprocess
+          root = pathlib.Path(os.environ['RUNNER_TEMP'])
+          data = (root / 'sr3-acceptance-history.bundle').read_bytes()
+          count = int(subprocess.check_output(['git','rev-list','--count','HEAD'],text=True).strip())
+          evidence = {
+              'protocol': 'sr3-portable-git-history/v1',
+              'snapshot_head': os.environ['HEAD_SHA'],
+              'accepted_core_receipt_commit': os.environ['CORE_ACCEPT'],
+              'accepted_core_receipt_blob': 'd11888c9f20b5603f874f4e976dff3e23c8cde98',
+              'bundle_sha256': hashlib.sha256(data).hexdigest(),
+              'bundle_size_bytes': len(data),
+              'commits_reachable': count,
+              'complete_history_git_bundle_verified': True,
+              'restored_clone_head_verified': True,
+              'sourcebook_acceptance': False,
+              'original_pdf_verification': False,
+              'global_pages_advanced': 0,
+          }
+          (root / 'sr3-acceptance-snapshot.json').write_text(
+              json.dumps(evidence,sort_keys=True,indent=2)+'\n',encoding='utf-8')
+          print(json.dumps(evidence,sort_keys=True))
+          PY
+
+      - name: Upload portable full-history artifact for acceptance worker
+        uses: actions/upload-artifact@v4
+        with:
+          name: sr3-acceptance-history-${{ github.run_id }}
+          path: |
+            ${{ runner.temp }}/sr3-acceptance-history.bundle
+            ${{ runner.temp }}/sr3-acceptance-snapshot.json
+          if-no-files-found: error
+          retention-days: 3
