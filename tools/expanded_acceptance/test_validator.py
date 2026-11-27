@@ -16,6 +16,10 @@ class FixtureGit:
     def read(self, path, ref=None):
         return self.files[(ref or self.head, path)]
 
+    def changed(self, path, ref):
+        if (ref, path) not in self.files:
+            raise ValueError('path not changed')
+
     def ancestor(self, old, new):
         if (old, new) not in [('b' * 40, 'c' * 40), ('c' * 40, self.head)]:
             raise ValueError('not ancestor')
@@ -41,7 +45,7 @@ class AcceptanceTests(unittest.TestCase):
 
     def refresh(self):
         raw = encoded(self.record)
-        plan = {'protocol': 'sr3-gate/v1', 'status': 'preflighted', 'record_id': self.record['id'], 'source': self.record['source'], 'path': self.path, 'printed_pages': '1', 'pdf_pages': '2', 'pdf_sha256': self.pdf_sha, 'candidate_sha256': sha(raw), 'expected_blob_sha': blob(raw), 'immutable_sha256': 'e' * 64}
+        plan = {'protocol': 'sr3-gate/v1', 'status': 'preflighted', 'record_id': self.record['id'], 'source': self.record['source'], 'path': self.path, 'printed_pages': '1', 'pdf_pages': '2', 'pdf_sha256': self.pdf_sha, 'candidate_sha256': sha(raw), 'expected_blob_sha': blob(raw), 'immutable_sha256': sha(encoded({k: v for k, v in self.record.items() if k not in {'headline', 'summary', 'framing'}}))}
         receipt = {**plan, 'status': 'verified', 'commit_sha': 'b' * 40, 'readback_blob_sha': blob(raw)}
         ed = {'source': self.source['id'], 'source_sha256': self.pdf_sha, 'edition': self.source['edition'], 'publisher': self.source['publisher'], 'catalog': self.source['catalog'], 'path': self.path, 'candidate_sha256': sha(raw), 'baseline_sha256': sha(raw), 'baseline_reviewed_independently': True, 'candidate_reviewed_independently': True, 'nested_text_reviewed': True, 'printed_pages': '1', 'pdf_pages': '2', 'reviewed_edition_scope': self.record['edition_scope']}
         self.e = {'plan': plan, 'confirm': receipt, 'historical_confirm_artifact': art(encoded(receipt)), 'prewrite_journal_artifact': {'baseline': art(raw), 'candidate': art(raw), 'plan': art(encoded(plan))}, 'editorial_review_artifact': art(encoded(ed)), 'baseline_sha256': sha(raw), 'index_commit': 'c' * 40, 'index_pointer': '/verified/0'}
@@ -99,6 +103,12 @@ class AcceptanceTests(unittest.TestCase):
 
     def test_bad_journal(self):
         self.e['prewrite_journal_artifact']['baseline']['sha256'] = '0' * 64
+        self.blocked()
+
+    def test_frozen_baseline_changed(self):
+        bad = {**self.record, 'data': {'tn': 99}}
+        self.e['prewrite_journal_artifact']['baseline'] = art(encoded(bad))
+        self.e['baseline_sha256'] = sha(encoded(bad))
         self.blocked()
 
     def test_unindexed_forward(self):
