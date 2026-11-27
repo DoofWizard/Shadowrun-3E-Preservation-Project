@@ -3,29 +3,43 @@ record_type: rule
 name: "Target: Wastelands Toxic Critters and Domains"
 domain: critters
 status: ingested
+source: source.fanpro-10653
+printed_pages: "114-115"
+pdf_pages: "115-116"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "Target: Wastelands (FanPro10653, FanPro 2002), fictional Shadowrun Third Edition toxic critter and domain rule correction, printed pp114-115/PDF pp115-116"
 effective: {status: source_specific, source: source.fanpro-10653, pages: "114-115", pdf_pages: "115-116", basis: defines}
-toxic_critters:
+toxic_critters: &toxic_critters
   eligibility: "Only Awakened critters become toxic; physical or dual-natured paranormal critters may also be mutants."
   power_uses:
+    granted: "One primary and one secondary toxic power."
     primary: "Essence uses"
     secondary: "Essence / 2 uses, rounded down"
     recovery: "Regain one use of each toxic power per hour in a toxic domain."
     replacement: "A regular paranormal power may be replaced by a toxic power for unlimited use."
-  primary_powers: ["Blindness","Compulsion","Confusion","Engulf (Sludge)","Enhanced Physical Attributes","Enhanced Senses","Fear","Noxious Breath"]
-  secondary_powers: ["Animal Control","Binding","Corrosive Saliva","Corrosive Secretions","Immunity (Poisons)","Magic Sense","Pestilence","Venom"]
+  primary_powers: ["Blindness", "Compulsion", "Confusion", "Engulf (Sludge)", "Enhanced Physical Attributes", "Enhanced Senses", "Fear", "Noxious Breath"]
+  secondary_powers: ["Animal Control", "Binding", "Corrosive Saliva", "Corrosive Secretions", "Immunity (Poisons)", "Magic Sense", "Pestilence", "Venom"]
   potency: "At gamemaster discretion a toxic critter may have Potency; add Potency to Essence for resolving its powers and grant one additional secondary toxic power per Potency point."
   potency_loss: "Potency may be lost in the same general way as for toxic shamans."
   drawbacks:
     - "Severe Allergy to purified air and water."
     - "Physical alterations and an astral signature that reveals the toxic nature with one or more Assensing successes unless masked."
-domains:
+domains: &domains
   rule: "Only toxic shamans can summon toxic spirits; other magicians cannot summon nature spirits while inside a toxic domain."
-  crossing: "Existing spirits able to cross domain lines may enter, though they may be reluctant."
+  crossing: "Nature spirits and spirits of the elements able to cross domain lines may enter a toxic domain, though they are reluctant."
   subtypes:
-    desolate: "Favours Fear and Pestilence."
-    irradiated: "Favours a radiation-themed aura; Guard may protect against radiation; toxic shamans may summon toxic Spirits of the Flames."
-    poisoned: "Favours powers associated with contaminated environments, including corrosive effects or Venom."
-    sterile: "Favours Desire Reflection, Influence and Noxious Breath rather than corrosive powers."
+    desolate: "The additional powers Fear and Pestilence replace the toxic powers on Magic in the Shadows p127."
+    irradiated: "A glow equivalent to Flame Aura replaces Corrosive Secretions; Guard may protect against radiation; toxic shamans may summon toxic Spirits of the Flames in this domain."
+    poisoned: "Use the toxic spirits described in Magic in the Shadows, with Venom optionally replacing Corrosive Secretions for some spirits."
+    sterile: "Desire Reflection and Influence replace Corrosive Secretions and Noxious Breath."
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  toxic_critters: *toxic_critters
+  domains: *domains
 links:
   uses: []
   affects: []
@@ -34,4 +48,4 @@ links:
 sources:
   - {source: source.fanpro-10653, pages: "114-115", pdf_pages: "115-116", relation: defines}
 notes:
-  - "Descriptions of toxic-shaman philosophies on printed pp.115-116 are source-period setting material rather than additional universal mechanics."
+  - "Descriptions of toxic-shaman philosophies on printed pp115-116 are source-period setting material rather than additional universal mechanics."
