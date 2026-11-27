@@ -13,6 +13,8 @@ from pathlib import Path
 
 import yaml
 
+from source_edition import manifest_edition_matches, record_edition_matches
+
 PROTOCOL = 'sr3-expanded-acceptance/v1'
 CLASSES = {'rule_exact', 'rule_procedure', 'equipment_stat', 'character_option', 'campaign_guidance'}
 
@@ -135,8 +137,9 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
     need(mp.startswith('sources/manifests/') and mp.endswith('.yml'), 'manifest_path_required')
     mr = git.read(mp)
     manifest = parse(mr)
-    for k, v in [('id', s['id']), ('source_pdf_sha256', pdf_sha), ('edition', s['edition']), ('catalog_number', s['catalog']), ('publisher', s['publisher'])]:
+    for k, v in [('id', s['id']), ('source_pdf_sha256', pdf_sha), ('catalog_number', s['catalog']), ('publisher', s['publisher'])]:
         need(manifest[k] == v, 'manifest_identity_mismatch:' + k)
+    need(manifest_edition_matches(s, manifest), 'manifest_identity_mismatch:edition')
     need(review['unresolved_fields'] == [], 'unresolved_original_fields')
     pages = review['pages']
     need([p['pdf'] for p in pages] == list(range(1, pdf_count + 1)), 'missing_duplicate_or_unordered_pdf_page')
@@ -230,6 +233,7 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
                 for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
                     need(entry[k] == v, 'unindexed_or_changed_record:' + k)
                 need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
+            need(record_edition_matches(s, r), 'record_source_or_edition_mismatch:' + path)
             cache[path] = r
         r = cache[path]
         need(r['content_class'] == [f['class']], 'bound_class_mismatch:' + fid)
