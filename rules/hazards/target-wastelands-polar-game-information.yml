@@ -3,42 +3,60 @@ record_type: rule
 name: "Target: Wastelands Polar Hazards and Travel"
 domain: hazards
 status: ingested
+source: source.fanpro-10653
+printed_pages: "121-124"
+pdf_pages: "122-125"
+edition_scope: SR3
+content_class: [rule_procedure]
+framing: reference_exact
+headline: "FanPro10653 Target: Wastelands (FanPro, 2002), fictional SR3 polar hazard and travel rules, printed pp121-124/PDF122-125"
 effective: {status: source_specific, source: source.fanpro-10653, pages: "121-124", pdf_pages: "122-125", basis: defines}
-cold_and_warmth:
+cold_and_warmth: &cold
   exposure: "The gamemaster may assign Stun for unsuitable clothing or inadequate water."
-  bulky_clothing: "Cold-weather gear may impose +1 or +2 target-number modifiers to manual-dexterity or movement tasks."
-sunburn_and_glare:
-  snow_glare: "Characters without vision protection suffer glare penalties; extended exposure may cause temporary snow blindness."
+  bulky_clothing: "Cold-induced numbness or bulky cold-weather gear may impose +1 or +2 target-number modifiers to affected manual-dexterity or movement tasks."
+sunburn_and_glare: &sun
+  snow_glare: "Characters outdoors during the day without vision protection suffer glare penalties; extended exposure may cause temporary snow blindness."
   sunburn: "Long unprotected exposure may inflict 4L."
   antarctic_background_exposure: "Characters spending time outdoors in Antarctica accumulate 1 rad per month."
-frostbite:
+frostbite: &frost
   trigger: "After a Serious or Deadly wound from extreme cold, make a separate Body Test."
   target_number: {serious: 4, deadly: 6}
   outcomes:
     zero_successes: "One limb requires amputation."
     one_success: "One extremity such as a toe, finger, ear or nose tip is lost."
-    two_or_more: "No permanent frostbite loss."
-foot_travel:
+    two_or_more: "The character is unaffected by frostbite."
+foot_travel: &foot
   snow_or_ice: "Treat as Difficult Ground; movement may be reduced by half or more."
-  slippery_ice: "Quickness (6) may be required to avoid falling."
+  slippery_ice: "On slippery icy ground, a Quickness (6) Test is required to avoid falling."
   hidden_crevasse: "Perception (8) to notice a snow-concealed crevasse before falling."
-snowstorms:
+snowstorms: &storm
   visibility: "Use Light/Heavy Rain Perception modifiers as appropriate; severe whiteouts may impose +8."
   ultrasound: "Halves the visual modifier."
   astral: "Apply half the visibility modifier, rounded down."
-  hearing: "+2 to +4 to hearing-based Perception Tests."
+  hearing: "+2 to +4 to hearing-based Perception Tests in strong polar winds."
   movement: "May be reduced by half or more."
-  gusts: "Body (8) may be required to avoid knockdown."
-polar_vehicle_rules:
+  gusts: "Major wind gusts may knock characters down if they fail a Body (8) Test."
+polar_vehicle_rules: &vehicle
   stress: "1 Stress Point per day of operation; appropriate Arctic hostile-environment adaptation reduces this to 1 per week."
-  ground_handling: "+1 on hard-packed snow through +4 on chopping ice; hitting an ice sheet may call for an immediate Crash Test."
+  ground_handling: "The gamemaster may apply Handling Test modifiers from +1 on hard-packed snow to +4 on choppy ice; hitting an ice sheet requires an immediate Crash Test."
   aircraft: "Snow/ice takeoffs and landings require double normal distance and always call for a Driving Test; ski-skids give -2 to takeoff/landing tests."
-polar_magic:
+polar_magic: &magic
   nature_spirits: "Polar wastes generally use desert spirits; sky and mountain spirits may apply, and ice fields/glaciers may count as lake-spirit domains at gamemaster discretion."
   white_nights: "Summoned nature spirits remain until the next sunrise or sunset even when that is weeks away."
-  antarctic_mana: "Antarctica is under mana-surge effects; the gamemaster determines duration/intensity, with once per day given as a general rolling cadence."
+  antarctic_mana: "Antarctica is under mana-surge effects; the gamemaster determines the interval before rolling again, with once per day given as a general rolling cadence; duration and intensity are random."
   aurora_polaris: "Auroras are mana flares with Force 1D6-3 and can form astral rifts."
   arctic_gathering: "Gathering Test target numbers for metal and herbal materials are 10+."
+data:
+  source_title: "Target: Wastelands"
+  publisher: FanPro
+  publication_year: 2002
+  cold_and_warmth: *cold
+  sunburn_and_glare: *sun
+  frostbite: *frost
+  foot_travel: *foot
+  snowstorms: *storm
+  polar_vehicle_rules: *vehicle
+  polar_magic: *magic
 sources:
   - {source: source.fanpro-10653, pages: "121-124", pdf_pages: "122-125", relation: defines}
 notes:
