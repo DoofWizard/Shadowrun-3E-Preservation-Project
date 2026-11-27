@@ -136,6 +136,29 @@ class PreservationMethodTests(unittest.TestCase):
         record_failure(self.journal,'create','Forbidden',403,False)
         self.assertEqual(decide(self.journal,remote_absent=True)['decision'],
                          'check_permissions_no_alternate_api')
+    def test_tool_route_404_is_not_provider_status_or_retry_authorization(self):
+        self.stage()
+        result = record_failure(self.journal, 'create', 'HTTP error prior to action invocation: 404: Action not found', 404, False)
+        self.assertEqual(result['category'], 'tool_route_not_found')
+        self.assertIsNone(result['github_http_status'])
+        self.assertIsNone(json.loads((self.journal/'write_attempts.json').read_text())[0]['github_http_status'])
+        self.assertEqual(decide(self.journal)['decision'], 'fresh_readback_required')
+        self.assertEqual(decide(self.journal, remote_absent=True)['decision'], 'defer_pending_supported_action_availability')
+
+    def test_provider_404_does_not_authorize_write_replay(self):
+        self.stage()
+        result = record_failure(self.journal, 'update', 'Not Found', 404, False)
+        self.assertEqual(result['category'], 'provider_write_not_found')
+        self.assertEqual(result['github_http_status'], 404)
+        self.assertEqual(decide(self.journal, remote_absent=True)['decision'], 'resolve_repository_ref_path_and_access_no_replay')
+
+    def test_unattributed_404_does_not_authorize_write_replay(self):
+        self.stage()
+        result = record_failure(self.journal, 'create', 'HTTP 404', None, False)
+        self.assertEqual(result['category'], 'unattributed_not_found')
+        self.assertIsNone(result['github_http_status'])
+        self.assertEqual(decide(self.journal, remote_absent=True)['decision'], 'resolve_repository_ref_path_and_access_no_replay')
+
     def test_blob_readback_takes_precedence_over_old_ambiguous_error(self):
         plan=self.stage()
         record_failure(self.journal,'create',REJECTION,None,False)
