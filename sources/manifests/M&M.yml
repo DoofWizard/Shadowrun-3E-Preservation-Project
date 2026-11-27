@@ -3510,8 +3510,11 @@ source_field_review:
       - scope: "Cyberweapons and general cyberware"
         printed: "42-49"
         state: partial_review
-        evidence: [confirmed_cyberware_grades_2026_11_24, confirmed_eye_configuration_2026_11_24, confirmed_reflex_behavior_2026_11_24, confirmed_cyberware_magic_protocols_critters_2026_11_24, confirmed_task_pool_triggers_2026_11_24, confirmed_vision_system_use_2026_11_24]
-        remaining: "Cyberweapons (including p41 boundary), BattleTac, signature, SUT, social interaction and other unverified fields; interconnectivity/mental access p46 invalid_semantic_path unresolved."
+        evidence: [confirmed_cyberware_grades_2026_11_24, confirmed_eye_configuration_2026_11_24, confirmed_reflex_behavior_2026_11_24, confirmed_cyberware_magic_protocols_critters_2026_11_24, confirmed_task_pool_triggers_2026_11_24, confirmed_vision_system_use_2026_11_24, confirmed_battletac_systems_2026_11_27]
+        present_day_field_comparisons_2026_11_27:
+          - {path: rules/cyberware/cybered-critters.yml, blob: "78e7869d383a7d75d9f785097f5c1fcc803a608b", printed: "44", pdf: "44", result: "Existing critter compatibility, Awakened Essence effects, HMHVV transformation and Regeneration exceptions match source mechanics; no new historical receipt claimed."}
+          - {path: rules/cyberware/single-cybereye.yml, blob: "c84e662d53667f55d114c4d994158031fd7dd07d", printed: "44", pdf: "44", result: "Existing eye configuration, cost and Essence multipliers, accessory limits, distance TN and single-eye accessory list match; no new historical receipt claimed."}
+        remaining: "BattleTac Systems pp42-44 individually confirmed/indexed. Shock Hand duplicate ID entity.cyberware.shock-hand observed in entities/cyberware/shock-hand.yml (b65d52987d8254cd9fce8c0bb344d6308a64b2d9) and entities/cyberware/shock-hand-table.yml (9963851a6dc29a0cff7f071199276520f78e48a1); p156/PDF157 ammunition and mode unbound, p42 alternate implant locations unbound, canonical path/reference retirement needs schema and dependency adjudication. Preserve both until reconciled. Review remaining p41 cyberweapon boundary, signature, SUT, social interaction and other unverified fields; p46 interconnectivity/mental access invalid_semantic_path unresolved."
       - scope: "Cybermancy"
         printed: "50-59"
         state: partial_review
@@ -3609,7 +3612,8 @@ source_field_review:
       - scope: "Equipment tables"
         printed: "152-158"
         state: partial_review
-        remaining: "PDF153/p152 inspected; prior isolated p155/PDF156 row receipts; compare all unbound original rows, columns, footnotes and cross-references."
+        evidence: [confirmed_oral_dart_purchase_2026_11_27, confirmed_oral_gun_purchase_2026_11_27]
+        remaining: "PDF153/p152 inspected; prior isolated p155/PDF156 row receipts retained. Oral Dart and Oral Gun printed p156/PDF157 nine-column rows reconciled; remaining unbound rows, columns, footnotes and cross-references require comparison."
       - scope: "Index"
         printed: "159-160"
         state: navigation_reviewed
@@ -3626,7 +3630,7 @@ source_field_review:
           - {path: entities/cyberware/replacement-modification.yml, commit: "d3dcdb3d7ca860f08e9f2e4c6fbb9b9b401cfcbe", blob: "640dc7d87d417679df3778409f195e48188a0a90"}
           - {path: entities/cyberware/weapon-mount-articulated-arm.yml, commit: "8de3e4dcf565df8c27028c21150c0e6332d5934e", blob: "baf8c3c1f5f1b0b097101fb5f624b365e3aa13b2"}
         missing: "Original immutable baseline, plan, candidate, actual confirmation artifact and individual indexing receipt; negative archive/title search retained until evidence changes."
-    next_cursor: "DNI, DNI Adaptation and Kid Stealth Legs purchase fields confirmed and individually indexed. Existing p37-38 game effects match; accessory-effects journal debt unchanged. Hook Hand ECU and Concealability dashes individually confirmed and indexed. Peg Leg purchase fields individually confirmed and indexed. Next Quickness Enhancement, Signal Booster and Telescoping Cyberlimb pp40/155. No range-level certification claimed."
+    next_cursor: "Oral Dart and Oral Gun purchase rows and BattleTac Systems individually confirmed/indexed. Resolve duplicate Shock Hand path and missing p42/156 fields only with schema and dependency evidence; otherwise continue signature and Small Unit Tactics p47-48, then remaining general cyberware gaps. Reuse exact p44 critter and eye field comparisons. Eight range-level scopes remain unresolved; no range-level certification claimed."
     original_field_denominator: unknown
     global_contiguous_page_credit: 0
     global_checkpoint_changes: 0
