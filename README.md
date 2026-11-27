@@ -8,6 +8,10 @@ This repository is being organized as a concept-centric, cross-source reference 
 
 *Prime Runners* (FASA Corporation, FASA7116, 1994) is a **historical Shadowrun Second Edition** source; preserve that edition's original printed/PDF pages and mechanics without silently converting anything to Third Edition.
 
+## Forward-only ingestion v2 (2026-11-27)
+
+For remaining open mechanical scopes, all existing workers follow [the forward-only ingestion v2 operating contract](docs/ingestion/forward-ingestion-v2.md): source-authenticated reusable layout preparation, selective difficult-page escalation, natural-section batching and measured throughput. Closed sources and previously reconciled scopes remain closed; no historical re-audit is authorized merely by this process change. All existing source, editorial, individual transaction and acceptance gates remain binding. Denver's owner-authorized archived losses are nonblocking, with no page credit.
+
 ## Fictional-source editorial contract
 
 Before the first semantic submission, the source reviewer must identify the actual published game, publisher, title, catalog number, edition, and printed/PDF pages in the record's permitted root headline/summary **and in the ordinary commit description**. Review every human-readable narrative field, including nested `data`, in neutral source-attributed prose distinguishing publisher narration, fictional in-world testimony, and optional GM scenarios. A `framing: newsroom_neutral` label is not proof that this has happened.
