@@ -211,3 +211,69 @@ registration in the main validator, and then implement explicit cross-source
 field equivalence with separately pinned source inventories and transaction
 evidence. No canon, source manifests, historical journals or protected gates
 changed. Global pages advanced: zero.
+
+## Split archive backend integrated (2026-11-26)
+
+The separate diagnostic above remains unchanged. The main validator now
+also supports a transaction with layout `split_archive/v1` (no layout key
+continues to select the original structured receipt format). For that
+transaction supply pre_base64, post_base64, pre_sha256, post_sha256,
+attestation_base64 and attestation_sha256 in the externally pinned evidence
+JSON. These are original ZIP bytes, not reconstructed or normalized journals.
+The attestation is a NEW independently reviewed binding of the original
+text-review artifact, not a replacement historical artifact or gate receipt.
+The coordinator must independently authenticate the archives and attestation
+and pin the complete evidence JSON before invoking the CLI.
+
+The attestation JSON protocol is sr3-expanded-editorial-binding/v1. It must
+contain source, source_sha256, edition, publisher, catalog, path, record_id,
+printed_pages, pdf_pages, reviewed_edition_scope, content_class (the original
+one-element array), baseline_sha256, candidate_sha256, historical_review_sha256
+(the SHA-256 of the unchanged source-review.txt member), pre_sha256,
+post_sha256, semantic_commit, index_commit, baseline_reviewed_independently,
+candidate_reviewed_independently, nested_text_reviewed and
+historical_custody_and_chronology_reviewed (each exactly true); plus reviewer
+(distinct from inventory reviewer and custodian) and original_review_locator.
+The binding must actually be authenticated by an independent reviewer; a
+locally generated claim, self-issued digest or Boolean alone is insufficient.
+Missing attestation remains BLOCKED. No actual Companion attestation has been
+issued by this engineering run.
+
+The integrated backend checks exact-path semantic/index commits, ancestry to
+the pinned head, byte equality of original archives with historical and live
+Git record bytes, exact historical manifest bytes, current registration,
+original source identity, and the independent attestation against the
+immutable original text and record/page/class/edition digests. It runs actual
+pinned prepare AND confirm as current consistency rechecks. The outer validator
+still checks the complete original-derived inventory and typed bindings and
+runs actual verify-source. Unknown archive layouts fail closed. The main
+CLI skips a redundant prepare for this backend and reports archive_diagnostics
+separately, including historical review/attestation hashes and semantic/index
+commit and blob pins. Candidate PASS is not formal acceptance.
+
+Engineering regression: 11 new tests passed with actual local Git commits
+and live-blob-matched original prepare/confirm code (synthetic fixtures,
+including changed live record/registration, wrong edition or historical
+review hash, same reviewer, absent confirm, mismatched pin, typed mismatch,
+unindexed head, and unknown layout). These exercise assess, not a fresh
+production original PDF. Original protected suites passed 29 preflight and
+56 combined ingestion/preservation/recovery tests. All eight dependency
+blobs matched the runtime kit and live main. The original validator and
+archive adapter local inputs matched b7a65588cc7e3dc4222dbf6cffd7cefdeba10cf0
+and 11ea9839a0cbaa66d78df94d74017166fc6d3508 respectively.
+
+Exact ordinary Contents commits, fresh commit and branch byte readbacks,
+matching the locally tested Git blobs:
+* receipt_binding.py: 6fd61b7e436f3a9fe113fbd33db2dfb073e0c058,
+  blob e385e906dad8d77b6c843d8c2609c0b15d1d457e.
+* validator.py: 90fe4645a907f4357125bd9639e900920a0ff7c9,
+  blob b097bd3f2c2232bb1aee96b473e0cf0d17610f3c.
+* test_receipt_binding.py: 5e8c3eb434bbb8056d2d374cac4dd84f81a3c504,
+  blob 20cee24ab8f606bc3e30dfca05b232dca1e82115.
+
+Next: explicit cross-source equivalence with separately verified original
+inventories and indexed target evidence, retaining edition/optional scope,
+conditions, units and conflicts. Companion p130's outstanding receipt links
+are not closed. No production original PDF verification, newly recovered
+historical receipt, accepted semantic record or formal source decision this
+run. No protected files, source manifests, canon or global pages changed.
