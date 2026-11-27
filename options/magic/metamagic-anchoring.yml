@@ -82,10 +82,54 @@ data:
     dispelling: Sustained anchored spells can be dispelled; reusable focus needs relinking; destroying focus permanently disables it.
     ritual_link: Anchoring focus may be a material link for ritual sorcery.
   illustrative_game_examples:
-    protective_focus: {anchor_force: 10, primary_force: 5, detection_force: 5, reusable: true, karma: 30}
-    healing_elixir: {anchor_force: 4, primary_force: 4, reusable: false, karma: 4}
-    reusable_healing_focus: {anchor_force: 4, reusable: true, karma: 12}
-    area_spell_focus: {anchor_force: 8, primary_force: 5, detection_force: 3, reusable: false, karma: 8, area_origin: anchor}
+    protective_focus:
+      anchor_force: 10
+      primary_force: 5
+      detection_force: 5
+      reusable: true
+      karma: 30
+      primary_spell: Bullet Armor
+      detection_spell: Detect Bullet
+      activation: Detection of incoming bullets moving toward the wearer.
+      deactivation: Danger past.
+    healing_elixir:
+      anchor_force: 4
+      primary_force: 4
+      reusable: false
+      karma: 4
+      primary_spell: Treat
+      activation: Elixir consumed.
+      sustain_until: Healing permanent.
+    reusable_healing_focus:
+      anchor_force: 4
+      reusable: true
+      karma: 12
+      primary_spell: Heal
+      activation: Wearer command.
+      sustain_until: Healing permanent.
+      relink_after_use: true
+    area_spell_focus:
+      anchor_force: 8
+      primary_force: 5
+      detection_force: 3
+      reusable: false
+      karma: 8
+      area_origin: anchor
+      primary_spell_example: Fireball
+      detection_spell_examples:
+      - Detect Orks
+      - Detect Elves
+      - Detect Individual
+      activation: A valid target is within range and detected using the detection spell
+        dice.
+    detection_trigger_example_p70:
+      anchor_force: 6
+      primary_spell: Barrier
+      primary_force: 4
+      detection_spell: Detect Bullet
+      detection_force: 2
+      activation: Detection of an incoming shot.
+      deactivation: Danger no longer present.
 framing: reference_exact
 headline: 'Fictional Shadowrun Third Edition metamagic: Anchoring (FASA7907, printed 70-72/PDF 71-73)'
-summary: FASA Corporation, Magic in the Shadows; tabletop RPG anchoring metamagic mechanics and exceptions from printed 70-72/PDF 71-73.
+summary: FASA Corporation, Magic in the Shadows (FASA7907, SR3); printed 70-72/PDF 71-73 anchoring mechanics, worked spell-force combinations and trigger examples.
