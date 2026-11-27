@@ -99,6 +99,25 @@ class CoreEquivalenceTests(unittest.TestCase):
         self.field['value']={'cost':'Simple','test':'4'}
         self.reject()
 
+    def test_nested_subfield_of_accepted_group_with_review(self):
+        self.binding['pointer']='/data/action/cost'
+        self.field['value']='Simple'
+        c=self.proof['comparisons'][self.field['id']]
+        c.update(accepted_core_group_pointer='/data/action',
+                 reviewed_subfield_pointer='/data/action/cost',
+                 core_group_original_review='source p102 original action table')
+        self.assertEqual(self.run_it()['status'],'CORE_FIELD_MATCH_CANDIDATE')
+
+    def test_nested_subfield_without_group_review_refused(self):
+        self.binding['pointer']='/data/action/cost'
+        self.field['value']='Simple'
+        self.reject()
+
+    def test_nested_non_member_refused(self):
+        self.binding['pointer']='/data/unaccepted/action'
+        self.field['value']='Simple'
+        self.reject()
+
     def test_wrong_edition_refused(self):
         self.source['edition']='SR2'
         self.reject()
