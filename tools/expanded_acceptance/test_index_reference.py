@@ -5,14 +5,14 @@ an original page, a historical transaction, or a sourcebook.
 """
 import json
 import unittest
-from test_core_equivalence import CoreEquivalenceTests, dump
+import test_core_equivalence as fixtures
 from core_equivalence import (CORE_RECEIPT, CORE_QUEUE, CORE_MANIFEST, CORE_SHA,
                               PROTOCOL, git_blob)
 
 
 class ActionIndexReferenceTests(unittest.TestCase):
     def setUp(self):
-        f = CoreEquivalenceTests(methodName='test_match_is_not_acceptance')
+        f = fixtures.CoreEquivalenceTests(methodName='test_match_is_not_acceptance')
         f.setUp()
         self.f = f
         f.source['sha256'] = '8c52409108459a130ff6292722d98dc1f7a65cf870e63a363c34dc1dc299afd5'
@@ -37,7 +37,7 @@ class ActionIndexReferenceTests(unittest.TestCase):
                    'pointer':'/data/selected_free_actions/0/action',
                    'core_obligation':f.obligation}
         f.manifest['postscan_verified_mechanics_recovery']['verified_semantic_records']=[
-            {'id':f.record['id'], 'path':f.path, 'blob':git_blob(dump(f.record)), 'gate':'verified'}]
+            {'id':f.record['id'], 'path':f.path, 'blob':git_blob(fixtures.dump(f.record)), 'gate':'verified'}]
         f.queue['core_acceptance_inventory']['bindings']={f.obligation:{
             'record_id':f.record['id'], 'record_pointer':'/data/selected_free_actions'}}
         self.d = {'source_field_id':f.field['id'], 'core_obligation':f.obligation,
@@ -65,8 +65,8 @@ class ActionIndexReferenceTests(unittest.TestCase):
 
     def refresh(self):
         f = self.f
-        raw = dump(f.record)
-        mr, qr = dump(f.manifest), dump(f.queue)
+        raw = fixtures.dump(f.record)
+        mr, qr = fixtures.dump(f.manifest), fixtures.dump(f.queue)
         f.receipt['assessment']['manifest_blob']=git_blob(mr)
         f.receipt['assessment']['closure_queue_blob']=git_blob(qr)
         rr=json.dumps(f.receipt).encode()
