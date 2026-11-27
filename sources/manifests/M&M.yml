@@ -15,6 +15,33 @@ status: complete
 
 source_field_review:
   status: open
+  confirmed_shock_hand_source_delta_2026_11_27:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    source_pdf_page_count: 161
+    original_image_review: "Original printed pp42-43/PDF42-43 and printed p156/PDF157 visually reviewed; original p156 equipment table explicitly has Shock Hand Ammo 12 and Mode dash; p42 lists foot/elbow/other extremities and insulation for natural hands."
+    original_rendered_pdf_sha256:
+      pdf42: bb788e31cc5a5dc8e9b278bf4f192c1c84a295cde5d0db49d09c586dfe98db21
+      pdf43: 8edab14d4e06519d5cfe9fd96ab303a3006b90bb832e11ded3afa5d58fade213
+      pdf157: 6122a9e9e5b8eeb6861173ee241b10dc085ac25e058074aa016d24290c5bd0b0
+    records:
+      - id: rule.cyberware.mm-shock-hand-configuration-p42-156
+        path: rules/cyberware/mm-shock-hand-configuration-p42-156.yml
+        printed: '42-43,156'
+        pdf: '42-43,157'
+        commit: 41280ee3cb6e7d2050a0aa4bcf1a12a29c84b1aa
+        blob: 5b9e3cfab95261679d8467db40303f7d6e901ba3
+        baseline_sha256: ce83bd61ac6fcb2ddbe29aaa648b14b9b12d7034d514585805513dfd990cba62
+        candidate_sha256: 3f5c77b7eb5d05b2d181eea3930bc4c72284a6ab4910ec052af5d2af0533e864
+        immutable_sha256: 1dbe22586a4e9e8808e9b8a97695e20e90cdd57cb9f2c0b759f04b4425b98edf
+        gate: verified
+        fields: "p42 contact activation, mounting in cyberlimbs and protected natural hands, alternate foot/elbow/other extremities; p156 equipment table ammo 12 and dash Mode. Existing entity stats not duplicated."
+    established_existing_entity: entities/cyberware/shock-hand.yml
+    historical_duplicate_id_paths: [entities/cyberware/shock-hand.yml, entities/cyberware/shock-hand-table.yml]
+    duplicate_id_not_retired: true
+    next_identity_task: "Resolve source-table-only entity path without deleting original historical data or silently changing canonical ID; original page for table record should be rechecked against printed p156/PDF157."
+    source_review_scope: "Three original pages and narrow missing operational qualifications only; no whole-book proof."
+    global_contiguous_page_credit: 0
+    global_checkpoint_changes: 0
   confirmed_social_interaction_p48_2026_11_27:
     source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
     verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
