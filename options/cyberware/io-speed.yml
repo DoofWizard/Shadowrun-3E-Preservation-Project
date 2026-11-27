@@ -1,39 +1,47 @@
 id: option.cyberware.io-speed
 record_type: option
-name: "Cyberware I/O Speed"
+name: Cyberware I/O Speed
 domain: cyberware
 status: ingested
-
+source: source.mm
+printed_pages: '46'
+pdf_pages: '46'
+edition_scope: Shadowrun Third Edition
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cyberware I/O Speed — standard action cost and optional rate
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed/PDF p46. Binds the default action separately from the optional numerical throughput rule.
 effective:
   status: optional
   source: source.mm
   page: 46
   basis: adds_option
-
 option_for:
   - subsystem.cyberware.interconnectivity
-
 selection:
-  timing: "campaign rules"
+  timing: campaign rules
   prerequisites: []
   incompatible_with: []
-
 effects:
-  - "Instead of treating ordinary cyberware-to-cyberware data transfer as effectively instantaneous, transfers between datajacks, routers, cyberware, and external devices may be limited to 1,000 Mp per Combat Turn."
-  - "Encrypted or compressed data uses twice its normal Mp size for determining transfer speed."
-
+  - Ordinary cyberware-to-cyberware data transfer takes a Simple Action regardless of data size; the optional speed rule quantifies transfers between datajacks, routers, cyberware and external devices at 1,000 Mp per Combat Turn.
+  - Encrypted or compressed data uses twice its normal Mp size for determining transfer speed.
 links:
   modifies:
     - subsystem.cyberware.interconnectivity
   requires: []
   interacts_with:
     - subsystem.matrix
-
 sources:
-  - source: source.mm
-    page: 46
-    relation: adds_option
-    note: "I/O Speed (Optional Rule)"
-
+  - {source: source.mm, page: 46, relation: adds_option, note: I/O Speed (Optional Rule)}
 notes:
-  - "Explicitly optional."
+  - Explicitly optional rate; the ordinary Simple Action rule is not optional.
+data:
+  default_device_transfer:
+    action: Simple Action
+    data_size_affects_action_cost: false
+  optional_rate:
+    enabled_by_campaign_choice: true
+    amount_mp_per_combat_turn: 1000
+    scope: [datajacks, routers, cyberware, external devices]
+    encrypted_or_compressed_size_multiplier: 2
+    multiplier_purpose: transfer speed calculation
