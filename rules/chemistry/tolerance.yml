@@ -1,41 +1,52 @@
 id: rule.chemistry.tolerance
 record_type: rule
-name: "Drug Tolerance"
+name: Drug Tolerance
 domain: chemistry
 status: ingested
-
-effective:
-  status: current
-  source: source.mm
-  page: 109
-  basis: defines
-
-scope:
-  applies_to:
-    - "repeated use of addictive substances"
-
+source: source.mm
+printed_pages: '108-110'
+pdf_pages: '109-111'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: SR3 fictional character Tolerance Rating tests and game effects
+summary: FASA7126 Man & Machine, FASA Corporation, 1999, Shadowrun Third Edition tabletop RPG; printed pp108-110/PDF109-111. Abstract character-sheet resolution only.
+effective: {status: current, source: source.mm, page: 109, basis: defines}
+scope: {applies_to: [fictional characters using substances with a Tolerance Rating]}
 resolution:
-  summary: "As repeated use reaches the substance's Edge interval, Addiction and Tolerance ratings can increase. A Body Test against Tolerance determines whether tolerance develops; tolerant characters require a stronger substance or increased dosage to satisfy the addiction and may receive reduced ordinary effects."
-  inputs:
-    - "Tolerance Rating"
-    - "Edge"
-    - "number of uses"
-    - "Body"
-  outputs:
-    - "tolerance state and required future dose/strength"
-
-links:
-  uses:
-    - rule.chemistry.addiction
-  affects: []
-  modified_by: []
-  interacts_with:
-    - rule.chemistry.additional-dosage
-
+  summary: Character tolerance is a game-state result of a Body Test and changes the satisfaction of the fictional addiction mechanic, not necessarily all other game effects.
+  inputs: [Tolerance Rating, applicable Edge, Body, use count, Addiction Rating]
+  outputs: [tolerance state, applicable game effects, updated ratings]
+  steps: []
+data:
+  tolerance_rating: higher rating makes game tolerance easier to acquire
+  test:
+    attribute: Body
+    tn: current Tolerance Rating
+    triggers: [first use, each increase in Tolerance Rating]
+    timing: after the fictional compound's game effects expire
+    failure: zero successes gives tolerance
+  rating_progression_reference: rule.chemistry.addiction
+  tolerance_effects:
+    original_substance_no_longer_satisfies_addiction: true
+    all_other_game_effects_automatically_removed: false
+    gm_optional_effect_multiplier: 0.5
+    qualifying_replacement: higher base Addiction Rating variant or substance of the same general type
+    alternative_abstract_game_dose_multiplier: 2
+    overdose_rule_reference: rule.chemistry.additional-dosage
+    modified_addiction_rating_for_replacement_or_increased_game_dose: previous modified Addiction Rating
+    failure_to_satisfy_fix: forced withdrawal
+  decline:
+    abstinence_interval_days: 30 minus pre-addiction Edge
+    rating_decrement: 1
+    floor: base Tolerance Rating
+    renewed_use: repeat tolerance test
+  examples:
+    failed_tolerance_test: {tn: 8, dice_results: [1, 2, 2, 5, 7], successes: 0}
+    gm_optional_reduced_bonus: {original_bonus_dice: 2, reduced_bonus_dice: 1}
+links: {uses: [rule.chemistry.addiction], affects: [], modified_by: [], interacts_with: [rule.chemistry.additional-dosage, rule.chemistry.withdrawal]}
 sources:
-  - source: source.mm
-    page: 109
-    relation: defines
-    note: "Acquiring a Tolerance"
-
+  - {source: source.mm, page: 108, relation: defines, note: Tolerance and Edge definitions}
+  - {source: source.mm, page: 109, relation: defines, note: Acquiring a Tolerance}
+  - {source: source.mm, page: 110, relation: extends, note: Staying Clean tolerance decline}
 notes: []
