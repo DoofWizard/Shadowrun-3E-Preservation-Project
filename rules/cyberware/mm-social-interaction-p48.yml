@@ -1,0 +1,28 @@
+id: rule.cyberware.mm-social-interaction-p48
+record_type: rule
+status: source_reviewed
+source: source.mm
+printed_pages: '48'
+pdf_pages: '48'
+edition_scope: Shadowrun Third Edition
+content_class: [rule_exact]
+framing: reference_exact
+headline: Man & Machine p48 — supplemental cyberware social-test modifiers
+summary: Fictional Shadowrun Third Edition tabletop RPG, Man & Machine Cyberware (FASA7126, FASA Corporation, 1999), printed/PDF p48. Original additional social target-number modifier and matching Open Test bonus, distinct from the core rule.
+data:
+  original_section: Cyberware and Social Interaction
+  applies_when: The fictional character has extremely unusual or menacing implants; apply in the appropriate social situation.
+  additional_charisma_modifier:
+    magnitude_choices: [1, 2]
+    operation: add_to_target_number
+    applies_to: [Charisma Tests, Charisma-linked Skill Tests]
+    additional_to_existing_core_rule: true
+  open_test_modifier:
+    magnitude: same_selected_modifier
+    operation: add_as_bonus_to_open_test
+    applies_to: [Intimidation Open Tests, Interrogation Open Tests]
+  dependencies:
+    base_cyberware_social_rule: rule.social.sr3-core-social-bias-cyberware-armor-p92-93
+    open_test_resolution: rule.social.interrogation-intimidation
+    core_modifier_table: rule.social.sr3-core-social-modifier-tables-p94
+  stacking_note: This is the additional modifier in M&M, not a replacement of the situational core Essence-based rule; use the same selected magnitude for the stated Open Test bonus.
