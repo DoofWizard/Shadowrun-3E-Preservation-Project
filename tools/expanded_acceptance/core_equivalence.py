@@ -103,7 +103,10 @@ def verify(git, source, original_field, original_page, binding,
           'unaccepted_core_obligation')
     ob = accepted['bindings'][obligation]
     core_id, pointer = ob['record_id'], ob['record_pointer']
-    check(binding['pointer'] == pointer, 'accepted_core_pointer_mismatch')
+    selected_pointer = binding['pointer']
+    nested = selected_pointer != pointer
+    if nested:
+        check(selected_pointer.startswith(pointer + '/'), 'accepted_core_pointer_mismatch')
     path = binding['path']
     check(re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path) and
           '..' not in path.split('/'), 'invalid_core_record_path')
@@ -118,7 +121,7 @@ def verify(git, source, original_field, original_page, binding,
                 entry.get('path') == path and entry.get('blob') == git_blob(raw) and
                 entry.get('gate') == 'verified']
     check(len(matching) == 1, 'core_record_not_uniquely_indexed_in_accepted_snapshot')
-    check(typed(ptr(rec, pointer)) == typed(original_field['value']),
+    check(typed(ptr(rec, selected_pointer)) == typed(original_field['value']),
           'original_and_core_typed_values_differ')
     comparison = proof.get('comparisons', {}).get(original_field['id'])
     check(isinstance(comparison, dict), 'independent_equivalence_comparison_missing')
@@ -136,6 +139,12 @@ def verify(git, source, original_field, original_page, binding,
           all(comparison.get(k) == 'identical' for k in
               ('rule_scope','conditions','exceptions','units','optional_status')),
           'conditional_or_partial_equivalence_not_proven')
+    if nested:
+        check(comparison.get('accepted_core_group_pointer') == pointer and
+              comparison.get('reviewed_subfield_pointer') == selected_pointer and
+              isinstance(comparison.get('core_group_original_review'), str) and
+              comparison['core_group_original_review'].strip(),
+              'accepted_group_descendant_not_independently_reviewed')
     check(isinstance(comparison.get('reviewer'), str) and
           comparison['reviewer'].strip() and
           comparison['reviewer'] not in (reviewer, custodian) and
