@@ -302,3 +302,31 @@ PYTHONPATH=tools/expanded_acceptance python -m unittest discover -s tools/expand
 ```
 
 **Highest-priority production handoff:** Complete ONE independently sourced full-book review/bindings/evidence pack for the nearest-complete owned supplement (initial candidate: FASA7905a Shadowrun Companion). Use this triage to enumerate exact missing original review/page/equivalence/receipt inputs, and resolve or bound those without fabricating history. Next run `validator.py` against the fresh authentic original PDF and live full Git history. Present the coordinator either a verified source-specific PASS candidate with the independent acceptance prerequisites, or exact BLOCKED reasons, never a synthetic certification or unchanged-status essay. Formal expanded-source/corpus acceptance requires the separate authorized final procedure; no such certification is conferred by this diagnostic.
+
+
+## Accepted SR3 core equivalence (v1)
+
+`tools/expanded_acceptance/core_equivalence.py` now supports the explicitly opted-in binding mode `sr3-accepted-core-equivalence/v1` inside `validator.py`. This is for a *precise SR3 supplement field whose rule and all conditions are independently reviewed as exactly identical to a genuinely accepted FASA7001 core field*. It does **not** support automatically importing SR2, collapsing conflicting action costs or treating similar wording/numbers as proof.
+
+An original-derived field remains in `review.json` with its exact original published page, heading, source edition, typed value and `lineage`. Instead of a duplicated source-local historical transaction, `bindings.json` selects:
+
+```json
+{
+  "specific-original-field-id": {
+    "mode": "sr3-accepted-core-equivalence/v1",
+    "core_obligation": "EXACT_ACCEPTED_FASA7001_OBLIGATION_ID",
+    "path": "rules/ACTUAL_ACCEPTED_CORE_RECORD.yml",
+    "pointer": "/data/ACTUAL_SUBSTANTIVE_FIELD"
+  }
+}
+```
+
+The externally pinned `evidence.json` includes `accepted_core_equivalence` with protocol `sr3-accepted-core-equivalence/v1`, `core_source_id: source.sr3-core`, original core PDF SHA256 `7661ba959edba8376373ed0cef13a39ecb63a2e9da3a311c3f4982d15b758914`, independently verified `receipt_commit`, exact `receipt_blob`, and a `comparisons` map keyed by each original source field ID. Each comparison supplies independent reviewer, original source/target image review locators, source ID/hash, original printed/PDF page, original heading, lineage, exact core obligation, relationship `exact_restatement`, and independently reviewed `identical` findings for scope, conditions, exceptions, units and optional-rule status.
+
+The backend checks the historical confirmed FASA7001 source acceptance receipt, historical **accepted** manifest/obligation queue blobs, unique indexed core rule ID/path/blob/field, present-day **unchanged** core record bytes, source-to-core exact *typed* value, and mandatory independent comparison fields. It returns `CORE_FIELD_MATCH_CANDIDATE` and `formal_acceptance: false`. A string reviewer/locator is not, by itself, authenticated evidence; the coordinator separately verifies the actual original-page comparison and custody before accepting any source.
+
+`blocker_triage.py` recognizes this mode and lists missing core receipt, accepted obligation or independently reviewed comparison prerequisites together, without requiring a fabricated *duplicate Companion* historical receipt for a previously accepted original core field. The full validator still requires the genuine sourcebook PDF, all original pages/fields, all remaining source-local actual receipts and global consistency. Unknown and partial equivalences remain BLOCKED.
+
+Real evidence and ownership for the initial FASA7905a Actions p130 source-review handoff are in `docs/ingestion/audits/FASA7905A_EXPANDED_ACCEPTANCE_BRIDGE_2026-11-26.md`. The 38 previously mapped core reference candidates are not 38 automatically accepted rules; original source work recorded 27 exact label matches and 11 qualified/nonliteral cases. Do not silently treat other Critters, MiTS, Matrix, rigging or VR2.0 source material as accepted core.
+
+Local synthetic regression evidence: 17/17 accepted-core equivalence tests passed; 14/14 prerequisite-triage tests passed. Source and test GitHub blobs match the local executed bytes. The integrated validator's complete test suite and the new GitHub Actions run were **not independently observed as passing** in this handoff. New CI workflow: `.github/workflows/sr3-expanded-acceptance-contract-tests.yml`, committed to run the complete test suite on affected changes. This is test automation, not original-source acceptance.
