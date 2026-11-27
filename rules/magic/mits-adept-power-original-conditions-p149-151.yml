@@ -29,11 +29,11 @@ data:
       range_meters: Magic
       attack: Standard Unarmed Combat Test and unarmed damage; ignore Reach. Defender uses ranged combat resistance with Combat Pool and Body; no counterattack. Dodge successes exceeding attack successes cause a miss.
       astral_barrier: blocks_targets_beyond_it_on_either_plane
-      example: {unarmed_skill: 6, attack_pool: 4, attack_TN: 4, attack_successes: 6, dodge_pool: 5, dodge_TN: 4, dodge_successes: 4, Body: 4, resistance_TN: 5, Strength: 7, Impact_Armor: 2, resistance_successes: 2, stated_base_damage: 5M, stated_result: Moderate_wound}
+      example: {unarmed_skill: 6, attack_pool: 4, attack_TN: 4, attack_successes: 6, dodge_pool: 5, dodge_TN: 4, dodge_successes: 4, Body: 4, resistance_TN: 5, Strength: 7, Impact_Armor: 2, resistance_successes: 2, stated_base_damage: 5M, stated_result: Moderate_wound, damage_power_used: Killing_Hands}
     empathic_sense: {cost: 0.5, visibility: unaided_sight, perception_TN: 4, information_table: SR3_p172_Assensing, masking: can_defeat_power_initiates_use_normal_penetration_p76, actual_assensing: false, aura_reading_skill_allowed: false, dual_natured: false}
     flexibility: {cost_by_level: {'1': 0.5, '2': 1}, escape_artist_TN_modifier_per_level: -1, applies_to: bindings_and_unarmed_holds, small_openings: Flexibility_Test_GM_sets_TN}
     freefall: {cost_per_level: 0.25, safe_distance_meters_per_level: 2, safe_surface: no_injury_or_resistance_test_within_allowance, excess_distance: subtract_allowance_before_damage, dangerous_surface: falling_damage_protection_remains_surface_damage_at_GM_discretion}
-    great_leap: {cost_per_level: 0.25, jumping_test_dice_per_level: 1, maximum_distance: add_level_to_Quickness, reference: SRComp_p47, example: {Quickness: 6, level: 4, maximum_meters: 10, Athletics: 5, extra_dice: 4, TN: 10, successes: 1, result: success}}
+    great_leap: {cost_per_level: 0.25, jumping_test_dice_per_level: 1, maximum_distance: add_level_to_Quickness, reference: SRComp_p47, example: {Quickness: 6, level: 4, maximum_meters: 10, gap_meters: 10, Athletics: 5, extra_dice: 4, TN: 10, successes: 1, result: success}}
     iron_will: {cost_per_level: 0.5, resistance_dice_per_level: 1, applies_to: mind_control_or_alteration_including_manipulation_spells_and_critter_powers, excludes: illusion_and_mana_combat_spells}
     magic_sense: {cost: 0.5, radius_meters: Magic_times_5, perception_TN_and_information: SR3_p192_Detection_Spell_Table, astrally_active: false}
     missile_mastery: {cost: 1, test: Throwing_Skill, unusual_missile_damage: floor_half_Strength_L, armor: Impact, edged_or_pointed_damage: Physical, blunt_damage: Stun, standard_missile_Power_modifier: 2}
@@ -47,7 +47,7 @@ data:
       test: Unarmed_Combat_TN_4
       resolution: Add successes to Strength and compare to unmodified Barrier Rating using SR3 p124 Barrier Effect Table.
       interactions: Increased Strength or Strength Boost can combine; astrally perceiving adepts can use against objects including astral barriers, adding 2 to Charisma for such attacks.
-      example: {initial_barrier: 6, Unarmed_Combat: 6, TN: 4, Strength: 5, first_successes: 3, first_total: 8, reduced_barrier: 5, second_successes: 4, second_total: 9, final_barrier: 4, opening_meters: 0.5}
+      example: {initial_barrier: 6, Unarmed_Combat: 6, TN: 4, Strength: 5, first_successes: 3, first_total: 8, reduced_barrier: 5, second_successes: 4, second_total: 9, second_threshold_multiplier: 1.5, second_threshold_comparison: greater_than_reduced_barrier_times_multiplier, final_barrier: 4, opening_meters: 0.5}
     spell_shroud: {cost_per_level: 0.25, resistance_dice_per_level: 1, eligible: detection_spells_only, excludes: astral_aura_reading_astral_detection_and_Masking_Tests}
     temperature_tolerance: {cost_per_level: 0.25, resistance_dice_per_level: 1, applies_to: extreme_heat_and_cold_and_primary_and_secondary_elemental_manipulation_spell_effects}
     traceless_walk: {cost: 0.5, soft_brittle_surfaces: no_visible_traces, contact_noise: none, clothing_and_gear_noise: possible, hearing_Perception_TN_modifier: 4, ground_motion_or_pressure_sensors: not_triggered, liquid_surface_walking: false, deep_snow: no_sinking, nonvisual_tracking: possible}
