@@ -291,6 +291,67 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_mjlbb_registration_mismatch')
         commit, recorded_blob, path = r['commit'], r['blob'], manifest_path
         prior, schema = None, 'mjlbb-compact-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/Rigger3Revised.yml' and 'previous_manifest_blob' in r:
+        # Original compact receipt shape observed in five source-local transactions.
+        required = {'index_commit', 'manifest_blob', 'live_blob', 'previous_manifest_blob',
+                    'semantic_commit', 'semantic_blob', 'historical_and_live_readbacks_match'}
+        require(set(r) == required, 'inline_index_r3r_compact_fields')
+        require(r['historical_and_live_readbacks_match'] is True and
+                r['live_blob'] == r['manifest_blob'], 'inline_index_original_readback_missing')
+        from r3r_mm_index_receipts import R3R_SOURCE, R3R_SHA
+        from index_transition import _identity, _gate, _registrations
+        from validator import parse
+        records = {
+            'rules/vehicles/r3-revised-andrews-game-backlash-p88.yml':
+                ('rule.vehicles.r3-revised-andrews-game-backlash-p88', [88, 88], [90, 90], 'rule_exact'),
+            'rules/gear/r3-revised-other-toys-installation-prerequisites-p100.yml':
+                ('rule.gear.r3-revised-other-toys-installation-prerequisites-p100', [100, 100], [102, 102], 'rule_exact'),
+            'equipment/gear/r3-revised-new-toys-weight-dashes-p98-101.yml':
+                ('equipment.gear.r3-revised-new-toys-weight-dashes-p98-101', [98, 101], [100, 103], 'equipment_stat'),
+            'rules/vehicles/r3-revised-intermediate-design-examples-p111.yml':
+                ('rule.vehicles.r3-revised-intermediate-design-examples-p111', [111, 111], [113, 113], 'rule_exact'),
+            'equipment/gear/r3-revised-new-toys-p90-market-dashes.yml':
+                ('equipment.gear.r3-revised-new-toys-p90-market-dashes', [90, 90], [92, 92], 'equipment_stat'),
+        }
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1' and
+                confirm.get('status') == 'verified' and confirm.get('source') == R3R_SOURCE and
+                confirm.get('pdf_sha256') == R3R_SHA, 'inline_index_r3r_compact_confirm')
+        record_path = confirm.get('path')
+        require(isinstance(record_path, str) and record_path in records, 'inline_index_r3r_compact_path')
+        record_id, printed, pdf, content_class = records[record_path]
+        def folios(span):
+            return str(span[0]) if span[0] == span[1] else f'{span[0]}-{span[1]}'
+        require(confirm.get('record_id') == record_id and confirm.get('printed_pages') == folios(printed) and
+                confirm.get('pdf_pages') == folios(pdf), 'inline_index_r3r_compact_record_scope')
+        require(all(isinstance(x, str) and re.fullmatch(r'[0-9a-f]{40}', x) for x in
+                    (r['semantic_commit'], r['semantic_blob'], parent_blob)), 'inline_index_r3r_compact_pins')
+        require(r['semantic_commit'] == confirm.get('commit_sha') and
+                r['semantic_blob'] == confirm.get('expected_blob_sha') == confirm.get('readback_blob_sha'),
+                'inline_index_r3r_compact_semantic')
+        prior = r['previous_manifest_blob']
+        require(prior == parent_blob, 'inline_index_parent_blob_mismatch')
+        doc = parse(snapshot_raw)
+        require(isinstance(doc, dict) and (doc.get('id'), doc.get('source_pdf_sha256'), doc.get('catalog_number'),
+                doc.get('edition'), doc.get('publisher')) == (R3R_SOURCE, R3R_SHA, 'FanPro10662',
+                'Shadowrun Third Edition', 'FanPro'), 'inline_index_r3r_compact_source')
+        regs = doc.get('verified_semantic_records')
+        require(isinstance(regs, list), 'inline_index_r3r_compact_registrations')
+        matches = [e for e in regs if isinstance(e, dict) and (e.get('id') == record_id or e.get('path') == record_path)]
+        identity = (record_id, record_path, r['semantic_commit'], r['semantic_blob'])
+        require(len(matches) == 1 and _identity(matches[0]) == identity and _gate(matches[0]) == 'verified' and
+                list(_registrations(doc, identity)).count((identity, 'verified')) == 1,
+                'inline_index_r3r_compact_registration')
+        entry = matches[0]
+        require(entry.get('range_printed') == printed and entry.get('range_pdf') == pdf and
+                all(type(n) is int for n in entry['range_printed'] + entry['range_pdf']) and
+                entry.get('content_class') == content_class and entry.get('original_source_sha256') == R3R_SHA and
+                entry.get('contiguous_advance') is False, 'inline_index_r3r_compact_registration_scope')
+        require(all(isinstance(entry.get(k), str) and re.fullmatch(r'[0-9a-f]{64}', entry[k])
+                    for k in ('baseline_sha256', 'candidate_sha256', 'immutable_sha256')) and
+                all(entry[k] == confirm.get(k) for k in ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_r3r_compact_registration_digest')
+        commit, recorded_blob, path = r['index_commit'], r['manifest_blob'], manifest_path
+        schema = 'r3r-compact-parent-index-receipt/v1'
     elif (manifest_path == 'sources/manifests/Rigger3Revised.yml' or
           (manifest_path == 'sources/manifests/M&M.yml' and 'semantic_live_and_commit_exact' in r)):
         from r3r_mm_index_receipts import adapt
@@ -334,7 +395,7 @@ def verify(git, manifest_path, transaction, transition):
             (manifest_path == 'sources/manifests/CannonCompanion.yml' and 'prior_blob' in r) or
             manifest_path == 'sources/manifests/TargetWastelands.yml' or
             (manifest_path == 'sources/manifests/Rigger3Revised.yml' and
-             ('source_manifest_before_blob' in r or 'prior_blob' in r))):
+             ('source_manifest_before_blob' in r or 'prior_blob' in r or 'previous_manifest_blob' in r))):
         prior = blob(git.read(manifest_path, transition['index_parent']))
     if 'registration_key' in r:
         key = r['registration_key']
