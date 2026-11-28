@@ -1,16 +1,48 @@
 id: rule.cyberware.eye-laser-systems
 record_type: rule
-name: "Eye Laser Systems"
+name: Eye Laser Systems
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '13-15,153'
+pdf_pages: '13-15,154'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 13, basis: defines}
-scope: {applies_to: ["cybernetic eye laser systems and accessories"]}
+scope: {applies_to: [fictional cybernetic eye laser systems and accessories]}
 resolution:
-  summary: "Eye lasers are cybernetic visual tools available in multiple power levels and may support tasks such as rangefinding, optical communication, illumination, cutting and targeting. Accessory rules define batteries, laser designators, microphones, scanning links, tool-laser use and brightlight/superflash effects."
-  inputs: ["laser power", "installed accessory", "task"]
-  outputs: ["range, utility effect or attack/test modifier"]
+  summary: Resolve the original basic eye-laser tabletop test; separate accessory rules remain distinct.
+  inputs: [fictional power tier, game target eligibility, Opposed Quickness Test successes, flare compensation]
+  outputs: [temporary game target-number modifier, duration progression]
   steps: []
 links: {uses: [], affects: [], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "13-15", relation: defines, note: "Eye Laser Systems and accessories"}
-notes: []
+  - {source: source.mm, pages: '13-15', relation: defines, note: Eye Laser Systems and accessories}
+  - {source: source.mm, page: 153, relation: clarifies, note: Consolidated eye equipment table}
+notes:
+  - Fictional tabletop game rules only. Accessory-specific game effects are not resolved by this basic-system record.
+data:
+  basic_system:
+    requires_cybereyes: true
+    fictional_target_eligibility: [within game range, looking at character, eye contact]
+    action: Complex
+    test: Opposed Quickness
+    user_bonus_dice_by_power: {low: 1, medium: 2, high: 3}
+    target_number_modifier_per_net_success: 1
+    target_number_modifier_maximum: 8
+    flare_compensation_modifier_reduction: 2
+    modifier_reduction_each_combat_turn: 2
+    line_of_sight: true
+    flux_rating: null
+  fictional_laser_table:
+    columns: [power_tier, effective_game_range_m, extra_dice, battery_game_duration_minutes]
+    rows:
+      - [low, 5, 1, 100]
+      - [medium, 50, 2, 50]
+      - [high, 500, 3, 25]
+  game_battery_purchase_cost_nuyen: 150
+  replacement_game_test: {skill: Biotech, target_number: 6, base_time_minutes: 10}
+  accessory_scope: [laser designator, laser microphone, optical scanning link, tool laser, eye light systems]
+  accessory_rules_resolved_separately: true
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop RPG, pp13-15,153/PDF13-15,154: basic fictional eye-laser test, game table and accessory boundary'
+framing: reference_exact
