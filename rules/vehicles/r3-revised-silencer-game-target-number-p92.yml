@@ -1,0 +1,24 @@
+id: rule.vehicles.r3-revised-silencer-game-target-number-p92
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '92'
+pdf_pages: '94'
+edition_scope: FanPro Rigger 3 Revised, FanPro10662, Shadowrun Third Edition fictional tabletop RPG
+content_class: [rule_exact]
+framing: reference_exact
+headline: FanPro10662 p92 Silencer fictional dice target-number operator correction
+summary: Bind the printed division operator for the game target-number exception; preserve the existing rounding and minimum and the historical normalized record.
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  applies_to: entity.ammunition.loral-vought-silencer-aarm
+  game_target_number:
+    numerator: 12
+    operator: divide
+    denominator: highest active fictional Flux rating from target vehicle sensors or ECM
+    rounding: down
+    minimum: 2
+    replaces_signature_as_target_number: true
+    zero_denominator: unspecified_in_original
+  historical_binding: {path: entities/ammunition/loral-vought-silencer-aarm.yml, blob: 8a40e723ef9f3d1007dd949163b4b47ca69b1a4e, normalized_operator: addition}
+  scope_limit: Original fictional dice target-number exception only. No real-world procedure or change to equipment statistics; no inferred historical original-edition difference.
