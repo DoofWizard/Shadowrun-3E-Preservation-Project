@@ -291,6 +291,10 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_mjlbb_registration_mismatch')
         commit, recorded_blob, path = r['commit'], r['blob'], manifest_path
         prior, schema = None, 'mjlbb-compact-index-receipt/v1'
+    elif (manifest_path == 'sources/manifests/Rigger3Revised.yml' or
+          (manifest_path == 'sources/manifests/M&M.yml' and 'semantic_live_and_commit_exact' in r)):
+        from r3r_mm_index_receipts import adapt
+        commit, recorded_blob, path, prior, schema = adapt(r, snapshot_raw, manifest_path, confirm)
     elif manifest_path in ('sources/manifests/M&M.yml', 'sources/manifests/CannonCompanion.yml'):
         from source_index_receipts import adapt
         commit, recorded_blob, path, prior, schema = adapt(
