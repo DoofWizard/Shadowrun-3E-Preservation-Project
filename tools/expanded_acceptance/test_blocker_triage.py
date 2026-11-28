@@ -23,7 +23,7 @@ class TriageTests(unittest.TestCase):
         self.review={'protocol':'sr3-expanded-acceptance/v1','reviewer':'synthetic R','source':{'id':'source.demo','sha256':'a'*64,'manifest':'sources/manifests/demo.yml','catalog':'DEMO','publisher':'Test','edition':'SR3','physical_pages':2},'unresolved_fields':[],'unrepresented_printed':[],'expected_printed_folios':[1],'contradictions':[],'pages':[{'pdf':1,'printed':None,'heading':'front','image_review':'fixture','disposition':'zero_rules','reason':'art','fields':[]},{'pdf':2,'printed':1,'heading':'Table','image_review':'fixture','disposition':'mechanical','fields':[self.field]}]}
         self.bindings={'a':{'path':'rules/demo.yml','pointer':'/data/tn'}}
         self.journal={'baseline':{'bytes_base64':b64(b'a')},'candidate':{'bytes_base64':b64(b'b')},'plan':{'bytes_base64':b64(b'c')}}
-        self.tx={'plan':{'status':'preflighted'},'confirm':{'status':'verified'},'baseline_sha256':'a'*64,'prewrite_journal_artifact':self.journal,'historical_confirm_artifact':{'x':1},'editorial_review_artifact':{'x':1},'index_commit':'b'*40,'index_pointer':'/verified/0'}
+        self.tx={'plan':{'status':'preflighted'},'confirm':{'status':'verified'},'baseline_sha256':'a'*64,'prewrite_journal_artifact':self.journal,'historical_confirm_artifact':{'x':1},'editorial_review_artifact':{'x':1},'historical_index_receipt_artifact':{'x':1},'historical_index_snapshot_artifact':{'x':1},'index_commit':'b'*40,'index_pointer':'/verified/0'}
         self.evidence={'protocol':'sr3-expanded-acceptance/v1','custodian':'synthetic C','transactions':{'rules/demo.yml':self.tx}}
 
     def test_all_obvious_prerequisites_present_is_still_only_triage(self):
@@ -39,6 +39,28 @@ class TriageTests(unittest.TestCase):
         self.assertIn('missing_historical_confirm',codes)
         self.assertIn('missing_historical_index_commit',codes)
         self.assertIn('missing_original_prewrite_candidate',codes)
+
+    def test_original_index_artifacts_are_required_together(self):
+        del self.tx['historical_index_receipt_artifact']
+        del self.tx['historical_index_snapshot_artifact']
+        codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+        self.assertIn('missing_historical_historical_index_receipt_artifact',codes)
+        self.assertIn('missing_historical_historical_index_snapshot_artifact',codes)
+
+    def test_narrow_equipment_intrinsic_binding(self):
+        self.field['class']='equipment_stat'
+        self.bindings['a']={'path':'entities/demo.yml','pointer':'/intrinsic/mode'}
+        self.evidence['transactions']={'entities/demo.yml':self.tx}
+        self.assertEqual(scan(self.review,self.bindings,self.evidence)['blocker_counts'],{})
+        for path, pointer, cls in [('rules/demo.yml','/intrinsic/mode','equipment_stat'),
+                                   ('entities/demo.yml','/intrinsic/mode','rule_exact'),
+                                   ('../entities/demo.yml','/intrinsic/mode','equipment_stat'),
+                                   ('entities/demo.yml','/data/','equipment_stat')]:
+            with self.subTest(path=path,pointer=pointer,cls=cls):
+                self.field['class']=cls
+                self.bindings['a']={'path':path,'pointer':pointer}
+                codes={i['code'] for i in scan(self.review,self.bindings,self.evidence)['blockers']}
+                self.assertIn('substantive_canonical_path_and_pointer_required',codes)
 
     def test_bad_source_page_and_binding_rejections_aggregate(self):
         self.review['pages'][1]['fields']=[]
