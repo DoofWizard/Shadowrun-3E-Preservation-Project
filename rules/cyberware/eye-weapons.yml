@@ -1,16 +1,49 @@
 id: rule.cyberware.eye-weapons
 record_type: rule
-name: "Eye Weapons"
+name: Eye Weapons
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '16'
+pdf_pages: '16'
+edition_scope: SR3
+content_class: [rule_exact]
 effective: {status: current, source: source.mm, page: 16, basis: defines}
-scope: {applies_to: ["eye dart and eye gun cyberware"]}
+scope: {applies_to: [eye dart and eye gun cyberware]}
 resolution:
-  summary: "Eye weapons must be installed in cybereyes and use the Cyber-Implant Combat skill rather than ordinary ranged-weapon skills. Firing produces a temporary visual penalty in the firing eye, ammunition is limited, and eye-weapon ammunition costs more than ordinary ammunition."
-  inputs: ["eye weapon", "Cyber-Implant Combat skill", "firing eye"]
-  outputs: ["attack resolution and temporary visual modifier"]
+  summary: 'Fictional tabletop cyberware game effects use the Eye Gun Active Skill, linked to Quickness.'
+  inputs: [eye weapon, Eye Gun Active Skill, unaugmented Body]
+  outputs: [game attack resolution, cybereye Stress, temporary visual test modifier]
   steps: []
-links: {uses: [entity.skill.cyber-implant-combat], affects: [], modified_by: [], interacts_with: [rule.cyberware.single-cybereye]}
+links: {uses: [entity.skill.eye-gun], affects: [], modified_by: [], interacts_with: [rule.cyberware.single-cybereye]}
 sources:
-  - {source: source.mm, page: 16, relation: defines, note: "Eye Weapons / Game Effects"}
-notes: []
+  - {source: source.mm, page: 16, relation: defines, note: 'Eye Weapons / Game Effects'}
+notes:
+  - Original M&M game effects replace the incorrect earlier skill attribution in this record.
+  - Fictional tabletop game values only.
+data:
+  fictional_game_effects:
+    installation: {requires_cybereyes: true, maximum_per_eye: 1}
+    game_capacity: 1
+    reload_game_test: {skill: Biotech, target_number: 6, base_time_combat_turns: 10}
+    active_skill: {name: Eye Gun, linked_attribute: Quickness}
+    aim_enhancers_and_accessories_allowed: false
+    cybereye_stress_per_shot: 1
+    eye_dart:
+      game_resolution_as: hold-out pistol
+      fictional_payload_types: [narcoject, toxin]
+      game_power_multiplier: {numerator: 1, denominator: 2, rounding: up}
+      game_range_multiplier: {numerator: 1, denominator: 2, rounding: down}
+      visual_test_modifier: 2
+      visual_modifier_duration_combat_turns: {base: 4, subtract: unaugmented Body, minimum: 1}
+      ammunition_cost_multiplier: 4
+      reference: {source: source.mm, page: 101, section: Chemistry}
+    eye_gun:
+      game_resolution_as: hold-out pistol
+      game_range_multiplier: {numerator: 1, denominator: 2, rounding: down}
+      recoil_modifier: 1
+      visual_test_modifier: 2
+      visual_modifier_duration_combat_turns: {base: 6, subtract: unaugmented Body, minimum: 2}
+      ammunition_cost_multiplier: 5
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, p16/PDF16: Eye Weapons: corrected fictional game skill and complete game-effect bindings'
+framing: reference_exact
