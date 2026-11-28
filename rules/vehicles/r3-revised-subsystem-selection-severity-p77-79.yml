@@ -1,0 +1,154 @@
+id: rule.vehicles.r3-revised-subsystem-selection-severity-p77-79
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: 77-79
+pdf_pages: 79-81
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class:
+- rule_exact
+headline: FanPro10662 pp77-79 optional subsystem selection and severity qualifications
+summary: Supplies missing fictional game lookup bindings and corrects the inherited Light bonus reduction without duplicating the subsystem count
+  formula.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  existing_rule:
+    id: rule.vehicles.subsystem-damage
+    path: rules/vehicles/subsystem-damage.yml
+    blob: 3f6eb3aae6393000987a9d2a05609fc220b1d8ae
+  optional: true
+  selection:
+    major_category_choice_allowed: true
+    component_choice_allowed: true
+    absent_component_options:
+    - no subsystem hit for this result
+    - gamemaster reroll
+    severity_roll: one D6 per damaged subsystem using table 8
+  tables:
+  - table_number: 1
+    dice: 1D6
+    result_to_table:
+    - - 1
+      - 2
+    - - 2
+      - 3
+    - - 3
+      - 4
+    - - 4
+      - 5
+    - - 5
+      - 6
+    - - 6
+      - 7
+  - table_number: 2
+    category: vehicle electronics
+    dice: 1D6
+    results:
+    - - 1
+      - ECM
+    - - 2
+      - ECCM
+    - - 3
+      - sensor systems
+    - - 4
+      - other electronics or reroll table 2
+    - - 5
+      - ECD
+    - - 6
+      - ED
+  - table_number: 3
+    category: vehicle controls
+    dice: 1D6
+    results:
+    - - 1
+      - rigger control box
+    - - 2
+      - autonav
+    - - 3
+      - remote control linkup
+    - - 4
+      - Handling
+    - - 5
+      - drive-by-wire system
+    - - 6
+      - other control modification or reroll table 3
+  - table_number: 4
+    category: accessories
+    dice: 2D6
+    results:
+    - - 2
+      - APPS system
+    - - 3
+      - amphibious system
+    - - 4
+      - anti-theft system
+    - - 5
+      - communications gear
+    - - 6
+      - drone rack
+    - - 7
+      - EnviroSeal
+    - - 8
+      - external cargo mount
+    - - 9
+      - life support
+    - - 10
+      - spotlight
+    - - 11
+      - gamemaster choice of any vehicle device or reroll table 1
+    - - 12
+      - roll twice on table 1
+  - table_number: 5
+    category: weapon systems
+    dice: 1D6
+    results:
+    - - 1-2
+      - turret
+    - - 3-4
+      - vehicle weapon
+    - - 5-6
+      - target acquisition system
+  - table_number: 6
+    category: engine
+    dice: 1D6
+    results:
+    - - 1
+      - Gridlink
+    - - 2
+      - turbocharger/superconductive drive
+    - - 3
+      - engine hit
+    - - 4
+      - engine customization
+    - - 5
+      - nitrous injector
+    - - 6
+      - SunCell
+  - table_number: 7
+    category: chassis
+    dice: 1D6
+    results:
+    - - 1
+      - fuel tank
+    - - 2
+      - passenger compartment
+    - - 3
+      - aggravated Body damage
+    - - 4
+      - armor-defeating hit
+    - - 5
+      - reroll table 1
+    - - 6
+      - roll twice on table 1
+  table_8_qualification:
+    light_bonus_or_extra_dice_reduction: 1
+    moderate_half_basis: original value
+    existing_no_bonus_or_extra_dice_test_modifiers_retained: true
+  scope: Fictional tabletop dice lookup only. Existing subsystem count formula, major categories, severity ranges and other severity effects retained
+    once; no real-world process or historical edition difference inferred.
