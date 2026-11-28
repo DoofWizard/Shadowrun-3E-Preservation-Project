@@ -2140,6 +2140,30 @@ Changed reached-source manifest observations: MitS 4f8f2aadb8df5e373d24847c571c6
 Checkpoint: five new verified semantic records across three original natural-section batches (p90 lower catalogue, cyberware/equipment eligibility, accessory/market rules), one coverage-only artwork check, one independently revalidated owner archive pair, zero newly recovered historical receipts, zero independently accepted books, zero global pages. All individual transactions complete and archived. No protected gate, branch, ownership, task or schedule change.
 
 
+
+### 2026-11-28 sustained production — mechanic scheduling, autosoft loading and design example capacity
+
+Fresh cataloged FanPro10662 original 210 physical pages, 40,997,045 bytes, SHA256 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909. Actual preservation_method verify-source returned source_pdf_hash_verified against exact initial and successive live manifest snapshots. Forward V2 f289054db49b55dec6f9e5a6401abaa6588c2e69; authenticated runtime kit and changed dependencies restored from private exact-byte transport, 97 actual regression tests passed. Live manifest lookup, not optional seed. Eight cached physical page layouts/images prepared (eight misses, 2.659s); direct pixel inspection including additional original pp124 and 142. No OCR-only rule inference.
+
+Initial exact manifest 7cbd0686a2e7d8485695d5b63550fd5cc538d268: 199 verified registrations, no pending normalization. Three new bounded records, each individually prepared, published, confirmed with exact semantic historical/live readback, and separately registered with exact index historical/live readback. Current manifest 3fa5763ed490d8a6a3eb27c69cf3ae532dc6757a: 202 registrations, empty pending normalization.
+
+| Scope | Semantic commit / blob | Index commit / manifest blob |
+|---|---|---|
+| p124/PDF126 contact scheduling, three original conditions | 19cb2f8911ce497b7314bb377c50229f0773d468 / a46361b07482934557ccba64d4a2807df6d58170 | 7194cef91896ffaae7295ac6a98b10d5b9b2bb35 / b8892a4429ec9d66fbbe1fed44a958dfb03a6d12 |
+| p99/PDF101 chip acquisition/loading qualification, checked against original pp44 and 142 | ab61845f4cc2962cde182aa0070308dfe4d46eed / f80a947e94258ffca952ec6a965ea5a48370534a | d0d4c3b47f9f987c9917615c05d6d92c2ad5e452 / 28ec9aec0baeaf369975842212b5638a96954183 |
+| p112/PDF114 example-specific intermediate Handling and modification capacity bindings | 5e9b1d83ed89148395a6bb78b56e977052193429 / 90e0dd91b1b5bd1aca3b4ccd232e36e3acf07ab4 | d487513baec565b5f531c952376990382efeb253 / 3fa5763ed490d8a6a3eb27c69cf3ae532dc6757a |
+
+Original private archive SHA256 pairs (prewrite / confirmed):
+- Mechanic: 80179224476c613b0299b772cef14bab23931103f891fd1506402529a193c1c9 / 469878926ca1cfecafc51b540765dda00956d4bd3d0b0ce6a582f02569fc001a.
+- Loading: 3fbb6d4fea0de0f201cc814aab4e17cf0672ed3712ffdd2d4b0bc850e5c80de9 / 585750477fa43ca86ba9caefaea14af3ce3515e35cb54609fedf86312ed6c1e1.
+- Example capacity: 9e94bdb5fe27b737a3bdfee89a37be1808cc02e08d8cb4c3136e007d6037662d / d134e40861f98a3b4f259bc9b648e7aecbcb656836b85f56b82c36cfd422b2b4.
+
+Acceptance specialist original p124 handoff at 653867ccb8e859b703890f28b9d0143103b47dd7 addressed by owner transaction above; existing normal rates, double-time/half-cost and early-use GM discretion not duplicated. Specialist's separate compact parent-bound adapter/test report (f9223dc358aa4eaeefe5767ddba9d3d2fcd5d1e5 / 88ce06b4bda33b198ecd7cb6ed81cac414ebabe7) claims five original archive replays and 42 focused tests; not counted as new owner production. Formal R3R validator remains blocked on pinned Git objects (cat-file 128, authenticated history head 384ffce7d0262a078647132c371b93b1a265be7d at reported 352-commit lag), independence, inventory and attestation. No new whole-book acceptance.
+
+Coverage-only p99 performance profile: exact existing historical semantic b23d4f2abb167f87cb718c482ff3eeeb5fe07c57 / e8dcb29dbd2dfbc3c3a7bc99de5805778d720f68; historical index 170320c8d6187de44087a3f04395e3a5ef1bf4dd / 653db7c3641593929656ffa3602ef252cf3473aa; current manifest includes it. This existing record already binds heavy modification discretion and typical name-brand market. Redundant uncommitted staging archive SHA256 950309374876865f0b91b3e811c3638d917a5215f20dafa12a846c3acc2fb751 is RETIRED; do not publish or count as a new record, receipt, or pending write. p100 Sharpshooter original comparison matches option blob be603a257984a970e373b0cda369957dd177798b. p44 and p142 general autosoft caps, ports, transfer and programming-option exclusions remain existing, not generalized from the p99 chip qualification. p112 example scope preserves 23 scalar/boolean bindings including intermediate capacity and Handling; no new general formula, no replacement of conflicting printed totals.
+
+Checkpoint: three completed transaction scopes across three natural batches; six mechanical qualification groups and 23 worked-example scalar/boolean bindings; two coverage-only scopes; one redundant preparation retired before publication; zero pending semantic transactions, newly recovered historical receipts, independently accepted books, or global pages. Next bounded dependency: independent acceptance evidence and live remaining source-manifest changes; no protected gate, role, task, schedule, or branch changes.
+
 ## Completion rule
 
 A source is not marked `complete` until:
