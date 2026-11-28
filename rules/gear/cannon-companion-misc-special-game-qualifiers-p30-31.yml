@@ -1,0 +1,58 @@
+id: rule.gear.cannon-companion-misc-special-game-qualifiers-p30-31
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '30-31'
+pdf_pages: '31-32'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: remaining miscellaneous special tabletop profiles'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp30-31/PDF31-32. Original category skill and three item-specific game qualifications supplement pinned entities and existing underwater rules.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  category:
+    default_skill_requirement: item-specific Active Skill unless otherwise stated
+    linked_attribute: Quickness
+    optional_related_skill_grouping: gamemaster discretion
+    example_group: Pistols
+    grouping_purpose: facilitate game skill defaulting
+    reference: Cannon Companion p104
+    accessory_rule: use item-specific eligibility
+  ares_protector:
+    entity: entity.weapon.ares-protector
+    path: entities/weapons/ares-protector.yml
+    blob: 8c8efff13f9e0da9eb287e508dd3f65d9328b34d
+    case_to_detached_game_action: Simple Action
+    smartlinked_variant_mentioned: true
+    governing_skill_both_modes: Submachine Guns
+    case_mode_uncompensated_recoil_multiplier: 2
+    integral_game_accessory: sound suppressor
+    accessory_eligibility: underbarrel only
+    detached_mode_stock_option:
+      when_used_recoil_compensation: 1
+    ammunition_eligibility: caseless only
+    concealability_by_game_mode: {briefcase: 10, detached: 3}
+  blowgun:
+    entity: entity.weapon.blowgun
+    path: entities/weapons/blowgun.yml
+    blob: 81eebf04b3c1032f17d58b25284c3cad8c2fa8db
+    game_sound_qualification: silent; no numerical modifier specified
+    game_impact_armor_multiplier: 2
+    game_ammunition_purchase: {quantity: 20, cost_nuyen: 5}
+    effect_rule_reference: Man and Machine p105 Drug Rules
+    external_resolution: delegated, not supplied here
+  gyrojet_pistol:
+    entity: entity.weapon.gyrojet-pistol
+    path: entities/weapons/gyrojet-pistol.yml
+    blob: 596d7515494cda9fe5cfeef7deaa1e15e77dd9ef
+    accessory_eligibility_as: heavy pistol
+    recoil_rule: standard firearm
+    range_table_by_environment: {underwater: heavy pistols, land: shotguns}
+    underwater_damage_level_increase: 1
+    source_references: [Cannon Companion p39, Cannon Companion p111]
+    underwater_rule_binding:
+      id: rule.combat.cannon-companion-water-combat-game-exceptions-p111-112
+      path: rules/combat/cannon-companion-water-combat-game-exceptions-p111-112.yml
+      blob: 7f4b9abda5ff463fb5c11d4b8caf82d1df96c2a0
+  disposition: 'Original fictional game rules only. Prior acquisition variants retained without duplication or precedence decision. No physical construction or real-world operational instructions.'
