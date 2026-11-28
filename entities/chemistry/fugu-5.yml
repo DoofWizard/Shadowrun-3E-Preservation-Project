@@ -3,13 +3,27 @@ record_type: entity
 name: "Fugu 5"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '157-158'
+pdf_pages: '158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999), Shadowrun Third Edition tabletop RPG, printed pp157-158/PDF158-159: fictional game item statistics'
 intrinsic:
   availability: "4/72 hrs"
   cost_nuyen_per_dose: 10000
   street_index: 0.5
   legality: "3-X"
+  vector: "Ingestion or injection"
+  speed: "Immediate"
+  damage: "3D"
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 158, relation: defines, note: "Drugs and pharmaceutical compounds purchasing table statistics"}
+  - {source: source.mm, page: 157, relation: defines, note: 'Pharmaceutical Compounds Effects table, game statistics only'}
+  - {source: source.mm, page: 158, relation: defines, note: 'Drugs and pharmaceutical compounds purchasing table statistics'}
+data:
+  effects_table: {printed_page: 157, fields: [vector, speed, damage]}
+  purchase_table: {printed_page: 158, price_unit: per_dose}
 notes:
   - "Preserved strictly as fictional Shadowrun tabletop game data."
