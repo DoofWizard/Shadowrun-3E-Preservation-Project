@@ -235,6 +235,9 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_srcomp_p17_registration_mismatch')
         commit, recorded_blob, path = r['commit'], r['blob'], r['path']
         prior, schema = None, 'srcomp-p17-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/SRComp.yml':
+        from srcomp_index_receipts import adapt
+        commit, recorded_blob, path, prior, schema = adapt(r, snapshot_raw, manifest_path, confirm)
     elif manifest_path == 'sources/manifests/MrJohnsonsLittleBlackBook.yml':
         # Actual FanPro25003 archived compact index receipt. The exact flag
         # attests the retained snapshot only; do not invent an original parent
