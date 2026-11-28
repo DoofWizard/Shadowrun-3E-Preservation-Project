@@ -91,6 +91,31 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         require(isinstance(prior, str) and prior == parent_blob,
                 'inline_index_parent_blob_mismatch')
         schema = 'matrix-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/TargetWastelands.yml':
+        required = {'source', 'record_id', 'index_commit', 'manifest_blob_sha',
+                    'previous_manifest_blob_sha', 'readback_commit_and_main_blob_match',
+                    'semantic_commit'}
+        require(set(r) == required, 'inline_index_wastelands_receipt_fields')
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
+                and confirm.get('status') == 'verified', 'inline_index_wastelands_verified_confirm_required')
+        require(r['source'] == confirm.get('source') == 'source.fanpro-10653'
+                and confirm.get('pdf_sha256') == '31db497dcbe649eda35b596ed2dff9475241518027137c65f35ea720b03d0c6b',
+                'inline_index_wastelands_original_identity_mismatch')
+        require(isinstance(r['record_id'], str) and bool(r['record_id'])
+                and r['record_id'] == confirm.get('record_id'),
+                'inline_index_wastelands_record_identity_mismatch')
+        require(all(isinstance(x, str) and re.fullmatch(r'[0-9a-f]{40}', x)
+                    for x in (confirm.get('commit_sha'), confirm.get('readback_blob_sha'), parent_blob)),
+                'inline_index_wastelands_external_pins_required')
+        require(r['semantic_commit'] == confirm['commit_sha']
+                and confirm.get('expected_blob_sha') == confirm['readback_blob_sha'],
+                'inline_index_wastelands_semantic_identity_mismatch')
+        require(r['readback_commit_and_main_blob_match'] is True,
+                'inline_index_original_readback_missing')
+        commit, recorded_blob, path = r['index_commit'], r['manifest_blob_sha'], manifest_path
+        prior = r['previous_manifest_blob_sha']
+        require(prior == parent_blob, 'inline_index_parent_blob_mismatch')
+        schema = 'wastelands-alter-pressure-index-receipt/v1'
     elif manifest_path in ('sources/manifests/M&M.yml', 'sources/manifests/CannonCompanion.yml'):
         from source_index_receipts import adapt
         commit, recorded_blob, path, prior, schema = adapt(
@@ -126,7 +151,9 @@ def verify(git, manifest_path, transaction, transition):
     require(snapshot == actual, 'inline_index_snapshot_bytes_mismatch')
     r = json.loads(receipt, object_pairs_hook=pairs)
     prior = None
-    if 'prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r or (manifest_path == 'sources/manifests/CannonCompanion.yml' and 'prior_blob' in r):
+    if ('prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r or
+            (manifest_path == 'sources/manifests/CannonCompanion.yml' and 'prior_blob' in r) or
+            manifest_path == 'sources/manifests/TargetWastelands.yml'):
         prior = blob(git.read(manifest_path, transition['index_parent']))
     if 'registration_key' in r:
         key = r['registration_key']
