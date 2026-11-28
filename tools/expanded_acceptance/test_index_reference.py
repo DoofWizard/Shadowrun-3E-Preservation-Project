@@ -15,7 +15,7 @@ class ActionIndexReferenceTests(unittest.TestCase):
         f = fixtures.CoreEquivalenceTests(methodName='test_match_is_not_acceptance')
         f.setUp()
         self.f = f
-        f.source['sha256'] = '8c52409108459a130ff6292722d98dc1f7a65cf870e63a363c34dc1dc299afd5'
+        f.source['sha256'] = '8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5'
         f.field.update({'id':'comp.actions.free.general.1',
                         'heading':'Actions / Free / General',
                         'class':'rule_procedure',
@@ -102,6 +102,14 @@ class ActionIndexReferenceTests(unittest.TestCase):
 
     def test_rejects_original_page_mismatch(self):
         self.f.original_page['pdf']=132
+        self.f.reject()
+
+    def test_rejects_previous_erroneous_companion_digest(self):
+        # The former fixture duplicated the adapter's typo; original PDF verification
+        # now pins the genuine digest and must reject the previous value.
+        wrong = '8c52409108459a130ff6292722d98dc1f7a65cf870e63a363c34dc1dc299afd5'
+        self.f.source['sha256'] = wrong
+        self.d['source_sha256'] = wrong
         self.f.reject()
 
     def test_rejects_other_companion_action_not_reviewed(self):
