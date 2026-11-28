@@ -65,10 +65,10 @@ verified_semantic_records:
     printed_pages: "35-39"
     pdf_pages: "35-39"
     content_class: rule_exact
-    commit_sha: e030e7ba4b91fc20fd5b206b3e481262930a1d45
-    blob_sha: 3a282cd8227db3c10572609187ca234c3117f034
-    candidate_sha256: 13d477950919662258d654a4c5a79fa54ce95597f0cfe4db01b18caec7ae11b1
-    immutable_sha256: 8742c1d872155cd95ed2ed0e0a644f5b362e5d4402ef145c1831c5531819dd0d
+    commit_sha: 2c69009eefa7bfdb4268c85c573fa521a04b633a
+    blob_sha: fbdcb20d3eb927d94192cabf40f2b999345c04e8
+    candidate_sha256: 57227a7f74e70cc4cefe28ef0ef8ab20068a7f987d15002aafd0b2c8df6e2b36
+    immutable_sha256: 78786ae33947d8f01dcdbbaad635761f337801975c032825430fe6215548e69a
     gate_status: verified
   - id: rule.critters.awakened-entry-exceptions-p28-p31-32
     path: rules/critters/awakened-entry-exceptions-p28-p31-32.yml
@@ -583,6 +583,19 @@ verified_semantic_revision_history_2026_11_24:
     immutable_sha256: 7251aefac6c761afd81b005cc41323c851cc41429a78ff468019b36a11a30693
     gate_status: verified
 
+# Prior registration retained verbatim; the live p35-39 record corrects the typed power list.
+verified_semantic_revision_history_2026_11_27:
+  - id: rule.critters.awakened-entry-exceptions-p35-39
+    path: rules/critters/awakened-entry-exceptions-p35-39.yml
+    printed_pages: "35-39"
+    pdf_pages: "35-39"
+    content_class: rule_exact
+    commit_sha: e030e7ba4b91fc20fd5b206b3e481262930a1d45
+    blob_sha: 3a282cd8227db3c10572609187ca234c3117f034
+    candidate_sha256: 13d477950919662258d654a4c5a79fa54ce95597f0cfe4db01b18caec7ae11b1
+    immutable_sha256: 8742c1d872155cd95ed2ed0e0a644f5b362e5d4402ef145c1831c5531819dd0d
+    gate_status: verified
+
 # Source-wide administrative reconciliation; not a semantic transaction or whole-book acceptance.
 mechanical_book_checklist_2026_11_25:
   original_drive_id: "1WNRS1kMVi7eWIboZkukbRzKio3CasWwQ"
@@ -675,6 +688,44 @@ mechanical_book_checklist_2026_11_25:
     historical_receipts_recovered: 0
     formal_acceptance: false
     next_binding_scope: "Awakened Critters pp37-38: original field matrix against aggregate and registered supplements where not already established; use live evidence and exclude already certified fields."
+  original_field_binding_p37_40_2026_11_27:
+    printed_pdf_pages: "37-40"
+    disposition: original_field_binding_with_one_confirmed_correction_not_formal_acceptance
+    original_sha256: "40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7"
+    verification_manifest_blob: "ee0f5831c6fc88282581781e746f77cc6ec3fbee"
+    verify_source: source_pdf_hash_verified
+    original_visual_review: "PDF37-40 at 180 dpi; original p35-36 also checked only for unchanged fields in the corrected p35-39 record. Physical and printed folios agree."
+    exact_live_bindings:
+      aggregate: {path: entities/critters/catalog-l-z.yml, blob: "858751a4476862a674a1f1e6c5a48f2a0dc6312d"}
+      core_nature_profiles: {path: rules/spirits/sr3-core-nature-force-profiles-p267-268.yml, blob: "a76d076caf5255db0b5c098414fe570b6a9a617a"}
+      nature_spirit_differences: {path: rules/critters/nature-spirit-profile-differences-p37.yml, blob: "6fca554b27929b8c75aeabce9bb2be140b430e03"}
+      magical_creature_exceptions: {path: rules/critters/awakened-entry-exceptions-p38.yml, blob: "8340fd8ad2df74670873f634fcecbf779fec07fc"}
+      nomad_targeting: {path: rules/critters/nomad-compulsion-targeting-p38.yml, blob: "95d125e37a4294b09e9c7478b009d874b47b8f06"}
+      corrected_nutria_list: {path: rules/critters/awakened-entry-exceptions-p35-39.yml, blob: "fbdcb20d3eb927d94192cabf40f2b999345c04e8"}
+      other_creature_exceptions: {path: rules/critters/awakened-entry-exceptions-p39-40.yml, blob: "70bb9c67a7207a519caa3fabfb57376be599e885"}
+    scopes:
+      - pages: "37-38 with p39 Nutria note"
+        headings: [Nature Spirits, Nimue's Salamander, Nomad, Nosferatu, Nova Scorpion, Nutria]
+        original_field_comparisons: 88
+        initial_exact_matches: 87
+        corrected_exact_matches: 88
+        qualifying_conditions_reviewed: "Four spirit family profiles and 14 subtype power lists; distinct Man/Water movement, home-domain and Wind restriction, physical and astral attacks; Nimue drain, Nomad recurrence/target selection, Nosferatu minimum attributes and weaknesses, Nova Scorpion venom/antitoxin, Nutria powers and chance."
+      - pages: "39-40"
+        headings: [Oracle Owl, Pegasus, Peryton, Phoenix, Piasma, Protean, Quicksilver Mongoose, Rockworm, Saber-tooth Cat, Salamander]
+        original_field_comparisons: 48
+        initial_exact_matches: 48
+        corrected_exact_matches: 48
+        qualifying_conditions_reviewed: "Detection spells, flight multipliers/duration, attack variants, enhancement timings, vulnerabilities, Protean mass/mimic/engulf/reassembly, Mongoose power range and attack codes, Rockworm burrowing and Regeneration, separate Salamander profile. Source leaves Protean Strength at 40 kg and Salamander Reaction operator unresolved. Oracle Owl narrative and power list remain distinct."
+    comparison_method: "Typed fields and arrays; presentation whitespace only in symbolic/raw fields, no inferred algebra or edition conversion. Prose conditions independently reviewed; not counted as automated comparisons."
+    corrected_field: "data.nutria.listed_powers: a YAML flow-list comma split one original Immunity power into two invalid strings. Source-reviewed block list preserves one power with both categories, plus separate Concealment."
+    confirmed_semantic_commit: "2c69009eefa7bfdb4268c85c573fa521a04b633a"
+    confirmed_semantic_blob: "fbdcb20d3eb927d94192cabf40f2b999345c04e8"
+    individual_gate: verified
+    new_confirmed_fields: 1
+    new_semantic_records: 0
+    historical_receipts_recovered: 0
+    formal_acceptance: false
+    next_binding_scope: "Awakened Critters pp41-43, beginning Sasquatch stat/power continuation; retain prior established qualifications and examine outstanding source-field bindings only."
   historical_receipt_debt:
     missing_artifacts: "Independent baseline bytes, original pre-write plan/journal, actual confirm receipt; old commit/index matches alone do not substitute."
     weakness_conditions_commit: "9e85d377e9f5c5ac91d3963f2fbb7d5ccdd8d8e2"
