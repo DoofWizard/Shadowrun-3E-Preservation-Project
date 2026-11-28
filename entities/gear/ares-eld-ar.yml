@@ -1,11 +1,29 @@
 id: entity.gear.ares-eld-ar
 record_type: entity
-name: "Ares ELD-AR Assault Rifle"
+name: Ares ELD-AR Assault Rifle
 domain: gear
 status: ingested
-intrinsic: {concealability: 4, ammo: "50(c)", mode: "SA/BF", damage: "4L Stun", weight: 4.5, cost_nuyen: 950, availability: "9/7 days", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '115,157'
+pdf_pages: '116,158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 4, ammo: '50(c)', mode: SA/BF, damage: 4L Stun, weight: 4.5, cost_nuyen: 950, availability: '9/7 days', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 115, relation: defines, note: "Ares ELD-AR fictional weapon/game gear statistics"}
+  - {source: source.mm, page: 115, relation: defines, note: 'Ares ELD-AR fictional weapon/game gear statistics and game effects'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated Chemtech Application Gear purchase row.'}
 notes:
-  - "Uses encapsulated liquid-delivery rounds in the game; paint rounds are standard ammunition."
+  - 'Uses encapsulated liquid-delivery rounds in the game; paint rounds are standard ammunition.'
+data:
+  attack_skill: Assault Rifle
+  standard_game_ammunition: entity.chemistry.paint-rounds
+  game_marking_ammunition: {invisible_dye_option: true, dye_visible_to: [ultraviolet, thermographic_vision]}
+  fictional_custom_ammunition: {game_material_cost_nuyen: 300, payload_compatibility: not_all_compounds_compatible}
+  game_recoil: negligible
+  game_sound_treatment: sound_suppressor
+  game_mounting: {drone_mount_allowed: true}
+  game_accessory_slots: {top: allowed, under_barrel: allowed, barrel: prohibited}
+  game_resource: {shots_per_charge: 50, refill_cost_nuyen: 50}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp115,157/PDF116,158: Ares ELD-AR Assault Rifle'
+framing: reference_exact
