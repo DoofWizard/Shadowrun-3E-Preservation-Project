@@ -1,0 +1,66 @@
+id: rule.chemistry.mm-street-drug-game-effects-p121-122
+record_type: rule
+name: Street drug character game effects
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '121-122'
+pdf_pages: '122-123'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Man & Machine (FASA7126, FASA Corporation, 1999, SR3 tabletop RPG): street drug character mechanics'
+summary: 'Fictional character rules for the six named street-drug entries, with existing purchase and effect-table entities retained.'
+effective: {status: current, source: source.mm, page: 121, basis: extends}
+scope: {applies_to: [Shadowrun characters, six fictional street-drug entries]}
+resolution:
+  summary: Apply the source-specific game effects of the referenced fictional entity.
+  inputs: [entity identity, character attributes, character state]
+  outputs: [character modifiers, durations, post-effect consequences]
+links:
+  uses: [entity.chemistry.bliss, entity.chemistry.burn, entity.chemistry.cram, entity.chemistry.nitro, entity.chemistry.novacoke, entity.chemistry.zen]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.chemistry.drug-exposure, rule.chemistry.addiction]
+sources:
+  - {source: source.mm, pages: '121-122', relation: extends, note: Fictional character game effects under Street Drugs}
+notes: []
+data:
+  gamemaster_character_guidance:
+    typical_professional_rating: 4
+    condition: character under street-drug effects
+    roleplaying_encouraged: true
+  bliss:
+    entity: entity.chemistry.bliss
+    Reaction_modifier: -1
+    all_target_numbers_modifier: 1
+    pain_resistance_equivalent_adept_levels: 3
+    duration: {hours: '6 - Body', minimum_hours: 1}
+  burn:
+    entity: entity.chemistry.burn
+    game_effect: represented_by_existing_stun_damage_code
+  cram:
+    entity: entity.chemistry.cram
+    Reaction_modifier: 1
+    initiative_dice_modifier: 1D6
+    duration: {hours: '12 - Body', minimum_hours: 1}
+    crash: {starts: effect_expiry, damage: Moderate Stun, duration: equivalent_to_effect_duration}
+  nitro:
+    entity: entity.chemistry.nitro
+    attribute_modifiers: {Strength: 2, Willpower: 2}
+    pain_resistance_equivalent_adept_levels: 6
+    perception_tests_modifier_as_printed: 2
+    duration_minutes: '10 x 1D6'
+    expiry_damage: 8D Stun
+  novacoke:
+    entity: entity.chemistry.novacoke
+    attribute_modifiers: {Reaction: 1, Charisma: 1}
+    perception_test_modifier_as_printed: 1
+    pain_resistance: {equivalent_adept_levels: 1, reference: SR3 p170}
+    duration: {hours: '10 - Body', minimum_hours: 1}
+    crash: {starts: effect_expiry, Charisma_set_to: 1, Willpower_divisor: 2, Willpower_rounding: down, duration: equivalent_to_effect_duration}
+  zen:
+    entity: entity.chemistry.zen
+    attribute_modifiers: {Reaction: -2, Willpower: 1}
+    physical_related_target_numbers_modifier: 1
+    duration_minutes: '10 x 1D6'
