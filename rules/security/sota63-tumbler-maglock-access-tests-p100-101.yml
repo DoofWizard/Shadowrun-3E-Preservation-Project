@@ -32,23 +32,23 @@
       },
       "maglock_case": {
         "game_test": "Electronics B/R (Maglock Rating) Test, base time 60 seconds reduced by successes.",
-        "failure": "Failed test leaves the case attached; source notes that excessive force may damage electronics.",
+        "failure": "Failed test leaves the case attached. In the tabletop rules, physical damage to the case uses Barrier Rating equal to maglock Rating; excessive force can harm the electronics.",
         "anti_tamper_range": [
           1,
           4
         ],
-        "anti_tamper_test": "Electronics B/R Test using target number maglock rating plus anti-tamper rating; failure triggers an alarm.",
+        "anti_tamper_test": "Compare the original case-removal Electronics B/R dice roll against maglock Rating plus anti-tamper Rating, not a new roll; failure triggers an alarm even if the case was successfully removed.",
         "reassembly": "Repeat case-removal test; successes become threshold for Perception tests examining the lock for tampering."
       },
       "keypad_access": {
         "valid_code": "A valid passcode opens a fictional maglock; code may change frequently or randomly.",
-        "game_sequencer": "Opposed Rating Test between sequencer and maglock rating; if sequencer wins, 10-second base time decreases with extra successes.",
+        "game_sequencer": "Requires the case-removal game step. Opposed Rating Test between sequencer and maglock rating; if sequencer wins, 10-second base time decreases with extra successes.",
         "tie": "Ten seconds pass and a new Opposed Test is rolled.",
         "maglock_wins": "Fictional alarm triggers."
       },
       "maglock_card_access": {
-        "proximity_card": "Card with corresponding fictional pattern is detected within the lock's stated few-meter range.",
-        "swipe_card_test": "An opposed test of passkey versus maglock Rating, with 10-second base time shortened by extra successes.",
+        "proximity_card": "Card with corresponding fictional pattern is detected within the lock range, from a few meters to contact with the reader.",
+        "swipe_card_test": "The tabletop passkey test does not require the case-removal step. Opposed Rating Test of passkey versus maglock Rating, with 10-second base time shortened by extra successes.",
         "tie": "Ten seconds pass and new Opposed Test required.",
         "maglock_wins": "Fictional alarm triggers."
       },
