@@ -1,11 +1,21 @@
 id: entity.gear.zic-splash-grenade
 record_type: entity
-name: "Z-IC Splash Grenade"
+name: Z-IC Splash Grenade
 domain: gear
 status: ingested
-intrinsic: {concealability: 5, damage: "Special", weight: 0.25, cost_nuyen: 50, availability: "8/4 days", street_index: 2, legality: "3-J"}
+source: source.mm
+printed_pages: '117,157'
+pdf_pages: '118,158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 5, ammo: '-', mode: '-', damage: Special, blast: '-', weight: 0.25, cost_nuyen: 50, availability: '8/4 days', street_index: 2, legality: 3-J}
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 117, relation: defines, note: "Z-IC Splash Grenade fictional game gear and statistics"}
+  - {source: source.mm, page: 117, relation: defines, note: 'Z-IC Splash Grenade fictional game gear and statistics; Blast table cell is a dash.'}
+  - {source: source.mm, page: 157, relation: defines, note: 'Chemtech Application Gear equipment table; Ammo and Mode cells are dashes.'}
 notes:
-  - "Fictional game delivery device; chemical cost/effect is represented separately."
+  - 'Fictional game delivery device; chemical cost/effect is represented separately.'
+data:
+  table_dash_fields: {printed_117: [blast], printed_157: [ammo, mode]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, SR3 tabletop RPG), pp117,157/PDF118,158: Splash Grenade equipment row'
+framing: reference_exact
