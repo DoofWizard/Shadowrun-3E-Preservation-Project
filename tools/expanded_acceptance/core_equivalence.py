@@ -140,8 +140,9 @@ def verify(git, source, original_field, original_page, binding,
     if relation == 'indexed_action_reference':
         # FASA7905a p130 is a consolidated ACTION INDEX, explicitly referring
         # readers to SR3 and other books for the rules. It is NOT an alternate
-        # detailed procedure. For these three independently reviewed entries,
-        # the p105 SR3 qualifying conditions remain fully operative.
+        # detailed procedure. The eleven original p130 labels reviewed against
+        # p105 preserve the detailed SR3 conditions; a separate authenticated
+        # reviewer is still required for each production proof.
         action = original_field['value']
         check(source['id'] == 'source.srcomp' and
               source['sha256'] == '8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5' and
@@ -153,9 +154,17 @@ def verify(git, source, original_field, original_page, binding,
               selected_pointer.endswith('/action') and
               pointer == '/data/selected_free_actions',
               'not_an_accepted_core_free_action_label')
-        check(action in ('Activate Cyberware', 'Observe', 'Speak a Word') and
+        reviewed_groups = {
+            'Activate Cyberware': 'General', 'Delay Action': 'General',
+            'Drop Object': 'General', 'Drop Prone': 'General',
+            'Gesture': 'General', 'Observe': 'General', 'Speak a Word': 'General',
+            'Call a Shot': 'Combat', 'Change Smartgun Fire Mode': 'Combat',
+            'Eject Smartgun Clip': 'Combat', 'Drop Sustained Spell': 'Magic',
+        }
+        check(core_id == 'rule.actions.sr3-core-combat-phase-action-timing-p104-108' and
+              isinstance(action, str) and action in reviewed_groups and
               comparison.get('indexed_action_class') == 'Free' and
-              comparison.get('indexed_action_group') == 'General' and
+              comparison.get('indexed_action_group') == reviewed_groups[action] and
               comparison.get('appendix_is_reference_only') is True and
               comparison.get('no_new_or_conflicting_rules_on_appendix_page') is True and
               comparison.get('preserve_core_conditions_without_weakening') is True,
