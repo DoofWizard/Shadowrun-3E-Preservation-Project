@@ -1,0 +1,50 @@
+id: rule.chemistry.mm-character-condition-effects-p118
+record_type: rule
+name: Compound Character Condition Game Effects
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '118'
+pdf_pages: '119'
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 118, basis: defines}
+scope: {applies_to: [Shadowrun tabletop characters affected by the named game entries]}
+resolution:
+  summary: Apply the original fictional damage-code, dice and character-condition modifiers without repeating the entity purchase or exposure statistics.
+  inputs: [game entity ID, fictional condition counter, Body test successes, character skill category]
+  outputs: [fictional damage code, test modifiers, effect duration and game-state changes]
+  steps: []
+data:
+  arsenic_game_counter:
+    entity: entity.chemistry.arsenic
+    counter: number of accumulated fictional game-effect events
+    power: counter
+    damage_boxes: counter
+    printed_damage_code_examples: {'1': '1L (effectively 2L)', '2': '2L', '3': '3M', '4': '4M', '5': '5M', '6': '6S', '7': '7S', '8': '8S', '9': '9S', '10': '10D'}
+    tactile_perception_dice_modifier: {counter_threshold: 6, dice: -2}
+  atropine_game_conditions:
+    entity: entity.chemistry.atropine
+    initial_active_skill_target_number_modifier: 1
+    additional_attack_target_number_modifier: {modifier: 1, categories: [melee, Short Range ranged attacks]}
+    skill_use_modifier: {modifier: 2, categories: [Knowledge, Technical, Build/Repair, Language, Magic]}
+    recurring_game_damage: {interval_game_minutes: 15, stop_when: compound effect neutralized or filtered in the game}
+  cs_tear_gas_game_conditions:
+    entity: entity.chemistry.cs-tear-gas
+    test: {attribute: Body, target_number: 5}
+    all_actions_modifier: {base: 3, reduction_per_success: 1}
+    duration: {base_game_minutes: 5, reduction_per_success_minutes: 1}
+    Willpower_modifier: {modifier: -2, tests: [resist fear, resist intimidation]}
+    lower_bounds: not specified in the original paragraph
+links:
+  uses: [entity.chemistry.arsenic, entity.chemistry.atropine, entity.chemistry.cs-tear-gas, rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.chemistry.drug-exposure]
+sources:
+  - {source: source.mm, page: 118, relation: defines, note: Original fictional character Game Effects paragraphs}
+notes:
+  - Preserve the original fictional damage-code example even where the first printed code has a qualification. These are abstract RPG counters and test modifiers, not real-world doses, exposure methods or medical advice.
+headline: FASA7126 Man & Machine — printed p118/PDF119 fictional character condition mechanics
+summary: FASA Corporation (1999), Shadowrun Third Edition tabletop RPG; abstract character damage-code and dice effects, not real-world chemical instructions.
+framing: reference_exact
