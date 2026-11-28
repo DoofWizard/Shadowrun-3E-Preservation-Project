@@ -1,15 +1,35 @@
 id: entity.cyberware.tool-laser
 record_type: entity
-name: "Tool Laser"
+name: Tool Laser
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '15,153'
+pdf_pages: '15,154'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence: 0.15
   cost_nuyen: 3000
-  availability: "8/1 wk"
+  availability: '8/1 wk'
   street_index: 2
-  legality: "5P-N"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: '5P-N'
+links: {uses: [rule.cyberware.eye-laser-systems], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 153, relation: defines, note: "Visual sensory cyberware equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 15, relation: defines, note: Local equipment row and fictional game effects}
+  - {source: source.mm, page: 153, relation: clarifies, note: Consolidated equipment row}
+notes:
+  - Fictional tabletop statistics and abstract game tests only; no real device specifications or fabrication instructions.
+data:
+  fictional_game_effects:
+    required_eye_laser_power: high
+    effective_range_tier: low
+    abstract_barrier_task: {maximum_barrier_rating: 10, progress_cm_per_combat_turn: 5}
+    attack_test: {action: Complex, skill: Laser Weapons, target_number_modifier_per_game_meter: 1, damage_code: 4L}
+    game_damage_power_adjustment_by_range:
+      - {maximum_game_range_m: 2, modifier: -1}
+      - {maximum_game_range_m: 4, modifier: -2}
+    fictional_barrier_exclusions: [reflective metals, silvered glass]
+    fictional_barrier_exception: mirrored plastics
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, pp15,153/PDF15,154: Tool Laser original fictional game-stat bindings'
+framing: reference_exact
