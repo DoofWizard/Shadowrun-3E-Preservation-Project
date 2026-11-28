@@ -100,6 +100,34 @@ class ActionIndexReferenceTests(unittest.TestCase):
         self.set_action(2)
         self.assertEqual(self.f.run_it()['status'],'CORE_ACTION_INDEX_REFERENCE_CANDIDATE')
 
+    def test_eight_additional_reviewed_free_references(self):
+        cases = [('Delay Action', 'General'), ('Drop Object', 'General'),
+                 ('Drop Prone', 'General'), ('Gesture', 'General'),
+                 ('Call a Shot', 'Combat'), ('Change Smartgun Fire Mode', 'Combat'),
+                 ('Eject Smartgun Clip', 'Combat'), ('Drop Sustained Spell', 'Magic')]
+        for label, group in cases:
+            with self.subTest(label=label, group=group):
+                self.f.record['data']['selected_free_actions'][0] = {
+                    'action': label, 'condition': 'Synthetic full qualifying condition.'}
+                self.d['indexed_action_group'] = group
+                self.f.manifest['postscan_verified_mechanics_recovery']['verified_semantic_records'][0]['blob'] = git_blob(fixtures.dump(self.f.record))
+                self.set_action(0)
+                result = self.f.run_it()
+                self.assertEqual(result['status'], 'CORE_ACTION_INDEX_REFERENCE_CANDIDATE')
+                self.assertFalse(result['formal_acceptance'])
+
+    def test_rejects_unreviewed_combined_magic_label(self):
+        label = 'Allocate Spell Defense/Reflecting/Shielding dice'
+        self.f.record['data']['selected_free_actions'][0]['action'] = label
+        self.f.manifest['postscan_verified_mechanics_recovery']['verified_semantic_records'][0]['blob'] = git_blob(fixtures.dump(self.f.record))
+        self.d['indexed_action_group'] = 'Magic'
+        self.set_action(0)
+        self.f.reject()
+
+    def test_rejects_wrong_original_group_for_reviewed_label(self):
+        self.d['indexed_action_group'] = 'Combat'
+        self.f.reject()
+
     def test_rejects_original_page_mismatch(self):
         self.f.original_page['pdf']=132
         self.f.reject()
