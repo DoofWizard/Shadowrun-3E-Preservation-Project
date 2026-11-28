@@ -975,3 +975,59 @@ corrected_digital_variant_bounded_intake_2026_11_28:
   newly_confirmed_mechanical_fields: 0
   independent_acceptance: outstanding
   net_global_pages: 0
+
+
+# Corrected digital edition candidate: bounded additional page-image comparisons, not source acceptance.
+corrected_edition_followup_p34_p47_20261128:
+  status: candidate_only_full_source_not_authenticated
+  earlier_dossier_blob: "3a0159ddb2335bab971b437cb189734bf55bcac2"
+  source_candidate: "FanPro digital v1.0, January 2005"
+  candidate_url: "https://shadowrun.es/data/documents/critters.pdf"
+  candidate_printed_and_pdf_pages_reviewed: [34, 47]
+  candidate_page_image_unavailable: [35, 48]
+  candidate_pdf_sha256: null
+  first_printing_source_sha256: "40f9991ad10d7453e39bcd7fdc7dd4600cb29892facf641de13ee9c34880bef7"
+  first_printing_local_hash_and_page_count_match: true
+  fresh_verify_source_executed: false
+  canonical_comparison:
+    - field: Kludde avian attack
+      page: 34
+      current_literal: "61, -1 Reach"
+      corrected_candidate: "6L, -1 Reach"
+      path: entities/critters/catalog-l-z.yml
+      blob: "858751a4476862a674a1f1e6c5a48f2a0dc6312d"
+    - field: Lesser Thunderbird Quickness
+      page: 34
+      current: "6 x 4"
+      corrected_candidate: "6 x 2"
+      path: entities/critters/catalog-l-z.yml
+      blob: "858751a4476862a674a1f1e6c5a48f2a0dc6312d"
+    - field: Lesser Thunderbird Reaction
+      page: 34
+      current_literal: 46
+      corrected_candidate: 6
+      path: rules/critters/awakened-entry-exceptions-p35.yml
+      blob: "1ea05b2d20d788130eaee254c3036386999f2c3c"
+    - field: Volleying Porcupine melee Reach threshold
+      page: 47
+      current: 1
+      corrected_candidate: 0
+      path: rules/critters/awakened-entry-exceptions-p47-48.yml
+      blob: "59d8254164016c8e6aa168a0188b15c6d12d8fdd"
+  omission_candidate:
+    field: Knocker special Glamour resistance TN
+    page: 34
+    current: "(3 x Essence) / 2"
+    corrected_candidate: special note not visible in entry
+    path: rules/critters/awakened-entry-exceptions-p34.yml
+    blob: "96123ab13e89636b108ab139d31c365248f2372a"
+    disposition: do not infer repeal
+  new_candidate_values: 4
+  new_candidate_omissions: 1
+  new_confirmed_mechanical_fields: 0
+  scope_limit: "Two page images only; continuation pages 35 and 48 unavailable. No whole-profile closure. Preserve first-printing records until the corrected publication is separately authenticated and precedence adjudicated."
+  lookup_seed: "artifact 15244033288; SHA-256 bb33235fe56adff2fbba89e7d6fb1614ec49dafa59fc457a382478b1882b538b; ZIP CRC clean; candidate locator only"
+  evidence_archive: "CrittersMixed-2026-11-28-corrected-variant-p34-p47-aleph-review.json"
+  evidence_sha256: "0820fc278f239c72d66524d66d8d0048424741f03e0dd5637e49fbac689f9489"
+  next: "Authenticate complete January 2005 original and adjudicate edition precedence; finish p35 Thunderbird continuation and p48 Wyvern damage notation when available. Earlier candidate comparisons remain open."
+  page_credit: 0
