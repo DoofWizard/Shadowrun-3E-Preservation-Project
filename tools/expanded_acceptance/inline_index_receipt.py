@@ -312,6 +312,8 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 ('rule.vehicles.r3-revised-intermediate-design-examples-p111', [111, 111], [113, 113], 'rule_exact'),
             'equipment/gear/r3-revised-new-toys-p90-market-dashes.yml':
                 ('equipment.gear.r3-revised-new-toys-p90-market-dashes', [90, 90], [92, 92], 'equipment_stat'),
+            'equipment/gear/r3-revised-new-toys-p90-lower-table-dashes.yml':
+                ('equipment.gear.r3-revised-new-toys-p90-lower-table-dashes', [90, 90], [92, 92], 'equipment_stat'),
         }
         require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1' and
                 confirm.get('status') == 'verified' and confirm.get('source') == R3R_SOURCE and
@@ -352,6 +354,61 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_r3r_compact_registration_digest')
         commit, recorded_blob, path = r['index_commit'], r['manifest_blob'], manifest_path
         schema = 'r3r-compact-parent-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/Rigger3Revised.yml' and 'verified_semantic_records' in r:
+        # These four original receipts contain a count, not a parent/semantic pin.
+        # Confirm, actual Git transition and independent custody remain mandatory.
+        from r3r_mm_index_receipts import R3R_SOURCE, R3R_SHA
+        from index_transition import _identity, _gate, _registrations
+        from validator import parse
+        required = {'commit_sha', 'blob_sha', 'exact_commit_and_live_readback', 'verified_semantic_records'}
+        require(set(r) == required, 'inline_index_r3r_count_fields')
+        require(r['exact_commit_and_live_readback'] is True, 'inline_index_original_readback_missing')
+        records = {
+            'rules/drones/r3-revised-snake-eyes-sensory-qualifications-p93-94.yml':
+                ('rule.drones.r3-revised-snake-eyes-sensory-qualifications-p93-94', [93, 94], [95, 96], 'rule_exact'),
+            'rules/gear/r3-revised-remote-control-accessory-ports-p95.yml':
+                ('rule.gear.r3-revised-remote-control-accessory-ports-p95', [95, 95], [97, 97], 'rule_exact'),
+            'equipment/gear/r3-revised-snake-eyes-full-x-market-dashes-p95.yml':
+                ('equipment.gear.r3-revised-snake-eyes-full-x-market-dashes-p95', [95, 95], [97, 97], 'equipment_stat'),
+            'rules/gear/r3-revised-scre-game-eligibility-p94.yml':
+                ('rule.gear.r3-revised-scre-game-eligibility-p94', [94, 94], [96, 96], 'rule_exact'),
+        }
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1' and
+                confirm.get('status') == 'verified' and confirm.get('source') == R3R_SOURCE and
+                confirm.get('pdf_sha256') == R3R_SHA, 'inline_index_r3r_count_confirm')
+        record_path = confirm.get('path')
+        require(isinstance(record_path, str) and record_path in records, 'inline_index_r3r_count_path')
+        record_id, printed, pdf, content_class = records[record_path]
+        def folios(span):
+            return str(span[0]) if span[0] == span[1] else f'{span[0]}-{span[1]}'
+        require(confirm.get('record_id') == record_id and confirm.get('printed_pages') == folios(printed) and
+                confirm.get('pdf_pages') == folios(pdf), 'inline_index_r3r_count_record_scope')
+        require(all(isinstance(confirm.get(k), str) and re.fullmatch(r'[0-9a-f]{40}', confirm[k])
+                    for k in ('commit_sha', 'expected_blob_sha', 'readback_blob_sha')) and
+                confirm['expected_blob_sha'] == confirm['readback_blob_sha'], 'inline_index_r3r_count_semantic')
+        doc = parse(snapshot_raw)
+        require(isinstance(doc, dict) and (doc.get('id'), doc.get('source_pdf_sha256'), doc.get('catalog_number'),
+                doc.get('edition'), doc.get('publisher')) == (R3R_SOURCE, R3R_SHA, 'FanPro10662',
+                'Shadowrun Third Edition', 'FanPro'), 'inline_index_r3r_count_source')
+        regs = doc.get('verified_semantic_records')
+        require(isinstance(regs, list) and type(r['verified_semantic_records']) is int and
+                r['verified_semantic_records'] == len(regs), 'inline_index_r3r_count_registration_count')
+        matches = [e for e in regs if isinstance(e, dict) and (e.get('id') == record_id or e.get('path') == record_path)]
+        identity = (record_id, record_path, confirm['commit_sha'], confirm['readback_blob_sha'])
+        require(len(matches) == 1 and _identity(matches[0]) == identity and _gate(matches[0]) == 'verified' and
+                list(_registrations(doc, identity)).count((identity, 'verified')) == 1,
+                'inline_index_r3r_count_registration')
+        entry = matches[0]
+        require(entry.get('range_printed') == printed and entry.get('range_pdf') == pdf and
+                all(type(n) is int for n in entry['range_printed'] + entry['range_pdf']) and
+                entry.get('content_class') == content_class and entry.get('original_source_sha256') == R3R_SHA and
+                entry.get('contiguous_advance') is False, 'inline_index_r3r_count_registration_scope')
+        require(all(isinstance(entry.get(k), str) and re.fullmatch(r'[0-9a-f]{64}', entry[k])
+                    for k in ('baseline_sha256', 'candidate_sha256', 'immutable_sha256')) and
+                all(entry[k] == confirm.get(k) for k in ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_r3r_count_registration_digest')
+        commit, recorded_blob, path = r['commit_sha'], r['blob_sha'], manifest_path
+        prior, schema = None, 'r3r-compact-count-index-receipt/v1'
     elif (manifest_path == 'sources/manifests/Rigger3Revised.yml' or
           (manifest_path == 'sources/manifests/M&M.yml' and 'semantic_live_and_commit_exact' in r)):
         from r3r_mm_index_receipts import adapt
