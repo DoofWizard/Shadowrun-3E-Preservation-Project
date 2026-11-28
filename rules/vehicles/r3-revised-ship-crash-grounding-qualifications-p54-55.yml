@@ -1,0 +1,35 @@
+id: rule.vehicles.r3-revised-ship-crash-grounding-qualifications-p54-55
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '54-55'
+pdf_pages: '56-57'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Revised SR3 game crash, grounding and deck-height qualifications
+summary: Bind the collision Crash Test exception, preserve conflicting grounding comparisons and record the strict deck-height condition for tabletop actions.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_ship_operations: {id: rule.vehicles.ship-operations, path: rules/vehicles/ship-operations.yml, blob: 5ec7a29d80b9ebe933045f1c52d25638c09618a6}
+  ship_to_ship_collision:
+    damaged_ship_requires_crash_test: true
+    exception_terrain: Open
+    existing_standard_vehicle_exception: retain the separate published no-crash qualification for ship versus boat or standard vehicle
+  grounding:
+    eligible_terrain: [Normal, Restricted, Tight]
+    trigger: failed vessel Crash Test
+    dice: 1D6
+    table_result: {Normal: '1', Restricted: '2 or lower', Tight: '3 or lower'}
+    prose_comparison: lower than the number indicated
+    unresolved_conflict: prose uses strict comparison while the table includes the indicated result; retain both and the existing table-based normalization without silently resolving the original wording
+    default_damage_level: Moderate
+    gm_discretion: [Light, Serious]
+    discretion_basis: fictional terrain and underwater obstacles
+    existing_stop_and_other_collision_rules: reuse ship-operations
+  boarding:
+    existing_positioning_and_turn_rules: reuse ship-operations
+    climb_or_jump_condition: acting vehicle deck more than one meter below the other vessel deck
+    threshold_meters: {operator: gt, value: 1}
+    optional_detail_reference: Shadowrun Companion pp44-47
+  scope_limit: These are fictional tabletop resolution conditions and original source ambiguities, not real-world procedures or a claim of an original historical edition difference.
