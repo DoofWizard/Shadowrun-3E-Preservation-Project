@@ -1,0 +1,66 @@
+id: rule.combat.cannon-companion-flame-game-qualifiers-p29-30
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '29-30'
+pdf_pages: '30-31'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: flame weapon tabletop game qualifiers'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed pp29-30/PDF30-31. Original game action, damage, resource and equipment option qualifiers supplement the existing flame rules.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  existing_rule: {id: rule.combat.flame-weapons, path: rules/combat/flame-weapons.yml, blob: e3a892cd3c937527a001d2a0f02fea97b0dfcc77}
+  original_game_rules:
+    equipment_action_costs:
+      standard_resource_pack_equip_or_remove: 1 full Combat Turn
+      warmup_before_use: 1 full Combat Turn
+    attack_resolution:
+      single_or_multiple_target_options: true
+      multiple_target_rule_reference: SR3 p117 shotgun spread
+      multiple_target_rule_binding: {path: rules/combat/sr3-core-shotgun-spread-choke-numeric-p117.yml, blob: 319b6b8e9c2ed74c785605e3abbbacd3ff2b60c4}
+      actual_choke_setting_present: false
+      standard_damage_code: 8M
+      armor_reduction: Impact armor
+      ballistic_armor_reduction: false
+      armor_fraction_note: 'This paragraph does not specify a fraction of Impact armor; retain the general fire-rule reference without inventing precedence.'
+      combustible_game_object_ignition: true
+      carried_ammunition_and_explosives_secondary_effect_possible: true
+      fire_rule_binding: {path: rules/combat/cannon-companion-fire-damage-timing-exceptions-p98-99.yml, blob: b1c46a10acbb5cef05f38db122e1ec87afde74bc}
+    standard_resource_accounting:
+      capacity_game_shots_per_tank_pair: 10
+      empty_tank_cost_nuyen: 50
+      resource_cost_nuyen_per_game_shot: 5
+      replenish_game_minutes: 5
+      replacement_full_combat_turns: 5
+      game_barrier_rating: 10
+      resource_pack_breach_game_effect:
+        trigger: breach by an explosion or other game attack
+        power: 2 times remaining game shots
+        power_reduction_per_half_meter_in_game: 1
+        damage_level: M
+    skill_and_range:
+      skill: Spray Weapons
+      range_table: shotguns
+      ordinary_accessory_eligibility: none
+      reference: Cannon Companion p105
+    named_game_modification:
+      source_option_label: Underbarrel Modification
+      eligibility: [rifle, shotgun, assault rifle]
+      additional_cost_nuyen: 200
+      game_option: permits simultaneous equipped item configuration and switching between game modes
+      switching_action_cost: not specified here
+    shiawase_blazer:
+      entity: entity.weapon.shiawase-blazer
+      path: entities/weapons/shiawase-blazer.yml
+      blob: ffca753674a719fc0cfe80699913e749c63f4c7a
+      inherits_standard_flame_rules: true
+      source_design_category_reference: Cannon Companion p75
+      range_table_override: light pistols
+      capacity_game_shots: 4
+      empty_tank_cost_nuyen: 25
+      resource_cost_nuyen_per_game_shot: 5
+      replenish_game_minutes: 2
+      replacement_full_combat_turns: 1
+  disposition: 'Fictional dice-resolution and inventory resource rules only, including conditional printed game effects. Existing core and general fire-rule bindings remain unchanged. No real-world design, material, preparation or operation instructions.'
