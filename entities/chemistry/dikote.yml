@@ -1,15 +1,30 @@
 id: entity.chemistry.dikote
 record_type: entity
-name: "Dikote"
+name: Dikote
 domain: chemistry
 status: ingested
-intrinsic:
-  availability: "6/14 days"
-  cost: "1,000 nuyen per 100 square centimeters, minimum 1,000"
-  street_index: 2
-  legality: "Legal"
+source: source.mm
+printed_pages: '111'
+pdf_pages: '112'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '6/14 days', cost: '1,000 nuyen per 100 square centimeters, minimum 1,000', street_index: 2, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 111, relation: defines, note: "Dikote fictional surface-treatment rules and statistics"}
-notes:
-  - "Adds fictional game-stat benefits to eligible surfaces, armor and weapons; the source's material restrictions apply."
+  - {source: source.mm, page: 111, relation: defines, note: 'Dikote game-stat effects and purchase terms'}
+notes: []
+data:
+  material_eligibility: {heat_resistant_item_required: true, excluded_materials: [cloth, plastic], eligible_examples: [ceramics, most metals]}
+  surface_game_modifiers: {barrier_rating: 2, ballistic_armor: 1, impact_armor: 1}
+  vehicle_or_drone_game_modifiers: {body: 1, armor: 1, cf_used: 0}
+  weapon_game_modifiers:
+    classes: [melee, throwing, projectile]
+    attack_power: 1
+    edged_instrument_damage_level_increase: 1
+    example_sword_original: '(STR + 2)M'
+    example_sword_treated: '(STR + 3)S'
+    barrier_rating_against_treated_melee_weapon_multiplier: 1
+    ordinary_melee_barrier_rating_multiplier: 2
+  pricing: {cost_nuyen: 1000, area_square_centimeters: 100, minimum_nuyen: 1000}
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), p111/PDF112: Dikote game-stat modifiers and price'
+framing: reference_exact
