@@ -2983,6 +2983,31 @@ book_closure_checklist_2026_11_25:
           fields: 21
           cross_source_discrepancies: [APDS_legality, paint_rounds_availability]
           paint_entity_blob: 226f8a918386669e2babedec89b029a7f6594094
+          current_dependency_reconciliation_2026_11_28:
+            source_verification: source_pdf_hash_verified
+            original_printed_pdf: [118, 119]
+            mm_owner_manifest_path: sources/manifests/M&M.yml
+            mm_owner_manifest_blob: f41d7c38e6189c3799ec14a6c8ef43fc2f98c4ea
+            checked_live_bindings:
+              - path: entities/gear/dart-guns.yml
+                blob: 6c46f2b48dba18b73493fd6b768c70109345bd12
+                owner_registration_commit: d33e64e4ad329a10faf460fc3946f2695e16eb5e
+                owner_printed_pages: [116, 157]
+                owner_pdf_pages: [117, 158]
+                compared_market_fields: 7
+                exact_typed_matches: 7
+                linked_game_rule: rule.chemistry.drug-exposure
+                linked_rule_blob: 5c2f72f48a9efd4283296308de6b1f49d7b65537
+              - path: entities/chemistry/paint-rounds.yml
+                blob: 4cc9c04ff14b66e5665859b5a355fad90e2eaab9
+                owner_registration_commit: 91a7b9f77e6bce3d3f8140ef1a6baa857ce92859
+                owner_printed_pages: [115, 157]
+                owner_pdf_pages: [116, 158]
+                compared_market_fields: 7
+                exact_typed_matches: 7
+            comparison_method: "Exact typed comparison of seven columns per row; both current records explicitly use ten game items and nuyen cost, so numeric currency mapping is explicit. See rules is a literal reference, not a numerical damage value."
+            historical_discrepancy_disposition: "The former paint availability discrepancy describes the prior M&M blob. Current owner record matches all seven Cannon Companion fields. Preserve historical record and unresolved APDS precedence; do not present the old paint value as a current mismatch."
+            remaining_game_effect_dependencies: "M&M owner: confirm exact applied-chemtech effect coverage on pp115-116 and drug exposure pp105-106; the current dart entity has a live drug-exposure link, but that link alone does not establish all original item-specific rules. Paint entity has no effect-rule link. Stun Rounds: exact source and rule identity remain unresolved; do not equate with Gel or the distinct Stun Shells. Bounded live searches for all three names returned no results. The original p118/PDF119 table supplies no exact page citation for See rules. No external original visual verification or acceptance claimed here."
         miscellaneous_binding:
           id: equipment.cannon-companion-misc-ammunition-table-p40-118-119
           blob: 5ca4be64c34f9f714731df0a6e525b99dcb074b6
@@ -3192,10 +3217,30 @@ book_closure_checklist_2026_11_25:
     - pdf: [80, 81]
       scope: "Customization general rules"
       status: prior_review_partial
-      evidence_or_gap: "24_customization_labor; timing precedence and individual catalogue gaps remain."
+      evidence_or_gap: "24_customization_labor; timing precedence retained; individual p80 catalogue headings now compared as below."
+      catalogue_binding_2026_11_28:
+        printed_pdf: [80, 81]
+        source_verification: source_pdf_hash_verified
+        canonical_path: rules/firearms/customization-modifications.yml
+        canonical_blob: beb034e6e1d925c79da57ba26620c570909ec6e3
+        headings: [Custom Finish, Embossing/Engraving, Gas Vent II/III/IV]
+        compared_fields: 21
+        matches_in_canonical_notation: 21
+        earlier_cosmetic_coverage_blob: 20b8c5823834cd270053414111c3930702a77c4a
+        related_accessory_qualification_blob: 01e13434cf9ba0bf63443a706bbb4940638723ab
+        disposition: "Two cosmetic headings already source-reviewed; do not count them as new closures. Gas Vent heading catalogue binding reconciled. No new semantic record. Original p79 labor and timing precedence remain distinct."
     - pdf: [82, 85]
       scope: "Remaining customization and abstract manufacture rules"
-      status: review_not_established
+      status: prior_review_partial
+      cumulative_catalogue_heading_reconciliation_2026_11_28:
+        original_printed_range: [80, 84]
+        original_pdf_range: [81, 85]
+        canonical_heading_count: 29
+        original_headings_bound_to_current_catalogue: 29
+        prior_headings_reused: 6
+        newly_reconciled_headings: 21
+        bounded_distinctions_remaining: [internal_smartgun_second_weight_label, shock_hip_pad_character_scope]
+        disposition: "All 29 original headings located in the current catalogue; field-level reconciliation retains two bounded distinctions. Original p84 procedure scope reviewed with separately indexed game qualifiers. Coverage only; no historical receipt restoration, precedence determination or independent whole-source acceptance."
       evidence_or_gap: "Historic scan for remaining individual modifications and manufacture; p81/PDF82 original character skill-list discrepancy, p82/PDF83 combined imaging accounting and p83/PDF84 shock-pad weight discrepancy individually confirmed and indexed. Printed p84/PDF85 Special Rules subsection now individually confirmed and indexed; remaining catalogue and other abstract manufacture field reconciliation not established."
       p82_p83_abstract_customization_game_comparison_2026_11_28:
         status: partial_field_coverage_only
