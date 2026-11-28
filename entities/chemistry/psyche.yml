@@ -3,6 +3,11 @@ record_type: entity
 name: "Psyche"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '121,157-158'
+pdf_pages: '122,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "8/72 hrs"
   cost_nuyen_per_dose: 500
@@ -10,6 +15,7 @@ intrinsic:
   legality: "Legal"
   vector: "Ingestion"
   speed: "10 min"
+  damage: '-'
   addiction: "4M"
   tolerance: 2
   edge: "10/20"
@@ -17,5 +23,9 @@ intrinsic:
 links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 121, relation: defines, note: "Psyche fictional drug game effects and statistics"}
-notes:
-  - "In the sourcebook, boosts Intelligence and has an additional Awakened-character interaction."
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effect and purchase tables'}
+notes: ["In the sourcebook, boosts Intelligence and has an additional Awakened-character interaction."]
+data:
+  table_dash_fields: {printed_121: [damage], printed_157: [damage]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp121,157-158: Psyche equipment table'
+framing: reference_exact
