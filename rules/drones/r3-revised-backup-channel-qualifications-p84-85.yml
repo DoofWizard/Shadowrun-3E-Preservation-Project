@@ -1,0 +1,32 @@
+id: rule.drones.r3-revised-backup-channel-qualifications-p84-85
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '84-85'
+pdf_pages: '86-87'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class:
+- rule_exact
+headline: FanPro10662 pp84-85 optional backup-channel qualifications
+summary: Optional fictional remote-control network game-state and action modifier applicability qualifications.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  existing_rule:
+    id: rule.drones.preprogrammed-commands
+    path: rules/drones/preprogrammed-commands.yml
+    blob: 0a975f30304bf57a387a3fb7e9e80b265a0f597f
+  optional: true
+  backup_transition:
+    trigger: A fictional channel has suffered MIJI degradation.
+    choice: The rigger may deactivate the degraded game channel and reassign its functions to another channel.
+    mandatory: false
+  combined_channel_action_modifier:
+    value: 2
+    applies_to: All game actions using either of the two combined original channel functions while the backup arrangement persists.
+  scope: Existing channel classes, opposing location modifier and prohibition on consolidating all three remain in the referenced rule; apply the action modifier once, not separately for each function. No historical edition change inferred.
