@@ -1,0 +1,38 @@
+id: rule.combat.cannon-companion-three-heavy-game-profile-qualifiers-p26
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '26'
+pdf_pages: '27'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Cannon Companion p26: three additional tabletop equipment profiles'
+summary: 'FASA Corporation FASA7908, Shadowrun Third Edition fictional tabletop game, printed p26/PDF27. Model-specific game action timing, inventory options and numerical modifiers supplement the existing inventory records.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  vindicator:
+    entity_binding: {path: entities/weapons/vindicator-minigun.yml, blob: 15c4f5ab3cfca4ee3df17e39cfd8261d25556685}
+    game_activation_delay_combat_turns: 1
+    game_attack_before_ready_allowed: false
+    activation_audible_game_cue: distinctive electric whirring
+    game_attack_action: Complex Action
+    game_rounds_per_action: 15
+    game_round_count_adjustable: false
+    game_resource_minutes_of_firing: 10
+    game_resource_recharge_hours: 1
+    barrel_slot_accessories_allowed: false
+  panther:
+    entity_binding: {path: entities/weapons/panther-assault-cannon.yml, blob: 5ed65c71a951128e9b2a113204bf1542fd63640e}
+    included_game_support_selection: one of two options
+    game_support_options:
+      - {type: bipod, slot: underbarrel, detachable: true}
+      - {type: shoulder strap and hip-brace, eligible_character: troll able to carry the load, source_reference: CC p34}
+  stoner_ares_m107:
+    entity_binding: {path: entities/weapons/stoner-ares-m107.yml, blob: ebcaa16f039b4a9005883d1596db4e1965722b9b}
+    included_game_sight: {type: laser sight, slot: top, built_in: true}
+    game_recoil_compensation:
+      built_in: 3
+      included_tripod_when_in_use: 6
+    included_game_support: {type: tripod, slot: underbarrel, detachable: true}
+  disposition: 'Fictional tabletop action economy, game item selection and modifier data only; no shared inventory replacement or precedence ruling. Existing Vindicator price correction and accepted game table fields are reused.'
