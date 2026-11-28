@@ -1,0 +1,47 @@
+id: rule.combat.cannon-companion-heavy-weapon-category-and-hv-game-profile-p24
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '24'
+pdf_pages: '25'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: heavy weapon category and Ares HV tabletop game profile'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed p24/PDF25. Original eligibility conditions and model-specific game firing-mode qualifications supplement the existing core recoil rules and inventory entity.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  category_game_eligibility:
+    default_unassisted_carried_attack_allowed: false
+    allowed_game_character_states: [prone, sitting, kneeling]
+    carried_game_attack_alternative: gyro-stabilization system
+    large_metahuman_exception: 'Trolls and similarly large metahumans may qualify under Carrying Heavy Weapons, Cannon Companion p99; not an unconditional permission.'
+    typical_support_options: [bipod, tripod]
+    support_option_qualification: usual, not universally required
+    uncompensated_recoil_multiplier: 2
+    recoil_binding: {path: rules/combat/sr3-core-recoil-accounting-numeric-p110-113.yml, blob: 6d4c5e05c3f132f118c37ccf215e7eea175c56f6}
+    default_accessory_slot_limits: {barrel: 1, underbarrel: 1, top: 1}
+    accessory_slot_exception: unless otherwise specified
+    game_categories: [machine guns, miniguns, cannons, grenade launchers, mortars, missile launchers, rocket launchers]
+    machine_gun_and_cannon_skill: Heavy Weapons
+    skill_binding: {path: entities/skills/heavy-weapons.yml, blob: 220166613938deaf9f8ff85315679dcc7c8bde2e}
+    source_core_references: [SR3 p111, SR3 p114, SR3 p279, SR3 p280, SR3 p282]
+  ares_hv_mp_lmg:
+    entity: entity.weapon.ares-hv-mp-lmg
+    path: entities/weapons/ares-hv-mp-lmg.yml
+    blob: 63026962f9074057491f9b754d04a80d14d7f47c
+    game_ammunition_category: light pistol
+    internal_game_smartlink: 2
+    recoil_compensation_points: 3
+    barrel_accessory_eligibility: none
+    burst_fire:
+      game_rounds_per_burst: 6
+      damage_code: 12D
+      recoil: standard per game round
+      source_reference: Ingram SuperMach 100, Cannon Companion p20
+    full_auto:
+      maximum_game_rounds_per_combat_phase: 18
+      multiple_target_burst_option: true
+      minimum_game_rounds_per_burst: 6
+      source_reference: SR3 p115
+  disposition: 'Fictional tabletop character-state eligibility, accessory slots, action and damage accounting only. Shared core and inventory values retained. No real-world performance, handling procedure or physical design claim.'
