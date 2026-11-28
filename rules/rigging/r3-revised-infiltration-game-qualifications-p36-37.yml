@@ -1,0 +1,53 @@
+id: rule.rigging.r3-revised-infiltration-game-qualifications-p36-37
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '36-37'
+pdf_pages: '38-39'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition fictional tabletop RPG
+content_class: [rule_procedure]
+headline: FanPro10662 fictional SR3 infiltration and switchover game qualifications, pp36-37/PDF38-39
+summary: Original tabletop action costs, detection triggers, controller timing and game-state restrictions.
+framing: reference_exact
+data:
+  provenance:
+    publication: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  infiltration_actions:
+    unspecified_channel_gamemaster_may_select: true
+    listen_action: Simple Action
+    request_specific_information_action: Complex Action
+    request_scope: information normally transmitted on the infiltrated game channel
+    successes_allocated_to_intrusion_factor_exclusive: true
+    channel_game_information:
+      simsense: game sensor observations
+      system: position, travel direction, ammunition and damage status of game drones
+      command: commands issued by the network controller to game drones
+  detection:
+    automatic_game_check_triggers: [successful entry into network, Complex Action requesting specific information]
+    automatic_success: network detects character, alerts controller and enters alert state
+    controller_voluntary_check_action: Complex Action
+    controller_voluntary_check_skill: Electronics (Electronic Warfare)
+    controller_voluntary_check_tn: character Intrusion Factor
+  switchover:
+    authorized_game_actor: controlling rigger only
+    base_time_combat_turns: 2 times network deck rating
+    time_reduction_test_skill: Electronics (Control Systems)
+    time_reduction_test_tn: network deck rating
+    time_reduction_formula: base time divided by successes
+    controller_state: captain's chair
+    drones_state: standby autopilot
+    previously_issued_orders: may complete under Pilot ratings
+    new_commands_allowed_during_switchover: false
+    sensor_and_perception_test_tn_modifier: 2
+    infiltration_lost_at: beginning of switchover
+    new_infiltration_test_tn_modifier: 2
+  reuse:
+    path: procedure/rigging/remote-control-network-infiltration.yml
+    blob: badec9ffa25e5e6f329fb34dfdc41f6fdc7aaedc
+    retained_fields: [existing fictional Infiltration Test dice, target number and time, channel count, Intrusion Factor formula, encryption failure modifier, prohibition on issuing commands]
+    related: rules/rigging/r3-revised-miji-qualifications-p37.yml
+    relationship: additional original revised-source game-action conditions, not an inferred historical edition change
