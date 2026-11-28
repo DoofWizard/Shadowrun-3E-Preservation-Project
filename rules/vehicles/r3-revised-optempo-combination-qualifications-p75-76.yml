@@ -1,0 +1,29 @@
+id: rule.vehicles.r3-revised-optempo-combination-qualifications-p75-76
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '75-76'
+pdf_pages: '77-78'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 pp75-76 optional optempo combination qualifications
+summary: Specifies payment periods, vehicle-use eligibility and strict mileage thresholds in the fictional SR3 maintenance rules.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.optempo, path: rules/vehicles/optempo.yml, blob: 969f0d34740112733220d848f5aa0e359b591d68}
+  optional: true
+  price_basis: {includes_all_vehicle_modifications: true, excludes_street_index: true, price_references_printed_pages: [156, 102, 122]}
+  split_cost:
+    half_monthly_maintenance_due_even_if_vehicle_unused: true
+    half_actual_optempo_cost_incurred_during_month: true
+  frequently_used:
+    regular_use_example: every_adventure
+    rare_use_maximum_uses_per_month: 1
+    rare_use_cost_method: standard_overhead
+  significant_mileage:
+    threshold_set_by_gamemaster: true
+    threshold_comparison: strictly_greater_than
+    measurement_period: adventure
+    at_or_below_threshold_cost_method: standard_maintenance
+  scope: Fictional tabletop economic option. Existing rate formula, rounding, split multipliers and suggested mileage thresholds are reused, not duplicated. No historical printed-edition inference.
