@@ -2857,6 +2857,17 @@ book_closure_checklist_2026_11_25:
         acquisition_discrepancy: {record: equipment.cannon-companion-great-dragon-acquisition-p28-118, blob: 19c5c2090568eaddcc09c90277dd75de3545e30b, distinct_fields: 2}
         notation_boundary: "Printed dashes, numeric versus string ammunition, spaces, dash glyphs and damage references are literal differences, not automatically equivalent. Twelve RC dash comparisons lack a canonical field. Lasher source rows compared to one another, but its exact live entity path remains unresolved after bounded 404/name lookup."
         next_scope: "Locate exact Lasher entity binding; compare p27 body game qualifications and existing table cells. Independently review source-local notation and historical receipts; no whole-section or book acceptance."
+      p27_lasher_game_profile_and_table_binding_2026_11_28:
+        status: coverage_reconciled_for_named_subsection
+        confirmed_rule: rule.combat.cannon-companion-lasher-game-profile-p27
+        rule_blob: b3984a1e698c64ad5b92344f32375347cbc46a36
+        resolved_entity_path: entities/weapons/aztechnology-lasher-4.yml
+        resolved_entity_blob: 96bea054165e4378581203e6181cb49803ad8b00
+        lookup_evidence: {artifact_id: 15244033288, head: 47388b9e3b94735f2204f3ef0cc238a1f89d0a10, sha256: bb33235fe56adff2fbba89e7d6fb1614ec49dafa59fc457a382478b1882b538b}
+        supersedes_lookup_blocker_only: p27_p28_p118_launcher_table_comparison_2026_11_28
+        final_live_entity_comparison: {rows: 7, cell_comparisons: 140, exact_typed_matches: 74, differences: 52, missing_canonical_field: 14}
+        final_difference_counts: {concealability: 10, ammunition: 14, legality: 14, damage: 10, availability: 2, cost_nuyen: 2}
+        boundary: "All seven p27-28 launcher body/appendix rows and live entity bindings now compared. Historical source notation, 14 missing canonical RC dash comparisons and shared precedence remain separate. No full-section or whole-source acceptance."
       p24_heavy_weapon_category_and_hv_profile_2026_11_28:
         status: coverage_reconciled_for_named_subsections
         confirmed_rule: rule.combat.cannon-companion-heavy-weapon-category-and-hv-game-profile-p24
@@ -4522,4 +4533,25 @@ source_mechanics_reconciliation_2026_11_28_p28_two_specialized_game_profiles:
       contiguous_advance: false
       scope: "Two original fictional tabletop model profiles, with state prerequisites, game concealability notation, modifier exceptions and turn costs."
   original_scope: "Printed p28/PDF29 right-column M79B1 and Vogeljaeger paragraphs independently inspected; existing table and item records retained. No formal source acceptance."
+  whole_source_certified: false
+
+source_mechanics_reconciliation_2026_11_28_p27_lasher_game_profile:
+  acceptance: section_review_in_progress
+  globally_authorized_pages: 0
+  verified_semantic_records:
+    - id: rule.combat.cannon-companion-lasher-game-profile-p27
+      path: rules/combat/cannon-companion-lasher-game-profile-p27.yml
+      range_printed: [27, 27]
+      range_pdf: [28, 28]
+      content_class: rule_exact
+      commit: be31f5e4f4191bf426faf79895ab8b3b4416a9e6
+      blob: b3984a1e698c64ad5b92344f32375347cbc46a36
+      baseline_sha256: 26c4e35a216fa2b39e28d046cf689d2b1b15b033d597dd436898259b609575e7
+      candidate_sha256: 26c4e35a216fa2b39e28d046cf689d2b1b15b033d597dd436898259b609575e7
+      immutable_sha256: 4704515a1f000df85dcaef61b881c8854b1019c0a788218e6d358a68dd8245d1
+      original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+      gate: verified
+      contiguous_advance: false
+      scope: "Original Lasher tabletop game inventory-state and rating qualifications. Prior path lookup gap resolved by qualified candidate index and live entity fetch."
+  original_scope: "Printed p27/PDF28 profile independently reviewed, exact entity pin and inventory retained. Both original Lasher row comparisons now bound. No formal source acceptance."
   whole_source_certified: false
