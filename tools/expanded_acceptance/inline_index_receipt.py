@@ -109,6 +109,37 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                     confirm.get('expected_blob_sha') == semantic_blob,
                     'inline_index_target_matrix_semantic_identity_mismatch')
             schema = 'target-matrix-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/SprawlSurvivalGuide.yml':
+        required = {'path', 'prior_blob_sha', 'index_commit_sha', 'index_blob_sha',
+                    'record_id', 'semantic_commit_sha', 'semantic_blob_sha',
+                    'candidate_sha256', 'immutable_sha256', 'committed_exact',
+                    'live_exact', 'semantic_committed_exact', 'semantic_live_exact', 'status'}
+        require(set(r) == required, 'inline_index_ssg_receipt_fields')
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
+                and confirm.get('status') == 'verified', 'inline_index_ssg_verified_confirm_required')
+        require(confirm.get('source') == 'source.fanpro-10667' and
+                confirm.get('pdf_sha256') == 'b0855865c06b20f8c71251d45d980d54470990af656277f5b9ace9264a9e309f',
+                'inline_index_ssg_original_identity_mismatch')
+        require(r['record_id'] == 'rule.lifestyle.ssg-detailed-lifestyle-edges-flaws-p137-144'
+                and r['record_id'] == confirm.get('record_id') and
+                confirm.get('path') == 'rules/lifestyle/ssg-detailed-lifestyle-edges-flaws-p137-144.yml',
+                'inline_index_ssg_record_identity_mismatch')
+        require(r['status'] == 'indexed' and all(r[k] is True for k in (
+                    'committed_exact', 'live_exact', 'semantic_committed_exact', 'semantic_live_exact')),
+                'inline_index_original_readback_missing')
+        require(all(isinstance(x, str) and re.fullmatch(r'[0-9a-f]{40}', x)
+                    for x in (r['semantic_commit_sha'], r['semantic_blob_sha'], parent_blob)),
+                'inline_index_ssg_external_pins_required')
+        require(r['semantic_commit_sha'] == confirm.get('commit_sha') and
+                r['semantic_blob_sha'] == confirm.get('expected_blob_sha') == confirm.get('readback_blob_sha'),
+                'inline_index_ssg_semantic_identity_mismatch')
+        require(all(isinstance(r[k], str) and re.fullmatch(r'[0-9a-f]{64}', r[k])
+                    and r[k] == confirm.get(k) for k in ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_ssg_digest_mismatch')
+        commit, recorded_blob, path = r['index_commit_sha'], r['index_blob_sha'], r['path']
+        prior = r['prior_blob_sha']
+        require(prior == parent_blob, 'inline_index_parent_blob_mismatch')
+        schema = 'ssg-lifestyle-p137-index-receipt/v1'
     elif manifest_path == 'sources/manifests/TargetWastelands.yml':
         required = {'source', 'record_id', 'index_commit', 'manifest_blob_sha',
                     'previous_manifest_blob_sha', 'readback_commit_and_main_blob_match',
