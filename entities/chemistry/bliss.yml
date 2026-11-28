@@ -3,9 +3,18 @@ record_type: entity
 name: "Bliss"
 domain: chemistry
 status: ingested
-intrinsic: {availability: "5/48 hrs", cost_nuyen_per_dose: 15, street_index: 2, legality: "5-X", vector: "Inhalation, injection", speed: "1 Turn", addiction: "5M/5P", tolerance: 2, edge: "2/30", fix_factor: "2 days"}
+source: source.mm
+printed_pages: '122,157-158'
+pdf_pages: '123,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: "5/48 hrs", cost_nuyen_per_dose: 15, street_index: 2, legality: "5-X", vector: "Inhalation, injection", speed: "1 Turn", damage: '-', addiction: "5M/5P", tolerance: 2, edge: "2/30", fix_factor: "2 days"}
 links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 122, relation: defines, note: "Bliss fictional street-drug game effects and statistics"}
-notes:
-  - "Reduces Reaction and adds target-number penalties in the game; provides pain resistance."
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effect and purchase tables'}
+notes: ["Reduces Reaction and adds target-number penalties in the game; provides pain resistance."]
+data:
+  table_dash_fields: {printed_122: [damage], printed_157: [damage]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp122,157-158: Bliss equipment table'
+framing: reference_exact
