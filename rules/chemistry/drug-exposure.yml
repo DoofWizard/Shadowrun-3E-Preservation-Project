@@ -57,5 +57,34 @@ data:
     resistance_successes: 1
     remaining_damage: Light Stun
     separate_effects_test: {attribute: Body, target_number: 5, successes: 1, action_modifier: 4, duration_minutes: 8}
+  exposure_modifiers:
+    basis: Original p106 Exposure Modifiers table; game Power modifiers, not actual medical or protective efficacy.
+    gamemaster_exposure_discretion: true
+    contact:
+      full_body_exposure: {game_power_modifier: 4}
+      semi_protective_gear: {game_power_modifier: -2}
+      chemsuit: {game_power_modifier: '-Rating'}
+    ingestion:
+      character_vomits_before_speed: {game_power_modifier: -4}
+      stomach_pumped_before_speed: {game_power_modifier: -8}
+    inhalation:
+      wet_rag_over_nose_and_mouth: {game_power_modifier: -1}
+      chemsuit_air_filter: {game_power_modifier: '-Rating'}
+      respirator:
+        core_rule: rule.survival.sr3-core-gear-effects-p293-294
+        core_fields: data.respirator.damaging_gases
+        original_values_match_core: true
+        apply_once: true
+    equipment_cross_references:
+      envirosealed_armor: {game_contact_protection: true, installed_respirator_rule: as_above, core_rule: rule.armor.sr3-core-camouflage-shield-security-effects-p284}
+      hazmat_and_xe: {record: entity.gear.hazmat-xe, reuse_existing_game_effects: true}
+    game_dosage_unit: abstract source-defined game unit; no physical amount inferred
+  game_attack_resolution:
+    exposure_requires_successful_hit_not_completely_dodged: true
+    game_power_increase_per_two_attack_successes: 1
+    damage_causing_attack_successes_cannot_stage_weapon_damage_up: true
+    game_impact_armor_power_reduction: 'floor(Impact Armor / 2)'
+    successful_called_shot_game_armor_effect: nullifies Impact Armor
+    damage_causing_called_shot_choice: [negate armor, stage weapon Damage Level]
 headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp105-106/PDF106-107: resistance timing, dice pools, and fictional condition modifiers'
 framing: reference_exact
