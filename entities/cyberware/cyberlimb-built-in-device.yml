@@ -1,0 +1,28 @@
+id: entity.cyberware.cyberlimb-built-in-device
+record_type: entity
+name: Cyberlimb Built-in Device
+domain: cyberware
+status: ingested
+source: source.mm
+printed_pages: '155'
+pdf_pages: '156'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p155/PDF156: Built-in Device purchase row'
+intrinsic:
+  essence: Varies
+  ecu: Varies
+  cost_nuyen: Cost of device x 4
+  concealability: '-Variable'
+  availability: Per device
+  street_index: Per device
+  legality: Per device
+data:
+  purchase_basis: built-in device enhancement
+  cost_multiplier: 4
+  cost_multiplier_basis: cost of device
+  ecu_basis: capacity used by enhancement
+links: {uses: [rule.cyberlimbs.equipment-capacity, rule.cyberlimbs.concealment], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 155, relation: defines, note: Cyberlimb Enhancements table, Built-in Device row}
