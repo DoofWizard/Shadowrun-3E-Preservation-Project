@@ -15,6 +15,27 @@ status: complete
 
 source_field_review:
   status: open
+  confirmed_optical_magnification_2_availability_2026_11_28:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed p153/PDF154 original table and separately enlarged Vision Magnification row."
+    records:
+      - id: equipment.cyberware.mm-optical-magnification-2-availability-p153
+        path: equipment/mm-optical-magnification-2-availability-p153.yml
+        printed: "153"
+        pdf: "154"
+        commit: "19248d4865486b5a0c98c9e4b61bd0502adbbccb"
+        blob: "77af84a8d6030d79a240e7b02325cf17b624a051"
+        baseline_sha256: "170155c94c1e0791071f91beaa88e7bb0188252136f6b9b4323d332b806bf185"
+        candidate_sha256: "48958d2bf941e46e949741367cd4c94fe7a692e221a1b519dc8b2da500bf4355"
+        immutable_sha256: "688aaea067b9699223145a5dc6ab8a34ba9fd7d7410c9a7e7085a7a35d2aa4cd"
+        gate: verified
+        fields: "M&M Optical 2 Availability 4/48 hrs differs from core p300 5/48 hrs; four other values match. Retain source-specific variant without automatic supersession."
+    prewrite_archive: "FASA7126-optical-magnification-2-20261128-prewrite.zip"
+    prewrite_archive_sha256: "847f7d123b9ff1c886fde8780a7748e7a6f881f2572ea7110f5163963ff643b9"
+    recovery_recheck_2026_11_28: {prior_index_status: HTTP 409, observed_head: "96c50ea82833bfe0cb65b0eff9340d62c0d17d76", exact_live_and_commit_readback: true, actual_confirm: verified, fresh_source_verify: source_pdf_hash_verified, confirmation_sha256: "197ce6814efec670f0ca57ed80a62fb90e93d93a67c152886a295475cfdd6e94"}
+    independent_source_acceptance: pending
+    global_checkpoint_advance: 0
   confirmed_independent_cybereyes_2026_11_28:
     source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
     verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
