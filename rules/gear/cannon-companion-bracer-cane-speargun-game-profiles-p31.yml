@@ -1,0 +1,40 @@
+id: rule.gear.cannon-companion-bracer-cane-speargun-game-profiles-p31
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '31'
+pdf_pages: '32'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: three special catalogue tabletop profiles'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG, printed p31/PDF32. Original item-specific game rules supplement three existing acquisition entities.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  profiles:
+    - item: Bracer
+      entity: entity.weapon.bracer
+      path: entities/weapons/bracer.yml
+      blob: 5ef8edb7dd2273de0c9e8c9f50d931a2d5dc2fb4
+      game_qualifiers:
+        attack_target_number_modifier: 1
+        range_table: hold-out pistols
+        accessory_eligibility: none
+    - item: Gun Cane
+      entity: entity.weapon.gun-cane
+      path: entities/weapons/gun-cane.yml
+      blob: 150fd6fe9f5bc41b22e8c61e9b04711494e9b53f
+      game_qualifiers:
+        concealability_cases:
+          - {game_detection_test_subject: entire item, concealability_rating: 2}
+          - {game_detection_test_subject: weapon feature within item, concealability_rating: 9}
+        range_table: hold-out pistols
+        accessory_eligibility: none
+    - item: Speargun
+      entity: entity.weapon.speargun
+      path: entities/weapons/speargun.yml
+      blob: a2f8038372245daef0cad8e38f7e40fa1a845b2a
+      game_qualifiers:
+        loaded_game_ammunition_limit: 1
+        range_table: submachine guns
+  disposition: 'Original tabletop game modifiers, conditional rating assignments, eligibility and range-table references only. Existing acquisition entities are retained. No real-world design, operation or performance claim.'
