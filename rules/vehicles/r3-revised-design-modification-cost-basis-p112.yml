@@ -1,0 +1,33 @@
+id: rule.vehicles.r3-revised-design-modification-cost-basis-p112
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '112'
+pdf_pages: '114'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Rigger 3 Revised (FanPro10662), FanPro, fictional Shadowrun Third Edition vehicle design, printed p112/PDF114
+summary: Apply the Design Point price during factory vehicle costing; use a direct nuyen price only when the option description expressly instructs it.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  scope: Vehicle modifications installed during factory design, as distinct from modifications to existing vehicles.
+  cost_basis:
+    default: Use the modification's Vehicle Design Point cost when calculating the final vehicle cost.
+    direct_nuyen_cost: Do not use the modification's nuyen price unless its description specifically directs that treatment.
+    comparative_qualification: Design-time modifications generally have fewer restrictions and higher cost than post-production customizations; no universal numeric adjustment is specified here.
+  reuse:
+    - record: procedure.vehicles.customization
+      path: procedures/vehicles/customization.yml
+      blob: bada741417e60202ff90a486a605fbb8fd48d3d0
+      binding: Retain the existing factory integration and capacity rule; apply listed CF consumption and Load reduction to their respective ratings.
+    - record: rule.vehicles.design-options
+      path: rule/vehicles/design-options.yml
+      blob: 7fcadc59bacfd4e002c89e46b20e2162c2da3211
+      binding: Existing capacity restrictions remain controlling; the vehicle cannot exceed its CF or Load allowance.
+  edition_relationship: Revised-source qualification of the normalized design procedure; no printed historical edition difference asserted.
