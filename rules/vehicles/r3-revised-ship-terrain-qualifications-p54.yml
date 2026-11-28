@@ -1,0 +1,27 @@
+id: rule.vehicles.r3-revised-ship-terrain-qualifications-p54
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '54'
+pdf_pages: '56'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Revised SR3 vessel terrain table qualifications
+summary: Preserve shallow-water eligibility, printed shore distances and the weather assumptions of the tabletop terrain table.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_ship_operations: {id: rule.vehicles.ship-operations, path: rules/vehicles/ship-operations.yml, blob: 5ec7a29d80b9ebe933045f1c52d25638c09618a6}
+  terrain:
+    ships_can_enter_shallow_water: false
+    normal_ship_shore_distance: {nautical_miles: 1, printed_kilometers: 2, relation: within}
+    restricted_ship_shore_distance: {nautical_miles: 0.5, printed_kilometers: 1, relation: within}
+    restricted_ship_additional_example: bays leading into city harbors
+    overlapping_categories: retain printed descriptors; no new precedence rule inferred
+  weather:
+    fair_assumption: {precipitation: light or none, wind_mph: {operator: lt, value: 25}}
+    marginal_examples: [steady rain, thunder showers, moderate winds greater than 25 mph]
+    severe_examples: [severe thunderstorms, high winds short of gale force]
+    exactly_25_mph: no explicit classification by speed alone
+    category_shift: reuse existing one-step marginal, two-step severe and Tight major-storm rules
+  lineage_limit: Older source7124 terrain bindings are comparison context; original revised source reviewed, no claim of original older edition equivalence.
