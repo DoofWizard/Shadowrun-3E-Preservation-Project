@@ -3,6 +3,11 @@ record_type: entity
 name: "Long Haul"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '120,157-158'
+pdf_pages: '121,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "6/6 days"
   cost_nuyen_per_dose: 500
@@ -10,6 +15,7 @@ intrinsic:
   legality: "Legal"
   vector: "Injection"
   speed: "10 min"
+  damage: '-'
   addiction: "2M"
   tolerance: 2
   edge: "10/10"
@@ -17,4 +23,9 @@ intrinsic:
 links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 120, relation: defines, note: "Long Haul fictional drug game effects and statistics"}
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effect and purchase tables'}
 notes: []
+data:
+  table_dash_fields: {printed_120: [damage], printed_157: [damage]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp120,157-158: Long Haul equipment table'
+framing: reference_exact
