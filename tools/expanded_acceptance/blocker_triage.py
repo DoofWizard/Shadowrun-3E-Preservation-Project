@@ -67,6 +67,7 @@ def scan(review, bindings, evidence):
         for item in unresolved:
             add('original_rule', str(item), 'unresolved_original_field')
     fields = {}
+    field_pages = {}
     pages = review.get('pages', None)
     if not isinstance(pages, list) or not pages:
         add('inventory', 'source', 'finite_original_page_inventory_missing')
@@ -116,6 +117,7 @@ def scan(review, bindings, evidence):
             if fid in fields:
                 add('inventory', fid, 'duplicate_original_rule_obligation')
             fields[fid] = f
+            field_pages[fid] = page
             if not f.get('heading') or f.get('lineage') not in LINEAGES or f.get('class') not in CLASSES or f.get('kind') not in KINDS or f.get('value') in (None,'',[],{}):
                 add('original_rule', fid, 'incomplete_field_or_lineage')
             if f.get('lineage', '').startswith('sr2') and (not f.get('precedence_review') or (f['lineage']=='sr2_superseded' and not f.get('named_successor'))):
@@ -150,7 +152,7 @@ def scan(review, bindings, evidence):
         if not isinstance(b, dict):
             add('binding', fid, 'invalid_canonical_binding'); continue
         path, pointer = b.get('path'), b.get('pointer')
-        if not substantive_pointer(b, fields[fid]):
+        if not substantive_pointer(b, fields[fid], source, field_pages[fid]):
             add('binding', fid, 'substantive_canonical_path_and_pointer_required'); continue
         mode = b.get('mode', 'source_local')
         if mode == 'sr3-accepted-core-equivalence/v1':
