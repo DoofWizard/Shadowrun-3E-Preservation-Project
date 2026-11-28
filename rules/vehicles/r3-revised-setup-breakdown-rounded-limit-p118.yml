@@ -1,0 +1,30 @@
+id: rule.vehicles.r3-revised-setup-breakdown-rounded-limit-p118
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '118'
+pdf_pages: '120'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Rigger 3 Revised (FanPro10662), FanPro, fictional Shadowrun Third Edition tabletop vehicle design, printed p118/PDF120
+summary: Preserve the distinction between the published minimum remaining setup time and the published maximum improvement; leave the rounding conflict unresolved.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  existing_mechanic:
+    id: rule.vehicles.r3-revised-design-enhancements-p118-119
+    path: rules/vehicles/r3-revised-design-enhancements-p118-119.yml
+    blob: 2e5266da9f6929eda223095fe97d194fba00d575
+    reuse: Retain its setup_breakdown eligibility, base time, storage fraction, cost, per-minute reduction cost, maximum CF multiplier and Load reduction without duplicate application.
+  prose_minimum_remaining_time: floor(base_setup_breakdown_minutes / 2)
+  labeled_maximum_improvement: floor(base_setup_breakdown_minutes / 2)
+  conflict:
+    distinct_quantities: The prose minimum remaining time and the separately labeled maximum time reduction have the same rounded expression but apply to different quantities.
+    derived_check_not_a_published_example: Base time is twice Body plus one minute; for an odd base time, subtracting the labeled maximum improvement leaves one minute more than the prose minimum.
+    disposition: Retain both limits as printed, without inventing precedence or silently rounding either expression differently.
+  edition_relationship: Preserve a revised-source qualification missing from the earlier normalized record; no claim of historical edition difference.
