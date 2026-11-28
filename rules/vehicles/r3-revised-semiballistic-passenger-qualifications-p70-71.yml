@@ -1,0 +1,39 @@
+id: rule.vehicles.r3-revised-semiballistic-passenger-qualifications-p70-71
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '70-71'
+pdf_pages: '72-73'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 pp70-71 semiballistic tabletop qualifications
+summary: Specifies fictional game phases, passenger tests, Background Count and fare eligibility for the existing flight rule.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.semiballistic-suborbital, path: rules/vehicles/semiballistic-suborbital.yml, blob: 121d00e7b7a167200b5786b9bcca2368b8900a98}
+  vehicle_game_phase:
+    exceeding_speed_rating_rules_apply_before_launch: true
+    no_speed_rating_stress_after_suborbit_launch: true
+  passenger_game_phase:
+    normal_character_actions: [ground_takeoff_to_prelaunch_altitude, terminal_guidance]
+    seated_passenger_still_receives_physical_test_modifier: true
+    optional_gamemaster_test_for_significant_physical_actions_normally_without_test:
+      base_target_number: 1
+      add_g_force_modifier: true
+      examples: [jacking in, readying equipment]
+    apogee_freefall_environment: zero_gravity
+    existing_landing_quickness_test_trigger: not_seated_and_buckled_in_at_landing
+  background_count:
+    start_travel_fraction: 0.2
+    initial: 1
+    increase_per_turn: 1
+    maximum: 10
+    decrease_start_travel_fraction: 0.8
+    decrease_per_turn: 1
+    reference: Magic in the Shadows p86
+  fare:
+    approximate_coach_nuyen_per_kilometer: 0.2
+    approximate_first_class_nuyen_per_kilometer: 1
+    minimum_route_kilometers: 4000
+  scope: Source-specific fictional tabletop qualifications. Existing skill, speed, maneuver transition, wall rating, acceleration and resistance values are reused without duplicate application. No historical printed-edition inference.
