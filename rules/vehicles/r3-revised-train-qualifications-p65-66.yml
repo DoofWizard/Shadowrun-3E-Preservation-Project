@@ -1,0 +1,30 @@
+id: rule.vehicles.r3-revised-train-qualifications-p65-66
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '65-66'
+pdf_pages: '67-68'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 SR3 — tractor-train Handling, Signature and targeting qualifications
+summary: Corrects original game-state formula scope and preserves train-control and target-selection qualifications.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.trailers-and-rail, path: rules/vehicles/trailers-and-rail.yml, blob: c0ab68937b49fd604e29254e03afd0af7210341d}
+  trailer:
+    definition: vehicle requiring another vehicle to push or pull it; applies to all travel modes
+    cargo_distribution: driver may distribute combined tractor pulling capacity subject to available cargo space and individual trailer Load
+  multi_tractor_train:
+    applies_when_tractor_count_at_least: 2
+    lead_vehicle_assumes_central_control: true
+    handling: {base: lead_vehicle_handling, fixed_modifier: 1, additional_modifier_per_trailer: 1}
+    signature: {applies_to: each_vehicle_in_train, modifier: -2, minimum: 1}
+  attack_target:
+    attacker_may_declare_individual_vehicle: true
+    otherwise_gamemaster_may_randomly_determine_vehicle_hit_by_successful_attack: true
+    retain_existing_sensor_and_missile_targeting_exception: true
+  rail:
+    retain_existing_handling_and_vehicle_points_rules: true
+    self_powered_car_tractor_and_forwardmost_lead_qualification: intra-city public monorail such as a subway
+  scope: Fictional game-state rules only; numerical trailer Body, Load and mount-capacity rules already bound in existing record. No new historical edition claim.
