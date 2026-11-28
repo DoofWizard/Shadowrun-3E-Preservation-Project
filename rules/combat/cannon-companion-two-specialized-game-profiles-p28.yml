@@ -1,0 +1,42 @@
+id: rule.combat.cannon-companion-two-specialized-game-profiles-p28
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '28'
+pdf_pages: '29'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: two specialized tabletop game profiles'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop game, printed p28/PDF29. M79B1 and Vogeljaeger game-state restrictions, sensor modifiers, turn costs and Damage Codes supplement the existing inventory and ammunition table.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  ammunition_table: {path: equipment/cannon-companion-specialized-ammunition-p28-120.yml, blob: 58c0691728eebe6ee491665b70a5ec8a552ce639}
+  m79b1_law:
+    entity_binding: {path: entities/weapons/m79b1-law.yml, blob: a7abf5ad3dce5cd5cd7e760169d47e916bf095f8}
+    game_consumable_item: true
+    game_attack_prerequisite: fully opened item state
+    opened_item_game_concealability_body: 0
+    concealability_table_literal: '4/dash'
+    concealability_source_note: Body uses numerical zero in the open state; the printed table uses a dash. No dash-to-zero equivalence assumed.
+    game_ammunition_class: HE
+    game_hazard_exception: {width_game_m: 1, length_game_m: 10, damage_code: 10M, power_reduction_per_game_meter: 1}
+  vogeljaeger:
+    entity_binding: {path: entities/weapons/vogeljaeger.yml, blob: 773118999da522261738a8623a2822389e591422}
+    printed_name: "Vogeljaeger (original spelling with umlaut)"
+    game_ammunition_eligibility: Vogeljaeger missiles
+    included_game_sensor_level: 2
+    game_sensor_procedure: standard vehicle sensor rules
+    game_ground_object_detection_modifier: 4
+    included_game_interface: linked wrist unit with datajack port
+    game_equipping_combat_turns: 10
+    game_unequipping_combat_turns: 10
+    airborne_target_game_damage_code: 14D
+    airborne_game_power_reduction: {amount: 2, per_game_m: 1}
+    ground_target_game_tn_modifier: 4
+    ground_target_game_damage_code: 8D
+    ground_game_power_reduction: {amount: 2, per_game_m: 0.5}
+    both_target_game_classes: AV
+    barrier_rating_game_divisor: 2
+    vehicle_armor_game_divisor: 2
+  disposition: 'Abstract fictional Damage Codes, Target Numbers, inventory-state flags and Combat Turns only. Existing inventory tables retained and literal body/table notation distinction preserved. No physical construction or real-world operation advice.'
