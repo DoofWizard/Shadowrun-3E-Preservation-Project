@@ -3151,6 +3151,54 @@ book_closure_checklist_2026_11_25:
       scope: "Consolidated equipment tables"
       status: prior_review_partial
       evidence_or_gap: "Prior specific appendix bindings reused (pp115-117,121-124); completeness across every appendix row and note not established; reconcile alongside matching body categories."
+      p120_general_accessory_appendix_reconciliation_2026_11_27:
+        basis_manifest_blob: 30579b590372b7a82939670b831d117d3718046c
+        original_printed_page: 120
+        original_pdf_page: 121
+        source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+        source_verification: source_pdf_hash_verified
+        source_review: "Full General Accessories table at 240 dpi and enlarged; p33/PDF34 body variant inspected at 300 dpi. Current existing records read."
+        bindings:
+          - path: equipment/sr3-core-firearm-weapon-accessory-market-p282.yml
+            blob: 581bcc3d32c0eb4a488fea674e30d9ce27c3d64f
+            pointer: /data/groups/0/rows
+            source_rows: 6
+            compared_stat_cells: 48
+            exact_typed_matches: 47
+            variant: "Tripod supplement game legality field present; core is unlisted. Independently indexed below."
+            name_notation: "Sound Suppressor appendix label versus core Sound Suppresser."
+          - path_prefix: entities/gear/
+            path_suffix: .yml
+            pointer: /intrinsic
+            source_rows: 13
+            compared_populated_stat_cells: 76
+            exact_typed_matches: 74
+            slug_blob_pairs:
+              - [battletac-remote-trigger-system, 02e14196e58be9aad0afbb84aca6fd8046bae492]
+              - [bayonet, ce5d96802b41e3b0310caa4827bd481eb0d4b7a8]
+              - [bow-accessory-mount, 0db103d1db882d6469d9eac7061e542b1d265f8c]
+              - [biometric-safety, 82db1c930a424816e7fe954547bb9e0880d6575d]
+              - [grenade-link, d1ec5b640313103ba0429bf2db784f05a38c03c0]
+              - [quick-draw-holster-standard, f93137ff1f84abaf4acdb676868e4dc21e1a283d]
+              - [quick-draw-holster-concealable, 5726de93df6d2682c9547629062d990bbbb5bdd1]
+              - [rangefinder, 292a4ee5f0ced8bf2c3fbb268060a16b0807e08b]
+              - [safe-target-gun-mod, 9e7ff688b58b2b1fcbfccbca4e6cde9ac46bec1b]
+              - [safe-target-beacon, 6249ca35679186ee70b5ac62d3786b03f48d121b]
+              - [sling, 8aeb37a1333406d0f7eea4a9f5d79e401acb9265]
+              - [standard-holster, 5da1ddae1882014cd00b75b45ba2bd37d3920bf1]
+              - [underbarrel-grapple-gun, a16182c3951b999b943f108370228f28af726b68]
+            explicit_dash_cells: 27
+            literal_mount_variant: "Under in appendix versus Underbarrel in entity; retain literal distinction, no new semantic category inferred."
+            bow_mount_alignment: "Appendix prints -1 under Mount, dash under Conceal; body game modifier already bound by rules/projectile/cannon-companion-projectile-game-qualifiers-p12-13.yml blob 2682fac67b8713ec0a62c85afe8c6ea12e02c500. No inferred column movement."
+            variant: "Biometric Safety body and appendix game weight contradiction independently indexed below."
+        source_rows: 19
+        compared_stat_cells: 124
+        exact_typed_matches: 121
+        separately_preserved_literal_cells: 28
+        source_specific_mechanical_variant_fields: 2
+        source_specific_variant_record: equipment.cannon-companion-general-accessory-appendix-variants-p120
+        disposition: "Finite General Accessories appendix comparison complete with bounded original layout and precedence questions. Existing body game rules reused; historical receipt debt and independent acceptance separate."
+
       p121_general_armor_modification_appendix_reconciliation_2026_11_27:
         basis_manifest_blob: 9fff82a36a7ff12787435edf6b5945b627cab4d7
         original_printed_page: 121
@@ -3619,4 +3667,25 @@ source_mechanics_reconciliation_2026_11_27_protective_and_survival_appendix:
     exact_typed_matches: 95
     notation_only: "Chemsuit price uses x in CC and multiplication sign in the core canonical field; no differing price formula. Original currency token and explicit dash meanings preserved."
     disposition: "Coverage-only for sixteen overlapping survival rows; original printed pp122-123 source labels and values visually compared at 240 dpi. Previously reviewed BattleTac, tactical communications, satellite dishes and parachute scopes not reopened."
+  whole_source_certified: false
+
+source_mechanics_reconciliation_2026_11_27_p120_general_accessory_variants:
+  acceptance: section_review_in_progress
+  globally_authorized_pages: 0
+  verified_semantic_records:
+    - id: equipment.cannon-companion-general-accessory-appendix-variants-p120
+      path: equipment/gear/cannon-companion-general-accessory-appendix-variants-p120.yml
+      range_printed: [33, 33, 120, 120]
+      range_pdf: [34, 34, 121, 121]
+      content_class: equipment_stat
+      commit: fd93a7c3487f1005f6993501d92f2618e0565198
+      blob: ad2b4eeba209c14b63c7ef6180d18d31baa8d135
+      baseline_sha256: b6b1633fadeff38d6dd2cea6bbf1b68d82b06605e135029b1c29ed1aeb5381a8
+      candidate_sha256: 5b42aa27c85a65ef24d51b54886bd991e8ac50ba1579d226b58d415575f5b5dd
+      immutable_sha256: 72c3a330ac638e04963d8a97d39ded4f409a1223744f5e6ad3eb0ffbf7a53d9b
+      original_source_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+      gate: verified
+      contiguous_advance: false
+      scope: "Two original fictional game inventory field distinctions, one body-versus-appendix weight variant and one supplement legality entry absent from core. No shared rewrite."
+  original_scope: "Printed pp33 and 120/PDF34 and 121; all 19 General Accessories appendix rows compared in the existing book checklist. Original label and placement ambiguities preserved; no precedence decision."
   whole_source_certified: false
