@@ -64,6 +64,22 @@ R3R_QUAL_RECORDS = {
 }
 
 
+# Exact identities of five newly recovered short-format receipts. The
+# equipment catalogue record has a different content class and ID namespace.
+R3R_NEW_TOYS_RECORDS = {
+    'rules/rigging/r3-revised-advanced-ew-game-qualifications-p85.yml':
+        ('rule.rigging.r3-revised-advanced-ew-game-qualifications-p85', '85', '87', [85, 85], [87, 87], 'rule_exact'),
+    'rules/gear/r3-revised-new-toys-availability-p86.yml':
+        ('rule.gear.r3-revised-new-toys-availability-p86', '86', '88', [86, 86], [88, 88], 'rule_exact'),
+    'rules/gear/r3-revised-rcem-compatibility-p98.yml':
+        ('rule.gear.r3-revised-rcem-compatibility-p98', '98', '100', [98, 98], [100, 100], 'rule_exact'),
+    'rules/vehicles/r3-revised-silencer-game-target-number-p92.yml':
+        ('rule.vehicles.r3-revised-silencer-game-target-number-p92', '92', '94', [92, 92], [94, 94], 'rule_exact'),
+    'equipment/gear/r3-revised-new-toys-p92-market-dashes.yml':
+        ('equipment.gear.r3-revised-new-toys-p92-market-dashes', '92', '94', [92, 92], [94, 94], 'equipment_stat'),
+}
+
+
 def adapt(receipt, snapshot, manifest_path, confirm, parent_blob=None):
     from validator import parse
     require(manifest_path in (MM, R3R), 'r3r_mm_manifest_required')
@@ -89,9 +105,10 @@ def adapt(receipt, snapshot, manifest_path, confirm, parent_blob=None):
     require((receipt['semantic_commit'], receipt['semantic_blob']) ==
             (confirm['commit_sha'], confirm['readback_blob_sha']), 'r3r_mm_semantic_identity_mismatch')
     path = confirm.get('path')
-    allowed = MM_RECORDS if is_mm else R3R_QUAL_RECORDS if qualified else R3R_RECORDS
+    allowed = MM_RECORDS if is_mm else (R3R_QUAL_RECORDS | R3R_NEW_TOYS_RECORDS) if qualified else R3R_RECORDS
     require(isinstance(path, str) and path in allowed, 'r3r_mm_record_path_required')
     prior = None
+    content_class = 'rule_exact'
     doc = parse(snapshot)
     require(isinstance(doc, dict) and (doc.get('id'), doc.get('source_pdf_sha256'),
             doc.get('catalog_number'), doc.get('edition'), doc.get('publisher')) ==
@@ -111,8 +128,11 @@ def adapt(receipt, snapshot, manifest_path, confirm, parent_blob=None):
         require(section.get('source_pdf_sha256') == source_sha, 'r3r_mm_section_source_mismatch')
         commit, recorded_blob, schema = receipt['index_commit'], receipt['index_blob'], f'mm-p{printed}-purchase-index-receipt/v1'
     elif qualified:
-        printed, pdf, printed_range, pdf_range = R3R_QUAL_RECORDS[path]
-        record_id = 'rule.vehicles.' + path.rsplit('/', 1)[-1].removesuffix('.yml')
+        if path in R3R_NEW_TOYS_RECORDS:
+            record_id, printed, pdf, printed_range, pdf_range, content_class = R3R_NEW_TOYS_RECORDS[path]
+        else:
+            printed, pdf, printed_range, pdf_range = R3R_QUAL_RECORDS[path]
+            record_id = 'rule.vehicles.' + path.rsplit('/', 1)[-1].removesuffix('.yml')
         # The full shape was observed only for the two naval scopes.
         require(full_qual == ('ship-' in path), 'r3r_mm_qualification_layout_mismatch')
         require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == (printed, pdf),
@@ -159,7 +179,7 @@ def adapt(receipt, snapshot, manifest_path, confirm, parent_blob=None):
     else:
         require(entry.get('range_printed') == printed_range and entry.get('range_pdf') == pdf_range
                 and all(type(n) is int for n in entry['range_printed'] + entry['range_pdf'])
-                and entry.get('content_class') == 'rule_exact'
+                and entry.get('content_class') == content_class
                 and entry.get('original_source_sha256') == source_sha
                 and entry.get('contiguous_advance') is False, 'r3r_mm_registration_pages_mismatch')
     require(pin(commit) and pin(recorded_blob), 'r3r_mm_index_pin_required')
