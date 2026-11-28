@@ -196,7 +196,7 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
             continue
         need(b.get('mode', 'source_local') == 'source_local', 'unsupported_binding_mode:' + fid)
         path = b['path']
-        need(substantive_pointer(b, f), 'cosmetic_binding:' + fid)
+        need(substantive_pointer(b, f, s, p), 'cosmetic_binding:' + fid)
         if path not in cache:
             e = evidence['transactions'][path]
             if e.get('layout') == 'split_archive/v1':
