@@ -1776,6 +1776,65 @@ Companion p130: specialist reports all 38 mapped classifications compared; 11 Fr
 
 New mechanical fields/records 0, original scopes completed 0, seven documentary semantic readbacks and three historical index snapshot pin checks, one new cross-owner candidate routed, authentic receipts recovered by coordinator 0, accepted books 0, global pages 0. Remaining invocation capacity insufficient for exact local dependency restoration plus complete source-gated transaction before next scheduled work; no semantic staging begun. No role, schedule, protected path or gate changes.
 
+
+## 2026-11-28 — Rigger sonar and network qualification reconciliation
+
+Coordinator source acquisition: fresh cataloged FanPro10662 original, 40,997,045 bytes, 210 physical pages, SHA256 `88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909`. Actual preservation verification against initial full manifest `5df79528c9a6796c24d135e1233978af4113d0c0`: `source_pdf_hash_verified`; source pixel review independently completed for the scoped records. Ten runtime script/test/editorial files matched current exact Git blobs after authenticated private transport; 97 actual tests passed (29 editorial, 51 ingestion/preservation/cache, 17 recovery). Qualified seed artifact 15244033288 re-acquired and ZIP digest and CRC checked; historical lookup only, current paths and exact manifest rechecked. Existing V2 cache preparation used; additional next-scope two-page preparation 1.544s, two misses, no hits. No artifact or scan alone confers acceptance.
+
+| Source-local rule scope (printed / PDF) | Semantic commit / blob | Individual index commit / manifest blob |
+|---|---|---|
+| Sonar mode qualifications 33–34 / 35–36 | `c430c5090cdc32108c35267e0b73caae60444fa6` / `9fa1ccee2c11450078f1188290ff6c322d5c125b` | `d25a12b103bb1db9b15119d6af3ce0b828ad1c7a` / `e93eb71d709da93a56176bf76fbf667e4e7c8b9e` |
+| Sonar environmental qualifications 34–35 / 36–37 | `9cb00980ec6f95440708c296811b1af3c754c511` / `bc03add23dfc4f70df8f72361238c8d70a6d5309` | `f85794a8a3a8f4520a7403149b2db27f0dfb5d8e` / `41b0dd63cad84b2bf374b60e8f460b4738eea23a` |
+| Fictional network action qualifications 36–37 / 38–39 | `527554bfc07a866a406d1a98bbe44715924ab4bd` / `bf1f1578d4b27ac71b256700d58ce42e76393a94` | `ced4dd7e54b35a93bf849be0db11440b63f0df72` / `9116a1c45d273d8a887f90db20fb43bcb669eb46` |
+| Signal Monitor thresholds 38 / 40 | `00602e9eb52261714e50a224d6f26da9c0172e58` / `03d96573528f0218f302ea8d05a6c840c584d130` | `69405a07d4dad975fe6287985b18b4c1f40a3993` / `84c3efc4de2282b857f1e446ef57b4dab285280c` |
+| MIJI game effects 38–40 / 40–42 | `ac15f464f09aa51c1a80b3ae9f8a3908ab6e8762` / `44cb14068f66da13946083bee3b08406ec09a910` | `07fc30b207aa5f6c1b7ae15d7dec150e0909fbe8` / `40c40c8b412637a36e39d7898a395c61f0dccb75` |
+| MIJI game recovery 40 / 42 | `3b431ebf1ed4b849de58486a7307b2008ba5762d` / `78bdaa604a320eb776cf0db07f87095d2d13ac99` | `4e8555bc7fa3cb29c9d54de90e063148ed85edf9` / `824324830de02fef3816f3df21e47f429d1f36ae` |
+
+All six source-owned transactions: separately source-reviewed baseline and candidate, actual stage/prepare, ordinary Contents creation, exact commit/live byte verification, actual confirm=verified, individual manifest update and exact committed/live verification. Six original prewrite and six confirmed journal ZIPs privately archived; no source pages or private inputs uploaded to GitHub. Registration count 119 → 125; existing history retained; pending normalization empty. These are source-bound game qualifications, not a declaration of original historical-edition change or full-book acceptance. Existing numeric tables reused rather than duplicated. Explicit missing monitor thresholds 1/3/6 boxes and exact 10-turn game reconfiguration now present. Newly explicit conditions and field bindings are not independent new systems; reused values, examples and metadata are excluded from new-rule counts.
+
+**Continuation step:** original Drones printed pp41–42/PDF43–44 inspected in the same verified source. Compared exact live `rules/drones/hardwired-remote-control-deck.yml` `2e17610686298293df57d189c6ea06af035ee363` (five listed game conditions match original), `dump-shock.yml` `7bf8405eee07515b796d342188c8b986a3166108` (direct-control and captain/secondary exceptions represented); no duplicate records warranted. Next substantive delta candidate: `rules/drones/subscriber-lists.yml` `0176eb2a431d8dd18679d526ac7063432e5cfd28` conflates configuration with affiliation in step 2; original p42 explicitly separates them, plus optional stored list and interface limitations. Check current core affiliation rules before adding any duplicated action rate. Continue original p43/PDF45 for multiple-rigger networks `55cebb079621cb060aa9e90934c720012c49a6f1` before claiming its complete comparison; p42 has an explicit failed occupied-control attempt and assignment qualifications. No new semantic write started for these candidates. Partial p104/105/107 chassis checks did not prove source-wide coverage.
+
+### Existing owner registrations and acceptance dependencies
+
+Three genuine owner prewrite/confirmed pairs independently acquired and CRC-checked; seven matching preserved prewrite members per pair, actual gate prepare and confirmation replay 3/3 equal original receipts, archived candidate and indexed manifest bytes matched exact historical Git blobs, committed/live path readbacks matched. These are documentary rechecks of already indexed owner production, not fresh original-image reviews or newly recovered historical receipts.
+
+| Source scope | Semantic commit / blob | Index commit / manifest blob |
+|---|---|---|
+| Sprawl Survival Guide p137 / PDF138, 3 corrected conditions | `9ee17cb68d415e87c0b93e4cd68eeff58543db93` / `7bdca8951ca27368e5e7bf4c77edd19bd76bf25f` | `f7e66898b17dbdb08c2c99d27da40865a5cc29b9` / `435d30c6ab366cd2de708716e06bcd5fe83b9515` |
+| Target Wastelands p131 / PDF132, 1 corrected game eligibility condition | `bc023849082750ba071d93b19e3031f446471c34` / `b97e163de3cf58e8487520fef13a7b83e9511f9e` | `bfc12b56c8d073463d347f14f9d920c9da4797fe` / `fec276a18578ad46216a0c391dcc6e140de03093` |
+| Target Matrix pp85,91 / PDF86,92, 2 equipment conditions | `20ac373f4b0a76140848fcd846164610db041ae6` / `041ba0c2609cfe3aebee78bf89014c9c8e29351e` | `193aa3590d68fca86b15821a10ce53a2964a4525` / `7d702ed73deaa6139824755260d6486bb17b4060` |
+
+The prior three routed SSG fields (/data/edges/0,2,3/effect) and single Wastelands p131 condition are now owner-corrected and indexed; no separate coordinator canonical write. Target Matrix original successor prewrite/confirmed archives for `54f3047ce7425f356dc04edbf43028a7289acefb` / `e1e6aba9e70b2b4806cab79ec3bf0d4ae4988683` remain missing despite exact live/historical readback. Acceptance specialist's actual 63 table bindings pp116–119/PDF117–120 now pass; full validator remains BLOCKED independent_review_required (independent reviewer/custodian, complete physical-page scope and folio, original obligation inventory and original grid receipt). Historical grid semantic `c20a2cc2ab8185ffb62c9782ac095eee980dc0f4` / `bd19f614f18e2e458dd14288a75c54e666f341f8`, index `57fbe17e58a587151ec500cc0c178553c2a6b3a3` / `f7662c4db910e93c6b5342112bdd6b3805e3d634`. Wastelands acceptance regression publication reported HTTP 409; preserve validated evidence and eight outstanding formal scopes. No independent source-wide PASS. Do not double-count owner corrections and acceptance rechecks.
+
+Additional current manifest registrations checked against exact semantic commit and live path bytes (not replayed by coordinator):
+- M&M: `bb872760f5af34116ce240a466867dae6b0a4342` / `d28a683684b2ebd37e9ba8050d04cde687bc7f46`, manifest `a439ef594be6c951467f056b098b907be9b51b9a`.
+- MJLBB entertainment and activist contacts: `08fd5c9616e1a765b5e52663d9487c593575c166` / `744b26d671a1471e92548fcaaebf5616d016cf45`, `36fb652403751a16f89c95596fe8b2792d9e9479` / `f0661bef95ee2ee948744f3da805de8328109ae1`, manifest `01a12349f320aa193ad5158a1cd9c5e0f0b0c2b6`. Source-owner reported 361 numerical profile fields matched independent review; not 361 new universal rules.
+- SOTA2063 sample condition `0bb1b928b37fc678cc33b7d9be565cb0d13181f1` / `957f66bf9994bef4d508de807a70ec06b951f640`, manifest `08aaad597eaeb57da2305bd7029a0b78106a3236`; SOTA2064 Link Club condition `795cc3cdfed3712d3fe2b1ec79009a2dea09f458` / `d6a1f6b20fcf4b9a679340b9b748f50dfbeaaa4c`, manifest `d3b37328c664ed5d746d6f1aa1a3372d74636112`. These two qualitative world/attributed records do not independently establish new numeric game mechanics.
+
+Existing 104-source inventory route updates (read-only, no ownership change):
+- FASA7331 Brainscan, pp119–124/PDF120–125, Matrix owner's bounded screen: specific encounter game fields for protective aura, AI intervention frequency, optional attack, persona multiplication and scenario exit consequence. Existing row remains owner adjudication, no authoritative manifest; original verify-source, exact fields, duplicate check and source-write authorization needed. No blanket permission or inferred general Matrix rules.
+- FanPro10654 Wake of the Comet, pp64–67/PDF65–68: Critters owner's bounded original screen reports 7 NPC field differences (officer Charisma/Intelligence/Essence, mage Quickness/Charisma/Intelligence, corporate representative Quickness), station background count candidate. Exact current comparison path `entities/npcs/wotc-price-of-liberty.yml` blob `4b3dde0bafa39e4372279646b561061220d71a92` independently checked. Existing inventory row remains owner adjudication; confirm profile identity and original hash manifest before any correction; no writing by Critters or coordinator on this evidence.
+- Legacy worker reports Rigger 2 p5/PDF6 explicit supersession of SR2 and Rigger Black Book rigging systems. Retain as lineage evidence pending independent original-source and exact field adjudication; no second-edition duplicate engine rules. Core p324 reported conversion-price qualification concern remains protected/read-only, owner adjudication needed; core acceptance unchanged.
+
+Manifest directory inspected for all reached sources. Remaining changed/not fully reconciled pins: CannonCompanion `3249f53514d362c5cdf80bb6a900a740f96941c2`, Critters `e92feb7bd6c3471ae76025d6109860db3edd6a0a`, Matrix `f48160059a855c8be8a7e235e9c00f98288b97d0`, ShadowBeat `5680b0106aa379dd539eecab43e2db98fb38c4e7`, ShadowsOfAsia `8def96835d9eb559f2d9188abc442798e4a375c7`, SystemFailure `fda6a6e4e4f4a7c7db69fcb5d7ef58ef2e829ed8`. These directory observations do not constitute complete changed-record reconciliation. Magic MitS `9d200c08eff4fdcece7f8bbba3a3ae2ca47f9b71` unchanged; specialist blocked by runtime restoration, authenticated exact-byte transport used successfully by coordinator, not itself proof of Magic source verification. Protected FASA7910 lacks required historic source hash, no silent inference or rewrite.
+
+### Continuation-first throughput observations
+
+Eight distinct accessible specialist completed invocations on 2026-11-28, sampled using observed start/end times. Output below is role-reported unless independently matched above, not additive across transcription and review. Combat's most recent execution failed after 25.03 minutes; excluded from completed-duration sample, prior result not substituted. Coordinator execution currently in progress at observation; excluded.
+
+| Role | End UTC | Elapsed min | Role-reported output |
+|---|---|---:|---|
+| Acceptance | 06:47:12 | 14.17 | 63 table bindings, 4 prior owner conditions verified, 3 original journal pairs; Wastelands publication conflict |
+| Augmentation | 06:35:21 | 7.54 | 1 rule, seven compound effects and shared rules; no independently stated count of novel fields |
+| Legacy | 06:44:37 | 8.88 | 21 matched fields, 2 lineage scopes, no new rule |
+| Sourcebook | 06:47:52 | 10.14 | 2 NPC records, 12 profiles, 361 matched numeric fields |
+| Matrix | 06:47:06 | 11.91 | 2 confirmed equipment conditions, Brainscan screen |
+| Critters | 06:41:57 | 10.10 | 4 corrected conditions, Wake of the Comet screen |
+| SOTA | 06:43:27 | 5.97 | 2 qualitative records, zero numeric additions |
+| Magic | 06:26:40 | 0.96 | 0, executable-source gate unavailable |
+
+Sample 8 of requested next 24 accessible distinct completed invocations; mean 8.71 minutes versus earlier nine-run 7.9-minute sample (different role composition, not an output-normalized comparison). No doubled corpus-wide throughput established; do not invent active minutes or historical role baseline. Independently accepted books: 0. Coordinator completed six new source-owned mechanical records across three batches, three additional owner receipt reconciliations, five additional exact registration checks, and next-source comparison. No new independent historic receipt recovery by coordinator; 0 global pages. No protected gate, checkpoint, ownership, schedule or core edits.
+
 ## Completion rule
 
 A source is not marked `complete` until:
