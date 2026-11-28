@@ -1002,3 +1002,66 @@ book-wide review, semantic writes or formal acceptance claimed. No global
 page credit. Machine-readable diagnostic
 Expanded_Acceptance_New_Journals_2026-11-27.json SHA256
 9445a9338e9cef90affcdbb81c4cf10229b543f8d88177ed64bd745e2371c6c2.
+
+
+## Newly indexed M&M device effects and ShadowBeat mixer — 2026-11-27
+
+Read-only archival reconciliation at pinned main
+2ac1a4f79d096b75bb67c1f8354c075380c76fe2; live forward-only workflow
+f289054db49b55dec6f9e5a6401abaa6588c2e69 read. Both newly retained prewrite/
+confirmed ZIP pairs pass CRC and all original prewrite member bytes agree.
+Actual present-day prepare and confirm re-executions exactly match both
+original receipts. The two archived indexed-manifest snapshots match the
+historical and pinned-head Git blob pins. Both index commits are directly
+one commit ahead of the semantic write, introduce a previously absent path
+registration, change only their own manifest, and are ancestors of pinned
+HEAD. Both semantic commits change only the corresponding record. No source
+review or archival chronology is inferred from these checks.
+
+| Scope | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| M&M printed/PDF41–42 implant device game effects | d4addd8922713e7c430a13dcb6a707c3b72459c6 / 19e909acdede83c507aafac613abb01e01b75623 | e9988c47623214872ecbf680478519fea85a4d8a / 4d0e3cbebec3f66d41402403fca8403505ae1191 |
+| ShadowBeat unnumbered color insert PDF39 mixer | 97120f0ee1022b50dd0ac86b098a6388c245e5dc / b407be40908fc8b1ea8bea383b1e0afb3e7ccb84 | dc1bcc2750cad90f5d6c46265e560d2d47899f18 / be0dd90012dc31e7a6d01a4d5f177c07aaf8b8ec |
+
+M&M registration pointer /source_field_review/confirmed_implant_device_effects_p41_42_2026_11_27/records/0.
+Unlike the previous accessory receipts, this original index receipt explicitly
+retains branch_and_commit_readback_equal=true and
+exact_index_proposal_readback_equal=true. The original proposal and indexed
+snapshot are byte-identical; manifest SHA256
+44ca04ab0a471c18062b604f35aa81e1773b9bc6ee824e2f598c9186c33f8b9f.
+The preserved review covers four device-specific tabletop game-effect groups
+and integral magazine reload eligibility, without duplicating equipment
+purchase stats. Original p41 external-port arrangement and compound-example
+references remain for the source owner to compare. This is not pp41–49 closure.
+
+ShadowBeat registration /verified_semantic_records/85. Retained original
+index receipt has exact_index_bytes_match=true and matches the actual index
+commit, semantic commit and record ID. Original mixer profile supplement
+retains two integrated equipment labels; other uncertain original profile
+fields remain unresolved. The source is original FASA7109 (1992), with SR3
+adaptation explicitly unverified. Do not treat a legacy profile as a complete
+SR3 playable stat block or infer unsuperseded mechanics from this archive.
+
+Specific acceptance-only blockers: M&M's literal ampersand manifest path
+and authentic new receipt schema remain unsupported by the expanded
+validator. ShadowBeat's index_commit_sha/manifest_blob_sha/
+exact_index_bytes_match receipt schema and readback_blob_sha/transaction_status
+registration aliases are unsupported by current inline_index_receipt.py
+(c17c1b65541aee2d8c79dea20181f351621251bd) and index_transition.py
+(80a0f8ba358f6c71dcd10eb634b2e4ee92d87dbe). The numeric printed-page binding
+also cannot certify the unnumbered original color insert. These defects do
+not establish missing mechanics. Complete independent original review,
+edition adjudication and book-wide bindings still required.
+
+Original source hashes as retained by owners: M&M
+6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8;
+ShadowBeat d111ebcfcab4e40645e61f2924e58b5d8ace6ab4c18610e3085e324c52bd4278.
+No fresh original PDF acquisition, verify-source or cache use in this
+archival-only run. Actual 29 editorial and 20 ingestion-gate tests passed,
+with matching live code blobs. Four preservation/recovery dependency/test
+blobs changed since the kit; those stale cached suites were not executed.
+No full production validator run or formal acceptance. Original archives
+remain in the Recovery library. Local diagnostic
+MM_ShadowBeat_Bounded_Receipt_Reconciliation_2026-11-27.json SHA256
+f589fc68fb17cfc56f282d1ada1b97d87f391b53c8c034a83795fbcf3d896b69.
+No semantic or manifest writes by this worker, no global page credit.
