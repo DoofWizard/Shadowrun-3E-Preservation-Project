@@ -8,8 +8,8 @@ from r3r_mm_index_receipts import MM, MM_SOURCE, MM_SHA, MM_RECORDS, R3R, R3R_SO
 
 
 class ReceiptTests(unittest.TestCase):
-    def fixture(self, mm):
-        path = next(iter(MM_RECORDS if mm else R3R_RECORDS))
+    def fixture(self, mm, path=None):
+        path = path or next(iter(MM_RECORDS if mm else R3R_RECORDS))
         record = (MM_RECORDS if mm else R3R_RECORDS)[path]
         source, sha, catalog, edition, publisher = (
             (MM_SOURCE, MM_SHA, 'FASA7126', 'SR3', 'FASA Corporation') if mm else
@@ -18,13 +18,13 @@ class ReceiptTests(unittest.TestCase):
                        pdf_sha256=sha, path=path, record_id=record[0], commit_sha='a'*40,
                        expected_blob_sha='b'*40, readback_blob_sha='b'*40,
                        candidate_sha256='c'*64, immutable_sha256='d'*64,
-                       printed_pages='154' if mm else record[1], pdf_pages='155' if mm else record[2])
+                       printed_pages=record[2] if mm else record[1], pdf_pages=record[3] if mm else record[2])
         entry = dict(id=record[0], path=path, commit='a'*40, blob='b'*40, gate='verified',
                      baseline_sha256='f'*64, candidate_sha256='c'*64, immutable_sha256='d'*64)
         doc = dict(id=source, source_pdf_sha256=sha, catalog_number=catalog, edition=edition, publisher=publisher)
         receipt = dict(semantic_commit='a'*40, semantic_blob='b'*40)
         if mm:
-            entry.update(printed='154', pdf='155')
+            entry.update(printed=record[2], pdf=record[3])
             doc['source_field_review'] = {record[1]: dict(source_pdf_sha256=sha, records=[entry])}
             receipt.update(source=source, index_commit='e'*40, semantic_live_and_commit_exact=True,
                            manifest_live_and_commit_exact=True, gate='verified', status='indexed')
@@ -36,8 +36,8 @@ class ReceiptTests(unittest.TestCase):
                            live_readback_exact=True, registration_count=1)
         return doc, entry, receipt, confirm
 
-    def check(self, mm, mutation=None, tamper=False):
-        doc, entry, receipt, confirm = self.fixture(mm)
+    def check(self, mm, mutation=None, tamper=False, path=None):
+        doc, entry, receipt, confirm = self.fixture(mm, path)
         if mutation:
             mutation(doc, entry, receipt, confirm)
         snap = yaml.safe_dump(doc).encode()
@@ -52,6 +52,14 @@ class ReceiptTests(unittest.TestCase):
                 self.assertEqual(result['status'], 'consistent_original_index_artifacts')
                 self.assertFalse(result['formal_acceptance'])
                 self.assertFalse(result['receipt_prior_blob_checked'])
+
+    def test_every_bound_record(self):
+        for mm, records in ((True, MM_RECORDS), (False, R3R_RECORDS)):
+            for path in records:
+                with self.subTest(path=path):
+                    self.assertFalse(self.check(mm, path=path)['formal_acceptance'])
+                    with self.assertRaises(ValueError):
+                        self.check(mm, lambda d,e,r,c: c.update(pdf_pages='1'), path=path)
 
     def test_confirm_mutations(self):
         for mm in (True, False):
