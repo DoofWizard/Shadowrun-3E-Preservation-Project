@@ -15,6 +15,26 @@ status: complete
 
 source_field_review:
   status: open
+  confirmed_telephone_purchase_2026_11_28:
+    source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
+    verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
+    original_images_reviewed: "Printed p152/PDF153 full table and separately enlarged row."
+    records:
+      - id: entity.cyberware.telephone
+        path: entities/cyberware/telephone.yml
+        printed: "152"
+        pdf: "153"
+        commit: "19a3dc9ddcc89da555ca63f05ec6d8d7618f0223"
+        blob: "244cf7004a09aae54a3bac715a2ef6962e56a4aa"
+        baseline_sha256: "38509eef6a4c528929fdd2d5b331f1fc14ddb53466fbc58b7146387b28952cb5"
+        candidate_sha256: "280d0a961ad9ca3efef5870fa9e33b2d4a5e86bf9eaef2605ef59549f4557e2e"
+        immutable_sha256: "a27381e95a79771c5c43e5a2212e9e28da08880abb3ff6d0b86191a841301373"
+        gate: verified
+        fields: "Essence corrected from 0.1 to original 0.5; other four purchase fields match."
+    prewrite_archive: "FASA7126-telephone-20261128-prewrite.zip"
+    prewrite_archive_sha256: "03ebf9bf393a91d915f16f8080804dfc6ae4c266dab4ec8598a5bc2ee3a468af"
+    independent_source_acceptance: pending
+    global_checkpoint_advance: 0
   confirmed_chipjack_purchase_2026_11_28:
     source_pdf_sha256: "6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8"
     verify_source_actual: {source: source.mm, status: source_pdf_hash_verified, page_images_review: still_required_independently, exit_code: 0}
