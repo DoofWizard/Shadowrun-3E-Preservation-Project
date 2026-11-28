@@ -23,6 +23,14 @@ MM_RECORDS = {
         'confirmed_simrig_simlink_purchase_2026_11_28'),
 }
 R3R_RECORDS = {
+    'rules/vehicles/r3-revised-design-modification-cost-basis-p112.yml':
+        ('rule.vehicles.r3-revised-design-modification-cost-basis-p112', '112', '114', [112, 112], [114, 114]),
+    'rules/vehicles/r3-revised-vehicle-market-class-qualifications-p113.yml':
+        ('rule.vehicles.r3-revised-vehicle-market-class-qualifications-p113', '113', '115', [113, 113], [115, 115]),
+    'rules/vehicles/r3-revised-final-design-cost-worked-examples-p113-114.yml':
+        ('rule.vehicles.r3-revised-final-design-cost-worked-examples-p113-114', '113-114', '115-116', [113, 114], [115, 116]),
+    'rules/vehicles/r3-revised-design-option-entry-point-operations-p114-115.yml':
+        ('rule.vehicles.r3-revised-design-option-entry-point-operations-p114-115', '114-115', '116-117', [114, 115], [116, 117]),
     'rules/vehicles/r3-revised-autonav-route-eligibility-p128.yml':
         ('rule.vehicles.r3-revised-autonav-route-eligibility-p128', '128', '130', [128, 128], [130, 130]),
     'rules/vehicles/r3-revised-environmental-system-qualifications-p132-133.yml':
