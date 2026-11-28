@@ -1,51 +1,61 @@
 id: rule.chemistry.drug-exposure
 record_type: rule
-name: "Drug Exposure and Resistance"
+name: Drug Exposure and Resistance
 domain: chemistry
 status: ingested
-
+source: source.mm
+printed_pages: '105-106'
+pdf_pages: '106-107'
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 105
   basis: extends
-
 scope:
-  applies_to:
-    - subsystem.chemistry.drugs
-
+  applies_to: [subsystem.chemistry.drugs]
 resolution:
-  summary: "A chemical's Vector determines how exposure occurs: contact, ingestion, inhalation or injection. After the compound's Speed period, the exposed character makes a Body-based Damage Resistance Test against the drug's Power, modified by exposure and protective equipment. Damage Level may be staged down but normally not up by resistance."
-  inputs:
-    - "Vector"
-    - "Power"
-    - "Damage Level"
-    - "Speed"
-    - "exposure conditions"
-    - "protective gear"
-    - "Body"
-  outputs:
-    - "damage/effects suffered"
-
+  summary: The fictional compound Vector determines whether exposure applies. Resolve a Body Damage Resistance Test using the compound Power as target number after Speed, adjusted by the game exposure and protection rules. Resistance can stage Damage Level down but not up; additional dosage is a separate rule.
+  inputs: [Vector, Power, Damage Level, Speed, exposure conditions, protective gear, Body]
+  outputs: [damage/effects suffered]
 links:
-  uses:
-    - rule.combat.damage-codes
-    - rule.tests.success-test
-  affects:
-    - rule.condition.condition-monitor
+  uses: [rule.combat.damage-codes, rule.tests.success-test]
+  affects: [rule.condition.condition-monitor]
   modified_by: []
-  interacts_with:
-    - rule.chemistry.additional-dosage
-
+  interacts_with: [rule.chemistry.additional-dosage]
 sources:
-  - source: source.mm
-    page: 105
-    relation: extends
-    note: "Drug Attributes / Determine Exposure"
-  - source: source.mm
-    page: 106
-    relation: clarifies
-    note: "Exposure modifiers / Body Resistance Test / Applying an Antidote"
-
+  - {source: source.mm, page: 105, relation: extends, note: 'Drug Attributes / Determine Exposure'}
+  - {source: source.mm, page: 106, relation: clarifies, note: 'Exposure modifiers / Body Resistance Test / Applying an Antidote'}
 notes:
-  - "Weapon-delivered chemicals can generate separate weapon-damage and chemical-resistance tests."
+  - The four original Vector categories are contact, ingestion, inhalation and injection.
+  - Separate weapon-damage and compound-resistance tests apply when both are applicable.
+data:
+  speed:
+    immediate_test_timing: end of same Combat Turn
+    one_combat_turn_test_timing: end of following Combat Turn
+  effects:
+    default_applies_even_if_damage_resisted: true
+    exception: unless otherwise stated
+    extent_of_game_exposure_can_mitigate_effects: true
+  resistance:
+    pool: Combat Pool
+    pool_allocation_timing: when attack is made
+    same_allocated_dice_apply_to_both_tests: true
+    current_later_turn_pool_not_available_for_delayed_test: true
+    damage_causing_weapon_test_timing: immediate
+    compound_test_timing: after Speed
+  antidote:
+    before_speed_elapsed: {compound_nullified: true, damage: none, other_effects: none}
+    after_speed_elapsed: {further_damage: none, other_effect_potency_multiplier: 0.5, healing_test_target_modifier: -2}
+  worked_game_example:
+    original_damage_code: 12L Stun
+    modified_damage_code: 10L Stun
+    body_dice: 3
+    previously_allocated_combat_pool_dice: 3
+    resistance_dice: 6
+    resistance_successes: 1
+    remaining_damage: Light Stun
+    separate_effects_test: {attribute: Body, target_number: 5, successes: 1, action_modifier: 4, duration_minutes: 8}
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp105-106/PDF106-107: resistance timing, dice pools, and fictional condition modifiers'
+framing: reference_exact
