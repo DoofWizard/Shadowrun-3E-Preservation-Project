@@ -1,15 +1,35 @@
 id: entity.cyberware.laser-designator
 record_type: entity
-name: "Laser Designator"
+name: Laser Designator
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '14-15,153'
+pdf_pages: '14-15,154'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence: 0.1
   cost_nuyen: 6000
-  availability: "12/1 mo"
+  availability: '12/1 mo'
   street_index: 3
-  legality: "5P-R"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: '5P-R'
+links: {uses: [rule.cyberware.eye-laser-systems], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 153, relation: defines, note: "Visual sensory cyberware equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 14, relation: defines, note: Fictional Laser Designators game rules}
+  - {source: source.mm, page: 15, relation: defines, note: Local equipment purchase row}
+  - {source: source.mm, page: 153, relation: clarifies, note: Consolidated equipment purchase row}
+notes:
+  - Fictional tabletop attack-resolution statistics only. Parent eye-laser rule supplies the power-tier definition.
+data:
+  fictional_game_effects:
+    required_eye_laser_power: high
+    compatible_game_targeting: appropriate fictional tracker or seeker head
+    lock_test: {type: ranged Attack Test, skill: Launch Weapons (Spotter), target_number: target Signature Rating, combat_pool_allowed: false}
+    missile_game_bonus_dice: {formula: Intelligence + floor(Sensor Rating / 2)}
+    lock_maintained_until: fictional indirect attack resolves
+    other_test_modifier_while_maintaining_lock: 2
+    indirect_attack: {type: standard Attack Test, extra_dice: successful lock test successes}
+    cross_reference: {publication: Rigger 2, printed_page: 60, subject: indirect fire}
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, pp14-15,153/PDF14-15,154: Laser Designator original fictional tabletop test bindings'
+framing: reference_exact
