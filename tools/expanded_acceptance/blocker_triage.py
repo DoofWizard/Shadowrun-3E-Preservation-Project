@@ -12,6 +12,7 @@ import json
 import re
 from collections import Counter
 from pathlib import Path
+from binding_schema import substantive_pointer
 
 PROTOCOL = 'sr3-expanded-acceptance/v1'
 HEX64 = re.compile(r'[a-f0-9]{64}\Z')
@@ -149,7 +150,7 @@ def scan(review, bindings, evidence):
         if not isinstance(b, dict):
             add('binding', fid, 'invalid_canonical_binding'); continue
         path, pointer = b.get('path'), b.get('pointer')
-        if not isinstance(path, str) or not path or not isinstance(pointer, str) or not pointer.startswith('/data/'):
+        if not substantive_pointer(b, fields[fid]):
             add('binding', fid, 'substantive_canonical_path_and_pointer_required'); continue
         mode = b.get('mode', 'source_local')
         if mode == 'sr3-accepted-core-equivalence/v1':
@@ -186,7 +187,7 @@ def scan(review, bindings, evidence):
                     except (ValueError, TypeError):
                         add('receipt', path, 'split_archive_bytes_invalid_' + k)
         elif layout is None:
-            for k in ('plan','confirm','baseline_sha256','prewrite_journal_artifact','historical_confirm_artifact','editorial_review_artifact','index_commit','index_pointer'):
+            for k in ('plan','confirm','baseline_sha256','prewrite_journal_artifact','historical_confirm_artifact','editorial_review_artifact','historical_index_receipt_artifact','historical_index_snapshot_artifact','index_commit','index_pointer'):
                 if not t.get(k):
                     add('receipt', path, 'missing_historical_' + k)
             journal = t.get('prewrite_journal_artifact', {})
