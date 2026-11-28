@@ -3,13 +3,36 @@ record_type: entity
 name: "Neuro Stun Viii"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '121,157-158'
+pdf_pages: '122,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999), Shadowrun Third Edition tabletop RPG, printed pp121,157-158/PDF122,158-159: fictional game item statistics'
 intrinsic:
   availability: "6/36 hrs"
   cost_nuyen_per_dose: 20
   street_index: 2
   legality: "6P-X"
+  vector: "Contact or inhalation"
+  speed: "1 Combat Turn"
+  damage: "6S Stun"
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 158, relation: defines, note: "Drugs and pharmaceutical compounds purchasing table statistics"}
+  - {source: source.mm, page: 157, relation: defines, note: 'Pharmaceutical Compounds Effects table, game statistics only'}
+  - {source: source.mm, page: 121, relation: extends, note: 'Neuro-Stun variants, original item distinction'}
+  - {source: source.mm, page: 158, relation: extends, note: 'Purchase table lists IX and X, not VIII; previous VIII purchase attribution unresolved'}
+data:
+  printed_name: Neuro-stun VIII
+  effects_table: {printed_page: 157, fields: [vector, speed, damage]}
+  purchase_provenance:
+    status: unresolved_prior_source_attribution
+    fields: [availability, cost_nuyen_per_dose, street_index, legality]
+    prior_record_values_retained: true
+    prior_cited_page: 158
+    original_p158_row_present_for_viii: false
+    original_p121_purchase_row_present_for_viii: false
+    note: These four legacy purchasing values are not confirmed by the cited Man & Machine tables. Do not infer a VIII purchase row from IX.
 notes:
   - "Preserved strictly as fictional Shadowrun tabletop game data."
