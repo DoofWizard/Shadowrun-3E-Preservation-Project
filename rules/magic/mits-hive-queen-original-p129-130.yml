@@ -15,6 +15,7 @@ data:
     functions: {worker: hive labor, soldier: hive and Queen defense}
     each_type_forms: [true-form, flesh-form]
     ant: {queen_count: 1, subtle_group_size: '2-4', typical_hive: underground}
+    ant_subtle_group_condition: When subtlety is needed and the shaman persuades the Queen that deploying the larger hive force would be counterproductive.
     fly: {caste_system: false, non_queen_sex: male, functions: [worker, soldier]}
     termite: {castes: [worker, soldier, Queen], typical_hive: aboveground}
     wasp: {caste_system: false, multiple_females_possible: true, sexually_mature_female: Queen, hive_requirement: high place open to air}
@@ -35,6 +36,9 @@ data:
     true_form_worker_count_max: Queen Force * shaman Willpower * 10
     potency_exchange: {shaman_potency_cost: 2, queen_force_or_spirit_energy_gain: 1}
   queen_control:
+    npc_roles: [Queen, insect shaman]
+    role_before_summoning: The Queen acts as the shaman's personal totem and focus of magic even before she is summoned.
+    freedom_attempt_timing: The Queen begins trying to become free almost immediately after arriving in the physical world.
     summoning_required: false
     queen_count_per_shaman_max: 1
     freedom_attempts: [ordinary spirit freedom conditions, ally escape procedure, whenever shaman Potency rises or falls]
