@@ -17,10 +17,18 @@ R3R_KEYS = {'semantic_commit', 'semantic_blob', 'manifest_commit',
             'manifest_blob', 'commit_readback_exact', 'live_readback_exact',
             'registration_count'}
 MM_RECORDS = {
+    'entities/cyberware/reaction-enhancer.yml': ('entity.cyberware.reaction-enhancer',
+        'confirmed_reaction_enhancer_purchase_2026_11_28', '154', '155'),
+    'entities/cyberware/reflex-trigger.yml': ('entity.cyberware.reflex-trigger',
+        'confirmed_reflex_trigger_purchase_2026_11_28', '154', '155'),
+    'entities/cyberware/bone-lacing-plastic.yml': ('entity.cyberware.bone-lacing-plastic',
+        'confirmed_plastic_bone_lacing_purchase_2026_11_28', '154', '155'),
+    'entities/cyberware/eye-camera-select-sound-filter.yml': ('entity.cyberware.eye-camera-select-sound-filter',
+        'confirmed_ear_select_sound_filter_purchase_2026_11_28', '153', '154'),
     'entities/cyberware/muscle-replacement.yml': ('entity.cyberware.muscle-replacement',
-        'confirmed_muscle_replacement_purchase_2026_11_28'),
+        'confirmed_muscle_replacement_purchase_2026_11_28', '154', '155'),
     'entities/cyberware/simrig-simlink.yml': ('entity.cyberware.simrig-simlink',
-        'confirmed_simrig_simlink_purchase_2026_11_28'),
+        'confirmed_simrig_simlink_purchase_2026_11_28', '154', '155'),
 }
 R3R_RECORDS = {
     'rules/vehicles/r3-revised-design-modification-cost-basis-p112.yml':
@@ -67,19 +75,19 @@ def adapt(receipt, snapshot, manifest_path, confirm):
             doc.get('catalog_number'), doc.get('edition'), doc.get('publisher')) ==
             (source, source_sha, catalog, edition, publisher), 'r3r_mm_snapshot_identity_mismatch')
     if is_mm:
-        record_id, section_name = MM_RECORDS[path]
+        record_id, section_name, printed, pdf = MM_RECORDS[path]
         require(receipt['source'] == source and receipt['gate'] == 'verified'
                 and receipt['status'] == 'indexed', 'r3r_mm_original_status_required')
         require(receipt['semantic_live_and_commit_exact'] is True and
                 receipt['manifest_live_and_commit_exact'] is True, 'r3r_mm_original_readback_missing')
-        require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == ('154', '155'),
+        require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == (printed, pdf),
                 'r3r_mm_original_pages_mismatch')
         sections = doc.get('source_field_review')
         section = sections.get(section_name) if isinstance(sections, dict) else None
         regs = section.get('records') if isinstance(section, dict) else None
         require(isinstance(regs, list), 'r3r_mm_original_registration_list_required')
         require(section.get('source_pdf_sha256') == source_sha, 'r3r_mm_section_source_mismatch')
-        commit, recorded_blob, schema = receipt['index_commit'], receipt['index_blob'], 'mm-p154-purchase-index-receipt/v1'
+        commit, recorded_blob, schema = receipt['index_commit'], receipt['index_blob'], f'mm-p{printed}-purchase-index-receipt/v1'
     else:
         record_id, printed, pdf, printed_range, pdf_range = R3R_RECORDS[path]
         require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == (printed, pdf),
@@ -101,7 +109,7 @@ def adapt(receipt, snapshot, manifest_path, confirm):
     require(all(entry.get(k) == confirm[k] for k in ('candidate_sha256', 'immutable_sha256'))
             and pin(entry.get('baseline_sha256'), 64), 'r3r_mm_registration_digest_mismatch')
     if is_mm:
-        require((entry.get('printed'), entry.get('pdf')) == ('154', '155'), 'r3r_mm_registration_pages_mismatch')
+        require((entry.get('printed'), entry.get('pdf')) == (printed, pdf), 'r3r_mm_registration_pages_mismatch')
     else:
         require(entry.get('range_printed') == printed_range and entry.get('range_pdf') == pdf_range
                 and all(type(n) is int for n in entry['range_printed'] + entry['range_pdf'])
