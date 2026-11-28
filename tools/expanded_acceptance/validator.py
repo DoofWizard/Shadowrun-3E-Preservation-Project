@@ -14,6 +14,7 @@ from pathlib import Path
 import yaml
 
 from source_edition import manifest_edition_matches, record_edition_matches
+from binding_schema import safe_git_path, substantive_pointer, mm_registration
 
 PROTOCOL = 'sr3-expanded-acceptance/v1'
 CLASSES = {'rule_exact', 'rule_procedure', 'equipment_stat', 'character_option', 'campaign_guidance'}
@@ -117,7 +118,7 @@ class Git:
         need(changed == path.encode('utf-8') + b'\0', 'exact_path_commit_required:' + path)
 
     def read(self, path, ref=None):
-        need(isinstance(path, str) and re.fullmatch(r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path) and not {'..', '.'}.intersection(path.split('/')), 'unsafe_path')
+        need(safe_git_path(path), 'unsafe_path')
         return self.run('show', (ref or self.head) + ':' + path)
 
 
@@ -195,7 +196,7 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
             continue
         need(b.get('mode', 'source_local') == 'source_local', 'unsupported_binding_mode:' + fid)
         path = b['path']
-        need(b['pointer'].startswith('/data/'), 'cosmetic_binding:' + fid)
+        need(substantive_pointer(b, f), 'cosmetic_binding:' + fid)
         if path not in cache:
             e = evidence['transactions'][path]
             if e.get('layout') == 'split_archive/v1':
@@ -229,10 +230,17 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
                 need(git.read(path, commit) == rraw, 'semantic_commit_bytes_mismatch')
                 ip = e['index_pointer']
                 entry = ptr(manifest, ip)
-                need(entry == ptr(parse(git.read(mp, index_commit)), ip), 'index_history_mismatch')
+                historical_manifest = parse(git.read(mp, index_commit))
+                for k in ('id', 'source_pdf_sha256', 'catalog_number', 'publisher'):
+                    need(historical_manifest[k] == manifest[k], 'index_source_identity_mismatch:' + k)
+                need(manifest_edition_matches(s, historical_manifest), 'index_source_identity_mismatch:edition')
+                need(entry == ptr(historical_manifest, ip), 'index_history_mismatch')
                 for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
                     need(entry[k] == v, 'unindexed_or_changed_record:' + k)
-                need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
+                if 'content_class' in entry:
+                    need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
+                else:
+                    mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, ip)
             need(record_edition_matches(s, r), 'record_source_or_edition_mismatch:' + path)
             cache[path] = r
         r = cache[path]
@@ -295,6 +303,16 @@ def main():
                 original_index_artifacts[path] = verify_inline_index_receipt(
                     git, review['source']['manifest'], e, transition)
         result['original_inline_index_artifacts'] = original_index_artifacts
+        # A corrected same-ID M&M record retains both original registrations.
+        # Never pass the newest receipt alone when the predecessor is present.
+        from mm_successor import PATH as mm_successor_path, verify as verify_mm_successor
+        successor_chains = {}
+        if mm_successor_path in transitions:
+            e = evidence['transactions'][mm_successor_path]
+            successor_chains[mm_successor_path] = verify_mm_successor(
+                git, review['source'], e, review['reviewer'], evidence['custodian'],
+                parse, ptr, blob, sha, encoded, artifact, pairs)
+        result['successor_chains'] = successor_chains
         with tempfile.TemporaryDirectory() as tmp:
             t = Path(tmp)
             for name in ('ingestion_gate.py', 'connector_preflight.py'):
