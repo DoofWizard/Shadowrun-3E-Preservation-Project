@@ -14,7 +14,7 @@ from pathlib import Path
 import yaml
 
 from source_edition import manifest_edition_matches, record_edition_matches
-from binding_schema import safe_git_path, substantive_pointer, mm_registration
+from binding_schema import safe_git_path, substantive_pointer, mm_registration, wastelands_registration
 
 PROTOCOL = 'sr3-expanded-acceptance/v1'
 CLASSES = {'rule_exact', 'rule_procedure', 'equipment_stat', 'character_option', 'campaign_guidance'}
@@ -236,14 +236,19 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
                     need(historical_manifest[k] == manifest[k], 'index_source_identity_mismatch:' + k)
                 need(manifest_edition_matches(s, historical_manifest), 'index_source_identity_mismatch:edition')
                 need(encoded(entry) == encoded(ptr(historical_manifest, historical_ip)), 'index_history_mismatch')
-                for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
-                    need(entry[k] == v, 'unindexed_or_changed_record:' + k)
-                if 'content_class' in entry:
-                    need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
-                else:
-                    mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, ip)
+                if mp == 'sources/manifests/TargetWastelands.yml':
+                    wastelands_registration(s, r, plan, receipt, entry, ip)
                     if historical_ip != ip:
-                        mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, historical_ip)
+                        wastelands_registration(s, r, plan, receipt, entry, historical_ip)
+                else:
+                    for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
+                        need(entry[k] == v, 'unindexed_or_changed_record:' + k)
+                    if 'content_class' in entry:
+                        need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
+                    else:
+                        mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, ip)
+                        if historical_ip != ip:
+                            mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, historical_ip)
             need(record_edition_matches(s, r), 'record_source_or_edition_mismatch:' + path)
             cache[path] = r
         r = cache[path]
