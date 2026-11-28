@@ -3250,6 +3250,77 @@ book_closure_checklist_2026_11_25:
             blob: 31f7ba48c40f4cff567630b4dac6dfdff608f0ac
             finding: "Existing M&M market record links to rule.cyberware.smartlink-2; this is a locator, not proof of equivalent game eligibility."
         remaining_locator_gap: "Bounded live repository searches for smartlink-2 rule ID, Secondary Weapon and smartgoggles returned no results; no absence conclusion. Resolve exact linked rule through lineage/registration or candidate index before staging."
+        continued_original_reconciliation_2026_11_28:
+          basis_manifest_blob: 87e67cd5b4fa330a224dd126676ed8d99707f401
+          source_verification: source_pdf_hash_verified
+          source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+          original_printed_pages: [81, 82, 83, 84]
+          original_pdf_pages: [82, 83, 84, 85]
+          canonical_path: rules/firearms/customization-modifications.yml
+          canonical_blob: beb034e6e1d925c79da57ba26620c570909ec6e3
+          comparison_batches:
+            - headings: [Safe Target System, Biometric Safety, Bipod, Extended Clip]
+              fields: 24
+              matches_in_canonical_notation: 24
+              status: coverage_reconciled
+            - headings: [Silencer, External Smartgun System, Sound Suppressor, Tripod]
+              fields: 24
+              matches_in_canonical_notation: 24
+              status: coverage_reconciled
+              qualification: "Printed p83 Sound Suppressor explicitly restricts the game modes to its two listed modes. The exact closed core p281 compatible-mode list contains those same two modes; retain explicit original wording here rather than treating the shared customization effect as standalone evidence."
+            - headings: [Secondary Weapon, Voice Activation, Foregrip]
+              fields: 21
+              matches_in_canonical_notation: 21
+              status: coverage_reconciled_with_new_p81_resolution_record
+            - headings: [Imaging Systems, Laser Sight, Laser Target Designator]
+              fields: 21
+              matches_in_canonical_notation: 21
+              status: coverage_reconciled_with_existing_related_rules
+            - headings: [Remove Safety, Remove Trigger, Full-Auto Conversion, Sawed-Off Shotgun Barrel]
+              fields: 28
+              matches_in_canonical_notation: 28
+              status: coverage_reconciled_with_new_p82_surprise_record
+            - headings: [Underbarrel Weapon, Underbarrel Weight, Shock/Hip Pads, Internal Smartgun System]
+              fields: 28
+              matches_in_canonical_notation: 25
+              status: two_reconciled_two_source_notation_or_precedence_open
+              differences: "Original shock-pad weight and internal skill-list discrepancies already individually confirmed; reused without new correction. Original internal weight line labels the second entry Smartlink, while the inherited row labels it Smartlink-2; preserve literal label without inferring identity."
+          totals: {headings_attempted: 22, compared_fields: 146, matches_in_canonical_notation: 143, previously_registered_differences: 2, additional_literal_label_ambiguities: 1, coverage_reconciled_headings: 20}
+          original_stat_mapping: "Case, abbreviated time units, parenthesized skill labels, additive signs, and mount labels mapped explicitly to existing notation; not literal typography equality. Earlier selected DP and game-effect coverage reused."
+          source_local_and_core_bindings:
+            rules/firearms/sr3-core-sighting-suppression-accessories-p281.yml: b0b30634bc814c54a34f6bad346dc28a6a9f2a61
+            rules/firearms/sr3-core-accessory-functions-p280-281.yml: 8fc4fd3ff1f7a5edeea6b8b9d58ef293698296b0
+            rules/cyberware/smartlink-2.yml: 2f97a8cdb1955ae1d2f58834fffc711175854a92
+            rules/firearms/cannon-companion-internal-smartgun-skill-list-p81.yml: acdced74c50950ae775f80228bbf48e29946f5f5
+            rules/firearms/cannon-companion-combined-imaging-point-accounting-p82.yml: 64a526817b885a79a1eb19490cbe3f1847a424a3
+            rules/firearms/cannon-companion-recoil-accessory-game-qualifiers-p34-35.yml: 01e13434cf9ba0bf63443a706bbb4940638723ab
+            rules/gear/cannon-companion-imaging-accessory-game-qualifiers-p34-35.yml: df72b3af4a3e4c0294eb29d099d4e0bf28926132
+            rules/combat/cannon-companion-designator-game-test-qualifiers-p35.yml: b94dbdd3bb0bc0c17397715cd1b783459ff8b903
+            rules/firearms/cannon-companion-shock-pad-weight-notation-p83.yml: 24494058c2404d8c5e92ef6f378414cff940c94d
+            rules/combat/sr3-core-surprise-ambush-resolution-p109.yml: 0b46ea683e59522b4df8946b8effd2eb7536a7ac
+            rules/firearms/cannon-companion-customization-game-resolution-qualifiers-p81.yml: ea33e48c3fdd3d1b43b1c195a71f28c832eca848
+            rules/firearms/cannon-companion-customization-surprise-game-eligibility-p82.yml: ac1d6810476ec857341b10354289b6a340e5c4eb
+          locator_resolution: "The qualified seed candidate index led to exact current M&M and core bindings. Internal smartgun no-receiver/no-bonus eligibility is represented explicitly in core p281, so no duplicate record was created. Source-local game exception and GM qualification gaps on p81-82 were individually prepared, confirmed and indexed."
+          unresolved_source_distinctions:
+            - "p81 internal Smartgun printed second weight label versus inherited Smartlink-2 label; numerical values preserved, no identity inferred."
+            - "p83 Shock/Hip Pads wording names trolls for hip pads; p34 includes other eligible large metahumans. Original weight discrepancy already separately preserved. Do not narrow or choose source precedence."
+          p84_abstract_game_procedure_reconciliation:
+            status: coverage_reconciled_with_new_source_local_records
+            source_bindings:
+              procedures/firearms/ammunition-manufacture.yml: 442b9593ebf4766fb03e99bf3927a984968833a0
+              procedures/equipment/ammunition-construction.yml: 0d68660b2397664afe3d9148ca11667ae2863d31
+              procedures/firearms/explosives-manufacture.yml: 459e234cb4ec1dbaa2a4c157038d013c394cd5ad
+              rules/firearms/cannon-companion-ammunition-build-test-special-cases-p84.yml: 78be1217f75750374554a66baf81ef16e2df2589
+              rules/firearms/cannon-companion-gm-test-adjustment-examples-p84.yml: 76e42375517b9a78a60cd5157475f0dc2f5e454b
+              rules/gear/cannon-companion-ammunition-game-tool-eligibility-p84.yml: 188ab91587e90d0b7c39cb17c853b50a3b521436
+            reviewed_original_scopes:
+              - "Ammunition introduction: character skill, game tool category and purchase eligibility."
+              - "Cased Ammo: base-kit purchase-cost reference, included categories, additional game purchase cost, TN and time inputs, success allocation and rounding, cost floor, output quantity, failure loss and reset, separate recovery discount."
+              - "Caseless Ammo: inherits the cased procedure with three explicit game eligibility and numeric exceptions."
+              - "Explosives: existing abstract game tool eligibility, two skill tests, TN/time examples, GM discretionary test adjustments, separate game component cost, delegated M&M p108 reference. Three missing original examples individually confirmed; no physical procedure reproduced."
+            prior_special_rules: "Use individually confirmed p84 special-case record; not reopened."
+            ambiguity: "Original cased cost-floor and additional recovery discount clauses retained separately; do not infer a calculation order. M&M p108 remains delegated, not claimed independently reviewed."
+          boundary: "Coverage-only reconciliation and separately indexed source-local game records, not formal acceptance. No original historical gate receipts recovered. Existing protected shared canon remains read-only. Two catalogue source distinctions and source-wide acceptance debt remain open. Continue next original-derived incomplete mechanical scope; do not repeat unchanged fields."
         boundary: "Original folios 81 and 83 visually inspected, including selected design-point lines; game design-point strings represented in canonical notation, not literal transcription of typography. Only selected fields compared. No completed natural-section certification, new semantic record, historical receipt or global page credit. Continue with cross-record checks of named candidates; remaining original catalogue/manufacture fields open."
     - pdf: [86, 94]
       scope: "Advanced melee and martial arts"
