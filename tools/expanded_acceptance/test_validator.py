@@ -69,6 +69,26 @@ class AcceptanceTests(unittest.TestCase):
         self.assertFalse(r['formal_acceptance'])
         self.assertEqual(r['global_pages_advanced'], 0)
 
+    def test_moved_registration_requires_two_exact_pointers(self):
+        other = {**self.manifest['verified'][0], 'id': 'rule.other', 'path': 'rules/other.yml'}
+        moved = copy.deepcopy(self.manifest)
+        moved['verified'].insert(0, other)
+        self.git.files[(self.git.head, self.mp)] = encoded(moved)
+        self.e['index_pointer'] = '/verified/1'
+        self.blocked()
+        self.e['historical_index_pointer'] = '/verified/0'
+        self.assertEqual(self.run_assess()['status'], 'PASS')
+        self.e['historical_index_pointer'] = '/verified/1'
+        self.blocked()
+
+    def test_moved_registration_cannot_change_original_row(self):
+        moved = copy.deepcopy(self.manifest)
+        moved['verified'].insert(0, {'id': 'rule.other'})
+        moved['verified'][1]['gate'] = 'unverified'
+        self.git.files[(self.git.head, self.mp)] = encoded(moved)
+        self.e.update(index_pointer='/verified/1', historical_index_pointer='/verified/0')
+        self.blocked()
+
     def test_omitted_page(self):
         self.review['pages'].pop(0)
         self.blocked()
