@@ -1,0 +1,28 @@
+id: rule.vehicles.r3-revised-submarine-terrain-control-qualifications-p60
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '60'
+pdf_pages: '62'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Revised SR3 underwater vehicle game-state qualifications
+summary: Preserve the printed depth boundary, aircraft terrain analogy and required fictional drone connection.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_submarine_operations: {id: rule.vehicles.submarine-operations, path: rules/vehicles/submarine-operations.yml, blob: 24bd2140b7b81218e17b977ead1482bad9e2d286}
+  periscope_depth_game_state:
+    terrain_surface_guidelines_depth_m: {operator: le, value: 10}
+    all_electronic_systems_operate_normally: true
+    visual_perception_option: periscope mast
+    retain_existing_detection_modifier: true
+  terrain:
+    between_periscope_depth_and_bottom_with_considerable_obstacles: gamemaster applies analogous high-altitude aircraft terrain guidelines, using cloud analogues for underwater obstacles or obscurants
+    near_bottom: reuse low-altitude aircraft analogy and existing four underwater terrain classes
+  underwater_drone_game_connection:
+    communications_cable_required: true
+    distinction: Original rule states a mandatory connection, not merely a normal connection as in the historical normalization.
+    intentional_disconnection_permitted: true
+    retain_existing_cable_length_vehicle_test_and_dump_shock_rules: true
+  scope_limit: Fictional tabletop terrain and game control states only, not real-world navigation, detection or operational advice. No historical original-edition difference inferred.
