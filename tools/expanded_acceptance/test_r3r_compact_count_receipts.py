@@ -116,5 +116,26 @@ class CompactCountTests(unittest.TestCase):
             self.check(RECORDS[-1], mutate=lambda d,e,r,c: e.update(content_class='rule_exact'))
 
 
+    def test_count_parent_scopes(self):
+        rows = (
+            ('rules/vehicles/r3-revised-mechanic-scheduling-p124.yml', 'rule.vehicles.r3-revised-mechanic-scheduling-p124', [124,124], [126,126], 'rule_exact'),
+            ('rules/drones/r3-revised-autosoft-chip-loading-p44-99-142.yml', 'rule.drones.r3-revised-autosoft-chip-loading-p44-99-142', [99,99], [101,101], 'rule_exact'),
+            ('rules/vehicles/r3-revised-modification-example-capacity-p112.yml', 'rule.vehicles.r3-revised-modification-example-capacity-p112', [112,112], [114,114], 'rule_exact'),
+        )
+        def add_parent(d,e,r,c):
+            r['previous_manifest_blob'] = '1'*40
+        for record in rows:
+            with self.subTest(record=record[0]):
+                self.assertTrue(self.check(record, mutate=add_parent)['receipt_prior_blob_checked'])
+                for parent in (None, '0'*40):
+                    with self.assertRaises(ValueError):
+                        self.check(record, mutate=add_parent, parent=parent)
+                with self.assertRaises(ValueError):
+                    self.check(record)
+        with self.assertRaises(ValueError):
+            self.check(RECORDS[0], mutate=add_parent)
+
+
+
 if __name__ == '__main__':
     unittest.main()
