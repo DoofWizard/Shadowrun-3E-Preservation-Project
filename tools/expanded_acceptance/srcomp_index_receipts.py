@@ -1,4 +1,4 @@
-"""Two observed Companion historical index receipt layouts (read-only)."""
+"""Three observed Companion historical index receipt layouts (read-only)."""
 import re
 from index_transition import _identity, _gate
 
@@ -10,6 +10,10 @@ DISCLOSURE_ID = 'rule.contacts.srcomp-contact-success-contest-p67-68'
 DISCLOSURE_PATH = 'rules/contacts/srcomp-contact-success-contest-p67-68.yml'
 LAW_ID = 'option.campaign.srcomp-law-campaign-resource-access-p117-118'
 LAW_PATH = 'rules/campaign/srcomp-law-campaign-resource-access-p117-118.yml'
+GANG_ID = 'rule.campaign.srcomp-five-seattle-gang-npc-ratings-p124-129'
+GANG_PATH = 'rules/campaign/srcomp-five-seattle-gang-npc-ratings-p124-129.yml'
+GANG_FIELDS = {'path', 'commit_sha', 'blob_sha', 'semantic_commit', 'semantic_blob',
+               'exact_commit_readback', 'exact_live_readback'}
 COMMON = {'manifest_path', 'index_commit', 'index_blob', 'semantic_commit', 'semantic_blob'}
 
 
@@ -25,7 +29,8 @@ def adapt(r, snapshot_raw, manifest_path, confirm):
     neither original receipt contains a parent hash.
     """
     from validator import parse
-    require(manifest_path == MANIFEST and r.get('manifest_path') == MANIFEST, 'manifest')
+    gang = set(r) == GANG_FIELDS
+    require(manifest_path == MANIFEST and r.get('path' if gang else 'manifest_path') == MANIFEST, 'manifest')
     require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
             and confirm.get('status') == 'verified' and confirm.get('source') == SOURCE
             and confirm.get('pdf_sha256') == SHA, 'confirm_source')
@@ -54,23 +59,29 @@ def adapt(r, snapshot_raw, manifest_path, confirm):
                 and entry['global_contiguous_pages'] == 0, 'disclosure_entry_flags')
         ep, ef = entry.get('printed_pages'), entry.get('physical_pdf_pages')
         schema = 'srcomp-disclosure-index-receipt/v1'
-    elif set(r) == COMMON | {'exact_commit_live_readback', 'registration_matched', 'global_pages_advanced'}:
-        require(r['exact_commit_live_readback'] is True and r['registration_matched'] is True
-                and type(r['global_pages_advanced']) is int and r['global_pages_advanced'] == 0,
-                'law_receipt_flags')
-        rid, path, pages, pdfs = LAW_ID, LAW_PATH, [117, 118], [118, 119]
+    elif gang or set(r) == COMMON | {'exact_commit_live_readback', 'registration_matched', 'global_pages_advanced'}:
+        if gang:
+            require(r['exact_commit_readback'] is True and r['exact_live_readback'] is True,
+                    'gang_receipt_flags')
+            rid, path, pages, pdfs = GANG_ID, GANG_PATH, [124, 129], [125, 130]
+            klass, schema = 'rule_exact', 'srcomp-gang-scenario-index-receipt/v1'
+        else:
+            require(r['exact_commit_live_readback'] is True and r['registration_matched'] is True
+                    and type(r['global_pages_advanced']) is int and r['global_pages_advanced'] == 0,
+                    'law_receipt_flags')
+            rid, path, pages, pdfs = LAW_ID, LAW_PATH, [117, 118], [118, 119]
+            klass, schema = 'character_option', 'srcomp-law-campaign-index-receipt/v1'
         section = m.get('postcompletion_mechanics_recovery')
         regs = section.get('verified_semantic_records') if isinstance(section, dict) else None
-        require(isinstance(regs, list), 'law_registrations')
+        require(isinstance(regs, list), 'nested_registrations')
         matches = [e for e in regs if isinstance(e, dict) and
                    (e.get('id') == rid or e.get('path') == path)]
-        require(len(matches) == 1, 'law_unique_registration')
+        require(len(matches) == 1, 'nested_unique_registration')
         entry = matches[0]
         require(entry.get('original_source_sha256') == SHA
-                and entry.get('content_class') == 'character_option'
-                and entry.get('contiguous_advance') is False, 'law_entry_flags')
+                and entry.get('content_class') == klass
+                and entry.get('contiguous_advance') is False, 'nested_entry_flags')
         ep, ef = entry.get('range_printed'), entry.get('range_pdf')
-        schema = 'srcomp-law-campaign-index-receipt/v1'
     else:
         raise ValueError('inline_index_unsupported_receipt_schema')
     require(confirm.get('record_id') == rid and confirm.get('path') == path
@@ -81,4 +92,5 @@ def adapt(r, snapshot_raw, manifest_path, confirm):
             and _gate(entry) == 'verified'
             and all(entry.get(k) == confirm[k] for k in ('candidate_sha256', 'immutable_sha256')),
             'entry_identity')
-    return r['index_commit'], r['index_blob'], MANIFEST, None, schema
+    return (r['commit_sha' if gang else 'index_commit'], r['blob_sha' if gang else 'index_blob'],
+            MANIFEST, None, schema)
