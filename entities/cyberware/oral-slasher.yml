@@ -1,11 +1,36 @@
 id: entity.cyberware.oral-slasher
 record_type: entity
-name: "Oral Slasher"
+name: Oral Slasher
 domain: cyberware
 status: ingested
-intrinsic: {essence: 0.25, concealability: 10, damage: "6M", cost_nuyen: 10500, availability: "8/1 wk", street_index: 2.5, legality: "6P-Q"}
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '17,153'
+pdf_pages: '17,154'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic:
+  essence: 0.25
+  concealability: 10
+  ammunition: '—'
+  mode: '—'
+  damage: 6M
+  cost_nuyen: 10500
+  availability: '8/1 wk'
+  street_index: 2.5
+  legality: 6P-Q
+links: {uses: [entity.skill.oral-strike], requires: [], component_of: [], interacts_with: [rule.combat.monofilament-whip]}
 sources:
-  - {source: source.mm, page: 17, relation: defines, note: "Oral Slasher fictional game effects and table statistics"}
+  - {source: source.mm, page: 17, relation: defines, note: Oral Slasher fictional game effects and local equipment row}
+  - {source: source.mm, page: 153, relation: clarifies, note: Senseware purchase row}
 notes:
-  - "Fictional Shadowrun tabletop cyberware weapon."
+  - Fictional Shadowrun tabletop equipment; the two table dashes are literal rather than numeric zero.
+data:
+  fictional_game_effects:
+    game_range_m: 1
+    active_skill: {name: Oral Strike, linked_attribute: Quickness}
+    self_damage_check:
+      triggers: [attack_test_ones_exceed_successes, target_dodges]
+      consequence: possible damage to acting character
+      game_resolution_reference: {source: source.sr3-core, printed_page: 275, subject: monofilament whip}
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, pp17,153/PDF17,154: Oral Slasher verified original game fields'
+framing: reference_exact
