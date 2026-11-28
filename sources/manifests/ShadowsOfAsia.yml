@@ -14,11 +14,20 @@ status: ingesting
 scan_depth: directed
 page_map_scope: "Printed p4, pp207-210 and pp227-231 correspond to physical PDF pages of the same number; other folios require independent review."
 routing:
-  - {range: "6-206", section: "Regional setting chapters", status: pending_original_mechanics_review}
-  - {range: "207-226", section: "Game Information", status: pending_original_mechanics_review}
+  - {range: "1-5", section: "Front matter and introduction (PDF1 unnumbered; printed pp2-5)", status: coverage_only_nonmechanical}
+  - {range: "6", section: "Looking Toward the Rising Sun", status: coverage_only_nonmechanical}
+  - {range: "7-20", section: "Neo-Asia", status: pending_original_mechanics_review}
+  - {range: "21-49", section: "Chinese Puzzle", status: pending_original_mechanics_review}
+  - {range: "50-72", section: "Indian Subcontinent", status: pending_original_mechanics_review}
+  - {range: "73-92", section: "Japan", status: pending_original_mechanics_review}
+  - {range: "93-120", section: "The Middle East", status: pending_original_mechanics_review}
+  - {range: "121-144", section: "Red Storm Rising", status: pending_original_mechanics_review}
+  - {range: "145-180", section: "Southeast Asia", status: pending_original_mechanics_review}
+  - {range: "181-206", section: "The Rest of Asia", status: pending_original_mechanics_review}
+  - {range: "207-226", section: "Game Information", status: scoped_original_mechanics_verified}
   - {range: "227-229", section: "Border Crossing", status: scoped_original_mechanics_verified}
   - {range: "229-231", section: "Asian Matrix RTGs", status: scoped_original_mechanics_verified}
-  - {range: "232", section: "Back cover", status: pending_original_review}
+  - {range: "232", section: "Back cover (unnumbered PDF232)", status: coverage_only_nonmechanical}
 verified_semantic_records:
   - id: rule.soa.ashura-conjuring-p208
     path: rules/magic/soa-ashura-conjuring-p208.yml
@@ -725,4 +734,28 @@ natural_section_reviews:
     status: scoped_original_mechanics_verified
     records: [reference.soa.beijing-astral-local-p40-41]
     evidence: "Original magical terrain passages inspected; narrator descriptions and named commentary individually confirmed with uncertainty intact. No new quantified background count, universal ward or test."
+    contiguous_advance: false
+  - section: "Southeast Asia — introduction and Naga Kingdom campaign remainder"
+    range_printed: [222, 223]
+    range_pdf: [222, 223]
+    status: coverage_only_nonmechanical
+    evidence: "Original pp222-223 images inspected; regional introductory material and Naga Kingdom campaign hooks, including GM discretion about a fictional artifact, add no standalone resolution test, stat block, cost or option. Getting In/Out and Red Orchid remain separately indexed; p224 remainder separately reconciled."
+    contiguous_advance: false
+  - section: "Front matter, contents, credits and introduction"
+    range_printed: [2, 5]
+    range_pdf: [1, 5]
+    status: coverage_only_nonmechanical
+    evidence: "Original unnumbered front cover and printed/PDF pp2-5 visually inspected. Contents and credits establish the natural chapter boundaries and FanPro 2005 first-printing identity; introduction delegates truth of attributed fictional commentary to GM judgment. No standalone mechanical table, test or option. Pending regional route divided by the original contents, not inferred as reviewed."
+    contiguous_advance: false
+  - section: "Looking Toward the Rising Sun"
+    range_printed: [6, 6]
+    range_pdf: [6, 6]
+    status: coverage_only_nonmechanical
+    evidence: "Original p6 image inspected; fictional introductory dispatch and campaign themes only, no standalone game test, numerical rating, price or option."
+    contiguous_advance: false
+  - section: "Back cover"
+    range_printed: null
+    range_pdf: [232, 232]
+    status: coverage_only_nonmechanical
+    evidence: "Original unnumbered PDF232 image inspected; promotional text and artwork, no game mechanics."
     contiguous_advance: false
