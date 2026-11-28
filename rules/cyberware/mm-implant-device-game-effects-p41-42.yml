@@ -10,7 +10,7 @@ edition_scope: SR3
 content_class: [rule_exact]
 framing: reference_exact
 headline: 'FASA7126 Man & Machine (FASA Corporation, 1999), fictional Shadowrun Third Edition tabletop game, printed and PDF pp41-42: specific implant effects'
-summary: Original SR3 game resolution, eligibility, inventory and Stress fields from printed pp41-42; existing entity statistics and common rules are reused.
+summary: Original fictional SR3 tabletop game effects and explicit accessory exception; compound-list page references restored without duplicating purchase statistics.
 data:
   source_publication: {title: 'Man & Machine: Cyberware', publisher: FASA Corporation, catalog_number: FASA7126, edition: SR3}
   cyber_dartgun:
@@ -20,6 +20,7 @@ data:
     doses_per_dart: 1
     attack_resolution: standard ranged combat rules
     drug_effects: {rule: rule.chemistry.drug-exposure, printed_page: 105}
+    compound_catalog_reference_printed_page: 111
   cybergun_reload:
     printed_page: 41
     applies_to: rule.cyberware.mm-cybergun-game-boundaries-p41
@@ -29,12 +30,15 @@ data:
     entity: entity.cyberware.cybersquirt
     printed_page: 42
     game_range_class: light pistol
+    optional_external_reservoir_ports: {gel: 1, chemical: 1}
+    compound_examples_reference: {heading: Applied Chemtech Compounds, printed_page: 111}
     chemical_power_reduction_for_porous_game_armor: {attribute: Impact Armor, divisor: 2, round: up}
     penetrating_effect_immunity: [fully sealed rigid armor, suit specifically designed to protect against chemical or biological agents]
     canister_service: {shots: 50, cost_nuyen: 50, alternatives: [replacement, recharge]}
     stress_check: {trigger: each time the implant takes Stress, dice: 1D6, leak_results: [1, 6], affected_character: implant owner, effect_reference: 'Chemistry, printed p101'}
     permitted_game_accessories: [smartlink, laser sight]
     other_accessories_allowed: false
+    accessory_restriction_scope: "Other cybergun accessories excluded; optional external reservoir ports explicitly permitted by printed p41."
     compound_effects_reference: 'Drug Effects, printed p105'
   cyber_taser:
     entity: entity.cyberware.cyber-taser
