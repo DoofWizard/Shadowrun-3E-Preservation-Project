@@ -1,0 +1,38 @@
+id: equipment.cannon-companion-arrowhead-appendix-variants-p115
+record_type: equipment
+status: reviewed
+source: source.cc
+printed_pages: '115'
+pdf_pages: '116'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: fictional RPG Arrowheads appendix inventory variants'
+summary: 'FASA Corporation Shadowrun Third Edition tabletop RPG, printed p115/PDF116. Six source-specific appendix game inventory expressions differ from the pinned chapter item records. Retain both versions and the original notation, without choosing precedence.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  table_group: Arrowheads
+  source_specific_variants:
+    - row_label: Explosive
+      compared_path: entities/ammunition/arrowhead-explosive.yml
+      compared_blob: a2a08367bd2be8903a32531e6b9218d0d72ce7ee
+      fields:
+        - {field: /intrinsic/availability, original_cell: '+1/36 hrs', existing_value: '+2/1 wk'}
+        - {field: /intrinsic/cost_modifier_nuyen, original_cell: '+10', existing_value: 20, unit: fictional nuyen}
+        - {field: /intrinsic/legality, original_cell: 10P-D, existing_value: 8P-D}
+    - row_label: EX Explosive
+      compared_path: entities/ammunition/arrowhead-ex-explosive.yml
+      compared_blob: 13398dfcbc2a4f1b7edcceffe8040206f07fc4cc
+      fields:
+        - {field: /intrinsic/availability, original_cell: '+4/+2 wks', existing_value: '+4/2 wks'}
+    - row_label: Screamer
+      compared_path: entities/ammunition/arrowhead-screamer.yml
+      compared_blob: ade6e6dd33d354d7aff9ce5872b5f5e080523ddc
+      fields:
+        - {field: /intrinsic/cost, original_cell: '10', existing_value: As arrow, unit: fictional nuyen}
+    - row_label: Ranger-X
+      compared_path: entities/ammunition/ranger-x-arrows.yml
+      compared_blob: 447b7cba56be4d72011a697a848dfe47ecb0eda6
+      fields:
+        - {field: /intrinsic/legality, original_cell: 10-D, existing_value: 10P-D}
+  disposition: 'Preserve only appendix game-stat distinctions; original p13 body records and original game-effect references remain unchanged. The positive time glyph, additive cost and fixed cost expressions are not silently normalized into a shared purchase procedure. Fictional legal codes are not real-world law.'
