@@ -1,0 +1,47 @@
+id: rule.combat.cannon-companion-launcher-game-qualifiers-p26
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '26'
+pdf_pages: '27'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: p26 launcher category and item game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop rules, printed p26/PDF27. Source-specific skill bindings, game modifier exceptions, item compatibility and combat-turn accounting; existing inventory fields and shared procedures retained.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  grenade_and_mortar_category:
+    game_skill: Launch Weapons
+    shared_game_rules: {explosives: SR3 p282, grenades: SR3 p118}
+    mortar_game_procedure: grenade-launcher rules including scatter and timing
+    distinct_mortar_range_table: CC p113
+    grenade_launcher_game_state_exception: carried character attack permitted
+    grenade_launcher_uncompensated_game_recoil_multiplier: 2
+    game_damage_determined_by: ammunition selected
+    ammunition_reference: CC p40
+  armtech_mgl:
+    entity_bindings:
+      - {path: entities/weapons/armtech-mgl-6.yml, blob: 63fe44a40dab7059443df3fa68d7ba0798088e5d}
+      - {path: entities/weapons/armtech-mgl-12.yml, blob: 5fbecacefefec33be75d605b49829700fcf56c77}
+    game_design_class_reference: 'bullpup; CC p75'
+    mgl_6_game_capacity_fraction_of_mgl_12: 0.5
+    game_accessory_categories_allowed: [imaging, smartlink]
+    game_recoil_compensation_options: [gyro-stabilization mount, tripod]
+  m12_portable_mortar:
+    entity_binding: {path: entities/weapons/m-12-portable-mortar.yml, blob: 032f1d6f8c7f3ca3b6412d7af985b68388f02f11}
+    game_attack_options: [direct, indirect with spotter data]
+    game_ammunition_eligibility: any mortar round
+    game_accessories_allowed: false
+    game_ready_state_required: true
+    game_ready_combat_turns: 60
+    game_pack_up_time_fraction: 0.5
+    game_max_rounds_per_combat_turn: 2
+    game_round_cap_independent_of_available_actions: true
+  missile_and_rocket_category:
+    game_skill: Launch Weapons
+    shared_game_rule_references: [SR3 p120, SR3 p279]
+    game_standard_firearm_accessories_allowed: false
+    game_accessory_exception: unless otherwise noted
+    range_table_reference: CC p114
+  disposition: 'Abstract SR3 game mechanics only; no physical construction, real-world targeting procedure or implementation. Delegated shared rules retained as references. Inventory quantities already represented in the three bound entities are not counted as new table rows.'
