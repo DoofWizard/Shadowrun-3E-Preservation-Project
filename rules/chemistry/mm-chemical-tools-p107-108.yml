@@ -1,0 +1,33 @@
+id: rule.chemistry.mm-chemical-tools-p107-108
+record_type: rule
+status: ingested
+source: source.mm
+printed_pages: '107-108'
+pdf_pages: '108-109'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  parent_procedure: procedure.chemistry.manufacture
+  tool_classes: [kit, shop, facility]
+  purchase_cost_multiplier: 3
+  base_tool_price_reference: SR3 p288
+  kit:
+    basic_supplies_and_handling_tools: true
+    reference_library: true
+    built_in_analysis_devices: [chemical analyzer, gas spectrometer]
+    analysis_rule_reference: 'Man & Machine p13 cyberware'
+    reference_program_rating: 3
+  shop_and_facility:
+    includes_kit_functions: true
+    wider_equipment_selection: true
+    compound_creation_game_prerequisites: [base elements present, software knows formula]
+    legality: '2P-X'
+    mandatory_security: 'Prevent unauthorized users from handling the equipment.'
+    built_in_safety_sensor:
+      equivalent: chem sniffer
+      rating: 3
+      core_rule_reference: 'SR3 p292'
+      scan_mode: continuous
+      detects: noxious or toxic airborne chemicals
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp107-108/PDF108-109: chemical equipment price modifier, game legality and sensor statistics'
+framing: reference_exact
