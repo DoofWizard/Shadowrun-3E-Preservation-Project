@@ -135,13 +135,69 @@ def source_ids(record):
     return sorted(found)
 
 
+
+def page_range(value):
+    if type(value) is int and 1 <= value <= 10000:
+        return [value, value]
+    if isinstance(value, str):
+        m = re.fullmatch(r"\s*(\d+)(?:\s*[-–]\s*(\d+))?\s*", value)
+        if m:
+            lo, hi = int(m[1]), int(m[2] or m[1])
+            if 1 <= lo <= hi <= 10000:
+                return [lo, hi]
+    return None
+
+
+def locators(record):
+    results = []
+    def add(source, printed, pdf):
+        if not isinstance(source, str) or not source.startswith("source.") or not ID.fullmatch(source):
+            return
+        p, f = page_range(printed), page_range(pdf)
+        if p or f:
+            results.append({"source": source, "printed": p, "pdf": f})
+    add(record.get("source"), record.get("printed_pages"), record.get("pdf_pages"))
+    for item in record.get("sources", []) if isinstance(record.get("sources"), list) else []:
+        if isinstance(item, dict):
+            add(item.get("source"), item.get("printed_pages", item.get("pages")), item.get("pdf_pages"))
+    eff = record.get("effective")
+    if isinstance(eff, dict):
+        add(eff.get("source"), eff.get("page"), None)
+    return results
+
+
+def registrations(manifest, path, blob):
+    found = []
+    def walk(value, pointer="", depth=0, ancestors=()):
+        if depth > 64 or len(found) >= 100000:
+            raise ValueError("registration traversal limit exceeded")
+        if isinstance(value, (dict, list)):
+            if id(value) in ancestors:
+                raise ValueError("cyclic manifest")
+            ancestry = ancestors + (id(value),)
+            if isinstance(value, dict):
+                p, c, b = value.get("path"), value.get("commit"), value.get("blob")
+                if isinstance(p, str) and p.endswith((".yml", ".yaml")) and not p.startswith("/") and ".." not in p.split("/") and all(isinstance(x, str) and re.fullmatch(r"[0-9a-f]{40}", x) for x in (c,b)):
+                    found.append({"record_path": p, "semantic_commit": c, "semantic_blob": b,
+                                  "manifest_path": path, "manifest_blob": blob,
+                                  "manifest_pointer": pointer})
+                items = value.items()
+            else:
+                items = enumerate(value)
+            for k, v in items:
+                if isinstance(k, str) or type(k) is int:
+                    walk(v, pointer + "/" + ptr(k), depth+1, ancestry)
+    walk(manifest)
+    return found
+
+
 def words(value):
     return set(WORD.findall(str(value).lower()))
 
 
 def build(repo, ref):
     head, entries = blobs(repo, ref)
-    records, manifests, catalog, issues = [], [], [], []
+    records, manifests, catalog, issues, refs = [], [], [], [], []
     for path, sha, raw in entries:
         is_catalog = path == "sources/catalog.yml"
         is_manifest = path.startswith("sources/manifests/")
@@ -172,6 +228,7 @@ def build(repo, ref):
                                   "source_pdf_sha256": d.get("source_pdf_sha256"),
                                   "physical_pages": d.get("source_physical_pdf_pages"),
                                   "reported_status": d.get("status")})
+                refs.extend(registrations(d, path, sha))
                 continue
             if not isinstance(d.get("record_type"), str):
                 raise ValueError("missing record type")
@@ -191,14 +248,14 @@ def build(repo, ref):
             tokens = words(rid + " " + path + " " + label + " " + str(d.get("domain", "")))
             records.append({"id": rid, "path": path, "blob": sha,
                             "record_type": d["record_type"], "sources": source_ids(d),
-                            "tokens": sorted(tokens), "fields": flat,
+                            "tokens": sorted(tokens), "fields": flat, "locators": locators(d),
                             "field_index_incomplete": bool(errors)})
         except (UnicodeError, ValueError, TypeError, RecursionError, yaml.YAMLError) as exc:
             # Do not expose source document content through exceptions.
             issues.append({"path": path, "blob": sha, "reason": type(exc).__name__})
     dup = Counter(r["id"] for r in records)
     return {"schema": SCHEMA, "head": head, "catalog": catalog, "manifests": manifests,
-            "records": records, "issues": issues,
+            "records": records, "issues": issues, "registration_candidates": refs,
             "duplicate_record_ids": sorted(k for k,v in dup.items() if v > 1),
             "review_status": "unreviewed_candidates_only", "page_credit": False}
 
@@ -214,21 +271,30 @@ def packet(index, source, query="", limit=40, printed=None, pdf=None):
     # Catalog-number matches are candidates, not proof that two PDFs are identical.
     aliases = {source} | {m["id"] for m in manifests}
     q = words(query)
-    same, ranked = [], []
+    same, ranked, page_candidates = [], [], []
+    wanted_printed, wanted_pdf = page_range(printed), page_range(pdf)
+    if (printed is not None and wanted_printed is None) or (pdf is not None and wanted_pdf is None):
+        raise ValueError("invalid page interval")
+    def overlaps(a, b):
+        return bool(a and b and a[0] <= b[1] and b[0] <= a[1])
     for r in index["records"]:
         own = bool(aliases.intersection(r["sources"]))
         score = len(q.intersection(r["tokens"]))
         brief = {k: r[k] for k in ("id", "path", "blob", "record_type", "sources",
-                                   "field_index_incomplete")}
+                                   "field_index_incomplete", "locators")}
         if own:
             same.append(brief)
+        if any(l["source"] in aliases and (overlaps(l["printed"], wanted_printed) or overlaps(l["pdf"], wanted_pdf)) for l in r["locators"]):
+            page_candidates.append(brief)
         if q and score:
             ranked.append((score, own, brief))
     ranked.sort(key=lambda x: (-x[0], -int(x[1]), x[2]["path"]))
     return {"schema": "sr3-review-packet/v1", "head": index["head"], "source": source,
             "printed_range": printed, "pdf_range": pdf, "catalog_candidates": cat,
             "manifest_candidates": manifests, "source_record_count": len(same),
-            "source_records": same, "query_candidates": [x[2] for x in ranked[:limit]],
+            "source_records": same, "page_candidates": page_candidates,
+            "registration_candidates": [ref for ref in index["registration_candidates"] if ref["manifest_path"] in {m["path"] for m in manifests}],
+            "query_candidates": [x[2] for x in ranked[:limit]],
             "query_candidate_count": len(ranked), "index_issue_count": len(index["issues"]),
             "duplicate_record_ids": index["duplicate_record_ids"],
             "review_status": "unreviewed_candidates_only", "page_credit": False,
