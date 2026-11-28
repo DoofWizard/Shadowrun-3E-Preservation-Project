@@ -1,13 +1,36 @@
 id: entity.gear.hazmat-xe
 record_type: entity
-name: "Hazmat and X-E Gear"
+name: Hazmat and X-E Gear
 domain: gear
 status: ingested
+source: source.mm
+printed_pages: '116'
+pdf_pages: '117'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  gas_mask_air_tank: {availability: "4/12 hrs", cost_nuyen: 1000, street_index: 1, legality: "Legal"}
-  hazmat_suit: {availability: "6/1 wk", cost_nuyen: 5000, street_index: 1.5, legality: "Legal", armor: "1/1"}
-  xe_suit: {availability: "8/2 wks", cost_nuyen: 15000, street_index: 2, legality: "Legal", armor: "3/2"}
+  gas_mask_air_tank: {availability: '4/12 hrs', cost_nuyen: 1000, street_index: 1, legality: Legal}
+  hazmat_suit: {availability: '6/1 wk', cost_nuyen: 5000, street_index: 1.5, legality: Legal, armor: '1/1'}
+  xe_suit: {availability: '8/2 wks', cost_nuyen: 15000, street_index: 2, legality: Legal, armor: '3/2'}
 links: {uses: [], requires: [], component_of: [], interacts_with: [rule.chemistry.drug-exposure]}
 sources:
-  - {source: source.mm, page: 116, relation: defines, note: "Hazmat Gear game effects and statistics"}
+  - {source: source.mm, page: 116, relation: defines, note: Hazmat Gear game effects and statistics}
 notes: []
+data:
+  fictional_game_effects:
+    hazmat_and_xe_suits:
+      protected_vectors: [contact, inhalation]
+      protection_requires_unbreached_suit: true
+      hand_or_finger_action_target_number_modifier: 1
+      includes_weapon_handling_actions: true
+      damaging_projectile_or_sharp_melee_game_hit_breaches_suit: true
+      patch_action: Complex Action
+      exposure_possible_until_patched: true
+    gas_mask_and_air_tank:
+      available_separately_from_suits: true
+      game_air_supply_hours: 1
+      protected_vectors: [inhalation]
+      concealability: not concealable
+      game_weight_kg: 10
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), p116/PDF117: protective item game effects and original purchase statistics'
+framing: reference_exact
