@@ -1,0 +1,33 @@
+id: rule.vehicles.r3-revised-aircraft-operation-qualifications-p68-69
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '68-69'
+pdf_pages: '70-71'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 SR3 aircraft flight and runway test qualifications
+summary: Preserves terrain stacking, Load boundary, test triggers, and modifier applicability for fictional aircraft operations.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.aircraft-operations, path: rules/vehicles/aircraft-operations.yml, blob: 1a11f633d8458bdf796fa4b933ec2d83787d689b}
+  nap_of_earth:
+    ordinary_airplane_threshold_applies_to: standard_airplanes
+    all_aircraft_and_drones_in_noe_subject_to_terrain_effects: true
+    existing_sensor_modifier_is_additional_to_relevant_ground_terrain_modifiers: true
+  runway_distance_selection:
+    load_basis: combined_weight_of_cargo_and_passengers
+    first_distance_when: below_aircraft_load_rating
+    second_distance_when: equals_or_exceeds_aircraft_load_rating
+  unusual_takeoff_or_landing:
+    successful_driving_test_required_if_any: [irregular_runway_surface, adverse_weather, combat_situation]
+    examples_of_unusual_runway: [aircraft carrier deck, automobile highway, water surface without floatplane adaptation, flat grassland]
+    relevant_modifiers_from_both: [Takeoff/Landing Modifiers Table, Driving Test Modifiers Table SR3 p134]
+    modifier_conditions:
+      crosswinds: {condition: strong wind across runway, adjudicator: gamemaster}
+      heavy_crosswinds: {condition: storm-generated wind across runway, adjudicator: gamemaster}
+      rough_uneven: {includes: [rough surface, uneven surface, gravel surface], excludes: [smooth unusual surface, smooth aircraft carrier deck, calm water, asphalt roadway]}
+      angled_runway: flight deck deliberately canted to assist landing
+      catapult_or_arrestor: {catapult: takeoff_only, arrestor_cable_crash_net_or_other_braking_device: landing_only, tailhook_required_for_either: true}
+  scope: Fictional SR3 game mechanics only. Existing flight ceiling correction and table values, NOE numeric thresholds, runway distances, modifier magnitudes, base test target numbers and rough-surface damage test remain controlling and are not duplicated. No earlier printed-edition inference.
