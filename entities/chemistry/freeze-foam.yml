@@ -1,15 +1,31 @@
 id: entity.chemistry.freeze-foam
 record_type: entity
-name: "Freeze Foam"
+name: Freeze Foam
 domain: chemistry
 status: ingested
-intrinsic:
-  availability: "2/12 hrs"
-  cost_nuyen_per_liter: 20
-  street_index: 1
-  legality: "Legal"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '112-113, 157'
+pdf_pages: '113-114, 158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '2/12 hrs', cost_nuyen_per_liter: 20, street_index: 1, legality: Legal}
+links: {uses: [], requires: [], component_of: [], interacts_with: [entity.chemistry.solvent]}
 sources:
-  - {source: source.mm, pages: "112-113", relation: defines, note: "Freeze Foam game effects and statistics"}
-notes:
-  - "Fictional restraint/barrier compound with medical and crowd-control variants."
+  - {source: source.mm, pages: '112-113', relation: defines, note: 'Freeze Foam fictional game effects and market row'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated equipment purchase row'}
+notes: []
+data:
+  medical_variant: {game_equipment: handheld spray tank, temporary_restraint_possible: true}
+  riot_variant:
+    game_attack_resolution: normal water cannon attack rules
+    affected_character_test_timing: end of each Combat Turn
+    test_attribute: Quickness
+    target_number: '4 + attack successes'
+    failed_test_condition: immobilized
+    uv_marker_duration_days: 1D6
+    scrubbing_removes_marker: false
+    water_cannon_tank_capacity_liters: 100
+    fictional_ammo_liters_per_shot: 1
+  barrier: {initial_rating: 12, rating_loss_per_hour: 1D6, game_solvent_removal: immediate}
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp112-113,157/PDF113-114,158: Freeze Foam character tests and barrier mechanics'
+framing: reference_exact
