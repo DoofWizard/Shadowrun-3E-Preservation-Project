@@ -43,3 +43,25 @@ def mm_registration(source, record, plan, confirm, baseline_sha, entry, pointer)
             'mm_registration_exact_evidence_mismatch')
     require(isinstance(entry['fields'], str) and entry['fields'].strip(), 'mm_registration_scope_missing')
     return True
+
+
+def wastelands_registration(source, record, plan, confirm, entry, pointer):
+    """Bind the exact ten-field Wastelands inline registration; no alias guessing."""
+    require(source['manifest'] == 'sources/manifests/TargetWastelands.yml'
+            and source['id'] == 'source.fanpro-10653' and source['edition'] == 'SR3'
+            and source['sha256'] == '31db497dcbe649eda35b596ed2dff9475241518027137c65f35ea720b03d0c6b',
+            'wastelands_registration_source_mismatch')
+    require(re.fullmatch(r'/verified_semantic_records/(0|[1-9][0-9]*)', pointer),
+            'wastelands_registration_pointer_mismatch')
+    require(record['source'] == source['id'] and record['edition_scope'] == 'SR3'
+            and len(record['content_class']) == 1, 'wastelands_registration_record_mismatch')
+    expected = {'id': record['id'], 'path': plan['path'], 'printed_pages': record['printed_pages'],
+                'pdf_pages': record['pdf_pages'], 'content_class': record['content_class'][0],
+                'commit_sha': confirm['commit_sha'], 'blob_sha': confirm['readback_blob_sha'],
+                'candidate_sha256': plan['candidate_sha256'], 'immutable_sha256': plan['immutable_sha256'],
+                'gate_status': 'verified'}
+    require(isinstance(entry, dict) and set(entry) == set(expected),
+            'wastelands_registration_schema_mismatch')
+    require(all(type(entry[k]) is type(v) and entry[k] == v for k, v in expected.items()),
+            'wastelands_registration_exact_evidence_mismatch')
+    return True
