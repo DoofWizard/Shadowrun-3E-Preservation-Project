@@ -3,43 +3,53 @@ record_type: rule
 name: "Additional Dosage and Overdose"
 domain: chemistry
 status: ingested
-
+source: source.mm
+printed_pages: '106-107'
+pdf_pages: '107-108'
+edition_scope: SR3
+content_class: [rule_exact]
 effective:
   status: current
   source: source.mm
   page: 106
   basis: extends
-
 scope:
   applies_to:
     - "repeated exposure to the same drug or chemical"
-
 resolution:
   summary: "Additional doses taken before the previous Speed period expires can increase the compound's Damage Level, then Power, subject to the source's dosage limits. Continued exposure requires repeated resistance tests. Excessive dosage can also trigger overdose damage determined by the gamemaster."
-  inputs:
-    - "number/timing of doses"
-    - "base Damage Code"
-    - "Speed"
-  outputs:
-    - "modified Damage Level and/or Power"
-    - "possible overdose damage"
-
+  inputs: ["number/timing of doses", "base Damage Code", "Speed"]
+  outputs: ["modified Damage Level and/or Power", "possible overdose damage"]
 links:
-  uses:
-    - rule.chemistry.drug-exposure
+  uses: [rule.chemistry.drug-exposure]
   affects: []
   modified_by: []
-  interacts_with:
-    - rule.chemistry.addiction
-
+  interacts_with: [rule.chemistry.addiction]
 sources:
-  - source: source.mm
-    page: 106
-    relation: extends
-    note: "Additional Dosage"
-  - source: source.mm
-    page: 107
-    relation: extends
-    note: "Continuation / Overdosing"
-
+  - {source: source.mm, page: 106, relation: extends, note: "Additional Dosage"}
+  - {source: source.mm, page: 107, relation: extends, note: "Continuation / Overdosing"}
 notes: []
+data:
+  source_section: Additional Dosage and Overdosing
+  unit: abstract tabletop exposure event, not a real quantity
+  before_speed_elapsed:
+    second_event_damage_level_stage_increase: 1
+    subsequent_event_damage_level_stage_increase: 0
+    subsequent_event_power_increase: 1
+  after_speed_elapsed:
+    new_body_resistance_test: true
+    continuous_exposure_test_interval: Speed
+    total_damage_cap_in_levels_above_base: 1
+    further_effects_after_cap: false
+    overdose_exception: true
+  other_effects_change_with_additional_events: false
+  other_effects_exception: unless otherwise stated
+  optional_overdose:
+    threshold: gamemaster determination, varies by fictional compound
+    extra_damage_boxes: 1
+    abstract_event_interval: Body attribute
+  worked_game_examples:
+    before_speed: {base_damage_code: '12L Stun', second_event: '12M Stun', third_event: '13M Stun', resistance_dice: 6}
+    after_speed: {repeated_damage_code: '12L Stun', interval: one Combat Turn, total_cap: Moderate Stun}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp106-107/PDF107-108: abstract exposure-event damage-code and Condition Monitor mechanics'
+framing: reference_exact
