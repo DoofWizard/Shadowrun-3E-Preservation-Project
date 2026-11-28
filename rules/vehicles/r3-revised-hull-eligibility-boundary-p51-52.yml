@@ -1,0 +1,31 @@
+id: rule.vehicles.r3-revised-hull-eligibility-boundary-p51-52
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '51-52'
+pdf_pages: '53-54'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 Rigger 3 Revised, fictional Shadowrun Third Edition tabletop Hull and vessel qualifications, pp51-52/PDF53-54
+summary: Bind the additional vehicle eligibility and cavitation qualifications and retain the original overlapping Hull table boundary as unresolved.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_ship_attributes: {id: rule.vehicles.ship-attributes, path: rules/vehicles/ship-attributes.yml, blob: 2662e83b9a50579ca4f586df8948859c16878648}
+  hull_eligibility:
+    other_vehicle_types_may_have_hull: true
+    overall_length_m: {operator: gt, value: 50}
+    tonnage_metric_tons: {operator: gt, value: 100}
+    combine: all
+  terminology: In the game the vessel label includes ships and boats, both surface and underwater.
+  cavitation_threshold:
+    ships_have_secondary_speed_rating: true
+    boats_have_threshold: false
+    existing_modifier_reference: {path: rules/rigging/sonar.yml, blob: 40fbc6865915861753950fbb59e15553ca0894aa}
+  hull_table_printed_boundary:
+    hull_6: {min_metric_tons: 10001, max_metric_tons: 25000}
+    hull_7: {min_metric_tons: 25000, max_metric_tons: 50000}
+    overlap_metric_tons: 25000
+    historical_normalized_hull_7_min: 25001
+    disposition: Preserve both printed ranges and the exact overlap without choosing a Hull rating at the shared endpoint. Preserve other existing Hull table rows; the printed Hull 1 minimum of 100 does not change the separate strict eligibility threshold.
+  scope_limit: These are fictional tabletop attributes and source fidelity qualifications; no claim of an edition change or of any real maritime classification.
