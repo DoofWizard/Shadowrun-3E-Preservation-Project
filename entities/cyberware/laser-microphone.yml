@@ -1,15 +1,34 @@
 id: entity.cyberware.laser-microphone
 record_type: entity
-name: "Laser Microphone"
+name: Laser Microphone
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '14-15,153'
+pdf_pages: '14-15,154'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence: 0.1
-  cost: "Rating x 2,000 nuyen"
-  availability: "Rating/72 hrs"
+  cost: Rating x 2,000 nuyen
+  availability: Rating/72 hrs
   street_index: 2
-  legality: "5P-N"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: 5P-N
+links: {uses: [rule.cyberware.eye-laser-systems], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 153, relation: defines, note: "Visual sensory cyberware equipment table statistics"}
+  - {source: source.mm, page: 14, relation: defines, note: Fictional cyberware compatibility and routing rules}
+  - {source: source.mm, page: 15, relation: defines, note: Local purchase table}
+  - {source: source.mm, page: 153, relation: clarifies, note: Consolidated purchase row}
 notes: []
+data:
+  fictional_eye_laser_power_eligible: [medium, high]
+  game_function_reference: SR3 p290 external laser microphone
+  game_output:
+    requires_link_for_audio: true
+    audio_link_options: [ear recorder, subdermal speakers, external speaker, similar game equipment]
+    recording_options: [headware memory, external recording]
+  original_cost_notation:
+    printed_15: 2,000 nuyen x Rating
+    printed_153: Rating x 2,000 nuyen
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop RPG, pp14-15,153/PDF14-15,154: cyberware power tiers and game output compatibility'
+framing: reference_exact
