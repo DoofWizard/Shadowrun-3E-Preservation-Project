@@ -1,10 +1,26 @@
 id: entity.gear.splat-gun
 record_type: entity
-name: "Splat Gun"
+name: Splat Gun
 domain: gear
 status: ingested
-intrinsic: {concealability: 4, ammo: "2(m)", mode: "SS", damage: "Special", weight: 3, cost_nuyen: 600, availability: "9/7 days", street_index: 2, legality: "Legal"}
+source: source.mm
+printed_pages: '116,157'
+pdf_pages: '117,158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 4, ammo: '2(m)', mode: SS, damage: Special, weight: 3, cost_nuyen: 600, availability: '9/7 days', street_index: 2, legality: Legal}
 links: {uses: [], requires: [entity.chemistry.splat-glue], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 116, relation: defines, note: "Splat Gun fictional game gear and statistics"}
+  - {source: source.mm, page: 116, relation: defines, note: 'Splat Gun fictional game gear, effects and statistics.'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated Chemtech Application Gear purchase row.'}
 notes: []
+data:
+  attack_skill: Launch Weapons
+  range_category: shotgun
+  simultaneous_targets: {maximum_characters: 2, maximum_separation_meters: 1}
+  hit: {knockdown_resistance_test: {attribute: Body, target_number: 8}, game_condition: adhered_and_immobilized}
+  escape_test: {attribute: Strength, target_number: 6, required_successes: net_attack_test_successes, required_before: physical_action}
+  game_resource: {shots_per_charge: 50, refill_cost_nuyen: 50}
+  glue_rule: entity.chemistry.splat-glue
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp116,157/PDF117,158: Splat Gun'
+framing: reference_exact
