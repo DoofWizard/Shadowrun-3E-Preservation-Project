@@ -177,6 +177,64 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         prior = r['previous_manifest_blob_sha']
         require(prior == parent_blob, 'inline_index_parent_blob_mismatch')
         schema = 'wastelands-alter-pressure-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/SRComp.yml' and 'registration_delta' in r:
+        # Original p17 custom-trait archive. Only this observed record/format
+        # is supported; the receipt contains no historical parent blob pin.
+        required = {'path', 'commit', 'blob', 'record_id',
+                    'exact_commit_and_live_readback', 'registration_delta'}
+        require(set(r) == required, 'inline_index_srcomp_p17_receipt_fields')
+        require(r['exact_commit_and_live_readback'] is True,
+                'inline_index_original_readback_missing')
+        require(type(r['registration_delta']) is int and r['registration_delta'] == 1,
+                'inline_index_srcomp_p17_registration_delta')
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
+                and confirm.get('status') == 'verified',
+                'inline_index_srcomp_p17_verified_confirm_required')
+        source_sha = '8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5'
+        record_id = 'option.character-creation.srcomp-custom-edge-flaw-worked-example-p17'
+        record_path = 'options/character-creation/srcomp-custom-edge-flaw-worked-example-p17.yml'
+        require(confirm.get('source') == 'source.srcomp' and confirm.get('pdf_sha256') == source_sha
+                and confirm.get('printed_pages') == '17' and confirm.get('pdf_pages') == '18',
+                'inline_index_srcomp_p17_original_identity_mismatch')
+        require(r['record_id'] == confirm.get('record_id') == record_id
+                and confirm.get('path') == record_path,
+                'inline_index_srcomp_p17_record_identity_mismatch')
+        require(all(isinstance(confirm.get(k), str) and re.fullmatch(r'[0-9a-f]{40}', confirm[k])
+                    for k in ('commit_sha', 'readback_blob_sha'))
+                and confirm.get('expected_blob_sha') == confirm.get('readback_blob_sha'),
+                'inline_index_srcomp_p17_semantic_identity_mismatch')
+        require(all(isinstance(confirm.get(k), str) and re.fullmatch(r'[0-9a-f]{64}', confirm[k])
+                    for k in ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_srcomp_p17_digest_required')
+        from validator import parse
+        manifest = parse(snapshot_raw)
+        require(isinstance(manifest, dict) and manifest.get('id') == confirm['source']
+                and manifest.get('catalog_number') == 'FASA7905a'
+                and manifest.get('edition') == 'SR3'
+                and manifest.get('publisher') == 'FASA Corporation'
+                and manifest.get('source_pdf_sha256') == source_sha,
+                'inline_index_srcomp_p17_snapshot_identity_mismatch')
+        section = manifest.get('postcompletion_mechanics_recovery')
+        regs = section.get('verified_semantic_records') if isinstance(section, dict) else None
+        require(isinstance(regs, list), 'inline_index_srcomp_p17_registrations_required')
+        matches = [e for e in regs if isinstance(e, dict) and
+                   (e.get('id') == record_id or e.get('path') == record_path)]
+        require(len(matches) == 1, 'inline_index_srcomp_p17_unique_registration_required')
+        entry = matches[0]
+        from index_transition import _identity, _gate
+        require(_identity(entry) == (record_id, record_path, confirm['commit_sha'],
+                                     confirm['readback_blob_sha'])
+                and _gate(entry) == 'verified'
+                and entry.get('content_class') == 'character_option'
+                and entry.get('original_source_sha256') == source_sha
+                and entry.get('range_printed') == [17, 17]
+                and entry.get('range_pdf') == [18, 18]
+                and all(type(n) is int for n in entry['range_printed'] + entry['range_pdf'])
+                and entry.get('contiguous_advance') is False
+                and all(entry.get(k) == confirm[k] for k in ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_srcomp_p17_registration_mismatch')
+        commit, recorded_blob, path = r['commit'], r['blob'], r['path']
+        prior, schema = None, 'srcomp-p17-index-receipt/v1'
     elif manifest_path == 'sources/manifests/MrJohnsonsLittleBlackBook.yml':
         # Actual FanPro25003 archived compact index receipt. The exact flag
         # attests the retained snapshot only; do not invent an original parent
