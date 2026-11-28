@@ -1,0 +1,61 @@
+id: rule.chemistry.mm-compound-character-modifiers-p119-121
+record_type: rule
+name: Compound Character Modifiers
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '119,121'
+pdf_pages: '120,122'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine — fictional compound game mechanics
+summary: FASA Corporation (1999), Shadowrun Third Edition tabletop RPG, printed pp119,121/PDF120,122. Character and encounter mechanics for invented game items, not real-world chemical guidance.
+effective: {status: current, source: source.mm, page: 119, basis: defines}
+scope: {applies_to: [Shadowrun characters and encounters involving the named fictional items]}
+resolution:
+  summary: Resolve item-specific game modifiers separately from the existing entity statistics.
+  inputs: [item ID, damage boxes, character test successes, fictional encounter state]
+  outputs: [test modifiers, additional Stun boxes, effect timers]
+  steps: []
+data:
+  green_ring_family:
+    entities: [entity.chemistry.green-ring-3, entity.chemistry.green-ring-8]
+    target_number_modifier_per_damage_boxes: {boxes: 2, modifier: 1}
+    character_effect_minutes_per_modifier_point: 10
+    encounter_item_expiration_minutes: {green-ring-3: 60, green-ring-8: 10}
+    green_ring_8_game_armor_interaction:
+      standard_chemsuit: {power_reduction: 0, speed_delay_combat_turns: 2}
+      blocks_game_effect: [hazmat suit, X-E suit]
+      reference: source.mm p116
+    seven_7:
+      entity: entity.chemistry.seven-7
+      use_green_ring_8_game_effects: true
+      exceptions: [onset, damage]
+      exceptions_use_existing_entity_stats: true
+  hyper:
+    entity: entity.chemistry.hyper
+    initial_all_target_number_modifier: 1
+    duration_minutes_per_damage_box: 10
+    concentration_task_modifier: 4
+    includes_spellcasting: true
+    additional_stun_boxes: 'ceil(damage boxes suffered during effect / 2)'
+    example: {physical_boxes: 6, additional_stun_boxes: 3}
+    modifier_stacking: The source lists the two modifiers separately and supplies no additional stacking formula here.
+  neuro_stun_variants:
+    encounter_item_expiration_minutes: {neuro-stun-viii: 10, neuro-stun-ix: 1, neuro-stun-x: 1}
+    gm_environment_can_end_effect_earlier: true
+  pepper_punch:
+    entity: entity.chemistry.pepper-punch
+    resistance_test: {attribute: Body, target_number: 5}
+    additional_action_modifier: {base: 5, reduction_per_success: 1}
+    duration_minutes_per_positive_modifier_point: 2
+links:
+  uses: [entity.chemistry.green-ring-3, entity.chemistry.green-ring-8, entity.chemistry.seven-7, entity.chemistry.hyper, entity.chemistry.neuro-stun-viii, entity.chemistry.neuro-stun-ix, entity.chemistry.neuro-stun-x, entity.chemistry.pepper-punch]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.chemistry.drug-exposure]
+sources:
+  - {source: source.mm, page: 119, relation: defines, note: Green Ring 3, Green Ring 8 and Hyper Game Effects}
+  - {source: source.mm, page: 121, relation: extends, note: Neuro-Stun Gases, Pepper Punch and Seven-7 Game Effects}
+notes: []
