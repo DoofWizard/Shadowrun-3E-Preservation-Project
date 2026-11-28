@@ -3151,6 +3151,44 @@ book_closure_checklist_2026_11_25:
       scope: "Consolidated equipment tables"
       status: prior_review_partial
       evidence_or_gap: "Prior specific appendix bindings reused (pp115-117,121-124); completeness across every appendix row and note not established; reconcile alongside matching body categories."
+      p124_entertainment_electronics_reader_reconciliation_2026_11_27:
+        basis_manifest_blob: 155fd75fb9428992adb3a40e3bcead384eb209c7
+        original_printed_page: 124
+        original_pdf_page: 125
+        source_pdf_sha256: 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4
+        source_verification: source_pdf_hash_verified
+        source_review: "Original lower-page tables and recording-cost note inspected at 180 dpi and enlarged at 288 dpi; upper-page BTL and programmable ASIST rows outside this recheck."
+        bindings:
+          - path: equipment/sr3-core-entertainment-simsense-market-p286.yml
+            blob: fd1c79d868175ef4b9dba2b8050f9d549a5cfe67
+            pointer: /data/rows
+            source_rows: 11
+            compared_stat_cells: 55
+            exact_string_matches: 47
+            notation_only_differences: 8
+            remaining: "All eight differences are original .75 versus stored 0.75; original monoPOV price basis, triple Full-X price and poly-POV multiplier by number of POVs separately match the existing qualifications."
+          - path: equipment/sr3-core-electronics-creds-readers-p287.yml
+            blob: 814a1375ea3b74f6b064cd1decf618e5bb6106d5
+            pointer: /data/electronics_rows
+            source_rows: 15
+            compared_rows: 13
+            compared_stat_cells: 65
+            exact_string_matches: 54
+            notation_only_differences: 11
+            remaining: "Six literal x versus multiplication-sign differences and five decimal leading-zero differences. Pager and Printer rows visually displaced: original Pager 10 and PrinterNA appear at the item position, with the next printed values shifted left; no automatic column reassignment or invented empty cell. Core has conventional aligned rows; original layout ambiguity retained pending source-specific adjudication."
+          - path: equipment/sr3-core-electronics-creds-readers-p287.yml
+            blob: 814a1375ea3b74f6b064cd1decf618e5bb6106d5
+            pointer: /data/credstick_reader_rows
+            source_rows: 5
+            compared_stat_cells: 30
+            exact_string_matches: 30
+            remaining: "All five rating-band rows and parenthesized portable price compared as printed; no new mechanic."
+        exact_typed_string_cells: 131
+        compared_stat_cells: 150
+        notation_only_cells: 19
+        new_mechanical_fields: 0
+        disposition: "Coverage-only for 29 compared rows and two separately unresolved layout rows; no new semantic record, no historical receipt reconstruction, no full appendix or whole-book acceptance. Existing independently closed core is unchanged."
+
     - pdf: [128, 128]
       scope: "Weapon record sheet"
       status: coverage_reconciled_acceptance_blocked
