@@ -1,16 +1,35 @@
 id: entity.chemistry.p4mo
 record_type: entity
-name: "Oxygenated Fluorocarbons (P4MO)"
+name: Oxygenated Fluorocarbons (P4MO)
 domain: chemistry
 status: ingested
-intrinsic:
-  availability: "4/48 hrs"
-  cost_nuyen_per_treatment: 4000
-  treatment_volume: "5 liters"
-  street_index: 1
-  legality: "Legal"
+source: source.mm
+printed_pages: '113, 157'
+pdf_pages: '114, 158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '4/48 hrs', cost_nuyen_per_treatment: 4000, treatment_volume: '5 liters', street_index: 1, legality: Legal}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 113, relation: defines, note: "P4MO fictional game effects and statistics"}
+  - {source: source.mm, page: 113, relation: defines, note: 'P4MO fictional character game effects and market row'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated purchase row'}
 notes:
-  - "Preserved as tabletop game data; grants specified Athletics/breath-holding benefits and carries game-system complications with repeated use."
+  - These are original tabletop character statistics, not medical advice.
+data:
+  character_benefits:
+    athletics_test_bonus_dice: 2
+    athletics_test_scope: all Athletics Tests
+    breath_holding_duration_multiplier: 2
+    normal_breath_holding_seconds: 45
+    modified_breath_holding_seconds: 90
+    duration_weeks: 1
+    all_benefits_end_after_duration: true
+    benefits_lost_until_replacement: true
+  repeated_treatment_game_risk:
+    condition: another fictional treatment within three weeks or less
+    dice: 2D6
+    initial_fatal_total: 2
+    each_further_repetition_increases_fatal_upper_bound_by: 1
+    next_fatal_totals: [2, 3]
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp113,157/PDF114,158: P4MO character dice and duration rules'
+framing: reference_exact
