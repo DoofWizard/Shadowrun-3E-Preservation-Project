@@ -1,0 +1,35 @@
+id: rule.vehicles.r3-revised-suborbital-qualifications-p71
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '71'
+pdf_pages: '73'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 p71 suborbital tabletop qualifications
+summary: Binds fictional vehicle phase, passenger acceleration, astral travel and fare eligibility to the existing game rule.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.semiballistic-suborbital, path: rules/vehicles/semiballistic-suborbital.yml, blob: 121d00e7b7a167200b5786b9bcca2368b8900a98}
+  vehicle_game_phase:
+    course_change_permitted: true
+    return_to_origin_requires_sufficient_fuel: true
+    maneuver_requires_transitional_altitude_and_maneuvering_speed: true
+    exceeding_speed_rating_rules_apply_during_climb_to_transitional_altitude: true
+  passenger_game_phase:
+    normal_character_actions: [normal_flight_below_transitional_altitude, high_speed_run]
+    g_force_applies_during: [beginning_high_speed_run, leaving_high_speed_run]
+    duration_at_existing_maximum_g_force_minutes: 5
+  astral_game_requirements:
+    movement_rate: fast
+    applies_to: [astrally_projecting_character, spirit]
+    minimum_magic_for_magician: 10
+    minimum_force_for_spirit: 10
+    reference: SR3 p173
+  fare:
+    coach_nuyen_per_kilometer: 0.15
+    first_class_nuyen_per_kilometer: 0.75
+    minimum_route_kilometers: 4000
+  source_fidelity_note: The printed descriptive speed wording and the explicit maximum in Operating Suborbitals are inconsistent. The latter is already retained in the existing rule; this addendum neither supplies a competing game speed nor resolves the printed tension by inference.
+  scope: Fictional SR3 mechanics only. Existing skill, wall rating, acceleration, transition time, Maneuver Score, Stress and high-speed vehicle combat rules remain bound in the historical normalization. No historical printed-edition inference.
