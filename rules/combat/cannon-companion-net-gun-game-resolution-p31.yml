@@ -1,0 +1,56 @@
+id: rule.combat.cannon-companion-net-gun-game-resolution-p31
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '31'
+pdf_pages: '32'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: Net Gun tabletop resolution'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop RPG printed p31/PDF32. Game action, Dodge, restraint, escape and knockdown resolution for the two catalogue variants.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  entity_bindings:
+    - {id: entity.weapon.net-gun-normal, path: entities/weapons/net-gun-normal.yml, blob: 149a05d8e0755ccf41d2848f6a04ebeaee08346f}
+    - {id: entity.weapon.net-gun-large, path: entities/weapons/net-gun-large.yml, blob: a6496f731cb273285e2ddcb9a7d637c9ea4a08e9}
+  game_profile:
+    size_options: [normal, large]
+    large_variant_accepts_normal_net: true
+    accessory_eligibility: none
+    governing_skill: Shotguns
+    range_table: shotgun
+    minimum_game_range_meters: 3
+    recoil_rule: heavy weapons
+    uncompensated_recoil_modifier_multiplier: 2
+  dodge:
+    eligible: true
+    target_number_modifier: 1
+    dwarf_or_equally_small_target_modifier_instead: 2
+    additional_size_modifiers:
+      - {net_size: large, target: smaller than troll, modifier: 1}
+      - {net_size: normal, target: troll-sized or larger, modifier: -1}
+  restraint:
+    requires_failed_dodge: true
+    attacker_success_threshold: floor(target Quickness / 2)
+    comparison: greater_than_or_equal
+    conditions_applied: [knocked down, immobilized]
+  escape:
+    open_test_dice: one per attacker success
+    target_number: highest Open Test die
+    tests: [Strength, Quickness]
+    action: Complex Action
+    target_number_reduction_per_helping_friend: 1
+    target_number_reduction_per_full_combat_turn: 1
+  hit_without_entanglement:
+    test: Knockdown Test
+    target_number_normal: 5
+    target_number_large: 8
+    successes_to_remain_standing: 1
+  net_barrier_rating: 6
+  related_rule:
+    id: rule.combat.cannon-companion-net-game-resolution-p14
+    path: rules/combat/cannon-companion-net-game-resolution-p14.yml
+    blob: b28ab726a14f881fd6801b9b176f7710ecf69962
+    distinction: 'The p14 thrown-net rule is retained; p31 explicitly conditions restraint on failed Dodge and supplies different size and knockdown cases. No substitution of the p14 wording.'
+  scope: 'Fictional tabletop dice, character attributes, catalogue eligibility and turn resolution. Existing acquisition statistics retained.'
