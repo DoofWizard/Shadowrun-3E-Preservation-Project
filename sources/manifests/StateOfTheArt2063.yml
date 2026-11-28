@@ -1020,8 +1020,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [26, 26]
       range_pdf: [27, 27]
       content_class: rule_exact
-      commit: 8ea2b30b30bc76b12f58e002d2623ded0a00e87c
-      blob: f8fb9bd5ad9ec0c678a00bcfca25b5bec260bc8d
+      commit: 3086e166d5e17cc12689f844200218dfd4d61883
+      blob: 39d7309d9034d3376cf1d9403f86df44eb717953
       gate: verified
       contiguous_advance: false
 
@@ -1668,4 +1668,26 @@ stickball_original_field_correction_2026_11_27:
   prewrite_journal_library: /Shadowrun Pass B Recovery/SOTA63-stickball-20261127-prewrite.zip
   corrected_fields: [/data/officials_and_magic/adept_eligibility, /data/fouls/prohibited_magical_effects]
   scope: 'Original boxed in-world competition rules reconciled; not new universal SR3 tabletop mechanics or formal book acceptance.'
+  new_global_contiguous_pages: 0
+
+# Individually confirmed source-local Genetech field correction; no contiguous advancement.
+genetech_therapy_original_conditions_correction_2026_11_27:
+  record: rule.genetech.gene-therapy-and-rejuvenation
+  path: rules/genetech/gene-therapy-and-rejuvenation.yml
+  printed: [26, 26]
+  pdf: [27, 27]
+  original_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  exact_verified_manifest_before: 904b08a45ff9b228729d5a6c67dd1c256520c8c9
+  verify_source: source_pdf_hash_verified
+  previous_commit: 8ea2b30b30bc76b12f58e002d2623ded0a00e87c
+  previous_blob: f8fb9bd5ad9ec0c678a00bcfca25b5bec260bc8d
+  semantic_commit: 3086e166d5e17cc12689f844200218dfd4d61883
+  semantic_blob: 39d7309d9034d3376cf1d9403f86df44eb717953
+  baseline_sha256: d585dec67c11b7374eff3f1274d3f61be7a1a5198f13ae05a615fa726c6cabfc
+  candidate_sha256: 877e22c40ca4326b74d70cd63e84c796f70f656d1e015f2c304c45706e1f2467
+  immutable_sha256: de11436599574bf9105c316472074c3250556e1740cf363c29a5bd680ad5dfcc
+  confirmation: verified
+  prewrite_journal_library: /Shadowrun Pass B Recovery/SOTA63-genetech-p26-20261127-prewrite.zip
+  corrected_fields: [/data/gene_therapy/communication_after_neural_treatment, /data/age_rejuvenation/eligibility, /data/age_rejuvenation/major_therapy_sessions, /data/age_rejuvenation/brain_chemistry_limit]
+  original_p19_p20_context: 'Printed pp19-20/PDF20-21 visually reviewed. Clean DNA sample is a setting treatment condition with risk of perpetuating or worsening acquired genetic damage; no additional universal test, TN or automatic failure stated. Environmental and protein synthesis commentary does not prescribe new numeric effects. The p19 setting condition remains a separate source-local binding candidate, not a new p26 universal rule.'
   new_global_contiguous_pages: 0
