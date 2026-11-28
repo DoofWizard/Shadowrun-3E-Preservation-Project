@@ -1,0 +1,40 @@
+id: rule.cybermancy.overflow-survival
+record_type: rule
+name: Cybermantic Physical Overflow Survival
+status: source_reviewed
+domain: cybermancy
+source: source.mm
+printed_pages: '56'
+pdf_pages: '56'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine — Cybermantic Overflow Survival Test
+summary: FASA Corporation (1999), Shadowrun Third Edition fictional tabletop RPG, printed p56/PDF56, the legible overflow-survival paragraph under Better Off Dead.
+effective: {status: current, source: source.mm, page: 56, basis: extends}
+scope:
+  applies_to: [cybermantic characters with Physical Damage Overflow]
+resolution:
+  summary: Healing or stabilization after Physical Damage Overflow triggers a separate character survival check.
+  inputs: [Physical Damage Overflow boxes, cybermantically adjusted Willpower]
+  outputs: [survival or character death]
+  steps: []
+data:
+  trigger: Each time a cybermantic character experiences Physical Damage Overflow and is healed or stabilized.
+  test:
+    attribute: Willpower
+    target_number: '2 * amount of Physical Damage Overflow'
+    cybermantic_willpower_adjustments_apply: true
+  failure: The fictional character dies despite magical or mundane healing, subject to the Karma exception.
+  karma_exception:
+    permitted: true
+    reference: SR3 p246
+  source_damage_limit_note: The preceding paragraph is damaged in this PDF. Its incomplete overflow-limit formula is not reconstructed or changed here.
+links:
+  uses: [rule.tests.success-test, rule.cybermancy.willpower]
+  affects: []
+  modified_by: []
+  interacts_with: [subsystem.cybermancy.core]
+sources:
+  - {source: source.mm, page: 56, relation: extends, note: Better Off Dead, legible second paragraph}
+notes: []
