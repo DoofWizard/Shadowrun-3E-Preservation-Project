@@ -1,8 +1,13 @@
 id: entity.chemistry.arsenic
 record_type: entity
-name: "Arsenic"
+name: Arsenic
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '118,157-158'
+pdf_pages: '119,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "4/12 hrs"
   cost_nuyen_per_dose: 40
@@ -11,10 +16,17 @@ intrinsic:
   vector: "Ingestion"
   speed: "1D6 hrs"
   damage: "10D"
+  addiction: '-'
   tolerance: 1
   edge: "20/—"
+  fix_factor: '-'
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 118, relation: defines, note: "Arsenic game statistics and cumulative-dose mechanics"}
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effects and purchase tables'}
 notes:
   - "Represented strictly as sourcebook game data."
+data:
+  table_dash_fields: {printed_118: [addiction, fix_factor], printed_157: [addiction, fix_factor]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp118,157-158: Arsenic original equipment rows'
+framing: reference_exact
