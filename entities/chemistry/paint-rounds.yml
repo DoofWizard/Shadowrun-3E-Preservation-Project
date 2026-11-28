@@ -1,15 +1,31 @@
 id: entity.chemistry.paint-rounds
 record_type: entity
-name: "Paint Rounds"
+name: Paint Rounds
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '115,157'
+pdf_pages: '116,158'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "Always"
-  cost: "5 nuyen per 10"
+  concealability: 8
+  ammo: '-'
+  mode: '-'
+  damage: See rules
+  weight: 0.15
+  availability: '2/24 hrs'
+  cost: '5 nuyen per 10'
   street_index: 1
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 157, relation: defines, note: "Chemistry equipment table statistics"}
+  - {source: source.mm, page: 115, relation: defines, note: 'ELD-AR paint rounds purchase table.'}
+  - {source: source.mm, page: 157, relation: defines, note: 'Chemtech Application Gear equipment table statistics.'}
 notes:
-  - "Preserved as Shadowrun tabletop game data."
+  - 'Preserved as Shadowrun tabletop game data.'
+data:
+  purchase_quantity: 10
+  table_dash_fields: [ammo, mode]
+headline: 'FASA7126 Man & Machine (FASA Corporation, SR3 tabletop RPG), pp115,157/PDF116,158: Paint Rounds equipment entry'
+framing: reference_exact
