@@ -1,11 +1,29 @@
 id: entity.gear.spray-tank
 record_type: entity
-name: "Spray Tank"
+name: Spray Tank
 domain: gear
 status: ingested
-intrinsic: {concealability: 4, ammo: 20, mode: "SS", damage: "Special", weight: 5, cost_nuyen: 100, availability: "3/12 hrs", street_index: 1, legality: "Legal"}
-links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '116-117, 157'
+pdf_pages: '117-118, 158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 4, ammo: 20, mode: SS, damage: Special, weight: 5, cost_nuyen: 100, availability: '3/12 hrs', street_index: 1, legality: Legal}
+links: {uses: [rule.chemistry.drug-exposure, entity.skill.spray-weapons], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "116-117", relation: defines, note: "Spray Tank fictional game gear and statistics"}
+  - {source: source.mm, pages: '116-117', relation: defines, note: 'Spray Tank original fictional tabletop game checks and market row'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated purchase row'}
 notes:
-  - "Stores up to two liters of an in-game chemical compound."
+  - Shared Spray Weapons skill retained; original M&M grouping language is preserved without overriding Cannon Companion defaulting.
+data:
+  game_skill: entity.skill.spray-weapons
+  source_skill_group: Heavy Weapons
+  game_range_category: Taser
+  game_spread_rules: shotgun
+  game_spread_adjustment: shotgun choke
+  game_exposure_check: target does not completely dodge the Attack Test
+  fictional_charge_uses: 50
+  recharge_cost_nuyen: 50
+  compound_capacity_liters: 2
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp116-117,157/PDF117-118,158: Spray Tank game skill and equipment rules'
+framing: reference_exact
