@@ -1,0 +1,32 @@
+id: rule.combat.cannon-companion-generic-launcher-game-qualifiers-p27-28
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '27-28'
+pdf_pages: '28-29'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: generic launcher tabletop game qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition, printed p27 and continued Spike paragraph on p28/PDF28-29. Fictional game category, hazard and consumable-item rules, separate from shared attack resolution.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  launch_exhaust_game_hazard:
+    applies_to: [rocket launcher, missile launcher]
+    exception: unless otherwise noted
+    fictional_game_zone: {relative_location: directly behind launcher token, width_game_m: 1, length_game_m: 12}
+    game_damage_code: 12M
+    game_damage_power_reduction_per_game_meter: 1
+  generic_launcher_category:
+    category_options: [generic, specialized]
+    eligible_game_ammunition: any listed standard rocket or missile type
+    inventory_references: [CC p44, SR3 p279]
+    game_damage_and_special_rules: use selected ammunition entry
+    core_binding: {path: rules/combat/sr3-core-rocket-missile-numeric-p120.yml, blob: 4797f464ce21d9fdbf165d0cea85eefc24b482f9}
+    supplementary_procedure: {path: procedures/combat/missile-combat.yml, blob: f7a61c8682b49cf5dfe272caf23638dda1a01004}
+  spike_disposable_launcher:
+    entity_binding: {path: entities/weapons/spike-disposable-launcher.yml, blob: a6ec3c68a2dc24f3b48ee19335f0a3339f143902}
+    game_inventory_uses: 1
+    reusable_as_launcher_after_use: false
+    remaining_game_item_use: improvised club
+  disposition: 'Fictional tabletop token hazard, abstract inventory compatibility and spent-item state only. No physical operation or real-world tactical instructions. Lasher body profile and other p28 subsections are outside this record; no whole-page or whole-source acceptance.'
