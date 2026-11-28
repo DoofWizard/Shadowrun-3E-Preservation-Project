@@ -20,6 +20,7 @@ data:
     environment: Patient remains inert on life support in a vat of DNA-vector solution.
     neural_treatment: 10 minutes per month of therapy; patient unconscious with sensory
       stimulus minimized during neural treatment.
+    communication_after_neural_treatment: For the remaining treatment period, patients may communicate through a datajack or magical mindlink.
     minimum_whole_body:
       duration: 2 months
       cost: 50,000¥
@@ -60,6 +61,9 @@ data:
       street_index: 2
       legality: Legal
   age_rejuvenation:
+    eligibility: May be performed at any time before death.
+    major_therapy_sessions: 1
+    brain_chemistry_limit: Brain chemistry must remain largely unchanged or the patient risks losing substantial memory and learned motor skills; no numeric penalty is specified.
     result: Restores physical age to approximately 21.
     base_time: 1 month for true age 40 or less; +2 weeks per decade above 40.
     maintenance: Every 6 months for 3 years.
@@ -90,14 +94,15 @@ data:
     interpretation_limit: The original printed dashes are preserved as literal source
       cells; numerical interpretation is not supplied by this source record.
 framing: reference_exact
-headline: 'Gene therapy and rejuvenation, printed Bio Index dashes — FanPro10664 p26/PDF27'
-summary: 'FanPro, State of the Art: 2063 (2003), Shadowrun Third Edition fictional tabletop reference. Original p26/PDF27 market-table Bio Index cells for Augmented Healing, Cellular Repair, and Rejuvenation Maintenance Session are literal dashes. No numerical interpretation is inferred; all other accepted procedures and prices are retained.'
+headline: 'Gene therapy and rejuvenation, eligibility and treatment conditions — FanPro10664 p26/PDF27'
+summary: 'FanPro, State of the Art: 2063 (2003), Shadowrun Third Edition fictional tabletop reference. Original p26/PDF27 market-table Bio Index cells for Augmented Healing, Cellular Repair, and Rejuvenation Maintenance Session are literal dashes. No numerical interpretation is inferred. The original also specifies communication during therapy, rejuvenation eligibility before death, one major session and limits on brain chemistry alteration.'
 name: "Gene Therapy and Age Rejuvenation"
 domain: genetech
 effective: {status: current, source: source.fanpro-10664, pages: "26-27", basis: defines}
 gene_therapy:
   environment: "Patient remains inert on life support in a vat of DNA-vector solution."
   neural_treatment: "10 minutes per month of therapy; patient unconscious with sensory stimulus minimized during neural treatment."
+  communication_after_neural_treatment: For the remaining treatment period, patients may communicate through a datajack or magical mindlink.
   minimum_whole_body: {duration: "2 months", cost: "50,000¥"}
   restore_existing_genetic_pattern: {minimum_duration: "1 month", minimum_cost: "30,000¥"}
 applications:
@@ -131,6 +136,9 @@ applications:
     street_index: 2
     legality: Legal
 age_rejuvenation:
+  eligibility: May be performed at any time before death.
+  major_therapy_sessions: 1
+  brain_chemistry_limit: Brain chemistry must remain largely unchanged or the patient risks losing substantial memory and learned motor skills; no numeric penalty is specified.
   result: "Restores physical age to approximately 21."
   base_time: "1 month for true age 40 or less; +2 weeks per decade above 40."
   maintenance: "Every 6 months for 3 years."
