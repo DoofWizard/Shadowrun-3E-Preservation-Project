@@ -1,19 +1,38 @@
 id: entity.chemistry.acth
 record_type: entity
-name: "ACTH"
+name: ACTH
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '117-118,157-158'
+pdf_pages: '118-119,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "5/12 hrs"
-  cost_nuyen: 100
+  cost_nuyen_per_dose: 100
   street_index: 1
   legality: "Legal"
   vector: "Inhalation"
   speed: "Instant"
+  damage: '-'
+  addiction: '-'
   tolerance: 3
   edge: "10/—"
+  fix_factor: '-'
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [entity.bioware.adrenal-pump]}
 sources:
   - {source: source.mm, pages: "117-118", relation: defines, note: "ACTH pharmaceutical game effects and statistics"}
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effects and purchase tables'}
 notes:
   - "In the game, inhaled ACTH triggers an adrenal pump; cost includes a six-dose inhaler."
+data:
+  table_dash_fields: {printed_118: [damage, addiction, fix_factor], printed_157: [damage, addiction, fix_factor]}
+  source_variants:
+    printed_117: {cost_includes_inhaler: true, package_doses: 6}
+    printed_118: {speed: Instant, cost_nuyen: 100, purchase_row_unit: unspecified}
+    printed_157: {speed: Immediate}
+    printed_158: {cost_nuyen: 100, purchase_table_header: per_dose}
+    purchase_basis_reconciliation: unresolved_source_variant
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp117-118,157-158: ACTH original equipment rows'
+framing: reference_exact
