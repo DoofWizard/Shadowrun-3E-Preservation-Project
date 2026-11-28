@@ -177,6 +177,59 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         prior = r['previous_manifest_blob_sha']
         require(prior == parent_blob, 'inline_index_parent_blob_mismatch')
         schema = 'wastelands-alter-pressure-index-receipt/v1'
+    elif manifest_path == 'sources/manifests/MrJohnsonsLittleBlackBook.yml':
+        # Actual FanPro25003 archived compact index receipt. The exact flag
+        # attests the retained snapshot only; do not invent an original parent
+        # digest or distinguish branch/commit attestations absent in the receipt.
+        # Full verify() still requires original artifact custody, exact historical
+        # bytes and the separate actual Git registration transition.
+        require(set(r) == {'commit', 'blob', 'exact'},
+                'inline_index_mjlbb_receipt_fields')
+        require(r['exact'] is True, 'inline_index_original_readback_missing')
+        require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
+                and confirm.get('status') == 'verified',
+                'inline_index_mjlbb_verified_confirm_required')
+        source_sha = '2426699e60652473e1d1be3387c6baf45fa950d3b1ae05e8cfd07302bc34cd5d'
+        require(confirm.get('source') == 'source.fanpro-25003' and
+                confirm.get('pdf_sha256') == source_sha,
+                'inline_index_mjlbb_original_identity_mismatch')
+        record_id, record_path = confirm.get('record_id'), confirm.get('path')
+        require(isinstance(record_id, str) and record_id.startswith('reference.mjlbb.')
+                and isinstance(record_path, str)
+                and re.fullmatch(r'references/campaign/mjlbb-[A-Za-z0-9_-]+\.yml', record_path),
+                'inline_index_mjlbb_record_identity_required')
+        require(all(isinstance(confirm.get(k), str) and
+                    re.fullmatch(r'[0-9a-f]{40}', confirm[k]) for k in
+                    ('commit_sha', 'readback_blob_sha')) and
+                confirm.get('expected_blob_sha') == confirm.get('readback_blob_sha'),
+                'inline_index_mjlbb_semantic_identity_mismatch')
+        require(all(isinstance(confirm.get(k), str) and
+                    re.fullmatch(r'[0-9a-f]{64}', confirm[k]) for k in
+                    ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_mjlbb_digest_required')
+        # Reuse the strict YAML parser rather than accepting duplicate keys.
+        from validator import parse
+        manifest = parse(snapshot_raw)
+        require(isinstance(manifest, dict) and manifest.get('id') == confirm['source']
+                and manifest.get('catalog_number') == 'FanPro25003'
+                and manifest.get('edition') == 'SR3'
+                and manifest.get('source_pdf_sha256') == source_sha,
+                'inline_index_mjlbb_snapshot_identity_mismatch')
+        regs = manifest.get('verified_semantic_records')
+        require(isinstance(regs, list), 'inline_index_mjlbb_registrations_required')
+        matches = [e for e in regs if isinstance(e, dict) and
+                   (e.get('id') == record_id or e.get('path') == record_path)]
+        require(len(matches) == 1, 'inline_index_mjlbb_unique_registration_required')
+        entry = matches[0]
+        require(entry.get('id') == record_id and entry.get('path') == record_path
+                and entry.get('commit') == confirm['commit_sha']
+                and entry.get('blob') == confirm['readback_blob_sha']
+                and entry.get('gate') == 'verified'
+                and all(entry.get(k) == confirm[k] for k in
+                        ('candidate_sha256', 'immutable_sha256')),
+                'inline_index_mjlbb_registration_mismatch')
+        commit, recorded_blob, path = r['commit'], r['blob'], manifest_path
+        prior, schema = None, 'mjlbb-compact-index-receipt/v1'
     elif manifest_path in ('sources/manifests/M&M.yml', 'sources/manifests/CannonCompanion.yml'):
         from source_index_receipts import adapt
         commit, recorded_blob, path, prior, schema = adapt(
