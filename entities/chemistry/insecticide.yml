@@ -1,15 +1,37 @@
 id: entity.chemistry.insecticide
 record_type: entity
-name: "Insecticide"
+name: Insecticide
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '113,157'
+pdf_pages: '114,158'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "Always"
+  availability: Always
   cost_nuyen_per_liter: 10
   street_index: 1
-  legality: "Legal"
+  legality: Legal
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 113, relation: defines, note: "Insecticide fictional game effects and statistics"}
+  - {source: source.mm, page: 113, relation: defines, note: Fictional game effects and purchase row}
+  - {source: source.mm, page: 157, relation: clarifies, note: Consolidated purchase table}
 notes:
-  - "Game mechanic includes special effects against creatures with Vulnerability (Insecticides)."
+  - Only abstract game statistics and supernatural creature mechanics are represented.
+data:
+  fictional_vulnerability:
+    required_weakness: Vulnerability (Insecticides)
+    ordinary_exposure: nuisance
+    substantial_game_attack_damage_code: 4L Physical
+    reaction: {qualifier: likely, alternatives: [berserk, flee], decision: gamemaster}
+    berserk_reference: SR3 p163 Bear shaman
+    qualifying_game_attack_damage_level_increase: 1
+    example: {from: Moderate, to: Serious}
+    applies_to_fictional_eld_ar_eligible_ammunition: true
+    eld_ar_reference: Man & Machine p115
+  metahuman_game_effect: {decision: gamemaster, fixed_damage_code: null}
+  shared_weakness_reference: rules/critters/weakness-conditions-p15.yml
+  lineage_reference: rules/chicago/bug-city-insect-powers-weaknesses-p144.yml
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition RPG, printed pp113,157/PDF114,158: abstract vulnerability game effects and market row'
+framing: reference_exact
