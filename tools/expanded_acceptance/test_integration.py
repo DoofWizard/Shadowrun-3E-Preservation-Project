@@ -61,7 +61,7 @@ class IntegrationTests(unittest.TestCase):
             gate = root / 'tools/ingestion/ingestion_gate.py'
 
             def call(*args):
-                return json.loads(subprocess.check_output([sys.executable, str(gate), *map(str, args)]))
+                return json.loads(subprocess.check_output([sys.executable, '-B', str(gate), *map(str, args)]))
 
             plan = call('prepare', baseline, candidate, fixture.path, fixture.source['id'], fixture.pdf_sha)
             write(fixture.path, raw)
@@ -74,6 +74,12 @@ class IntegrationTests(unittest.TestCase):
             index = commit('Synthetic source index')
             fixture.e.update(plan=plan, confirm=receipt, index_commit=index, historical_confirm_artifact=art(encoded(receipt)))
             fixture.e['prewrite_journal_artifact']['plan'] = art(encoded(plan))
+            snapshot = encoded(fixture.manifest)
+            index_receipt = {'commit_sha': index, 'blob_sha': blob(snapshot),
+                             'manifest_path': fixture.mp, 'readback_exact': True,
+                             'prior_blob_sha': blob(encoded(original))}
+            fixture.e['historical_index_receipt_artifact'] = art(encoded(index_receipt))
+            fixture.e['historical_index_snapshot_artifact'] = art(snapshot)
             args = []
             for name, value in [('review', fixture.review), ('bindings', fixture.bindings), ('evidence', fixture.evidence)]:
                 path = tmp / (name + '.json')
