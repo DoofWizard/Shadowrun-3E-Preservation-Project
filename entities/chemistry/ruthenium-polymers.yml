@@ -1,15 +1,36 @@
 id: entity.chemistry.ruthenium-polymers
 record_type: entity
-name: "Ruthenium Polymers"
+name: Ruthenium Polymers
 domain: chemistry
 status: ingested
-intrinsic:
-  availability: "5/14 days"
-  cost_nuyen_per_square_meter: 10000
-  street_index: 2
-  legality: "Legal"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '114, 157'
+pdf_pages: '115, 158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '5/14 days', cost_nuyen_per_square_meter: 10000, street_index: 2, legality: Legal}
+links: {uses: [], requires: [entity.chemistry.imaging-scanner], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 114, relation: defines, note: "Ruthenium Polymer cloaking rules and statistics"}
-notes:
-  - "Works with imaging scanners/processors to provide the source's fictional visual-cloaking modifiers."
+  - {source: source.mm, page: 114, relation: defines, note: 'Ruthenium Polymers fictional cloaking game effects and purchase rows'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Equipment Table repeated purchase row'}
+notes: []
+data:
+  cloak_eligibility: {entire_object_covered: true, imaging_scanners_minimum: 4, metahuman_examples: [covered_cloak, covered_body_suit]}
+  perception_test:
+    activation_required: true
+    base_target_number_modifier: 4
+    modifier_per_scanner_above_minimum: 1
+    maximum_modifier: 12
+    unaffected_systems: [radar, thermographic, ultrasonic]
+    specified_observers_halve_modifier: [dwarf, troll, ultrasound_user, vehicle_sensor]
+    rounding: down
+  power: {gel_pack_duration_hours: 10, replacement_pack_cost_nuyen: 50, vehicle_power_supply_permitted: true}
+  movement:
+    full_effect_maximum_meters_per_combat_turn: 6
+    modifier_reduction_per_extra_meters: 1
+    extra_meters_step: 2
+    exceptionally_fast_target_perception_modifier: -2
+    exceptionally_fast_threshold: unspecified
+    exceptionally_fast_modifier_qualifier: likely
+headline: 'FASA7126 Man & Machine: Cyberware (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp114,157/PDF115,158: Ruthenium Polymers Perception Test and game-equipment effects'
+framing: reference_exact
