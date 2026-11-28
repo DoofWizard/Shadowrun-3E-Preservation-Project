@@ -1,11 +1,26 @@
 id: entity.gear.slap-patch
 record_type: entity
-name: "Slap Patch"
+name: Slap Patch
 domain: gear
 status: ingested
-intrinsic: {availability: "6/72 hrs", cost: "50 nuyen plus chemical cost", street_index: 2, legality: "Legal"}
-links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+source: source.mm
+printed_pages: '116,157'
+pdf_pages: '117,158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {availability: '6/72 hrs', cost: '50 nuyen plus chemical cost', street_index: 2, legality: Legal}
+links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: [rule.health.sr3-core-slap-patches-p305]}
 sources:
-  - {source: source.mm, page: 116, relation: defines, note: "Slap Patch description and statistics"}
+  - {source: source.mm, page: 116, relation: defines, note: 'Slap Patch fictional game effects and purchase statistics.'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated fictional equipment purchase row.'}
 notes:
-  - "Fictional adhesive game delivery item; attached compound is represented separately."
+  - 'Fictional adhesive game delivery item; attached compound is represented separately.'
+data:
+  eligible_fictional_game_drug: any
+  game_exposure_vector: contact
+  in_game_protection_interactions: [dermal_armor, blood_filtration]
+  source_protection_cross_reference: SR3 p305
+  core_protection_rule: rule.health.sr3-core-slap-patches-p305
+  legacy_market_record: entity.chemistry.slap-patch
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp116,157/PDF117,158: Slap Patch game effects'
+framing: reference_exact
