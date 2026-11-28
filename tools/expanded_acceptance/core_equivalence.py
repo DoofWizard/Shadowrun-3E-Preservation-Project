@@ -144,7 +144,7 @@ def verify(git, source, original_field, original_page, binding,
         # the p105 SR3 qualifying conditions remain fully operative.
         action = original_field['value']
         check(source['id'] == 'source.srcomp' and
-              source['sha256'] == '8c52409108459a130ff6292722d98dc1f7a65cf870e63a363c34dc1dc299afd5' and
+              source['sha256'] == '8c52409108459a130ff6292722d98dc1f7a65cf870e63e363c34dc1dc299afd5' and
               original_page['printed'] == 130 and original_page['pdf'] == 131,
               'not_the_reviewed_companion_action_index')
         check(original_field.get('kind') == 'row' and
