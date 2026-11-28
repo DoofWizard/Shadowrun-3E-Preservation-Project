@@ -229,18 +229,21 @@ def assess(git, review, bindings, evidence, pdf_sha, pdf_count):
                 git.ancestor(index_commit, git.head)
                 need(git.read(path, commit) == rraw, 'semantic_commit_bytes_mismatch')
                 ip = e['index_pointer']
+                historical_ip = e.get('historical_index_pointer', ip)
                 entry = ptr(manifest, ip)
                 historical_manifest = parse(git.read(mp, index_commit))
                 for k in ('id', 'source_pdf_sha256', 'catalog_number', 'publisher'):
                     need(historical_manifest[k] == manifest[k], 'index_source_identity_mismatch:' + k)
                 need(manifest_edition_matches(s, historical_manifest), 'index_source_identity_mismatch:edition')
-                need(entry == ptr(historical_manifest, ip), 'index_history_mismatch')
+                need(encoded(entry) == encoded(ptr(historical_manifest, historical_ip)), 'index_history_mismatch')
                 for k, v in [('id', r['id']), ('path', path), ('commit', commit), ('blob', blob(rraw)), ('gate', 'verified')]:
                     need(entry[k] == v, 'unindexed_or_changed_record:' + k)
                 if 'content_class' in entry:
                     need(r['content_class'] == [entry['content_class']], 'index_class_mismatch')
                 else:
                     mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, ip)
+                    if historical_ip != ip:
+                        mm_registration(s, r, plan, receipt, e['baseline_sha256'], entry, historical_ip)
             need(record_edition_matches(s, r), 'record_source_or_edition_mismatch:' + path)
             cache[path] = r
         r = cache[path]
@@ -286,7 +289,7 @@ def main():
                 pointer = '/' + d['registration_key'].replace('~', '~0').replace('/', '~1')
                 index_commit, semantic_commit = d['index_commit'], d['semantic_commit']
             else:
-                pointer = e['index_pointer']
+                pointer = e.get('historical_index_pointer', e['index_pointer'])
                 index_commit, semantic_commit = e['index_commit'], e['confirm']['commit_sha']
             transitions[path] = verify_index_transition(
                 git, review['source']['manifest'], index_commit, pointer,
