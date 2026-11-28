@@ -1,21 +1,46 @@
 id: rule.cybermancy.access
 record_type: rule
-name: "Access to Cybermancy"
+name: Cybermancy Access and Ritual Limits
 domain: cybermancy
 status: ingested
+source: source.mm
+printed_pages: '54-55'
+pdf_pages: '54-55'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: Cybermancy Access and Ritual Limits
+summary: FASA7126 Man & Machine, FASA Corporation (1999), Shadowrun Third Edition fictional tabletop rules, printed and PDF pp54-55.
 effective: {status: current, source: source.mm, page: 54, basis: defines}
 scope:
-  applies_to: ["cybermancy procedures"]
+  applies_to: [cybermancy procedures]
 resolution:
-  summary: "Cybermancy that takes Essence below zero requires a delta clinic and specialized magical support. Characters cannot begin play with Essence 0 or less; access is intended to be controlled by the gamemaster and tied to campaign circumstances."
-  inputs: ["clinic access", "magical support", "campaign permission"]
-  outputs: ["whether cybermancy may be attempted"]
+  summary: The source limits subzero Essence surgery to specialized delta clinics and makes access an optional campaign decision rather than an ordinary purchase or character creation choice.
+  inputs: [clinic access, magical support, campaign permission]
+  outputs: [whether cybermancy may be attempted]
   steps: []
+data:
+  access:
+    subzero_essence_requires_delta_clinic: true
+    specialized_magical_resources_required: true
+    clinic_controller_approval_required: true
+    gm_campaign_permission_required: true
+    starting_character_essence_must_be_positive: true
+    ordinary_walk_in_service: false
+    treatment_story_requirement: The book directs the GM to tie access to a plot element and an extended roleplaying endeavor, not only successful dice rolls.
+  cybermantic_magic:
+    player_character_use: The source presents the spells and rituals as unavailable to shadowrunners; it gives general information only.
+    hypothetical_technique_knowledge_alone_sufficient: false
+    resources: [delta clinic, dedicated medical staff for weeks, dedicated magical group]
+    minimum_ritual_hours: 24
+    ritual_components: [equivalent of an astral quest, powerful spirits in an unspecified role, metamagic strengthening the fictional spiritual binding]
+    drain: Described as extremely severe; the source supplies no numerical Drain code.
 links:
   uses: []
   affects: []
   modified_by: []
   interacts_with: [subsystem.cybermancy.core]
 sources:
-  - {source: source.mm, page: 54, relation: defines, note: "Access to Cybermancy"}
+  - {source: source.mm, page: 54, relation: defines, note: Access to Cybermancy}
+  - {source: source.mm, page: 55, relation: extends, note: Cybermantic Magic}
 notes: []
