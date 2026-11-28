@@ -1,0 +1,34 @@
+id: rule.vehicles.r3-revised-aircraft-fuel-qualifications-p74
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '74'
+pdf_pages: '76'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 p74 optional aircraft fuel qualifications
+summary: Qualifies the existing fictional game fuel calculation and crash consequences; retains a separate printed example conflict.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_rule: {id: rule.vehicles.fuel-consumption, path: rules/vehicles/fuel-consumption.yml, blob: e89be31faa117c8053644af84f528d968cfcff15}
+  optional: true
+  aircraft_maneuvers:
+    multiplier_result: remaining_initial_fuel
+    vtol_landing_applies_only_to: tilt-wing aircraft
+  worked_example:
+    vehicle: Mistral
+    maneuver: VSTOL takeoff
+    initial_liters: 2000
+    example_multiplier: 0.8
+    remaining_liters: 1600
+    economy_km_per_liter: 2
+    published_range_km: 3200
+    table_multiplier_for_same_maneuver: 0.7
+    discrepancy: unresolved printed table versus example; example not an override
+  out_of_fuel_crash_test:
+    success_passenger_damage: none
+    success_cargo_damage: none
+    failure_crash_damage_speed_basis: Stall Speed
+    failure_crash_damage_distance_basis: already calculated deceleration distance
+  scope: Fictional tabletop mechanics only; existing table values, exceptions, Stress and resistance rules reused. No historical edition difference inferred.
