@@ -1,0 +1,78 @@
+id: rule.chemistry.mm-magical-compound-effects-p122-123
+record_type: rule
+name: Magical compound game effects
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '122-123,157-158'
+pdf_pages: '123-124,158-159'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3): magical compound rule bindings'
+summary: 'Fictional tabletop RPG rules for character attributes, critter powers, durations and drawbacks; printed pp122-123 and 157-158.'
+effective: {status: current, source: source.mm, page: 122, basis: extends}
+scope: {applies_to: [magical compounds, Shadowrun characters]}
+resolution:
+  summary: Apply the common duration and expiry rules and the applicable compound-specific game effects.
+  inputs: [compound identity, character Essence, character state]
+  outputs: [temporary game effects, post-effect game penalties]
+  steps: []
+links:
+  uses: [entity.chemistry.animal-tongue, entity.chemistry.deepweed, entity.chemistry.immortal-flower, entity.chemistry.little-smoke, entity.chemistry.rock-lizard-blood, entity.chemistry.spirit-strength, entity.chemistry.witchs-moss]
+  affects: []
+  modified_by: []
+  interacts_with: []
+sources:
+  - {source: source.mm, pages: '122-123', relation: extends, note: Common and individual magical compound game rules}
+  - {source: source.mm, pages: '157-158', relation: extends, note: Consolidated game-stat tables}
+notes: []
+data:
+  common:
+    eligible_characters: [Awakened, mundane]
+    shelf_life_weeks: 1D6
+    expired_shelf_life: {advantages: false, disadvantages: true}
+    speed: Immediate
+    duration: {hours: 'Essence + 1D6', maximum_hours: 12}
+  animal_tongue:
+    entity: entity.chemistry.animal-tongue
+    power: {name: Animal Control, reference: SR3 p262}
+    drawback: {starts: effect_expiry, duration: equal_to_effect, nearby_animals: [mundane, paranormal], treated_as_power: Fear, reference: SR3 p263, spirits_count_as_animals: false}
+  deepweed:
+    entity: entity.chemistry.deepweed
+    willpower_modifier: 1
+    astral_perception: {required: true, applies_to: magically active smoker, includes_adepts_without_astral_access: true}
+    drawback: {starts: effect_expiry, duration: equal_to_effect, all_target_numbers_modifier: 2}
+    source_table_variants:
+      p122: {vector: '-', speed: '-', damage: '-'}
+      p157: {vector: 'Ingestion, Inhalation', speed: Immediate, damage: '-'}
+      p158: {vector: 'Ingestion or Inhalation', speed: Immediate, duration: 'Essence + 1D6 hrs'}
+  immortal_flower:
+    entity: entity.chemistry.immortal-flower
+    power: {name: Regeneration, reference: Critters p13}
+    damage_while_active: {boxes_per_permanent_physical_overflow_box_lost: 20, overflow_boxes_lost_per_threshold: 1, lost_boxes_recoverable: false}
+    after_overflow_reaches_zero: {essence_loss_per_further_damage_box_while_active: 0.1}
+    expiry_with_cyberware_or_bioware: {wound_effects: 2D6}
+  little_smoke:
+    entity: entity.chemistry.little-smoke
+    powers: {names: [Concealment, Confusion], reference: SR3 pp262-263}
+    drawback: {starts: effect_expiry, duration: equal_to_effect, Perception: 1, Willpower: 1}
+  rock_lizard_blood:
+    entity: entity.chemistry.rock-lizard-blood
+    power: {name: Immunity, types: [pathogens, poisons], reference: SR3 p264}
+    drawback:
+      starts: effect_expiry
+      without_existing_physical_damage: Light Physical wound
+      with_existing_physical_damage: {damage_level_increase: 1, duration: 'for the duration (source wording)'}
+  spirit_strength:
+    entity: entity.chemistry.spirit-strength
+    powers:
+      - {name: Enhanced Physical Attributes, reference: Critters p9}
+      - {name: Movement, target: self_only, reference: SR3 p265}
+      - {name: Enhanced Reactions, reference: Critters p9}
+      - {name: Enhanced Sense, count: 1, selected_by: gamemaster, reference: SR3 p263}
+    drawback: {starts: effect_expiry, duration: equal_to_effect, natural_Body: 1, natural_Quickness: 1, natural_Strength: 1, natural_Reaction: '1 + 1D6'}
+  witchs_moss:
+    entity: entity.chemistry.witchs-moss
+    power: {name: Paralyzing Touch, reference: Critters p13}
+    drawback: {starts: effect_expiry, duration: equal_to_effect, arms_usable: false, tests_involving_arms_modifier: 6}
