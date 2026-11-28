@@ -1,15 +1,27 @@
 id: entity.cyberware.eye-camera-eye-laser-medium-power
 record_type: entity
-name: "Eye Camera Eye Laser Medium Power"
+name: Eye Laser System — Medium Power
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '15,153'
+pdf_pages: '15,154'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   essence: 0.3
   cost_nuyen: 5000
-  availability: "8/1 wk"
+  availability: '8/1 wk'
   street_index: 2
-  legality: "5P-N"
-links: {uses: [], requires: [], component_of: [], interacts_with: []}
+  legality: '5P-N'
+links: {uses: [rule.cyberware.eye-laser-systems], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 153, relation: defines, note: "Sensory gear / eye equipment table statistics"}
-notes: []
+  - {source: source.mm, page: 15, relation: defines, note: Local Eye Laser System purchase row}
+  - {source: source.mm, page: 153, relation: clarifies, note: Consolidated Eye Laser System purchase row}
+notes:
+  - Stable existing identifier retained for consumers; printed equipment category is Eye Laser System, not Eye Camera.
+data:
+  printed_category: Eye Laser System
+  power_tier: medium
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition tabletop RPG, pp15,153/PDF15,154: Medium Power correct fictional equipment identity; stable legacy identifier retained'
+framing: reference_exact
