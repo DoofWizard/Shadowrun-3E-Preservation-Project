@@ -47,15 +47,36 @@ R3R_RECORDS = {
 }
 
 
-def adapt(receipt, snapshot, manifest_path, confirm):
+# The six newly recovered qualification receipts have two exact shapes.
+# Unlike the older route receipts both contain an original parent manifest pin.
+R3R_QUAL_SHORT = {'status', 'semantic_commit', 'semantic_blob', 'index_commit',
+                  'index_blob', 'historical_and_live_exact_readback', 'source_manifest_before_blob'}
+R3R_QUAL_FULL = {'source', 'path', 'record_path', 'record_id', 'semantic_commit',
+                 'semantic_blob', 'index_commit', 'index_blob', 'commit_readback_exact',
+                 'live_readback_exact', 'prior_blob', 'contiguous_advance', 'status'}
+R3R_QUAL_RECORDS = {
+    'rules/vehicles/r3-revised-train-qualifications-p65-66.yml': ('65-66', '67-68', [65, 66], [67, 68]),
+    'rules/vehicles/r3-revised-appendage-qualifications-p66-67.yml': ('66-67', '68-69', [66, 67], [68, 69]),
+    'rules/vehicles/r3-revised-acv-terrain-qualifications-p67.yml': ('67', '69', [67, 67], [69, 69]),
+    'rules/vehicles/r3-revised-aircraft-operation-qualifications-p68-69.yml': ('68-69', '70-71', [68, 69], [70, 71]),
+    'rules/vehicles/r3-revised-ship-crash-grounding-qualifications-p54-55.yml': ('54-55', '56-57', [54, 55], [56, 57]),
+    'rules/vehicles/r3-revised-ship-damage-control-qualifications-p57-58.yml': ('57-58', '59-60', [57, 58], [59, 60]),
+}
+
+
+def adapt(receipt, snapshot, manifest_path, confirm, parent_blob=None):
     from validator import parse
     require(manifest_path in (MM, R3R), 'r3r_mm_manifest_required')
     is_mm = manifest_path == MM
     source, source_sha, catalog, edition, publisher = (
         (MM_SOURCE, MM_SHA, 'FASA7126', 'SR3', 'FASA Corporation') if is_mm else
         (R3R_SOURCE, R3R_SHA, 'FanPro10662', 'Shadowrun Third Edition', 'FanPro'))
-    require(isinstance(receipt, dict) and set(receipt) == (MM_KEYS if is_mm else R3R_KEYS),
-            'r3r_mm_receipt_fields')
+    require(isinstance(receipt, dict), 'r3r_mm_receipt_fields')
+    keys = set(receipt)
+    short_qual = not is_mm and keys == R3R_QUAL_SHORT
+    full_qual = not is_mm and keys == R3R_QUAL_FULL
+    qualified = short_qual or full_qual
+    require(qualified or keys == (MM_KEYS if is_mm else R3R_KEYS), 'r3r_mm_receipt_fields')
     require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
             and confirm.get('status') == 'verified', 'r3r_mm_verified_confirm_required')
     require(confirm.get('source') == source and confirm.get('pdf_sha256') == source_sha,
@@ -68,8 +89,9 @@ def adapt(receipt, snapshot, manifest_path, confirm):
     require((receipt['semantic_commit'], receipt['semantic_blob']) ==
             (confirm['commit_sha'], confirm['readback_blob_sha']), 'r3r_mm_semantic_identity_mismatch')
     path = confirm.get('path')
-    require(isinstance(path, str) and path in (MM_RECORDS if is_mm else R3R_RECORDS),
-            'r3r_mm_record_path_required')
+    allowed = MM_RECORDS if is_mm else R3R_QUAL_RECORDS if qualified else R3R_RECORDS
+    require(isinstance(path, str) and path in allowed, 'r3r_mm_record_path_required')
+    prior = None
     doc = parse(snapshot)
     require(isinstance(doc, dict) and (doc.get('id'), doc.get('source_pdf_sha256'),
             doc.get('catalog_number'), doc.get('edition'), doc.get('publisher')) ==
@@ -88,6 +110,30 @@ def adapt(receipt, snapshot, manifest_path, confirm):
         require(isinstance(regs, list), 'r3r_mm_original_registration_list_required')
         require(section.get('source_pdf_sha256') == source_sha, 'r3r_mm_section_source_mismatch')
         commit, recorded_blob, schema = receipt['index_commit'], receipt['index_blob'], f'mm-p{printed}-purchase-index-receipt/v1'
+    elif qualified:
+        printed, pdf, printed_range, pdf_range = R3R_QUAL_RECORDS[path]
+        record_id = 'rule.vehicles.' + path.rsplit('/', 1)[-1].removesuffix('.yml')
+        # The full shape was observed only for the two naval scopes.
+        require(full_qual == ('ship-' in path), 'r3r_mm_qualification_layout_mismatch')
+        require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == (printed, pdf),
+                'r3r_mm_original_pages_mismatch')
+        require(receipt['status'] == 'indexed', 'r3r_mm_original_status_required')
+        if full_qual:
+            require(receipt['source'] == source and receipt['path'] == manifest_path
+                    and receipt['record_path'] == path and receipt['record_id'] == record_id,
+                    'r3r_mm_original_record_identity_mismatch')
+            require(receipt['contiguous_advance'] is False and receipt['commit_readback_exact'] is True
+                    and receipt['live_readback_exact'] is True, 'r3r_mm_original_readback_missing')
+            prior = receipt['prior_blob']
+            schema = 'r3r-naval-qualification-index-receipt/v1'
+        else:
+            require(receipt['historical_and_live_exact_readback'] is True, 'r3r_mm_original_readback_missing')
+            prior = receipt['source_manifest_before_blob']
+            schema = 'r3r-vehicle-qualification-index-receipt/v1'
+        require(pin(parent_blob) and pin(prior) and prior == parent_blob, 'r3r_mm_original_parent_mismatch')
+        regs = doc.get('verified_semantic_records')
+        require(isinstance(regs, list), 'r3r_mm_original_registration_list_required')
+        commit, recorded_blob = receipt['index_commit'], receipt['index_blob']
     else:
         record_id, printed, pdf, printed_range, pdf_range = R3R_RECORDS[path]
         require((confirm.get('printed_pages'), confirm.get('pdf_pages')) == (printed, pdf),
@@ -117,5 +163,5 @@ def adapt(receipt, snapshot, manifest_path, confirm):
                 and entry.get('original_source_sha256') == source_sha
                 and entry.get('contiguous_advance') is False, 'r3r_mm_registration_pages_mismatch')
     require(pin(commit) and pin(recorded_blob), 'r3r_mm_index_pin_required')
-    # No original receipt parent digest exists. Do not invent one.
-    return commit, recorded_blob, manifest_path, None, schema
+    # Older receipts lack parent pins; do not invent them.
+    return commit, recorded_blob, manifest_path, prior, schema
