@@ -278,8 +278,8 @@ postscan_verified_mechanics_recovery:
       range_printed: [73, 75]
       range_pdf: [74, 76]
       content_class: equipment_stat
-      commit: f00a53d3e35720d1a505fba4341c928dbdfed43d
-      blob: 90ce8a2be0c82076b4106d39cd604eb557d231dc
+      commit: d46de6eb0485078450512ec11b8167c3cb27cb71
+      blob: e8060fabaf0caac93753ec4f7603deffd9fa6a7b
       gate: verified
       contiguous_advance: false
     - id: rule.mercenary.sota63-rural-guide-contact-p72
@@ -2515,4 +2515,36 @@ culture_shock_nightlife_access_conditions_2026_11_28:
   candidate_sha256: 6c637a69f6682c52fd8d9281cab7866638de792873c3bb9fc6603f1648dcb9ed
   prewrite_archive_sha256: d11b0eb815a7b00b1c908de2f4ed72b5857585dfa1edec917d83e003a2111a89
   disposition: 'Restore venue-specific admission and room availability, queue timing, disputed contact-specific price and work-off arrangement, and other missing contextual qualifications. No new universal mechanics or independent source acceptance.'
+  new_global_contiguous_pages: 0
+
+
+soldiers_field_gear_group_qualifications_2026_11_28:
+  source: source.fanpro-10664
+  source_pdf_sha256: a49f6c0030ed18e8541a7d45ca2a263ada608e6a22689287a4d234caa471265a
+  exact_verified_input_manifest_blob: c4a0c1d604f1a5ce40d7f62654448e86e3cd2470
+  actual_source_verification: source_pdf_hash_verified
+  printed_pages: [73, 74, 75]
+  physical_pdf_pages: [74, 75, 76]
+  record: equipment.sota63-mercenary-field-gear-p73-75
+  prior_commit: f00a53d3e35720d1a505fba4341c928dbdfed43d
+  prior_blob: 90ce8a2be0c82076b4106d39cd604eb557d231dc
+  semantic_commit: d46de6eb0485078450512ec11b8167c3cb27cb71
+  semantic_blob: e8060fabaf0caac93753ec4f7603deffd9fa6a7b
+  candidate_sha256: 70a0760f3f12813b4813a653617ab30f904d84de0fcb12ce3ff27cc379b23402
+  baseline_sha256: feca1bc7872098beddda4ab34c184c305ed5de2521a675c42192accbadfc7027
+  immutable_sha256: cec5e10f1631348742e7201138d10cfe1a78b75b8c3a01950479dac0492087e8
+  prewrite_archive_sha256: 0fcc55472d138c24fb3b99dc469b065a185958cca19df8510f8a90fe0b7798ea
+  confirmation: verified
+  corrected_fields:
+    - /data/equipment_effects/camping_gear/survival_test_target_number_effect
+    - /data/equipment_effects/field_rations/survival_test_target_number_effect
+    - /data/equipment_effects/ammunition_pouches/optional_gamemaster_use
+    - /data/equipment_effects/combat_vest/optional_gamemaster_use
+    - /data/equipment_effects/load_bearing_harness/optional_gamemaster_use
+    - /data/equipment_effects/equipment_pouches/optional_gamemaster_use
+    - /data/equipment_effects/military_rucksacks/optional_gamemaster_use
+  lineage_comparisons:
+    - {id: rule.hazards.target-wastelands-survival-test, blob: b34c7804b53e9d980a08e41cc68b4ced8dfd2d57}
+    - {id: rule.hazards.target-wastelands-survival-test-qualifications, blob: d9b400a42089e179de8dfc8f87a57c71cffbf9fc}
+  disposition: 'Restore the two all-character sufficiency statements and five explicitly optional GM inventory limits. No numerical table changes or exclusive group threshold inferred. Separate Wastelands at-least-half qualifications remain intact. Prior historical receipts remain separate; no formal acceptance or global advancement.'
   new_global_contiguous_pages: 0
