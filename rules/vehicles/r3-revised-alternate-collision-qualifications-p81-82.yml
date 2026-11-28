@@ -1,0 +1,47 @@
+id: rule.vehicles.r3-revised-alternate-collision-qualifications-p81-82
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '81-82'
+pdf_pages: '83-84'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class:
+- rule_exact
+headline: FanPro10662 pp81-82 optional alternate collision qualifications
+summary: Optional fictional vehicle combat test, rounding, and table applicability bindings; retain the printed table and example distinction.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  existing_option:
+    id: option.vehicles.alternate-collision-damage
+    path: options/vehicles/alternate-collision-damage.yml
+    blob: c88c258b103b20a16975ac06b7777d1054e8a198
+  optional: true
+  replaces_core_scopes:
+  - {heading: Ramming, printed_page: 143}
+  - {heading: Vehicle Damage From Impact, printed_page: 145}
+  - {heading: Vehicle-Pedestrian Collisions, printed_page: 148}
+  test_qualifications:
+    ramming_test: Reuse the SR3 p143 game test and applicable modifiers.
+    positioning: The gamemaster may require a successful Positioning Test for a selected collision type.
+    damage_resistance: Standard game resistance tests; spending Control Pool dice is optional.
+    vehicle_collision_crash_test: Both vehicles require immediate Crash Tests, with driver and vehicle damage modifiers.
+    barrier_collision_crash_test: The vehicle still makes a Crash Test following game barrier damage resolution.
+  rounding:
+    collision_power: up
+    t_bone_post_collision_speed: down
+  body_comparison_table_boundary:
+    printed_light_row: Exactly twice the other vehicle Body as literally stated in the table.
+    worked_example: The fictional example applies Light when Body 5 is compared to Body 2, and explains that the former is more than twice the latter.
+    disposition: Preserve the original table wording and example interpretation separately; the table does not explicitly enumerate the greater-than-twice case.
+  pedestrian_game_condition:
+    crash_test_exemption: The rule states that a vehicle does not need a Crash Test after striking a metahuman.
+    per_turn_count_limit: vehicle Body Rating
+    inherited_unless_clause: The printed prose does not make the exemption conditional on falling below the per-turn count limit; the worked example separately contains a conditional crash reference.
+    disposition: Do not infer an automatic Crash Test threshold or resolve the example wording into a new general rule.
+  scope: Fictional RPG test applicability and typed rounding only; existing collision formulas, speed changes and equivalent Body values are referenced, not duplicated. No historical edition change inferred.
