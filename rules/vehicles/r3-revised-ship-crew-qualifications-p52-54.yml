@@ -1,0 +1,33 @@
+id: rule.vehicles.r3-revised-ship-crew-qualifications-p52-54
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '52,54'
+pdf_pages: '54,56'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Revised SR3 tabletop ship crew role qualifications
+summary: Preserve crew requirements, helm control eligibility, fictional network accounting and electronic-system operator restrictions.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_ship_attributes: {id: rule.vehicles.ship-attributes, path: rules/vehicles/ship-attributes.yml, blob: 2662e83b9a50579ca4f586df8948859c16878648}
+  ship_operation:
+    single_individual_sufficient: false
+    rigger_adaptation_removes_multiple_person_requirement: false
+  helm:
+    possible_control_actor: [pilot, ship Autonav]
+    pilot_operating_modes: [manual, datajack, rigged if rigger-adapted]
+    existing_driving_test_binding: reuse ship-attributes helm Driving Tests
+  gunnery:
+    default_operators_per_weapon_system: 1
+    exception: weapon game statistics may specify otherwise
+    nwcn_game_accounting: each separate weapon system counts as one drone in the network
+    existing_network_reference: {path: procedure/vehicles/naval-weapon-control.yml, blob: f18e6e67e7722ddd06380b76f150b6ec00549764}
+  comm_crew:
+    game_responsibilities: [sensors, sonar, communications, electronic warfare]
+    nonrigged_ship: one dedicated operator for each type of electronic system
+    rigger_adapted_ship: pilot may operate all ship electronic systems through the vehicle rig
+    autonav_may_operate_ship_electronics: false
+  engineering: Reuse the existing SR3 engineering crew minimum, shortage Stress Test modifier, Stress Point and full-staff recovery rule without duplicate application.
+  lineage_limit: The older source7124 ship-core record contains some analogous qualifications; this record binds the current revised SR3 source without applying older formulas or asserting original printed edition differences.
