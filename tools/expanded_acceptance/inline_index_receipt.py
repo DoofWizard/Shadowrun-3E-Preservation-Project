@@ -291,7 +291,7 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 'inline_index_mjlbb_registration_mismatch')
         commit, recorded_blob, path = r['commit'], r['blob'], manifest_path
         prior, schema = None, 'mjlbb-compact-index-receipt/v1'
-    elif manifest_path == 'sources/manifests/Rigger3Revised.yml' and 'previous_manifest_blob' in r:
+    elif manifest_path == 'sources/manifests/Rigger3Revised.yml' and 'previous_manifest_blob' in r and 'verified_semantic_records' not in r:
         # Original compact receipt shape observed in five source-local transactions.
         required = {'index_commit', 'manifest_blob', 'live_blob', 'previous_manifest_blob',
                     'semantic_commit', 'semantic_blob', 'historical_and_live_readbacks_match'}
@@ -361,7 +361,8 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         from index_transition import _identity, _gate, _registrations
         from validator import parse
         required = {'commit_sha', 'blob_sha', 'exact_commit_and_live_readback', 'verified_semantic_records'}
-        require(set(r) == required, 'inline_index_r3r_count_fields')
+        has_parent = 'previous_manifest_blob' in r
+        require(set(r) == (required | {'previous_manifest_blob'} if has_parent else required), 'inline_index_r3r_count_fields')
         require(r['exact_commit_and_live_readback'] is True, 'inline_index_original_readback_missing')
         records = {
             'rules/drones/r3-revised-snake-eyes-sensory-qualifications-p93-94.yml':
@@ -377,6 +378,18 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 confirm.get('status') == 'verified' and confirm.get('source') == R3R_SOURCE and
                 confirm.get('pdf_sha256') == R3R_SHA, 'inline_index_r3r_count_confirm')
         record_path = confirm.get('path')
+        parent_records = {
+            'rules/vehicles/r3-revised-mechanic-scheduling-p124.yml':
+                ('rule.vehicles.r3-revised-mechanic-scheduling-p124', [124, 124], [126, 126], 'rule_exact'),
+            'rules/drones/r3-revised-autosoft-chip-loading-p44-99-142.yml':
+                ('rule.drones.r3-revised-autosoft-chip-loading-p44-99-142', [99, 99], [101, 101], 'rule_exact'),
+            'rules/vehicles/r3-revised-modification-example-capacity-p112.yml':
+                ('rule.vehicles.r3-revised-modification-example-capacity-p112', [112, 112], [114, 114], 'rule_exact'),
+        }
+        if has_parent:
+            require(isinstance(parent_blob, str) and re.fullmatch(r'[0-9a-f]{40}', parent_blob) and
+                    r['previous_manifest_blob'] == parent_blob, 'inline_index_parent_blob_mismatch')
+            records = parent_records
         require(isinstance(record_path, str) and record_path in records, 'inline_index_r3r_count_path')
         record_id, printed, pdf, content_class = records[record_path]
         def folios(span):
@@ -408,7 +421,8 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                 all(entry[k] == confirm.get(k) for k in ('candidate_sha256', 'immutable_sha256')),
                 'inline_index_r3r_count_registration_digest')
         commit, recorded_blob, path = r['commit_sha'], r['blob_sha'], manifest_path
-        prior, schema = None, 'r3r-compact-count-index-receipt/v1'
+        prior = r['previous_manifest_blob'] if has_parent else None
+        schema = 'r3r-compact-count-parent-index-receipt/v1' if has_parent else 'r3r-compact-count-index-receipt/v1'
     elif (manifest_path == 'sources/manifests/Rigger3Revised.yml' or
           (manifest_path == 'sources/manifests/M&M.yml' and 'semantic_live_and_commit_exact' in r)):
         from r3r_mm_index_receipts import adapt
