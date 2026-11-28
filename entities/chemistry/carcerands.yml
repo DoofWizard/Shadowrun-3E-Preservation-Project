@@ -1,15 +1,32 @@
 id: entity.chemistry.carcerands
 record_type: entity
-name: "Carcerands"
+name: Carcerands
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '111,156'
+pdf_pages: '112,157'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  availability: "4/10 days"
-  cost: "100 nuyen per day"
+  availability: '4/10 days'
+  cost: 100 nuyen per day
   street_index: 2
-  legality: "Legal"
+  legality: Legal
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 111, relation: defines, note: "Carcerands description and game effects"}
+  - {source: source.mm, page: 111, relation: defines, note: Fictional game timer and purchase rule}
+  - {source: source.mm, page: 156, relation: clarifies, note: Consolidated purchase row}
 notes:
-  - "Fictional delivery technology that delays release of an enclosed compound; contained compound is represented separately."
+  - Fictional tabletop RPG mechanics only; no physical preparation or administration instructions.
+data:
+  game_timer:
+    parameter: delay period
+    event: resolution of stored game effect
+    affected_by_fictional_blood_filter_cyberware: false
+  purchase_basis:
+    unit: per dose
+    cost_nuyen_per_delay_day: 100
+    stored_game_item_cost_included: false
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation (1999), fictional Shadowrun Third Edition, printed pp111,156/PDF112,157: game-only equipment timer and separate market costs'
+framing: reference_exact
