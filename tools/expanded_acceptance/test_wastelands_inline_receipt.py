@@ -98,7 +98,7 @@ class WastelandsInlineReceiptTests(unittest.TestCase):
         tx = dict(index_commit='c'*40, confirm=self.confirm,
                   historical_index_receipt_artifact=artifact(json.dumps(self.receipt).encode()),
                   historical_index_snapshot_artifact=artifact(self.snapshot))
-        transition = dict(index_commit='c'*40, index_parent='d'*40',
+        transition = dict(index_commit='c'*40, index_parent='d'*40,
                           status='new_or_changed_verified_registration')
         self.assertTrue(verify(FixtureGit(), self.path, tx, transition)['receipt_prior_blob_checked'])
         tx['historical_index_snapshot_artifact'] = artifact(b'tampered')
