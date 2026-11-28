@@ -1,0 +1,50 @@
+id: rule.combat.cannon-companion-specialized-launcher-game-qualifiers-p28
+record_type: rule
+status: reviewed
+source: source.cc
+printed_pages: '28'
+pdf_pages: '29'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7908 Cannon Companion: specialized launcher tabletop item qualifications'
+summary: 'FASA Corporation Shadowrun Third Edition fictional tabletop game, printed p28/PDF29. Specialized category, Arbelast, Ballista and Great Dragon game eligibility, equipment options, turn accounting and rating modifiers.'
+data:
+  publication: {title: Cannon Companion, publisher: FASA Corporation, catalog_number: FASA7908, edition: Shadowrun Third Edition}
+  specialized_category:
+    game_ammunition_eligibility: designated type only
+    generic_game_ammunition_allowed: false
+    game_intelligence_rating_reference: SR3 p120
+    existing_ammunition_table: {path: equipment/cannon-companion-specialized-ammunition-p28-120.yml, blob: 58c0691728eebe6ee491665b70a5ec8a552ce639}
+  arbelast_ii_maw:
+    printed_name: Arbelast II MAW
+    entity_binding: {path: entities/weapons/arbalest-ii-maw.yml, blob: d26f31feb5234bd2be0aeac8db566214a8bb570d}
+    included_game_imaging_rating: 1
+    game_ammunition_class: HE rocket
+  ballista:
+    entity_binding: {path: entities/weapons/ballista-missile-launcher.yml, blob: 31fe6bf12ad8fe00d0b2ecc17c4c0c5ad44eeee0}
+    game_attack_modes: [direct, indirect]
+    included_game_accessory: laser target designator
+    additional_game_accessories_allowed: false
+    game_equipping_combat_turns: 10
+    game_unequipping_combat_turns: 10
+    game_ammunition_eligibility: Ballista only
+    variants:
+      Mk_I: {game_projectile_type: rocket, game_attack_modes: [direct, indirect]}
+      Mk_II: {game_projectile_type: semi-smart missile, game_attack_modes: [direct]}
+      Mk_III: {game_projectile_type: laser-tracking missile, game_attack_modes: [direct, indirect], game_designator_required: true, game_designator_options: [laser, microwave, radar], option_choice_timing: purchase, designator_reference: CC p35}
+    all_three_variants_game_class: AV
+    barrier_rating_game_divisor: 2
+    vehicle_armor_game_divisor: 2
+    mixed_game_ammunition_allowed: true
+    game_magazine_capacity: 4
+    game_reload_prerequisite: unequipped
+    game_magazine_replacement_combat_turns: 3
+  great_dragon:
+    entity_binding: {path: entities/weapons/great-dragon-atgm-launcher.yml, blob: 90e6f3be4565fc1f5d553d42639fff4546af7f84}
+    included_game_imaging: {type: optical, rating: 2}
+    additional_game_accessories_allowed: false
+    game_ammunition_class: AV
+    barrier_rating_game_divisor: 2
+    vehicle_armor_game_divisor: 2
+  disposition: 'Abstract tabletop item compatibility and game ratings only. Existing ammunition values and Great Dragon acquisition correction remain separate. The printed Arbelast spelling and legacy Arbalest entity binding are both preserved. No operational or physical design guidance.'
