@@ -1,16 +1,40 @@
 id: rule.cyberware.independent-cybereyes
 record_type: rule
-name: "Independent Cybereyes"
+name: Independent Cybereyes
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '16-17,153'
+pdf_pages: '16-17,154'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed pp16-17,153/PDF16-17,154: Independent Cybereyes game tests and installation'
 effective: {status: current, source: source.mm, page: 16, basis: defines}
-scope: {applies_to: ["independent cybereyes mounted away from normal paired eye placement"]}
+scope: {applies_to: [independent cybereyes mounted away from normal paired eye placement]}
 resolution:
-  summary: "Independent cybereyes may be installed elsewhere on the body and must be mentally selected for visual use. Switching imposes an adaptation penalty to vision-based tests, and independent eyes use the single-cybereye accessory rules."
-  inputs: ["active eye", "placement", "accessories"]
-  outputs: ["visual-test modifiers and available functions"]
+  summary: Independent eyes may be fitted individually or as pairs at other body locations. Use the specified simultaneous-vision modifiers and the independent-eye installation table.
+  inputs: [active eye sets, placement, accessories, test type]
+  outputs: [target number modifiers, installation cost, Essence, available functions]
   steps: []
+data:
+  installation: {body_locations: other body locations permitted, configurations: [single, pair]}
+  accessory_rule: rule.cyberware.single-cybereye
+  accessory_rule_printed_page: 44
+  installation_cost_exception: Use the independent-eye table instead of ordinary single-eye installation costs.
+  simultaneous_use:
+    active_set_definition: An independent eye or a pair of natural or cyber eyes.
+    applies_to: all user target numbers
+    modifier_per_set_beyond_first: 1
+    closed_eyes_count: false
+  ranged_attack_only_independent_eye_TN_modifier: 4
+  distance_judgment_test_TN_modifier: 2
+  social_interaction_reference_printed_page: 48
+  installation_table:
+    pair: {essence: 0.5, concealability: '-', ammo: '-', mode: '-', damage: '-', cost_nuyen: 15000, availability: '6/72 hrs', street_index: 2, legality: Legal}
+    single: {essence: 0.3, concealability: '-', ammo: '-', mode: '-', damage: '-', cost_nuyen: 10000, availability: '6/72 hrs', street_index: 2, legality: Legal}
 links: {uses: [rule.cyberware.single-cybereye], affects: [], modified_by: [], interacts_with: []}
 sources:
-  - {source: source.mm, pages: "16-17", relation: defines, note: "Independent Cybereyes"}
+  - {source: source.mm, pages: '16-17', relation: defines, note: Independent Cybereyes game effects and installation table}
+  - {source: source.mm, page: 153, relation: defines, note: Eyes equipment table confirms installation market values}
 notes: []
