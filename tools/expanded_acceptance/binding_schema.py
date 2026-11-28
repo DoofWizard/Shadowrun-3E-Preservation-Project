@@ -2,6 +2,7 @@
 import re
 
 from source_index_receipts import MM, MM_SOURCE, MM_SHA, require
+from target_matrix_binding import target_matrix_table_pointer
 
 
 def safe_git_path(path):
@@ -9,11 +10,13 @@ def safe_git_path(path):
         r'[A-Za-z0-9_.-]+(?:/[A-Za-z0-9_.-]+)*', path))) and not {'.', '..'}.intersection(path.split('/'))
 
 
-def substantive_pointer(binding, field):
+def substantive_pointer(binding, field, source=None, page=None):
     pointer, path = binding.get('pointer'), binding.get('path')
     if not isinstance(pointer, str) or not safe_git_path(path):
         return False
     if pointer.startswith('/data/') and len(pointer) > len('/data/'):
+        return True
+    if target_matrix_table_pointer(binding, field, source, page):
         return True
     return (binding.get('mode', 'source_local') == 'source_local' and
             field.get('class') == 'equipment_stat' and path.startswith('entities/') and
