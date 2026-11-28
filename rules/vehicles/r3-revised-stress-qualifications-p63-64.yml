@@ -1,0 +1,48 @@
+id: rule.vehicles.r3-revised-stress-qualifications-p63-64
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '63-64'
+pdf_pages: '65-66'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro10662 SR3 — vehicle Stress test and overload qualifications (pp63-64)
+summary: Preserves the original mandatory game test, GM discretion, initial rating and overload conditions plus the published numerical example.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_stress: {id: rule.vehicles.stress, path: rules/vehicles/stress.yml, blob: 86f955d9ddab2eefc4f84edcf2283f59d162fd8e}
+  initial_rating:
+    all_new_vehicles: 0
+    used_vehicle: gamemaster determines the exact initial rating; it may be higher
+  overload:
+    maximum_cargo_as_multiple_of_load_rating: 2
+    stress_points: 1
+    interval: each hour or fraction of an hour carrying excess cargo
+    related_rule: procedure.vehicles.pull-test
+    retain_separate_long_distance_hauling_procedure: true
+  failed_driving_test:
+    gamemaster_stress_test_required: true
+    reuse_existing_2D6_comparison: true
+    maintenance_result_modifier_reference: rule.vehicles.maintenance-overhead
+  stress_rule_of_one:
+    reuse_existing_stress_threshold: true
+    after_rule_of_one_increase_at_or_above_existing_threshold:
+      major_system_selected_by: gamemaster
+      driver_crash_test_required: true
+  discretionary_test:
+    gamemaster_may_call_stress_test_whenever_vehicle_running: true
+  example:
+    body: 3
+    control_pool_dice_available: 0
+    intentional_stress: 3
+    additional_driving_dice: 3
+    first_stress_test_result: 4
+    first_stress_test_causes_system_failure: false
+    stress_before_rule_of_one: 3
+    ones_rolled: 5
+    car_skill: 5
+    rule_of_one_d6_result: 4
+    resulting_stress: 7
+    automatic_system_failure: true
+  scope: Tabletop game-state qualifications only; retain existing speed, deceleration, intentional dice and overhaul formulas. No historical original-edition difference inferred.
