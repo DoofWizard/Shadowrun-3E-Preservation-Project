@@ -1,33 +1,27 @@
-{
-  "id": "entity.spell.analyze-magic",
-  "record_type": "entity",
-  "name": "Analyze Magic",
-  "domain": "spells",
-  "status": "ingested",
-  "intrinsic": {
-    "category": "detection",
-    "type": "M",
-    "target": "F",
-    "duration": "S",
-    "drain": "(L)"
-  },
-  "links": {
-    "uses": [
-      "rule.magic.spell-characteristics"
-    ],
-    "requires": [],
-    "component_of": [],
-    "interacts_with": []
-  },
-  "sources": [
-    {
-      "source": "source.mits",
-      "page": 140,
-      "relation": "defines",
-      "note": "Spell statistics and effect"
-    }
-  ],
-  "notes": [
-    "Analyzes a spell, spirit, magical item, or assensed being."
-  ]
-}
+id: entity.spell.analyze-magic
+record_type: entity
+name: Analyze Magic
+domain: spells
+status: ingested
+intrinsic:
+  category: detection
+  type: M
+  target: F
+  duration: S
+  drain: (L)
+links: {uses: [rule.magic.spell-characteristics], requires: [], component_of: [], interacts_with: []}
+sources:
+  - {source: source.mits, page: 140, relation: defines, note: Spell statistics and effect}
+notes:
+  - 'Allows the subject to analyze a spell, spirit or magical item as if assensing it.'
+source: source.mits
+printed_pages: '140'
+pdf_pages: '141'
+edition_scope: SR3
+content_class: [rule_exact]
+data:
+  eligible_analysis_targets: [spell, spirit, magical item]
+  effect_reference: rule.magic.mits-detection-spell-effects-original
+headline: 'FASA7907 Magic in the Shadows: Analyze Magic (FASA Corporation, SR3, p140/PDF141)'
+summary: 'Fictional tabletop RPG detection spell; the original definition specifies three classes of analysis targets.'
+framing: reference_exact
