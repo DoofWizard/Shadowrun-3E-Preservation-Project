@@ -1,0 +1,114 @@
+id: rule.vehicles.r3-revised-final-design-cost-worked-examples-p113-114
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '113-114'
+pdf_pages: '115-116'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: Rigger 3 Revised (FanPro10662), FanPro, fictional Shadowrun Third Edition vehicle design cost examples, printed pp113-114/PDF115-116
+summary: Retain both final-design examples, their distinct printed cost and availability presentations, and the unresolved arithmetic and feature-layout differences.
+framing: reference_exact
+data:
+  publication:
+    title: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  scope: Worked examples only; neither table replaces a general rule or a separately published production vehicle catalog entry.
+  light_strike_vehicle:
+    printed_page: 113
+    design_points: 169
+    chassis_mark_up: 0.40
+    marked_up_points: 67.6
+    base_cost_nuyen: 6760
+    class_decision: Security-grade in this example, based on the fitted mounts, absence of armor and relatively light armament.
+    street_index: 2
+    street_price_nuyen: 13520
+    printed_table:
+      handling: '3/4'
+      speed: 90
+      acceleration: 8
+      body: 2
+      armor: 0
+      signature: 3
+      autonav: 0
+      pilot: '—'
+      sensor: 0
+      cargo: 5
+      load: 45
+      seating: '1b'
+      entry: NA
+      fuel: G (40 l)
+      economy: 8 km/l
+      setup_breakdown: NA
+      landing_takeoff: NA
+      chassis: Sand buggy
+      street_index: 2
+      availability: 2/2 days
+      cost_nuyen: 13520
+  brickyard_beauty_racer:
+    printed_page: 114
+    base_chassis_mark_up: 1.0
+    unusual_design_mark_up_addition: 0.5
+    final_mark_up: 1.5
+    design_points: 1402
+    marked_up_points: 2103
+    base_cost_nuyen: 210300
+    custom_tires_cost_nuyen: 900
+    printed_price_with_tires_nuyen: 214950
+    base_street_index: 2
+    smart_materials_street_index_addition: 1
+    final_street_index: 3
+    printed_street_price_nuyen: 644850
+    printed_table:
+      handling: '2/7'
+      speed: 311
+      acceleration: 21
+      body: 3
+      armor: 0
+      signature: 2
+      autonav: 0
+      pilot: '—'
+      sensor: 2
+      cargo: 6.5
+      load: 95
+      seating: 1
+      entry: '—'
+      fuel: G (40 l)
+      economy: 6 km/l
+      setup_breakdown: '—'
+      landing_takeoff: '—'
+      chassis: Sports car
+      street_index: 3
+      availability: 11/11 days
+      cost_nuyen: 210300
+    explicitly_listed_final_features: [Crash Cage, Datajack Port, High Performance Tires, Nitrous Oxide Injectors (Rating 6), Rigger Adaptation]
+  original_discrepancies:
+    racer_tire_price_arithmetic:
+      calculated_base_plus_tires_nuyen: 211200
+      printed_total_nuyen: 214950
+      difference_nuyen: 3750
+      treatment: Preserve the printed table cost, printed narrative prices and independent arithmetic check; no invented adjustment.
+    unusual_mark_up: The example adds 0.5 despite the general unusual-design modifier range of 1 to 3 on p113. No general range amendment inferred.
+    availability: The example tables retain 2/2 days and 11/11 days respectively; the general p113 class adjustments of +6 and +4 are not reflected explicitly in these table entries. Preserve both presentations without declaring an exception.
+    features_layout: The first Other Features line on p114 follows the racer table but precedes the transition to the racer narrative; it names Electronics Port without radio, Pintle Mount, Ring Mount and Roll Bars. The p112 modification example assigns those items to the Light Strike Vehicle. Preserve the placement uncertainty rather than treating them as additional racer features.
+  reuse:
+    - rule: rule.vehicles.design-cost
+      blob: e59a233b720cdef2a1edd558457a496b49898b30
+      binding: General design cost and Street Index rules.
+    - rule: rule.vehicles.r3-revised-vehicle-availability-class-modifiers-p113
+      blob: e355f305e8bbcee1956c5f7416fb45b196dfe012
+      binding: General revised Availability and base-time adjustments.
+    - rule: rule.vehicles.r3-revised-design-example-datajack-double-count-p112
+      blob: 9a801ec349600a8af513f54bbc21911842d19c9c
+      binding: Existing race-car design point subtotal and separate modification example attribution; no duplication of the p112 arithmetic discrepancy.
+  catalog_separation:
+    - entity: entity.vehicle.ferrari-open-wheel-racer
+      blob: a37137d95d9eb7b830da94ce4afa113268c8a9ef
+      binding: Existing normalized historical production-catalog entry has different handling, capacity, fuel and cost values; these are not the custom example.
+    - entity: entity.vehicle.lockheed-chenowth-light-strike-vehicle
+      blob: 369a9b260442d9ce845b88a43e4adad150f2b7a6
+      binding: Existing normalized historical production-catalog entry has different handling, capacities, seating, availability and cost; these are not the custom example.
+  edition_relationship: Original revised worked examples preserved; historical printed-edition comparison not asserted.
