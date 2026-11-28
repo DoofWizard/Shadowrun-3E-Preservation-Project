@@ -3,6 +3,11 @@ record_type: entity
 name: "Atropine"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '118,157-158'
+pdf_pages: '119,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "5/12 hrs"
   cost_nuyen_per_dose: 600
@@ -11,7 +16,20 @@ intrinsic:
   vector: "Injection"
   speed: "Immediate/15 min"
   damage: "7D"
+  addiction: '—'
+  tolerance: '—'
+  edge: '—'
+  fix_factor: '—'
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 118, relation: defines, note: "Atropine game effects and statistics"}
-notes: []
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Consolidated fictional equipment tables'}
+notes:
+  - Represented strictly as original fictional tabletop game data.
+data:
+  local_table_dash_fields: [addiction, tolerance, edge, fix_factor]
+  printed_118: Four explicit dash cells; no numeric zero inferred.
+  printed_157: Pharmaceutical Compounds (Effects) omits these four columns rather than providing replacement values.
+  character_effects_record: rule.chemistry.mm-character-condition-effects-p118
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional SR3 tabletop RPG), pp118,157-158/PDF119,158-159: Atropine original equipment rows'
+framing: reference_exact
