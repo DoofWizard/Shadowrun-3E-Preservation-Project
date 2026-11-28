@@ -1,11 +1,28 @@
 id: entity.gear.ares-cascade-rifle
 record_type: entity
-name: "Ares Cascade Rifle"
+name: Ares Cascade Rifle
 domain: gear
 status: ingested
-intrinsic: {concealability: 4, ammo: "100/20(c)", mode: "SA", damage: "Special", weight: 5.5, cost_nuyen: 1800, availability: "12/14 days", street_index: 2, legality: "6P-F"}
+source: source.mm
+printed_pages: '115,157'
+pdf_pages: '116,158'
+edition_scope: SR3
+content_class: [equipment_stat]
+intrinsic: {concealability: 4, ammo: '100/20(c)', mode: SA, damage: Special, weight: 5.5, cost_nuyen: 1800, availability: '12/14 days', street_index: 2, legality: 6P-F}
 links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 115, relation: defines, note: "Ares Cascade Rifle fictional weapon/game gear statistics"}
+  - {source: source.mm, page: 115, relation: defines, note: 'Ares Cascade Rifle fictional weapon/game gear statistics and game effects'}
+  - {source: source.mm, page: 157, relation: clarifies, note: 'Repeated Chemtech Application Gear purchase row.'}
 notes:
-  - "Fictional rifle-scale chemical-delivery game weapon with stream and spray modes."
+  - 'Fictional rifle-scale chemical-delivery game weapon with stream and spray modes.'
+data:
+  attack_skill: Rifle
+  game_reservoir: {capacity_shots: 100, extra_clip_cost_nuyen: 20}
+  compatible_game_ammunition: {chemical_clips_as: entity.gear.ares-supersquirt-ii}
+  game_modes:
+    stream: {range_category: SMG}
+    spray: {range_category: shotgun, effective_choke: 2, choke_adjustable: false}
+  game_mounting: {drone_mount_allowed: true}
+  game_accessory_slots: {top: allowed, under_barrel: allowed, barrel: prohibited}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), pp115,157/PDF116,158: Ares Cascade Rifle'
+framing: reference_exact
