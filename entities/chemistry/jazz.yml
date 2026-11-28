@@ -3,6 +3,11 @@ record_type: entity
 name: "Jazz"
 domain: chemistry
 status: ingested
+source: source.mm
+printed_pages: '119,157-158'
+pdf_pages: '120,158-159'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
   availability: "8/4 days"
   cost_nuyen_per_dose: 40
@@ -10,6 +15,7 @@ intrinsic:
   legality: "4P-X"
   vector: "Inhalation"
   speed: "Immediate"
+  damage: '-'
   addiction: "4M/5P"
   tolerance: 2
   edge: "2/8"
@@ -17,5 +23,9 @@ intrinsic:
 links: {uses: [rule.chemistry.addiction], requires: [], component_of: [], interacts_with: [rule.initiative.initiative]}
 sources:
   - {source: source.mm, page: 119, relation: defines, note: "Jazz fictional drug game effects and statistics"}
-notes:
-  - "Temporarily modifies Quickness and Initiative in the tabletop rules and has a crash period."
+  - {source: source.mm, pages: '157-158', relation: defines, note: 'Original consolidated effect and purchase tables'}
+notes: ["Temporarily modifies Quickness and Initiative in the tabletop rules and has a crash period."]
+data:
+  table_dash_fields: {printed_119: [damage], printed_157: [damage]}
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, SR3 tabletop RPG), pp119,157-158: Jazz equipment table'
+framing: reference_exact
