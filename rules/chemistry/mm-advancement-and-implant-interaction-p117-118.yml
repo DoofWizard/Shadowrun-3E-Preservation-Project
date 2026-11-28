@@ -1,0 +1,47 @@
+id: rule.chemistry.mm-advancement-and-implant-interaction-p117-118
+record_type: rule
+name: Pharmaceutical advancement and implant interaction
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '117-118'
+pdf_pages: '118-119'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Man & Machine (FASA7126, FASA Corporation, SR3 tabletop RPG), printed pp117-118/PDF118-119: character advancement and implant interaction'
+summary: 'Fictional character Karma adjustment and implant tolerance clauses, separate from existing equipment and general tolerance rules.'
+effective: {status: current, source: source.mm, page: 117, basis: extends}
+scope: {applies_to: [Shadowrun characters, fictional pharmaceutical game items]}
+resolution:
+  summary: Resolve the named game-item clauses without replacing existing character advancement or implant statistics.
+  inputs: [game item identity, desired attribute score, character state]
+  outputs: [Karma cost adjustment, optional long-term game consequences, implant trigger eligibility]
+links:
+  uses: [entity.chemistry.anabolic-steroids, entity.chemistry.acth, entity.bioware.adrenal-pump]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.chemistry.tolerance, rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: '117-118', relation: extends, note: Character-development and implant interaction clauses}
+notes: []
+data:
+  character_advancement:
+    entity: entity.chemistry.anabolic-steroids
+    prerequisite: The fictional character meets the source-described regular intensive game-item use and exercise condition.
+    qualifying_weeks: desired_attribute_score
+    karma_cost_reduction:
+      Strength: {fraction: '1/2', rounding: up}
+      Body: {fraction: '1/4', rounding: up}
+    rounding_target: not separately specified by source
+    longer_term_game_consequences:
+      gm_discretion: true
+      permitted_game_representations: [appropriate Flaws, modifiers, occasional Stress damage]
+  acth:
+    entity: entity.chemistry.acth
+    implant: entity.bioware.adrenal-pump
+    activation_rule: reuse existing implant activation and game-item references
+    addictive: false
+    tolerance_accumulates: true
+    accumulated_tolerance_consequence: external implant trigger becomes ineffective
+    tolerance_threshold: not specified in this clause
