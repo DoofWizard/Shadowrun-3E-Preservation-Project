@@ -40,17 +40,18 @@ def artifact(a):
 
 def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
                  historical_blob, parent_blob=None, *,
-                 semantic_commit=None, semantic_blob=None):
+                 semantic_commit=None, semantic_blob=None, confirm=None):
     """Check exact archived bytes against independently obtained Git blob pins.
 
     This lower-level diagnostic does not establish Git ancestry or custody.
-    Supported schemas are the observed Rigger, split and Matrix receipt shapes.
+    Supported schemas are the observed Rigger, split, Matrix, M&M and CC receipt shapes.
     """
     r = json.loads(receipt_raw, object_pairs_hook=pairs)
     require(isinstance(r, dict), 'inline_index_receipt_object_required')
     require(re.fullmatch(r'[0-9a-f]{40}', index_commit) and
             re.fullmatch(r'[0-9a-f]{40}', historical_blob), 'inline_index_full_git_pin_required')
-    require(re.fullmatch(r'sources/manifests/[A-Za-z0-9_.-]+\.yml', manifest_path),
+    require(manifest_path == 'sources/manifests/M&M.yml' or
+            re.fullmatch(r'sources/manifests/[A-Za-z0-9_.-]+\.yml', manifest_path),
             'inline_index_manifest_path_required')
     if {'commit_sha', 'blob_sha', 'manifest_path', 'readback_exact'} <= r.keys():
         require(set(r) <= {'commit_sha', 'blob_sha', 'manifest_path', 'readback_exact',
@@ -90,6 +91,10 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         require(isinstance(prior, str) and prior == parent_blob,
                 'inline_index_parent_blob_mismatch')
         schema = 'matrix-index-receipt/v1'
+    elif manifest_path in ('sources/manifests/M&M.yml', 'sources/manifests/CannonCompanion.yml'):
+        from source_index_receipts import adapt
+        commit, recorded_blob, path, prior, schema = adapt(
+            r, snapshot_raw, manifest_path, confirm, parent_blob)
     else:
         raise ValueError('inline_index_unsupported_receipt_schema')
     require((commit, recorded_blob, path) == (index_commit, historical_blob, manifest_path),
@@ -121,7 +126,7 @@ def verify(git, manifest_path, transaction, transition):
     require(snapshot == actual, 'inline_index_snapshot_bytes_mismatch')
     r = json.loads(receipt, object_pairs_hook=pairs)
     prior = None
-    if 'prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r:
+    if 'prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r or (manifest_path == 'sources/manifests/CannonCompanion.yml' and 'prior_blob' in r):
         prior = blob(git.read(manifest_path, transition['index_parent']))
     if 'registration_key' in r:
         key = r['registration_key']
@@ -133,4 +138,5 @@ def verify(git, manifest_path, transaction, transition):
         return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior,
                             semantic_commit=confirm['commit_sha'],
                             semantic_blob=confirm['readback_blob_sha'])
-    return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior)
+    return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior,
+                        confirm=transaction.get('confirm'))
