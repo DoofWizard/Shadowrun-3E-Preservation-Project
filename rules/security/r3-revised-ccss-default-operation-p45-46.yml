@@ -1,0 +1,24 @@
+id: rule.security.r3-revised-ccss-default-operation-p45-46
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '45-46'
+pdf_pages: '47-48'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition
+content_class: [rule_exact]
+headline: FanPro Rigger 3 Revised (FanPro10662), fictional Shadowrun Third Edition tabletop RPG, printed pp45-46/PDF47-48
+summary: The gamemaster chooses the game security-system arrangement; CCSS devices normally operate autonomously when the rigger is not actively controlling them.
+framing: reference_exact
+data:
+  publication: {title: Rigger 3 Revised, publisher: FanPro, catalog_number: FanPro10662, edition: Shadowrun Third Edition, source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909}
+  existing_subsystem: {id: subsystem.security.ccss, path: subsystems/security/ccss.yml, blob: 856a6673b26f58fa175a02a9325ff4a87dd36607}
+  game_site_system_selection:
+    authority: gamemaster
+    alternatives_per_area: [Matrix security system only, CCSS only, both systems]
+    different_areas_may_use_different_systems: true
+    neither_system_automatically_supersedes_the_other: true
+  game_component_operation:
+    applies_to: fictional CCSS security devices
+    default_when_not_actively_controlled_by_rigger: autopilot
+    existing_alert_binding: reuse the subsystem's automatic alert rule; no additional Perception Test or automatic successful recognition is inferred
+  scope_limit: Game-state selection and autonomous device state in the published fictional tabletop system only. Preserve existing control actions, ratings, vigilance and perception checks. No historical edition difference asserted.
