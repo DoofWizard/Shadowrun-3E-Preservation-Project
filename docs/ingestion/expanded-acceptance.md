@@ -1128,3 +1128,41 @@ or independently pinned complete source review/bindings/evidence; the
 connector's PR-only workflow listing for pinned main returned no runs.
 No semantic writes, formal book acceptance, global page credit, or changes
 to common gates or worker configuration.
+
+
+## 2026-11-27 — retained M&M / Cannon index schemas and successor acceptance dependency
+
+Closure-first engineering only. No semantic, manifest, checkpoint, schedule or protected gate mutation; zero global pages. The start HEAD was `47388b9e3b94735f2204f3ef0cc238a1f89d0a10`; live forward-ingestion-v2 read at `f289054db49b55dec6f9e5a6401abaa6588c2e69`. Restored four changed runtime dependencies locally, with exact blob verification: preservation_method.py `338caa42e355c7611247a0925b2b03c4fd76c1e3`, test_preservation_method.py `a7613a2320e698e39d6759e0490aab53283a4ac5`, transaction_recovery.py `bc15e089ae4557812a940ebf23056a179c978e5c`, tests/test_transaction_recovery.py `cd2ff87d33e9703c1d5f1bc0533f90d99d9c103f`. Actual protected tests: 29 editorial, 43 ingestion/preservation, 17 recovery passed.
+
+The isolated validator now supports the exact observed three original receipt schemas, the literal M&M manifest path (not generic unsafe paths), source-local equipment_stat /intrinsic/ bindings, and the exact observed nested M&M registration shape with independently typed canonical class and source-review evidence. All original digest, readback, source identity, same-record, ancestry and independence requirements remain. The earlier four M&M accessory receipts without explicit original readback attestations are NOT certified. The old advisory blocker_triage pointer predicate still needs alignment with the validator's narrow /intrinsic/ support; it is not a basis for a formal decision.
+
+| File under tools/expanded_acceptance/ | Tested exact blob | Contents commit |
+|---|---|---|
+| source_index_receipts.py | 7983546197e9f43ead75dd8e653d88ae65364783 | 1a39956b3913e664df12755ddcdad5fbc346abff |
+| test_source_index_receipts.py | 100047cd15602bcf196dbbc38bcdc58b1ae298ee | fbf6e08e33a62b1ffa138da7a6586b27f4dcf68e |
+| inline_index_receipt.py | eb6685e9f9ae1459f1ac00f05e6fb76a891b5192 | af82e18b0c995d3bce54ca0123f1a4ca69f43e4b |
+| binding_schema.py | 8e9d07b24692b3ccfd9c36018852c42193ee4216 | c593009546be30e68866c1e54f77243e3261724f |
+| test_binding_schema.py | 54d909095ee06d866470471e7907b29f0541e858 | 11b137eb9b722503649394d150c54f9561d313df |
+| mm_successor.py | 466893ce02d765c4179485b624e044c8b1c9df51 | aeb2539239ed580732aef87b6af75bf99e80a6a5 |
+| test_mm_successor.py | 96f49ea59ae534b06489b39807816294e4dfbf82 | 7df7e12387c60ee072662a997e0a97870d025ec0 |
+| validator.py | a2e3daaed6de053bd7d77ec7a090d2e24defdae6 | e7ae40e27c4f8ad33cda9fe41aa453b6b467e964 |
+| test_current_cli_integration.py | 240c941c78803a7d57379bd29e90d6cb83ed55b8 | f27134a031ef883b0bd8a74dc7b4fd335525c9e5 |
+| test_mm_successor_evidence.py | 0103052d31c3920e5e01e9ef691245035c424ac7 | 72510144db59c815bce7b957b8d8ba8bfe79744c |
+
+Actual 21 new synthetic tests passed locally (9 receipt schema, 4 binding, 6 Git successor history, 1 CLI integration, 1 full successor evidence with actual local Git and protected gate execution). The CLI synthetic fixture passes literal dash, original index receipt/snapshot, individual transition and actual source hash check; missing snapshot and null substitution are blocked. Full successor fixture passes only with both registrations and independent lineage review artifact, and blocks same reviewer/custodian and absent predecessor snapshot. Synthetic evidence is not production certification.
+
+Three retained authentic archive index receipt/snapshot pairs rechecked against exact original Git blob pins, plus six tampered-artifact negatives rejected. These are previously recovered journals, not new recovery:
+
+| Scope | Semantic commit / blob | Original index commit / manifest blob |
+|---|---|---|
+| M&M pp41-42 previous device effects | d4addd8922713e7c430a13dcb6a707c3b72459c6 / 19e909acdede83c507aafac613abb01e01b75623 | e9988c47623214872ecbf680478519fea85a4d8a / 4d0e3cbebec3f66d41402403fca8403505ae1191 |
+| M&M pp41-42 current reservoir exception | fcb40a5cae126f46e8cb6592f1a26f9797540d9e / d2ffc488833f637f2930e00ec573ccaa20957862 | fb32ff23585256d00ff968e934b36f9e1a81a0b1 / 2b7e9c8c9651b7134d73c75a34c659dd28215961 |
+| Cannon Companion p118/PDF119 launcher variants | 3d5dfa7dc9c3543bc7b60145ab29fd549601ce49 / e8952fcb7466c901f31e0492833240aa307454e2 | 9f8edafd2c4174ca2c0922d47e5896958b0a2a23 / 155fd75fb9428992adb3a40e3bcead384eb209c7 |
+
+M&M previous archive Library libfile_6b693c0a7284819185119822d40c511b, SHA256 b74755b479b15ded676719e8bdaea227dd2feb293cd3788601f3398f68f204a1; current libfile_f85876c09e78819196bb39deb163fcda, SHA256 416279f05ec7489b765f4a1573210670ec90dbb949fe63ec76c88060c01d8198. Cannon libfile_2092b1ed83408191b498f5680573625f, SHA256 98c2c24eff125d5714573b8b0b05130f55cedd995aaeb9990a29347a38f25803. Source SHA pins retained, not freshly verified: M&M 6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8; Cannon 7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4.
+
+New bounded connector ancestry evidence: M&M previous semantic to index ahead 1/behind 0; previous index to current semantic ahead 12/behind 0. Current semantic to 2a9546671a22aeedabd2cd31f8e725c35f1791c1 ahead 1/behind 0 (docs only); that intermediate commit to current index ahead 1/behind 0 (M&M manifest only). Intermediate manifest blob still previous 4d0e3cbebec3f66d41402403fca8403505ae1191, path blob already current d2ffc488833f637f2930e00ec573ccaa20957862. Both exact nested registrations retained at observed live manifest 3948530837d51f056ae06ada7d68cdc9805a5b0d; live semantic path matches current blob. Cannon index follows semantic directly, previous manifest blob 9167e6d9a41343d8185fe5c23a60677d21bf46ec matches original receipt. Preserve Cannon variants and independently adjudicate edition precedence.
+
+Production M&M proof for rules/cyberware/mm-implant-device-game-effects-p41-42.yml now mandates predecessor_transaction and successor_review_artifact on the current transaction, historical original artifact custody and both real index transitions. The successor_review_artifact is independently pinned JSON protocol sr3-mm-successor-review/v1 binding source, source_sha256, path, record_id, previous/current semantic commit/blob, previous/current index commit, reviewer distinct from source reviewer/custodian, original_review_locator, all_changed_fields_reviewed=true, same_edition_confirmed=true, current_controls=true. These flags require actual separate review, not manufacture from Git. Predecessor uses normal inline original baseline/candidate/prepare/confirm/editorial/index receipt/index snapshot. The actual complete production proof remains blocked by independent adjudication and full local history; connector compare evidence is not the full local Git verifier execution.
+
+Coordinator handoff: ledger pin 3b70c1365638b8c5e393c1bd922bae06ede18b82 records previous authenticated history export at 4454f82eea80b020ca9c278ed795ce68e14512de, predating current records; current-head workflow lookup returned no runs through available PR-filtered connector, which does not prove no run exists. Current authenticated complete history and independently pinned original-derived source-wide review/bindings/evidence JSON were not acquired. Loose Alliances still needs successful original archaeology journal and Dragonheart lineage; move to the next eligible existing candidate once independently pinned inputs arrive, not another unchanged receipt replay. For Wastelands eight formal scopes and Companion remaining grapple/Rigger2 lineage, independent bindings remain outstanding. No new production blocker_triage or validator book verdict, source verification, mechanical fields, journals recovered, section/source certifications or page credit claimed in this run. Existing accepted core/Denver and ownership boundaries remain untouched.
