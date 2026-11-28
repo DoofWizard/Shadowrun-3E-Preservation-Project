@@ -44,6 +44,7 @@ data:
     cost: 25,000¥
     availability: 6/18 days
     street_index: 2
+    legality: Legal
     exceeding_limit: The published game states that immunizations beyond unmodified
       Body disrupt the immune system to the point of failure, with unpleasant consequences;
       no additional fixed test or numerical penalty is stated.
@@ -52,7 +53,7 @@ data:
       target: bacteria/disease
       preinfection: Subtract agent rating from TN of Body Tests for infection and/or
         from infection Power for Damage Resistance; Power <=0 grants immunity.
-      postinfection: Halve side effects; subtract rating from infection Power for
+      postinfection: Halve side effects (round down); subtract rating from infection Power for
         Damage Resistance; if damage becomes none, infection eliminated.
       duration: 24 hours
       verification: After 24h, Biotech Test vs original infection Power may determine
@@ -107,7 +108,7 @@ data:
     binder:
       target: one specific toxin chosen when purchased
       before_speed: Complete immunity.
-      after_speed: Halve toxin effects and protect against continued exposure.
+      after_speed: Halve toxin effects (round down) and protect against continued exposure.
       continued_exposure: Subtract binder rating from toxin Power and reduce Damage
         Level by one; Power <=0 grants immunity.
       duration: 1 hour
@@ -144,6 +145,5 @@ sources:
   pages: 29-30
   relation: defines
 framing: reference_exact
-headline: rule.genetech.immunization-and-protective-agents — archival rule_exact record
-summary: Source-indexed rule_exact from source.fanpro-10664, printed pages 29-30;
-  substantive assertions and provenance are in the structured data.
+headline: 'FanPro State of the Art: 2063, FanPro10664, 2003, Shadowrun Third Edition fictional tabletop rules, printed pp29-30/PDF30-31'
+summary: 'Original fictional game table legality for genetic immunization and two explicit round-down qualifiers for game effects; prior mechanical fields and scope preserved.'
