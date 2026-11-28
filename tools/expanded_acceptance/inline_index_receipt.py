@@ -44,7 +44,7 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
     """Check exact archived bytes against independently obtained Git blob pins.
 
     This lower-level diagnostic does not establish Git ancestry or custody.
-    Supported schemas are the observed Rigger, split, Matrix, M&M and CC receipt shapes.
+    Supported schemas include the observed Matrix and Target: Matrix receipt shapes.
     """
     r = json.loads(receipt_raw, object_pairs_hook=pairs)
     require(isinstance(r, dict), 'inline_index_receipt_object_required')
@@ -75,7 +75,8 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         required = {'path', 'commit', 'blob', 'previous_blob', 'semantic_commit',
                     'semantic_blob', 'exact_commit_and_branch_readback', 'commit_sha', 'blob_sha'}
         require(set(r) == required, 'inline_index_matrix_receipt_fields')
-        require(manifest_path == 'sources/manifests/Matrix.yml',
+        require(manifest_path in ('sources/manifests/Matrix.yml',
+                                  'sources/manifests/TargetMatrix.yml'),
                 'inline_index_matrix_manifest_required')
         commit, recorded_blob, path = r['commit'], r['blob'], r['path']
         require((r['commit_sha'], r['blob_sha']) == (commit, recorded_blob),
@@ -91,6 +92,23 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
         require(isinstance(prior, str) and prior == parent_blob,
                 'inline_index_parent_blob_mismatch')
         schema = 'matrix-index-receipt/v1'
+        if manifest_path == 'sources/manifests/TargetMatrix.yml':
+            require(isinstance(confirm, dict) and confirm.get('protocol') == 'sr3-gate/v1'
+                    and confirm.get('status') == 'verified',
+                    'inline_index_target_matrix_verified_confirm_required')
+            require(confirm.get('source') == 'source.fasa-7219' and
+                    confirm.get('pdf_sha256') == 'dc9fbba78b9eb5efc60941213a90dfa0be190275dc92ea671631ddb7db154c4b',
+                    'inline_index_target_matrix_original_identity_mismatch')
+            require(isinstance(confirm.get('record_id'), str) and confirm['record_id'].strip()
+                    and isinstance(confirm.get('path'), str)
+                    and re.fullmatch(r'(references|rule|rules|equipment|options|entities|world|procedure|procedures)/[\w./-]+\.yml', confirm['path'])
+                    and '..' not in confirm['path'].split('/'),
+                    'inline_index_target_matrix_record_identity_required')
+            require(confirm.get('commit_sha') == semantic_commit and
+                    confirm.get('readback_blob_sha') == semantic_blob and
+                    confirm.get('expected_blob_sha') == semantic_blob,
+                    'inline_index_target_matrix_semantic_identity_mismatch')
+            schema = 'target-matrix-index-receipt/v1'
     elif manifest_path == 'sources/manifests/TargetWastelands.yml':
         required = {'source', 'record_id', 'index_commit', 'manifest_blob_sha',
                     'previous_manifest_blob_sha', 'readback_commit_and_main_blob_match',
@@ -164,6 +182,6 @@ def verify(git, manifest_path, transaction, transition):
         require(confirm['status'] == 'verified', 'inline_index_matrix_verified_confirm_required')
         return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior,
                             semantic_commit=confirm['commit_sha'],
-                            semantic_blob=confirm['readback_blob_sha'])
+                            semantic_blob=confirm['readback_blob_sha'], confirm=confirm)
     return verify_bytes(receipt, snapshot, manifest_path, commit, blob(actual), prior,
                         confirm=transaction.get('confirm'))
