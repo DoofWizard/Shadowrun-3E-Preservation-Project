@@ -1,20 +1,31 @@
 id: entity.cyberware.eye-dart
 record_type: entity
-name: "Eye Dart"
+name: Eye Dart
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '16,153,155'
+pdf_pages: '16,154,156'
+edition_scope: SR3
+content_class: [equipment_stat]
 intrinsic:
-  essence: 0.4
+  essence: 0.25
   concealability: 10
-  ammunition: 5
-  mode: "SS"
-  damage: "Special"
-  cost_nuyen: 6400
-  availability: "6/1 wk"
-  street_index: 3
-  legality: "6P-Q"
-links: {uses: [rule.chemistry.drug-exposure], requires: [], component_of: [], interacts_with: []}
+  ammunition: 1
+  mode: SS
+  damage: Special
+  cost_nuyen: 4200
+  availability: '8/2 wks'
+  street_index: 2
+  legality: 7P-Q
+links: {uses: [rule.chemistry.drug-exposure, rule.cyberware.eye-weapons], requires: [], component_of: [], interacts_with: []}
 sources:
-  - {source: source.mm, page: 16, relation: defines, note: "Eye Dart description and game effects"}
+  - {source: source.mm, page: 16, relation: defines, note: Original fictional game capacity and effects}
+  - {source: source.mm, page: 153, relation: defines, note: Senseware purchase row}
+  - {source: source.mm, page: 155, relation: clarifies, note: Consolidated cyber weapons equipment row}
 notes:
-  - "Fictional Shadowrun eye-mounted dart weapon; toxin/compound payload mechanics are represented separately."
+  - Fictional Shadowrun tabletop equipment statistics; game effects are represented by the linked rule.
+data:
+  original_table_category: Eye Dart
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, pp16,153,155/PDF16,154,156: Eye Dart corrected original equipment row'
+framing: reference_exact
