@@ -1065,3 +1065,66 @@ remain in the Recovery library. Local diagnostic
 MM_ShadowBeat_Bounded_Receipt_Reconciliation_2026-11-27.json SHA256
 f589fc68fb17cfc56f282d1ada1b97d87f391b53c8c034a83795fbcf3d896b69.
 No semantic or manifest writes by this worker, no global page credit.
+
+
+## Newly indexed M&M reservoir exception and Cannon Companion p118 variants — 2026-11-27
+
+Read-only archival reconciliation at pinned main
+418336b9f534d00813f97f286cedb3c4c20fd7ef; forward-only workflow
+f289054db49b55dec6f9e5a6401abaa6588c2e69 read. Four newly retained source-owner
+ZIPs pass CRC; original prewrite members agree byte for byte with the
+confirmed archives. Both present-day gate prepare and confirm re-executions
+match original retained receipts (2/2 each), and local exact candidate and
+index-snapshot Git blob hashes match historical and pinned-head GitHub
+reads. Connector historical and pinned-head content compares equal.
+Both semantic commits change only their own path, and both index commits
+change only their own source manifest. Both index commits are ancestral to
+the pinned head. Actual current editorial and ingestion-gate tests: 49
+passed, exact cached script/test blobs match live. Four changed preservation/
+recovery dependencies are not locally refreshed; stale suites not run.
+No fresh PDF verification, extraction or cache use in this archival-only
+scope; original source-owner verify-source receipts retained.
+
+| Scope | Semantic commit / blob | Index commit / blob |
+|---|---|---|
+| M&M printed/PDF41–42 reservoir exception and references | fcb40a5cae126f46e8cb6592f1a26f9797540d9e / d2ffc488833f637f2930e00ec573ccaa20957862 | fb32ff23585256d00ff968e934b36f9e1a81a0b1 / 2b7e9c8c9651b7134d73c75a34c659dd28215961 |
+| Cannon Companion printed118/PDF119 appendix variants | 3d5dfa7dc9c3543bc7b60145ab29fd549601ce49 / e8952fcb7466c901f31e0492833240aa307454e2 | 9f8edafd2c4174ca2c0922d47e5896958b0a2a23 / 155fd75fb9428992adb3a40e3bcead384eb209c7 |
+
+M&M four new source-owner field groups match the commit delta, including the
+explicit optional accessory exception, narrowed restriction and two original
+cross-references. The correction supersedes the prior semantic blob
+19e909acdede83c507aafac613abb01e01b75623 at the same path; both historical
+registrations remain in the live manifest. New registration pointer:
+ /source_field_review/confirmed_reservoir_accessory_exception_2026_11_27/records/0.
+The actual original index receipt has branch_and_commit_readbacks_equal=true
+and exact_local_proposal_match=true. This receipt schema is unsupported by
+the current inline verifier, as is the literal ampersand in the manifest path.
+Do not discard the prior registration or infer a valid successor chain merely
+from current blob equality. Semantic-to-index comparison is ahead_by=2;
+the exact index parent is not independently established. The previous
+M&M source hash retained in the original verification artifact is
+6d4e25208e8ee3b8b8b05a7f9308ccdbf5a73f090f4d0b32a0916457a9dc5ec8.
+
+Cannon Companion registration:
+ /source_mechanics_reconciliation_2026_11_27_p118_appendix_launcher_variants/verified_semantic_records/0.
+Index follows semantic commit directly; manifest at semantic commit has
+blob 9167e6d9a41343d8185fe5c23a60677d21bf46ec, equal to original receipt's
+prior_blob. Original index receipt contains explicit committed and live
+readback attestations, matching index/blob aliases and semantic identity,
+but is a further unsupported receipt schema. The three pinned core
+reference cells were independently checked in the exact historical core
+acceptance snapshot (blob 2d6ad408ffa7a07e887998bbe6fac3de6266c69f).
+All three agree with the new record's description of the core version;
+source-specific variants and unresolved shared precedence remain distinct.
+Original source SHA retained:
+7b979ed358aaa23bbe68eb95a0887b1315f302bedd6bcc04df00d8d68fbd84a4.
+This verifies the reference comparison and original archive consistency,
+not independent fresh source fidelity or source-wide closure.
+
+Machine-readable diagnostic MM_CC_New_Receipt_Reconciliation_2026-11-27.json
+SHA256 cf15913325212003098c5d32ac765b086140cdd4abcf6d155fe8981a3bf25afd.
+Full production CLI still not executed: no authenticated full Git bundle
+or independently pinned complete source review/bindings/evidence; the
+connector's PR-only workflow listing for pinned main returned no runs.
+No semantic writes, formal book acceptance, global page credit, or changes
+to common gates or worker configuration.
