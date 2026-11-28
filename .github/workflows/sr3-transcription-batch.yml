@@ -1,0 +1,58 @@
+name: SR3 transcription batch qualification
+on:
+  pull_request:
+    paths:
+      - 'tools/transcription_batch/**'
+      - '.github/workflows/sr3-transcription-batch.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: sr3-batch-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  qualify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install pinned parser
+        run: python -m pip install PyYAML==6.0.2
+      - name: Test synthetic Git snapshots
+        run: python -m unittest discover -s tools/transcription_batch -p 'test_*.py' -v
+      - name: Build public-canon candidate index and per-source packets
+        env:
+          SOURCE_HEAD: ${{ github.event.pull_request.base.sha || github.sha }}
+        run: |
+          set -euo pipefail
+          git cat-file -e "$SOURCE_HEAD^{commit}"
+          mkdir -p review-output
+          /usr/bin/time -p python tools/transcription_batch/review_index.py build --repo . --ref "$SOURCE_HEAD" --out review-output/index.json --packets review-output/packets | tee review-output/build-summary.json
+          python - <<'PY'
+          import json, pathlib, os
+          root = pathlib.Path('review-output')
+          idx = json.loads((root / 'index.json').read_text())
+          assert idx['head'] == os.environ['SOURCE_HEAD']
+          assert idx['review_status'] == 'unreviewed_candidates_only'
+          assert idx['page_credit'] is False
+          assert idx['records'] and idx['catalog']
+          directory = json.loads((root / 'packets/directory.json').read_text())
+          assert len(directory) == len({x['id'] for x in idx['catalog']})
+          for source, name in directory.items():
+              packet = json.loads((root / 'packets' / name).read_text())
+              assert packet['source'] == source and packet['head'] == idx['head']
+              assert packet['page_credit'] is False
+          print('Snapshot and packet checks passed; no source acceptance claimed.')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: sr3-public-canon-review-candidates
+          path: review-output/
+          if-no-files-found: error
+          retention-days: 3
