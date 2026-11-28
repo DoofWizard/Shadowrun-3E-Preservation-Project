@@ -1,0 +1,39 @@
+id: rule.cyberware.oral-weapons
+record_type: rule
+name: Oral Dart and Oral Gun
+domain: cyberware
+status: ingested
+source: source.mm
+printed_pages: '17'
+pdf_pages: '17'
+edition_scope: SR3
+content_class: [rule_exact]
+effective: {status: current, source: source.mm, page: 17, basis: defines}
+scope: {applies_to: [entity.cyberware.oral-dart, entity.cyberware.oral-gun]}
+resolution:
+  summary: Fictional tabletop game effects for the two oral cyberware equipment types.
+  inputs: [oral weapon, Oral Gun Active Skill, game test conditions]
+  outputs: [game attack and reload test results, possible Perception modifier]
+  steps: []
+links: {uses: [entity.skill.oral-gun], affects: [entity.cyberware.oral-dart, entity.cyberware.oral-gun], modified_by: [], interacts_with: []}
+sources:
+  - {source: source.mm, page: 17, relation: defines, note: Oral Dart and Oral Gun / Game Effects}
+notes:
+  - Fictional tabletop game mechanics only; equipment purchase and capacity rows remain in their existing entity records.
+data:
+  shared_fictional_game_effects:
+    active_skill: {name: Oral Gun, linked_attribute: Quickness}
+    aim_enhancers_and_accessories_allowed: false
+    game_use_condition: mouth open
+    smell_perception_modifier: {gamemaster_discretion: true, applies_to: innate sense of smell, direction: penalty, value: unspecified}
+    reload_game_test: {skill: Biotech, target_number: 4, base_time_combat_turns: 10}
+  oral_dart:
+    game_range_as: hold-out pistol
+    fictional_payload_types: [narcoject, toxin]
+    ammunition_cost_multiplier: 2
+    reference: {source: source.mm, page: 101, section: Chemistry}
+  oral_gun:
+    game_resolution_as: hold-out pistol
+    ammunition_cost_multiplier: 3
+headline: 'FASA7126 Man & Machine: Cyberware, FASA Corporation, fictional Shadowrun Third Edition tabletop RPG, p17/PDF17: Oral Dart and Oral Gun verified original game effects'
+framing: reference_exact
