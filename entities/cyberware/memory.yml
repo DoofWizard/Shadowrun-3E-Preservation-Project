@@ -3,12 +3,22 @@ record_type: entity
 name: "Memory"
 domain: cyberware
 status: ingested
+source: source.mm
+printed_pages: '152'
+pdf_pages: '153'
+edition_scope: SR3
+content_class: [equipment_stat]
+framing: reference_exact
+headline: 'FASA7126 Man & Machine (FASA Corporation, 1999, fictional Shadowrun Third Edition tabletop RPG), printed p152/PDF153: Memory purchase row'
 intrinsic:
-  essence: "MP x 300"
+  essence: "Mp ÷ 300"
   cost: "MP x 150 nuyen"
   availability: "3/24 hrs"
   street_index: 0.8
   legality: "Legal"
+data:
+  essence_formula: {operation: divide, numerator: Mp, denominator: 300}
+  cost_formula: {operation: multiply, quantity: Mp, nuyen_per_mp: 150}
 links: {uses: [], requires: [], component_of: [], interacts_with: []}
 sources:
   - {source: source.mm, page: 152, relation: defines, note: "Headware equipment table statistics"}
