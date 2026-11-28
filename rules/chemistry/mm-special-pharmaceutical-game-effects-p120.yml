@@ -1,0 +1,69 @@
+id: rule.chemistry.mm-special-pharmaceutical-game-effects-p120
+record_type: rule
+name: Special Pharmaceutical Character Game Effects
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '64,120'
+pdf_pages: '65,121'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: FASA7126 Man & Machine — special pharmaceutical tabletop game effects
+summary: FASA Corporation (1999), Shadowrun Third Edition fictional RPG, printed p120/PDF121 with original p64/PDF65 implant comparison. These are character dice and attribute rules, not clinical instructions.
+effective: {status: current, source: source.mm, page: 120, basis: defines}
+scope:
+  applies_to: [Shadowrun characters affected by the named game items]
+resolution:
+  summary: Apply the source-defined character tests, durations and effects; retain the existing entity purchase and exposure fields separately.
+  inputs: [game item ID, character attributes, active implant level, test successes]
+  outputs: [character game-state changes, temporary test modifiers, duration]
+  steps: []
+data:
+  laes:
+    entity: entity.chemistry.laes
+    test: {attribute: Body, target_number: 6}
+    memory_effect: {base_hours: 12, hours_reduced_per_success: 1, direction: backward from exposure event}
+    unconsciousness:
+      applies_unless_full_resistance: true
+      successes_for_full_resistance: 12
+      base_minutes: 120
+      minutes_reduced_per_success: 10
+    memory_recovery: The source says the affected fictional memories may not be recoverable by any means, including magic.
+  mao:
+    entity: entity.chemistry.mao
+    reaction_modifier: -1
+    initiative_dice_modifier: '-1D6'
+    active_adrenal_pump:
+      entity: entity.bioware.adrenal-pump
+      level_1: {retains_only: Reaction bonus, total_reaction_modifier_still_applies: true}
+      level_2:
+        retained_reaction_bonus_as_printed: 6
+        total_reaction_modifier_still_applies: true
+        remaining_other_attribute_bonuses_as_printed: {Quickness: 1, Strength: 1, Willpower: 1}
+      source_variation:
+        printed_64_per_level: {Quickness: 1, Strength: 2, Willpower: 1, Reaction: 2}
+        printed_120_description: Level 2 retains its normal Reaction bonus stated as +6; remaining attributes are described as Level 1, including +1 Strength.
+        reconciliation: unresolved original source variation; do not substitute one printed value for the other
+    duration: {base_combat_turns: 10, test: {attribute: Body, target_number: 4}, turns_reduced_per_success: 1}
+    repeat_applications_while_current_effect_active: no additional effect
+  nausea_gas:
+    entity: entity.chemistry.nausea-gas
+    test: {attribute: Body, target_number: 5}
+    all_test_target_number_modifier: {base: 5, reduction_per_success: 1}
+    secondary_test:
+      condition: resulting target number modifier exceeds character Willpower
+      test: {attribute: Body, target_number: 5}
+      failure: vomiting with incapacitation
+      incapacitated_combat_turns: 3
+    duration_minutes_per_positive_modifier_point: 5
+    example: {first_test_successes: 2, resulting_modifier: 3, duration_minutes: 15}
+links:
+  uses: [entity.chemistry.laes, entity.chemistry.mao, entity.chemistry.nausea-gas, rule.tests.success-test]
+  affects: []
+  modified_by: []
+  interacts_with: [entity.bioware.adrenal-pump, rule.chemistry.drug-exposure]
+sources:
+  - {source: source.mm, page: 120, relation: defines, note: Laés, MAO and Nausea Gas Game Effects}
+  - {source: source.mm, page: 64, relation: extends, note: Original implant modifier values for comparison}
+notes: []
