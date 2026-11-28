@@ -1,0 +1,72 @@
+id: rule.chemistry.mm-pharmaceutical-game-effects-p119-121
+record_type: rule
+name: Pharmaceutical character game effects
+domain: chemistry
+status: ingested
+source: source.mm
+printed_pages: '119-121'
+pdf_pages: '120-122'
+edition_scope: SR3
+content_class: [rule_exact]
+framing: reference_exact
+headline: 'Man & Machine (FASA7126, FASA Corporation, 1999, SR3 tabletop RPG): character-rule extraction'
+summary: 'Source-defined fictional character modifiers, duration, recovery consequences and optional interactions; purchase statistics remain in the existing equipment entities.'
+effective: {status: current, source: source.mm, page: 119, basis: extends}
+scope: {applies_to: [Shadowrun characters, four fictional pharmaceutical entries]}
+resolution:
+  summary: Apply the specific character game effects for the named entry, retaining the existing purchase and exposure statistics separately.
+  inputs: [entity identity, character attributes, character state]
+  outputs: [temporary attribute and test modifiers, post-effect consequences]
+links:
+  uses: [entity.chemistry.jazz, entity.chemistry.kamikaze, entity.chemistry.long-haul, entity.chemistry.psyche]
+  affects: []
+  modified_by: []
+  interacts_with: [rule.chemistry.drug-exposure, rule.chemistry.addiction, rule.damage.stress-points]
+sources:
+  - {source: source.mm, pages: '119-121', relation: extends, note: Individual fictional character game effects}
+notes: []
+data:
+  jazz:
+    entity: entity.chemistry.jazz
+    attribute_modifiers: {Quickness: 2}
+    reaction_may_change: true
+    initiative_dice_modifier: 1D6
+    duration_minutes: '10 x 1D6'
+    crash:
+      starts: effect_expiry
+      resistance: {attribute: Body, damage: 8L Stun}
+      concentration_tests_target_number_modifier: 1
+      Quickness_modifier: -1
+      modifier_duration_minutes: '10 x 1D6'
+      emotional_effect: despondent mood
+  kamikaze:
+    entity: entity.chemistry.kamikaze
+    attribute_modifiers: {Body: 1, Quickness: 1, Strength: 2, Willpower: 1}
+    initiative_dice_modifier: 1D6
+    calculated_reaction_and_dice_pools_may_change: true
+    pain_resistance: {equivalent_adept_power_levels: 4, reference: SR3 p170}
+    duration_minutes: '10 x 1D6'
+    crash:
+      starts: effect_expiry
+      attribute_modifiers: {Quickness: -1, Willpower: -1}
+      modifier_duration_minutes: '10 x 1D6'
+      resistance: {attribute: Body, damage: 6M Stun}
+    repeated_use: {applications_per_automatic_wound_effect: 4, affected_implants: [cyberware, bioware], reference: M&M p126}
+  long_haul:
+    entity: entity.chemistry.long-haul
+    wakefulness: {duration_days: 4, fatigue_and_weariness_modifiers_apply: false}
+    crash:
+      starts: effect_expiry
+      immediate_loss_of_consciousness: true
+      sleep_duration_hours: 8D6
+      if_kept_awake: {all_target_numbers_modifier: 6, effects: [hallucinations, disorientation, inability to concentrate]}
+    second_application_after_expiry:
+      additional_wakefulness_days: '1D6 / 2'
+      expiry_damage: 10D Stun
+      crash: as_above
+    further_applications_extend_wakefulness: false
+  psyche:
+    entity: entity.chemistry.psyche
+    Intelligence_modifier: 1
+    duration: {hours: '12 - Body', minimum_hours: 1}
+    awakened: {edge: Focused Concentration, reference: SRComp p28, target_number_modifier_per_sustained_spell: 1}
