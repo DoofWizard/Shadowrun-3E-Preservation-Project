@@ -294,7 +294,7 @@ def verify_bytes(receipt_raw, snapshot_raw, manifest_path, index_commit,
     elif (manifest_path == 'sources/manifests/Rigger3Revised.yml' or
           (manifest_path == 'sources/manifests/M&M.yml' and 'semantic_live_and_commit_exact' in r)):
         from r3r_mm_index_receipts import adapt
-        commit, recorded_blob, path, prior, schema = adapt(r, snapshot_raw, manifest_path, confirm)
+        commit, recorded_blob, path, prior, schema = adapt(r, snapshot_raw, manifest_path, confirm, parent_blob)
     elif manifest_path in ('sources/manifests/M&M.yml', 'sources/manifests/CannonCompanion.yml'):
         from source_index_receipts import adapt
         commit, recorded_blob, path, prior, schema = adapt(
@@ -332,7 +332,9 @@ def verify(git, manifest_path, transaction, transition):
     prior = None
     if ('prior_blob_sha' in r or 'exact_commit_and_branch_readback' in r or
             (manifest_path == 'sources/manifests/CannonCompanion.yml' and 'prior_blob' in r) or
-            manifest_path == 'sources/manifests/TargetWastelands.yml'):
+            manifest_path == 'sources/manifests/TargetWastelands.yml' or
+            (manifest_path == 'sources/manifests/Rigger3Revised.yml' and
+             ('source_manifest_before_blob' in r or 'prior_blob' in r))):
         prior = blob(git.read(manifest_path, transition['index_parent']))
     if 'registration_key' in r:
         key = r['registration_key']
