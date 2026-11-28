@@ -1,0 +1,51 @@
+id: rule.rigging.r3-revised-miji-effect-qualifications-p38-40
+record_type: rule
+status: source_reviewed
+source: source.fanpro-10662
+printed_pages: '38-40'
+pdf_pages: '40-42'
+edition_scope: FanPro Rigger 3 Revised (FanPro10662), Shadowrun Third Edition fictional tabletop RPG
+content_class: [rule_procedure]
+headline: FanPro10662 fictional SR3 MIJI game effect qualifications pp38-40/PDF40-42
+summary: Original tabletop action types, dice tests, exceptions and game-state consequences for distinct channel effects.
+framing: reference_exact
+data:
+  provenance:
+    publication: Rigger 3 Revised
+    publisher: FanPro
+    catalog_number: FanPro10662
+    edition: Shadowrun Third Edition
+    source_pdf_sha256: 88c3670ad4f39efebb1ee0545c222e4153bc4a5e1114e138e063e4f845a36909
+  meaconing:
+    comprehension_tests_affected: false
+  intrusion:
+    perception_test_timing: immediately after successful opposed game test
+    successful_perception: controller recognizes false game image but drones still treat it as real until dispelled
+    failed_perception: controller believes false game image
+    image_removal_action: Complex Action
+    image_removal_dice: controller deck ECCM rating
+    image_removal_tn: opponent protocol-emulation module rating
+    image_removal_success_requirement: equal or exceed opposing net successes on original MIJI contest
+    prepared_image_base_time_hours: 1D6 + 1
+    another_character_may_prepare_image: true
+    prepared_image_test_skill: Computer (Programming)
+    prepared_image_test_tn: 4
+    prepared_image_perception_tn_modifier: preparation test successes
+  jamming:
+    command_channel_ivis_tests_affected: true
+    command_channel_lost_game_behavior: last issued order or holding pattern; original specifies self-defense actions only
+    simsense_remote_rigging_penalty_basis: game damage modifiers to target numbers and Initiative
+    simsense_lost_dump_shock_condition: rigger jumped into drone when channel is lost
+    system_channel_degradation_cancels_smartlink_at: Moderate or higher
+  interference:
+    losing_initiator_system_channel_takes_degradation: true
+    repeated_contest_earliest_timing: Combat Phase following first MIJI Test
+    repeated_contest_actor: either participant
+    repeated_contest_action: Complex Action
+    opponent_exits_win_condition: remaining participant wins when the other voluntarily exits
+  reuse:
+    path: rules/rigging/miji.yml
+    blob: 8566f68df3f0e63797d8409d57ffc019c7fcac63
+    signal_monitor: rules/rigging/signal-condition-monitor.yml
+    retained_fields: [existing game contest and channel eligibility, unaffected directly controlled drones, Perception TN 4 plus degradation, existing channel degradation modifiers and opponent dump shock]
+    relationship: additional original fictional game-resolution qualifications; no historical edition difference inferred
