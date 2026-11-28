@@ -1,4 +1,4 @@
-"""Exact, bounded legacy table pointer admission; no evidence certification."""
+"""Exact, bounded legacy table and NPC rating pointer admission; no certification."""
 import re
 
 SOURCE = {
@@ -16,8 +16,17 @@ TABLES = {
 }
 
 
+PERSONA_PATH = 'rules/matrix/target-matrix-persona-ratings.yml'
+PERSONAS = {
+    126: ('anubis', 'fastjack', 'grid_reaper'),
+    127: ('link', 'red_wraith'),
+    128: ('silvery_k', 'slamm_0', 'smiling_bandit', 'snow_tiger'),
+    129: ('michael_sutherland',),
+}
+
+
 def target_matrix_table_pointer(binding, field, source, page):
-    """Only the four independently reviewed table shapes, not arbitrary roots.
+    """Only the reviewed table shapes and ten exact NPC rating-pair pointers.
 
     The caller still verifies the actual original, typed value, class, record
     provenance, immutable journal, historical registration and independent review.
@@ -27,8 +36,13 @@ def target_matrix_table_pointer(binding, field, source, page):
     if any(type(source.get(k)) is not type(v) or source.get(k) != v for k, v in SOURCE.items()):
         return False
     n, pdf, pointer = page.get('printed'), page.get('pdf'), binding.get('pointer')
-    return (binding.get('mode', 'source_local') == 'source_local' and
-            binding.get('path') == PATH and field.get('class') == 'rule_exact' and
-            field.get('kind') == 'row' and type(n) is int and n in TABLES and
-            type(pdf) is int and pdf == n + 1 and isinstance(pointer, str) and
-            re.fullmatch(TABLES[n], pointer) is not None)
+    if not (binding.get('mode', 'source_local') == 'source_local' and
+            field.get('class') == 'rule_exact' and field.get('kind') == 'row' and
+            type(n) is int and type(pdf) is int and pdf == n + 1 and
+            isinstance(pointer, str)):
+        return False
+    if binding.get('path') == PATH:
+        return n in TABLES and re.fullmatch(TABLES[n], pointer) is not None
+    if binding.get('path') == PERSONA_PATH:
+        return pointer in {f'/ratings/{name}/npc_ratings' for name in PERSONAS.get(n, ())}
+    return False
